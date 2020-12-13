@@ -1,0 +1,8 @@
+horstoeko\ubl\entities\cac\PricingReferenceType:
+    properties:
+        originalItemLocationQuantity:
+            -
+                Valid: null
+        alternativeConditionPrice:
+            -
+                Valid: null

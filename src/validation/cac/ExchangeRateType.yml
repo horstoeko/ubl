@@ -1,0 +1,15 @@
+horstoeko\ubl\entities\cac\ExchangeRateType:
+    properties:
+        sourceCurrencyCode:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        targetCurrencyCode:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        foreignExchangeContract:
+            -
+                Valid: null

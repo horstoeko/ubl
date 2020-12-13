@@ -1,0 +1,5 @@
+horstoeko\ubl\entities\cac\ClassificationCategoryType:
+    properties:
+        categorizesClassificationCategory:
+            -
+                Valid: null

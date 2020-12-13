@@ -1,0 +1,16 @@
+horstoeko\ubl\entities\cac\LineResponseType:
+    properties:
+        lineReference:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        response:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

@@ -1,0 +1,14 @@
+horstoeko\ubl\entities\cac\ClassificationSchemeType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        classificationCategory:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

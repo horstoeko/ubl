@@ -1,0 +1,13 @@
+horstoeko\ubl\entities\cac\PartyNameType:
+    properties:
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: Name
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getName
+                setter: setName
+            type: horstoeko\ubl\entities\cbc\Name

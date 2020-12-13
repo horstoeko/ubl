@@ -1,0 +1,12 @@
+horstoeko\ubl\entities\cac\TemperatureType:
+    properties:
+        attributeID:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        measure:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

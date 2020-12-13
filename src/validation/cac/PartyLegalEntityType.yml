@@ -1,0 +1,8 @@
+horstoeko\ubl\entities\cac\PartyLegalEntityType:
+    properties:
+        registrationAddress:
+            -
+                Valid: null
+        corporateRegistrationScheme:
+            -
+                Valid: null

@@ -1,0 +1,16 @@
+horstoeko\ubl\entities\cac\PriceType:
+    properties:
+        priceAmount:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        validityPeriod:
+            -
+                Valid: null
+        priceList:
+            -
+                Valid: null
+        allowanceCharge:
+            -
+                Valid: null

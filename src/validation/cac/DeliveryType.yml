@@ -1,0 +1,23 @@
+horstoeko\ubl\entities\cac\DeliveryType:
+    properties:
+        deliveryAddress:
+            -
+                Valid: null
+        deliveryLocation:
+            -
+                Valid: null
+        requestedDeliveryPeriod:
+            -
+                Valid: null
+        promisedDeliveryPeriod:
+            -
+                Valid: null
+        estimatedDeliveryPeriod:
+            -
+                Valid: null
+        deliveryParty:
+            -
+                Valid: null
+        despatch:
+            -
+                Valid: null

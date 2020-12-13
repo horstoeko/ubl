@@ -1,0 +1,32 @@
+horstoeko\ubl\entities\cac\PartyType:
+    properties:
+        partyIdentification:
+            -
+                Valid: null
+        partyName:
+            -
+                Valid: null
+        language:
+            -
+                Valid: null
+        postalAddress:
+            -
+                Valid: null
+        physicalLocation:
+            -
+                Valid: null
+        partyTaxScheme:
+            -
+                Valid: null
+        partyLegalEntity:
+            -
+                Valid: null
+        contact:
+            -
+                Valid: null
+        person:
+            -
+                Valid: null
+        agentParty:
+            -
+                Valid: null

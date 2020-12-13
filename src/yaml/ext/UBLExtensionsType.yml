@@ -1,0 +1,17 @@
+horstoeko\ubl\entities\ext\UBLExtensionsType:
+    properties:
+        uBLExtension:
+            expose: true
+            access_type: public_method
+            serialized_name: UBLExtension
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2'
+            accessor:
+                getter: getUBLExtension
+                setter: setUBLExtension
+            xml_list:
+                inline: true
+                entry_name: UBLExtension
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2'
+            type: array<horstoeko\ubl\entities\ext\UBLExtension>

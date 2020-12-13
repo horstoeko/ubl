@@ -1,0 +1,50 @@
+horstoeko\ubl\entities\cac\PhysicalAttributeType:
+    properties:
+        attributeID:
+            expose: true
+            access_type: public_method
+            serialized_name: AttributeID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAttributeID
+                setter: setAttributeID
+            type: horstoeko\ubl\entities\cbc\AttributeID
+        positionCode:
+            expose: true
+            access_type: public_method
+            serialized_name: PositionCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPositionCode
+                setter: setPositionCode
+            type: horstoeko\ubl\entities\cbc\PositionCode
+        descriptionCode:
+            expose: true
+            access_type: public_method
+            serialized_name: DescriptionCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDescriptionCode
+                setter: setDescriptionCode
+            type: horstoeko\ubl\entities\cbc\DescriptionCode
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: Description
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>

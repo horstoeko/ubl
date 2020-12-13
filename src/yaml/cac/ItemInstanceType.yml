@@ -1,0 +1,83 @@
+horstoeko\ubl\entities\cac\ItemInstanceType:
+    properties:
+        productTraceID:
+            expose: true
+            access_type: public_method
+            serialized_name: ProductTraceID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getProductTraceID
+                setter: setProductTraceID
+            type: horstoeko\ubl\entities\cbc\ProductTraceID
+        manufactureDate:
+            expose: true
+            access_type: public_method
+            serialized_name: ManufactureDate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getManufactureDate
+                setter: setManufactureDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        manufactureTime:
+            expose: true
+            access_type: public_method
+            serialized_name: ManufactureTime
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getManufactureTime
+                setter: setManufactureTime
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time
+        registrationID:
+            expose: true
+            access_type: public_method
+            serialized_name: RegistrationID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getRegistrationID
+                setter: setRegistrationID
+            type: horstoeko\ubl\entities\cbc\RegistrationID
+        serialID:
+            expose: true
+            access_type: public_method
+            serialized_name: SerialID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getSerialID
+                setter: setSerialID
+            type: horstoeko\ubl\entities\cbc\SerialID
+        additionalItemProperty:
+            expose: true
+            access_type: public_method
+            serialized_name: AdditionalItemProperty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getAdditionalItemProperty
+                setter: setAdditionalItemProperty
+            xml_list:
+                inline: true
+                entry_name: AdditionalItemProperty
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\AdditionalItemProperty>
+        lotIdentification:
+            expose: true
+            access_type: public_method
+            serialized_name: LotIdentification
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getLotIdentification
+                setter: setLotIdentification
+            type: horstoeko\ubl\entities\cac\LotIdentification

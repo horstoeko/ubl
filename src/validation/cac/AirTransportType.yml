@@ -1,0 +1,7 @@
+horstoeko\ubl\entities\cac\AirTransportType:
+    properties:
+        aircraftID:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

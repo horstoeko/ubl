@@ -1,0 +1,11 @@
+horstoeko\ubl\entities\cac\DespatchType:
+    properties:
+        despatchAddress:
+            -
+                Valid: null
+        despatchParty:
+            -
+                Valid: null
+        contact:
+            -
+                Valid: null

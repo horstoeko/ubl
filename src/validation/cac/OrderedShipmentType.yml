@@ -1,0 +1,12 @@
+horstoeko\ubl\entities\cac\OrderedShipmentType:
+    properties:
+        shipment:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        package:
+            -
+                Valid: null

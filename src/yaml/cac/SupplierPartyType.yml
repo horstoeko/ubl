@@ -1,0 +1,83 @@
+horstoeko\ubl\entities\cac\SupplierPartyType:
+    properties:
+        customerAssignedAccountID:
+            expose: true
+            access_type: public_method
+            serialized_name: CustomerAssignedAccountID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getCustomerAssignedAccountID
+                setter: setCustomerAssignedAccountID
+            type: horstoeko\ubl\entities\cbc\CustomerAssignedAccountID
+        additionalAccountID:
+            expose: true
+            access_type: public_method
+            serialized_name: AdditionalAccountID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAdditionalAccountID
+                setter: setAdditionalAccountID
+            xml_list:
+                inline: true
+                entry_name: AdditionalAccountID
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\AdditionalAccountID>
+        dataSendingCapability:
+            expose: true
+            access_type: public_method
+            serialized_name: DataSendingCapability
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDataSendingCapability
+                setter: setDataSendingCapability
+            type: horstoeko\ubl\entities\cbc\DataSendingCapability
+        party:
+            expose: true
+            access_type: public_method
+            serialized_name: Party
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getParty
+                setter: setParty
+            type: horstoeko\ubl\entities\cac\Party
+        despatchContact:
+            expose: true
+            access_type: public_method
+            serialized_name: DespatchContact
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getDespatchContact
+                setter: setDespatchContact
+            type: horstoeko\ubl\entities\cac\DespatchContact
+        accountingContact:
+            expose: true
+            access_type: public_method
+            serialized_name: AccountingContact
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getAccountingContact
+                setter: setAccountingContact
+            type: horstoeko\ubl\entities\cac\AccountingContact
+        sellerContact:
+            expose: true
+            access_type: public_method
+            serialized_name: SellerContact
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getSellerContact
+                setter: setSellerContact
+            type: horstoeko\ubl\entities\cac\SellerContact

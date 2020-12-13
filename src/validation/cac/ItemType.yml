@@ -1,0 +1,56 @@
+horstoeko\ubl\entities\cac\ItemType:
+    properties:
+        buyersItemIdentification:
+            -
+                Valid: null
+        sellersItemIdentification:
+            -
+                Valid: null
+        manufacturersItemIdentification:
+            -
+                Valid: null
+        standardItemIdentification:
+            -
+                Valid: null
+        catalogueItemIdentification:
+            -
+                Valid: null
+        additionalItemIdentification:
+            -
+                Valid: null
+        catalogueDocumentReference:
+            -
+                Valid: null
+        itemSpecificationDocumentReference:
+            -
+                Valid: null
+        originCountry:
+            -
+                Valid: null
+        commodityClassification:
+            -
+                Valid: null
+        transactionConditions:
+            -
+                Valid: null
+        hazardousItem:
+            -
+                Valid: null
+        classifiedTaxCategory:
+            -
+                Valid: null
+        additionalItemProperty:
+            -
+                Valid: null
+        manufacturerParty:
+            -
+                Valid: null
+        informationContentProviderParty:
+            -
+                Valid: null
+        originAddress:
+            -
+                Valid: null
+        itemInstance:
+            -
+                Valid: null

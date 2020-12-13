@@ -1,0 +1,7 @@
+horstoeko\ubl\entities\cac\MonetaryTotalType:
+    properties:
+        payableAmount:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

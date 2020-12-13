@@ -1,0 +1,57 @@
+horstoeko\ubl\entities\cac\SecondaryHazardType:
+    properties:
+        iD:
+            expose: true
+            access_type: public_method
+            serialized_name: ID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getID
+                setter: setID
+            type: horstoeko\ubl\entities\cbc\ID
+        placardNotation:
+            expose: true
+            access_type: public_method
+            serialized_name: PlacardNotation
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPlacardNotation
+                setter: setPlacardNotation
+            type: horstoeko\ubl\entities\cbc\PlacardNotation
+        placardEndorsement:
+            expose: true
+            access_type: public_method
+            serialized_name: PlacardEndorsement
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPlacardEndorsement
+                setter: setPlacardEndorsement
+            type: horstoeko\ubl\entities\cbc\PlacardEndorsement
+        emergencyProceduresCode:
+            expose: true
+            access_type: public_method
+            serialized_name: EmergencyProceduresCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getEmergencyProceduresCode
+                setter: setEmergencyProceduresCode
+            type: horstoeko\ubl\entities\cbc\EmergencyProceduresCode
+        extension:
+            expose: true
+            access_type: public_method
+            serialized_name: Extension
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getExtension
+                setter: setExtension
+            type: horstoeko\ubl\entities\cbc\Extension

@@ -1,0 +1,16 @@
+horstoeko\ubl\entities\cac\ItemIdentificationType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        physicalAttribute:
+            -
+                Valid: null
+        measurementDimension:
+            -
+                Valid: null
+        issuerParty:
+            -
+                Valid: null

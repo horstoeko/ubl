@@ -1,0 +1,25 @@
+horstoeko\ubl\entities\cac\DocumentResponseType:
+    properties:
+        response:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        documentReference:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        issuerParty:
+            -
+                Valid: null
+        recipientParty:
+            -
+                Valid: null
+        lineResponse:
+            -
+                Valid: null

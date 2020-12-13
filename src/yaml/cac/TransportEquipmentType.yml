@@ -1,0 +1,208 @@
+horstoeko\ubl\entities\cac\TransportEquipmentType:
+    properties:
+        iD:
+            expose: true
+            access_type: public_method
+            serialized_name: ID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getID
+                setter: setID
+            type: horstoeko\ubl\entities\cbc\ID
+        transportEquipmentTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: TransportEquipmentTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTransportEquipmentTypeCode
+                setter: setTransportEquipmentTypeCode
+            type: horstoeko\ubl\entities\cbc\TransportEquipmentTypeCode
+        providerTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ProviderTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getProviderTypeCode
+                setter: setProviderTypeCode
+            type: horstoeko\ubl\entities\cbc\ProviderTypeCode
+        ownerTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: OwnerTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getOwnerTypeCode
+                setter: setOwnerTypeCode
+            type: horstoeko\ubl\entities\cbc\OwnerTypeCode
+        sizeTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: SizeTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getSizeTypeCode
+                setter: setSizeTypeCode
+            type: horstoeko\ubl\entities\cbc\SizeTypeCode
+        dispositionCode:
+            expose: true
+            access_type: public_method
+            serialized_name: DispositionCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDispositionCode
+                setter: setDispositionCode
+            type: horstoeko\ubl\entities\cbc\DispositionCode
+        fullnessIndicationCode:
+            expose: true
+            access_type: public_method
+            serialized_name: FullnessIndicationCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getFullnessIndicationCode
+                setter: setFullnessIndicationCode
+            type: horstoeko\ubl\entities\cbc\FullnessIndicationCode
+        refrigerationOnIndicator:
+            expose: true
+            access_type: public_method
+            serialized_name: RefrigerationOnIndicator
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getRefrigerationOnIndicator
+                setter: setRefrigerationOnIndicator
+            type: bool
+        information:
+            expose: true
+            access_type: public_method
+            serialized_name: Information
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getInformation
+                setter: setInformation
+            type: horstoeko\ubl\entities\cbc\Information
+        returnabilityIndicator:
+            expose: true
+            access_type: public_method
+            serialized_name: ReturnabilityIndicator
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getReturnabilityIndicator
+                setter: setReturnabilityIndicator
+            type: bool
+        legalStatusIndicator:
+            expose: true
+            access_type: public_method
+            serialized_name: LegalStatusIndicator
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getLegalStatusIndicator
+                setter: setLegalStatusIndicator
+            type: bool
+        measurementDimension:
+            expose: true
+            access_type: public_method
+            serialized_name: MeasurementDimension
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getMeasurementDimension
+                setter: setMeasurementDimension
+            xml_list:
+                inline: true
+                entry_name: MeasurementDimension
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\MeasurementDimension>
+        transportEquipmentSeal:
+            expose: true
+            access_type: public_method
+            serialized_name: TransportEquipmentSeal
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getTransportEquipmentSeal
+                setter: setTransportEquipmentSeal
+            xml_list:
+                inline: true
+                entry_name: TransportEquipmentSeal
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\TransportEquipmentSeal>
+        minimumTemperature:
+            expose: true
+            access_type: public_method
+            serialized_name: MinimumTemperature
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getMinimumTemperature
+                setter: setMinimumTemperature
+            type: horstoeko\ubl\entities\cac\MinimumTemperature
+        maximumTemperature:
+            expose: true
+            access_type: public_method
+            serialized_name: MaximumTemperature
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getMaximumTemperature
+                setter: setMaximumTemperature
+            type: horstoeko\ubl\entities\cac\MaximumTemperature
+        providerParty:
+            expose: true
+            access_type: public_method
+            serialized_name: ProviderParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getProviderParty
+                setter: setProviderParty
+            type: horstoeko\ubl\entities\cac\ProviderParty
+        loadingProofParty:
+            expose: true
+            access_type: public_method
+            serialized_name: LoadingProofParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getLoadingProofParty
+                setter: setLoadingProofParty
+            type: horstoeko\ubl\entities\cac\LoadingProofParty
+        loadingLocation:
+            expose: true
+            access_type: public_method
+            serialized_name: LoadingLocation
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getLoadingLocation
+                setter: setLoadingLocation
+            type: horstoeko\ubl\entities\cac\LoadingLocation

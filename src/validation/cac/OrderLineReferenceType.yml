@@ -1,0 +1,10 @@
+horstoeko\ubl\entities\cac\OrderLineReferenceType:
+    properties:
+        lineID:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        orderReference:
+            -
+                Valid: null

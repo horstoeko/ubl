@@ -1,0 +1,303 @@
+horstoeko\ubl\entities\cac\AddressType:
+    properties:
+        iD:
+            expose: true
+            access_type: public_method
+            serialized_name: ID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getID
+                setter: setID
+            type: horstoeko\ubl\entities\cbc\ID
+        addressTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: AddressTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAddressTypeCode
+                setter: setAddressTypeCode
+            type: horstoeko\ubl\entities\cbc\AddressTypeCode
+        addressFormatCode:
+            expose: true
+            access_type: public_method
+            serialized_name: AddressFormatCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAddressFormatCode
+                setter: setAddressFormatCode
+            type: horstoeko\ubl\entities\cbc\AddressFormatCode
+        postbox:
+            expose: true
+            access_type: public_method
+            serialized_name: Postbox
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPostbox
+                setter: setPostbox
+            type: horstoeko\ubl\entities\cbc\Postbox
+        floor:
+            expose: true
+            access_type: public_method
+            serialized_name: Floor
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getFloor
+                setter: setFloor
+            type: horstoeko\ubl\entities\cbc\Floor
+        room:
+            expose: true
+            access_type: public_method
+            serialized_name: Room
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getRoom
+                setter: setRoom
+            type: horstoeko\ubl\entities\cbc\Room
+        streetName:
+            expose: true
+            access_type: public_method
+            serialized_name: StreetName
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getStreetName
+                setter: setStreetName
+            type: horstoeko\ubl\entities\cbc\StreetName
+        additionalStreetName:
+            expose: true
+            access_type: public_method
+            serialized_name: AdditionalStreetName
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAdditionalStreetName
+                setter: setAdditionalStreetName
+            type: horstoeko\ubl\entities\cbc\AdditionalStreetName
+        blockName:
+            expose: true
+            access_type: public_method
+            serialized_name: BlockName
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getBlockName
+                setter: setBlockName
+            type: horstoeko\ubl\entities\cbc\BlockName
+        buildingName:
+            expose: true
+            access_type: public_method
+            serialized_name: BuildingName
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getBuildingName
+                setter: setBuildingName
+            type: horstoeko\ubl\entities\cbc\BuildingName
+        buildingNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: BuildingNumber
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getBuildingNumber
+                setter: setBuildingNumber
+            type: horstoeko\ubl\entities\cbc\BuildingNumber
+        inhouseMail:
+            expose: true
+            access_type: public_method
+            serialized_name: InhouseMail
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getInhouseMail
+                setter: setInhouseMail
+            type: horstoeko\ubl\entities\cbc\InhouseMail
+        department:
+            expose: true
+            access_type: public_method
+            serialized_name: Department
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDepartment
+                setter: setDepartment
+            type: horstoeko\ubl\entities\cbc\Department
+        markAttention:
+            expose: true
+            access_type: public_method
+            serialized_name: MarkAttention
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMarkAttention
+                setter: setMarkAttention
+            type: horstoeko\ubl\entities\cbc\MarkAttention
+        markCare:
+            expose: true
+            access_type: public_method
+            serialized_name: MarkCare
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMarkCare
+                setter: setMarkCare
+            type: horstoeko\ubl\entities\cbc\MarkCare
+        plotIdentification:
+            expose: true
+            access_type: public_method
+            serialized_name: PlotIdentification
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPlotIdentification
+                setter: setPlotIdentification
+            type: horstoeko\ubl\entities\cbc\PlotIdentification
+        citySubdivisionName:
+            expose: true
+            access_type: public_method
+            serialized_name: CitySubdivisionName
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getCitySubdivisionName
+                setter: setCitySubdivisionName
+            type: horstoeko\ubl\entities\cbc\CitySubdivisionName
+        cityName:
+            expose: true
+            access_type: public_method
+            serialized_name: CityName
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getCityName
+                setter: setCityName
+            type: horstoeko\ubl\entities\cbc\CityName
+        postalZone:
+            expose: true
+            access_type: public_method
+            serialized_name: PostalZone
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPostalZone
+                setter: setPostalZone
+            type: horstoeko\ubl\entities\cbc\PostalZone
+        countrySubentity:
+            expose: true
+            access_type: public_method
+            serialized_name: CountrySubentity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getCountrySubentity
+                setter: setCountrySubentity
+            type: horstoeko\ubl\entities\cbc\CountrySubentity
+        countrySubentityCode:
+            expose: true
+            access_type: public_method
+            serialized_name: CountrySubentityCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getCountrySubentityCode
+                setter: setCountrySubentityCode
+            type: horstoeko\ubl\entities\cbc\CountrySubentityCode
+        region:
+            expose: true
+            access_type: public_method
+            serialized_name: Region
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getRegion
+                setter: setRegion
+            type: horstoeko\ubl\entities\cbc\Region
+        district:
+            expose: true
+            access_type: public_method
+            serialized_name: District
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDistrict
+                setter: setDistrict
+            type: horstoeko\ubl\entities\cbc\District
+        timezoneOffset:
+            expose: true
+            access_type: public_method
+            serialized_name: TimezoneOffset
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTimezoneOffset
+                setter: setTimezoneOffset
+            type: horstoeko\ubl\entities\cbc\TimezoneOffset
+        addressLine:
+            expose: true
+            access_type: public_method
+            serialized_name: AddressLine
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getAddressLine
+                setter: setAddressLine
+            xml_list:
+                inline: true
+                entry_name: AddressLine
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\AddressLine>
+        country:
+            expose: true
+            access_type: public_method
+            serialized_name: Country
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getCountry
+                setter: setCountry
+            type: horstoeko\ubl\entities\cac\Country
+        locationCoordinate:
+            expose: true
+            access_type: public_method
+            serialized_name: LocationCoordinate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getLocationCoordinate
+                setter: setLocationCoordinate
+            type: horstoeko\ubl\entities\cac\LocationCoordinate

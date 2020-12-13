@@ -1,0 +1,7 @@
+horstoeko\ubl\entities\cac\RoadTransportType:
+    properties:
+        licensePlateID:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

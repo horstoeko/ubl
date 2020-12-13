@@ -1,0 +1,14 @@
+horstoeko\ubl\entities\cac\SupplierPartyType:
+    properties:
+        party:
+            -
+                Valid: null
+        despatchContact:
+            -
+                Valid: null
+        accountingContact:
+            -
+                Valid: null
+        sellerContact:
+            -
+                Valid: null

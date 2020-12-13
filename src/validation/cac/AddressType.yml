@@ -1,0 +1,11 @@
+horstoeko\ubl\entities\cac\AddressType:
+    properties:
+        addressLine:
+            -
+                Valid: null
+        country:
+            -
+                Valid: null
+        locationCoordinate:
+            -
+                Valid: null

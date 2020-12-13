@@ -1,0 +1,35 @@
+horstoeko\ubl\entities\cac\CommunicationType:
+    properties:
+        channelCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ChannelCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getChannelCode
+                setter: setChannelCode
+            type: horstoeko\ubl\entities\cbc\ChannelCode
+        channel:
+            expose: true
+            access_type: public_method
+            serialized_name: Channel
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getChannel
+                setter: setChannel
+            type: horstoeko\ubl\entities\cbc\Channel
+        value:
+            expose: true
+            access_type: public_method
+            serialized_name: Value
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getValue
+                setter: setValue
+            type: horstoeko\ubl\entities\cbc\Value

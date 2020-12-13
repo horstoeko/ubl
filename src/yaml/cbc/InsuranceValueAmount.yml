@@ -1,0 +1,3 @@
+horstoeko\ubl\entities\cbc\InsuranceValueAmount:
+    xml_root_name: InsuranceValueAmount
+    xml_root_namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'

@@ -1,0 +1,115 @@
+horstoeko\ubl\entities\main\InvoiceType:
+    properties:
+        uBLExtensions:
+            -
+                Valid: null
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        issueDate:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        invoicePeriod:
+            -
+                Valid: null
+        orderReference:
+            -
+                Valid: null
+        billingReference:
+            -
+                Valid: null
+        despatchDocumentReference:
+            -
+                Valid: null
+        receiptDocumentReference:
+            -
+                Valid: null
+        originatorDocumentReference:
+            -
+                Valid: null
+        contractDocumentReference:
+            -
+                Valid: null
+        additionalDocumentReference:
+            -
+                Valid: null
+        signature:
+            -
+                Valid: null
+        accountingSupplierParty:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        accountingCustomerParty:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        payeeParty:
+            -
+                Valid: null
+        buyerCustomerParty:
+            -
+                Valid: null
+        sellerSupplierParty:
+            -
+                Valid: null
+        taxRepresentativeParty:
+            -
+                Valid: null
+        delivery:
+            -
+                Valid: null
+        deliveryTerms:
+            -
+                Valid: null
+        paymentMeans:
+            -
+                Valid: null
+        paymentTerms:
+            -
+                Valid: null
+        prepaidPayment:
+            -
+                Valid: null
+        allowanceCharge:
+            -
+                Valid: null
+        taxExchangeRate:
+            -
+                Valid: null
+        pricingExchangeRate:
+            -
+                Valid: null
+        paymentExchangeRate:
+            -
+                Valid: null
+        paymentAlternativeExchangeRate:
+            -
+                Valid: null
+        taxTotal:
+            -
+                Valid: null
+        legalMonetaryTotal:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        invoiceLine:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

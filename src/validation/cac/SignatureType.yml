@@ -1,0 +1,20 @@
+horstoeko\ubl\entities\cac\SignatureType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        signatoryParty:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        digitalSignatureAttachment:
+            -
+                Valid: null
+        originalDocumentReference:
+            -
+                Valid: null

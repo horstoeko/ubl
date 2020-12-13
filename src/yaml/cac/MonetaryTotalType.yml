@@ -1,0 +1,90 @@
+horstoeko\ubl\entities\cac\MonetaryTotalType:
+    properties:
+        lineExtensionAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: LineExtensionAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getLineExtensionAmount
+                setter: setLineExtensionAmount
+            type: horstoeko\ubl\entities\cbc\LineExtensionAmount
+        taxExclusiveAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: TaxExclusiveAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTaxExclusiveAmount
+                setter: setTaxExclusiveAmount
+            type: horstoeko\ubl\entities\cbc\TaxExclusiveAmount
+        taxInclusiveAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: TaxInclusiveAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTaxInclusiveAmount
+                setter: setTaxInclusiveAmount
+            type: horstoeko\ubl\entities\cbc\TaxInclusiveAmount
+        allowanceTotalAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: AllowanceTotalAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAllowanceTotalAmount
+                setter: setAllowanceTotalAmount
+            type: horstoeko\ubl\entities\cbc\AllowanceTotalAmount
+        chargeTotalAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: ChargeTotalAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getChargeTotalAmount
+                setter: setChargeTotalAmount
+            type: horstoeko\ubl\entities\cbc\ChargeTotalAmount
+        prepaidAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: PrepaidAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPrepaidAmount
+                setter: setPrepaidAmount
+            type: horstoeko\ubl\entities\cbc\PrepaidAmount
+        payableRoundingAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: PayableRoundingAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPayableRoundingAmount
+                setter: setPayableRoundingAmount
+            type: horstoeko\ubl\entities\cbc\PayableRoundingAmount
+        payableAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: PayableAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPayableAmount
+                setter: setPayableAmount
+            type: horstoeko\ubl\entities\cbc\PayableAmount

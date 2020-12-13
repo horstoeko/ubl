@@ -1,0 +1,61 @@
+horstoeko\ubl\entities\cac\CertificateOfOriginApplicationType:
+    properties:
+        referenceID:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        certificateType:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        originalJobID:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        shipment:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        endorserParty:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        preparationParty:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        issuerParty:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        issuingCountry:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        documentDistribution:
+            -
+                Valid: null
+        supportingDocumentReference:
+            -
+                Valid: null
+        signature:
+            -
+                Valid: null

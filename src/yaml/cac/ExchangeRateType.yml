@@ -1,0 +1,101 @@
+horstoeko\ubl\entities\cac\ExchangeRateType:
+    properties:
+        sourceCurrencyCode:
+            expose: true
+            access_type: public_method
+            serialized_name: SourceCurrencyCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getSourceCurrencyCode
+                setter: setSourceCurrencyCode
+            type: horstoeko\ubl\entities\cbc\SourceCurrencyCode
+        sourceCurrencyBaseRate:
+            expose: true
+            access_type: public_method
+            serialized_name: SourceCurrencyBaseRate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getSourceCurrencyBaseRate
+                setter: setSourceCurrencyBaseRate
+            type: float
+        targetCurrencyCode:
+            expose: true
+            access_type: public_method
+            serialized_name: TargetCurrencyCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTargetCurrencyCode
+                setter: setTargetCurrencyCode
+            type: horstoeko\ubl\entities\cbc\TargetCurrencyCode
+        targetCurrencyBaseRate:
+            expose: true
+            access_type: public_method
+            serialized_name: TargetCurrencyBaseRate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTargetCurrencyBaseRate
+                setter: setTargetCurrencyBaseRate
+            type: float
+        exchangeMarketID:
+            expose: true
+            access_type: public_method
+            serialized_name: ExchangeMarketID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getExchangeMarketID
+                setter: setExchangeMarketID
+            type: horstoeko\ubl\entities\cbc\ExchangeMarketID
+        calculationRate:
+            expose: true
+            access_type: public_method
+            serialized_name: CalculationRate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getCalculationRate
+                setter: setCalculationRate
+            type: float
+        mathematicOperatorCode:
+            expose: true
+            access_type: public_method
+            serialized_name: MathematicOperatorCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMathematicOperatorCode
+                setter: setMathematicOperatorCode
+            type: horstoeko\ubl\entities\cbc\MathematicOperatorCode
+        date:
+            expose: true
+            access_type: public_method
+            serialized_name: Date
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDate
+                setter: setDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        foreignExchangeContract:
+            expose: true
+            access_type: public_method
+            serialized_name: ForeignExchangeContract
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getForeignExchangeContract
+                setter: setForeignExchangeContract
+            type: horstoeko\ubl\entities\cac\ForeignExchangeContract

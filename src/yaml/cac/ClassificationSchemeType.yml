@@ -1,0 +1,164 @@
+horstoeko\ubl\entities\cac\ClassificationSchemeType:
+    properties:
+        iD:
+            expose: true
+            access_type: public_method
+            serialized_name: ID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getID
+                setter: setID
+            type: horstoeko\ubl\entities\cbc\ID
+        uUID:
+            expose: true
+            access_type: public_method
+            serialized_name: UUID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getUUID
+                setter: setUUID
+            type: horstoeko\ubl\entities\cbc\UUID
+        lastRevisionDate:
+            expose: true
+            access_type: public_method
+            serialized_name: LastRevisionDate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getLastRevisionDate
+                setter: setLastRevisionDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        lastRevisionTime:
+            expose: true
+            access_type: public_method
+            serialized_name: LastRevisionTime
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getLastRevisionTime
+                setter: setLastRevisionTime
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: Note
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getNote
+                setter: setNote
+            type: horstoeko\ubl\entities\cbc\Note
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: Name
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getName
+                setter: setName
+            type: horstoeko\ubl\entities\cbc\Name
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: Description
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>
+        agencyID:
+            expose: true
+            access_type: public_method
+            serialized_name: AgencyID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAgencyID
+                setter: setAgencyID
+            type: horstoeko\ubl\entities\cbc\AgencyID
+        agencyName:
+            expose: true
+            access_type: public_method
+            serialized_name: AgencyName
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAgencyName
+                setter: setAgencyName
+            type: horstoeko\ubl\entities\cbc\AgencyName
+        versionID:
+            expose: true
+            access_type: public_method
+            serialized_name: VersionID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getVersionID
+                setter: setVersionID
+            type: horstoeko\ubl\entities\cbc\VersionID
+        uRI:
+            expose: true
+            access_type: public_method
+            serialized_name: URI
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getURI
+                setter: setURI
+            type: horstoeko\ubl\entities\cbc\URI
+        schemeURI:
+            expose: true
+            access_type: public_method
+            serialized_name: SchemeURI
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getSchemeURI
+                setter: setSchemeURI
+            type: horstoeko\ubl\entities\cbc\SchemeURI
+        languageID:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getLanguageID
+                setter: setLanguageID
+            type: horstoeko\ubl\entities\cbc\LanguageID
+        classificationCategory:
+            expose: true
+            access_type: public_method
+            serialized_name: ClassificationCategory
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getClassificationCategory
+                setter: setClassificationCategory
+            xml_list:
+                inline: true
+                entry_name: ClassificationCategory
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\ClassificationCategory>

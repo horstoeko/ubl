@@ -1,0 +1,10 @@
+horstoeko\ubl\entities\cac\BillingReferenceLineType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        allowanceCharge:
+            -
+                Valid: null

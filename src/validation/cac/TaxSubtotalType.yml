@@ -1,0 +1,14 @@
+horstoeko\ubl\entities\cac\TaxSubtotalType:
+    properties:
+        taxAmount:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        taxCategory:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

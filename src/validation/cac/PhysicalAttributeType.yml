@@ -1,0 +1,7 @@
+horstoeko\ubl\entities\cac\PhysicalAttributeType:
+    properties:
+        attributeID:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

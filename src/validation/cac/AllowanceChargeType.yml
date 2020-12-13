@@ -1,0 +1,21 @@
+horstoeko\ubl\entities\cac\AllowanceChargeType:
+    properties:
+        chargeIndicator:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        amount:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        taxCategory:
+            -
+                Valid: null
+        taxTotal:
+            -
+                Valid: null
+        paymentMeans:
+            -
+                Valid: null

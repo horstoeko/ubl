@@ -1,0 +1,53 @@
+horstoeko\ubl\entities\cac\CatalogueLineType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        contractorCustomerParty:
+            -
+                Valid: null
+        sellerSupplierParty:
+            -
+                Valid: null
+        warrantyParty:
+            -
+                Valid: null
+        warrantyValidityPeriod:
+            -
+                Valid: null
+        lineValidityPeriod:
+            -
+                Valid: null
+        itemComparison:
+            -
+                Valid: null
+        componentRelatedItem:
+            -
+                Valid: null
+        accessoryRelatedItem:
+            -
+                Valid: null
+        requiredRelatedItem:
+            -
+                Valid: null
+        replacementRelatedItem:
+            -
+                Valid: null
+        complementaryRelatedItem:
+            -
+                Valid: null
+        requiredItemLocationQuantity:
+            -
+                Valid: null
+        documentReference:
+            -
+                Valid: null
+        item:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

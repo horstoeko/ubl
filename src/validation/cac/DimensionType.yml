@@ -1,0 +1,7 @@
+horstoeko\ubl\entities\cac\DimensionType:
+    properties:
+        attributeID:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

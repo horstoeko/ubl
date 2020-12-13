@@ -1,0 +1,22 @@
+horstoeko\ubl\entities\cac\EndorsementType:
+    properties:
+        documentID:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        approvalStatus:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        endorserParty:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        signature:
+            -
+                Valid: null

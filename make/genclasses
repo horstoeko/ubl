@@ -1,0 +1,10 @@
+#!/bin/bash
+
+CURRENTUSER=$(id -u -n)
+
+if [ "$CURRENTUSER" != "www-data" ]; then
+    echo "Not the right user"
+    exit 1
+fi
+
+./../vendor/bin/xsd2php convert ./config.yml ./../src/schema/maindoc/UBL-Invoice-2.0.xsd -vvv

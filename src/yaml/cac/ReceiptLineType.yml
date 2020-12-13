@@ -1,0 +1,227 @@
+horstoeko\ubl\entities\cac\ReceiptLineType:
+    properties:
+        iD:
+            expose: true
+            access_type: public_method
+            serialized_name: ID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getID
+                setter: setID
+            type: horstoeko\ubl\entities\cbc\ID
+        uUID:
+            expose: true
+            access_type: public_method
+            serialized_name: UUID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getUUID
+                setter: setUUID
+            type: horstoeko\ubl\entities\cbc\UUID
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: Note
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getNote
+                setter: setNote
+            type: horstoeko\ubl\entities\cbc\Note
+        receivedQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: ReceivedQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getReceivedQuantity
+                setter: setReceivedQuantity
+            type: horstoeko\ubl\entities\cbc\ReceivedQuantity
+        shortQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: ShortQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getShortQuantity
+                setter: setShortQuantity
+            type: horstoeko\ubl\entities\cbc\ShortQuantity
+        shortageActionCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ShortageActionCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getShortageActionCode
+                setter: setShortageActionCode
+            type: horstoeko\ubl\entities\cbc\ShortageActionCode
+        rejectedQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: RejectedQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getRejectedQuantity
+                setter: setRejectedQuantity
+            type: horstoeko\ubl\entities\cbc\RejectedQuantity
+        rejectReasonCode:
+            expose: true
+            access_type: public_method
+            serialized_name: RejectReasonCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getRejectReasonCode
+                setter: setRejectReasonCode
+            type: horstoeko\ubl\entities\cbc\RejectReasonCode
+        rejectReason:
+            expose: true
+            access_type: public_method
+            serialized_name: RejectReason
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getRejectReason
+                setter: setRejectReason
+            type: horstoeko\ubl\entities\cbc\RejectReason
+        rejectActionCode:
+            expose: true
+            access_type: public_method
+            serialized_name: RejectActionCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getRejectActionCode
+                setter: setRejectActionCode
+            type: horstoeko\ubl\entities\cbc\RejectActionCode
+        oversupplyQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: OversupplyQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getOversupplyQuantity
+                setter: setOversupplyQuantity
+            type: horstoeko\ubl\entities\cbc\OversupplyQuantity
+        receivedDate:
+            expose: true
+            access_type: public_method
+            serialized_name: ReceivedDate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getReceivedDate
+                setter: setReceivedDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        timingComplaintCode:
+            expose: true
+            access_type: public_method
+            serialized_name: TimingComplaintCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTimingComplaintCode
+                setter: setTimingComplaintCode
+            type: horstoeko\ubl\entities\cbc\TimingComplaintCode
+        timingComplaint:
+            expose: true
+            access_type: public_method
+            serialized_name: TimingComplaint
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTimingComplaint
+                setter: setTimingComplaint
+            type: horstoeko\ubl\entities\cbc\TimingComplaint
+        orderLineReference:
+            expose: true
+            access_type: public_method
+            serialized_name: OrderLineReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getOrderLineReference
+                setter: setOrderLineReference
+            type: horstoeko\ubl\entities\cac\OrderLineReference
+        despatchLineReference:
+            expose: true
+            access_type: public_method
+            serialized_name: DespatchLineReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getDespatchLineReference
+                setter: setDespatchLineReference
+            xml_list:
+                inline: true
+                entry_name: DespatchLineReference
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\DespatchLineReference>
+        documentReference:
+            expose: true
+            access_type: public_method
+            serialized_name: DocumentReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getDocumentReference
+                setter: setDocumentReference
+            xml_list:
+                inline: true
+                entry_name: DocumentReference
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\DocumentReference>
+        item:
+            expose: true
+            access_type: public_method
+            serialized_name: Item
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getItem
+                setter: setItem
+            xml_list:
+                inline: true
+                entry_name: Item
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\Item>
+        shipment:
+            expose: true
+            access_type: public_method
+            serialized_name: Shipment
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getShipment
+                setter: setShipment
+            xml_list:
+                inline: true
+                entry_name: Shipment
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\Shipment>

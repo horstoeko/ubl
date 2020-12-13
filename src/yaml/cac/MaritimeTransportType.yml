@@ -1,0 +1,24 @@
+horstoeko\ubl\entities\cac\MaritimeTransportType:
+    properties:
+        vesselID:
+            expose: true
+            access_type: public_method
+            serialized_name: VesselID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getVesselID
+                setter: setVesselID
+            type: horstoeko\ubl\entities\cbc\VesselID
+        vesselName:
+            expose: true
+            access_type: public_method
+            serialized_name: VesselName
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getVesselName
+                setter: setVesselName
+            type: horstoeko\ubl\entities\cbc\VesselName

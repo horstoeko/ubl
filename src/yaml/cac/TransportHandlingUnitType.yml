@@ -1,0 +1,221 @@
+horstoeko\ubl\entities\cac\TransportHandlingUnitType:
+    properties:
+        iD:
+            expose: true
+            access_type: public_method
+            serialized_name: ID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getID
+                setter: setID
+            type: horstoeko\ubl\entities\cbc\ID
+        transportHandlingUnitTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: TransportHandlingUnitTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTransportHandlingUnitTypeCode
+                setter: setTransportHandlingUnitTypeCode
+            type: horstoeko\ubl\entities\cbc\TransportHandlingUnitTypeCode
+        handlingCode:
+            expose: true
+            access_type: public_method
+            serialized_name: HandlingCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getHandlingCode
+                setter: setHandlingCode
+            type: horstoeko\ubl\entities\cbc\HandlingCode
+        handlingInstructions:
+            expose: true
+            access_type: public_method
+            serialized_name: HandlingInstructions
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getHandlingInstructions
+                setter: setHandlingInstructions
+            type: horstoeko\ubl\entities\cbc\HandlingInstructions
+        hazardousRiskIndicator:
+            expose: true
+            access_type: public_method
+            serialized_name: HazardousRiskIndicator
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getHazardousRiskIndicator
+                setter: setHazardousRiskIndicator
+            type: bool
+        totalGoodsItemQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: TotalGoodsItemQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTotalGoodsItemQuantity
+                setter: setTotalGoodsItemQuantity
+            type: horstoeko\ubl\entities\cbc\TotalGoodsItemQuantity
+        totalPackageQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: TotalPackageQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTotalPackageQuantity
+                setter: setTotalPackageQuantity
+            type: horstoeko\ubl\entities\cbc\TotalPackageQuantity
+        damageRemarks:
+            expose: true
+            access_type: public_method
+            serialized_name: DamageRemarks
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDamageRemarks
+                setter: setDamageRemarks
+            xml_list:
+                inline: true
+                entry_name: DamageRemarks
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\DamageRemarks>
+        shippingMarks:
+            expose: true
+            access_type: public_method
+            serialized_name: ShippingMarks
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getShippingMarks
+                setter: setShippingMarks
+            xml_list:
+                inline: true
+                entry_name: ShippingMarks
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\ShippingMarks>
+        handlingUnitDespatchLine:
+            expose: true
+            access_type: public_method
+            serialized_name: HandlingUnitDespatchLine
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getHandlingUnitDespatchLine
+                setter: setHandlingUnitDespatchLine
+            xml_list:
+                inline: true
+                entry_name: HandlingUnitDespatchLine
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\HandlingUnitDespatchLine>
+        actualPackage:
+            expose: true
+            access_type: public_method
+            serialized_name: ActualPackage
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getActualPackage
+                setter: setActualPackage
+            xml_list:
+                inline: true
+                entry_name: ActualPackage
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\ActualPackage>
+        receivedHandlingUnitReceiptLine:
+            expose: true
+            access_type: public_method
+            serialized_name: ReceivedHandlingUnitReceiptLine
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getReceivedHandlingUnitReceiptLine
+                setter: setReceivedHandlingUnitReceiptLine
+            xml_list:
+                inline: true
+                entry_name: ReceivedHandlingUnitReceiptLine
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\ReceivedHandlingUnitReceiptLine>
+        transportEquipment:
+            expose: true
+            access_type: public_method
+            serialized_name: TransportEquipment
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getTransportEquipment
+                setter: setTransportEquipment
+            xml_list:
+                inline: true
+                entry_name: TransportEquipment
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\TransportEquipment>
+        hazardousGoodsTransit:
+            expose: true
+            access_type: public_method
+            serialized_name: HazardousGoodsTransit
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getHazardousGoodsTransit
+                setter: setHazardousGoodsTransit
+            xml_list:
+                inline: true
+                entry_name: HazardousGoodsTransit
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\HazardousGoodsTransit>
+        measurementDimension:
+            expose: true
+            access_type: public_method
+            serialized_name: MeasurementDimension
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getMeasurementDimension
+                setter: setMeasurementDimension
+            xml_list:
+                inline: true
+                entry_name: MeasurementDimension
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\MeasurementDimension>
+        minimumTemperature:
+            expose: true
+            access_type: public_method
+            serialized_name: MinimumTemperature
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getMinimumTemperature
+                setter: setMinimumTemperature
+            type: horstoeko\ubl\entities\cac\MinimumTemperature
+        maximumTemperature:
+            expose: true
+            access_type: public_method
+            serialized_name: MaximumTemperature
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getMaximumTemperature
+                setter: setMaximumTemperature
+            type: horstoeko\ubl\entities\cac\MaximumTemperature

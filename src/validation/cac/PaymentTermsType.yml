@@ -1,0 +1,8 @@
+horstoeko\ubl\entities\cac\PaymentTermsType:
+    properties:
+        settlementPeriod:
+            -
+                Valid: null
+        penaltyPeriod:
+            -
+                Valid: null

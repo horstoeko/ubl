@@ -1,0 +1,19 @@
+horstoeko\ubl\entities\cac\DocumentDistributionType:
+    properties:
+        printQualifier:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        maximumCopiesNumeric:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        party:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

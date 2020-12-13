@@ -1,0 +1,39 @@
+horstoeko\ubl\entities\cac\ResponseType:
+    properties:
+        referenceID:
+            expose: true
+            access_type: public_method
+            serialized_name: ReferenceID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getReferenceID
+                setter: setReferenceID
+            type: horstoeko\ubl\entities\cbc\ReferenceID
+        responseCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ResponseCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getResponseCode
+                setter: setResponseCode
+            type: horstoeko\ubl\entities\cbc\ResponseCode
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: Description
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>

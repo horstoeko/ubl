@@ -1,0 +1,8 @@
+horstoeko\ubl\entities\cac\LocationType:
+    properties:
+        validityPeriod:
+            -
+                Valid: null
+        address:
+            -
+                Valid: null

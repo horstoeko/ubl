@@ -1,0 +1,8 @@
+horstoeko\ubl\entities\cac\BranchType:
+    properties:
+        financialInstitution:
+            -
+                Valid: null
+        address:
+            -
+                Valid: null

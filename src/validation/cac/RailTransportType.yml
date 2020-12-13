@@ -1,0 +1,7 @@
+horstoeko\ubl\entities\cac\RailTransportType:
+    properties:
+        trainID:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

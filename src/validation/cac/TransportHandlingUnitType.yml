@@ -1,0 +1,26 @@
+horstoeko\ubl\entities\cac\TransportHandlingUnitType:
+    properties:
+        handlingUnitDespatchLine:
+            -
+                Valid: null
+        actualPackage:
+            -
+                Valid: null
+        receivedHandlingUnitReceiptLine:
+            -
+                Valid: null
+        transportEquipment:
+            -
+                Valid: null
+        hazardousGoodsTransit:
+            -
+                Valid: null
+        measurementDimension:
+            -
+                Valid: null
+        minimumTemperature:
+            -
+                Valid: null
+        maximumTemperature:
+            -
+                Valid: null

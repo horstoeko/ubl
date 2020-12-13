@@ -1,0 +1,7 @@
+horstoeko\ubl\entities\cac\AddressLineType:
+    properties:
+        line:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

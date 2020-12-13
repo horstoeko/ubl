@@ -1,0 +1,26 @@
+horstoeko\ubl\entities\cac\BillingReferenceType:
+    properties:
+        invoiceDocumentReference:
+            -
+                Valid: null
+        selfBilledInvoiceDocumentReference:
+            -
+                Valid: null
+        creditNoteDocumentReference:
+            -
+                Valid: null
+        selfBilledCreditNoteDocumentReference:
+            -
+                Valid: null
+        debitNoteDocumentReference:
+            -
+                Valid: null
+        reminderDocumentReference:
+            -
+                Valid: null
+        additionalDocumentReference:
+            -
+                Valid: null
+        billingReferenceLine:
+            -
+                Valid: null

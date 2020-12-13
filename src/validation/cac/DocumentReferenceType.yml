@@ -1,0 +1,10 @@
+horstoeko\ubl\entities\cac\DocumentReferenceType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        attachment:
+            -
+                Valid: null

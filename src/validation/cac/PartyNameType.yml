@@ -1,0 +1,7 @@
+horstoeko\ubl\entities\cac\PartyNameType:
+    properties:
+        name:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

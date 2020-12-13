@@ -1,0 +1,94 @@
+horstoeko\ubl\entities\cac\BillingReferenceType:
+    properties:
+        invoiceDocumentReference:
+            expose: true
+            access_type: public_method
+            serialized_name: InvoiceDocumentReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getInvoiceDocumentReference
+                setter: setInvoiceDocumentReference
+            type: horstoeko\ubl\entities\cac\InvoiceDocumentReference
+        selfBilledInvoiceDocumentReference:
+            expose: true
+            access_type: public_method
+            serialized_name: SelfBilledInvoiceDocumentReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getSelfBilledInvoiceDocumentReference
+                setter: setSelfBilledInvoiceDocumentReference
+            type: horstoeko\ubl\entities\cac\SelfBilledInvoiceDocumentReference
+        creditNoteDocumentReference:
+            expose: true
+            access_type: public_method
+            serialized_name: CreditNoteDocumentReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getCreditNoteDocumentReference
+                setter: setCreditNoteDocumentReference
+            type: horstoeko\ubl\entities\cac\CreditNoteDocumentReference
+        selfBilledCreditNoteDocumentReference:
+            expose: true
+            access_type: public_method
+            serialized_name: SelfBilledCreditNoteDocumentReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getSelfBilledCreditNoteDocumentReference
+                setter: setSelfBilledCreditNoteDocumentReference
+            type: horstoeko\ubl\entities\cac\SelfBilledCreditNoteDocumentReference
+        debitNoteDocumentReference:
+            expose: true
+            access_type: public_method
+            serialized_name: DebitNoteDocumentReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getDebitNoteDocumentReference
+                setter: setDebitNoteDocumentReference
+            type: horstoeko\ubl\entities\cac\DebitNoteDocumentReference
+        reminderDocumentReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ReminderDocumentReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getReminderDocumentReference
+                setter: setReminderDocumentReference
+            type: horstoeko\ubl\entities\cac\ReminderDocumentReference
+        additionalDocumentReference:
+            expose: true
+            access_type: public_method
+            serialized_name: AdditionalDocumentReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getAdditionalDocumentReference
+                setter: setAdditionalDocumentReference
+            type: horstoeko\ubl\entities\cac\AdditionalDocumentReference
+        billingReferenceLine:
+            expose: true
+            access_type: public_method
+            serialized_name: BillingReferenceLine
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getBillingReferenceLine
+                setter: setBillingReferenceLine
+            xml_list:
+                inline: true
+                entry_name: BillingReferenceLine
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\BillingReferenceLine>

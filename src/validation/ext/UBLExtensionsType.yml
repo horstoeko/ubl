@@ -1,0 +1,9 @@
+horstoeko\ubl\entities\ext\UBLExtensionsType:
+    properties:
+        uBLExtension:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

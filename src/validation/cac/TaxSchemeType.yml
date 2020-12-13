@@ -1,0 +1,5 @@
+horstoeko\ubl\entities\cac\TaxSchemeType:
+    properties:
+        jurisdictionRegionAddress:
+            -
+                Valid: null

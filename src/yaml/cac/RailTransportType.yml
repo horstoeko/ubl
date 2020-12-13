@@ -1,0 +1,24 @@
+horstoeko\ubl\entities\cac\RailTransportType:
+    properties:
+        trainID:
+            expose: true
+            access_type: public_method
+            serialized_name: TrainID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTrainID
+                setter: setTrainID
+            type: horstoeko\ubl\entities\cbc\TrainID
+        railCarID:
+            expose: true
+            access_type: public_method
+            serialized_name: RailCarID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getRailCarID
+                setter: setRailCarID
+            type: horstoeko\ubl\entities\cbc\RailCarID

@@ -1,0 +1,739 @@
+<?php
+
+namespace horstoeko\ubl\entities\cac;
+
+/**
+ * Class representing ReminderLineType
+ *
+ * ABIE
+ *  Reminder Line. Details
+ *  Information about a Line on a Reminder document.
+ *  Reminder Line
+ * XSD Type: ReminderLineType
+ */
+class ReminderLineType
+{
+
+    /**
+     * BBIE
+     *  Reminder Line. Identifier
+     *  Identifies the Reminder Line.
+     *  1
+     *  Reminder Line
+     *  Identifier
+     *  Identifier
+     *  Identifier. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\ID $iD
+     */
+    private $iD = null;
+
+    /**
+     * BBIE
+     *  Reminder Line. Note. Text
+     *  Free-form text applying to the Reminder Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
+     *  0..1
+     *  Reminder Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\Note $note
+     */
+    private $note = null;
+
+    /**
+     * BBIE
+     *  Reminder Line. UUID. Identifier
+     *  A universally unique identifier for an instance of this ABIE.
+     *  0..1
+     *  Reminder Line
+     *  UUID
+     *  Identifier
+     *  Identifier. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\UUID $uUID
+     */
+    private $uUID = null;
+
+    /**
+     * BBIE
+     *  Reminder Line. Balance Brought Forward_ Indicator. Indicator
+     *  If true, indicates that the Remonder Line contains a balance brought forward.
+     *  0..1
+     *  Reminder Line
+     *  Balance Brought Forward
+     *  Indicator
+     *  Indicator
+     *  Indicator. Type
+     *
+     * @var bool $balanceBroughtForwardIndicator
+     */
+    private $balanceBroughtForwardIndicator = null;
+
+    /**
+     * BBIE
+     *  Reminder Line. Debit_ Line Amount. Amount
+     *  The amount debited on the Reminder Line.
+     *  0..1
+     *  Reminder Line
+     *  Debit
+     *  Line Amount
+     *  Amount
+     *  Amount. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\DebitLineAmount $debitLineAmount
+     */
+    private $debitLineAmount = null;
+
+    /**
+     * BBIE
+     *  Reminder Line. Credit_ Line Amount. Amount
+     *  The amount credited on the Reminder Line.
+     *  0..1
+     *  Reminder Line
+     *  Credit
+     *  Line Amount
+     *  Amount
+     *  Amount. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\CreditLineAmount $creditLineAmount
+     */
+    private $creditLineAmount = null;
+
+    /**
+     * BBIE
+     *  Reminder Line. Accounting Cost Code. Code
+     *  The buyer's accounting code applied to the Reminder Line.
+     *  0..1
+     *  Reminder Line
+     *  Accounting Cost Code
+     *  Code
+     *  Code. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\AccountingCostCode $accountingCostCode
+     */
+    private $accountingCostCode = null;
+
+    /**
+     * BBIE
+     *  Reminder Line. Accounting Cost. Text
+     *  The buyer's accounting code applied to the Reminder Line, expressed as text.
+     *  0..1
+     *  Reminder Line
+     *  Accounting Cost
+     *  Text
+     *  Text. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\AccountingCost $accountingCost
+     */
+    private $accountingCost = null;
+
+    /**
+     * ASBIE
+     *  Reminder Line. Reminder_ Period. Period
+     *  An association to Period.
+     *  0..n
+     *  Reminder Line
+     *  Reminder
+     *  Period
+     *  Period
+     *
+     * @var \horstoeko\ubl\entities\cac\ReminderPeriod[] $reminderPeriod
+     */
+    private $reminderPeriod = [
+        
+    ];
+
+    /**
+     * ASBIE
+     *  Reminder Line. Billing Reference
+     *  An association to Billing Reference
+     *  0..n
+     *  Reminder Line
+     *  Billing Reference
+     *  Billing Reference
+     *
+     * @var \horstoeko\ubl\entities\cac\BillingReference[] $billingReference
+     */
+    private $billingReference = [
+        
+    ];
+
+    /**
+     * ASBIE
+     *  Reminder Line. Exchange Rate
+     *  An association to Exchange Rate (between the Reminder Line Currency and the Related Document currency).
+     *  0..1
+     *  Reminder Line
+     *  Exchange Rate
+     *  Exchange Rate
+     *
+     * @var \horstoeko\ubl\entities\cac\ExchangeRate $exchangeRate
+     */
+    private $exchangeRate = null;
+
+    /**
+     * Gets as iD
+     *
+     * BBIE
+     *  Reminder Line. Identifier
+     *  Identifies the Reminder Line.
+     *  1
+     *  Reminder Line
+     *  Identifier
+     *  Identifier
+     *  Identifier. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\ID
+     */
+    public function getID()
+    {
+        return $this->iD;
+    }
+
+    /**
+     * Sets a new iD
+     *
+     * BBIE
+     *  Reminder Line. Identifier
+     *  Identifies the Reminder Line.
+     *  1
+     *  Reminder Line
+     *  Identifier
+     *  Identifier
+     *  Identifier. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @return self
+     */
+    public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
+    {
+        $this->iD = $iD;
+        return $this;
+    }
+
+    /**
+     * Gets as note
+     *
+     * BBIE
+     *  Reminder Line. Note. Text
+     *  Free-form text applying to the Reminder Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
+     *  0..1
+     *  Reminder Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\Note
+     */
+    public function getNote()
+    {
+        return $this->note;
+    }
+
+    /**
+     * Sets a new note
+     *
+     * BBIE
+     *  Reminder Line. Note. Text
+     *  Free-form text applying to the Reminder Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
+     *  0..1
+     *  Reminder Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @return self
+     */
+    public function setNote(\horstoeko\ubl\entities\cbc\Note $note)
+    {
+        $this->note = $note;
+        return $this;
+    }
+
+    /**
+     * Gets as uUID
+     *
+     * BBIE
+     *  Reminder Line. UUID. Identifier
+     *  A universally unique identifier for an instance of this ABIE.
+     *  0..1
+     *  Reminder Line
+     *  UUID
+     *  Identifier
+     *  Identifier. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\UUID
+     */
+    public function getUUID()
+    {
+        return $this->uUID;
+    }
+
+    /**
+     * Sets a new uUID
+     *
+     * BBIE
+     *  Reminder Line. UUID. Identifier
+     *  A universally unique identifier for an instance of this ABIE.
+     *  0..1
+     *  Reminder Line
+     *  UUID
+     *  Identifier
+     *  Identifier. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\UUID $uUID
+     * @return self
+     */
+    public function setUUID(\horstoeko\ubl\entities\cbc\UUID $uUID)
+    {
+        $this->uUID = $uUID;
+        return $this;
+    }
+
+    /**
+     * Gets as balanceBroughtForwardIndicator
+     *
+     * BBIE
+     *  Reminder Line. Balance Brought Forward_ Indicator. Indicator
+     *  If true, indicates that the Remonder Line contains a balance brought forward.
+     *  0..1
+     *  Reminder Line
+     *  Balance Brought Forward
+     *  Indicator
+     *  Indicator
+     *  Indicator. Type
+     *
+     * @return bool
+     */
+    public function getBalanceBroughtForwardIndicator()
+    {
+        return $this->balanceBroughtForwardIndicator;
+    }
+
+    /**
+     * Sets a new balanceBroughtForwardIndicator
+     *
+     * BBIE
+     *  Reminder Line. Balance Brought Forward_ Indicator. Indicator
+     *  If true, indicates that the Remonder Line contains a balance brought forward.
+     *  0..1
+     *  Reminder Line
+     *  Balance Brought Forward
+     *  Indicator
+     *  Indicator
+     *  Indicator. Type
+     *
+     * @param bool $balanceBroughtForwardIndicator
+     * @return self
+     */
+    public function setBalanceBroughtForwardIndicator($balanceBroughtForwardIndicator)
+    {
+        $this->balanceBroughtForwardIndicator = $balanceBroughtForwardIndicator;
+        return $this;
+    }
+
+    /**
+     * Gets as debitLineAmount
+     *
+     * BBIE
+     *  Reminder Line. Debit_ Line Amount. Amount
+     *  The amount debited on the Reminder Line.
+     *  0..1
+     *  Reminder Line
+     *  Debit
+     *  Line Amount
+     *  Amount
+     *  Amount. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\DebitLineAmount
+     */
+    public function getDebitLineAmount()
+    {
+        return $this->debitLineAmount;
+    }
+
+    /**
+     * Sets a new debitLineAmount
+     *
+     * BBIE
+     *  Reminder Line. Debit_ Line Amount. Amount
+     *  The amount debited on the Reminder Line.
+     *  0..1
+     *  Reminder Line
+     *  Debit
+     *  Line Amount
+     *  Amount
+     *  Amount. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\DebitLineAmount $debitLineAmount
+     * @return self
+     */
+    public function setDebitLineAmount(\horstoeko\ubl\entities\cbc\DebitLineAmount $debitLineAmount)
+    {
+        $this->debitLineAmount = $debitLineAmount;
+        return $this;
+    }
+
+    /**
+     * Gets as creditLineAmount
+     *
+     * BBIE
+     *  Reminder Line. Credit_ Line Amount. Amount
+     *  The amount credited on the Reminder Line.
+     *  0..1
+     *  Reminder Line
+     *  Credit
+     *  Line Amount
+     *  Amount
+     *  Amount. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\CreditLineAmount
+     */
+    public function getCreditLineAmount()
+    {
+        return $this->creditLineAmount;
+    }
+
+    /**
+     * Sets a new creditLineAmount
+     *
+     * BBIE
+     *  Reminder Line. Credit_ Line Amount. Amount
+     *  The amount credited on the Reminder Line.
+     *  0..1
+     *  Reminder Line
+     *  Credit
+     *  Line Amount
+     *  Amount
+     *  Amount. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\CreditLineAmount $creditLineAmount
+     * @return self
+     */
+    public function setCreditLineAmount(\horstoeko\ubl\entities\cbc\CreditLineAmount $creditLineAmount)
+    {
+        $this->creditLineAmount = $creditLineAmount;
+        return $this;
+    }
+
+    /**
+     * Gets as accountingCostCode
+     *
+     * BBIE
+     *  Reminder Line. Accounting Cost Code. Code
+     *  The buyer's accounting code applied to the Reminder Line.
+     *  0..1
+     *  Reminder Line
+     *  Accounting Cost Code
+     *  Code
+     *  Code. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\AccountingCostCode
+     */
+    public function getAccountingCostCode()
+    {
+        return $this->accountingCostCode;
+    }
+
+    /**
+     * Sets a new accountingCostCode
+     *
+     * BBIE
+     *  Reminder Line. Accounting Cost Code. Code
+     *  The buyer's accounting code applied to the Reminder Line.
+     *  0..1
+     *  Reminder Line
+     *  Accounting Cost Code
+     *  Code
+     *  Code. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\AccountingCostCode $accountingCostCode
+     * @return self
+     */
+    public function setAccountingCostCode(\horstoeko\ubl\entities\cbc\AccountingCostCode $accountingCostCode)
+    {
+        $this->accountingCostCode = $accountingCostCode;
+        return $this;
+    }
+
+    /**
+     * Gets as accountingCost
+     *
+     * BBIE
+     *  Reminder Line. Accounting Cost. Text
+     *  The buyer's accounting code applied to the Reminder Line, expressed as text.
+     *  0..1
+     *  Reminder Line
+     *  Accounting Cost
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\AccountingCost
+     */
+    public function getAccountingCost()
+    {
+        return $this->accountingCost;
+    }
+
+    /**
+     * Sets a new accountingCost
+     *
+     * BBIE
+     *  Reminder Line. Accounting Cost. Text
+     *  The buyer's accounting code applied to the Reminder Line, expressed as text.
+     *  0..1
+     *  Reminder Line
+     *  Accounting Cost
+     *  Text
+     *  Text. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\AccountingCost $accountingCost
+     * @return self
+     */
+    public function setAccountingCost(\horstoeko\ubl\entities\cbc\AccountingCost $accountingCost)
+    {
+        $this->accountingCost = $accountingCost;
+        return $this;
+    }
+
+    /**
+     * Adds as reminderPeriod
+     *
+     * ASBIE
+     *  Reminder Line. Reminder_ Period. Period
+     *  An association to Period.
+     *  0..n
+     *  Reminder Line
+     *  Reminder
+     *  Period
+     *  Period
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\ReminderPeriod $reminderPeriod
+     */
+    public function addToReminderPeriod(\horstoeko\ubl\entities\cac\ReminderPeriod $reminderPeriod)
+    {
+        $this->reminderPeriod[] = $reminderPeriod;
+        return $this;
+    }
+
+    /**
+     * isset reminderPeriod
+     *
+     * ASBIE
+     *  Reminder Line. Reminder_ Period. Period
+     *  An association to Period.
+     *  0..n
+     *  Reminder Line
+     *  Reminder
+     *  Period
+     *  Period
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetReminderPeriod($index)
+    {
+        return isset($this->reminderPeriod[$index]);
+    }
+
+    /**
+     * unset reminderPeriod
+     *
+     * ASBIE
+     *  Reminder Line. Reminder_ Period. Period
+     *  An association to Period.
+     *  0..n
+     *  Reminder Line
+     *  Reminder
+     *  Period
+     *  Period
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetReminderPeriod($index)
+    {
+        unset($this->reminderPeriod[$index]);
+    }
+
+    /**
+     * Gets as reminderPeriod
+     *
+     * ASBIE
+     *  Reminder Line. Reminder_ Period. Period
+     *  An association to Period.
+     *  0..n
+     *  Reminder Line
+     *  Reminder
+     *  Period
+     *  Period
+     *
+     * @return \horstoeko\ubl\entities\cac\ReminderPeriod[]
+     */
+    public function getReminderPeriod()
+    {
+        return $this->reminderPeriod;
+    }
+
+    /**
+     * Sets a new reminderPeriod
+     *
+     * ASBIE
+     *  Reminder Line. Reminder_ Period. Period
+     *  An association to Period.
+     *  0..n
+     *  Reminder Line
+     *  Reminder
+     *  Period
+     *  Period
+     *
+     * @param \horstoeko\ubl\entities\cac\ReminderPeriod[] $reminderPeriod
+     * @return self
+     */
+    public function setReminderPeriod(array $reminderPeriod)
+    {
+        $this->reminderPeriod = $reminderPeriod;
+        return $this;
+    }
+
+    /**
+     * Adds as billingReference
+     *
+     * ASBIE
+     *  Reminder Line. Billing Reference
+     *  An association to Billing Reference
+     *  0..n
+     *  Reminder Line
+     *  Billing Reference
+     *  Billing Reference
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\BillingReference $billingReference
+     */
+    public function addToBillingReference(\horstoeko\ubl\entities\cac\BillingReference $billingReference)
+    {
+        $this->billingReference[] = $billingReference;
+        return $this;
+    }
+
+    /**
+     * isset billingReference
+     *
+     * ASBIE
+     *  Reminder Line. Billing Reference
+     *  An association to Billing Reference
+     *  0..n
+     *  Reminder Line
+     *  Billing Reference
+     *  Billing Reference
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetBillingReference($index)
+    {
+        return isset($this->billingReference[$index]);
+    }
+
+    /**
+     * unset billingReference
+     *
+     * ASBIE
+     *  Reminder Line. Billing Reference
+     *  An association to Billing Reference
+     *  0..n
+     *  Reminder Line
+     *  Billing Reference
+     *  Billing Reference
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetBillingReference($index)
+    {
+        unset($this->billingReference[$index]);
+    }
+
+    /**
+     * Gets as billingReference
+     *
+     * ASBIE
+     *  Reminder Line. Billing Reference
+     *  An association to Billing Reference
+     *  0..n
+     *  Reminder Line
+     *  Billing Reference
+     *  Billing Reference
+     *
+     * @return \horstoeko\ubl\entities\cac\BillingReference[]
+     */
+    public function getBillingReference()
+    {
+        return $this->billingReference;
+    }
+
+    /**
+     * Sets a new billingReference
+     *
+     * ASBIE
+     *  Reminder Line. Billing Reference
+     *  An association to Billing Reference
+     *  0..n
+     *  Reminder Line
+     *  Billing Reference
+     *  Billing Reference
+     *
+     * @param \horstoeko\ubl\entities\cac\BillingReference[] $billingReference
+     * @return self
+     */
+    public function setBillingReference(array $billingReference)
+    {
+        $this->billingReference = $billingReference;
+        return $this;
+    }
+
+    /**
+     * Gets as exchangeRate
+     *
+     * ASBIE
+     *  Reminder Line. Exchange Rate
+     *  An association to Exchange Rate (between the Reminder Line Currency and the Related Document currency).
+     *  0..1
+     *  Reminder Line
+     *  Exchange Rate
+     *  Exchange Rate
+     *
+     * @return \horstoeko\ubl\entities\cac\ExchangeRate
+     */
+    public function getExchangeRate()
+    {
+        return $this->exchangeRate;
+    }
+
+    /**
+     * Sets a new exchangeRate
+     *
+     * ASBIE
+     *  Reminder Line. Exchange Rate
+     *  An association to Exchange Rate (between the Reminder Line Currency and the Related Document currency).
+     *  0..1
+     *  Reminder Line
+     *  Exchange Rate
+     *  Exchange Rate
+     *
+     * @param \horstoeko\ubl\entities\cac\ExchangeRate $exchangeRate
+     * @return self
+     */
+    public function setExchangeRate(\horstoeko\ubl\entities\cac\ExchangeRate $exchangeRate)
+    {
+        $this->exchangeRate = $exchangeRate;
+        return $this;
+    }
+
+
+}
+

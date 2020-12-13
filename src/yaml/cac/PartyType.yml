@@ -1,0 +1,183 @@
+horstoeko\ubl\entities\cac\PartyType:
+    properties:
+        markCareIndicator:
+            expose: true
+            access_type: public_method
+            serialized_name: MarkCareIndicator
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMarkCareIndicator
+                setter: setMarkCareIndicator
+            type: bool
+        markAttentionIndicator:
+            expose: true
+            access_type: public_method
+            serialized_name: MarkAttentionIndicator
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMarkAttentionIndicator
+                setter: setMarkAttentionIndicator
+            type: bool
+        websiteURI:
+            expose: true
+            access_type: public_method
+            serialized_name: WebsiteURI
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getWebsiteURI
+                setter: setWebsiteURI
+            type: horstoeko\ubl\entities\cbc\WebsiteURI
+        logoReferenceID:
+            expose: true
+            access_type: public_method
+            serialized_name: LogoReferenceID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getLogoReferenceID
+                setter: setLogoReferenceID
+            type: horstoeko\ubl\entities\cbc\LogoReferenceID
+        endpointID:
+            expose: true
+            access_type: public_method
+            serialized_name: EndpointID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getEndpointID
+                setter: setEndpointID
+            type: horstoeko\ubl\entities\cbc\EndpointID
+        partyIdentification:
+            expose: true
+            access_type: public_method
+            serialized_name: PartyIdentification
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPartyIdentification
+                setter: setPartyIdentification
+            xml_list:
+                inline: true
+                entry_name: PartyIdentification
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\PartyIdentification>
+        partyName:
+            expose: true
+            access_type: public_method
+            serialized_name: PartyName
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPartyName
+                setter: setPartyName
+            xml_list:
+                inline: true
+                entry_name: PartyName
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\PartyName>
+        language:
+            expose: true
+            access_type: public_method
+            serialized_name: Language
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getLanguage
+                setter: setLanguage
+            type: horstoeko\ubl\entities\cac\Language
+        postalAddress:
+            expose: true
+            access_type: public_method
+            serialized_name: PostalAddress
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPostalAddress
+                setter: setPostalAddress
+            type: horstoeko\ubl\entities\cac\PostalAddress
+        physicalLocation:
+            expose: true
+            access_type: public_method
+            serialized_name: PhysicalLocation
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPhysicalLocation
+                setter: setPhysicalLocation
+            type: horstoeko\ubl\entities\cac\PhysicalLocation
+        partyTaxScheme:
+            expose: true
+            access_type: public_method
+            serialized_name: PartyTaxScheme
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPartyTaxScheme
+                setter: setPartyTaxScheme
+            xml_list:
+                inline: true
+                entry_name: PartyTaxScheme
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\PartyTaxScheme>
+        partyLegalEntity:
+            expose: true
+            access_type: public_method
+            serialized_name: PartyLegalEntity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPartyLegalEntity
+                setter: setPartyLegalEntity
+            xml_list:
+                inline: true
+                entry_name: PartyLegalEntity
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\PartyLegalEntity>
+        contact:
+            expose: true
+            access_type: public_method
+            serialized_name: Contact
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getContact
+                setter: setContact
+            type: horstoeko\ubl\entities\cac\Contact
+        person:
+            expose: true
+            access_type: public_method
+            serialized_name: Person
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPerson
+                setter: setPerson
+            type: horstoeko\ubl\entities\cac\Person
+        agentParty:
+            expose: true
+            access_type: public_method
+            serialized_name: AgentParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getAgentParty
+                setter: setAgentParty
+            type: horstoeko\ubl\entities\cac\AgentParty

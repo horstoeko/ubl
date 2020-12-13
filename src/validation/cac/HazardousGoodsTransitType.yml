@@ -1,0 +1,8 @@
+horstoeko\ubl\entities\cac\HazardousGoodsTransitType:
+    properties:
+        maximumTemperature:
+            -
+                Valid: null
+        minimumTemperature:
+            -
+                Valid: null

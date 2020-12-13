@@ -1,0 +1,7 @@
+horstoeko\ubl\entities\cac\CatalogueReferenceType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

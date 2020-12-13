@@ -1,0 +1,46 @@
+horstoeko\ubl\entities\cac\EndorserPartyType:
+    properties:
+        roleCode:
+            expose: true
+            access_type: public_method
+            serialized_name: RoleCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getRoleCode
+                setter: setRoleCode
+            type: horstoeko\ubl\entities\cbc\RoleCode
+        sequenceNumeric:
+            expose: true
+            access_type: public_method
+            serialized_name: SequenceNumeric
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getSequenceNumeric
+                setter: setSequenceNumeric
+            type: float
+        party:
+            expose: true
+            access_type: public_method
+            serialized_name: Party
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getParty
+                setter: setParty
+            type: horstoeko\ubl\entities\cac\Party
+        signatoryContact:
+            expose: true
+            access_type: public_method
+            serialized_name: SignatoryContact
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getSignatoryContact
+                setter: setSignatoryContact
+            type: horstoeko\ubl\entities\cac\SignatoryContact

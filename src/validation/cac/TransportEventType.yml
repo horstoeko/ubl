@@ -1,0 +1,15 @@
+horstoeko\ubl\entities\cac\TransportEventType:
+    properties:
+        reportedShipment:
+            -
+                Valid: null
+        currentStatus:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        contact:
+            -
+                Valid: null

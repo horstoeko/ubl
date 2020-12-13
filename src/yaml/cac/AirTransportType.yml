@@ -1,0 +1,13 @@
+horstoeko\ubl\entities\cac\AirTransportType:
+    properties:
+        aircraftID:
+            expose: true
+            access_type: public_method
+            serialized_name: AircraftID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAircraftID
+                setter: setAircraftID
+            type: horstoeko\ubl\entities\cbc\AircraftID

@@ -1,0 +1,20 @@
+horstoeko\ubl\entities\cac\CatalogueItemSpecificationUpdateLineType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        contractorCustomerParty:
+            -
+                Valid: null
+        sellerSupplierParty:
+            -
+                Valid: null
+        item:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

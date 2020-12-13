@@ -1,0 +1,267 @@
+horstoeko\ubl\entities\cac\HazardousItemType:
+    properties:
+        iD:
+            expose: true
+            access_type: public_method
+            serialized_name: ID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getID
+                setter: setID
+            type: horstoeko\ubl\entities\cbc\ID
+        placardNotation:
+            expose: true
+            access_type: public_method
+            serialized_name: PlacardNotation
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPlacardNotation
+                setter: setPlacardNotation
+            type: horstoeko\ubl\entities\cbc\PlacardNotation
+        placardEndorsement:
+            expose: true
+            access_type: public_method
+            serialized_name: PlacardEndorsement
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPlacardEndorsement
+                setter: setPlacardEndorsement
+            type: horstoeko\ubl\entities\cbc\PlacardEndorsement
+        additionalInformation:
+            expose: true
+            access_type: public_method
+            serialized_name: AdditionalInformation
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAdditionalInformation
+                setter: setAdditionalInformation
+            type: horstoeko\ubl\entities\cbc\AdditionalInformation
+        uNDGCode:
+            expose: true
+            access_type: public_method
+            serialized_name: UNDGCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getUNDGCode
+                setter: setUNDGCode
+            type: horstoeko\ubl\entities\cbc\UNDGCode
+        emergencyProceduresCode:
+            expose: true
+            access_type: public_method
+            serialized_name: EmergencyProceduresCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getEmergencyProceduresCode
+                setter: setEmergencyProceduresCode
+            type: horstoeko\ubl\entities\cbc\EmergencyProceduresCode
+        medicalFirstAidGuideCode:
+            expose: true
+            access_type: public_method
+            serialized_name: MedicalFirstAidGuideCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMedicalFirstAidGuideCode
+                setter: setMedicalFirstAidGuideCode
+            type: horstoeko\ubl\entities\cbc\MedicalFirstAidGuideCode
+        technicalName:
+            expose: true
+            access_type: public_method
+            serialized_name: TechnicalName
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTechnicalName
+                setter: setTechnicalName
+            type: horstoeko\ubl\entities\cbc\TechnicalName
+        categoryName:
+            expose: true
+            access_type: public_method
+            serialized_name: CategoryName
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getCategoryName
+                setter: setCategoryName
+            type: horstoeko\ubl\entities\cbc\CategoryName
+        hazardousCategoryCode:
+            expose: true
+            access_type: public_method
+            serialized_name: HazardousCategoryCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getHazardousCategoryCode
+                setter: setHazardousCategoryCode
+            type: horstoeko\ubl\entities\cbc\HazardousCategoryCode
+        upperOrangeHazardPlacardID:
+            expose: true
+            access_type: public_method
+            serialized_name: UpperOrangeHazardPlacardID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getUpperOrangeHazardPlacardID
+                setter: setUpperOrangeHazardPlacardID
+            type: horstoeko\ubl\entities\cbc\UpperOrangeHazardPlacardID
+        lowerOrangeHazardPlacardID:
+            expose: true
+            access_type: public_method
+            serialized_name: LowerOrangeHazardPlacardID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getLowerOrangeHazardPlacardID
+                setter: setLowerOrangeHazardPlacardID
+            type: horstoeko\ubl\entities\cbc\LowerOrangeHazardPlacardID
+        markingID:
+            expose: true
+            access_type: public_method
+            serialized_name: MarkingID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMarkingID
+                setter: setMarkingID
+            type: horstoeko\ubl\entities\cbc\MarkingID
+        hazardClassID:
+            expose: true
+            access_type: public_method
+            serialized_name: HazardClassID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getHazardClassID
+                setter: setHazardClassID
+            type: horstoeko\ubl\entities\cbc\HazardClassID
+        netWeightMeasure:
+            expose: true
+            access_type: public_method
+            serialized_name: NetWeightMeasure
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getNetWeightMeasure
+                setter: setNetWeightMeasure
+            type: horstoeko\ubl\entities\cbc\NetWeightMeasure
+        netVolumeMeasure:
+            expose: true
+            access_type: public_method
+            serialized_name: NetVolumeMeasure
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getNetVolumeMeasure
+                setter: setNetVolumeMeasure
+            type: horstoeko\ubl\entities\cbc\NetVolumeMeasure
+        quantity:
+            expose: true
+            access_type: public_method
+            serialized_name: Quantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getQuantity
+                setter: setQuantity
+            type: horstoeko\ubl\entities\cbc\Quantity
+        contactParty:
+            expose: true
+            access_type: public_method
+            serialized_name: ContactParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getContactParty
+                setter: setContactParty
+            type: horstoeko\ubl\entities\cac\ContactParty
+        secondaryHazard:
+            expose: true
+            access_type: public_method
+            serialized_name: SecondaryHazard
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getSecondaryHazard
+                setter: setSecondaryHazard
+            xml_list:
+                inline: true
+                entry_name: SecondaryHazard
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\SecondaryHazard>
+        hazardousGoodsTransit:
+            expose: true
+            access_type: public_method
+            serialized_name: HazardousGoodsTransit
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getHazardousGoodsTransit
+                setter: setHazardousGoodsTransit
+            xml_list:
+                inline: true
+                entry_name: HazardousGoodsTransit
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\HazardousGoodsTransit>
+        emergencyTemperature:
+            expose: true
+            access_type: public_method
+            serialized_name: EmergencyTemperature
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getEmergencyTemperature
+                setter: setEmergencyTemperature
+            type: horstoeko\ubl\entities\cac\EmergencyTemperature
+        flashpointTemperature:
+            expose: true
+            access_type: public_method
+            serialized_name: FlashpointTemperature
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getFlashpointTemperature
+                setter: setFlashpointTemperature
+            type: horstoeko\ubl\entities\cac\FlashpointTemperature
+        additionalTemperature:
+            expose: true
+            access_type: public_method
+            serialized_name: AdditionalTemperature
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getAdditionalTemperature
+                setter: setAdditionalTemperature
+            xml_list:
+                inline: true
+                entry_name: AdditionalTemperature
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\AdditionalTemperature>

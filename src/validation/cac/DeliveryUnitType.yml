@@ -1,0 +1,7 @@
+horstoeko\ubl\entities\cac\DeliveryUnitType:
+    properties:
+        batchQuantity:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

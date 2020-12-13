@@ -1,0 +1,5 @@
+horstoeko\ubl\entities\cac\CorporateRegistrationSchemeType:
+    properties:
+        jurisdictionRegionAddress:
+            -
+                Valid: null

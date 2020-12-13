@@ -1,0 +1,5 @@
+horstoeko\ubl\entities\cac\TransactionConditionsType:
+    properties:
+        documentReference:
+            -
+                Valid: null

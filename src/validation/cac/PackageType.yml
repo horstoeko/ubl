@@ -1,0 +1,14 @@
+horstoeko\ubl\entities\cac\PackageType:
+    properties:
+        containedPackage:
+            -
+                Valid: null
+        goodsItem:
+            -
+                Valid: null
+        measurementDimension:
+            -
+                Valid: null
+        deliveryUnit:
+            -
+                Valid: null

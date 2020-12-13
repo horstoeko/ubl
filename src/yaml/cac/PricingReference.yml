@@ -1,0 +1,3 @@
+horstoeko\ubl\entities\cac\PricingReference:
+    xml_root_name: PricingReference
+    xml_root_namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'

@@ -1,0 +1,12 @@
+horstoeko\ubl\entities\cac\RequestForQuotationLineType:
+    properties:
+        documentReference:
+            -
+                Valid: null
+        lineItem:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

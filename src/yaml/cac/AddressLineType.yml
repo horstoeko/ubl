@@ -1,0 +1,13 @@
+horstoeko\ubl\entities\cac\AddressLineType:
+    properties:
+        line:
+            expose: true
+            access_type: public_method
+            serialized_name: Line
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getLine
+                setter: setLine
+            type: horstoeko\ubl\entities\cbc\Line

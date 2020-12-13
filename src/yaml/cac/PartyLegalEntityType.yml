@@ -1,0 +1,46 @@
+horstoeko\ubl\entities\cac\PartyLegalEntityType:
+    properties:
+        registrationName:
+            expose: true
+            access_type: public_method
+            serialized_name: RegistrationName
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getRegistrationName
+                setter: setRegistrationName
+            type: horstoeko\ubl\entities\cbc\RegistrationName
+        companyID:
+            expose: true
+            access_type: public_method
+            serialized_name: CompanyID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getCompanyID
+                setter: setCompanyID
+            type: horstoeko\ubl\entities\cbc\CompanyID
+        registrationAddress:
+            expose: true
+            access_type: public_method
+            serialized_name: RegistrationAddress
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getRegistrationAddress
+                setter: setRegistrationAddress
+            type: horstoeko\ubl\entities\cac\RegistrationAddress
+        corporateRegistrationScheme:
+            expose: true
+            access_type: public_method
+            serialized_name: CorporateRegistrationScheme
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getCorporateRegistrationScheme
+                setter: setCorporateRegistrationScheme
+            type: horstoeko\ubl\entities\cac\CorporateRegistrationScheme

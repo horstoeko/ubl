@@ -1,0 +1,41 @@
+horstoeko\ubl\entities\cac\ShipmentType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        consignment:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        goodsItem:
+            -
+                Valid: null
+        shipmentStage:
+            -
+                Valid: null
+        delivery:
+            -
+                Valid: null
+        transportHandlingUnit:
+            -
+                Valid: null
+        originAddress:
+            -
+                Valid: null
+        firstArrivalPortLocation:
+            -
+                Valid: null
+        lastExitPortLocation:
+            -
+                Valid: null
+        exportCountry:
+            -
+                Valid: null
+        freightAllowanceCharge:
+            -
+                Valid: null

@@ -1,0 +1,61 @@
+horstoeko\ubl\entities\cac\ConsignmentType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        consigneeParty:
+            -
+                Valid: null
+        exporterParty:
+            -
+                Valid: null
+        consignorParty:
+            -
+                Valid: null
+        importerParty:
+            -
+                Valid: null
+        carrierParty:
+            -
+                Valid: null
+        freightForwarderParty:
+            -
+                Valid: null
+        notifyParty:
+            -
+                Valid: null
+        originalDespatchParty:
+            -
+                Valid: null
+        finalDeliveryParty:
+            -
+                Valid: null
+        originalDepartureCountry:
+            -
+                Valid: null
+        finalDestinationCountry:
+            -
+                Valid: null
+        transitCountry:
+            -
+                Valid: null
+        transportContract:
+            -
+                Valid: null
+        originalDespatchTransportationService:
+            -
+                Valid: null
+        finalDeliveryTransportationService:
+            -
+                Valid: null
+        deliveryTerms:
+            -
+                Valid: null
+        paymentTerms:
+            -
+                Valid: null
+        freightAllowanceCharge:
+            -
+                Valid: null

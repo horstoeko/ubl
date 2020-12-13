@@ -1,0 +1,28 @@
+horstoeko\ubl\entities\cac\GoodsItemType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        item:
+            -
+                Valid: null
+        goodsItemContainer:
+            -
+                Valid: null
+        freightAllowanceCharge:
+            -
+                Valid: null
+        invoiceLine:
+            -
+                Valid: null
+        temperature:
+            -
+                Valid: null
+        containedGoodsItem:
+            -
+                Valid: null
+        originAddress:
+            -
+                Valid: null

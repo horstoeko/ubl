@@ -1,0 +1,14 @@
+horstoeko\ubl\entities\cac\ItemLocationQuantityType:
+    properties:
+        applicableTerritoryAddress:
+            -
+                Valid: null
+        price:
+            -
+                Valid: null
+        deliveryUnit:
+            -
+                Valid: null
+        applicableTaxCategory:
+            -
+                Valid: null

@@ -1,0 +1,42 @@
+horstoeko\ubl\entities\cac\DebitNoteLineType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        lineExtensionAmount:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        discrepancyResponse:
+            -
+                Valid: null
+        despatchLineReference:
+            -
+                Valid: null
+        receiptLineReference:
+            -
+                Valid: null
+        billingReference:
+            -
+                Valid: null
+        documentReference:
+            -
+                Valid: null
+        pricingReference:
+            -
+                Valid: null
+        delivery:
+            -
+                Valid: null
+        taxTotal:
+            -
+                Valid: null
+        item:
+            -
+                Valid: null
+        price:
+            -
+                Valid: null

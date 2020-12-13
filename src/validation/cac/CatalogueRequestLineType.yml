@@ -1,0 +1,20 @@
+horstoeko\ubl\entities\cac\CatalogueRequestLineType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        lineValidityPeriod:
+            -
+                Valid: null
+        requiredItemLocationQuantity:
+            -
+                Valid: null
+        item:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

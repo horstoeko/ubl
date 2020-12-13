@@ -1,0 +1,14 @@
+horstoeko\ubl\entities\cac\CustomerPartyType:
+    properties:
+        party:
+            -
+                Valid: null
+        deliveryContact:
+            -
+                Valid: null
+        accountingContact:
+            -
+                Valid: null
+        buyerContact:
+            -
+                Valid: null

@@ -1,0 +1,79 @@
+horstoeko\ubl\entities\cac\LocationCoordinateType:
+    properties:
+        coordinateSystemCode:
+            expose: true
+            access_type: public_method
+            serialized_name: CoordinateSystemCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getCoordinateSystemCode
+                setter: setCoordinateSystemCode
+            type: horstoeko\ubl\entities\cbc\CoordinateSystemCode
+        latitudeDegreesMeasure:
+            expose: true
+            access_type: public_method
+            serialized_name: LatitudeDegreesMeasure
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getLatitudeDegreesMeasure
+                setter: setLatitudeDegreesMeasure
+            type: horstoeko\ubl\entities\cbc\LatitudeDegreesMeasure
+        latitudeMinutesMeasure:
+            expose: true
+            access_type: public_method
+            serialized_name: LatitudeMinutesMeasure
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getLatitudeMinutesMeasure
+                setter: setLatitudeMinutesMeasure
+            type: horstoeko\ubl\entities\cbc\LatitudeMinutesMeasure
+        latitudeDirectionCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LatitudeDirectionCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getLatitudeDirectionCode
+                setter: setLatitudeDirectionCode
+            type: horstoeko\ubl\entities\cbc\LatitudeDirectionCode
+        longitudeDegreesMeasure:
+            expose: true
+            access_type: public_method
+            serialized_name: LongitudeDegreesMeasure
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getLongitudeDegreesMeasure
+                setter: setLongitudeDegreesMeasure
+            type: horstoeko\ubl\entities\cbc\LongitudeDegreesMeasure
+        longitudeMinutesMeasure:
+            expose: true
+            access_type: public_method
+            serialized_name: LongitudeMinutesMeasure
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getLongitudeMinutesMeasure
+                setter: setLongitudeMinutesMeasure
+            type: horstoeko\ubl\entities\cbc\LongitudeMinutesMeasure
+        longitudeDirectionCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LongitudeDirectionCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getLongitudeDirectionCode
+                setter: setLongitudeDirectionCode
+            type: horstoeko\ubl\entities\cbc\LongitudeDirectionCode

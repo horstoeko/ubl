@@ -1,0 +1,12 @@
+horstoeko\ubl\entities\cac\CardAccountType:
+    properties:
+        primaryAccountNumberID:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        networkID:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

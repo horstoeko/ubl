@@ -1,0 +1,27 @@
+horstoeko\ubl\entities\cac\OrderLineType:
+    properties:
+        lineItem:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        sellerProposedSubstituteLineItem:
+            -
+                Valid: null
+        sellerSubstitutedLineItem:
+            -
+                Valid: null
+        buyerProposedSubstituteLineItem:
+            -
+                Valid: null
+        catalogueLineReference:
+            -
+                Valid: null
+        quotationLineReference:
+            -
+                Valid: null
+        documentReference:
+            -
+                Valid: null

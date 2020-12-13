@@ -1,0 +1,116 @@
+horstoeko\ubl\entities\cac\TransportMeansType:
+    properties:
+        journeyID:
+            expose: true
+            access_type: public_method
+            serialized_name: JourneyID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getJourneyID
+                setter: setJourneyID
+            type: horstoeko\ubl\entities\cbc\JourneyID
+        registrationNationalityID:
+            expose: true
+            access_type: public_method
+            serialized_name: RegistrationNationalityID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getRegistrationNationalityID
+                setter: setRegistrationNationalityID
+            type: horstoeko\ubl\entities\cbc\RegistrationNationalityID
+        registrationNationality:
+            expose: true
+            access_type: public_method
+            serialized_name: RegistrationNationality
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getRegistrationNationality
+                setter: setRegistrationNationality
+            xml_list:
+                inline: true
+                entry_name: RegistrationNationality
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\RegistrationNationality>
+        directionCode:
+            expose: true
+            access_type: public_method
+            serialized_name: DirectionCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDirectionCode
+                setter: setDirectionCode
+            type: horstoeko\ubl\entities\cbc\DirectionCode
+        stowage:
+            expose: true
+            access_type: public_method
+            serialized_name: Stowage
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getStowage
+                setter: setStowage
+            type: horstoeko\ubl\entities\cac\Stowage
+        airTransport:
+            expose: true
+            access_type: public_method
+            serialized_name: AirTransport
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getAirTransport
+                setter: setAirTransport
+            type: horstoeko\ubl\entities\cac\AirTransport
+        roadTransport:
+            expose: true
+            access_type: public_method
+            serialized_name: RoadTransport
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getRoadTransport
+                setter: setRoadTransport
+            type: horstoeko\ubl\entities\cac\RoadTransport
+        railTransport:
+            expose: true
+            access_type: public_method
+            serialized_name: RailTransport
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getRailTransport
+                setter: setRailTransport
+            type: horstoeko\ubl\entities\cac\RailTransport
+        maritimeTransport:
+            expose: true
+            access_type: public_method
+            serialized_name: MaritimeTransport
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getMaritimeTransport
+                setter: setMaritimeTransport
+            type: horstoeko\ubl\entities\cac\MaritimeTransport
+        ownerParty:
+            expose: true
+            access_type: public_method
+            serialized_name: OwnerParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getOwnerParty
+                setter: setOwnerParty
+            type: horstoeko\ubl\entities\cac\OwnerParty

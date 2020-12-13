@@ -1,0 +1,7 @@
+horstoeko\ubl\entities\cac\ResponseType:
+    properties:
+        referenceID:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

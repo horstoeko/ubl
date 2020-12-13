@@ -1,0 +1,37 @@
+horstoeko\ubl\entities\cac\RemittanceAdviceLineType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        accountingSupplierParty:
+            -
+                Valid: null
+        accountingCustomerParty:
+            -
+                Valid: null
+        buyerCustomerParty:
+            -
+                Valid: null
+        sellerSupplierParty:
+            -
+                Valid: null
+        originatorCustomerParty:
+            -
+                Valid: null
+        payeeParty:
+            -
+                Valid: null
+        invoicePeriod:
+            -
+                Valid: null
+        billingReference:
+            -
+                Valid: null
+        documentReference:
+            -
+                Valid: null
+        exchangeRate:
+            -
+                Valid: null

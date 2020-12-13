@@ -1,0 +1,8 @@
+horstoeko\ubl\entities\cac\ItemInstanceType:
+    properties:
+        additionalItemProperty:
+            -
+                Valid: null
+        lotIdentification:
+            -
+                Valid: null

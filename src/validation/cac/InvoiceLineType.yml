@@ -1,0 +1,58 @@
+horstoeko\ubl\entities\cac\InvoiceLineType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        lineExtensionAmount:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        orderLineReference:
+            -
+                Valid: null
+        despatchLineReference:
+            -
+                Valid: null
+        receiptLineReference:
+            -
+                Valid: null
+        billingReference:
+            -
+                Valid: null
+        documentReference:
+            -
+                Valid: null
+        pricingReference:
+            -
+                Valid: null
+        originatorParty:
+            -
+                Valid: null
+        delivery:
+            -
+                Valid: null
+        paymentTerms:
+            -
+                Valid: null
+        allowanceCharge:
+            -
+                Valid: null
+        taxTotal:
+            -
+                Valid: null
+        item:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        price:
+            -
+                Valid: null
+        deliveryTerms:
+            -
+                Valid: null

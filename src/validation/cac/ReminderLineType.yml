@@ -1,0 +1,16 @@
+horstoeko\ubl\entities\cac\ReminderLineType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        reminderPeriod:
+            -
+                Valid: null
+        billingReference:
+            -
+                Valid: null
+        exchangeRate:
+            -
+                Valid: null

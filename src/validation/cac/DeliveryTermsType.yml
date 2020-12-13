@@ -1,0 +1,8 @@
+horstoeko\ubl\entities\cac\DeliveryTermsType:
+    properties:
+        deliveryLocation:
+            -
+                Valid: null
+        allowanceCharge:
+            -
+                Valid: null

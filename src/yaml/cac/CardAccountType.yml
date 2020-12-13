@@ -1,0 +1,123 @@
+horstoeko\ubl\entities\cac\CardAccountType:
+    properties:
+        primaryAccountNumberID:
+            expose: true
+            access_type: public_method
+            serialized_name: PrimaryAccountNumberID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPrimaryAccountNumberID
+                setter: setPrimaryAccountNumberID
+            type: horstoeko\ubl\entities\cbc\PrimaryAccountNumberID
+        networkID:
+            expose: true
+            access_type: public_method
+            serialized_name: NetworkID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getNetworkID
+                setter: setNetworkID
+            type: horstoeko\ubl\entities\cbc\NetworkID
+        cardTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: CardTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getCardTypeCode
+                setter: setCardTypeCode
+            type: horstoeko\ubl\entities\cbc\CardTypeCode
+        validityStartDate:
+            expose: true
+            access_type: public_method
+            serialized_name: ValidityStartDate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getValidityStartDate
+                setter: setValidityStartDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        expiryDate:
+            expose: true
+            access_type: public_method
+            serialized_name: ExpiryDate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getExpiryDate
+                setter: setExpiryDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        issuerID:
+            expose: true
+            access_type: public_method
+            serialized_name: IssuerID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getIssuerID
+                setter: setIssuerID
+            type: horstoeko\ubl\entities\cbc\IssuerID
+        issueNumberID:
+            expose: true
+            access_type: public_method
+            serialized_name: IssueNumberID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getIssueNumberID
+                setter: setIssueNumberID
+            type: horstoeko\ubl\entities\cbc\IssueNumberID
+        cV2ID:
+            expose: true
+            access_type: public_method
+            serialized_name: CV2ID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getCV2ID
+                setter: setCV2ID
+            type: horstoeko\ubl\entities\cbc\CV2ID
+        cardChipCode:
+            expose: true
+            access_type: public_method
+            serialized_name: CardChipCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getCardChipCode
+                setter: setCardChipCode
+            type: horstoeko\ubl\entities\cbc\CardChipCode
+        chipApplicationID:
+            expose: true
+            access_type: public_method
+            serialized_name: ChipApplicationID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getChipApplicationID
+                setter: setChipApplicationID
+            type: horstoeko\ubl\entities\cbc\ChipApplicationID
+        holderName:
+            expose: true
+            access_type: public_method
+            serialized_name: HolderName
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getHolderName
+                setter: setHolderName
+            type: horstoeko\ubl\entities\cbc\HolderName

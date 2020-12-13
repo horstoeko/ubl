@@ -1,0 +1,10 @@
+horstoeko\ubl\entities\cac\OrderReferenceType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        documentReference:
+            -
+                Valid: null

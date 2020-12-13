@@ -1,0 +1,20 @@
+horstoeko\ubl\entities\cac\HazardousItemType:
+    properties:
+        contactParty:
+            -
+                Valid: null
+        secondaryHazard:
+            -
+                Valid: null
+        hazardousGoodsTransit:
+            -
+                Valid: null
+        emergencyTemperature:
+            -
+                Valid: null
+        flashpointTemperature:
+            -
+                Valid: null
+        additionalTemperature:
+            -
+                Valid: null

@@ -1,0 +1,18 @@
+horstoeko\ubl\entities\cac\ItemPropertyType:
+    properties:
+        name:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        value:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        usabilityPeriod:
+            -
+                Valid: null
+        itemPropertyGroup:
+            -
+                Valid: null

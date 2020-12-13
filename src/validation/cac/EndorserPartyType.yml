@@ -1,0 +1,26 @@
+horstoeko\ubl\entities\cac\EndorserPartyType:
+    properties:
+        roleCode:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        sequenceNumeric:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        party:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        signatoryContact:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

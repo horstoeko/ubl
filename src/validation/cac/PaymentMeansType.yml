@@ -1,0 +1,19 @@
+horstoeko\ubl\entities\cac\PaymentMeansType:
+    properties:
+        paymentMeansCode:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        cardAccount:
+            -
+                Valid: null
+        payerFinancialAccount:
+            -
+                Valid: null
+        payeeFinancialAccount:
+            -
+                Valid: null
+        creditAccount:
+            -
+                Valid: null

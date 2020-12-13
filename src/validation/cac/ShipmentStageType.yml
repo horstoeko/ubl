@@ -1,0 +1,30 @@
+horstoeko\ubl\entities\cac\ShipmentStageType:
+    properties:
+        preCarriageIndicator:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        onCarriageIndicator:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        transitPeriod:
+            -
+                Valid: null
+        carrierParty:
+            -
+                Valid: null
+        transportMeans:
+            -
+                Valid: null
+        loadingPortLocation:
+            -
+                Valid: null
+        unloadingPortLocation:
+            -
+                Valid: null
+        transshipPortLocation:
+            -
+                Valid: null

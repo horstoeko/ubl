@@ -1,0 +1,23 @@
+horstoeko\ubl\entities\cac\TransportEquipmentType:
+    properties:
+        measurementDimension:
+            -
+                Valid: null
+        transportEquipmentSeal:
+            -
+                Valid: null
+        minimumTemperature:
+            -
+                Valid: null
+        maximumTemperature:
+            -
+                Valid: null
+        providerParty:
+            -
+                Valid: null
+        loadingProofParty:
+            -
+                Valid: null
+        loadingLocation:
+            -
+                Valid: null

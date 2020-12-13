@@ -1,0 +1,8 @@
+horstoeko\ubl\entities\cac\PriceListType:
+    properties:
+        validityPeriod:
+            -
+                Valid: null
+        previousPriceList:
+            -
+                Valid: null

@@ -1,0 +1,43 @@
+horstoeko\ubl\entities\cac\StatementLineType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        paymentMeans:
+            -
+                Valid: null
+        paymentTerms:
+            -
+                Valid: null
+        buyerCustomerParty:
+            -
+                Valid: null
+        sellerSupplierParty:
+            -
+                Valid: null
+        originatorCustomerParty:
+            -
+                Valid: null
+        accountingCustomerParty:
+            -
+                Valid: null
+        accountingSupplierParty:
+            -
+                Valid: null
+        payeeParty:
+            -
+                Valid: null
+        invoicePeriod:
+            -
+                Valid: null
+        billingReference:
+            -
+                Valid: null
+        documentReference:
+            -
+                Valid: null
+        exchangeRate:
+            -
+                Valid: null

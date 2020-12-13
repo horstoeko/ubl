@@ -1,0 +1,7 @@
+horstoeko\ubl\entities\cac\CreditAccountType:
+    properties:
+        accountID:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

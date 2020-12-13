@@ -1,0 +1,22 @@
+horstoeko\ubl\entities\cac\ReceiptLineType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        orderLineReference:
+            -
+                Valid: null
+        despatchLineReference:
+            -
+                Valid: null
+        documentReference:
+            -
+                Valid: null
+        item:
+            -
+                Valid: null
+        shipment:
+            -
+                Valid: null

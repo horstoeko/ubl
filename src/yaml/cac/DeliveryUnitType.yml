@@ -1,0 +1,35 @@
+horstoeko\ubl\entities\cac\DeliveryUnitType:
+    properties:
+        batchQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: BatchQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getBatchQuantity
+                setter: setBatchQuantity
+            type: horstoeko\ubl\entities\cbc\BatchQuantity
+        consumerUnitQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: ConsumerUnitQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getConsumerUnitQuantity
+                setter: setConsumerUnitQuantity
+            type: horstoeko\ubl\entities\cbc\ConsumerUnitQuantity
+        hazardousRiskIndicator:
+            expose: true
+            access_type: public_method
+            serialized_name: HazardousRiskIndicator
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getHazardousRiskIndicator
+                setter: setHazardousRiskIndicator
+            type: bool

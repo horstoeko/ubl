@@ -1,0 +1,20 @@
+horstoeko\ubl\entities\cac\TransportMeansType:
+    properties:
+        stowage:
+            -
+                Valid: null
+        airTransport:
+            -
+                Valid: null
+        roadTransport:
+            -
+                Valid: null
+        railTransport:
+            -
+                Valid: null
+        maritimeTransport:
+            -
+                Valid: null
+        ownerParty:
+            -
+                Valid: null

@@ -1,0 +1,35 @@
+horstoeko\ubl\entities\cac\DocumentDistributionType:
+    properties:
+        printQualifier:
+            expose: true
+            access_type: public_method
+            serialized_name: PrintQualifier
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPrintQualifier
+                setter: setPrintQualifier
+            type: horstoeko\ubl\entities\cbc\PrintQualifier
+        maximumCopiesNumeric:
+            expose: true
+            access_type: public_method
+            serialized_name: MaximumCopiesNumeric
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMaximumCopiesNumeric
+                setter: setMaximumCopiesNumeric
+            type: float
+        party:
+            expose: true
+            access_type: public_method
+            serialized_name: Party
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getParty
+                setter: setParty
+            type: horstoeko\ubl\entities\cac\Party

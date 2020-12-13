@@ -1,0 +1,10 @@
+horstoeko\ubl\entities\cac\GoodsItemContainerType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        transportEquipment:
+            -
+                Valid: null

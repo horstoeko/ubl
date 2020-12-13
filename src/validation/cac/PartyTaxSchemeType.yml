@@ -1,0 +1,12 @@
+horstoeko\ubl\entities\cac\PartyTaxSchemeType:
+    properties:
+        registrationAddress:
+            -
+                Valid: null
+        taxScheme:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
