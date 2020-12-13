@@ -7,30 +7,20 @@ use \GoetasWebservices\Xsd\XsdToPhpRuntime\Jms\Handler\XmlSchemaDateHandler;
 use horstoeko\ubl\entities\cbc\ID;
 use \JMS\Serializer\Handler\HandlerRegistryInterface;
 use \JMS\Serializer\SerializerBuilder;
-use \horstoeko\ubl\entities\main\Invoice;
+use \horstoeko\ubl\UblDocumentBuilder;
 
-$serializerBuilder = SerializerBuilder::create();
-$serializerBuilder->addMetadataDir(dirname(__FILE__) . '/../src/yaml/cac', 'horstoeko\ubl\entities\cac');
-$serializerBuilder->addMetadataDir(dirname(__FILE__) . '/../src/yaml/cbc', 'horstoeko\ubl\entities\cbc');
-$serializerBuilder->addMetadataDir(dirname(__FILE__) . '/../src/yaml/clm5639', 'horstoeko\ubl\entities\clm5639');
-$serializerBuilder->addMetadataDir(dirname(__FILE__) . '/../src/yaml/clm54217', 'horstoeko\ubl\entities\clm54217');
-$serializerBuilder->addMetadataDir(dirname(__FILE__) . '/../src/yaml/clm66411', 'horstoeko\ubl\entities\clm66411');
-$serializerBuilder->addMetadataDir(dirname(__FILE__) . '/../src/yaml/ext', 'horstoeko\ubl\entities\ext');
-$serializerBuilder->addMetadataDir(dirname(__FILE__) . '/../src/yaml/main', 'horstoeko\ubl\entities\main');
-$serializerBuilder->addMetadataDir(dirname(__FILE__) . '/../src/yaml/mimemedia', 'horstoeko\ubl\entities\mimemedia');
-$serializerBuilder->addMetadataDir(dirname(__FILE__) . '/../src/yaml/qdt', 'horstoeko\ubl\entities\qdt');
-$serializerBuilder->addMetadataDir(dirname(__FILE__) . '/../src/yaml/udt', 'horstoeko\ubl\entities\udt');
-$serializerBuilder->addDefaultListeners();
-$serializerBuilder->configureHandlers(function (HandlerRegistryInterface $handler) use ($serializerBuilder) {
-    $serializerBuilder->addDefaultHandlers();
-    $handler->registerSubscribingHandler(new BaseTypesHandler());
-    $handler->registerSubscribingHandler(new XmlSchemaDateHandler());
-});
+$ublBuilder = new UblDocumentBuilder();
 
-$serializer = $serializerBuilder->build();
+$ublBuilder->setDocumentInformation("1234", "380", new \DateTime(), "EUR");
+$ublBuilder->addDocumentNote("#ADU#Es gelten unsere Allgem. Geschäftsbedingungen, die Sie unter […] finden.");
+$ublBuilder->setDocumentBuyerReference("abc");
+$ublBuilder->setDocumentSeller("Lieferant GmbH", "549910");
+$ublBuilder->addDocumentSellerGlobalId("4000001123452", "0088");
+$ublBuilder->addDocumentSellerTaxRegistration("FC", "201/113/40209");
+$ublBuilder->addDocumentSellerTaxRegistration("VA", "DE123456789");
+$ublBuilder->setDocumentSellerAddress("Lieferantenstraße 20", "", "", "80333", "München", "DE", "Bayern");
+$ublBuilder->setDocumentSellerLegalOrganisation("123456789", "0198", "[Seller trading name]");
+$ublBuilder->setDocumentSellerContact("Heinz Mükker", "Buchhaltung", "+49-111-2222222", "+49-111-3333333","info@lieferant.de");
 
-$invoice = new Invoice();
-$invoice->setId(new ID("1234"));
-
-echo $serializer->serialize($invoice, 'xml');
+echo $ublBuilder->getContent();
 echo "\n\n";

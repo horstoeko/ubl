@@ -165,9 +165,7 @@ class InvoiceType
      *
      * @var \horstoeko\ubl\entities\cbc\Note[] $note
      */
-    private $note = [
-        
-    ];
+    private $note = [];
 
     /**
      * BBIE
@@ -312,9 +310,7 @@ class InvoiceType
      *
      * @var \horstoeko\ubl\entities\cac\InvoicePeriod[] $invoicePeriod
      */
-    private $invoicePeriod = [
-        
-    ];
+    private $invoicePeriod = [];
 
     /**
      * ASBIE
@@ -340,9 +336,7 @@ class InvoiceType
      *
      * @var \horstoeko\ubl\entities\cac\BillingReference[] $billingReference
      */
-    private $billingReference = [
-        
-    ];
+    private $billingReference = [];
 
     /**
      * ASBIE
@@ -356,9 +350,7 @@ class InvoiceType
      *
      * @var \horstoeko\ubl\entities\cac\DespatchDocumentReference[] $despatchDocumentReference
      */
-    private $despatchDocumentReference = [
-        
-    ];
+    private $despatchDocumentReference = [];
 
     /**
      * ASBIE
@@ -372,9 +364,7 @@ class InvoiceType
      *
      * @var \horstoeko\ubl\entities\cac\ReceiptDocumentReference[] $receiptDocumentReference
      */
-    private $receiptDocumentReference = [
-        
-    ];
+    private $receiptDocumentReference = [];
 
     /**
      * ASBIE
@@ -388,9 +378,7 @@ class InvoiceType
      *
      * @var \horstoeko\ubl\entities\cac\OriginatorDocumentReference[] $originatorDocumentReference
      */
-    private $originatorDocumentReference = [
-        
-    ];
+    private $originatorDocumentReference = [];
 
     /**
      * ASBIE
@@ -404,9 +392,7 @@ class InvoiceType
      *
      * @var \horstoeko\ubl\entities\cac\ContractDocumentReference[] $contractDocumentReference
      */
-    private $contractDocumentReference = [
-        
-    ];
+    private $contractDocumentReference = [];
 
     /**
      * ASBIE
@@ -420,9 +406,7 @@ class InvoiceType
      *
      * @var \horstoeko\ubl\entities\cac\AdditionalDocumentReference[] $additionalDocumentReference
      */
-    private $additionalDocumentReference = [
-        
-    ];
+    private $additionalDocumentReference = [];
 
     /**
      * ASBIE
@@ -435,9 +419,7 @@ class InvoiceType
      *
      * @var \horstoeko\ubl\entities\cac\Signature[] $signature
      */
-    private $signature = [
-        
-    ];
+    private $signature = [];
 
     /**
      * ASBIE
@@ -534,9 +516,7 @@ class InvoiceType
      *
      * @var \horstoeko\ubl\entities\cac\Delivery[] $delivery
      */
-    private $delivery = [
-        
-    ];
+    private $delivery = [];
 
     /**
      * ASBIE
@@ -562,9 +542,7 @@ class InvoiceType
      *
      * @var \horstoeko\ubl\entities\cac\PaymentMeans[] $paymentMeans
      */
-    private $paymentMeans = [
-        
-    ];
+    private $paymentMeans = [];
 
     /**
      * ASBIE
@@ -577,9 +555,7 @@ class InvoiceType
      *
      * @var \horstoeko\ubl\entities\cac\PaymentTerms[] $paymentTerms
      */
-    private $paymentTerms = [
-        
-    ];
+    private $paymentTerms = [];
 
     /**
      * ASBIE
@@ -593,9 +569,7 @@ class InvoiceType
      *
      * @var \horstoeko\ubl\entities\cac\PrepaidPayment[] $prepaidPayment
      */
-    private $prepaidPayment = [
-        
-    ];
+    private $prepaidPayment = [];
 
     /**
      * ASBIE
@@ -608,9 +582,7 @@ class InvoiceType
      *
      * @var \horstoeko\ubl\entities\cac\AllowanceCharge[] $allowanceCharge
      */
-    private $allowanceCharge = [
-        
-    ];
+    private $allowanceCharge = [];
 
     /**
      * ASBIE
@@ -679,9 +651,7 @@ class InvoiceType
      *
      * @var \horstoeko\ubl\entities\cac\TaxTotal[] $taxTotal
      */
-    private $taxTotal = [
-        
-    ];
+    private $taxTotal = [];
 
     /**
      * ASBIE
@@ -708,9 +678,9 @@ class InvoiceType
      *
      * @var \horstoeko\ubl\entities\cac\InvoiceLine[] $invoiceLine
      */
-    private $invoiceLine = [
-        
-    ];
+    private $invoiceLine = [];
+
+    private $buyerReference = null;
 
     /**
      * Adds as uBLExtension
@@ -3612,6 +3582,21 @@ class InvoiceType
         return $this;
     }
 
+    /**
+     * @return string buyerReference
+     */
+    public function getBuyerReference(): ?string
+    {
+        return $this->buyerReference;
+    }
 
+    /**
+     * @param string $buyerReference
+     * @return self
+     */
+    public function setBuyerReference(string $buyerReference)
+    {
+        $this->buyerReference = $buyerReference;
+        return $this;
+    }
 }
-
