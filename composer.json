@@ -1,0 +1,60 @@
+{
+    "name": "horstoeko/ubl",
+    "keywords": ["ubl","xrechnung","electronic","invoice"],
+    "description": "A library for creating and reading european electronic invoices",
+    "homepage": "https://github.com/horstoeko/ubl",
+    "type": "package",
+    "license": "MIT",
+    "prefer-stable": true,
+    "authors": [
+        {
+            "name": "Daniel Erling",
+            "email": "daniel@erling.com.de",
+            "role": "lead"
+        }
+    ],
+    "config": {
+        "platform": {
+            "php": "7.3.0"
+        },
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "horstoeko\\ubl\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "horstoeko\\ubl\\tests\\": "tests"
+        }
+    },
+    "require": {
+        "php": "^7",
+        "jms/serializer": "^3",
+        "adrienrn/php-mimetyper": "^0.2",
+        "goetas-webservices/xsd2php-runtime": "^0.2.13",
+        "ext-simplexml": "*",
+        "symfony/validator": "^5",
+        "symfony/yaml": "^5",
+        "horstoeko/stringmanagement": "^1"
+    },
+    "require-dev": {
+        "clean/phpdoc-md": "^0",
+        "goetas-webservices/xsd2php": "^0",
+        "pdepend/pdepend": "^2",
+        "phploc/phploc": "^7",
+        "phpmd/phpmd": "^2",
+        "phpstan/phpstan": "^0.12.59",
+        "phpunit/phpunit": "^9",
+        "sebastian/phpcpd": "^6",
+        "squizlabs/php_codesniffer": "^3",
+        "theseer/phpdox": "^0"
+    },
+    "scripts": {
+        "tests": "./vendor/bin/phpunit ./tests/",
+        "phpcs": "./vendor/bin/phpcs --standard=./build/phpcsrules.xml --extensions=php --ignore=autoload.php ./src ./tests",
+        "phpstan": "./vendor/bin/phpstan analyze -c ./build/phpstan.neon --autoload-file=vendor/autoload.php --no-interaction --no-progress --error-format=checkstyle"
+    }
+}
