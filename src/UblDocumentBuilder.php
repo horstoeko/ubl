@@ -10,7 +10,6 @@
 namespace horstoeko\ubl;
 
 use \DateTime;
-use \horstoeko\stringmanagement\StringUtils;
 use \horstoeko\ubl\entities\cbc\ID;
 use \horstoeko\ubl\entities\cbc\Name;
 use \horstoeko\ubl\entities\cbc\Note;
@@ -39,13 +38,13 @@ use \horstoeko\ubl\entities\cbc\RegistrationName;
 use \horstoeko\ubl\entities\cbc\Telefax;
 use \horstoeko\ubl\entities\cbc\Telephone;
 use \horstoeko\ubl\entities\cac\AccountingCustomerParty;
-use horstoeko\ubl\entities\cac\Address;
-use horstoeko\ubl\entities\cac\Delivery;
-use horstoeko\ubl\entities\cac\DeliveryLocation;
-use horstoeko\ubl\entities\cac\DeliveryParty;
-use horstoeko\ubl\entities\cac\PayeeParty;
+use \horstoeko\ubl\entities\cac\Address;
+use \horstoeko\ubl\entities\cac\Delivery;
+use \horstoeko\ubl\entities\cac\DeliveryLocation;
+use \horstoeko\ubl\entities\cac\DeliveryParty;
+use \horstoeko\ubl\entities\cac\PayeeParty;
 use \horstoeko\ubl\entities\cac\TaxRepresentativeParty;
-use horstoeko\ubl\entities\cbc\CustomizationID;
+use \horstoeko\ubl\entities\cbc\CustomizationID;
 
 /**
  * Class representing the ubl invoice builder
@@ -58,13 +57,6 @@ use horstoeko\ubl\entities\cbc\CustomizationID;
  */
 class UblDocumentBuilder extends UblDocument
 {
-    /**
-     * Internal reference to the builder helper
-     *
-     * @var \horstoeko\ubl\UblDocumentBuilderHelper
-     */
-    protected $ublDocumentBuilderHelper = null;
-
     /**
      * @internal
      * The internal invoice object
@@ -81,7 +73,6 @@ class UblDocumentBuilder extends UblDocument
     {
         parent::__construct();
         $this->initInvoiceObject();
-        $this->initBuilderHelper();
     }
 
     /**
@@ -1106,17 +1097,6 @@ class UblDocumentBuilder extends UblDocument
     private function initInvoiceObject(): UblDocumentBuilder
     {
         $this->invoiceObject = new Invoice();
-        return $this;
-    }
-
-    /**
-     * Creates a new instance of the UblDocumentBuilderHelper class
-     *
-     * @return UblDocumentBuilder
-     */
-    private function initBuilderHelper(): UblDocumentBuilder
-    {
-        $this->ublDocumentBuilderHelper = new UblDocumentBuilderHelper($this);
         return $this;
     }
 }
