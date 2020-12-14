@@ -39,5 +39,12 @@ $ublBuilder->setDocumentShipTo("Warehouse GmbH", "68");
 $ublBuilder->setDocumentShipToAddress("Kundenstraße 15", null, null, "69876", "Frankfurt", "DE", "Hessen");
 $ublBuilder->setDocumentShipToContact("Heinz Müller", "", "", "", "");
 
+$ublBuilder->setDocumentPayee("[payee name]", "payee0001");
+$ublBuilder->addDocumentPayeeGlobalId("38763267", "0088");
+$ublBuilder->addDocumentPayeeTaxRegistration("DE366746532","FC");
+$ublBuilder->setDocumentPayeeAddress("Lieferantenstraße 20", null, null, "80333", "München", "DE", "Bayern");
+$ublBuilder->setDocumentPayeeLegalOrganisation("123456789", "0198", "[Seller trading name]");
+$ublBuilder->setDocumentPayeeContact("Horst Meier", "Einkauf", "+49-111-333", "+49-111-444", "info@kunde.de");
+
 echo $ublBuilder->getContent();
 echo "\n\n";

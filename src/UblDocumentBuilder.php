@@ -43,6 +43,7 @@ use horstoeko\ubl\entities\cac\Address;
 use horstoeko\ubl\entities\cac\Delivery;
 use horstoeko\ubl\entities\cac\DeliveryLocation;
 use horstoeko\ubl\entities\cac\DeliveryParty;
+use horstoeko\ubl\entities\cac\PayeeParty;
 use \horstoeko\ubl\entities\cac\TaxRepresentativeParty;
 use horstoeko\ubl\entities\cbc\CustomizationID;
 
@@ -846,7 +847,6 @@ class UblDocumentBuilder extends UblDocument
         $delivery = $this->invoiceObject->getDelivery();
         $delivery = isset($delivery[0]) ? $delivery[0] : $this->invoiceObject->addToDelivery(new Delivery())->getDelivery()[0];
 
-        $deliveryParty = $delivery->getDeliveryParty() ?? new DeliveryParty();
         $deliveryLocation = $delivery->getDeliveryLocation() ?? new DeliveryLocation();
         $deliveryAddress = $deliveryLocation->getAddress() ?? new Address();
 
@@ -859,7 +859,6 @@ class UblDocumentBuilder extends UblDocument
 
         $deliveryLocation->setAddress($deliveryAddress);
         $delivery->setDeliveryLocation($deliveryLocation);
-        $delivery->setDeliveryParty($deliveryParty);
 
         return $this;
     }
@@ -915,6 +914,186 @@ class UblDocumentBuilder extends UblDocument
         $deliveryParty->setContact($contact);
 
         $delivery->setDeliveryParty($deliveryParty);
+
+        return $this;
+    }
+
+    // TODO: UltimateShipTo goes here...
+
+    // TODO: ShipFrom goes here...
+
+    // TODO: Invoicer goes here...
+
+    // TODO: Invoicee goes here
+
+    /**
+     * Set detailed information about the payee, i.e. about the place that receives the payment.
+     * The role of the payee may also be performed by a party other than the seller, e.g. by a factoring service.
+     *
+     * @param string $name
+     * The name of the party. Must be used if the payee is not the same as the seller. However, the name of the
+     * payee may match the name of the seller.
+     * @param string|null $id
+     * An identifier for the party. Multiple IDs can be assigned or specified. They can be differentiated by using
+     * different identification schemes. If no scheme is given, it should  be known to the buyer and seller, e.g.
+     * a previously exchanged identifier assigned by the buyer or seller.
+     * @param string|null $description
+     * Further legal information that is relevant for the party
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentPayee(string $name, ?string $id = null, ?string $description = null): UblDocumentBuilder
+    {
+        $payeeParty = $this->invoiceObject->getPayeeParty() ?? $this->invoiceObject->setPayeeParty((new PayeeParty()))->getPayeeParty();
+
+        $payeeParty->addToPartyName((new PartyName())->setName((new Name($name))));
+        $payeeParty->addToPartyIdentification((new PartyIdentification())->setID(new Id($id)));
+
+        $this->invoiceObject->setPayeeParty($payeeParty);
+
+        return $this;
+    }
+
+    /**
+     * Add a global id for the payee trade party
+     *
+     * @param string|null $globalID
+     * Global identification number
+     * @param string|null $globalIDType
+     * Type of global identification number, must be selected from the entries in
+     * the list published by the ISO / IEC 6523 Maintenance Agency.
+     * @return UblDocumentBuilder
+     */
+    public function addDocumentPayeeGlobalId(?string $globalID = null, ?string $globalIDType = null): UblDocumentBuilder
+    {
+        $payeeParty = $this->invoiceObject->getPayeeParty() ?? $this->invoiceObject->setPayeeParty((new PayeeParty()))->getPayeeParty();
+
+        $payeeParty->addToPartyIdentification((new PartyIdentification())->setID((new Id($globalID))->setSchemeID($globalIDType)));
+
+        $this->invoiceObject->setPayeeParty($payeeParty);
+
+        return $this;
+    }
+
+    /**
+     * Add Tax registration to payee trade party
+     *
+     * @param string|null $taxregtype
+     * Type of tax number of the party
+     * @param string|null $taxregid
+     * Tax number of the party or sales tax identification number of the (FC = Tax number, VA = Sales tax number)
+     * @return UblDocumentBuilder
+     */
+    public function addDocumentPayeeTaxRegistration(?string $taxregtype = null, ?string $taxregid = null): UblDocumentBuilder
+    {
+        $payeeParty = $this->invoiceObject->getPayeeParty() ?? $this->invoiceObject->setPayeeParty((new PayeeParty()))->getPayeeParty();
+
+        $payeeParty->addToPartyTaxScheme((new PartyTaxScheme())->setCompanyID((new CompanyID($taxregid)))->setTaxScheme((new TaxScheme())->setId(new Id($taxregtype))));
+
+        $this->invoiceObject->setPayeeParty($payeeParty);
+
+        return $this;
+    }
+
+    /**
+     * Sets the postal address of the payee trade party
+     *
+     * @param string|null $lineone
+     * The main line in the party's address. This is usually the street name and house number or
+     * the post office box
+     * @param string|null $linetwo
+     * Line 2 of the party's address. This is an additional address line in an address that can be
+     * used to provide additional details in addition to the main line
+     * @param string|null $linethree
+     * Line 3 of the party's address. This is an additional address line in an address that can be
+     * used to provide additional details in addition to the main line
+     * @param string|null $postcode
+     * Identifier for a group of properties, such as a zip code
+     * @param string|null $city
+     * Usual name of the city or municipality in which the party's address is located
+     * @param string|null $country
+     * Code used to identify the country. If no tax agent is specified, this is the country in which the sales tax
+     * is due. The lists of approved countries are maintained by the EN ISO 3166-1 Maintenance Agency “Codes for the
+     * representation of names of countries and their subdivisions”
+     * @param string|null $subdivision
+     * The party's state
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentPayeeAddress(?string $lineone = null, ?string $linetwo = null, ?string $linethree = null, ?string $postcode = null, ?string $city = null, ?string $country = null, ?string $subdivision = null): UblDocumentBuilder
+    {
+        $payeeParty = $this->invoiceObject->getPayeeParty() ?? $this->invoiceObject->setPayeeParty((new PayeeParty()))->getPayeeParty();
+
+        $postalAddress = $payeeParty->getPostalAddress() ?? new PostalAddress();
+        $postalAddress->setStreetName(new StreetName($lineone));
+        $postalAddress->setAdditionalStreetName(new AdditionalStreetName($linetwo));
+        $postalAddress->setPostalZone(new PostalZone($postcode));
+        $postalAddress->setCityName(new CityName($city));
+        $postalAddress->setCountry((new Country())->setIdentificationCode(new IdentificationCode($country)));
+        $postalAddress->setCountrySubentity(new CountrySubentity($subdivision));
+
+        $payeeParty->setPostalAddress($postalAddress);
+
+        $this->invoiceObject->setPayeeParty($payeeParty);
+
+        return $this;
+    }
+
+    /**
+     * Set legal organisation of the payee trade party
+     *
+     * @param string|null $legalorgid
+     * An identifier issued by an official registrar that identifies the
+     * party as a legal entity or legal person. If no identification scheme ($legalorgtype) is provided,
+     * it should be known to the buyer or seller party
+     * @param string|null $legalorgtype
+     * The identifier for the identification scheme of the legal registration of the party. In particular,
+     * the following scheme codes are used: 0021 : SWIFT, 0088 : EAN, 0060 : DUNS, 0177 : ODETTE
+     * @param string|null $legalorgname
+     * A name by which the party is known, if different from the party's name (also known as the company name)
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentPayeeLegalOrganisation(?string $legalorgid, ?string $legalorgtype, ?string $legalorgname): UblDocumentBuilder
+    {
+        $payeeParty = $this->invoiceObject->getPayeeParty() ?? $this->invoiceObject->setPayeeParty((new PayeeParty()))->getPayeeParty();
+
+        $partyLegalEntity = isset($payeeParty->getPartyLegalEntity()[0]) ? $payeeParty->getPartyLegalEntity()[0] : new PartyLegalEntity();
+        $partyLegalEntity->setCompanyID((new CompanyID($legalorgid))->setSchemeID($legalorgtype));
+        $partyLegalEntity->setRegistrationName(new RegistrationName($legalorgname));
+
+        $payeeParty->setPartyLegalEntity([$partyLegalEntity]);
+
+        $this->invoiceObject->setPayeeParty($payeeParty);
+
+        return $this;
+    }
+
+    /**
+     * Set contact of the payee trade party
+     *
+     * @param string|null $contactpersonname
+     * Contact point for a legal entity, such as a personal name of the contact person
+     * @param string|null $contactdepartmentname
+     * Contact point for a legal entity, such as a name of the department or office
+     * @param string|null $contactphoneno
+     * Detailed information on the party's phone number
+     * @param string|null $contactfaxno
+     * Detailed information on the party's fax number
+     * @param string|null $contactemailadd
+     * Detailed information on the party's email address
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentPayeeContact(?string $contactpersonname, ?string $contactdepartmentname, ?string $contactphoneno, ?string $contactfaxno, ?string $contactemailadd): UblDocumentBuilder
+    {
+        $payeeParty = $this->invoiceObject->getPayeeParty() ?? $this->invoiceObject->setPayeeParty((new PayeeParty()))->getPayeeParty();
+
+        $contact = $payeeParty->getContact() ?? new Contact();
+        $contact->setName(new Name($contactpersonname));
+        $contact->setTelephone(new Telephone($contactphoneno));
+        $contact->setTelefax(new Telefax($contactfaxno));
+        $contact->setElectronicMail(new ElectronicMail($contactemailadd));
+
+        $payeeParty->setContact($contact);
+
+        $this->invoiceObject->setPayeeParty($payeeParty);
 
         return $this;
     }
