@@ -240,6 +240,17 @@ horstoeko\ubl\entities\main\InvoiceType:
                 getter: getLineCountNumeric
                 setter: setLineCountNumeric
             type: float
+        buyerReference:
+            expose: true
+            access_type: public_method
+            serialized_name: BuyerReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getBuyerReference
+                setter: setBuyerReference
+            type: string
         invoicePeriod:
             expose: true
             access_type: public_method
@@ -608,14 +619,3 @@ horstoeko\ubl\entities\main\InvoiceType:
                 entry_name: InvoiceLine
                 namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
             type: array<horstoeko\ubl\entities\cac\InvoiceLine>
-        buyerReference:
-            expose: true
-            access_type: public_method
-            serialized_name: BuyerReference
-            xml_element:
-                cdata: false
-                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
-            accessor:
-                getter: getBuyerReference
-                setter: setBuyerReference
-            type: string

@@ -299,6 +299,10 @@ class InvoiceType
     private $lineCountNumeric = null;
 
     /**
+     */
+    private $buyerReference = null;
+
+    /**
      * ASBIE
      *  Invoice. Invoice_ Period. Period
      *  An association to period(s) to which the Invoice applies.
@@ -679,8 +683,6 @@ class InvoiceType
      * @var \horstoeko\ubl\entities\cac\InvoiceLine[] $invoiceLine
      */
     private $invoiceLine = [];
-
-    private $buyerReference = null;
 
     /**
      * Adds as uBLExtension
@@ -1588,6 +1590,24 @@ class InvoiceType
     public function setLineCountNumeric($lineCountNumeric)
     {
         $this->lineCountNumeric = $lineCountNumeric;
+        return $this;
+    }
+
+    /**
+     * @return string buyerReference
+     */
+    public function getBuyerReference(): ?string
+    {
+        return $this->buyerReference;
+    }
+
+    /**
+     * @param string $buyerReference
+     * @return self
+     */
+    public function setBuyerReference(string $buyerReference)
+    {
+        $this->buyerReference = $buyerReference;
         return $this;
     }
 
@@ -3579,24 +3599,6 @@ class InvoiceType
     public function setInvoiceLine(array $invoiceLine)
     {
         $this->invoiceLine = $invoiceLine;
-        return $this;
-    }
-
-    /**
-     * @return string buyerReference
-     */
-    public function getBuyerReference(): ?string
-    {
-        return $this->buyerReference;
-    }
-
-    /**
-     * @param string $buyerReference
-     * @return self
-     */
-    public function setBuyerReference(string $buyerReference)
-    {
-        $this->buyerReference = $buyerReference;
         return $this;
     }
 }
