@@ -39,6 +39,10 @@ use \horstoeko\ubl\entities\cbc\RegistrationName;
 use \horstoeko\ubl\entities\cbc\Telefax;
 use \horstoeko\ubl\entities\cbc\Telephone;
 use \horstoeko\ubl\entities\cac\AccountingCustomerParty;
+use horstoeko\ubl\entities\cac\Address;
+use horstoeko\ubl\entities\cac\Delivery;
+use horstoeko\ubl\entities\cac\DeliveryLocation;
+use horstoeko\ubl\entities\cac\DeliveryParty;
 use \horstoeko\ubl\entities\cac\TaxRepresentativeParty;
 use horstoeko\ubl\entities\cbc\CustomizationID;
 
@@ -53,6 +57,13 @@ use horstoeko\ubl\entities\cbc\CustomizationID;
  */
 class UblDocumentBuilder extends UblDocument
 {
+    /**
+     * Internal reference to the builder helper
+     *
+     * @var \horstoeko\ubl\UblDocumentBuilderHelper
+     */
+    protected $ublDocumentBuilderHelper = null;
+
     /**
      * @internal
      * The internal invoice object
@@ -69,6 +80,7 @@ class UblDocumentBuilder extends UblDocument
     {
         parent::__construct();
         $this->initInvoiceObject();
+        $this->initBuilderHelper();
     }
 
     /**
@@ -211,13 +223,12 @@ class UblDocumentBuilder extends UblDocument
     public function setDocumentSeller(string $name, ?string $id = null, ?string $description = null): UblDocumentBuilder
     {
         $accountingSupplierParty = $this->invoiceObject->getAccountingSupplierParty() ?? $this->invoiceObject->setAccountingSupplierParty((new AccountingSupplierParty())->setParty(new Party()))->getAccountingSupplierParty();
-        $party = $accountingSupplierParty->getParty();
 
+        $party = $accountingSupplierParty->getParty() ?? new Party();
         $party->addToPartyName((new PartyName())->setName((new Name($name))));
+        $party->addToPartyIdentification((new PartyIdentification())->setID(new Id($id)));
 
-        if (!StringUtils::stringIsNullOrEmpty($id)) {
-            $party->addToPartyIdentification((new PartyIdentification())->setID(new Id($id)));
-        }
+        $accountingSupplierParty->setParty($party);
 
         return $this;
     }
@@ -241,11 +252,11 @@ class UblDocumentBuilder extends UblDocument
     public function addDocumentSellerGlobalId(?string $globalID = null, ?string $globalIDType = null): UblDocumentBuilder
     {
         $accountingSupplierParty = $this->invoiceObject->getAccountingSupplierParty() ?? $this->invoiceObject->setAccountingSupplierParty((new AccountingSupplierParty())->setParty(new Party()))->getAccountingSupplierParty();
-        $party = $accountingSupplierParty->getParty();
 
-        if (!StringUtils::stringIsNullOrEmpty($globalID)) {
-            $party->addToPartyIdentification((new PartyIdentification())->setID((new Id($globalID))->setSchemeID($globalIDType)));
-        }
+        $party = $accountingSupplierParty->getParty() ?? new Party();
+        $party->addToPartyIdentification((new PartyIdentification())->setID((new Id($globalID))->setSchemeID($globalIDType)));
+
+        $accountingSupplierParty->setParty($party);
 
         return $this;
     }
@@ -267,11 +278,11 @@ class UblDocumentBuilder extends UblDocument
     public function addDocumentSellerTaxRegistration(?string $taxregtype = null, ?string $taxregid = null): UblDocumentBuilder
     {
         $accountingSupplierParty = $this->invoiceObject->getAccountingSupplierParty() ?? $this->invoiceObject->setAccountingSupplierParty((new AccountingSupplierParty())->setParty(new Party()))->getAccountingSupplierParty();
-        $party = $accountingSupplierParty->getParty();
 
-        if (!StringUtils::stringIsNullOrEmpty($taxregtype) && !StringUtils::stringIsNullOrEmpty($taxregid)) {
-            $party->addToPartyTaxScheme((new PartyTaxScheme())->setCompanyID((new CompanyID($taxregid)))->setTaxScheme((new TaxScheme())->setId(new Id($taxregtype))));
-        }
+        $party = $accountingSupplierParty->getParty() ?? new Party();
+        $party->addToPartyTaxScheme((new PartyTaxScheme())->setCompanyID((new CompanyID($taxregid)))->setTaxScheme((new TaxScheme())->setId(new Id($taxregtype))));
+
+        $accountingSupplierParty->setParty($party);
 
         return $this;
     }
@@ -303,36 +314,19 @@ class UblDocumentBuilder extends UblDocument
     public function setDocumentSellerAddress(?string $lineone = null, ?string $linetwo = null, ?string $linethree = null, ?string $postcode = null, ?string $city = null, ?string $country = null, ?string $subdivision = null): UblDocumentBuilder
     {
         $accountingSupplierParty = $this->invoiceObject->getAccountingSupplierParty() ?? $this->invoiceObject->setAccountingSupplierParty((new AccountingSupplierParty())->setParty(new Party()))->getAccountingSupplierParty();
-        $party = $accountingSupplierParty->getParty();
+        $party = $accountingSupplierParty->getParty() ?? new Party();
 
-        $postalAddress = null;
-
-        if (!StringUtils::stringIsNullOrEmpty($lineone)) {
-            $postalAddress = $postalAddress ?? new PostalAddress();
-            $postalAddress->setStreetName(new StreetName($lineone));
-        }
-        if (!StringUtils::stringIsNullOrEmpty($linetwo)) {
-            $postalAddress = $postalAddress ?? new PostalAddress();
-            $postalAddress->setAdditionalStreetName(new AdditionalStreetName($linetwo));
-        }
-        if (!StringUtils::stringIsNullOrEmpty($postcode)) {
-            $postalAddress = $postalAddress ?? new PostalAddress();
-            $postalAddress->setPostalZone(new PostalZone($postcode));
-        }
-        if (!StringUtils::stringIsNullOrEmpty($city)) {
-            $postalAddress = $postalAddress ?? new PostalAddress();
-            $postalAddress->setCityName(new CityName($city));
-        }
-        if (!StringUtils::stringIsNullOrEmpty($country)) {
-            $postalAddress = $postalAddress ?? new PostalAddress();
-            $postalAddress->setCountry((new Country())->setIdentificationCode(new IdentificationCode($country)));
-        }
-        if (!StringUtils::stringIsNullOrEmpty($subdivision)) {
-            $postalAddress = $postalAddress ?? new PostalAddress();
-            $postalAddress->setCountrySubentity(new CountrySubentity($subdivision));
-        }
+        $postalAddress = $party->getPostalAddress() ?? new PostalAddress();
+        $postalAddress->setStreetName(new StreetName($lineone));
+        $postalAddress->setAdditionalStreetName(new AdditionalStreetName($linetwo));
+        $postalAddress->setPostalZone(new PostalZone($postcode));
+        $postalAddress->setCityName(new CityName($city));
+        $postalAddress->setCountry((new Country())->setIdentificationCode(new IdentificationCode($country)));
+        $postalAddress->setCountrySubentity(new CountrySubentity($subdivision));
 
         $party->setPostalAddress($postalAddress);
+
+        $accountingSupplierParty->setParty($party);
 
         return $this;
     }
@@ -356,20 +350,15 @@ class UblDocumentBuilder extends UblDocument
     public function setDocumentSellerLegalOrganisation(?string $legalorgid, ?string $legalorgtype, ?string $legalorgname): UblDocumentBuilder
     {
         $accountingSupplierParty = $this->invoiceObject->getAccountingSupplierParty() ?? $this->invoiceObject->setAccountingSupplierParty((new AccountingSupplierParty())->setParty(new Party()))->getAccountingSupplierParty();
-        $party = $accountingSupplierParty->getParty();
+        $party = $accountingSupplierParty->getParty() ?? new Party();
 
-        $partyLegalEntity = null;
+        $partyLegalEntity = isset($party->getPartyLegalEntity()[0]) ? $party->getPartyLegalEntity()[0] : new PartyLegalEntity();
+        $partyLegalEntity->setCompanyID((new CompanyID($legalorgid))->setSchemeID($legalorgtype));
+        $partyLegalEntity->setRegistrationName(new RegistrationName($legalorgname));
 
-        if (!StringUtils::stringIsNullOrEmpty($legalorgid)) {
-            $partyLegalEntity = $partyLegalEntity ?? new PartyLegalEntity();
-            $partyLegalEntity->setCompanyID((new CompanyID($legalorgid))->setSchemeID($legalorgtype));
-        }
-        if (!StringUtils::stringIsNullOrEmpty($legalorgname)) {
-            $partyLegalEntity = $partyLegalEntity ?? new PartyLegalEntity();
-            $partyLegalEntity->setRegistrationName(new RegistrationName($legalorgname));
-        }
+        $party->setPartyLegalEntity([$partyLegalEntity]);
 
-        $party->addToPartyLegalEntity($partyLegalEntity);
+        $accountingSupplierParty->setParty($party);
 
         return $this;
     }
@@ -393,28 +382,17 @@ class UblDocumentBuilder extends UblDocument
     public function setDocumentSellerContact(?string $contactpersonname, ?string $contactdepartmentname, ?string $contactphoneno, ?string $contactfaxno, ?string $contactemailadd): UblDocumentBuilder
     {
         $accountingSupplierParty = $this->invoiceObject->getAccountingSupplierParty() ?? $this->invoiceObject->setAccountingSupplierParty((new AccountingSupplierParty())->setParty(new Party()))->getAccountingSupplierParty();
-        $party = $accountingSupplierParty->getParty();
+        $party = $accountingSupplierParty->getParty() ?? new Party();
 
-        $contact = null;
-
-        if (!StringUtils::stringIsNullOrEmpty($contactpersonname)) {
-            $contact = $contact ?? new Contact();
-            $contact->setName(new Name($contactpersonname));
-        }
-        if (!StringUtils::stringIsNullOrEmpty($contactphoneno)) {
-            $contact = $contact ?? new Contact();
-            $contact->setTelephone(new Telephone($contactphoneno));
-        }
-        if (!StringUtils::stringIsNullOrEmpty($contactfaxno)) {
-            $contact = $contact ?? new Contact();
-            $contact->setTelefax(new Telefax($contactfaxno));
-        }
-        if (!StringUtils::stringIsNullOrEmpty($contactemailadd)) {
-            $contact = $contact ?? new Contact();
-            $contact->setElectronicMail(new ElectronicMail($contactemailadd));
-        }
+        $contact = $party->getContact() ?? new Contact();
+        $contact->setName(new Name($contactpersonname));
+        $contact->setTelephone(new Telephone($contactphoneno));
+        $contact->setTelefax(new Telefax($contactfaxno));
+        $contact->setElectronicMail(new ElectronicMail($contactemailadd));
 
         $party->setContact($contact);
+
+        $accountingSupplierParty->setParty($party);
 
         return $this;
     }
@@ -434,14 +412,13 @@ class UblDocumentBuilder extends UblDocument
      */
     public function setDocumentBuyer(string $name, ?string $id = null, ?string $description = null): UblDocumentBuilder
     {
-        $accountingCustomerParty = $this->getAccountingCustomerParty() ?? $this->invoiceObject->setAccountingCustomerParty((new AccountingCustomerParty())->setParty(new Party()))->getAccountingCustomerParty();
-        $party = $accountingCustomerParty->getParty();
+        $accountingCustomerParty = $this->invoiceObject->getAccountingCustomerParty() ?? $this->invoiceObject->setAccountingCustomerParty((new AccountingCustomerParty())->setParty(new Party()))->getAccountingCustomerParty();
 
+        $party = $accountingCustomerParty->getParty() ?? new Party();
         $party->addToPartyName((new PartyName())->setName((new Name($name))));
+        $party->addToPartyIdentification((new PartyIdentification())->setID(new Id($id)));
 
-        if (!StringUtils::stringIsNullOrEmpty($id)) {
-            $party->addToPartyIdentification((new PartyIdentification())->setID(new Id($id)));
-        }
+        $accountingCustomerParty->setParty($party);
 
         return $this;
     }
@@ -459,12 +436,12 @@ class UblDocumentBuilder extends UblDocument
      */
     public function addDocumentBuyerGlobalId(?string $globalID = null, ?string $globalIDType = null): UblDocumentBuilder
     {
-        $accountingCustomerParty = $this->getAccountingCustomerParty() ?? $this->invoiceObject->setAccountingCustomerParty((new AccountingCustomerParty())->setParty(new Party()))->getAccountingCustomerParty();
-        $party = $accountingCustomerParty->getParty();
+        $accountingCustomerParty = $this->invoiceObject->getAccountingCustomerParty() ?? $this->invoiceObject->setAccountingCustomerParty((new AccountingCustomerParty())->setParty(new Party()))->getAccountingCustomerParty();
 
-        if (!StringUtils::stringIsNullOrEmpty($globalID)) {
-            $party->addToPartyIdentification((new PartyIdentification())->setID((new Id($globalID))->setSchemeID($globalIDType)));
-        }
+        $party = $accountingCustomerParty->getParty() ?? new Party();
+        $party->addToPartyIdentification((new PartyIdentification())->setID((new Id($globalID))->setSchemeID($globalIDType)));
+
+        $accountingCustomerParty->setParty($party);
 
         return $this;
     }
@@ -487,12 +464,12 @@ class UblDocumentBuilder extends UblDocument
      */
     public function addDocumentBuyerTaxRegistration(?string $taxregtype = null, ?string $taxregid = null): UblDocumentBuilder
     {
-        $accountingCustomerParty = $this->getAccountingCustomerParty() ?? $this->invoiceObject->setAccountingCustomerParty((new AccountingCustomerParty())->setParty(new Party()))->getAccountingCustomerParty();
-        $party = $accountingCustomerParty->getParty();
+        $accountingCustomerParty = $this->invoiceObject->getAccountingCustomerParty() ?? $this->invoiceObject->setAccountingCustomerParty((new AccountingCustomerParty())->setParty(new Party()))->getAccountingCustomerParty();
 
-        if (!StringUtils::stringIsNullOrEmpty($taxregtype) && !StringUtils::stringIsNullOrEmpty($taxregid)) {
-            $party->addToPartyTaxScheme((new PartyTaxScheme())->setCompanyID((new CompanyID($taxregid)))->setTaxScheme((new TaxScheme())->setId(new Id($taxregtype))));
-        }
+        $party = $accountingCustomerParty->getParty() ?? new Party();
+        $party->addToPartyTaxScheme((new PartyTaxScheme())->setCompanyID((new CompanyID($taxregid)))->setTaxScheme((new TaxScheme())->setId(new Id($taxregtype))));
+
+        $accountingCustomerParty->setParty($party);
 
         return $this;
     }
@@ -523,37 +500,20 @@ class UblDocumentBuilder extends UblDocument
      */
     public function setDocumentBuyerAddress(?string $lineone = null, ?string $linetwo = null, ?string $linethree = null, ?string $postcode = null, ?string $city = null, ?string $country = null, ?string $subdivision = null): UblDocumentBuilder
     {
-        $accountingCustomerParty = $this->getAccountingCustomerParty() ?? $this->invoiceObject->setAccountingCustomerParty((new AccountingCustomerParty())->setParty(new Party()))->getAccountingCustomerParty();
-        $party = $accountingCustomerParty->getParty();
+        $accountingCustomerParty = $this->invoiceObject->getAccountingCustomerParty() ?? $this->invoiceObject->setAccountingCustomerParty((new AccountingCustomerParty())->setParty(new Party()))->getAccountingCustomerParty();
+        $party = $accountingCustomerParty->getParty() ?? new Party();
 
-        $postalAddress = null;
-
-        if (!StringUtils::stringIsNullOrEmpty($lineone)) {
-            $postalAddress = $postalAddress ?? new PostalAddress();
-            $postalAddress->setStreetName(new StreetName($lineone));
-        }
-        if (!StringUtils::stringIsNullOrEmpty($linetwo)) {
-            $postalAddress = $postalAddress ?? new PostalAddress();
-            $postalAddress->setAdditionalStreetName(new AdditionalStreetName($linetwo));
-        }
-        if (!StringUtils::stringIsNullOrEmpty($postcode)) {
-            $postalAddress = $postalAddress ?? new PostalAddress();
-            $postalAddress->setPostalZone(new PostalZone($postcode));
-        }
-        if (!StringUtils::stringIsNullOrEmpty($city)) {
-            $postalAddress = $postalAddress ?? new PostalAddress();
-            $postalAddress->setCityName(new CityName($city));
-        }
-        if (!StringUtils::stringIsNullOrEmpty($country)) {
-            $postalAddress = $postalAddress ?? new PostalAddress();
-            $postalAddress->setCountry((new Country())->setIdentificationCode(new IdentificationCode($country)));
-        }
-        if (!StringUtils::stringIsNullOrEmpty($subdivision)) {
-            $postalAddress = $postalAddress ?? new PostalAddress();
-            $postalAddress->setCountrySubentity(new CountrySubentity($subdivision));
-        }
+        $postalAddress = $party->getPostalAddress() ?? new PostalAddress();
+        $postalAddress->setStreetName(new StreetName($lineone));
+        $postalAddress->setAdditionalStreetName(new AdditionalStreetName($linetwo));
+        $postalAddress->setPostalZone(new PostalZone($postcode));
+        $postalAddress->setCityName(new CityName($city));
+        $postalAddress->setCountry((new Country())->setIdentificationCode(new IdentificationCode($country)));
+        $postalAddress->setCountrySubentity(new CountrySubentity($subdivision));
 
         $party->setPostalAddress($postalAddress);
+
+        $accountingCustomerParty->setParty($party);
 
         return $this;
     }
@@ -576,21 +536,16 @@ class UblDocumentBuilder extends UblDocument
      */
     public function setDocumentBuyerLegalOrganisation(?string $legalorgid, ?string $legalorgtype, ?string $legalorgname): UblDocumentBuilder
     {
-        $accountingCustomerParty = $this->getAccountingCustomerParty() ?? $this->invoiceObject->setAccountingCustomerParty((new AccountingCustomerParty())->setParty(new Party()))->getAccountingCustomerParty();
-        $party = $accountingCustomerParty->getParty();
+        $accountingCustomerParty = $this->invoiceObject->getAccountingCustomerParty() ?? $this->invoiceObject->setAccountingCustomerParty((new AccountingCustomerParty())->setParty(new Party()))->getAccountingCustomerParty();
+        $party = $accountingCustomerParty->getParty() ?? new Party();
 
-        $partyLegalEntity = null;
+        $partyLegalEntity = isset($party->getPartyLegalEntity()[0]) ? $party->getPartyLegalEntity()[0] : new PartyLegalEntity();
+        $partyLegalEntity->setCompanyID((new CompanyID($legalorgid))->setSchemeID($legalorgtype));
+        $partyLegalEntity->setRegistrationName(new RegistrationName($legalorgname));
 
-        if (!StringUtils::stringIsNullOrEmpty($legalorgid)) {
-            $partyLegalEntity = $partyLegalEntity ?? new PartyLegalEntity();
-            $partyLegalEntity->setCompanyID((new CompanyID($legalorgid))->setSchemeID($legalorgtype));
-        }
-        if (!StringUtils::stringIsNullOrEmpty($legalorgname)) {
-            $partyLegalEntity = $partyLegalEntity ?? new PartyLegalEntity();
-            $partyLegalEntity->setRegistrationName(new RegistrationName($legalorgname));
-        }
+        $party->setPartyLegalEntity([$partyLegalEntity]);
 
-        $party->addToPartyLegalEntity($partyLegalEntity);
+        $accountingCustomerParty->setParty($party);
 
         return $this;
     }
@@ -612,29 +567,18 @@ class UblDocumentBuilder extends UblDocument
      */
     public function setDocumentBuyerContact(?string $contactpersonname, ?string $contactdepartmentname, ?string $contactphoneno, ?string $contactfaxno, ?string $contactemailadd): UblDocumentBuilder
     {
-        $accountingCustomerParty = $this->getAccountingCustomerParty() ?? $this->invoiceObject->setAccountingCustomerParty((new AccountingCustomerParty())->setParty(new Party()))->getAccountingCustomerParty();
-        $party = $accountingCustomerParty->getParty();
+        $accountingCustomerParty = $this->invoiceObject->getAccountingCustomerParty() ?? $this->invoiceObject->setAccountingCustomerParty((new AccountingCustomerParty())->setParty(new Party()))->getAccountingCustomerParty();
+        $party = $accountingCustomerParty->getParty() ?? new Party();
 
-        $contact = null;
-
-        if (!StringUtils::stringIsNullOrEmpty($contactpersonname)) {
-            $contact = $contact ?? new Contact();
-            $contact->setName(new Name($contactpersonname));
-        }
-        if (!StringUtils::stringIsNullOrEmpty($contactphoneno)) {
-            $contact = $contact ?? new Contact();
-            $contact->setTelephone(new Telephone($contactphoneno));
-        }
-        if (!StringUtils::stringIsNullOrEmpty($contactfaxno)) {
-            $contact = $contact ?? new Contact();
-            $contact->setTelefax(new Telefax($contactfaxno));
-        }
-        if (!StringUtils::stringIsNullOrEmpty($contactemailadd)) {
-            $contact = $contact ?? new Contact();
-            $contact->setElectronicMail(new ElectronicMail($contactemailadd));
-        }
+        $contact = $party->getContact() ?? new Contact();
+        $contact->setName(new Name($contactpersonname));
+        $contact->setTelephone(new Telephone($contactphoneno));
+        $contact->setTelefax(new Telefax($contactfaxno));
+        $contact->setElectronicMail(new ElectronicMail($contactemailadd));
 
         $party->setContact($contact);
+
+        $accountingCustomerParty->setParty($party);
 
         return $this;
     }
@@ -655,10 +599,7 @@ class UblDocumentBuilder extends UblDocument
         $taxRepresentativeParty = $this->invoiceObject->getTaxRepresentativeParty() ?? $this->invoiceObject->setTaxRepresentativeParty(new TaxRepresentativeParty())->getTaxRepresentativeParty();
 
         $taxRepresentativeParty->addToPartyName((new PartyName())->setName((new Name($name))));
-
-        if (!StringUtils::stringIsNullOrEmpty($id)) {
-            $taxRepresentativeParty->addToPartyIdentification((new PartyIdentification())->setID(new Id($id)));
-        }
+        $taxRepresentativeParty->addToPartyIdentification((new PartyIdentification())->setID(new Id($id)));
 
         return $this;
     }
@@ -678,9 +619,7 @@ class UblDocumentBuilder extends UblDocument
     {
         $taxRepresentativeParty = $this->invoiceObject->getTaxRepresentativeParty() ?? $this->invoiceObject->setTaxRepresentativeParty(new TaxRepresentativeParty())->getTaxRepresentativeParty();
 
-        if (!StringUtils::stringIsNullOrEmpty($globalID)) {
-            $taxRepresentativeParty->addToPartyIdentification((new PartyIdentification())->setID((new Id($globalID))->setSchemeID($globalIDType)));
-        }
+        $taxRepresentativeParty->addToPartyIdentification((new PartyIdentification())->setID((new Id($globalID))->setSchemeID($globalIDType)));
 
         return $this;
     }
@@ -696,9 +635,7 @@ class UblDocumentBuilder extends UblDocument
     {
         $taxRepresentativeParty = $this->invoiceObject->getTaxRepresentativeParty() ?? $this->invoiceObject->setTaxRepresentativeParty(new TaxRepresentativeParty())->getTaxRepresentativeParty();
 
-        if (!StringUtils::stringIsNullOrEmpty($taxregtype) && !StringUtils::stringIsNullOrEmpty($taxregid)) {
-            $taxRepresentativeParty->addToPartyTaxScheme((new PartyTaxScheme())->setCompanyID((new CompanyID($taxregid)))->setTaxScheme((new TaxScheme())->setId(new Id($taxregtype))));
-        }
+        $taxRepresentativeParty->addToPartyTaxScheme((new PartyTaxScheme())->setCompanyID((new CompanyID($taxregid)))->setTaxScheme((new TaxScheme())->setId(new Id($taxregtype))));
 
         return $this;
     }
@@ -731,32 +668,13 @@ class UblDocumentBuilder extends UblDocument
     {
         $taxRepresentativeParty = $this->invoiceObject->getTaxRepresentativeParty() ?? $this->invoiceObject->setTaxRepresentativeParty(new TaxRepresentativeParty())->getTaxRepresentativeParty();
 
-        $postalAddress = null;
-
-        if (!StringUtils::stringIsNullOrEmpty($lineone)) {
-            $postalAddress = $postalAddress ?? new PostalAddress();
-            $postalAddress->setStreetName(new StreetName($lineone));
-        }
-        if (!StringUtils::stringIsNullOrEmpty($linetwo)) {
-            $postalAddress = $postalAddress ?? new PostalAddress();
-            $postalAddress->setAdditionalStreetName(new AdditionalStreetName($linetwo));
-        }
-        if (!StringUtils::stringIsNullOrEmpty($postcode)) {
-            $postalAddress = $postalAddress ?? new PostalAddress();
-            $postalAddress->setPostalZone(new PostalZone($postcode));
-        }
-        if (!StringUtils::stringIsNullOrEmpty($city)) {
-            $postalAddress = $postalAddress ?? new PostalAddress();
-            $postalAddress->setCityName(new CityName($city));
-        }
-        if (!StringUtils::stringIsNullOrEmpty($country)) {
-            $postalAddress = $postalAddress ?? new PostalAddress();
-            $postalAddress->setCountry((new Country())->setIdentificationCode(new IdentificationCode($country)));
-        }
-        if (!StringUtils::stringIsNullOrEmpty($subdivision)) {
-            $postalAddress = $postalAddress ?? new PostalAddress();
-            $postalAddress->setCountrySubentity(new CountrySubentity($subdivision));
-        }
+        $postalAddress = $taxRepresentativeParty->getPostalAddress() ?? new PostalAddress();;
+        $postalAddress->setStreetName(new StreetName($lineone));
+        $postalAddress->setAdditionalStreetName(new AdditionalStreetName($linetwo));
+        $postalAddress->setPostalZone(new PostalZone($postcode));
+        $postalAddress->setCityName(new CityName($city));
+        $postalAddress->setCountry((new Country())->setIdentificationCode(new IdentificationCode($country)));
+        $postalAddress->setCountrySubentity(new CountrySubentity($subdivision));
 
         $taxRepresentativeParty->setPostalAddress($postalAddress);
 
@@ -781,18 +699,11 @@ class UblDocumentBuilder extends UblDocument
     {
         $taxRepresentativeParty = $this->invoiceObject->getTaxRepresentativeParty() ?? $this->invoiceObject->setTaxRepresentativeParty(new TaxRepresentativeParty())->getTaxRepresentativeParty();
 
-        $partyLegalEntity = null;
+        $partyLegalEntity = isset($taxRepresentativeParty->getPartyLegalEntity()[0]) ? $taxRepresentativeParty->getPartyLegalEntity()[0] : new PartyLegalEntity();
+        $partyLegalEntity->setCompanyID((new CompanyID($legalorgid))->setSchemeID($legalorgtype));
+        $partyLegalEntity->setRegistrationName(new RegistrationName($legalorgname));
 
-        if (!StringUtils::stringIsNullOrEmpty($legalorgid)) {
-            $partyLegalEntity = $partyLegalEntity ?? new PartyLegalEntity();
-            $partyLegalEntity->setCompanyID((new CompanyID($legalorgid))->setSchemeID($legalorgtype));
-        }
-        if (!StringUtils::stringIsNullOrEmpty($legalorgname)) {
-            $partyLegalEntity = $partyLegalEntity ?? new PartyLegalEntity();
-            $partyLegalEntity->setRegistrationName(new RegistrationName($legalorgname));
-        }
-
-        $taxRepresentativeParty->addToPartyLegalEntity($partyLegalEntity);
+        $taxRepresentativeParty->setPartyLegalEntity([$partyLegalEntity]);
 
         return $this;
     }
@@ -816,26 +727,194 @@ class UblDocumentBuilder extends UblDocument
     {
         $taxRepresentativeParty = $this->invoiceObject->getTaxRepresentativeParty() ?? $this->invoiceObject->setTaxRepresentativeParty(new TaxRepresentativeParty())->getTaxRepresentativeParty();
 
-        $contact = null;
-
-        if (!StringUtils::stringIsNullOrEmpty($contactpersonname)) {
-            $contact = $contact ?? new Contact();
-            $contact->setName(new Name($contactpersonname));
-        }
-        if (!StringUtils::stringIsNullOrEmpty($contactphoneno)) {
-            $contact = $contact ?? new Contact();
-            $contact->setTelephone(new Telephone($contactphoneno));
-        }
-        if (!StringUtils::stringIsNullOrEmpty($contactfaxno)) {
-            $contact = $contact ?? new Contact();
-            $contact->setTelefax(new Telefax($contactfaxno));
-        }
-        if (!StringUtils::stringIsNullOrEmpty($contactemailadd)) {
-            $contact = $contact ?? new Contact();
-            $contact->setElectronicMail(new ElectronicMail($contactemailadd));
-        }
+        $contact = $taxRepresentativeParty->getContact() ?? new Contact();
+        $contact->setName(new Name($contactpersonname));
+        $contact->setTelephone(new Telephone($contactphoneno));
+        $contact->setTelefax(new Telefax($contactfaxno));
+        $contact->setElectronicMail(new ElectronicMail($contactemailadd));
 
         $taxRepresentativeParty->setContact($contact);
+
+        return $this;
+    }
+
+    // TODO: Product enduser goes here....
+
+    /**
+     * Ship-To
+     *
+     * @param string $name
+     * The name of the party to whom the goods are being delivered or for whom the services are being
+     * performed. Must be used if the recipient of the goods or services is not the same as the buyer.
+     * @param string|null $id
+     * An identifier for the place where the goods are delivered or where the services are provided.
+     * Multiple IDs can be assigned or specified. They can be differentiated by using different
+     * identification schemes. If no scheme is given, it should be known to the buyer and seller, e.g.
+     * a previously exchanged identifier assigned by the buyer or seller.
+     * @param string|null $description
+     * Further legal information that is relevant for the party
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentShipTo(string $name, ?string $id = null, ?string $description = null): UblDocumentBuilder
+    {
+        $delivery = $this->invoiceObject->getDelivery();
+        $delivery = isset($delivery[0]) ? $delivery[0] : $this->invoiceObject->addToDelivery(new Delivery())->getDelivery()[0];
+
+        $deliveryParty = $delivery->getDeliveryParty() ?? new DeliveryParty();
+        $deliveryParty->addToPartyName((new PartyName())->setName((new Name($name))));
+
+        $deliveryLocation = $delivery->getDeliveryLocation() ?? new DeliveryLocation();
+        $deliveryLocation->setID(new Id($id));
+
+        $delivery->setDeliveryParty($deliveryParty);
+        $delivery->setDeliveryLocation($deliveryLocation);
+
+        return $this;
+    }
+
+    /**
+     * Add a global id for the Ship-to Trade Party
+     *
+     * @param string|null $globalID
+     * Global identifier of the goods recipient
+     * @param string|null $globalIDType
+     * Type of global identification number, must be selected from the entries in
+     * the list published by the ISO / IEC 6523 Maintenance Agency.
+     * @return UblDocumentBuilder
+     */
+    public function addDocumentShipToGlobalId(?string $globalID = null, ?string $globalIDType = null): UblDocumentBuilder
+    {
+        $delivery = $this->invoiceObject->getDelivery();
+        $delivery = isset($delivery[0]) ? $delivery[0] : $this->invoiceObject->addToDelivery(new Delivery())->getDelivery()[0];
+
+        $deliveryParty = $delivery->getDeliveryParty() ?? new DeliveryParty();
+        $deliveryParty->addToPartyIdentification((new PartyIdentification())->setID((new Id($globalID))->setSchemeID($globalIDType)));
+
+        $delivery->setDeliveryParty($deliveryParty);
+
+        return $this;
+    }
+
+    /**
+     * Add Tax registration to Ship-To Trade party
+     *
+     * @param string|null $taxregtype
+     * Type of tax number of the party
+     * @param string|null $taxregid
+     * Tax number of the party or sales tax identification number of the (FC = Tax number, VA = Sales tax number)
+     * @return UblDocumentBuilder
+     */
+    public function addDocumentShipToTaxRegistration(?string $taxregtype = null, ?string $taxregid = null): UblDocumentBuilder
+    {
+        $delivery = $this->invoiceObject->getDelivery();
+        $delivery = isset($delivery[0]) ? $delivery[0] : $this->invoiceObject->addToDelivery(new Delivery())->getDelivery()[0];
+
+        $deliveryParty = $delivery->getDeliveryParty() ?? new DeliveryParty();
+        $deliveryParty->addToPartyTaxScheme((new PartyTaxScheme())->setCompanyID((new CompanyID($taxregid)))->setTaxScheme((new TaxScheme())->setId(new Id($taxregtype))));
+
+        $delivery->setDeliveryParty($deliveryParty);
+
+        return $this;
+    }
+
+    /**
+     * Sets the postal address of the Ship-To party
+     *
+     * @param string|null $lineone
+     * The main line in the party's address. This is usually the street name and house number or
+     * the post office box
+     * @param string|null $linetwo
+     * Line 2 of the party's address. This is an additional address line in an address that can be
+     * used to provide additional details in addition to the main line
+     * @param string|null $linethree
+     * Line 3 of the party's address. This is an additional address line in an address that can be
+     * used to provide additional details in addition to the main line
+     * @param string|null $postcode
+     * Identifier for a group of properties, such as a zip code
+     * @param string|null $city
+     * Usual name of the city or municipality in which the party's address is located
+     * @param string|null $country
+     * Code used to identify the country. If no tax agent is specified, this is the country in which the sales tax
+     * is due. The lists of approved countries are maintained by the EN ISO 3166-1 Maintenance Agency “Codes for the
+     * representation of names of countries and their subdivisions”
+     * @param string|null $subdivision
+     * The party's state
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentShipToAddress(?string $lineone = null, ?string $linetwo = null, ?string $linethree = null, ?string $postcode = null, ?string $city = null, ?string $country = null, ?string $subdivision = null): UblDocumentBuilder
+    {
+        $delivery = $this->invoiceObject->getDelivery();
+        $delivery = isset($delivery[0]) ? $delivery[0] : $this->invoiceObject->addToDelivery(new Delivery())->getDelivery()[0];
+
+        $deliveryParty = $delivery->getDeliveryParty() ?? new DeliveryParty();
+        $deliveryLocation = $delivery->getDeliveryLocation() ?? new DeliveryLocation();
+        $deliveryAddress = $deliveryLocation->getAddress() ?? new Address();
+
+        $deliveryAddress->setStreetName(new StreetName($lineone));
+        $deliveryAddress->setAdditionalStreetName(new AdditionalStreetName($linetwo));
+        $deliveryAddress->setPostalZone(new PostalZone($postcode));
+        $deliveryAddress->setCityName(new CityName($city));
+        $deliveryAddress->setCountry((new Country())->setIdentificationCode(new IdentificationCode($country)));
+        $deliveryAddress->setCountrySubentity(new CountrySubentity($subdivision));
+
+        $deliveryLocation->setAddress($deliveryAddress);
+        $delivery->setDeliveryLocation($deliveryLocation);
+        $delivery->setDeliveryParty($deliveryParty);
+
+        return $this;
+    }
+
+    /**
+     * Set legal organisation of the Ship-To party
+     *
+     * @param string|null $legalorgid
+     * An identifier issued by an official registrar that identifies the
+     * party as a legal entity or legal person. If no identification scheme ($legalorgtype) is provided,
+     * it should be known to the buyer or seller party
+     * @param string|null $legalorgtype The identifier for the identification scheme of the legal
+     * registration of the party. In particular, the following scheme codes are used: 0021 : SWIFT, 0088 : EAN,
+     * 0060 : DUNS, 0177 : ODETTE
+     * @param string|null $legalorgname A name by which the party is known, if different from the party's name
+     * (also known as the company name)
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentShipToLegalOrganisation(?string $legalorgid, ?string $legalorgtype, ?string $legalorgname): UblDocumentBuilder
+    {
+        // TODO: Implement this
+        return $this;
+    }
+
+    /**
+     * Set contact of the Ship-To party
+     *
+     * @param string|null $contactpersonname
+     * Contact point for a legal entity, such as a personal name of the contact person
+     * @param string|null $contactdepartmentname
+     * Contact point for a legal entity, such as a name of the department or office
+     * @param string|null $contactphoneno
+     * Detailed information on the party's phone number
+     * @param string|null $contactfaxno
+     * Detailed information on the party's fax number
+     * @param string|null $contactemailadd
+     * Detailed information on the party's email address
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentShipToContact(?string $contactpersonname, ?string $contactdepartmentname, ?string $contactphoneno, ?string $contactfaxno, ?string $contactemailadd): UblDocumentBuilder
+    {
+        $delivery = $this->invoiceObject->getDelivery();
+        $delivery = isset($delivery[0]) ? $delivery[0] : $this->invoiceObject->addToDelivery(new Delivery())->getDelivery()[0];
+
+        $deliveryParty = $delivery->getDeliveryParty() ?? new DeliveryParty();
+
+        $contact = $deliveryParty->getContact() ?? new Contact();
+        $contact->setName(new Name($contactpersonname));
+        $contact->setTelephone(new Telephone($contactphoneno));
+        $contact->setTelefax(new Telefax($contactfaxno));
+        $contact->setElectronicMail(new ElectronicMail($contactemailadd));
+
+        $deliveryParty->setContact($contact);
+
+        $delivery->setDeliveryParty($deliveryParty);
 
         return $this;
     }
@@ -852,38 +931,13 @@ class UblDocumentBuilder extends UblDocument
     }
 
     /**
-     * Returns wether an existing supplier or creates a new supplier
+     * Creates a new instance of the UblDocumentBuilderHelper class
      *
-     * @return AccountingSupplierParty
+     * @return UblDocumentBuilder
      */
-    private function getAccountingSupplierParty(): AccountingSupplierParty
+    private function initBuilderHelper(): UblDocumentBuilder
     {
-        $accountingSupplierParty = $this->invoiceObject->getAccountingSupplierParty();
-
-        if ($accountingSupplierParty === null) {
-            $accountingSupplierParty = new AccountingSupplierParty();
-            $accountingSupplierParty->setParty(new Party());
-            $this->invoiceObject->setAccountingSupplierParty($accountingSupplierParty);
-        }
-
-        return $accountingSupplierParty;
-    }
-
-    /**
-     * Returns wether an existing customer or creates a new customer
-     *
-     * @return AccountingCustomerParty
-     */
-    private function getAccountingCustomerParty(): AccountingCustomerParty
-    {
-        $accountingCustomerParty = $this->invoiceObject->getAccountingCustomerParty();
-
-        if ($accountingCustomerParty === null) {
-            $accountingCustomerParty = new AccountingCustomerParty();
-            $accountingCustomerParty->setParty(new Party());
-            $this->invoiceObject->setAccountingCustomerParty($accountingCustomerParty);
-        }
-
-        return $accountingCustomerParty;
+        $this->ublDocumentBuilderHelper = new UblDocumentBuilderHelper($this);
+        return $this;
     }
 }
