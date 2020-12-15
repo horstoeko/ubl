@@ -11,71 +11,78 @@ namespace horstoeko\ubl;
 
 use \DateTime;
 use \horstoeko\ubl\entities\cbc\ID;
-use horstoeko\ubl\entities\cbc\URI;
+use \horstoeko\ubl\entities\cbc\URI;
 use \horstoeko\ubl\entities\cbc\Name;
 use \horstoeko\ubl\entities\cbc\Note;
 use \horstoeko\ubl\entities\cac\Party;
 use \horstoeko\ubl\entities\cac\Address;
 use \horstoeko\ubl\entities\cac\Contact;
 use \horstoeko\ubl\entities\cac\Country;
+use \horstoeko\ubl\entities\cbc\Percent;
 use \horstoeko\ubl\entities\cbc\Telefax;
 use \horstoeko\ubl\entities\cac\Delivery;
+use \horstoeko\ubl\entities\cac\TaxTotal;
 use \horstoeko\ubl\entities\cbc\CityName;
 use \horstoeko\ubl\entities\main\Invoice;
-use horstoeko\stringmanagement\FileUtils;
-use horstoeko\ubl\entities\cbc\NetworkID;
+use \horstoeko\stringmanagement\FileUtils;
 use \horstoeko\ubl\entities\cac\PartyName;
 use \horstoeko\ubl\entities\cac\TaxScheme;
 use \horstoeko\ubl\entities\cbc\CompanyID;
+use \horstoeko\ubl\entities\cbc\NetworkID;
+use \horstoeko\ubl\entities\cbc\TaxAmount;
 use \horstoeko\ubl\entities\cbc\Telephone;
-use horstoeko\ubl\entities\cac\Attachment;
-use horstoeko\ubl\entities\cbc\HolderName;
-use MimeTyper\Repository\MimeDbRepository;
+use \horstoeko\ubl\entities\cac\Attachment;
 use \horstoeko\ubl\entities\cac\PayeeParty;
+use \horstoeko\ubl\entities\cbc\HolderName;
 use \horstoeko\ubl\entities\cbc\PostalZone;
 use \horstoeko\ubl\entities\cbc\StreetName;
-use horstoeko\ubl\entities\cac\CardAccount;
+use \MimeTyper\Repository\MimeDbRepository;
 use \horstoeko\stringmanagement\StringUtils;
-use horstoeko\ubl\entities\cac\PaymentMeans;
+use \horstoeko\ubl\entities\cac\CardAccount;
+use \horstoeko\ubl\entities\cac\TaxCategory;
+use \horstoeko\ubl\entities\cac\TaxSubtotal;
+use \horstoeko\ubl\entities\cac\PaymentMeans;
 use \horstoeko\ubl\entities\cbc\SalesOrderID;
 use \horstoeko\ubl\entities\cac\DeliveryParty;
 use \horstoeko\ubl\entities\cac\PostalAddress;
-use horstoeko\ubl\entities\cac\PaymentMandate;
-use horstoeko\ubl\entities\cbc\BuyerReference;
+use \horstoeko\ubl\entities\cbc\TaxableAmount;
 use \horstoeko\ubl\entities\cac\OrderReference;
 use \horstoeko\ubl\entities\cac\PartyTaxScheme;
+use \horstoeko\ubl\entities\cac\PaymentMandate;
+use \horstoeko\ubl\entities\cbc\BuyerReference;
 use \horstoeko\ubl\entities\cbc\ElectronicMail;
 use \horstoeko\ubl\entities\cbc\CustomizationID;
 use \horstoeko\ubl\entities\cbc\InvoiceTypeCode;
-use function PHPUnit\Framework\stringStartsWith;
-use horstoeko\ubl\entities\cac\BillingReference;
-use horstoeko\ubl\entities\cac\ProjectReference;
-use horstoeko\ubl\entities\cbc\PaymentMeansCode;
+use \horstoeko\ubl\entities\cac\BillingReference;
 use \horstoeko\ubl\entities\cac\DeliveryLocation;
 use \horstoeko\ubl\entities\cac\PartyLegalEntity;
+use \horstoeko\ubl\entities\cac\ProjectReference;
 use \horstoeko\ubl\entities\cbc\CountrySubentity;
 use \horstoeko\ubl\entities\cbc\DocumentTypeCode;
+use \horstoeko\ubl\entities\cbc\PaymentMeansCode;
 use \horstoeko\ubl\entities\cbc\RegistrationName;
-use horstoeko\ubl\entities\cac\ExternalReference;
+use \horstoeko\ubl\entities\cac\ExternalReference;
+use horstoeko\ubl\entities\cbc\TaxExemptionReason;
 use \horstoeko\ubl\entities\cbc\IdentificationCode;
-use horstoeko\ubl\entities\cbc\DocumentDescription;
 use \horstoeko\ubl\entities\cac\PartyIdentification;
+use \horstoeko\ubl\entities\cbc\DocumentDescription;
 use \horstoeko\ubl\entities\cbc\AdditionalStreetName;
 use \horstoeko\ubl\entities\cbc\DocumentCurrencyCode;
-use horstoeko\ubl\entities\cac\PayeeFinancialAccount;
-use horstoeko\ubl\entities\cac\PayerFinancialAccount;
-use horstoeko\ubl\entities\cbc\PrimaryAccountNumberID;
+use \horstoeko\ubl\entities\cac\PayeeFinancialAccount;
+use \horstoeko\ubl\entities\cac\PayerFinancialAccount;
+use horstoeko\ubl\entities\cbc\TaxExemptionReasonCode;
 use \horstoeko\ubl\entities\cac\TaxRepresentativeParty;
+use \horstoeko\ubl\entities\cbc\PrimaryAccountNumberID;
+use horstoeko\ubl\entities\cbc\ExceptionResolutionCode;
 use \horstoeko\ubl\entities\cac\AccountingCustomerParty;
 use \horstoeko\ubl\entities\cac\AccountingSupplierParty;
-use horstoeko\ubl\entities\cac\InvoiceDocumentReference;
-use horstoeko\ubl\entities\cac\ReceiptDocumentReference;
-use horstoeko\ubl\entities\cac\DespatchDocumentReference;
+use \horstoeko\ubl\entities\cac\InvoiceDocumentReference;
+use \horstoeko\ubl\entities\cac\ReceiptDocumentReference;
 use \horstoeko\ubl\entities\cac\ContractDocumentReference;
-use horstoeko\ubl\entities\cac\FinancialInstitutionBranch;
-
+use \horstoeko\ubl\entities\cac\DespatchDocumentReference;
+use \horstoeko\ubl\entities\cac\FinancialInstitutionBranch;
 use \horstoeko\ubl\entities\cac\AdditionalDocumentReference;
-use horstoeko\ubl\entities\cbc\EmbeddedDocumentBinaryObject;
+use \horstoeko\ubl\entities\cbc\EmbeddedDocumentBinaryObject;
 
 /**
  * Class representing the ubl invoice builder
@@ -1491,46 +1498,48 @@ class UblDocumentBuilder extends UblDocument
             return $this->addDocumentPaymentMeanBankCard($cardType, $cardId, $cardHolderName);
         }
 
-        $paymentMeans = $this->invoiceObject->setPaymentMeans([])->addToPaymentMeans(new PaymentMeans())->getPaymentMeans()[0];
+        $paymentMean = new PaymentMeans();
+
+        $this->invoiceObject->addToPaymentMeans($paymentMean);
 
         if (!StringUtils::stringIsNullOrEmpty($typecode)) {
-            $paymentMeans->setPaymentMeansCode(new PaymentMeansCode($typecode));
+            $paymentMean->setPaymentMeansCode(new PaymentMeansCode($typecode));
         }
         if (!StringUtils::stringIsNullOrEmpty($information)) {
-            $paymentMeans->getPaymentMeansCode()->setName($information);
+            $paymentMean->getPaymentMeansCode()->setName($information);
         }
         if (!StringUtils::stringIsNullOrEmpty($cardType)) {
-            $cardAccount = $paymentMeans->getCardAccount() ?? $paymentMeans->setCardAccount(new CardAccount())->getCardAccount();
+            $cardAccount = $paymentMean->getCardAccount() ?? $paymentMean->setCardAccount(new CardAccount())->getCardAccount();
             $cardAccount->setNetworkID(new NetworkID($cardType));
         }
         if (!StringUtils::stringIsNullOrEmpty($cardId)) {
-            $cardAccount = $paymentMeans->getCardAccount() ?? $paymentMeans->setCardAccount(new CardAccount())->getCardAccount();
+            $cardAccount = $paymentMean->getCardAccount() ?? $paymentMean->setCardAccount(new CardAccount())->getCardAccount();
             $cardAccount->setPrimaryAccountNumberID(new PrimaryAccountNumberID(substr($cardId, -4)));
         }
         if (!StringUtils::stringIsNullOrEmpty($cardHolderName)) {
-            $cardAccount = $paymentMeans->getCardAccount() ?? $paymentMeans->setCardAccount(new CardAccount())->getCardAccount();
+            $cardAccount = $paymentMean->getCardAccount() ?? $paymentMean->setCardAccount(new CardAccount())->getCardAccount();
             $cardAccount->setHolderName(new HolderName($cardHolderName));
         }
         if (!StringUtils::stringIsNullOrEmpty($buyerIban)) {
-            $payerFinancialAccount = $paymentMeans->getPayerFinancialAccount() ?? $paymentMeans->setPayerFinancialAccount(new PayerFinancialAccount())->getPayerFinancialAccount();
+            $payerFinancialAccount = $paymentMean->getPayerFinancialAccount() ?? $paymentMean->setPayerFinancialAccount(new PayerFinancialAccount())->getPayerFinancialAccount();
             $payerFinancialAccount->setID(new ID($buyerIban));
         }
         if (!StringUtils::stringIsNullOrEmpty($mandate)) {
-            $paymentMandate = $paymentMeans->getPaymentMandate() ?? $paymentMeans->setPaymentMandate(new PaymentMandate())->getPaymentMandate();
+            $paymentMandate = $paymentMean->getPaymentMandate() ?? $paymentMean->setPaymentMandate(new PaymentMandate())->getPaymentMandate();
             $paymentMandate->setID(new ID($mandate));
         }
         if (!StringUtils::stringIsNullOrEmpty($payeeIban)) {
-            $payeeFinancialAccount = $paymentMeans->getPayeeFinancialAccount() ?? $paymentMeans->setPayeeFinancialAccount(new PayeeFinancialAccount)->getPayeeFinancialAccount();
+            $payeeFinancialAccount = $paymentMean->getPayeeFinancialAccount() ?? $paymentMean->setPayeeFinancialAccount(new PayeeFinancialAccount)->getPayeeFinancialAccount();
             $payeeFinancialAccount->setID(new ID($payeeIban));
         }
         if (!StringUtils::stringIsNullOrEmpty($payeeAccountName)) {
-            $payeeFinancialAccount = $paymentMeans->getPayeeFinancialAccount() ?? $paymentMeans->setPayeeFinancialAccount(new PayeeFinancialAccount)->getPayeeFinancialAccount();
+            $payeeFinancialAccount = $paymentMean->getPayeeFinancialAccount() ?? $paymentMean->setPayeeFinancialAccount(new PayeeFinancialAccount)->getPayeeFinancialAccount();
             $payeeFinancialAccount->setName(new Name($payeeAccountName));
         }
         if (!StringUtils::stringIsNullOrEmpty($payeePropId)) {
         }
         if (!StringUtils::stringIsNullOrEmpty($payeeBic)) {
-            $payeeFinancialAccount = $paymentMeans->getPayeeFinancialAccount() ?? $paymentMeans->setPayeeFinancialAccount(new PayeeFinancialAccount)->getPayeeFinancialAccount();
+            $payeeFinancialAccount = $paymentMean->getPayeeFinancialAccount() ?? $paymentMean->setPayeeFinancialAccount(new PayeeFinancialAccount)->getPayeeFinancialAccount();
             $payeeFinancialAccount->setFinancialInstitutionBranch((new FinancialInstitutionBranch())->setID(new ID($payeeBic)));
         }
 
@@ -1546,9 +1555,11 @@ class UblDocumentBuilder extends UblDocument
      */
     public function addDocumentPaymentMeanSepaCreditTransfer(string $payeeIban): UblDocumentBuilder
     {
-        $paymentMeans = $this->invoiceObject->setPaymentMeans([])->addToPaymentMeans(new PaymentMeans())->getPaymentMeans()[0];
-        $paymentMeans->setPaymentMeansCode((new PaymentMeansCode("58"))->setName("SEPA credit transfer"));
-        $paymentMeans->setPayeeFinancialAccount(new PayeeFinancialAccount())->getPayeeFinancialAccount()->setID(new ID($payeeIban));
+        $paymentMean = new PaymentMeans();
+        $paymentMean->setPaymentMeansCode((new PaymentMeansCode("58"))->setName("SEPA credit transfer"));
+        $paymentMean->setPayeeFinancialAccount(new PayeeFinancialAccount())->getPayeeFinancialAccount()->setID(new ID($payeeIban));
+
+        $this->invoiceObject->addToPaymentMeans($paymentMean);
 
         return $this;
     }
@@ -1567,9 +1578,11 @@ class UblDocumentBuilder extends UblDocument
      */
     public function addDocumentPaymentMeanSepaDirectDebit(string $buyerIban, string $mandate): UblDocumentBuilder
     {
-        $paymentMeans = $this->invoiceObject->setPaymentMeans([])->addToPaymentMeans(new PaymentMeans())->getPaymentMeans()[0];
-        $paymentMeans->setPaymentMeansCode((new PaymentMeansCode("59"))->setName("SEPA direct debit"));
-        $paymentMeans->setPaymentMandate(new PaymentMandate())->getPaymentMandate()->setPayerFinancialAccount((new PayerFinancialAccount())->setID(new ID($buyerIban)))->setID(new ID($mandate));
+        $paymentMean = new PaymentMeans();
+        $paymentMean->setPaymentMeansCode((new PaymentMeansCode("59"))->setName("SEPA direct debit"));
+        $paymentMean->setPaymentMandate(new PaymentMandate())->getPaymentMandate()->setPayerFinancialAccount((new PayerFinancialAccount())->setID(new ID($buyerIban)))->setID(new ID($mandate));
+
+        $this->invoiceObject->addToPaymentMeans($paymentMean);
 
         return $this;
     }
@@ -1589,14 +1602,184 @@ class UblDocumentBuilder extends UblDocument
      */
     public function addDocumentPaymentMeanBankCard(string $cardType, string $cardId, string $cardHolderName): UblDocumentBuilder
     {
-        $paymentMeans = $this->invoiceObject->setPaymentMeans([])->addToPaymentMeans(new PaymentMeans())->getPaymentMeans()[0];
-        $paymentMeans->setPaymentMeansCode((new PaymentMeansCode("48"))->setName("Bank card"));
-        $paymentMeans->setCardAccount((new CardAccount)
+        $paymentMean = new PaymentMeans();
+        $paymentMean->setPaymentMeansCode((new PaymentMeansCode("48"))->setName("Bank card"));
+        $paymentMean->setCardAccount((new CardAccount)
             ->setPrimaryAccountNumberID(new PrimaryAccountNumberID(substr($cardId, -4)))
             ->setNetworkID(new NetworkID($cardType))
             ->setHolderName(new HolderName($cardHolderName)));
 
+        $this->invoiceObject->addToPaymentMeans($paymentMean);
+
         return $this;
+    }
+
+    /**
+     * Add a VAT breakdown (at document level)
+     *
+     * @param string $categoryCode
+     * Coded description of a sales tax category
+     *
+     * The following entries from UNTDID 5305 are used (details in brackets):
+     *  - Standard rate (sales tax is due according to the normal procedure)
+     *  - Goods to be taxed according to the zero rate (sales tax is charged with a percentage of zero)
+     *  - Tax exempt (USt./IGIC/IPSI)
+     *  - Reversal of the tax liability (the rules for reversing the tax liability at USt./IGIC/IPSI apply)
+     *  - VAT exempt for intra-community deliveries of goods (USt./IGIC/IPSI not levied due to rules on intra-community deliveries)
+     *  - Free export item, tax not levied (VAT / IGIC/IPSI not levied due to export outside the EU)
+     *  - Services outside the tax scope (sales are not subject to VAT / IGIC/IPSI)
+     *  - Canary Islands general indirect tax (IGIC tax applies)
+     *  - IPSI (tax for Ceuta / Melilla) applies.
+     *
+     * The codes for the VAT category are as follows:
+     *  - S = sales tax is due at the normal rate
+     *  - Z = goods to be taxed according to the zero rate
+     *  - E = tax exempt
+     *  - AE = reversal of tax liability
+     *  - K = VAT is not shown for intra-community deliveries
+     *  - G = tax not levied due to export outside the EU
+     *  - O = Outside the tax scope
+     *  - L = IGIC (Canary Islands)
+     *  - M = IPSI (Ceuta / Melilla)
+     * @param string $typeCode
+     * Coded description of a sales tax category. Note: Fixed value = "VAT"
+     * @param float $basisAmount
+     * Tax base amount, Each sales tax breakdown must show a category-specific tax base amount.
+     * @param float $calculatedAmount
+     * The total amount to be paid for the relevant VAT category. Note: Calculated by multiplying
+     * the amount to be taxed according to the sales tax category by the sales tax rate applicable
+     * for the sales tax category concerned
+     * @param float|null $rateApplicablePercent
+     * The sales tax rate, expressed as the percentage applicable to the sales tax category in
+     * question. Note: The code of the sales tax category and the category-specific sales tax rate
+     * must correspond to one another. The value to be given is the percentage. For example, the
+     * value 20 is given for 20% (and not 0.2)
+     * @param string|null $exemptionReason
+     * Reason for tax exemption (free text)
+     * @param string|null $exemptionReasonCode
+     * Reason given in code form for the exemption of the amount from VAT. Note: Code list issued
+     * and maintained by the Connecting Europe Facility.
+     * @param float|null $lineTotalBasisAmount
+     * Tax rate goods amount
+     * @param float|null $allowanceChargeBasisAmount
+     * Total amount of surcharges and deductions of the tax rate at document level
+     * @param DateTime|null $taxPointDate
+     * Specification of a date, in accordance with the sales tax guideline, on which the sales tax
+     * for the seller and for the buyer becomes relevant for accounting, insofar as this date can be
+     * determined and differs from the invoice date
+     * Note: The tax collection date for VAT purposes is usually the date the goods were delivered or
+     * the service was completed (the base tax date). There are a few variations. For further information,
+     * please refer to Article 226 (7) of Council Directive 2006/112 / EC. This element is required
+     * if the date set for the sales tax return differs from the invoice date. Both the buyer and the
+     * seller should use the delivery date for VAT returns, if provided by the seller.
+     * This is not used in Germany. Instead, the delivery and service date must be specified.
+     * @param string|null $dueDateTypeCode
+     * The code for the date on which sales tax becomes relevant for the seller and the buyer.
+     * The code must distinguish between the following entries from UNTDID 2005:
+     *  - date of issue of the invoice document
+     *  - actual delivery date
+     *  - Date of payment.
+     *
+     * The VAT Collection Date Code is used when the VAT Collection Date is not known for VAT purposes
+     * when the invoice is issued.
+     *
+     * The semantic values cited in the standard, which are represented by the values 3, 35, 432 in
+     * UNTDID2005, are mapped to the following values of UNTDID2475, which is the relevant code list
+     * supported by CII 16B:
+     *  - 5: date of issue of the invoice
+     *  - 29: Delivery date, current status
+     *  - 72: Paid to date
+     *
+     * In Germany, the date of delivery and service is decisive.
+     * @return UblDocumentBuilder
+     */
+    public function addDocumentTax(string $categoryCode, string $typeCode, float $basisAmount, float $calculatedAmount, ?float $rateApplicablePercent = null, ?string $exemptionReason = null, ?string $exemptionReasonCode = null, ?float $lineTotalBasisAmount = null, ?float $allowanceChargeBasisAmount = null, ?DateTime $taxPointDate = null, ?string $dueDateTypeCode = null): UblDocumentBuilder
+    {
+        $taxTotalAmount = 0.0;
+
+        $taxCurrencyCode = $this->invoiceObject->getTaxCurrencyCode() != null ? $this->invoiceObject->getTaxCurrencyCode()->value() : null;
+        $taxCurrencyCode = StringUtils::stringIsNullOrEmpty($taxCurrencyCode) == true ? $this->invoiceObject->getDocumentCurrencyCode()->value() : $taxCurrencyCode;
+
+        $taxTotal = isset($this->invoiceObject->getTaxTotal()[0]) ?
+            $this->invoiceObject->getTaxTotal()[0] :
+            $this->invoiceObject->addToTaxTotal(new TaxTotal())->getTaxTotal()[0];
+
+        $taxSubTotal = new TaxSubtotal();
+        $taxSubTotal->setTaxableAmount((new TaxableAmount($basisAmount))->setCurrencyID($taxCurrencyCode));
+        $taxSubTotal->setTaxAmount((new TaxAmount($calculatedAmount))->setCurrencyID($taxCurrencyCode));
+
+        $taxCategory = (new TaxCategory())
+            ->setId(new ID($categoryCode))
+            ->setTaxScheme((new TaxScheme())
+                ->setID(new ID($typeCode)));
+
+        if ($rateApplicablePercent != null) {
+            $taxCategory->setPercent(new Percent($rateApplicablePercent));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($exemptionReason)) {
+            $taxCategory->addToTaxExemptionReason(new TaxExemptionReason($exemptionReason));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($exemptionReasonCode)) {
+            $taxCategory->setTaxExemptionReasonCode(new TaxExemptionReasonCode($exemptionReasonCode));
+        }
+
+        $taxSubTotal->setTaxCategory($taxCategory);
+        $taxTotal->addToTaxSubtotal($taxSubTotal);
+
+        foreach ($taxTotal->getTaxSubtotal() as $taxSubTotal) {
+            $taxTotalAmount += $taxSubTotal->getTaxAmount()->value();
+        }
+
+        $taxTotal->setTaxAmount((new TaxAmount($taxTotalAmount))->setCurrencyID($taxCurrencyCode));
+
+        return $this;
+    }
+
+    /**
+     * Add a VAT breakdown (at document level) in a more simple way
+     *
+     * @param string $categoryCode
+     * Coded description of a sales tax category
+     *
+     * The following entries from UNTDID 5305 are used (details in brackets):
+     *  - Standard rate (sales tax is due according to the normal procedure)
+     *  - Goods to be taxed according to the zero rate (sales tax is charged with a percentage of zero)
+     *  - Tax exempt (USt./IGIC/IPSI)
+     *  - Reversal of the tax liability (the rules for reversing the tax liability at USt./IGIC/IPSI apply)
+     *  - VAT exempt for intra-community deliveries of goods (USt./IGIC/IPSI not levied due to rules on intra-community deliveries)
+     *  - Free export item, tax not levied (VAT / IGIC/IPSI not levied due to export outside the EU)
+     *  - Services outside the tax scope (sales are not subject to VAT / IGIC/IPSI)
+     *  - Canary Islands general indirect tax (IGIC tax applies)
+     *  - IPSI (tax for Ceuta / Melilla) applies.
+     *
+     * The codes for the VAT category are as follows:
+     *  - S = sales tax is due at the normal rate
+     *  - Z = goods to be taxed according to the zero rate
+     *  - E = tax exempt
+     *  - AE = reversal of tax liability
+     *  - K = VAT is not shown for intra-community deliveries
+     *  - G = tax not levied due to export outside the EU
+     *  - O = Outside the tax scope
+     *  - L = IGIC (Canary Islands)
+     *  - M = IPSI (Ceuta / Melilla)
+     * @param string $typeCode
+     * Coded description of a sales tax category. Note: Fixed value = "VAT"
+     * @param float $basisAmount
+     * Tax base amount, Each sales tax breakdown must show a category-specific tax base amount.
+     * @param float $calculatedAmount
+     * The total amount to be paid for the relevant VAT category. Note: Calculated by multiplying
+     * the amount to be taxed according to the sales tax category by the sales tax rate applicable
+     * for the sales tax category concerned
+     * @param float|null $rateApplicablePercent
+     * The sales tax rate, expressed as the percentage applicable to the sales tax category in
+     * question. Note: The code of the sales tax category and the category-specific sales tax rate
+     * must correspond to one another. The value to be given is the percentage. For example, the
+     * value 20 is given for 20% (and not 0.2)
+     * @return UblDocumentBuilder
+     */
+    public function addDocumentTaxSimple(string $categoryCode, string $typeCode, float $basisAmount, float $calculatedAmount, ?float $rateApplicablePercent = null): UblDocumentBuilder
+    {
+        return $this->addDocumentTax($categoryCode, $typeCode, $basisAmount, $calculatedAmount, $rateApplicablePercent);
     }
 
     /**

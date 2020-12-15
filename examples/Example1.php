@@ -42,7 +42,7 @@ $ublBuilder->setDocumentShipToContact("Heinz Müller", "", "", "", "");
 
 $ublBuilder->setDocumentPayee("[payee name]", "payee0001");
 $ublBuilder->addDocumentPayeeGlobalId("38763267", "0088");
-$ublBuilder->addDocumentPayeeTaxRegistration("DE366746532","FC");
+$ublBuilder->addDocumentPayeeTaxRegistration("DE366746532", "FC");
 $ublBuilder->setDocumentPayeeAddress("Lieferantenstraße 20", null, null, "80333", "München", "DE", "Bayern");
 $ublBuilder->setDocumentPayeeLegalOrganisation("123456789", "0198", "[Seller trading name]");
 $ublBuilder->setDocumentPayeeContact("Horst Meier", "Einkauf", "+49-111-333", "+49-111-444", "info@kunde.de");
@@ -58,5 +58,6 @@ $ublBuilder->setDocumentReceivingAdviceReferencedDocument("RECIP-0003", new Date
 
 $ublBuilder->addDocumentPaymentMeanBankCard("VISA", "99933847576752", "Rolf Meier");
 
-echo $ublBuilder->getContent();
-echo "\n\n";
+$ublBuilder->addDocumentTaxSimple("S", "VAT", 20700379.33, 3933072.07, 19.0);
+
+echo $ublBuilder->getContent() . PHP_EOL . PHP_EOL;
