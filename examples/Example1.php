@@ -56,5 +56,7 @@ $ublBuilder->setDocumentProcuringProject("PROJ-0001");
 $ublBuilder->setDocumentDespatchAdviceReferencedDocument("DESP-0002", new DateTime());
 $ublBuilder->setDocumentReceivingAdviceReferencedDocument("RECIP-0003", new DateTime());
 
+$ublBuilder->addDocumentPaymentMeanBankCard("VISA", "99933847576752", "Rolf Meier");
+
 echo $ublBuilder->getContent();
 echo "\n\n";

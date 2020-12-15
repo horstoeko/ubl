@@ -23,25 +23,34 @@ use \horstoeko\ubl\entities\cac\Delivery;
 use \horstoeko\ubl\entities\cbc\CityName;
 use \horstoeko\ubl\entities\main\Invoice;
 use horstoeko\stringmanagement\FileUtils;
+use horstoeko\ubl\entities\cbc\NetworkID;
 use \horstoeko\ubl\entities\cac\PartyName;
 use \horstoeko\ubl\entities\cac\TaxScheme;
 use \horstoeko\ubl\entities\cbc\CompanyID;
 use \horstoeko\ubl\entities\cbc\Telephone;
 use horstoeko\ubl\entities\cac\Attachment;
+use horstoeko\ubl\entities\cbc\HolderName;
 use MimeTyper\Repository\MimeDbRepository;
 use \horstoeko\ubl\entities\cac\PayeeParty;
 use \horstoeko\ubl\entities\cbc\PostalZone;
 use \horstoeko\ubl\entities\cbc\StreetName;
+use horstoeko\ubl\entities\cac\CardAccount;
 use \horstoeko\stringmanagement\StringUtils;
+use horstoeko\ubl\entities\cac\PaymentMeans;
 use \horstoeko\ubl\entities\cbc\SalesOrderID;
 use \horstoeko\ubl\entities\cac\DeliveryParty;
 use \horstoeko\ubl\entities\cac\PostalAddress;
+use horstoeko\ubl\entities\cac\PaymentMandate;
 use horstoeko\ubl\entities\cbc\BuyerReference;
 use \horstoeko\ubl\entities\cac\OrderReference;
 use \horstoeko\ubl\entities\cac\PartyTaxScheme;
 use \horstoeko\ubl\entities\cbc\ElectronicMail;
 use \horstoeko\ubl\entities\cbc\CustomizationID;
 use \horstoeko\ubl\entities\cbc\InvoiceTypeCode;
+use function PHPUnit\Framework\stringStartsWith;
+use horstoeko\ubl\entities\cac\BillingReference;
+use horstoeko\ubl\entities\cac\ProjectReference;
+use horstoeko\ubl\entities\cbc\PaymentMeansCode;
 use \horstoeko\ubl\entities\cac\DeliveryLocation;
 use \horstoeko\ubl\entities\cac\PartyLegalEntity;
 use \horstoeko\ubl\entities\cbc\CountrySubentity;
@@ -53,16 +62,19 @@ use horstoeko\ubl\entities\cbc\DocumentDescription;
 use \horstoeko\ubl\entities\cac\PartyIdentification;
 use \horstoeko\ubl\entities\cbc\AdditionalStreetName;
 use \horstoeko\ubl\entities\cbc\DocumentCurrencyCode;
+use horstoeko\ubl\entities\cac\PayeeFinancialAccount;
+use horstoeko\ubl\entities\cac\PayerFinancialAccount;
+use horstoeko\ubl\entities\cbc\PrimaryAccountNumberID;
 use \horstoeko\ubl\entities\cac\TaxRepresentativeParty;
 use \horstoeko\ubl\entities\cac\AccountingCustomerParty;
 use \horstoeko\ubl\entities\cac\AccountingSupplierParty;
-use \horstoeko\ubl\entities\cac\ContractDocumentReference;
-use \horstoeko\ubl\entities\cac\AdditionalDocumentReference;
-use horstoeko\ubl\entities\cac\BillingReference;
-use horstoeko\ubl\entities\cac\DespatchDocumentReference;
 use horstoeko\ubl\entities\cac\InvoiceDocumentReference;
-use horstoeko\ubl\entities\cac\ProjectReference;
 use horstoeko\ubl\entities\cac\ReceiptDocumentReference;
+use horstoeko\ubl\entities\cac\DespatchDocumentReference;
+use \horstoeko\ubl\entities\cac\ContractDocumentReference;
+use horstoeko\ubl\entities\cac\FinancialInstitutionBranch;
+
+use \horstoeko\ubl\entities\cac\AdditionalDocumentReference;
 use horstoeko\ubl\entities\cbc\EmbeddedDocumentBinaryObject;
 
 /**
@@ -1414,6 +1426,178 @@ class UblDocumentBuilder extends UblDocument
     }
 
     // TODO: DeliveryNoteReferencedDocument goes here...
+
+    /**
+     * Add detailed information on the payment method
+     *
+     * __Notes__
+     *  - The SpecifiedTradeSettlementPaymentMeans element can only be repeated for each bank account if
+     *    several bank accounts are to be transferred for transfers. The code for the payment method in the Typecode
+     *    element must therefore not differ in the repetitions. The elements ApplicableTradeSettlementFinancialCard
+     *    and PayerPartyDebtorFinancialAccount must not be specified for bank transfers.
+     *
+     * @param string $typecode
+     * The expected or used means of payment, expressed as a code. The entries from the UNTDID 4461 code list
+     * must be used. A distinction should be made between SEPA and non-SEPA payments as well as between credit
+     * payments, direct debits, card payments and other means of payment In particular, the following codes can
+     * be used:
+     *  - 10: cash
+     *  - 20: check
+     *  - 30: transfer
+     *  - 42: Payment to bank account
+     *  - 48: Card payment
+     *  - 49: direct debit
+     *  - 57: Standing order
+     *  - 58: SEPA Credit Transfer
+     *  - 59: SEPA Direct Debit
+     *  - 97: Report
+     * @param string|null $information
+     * The expected or used means of payment expressed in text form, e.g. cash, bank transfer, direct debit,
+     * credit card, etc.
+     * @param string|null $cardType
+     * The type of the card
+     * @param string|null $cardId
+     * The primary account number (PAN) to which the card used for payment belongs. In accordance with card
+     * payment security standards, an invoice should never contain a full payment card master account number.
+     * The following specification of the PCI Security Standards Council currently applies: The first 6 and
+     * last 4 digits at most are to be displayed
+     * @param string|null $cardHolderName
+     * Name of the payment card holder
+     * @param string|null $buyerIban
+     * Direct debit: ID of the account to be debited
+     * @param string|null $payeeIban
+     * Transfer: A unique identifier for the financial account held with a payment service provider to which
+     * the payment should be made, e.g. Use an IBAN (in the case of a SEPA payment) for a national ProprietaryID
+     * account number
+     * @param string|null $payeeAccountName
+     * The name of the payment account held with a payment service provider to which the payment should be made.
+     * Information only required if different from the name of the payee / seller
+     * @param string|null $payeePropId
+     * National account number (not for SEPA)
+     * @param string|null $payeeBic
+     * Seller's banking institution, An identifier for the payment service provider with whom the payment account
+     * is managed, such as the BIC or a national bank code, if required. No identification scheme is to be used.
+     * @return UblDocumentBuilder
+     */
+    public function addDocumentPaymentMean(string $typecode, ?string $information = null, ?string $cardType = null, ?string $cardId = null, ?string $cardHolderName = null, ?string $buyerIban = null, ?string $payeeIban = null, ?string $payeeAccountName = null, ?string $payeePropId = null, ?string $payeeBic = null, ?string $mandate = null): UblDocumentBuilder
+    {
+        if ($typecode == "58") {
+            return $this->addDocumentPaymentMeanSepaCreditTransfer($payeeIban);
+        }
+        if ($typecode == "59") {
+            return $this->addDocumentPaymentMeanSepaCreditTransfer($buyerIban, $mandate);
+        }
+        if ($typecode == "48") {
+            return $this->addDocumentPaymentMeanBankCard($cardType, $cardId, $cardHolderName);
+        }
+
+        $paymentMeans = $this->invoiceObject->setPaymentMeans([])->addToPaymentMeans(new PaymentMeans())->getPaymentMeans()[0];
+
+        if (!StringUtils::stringIsNullOrEmpty($typecode)) {
+            $paymentMeans->setPaymentMeansCode(new PaymentMeansCode($typecode));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($information)) {
+            $paymentMeans->getPaymentMeansCode()->setName($information);
+        }
+        if (!StringUtils::stringIsNullOrEmpty($cardType)) {
+            $cardAccount = $paymentMeans->getCardAccount() ?? $paymentMeans->setCardAccount(new CardAccount())->getCardAccount();
+            $cardAccount->setNetworkID(new NetworkID($cardType));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($cardId)) {
+            $cardAccount = $paymentMeans->getCardAccount() ?? $paymentMeans->setCardAccount(new CardAccount())->getCardAccount();
+            $cardAccount->setPrimaryAccountNumberID(new PrimaryAccountNumberID(substr($cardId, -4)));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($cardHolderName)) {
+            $cardAccount = $paymentMeans->getCardAccount() ?? $paymentMeans->setCardAccount(new CardAccount())->getCardAccount();
+            $cardAccount->setHolderName(new HolderName($cardHolderName));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($buyerIban)) {
+            $payerFinancialAccount = $paymentMeans->getPayerFinancialAccount() ?? $paymentMeans->setPayerFinancialAccount(new PayerFinancialAccount())->getPayerFinancialAccount();
+            $payerFinancialAccount->setID(new ID($buyerIban));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($mandate)) {
+            $paymentMandate = $paymentMeans->getPaymentMandate() ?? $paymentMeans->setPaymentMandate(new PaymentMandate())->getPaymentMandate();
+            $paymentMandate->setID(new ID($mandate));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($payeeIban)) {
+            $payeeFinancialAccount = $paymentMeans->getPayeeFinancialAccount() ?? $paymentMeans->setPayeeFinancialAccount(new PayeeFinancialAccount)->getPayeeFinancialAccount();
+            $payeeFinancialAccount->setID(new ID($payeeIban));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($payeeAccountName)) {
+            $payeeFinancialAccount = $paymentMeans->getPayeeFinancialAccount() ?? $paymentMeans->setPayeeFinancialAccount(new PayeeFinancialAccount)->getPayeeFinancialAccount();
+            $payeeFinancialAccount->setName(new Name($payeeAccountName));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($payeePropId)) {
+        }
+        if (!StringUtils::stringIsNullOrEmpty($payeeBic)) {
+            $payeeFinancialAccount = $paymentMeans->getPayeeFinancialAccount() ?? $paymentMeans->setPayeeFinancialAccount(new PayeeFinancialAccount)->getPayeeFinancialAccount();
+            $payeeFinancialAccount->setFinancialInstitutionBranch((new FinancialInstitutionBranch())->setID(new ID($payeeBic)));
+        }
+
+        return $this;
+    }
+
+    /**
+     * Create payment means for payment type 58 (SEPA credit transfer)
+     * German translation: SEPA-Überweisung
+     *
+     * @param string $payeeIban
+     * @return UblDocumentBuilder
+     */
+    public function addDocumentPaymentMeanSepaCreditTransfer(string $payeeIban): UblDocumentBuilder
+    {
+        $paymentMeans = $this->invoiceObject->setPaymentMeans([])->addToPaymentMeans(new PaymentMeans())->getPaymentMeans()[0];
+        $paymentMeans->setPaymentMeansCode((new PaymentMeansCode("58"))->setName("SEPA credit transfer"));
+        $paymentMeans->setPayeeFinancialAccount(new PayeeFinancialAccount())->getPayeeFinancialAccount()->setID(new ID($payeeIban));
+
+        return $this;
+    }
+
+    /**
+     * Create payment means for payment type 59 (SEPA direct debit)
+     * German translation: SEPA Lastschrift
+     *
+     * @param string $buyerIban
+     * Debited account,  __German translation:__ Belastetes Konto
+     * @param string $mandate
+     * Mandate reference identifier
+     * Unique identifier assigned by the Payee for referencing the direct debit mandate. Used in order to pre-notify
+     * the Buyer of a SEPA direct debit, __German translation:__ Mandatsreferenz
+     * @return UblDocumentBuilder
+     */
+    public function addDocumentPaymentMeanSepaDirectDebit(string $buyerIban, string $mandate): UblDocumentBuilder
+    {
+        $paymentMeans = $this->invoiceObject->setPaymentMeans([])->addToPaymentMeans(new PaymentMeans())->getPaymentMeans()[0];
+        $paymentMeans->setPaymentMeansCode((new PaymentMeansCode("59"))->setName("SEPA direct debit"));
+        $paymentMeans->setPaymentMandate(new PaymentMandate())->getPaymentMandate()->setPayerFinancialAccount((new PayerFinancialAccount())->setID(new ID($buyerIban)))->setID(new ID($mandate));
+
+        return $this;
+    }
+
+    /**
+     * Create payment means for payment type 48 (Bank card)
+     *
+     * @param string $cardType
+     * Card Network identifier, such as VISA, American Express, Master Card.
+     * @param string $cardId
+     * The Primary Account Number (PAN) of the card used for payment.In accordance with card payments security
+     * standards, an invoice should never include a full card primary account number. This method will do the
+     * security for you automatically
+     * @param string $cardHolderName
+     * The name of the payment card holder.
+     * @return UblDocumentBuilder
+     */
+    public function addDocumentPaymentMeanBankCard(string $cardType, string $cardId, string $cardHolderName): UblDocumentBuilder
+    {
+        $paymentMeans = $this->invoiceObject->setPaymentMeans([])->addToPaymentMeans(new PaymentMeans())->getPaymentMeans()[0];
+        $paymentMeans->setPaymentMeansCode((new PaymentMeansCode("48"))->setName("Bank card"));
+        $paymentMeans->setCardAccount((new CardAccount)
+            ->setPrimaryAccountNumberID(new PrimaryAccountNumberID(substr($cardId, -4)))
+            ->setNetworkID(new NetworkID($cardType))
+            ->setHolderName(new HolderName($cardHolderName)));
+
+        return $this;
+    }
 
     /**
      * Creates a new instance of the invoice class
