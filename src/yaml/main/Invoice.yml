@@ -3,19 +3,5 @@ horstoeko\ubl\entities\main\Invoice:
     xml_root_namespace: 'urn:oasis:names:specification:ubl:schema:xsd:Invoice-2'
     xml_namespaces:
         ubl: urn:oasis:names:specification:ubl:schema:xsd:Invoice-2
-        ext: urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2
-        cbc: urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2
-        udt: urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2
-        qdt: urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2
         cac: urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2
-        clm66411: urn:un:unece:uncefact:codelist:specification:66411:2001
-        clmIANAMIMEMediaType: urn:un:unece:uncefact:codelist:specification:IANAMIMEMediaType:2003
-        clm54217: urn:un:unece:uncefact:codelist:specification:54217:2001
-        clm5639: urn:un:unece:uncefact:codelist:specification:5639:1988
-        cct: urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2
-        csc: urn:oasis:names:specification:ubl:schema:xsd:CommonSignatureComponents-2
-        sac: urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2
-        sbc: urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2
-        ds: http://www.w3.org/2000/09/xmldsig#
-        xades: http://uri.etsi.org/01903/v1.3.2#
-        xadesb: http://uri.etsi.org/01903/v1.4.1#
+        cbc: urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2

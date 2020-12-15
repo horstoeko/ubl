@@ -12,7 +12,7 @@ xsd2php:
     'urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2': 'horstoeko\ubl\entities\sbc'
     'http://www.w3.org/2000/09/xmldsig#': 'horstoeko\ubl\entities\ds'
     'http://uri.etsi.org/01903/v1.3.2#': 'horstoeko\ubl\entities\xades'
-    'http://uri.etsi.org/01903/v1.4.1#': 'horstoeko\ubl\entities\xadesb'
+    'http://uri.etsi.org/01903/v1.4.1#': 'horstoeko\ubl\entities\xades'
   destinations_php: 
     'horstoeko\ubl\entities\main': '../src/entities/main'
     'horstoeko\ubl\entities\ext': '../src/entities/ext'
@@ -26,7 +26,6 @@ xsd2php:
     'horstoeko\ubl\entities\sbc': '../src/entities/sbc'
     'horstoeko\ubl\entities\ds': '../src/entities/ds'
     'horstoeko\ubl\entities\xades': '../src/entities/xades'
-    'horstoeko\ubl\entities\xadesb': '../src/entities/xadesb'
   destinations_jms: 
     'horstoeko\ubl\entities\main': '../src/yaml/main'
     'horstoeko\ubl\entities\ext': '../src/yaml/ext'
@@ -40,7 +39,6 @@ xsd2php:
     'horstoeko\ubl\entities\sbc': '../src/yaml/sbc'
     'horstoeko\ubl\entities\ds': '../src/yaml/ds'
     'horstoeko\ubl\entities\xades': '../src/yaml/xades'
-    'horstoeko\ubl\entities\xadesb': '../src/yaml/xadesb'
   destinations_validation:
     'horstoeko\ubl\entities\main': '../src/validation/main'
     'horstoeko\ubl\entities\ext': '../src/validation/ext'
@@ -54,7 +52,6 @@ xsd2php:
     'horstoeko\ubl\entities\sbc': '../src/validation/sbc'
     'horstoeko\ubl\entities\ds': '../src/validation/ds'
     'horstoeko\ubl\entities\xades': '../src/validation/xades'
-    'horstoeko\ubl\entities\xadesb': '../src/validation/xadesb'
   configs_jms:
     xml_cdata: false
   aliases:

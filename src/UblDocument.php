@@ -82,7 +82,6 @@ abstract class UblDocument
         $this->serializerBuilder->addMetadataDir(dirname(__FILE__) . '/../src/yaml/sbc', 'horstoeko\ubl\entities\sbc');
         $this->serializerBuilder->addMetadataDir(dirname(__FILE__) . '/../src/yaml/udt', 'horstoeko\ubl\entities\udt');
         $this->serializerBuilder->addMetadataDir(dirname(__FILE__) . '/../src/yaml/xades', 'horstoeko\ubl\entities\xades');
-        $this->serializerBuilder->addMetadataDir(dirname(__FILE__) . '/../src/yaml/xadesb', 'horstoeko\ubl\entities\xadesb');
         $this->serializerBuilder->addDefaultListeners();
         $this->serializerBuilder->configureHandlers(function (HandlerRegistryInterface $handler) use ($serializerBuilder) {
             $serializerBuilder->addDefaultHandlers();

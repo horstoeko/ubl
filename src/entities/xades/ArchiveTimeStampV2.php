@@ -1,8 +1,6 @@
 <?php
 
-namespace horstoeko\ubl\entities\xadesb;
-
-use horstoeko\ubl\entities\xades\XAdESTimeStampType;
+namespace horstoeko\ubl\entities\xades;
 
 /**
  * Class representing ArchiveTimeStampV2

@@ -1,6 +1,6 @@
 <?php
 
-namespace horstoeko\ubl\entities\xadesb;
+namespace horstoeko\ubl\entities\xades;
 
 /**
  * Class representing TimeStampValidationData
