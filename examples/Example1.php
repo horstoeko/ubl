@@ -3,6 +3,7 @@
 require getcwd() . "/../vendor/autoload.php";
 
 use \horstoeko\ubl\UblDocumentBuilder;
+use Symfony\Component\Validator\Constraints\Date;
 
 $ublBuilder = new UblDocumentBuilder();
 
@@ -49,7 +50,11 @@ $ublBuilder->setDocumentPayeeContact("Horst Meier", "Einkauf", "+49-111-333", "+
 $ublBuilder->setDocumentSellerOrderReferencedDocument("ABC123456789");
 $ublBuilder->setDocumentBuyerOrderReferencedDocument("65002278");
 $ublBuilder->setDocumentContractReferencedDocument("CR987654321", new DateTime());
-$ublBuilder->addDocumentAdditionalReferencedDocument("01_15_Anhang_01.pdf", null, null, "Aufschlüsselung der einzelnen Leistungspositionen");
+$ublBuilder->addDocumentAdditionalReferencedDocument("01_15_Anhang_01.pdf", null, "http://web.de", "Aufschlüsselung der einzelnen Leistungspositionen", "", null, null);
+$ublBuilder->setDocumentInvoiceReferencedDocument("INV-00001", new DateTime());
+$ublBuilder->setDocumentProcuringProject("PROJ-0001");
+$ublBuilder->setDocumentDespatchAdviceReferencedDocument("DESP-0002", new DateTime());
+$ublBuilder->setDocumentReceivingAdviceReferencedDocument("RECIP-0003", new DateTime());
 
 echo $ublBuilder->getContent();
 echo "\n\n";

@@ -10,8 +10,8 @@
 namespace horstoeko\ubl;
 
 use \DateTime;
-use \horstoeko\stringmanagement\StringUtils;
 use \horstoeko\ubl\entities\cbc\ID;
+use horstoeko\ubl\entities\cbc\URI;
 use \horstoeko\ubl\entities\cbc\Name;
 use \horstoeko\ubl\entities\cbc\Note;
 use \horstoeko\ubl\entities\cac\Party;
@@ -22,16 +22,21 @@ use \horstoeko\ubl\entities\cbc\Telefax;
 use \horstoeko\ubl\entities\cac\Delivery;
 use \horstoeko\ubl\entities\cbc\CityName;
 use \horstoeko\ubl\entities\main\Invoice;
+use horstoeko\stringmanagement\FileUtils;
 use \horstoeko\ubl\entities\cac\PartyName;
 use \horstoeko\ubl\entities\cac\TaxScheme;
 use \horstoeko\ubl\entities\cbc\CompanyID;
 use \horstoeko\ubl\entities\cbc\Telephone;
+use horstoeko\ubl\entities\cac\Attachment;
+use MimeTyper\Repository\MimeDbRepository;
 use \horstoeko\ubl\entities\cac\PayeeParty;
 use \horstoeko\ubl\entities\cbc\PostalZone;
 use \horstoeko\ubl\entities\cbc\StreetName;
+use \horstoeko\stringmanagement\StringUtils;
 use \horstoeko\ubl\entities\cbc\SalesOrderID;
 use \horstoeko\ubl\entities\cac\DeliveryParty;
 use \horstoeko\ubl\entities\cac\PostalAddress;
+use horstoeko\ubl\entities\cbc\BuyerReference;
 use \horstoeko\ubl\entities\cac\OrderReference;
 use \horstoeko\ubl\entities\cac\PartyTaxScheme;
 use \horstoeko\ubl\entities\cbc\ElectronicMail;
@@ -40,19 +45,25 @@ use \horstoeko\ubl\entities\cbc\InvoiceTypeCode;
 use \horstoeko\ubl\entities\cac\DeliveryLocation;
 use \horstoeko\ubl\entities\cac\PartyLegalEntity;
 use \horstoeko\ubl\entities\cbc\CountrySubentity;
+use \horstoeko\ubl\entities\cbc\DocumentTypeCode;
 use \horstoeko\ubl\entities\cbc\RegistrationName;
+use horstoeko\ubl\entities\cac\ExternalReference;
 use \horstoeko\ubl\entities\cbc\IdentificationCode;
+use horstoeko\ubl\entities\cbc\DocumentDescription;
 use \horstoeko\ubl\entities\cac\PartyIdentification;
 use \horstoeko\ubl\entities\cbc\AdditionalStreetName;
 use \horstoeko\ubl\entities\cbc\DocumentCurrencyCode;
 use \horstoeko\ubl\entities\cac\TaxRepresentativeParty;
 use \horstoeko\ubl\entities\cac\AccountingCustomerParty;
 use \horstoeko\ubl\entities\cac\AccountingSupplierParty;
-use \horstoeko\ubl\entities\cac\AdditionalDocumentReference;
 use \horstoeko\ubl\entities\cac\ContractDocumentReference;
-use horstoeko\ubl\entities\cbc\BuyerReference;
-use horstoeko\ubl\entities\cbc\DocumentDescription;
-use \horstoeko\ubl\entities\cbc\DocumentTypeCode;
+use \horstoeko\ubl\entities\cac\AdditionalDocumentReference;
+use horstoeko\ubl\entities\cac\BillingReference;
+use horstoeko\ubl\entities\cac\DespatchDocumentReference;
+use horstoeko\ubl\entities\cac\InvoiceDocumentReference;
+use horstoeko\ubl\entities\cac\ProjectReference;
+use horstoeko\ubl\entities\cac\ReceiptDocumentReference;
+use horstoeko\ubl\entities\cbc\EmbeddedDocumentBinaryObject;
 
 /**
  * Class representing the ubl invoice builder
@@ -71,6 +82,19 @@ class UblDocumentBuilder extends UblDocument
      * @var \horstoeko\ubl\entities\main\Invoice
      */
     protected $invoiceObject = null;
+
+    /**
+     * A list of supported mimetypes by binaryattachments
+     */
+    const SUPPORTEDTMIMETYPES = [
+        "application/pdf",
+        "image/png",
+        "image/jpeg",
+        "text/csv",
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "application/vnd.oasis.opendocument.spreadsheet",
+        "application/xml",
+    ];
 
     /**
      * Constructor
@@ -155,10 +179,18 @@ class UblDocumentBuilder extends UblDocument
      */
     public function setDocumentInformation(string $documentno, string $documenttypecode, DateTime $documentdate, string $invoiceCurrency): UblDocumentBuilder
     {
+        // Mandatory
+
         $this->invoiceObject->setID(new Id($documentno));
-        $this->invoiceObject->setInvoiceTypeCode(new InvoiceTypeCode($documenttypecode));
         $this->invoiceObject->setIssueDate($documentdate);
         $this->invoiceObject->setDocumentCurrencyCode(new DocumentCurrencyCode($invoiceCurrency));
+
+        // Optional
+
+        if (!StringUtils::stringIsNullOrEmpty($documenttypecode)) {
+            $this->invoiceObject->setInvoiceTypeCode(new InvoiceTypeCode($documenttypecode));
+        }
+
         return $this;
     }
 
@@ -171,7 +203,9 @@ class UblDocumentBuilder extends UblDocument
      */
     public function addDocumentNote(string $note): UblDocumentBuilder
     {
-        $this->invoiceObject->addToNote(new Note($note));
+        if (!StringUtils::stringIsNullOrEmpty($note)) {
+            $this->invoiceObject->addToNote(new Note($note));
+        }
         return $this;
     }
 
@@ -216,17 +250,17 @@ class UblDocumentBuilder extends UblDocument
      * is key information. Multiple seller IDs can be assigned or specified. They can be differentiated
      * by using different identification schemes. If no scheme is given, it should be known to the buyer
      * and seller, e.g. a previously exchanged, buyer-assigned identifier of the seller
-     * @param string|null $description
-     * Further legal information that is relevant for the seller
      * @return UblDocumentBuilder
      */
-    public function setDocumentSeller(string $name, ?string $id = null, ?string $description = null): UblDocumentBuilder
+    public function setDocumentSeller(string $name, ?string $id = null): UblDocumentBuilder
     {
         $accountingSupplierParty = $this->invoiceObject->getAccountingSupplierParty() ?? $this->invoiceObject->setAccountingSupplierParty((new AccountingSupplierParty())->setParty(new Party()))->getAccountingSupplierParty();
 
         $party = $accountingSupplierParty->getParty() ?? new Party();
         $party->addToPartyName((new PartyName())->setName((new Name($name))));
-        $party->addToPartyIdentification((new PartyIdentification())->setID(new Id($id)));
+        if (!StringUtils::stringIsNullOrEmpty($id)) {
+            $party->addToPartyIdentification((new PartyIdentification())->setID(new Id($id)));
+        }
 
         $accountingSupplierParty->setParty($party);
 
@@ -251,6 +285,10 @@ class UblDocumentBuilder extends UblDocument
      */
     public function addDocumentSellerGlobalId(?string $globalID = null, ?string $globalIDType = null): UblDocumentBuilder
     {
+        if (StringUtils::stringIsNullOrEmpty($globalID)) {
+            return $this;
+        }
+
         $accountingSupplierParty = $this->invoiceObject->getAccountingSupplierParty() ?? $this->invoiceObject->setAccountingSupplierParty((new AccountingSupplierParty())->setParty(new Party()))->getAccountingSupplierParty();
 
         $party = $accountingSupplierParty->getParty() ?? new Party();
@@ -277,6 +315,10 @@ class UblDocumentBuilder extends UblDocument
      */
     public function addDocumentSellerTaxRegistration(?string $taxregtype = null, ?string $taxregid = null): UblDocumentBuilder
     {
+        if (StringUtils::stringIsNullOrEmpty($taxregtype) || StringUtils::stringIsNullOrEmpty($taxregid)) {
+            return $this;
+        }
+
         $accountingSupplierParty = $this->invoiceObject->getAccountingSupplierParty() ?? $this->invoiceObject->setAccountingSupplierParty((new AccountingSupplierParty())->setParty(new Party()))->getAccountingSupplierParty();
 
         $party = $accountingSupplierParty->getParty() ?? new Party();
@@ -436,6 +478,10 @@ class UblDocumentBuilder extends UblDocument
      */
     public function addDocumentBuyerGlobalId(?string $globalID = null, ?string $globalIDType = null): UblDocumentBuilder
     {
+        if (StringUtils::stringIsNullOrEmpty($globalID)) {
+            return $this;
+        }
+
         $accountingCustomerParty = $this->invoiceObject->getAccountingCustomerParty() ?? $this->invoiceObject->setAccountingCustomerParty((new AccountingCustomerParty())->setParty(new Party()))->getAccountingCustomerParty();
 
         $party = $accountingCustomerParty->getParty() ?? new Party();
@@ -464,6 +510,10 @@ class UblDocumentBuilder extends UblDocument
      */
     public function addDocumentBuyerTaxRegistration(?string $taxregtype = null, ?string $taxregid = null): UblDocumentBuilder
     {
+        if (StringUtils::stringIsNullOrEmpty($taxregtype) || StringUtils::stringIsNullOrEmpty($taxregid)) {
+            return $this;
+        }
+
         $accountingCustomerParty = $this->invoiceObject->getAccountingCustomerParty() ?? $this->invoiceObject->setAccountingCustomerParty((new AccountingCustomerParty())->setParty(new Party()))->getAccountingCustomerParty();
 
         $party = $accountingCustomerParty->getParty() ?? new Party();
@@ -617,6 +667,10 @@ class UblDocumentBuilder extends UblDocument
      */
     public function addDocumentSellerTaxRepresentativeGlobalId(?string $globalID = null, ?string $globalIDType = null): UblDocumentBuilder
     {
+        if (StringUtils::stringIsNullOrEmpty($globalID)) {
+            return $this;
+        }
+
         $taxRepresentativeParty = $this->invoiceObject->getTaxRepresentativeParty() ?? $this->invoiceObject->setTaxRepresentativeParty(new TaxRepresentativeParty())->getTaxRepresentativeParty();
 
         $taxRepresentativeParty->addToPartyIdentification((new PartyIdentification())->setID((new Id($globalID))->setSchemeID($globalIDType)));
@@ -633,6 +687,10 @@ class UblDocumentBuilder extends UblDocument
      */
     public function addDocumentSellerTaxRepresentativeTaxRegistration(?string $taxregtype = null, ?string $taxregid = null): UblDocumentBuilder
     {
+        if (StringUtils::stringIsNullOrEmpty($taxregtype) || StringUtils::stringIsNullOrEmpty($taxregid)) {
+            return $this;
+        }
+
         $taxRepresentativeParty = $this->invoiceObject->getTaxRepresentativeParty() ?? $this->invoiceObject->setTaxRepresentativeParty(new TaxRepresentativeParty())->getTaxRepresentativeParty();
 
         $taxRepresentativeParty->addToPartyTaxScheme((new PartyTaxScheme())->setCompanyID((new CompanyID($taxregid)))->setTaxScheme((new TaxScheme())->setId(new Id($taxregtype))));
@@ -784,6 +842,10 @@ class UblDocumentBuilder extends UblDocument
      */
     public function addDocumentShipToGlobalId(?string $globalID = null, ?string $globalIDType = null): UblDocumentBuilder
     {
+        if (StringUtils::stringIsNullOrEmpty($globalID)) {
+            return $this;
+        }
+
         $delivery = $this->invoiceObject->getDelivery();
         $delivery = isset($delivery[0]) ? $delivery[0] : $this->invoiceObject->addToDelivery(new Delivery())->getDelivery()[0];
 
@@ -806,6 +868,10 @@ class UblDocumentBuilder extends UblDocument
      */
     public function addDocumentShipToTaxRegistration(?string $taxregtype = null, ?string $taxregid = null): UblDocumentBuilder
     {
+        if (StringUtils::stringIsNullOrEmpty($taxregtype) || StringUtils::stringIsNullOrEmpty($taxregid)) {
+            return $this;
+        }
+
         $delivery = $this->invoiceObject->getDelivery();
         $delivery = isset($delivery[0]) ? $delivery[0] : $this->invoiceObject->addToDelivery(new Delivery())->getDelivery()[0];
 
@@ -964,6 +1030,10 @@ class UblDocumentBuilder extends UblDocument
      */
     public function addDocumentPayeeGlobalId(?string $globalID = null, ?string $globalIDType = null): UblDocumentBuilder
     {
+        if (StringUtils::stringIsNullOrEmpty($globalID)) {
+            return $this;
+        }
+
         $payeeParty = $this->invoiceObject->getPayeeParty() ?? $this->invoiceObject->setPayeeParty((new PayeeParty()))->getPayeeParty();
 
         $payeeParty->addToPartyIdentification((new PartyIdentification())->setID((new Id($globalID))->setSchemeID($globalIDType)));
@@ -984,6 +1054,10 @@ class UblDocumentBuilder extends UblDocument
      */
     public function addDocumentPayeeTaxRegistration(?string $taxregtype = null, ?string $taxregid = null): UblDocumentBuilder
     {
+        if (StringUtils::stringIsNullOrEmpty($taxregtype) || StringUtils::stringIsNullOrEmpty($taxregid)) {
+            return $this;
+        }
+
         $payeeParty = $this->invoiceObject->getPayeeParty() ?? $this->invoiceObject->setPayeeParty((new PayeeParty()))->getPayeeParty();
 
         $payeeParty->addToPartyTaxScheme((new PartyTaxScheme())->setCompanyID((new CompanyID($taxregid)))->setTaxScheme((new TaxScheme())->setId(new Id($taxregtype))));
@@ -1198,27 +1272,148 @@ class UblDocumentBuilder extends UblDocument
      * Document date
      * @param string|null $binarydatafilename
      * Contains a file name of an attachment document embedded as a binary object
-     * @return ZugferdDocumentBuilder
+     * @return UblDocumentBuilder
      */
     public function addDocumentAdditionalReferencedDocument(string $issuerassignedid, ?string $typecode = null, ?string $uriid = null, ?string $name = null, ?string $reftypecode = null, ?DateTime $issueddate = null, ?string $binarydatafilename = null): UblDocumentBuilder
     {
         $additionalrefdoc = $this->invoiceObject->addToAdditionalDocumentReference(new AdditionalDocumentReference())->getAdditionalDocumentReference();
         $additionalrefdoc = $additionalrefdoc[count($additionalrefdoc) - 1];
 
-        if (!StringUtils::stringIsNullOrEmpty($issuerassignedid))
+        if (!StringUtils::stringIsNullOrEmpty($issuerassignedid)) {
             $additionalrefdoc->setID(new Id($issuerassignedid));
+        }
 
-        if (!StringUtils::stringIsNullOrEmpty($name))
+        if (!StringUtils::stringIsNullOrEmpty($name)) {
             $additionalrefdoc->addToDocumentDescription(new DocumentDescription($name));
+        }
 
-        if (!StringUtils::stringIsNullOrEmpty($typecode))
+        if (!StringUtils::stringIsNullOrEmpty($typecode)) {
             $additionalrefdoc->setDocumentTypeCode(new DocumentTypeCode($typecode));
+        }
 
         if ($issueddate != null)
             $additionalrefdoc->setIssueDate($issueddate);
 
+        if (!StringUtils::stringIsNullOrEmpty($binarydatafilename)) {
+            if (FileUtils::fileExists($binarydatafilename)) {
+                $mimetyper = new MimeDbRepository();
+                $mimeType = $mimetyper->findType(FileUtils::getFileExtension($binarydatafilename));
+
+                if (in_array($mimeType, self::SUPPORTEDTMIMETYPES)) {
+                    $content = FileUtils::fileToBase64($binarydatafilename);
+                    $embededObject = (new EmbeddedDocumentBinaryObject($content))->setMimeCode($mimeType)->setFilename(FileUtils::getFilenameWithExtension($binarydatafilename));
+                    $attachment = (new Attachment())->setEmbeddedDocumentBinaryObject($embededObject);
+                    $additionalrefdoc->setAttachment($attachment);
+                } else {
+                    throw new \Exception(sprintf("Invalid attachment. Mimetype %s not supported", $mimeType));
+                }
+            }
+        } elseif (!StringUtils::stringIsNullOrEmpty($uriid)) {
+            $attachment = (new Attachment())->setExternalReference((new ExternalReference())->setURI(new URI($uriid)));
+            $additionalrefdoc->setAttachment($attachment);
+        }
+
         return $this;
     }
+
+    /**
+     * Set a Reference to the previous invoice
+     *
+     * __Note__: To be used if:
+     *  - a previous invoice is corrected
+     *  - reference is made to previous partial invoices from a final invoice
+     *  - Reference is made to previous invoices for advance payments from a final invoice
+     *
+     * @param string $issuerassignedid
+     * Number of the previous invoice
+     * @param DateTime|null $issueddate
+     * Date of the previous invoice
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentInvoiceReferencedDocument(string $issuerassignedid, ?DateTime $issueddate = null): UblDocumentBuilder
+    {
+        $billingReference = isset($this->invoiceObject->getBillingReference()[0]) ?
+            $this->invoiceObject->getBillingReference()[0] :
+            $this->invoiceObject->addToBillingReference(new BillingReference())->getBillingReference()[0];
+
+        $invoiceReference = $billingReference->getInvoiceDocumentReference() != null ?
+            $billingReference->getInvoiceDocumentReference :
+            $billingReference->setInvoiceDocumentReference(new InvoiceDocumentReference())->getInvoiceDocumentReference();
+
+        $invoiceReference->setId(new Id($issuerassignedid));
+        if ($issueddate != null) $invoiceReference->setIssueDate($issueddate);
+
+        return $this;
+    }
+
+    /**
+     * Set Details of a project reference
+     *
+     * @param string $id
+     * Project number/id
+     * @param DateTime|null $date
+     * Project date
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentProcuringProject(string $id, ?DateTime $date = null): UblDocumentBuilder
+    {
+        $procuringproject = isset($this->invoiceObject->getProjectReference()[0]) ?
+            $this->invoiceObject->getProjectReference()[0] :
+            $this->invoiceObject->addToProjectReference(new ProjectReference())->getProjectReference()[0];
+
+        $procuringproject->setID(new ID($id));
+        if ($date != null) $procuringproject->setIssueDate($date);
+
+        return $this;
+    }
+
+    // TODO: UltimateCustomerOrderReferencedDocument goes here...
+
+    // TODO: SupplyChainEvent goes here...
+
+    /**
+     * Set detailed information on the associated shipping notification
+     *
+     * @param string $issuerassignedid
+     * Shipping notification reference
+     * @param DateTime|null $issueddate
+     * Shipping notification date
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentDespatchAdviceReferencedDocument(string $issuerassignedid, ?DateTime $issueddate = null): UblDocumentBuilder
+    {
+        $despatchDocumentReference = isset($this->invoiceObject->getDespatchDocumentReference()[0]) ?
+            $this->invoiceObject->getDespatchDocumentReference()[0] :
+            $this->invoiceObject->addToDespatchDocumentReference(new DespatchDocumentReference())->getDespatchDocumentReference()[0];
+
+        $despatchDocumentReference->setID(new ID($issuerassignedid));
+        if ($issueddate != null) $despatchDocumentReference->setIssueDate($issueddate);
+
+        return $this;
+    }
+
+    /**
+     * Set detailed information on the associated goods receipt notification
+     *
+     * @param string $issuerassignedid
+     * An identifier for a referenced goods receipt notification (Goods receipt number)
+     * @param DateTime|null $issueddate
+     * Goods receipt date
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentReceivingAdviceReferencedDocument(string $issuerassignedid, ?DateTime $issueddate = null): UblDocumentBuilder
+    {
+        $receiptDocumentReference = isset($this->invoiceObject->getReceiptDocumentReference()[0]) ?
+            $this->invoiceObject->getReceiptDocumentReference()[0] :
+            $this->invoiceObject->addToReceiptDocumentReference(new ReceiptDocumentReference())->getReceiptDocumentReference()[0];
+
+        $receiptDocumentReference->setID(new ID($issuerassignedid));
+        if ($issueddate != null) $receiptDocumentReference->setIssueDate($issueddate);
+
+        return $this;
+    }
+
+    // TODO: DeliveryNoteReferencedDocument goes here...
 
     /**
      * Creates a new instance of the invoice class
