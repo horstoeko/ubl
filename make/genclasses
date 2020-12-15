@@ -7,4 +7,4 @@ if [ "$CURRENTUSER" != "www-data" ]; then
     exit 1
 fi
 
-./../vendor/bin/xsd2php convert ./config.yml ./../src/schema/maindoc/UBL-Invoice-2.0.xsd -vvv
+./../vendor/bin/xsd2php convert ./config.yml ./../src/schema/maindoc/UBL-Invoice-2.1.xsd -vvv

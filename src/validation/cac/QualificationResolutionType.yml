@@ -1,0 +1,15 @@
+horstoeko\ubl\entities\cac\QualificationResolutionType:
+    properties:
+        admissionCode:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        resolutionDate:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        procurementProjectLot:
+            -
+                Valid: null

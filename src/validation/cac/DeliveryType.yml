@@ -6,6 +6,9 @@ horstoeko\ubl\entities\cac\DeliveryType:
         deliveryLocation:
             -
                 Valid: null
+        alternativeDeliveryLocation:
+            -
+                Valid: null
         requestedDeliveryPeriod:
             -
                 Valid: null
@@ -15,9 +18,27 @@ horstoeko\ubl\entities\cac\DeliveryType:
         estimatedDeliveryPeriod:
             -
                 Valid: null
+        carrierParty:
+            -
+                Valid: null
         deliveryParty:
             -
                 Valid: null
+        notifyParty:
+            -
+                Valid: null
         despatch:
+            -
+                Valid: null
+        deliveryTerms:
+            -
+                Valid: null
+        minimumDeliveryUnit:
+            -
+                Valid: null
+        maximumDeliveryUnit:
+            -
+                Valid: null
+        shipment:
             -
                 Valid: null

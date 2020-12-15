@@ -1,0 +1,9 @@
+horstoeko\ubl\entities\xades\UnsignedDataObjectPropertiesType:
+    properties:
+        unsignedDataObjectProperty:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

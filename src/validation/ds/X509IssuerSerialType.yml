@@ -1,0 +1,17 @@
+horstoeko\ubl\entities\ds\X509IssuerSerialType:
+    properties:
+        x509IssuerName:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        x509SerialNumber:
+            -
+                Regex:
+                    pattern: '~[\-+]?[0-9]+~'
+                    groups:
+                        - xsd_rules
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

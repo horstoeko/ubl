@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Hazardous Goods Transit. Details
- *  Information about Hazardous Goods Transit.
+ *  A class to describe hazardous goods in transit.
  *  Hazardous Goods Transit
  * XSD Type: HazardousGoodsTransitType
  */
@@ -17,7 +17,7 @@ class HazardousGoodsTransitType
     /**
      * BBIE
      *  Hazardous Goods Transit. Transport Emergency Card Code. Code
-     *  The identifier for a transport emergency card, describing the actions to be taken in an emergency in transporting the Hazardous Goods. May be the identity number of a hazardous emergency response plan assigned by the appropriate authority.
+     *  An identifier for a transport emergency card describing the actions to be taken in an emergency in transporting the hazardous goods. It may be the identity number of a hazardous emergency response plan assigned by the appropriate authority.
      *  0..1
      *  Hazardous Goods Transit
      *  Transport Emergency Card Code
@@ -32,7 +32,7 @@ class HazardousGoodsTransitType
     /**
      * BBIE
      *  Hazardous Goods Transit. Packing Criteria Code. Code
-     *  A code identifying the packaging requirement for the transportation of the Hazardous Goods as assigned by IATA/IMDB/ADR/RID etc.
+     *  A code signifying the packaging requirement for transportation of the hazardous goods as assigned by IATA, IMDB, ADR, RID etc.
      *  0..1
      *  Hazardous Goods Transit
      *  Packing Criteria Code
@@ -47,7 +47,7 @@ class HazardousGoodsTransitType
     /**
      * BBIE
      *  Hazardous Goods Transit. Hazardous Regulation Code. Code
-     *  The identifier for a set of legal regulations that govern the transportation of the Hazardous Goods, expressed as a code.
+     *  A code signifying the set of legal regulations governing the transportation of the hazardous goods.
      *  0..1
      *  Hazardous Goods Transit
      *  Hazardous Regulation Code
@@ -61,7 +61,7 @@ class HazardousGoodsTransitType
     /**
      * BBIE
      *  Hazardous Goods Transit. Inhalation Toxicity Zone Code. Code
-     *  An identifier for the Inhalation Toxicity Hazard Zone for the Hazardous Goods, as defined by the US Department of Transportation, expressed as a code.
+     *  A code signifying the Inhalation Toxicity Hazard Zone for the hazardous goods, as defined by the US Department of Transportation.
      *  0..1
      *  Hazardous Goods Transit
      *  Inhalation Toxicity Zone Code
@@ -75,7 +75,7 @@ class HazardousGoodsTransitType
     /**
      * BBIE
      *  Hazardous Goods Transit. Transport Authorization Code. Code
-     *  Code specifying the authorization for the transportation of hazardous cargo.
+     *  A code signifying authorization for the transportation of hazardous cargo.
      *  0..1
      *  Hazardous Goods Transit
      *  Transport Authorization Code
@@ -90,10 +90,11 @@ class HazardousGoodsTransitType
     /**
      * ASBIE
      *  Hazardous Goods Transit. Maximum_ Temperature. Temperature
-     *  An association to Maximum Temperature (at which the Hazardous Goods can be safely transported).
+     *  The maximum temperature at which the hazardous goods can safely be transported.
      *  0..1
      *  Hazardous Goods Transit
      *  Maximum
+     *  Temperature
      *  Temperature
      *  Temperature
      *
@@ -104,10 +105,11 @@ class HazardousGoodsTransitType
     /**
      * ASBIE
      *  Hazardous Goods Transit. Minimum_ Temperature. Temperature
-     *  An association to Minimum Temperature (at which the Hazardous Goods can be safely transported).
+     *  The minimum temperature at which the hazardous goods can safely be transported.
      *  0..1
      *  Hazardous Goods Transit
      *  Minimum
+     *  Temperature
      *  Temperature
      *  Temperature
      *
@@ -120,7 +122,7 @@ class HazardousGoodsTransitType
      *
      * BBIE
      *  Hazardous Goods Transit. Transport Emergency Card Code. Code
-     *  The identifier for a transport emergency card, describing the actions to be taken in an emergency in transporting the Hazardous Goods. May be the identity number of a hazardous emergency response plan assigned by the appropriate authority.
+     *  An identifier for a transport emergency card describing the actions to be taken in an emergency in transporting the hazardous goods. It may be the identity number of a hazardous emergency response plan assigned by the appropriate authority.
      *  0..1
      *  Hazardous Goods Transit
      *  Transport Emergency Card Code
@@ -140,7 +142,7 @@ class HazardousGoodsTransitType
      *
      * BBIE
      *  Hazardous Goods Transit. Transport Emergency Card Code. Code
-     *  The identifier for a transport emergency card, describing the actions to be taken in an emergency in transporting the Hazardous Goods. May be the identity number of a hazardous emergency response plan assigned by the appropriate authority.
+     *  An identifier for a transport emergency card describing the actions to be taken in an emergency in transporting the hazardous goods. It may be the identity number of a hazardous emergency response plan assigned by the appropriate authority.
      *  0..1
      *  Hazardous Goods Transit
      *  Transport Emergency Card Code
@@ -162,7 +164,7 @@ class HazardousGoodsTransitType
      *
      * BBIE
      *  Hazardous Goods Transit. Packing Criteria Code. Code
-     *  A code identifying the packaging requirement for the transportation of the Hazardous Goods as assigned by IATA/IMDB/ADR/RID etc.
+     *  A code signifying the packaging requirement for transportation of the hazardous goods as assigned by IATA, IMDB, ADR, RID etc.
      *  0..1
      *  Hazardous Goods Transit
      *  Packing Criteria Code
@@ -182,7 +184,7 @@ class HazardousGoodsTransitType
      *
      * BBIE
      *  Hazardous Goods Transit. Packing Criteria Code. Code
-     *  A code identifying the packaging requirement for the transportation of the Hazardous Goods as assigned by IATA/IMDB/ADR/RID etc.
+     *  A code signifying the packaging requirement for transportation of the hazardous goods as assigned by IATA, IMDB, ADR, RID etc.
      *  0..1
      *  Hazardous Goods Transit
      *  Packing Criteria Code
@@ -204,7 +206,7 @@ class HazardousGoodsTransitType
      *
      * BBIE
      *  Hazardous Goods Transit. Hazardous Regulation Code. Code
-     *  The identifier for a set of legal regulations that govern the transportation of the Hazardous Goods, expressed as a code.
+     *  A code signifying the set of legal regulations governing the transportation of the hazardous goods.
      *  0..1
      *  Hazardous Goods Transit
      *  Hazardous Regulation Code
@@ -223,7 +225,7 @@ class HazardousGoodsTransitType
      *
      * BBIE
      *  Hazardous Goods Transit. Hazardous Regulation Code. Code
-     *  The identifier for a set of legal regulations that govern the transportation of the Hazardous Goods, expressed as a code.
+     *  A code signifying the set of legal regulations governing the transportation of the hazardous goods.
      *  0..1
      *  Hazardous Goods Transit
      *  Hazardous Regulation Code
@@ -244,7 +246,7 @@ class HazardousGoodsTransitType
      *
      * BBIE
      *  Hazardous Goods Transit. Inhalation Toxicity Zone Code. Code
-     *  An identifier for the Inhalation Toxicity Hazard Zone for the Hazardous Goods, as defined by the US Department of Transportation, expressed as a code.
+     *  A code signifying the Inhalation Toxicity Hazard Zone for the hazardous goods, as defined by the US Department of Transportation.
      *  0..1
      *  Hazardous Goods Transit
      *  Inhalation Toxicity Zone Code
@@ -263,7 +265,7 @@ class HazardousGoodsTransitType
      *
      * BBIE
      *  Hazardous Goods Transit. Inhalation Toxicity Zone Code. Code
-     *  An identifier for the Inhalation Toxicity Hazard Zone for the Hazardous Goods, as defined by the US Department of Transportation, expressed as a code.
+     *  A code signifying the Inhalation Toxicity Hazard Zone for the hazardous goods, as defined by the US Department of Transportation.
      *  0..1
      *  Hazardous Goods Transit
      *  Inhalation Toxicity Zone Code
@@ -284,7 +286,7 @@ class HazardousGoodsTransitType
      *
      * BBIE
      *  Hazardous Goods Transit. Transport Authorization Code. Code
-     *  Code specifying the authorization for the transportation of hazardous cargo.
+     *  A code signifying authorization for the transportation of hazardous cargo.
      *  0..1
      *  Hazardous Goods Transit
      *  Transport Authorization Code
@@ -304,7 +306,7 @@ class HazardousGoodsTransitType
      *
      * BBIE
      *  Hazardous Goods Transit. Transport Authorization Code. Code
-     *  Code specifying the authorization for the transportation of hazardous cargo.
+     *  A code signifying authorization for the transportation of hazardous cargo.
      *  0..1
      *  Hazardous Goods Transit
      *  Transport Authorization Code
@@ -326,10 +328,11 @@ class HazardousGoodsTransitType
      *
      * ASBIE
      *  Hazardous Goods Transit. Maximum_ Temperature. Temperature
-     *  An association to Maximum Temperature (at which the Hazardous Goods can be safely transported).
+     *  The maximum temperature at which the hazardous goods can safely be transported.
      *  0..1
      *  Hazardous Goods Transit
      *  Maximum
+     *  Temperature
      *  Temperature
      *  Temperature
      *
@@ -345,10 +348,11 @@ class HazardousGoodsTransitType
      *
      * ASBIE
      *  Hazardous Goods Transit. Maximum_ Temperature. Temperature
-     *  An association to Maximum Temperature (at which the Hazardous Goods can be safely transported).
+     *  The maximum temperature at which the hazardous goods can safely be transported.
      *  0..1
      *  Hazardous Goods Transit
      *  Maximum
+     *  Temperature
      *  Temperature
      *  Temperature
      *
@@ -366,10 +370,11 @@ class HazardousGoodsTransitType
      *
      * ASBIE
      *  Hazardous Goods Transit. Minimum_ Temperature. Temperature
-     *  An association to Minimum Temperature (at which the Hazardous Goods can be safely transported).
+     *  The minimum temperature at which the hazardous goods can safely be transported.
      *  0..1
      *  Hazardous Goods Transit
      *  Minimum
+     *  Temperature
      *  Temperature
      *  Temperature
      *
@@ -385,10 +390,11 @@ class HazardousGoodsTransitType
      *
      * ASBIE
      *  Hazardous Goods Transit. Minimum_ Temperature. Temperature
-     *  An association to Minimum Temperature (at which the Hazardous Goods can be safely transported).
+     *  The minimum temperature at which the hazardous goods can safely be transported.
      *  0..1
      *  Hazardous Goods Transit
      *  Minimum
+     *  Temperature
      *  Temperature
      *  Temperature
      *

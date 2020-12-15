@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Period. Details
- *  Information about a period of time.
+ *  A class to describe a period of time.
  *  Period
  * XSD Type: PeriodType
  */
@@ -17,7 +17,7 @@ class PeriodType
     /**
      * BBIE
      *  Period. Start Date. Date
-     *  The start date of the period.
+     *  The date on which this period begins.
      *  0..1
      *  Period
      *  Start Date
@@ -31,7 +31,7 @@ class PeriodType
     /**
      * BBIE
      *  Period. Start Time. Time
-     *  The start time of the period.
+     *  The time at which this period begins.
      *  0..1
      *  Period
      *  Start Time
@@ -45,7 +45,7 @@ class PeriodType
     /**
      * BBIE
      *  Period. End Date. Date
-     *  The end date of the period.
+     *  The date on which this period ends.
      *  0..1
      *  Period
      *  End Date
@@ -59,7 +59,7 @@ class PeriodType
     /**
      * BBIE
      *  Period. End Time. Time
-     *  The end time of the period.
+     *  The time at which this period ends.
      *  0..1
      *  Period
      *  End Time
@@ -73,7 +73,7 @@ class PeriodType
     /**
      * BBIE
      *  Period. Duration. Measure
-     *  The duration of a period, expressed as a code; ISO 8601.
+     *  The duration of this period, expressed as an ISO 8601 code.
      *  0..1
      *  Period
      *  Duration
@@ -87,7 +87,7 @@ class PeriodType
     /**
      * BBIE
      *  Period. Description Code. Code
-     *  A description of the period, expressed as a code.
+     *  A description of this period, expressed as a code.
      *  0..n
      *  Period
      *  Description Code
@@ -103,7 +103,7 @@ class PeriodType
     /**
      * BBIE
      *  Period. Description. Text
-     *  A description of the period.
+     *  A description of this period, expressed as text.
      *  0..n
      *  Period
      *  Description
@@ -121,7 +121,7 @@ class PeriodType
      *
      * BBIE
      *  Period. Start Date. Date
-     *  The start date of the period.
+     *  The date on which this period begins.
      *  0..1
      *  Period
      *  Start Date
@@ -140,7 +140,7 @@ class PeriodType
      *
      * BBIE
      *  Period. Start Date. Date
-     *  The start date of the period.
+     *  The date on which this period begins.
      *  0..1
      *  Period
      *  Start Date
@@ -161,7 +161,7 @@ class PeriodType
      *
      * BBIE
      *  Period. Start Time. Time
-     *  The start time of the period.
+     *  The time at which this period begins.
      *  0..1
      *  Period
      *  Start Time
@@ -180,7 +180,7 @@ class PeriodType
      *
      * BBIE
      *  Period. Start Time. Time
-     *  The start time of the period.
+     *  The time at which this period begins.
      *  0..1
      *  Period
      *  Start Time
@@ -201,7 +201,7 @@ class PeriodType
      *
      * BBIE
      *  Period. End Date. Date
-     *  The end date of the period.
+     *  The date on which this period ends.
      *  0..1
      *  Period
      *  End Date
@@ -220,7 +220,7 @@ class PeriodType
      *
      * BBIE
      *  Period. End Date. Date
-     *  The end date of the period.
+     *  The date on which this period ends.
      *  0..1
      *  Period
      *  End Date
@@ -241,7 +241,7 @@ class PeriodType
      *
      * BBIE
      *  Period. End Time. Time
-     *  The end time of the period.
+     *  The time at which this period ends.
      *  0..1
      *  Period
      *  End Time
@@ -260,7 +260,7 @@ class PeriodType
      *
      * BBIE
      *  Period. End Time. Time
-     *  The end time of the period.
+     *  The time at which this period ends.
      *  0..1
      *  Period
      *  End Time
@@ -281,7 +281,7 @@ class PeriodType
      *
      * BBIE
      *  Period. Duration. Measure
-     *  The duration of a period, expressed as a code; ISO 8601.
+     *  The duration of this period, expressed as an ISO 8601 code.
      *  0..1
      *  Period
      *  Duration
@@ -300,7 +300,7 @@ class PeriodType
      *
      * BBIE
      *  Period. Duration. Measure
-     *  The duration of a period, expressed as a code; ISO 8601.
+     *  The duration of this period, expressed as an ISO 8601 code.
      *  0..1
      *  Period
      *  Duration
@@ -321,7 +321,7 @@ class PeriodType
      *
      * BBIE
      *  Period. Description Code. Code
-     *  A description of the period, expressed as a code.
+     *  A description of this period, expressed as a code.
      *  0..n
      *  Period
      *  Description Code
@@ -342,7 +342,7 @@ class PeriodType
      *
      * BBIE
      *  Period. Description Code. Code
-     *  A description of the period, expressed as a code.
+     *  A description of this period, expressed as a code.
      *  0..n
      *  Period
      *  Description Code
@@ -362,7 +362,7 @@ class PeriodType
      *
      * BBIE
      *  Period. Description Code. Code
-     *  A description of the period, expressed as a code.
+     *  A description of this period, expressed as a code.
      *  0..n
      *  Period
      *  Description Code
@@ -382,7 +382,7 @@ class PeriodType
      *
      * BBIE
      *  Period. Description Code. Code
-     *  A description of the period, expressed as a code.
+     *  A description of this period, expressed as a code.
      *  0..n
      *  Period
      *  Description Code
@@ -401,7 +401,7 @@ class PeriodType
      *
      * BBIE
      *  Period. Description Code. Code
-     *  A description of the period, expressed as a code.
+     *  A description of this period, expressed as a code.
      *  0..n
      *  Period
      *  Description Code
@@ -422,7 +422,7 @@ class PeriodType
      *
      * BBIE
      *  Period. Description. Text
-     *  A description of the period.
+     *  A description of this period, expressed as text.
      *  0..n
      *  Period
      *  Description
@@ -443,7 +443,7 @@ class PeriodType
      *
      * BBIE
      *  Period. Description. Text
-     *  A description of the period.
+     *  A description of this period, expressed as text.
      *  0..n
      *  Period
      *  Description
@@ -463,7 +463,7 @@ class PeriodType
      *
      * BBIE
      *  Period. Description. Text
-     *  A description of the period.
+     *  A description of this period, expressed as text.
      *  0..n
      *  Period
      *  Description
@@ -483,7 +483,7 @@ class PeriodType
      *
      * BBIE
      *  Period. Description. Text
-     *  A description of the period.
+     *  A description of this period, expressed as text.
      *  0..n
      *  Period
      *  Description
@@ -502,7 +502,7 @@ class PeriodType
      *
      * BBIE
      *  Period. Description. Text
-     *  A description of the period.
+     *  A description of this period, expressed as text.
      *  0..n
      *  Period
      *  Description

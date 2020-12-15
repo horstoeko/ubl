@@ -1,0 +1,257 @@
+horstoeko\ubl\entities\cac\TenderLineType:
+    properties:
+        iD:
+            expose: true
+            access_type: public_method
+            serialized_name: ID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getID
+                setter: setID
+            type: horstoeko\ubl\entities\cbc\ID
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: Note
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getNote
+                setter: setNote
+            xml_list:
+                inline: true
+                entry_name: Note
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Note>
+        quantity:
+            expose: true
+            access_type: public_method
+            serialized_name: Quantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getQuantity
+                setter: setQuantity
+            type: horstoeko\ubl\entities\cbc\Quantity
+        lineExtensionAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: LineExtensionAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getLineExtensionAmount
+                setter: setLineExtensionAmount
+            type: horstoeko\ubl\entities\cbc\LineExtensionAmount
+        totalTaxAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: TotalTaxAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTotalTaxAmount
+                setter: setTotalTaxAmount
+            type: horstoeko\ubl\entities\cbc\TotalTaxAmount
+        orderableUnit:
+            expose: true
+            access_type: public_method
+            serialized_name: OrderableUnit
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getOrderableUnit
+                setter: setOrderableUnit
+            type: horstoeko\ubl\entities\cbc\OrderableUnit
+        contentUnitQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: ContentUnitQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getContentUnitQuantity
+                setter: setContentUnitQuantity
+            type: horstoeko\ubl\entities\cbc\ContentUnitQuantity
+        orderQuantityIncrementNumeric:
+            expose: true
+            access_type: public_method
+            serialized_name: OrderQuantityIncrementNumeric
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getOrderQuantityIncrementNumeric
+                setter: setOrderQuantityIncrementNumeric
+            type: horstoeko\ubl\entities\cbc\OrderQuantityIncrementNumeric
+        minimumOrderQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: MinimumOrderQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMinimumOrderQuantity
+                setter: setMinimumOrderQuantity
+            type: horstoeko\ubl\entities\cbc\MinimumOrderQuantity
+        maximumOrderQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: MaximumOrderQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMaximumOrderQuantity
+                setter: setMaximumOrderQuantity
+            type: horstoeko\ubl\entities\cbc\MaximumOrderQuantity
+        warrantyInformation:
+            expose: true
+            access_type: public_method
+            serialized_name: WarrantyInformation
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getWarrantyInformation
+                setter: setWarrantyInformation
+            xml_list:
+                inline: true
+                entry_name: WarrantyInformation
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\WarrantyInformation>
+        packLevelCode:
+            expose: true
+            access_type: public_method
+            serialized_name: PackLevelCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPackLevelCode
+                setter: setPackLevelCode
+            type: horstoeko\ubl\entities\cbc\PackLevelCode
+        documentReference:
+            expose: true
+            access_type: public_method
+            serialized_name: DocumentReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getDocumentReference
+                setter: setDocumentReference
+            xml_list:
+                inline: true
+                entry_name: DocumentReference
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\DocumentReference>
+        item:
+            expose: true
+            access_type: public_method
+            serialized_name: Item
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getItem
+                setter: setItem
+            type: horstoeko\ubl\entities\cac\Item
+        offeredItemLocationQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: OfferedItemLocationQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getOfferedItemLocationQuantity
+                setter: setOfferedItemLocationQuantity
+            xml_list:
+                inline: true
+                entry_name: OfferedItemLocationQuantity
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\OfferedItemLocationQuantity>
+        replacementRelatedItem:
+            expose: true
+            access_type: public_method
+            serialized_name: ReplacementRelatedItem
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getReplacementRelatedItem
+                setter: setReplacementRelatedItem
+            xml_list:
+                inline: true
+                entry_name: ReplacementRelatedItem
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\ReplacementRelatedItem>
+        warrantyParty:
+            expose: true
+            access_type: public_method
+            serialized_name: WarrantyParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getWarrantyParty
+                setter: setWarrantyParty
+            type: horstoeko\ubl\entities\cac\WarrantyParty
+        warrantyValidityPeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: WarrantyValidityPeriod
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getWarrantyValidityPeriod
+                setter: setWarrantyValidityPeriod
+            type: horstoeko\ubl\entities\cac\WarrantyValidityPeriod
+        subTenderLine:
+            expose: true
+            access_type: public_method
+            serialized_name: SubTenderLine
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getSubTenderLine
+                setter: setSubTenderLine
+            xml_list:
+                inline: true
+                entry_name: SubTenderLine
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\SubTenderLine>
+        callForTendersLineReference:
+            expose: true
+            access_type: public_method
+            serialized_name: CallForTendersLineReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getCallForTendersLineReference
+                setter: setCallForTendersLineReference
+            type: horstoeko\ubl\entities\cac\CallForTendersLineReference
+        callForTendersDocumentReference:
+            expose: true
+            access_type: public_method
+            serialized_name: CallForTendersDocumentReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getCallForTendersDocumentReference
+                setter: setCallForTendersDocumentReference
+            type: horstoeko\ubl\entities\cac\CallForTendersDocumentReference

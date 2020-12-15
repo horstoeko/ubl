@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Location Coordinate. Details
- *  Information about physical (geographical) location.
+ *  A class for defining a set of geographical coordinates (apparently misnamed).
  *  Location Coordinate
  * XSD Type: LocationCoordinateType
  */
@@ -17,7 +17,7 @@ class LocationCoordinateType
     /**
      * BBIE
      *  Location Coordinate. Coordinate System Code. Code
-     *  An identifier for the location system used.
+     *  A code signifying the location system used.
      *  0..1
      *  Location Coordinate
      *  Coordinate System Code
@@ -31,7 +31,7 @@ class LocationCoordinateType
     /**
      * BBIE
      *  Location Coordinate. Latitude_ Degrees. Measure
-     *  The measure of latitude in degrees.
+     *  The degree component of a latitude measured in degrees and minutes.
      *  0..1
      *  Location Coordinate
      *  Latitude
@@ -46,7 +46,7 @@ class LocationCoordinateType
     /**
      * BBIE
      *  Location Coordinate. Latitude_ Minutes. Measure
-     *  The measure of latitude in minutes.
+     *  The minutes component of a latitude measured in degrees and minutes (modulo 60).
      *  0..1
      *  Location Coordinate
      *  Latitude
@@ -61,11 +61,12 @@ class LocationCoordinateType
     /**
      * BBIE
      *  Location Coordinate. Latitude Direction Code. Code
-     *  The direction of latitude measurement from the equator.
+     *  A code signifying the direction of latitude measurement from the equator (north or south).
      *  0..1
      *  Location Coordinate
      *  Latitude Direction Code
      *  Code
+     *  Latitude Direction
      *  Latitude Direction_ Code. Type
      *
      * @var \horstoeko\ubl\entities\cbc\LatitudeDirectionCode $latitudeDirectionCode
@@ -75,7 +76,7 @@ class LocationCoordinateType
     /**
      * BBIE
      *  Location Coordinate. Longitude_ Degrees. Measure
-     *  The measure of longitude in degrees.
+     *  The degree component of a longitude measured in degrees and minutes.
      *  0..1
      *  Location Coordinate
      *  Longitude
@@ -90,7 +91,7 @@ class LocationCoordinateType
     /**
      * BBIE
      *  Location Coordinate. Longitude_ Minutes. Measure
-     *  The measure of longitude in minutes.
+     *  The minutes component of a longitude measured in degrees and minutes (modulo 60).
      *  0..1
      *  Location Coordinate
      *  Longitude
@@ -105,11 +106,12 @@ class LocationCoordinateType
     /**
      * BBIE
      *  Location Coordinate. Longitude Direction Code. Code
-     *  The direction of longitude measurement from the meridian.
+     *  A code signifying the direction of longitude measurement from the prime meridian (east or west).
      *  0..1
      *  Location Coordinate
      *  Longitude Direction Code
      *  Code
+     *  Longitude Direction
      *  Longitude Direction_ Code. Type
      *
      * @var \horstoeko\ubl\entities\cbc\LongitudeDirectionCode $longitudeDirectionCode
@@ -117,11 +119,25 @@ class LocationCoordinateType
     private $longitudeDirectionCode = null;
 
     /**
+     * BBIE
+     *  Location Coordinate. Altitude. Measure
+     *  The altitude of the location.
+     *  0..1
+     *  Location Coordinate
+     *  Altitude
+     *  Measure
+     *  Measure. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\AltitudeMeasure $altitudeMeasure
+     */
+    private $altitudeMeasure = null;
+
+    /**
      * Gets as coordinateSystemCode
      *
      * BBIE
      *  Location Coordinate. Coordinate System Code. Code
-     *  An identifier for the location system used.
+     *  A code signifying the location system used.
      *  0..1
      *  Location Coordinate
      *  Coordinate System Code
@@ -140,7 +156,7 @@ class LocationCoordinateType
      *
      * BBIE
      *  Location Coordinate. Coordinate System Code. Code
-     *  An identifier for the location system used.
+     *  A code signifying the location system used.
      *  0..1
      *  Location Coordinate
      *  Coordinate System Code
@@ -161,7 +177,7 @@ class LocationCoordinateType
      *
      * BBIE
      *  Location Coordinate. Latitude_ Degrees. Measure
-     *  The measure of latitude in degrees.
+     *  The degree component of a latitude measured in degrees and minutes.
      *  0..1
      *  Location Coordinate
      *  Latitude
@@ -181,7 +197,7 @@ class LocationCoordinateType
      *
      * BBIE
      *  Location Coordinate. Latitude_ Degrees. Measure
-     *  The measure of latitude in degrees.
+     *  The degree component of a latitude measured in degrees and minutes.
      *  0..1
      *  Location Coordinate
      *  Latitude
@@ -203,7 +219,7 @@ class LocationCoordinateType
      *
      * BBIE
      *  Location Coordinate. Latitude_ Minutes. Measure
-     *  The measure of latitude in minutes.
+     *  The minutes component of a latitude measured in degrees and minutes (modulo 60).
      *  0..1
      *  Location Coordinate
      *  Latitude
@@ -223,7 +239,7 @@ class LocationCoordinateType
      *
      * BBIE
      *  Location Coordinate. Latitude_ Minutes. Measure
-     *  The measure of latitude in minutes.
+     *  The minutes component of a latitude measured in degrees and minutes (modulo 60).
      *  0..1
      *  Location Coordinate
      *  Latitude
@@ -245,11 +261,12 @@ class LocationCoordinateType
      *
      * BBIE
      *  Location Coordinate. Latitude Direction Code. Code
-     *  The direction of latitude measurement from the equator.
+     *  A code signifying the direction of latitude measurement from the equator (north or south).
      *  0..1
      *  Location Coordinate
      *  Latitude Direction Code
      *  Code
+     *  Latitude Direction
      *  Latitude Direction_ Code. Type
      *
      * @return \horstoeko\ubl\entities\cbc\LatitudeDirectionCode
@@ -264,11 +281,12 @@ class LocationCoordinateType
      *
      * BBIE
      *  Location Coordinate. Latitude Direction Code. Code
-     *  The direction of latitude measurement from the equator.
+     *  A code signifying the direction of latitude measurement from the equator (north or south).
      *  0..1
      *  Location Coordinate
      *  Latitude Direction Code
      *  Code
+     *  Latitude Direction
      *  Latitude Direction_ Code. Type
      *
      * @param \horstoeko\ubl\entities\cbc\LatitudeDirectionCode $latitudeDirectionCode
@@ -285,7 +303,7 @@ class LocationCoordinateType
      *
      * BBIE
      *  Location Coordinate. Longitude_ Degrees. Measure
-     *  The measure of longitude in degrees.
+     *  The degree component of a longitude measured in degrees and minutes.
      *  0..1
      *  Location Coordinate
      *  Longitude
@@ -305,7 +323,7 @@ class LocationCoordinateType
      *
      * BBIE
      *  Location Coordinate. Longitude_ Degrees. Measure
-     *  The measure of longitude in degrees.
+     *  The degree component of a longitude measured in degrees and minutes.
      *  0..1
      *  Location Coordinate
      *  Longitude
@@ -327,7 +345,7 @@ class LocationCoordinateType
      *
      * BBIE
      *  Location Coordinate. Longitude_ Minutes. Measure
-     *  The measure of longitude in minutes.
+     *  The minutes component of a longitude measured in degrees and minutes (modulo 60).
      *  0..1
      *  Location Coordinate
      *  Longitude
@@ -347,7 +365,7 @@ class LocationCoordinateType
      *
      * BBIE
      *  Location Coordinate. Longitude_ Minutes. Measure
-     *  The measure of longitude in minutes.
+     *  The minutes component of a longitude measured in degrees and minutes (modulo 60).
      *  0..1
      *  Location Coordinate
      *  Longitude
@@ -369,11 +387,12 @@ class LocationCoordinateType
      *
      * BBIE
      *  Location Coordinate. Longitude Direction Code. Code
-     *  The direction of longitude measurement from the meridian.
+     *  A code signifying the direction of longitude measurement from the prime meridian (east or west).
      *  0..1
      *  Location Coordinate
      *  Longitude Direction Code
      *  Code
+     *  Longitude Direction
      *  Longitude Direction_ Code. Type
      *
      * @return \horstoeko\ubl\entities\cbc\LongitudeDirectionCode
@@ -388,11 +407,12 @@ class LocationCoordinateType
      *
      * BBIE
      *  Location Coordinate. Longitude Direction Code. Code
-     *  The direction of longitude measurement from the meridian.
+     *  A code signifying the direction of longitude measurement from the prime meridian (east or west).
      *  0..1
      *  Location Coordinate
      *  Longitude Direction Code
      *  Code
+     *  Longitude Direction
      *  Longitude Direction_ Code. Type
      *
      * @param \horstoeko\ubl\entities\cbc\LongitudeDirectionCode $longitudeDirectionCode
@@ -401,6 +421,46 @@ class LocationCoordinateType
     public function setLongitudeDirectionCode(\horstoeko\ubl\entities\cbc\LongitudeDirectionCode $longitudeDirectionCode)
     {
         $this->longitudeDirectionCode = $longitudeDirectionCode;
+        return $this;
+    }
+
+    /**
+     * Gets as altitudeMeasure
+     *
+     * BBIE
+     *  Location Coordinate. Altitude. Measure
+     *  The altitude of the location.
+     *  0..1
+     *  Location Coordinate
+     *  Altitude
+     *  Measure
+     *  Measure. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\AltitudeMeasure
+     */
+    public function getAltitudeMeasure()
+    {
+        return $this->altitudeMeasure;
+    }
+
+    /**
+     * Sets a new altitudeMeasure
+     *
+     * BBIE
+     *  Location Coordinate. Altitude. Measure
+     *  The altitude of the location.
+     *  0..1
+     *  Location Coordinate
+     *  Altitude
+     *  Measure
+     *  Measure. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\AltitudeMeasure $altitudeMeasure
+     * @return self
+     */
+    public function setAltitudeMeasure(\horstoeko\ubl\entities\cbc\AltitudeMeasure $altitudeMeasure)
+    {
+        $this->altitudeMeasure = $altitudeMeasure;
         return $this;
     }
 

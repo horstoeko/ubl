@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Catalogue Pricing Update Line. Details
- *  Details of Catalogue Line Pricing.
+ *  A class to define a line describing a pricing update to a catalogue line.
  *  Catalogue Pricing Update Line
  * XSD Type: CataloguePricingUpdateLineType
  */
@@ -17,13 +17,13 @@ class CataloguePricingUpdateLineType
     /**
      * BBIE
      *  Catalogue Pricing Update Line. Identifier
-     *  A unique instance identifier for the line in this Catalogue document.
+     *  An identifier for the catalogue line to be updated.
      *  1
      *  Catalogue Pricing Update Line
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "1"
+     *  1
      *
      * @var \horstoeko\ubl\entities\cbc\ID $iD
      */
@@ -32,10 +32,11 @@ class CataloguePricingUpdateLineType
     /**
      * ASBIE
      *  Catalogue Pricing Update Line. Contractor_ Customer Party. Customer Party
-     *  The Customer Party responsible for the contract to which the Catalogue relates.
+     *  The customer responsible for the contract associated with the catalogue line being updated.
      *  0..1
      *  Catalogue Pricing Update Line
      *  Contractor
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -46,10 +47,11 @@ class CataloguePricingUpdateLineType
     /**
      * ASBIE
      *  Catalogue Pricing Update Line. Seller_ Supplier Party. Supplier Party
-     *  An association to the Seller of the Item.
+     *  The seller/supplier responsible for the contract associated with the catalogue line being updated.
      *  0..1
      *  Catalogue Pricing Update Line
      *  Seller
+     *  Supplier Party
      *  Supplier Party
      *  Supplier Party
      *
@@ -60,10 +62,11 @@ class CataloguePricingUpdateLineType
     /**
      * ASBIE
      *  Catalogue Pricing Update Line. Required_ Item Location Quantity. Item Location Quantity
-     *  An association to the description of properties related to locations and quantities of the item.
+     *  Updated properties of the item in this catalogue line that are dependent on location and quantity.
      *  0..n
      *  Catalogue Pricing Update Line
      *  Required
+     *  Item Location Quantity
      *  Item Location Quantity
      *  Item Location Quantity
      *
@@ -78,13 +81,13 @@ class CataloguePricingUpdateLineType
      *
      * BBIE
      *  Catalogue Pricing Update Line. Identifier
-     *  A unique instance identifier for the line in this Catalogue document.
+     *  An identifier for the catalogue line to be updated.
      *  1
      *  Catalogue Pricing Update Line
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "1"
+     *  1
      *
      * @return \horstoeko\ubl\entities\cbc\ID
      */
@@ -98,13 +101,13 @@ class CataloguePricingUpdateLineType
      *
      * BBIE
      *  Catalogue Pricing Update Line. Identifier
-     *  A unique instance identifier for the line in this Catalogue document.
+     *  An identifier for the catalogue line to be updated.
      *  1
      *  Catalogue Pricing Update Line
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "1"
+     *  1
      *
      * @param \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
@@ -120,10 +123,11 @@ class CataloguePricingUpdateLineType
      *
      * ASBIE
      *  Catalogue Pricing Update Line. Contractor_ Customer Party. Customer Party
-     *  The Customer Party responsible for the contract to which the Catalogue relates.
+     *  The customer responsible for the contract associated with the catalogue line being updated.
      *  0..1
      *  Catalogue Pricing Update Line
      *  Contractor
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -139,10 +143,11 @@ class CataloguePricingUpdateLineType
      *
      * ASBIE
      *  Catalogue Pricing Update Line. Contractor_ Customer Party. Customer Party
-     *  The Customer Party responsible for the contract to which the Catalogue relates.
+     *  The customer responsible for the contract associated with the catalogue line being updated.
      *  0..1
      *  Catalogue Pricing Update Line
      *  Contractor
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -160,10 +165,11 @@ class CataloguePricingUpdateLineType
      *
      * ASBIE
      *  Catalogue Pricing Update Line. Seller_ Supplier Party. Supplier Party
-     *  An association to the Seller of the Item.
+     *  The seller/supplier responsible for the contract associated with the catalogue line being updated.
      *  0..1
      *  Catalogue Pricing Update Line
      *  Seller
+     *  Supplier Party
      *  Supplier Party
      *  Supplier Party
      *
@@ -179,10 +185,11 @@ class CataloguePricingUpdateLineType
      *
      * ASBIE
      *  Catalogue Pricing Update Line. Seller_ Supplier Party. Supplier Party
-     *  An association to the Seller of the Item.
+     *  The seller/supplier responsible for the contract associated with the catalogue line being updated.
      *  0..1
      *  Catalogue Pricing Update Line
      *  Seller
+     *  Supplier Party
      *  Supplier Party
      *  Supplier Party
      *
@@ -200,10 +207,11 @@ class CataloguePricingUpdateLineType
      *
      * ASBIE
      *  Catalogue Pricing Update Line. Required_ Item Location Quantity. Item Location Quantity
-     *  An association to the description of properties related to locations and quantities of the item.
+     *  Updated properties of the item in this catalogue line that are dependent on location and quantity.
      *  0..n
      *  Catalogue Pricing Update Line
      *  Required
+     *  Item Location Quantity
      *  Item Location Quantity
      *  Item Location Quantity
      *
@@ -221,10 +229,11 @@ class CataloguePricingUpdateLineType
      *
      * ASBIE
      *  Catalogue Pricing Update Line. Required_ Item Location Quantity. Item Location Quantity
-     *  An association to the description of properties related to locations and quantities of the item.
+     *  Updated properties of the item in this catalogue line that are dependent on location and quantity.
      *  0..n
      *  Catalogue Pricing Update Line
      *  Required
+     *  Item Location Quantity
      *  Item Location Quantity
      *  Item Location Quantity
      *
@@ -241,10 +250,11 @@ class CataloguePricingUpdateLineType
      *
      * ASBIE
      *  Catalogue Pricing Update Line. Required_ Item Location Quantity. Item Location Quantity
-     *  An association to the description of properties related to locations and quantities of the item.
+     *  Updated properties of the item in this catalogue line that are dependent on location and quantity.
      *  0..n
      *  Catalogue Pricing Update Line
      *  Required
+     *  Item Location Quantity
      *  Item Location Quantity
      *  Item Location Quantity
      *
@@ -261,10 +271,11 @@ class CataloguePricingUpdateLineType
      *
      * ASBIE
      *  Catalogue Pricing Update Line. Required_ Item Location Quantity. Item Location Quantity
-     *  An association to the description of properties related to locations and quantities of the item.
+     *  Updated properties of the item in this catalogue line that are dependent on location and quantity.
      *  0..n
      *  Catalogue Pricing Update Line
      *  Required
+     *  Item Location Quantity
      *  Item Location Quantity
      *  Item Location Quantity
      *
@@ -280,10 +291,11 @@ class CataloguePricingUpdateLineType
      *
      * ASBIE
      *  Catalogue Pricing Update Line. Required_ Item Location Quantity. Item Location Quantity
-     *  An association to the description of properties related to locations and quantities of the item.
+     *  Updated properties of the item in this catalogue line that are dependent on location and quantity.
      *  0..n
      *  Catalogue Pricing Update Line
      *  Required
+     *  Item Location Quantity
      *  Item Location Quantity
      *  Item Location Quantity
      *

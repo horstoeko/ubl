@@ -54,3 +54,9 @@ horstoeko\ubl\entities\cac\ItemType:
         itemInstance:
             -
                 Valid: null
+        certificate:
+            -
+                Valid: null
+        dimension:
+            -
+                Valid: null

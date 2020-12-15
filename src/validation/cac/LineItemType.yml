@@ -33,3 +33,21 @@ horstoeko\ubl\entities\cac\LineItemType:
                         - xsd_rules
             -
                 Valid: null
+        subLineItem:
+            -
+                Valid: null
+        warrantyValidityPeriod:
+            -
+                Valid: null
+        warrantyParty:
+            -
+                Valid: null
+        taxTotal:
+            -
+                Valid: null
+        itemPriceExtension:
+            -
+                Valid: null
+        lineReference:
+            -
+                Valid: null

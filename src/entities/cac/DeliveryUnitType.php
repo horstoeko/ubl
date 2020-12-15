@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Delivery Unit. Details
- *  Information about a Delivery Unit.
+ *  A class to describe a delivery unit.
  *  Delivery Unit
  * XSD Type: DeliveryUnitType
  */
@@ -23,7 +23,7 @@ class DeliveryUnitType
      *  Batch Quantity
      *  Quantity
      *  Quantity. Type
-     *  "100 units", "by the dozen"
+     *  100 units , by the dozen
      *
      * @var \horstoeko\ubl\entities\cbc\BatchQuantity $batchQuantity
      */
@@ -32,14 +32,14 @@ class DeliveryUnitType
     /**
      * BBIE
      *  Delivery Unit. Consumer_ Unit. Quantity
-     *  The quantity of consumer units in the Delivery Unit.
+     *  The quantity of units in the Delivery Unit expressed in the units used by the consumer.
      *  0..1
      *  Delivery Unit
      *  Consumer
      *  Unit
      *  Quantity
      *  Quantity. Type
-     *  "packs of 10"
+     *  packs of 10
      *
      * @var \horstoeko\ubl\entities\cbc\ConsumerUnitQuantity $consumerUnitQuantity
      */
@@ -48,7 +48,7 @@ class DeliveryUnitType
     /**
      * BBIE
      *  Delivery Unit. Hazardous Risk_ Indicator. Indicator
-     *  Indicates whether the Item as delivered is hazardous.
+     *  An indication that the transported goods are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).
      *  0..1
      *  Delivery Unit
      *  Hazardous Risk
@@ -72,7 +72,7 @@ class DeliveryUnitType
      *  Batch Quantity
      *  Quantity
      *  Quantity. Type
-     *  "100 units", "by the dozen"
+     *  100 units , by the dozen
      *
      * @return \horstoeko\ubl\entities\cbc\BatchQuantity
      */
@@ -92,7 +92,7 @@ class DeliveryUnitType
      *  Batch Quantity
      *  Quantity
      *  Quantity. Type
-     *  "100 units", "by the dozen"
+     *  100 units , by the dozen
      *
      * @param \horstoeko\ubl\entities\cbc\BatchQuantity $batchQuantity
      * @return self
@@ -108,14 +108,14 @@ class DeliveryUnitType
      *
      * BBIE
      *  Delivery Unit. Consumer_ Unit. Quantity
-     *  The quantity of consumer units in the Delivery Unit.
+     *  The quantity of units in the Delivery Unit expressed in the units used by the consumer.
      *  0..1
      *  Delivery Unit
      *  Consumer
      *  Unit
      *  Quantity
      *  Quantity. Type
-     *  "packs of 10"
+     *  packs of 10
      *
      * @return \horstoeko\ubl\entities\cbc\ConsumerUnitQuantity
      */
@@ -129,14 +129,14 @@ class DeliveryUnitType
      *
      * BBIE
      *  Delivery Unit. Consumer_ Unit. Quantity
-     *  The quantity of consumer units in the Delivery Unit.
+     *  The quantity of units in the Delivery Unit expressed in the units used by the consumer.
      *  0..1
      *  Delivery Unit
      *  Consumer
      *  Unit
      *  Quantity
      *  Quantity. Type
-     *  "packs of 10"
+     *  packs of 10
      *
      * @param \horstoeko\ubl\entities\cbc\ConsumerUnitQuantity $consumerUnitQuantity
      * @return self
@@ -152,7 +152,7 @@ class DeliveryUnitType
      *
      * BBIE
      *  Delivery Unit. Hazardous Risk_ Indicator. Indicator
-     *  Indicates whether the Item as delivered is hazardous.
+     *  An indication that the transported goods are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).
      *  0..1
      *  Delivery Unit
      *  Hazardous Risk
@@ -173,7 +173,7 @@ class DeliveryUnitType
      *
      * BBIE
      *  Delivery Unit. Hazardous Risk_ Indicator. Indicator
-     *  Indicates whether the Item as delivered is hazardous.
+     *  An indication that the transported goods are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).
      *  0..1
      *  Delivery Unit
      *  Hazardous Risk

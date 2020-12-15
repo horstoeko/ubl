@@ -12,6 +12,9 @@ horstoeko\ubl\entities\cac\TransportHandlingUnitType:
         transportEquipment:
             -
                 Valid: null
+        transportMeans:
+            -
+                Valid: null
         hazardousGoodsTransit:
             -
                 Valid: null
@@ -22,5 +25,29 @@ horstoeko\ubl\entities\cac\TransportHandlingUnitType:
             -
                 Valid: null
         maximumTemperature:
+            -
+                Valid: null
+        goodsItem:
+            -
+                Valid: null
+        floorSpaceMeasurementDimension:
+            -
+                Valid: null
+        palletSpaceMeasurementDimension:
+            -
+                Valid: null
+        shipmentDocumentReference:
+            -
+                Valid: null
+        status:
+            -
+                Valid: null
+        customsDeclaration:
+            -
+                Valid: null
+        referencedShipment:
+            -
+                Valid: null
+        package:
             -
                 Valid: null

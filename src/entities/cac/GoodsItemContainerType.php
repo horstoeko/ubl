@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Goods Item Container. Details
- *  How goods items are split across transport equipment.
+ *  A class defining how goods items are split across transport equipment.
  *  Goods Item Container
  * XSD Type: GoodsItemContainerType
  */
@@ -17,7 +17,7 @@ class GoodsItemContainerType
     /**
      * BBIE
      *  Goods Item Container. Identifier
-     *  Identifies goods items split across transport equipment.
+     *  An identifier for this goods item container.
      *  1
      *  Goods Item Container
      *  Identifier
@@ -31,7 +31,7 @@ class GoodsItemContainerType
     /**
      * BBIE
      *  Goods Item Container. Quantity
-     *  Number of goods items loaded into or onto one piece of transport equipment as a total consignment or part of a consignment.
+     *  The number of goods items loaded into or onto one piece of transport equipment as a total consignment or part of a consignment.
      *  0..1
      *  Goods Item Container
      *  Quantity
@@ -46,9 +46,10 @@ class GoodsItemContainerType
     /**
      * ASBIE
      *  Goods Item Container. Transport Equipment
-     *  Associates the containers for a single goods item.
+     *  A piece of transport equipment used to contain a single goods item.
      *  0..n
      *  Goods Item Container
+     *  Transport Equipment
      *  Transport Equipment
      *  Transport Equipment
      *
@@ -63,7 +64,7 @@ class GoodsItemContainerType
      *
      * BBIE
      *  Goods Item Container. Identifier
-     *  Identifies goods items split across transport equipment.
+     *  An identifier for this goods item container.
      *  1
      *  Goods Item Container
      *  Identifier
@@ -82,7 +83,7 @@ class GoodsItemContainerType
      *
      * BBIE
      *  Goods Item Container. Identifier
-     *  Identifies goods items split across transport equipment.
+     *  An identifier for this goods item container.
      *  1
      *  Goods Item Container
      *  Identifier
@@ -103,7 +104,7 @@ class GoodsItemContainerType
      *
      * BBIE
      *  Goods Item Container. Quantity
-     *  Number of goods items loaded into or onto one piece of transport equipment as a total consignment or part of a consignment.
+     *  The number of goods items loaded into or onto one piece of transport equipment as a total consignment or part of a consignment.
      *  0..1
      *  Goods Item Container
      *  Quantity
@@ -123,7 +124,7 @@ class GoodsItemContainerType
      *
      * BBIE
      *  Goods Item Container. Quantity
-     *  Number of goods items loaded into or onto one piece of transport equipment as a total consignment or part of a consignment.
+     *  The number of goods items loaded into or onto one piece of transport equipment as a total consignment or part of a consignment.
      *  0..1
      *  Goods Item Container
      *  Quantity
@@ -145,9 +146,10 @@ class GoodsItemContainerType
      *
      * ASBIE
      *  Goods Item Container. Transport Equipment
-     *  Associates the containers for a single goods item.
+     *  A piece of transport equipment used to contain a single goods item.
      *  0..n
      *  Goods Item Container
+     *  Transport Equipment
      *  Transport Equipment
      *  Transport Equipment
      *
@@ -165,9 +167,10 @@ class GoodsItemContainerType
      *
      * ASBIE
      *  Goods Item Container. Transport Equipment
-     *  Associates the containers for a single goods item.
+     *  A piece of transport equipment used to contain a single goods item.
      *  0..n
      *  Goods Item Container
+     *  Transport Equipment
      *  Transport Equipment
      *  Transport Equipment
      *
@@ -184,9 +187,10 @@ class GoodsItemContainerType
      *
      * ASBIE
      *  Goods Item Container. Transport Equipment
-     *  Associates the containers for a single goods item.
+     *  A piece of transport equipment used to contain a single goods item.
      *  0..n
      *  Goods Item Container
+     *  Transport Equipment
      *  Transport Equipment
      *  Transport Equipment
      *
@@ -203,9 +207,10 @@ class GoodsItemContainerType
      *
      * ASBIE
      *  Goods Item Container. Transport Equipment
-     *  Associates the containers for a single goods item.
+     *  A piece of transport equipment used to contain a single goods item.
      *  0..n
      *  Goods Item Container
+     *  Transport Equipment
      *  Transport Equipment
      *  Transport Equipment
      *
@@ -221,9 +226,10 @@ class GoodsItemContainerType
      *
      * ASBIE
      *  Goods Item Container. Transport Equipment
-     *  Associates the containers for a single goods item.
+     *  A piece of transport equipment used to contain a single goods item.
      *  0..n
      *  Goods Item Container
+     *  Transport Equipment
      *  Transport Equipment
      *  Transport Equipment
      *

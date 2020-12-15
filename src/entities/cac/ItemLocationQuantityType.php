@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Item Location Quantity. Details
- *  Information about the properties of an item as they relate to specific quantities and/or specific locations.
+ *  A class for information about pricing structure, lead time, and location associated with an item.
  *  Item Location Quantity
  * XSD Type: ItemLocationQuantityType
  */
@@ -17,13 +17,13 @@ class ItemLocationQuantityType
     /**
      * BBIE
      *  Item Location Quantity. Lead Time. Measure
-     *  The time taken from the time of order to the time of delivery for an item.
+     *  The lead time, i.e., the time taken from the time at which an item is ordered to the time of its delivery.
      *  0..1
      *  Item Location Quantity
      *  Lead Time
      *  Measure
      *  Measure. Type
-     *  "2 days", "24 hours"
+     *  2 days , 24 hours
      *
      * @var \horstoeko\ubl\entities\cbc\LeadTimeMeasure $leadTimeMeasure
      */
@@ -39,7 +39,7 @@ class ItemLocationQuantityType
      *  Quantity
      *  Quantity
      *  Quantity. Type
-     *  "10 boxes", "1 carton", "1000 sheets"
+     *  10 boxes , 1 carton , 1000 sheets
      *
      * @var \horstoeko\ubl\entities\cbc\MinimumQuantity $minimumQuantity
      */
@@ -55,7 +55,7 @@ class ItemLocationQuantityType
      *  Quantity
      *  Quantity
      *  Quantity. Type
-     *  "10 boxes", "1 carton", "1000 sheets"
+     *  10 boxes , 1 carton , 1000 sheets
      *
      * @var \horstoeko\ubl\entities\cbc\MaximumQuantity $maximumQuantity
      */
@@ -64,7 +64,7 @@ class ItemLocationQuantityType
     /**
      * BBIE
      *  Item Location Quantity. Hazardous Risk_ Indicator. Indicator
-     *  Indicates whether the item as delivered, in the stated quantity to the stated location, is hazardous.
+     *  An indication that the transported item, as delivered, in the stated quantity to the stated location, is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).
      *  0..1
      *  Item Location Quantity
      *  Hazardous Risk
@@ -80,13 +80,13 @@ class ItemLocationQuantityType
     /**
      * BBIE
      *  Item Location Quantity. Trading Restrictions. Text
-     *  A description of trade restrictions that apply to the item or quantities of the item.
+     *  Text describing trade restrictions on the quantity of this item or on the item itself.
      *  0..n
      *  Item Location Quantity
      *  Trading Restrictions
      *  Text
      *  Text. Type
-     *  "not for export"
+     *  not for export
      *
      * @var \horstoeko\ubl\entities\cbc\TradingRestrictions[] $tradingRestrictions
      */
@@ -97,10 +97,11 @@ class ItemLocationQuantityType
     /**
      * ASBIE
      *  Item Location Quantity. Applicable Territory_ Address. Address
-     *  An association to Territory (Address).
+     *  The applicable sales territory.
      *  0..n
      *  Item Location Quantity
      *  Applicable Territory
+     *  Address
      *  Address
      *  Address
      *
@@ -113,9 +114,10 @@ class ItemLocationQuantityType
     /**
      * ASBIE
      *  Item Location Quantity. Price
-     *  An association to Price.
+     *  The price associated with the given location.
      *  0..1
      *  Item Location Quantity
+     *  Price
      *  Price
      *  Price
      *
@@ -126,9 +128,10 @@ class ItemLocationQuantityType
     /**
      * ASBIE
      *  Item Location Quantity. Delivery Unit
-     *  An association to Delivery Unit.
+     *  A delivery unit in which the item is located.
      *  0..n
      *  Item Location Quantity
+     *  Delivery Unit
      *  Delivery Unit
      *  Delivery Unit
      *
@@ -141,10 +144,11 @@ class ItemLocationQuantityType
     /**
      * ASBIE
      *  Item Location Quantity. Applicable_ Tax Category. Tax Category
-     *  An association to Tax Category.
+     *  A tax category applicable to this item location quantity.
      *  0..n
      *  Item Location Quantity
      *  Applicable
+     *  Tax Category
      *  Tax Category
      *  Tax Category
      *
@@ -155,17 +159,61 @@ class ItemLocationQuantityType
     ];
 
     /**
+     * ASBIE
+     *  Item Location Quantity. Package
+     *  The package to which this price applies.
+     *  0..1
+     *  Item Location Quantity
+     *  Package
+     *  Package
+     *  Package
+     *
+     * @var \horstoeko\ubl\entities\cac\Package $package
+     */
+    private $package = null;
+
+    /**
+     * ASBIE
+     *  Item Location Quantity. Allowance Charge
+     *  An allowance or charge associated with this item location quantity.
+     *  0..n
+     *  Item Location Quantity
+     *  Allowance Charge
+     *  Allowance Charge
+     *  Allowance Charge
+     *
+     * @var \horstoeko\ubl\entities\cac\AllowanceCharge[] $allowanceCharge
+     */
+    private $allowanceCharge = [
+        
+    ];
+
+    /**
+     * ASBIE
+     *  Item Location Quantity. Dependent Price Reference
+     *  The price of the item as a percentage of the price of some other item.
+     *  0..1
+     *  Item Location Quantity
+     *  Dependent Price Reference
+     *  Dependent Price Reference
+     *  Dependent Price Reference
+     *
+     * @var \horstoeko\ubl\entities\cac\DependentPriceReference $dependentPriceReference
+     */
+    private $dependentPriceReference = null;
+
+    /**
      * Gets as leadTimeMeasure
      *
      * BBIE
      *  Item Location Quantity. Lead Time. Measure
-     *  The time taken from the time of order to the time of delivery for an item.
+     *  The lead time, i.e., the time taken from the time at which an item is ordered to the time of its delivery.
      *  0..1
      *  Item Location Quantity
      *  Lead Time
      *  Measure
      *  Measure. Type
-     *  "2 days", "24 hours"
+     *  2 days , 24 hours
      *
      * @return \horstoeko\ubl\entities\cbc\LeadTimeMeasure
      */
@@ -179,13 +227,13 @@ class ItemLocationQuantityType
      *
      * BBIE
      *  Item Location Quantity. Lead Time. Measure
-     *  The time taken from the time of order to the time of delivery for an item.
+     *  The lead time, i.e., the time taken from the time at which an item is ordered to the time of its delivery.
      *  0..1
      *  Item Location Quantity
      *  Lead Time
      *  Measure
      *  Measure. Type
-     *  "2 days", "24 hours"
+     *  2 days , 24 hours
      *
      * @param \horstoeko\ubl\entities\cbc\LeadTimeMeasure $leadTimeMeasure
      * @return self
@@ -208,7 +256,7 @@ class ItemLocationQuantityType
      *  Quantity
      *  Quantity
      *  Quantity. Type
-     *  "10 boxes", "1 carton", "1000 sheets"
+     *  10 boxes , 1 carton , 1000 sheets
      *
      * @return \horstoeko\ubl\entities\cbc\MinimumQuantity
      */
@@ -229,7 +277,7 @@ class ItemLocationQuantityType
      *  Quantity
      *  Quantity
      *  Quantity. Type
-     *  "10 boxes", "1 carton", "1000 sheets"
+     *  10 boxes , 1 carton , 1000 sheets
      *
      * @param \horstoeko\ubl\entities\cbc\MinimumQuantity $minimumQuantity
      * @return self
@@ -252,7 +300,7 @@ class ItemLocationQuantityType
      *  Quantity
      *  Quantity
      *  Quantity. Type
-     *  "10 boxes", "1 carton", "1000 sheets"
+     *  10 boxes , 1 carton , 1000 sheets
      *
      * @return \horstoeko\ubl\entities\cbc\MaximumQuantity
      */
@@ -273,7 +321,7 @@ class ItemLocationQuantityType
      *  Quantity
      *  Quantity
      *  Quantity. Type
-     *  "10 boxes", "1 carton", "1000 sheets"
+     *  10 boxes , 1 carton , 1000 sheets
      *
      * @param \horstoeko\ubl\entities\cbc\MaximumQuantity $maximumQuantity
      * @return self
@@ -289,7 +337,7 @@ class ItemLocationQuantityType
      *
      * BBIE
      *  Item Location Quantity. Hazardous Risk_ Indicator. Indicator
-     *  Indicates whether the item as delivered, in the stated quantity to the stated location, is hazardous.
+     *  An indication that the transported item, as delivered, in the stated quantity to the stated location, is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).
      *  0..1
      *  Item Location Quantity
      *  Hazardous Risk
@@ -310,7 +358,7 @@ class ItemLocationQuantityType
      *
      * BBIE
      *  Item Location Quantity. Hazardous Risk_ Indicator. Indicator
-     *  Indicates whether the item as delivered, in the stated quantity to the stated location, is hazardous.
+     *  An indication that the transported item, as delivered, in the stated quantity to the stated location, is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).
      *  0..1
      *  Item Location Quantity
      *  Hazardous Risk
@@ -333,13 +381,13 @@ class ItemLocationQuantityType
      *
      * BBIE
      *  Item Location Quantity. Trading Restrictions. Text
-     *  A description of trade restrictions that apply to the item or quantities of the item.
+     *  Text describing trade restrictions on the quantity of this item or on the item itself.
      *  0..n
      *  Item Location Quantity
      *  Trading Restrictions
      *  Text
      *  Text. Type
-     *  "not for export"
+     *  not for export
      *
      * @return self
      * @param \horstoeko\ubl\entities\cbc\TradingRestrictions $tradingRestrictions
@@ -355,13 +403,13 @@ class ItemLocationQuantityType
      *
      * BBIE
      *  Item Location Quantity. Trading Restrictions. Text
-     *  A description of trade restrictions that apply to the item or quantities of the item.
+     *  Text describing trade restrictions on the quantity of this item or on the item itself.
      *  0..n
      *  Item Location Quantity
      *  Trading Restrictions
      *  Text
      *  Text. Type
-     *  "not for export"
+     *  not for export
      *
      * @param int|string $index
      * @return bool
@@ -376,13 +424,13 @@ class ItemLocationQuantityType
      *
      * BBIE
      *  Item Location Quantity. Trading Restrictions. Text
-     *  A description of trade restrictions that apply to the item or quantities of the item.
+     *  Text describing trade restrictions on the quantity of this item or on the item itself.
      *  0..n
      *  Item Location Quantity
      *  Trading Restrictions
      *  Text
      *  Text. Type
-     *  "not for export"
+     *  not for export
      *
      * @param int|string $index
      * @return void
@@ -397,13 +445,13 @@ class ItemLocationQuantityType
      *
      * BBIE
      *  Item Location Quantity. Trading Restrictions. Text
-     *  A description of trade restrictions that apply to the item or quantities of the item.
+     *  Text describing trade restrictions on the quantity of this item or on the item itself.
      *  0..n
      *  Item Location Quantity
      *  Trading Restrictions
      *  Text
      *  Text. Type
-     *  "not for export"
+     *  not for export
      *
      * @return \horstoeko\ubl\entities\cbc\TradingRestrictions[]
      */
@@ -417,13 +465,13 @@ class ItemLocationQuantityType
      *
      * BBIE
      *  Item Location Quantity. Trading Restrictions. Text
-     *  A description of trade restrictions that apply to the item or quantities of the item.
+     *  Text describing trade restrictions on the quantity of this item or on the item itself.
      *  0..n
      *  Item Location Quantity
      *  Trading Restrictions
      *  Text
      *  Text. Type
-     *  "not for export"
+     *  not for export
      *
      * @param \horstoeko\ubl\entities\cbc\TradingRestrictions[] $tradingRestrictions
      * @return self
@@ -439,10 +487,11 @@ class ItemLocationQuantityType
      *
      * ASBIE
      *  Item Location Quantity. Applicable Territory_ Address. Address
-     *  An association to Territory (Address).
+     *  The applicable sales territory.
      *  0..n
      *  Item Location Quantity
      *  Applicable Territory
+     *  Address
      *  Address
      *  Address
      *
@@ -460,10 +509,11 @@ class ItemLocationQuantityType
      *
      * ASBIE
      *  Item Location Quantity. Applicable Territory_ Address. Address
-     *  An association to Territory (Address).
+     *  The applicable sales territory.
      *  0..n
      *  Item Location Quantity
      *  Applicable Territory
+     *  Address
      *  Address
      *  Address
      *
@@ -480,10 +530,11 @@ class ItemLocationQuantityType
      *
      * ASBIE
      *  Item Location Quantity. Applicable Territory_ Address. Address
-     *  An association to Territory (Address).
+     *  The applicable sales territory.
      *  0..n
      *  Item Location Quantity
      *  Applicable Territory
+     *  Address
      *  Address
      *  Address
      *
@@ -500,10 +551,11 @@ class ItemLocationQuantityType
      *
      * ASBIE
      *  Item Location Quantity. Applicable Territory_ Address. Address
-     *  An association to Territory (Address).
+     *  The applicable sales territory.
      *  0..n
      *  Item Location Quantity
      *  Applicable Territory
+     *  Address
      *  Address
      *  Address
      *
@@ -519,10 +571,11 @@ class ItemLocationQuantityType
      *
      * ASBIE
      *  Item Location Quantity. Applicable Territory_ Address. Address
-     *  An association to Territory (Address).
+     *  The applicable sales territory.
      *  0..n
      *  Item Location Quantity
      *  Applicable Territory
+     *  Address
      *  Address
      *  Address
      *
@@ -540,9 +593,10 @@ class ItemLocationQuantityType
      *
      * ASBIE
      *  Item Location Quantity. Price
-     *  An association to Price.
+     *  The price associated with the given location.
      *  0..1
      *  Item Location Quantity
+     *  Price
      *  Price
      *  Price
      *
@@ -558,9 +612,10 @@ class ItemLocationQuantityType
      *
      * ASBIE
      *  Item Location Quantity. Price
-     *  An association to Price.
+     *  The price associated with the given location.
      *  0..1
      *  Item Location Quantity
+     *  Price
      *  Price
      *  Price
      *
@@ -578,9 +633,10 @@ class ItemLocationQuantityType
      *
      * ASBIE
      *  Item Location Quantity. Delivery Unit
-     *  An association to Delivery Unit.
+     *  A delivery unit in which the item is located.
      *  0..n
      *  Item Location Quantity
+     *  Delivery Unit
      *  Delivery Unit
      *  Delivery Unit
      *
@@ -598,9 +654,10 @@ class ItemLocationQuantityType
      *
      * ASBIE
      *  Item Location Quantity. Delivery Unit
-     *  An association to Delivery Unit.
+     *  A delivery unit in which the item is located.
      *  0..n
      *  Item Location Quantity
+     *  Delivery Unit
      *  Delivery Unit
      *  Delivery Unit
      *
@@ -617,9 +674,10 @@ class ItemLocationQuantityType
      *
      * ASBIE
      *  Item Location Quantity. Delivery Unit
-     *  An association to Delivery Unit.
+     *  A delivery unit in which the item is located.
      *  0..n
      *  Item Location Quantity
+     *  Delivery Unit
      *  Delivery Unit
      *  Delivery Unit
      *
@@ -636,9 +694,10 @@ class ItemLocationQuantityType
      *
      * ASBIE
      *  Item Location Quantity. Delivery Unit
-     *  An association to Delivery Unit.
+     *  A delivery unit in which the item is located.
      *  0..n
      *  Item Location Quantity
+     *  Delivery Unit
      *  Delivery Unit
      *  Delivery Unit
      *
@@ -654,9 +713,10 @@ class ItemLocationQuantityType
      *
      * ASBIE
      *  Item Location Quantity. Delivery Unit
-     *  An association to Delivery Unit.
+     *  A delivery unit in which the item is located.
      *  0..n
      *  Item Location Quantity
+     *  Delivery Unit
      *  Delivery Unit
      *  Delivery Unit
      *
@@ -674,10 +734,11 @@ class ItemLocationQuantityType
      *
      * ASBIE
      *  Item Location Quantity. Applicable_ Tax Category. Tax Category
-     *  An association to Tax Category.
+     *  A tax category applicable to this item location quantity.
      *  0..n
      *  Item Location Quantity
      *  Applicable
+     *  Tax Category
      *  Tax Category
      *  Tax Category
      *
@@ -695,10 +756,11 @@ class ItemLocationQuantityType
      *
      * ASBIE
      *  Item Location Quantity. Applicable_ Tax Category. Tax Category
-     *  An association to Tax Category.
+     *  A tax category applicable to this item location quantity.
      *  0..n
      *  Item Location Quantity
      *  Applicable
+     *  Tax Category
      *  Tax Category
      *  Tax Category
      *
@@ -715,10 +777,11 @@ class ItemLocationQuantityType
      *
      * ASBIE
      *  Item Location Quantity. Applicable_ Tax Category. Tax Category
-     *  An association to Tax Category.
+     *  A tax category applicable to this item location quantity.
      *  0..n
      *  Item Location Quantity
      *  Applicable
+     *  Tax Category
      *  Tax Category
      *  Tax Category
      *
@@ -735,10 +798,11 @@ class ItemLocationQuantityType
      *
      * ASBIE
      *  Item Location Quantity. Applicable_ Tax Category. Tax Category
-     *  An association to Tax Category.
+     *  A tax category applicable to this item location quantity.
      *  0..n
      *  Item Location Quantity
      *  Applicable
+     *  Tax Category
      *  Tax Category
      *  Tax Category
      *
@@ -754,10 +818,11 @@ class ItemLocationQuantityType
      *
      * ASBIE
      *  Item Location Quantity. Applicable_ Tax Category. Tax Category
-     *  An association to Tax Category.
+     *  A tax category applicable to this item location quantity.
      *  0..n
      *  Item Location Quantity
      *  Applicable
+     *  Tax Category
      *  Tax Category
      *  Tax Category
      *
@@ -767,6 +832,187 @@ class ItemLocationQuantityType
     public function setApplicableTaxCategory(array $applicableTaxCategory)
     {
         $this->applicableTaxCategory = $applicableTaxCategory;
+        return $this;
+    }
+
+    /**
+     * Gets as package
+     *
+     * ASBIE
+     *  Item Location Quantity. Package
+     *  The package to which this price applies.
+     *  0..1
+     *  Item Location Quantity
+     *  Package
+     *  Package
+     *  Package
+     *
+     * @return \horstoeko\ubl\entities\cac\Package
+     */
+    public function getPackage()
+    {
+        return $this->package;
+    }
+
+    /**
+     * Sets a new package
+     *
+     * ASBIE
+     *  Item Location Quantity. Package
+     *  The package to which this price applies.
+     *  0..1
+     *  Item Location Quantity
+     *  Package
+     *  Package
+     *  Package
+     *
+     * @param \horstoeko\ubl\entities\cac\Package $package
+     * @return self
+     */
+    public function setPackage(\horstoeko\ubl\entities\cac\Package $package)
+    {
+        $this->package = $package;
+        return $this;
+    }
+
+    /**
+     * Adds as allowanceCharge
+     *
+     * ASBIE
+     *  Item Location Quantity. Allowance Charge
+     *  An allowance or charge associated with this item location quantity.
+     *  0..n
+     *  Item Location Quantity
+     *  Allowance Charge
+     *  Allowance Charge
+     *  Allowance Charge
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge
+     */
+    public function addToAllowanceCharge(\horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge)
+    {
+        $this->allowanceCharge[] = $allowanceCharge;
+        return $this;
+    }
+
+    /**
+     * isset allowanceCharge
+     *
+     * ASBIE
+     *  Item Location Quantity. Allowance Charge
+     *  An allowance or charge associated with this item location quantity.
+     *  0..n
+     *  Item Location Quantity
+     *  Allowance Charge
+     *  Allowance Charge
+     *  Allowance Charge
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetAllowanceCharge($index)
+    {
+        return isset($this->allowanceCharge[$index]);
+    }
+
+    /**
+     * unset allowanceCharge
+     *
+     * ASBIE
+     *  Item Location Quantity. Allowance Charge
+     *  An allowance or charge associated with this item location quantity.
+     *  0..n
+     *  Item Location Quantity
+     *  Allowance Charge
+     *  Allowance Charge
+     *  Allowance Charge
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetAllowanceCharge($index)
+    {
+        unset($this->allowanceCharge[$index]);
+    }
+
+    /**
+     * Gets as allowanceCharge
+     *
+     * ASBIE
+     *  Item Location Quantity. Allowance Charge
+     *  An allowance or charge associated with this item location quantity.
+     *  0..n
+     *  Item Location Quantity
+     *  Allowance Charge
+     *  Allowance Charge
+     *  Allowance Charge
+     *
+     * @return \horstoeko\ubl\entities\cac\AllowanceCharge[]
+     */
+    public function getAllowanceCharge()
+    {
+        return $this->allowanceCharge;
+    }
+
+    /**
+     * Sets a new allowanceCharge
+     *
+     * ASBIE
+     *  Item Location Quantity. Allowance Charge
+     *  An allowance or charge associated with this item location quantity.
+     *  0..n
+     *  Item Location Quantity
+     *  Allowance Charge
+     *  Allowance Charge
+     *  Allowance Charge
+     *
+     * @param \horstoeko\ubl\entities\cac\AllowanceCharge[] $allowanceCharge
+     * @return self
+     */
+    public function setAllowanceCharge(array $allowanceCharge)
+    {
+        $this->allowanceCharge = $allowanceCharge;
+        return $this;
+    }
+
+    /**
+     * Gets as dependentPriceReference
+     *
+     * ASBIE
+     *  Item Location Quantity. Dependent Price Reference
+     *  The price of the item as a percentage of the price of some other item.
+     *  0..1
+     *  Item Location Quantity
+     *  Dependent Price Reference
+     *  Dependent Price Reference
+     *  Dependent Price Reference
+     *
+     * @return \horstoeko\ubl\entities\cac\DependentPriceReference
+     */
+    public function getDependentPriceReference()
+    {
+        return $this->dependentPriceReference;
+    }
+
+    /**
+     * Sets a new dependentPriceReference
+     *
+     * ASBIE
+     *  Item Location Quantity. Dependent Price Reference
+     *  The price of the item as a percentage of the price of some other item.
+     *  0..1
+     *  Item Location Quantity
+     *  Dependent Price Reference
+     *  Dependent Price Reference
+     *  Dependent Price Reference
+     *
+     * @param \horstoeko\ubl\entities\cac\DependentPriceReference $dependentPriceReference
+     * @return self
+     */
+    public function setDependentPriceReference(\horstoeko\ubl\entities\cac\DependentPriceReference $dependentPriceReference)
+    {
+        $this->dependentPriceReference = $dependentPriceReference;
         return $this;
     }
 

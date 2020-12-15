@@ -1,0 +1,9 @@
+horstoeko\ubl\entities\ds\ManifestType:
+    properties:
+        reference:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

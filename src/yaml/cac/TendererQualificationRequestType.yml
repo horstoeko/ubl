@@ -1,0 +1,151 @@
+horstoeko\ubl\entities\cac\TendererQualificationRequestType:
+    properties:
+        companyLegalFormCode:
+            expose: true
+            access_type: public_method
+            serialized_name: CompanyLegalFormCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getCompanyLegalFormCode
+                setter: setCompanyLegalFormCode
+            type: horstoeko\ubl\entities\cbc\CompanyLegalFormCode
+        companyLegalForm:
+            expose: true
+            access_type: public_method
+            serialized_name: CompanyLegalForm
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getCompanyLegalForm
+                setter: setCompanyLegalForm
+            type: horstoeko\ubl\entities\cbc\CompanyLegalForm
+        personalSituation:
+            expose: true
+            access_type: public_method
+            serialized_name: PersonalSituation
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPersonalSituation
+                setter: setPersonalSituation
+            xml_list:
+                inline: true
+                entry_name: PersonalSituation
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\PersonalSituation>
+        operatingYearsQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: OperatingYearsQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getOperatingYearsQuantity
+                setter: setOperatingYearsQuantity
+            type: horstoeko\ubl\entities\cbc\OperatingYearsQuantity
+        employeeQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: EmployeeQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getEmployeeQuantity
+                setter: setEmployeeQuantity
+            type: horstoeko\ubl\entities\cbc\EmployeeQuantity
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: Description
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>
+        requiredBusinessClassificationScheme:
+            expose: true
+            access_type: public_method
+            serialized_name: RequiredBusinessClassificationScheme
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getRequiredBusinessClassificationScheme
+                setter: setRequiredBusinessClassificationScheme
+            xml_list:
+                inline: true
+                entry_name: RequiredBusinessClassificationScheme
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\RequiredBusinessClassificationScheme>
+        technicalEvaluationCriterion:
+            expose: true
+            access_type: public_method
+            serialized_name: TechnicalEvaluationCriterion
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getTechnicalEvaluationCriterion
+                setter: setTechnicalEvaluationCriterion
+            xml_list:
+                inline: true
+                entry_name: TechnicalEvaluationCriterion
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\TechnicalEvaluationCriterion>
+        financialEvaluationCriterion:
+            expose: true
+            access_type: public_method
+            serialized_name: FinancialEvaluationCriterion
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getFinancialEvaluationCriterion
+                setter: setFinancialEvaluationCriterion
+            xml_list:
+                inline: true
+                entry_name: FinancialEvaluationCriterion
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\FinancialEvaluationCriterion>
+        specificTendererRequirement:
+            expose: true
+            access_type: public_method
+            serialized_name: SpecificTendererRequirement
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getSpecificTendererRequirement
+                setter: setSpecificTendererRequirement
+            xml_list:
+                inline: true
+                entry_name: SpecificTendererRequirement
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\SpecificTendererRequirement>
+        economicOperatorRole:
+            expose: true
+            access_type: public_method
+            serialized_name: EconomicOperatorRole
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getEconomicOperatorRole
+                setter: setEconomicOperatorRole
+            xml_list:
+                inline: true
+                entry_name: EconomicOperatorRole
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\EconomicOperatorRole>

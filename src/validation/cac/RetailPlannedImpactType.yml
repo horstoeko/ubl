@@ -1,0 +1,20 @@
+horstoeko\ubl\entities\cac\RetailPlannedImpactType:
+    properties:
+        amount:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        forecastPurposeCode:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        forecastTypeCode:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        period:
+            -
+                Valid: null

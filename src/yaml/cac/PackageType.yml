@@ -70,6 +70,17 @@ horstoeko\ubl\entities\cac\PackageType:
                 entry_name: PackingMaterial
                 namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
             type: array<horstoeko\ubl\entities\cbc\PackingMaterial>
+        traceID:
+            expose: true
+            access_type: public_method
+            serialized_name: TraceID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTraceID
+                setter: setTraceID
+            type: horstoeko\ubl\entities\cbc\TraceID
         containedPackage:
             expose: true
             access_type: public_method
@@ -85,6 +96,17 @@ horstoeko\ubl\entities\cac\PackageType:
                 entry_name: ContainedPackage
                 namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
             type: array<horstoeko\ubl\entities\cac\ContainedPackage>
+        containingTransportEquipment:
+            expose: true
+            access_type: public_method
+            serialized_name: ContainingTransportEquipment
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getContainingTransportEquipment
+                setter: setContainingTransportEquipment
+            type: horstoeko\ubl\entities\cac\ContainingTransportEquipment
         goodsItem:
             expose: true
             access_type: public_method
@@ -130,3 +152,36 @@ horstoeko\ubl\entities\cac\PackageType:
                 entry_name: DeliveryUnit
                 namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
             type: array<horstoeko\ubl\entities\cac\DeliveryUnit>
+        delivery:
+            expose: true
+            access_type: public_method
+            serialized_name: Delivery
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getDelivery
+                setter: setDelivery
+            type: horstoeko\ubl\entities\cac\Delivery
+        pickup:
+            expose: true
+            access_type: public_method
+            serialized_name: Pickup
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPickup
+                setter: setPickup
+            type: horstoeko\ubl\entities\cac\Pickup
+        despatch:
+            expose: true
+            access_type: public_method
+            serialized_name: Despatch
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getDespatch
+                setter: setDespatch
+            type: horstoeko\ubl\entities\cac\Despatch

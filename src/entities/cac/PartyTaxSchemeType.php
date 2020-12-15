@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Party Tax Scheme. Details
- *  Information about a party's Tax Scheme.
+ *  A class to describe a taxation scheme applying to a party.
  *  Party Tax Scheme
  * XSD Type: PartyTaxSchemeType
  */
@@ -17,14 +17,14 @@ class PartyTaxSchemeType
     /**
      * BBIE
      *  Party Tax Scheme. Registration_ Name. Name
-     *  The official name of the party as registered with the relevant fiscal authority.
+     *  The name of the party as registered with the relevant fiscal authority.
      *  0..1
      *  Party Tax Scheme
      *  Registration
      *  Name
      *  Name
      *  Name. Type
-     *  "Microsoft Corporation"
+     *  Microsoft Corporation
      *
      * @var \horstoeko\ubl\entities\cbc\RegistrationName $registrationName
      */
@@ -33,14 +33,14 @@ class PartyTaxSchemeType
     /**
      * BBIE
      *  Party Tax Scheme. Company Identifier. Identifier
-     *  The identifier assigned for tax purposes to a party by the taxation authority.
+     *  An identifier for the party assigned for tax purposes by the taxation authority.
      *  0..1
      *  Party Tax Scheme
      *  Company Identifier
      *  Identifier
      *  Identifier. Type
      *  VAT Number
-     *  "3556625"
+     *  3556625
      *
      * @var \horstoeko\ubl\entities\cbc\CompanyID $companyID
      */
@@ -49,7 +49,7 @@ class PartyTaxSchemeType
     /**
      * BBIE
      *  Party Tax Scheme. Tax Level Code. Code
-     *  The section or role within the tax scheme that applies to the party.
+     *  A code signifying the tax level applicable to the party within this taxation scheme.
      *  0..1
      *  Party Tax Scheme
      *  Tax Level Code
@@ -63,7 +63,7 @@ class PartyTaxSchemeType
     /**
      * BBIE
      *  Party Tax Scheme. Exemption Reason Code. Code
-     *  A reason for a party's exemption from tax, expressed as a code.
+     *  A reason for the party's exemption from tax, expressed as a code.
      *  0..1
      *  Party Tax Scheme
      *  Exemption Reason Code
@@ -77,25 +77,28 @@ class PartyTaxSchemeType
     /**
      * BBIE
      *  Party Tax Scheme. Exemption_ Reason. Text
-     *  A reason for a party's exemption from tax, expressed as text.
-     *  0..1
+     *  A reason for the party's exemption from tax, expressed as text.
+     *  0..n
      *  Party Tax Scheme
      *  Exemption
      *  Reason
      *  Text
      *  Text. Type
      *
-     * @var \horstoeko\ubl\entities\cbc\ExemptionReason $exemptionReason
+     * @var \horstoeko\ubl\entities\cbc\ExemptionReason[] $exemptionReason
      */
-    private $exemptionReason = null;
+    private $exemptionReason = [
+        
+    ];
 
     /**
      * ASBIE
      *  Party Tax Scheme. Registration_ Address. Address
-     *  An association to Registered Address (for tax purposes).
+     *  The address of the party as registered for tax purposes.
      *  0..1
      *  Party Tax Scheme
      *  Registration
+     *  Address
      *  Address
      *  Address
      *
@@ -106,9 +109,10 @@ class PartyTaxSchemeType
     /**
      * ASBIE
      *  Party Tax Scheme. Tax Scheme
-     *  An association to Tax Scheme.
+     *  The taxation scheme applicable to the party.
      *  1
      *  Party Tax Scheme
+     *  Tax Scheme
      *  Tax Scheme
      *  Tax Scheme
      *
@@ -121,14 +125,14 @@ class PartyTaxSchemeType
      *
      * BBIE
      *  Party Tax Scheme. Registration_ Name. Name
-     *  The official name of the party as registered with the relevant fiscal authority.
+     *  The name of the party as registered with the relevant fiscal authority.
      *  0..1
      *  Party Tax Scheme
      *  Registration
      *  Name
      *  Name
      *  Name. Type
-     *  "Microsoft Corporation"
+     *  Microsoft Corporation
      *
      * @return \horstoeko\ubl\entities\cbc\RegistrationName
      */
@@ -142,14 +146,14 @@ class PartyTaxSchemeType
      *
      * BBIE
      *  Party Tax Scheme. Registration_ Name. Name
-     *  The official name of the party as registered with the relevant fiscal authority.
+     *  The name of the party as registered with the relevant fiscal authority.
      *  0..1
      *  Party Tax Scheme
      *  Registration
      *  Name
      *  Name
      *  Name. Type
-     *  "Microsoft Corporation"
+     *  Microsoft Corporation
      *
      * @param \horstoeko\ubl\entities\cbc\RegistrationName $registrationName
      * @return self
@@ -165,14 +169,14 @@ class PartyTaxSchemeType
      *
      * BBIE
      *  Party Tax Scheme. Company Identifier. Identifier
-     *  The identifier assigned for tax purposes to a party by the taxation authority.
+     *  An identifier for the party assigned for tax purposes by the taxation authority.
      *  0..1
      *  Party Tax Scheme
      *  Company Identifier
      *  Identifier
      *  Identifier. Type
      *  VAT Number
-     *  "3556625"
+     *  3556625
      *
      * @return \horstoeko\ubl\entities\cbc\CompanyID
      */
@@ -186,14 +190,14 @@ class PartyTaxSchemeType
      *
      * BBIE
      *  Party Tax Scheme. Company Identifier. Identifier
-     *  The identifier assigned for tax purposes to a party by the taxation authority.
+     *  An identifier for the party assigned for tax purposes by the taxation authority.
      *  0..1
      *  Party Tax Scheme
      *  Company Identifier
      *  Identifier
      *  Identifier. Type
      *  VAT Number
-     *  "3556625"
+     *  3556625
      *
      * @param \horstoeko\ubl\entities\cbc\CompanyID $companyID
      * @return self
@@ -209,7 +213,7 @@ class PartyTaxSchemeType
      *
      * BBIE
      *  Party Tax Scheme. Tax Level Code. Code
-     *  The section or role within the tax scheme that applies to the party.
+     *  A code signifying the tax level applicable to the party within this taxation scheme.
      *  0..1
      *  Party Tax Scheme
      *  Tax Level Code
@@ -228,7 +232,7 @@ class PartyTaxSchemeType
      *
      * BBIE
      *  Party Tax Scheme. Tax Level Code. Code
-     *  The section or role within the tax scheme that applies to the party.
+     *  A code signifying the tax level applicable to the party within this taxation scheme.
      *  0..1
      *  Party Tax Scheme
      *  Tax Level Code
@@ -249,7 +253,7 @@ class PartyTaxSchemeType
      *
      * BBIE
      *  Party Tax Scheme. Exemption Reason Code. Code
-     *  A reason for a party's exemption from tax, expressed as a code.
+     *  A reason for the party's exemption from tax, expressed as a code.
      *  0..1
      *  Party Tax Scheme
      *  Exemption Reason Code
@@ -268,7 +272,7 @@ class PartyTaxSchemeType
      *
      * BBIE
      *  Party Tax Scheme. Exemption Reason Code. Code
-     *  A reason for a party's exemption from tax, expressed as a code.
+     *  A reason for the party's exemption from tax, expressed as a code.
      *  0..1
      *  Party Tax Scheme
      *  Exemption Reason Code
@@ -285,19 +289,83 @@ class PartyTaxSchemeType
     }
 
     /**
-     * Gets as exemptionReason
+     * Adds as exemptionReason
      *
      * BBIE
      *  Party Tax Scheme. Exemption_ Reason. Text
-     *  A reason for a party's exemption from tax, expressed as text.
-     *  0..1
+     *  A reason for the party's exemption from tax, expressed as text.
+     *  0..n
      *  Party Tax Scheme
      *  Exemption
      *  Reason
      *  Text
      *  Text. Type
      *
-     * @return \horstoeko\ubl\entities\cbc\ExemptionReason
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\ExemptionReason $exemptionReason
+     */
+    public function addToExemptionReason(\horstoeko\ubl\entities\cbc\ExemptionReason $exemptionReason)
+    {
+        $this->exemptionReason[] = $exemptionReason;
+        return $this;
+    }
+
+    /**
+     * isset exemptionReason
+     *
+     * BBIE
+     *  Party Tax Scheme. Exemption_ Reason. Text
+     *  A reason for the party's exemption from tax, expressed as text.
+     *  0..n
+     *  Party Tax Scheme
+     *  Exemption
+     *  Reason
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetExemptionReason($index)
+    {
+        return isset($this->exemptionReason[$index]);
+    }
+
+    /**
+     * unset exemptionReason
+     *
+     * BBIE
+     *  Party Tax Scheme. Exemption_ Reason. Text
+     *  A reason for the party's exemption from tax, expressed as text.
+     *  0..n
+     *  Party Tax Scheme
+     *  Exemption
+     *  Reason
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetExemptionReason($index)
+    {
+        unset($this->exemptionReason[$index]);
+    }
+
+    /**
+     * Gets as exemptionReason
+     *
+     * BBIE
+     *  Party Tax Scheme. Exemption_ Reason. Text
+     *  A reason for the party's exemption from tax, expressed as text.
+     *  0..n
+     *  Party Tax Scheme
+     *  Exemption
+     *  Reason
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\ExemptionReason[]
      */
     public function getExemptionReason()
     {
@@ -309,18 +377,18 @@ class PartyTaxSchemeType
      *
      * BBIE
      *  Party Tax Scheme. Exemption_ Reason. Text
-     *  A reason for a party's exemption from tax, expressed as text.
-     *  0..1
+     *  A reason for the party's exemption from tax, expressed as text.
+     *  0..n
      *  Party Tax Scheme
      *  Exemption
      *  Reason
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ExemptionReason $exemptionReason
+     * @param \horstoeko\ubl\entities\cbc\ExemptionReason[] $exemptionReason
      * @return self
      */
-    public function setExemptionReason(\horstoeko\ubl\entities\cbc\ExemptionReason $exemptionReason)
+    public function setExemptionReason(array $exemptionReason)
     {
         $this->exemptionReason = $exemptionReason;
         return $this;
@@ -331,10 +399,11 @@ class PartyTaxSchemeType
      *
      * ASBIE
      *  Party Tax Scheme. Registration_ Address. Address
-     *  An association to Registered Address (for tax purposes).
+     *  The address of the party as registered for tax purposes.
      *  0..1
      *  Party Tax Scheme
      *  Registration
+     *  Address
      *  Address
      *  Address
      *
@@ -350,10 +419,11 @@ class PartyTaxSchemeType
      *
      * ASBIE
      *  Party Tax Scheme. Registration_ Address. Address
-     *  An association to Registered Address (for tax purposes).
+     *  The address of the party as registered for tax purposes.
      *  0..1
      *  Party Tax Scheme
      *  Registration
+     *  Address
      *  Address
      *  Address
      *
@@ -371,9 +441,10 @@ class PartyTaxSchemeType
      *
      * ASBIE
      *  Party Tax Scheme. Tax Scheme
-     *  An association to Tax Scheme.
+     *  The taxation scheme applicable to the party.
      *  1
      *  Party Tax Scheme
+     *  Tax Scheme
      *  Tax Scheme
      *  Tax Scheme
      *
@@ -389,9 +460,10 @@ class PartyTaxSchemeType
      *
      * ASBIE
      *  Party Tax Scheme. Tax Scheme
-     *  An association to Tax Scheme.
+     *  The taxation scheme applicable to the party.
      *  1
      *  Party Tax Scheme
+     *  Tax Scheme
      *  Tax Scheme
      *  Tax Scheme
      *

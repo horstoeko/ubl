@@ -1,0 +1,12 @@
+horstoeko\ubl\entities\xades\OCSPRefType:
+    properties:
+        oCSPIdentifier:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        digestAlgAndValue:
+            -
+                Valid: null

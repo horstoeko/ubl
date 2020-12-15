@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Card Account. Details
- *  Information about a credit card, debit card, or charge card.
+ *  A class to define a credit card, debit card, or charge card account.
  *  Card Account
  * XSD Type: CardAccountType
  */
@@ -17,7 +17,7 @@ class CardAccountType
     /**
      * BBIE
      *  Card Account. Primary_ Account Number. Identifier
-     *  The card number; the Primary Account Number (PAN).
+     *  An identifier of the card (e.g., the Primary Account Number (PAN)).
      *  1
      *  Card Account
      *  Primary
@@ -33,13 +33,13 @@ class CardAccountType
     /**
      * BBIE
      *  Card Account. Network. Identifier
-     *  The card network provider.
+     *  An identifier for the financial service network provider of the card.
      *  1
      *  Card Account
      *  Network
      *  Identifier
      *  Identifier. Type
-     *  “VISA”, “MasterCard”, “American Express”
+     *  VISA, MasterCard, American Express
      *
      * @var \horstoeko\ubl\entities\cbc\NetworkID $networkID
      */
@@ -48,13 +48,13 @@ class CardAccountType
     /**
      * BBIE
      *  Card Account. Card Type Code. Code
-     *  The type of card.
+     *  A mutually agreed code signifying the type of card. Examples of types are "debit", "credit" and "purchasing"
      *  0..1
      *  Card Account
      *  Card Type Code
      *  Code
      *  Code. Type
-     *  “Debit Card”, “Credit Card”, “Procurement Card”
+     *  Debit Card, Credit Card, Procurement Card
      *
      * @var \horstoeko\ubl\entities\cbc\CardTypeCode $cardTypeCode
      */
@@ -77,7 +77,7 @@ class CardAccountType
     /**
      * BBIE
      *  Card Account. Expiry Date. Date
-     *  The date up to which the card is valid.
+     *  The date on which the card expires.
      *  0..1
      *  Card Account
      *  Expiry Date
@@ -91,7 +91,7 @@ class CardAccountType
     /**
      * BBIE
      *  Card Account. Issuer. Identifier
-     *  The identifier for the card issuer.
+     *  An identifier for the institution issuing the card.
      *  0..1
      *  Card Account
      *  Issuer
@@ -105,7 +105,7 @@ class CardAccountType
     /**
      * BBIE
      *  Card Account. Issue Number. Identifier
-     *  The card issue number.
+     *  An identifier for the card, specified by the issuer.
      *  0..1
      *  Card Account
      *  Issue Number
@@ -119,7 +119,7 @@ class CardAccountType
     /**
      * BBIE
      *  Card Account. CV2. Identifier
-     *  The Card Verification Value.
+     *  An identifier for the Card Verification Value (often found on the reverse of the card itself).
      *  0..1
      *  Card Account
      *  CV2
@@ -133,11 +133,12 @@ class CardAccountType
     /**
      * BBIE
      *  Card Account. Card Chip Code. Code
-     *  The distinction between CHIP and MAG STRIPE cards.
+     *  A mutually agreed code to distinguish between CHIP and MAG STRIPE cards.
      *  0..1
      *  Card Account
      *  Card Chip Code
      *  Code
+     *  Chip
      *  Chip_ Code. Type
      *
      * @var \horstoeko\ubl\entities\cbc\CardChipCode $cardChipCode
@@ -147,7 +148,7 @@ class CardAccountType
     /**
      * BBIE
      *  Card Account. Chip_ Application. Identifier
-     *  An identifier for the application (AID) on a chip card that provides the information quoted.
+     *  An identifier on the chip card for the application that provides the quoted information; an AID (application ID).
      *  0..1
      *  Card Account
      *  Chip
@@ -178,7 +179,7 @@ class CardAccountType
      *
      * BBIE
      *  Card Account. Primary_ Account Number. Identifier
-     *  The card number; the Primary Account Number (PAN).
+     *  An identifier of the card (e.g., the Primary Account Number (PAN)).
      *  1
      *  Card Account
      *  Primary
@@ -199,7 +200,7 @@ class CardAccountType
      *
      * BBIE
      *  Card Account. Primary_ Account Number. Identifier
-     *  The card number; the Primary Account Number (PAN).
+     *  An identifier of the card (e.g., the Primary Account Number (PAN)).
      *  1
      *  Card Account
      *  Primary
@@ -222,13 +223,13 @@ class CardAccountType
      *
      * BBIE
      *  Card Account. Network. Identifier
-     *  The card network provider.
+     *  An identifier for the financial service network provider of the card.
      *  1
      *  Card Account
      *  Network
      *  Identifier
      *  Identifier. Type
-     *  “VISA”, “MasterCard”, “American Express”
+     *  VISA, MasterCard, American Express
      *
      * @return \horstoeko\ubl\entities\cbc\NetworkID
      */
@@ -242,13 +243,13 @@ class CardAccountType
      *
      * BBIE
      *  Card Account. Network. Identifier
-     *  The card network provider.
+     *  An identifier for the financial service network provider of the card.
      *  1
      *  Card Account
      *  Network
      *  Identifier
      *  Identifier. Type
-     *  “VISA”, “MasterCard”, “American Express”
+     *  VISA, MasterCard, American Express
      *
      * @param \horstoeko\ubl\entities\cbc\NetworkID $networkID
      * @return self
@@ -264,13 +265,13 @@ class CardAccountType
      *
      * BBIE
      *  Card Account. Card Type Code. Code
-     *  The type of card.
+     *  A mutually agreed code signifying the type of card. Examples of types are "debit", "credit" and "purchasing"
      *  0..1
      *  Card Account
      *  Card Type Code
      *  Code
      *  Code. Type
-     *  “Debit Card”, “Credit Card”, “Procurement Card”
+     *  Debit Card, Credit Card, Procurement Card
      *
      * @return \horstoeko\ubl\entities\cbc\CardTypeCode
      */
@@ -284,13 +285,13 @@ class CardAccountType
      *
      * BBIE
      *  Card Account. Card Type Code. Code
-     *  The type of card.
+     *  A mutually agreed code signifying the type of card. Examples of types are "debit", "credit" and "purchasing"
      *  0..1
      *  Card Account
      *  Card Type Code
      *  Code
      *  Code. Type
-     *  “Debit Card”, “Credit Card”, “Procurement Card”
+     *  Debit Card, Credit Card, Procurement Card
      *
      * @param \horstoeko\ubl\entities\cbc\CardTypeCode $cardTypeCode
      * @return self
@@ -346,7 +347,7 @@ class CardAccountType
      *
      * BBIE
      *  Card Account. Expiry Date. Date
-     *  The date up to which the card is valid.
+     *  The date on which the card expires.
      *  0..1
      *  Card Account
      *  Expiry Date
@@ -365,7 +366,7 @@ class CardAccountType
      *
      * BBIE
      *  Card Account. Expiry Date. Date
-     *  The date up to which the card is valid.
+     *  The date on which the card expires.
      *  0..1
      *  Card Account
      *  Expiry Date
@@ -386,7 +387,7 @@ class CardAccountType
      *
      * BBIE
      *  Card Account. Issuer. Identifier
-     *  The identifier for the card issuer.
+     *  An identifier for the institution issuing the card.
      *  0..1
      *  Card Account
      *  Issuer
@@ -405,7 +406,7 @@ class CardAccountType
      *
      * BBIE
      *  Card Account. Issuer. Identifier
-     *  The identifier for the card issuer.
+     *  An identifier for the institution issuing the card.
      *  0..1
      *  Card Account
      *  Issuer
@@ -426,7 +427,7 @@ class CardAccountType
      *
      * BBIE
      *  Card Account. Issue Number. Identifier
-     *  The card issue number.
+     *  An identifier for the card, specified by the issuer.
      *  0..1
      *  Card Account
      *  Issue Number
@@ -445,7 +446,7 @@ class CardAccountType
      *
      * BBIE
      *  Card Account. Issue Number. Identifier
-     *  The card issue number.
+     *  An identifier for the card, specified by the issuer.
      *  0..1
      *  Card Account
      *  Issue Number
@@ -466,7 +467,7 @@ class CardAccountType
      *
      * BBIE
      *  Card Account. CV2. Identifier
-     *  The Card Verification Value.
+     *  An identifier for the Card Verification Value (often found on the reverse of the card itself).
      *  0..1
      *  Card Account
      *  CV2
@@ -485,7 +486,7 @@ class CardAccountType
      *
      * BBIE
      *  Card Account. CV2. Identifier
-     *  The Card Verification Value.
+     *  An identifier for the Card Verification Value (often found on the reverse of the card itself).
      *  0..1
      *  Card Account
      *  CV2
@@ -506,11 +507,12 @@ class CardAccountType
      *
      * BBIE
      *  Card Account. Card Chip Code. Code
-     *  The distinction between CHIP and MAG STRIPE cards.
+     *  A mutually agreed code to distinguish between CHIP and MAG STRIPE cards.
      *  0..1
      *  Card Account
      *  Card Chip Code
      *  Code
+     *  Chip
      *  Chip_ Code. Type
      *
      * @return \horstoeko\ubl\entities\cbc\CardChipCode
@@ -525,11 +527,12 @@ class CardAccountType
      *
      * BBIE
      *  Card Account. Card Chip Code. Code
-     *  The distinction between CHIP and MAG STRIPE cards.
+     *  A mutually agreed code to distinguish between CHIP and MAG STRIPE cards.
      *  0..1
      *  Card Account
      *  Card Chip Code
      *  Code
+     *  Chip
      *  Chip_ Code. Type
      *
      * @param \horstoeko\ubl\entities\cbc\CardChipCode $cardChipCode
@@ -546,7 +549,7 @@ class CardAccountType
      *
      * BBIE
      *  Card Account. Chip_ Application. Identifier
-     *  An identifier for the application (AID) on a chip card that provides the information quoted.
+     *  An identifier on the chip card for the application that provides the quoted information; an AID (application ID).
      *  0..1
      *  Card Account
      *  Chip
@@ -566,7 +569,7 @@ class CardAccountType
      *
      * BBIE
      *  Card Account. Chip_ Application. Identifier
-     *  An identifier for the application (AID) on a chip card that provides the information quoted.
+     *  An identifier on the chip card for the application that provides the quoted information; an AID (application ID).
      *  0..1
      *  Card Account
      *  Chip

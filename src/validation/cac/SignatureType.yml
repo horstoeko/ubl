@@ -7,10 +7,6 @@ horstoeko\ubl\entities\cac\SignatureType:
                         - xsd_rules
         signatoryParty:
             -
-                NotNull:
-                    groups:
-                        - xsd_rules
-            -
                 Valid: null
         digitalSignatureAttachment:
             -

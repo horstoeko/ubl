@@ -1,0 +1,11 @@
+horstoeko\ubl\entities\xades\RevocationValuesType:
+    properties:
+        cRLValues:
+            -
+                Valid: null
+        oCSPValues:
+            -
+                Valid: null
+        otherValues:
+            -
+                Valid: null

@@ -1,0 +1,98 @@
+horstoeko\ubl\entities\cac\RequestedTenderTotalType:
+    properties:
+        estimatedOverallContractAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: EstimatedOverallContractAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getEstimatedOverallContractAmount
+                setter: setEstimatedOverallContractAmount
+            type: horstoeko\ubl\entities\cbc\EstimatedOverallContractAmount
+        totalAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: TotalAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTotalAmount
+                setter: setTotalAmount
+            type: horstoeko\ubl\entities\cbc\TotalAmount
+        taxIncludedIndicator:
+            expose: true
+            access_type: public_method
+            serialized_name: TaxIncludedIndicator
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTaxIncludedIndicator
+                setter: setTaxIncludedIndicator
+            type: bool
+        minimumAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: MinimumAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMinimumAmount
+                setter: setMinimumAmount
+            type: horstoeko\ubl\entities\cbc\MinimumAmount
+        maximumAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: MaximumAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMaximumAmount
+                setter: setMaximumAmount
+            type: horstoeko\ubl\entities\cbc\MaximumAmount
+        monetaryScope:
+            expose: true
+            access_type: public_method
+            serialized_name: MonetaryScope
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMonetaryScope
+                setter: setMonetaryScope
+            xml_list:
+                inline: true
+                entry_name: MonetaryScope
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\MonetaryScope>
+        averageSubsequentContractAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: AverageSubsequentContractAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAverageSubsequentContractAmount
+                setter: setAverageSubsequentContractAmount
+            type: horstoeko\ubl\entities\cbc\AverageSubsequentContractAmount
+        applicableTaxCategory:
+            expose: true
+            access_type: public_method
+            serialized_name: ApplicableTaxCategory
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getApplicableTaxCategory
+                setter: setApplicableTaxCategory
+            xml_list:
+                inline: true
+                entry_name: ApplicableTaxCategory
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\ApplicableTaxCategory>

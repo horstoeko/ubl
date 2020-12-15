@@ -1,0 +1,80 @@
+horstoeko\ubl\entities\cac\TenderingTermsType:
+    properties:
+        penaltyClause:
+            -
+                Valid: null
+        requiredFinancialGuarantee:
+            -
+                Valid: null
+        procurementLegislationDocumentReference:
+            -
+                Valid: null
+        fiscalLegislationDocumentReference:
+            -
+                Valid: null
+        environmentalLegislationDocumentReference:
+            -
+                Valid: null
+        employmentLegislationDocumentReference:
+            -
+                Valid: null
+        contractualDocumentReference:
+            -
+                Valid: null
+        callForTendersDocumentReference:
+            -
+                Valid: null
+        warrantyValidityPeriod:
+            -
+                Valid: null
+        paymentTerms:
+            -
+                Valid: null
+        tendererQualificationRequest:
+            -
+                Valid: null
+        allowedSubcontractTerms:
+            -
+                Valid: null
+        tenderPreparation:
+            -
+                Valid: null
+        contractExecutionRequirement:
+            -
+                Valid: null
+        awardingTerms:
+            -
+                Valid: null
+        additionalInformationParty:
+            -
+                Valid: null
+        documentProviderParty:
+            -
+                Valid: null
+        tenderRecipientParty:
+            -
+                Valid: null
+        contractResponsibleParty:
+            -
+                Valid: null
+        tenderEvaluationParty:
+            -
+                Valid: null
+        tenderValidityPeriod:
+            -
+                Valid: null
+        contractAcceptancePeriod:
+            -
+                Valid: null
+        appealTerms:
+            -
+                Valid: null
+        language:
+            -
+                Valid: null
+        budgetAccountLine:
+            -
+                Valid: null
+        replacedNoticeDocumentReference:
+            -
+                Valid: null

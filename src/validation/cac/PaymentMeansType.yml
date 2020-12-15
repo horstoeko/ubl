@@ -17,3 +17,9 @@ horstoeko\ubl\entities\cac\PaymentMeansType:
         creditAccount:
             -
                 Valid: null
+        paymentMandate:
+            -
+                Valid: null
+        tradeFinancing:
+            -
+                Valid: null

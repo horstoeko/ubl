@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Statement Line. Details
- *  Information about a Line on a Statement of Account.
+ *  A class to define a line in a Statement of account.
  *  Statement Line
  * XSD Type: StatementLineType
  */
@@ -17,7 +17,7 @@ class StatementLineType
     /**
      * BBIE
      *  Statement Line. Identifier
-     *  Identifies the Statement Line.
+     *  An identifier for this statement line.
      *  1
      *  Statement Line
      *  Identifier
@@ -31,21 +31,23 @@ class StatementLineType
     /**
      * BBIE
      *  Statement Line. Note. Text
-     *  Free-form text applying to the Statement Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Statement Line
      *  Note
      *  Text
      *  Text. Type
      *
-     * @var \horstoeko\ubl\entities\cbc\Note $note
+     * @var \horstoeko\ubl\entities\cbc\Note[] $note
      */
-    private $note = null;
+    private $note = [
+        
+    ];
 
     /**
      * BBIE
      *  Statement Line. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this statement line.
      *  0..1
      *  Statement Line
      *  UUID
@@ -59,7 +61,7 @@ class StatementLineType
     /**
      * BBIE
      *  Statement Line. Balance Brought Forward_ Indicator. Indicator
-     *  If true, indicates that the Statement Line contains a balance brought forward.
+     *  An indication that this statement line contains an outstanding balance from the previous bill(s) (true) or does not (false).
      *  0..1
      *  Statement Line
      *  Balance Brought Forward
@@ -74,7 +76,7 @@ class StatementLineType
     /**
      * BBIE
      *  Statement Line. Debit_ Line Amount. Amount
-     *  The amount debited on the Statement Line.
+     *  The amount debited on this statement line.
      *  0..1
      *  Statement Line
      *  Debit
@@ -89,7 +91,7 @@ class StatementLineType
     /**
      * BBIE
      *  Statement Line. Credit_ Line Amount. Amount
-     *  The amount credited on the Statement Line.
+     *  The amount credited on this statement line.
      *  0..1
      *  Statement Line
      *  Credit
@@ -104,7 +106,7 @@ class StatementLineType
     /**
      * BBIE
      *  Statement Line. Balance Amount. Amount
-     *  The balance amount on the Statement Line.
+     *  The balance amount on this statement line.
      *  0..1
      *  Statement Line
      *  Balance Amount
@@ -116,11 +118,26 @@ class StatementLineType
     private $balanceAmount = null;
 
     /**
-     * ASBIE
-     *  Statement Line. Payment Means
-     *  An association to Payment Means.
+     * BBIE
+     *  Statement Line. Payment Purpose Code. Code
+     *  A code signifying the business purpose for this payment.
      *  0..1
      *  Statement Line
+     *  Payment Purpose Code
+     *  Code
+     *  Code. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\PaymentPurposeCode $paymentPurposeCode
+     */
+    private $paymentPurposeCode = null;
+
+    /**
+     * ASBIE
+     *  Statement Line. Payment Means
+     *  A means of payment associated with this statement line.
+     *  0..1
+     *  Statement Line
+     *  Payment Means
      *  Payment Means
      *  Payment Means
      *
@@ -131,9 +148,10 @@ class StatementLineType
     /**
      * ASBIE
      *  Statement Line. Payment Terms
-     *  An association to Payment Terms.
+     *  A specification of payment terms associated with this statement line.
      *  0..n
      *  Statement Line
+     *  Payment Terms
      *  Payment Terms
      *  Payment Terms
      *
@@ -146,10 +164,11 @@ class StatementLineType
     /**
      * ASBIE
      *  Statement Line. Buyer_ Customer Party. Customer Party
-     *  An association to Buyer.
+     *  The buyer associated with this statement line.
      *  0..1
      *  Statement Line
      *  Buyer
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -160,10 +179,11 @@ class StatementLineType
     /**
      * ASBIE
      *  Statement Line. Seller_ Supplier Party. Supplier Party
-     *  An association to Seller.
+     *  The seller/supplier associated with this statement line.
      *  0..1
      *  Statement Line
      *  Seller
+     *  Supplier Party
      *  Supplier Party
      *  Supplier Party
      *
@@ -174,10 +194,11 @@ class StatementLineType
     /**
      * ASBIE
      *  Statement Line. Originator_ Customer Party. Customer Party
-     *  An association to Originator.
+     *  The originating party.
      *  0..1
      *  Statement Line
      *  Originator
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -188,10 +209,11 @@ class StatementLineType
     /**
      * ASBIE
      *  Statement Line. Accounting_ Customer Party. Customer Party
-     *  An association to Accounting Customer Party.
+     *  The Accounting Customer Party related to the statement information reported on this Statement Line.
      *  0..1
      *  Statement Line
      *  Accounting
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -202,10 +224,11 @@ class StatementLineType
     /**
      * ASBIE
      *  Statement Line. Accounting_ Supplier Party. Supplier Party
-     *  An association to Accounting Supplier Party.
+     *  The Accounting Supplier Party related to the statement information reported on this Statement Line.
      *  0..1
      *  Statement Line
      *  Accounting
+     *  Supplier Party
      *  Supplier Party
      *  Supplier Party
      *
@@ -216,10 +239,11 @@ class StatementLineType
     /**
      * ASBIE
      *  Statement Line. Payee_ Party. Party
-     *  An association to Payee.
+     *  The payee.
      *  0..1
      *  Statement Line
      *  Payee
+     *  Party
      *  Party
      *  Party
      *
@@ -230,10 +254,11 @@ class StatementLineType
     /**
      * ASBIE
      *  Statement Line. Invoice_ Period. Period
-     *  An association to Invoice Period.
+     *  An invoice period to which this statement line applies.
      *  0..n
      *  Statement Line
      *  Invoice
+     *  Period
      *  Period
      *  Period
      *
@@ -246,9 +271,10 @@ class StatementLineType
     /**
      * ASBIE
      *  Statement Line. Billing Reference
-     *  An association to Billing Reference.
+     *  A reference to a billing document associated with this statement line.
      *  0..n
      *  Statement Line
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -261,9 +287,10 @@ class StatementLineType
     /**
      * ASBIE
      *  Statement Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this statement line.
      *  0..n
      *  Statement Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -276,9 +303,10 @@ class StatementLineType
     /**
      * ASBIE
      *  Statement Line. Exchange Rate
-     *  An association to Exchange Rate (between the Statement Line currency and the Related Document Currency).
+     *  The rate of exchange between the currency of the Statement and the currency of the document described in the BillingReference.
      *  0..1
      *  Statement Line
+     *  Exchange Rate
      *  Exchange Rate
      *  Exchange Rate
      *
@@ -287,11 +315,44 @@ class StatementLineType
     private $exchangeRate = null;
 
     /**
+     * ASBIE
+     *  Statement Line. Allowance Charge
+     *  A charge or discount price component associated with this statement line.
+     *  0..n
+     *  Statement Line
+     *  Allowance Charge
+     *  Allowance Charge
+     *  Allowance Charge
+     *
+     * @var \horstoeko\ubl\entities\cac\AllowanceCharge[] $allowanceCharge
+     */
+    private $allowanceCharge = [
+        
+    ];
+
+    /**
+     * ASBIE
+     *  Statement Line. Collected_ Payment. Payment
+     *  A collected payment.
+     *  0..n
+     *  Statement Line
+     *  Collected
+     *  Payment
+     *  Payment
+     *  Payment
+     *
+     * @var \horstoeko\ubl\entities\cac\CollectedPayment[] $collectedPayment
+     */
+    private $collectedPayment = [
+        
+    ];
+
+    /**
      * Gets as iD
      *
      * BBIE
      *  Statement Line. Identifier
-     *  Identifies the Statement Line.
+     *  An identifier for this statement line.
      *  1
      *  Statement Line
      *  Identifier
@@ -310,7 +371,7 @@ class StatementLineType
      *
      * BBIE
      *  Statement Line. Identifier
-     *  Identifies the Statement Line.
+     *  An identifier for this statement line.
      *  1
      *  Statement Line
      *  Identifier
@@ -327,18 +388,79 @@ class StatementLineType
     }
 
     /**
-     * Gets as note
+     * Adds as note
      *
      * BBIE
      *  Statement Line. Note. Text
-     *  Free-form text applying to the Statement Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Statement Line
      *  Note
      *  Text
      *  Text. Type
      *
-     * @return \horstoeko\ubl\entities\cbc\Note
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\Note $note
+     */
+    public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
+    {
+        $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * isset note
+     *
+     * BBIE
+     *  Statement Line. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Statement Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetNote($index)
+    {
+        return isset($this->note[$index]);
+    }
+
+    /**
+     * unset note
+     *
+     * BBIE
+     *  Statement Line. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Statement Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetNote($index)
+    {
+        unset($this->note[$index]);
+    }
+
+    /**
+     * Gets as note
+     *
+     * BBIE
+     *  Statement Line. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Statement Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\Note[]
      */
     public function getNote()
     {
@@ -350,17 +472,17 @@ class StatementLineType
      *
      * BBIE
      *  Statement Line. Note. Text
-     *  Free-form text applying to the Statement Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Statement Line
      *  Note
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
-    public function setNote(\horstoeko\ubl\entities\cbc\Note $note)
+    public function setNote(array $note)
     {
         $this->note = $note;
         return $this;
@@ -371,7 +493,7 @@ class StatementLineType
      *
      * BBIE
      *  Statement Line. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this statement line.
      *  0..1
      *  Statement Line
      *  UUID
@@ -390,7 +512,7 @@ class StatementLineType
      *
      * BBIE
      *  Statement Line. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this statement line.
      *  0..1
      *  Statement Line
      *  UUID
@@ -411,7 +533,7 @@ class StatementLineType
      *
      * BBIE
      *  Statement Line. Balance Brought Forward_ Indicator. Indicator
-     *  If true, indicates that the Statement Line contains a balance brought forward.
+     *  An indication that this statement line contains an outstanding balance from the previous bill(s) (true) or does not (false).
      *  0..1
      *  Statement Line
      *  Balance Brought Forward
@@ -431,7 +553,7 @@ class StatementLineType
      *
      * BBIE
      *  Statement Line. Balance Brought Forward_ Indicator. Indicator
-     *  If true, indicates that the Statement Line contains a balance brought forward.
+     *  An indication that this statement line contains an outstanding balance from the previous bill(s) (true) or does not (false).
      *  0..1
      *  Statement Line
      *  Balance Brought Forward
@@ -453,7 +575,7 @@ class StatementLineType
      *
      * BBIE
      *  Statement Line. Debit_ Line Amount. Amount
-     *  The amount debited on the Statement Line.
+     *  The amount debited on this statement line.
      *  0..1
      *  Statement Line
      *  Debit
@@ -473,7 +595,7 @@ class StatementLineType
      *
      * BBIE
      *  Statement Line. Debit_ Line Amount. Amount
-     *  The amount debited on the Statement Line.
+     *  The amount debited on this statement line.
      *  0..1
      *  Statement Line
      *  Debit
@@ -495,7 +617,7 @@ class StatementLineType
      *
      * BBIE
      *  Statement Line. Credit_ Line Amount. Amount
-     *  The amount credited on the Statement Line.
+     *  The amount credited on this statement line.
      *  0..1
      *  Statement Line
      *  Credit
@@ -515,7 +637,7 @@ class StatementLineType
      *
      * BBIE
      *  Statement Line. Credit_ Line Amount. Amount
-     *  The amount credited on the Statement Line.
+     *  The amount credited on this statement line.
      *  0..1
      *  Statement Line
      *  Credit
@@ -537,7 +659,7 @@ class StatementLineType
      *
      * BBIE
      *  Statement Line. Balance Amount. Amount
-     *  The balance amount on the Statement Line.
+     *  The balance amount on this statement line.
      *  0..1
      *  Statement Line
      *  Balance Amount
@@ -556,7 +678,7 @@ class StatementLineType
      *
      * BBIE
      *  Statement Line. Balance Amount. Amount
-     *  The balance amount on the Statement Line.
+     *  The balance amount on this statement line.
      *  0..1
      *  Statement Line
      *  Balance Amount
@@ -573,13 +695,54 @@ class StatementLineType
     }
 
     /**
+     * Gets as paymentPurposeCode
+     *
+     * BBIE
+     *  Statement Line. Payment Purpose Code. Code
+     *  A code signifying the business purpose for this payment.
+     *  0..1
+     *  Statement Line
+     *  Payment Purpose Code
+     *  Code
+     *  Code. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\PaymentPurposeCode
+     */
+    public function getPaymentPurposeCode()
+    {
+        return $this->paymentPurposeCode;
+    }
+
+    /**
+     * Sets a new paymentPurposeCode
+     *
+     * BBIE
+     *  Statement Line. Payment Purpose Code. Code
+     *  A code signifying the business purpose for this payment.
+     *  0..1
+     *  Statement Line
+     *  Payment Purpose Code
+     *  Code
+     *  Code. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\PaymentPurposeCode $paymentPurposeCode
+     * @return self
+     */
+    public function setPaymentPurposeCode(\horstoeko\ubl\entities\cbc\PaymentPurposeCode $paymentPurposeCode)
+    {
+        $this->paymentPurposeCode = $paymentPurposeCode;
+        return $this;
+    }
+
+    /**
      * Gets as paymentMeans
      *
      * ASBIE
      *  Statement Line. Payment Means
-     *  An association to Payment Means.
+     *  A means of payment associated with this statement line.
      *  0..1
      *  Statement Line
+     *  Payment Means
      *  Payment Means
      *  Payment Means
      *
@@ -595,9 +758,10 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Payment Means
-     *  An association to Payment Means.
+     *  A means of payment associated with this statement line.
      *  0..1
      *  Statement Line
+     *  Payment Means
      *  Payment Means
      *  Payment Means
      *
@@ -615,9 +779,10 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Payment Terms
-     *  An association to Payment Terms.
+     *  A specification of payment terms associated with this statement line.
      *  0..n
      *  Statement Line
+     *  Payment Terms
      *  Payment Terms
      *  Payment Terms
      *
@@ -635,9 +800,10 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Payment Terms
-     *  An association to Payment Terms.
+     *  A specification of payment terms associated with this statement line.
      *  0..n
      *  Statement Line
+     *  Payment Terms
      *  Payment Terms
      *  Payment Terms
      *
@@ -654,9 +820,10 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Payment Terms
-     *  An association to Payment Terms.
+     *  A specification of payment terms associated with this statement line.
      *  0..n
      *  Statement Line
+     *  Payment Terms
      *  Payment Terms
      *  Payment Terms
      *
@@ -673,9 +840,10 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Payment Terms
-     *  An association to Payment Terms.
+     *  A specification of payment terms associated with this statement line.
      *  0..n
      *  Statement Line
+     *  Payment Terms
      *  Payment Terms
      *  Payment Terms
      *
@@ -691,9 +859,10 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Payment Terms
-     *  An association to Payment Terms.
+     *  A specification of payment terms associated with this statement line.
      *  0..n
      *  Statement Line
+     *  Payment Terms
      *  Payment Terms
      *  Payment Terms
      *
@@ -711,10 +880,11 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Buyer_ Customer Party. Customer Party
-     *  An association to Buyer.
+     *  The buyer associated with this statement line.
      *  0..1
      *  Statement Line
      *  Buyer
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -730,10 +900,11 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Buyer_ Customer Party. Customer Party
-     *  An association to Buyer.
+     *  The buyer associated with this statement line.
      *  0..1
      *  Statement Line
      *  Buyer
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -751,10 +922,11 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Seller_ Supplier Party. Supplier Party
-     *  An association to Seller.
+     *  The seller/supplier associated with this statement line.
      *  0..1
      *  Statement Line
      *  Seller
+     *  Supplier Party
      *  Supplier Party
      *  Supplier Party
      *
@@ -770,10 +942,11 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Seller_ Supplier Party. Supplier Party
-     *  An association to Seller.
+     *  The seller/supplier associated with this statement line.
      *  0..1
      *  Statement Line
      *  Seller
+     *  Supplier Party
      *  Supplier Party
      *  Supplier Party
      *
@@ -791,10 +964,11 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Originator_ Customer Party. Customer Party
-     *  An association to Originator.
+     *  The originating party.
      *  0..1
      *  Statement Line
      *  Originator
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -810,10 +984,11 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Originator_ Customer Party. Customer Party
-     *  An association to Originator.
+     *  The originating party.
      *  0..1
      *  Statement Line
      *  Originator
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -831,10 +1006,11 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Accounting_ Customer Party. Customer Party
-     *  An association to Accounting Customer Party.
+     *  The Accounting Customer Party related to the statement information reported on this Statement Line.
      *  0..1
      *  Statement Line
      *  Accounting
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -850,10 +1026,11 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Accounting_ Customer Party. Customer Party
-     *  An association to Accounting Customer Party.
+     *  The Accounting Customer Party related to the statement information reported on this Statement Line.
      *  0..1
      *  Statement Line
      *  Accounting
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -871,10 +1048,11 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Accounting_ Supplier Party. Supplier Party
-     *  An association to Accounting Supplier Party.
+     *  The Accounting Supplier Party related to the statement information reported on this Statement Line.
      *  0..1
      *  Statement Line
      *  Accounting
+     *  Supplier Party
      *  Supplier Party
      *  Supplier Party
      *
@@ -890,10 +1068,11 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Accounting_ Supplier Party. Supplier Party
-     *  An association to Accounting Supplier Party.
+     *  The Accounting Supplier Party related to the statement information reported on this Statement Line.
      *  0..1
      *  Statement Line
      *  Accounting
+     *  Supplier Party
      *  Supplier Party
      *  Supplier Party
      *
@@ -911,10 +1090,11 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Payee_ Party. Party
-     *  An association to Payee.
+     *  The payee.
      *  0..1
      *  Statement Line
      *  Payee
+     *  Party
      *  Party
      *  Party
      *
@@ -930,10 +1110,11 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Payee_ Party. Party
-     *  An association to Payee.
+     *  The payee.
      *  0..1
      *  Statement Line
      *  Payee
+     *  Party
      *  Party
      *  Party
      *
@@ -951,10 +1132,11 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Invoice_ Period. Period
-     *  An association to Invoice Period.
+     *  An invoice period to which this statement line applies.
      *  0..n
      *  Statement Line
      *  Invoice
+     *  Period
      *  Period
      *  Period
      *
@@ -972,10 +1154,11 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Invoice_ Period. Period
-     *  An association to Invoice Period.
+     *  An invoice period to which this statement line applies.
      *  0..n
      *  Statement Line
      *  Invoice
+     *  Period
      *  Period
      *  Period
      *
@@ -992,10 +1175,11 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Invoice_ Period. Period
-     *  An association to Invoice Period.
+     *  An invoice period to which this statement line applies.
      *  0..n
      *  Statement Line
      *  Invoice
+     *  Period
      *  Period
      *  Period
      *
@@ -1012,10 +1196,11 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Invoice_ Period. Period
-     *  An association to Invoice Period.
+     *  An invoice period to which this statement line applies.
      *  0..n
      *  Statement Line
      *  Invoice
+     *  Period
      *  Period
      *  Period
      *
@@ -1031,10 +1216,11 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Invoice_ Period. Period
-     *  An association to Invoice Period.
+     *  An invoice period to which this statement line applies.
      *  0..n
      *  Statement Line
      *  Invoice
+     *  Period
      *  Period
      *  Period
      *
@@ -1052,9 +1238,10 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Billing Reference
-     *  An association to Billing Reference.
+     *  A reference to a billing document associated with this statement line.
      *  0..n
      *  Statement Line
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -1072,9 +1259,10 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Billing Reference
-     *  An association to Billing Reference.
+     *  A reference to a billing document associated with this statement line.
      *  0..n
      *  Statement Line
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -1091,9 +1279,10 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Billing Reference
-     *  An association to Billing Reference.
+     *  A reference to a billing document associated with this statement line.
      *  0..n
      *  Statement Line
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -1110,9 +1299,10 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Billing Reference
-     *  An association to Billing Reference.
+     *  A reference to a billing document associated with this statement line.
      *  0..n
      *  Statement Line
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -1128,9 +1318,10 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Billing Reference
-     *  An association to Billing Reference.
+     *  A reference to a billing document associated with this statement line.
      *  0..n
      *  Statement Line
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -1148,9 +1339,10 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this statement line.
      *  0..n
      *  Statement Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1168,9 +1360,10 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this statement line.
      *  0..n
      *  Statement Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1187,9 +1380,10 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this statement line.
      *  0..n
      *  Statement Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1206,9 +1400,10 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this statement line.
      *  0..n
      *  Statement Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1224,9 +1419,10 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this statement line.
      *  0..n
      *  Statement Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1244,9 +1440,10 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Exchange Rate
-     *  An association to Exchange Rate (between the Statement Line currency and the Related Document Currency).
+     *  The rate of exchange between the currency of the Statement and the currency of the document described in the BillingReference.
      *  0..1
      *  Statement Line
+     *  Exchange Rate
      *  Exchange Rate
      *  Exchange Rate
      *
@@ -1262,9 +1459,10 @@ class StatementLineType
      *
      * ASBIE
      *  Statement Line. Exchange Rate
-     *  An association to Exchange Rate (between the Statement Line currency and the Related Document Currency).
+     *  The rate of exchange between the currency of the Statement and the currency of the document described in the BillingReference.
      *  0..1
      *  Statement Line
+     *  Exchange Rate
      *  Exchange Rate
      *  Exchange Rate
      *
@@ -1274,6 +1472,213 @@ class StatementLineType
     public function setExchangeRate(\horstoeko\ubl\entities\cac\ExchangeRate $exchangeRate)
     {
         $this->exchangeRate = $exchangeRate;
+        return $this;
+    }
+
+    /**
+     * Adds as allowanceCharge
+     *
+     * ASBIE
+     *  Statement Line. Allowance Charge
+     *  A charge or discount price component associated with this statement line.
+     *  0..n
+     *  Statement Line
+     *  Allowance Charge
+     *  Allowance Charge
+     *  Allowance Charge
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge
+     */
+    public function addToAllowanceCharge(\horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge)
+    {
+        $this->allowanceCharge[] = $allowanceCharge;
+        return $this;
+    }
+
+    /**
+     * isset allowanceCharge
+     *
+     * ASBIE
+     *  Statement Line. Allowance Charge
+     *  A charge or discount price component associated with this statement line.
+     *  0..n
+     *  Statement Line
+     *  Allowance Charge
+     *  Allowance Charge
+     *  Allowance Charge
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetAllowanceCharge($index)
+    {
+        return isset($this->allowanceCharge[$index]);
+    }
+
+    /**
+     * unset allowanceCharge
+     *
+     * ASBIE
+     *  Statement Line. Allowance Charge
+     *  A charge or discount price component associated with this statement line.
+     *  0..n
+     *  Statement Line
+     *  Allowance Charge
+     *  Allowance Charge
+     *  Allowance Charge
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetAllowanceCharge($index)
+    {
+        unset($this->allowanceCharge[$index]);
+    }
+
+    /**
+     * Gets as allowanceCharge
+     *
+     * ASBIE
+     *  Statement Line. Allowance Charge
+     *  A charge or discount price component associated with this statement line.
+     *  0..n
+     *  Statement Line
+     *  Allowance Charge
+     *  Allowance Charge
+     *  Allowance Charge
+     *
+     * @return \horstoeko\ubl\entities\cac\AllowanceCharge[]
+     */
+    public function getAllowanceCharge()
+    {
+        return $this->allowanceCharge;
+    }
+
+    /**
+     * Sets a new allowanceCharge
+     *
+     * ASBIE
+     *  Statement Line. Allowance Charge
+     *  A charge or discount price component associated with this statement line.
+     *  0..n
+     *  Statement Line
+     *  Allowance Charge
+     *  Allowance Charge
+     *  Allowance Charge
+     *
+     * @param \horstoeko\ubl\entities\cac\AllowanceCharge[] $allowanceCharge
+     * @return self
+     */
+    public function setAllowanceCharge(array $allowanceCharge)
+    {
+        $this->allowanceCharge = $allowanceCharge;
+        return $this;
+    }
+
+    /**
+     * Adds as collectedPayment
+     *
+     * ASBIE
+     *  Statement Line. Collected_ Payment. Payment
+     *  A collected payment.
+     *  0..n
+     *  Statement Line
+     *  Collected
+     *  Payment
+     *  Payment
+     *  Payment
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\CollectedPayment $collectedPayment
+     */
+    public function addToCollectedPayment(\horstoeko\ubl\entities\cac\CollectedPayment $collectedPayment)
+    {
+        $this->collectedPayment[] = $collectedPayment;
+        return $this;
+    }
+
+    /**
+     * isset collectedPayment
+     *
+     * ASBIE
+     *  Statement Line. Collected_ Payment. Payment
+     *  A collected payment.
+     *  0..n
+     *  Statement Line
+     *  Collected
+     *  Payment
+     *  Payment
+     *  Payment
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetCollectedPayment($index)
+    {
+        return isset($this->collectedPayment[$index]);
+    }
+
+    /**
+     * unset collectedPayment
+     *
+     * ASBIE
+     *  Statement Line. Collected_ Payment. Payment
+     *  A collected payment.
+     *  0..n
+     *  Statement Line
+     *  Collected
+     *  Payment
+     *  Payment
+     *  Payment
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetCollectedPayment($index)
+    {
+        unset($this->collectedPayment[$index]);
+    }
+
+    /**
+     * Gets as collectedPayment
+     *
+     * ASBIE
+     *  Statement Line. Collected_ Payment. Payment
+     *  A collected payment.
+     *  0..n
+     *  Statement Line
+     *  Collected
+     *  Payment
+     *  Payment
+     *  Payment
+     *
+     * @return \horstoeko\ubl\entities\cac\CollectedPayment[]
+     */
+    public function getCollectedPayment()
+    {
+        return $this->collectedPayment;
+    }
+
+    /**
+     * Sets a new collectedPayment
+     *
+     * ASBIE
+     *  Statement Line. Collected_ Payment. Payment
+     *  A collected payment.
+     *  0..n
+     *  Statement Line
+     *  Collected
+     *  Payment
+     *  Payment
+     *  Payment
+     *
+     * @param \horstoeko\ubl\entities\cac\CollectedPayment[] $collectedPayment
+     * @return self
+     */
+    public function setCollectedPayment(array $collectedPayment)
+    {
+        $this->collectedPayment = $collectedPayment;
         return $this;
     }
 

@@ -1,0 +1,14 @@
+horstoeko\ubl\entities\cac\TelecommunicationsSupplyType:
+    properties:
+        privacyCode:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        telecommunicationsSupplyLine:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

@@ -1,0 +1,11 @@
+horstoeko\ubl\entities\xades\IntegerListType:
+    properties:
+        int:
+            -
+                All:
+                    constraints:
+                        -
+                            Regex:
+                                pattern: '~[\-+]?[0-9]+~'
+                    groups:
+                        - xsd_rules

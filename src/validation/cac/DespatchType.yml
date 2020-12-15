@@ -3,9 +3,24 @@ horstoeko\ubl\entities\cac\DespatchType:
         despatchAddress:
             -
                 Valid: null
+        despatchLocation:
+            -
+                Valid: null
         despatchParty:
             -
                 Valid: null
+        carrierParty:
+            -
+                Valid: null
+        notifyParty:
+            -
+                Valid: null
         contact:
+            -
+                Valid: null
+        estimatedDespatchPeriod:
+            -
+                Valid: null
+        requestedDespatchPeriod:
             -
                 Valid: null

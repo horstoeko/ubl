@@ -1,0 +1,12 @@
+horstoeko\ubl\entities\cac\ServiceProviderPartyType:
+    properties:
+        party:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        sellerContact:
+            -
+                Valid: null

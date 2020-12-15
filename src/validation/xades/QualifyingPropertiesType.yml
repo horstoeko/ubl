@@ -1,0 +1,13 @@
+horstoeko\ubl\entities\xades\QualifyingPropertiesType:
+    properties:
+        target:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        signedProperties:
+            -
+                Valid: null
+        unsignedProperties:
+            -
+                Valid: null

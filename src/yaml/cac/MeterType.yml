@@ -1,0 +1,87 @@
+horstoeko\ubl\entities\cac\MeterType:
+    properties:
+        meterNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: MeterNumber
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMeterNumber
+                setter: setMeterNumber
+            type: horstoeko\ubl\entities\cbc\MeterNumber
+        meterName:
+            expose: true
+            access_type: public_method
+            serialized_name: MeterName
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMeterName
+                setter: setMeterName
+            type: horstoeko\ubl\entities\cbc\MeterName
+        meterConstant:
+            expose: true
+            access_type: public_method
+            serialized_name: MeterConstant
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMeterConstant
+                setter: setMeterConstant
+            type: horstoeko\ubl\entities\cbc\MeterConstant
+        meterConstantCode:
+            expose: true
+            access_type: public_method
+            serialized_name: MeterConstantCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMeterConstantCode
+                setter: setMeterConstantCode
+            type: horstoeko\ubl\entities\cbc\MeterConstantCode
+        totalDeliveredQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: TotalDeliveredQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTotalDeliveredQuantity
+                setter: setTotalDeliveredQuantity
+            type: horstoeko\ubl\entities\cbc\TotalDeliveredQuantity
+        meterReading:
+            expose: true
+            access_type: public_method
+            serialized_name: MeterReading
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getMeterReading
+                setter: setMeterReading
+            xml_list:
+                inline: true
+                entry_name: MeterReading
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\MeterReading>
+        meterProperty:
+            expose: true
+            access_type: public_method
+            serialized_name: MeterProperty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getMeterProperty
+                setter: setMeterProperty
+            xml_list:
+                inline: true
+                entry_name: MeterProperty
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\MeterProperty>

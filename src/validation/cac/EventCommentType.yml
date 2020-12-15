@@ -1,0 +1,7 @@
+horstoeko\ubl\entities\cac\EventCommentType:
+    properties:
+        comment:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

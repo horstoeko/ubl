@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Address Line. Details
- *  Information about a line of address expressed as unstructured text.
+ *  A class to define an unstructured address line.
  *  Address Line
  * XSD Type: AddressLineType
  */
@@ -17,13 +17,13 @@ class AddressLineType
     /**
      * BBIE
      *  Address Line. Line. Text
-     *  A line of address expressed as unstructured text.
+     *  An address line expressed as unstructured text.
      *  1
      *  Address Line
      *  Line
      *  Text
      *  Text. Type
-     *  "123 Standard Chartered Tower"
+     *  123 Standard Chartered Tower
      *
      * @var \horstoeko\ubl\entities\cbc\Line $line
      */
@@ -34,13 +34,13 @@ class AddressLineType
      *
      * BBIE
      *  Address Line. Line. Text
-     *  A line of address expressed as unstructured text.
+     *  An address line expressed as unstructured text.
      *  1
      *  Address Line
      *  Line
      *  Text
      *  Text. Type
-     *  "123 Standard Chartered Tower"
+     *  123 Standard Chartered Tower
      *
      * @return \horstoeko\ubl\entities\cbc\Line
      */
@@ -54,13 +54,13 @@ class AddressLineType
      *
      * BBIE
      *  Address Line. Line. Text
-     *  A line of address expressed as unstructured text.
+     *  An address line expressed as unstructured text.
      *  1
      *  Address Line
      *  Line
      *  Text
      *  Text. Type
-     *  "123 Standard Chartered Tower"
+     *  123 Standard Chartered Tower
      *
      * @param \horstoeko\ubl\entities\cbc\Line $line
      * @return self

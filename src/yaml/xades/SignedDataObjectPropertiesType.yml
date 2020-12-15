@@ -1,0 +1,71 @@
+horstoeko\ubl\entities\xades\SignedDataObjectPropertiesType:
+    properties:
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: Id
+            accessor:
+                getter: getId
+                setter: setId
+            xml_attribute: true
+            type: string
+        dataObjectFormat:
+            expose: true
+            access_type: public_method
+            serialized_name: DataObjectFormat
+            xml_element:
+                cdata: false
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            accessor:
+                getter: getDataObjectFormat
+                setter: setDataObjectFormat
+            xml_list:
+                inline: true
+                entry_name: DataObjectFormat
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            type: array<horstoeko\ubl\entities\xades\DataObjectFormatType>
+        commitmentTypeIndication:
+            expose: true
+            access_type: public_method
+            serialized_name: CommitmentTypeIndication
+            xml_element:
+                cdata: false
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            accessor:
+                getter: getCommitmentTypeIndication
+                setter: setCommitmentTypeIndication
+            xml_list:
+                inline: true
+                entry_name: CommitmentTypeIndication
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            type: array<horstoeko\ubl\entities\xades\CommitmentTypeIndicationType>
+        allDataObjectsTimeStamp:
+            expose: true
+            access_type: public_method
+            serialized_name: AllDataObjectsTimeStamp
+            xml_element:
+                cdata: false
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            accessor:
+                getter: getAllDataObjectsTimeStamp
+                setter: setAllDataObjectsTimeStamp
+            xml_list:
+                inline: true
+                entry_name: AllDataObjectsTimeStamp
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            type: array<horstoeko\ubl\entities\xades\XAdESTimeStampType>
+        individualDataObjectsTimeStamp:
+            expose: true
+            access_type: public_method
+            serialized_name: IndividualDataObjectsTimeStamp
+            xml_element:
+                cdata: false
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            accessor:
+                getter: getIndividualDataObjectsTimeStamp
+                setter: setIndividualDataObjectsTimeStamp
+            xml_list:
+                inline: true
+                entry_name: IndividualDataObjectsTimeStamp
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            type: array<horstoeko\ubl\entities\xades\XAdESTimeStampType>

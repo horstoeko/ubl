@@ -1,0 +1,8 @@
+horstoeko\ubl\entities\cac\MaritimeTransportType:
+    properties:
+        registryCertificateDocumentReference:
+            -
+                Valid: null
+        registryPortLocation:
+            -
+                Valid: null

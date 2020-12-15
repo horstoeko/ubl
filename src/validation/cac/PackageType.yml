@@ -3,6 +3,9 @@ horstoeko\ubl\entities\cac\PackageType:
         containedPackage:
             -
                 Valid: null
+        containingTransportEquipment:
+            -
+                Valid: null
         goodsItem:
             -
                 Valid: null
@@ -10,5 +13,14 @@ horstoeko\ubl\entities\cac\PackageType:
             -
                 Valid: null
         deliveryUnit:
+            -
+                Valid: null
+        delivery:
+            -
+                Valid: null
+        pickup:
+            -
+                Valid: null
+        despatch:
             -
                 Valid: null

@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Order Line Reference. Details
- *  Information about an Order Line Reference.
+ *  A class to define a reference to an order line.
  *  Order Line Reference
  * XSD Type: OrderLineReferenceType
  */
@@ -17,7 +17,7 @@ class OrderLineReferenceType
     /**
      * BBIE
      *  Order Line Reference. Line Identifier. Identifier
-     *  Identifies the referenced Order Line assigned by the buyer.
+     *  An identifier for the referenced order line, assigned by the buyer.
      *  1
      *  Order Line Reference
      *  Line Identifier
@@ -31,7 +31,7 @@ class OrderLineReferenceType
     /**
      * BBIE
      *  Order Line Reference. Sales Order_ Line Identifier. Identifier
-     *  Identifies the referenced Order Line assigned by the seller.
+     *  An identifier for the referenced order line, assigned by the seller.
      *  0..1
      *  Order Line Reference
      *  Sales Order
@@ -46,7 +46,7 @@ class OrderLineReferenceType
     /**
      * BBIE
      *  Order Line Reference. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this order line reference.
      *  0..1
      *  Order Line Reference
      *  UUID
@@ -60,11 +60,12 @@ class OrderLineReferenceType
     /**
      * BBIE
      *  Order Line Reference. Line Status Code. Code
-     *  Identifies the status of the referenced Order Line with respect to its original state.
+     *  A code signifying the status of the referenced order line with respect to its original state.
      *  0..1
      *  Order Line Reference
      *  Line Status Code
      *  Code
+     *  Line Status
      *  Line Status_ Code. Type
      *
      * @var \horstoeko\ubl\entities\cbc\LineStatusCode $lineStatusCode
@@ -74,9 +75,10 @@ class OrderLineReferenceType
     /**
      * ASBIE
      *  Order Line Reference. Order Reference
-     *  An association to Order Reference.
+     *  A reference to the Order containing the referenced order line.
      *  0..1
      *  Order Line Reference
+     *  Order Reference
      *  Order Reference
      *  Order Reference
      *
@@ -89,7 +91,7 @@ class OrderLineReferenceType
      *
      * BBIE
      *  Order Line Reference. Line Identifier. Identifier
-     *  Identifies the referenced Order Line assigned by the buyer.
+     *  An identifier for the referenced order line, assigned by the buyer.
      *  1
      *  Order Line Reference
      *  Line Identifier
@@ -108,7 +110,7 @@ class OrderLineReferenceType
      *
      * BBIE
      *  Order Line Reference. Line Identifier. Identifier
-     *  Identifies the referenced Order Line assigned by the buyer.
+     *  An identifier for the referenced order line, assigned by the buyer.
      *  1
      *  Order Line Reference
      *  Line Identifier
@@ -129,7 +131,7 @@ class OrderLineReferenceType
      *
      * BBIE
      *  Order Line Reference. Sales Order_ Line Identifier. Identifier
-     *  Identifies the referenced Order Line assigned by the seller.
+     *  An identifier for the referenced order line, assigned by the seller.
      *  0..1
      *  Order Line Reference
      *  Sales Order
@@ -149,7 +151,7 @@ class OrderLineReferenceType
      *
      * BBIE
      *  Order Line Reference. Sales Order_ Line Identifier. Identifier
-     *  Identifies the referenced Order Line assigned by the seller.
+     *  An identifier for the referenced order line, assigned by the seller.
      *  0..1
      *  Order Line Reference
      *  Sales Order
@@ -171,7 +173,7 @@ class OrderLineReferenceType
      *
      * BBIE
      *  Order Line Reference. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this order line reference.
      *  0..1
      *  Order Line Reference
      *  UUID
@@ -190,7 +192,7 @@ class OrderLineReferenceType
      *
      * BBIE
      *  Order Line Reference. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this order line reference.
      *  0..1
      *  Order Line Reference
      *  UUID
@@ -211,11 +213,12 @@ class OrderLineReferenceType
      *
      * BBIE
      *  Order Line Reference. Line Status Code. Code
-     *  Identifies the status of the referenced Order Line with respect to its original state.
+     *  A code signifying the status of the referenced order line with respect to its original state.
      *  0..1
      *  Order Line Reference
      *  Line Status Code
      *  Code
+     *  Line Status
      *  Line Status_ Code. Type
      *
      * @return \horstoeko\ubl\entities\cbc\LineStatusCode
@@ -230,11 +233,12 @@ class OrderLineReferenceType
      *
      * BBIE
      *  Order Line Reference. Line Status Code. Code
-     *  Identifies the status of the referenced Order Line with respect to its original state.
+     *  A code signifying the status of the referenced order line with respect to its original state.
      *  0..1
      *  Order Line Reference
      *  Line Status Code
      *  Code
+     *  Line Status
      *  Line Status_ Code. Type
      *
      * @param \horstoeko\ubl\entities\cbc\LineStatusCode $lineStatusCode
@@ -251,9 +255,10 @@ class OrderLineReferenceType
      *
      * ASBIE
      *  Order Line Reference. Order Reference
-     *  An association to Order Reference.
+     *  A reference to the Order containing the referenced order line.
      *  0..1
      *  Order Line Reference
+     *  Order Reference
      *  Order Reference
      *  Order Reference
      *
@@ -269,9 +274,10 @@ class OrderLineReferenceType
      *
      * ASBIE
      *  Order Line Reference. Order Reference
-     *  An association to Order Reference.
+     *  A reference to the Order containing the referenced order line.
      *  0..1
      *  Order Line Reference
+     *  Order Reference
      *  Order Reference
      *  Order Reference
      *

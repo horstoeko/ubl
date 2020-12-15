@@ -1,0 +1,43 @@
+horstoeko\ubl\entities\cac\OnAccountPaymentType:
+    properties:
+        estimatedConsumedQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: EstimatedConsumedQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getEstimatedConsumedQuantity
+                setter: setEstimatedConsumedQuantity
+            type: horstoeko\ubl\entities\cbc\EstimatedConsumedQuantity
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: Note
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getNote
+                setter: setNote
+            xml_list:
+                inline: true
+                entry_name: Note
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Note>
+        paymentTerms:
+            expose: true
+            access_type: public_method
+            serialized_name: PaymentTerms
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPaymentTerms
+                setter: setPaymentTerms
+            xml_list:
+                inline: true
+                entry_name: PaymentTerms
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\PaymentTerms>

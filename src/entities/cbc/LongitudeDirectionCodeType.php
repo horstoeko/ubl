@@ -2,7 +2,7 @@
 
 namespace horstoeko\ubl\entities\cbc;
 
-use horstoeko\ubl\entities\qdt\LongitudeDirectionCodeType as LongitudeDirectionCodeTypeBase;
+use horstoeko\ubl\entities\udt\CodeType;
 
 /**
  * Class representing LongitudeDirectionCodeType
@@ -10,7 +10,7 @@ use horstoeko\ubl\entities\qdt\LongitudeDirectionCodeType as LongitudeDirectionC
  *
  * XSD Type: LongitudeDirectionCodeType
  */
-class LongitudeDirectionCodeType extends LongitudeDirectionCodeTypeBase
+class LongitudeDirectionCodeType extends CodeType
 {
 
 

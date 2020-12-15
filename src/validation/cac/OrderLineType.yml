@@ -22,6 +22,9 @@ horstoeko\ubl\entities\cac\OrderLineType:
         quotationLineReference:
             -
                 Valid: null
+        orderLineReference:
+            -
+                Valid: null
         documentReference:
             -
                 Valid: null

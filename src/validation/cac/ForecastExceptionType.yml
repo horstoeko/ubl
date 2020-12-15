@@ -1,0 +1,22 @@
+horstoeko\ubl\entities\cac\ForecastExceptionType:
+    properties:
+        forecastPurposeCode:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        forecastTypeCode:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        issueDate:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        dataSourceCode:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

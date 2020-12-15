@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Contact. Details
- *  Information about a contactable person or organization department.
+ *  A class to describe a contactable person or department in an organization.
  *  Contact
  * XSD Type: ContactType
  */
@@ -17,13 +17,13 @@ class ContactType
     /**
      * BBIE
      *  Contact. Identifier
-     *  An identifier for the Contact.
+     *  An identifier for this contact.
      *  0..1
      *  Contact
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "Receivals Clerk"
+     *  Receivals Clerk
      *
      * @var \horstoeko\ubl\entities\cbc\ID $iD
      */
@@ -32,13 +32,13 @@ class ContactType
     /**
      * BBIE
      *  Contact. Name
-     *  The name of the Contact.
+     *  The name of this contact. It is recommended that this be used for a functional name and not a personal name.
      *  0..1
      *  Contact
      *  Name
      *  Name
      *  Name. Type
-     *  "Delivery Dock"
+     *  Delivery Dock
      *
      * @var \horstoeko\ubl\entities\cbc\Name $name
      */
@@ -47,7 +47,7 @@ class ContactType
     /**
      * BBIE
      *  Contact. Telephone. Text
-     *  The telephone number of the Contact.
+     *  The primary telephone number of this contact.
      *  0..1
      *  Contact
      *  Telephone
@@ -61,7 +61,7 @@ class ContactType
     /**
      * BBIE
      *  Contact. Telefax. Text
-     *  The fax number of the Contact.
+     *  The primary fax number of this contact.
      *  0..1
      *  Contact
      *  Telefax
@@ -75,7 +75,7 @@ class ContactType
     /**
      * BBIE
      *  Contact. Electronic_ Mail. Text
-     *  The email address of the Contact.
+     *  The primary email address of this contact.
      *  0..1
      *  Contact
      *  Electronic
@@ -90,24 +90,27 @@ class ContactType
     /**
      * BBIE
      *  Contact. Note. Text
-     *  A note such as 'Emergency' or 'After Hours' describing the circumstances in which the Contact can be used.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures; in particular, a textual description of the circumstances under which this contact can be used (e.g., "emergency" or "after hours").
+     *  0..n
      *  Contact
      *  Note
      *  Text
      *  Text. Type
      *
-     * @var \horstoeko\ubl\entities\cbc\Note $note
+     * @var \horstoeko\ubl\entities\cbc\Note[] $note
      */
-    private $note = null;
+    private $note = [
+        
+    ];
 
     /**
      * ASBIE
      *  Contact. Other_ Communication. Communication
-     *  An association to Other Communication.
+     *  Another means of communication with this contact.
      *  0..n
      *  Contact
      *  Other
+     *  Communication
      *  Communication
      *  Communication
      *
@@ -122,13 +125,13 @@ class ContactType
      *
      * BBIE
      *  Contact. Identifier
-     *  An identifier for the Contact.
+     *  An identifier for this contact.
      *  0..1
      *  Contact
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "Receivals Clerk"
+     *  Receivals Clerk
      *
      * @return \horstoeko\ubl\entities\cbc\ID
      */
@@ -142,13 +145,13 @@ class ContactType
      *
      * BBIE
      *  Contact. Identifier
-     *  An identifier for the Contact.
+     *  An identifier for this contact.
      *  0..1
      *  Contact
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "Receivals Clerk"
+     *  Receivals Clerk
      *
      * @param \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
@@ -164,13 +167,13 @@ class ContactType
      *
      * BBIE
      *  Contact. Name
-     *  The name of the Contact.
+     *  The name of this contact. It is recommended that this be used for a functional name and not a personal name.
      *  0..1
      *  Contact
      *  Name
      *  Name
      *  Name. Type
-     *  "Delivery Dock"
+     *  Delivery Dock
      *
      * @return \horstoeko\ubl\entities\cbc\Name
      */
@@ -184,13 +187,13 @@ class ContactType
      *
      * BBIE
      *  Contact. Name
-     *  The name of the Contact.
+     *  The name of this contact. It is recommended that this be used for a functional name and not a personal name.
      *  0..1
      *  Contact
      *  Name
      *  Name
      *  Name. Type
-     *  "Delivery Dock"
+     *  Delivery Dock
      *
      * @param \horstoeko\ubl\entities\cbc\Name $name
      * @return self
@@ -206,7 +209,7 @@ class ContactType
      *
      * BBIE
      *  Contact. Telephone. Text
-     *  The telephone number of the Contact.
+     *  The primary telephone number of this contact.
      *  0..1
      *  Contact
      *  Telephone
@@ -225,7 +228,7 @@ class ContactType
      *
      * BBIE
      *  Contact. Telephone. Text
-     *  The telephone number of the Contact.
+     *  The primary telephone number of this contact.
      *  0..1
      *  Contact
      *  Telephone
@@ -246,7 +249,7 @@ class ContactType
      *
      * BBIE
      *  Contact. Telefax. Text
-     *  The fax number of the Contact.
+     *  The primary fax number of this contact.
      *  0..1
      *  Contact
      *  Telefax
@@ -265,7 +268,7 @@ class ContactType
      *
      * BBIE
      *  Contact. Telefax. Text
-     *  The fax number of the Contact.
+     *  The primary fax number of this contact.
      *  0..1
      *  Contact
      *  Telefax
@@ -286,7 +289,7 @@ class ContactType
      *
      * BBIE
      *  Contact. Electronic_ Mail. Text
-     *  The email address of the Contact.
+     *  The primary email address of this contact.
      *  0..1
      *  Contact
      *  Electronic
@@ -306,7 +309,7 @@ class ContactType
      *
      * BBIE
      *  Contact. Electronic_ Mail. Text
-     *  The email address of the Contact.
+     *  The primary email address of this contact.
      *  0..1
      *  Contact
      *  Electronic
@@ -324,18 +327,79 @@ class ContactType
     }
 
     /**
-     * Gets as note
+     * Adds as note
      *
      * BBIE
      *  Contact. Note. Text
-     *  A note such as 'Emergency' or 'After Hours' describing the circumstances in which the Contact can be used.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures; in particular, a textual description of the circumstances under which this contact can be used (e.g., "emergency" or "after hours").
+     *  0..n
      *  Contact
      *  Note
      *  Text
      *  Text. Type
      *
-     * @return \horstoeko\ubl\entities\cbc\Note
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\Note $note
+     */
+    public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
+    {
+        $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * isset note
+     *
+     * BBIE
+     *  Contact. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures; in particular, a textual description of the circumstances under which this contact can be used (e.g., "emergency" or "after hours").
+     *  0..n
+     *  Contact
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetNote($index)
+    {
+        return isset($this->note[$index]);
+    }
+
+    /**
+     * unset note
+     *
+     * BBIE
+     *  Contact. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures; in particular, a textual description of the circumstances under which this contact can be used (e.g., "emergency" or "after hours").
+     *  0..n
+     *  Contact
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetNote($index)
+    {
+        unset($this->note[$index]);
+    }
+
+    /**
+     * Gets as note
+     *
+     * BBIE
+     *  Contact. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures; in particular, a textual description of the circumstances under which this contact can be used (e.g., "emergency" or "after hours").
+     *  0..n
+     *  Contact
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\Note[]
      */
     public function getNote()
     {
@@ -347,17 +411,17 @@ class ContactType
      *
      * BBIE
      *  Contact. Note. Text
-     *  A note such as 'Emergency' or 'After Hours' describing the circumstances in which the Contact can be used.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures; in particular, a textual description of the circumstances under which this contact can be used (e.g., "emergency" or "after hours").
+     *  0..n
      *  Contact
      *  Note
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
-    public function setNote(\horstoeko\ubl\entities\cbc\Note $note)
+    public function setNote(array $note)
     {
         $this->note = $note;
         return $this;
@@ -368,10 +432,11 @@ class ContactType
      *
      * ASBIE
      *  Contact. Other_ Communication. Communication
-     *  An association to Other Communication.
+     *  Another means of communication with this contact.
      *  0..n
      *  Contact
      *  Other
+     *  Communication
      *  Communication
      *  Communication
      *
@@ -389,10 +454,11 @@ class ContactType
      *
      * ASBIE
      *  Contact. Other_ Communication. Communication
-     *  An association to Other Communication.
+     *  Another means of communication with this contact.
      *  0..n
      *  Contact
      *  Other
+     *  Communication
      *  Communication
      *  Communication
      *
@@ -409,10 +475,11 @@ class ContactType
      *
      * ASBIE
      *  Contact. Other_ Communication. Communication
-     *  An association to Other Communication.
+     *  Another means of communication with this contact.
      *  0..n
      *  Contact
      *  Other
+     *  Communication
      *  Communication
      *  Communication
      *
@@ -429,10 +496,11 @@ class ContactType
      *
      * ASBIE
      *  Contact. Other_ Communication. Communication
-     *  An association to Other Communication.
+     *  Another means of communication with this contact.
      *  0..n
      *  Contact
      *  Other
+     *  Communication
      *  Communication
      *  Communication
      *
@@ -448,10 +516,11 @@ class ContactType
      *
      * ASBIE
      *  Contact. Other_ Communication. Communication
-     *  An association to Other Communication.
+     *  Another means of communication with this contact.
      *  0..n
      *  Contact
      *  Other
+     *  Communication
      *  Communication
      *  Communication
      *

@@ -1,0 +1,42 @@
+horstoeko\ubl\entities\cac\ConsumptionLineType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        invoicedQuantity:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        lineExtensionAmount:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        period:
+            -
+                Valid: null
+        delivery:
+            -
+                Valid: null
+        allowanceCharge:
+            -
+                Valid: null
+        taxTotal:
+            -
+                Valid: null
+        utilityItem:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        price:
+            -
+                Valid: null
+        unstructuredPrice:
+            -
+                Valid: null

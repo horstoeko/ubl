@@ -1,0 +1,12 @@
+horstoeko\ubl\entities\cac\WebSiteAccessType:
+    properties:
+        password:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        login:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

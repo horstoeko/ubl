@@ -1,0 +1,14 @@
+horstoeko\ubl\entities\xades\SignedDataObjectPropertiesType:
+    properties:
+        dataObjectFormat:
+            -
+                Valid: null
+        commitmentTypeIndication:
+            -
+                Valid: null
+        allDataObjectsTimeStamp:
+            -
+                Valid: null
+        individualDataObjectsTimeStamp:
+            -
+                Valid: null

@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Secondary Hazard. Details
- *  Information about Secondary Hazard (related to a Hazardous Item).
+ *  A class to describe a secondary hazard associated with a hazardous item.
  *  Secondary Hazard
  * XSD Type: SecondaryHazardType
  */
@@ -17,7 +17,7 @@ class SecondaryHazardType
     /**
      * BBIE
      *  Secondary Hazard. Identifier
-     *  Identifies the Secondary Hazard.
+     *  An identifier for this secondary hazard.
      *  0..1
      *  Secondary Hazard
      *  Identifier
@@ -31,13 +31,13 @@ class SecondaryHazardType
     /**
      * BBIE
      *  Secondary Hazard. Placard Notation. Text
-     *  The placard notation corresponding to the hazard class of the hazardous commodity. Can also be the hazard identification number of the orange placard (upper part) required on the means of transport.
+     *  Text of the placard notation corresponding to the hazard class of this secondary hazard. Can also be the hazard identification number of the orange placard (upper part) required on the means of transport.
      *  0..1
      *  Secondary Hazard
      *  Placard Notation
      *  Text
      *  Text. Type
-     *  "5.1"
+     *  5.1
      *
      * @var \horstoeko\ubl\entities\cbc\PlacardNotation $placardNotation
      */
@@ -46,13 +46,13 @@ class SecondaryHazardType
     /**
      * BBIE
      *  Secondary Hazard. Placard Endorsement. Text
-     *  The placard endorsement that is to be shown on the shipping papers for the hazardous commodity. Can also be used for the number of the orange placard (lower part) required on the means of transport.
+     *  Text of the placard endorsement for this secondary hazard that is to be shown on the shipping papers for a hazardous item. Can also be used for the number of the orange placard (lower part) required on the means of transport.
      *  0..1
      *  Secondary Hazard
      *  Placard Endorsement
      *  Text
      *  Text. Type
-     *  "2"
+     *  2
      *
      * @var \horstoeko\ubl\entities\cbc\PlacardEndorsement $placardEndorsement
      */
@@ -61,7 +61,7 @@ class SecondaryHazardType
     /**
      * BBIE
      *  Secondary Hazard. Emergency Procedures Code. Code
-     *  Emergency procedures for hazardous goods, expressed as a code.
+     *  A code signifying the emergency procedures for this secondary hazard.
      *  0..1
      *  Secondary Hazard
      *  Emergency Procedures Code
@@ -76,24 +76,26 @@ class SecondaryHazardType
     /**
      * BBIE
      *  Secondary Hazard. Extension. Text
-     *  Additional information about the hazardous substance. Can be used to specify information such as the type of regulatory requirements that apply to a description.
-     *  0..1
+     *  Additional information about the hazardous substance, which can be used (for example) to specify the type of regulatory requirements that apply to this secondary hazard.
+     *  0..n
      *  Secondary Hazard
      *  Extension
      *  Text
      *  Text. Type
-     *  "N.O.S. or a Waste Characteristics Code in conjunction with an EPA Waste Stream code"
+     *  N.O.S. or a Waste Characteristics Code in conjunction with an EPA Waste Stream code
      *
-     * @var \horstoeko\ubl\entities\cbc\Extension $extension
+     * @var \horstoeko\ubl\entities\cbc\Extension[] $extension
      */
-    private $extension = null;
+    private $extension = [
+        
+    ];
 
     /**
      * Gets as iD
      *
      * BBIE
      *  Secondary Hazard. Identifier
-     *  Identifies the Secondary Hazard.
+     *  An identifier for this secondary hazard.
      *  0..1
      *  Secondary Hazard
      *  Identifier
@@ -112,7 +114,7 @@ class SecondaryHazardType
      *
      * BBIE
      *  Secondary Hazard. Identifier
-     *  Identifies the Secondary Hazard.
+     *  An identifier for this secondary hazard.
      *  0..1
      *  Secondary Hazard
      *  Identifier
@@ -133,13 +135,13 @@ class SecondaryHazardType
      *
      * BBIE
      *  Secondary Hazard. Placard Notation. Text
-     *  The placard notation corresponding to the hazard class of the hazardous commodity. Can also be the hazard identification number of the orange placard (upper part) required on the means of transport.
+     *  Text of the placard notation corresponding to the hazard class of this secondary hazard. Can also be the hazard identification number of the orange placard (upper part) required on the means of transport.
      *  0..1
      *  Secondary Hazard
      *  Placard Notation
      *  Text
      *  Text. Type
-     *  "5.1"
+     *  5.1
      *
      * @return \horstoeko\ubl\entities\cbc\PlacardNotation
      */
@@ -153,13 +155,13 @@ class SecondaryHazardType
      *
      * BBIE
      *  Secondary Hazard. Placard Notation. Text
-     *  The placard notation corresponding to the hazard class of the hazardous commodity. Can also be the hazard identification number of the orange placard (upper part) required on the means of transport.
+     *  Text of the placard notation corresponding to the hazard class of this secondary hazard. Can also be the hazard identification number of the orange placard (upper part) required on the means of transport.
      *  0..1
      *  Secondary Hazard
      *  Placard Notation
      *  Text
      *  Text. Type
-     *  "5.1"
+     *  5.1
      *
      * @param \horstoeko\ubl\entities\cbc\PlacardNotation $placardNotation
      * @return self
@@ -175,13 +177,13 @@ class SecondaryHazardType
      *
      * BBIE
      *  Secondary Hazard. Placard Endorsement. Text
-     *  The placard endorsement that is to be shown on the shipping papers for the hazardous commodity. Can also be used for the number of the orange placard (lower part) required on the means of transport.
+     *  Text of the placard endorsement for this secondary hazard that is to be shown on the shipping papers for a hazardous item. Can also be used for the number of the orange placard (lower part) required on the means of transport.
      *  0..1
      *  Secondary Hazard
      *  Placard Endorsement
      *  Text
      *  Text. Type
-     *  "2"
+     *  2
      *
      * @return \horstoeko\ubl\entities\cbc\PlacardEndorsement
      */
@@ -195,13 +197,13 @@ class SecondaryHazardType
      *
      * BBIE
      *  Secondary Hazard. Placard Endorsement. Text
-     *  The placard endorsement that is to be shown on the shipping papers for the hazardous commodity. Can also be used for the number of the orange placard (lower part) required on the means of transport.
+     *  Text of the placard endorsement for this secondary hazard that is to be shown on the shipping papers for a hazardous item. Can also be used for the number of the orange placard (lower part) required on the means of transport.
      *  0..1
      *  Secondary Hazard
      *  Placard Endorsement
      *  Text
      *  Text. Type
-     *  "2"
+     *  2
      *
      * @param \horstoeko\ubl\entities\cbc\PlacardEndorsement $placardEndorsement
      * @return self
@@ -217,7 +219,7 @@ class SecondaryHazardType
      *
      * BBIE
      *  Secondary Hazard. Emergency Procedures Code. Code
-     *  Emergency procedures for hazardous goods, expressed as a code.
+     *  A code signifying the emergency procedures for this secondary hazard.
      *  0..1
      *  Secondary Hazard
      *  Emergency Procedures Code
@@ -237,7 +239,7 @@ class SecondaryHazardType
      *
      * BBIE
      *  Secondary Hazard. Emergency Procedures Code. Code
-     *  Emergency procedures for hazardous goods, expressed as a code.
+     *  A code signifying the emergency procedures for this secondary hazard.
      *  0..1
      *  Secondary Hazard
      *  Emergency Procedures Code
@@ -255,19 +257,83 @@ class SecondaryHazardType
     }
 
     /**
-     * Gets as extension
+     * Adds as extension
      *
      * BBIE
      *  Secondary Hazard. Extension. Text
-     *  Additional information about the hazardous substance. Can be used to specify information such as the type of regulatory requirements that apply to a description.
-     *  0..1
+     *  Additional information about the hazardous substance, which can be used (for example) to specify the type of regulatory requirements that apply to this secondary hazard.
+     *  0..n
      *  Secondary Hazard
      *  Extension
      *  Text
      *  Text. Type
-     *  "N.O.S. or a Waste Characteristics Code in conjunction with an EPA Waste Stream code"
+     *  N.O.S. or a Waste Characteristics Code in conjunction with an EPA Waste Stream code
      *
-     * @return \horstoeko\ubl\entities\cbc\Extension
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\Extension $extension
+     */
+    public function addToExtension(\horstoeko\ubl\entities\cbc\Extension $extension)
+    {
+        $this->extension[] = $extension;
+        return $this;
+    }
+
+    /**
+     * isset extension
+     *
+     * BBIE
+     *  Secondary Hazard. Extension. Text
+     *  Additional information about the hazardous substance, which can be used (for example) to specify the type of regulatory requirements that apply to this secondary hazard.
+     *  0..n
+     *  Secondary Hazard
+     *  Extension
+     *  Text
+     *  Text. Type
+     *  N.O.S. or a Waste Characteristics Code in conjunction with an EPA Waste Stream code
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetExtension($index)
+    {
+        return isset($this->extension[$index]);
+    }
+
+    /**
+     * unset extension
+     *
+     * BBIE
+     *  Secondary Hazard. Extension. Text
+     *  Additional information about the hazardous substance, which can be used (for example) to specify the type of regulatory requirements that apply to this secondary hazard.
+     *  0..n
+     *  Secondary Hazard
+     *  Extension
+     *  Text
+     *  Text. Type
+     *  N.O.S. or a Waste Characteristics Code in conjunction with an EPA Waste Stream code
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetExtension($index)
+    {
+        unset($this->extension[$index]);
+    }
+
+    /**
+     * Gets as extension
+     *
+     * BBIE
+     *  Secondary Hazard. Extension. Text
+     *  Additional information about the hazardous substance, which can be used (for example) to specify the type of regulatory requirements that apply to this secondary hazard.
+     *  0..n
+     *  Secondary Hazard
+     *  Extension
+     *  Text
+     *  Text. Type
+     *  N.O.S. or a Waste Characteristics Code in conjunction with an EPA Waste Stream code
+     *
+     * @return \horstoeko\ubl\entities\cbc\Extension[]
      */
     public function getExtension()
     {
@@ -279,18 +345,18 @@ class SecondaryHazardType
      *
      * BBIE
      *  Secondary Hazard. Extension. Text
-     *  Additional information about the hazardous substance. Can be used to specify information such as the type of regulatory requirements that apply to a description.
-     *  0..1
+     *  Additional information about the hazardous substance, which can be used (for example) to specify the type of regulatory requirements that apply to this secondary hazard.
+     *  0..n
      *  Secondary Hazard
      *  Extension
      *  Text
      *  Text. Type
-     *  "N.O.S. or a Waste Characteristics Code in conjunction with an EPA Waste Stream code"
+     *  N.O.S. or a Waste Characteristics Code in conjunction with an EPA Waste Stream code
      *
-     * @param \horstoeko\ubl\entities\cbc\Extension $extension
+     * @param \horstoeko\ubl\entities\cbc\Extension[] $extension
      * @return self
      */
-    public function setExtension(\horstoeko\ubl\entities\cbc\Extension $extension)
+    public function setExtension(array $extension)
     {
         $this->extension = $extension;
         return $this;

@@ -1,0 +1,12 @@
+horstoeko\ubl\entities\xades\CRLRefType:
+    properties:
+        digestAlgAndValue:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        cRLIdentifier:
+            -
+                Valid: null

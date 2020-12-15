@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Trading Terms. Details
- *  Information about the terms of a trade agreement.
+ *  A class for describing the terms of a trade agreement.
  *  Trading Terms
  * XSD Type: TradingTermsType
  */
@@ -17,13 +17,13 @@ class TradingTermsType
     /**
      * BBIE
      *  Trading Terms. Information. Text
-     *  The terms in text.
+     *  Text describing the terms of a trade agreement.
      *  0..n
      *  Trading Terms
      *  Information
      *  Text
      *  Text. Type
-     *  "Unless credit terms have been expressly agreed by Dell, payment for the products or services shall be made in full before physical delivery of products or services. Customer shall pay for all shipping and handling charges."
+     *  Unless credit terms have been expressly agreed by Dell, payment for the products or services shall be made in full before physical delivery of products or services. Customer shall pay for all shipping and handling charges.
      *
      * @var \horstoeko\ubl\entities\cbc\Information[] $information
      */
@@ -34,7 +34,7 @@ class TradingTermsType
     /**
      * BBIE
      *  Trading Terms. Reference. Text
-     *  A reference to the terms.
+     *  A reference quoting the basis of the terms
      *  0..1
      *  Trading Terms
      *  Reference
@@ -49,10 +49,11 @@ class TradingTermsType
     /**
      * ASBIE
      *  Trading Terms. Applicable_ Address. Address
-     *  An association to Address.
+     *  The address at which these trading terms apply.
      *  0..1
      *  Trading Terms
      *  Applicable
+     *  Address
      *  Address
      *  Address
      *
@@ -65,13 +66,13 @@ class TradingTermsType
      *
      * BBIE
      *  Trading Terms. Information. Text
-     *  The terms in text.
+     *  Text describing the terms of a trade agreement.
      *  0..n
      *  Trading Terms
      *  Information
      *  Text
      *  Text. Type
-     *  "Unless credit terms have been expressly agreed by Dell, payment for the products or services shall be made in full before physical delivery of products or services. Customer shall pay for all shipping and handling charges."
+     *  Unless credit terms have been expressly agreed by Dell, payment for the products or services shall be made in full before physical delivery of products or services. Customer shall pay for all shipping and handling charges.
      *
      * @return self
      * @param \horstoeko\ubl\entities\cbc\Information $information
@@ -87,13 +88,13 @@ class TradingTermsType
      *
      * BBIE
      *  Trading Terms. Information. Text
-     *  The terms in text.
+     *  Text describing the terms of a trade agreement.
      *  0..n
      *  Trading Terms
      *  Information
      *  Text
      *  Text. Type
-     *  "Unless credit terms have been expressly agreed by Dell, payment for the products or services shall be made in full before physical delivery of products or services. Customer shall pay for all shipping and handling charges."
+     *  Unless credit terms have been expressly agreed by Dell, payment for the products or services shall be made in full before physical delivery of products or services. Customer shall pay for all shipping and handling charges.
      *
      * @param int|string $index
      * @return bool
@@ -108,13 +109,13 @@ class TradingTermsType
      *
      * BBIE
      *  Trading Terms. Information. Text
-     *  The terms in text.
+     *  Text describing the terms of a trade agreement.
      *  0..n
      *  Trading Terms
      *  Information
      *  Text
      *  Text. Type
-     *  "Unless credit terms have been expressly agreed by Dell, payment for the products or services shall be made in full before physical delivery of products or services. Customer shall pay for all shipping and handling charges."
+     *  Unless credit terms have been expressly agreed by Dell, payment for the products or services shall be made in full before physical delivery of products or services. Customer shall pay for all shipping and handling charges.
      *
      * @param int|string $index
      * @return void
@@ -129,13 +130,13 @@ class TradingTermsType
      *
      * BBIE
      *  Trading Terms. Information. Text
-     *  The terms in text.
+     *  Text describing the terms of a trade agreement.
      *  0..n
      *  Trading Terms
      *  Information
      *  Text
      *  Text. Type
-     *  "Unless credit terms have been expressly agreed by Dell, payment for the products or services shall be made in full before physical delivery of products or services. Customer shall pay for all shipping and handling charges."
+     *  Unless credit terms have been expressly agreed by Dell, payment for the products or services shall be made in full before physical delivery of products or services. Customer shall pay for all shipping and handling charges.
      *
      * @return \horstoeko\ubl\entities\cbc\Information[]
      */
@@ -149,13 +150,13 @@ class TradingTermsType
      *
      * BBIE
      *  Trading Terms. Information. Text
-     *  The terms in text.
+     *  Text describing the terms of a trade agreement.
      *  0..n
      *  Trading Terms
      *  Information
      *  Text
      *  Text. Type
-     *  "Unless credit terms have been expressly agreed by Dell, payment for the products or services shall be made in full before physical delivery of products or services. Customer shall pay for all shipping and handling charges."
+     *  Unless credit terms have been expressly agreed by Dell, payment for the products or services shall be made in full before physical delivery of products or services. Customer shall pay for all shipping and handling charges.
      *
      * @param \horstoeko\ubl\entities\cbc\Information[] $information
      * @return self
@@ -171,7 +172,7 @@ class TradingTermsType
      *
      * BBIE
      *  Trading Terms. Reference. Text
-     *  A reference to the terms.
+     *  A reference quoting the basis of the terms
      *  0..1
      *  Trading Terms
      *  Reference
@@ -191,7 +192,7 @@ class TradingTermsType
      *
      * BBIE
      *  Trading Terms. Reference. Text
-     *  A reference to the terms.
+     *  A reference quoting the basis of the terms
      *  0..1
      *  Trading Terms
      *  Reference
@@ -213,10 +214,11 @@ class TradingTermsType
      *
      * ASBIE
      *  Trading Terms. Applicable_ Address. Address
-     *  An association to Address.
+     *  The address at which these trading terms apply.
      *  0..1
      *  Trading Terms
      *  Applicable
+     *  Address
      *  Address
      *  Address
      *
@@ -232,10 +234,11 @@ class TradingTermsType
      *
      * ASBIE
      *  Trading Terms. Applicable_ Address. Address
-     *  An association to Address.
+     *  The address at which these trading terms apply.
      *  0..1
      *  Trading Terms
      *  Applicable
+     *  Address
      *  Address
      *  Address
      *

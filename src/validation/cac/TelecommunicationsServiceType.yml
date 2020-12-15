@@ -1,0 +1,38 @@
+horstoeko\ubl\entities\cac\TelecommunicationsServiceType:
+    properties:
+        callDate:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        callTime:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        serviceNumberCalled:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        price:
+            -
+                Valid: null
+        country:
+            -
+                Valid: null
+        exchangeRate:
+            -
+                Valid: null
+        allowanceCharge:
+            -
+                Valid: null
+        taxTotal:
+            -
+                Valid: null
+        callDuty:
+            -
+                Valid: null
+        timeDuty:
+            -
+                Valid: null

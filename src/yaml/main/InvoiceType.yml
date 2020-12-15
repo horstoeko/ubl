@@ -3,13 +3,20 @@ horstoeko\ubl\entities\main\InvoiceType:
         ubl: urn:oasis:names:specification:ubl:schema:xsd:Invoice-2
         ext: urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2
         cbc: urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2
-        udt: urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2
+        udt: urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2
         qdt: urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2
         cac: urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2
         clm66411: urn:un:unece:uncefact:codelist:specification:66411:2001
         clmIANAMIMEMediaType: urn:un:unece:uncefact:codelist:specification:IANAMIMEMediaType:2003
         clm54217: urn:un:unece:uncefact:codelist:specification:54217:2001
         clm5639: urn:un:unece:uncefact:codelist:specification:5639:1988
+        cct: urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2
+        csc: urn:oasis:names:specification:ubl:schema:xsd:CommonSignatureComponents-2
+        sac: urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2
+        sbc: urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2
+        ds: http://www.w3.org/2000/09/xmldsig#
+        xades: http://uri.etsi.org/01903/v1.3.2#
+        xadesb: http://uri.etsi.org/01903/v1.4.1#
     properties:
         uBLExtensions:
             expose: true
@@ -60,6 +67,17 @@ horstoeko\ubl\entities\main\InvoiceType:
                 getter: getProfileID
                 setter: setProfileID
             type: horstoeko\ubl\entities\cbc\ProfileID
+        profileExecutionID:
+            expose: true
+            access_type: public_method
+            serialized_name: ProfileExecutionID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getProfileExecutionID
+                setter: setProfileExecutionID
+            type: horstoeko\ubl\entities\cbc\ProfileExecutionID
         iD:
             expose: true
             access_type: public_method
@@ -115,6 +133,17 @@ horstoeko\ubl\entities\main\InvoiceType:
                 getter: getIssueTime
                 setter: setIssueTime
             type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time
+        dueDate:
+            expose: true
+            access_type: public_method
+            serialized_name: DueDate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDueDate
+                setter: setDueDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
         invoiceTypeCode:
             expose: true
             access_type: public_method
@@ -239,7 +268,7 @@ horstoeko\ubl\entities\main\InvoiceType:
             accessor:
                 getter: getLineCountNumeric
                 setter: setLineCountNumeric
-            type: float
+            type: horstoeko\ubl\entities\cbc\LineCountNumeric
         buyerReference:
             expose: true
             access_type: public_method
@@ -250,7 +279,7 @@ horstoeko\ubl\entities\main\InvoiceType:
             accessor:
                 getter: getBuyerReference
                 setter: setBuyerReference
-            type: string
+            type: horstoeko\ubl\entities\cbc\BuyerReference
         invoicePeriod:
             expose: true
             access_type: public_method
@@ -322,6 +351,21 @@ horstoeko\ubl\entities\main\InvoiceType:
                 entry_name: ReceiptDocumentReference
                 namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
             type: array<horstoeko\ubl\entities\cac\ReceiptDocumentReference>
+        statementDocumentReference:
+            expose: true
+            access_type: public_method
+            serialized_name: StatementDocumentReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getStatementDocumentReference
+                setter: setStatementDocumentReference
+            xml_list:
+                inline: true
+                entry_name: StatementDocumentReference
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\StatementDocumentReference>
         originatorDocumentReference:
             expose: true
             access_type: public_method
@@ -367,6 +411,21 @@ horstoeko\ubl\entities\main\InvoiceType:
                 entry_name: AdditionalDocumentReference
                 namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
             type: array<horstoeko\ubl\entities\cac\AdditionalDocumentReference>
+        projectReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ProjectReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getProjectReference
+                setter: setProjectReference
+            xml_list:
+                inline: true
+                entry_name: ProjectReference
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\ProjectReference>
         signature:
             expose: true
             access_type: public_method
@@ -593,6 +652,21 @@ horstoeko\ubl\entities\main\InvoiceType:
                 entry_name: TaxTotal
                 namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
             type: array<horstoeko\ubl\entities\cac\TaxTotal>
+        withholdingTaxTotal:
+            expose: true
+            access_type: public_method
+            serialized_name: WithholdingTaxTotal
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getWithholdingTaxTotal
+                setter: setWithholdingTaxTotal
+            xml_list:
+                inline: true
+                entry_name: WithholdingTaxTotal
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\WithholdingTaxTotal>
         legalMonetaryTotal:
             expose: true
             access_type: public_method

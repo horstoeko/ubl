@@ -1,0 +1,13 @@
+horstoeko\ubl\entities\cac\ProcurementProjectLotType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        tenderingTerms:
+            -
+                Valid: null
+        procurementProject:
+            -
+                Valid: null

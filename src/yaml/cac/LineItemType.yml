@@ -43,7 +43,11 @@ horstoeko\ubl\entities\cac\LineItemType:
             accessor:
                 getter: getNote
                 setter: setNote
-            type: horstoeko\ubl\entities\cbc\Note
+            xml_list:
+                inline: true
+                entry_name: Note
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Note>
         lineStatusCode:
             expose: true
             access_type: public_method
@@ -187,6 +191,21 @@ horstoeko\ubl\entities\cac\LineItemType:
                 getter: getAccountingCost
                 setter: setAccountingCost
             type: horstoeko\ubl\entities\cbc\AccountingCost
+        warrantyInformation:
+            expose: true
+            access_type: public_method
+            serialized_name: WarrantyInformation
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getWarrantyInformation
+                setter: setWarrantyInformation
+            xml_list:
+                inline: true
+                entry_name: WarrantyInformation
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\WarrantyInformation>
         delivery:
             expose: true
             access_type: public_method
@@ -287,3 +306,81 @@ horstoeko\ubl\entities\cac\LineItemType:
                 getter: getItem
                 setter: setItem
             type: horstoeko\ubl\entities\cac\Item
+        subLineItem:
+            expose: true
+            access_type: public_method
+            serialized_name: SubLineItem
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getSubLineItem
+                setter: setSubLineItem
+            xml_list:
+                inline: true
+                entry_name: SubLineItem
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\SubLineItem>
+        warrantyValidityPeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: WarrantyValidityPeriod
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getWarrantyValidityPeriod
+                setter: setWarrantyValidityPeriod
+            type: horstoeko\ubl\entities\cac\WarrantyValidityPeriod
+        warrantyParty:
+            expose: true
+            access_type: public_method
+            serialized_name: WarrantyParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getWarrantyParty
+                setter: setWarrantyParty
+            type: horstoeko\ubl\entities\cac\WarrantyParty
+        taxTotal:
+            expose: true
+            access_type: public_method
+            serialized_name: TaxTotal
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getTaxTotal
+                setter: setTaxTotal
+            xml_list:
+                inline: true
+                entry_name: TaxTotal
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\TaxTotal>
+        itemPriceExtension:
+            expose: true
+            access_type: public_method
+            serialized_name: ItemPriceExtension
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getItemPriceExtension
+                setter: setItemPriceExtension
+            type: horstoeko\ubl\entities\cac\ItemPriceExtension
+        lineReference:
+            expose: true
+            access_type: public_method
+            serialized_name: LineReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getLineReference
+                setter: setLineReference
+            xml_list:
+                inline: true
+                entry_name: LineReference
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\LineReference>

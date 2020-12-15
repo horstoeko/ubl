@@ -1,0 +1,15 @@
+horstoeko\ubl\entities\cac\TendererPartyQualificationType:
+    properties:
+        interestedProcurementProjectLot:
+            -
+                Valid: null
+        mainQualifyingParty:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        additionalQualifyingParty:
+            -
+                Valid: null

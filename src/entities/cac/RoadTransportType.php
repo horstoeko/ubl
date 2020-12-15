@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Road Transport. Details
- *  Describes a road transport vehicle.
+ *  A class for identifying a vehicle used for road transport.
  *  Road Transport
  * XSD Type: RoadTransportType
  */
@@ -17,7 +17,7 @@ class RoadTransportType
     /**
      * BBIE
      *  Road Transport. License Plate Identifier. Identifier
-     *  Identifies a specific vehicle.
+     *  The license plate identifier of this vehicle.
      *  1
      *  Road Transport
      *  License Plate Identifier
@@ -34,7 +34,7 @@ class RoadTransportType
      *
      * BBIE
      *  Road Transport. License Plate Identifier. Identifier
-     *  Identifies a specific vehicle.
+     *  The license plate identifier of this vehicle.
      *  1
      *  Road Transport
      *  License Plate Identifier
@@ -54,7 +54,7 @@ class RoadTransportType
      *
      * BBIE
      *  Road Transport. License Plate Identifier. Identifier
-     *  Identifies a specific vehicle.
+     *  The license plate identifier of this vehicle.
      *  1
      *  Road Transport
      *  License Plate Identifier

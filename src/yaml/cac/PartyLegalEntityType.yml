@@ -22,6 +22,94 @@ horstoeko\ubl\entities\cac\PartyLegalEntityType:
                 getter: getCompanyID
                 setter: setCompanyID
             type: horstoeko\ubl\entities\cbc\CompanyID
+        registrationDate:
+            expose: true
+            access_type: public_method
+            serialized_name: RegistrationDate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getRegistrationDate
+                setter: setRegistrationDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        registrationExpirationDate:
+            expose: true
+            access_type: public_method
+            serialized_name: RegistrationExpirationDate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getRegistrationExpirationDate
+                setter: setRegistrationExpirationDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        companyLegalFormCode:
+            expose: true
+            access_type: public_method
+            serialized_name: CompanyLegalFormCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getCompanyLegalFormCode
+                setter: setCompanyLegalFormCode
+            type: horstoeko\ubl\entities\cbc\CompanyLegalFormCode
+        companyLegalForm:
+            expose: true
+            access_type: public_method
+            serialized_name: CompanyLegalForm
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getCompanyLegalForm
+                setter: setCompanyLegalForm
+            type: horstoeko\ubl\entities\cbc\CompanyLegalForm
+        soleProprietorshipIndicator:
+            expose: true
+            access_type: public_method
+            serialized_name: SoleProprietorshipIndicator
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getSoleProprietorshipIndicator
+                setter: setSoleProprietorshipIndicator
+            type: bool
+        companyLiquidationStatusCode:
+            expose: true
+            access_type: public_method
+            serialized_name: CompanyLiquidationStatusCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getCompanyLiquidationStatusCode
+                setter: setCompanyLiquidationStatusCode
+            type: horstoeko\ubl\entities\cbc\CompanyLiquidationStatusCode
+        corporateStockAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: CorporateStockAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getCorporateStockAmount
+                setter: setCorporateStockAmount
+            type: horstoeko\ubl\entities\cbc\CorporateStockAmount
+        fullyPaidSharesIndicator:
+            expose: true
+            access_type: public_method
+            serialized_name: FullyPaidSharesIndicator
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getFullyPaidSharesIndicator
+                setter: setFullyPaidSharesIndicator
+            type: bool
         registrationAddress:
             expose: true
             access_type: public_method
@@ -44,3 +132,29 @@ horstoeko\ubl\entities\cac\PartyLegalEntityType:
                 getter: getCorporateRegistrationScheme
                 setter: setCorporateRegistrationScheme
             type: horstoeko\ubl\entities\cac\CorporateRegistrationScheme
+        headOfficeParty:
+            expose: true
+            access_type: public_method
+            serialized_name: HeadOfficeParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getHeadOfficeParty
+                setter: setHeadOfficeParty
+            type: horstoeko\ubl\entities\cac\HeadOfficeParty
+        shareholderParty:
+            expose: true
+            access_type: public_method
+            serialized_name: ShareholderParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getShareholderParty
+                setter: setShareholderParty
+            xml_list:
+                inline: true
+                entry_name: ShareholderParty
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\ShareholderParty>

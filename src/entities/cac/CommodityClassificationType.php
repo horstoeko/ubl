@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Commodity Classification. Details
- *  Information about Commodity Classification.
+ *  A class to describe the classification of a commodity.
  *  Commodity Classification
  * XSD Type: CommodityClassificationType
  */
@@ -17,13 +17,13 @@ class CommodityClassificationType
     /**
      * BBIE
      *  Commodity Classification. Nature Code. Code
-     *  The high-level nature of the Classification issued by a specific maintenance agency, expressed as a code.
+     *  A code defined by a specific maintenance agency signifying the high-level nature of the commodity.
      *  0..1
      *  Commodity Classification
      *  Nature Code
      *  Code
      *  Code. Type
-     *  "wooden products"
+     *  wooden products
      *
      * @var \horstoeko\ubl\entities\cbc\NatureCode $natureCode
      */
@@ -32,13 +32,13 @@ class CommodityClassificationType
     /**
      * BBIE
      *  Commodity Classification. Cargo Type Code. Code
-     *  The type of cargo, expressed as a code.
+     *  A mutually agreed code signifying the type of cargo for purposes of commodity classification.
      *  0..1
      *  Commodity Classification
      *  Cargo Type Code
      *  Code
      *  Code. Type
-     *  "Refrigerated"
+     *  Refrigerated
      *
      * @var \horstoeko\ubl\entities\cbc\CargoTypeCode $cargoTypeCode
      */
@@ -47,14 +47,14 @@ class CommodityClassificationType
     /**
      * BBIE
      *  Commodity Classification. Commodity Code. Code
-     *  The harmonized international commodity code for regulatory (customs and trade statistics) purposes.
+     *  The harmonized international commodity code for cross border and regulatory (customs and trade statistics) purposes.
      *  0..1
      *  Commodity Classification
      *  Commodity Code
      *  Code
      *  Code. Type
      *  Harmonized Code
-     *  "1102222883"
+     *  1102222883
      *
      * @var \horstoeko\ubl\entities\cbc\CommodityCode $commodityCode
      */
@@ -63,14 +63,14 @@ class CommodityClassificationType
     /**
      * BBIE
      *  Commodity Classification. Item Classification Code. Code
-     *  The trade commodity classification, expressed as a code.
+     *  A code signifying the trade classification of the commodity.
      *  0..1
      *  Commodity Classification
      *  Item Classification Code
      *  Code
      *  Code. Type
      *  UN/SPSC Code
-     *  "3440234"
+     *  3440234
      *
      * @var \horstoeko\ubl\entities\cbc\ItemClassificationCode $itemClassificationCode
      */
@@ -81,13 +81,13 @@ class CommodityClassificationType
      *
      * BBIE
      *  Commodity Classification. Nature Code. Code
-     *  The high-level nature of the Classification issued by a specific maintenance agency, expressed as a code.
+     *  A code defined by a specific maintenance agency signifying the high-level nature of the commodity.
      *  0..1
      *  Commodity Classification
      *  Nature Code
      *  Code
      *  Code. Type
-     *  "wooden products"
+     *  wooden products
      *
      * @return \horstoeko\ubl\entities\cbc\NatureCode
      */
@@ -101,13 +101,13 @@ class CommodityClassificationType
      *
      * BBIE
      *  Commodity Classification. Nature Code. Code
-     *  The high-level nature of the Classification issued by a specific maintenance agency, expressed as a code.
+     *  A code defined by a specific maintenance agency signifying the high-level nature of the commodity.
      *  0..1
      *  Commodity Classification
      *  Nature Code
      *  Code
      *  Code. Type
-     *  "wooden products"
+     *  wooden products
      *
      * @param \horstoeko\ubl\entities\cbc\NatureCode $natureCode
      * @return self
@@ -123,13 +123,13 @@ class CommodityClassificationType
      *
      * BBIE
      *  Commodity Classification. Cargo Type Code. Code
-     *  The type of cargo, expressed as a code.
+     *  A mutually agreed code signifying the type of cargo for purposes of commodity classification.
      *  0..1
      *  Commodity Classification
      *  Cargo Type Code
      *  Code
      *  Code. Type
-     *  "Refrigerated"
+     *  Refrigerated
      *
      * @return \horstoeko\ubl\entities\cbc\CargoTypeCode
      */
@@ -143,13 +143,13 @@ class CommodityClassificationType
      *
      * BBIE
      *  Commodity Classification. Cargo Type Code. Code
-     *  The type of cargo, expressed as a code.
+     *  A mutually agreed code signifying the type of cargo for purposes of commodity classification.
      *  0..1
      *  Commodity Classification
      *  Cargo Type Code
      *  Code
      *  Code. Type
-     *  "Refrigerated"
+     *  Refrigerated
      *
      * @param \horstoeko\ubl\entities\cbc\CargoTypeCode $cargoTypeCode
      * @return self
@@ -165,14 +165,14 @@ class CommodityClassificationType
      *
      * BBIE
      *  Commodity Classification. Commodity Code. Code
-     *  The harmonized international commodity code for regulatory (customs and trade statistics) purposes.
+     *  The harmonized international commodity code for cross border and regulatory (customs and trade statistics) purposes.
      *  0..1
      *  Commodity Classification
      *  Commodity Code
      *  Code
      *  Code. Type
      *  Harmonized Code
-     *  "1102222883"
+     *  1102222883
      *
      * @return \horstoeko\ubl\entities\cbc\CommodityCode
      */
@@ -186,14 +186,14 @@ class CommodityClassificationType
      *
      * BBIE
      *  Commodity Classification. Commodity Code. Code
-     *  The harmonized international commodity code for regulatory (customs and trade statistics) purposes.
+     *  The harmonized international commodity code for cross border and regulatory (customs and trade statistics) purposes.
      *  0..1
      *  Commodity Classification
      *  Commodity Code
      *  Code
      *  Code. Type
      *  Harmonized Code
-     *  "1102222883"
+     *  1102222883
      *
      * @param \horstoeko\ubl\entities\cbc\CommodityCode $commodityCode
      * @return self
@@ -209,14 +209,14 @@ class CommodityClassificationType
      *
      * BBIE
      *  Commodity Classification. Item Classification Code. Code
-     *  The trade commodity classification, expressed as a code.
+     *  A code signifying the trade classification of the commodity.
      *  0..1
      *  Commodity Classification
      *  Item Classification Code
      *  Code
      *  Code. Type
      *  UN/SPSC Code
-     *  "3440234"
+     *  3440234
      *
      * @return \horstoeko\ubl\entities\cbc\ItemClassificationCode
      */
@@ -230,14 +230,14 @@ class CommodityClassificationType
      *
      * BBIE
      *  Commodity Classification. Item Classification Code. Code
-     *  The trade commodity classification, expressed as a code.
+     *  A code signifying the trade classification of the commodity.
      *  0..1
      *  Commodity Classification
      *  Item Classification Code
      *  Code
      *  Code. Type
      *  UN/SPSC Code
-     *  "3440234"
+     *  3440234
      *
      * @param \horstoeko\ubl\entities\cbc\ItemClassificationCode $itemClassificationCode
      * @return self

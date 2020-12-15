@@ -1,0 +1,22 @@
+horstoeko\ubl\entities\cac\InventoryReportLineType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        quantity:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        item:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        inventoryLocation:
+            -
+                Valid: null

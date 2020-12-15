@@ -1,0 +1,101 @@
+horstoeko\ubl\entities\cac\PickupType:
+    properties:
+        iD:
+            expose: true
+            access_type: public_method
+            serialized_name: ID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getID
+                setter: setID
+            type: horstoeko\ubl\entities\cbc\ID
+        actualPickupDate:
+            expose: true
+            access_type: public_method
+            serialized_name: ActualPickupDate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getActualPickupDate
+                setter: setActualPickupDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        actualPickupTime:
+            expose: true
+            access_type: public_method
+            serialized_name: ActualPickupTime
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getActualPickupTime
+                setter: setActualPickupTime
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time
+        earliestPickupDate:
+            expose: true
+            access_type: public_method
+            serialized_name: EarliestPickupDate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getEarliestPickupDate
+                setter: setEarliestPickupDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        earliestPickupTime:
+            expose: true
+            access_type: public_method
+            serialized_name: EarliestPickupTime
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getEarliestPickupTime
+                setter: setEarliestPickupTime
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time
+        latestPickupDate:
+            expose: true
+            access_type: public_method
+            serialized_name: LatestPickupDate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getLatestPickupDate
+                setter: setLatestPickupDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        latestPickupTime:
+            expose: true
+            access_type: public_method
+            serialized_name: LatestPickupTime
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getLatestPickupTime
+                setter: setLatestPickupTime
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time
+        pickupLocation:
+            expose: true
+            access_type: public_method
+            serialized_name: PickupLocation
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPickupLocation
+                setter: setPickupLocation
+            type: horstoeko\ubl\entities\cac\PickupLocation
+        pickupParty:
+            expose: true
+            access_type: public_method
+            serialized_name: PickupParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPickupParty
+                setter: setPickupParty
+            type: horstoeko\ubl\entities\cac\PickupParty

@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Catalogue Item Specification Update Line. Details
- *  Details of Catalogue Line Item Specification.
+ *  A class to define a line describing the transaction that updates the specification of an item in a catalogue.
  *  Catalogue Item Specification Update Line
  * XSD Type: CatalogueItemSpecificationUpdateLineType
  */
@@ -17,13 +17,13 @@ class CatalogueItemSpecificationUpdateLineType
     /**
      * BBIE
      *  Catalogue Item Specification Update Line. Identifier
-     *  A unique instance identifier for the line in this Catalogue document.
+     *  An identifier for the line to be updated in a catalogue.
      *  1
      *  Catalogue Item Specification Update Line
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "1"
+     *  1
      *
      * @var \horstoeko\ubl\entities\cbc\ID $iD
      */
@@ -32,10 +32,11 @@ class CatalogueItemSpecificationUpdateLineType
     /**
      * ASBIE
      *  Catalogue Item Specification Update Line. Contractor_ Customer Party. Customer Party
-     *  The Customer Party responsible for the contract to which the Catalogue relates.
+     *  The customer responsible for the contract associated with the catalogue item.
      *  0..1
      *  Catalogue Item Specification Update Line
      *  Contractor
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -46,10 +47,11 @@ class CatalogueItemSpecificationUpdateLineType
     /**
      * ASBIE
      *  Catalogue Item Specification Update Line. Seller_ Supplier Party. Supplier Party
-     *  An association to the Seller of the item.
+     *  The seller/supplier responsible for the contract associated with the catalogue item.
      *  0..1
      *  Catalogue Item Specification Update Line
      *  Seller
+     *  Supplier Party
      *  Supplier Party
      *  Supplier Party
      *
@@ -60,9 +62,10 @@ class CatalogueItemSpecificationUpdateLineType
     /**
      * ASBIE
      *  Catalogue Item Specification Update Line. Item
-     *  An association to Item itself.
+     *  The catalogue item to be updated.
      *  1
      *  Catalogue Item Specification Update Line
+     *  Item
      *  Item
      *  Item
      *
@@ -75,13 +78,13 @@ class CatalogueItemSpecificationUpdateLineType
      *
      * BBIE
      *  Catalogue Item Specification Update Line. Identifier
-     *  A unique instance identifier for the line in this Catalogue document.
+     *  An identifier for the line to be updated in a catalogue.
      *  1
      *  Catalogue Item Specification Update Line
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "1"
+     *  1
      *
      * @return \horstoeko\ubl\entities\cbc\ID
      */
@@ -95,13 +98,13 @@ class CatalogueItemSpecificationUpdateLineType
      *
      * BBIE
      *  Catalogue Item Specification Update Line. Identifier
-     *  A unique instance identifier for the line in this Catalogue document.
+     *  An identifier for the line to be updated in a catalogue.
      *  1
      *  Catalogue Item Specification Update Line
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "1"
+     *  1
      *
      * @param \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
@@ -117,10 +120,11 @@ class CatalogueItemSpecificationUpdateLineType
      *
      * ASBIE
      *  Catalogue Item Specification Update Line. Contractor_ Customer Party. Customer Party
-     *  The Customer Party responsible for the contract to which the Catalogue relates.
+     *  The customer responsible for the contract associated with the catalogue item.
      *  0..1
      *  Catalogue Item Specification Update Line
      *  Contractor
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -136,10 +140,11 @@ class CatalogueItemSpecificationUpdateLineType
      *
      * ASBIE
      *  Catalogue Item Specification Update Line. Contractor_ Customer Party. Customer Party
-     *  The Customer Party responsible for the contract to which the Catalogue relates.
+     *  The customer responsible for the contract associated with the catalogue item.
      *  0..1
      *  Catalogue Item Specification Update Line
      *  Contractor
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -157,10 +162,11 @@ class CatalogueItemSpecificationUpdateLineType
      *
      * ASBIE
      *  Catalogue Item Specification Update Line. Seller_ Supplier Party. Supplier Party
-     *  An association to the Seller of the item.
+     *  The seller/supplier responsible for the contract associated with the catalogue item.
      *  0..1
      *  Catalogue Item Specification Update Line
      *  Seller
+     *  Supplier Party
      *  Supplier Party
      *  Supplier Party
      *
@@ -176,10 +182,11 @@ class CatalogueItemSpecificationUpdateLineType
      *
      * ASBIE
      *  Catalogue Item Specification Update Line. Seller_ Supplier Party. Supplier Party
-     *  An association to the Seller of the item.
+     *  The seller/supplier responsible for the contract associated with the catalogue item.
      *  0..1
      *  Catalogue Item Specification Update Line
      *  Seller
+     *  Supplier Party
      *  Supplier Party
      *  Supplier Party
      *
@@ -197,9 +204,10 @@ class CatalogueItemSpecificationUpdateLineType
      *
      * ASBIE
      *  Catalogue Item Specification Update Line. Item
-     *  An association to Item itself.
+     *  The catalogue item to be updated.
      *  1
      *  Catalogue Item Specification Update Line
+     *  Item
      *  Item
      *  Item
      *
@@ -215,9 +223,10 @@ class CatalogueItemSpecificationUpdateLineType
      *
      * ASBIE
      *  Catalogue Item Specification Update Line. Item
-     *  An association to Item itself.
+     *  The catalogue item to be updated.
      *  1
      *  Catalogue Item Specification Update Line
+     *  Item
      *  Item
      *  Item
      *

@@ -1,0 +1,14 @@
+horstoeko\ubl\entities\xades\SignedSignaturePropertiesType:
+    properties:
+        signingCertificate:
+            -
+                Valid: null
+        signaturePolicyIdentifier:
+            -
+                Valid: null
+        signatureProductionPlace:
+            -
+                Valid: null
+        signerRole:
+            -
+                Valid: null

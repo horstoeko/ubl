@@ -55,6 +55,17 @@ horstoeko\ubl\entities\cac\PartyType:
                 getter: getEndpointID
                 setter: setEndpointID
             type: horstoeko\ubl\entities\cbc\EndpointID
+        industryClassificationCode:
+            expose: true
+            access_type: public_method
+            serialized_name: IndustryClassificationCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getIndustryClassificationCode
+                setter: setIndustryClassificationCode
+            type: horstoeko\ubl\entities\cbc\IndustryClassificationCode
         partyIdentification:
             expose: true
             access_type: public_method
@@ -169,7 +180,11 @@ horstoeko\ubl\entities\cac\PartyType:
             accessor:
                 getter: getPerson
                 setter: setPerson
-            type: horstoeko\ubl\entities\cac\Person
+            xml_list:
+                inline: true
+                entry_name: Person
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\Person>
         agentParty:
             expose: true
             access_type: public_method
@@ -181,3 +196,44 @@ horstoeko\ubl\entities\cac\PartyType:
                 getter: getAgentParty
                 setter: setAgentParty
             type: horstoeko\ubl\entities\cac\AgentParty
+        serviceProviderParty:
+            expose: true
+            access_type: public_method
+            serialized_name: ServiceProviderParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getServiceProviderParty
+                setter: setServiceProviderParty
+            xml_list:
+                inline: true
+                entry_name: ServiceProviderParty
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\ServiceProviderParty>
+        powerOfAttorney:
+            expose: true
+            access_type: public_method
+            serialized_name: PowerOfAttorney
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPowerOfAttorney
+                setter: setPowerOfAttorney
+            xml_list:
+                inline: true
+                entry_name: PowerOfAttorney
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\PowerOfAttorney>
+        financialAccount:
+            expose: true
+            access_type: public_method
+            serialized_name: FinancialAccount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getFinancialAccount
+                setter: setFinancialAccount
+            type: horstoeko\ubl\entities\cac\FinancialAccount

@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Hazardous Item. Details
- *  Information about a Hazardous Item.
+ *  A class to describe a hazardous item.
  *  Hazardous Item
  * XSD Type: HazardousItemType
  */
@@ -17,13 +17,13 @@ class HazardousItemType
     /**
      * BBIE
      *  Hazardous Item. Identifier
-     *  The identifier for a Hazardous Item.
+     *  An identifier for this hazardous item.
      *  0..1
      *  Hazardous Item
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "Round Up"
+     *  Round Up
      *
      * @var \horstoeko\ubl\entities\cbc\ID $iD
      */
@@ -32,13 +32,13 @@ class HazardousItemType
     /**
      * BBIE
      *  Hazardous Item. Placard Notation. Text
-     *  The placard notation corresponding to the hazard class of the hazardous commodity. Can also be the hazard identification number of the orange placard (upper part) required on the means of transport.
+     *  Text of the placard notation corresponding to the hazard class of this hazardous item. Can also be the hazard identification number of the orange placard (upper part) required on the means of transport.
      *  0..1
      *  Hazardous Item
      *  Placard Notation
      *  Text
      *  Text. Type
-     *  "5.1"
+     *  5.1
      *
      * @var \horstoeko\ubl\entities\cbc\PlacardNotation $placardNotation
      */
@@ -47,13 +47,13 @@ class HazardousItemType
     /**
      * BBIE
      *  Hazardous Item. Placard Endorsement. Text
-     *  The placard endorsement that is to be shown on the shipping papers for the hazardous commodity. Can also be used for the number of the orange placard (lower part) required on the means of transport.
+     *  Text of the placard endorsement that is to be shown on the shipping papers for this hazardous item. Can also be used for the number of the orange placard (lower part) required on the means of transport.
      *  0..1
      *  Hazardous Item
      *  Placard Endorsement
      *  Text
      *  Text. Type
-     *  "2"
+     *  2
      *
      * @var \horstoeko\ubl\entities\cbc\PlacardEndorsement $placardEndorsement
      */
@@ -62,23 +62,25 @@ class HazardousItemType
     /**
      * BBIE
      *  Hazardous Item. Additional_ Information. Text
-     *  Additional information about the hazardous substance. Can be used to specify information such as the type of regulatory requirements that apply to a description.
-     *  0..1
+     *  Text providing further information about the hazardous substance.
+     *  0..n
      *  Hazardous Item
      *  Additional
      *  Information
      *  Text
      *  Text. Type
-     *  "Must be stored away from flammable materials" "N.O.S. or a Waste Characteristics Code in conjunction with an EPA Waste Stream code"
+     *  Must be stored away from flammable materials N.O.S. or a Waste Characteristics Code in conjunction with an EPA Waste Stream code
      *
-     * @var \horstoeko\ubl\entities\cbc\AdditionalInformation $additionalInformation
+     * @var \horstoeko\ubl\entities\cbc\AdditionalInformation[] $additionalInformation
      */
-    private $additionalInformation = null;
+    private $additionalInformation = [
+        
+    ];
 
     /**
      * BBIE
      *  Hazardous Item. UNDG Code. Code
-     *  The identifier assigned to transportable hazardous goods by the United Nations, expressed as a code.
+     *  The UN code for this kind of hazardous item.
      *  0..1
      *  Hazardous Item
      *  UNDG Code
@@ -93,7 +95,7 @@ class HazardousItemType
     /**
      * BBIE
      *  Hazardous Item. Emergency Procedures Code. Code
-     *  The emergency procedures for the Hazardous Item, expressed as a code.
+     *  A code signifying the emergency procedures for this hazardous item.
      *  0..1
      *  Hazardous Item
      *  Emergency Procedures Code
@@ -108,7 +110,7 @@ class HazardousItemType
     /**
      * BBIE
      *  Hazardous Item. Medical First Aid Guide Code. Code
-     *  The identifier of a medical first aid guide that is relevant to specific hazardous goods, expressed as a code.
+     *  A code signifying a medical first aid guide appropriate to this hazardous item.
      *  0..1
      *  Hazardous Item
      *  Medical First Aid Guide Code
@@ -123,14 +125,14 @@ class HazardousItemType
     /**
      * BBIE
      *  Hazardous Item. Technical_ Name. Name
-     *  The full technical name of the specific hazardous substance.
+     *  The full technical name of a specific hazardous substance contained in this goods item.
      *  0..1
      *  Hazardous Item
      *  Technical
      *  Name
      *  Name
      *  Name. Type
-     *  "Granular Sodium Chlorate WeedKiller"
+     *  Granular Sodium Chlorate WeedKiller
      *
      * @var \horstoeko\ubl\entities\cbc\TechnicalName $technicalName
      */
@@ -153,7 +155,7 @@ class HazardousItemType
     /**
      * BBIE
      *  Hazardous Item. Hazardous Category Code. Code
-     *  Code specifying a kind of hazard for a material.
+     *  A code signifying a kind of hazard for a material.
      *  0..1
      *  Hazardous Item
      *  Hazardous Category Code
@@ -168,7 +170,7 @@ class HazardousItemType
     /**
      * BBIE
      *  Hazardous Item. Upper_ Orange Hazard Placard Identifier. Identifier
-     *  Specifies the identity number for the upper part of the orange hazard placard required on the means of transport.
+     *  The number for the upper part of the orange hazard placard required on the means of transport.
      *  0..1
      *  Hazardous Item
      *  Upper
@@ -184,7 +186,7 @@ class HazardousItemType
     /**
      * BBIE
      *  Hazardous Item. Lower_ Orange Hazard Placard Identifier. Identifier
-     *  Specifies the identity number for the lower part of the orange hazard placard required on the means of transport.
+     *  The number for the lower part of the orange hazard placard required on the means of transport.
      *  0..1
      *  Hazardous Item
      *  Lower
@@ -200,7 +202,7 @@ class HazardousItemType
     /**
      * BBIE
      *  Hazardous Item. Marking Identifier. Identifier
-     *  Identifies the marking of dangerous goods.
+     *  An identifier to the marking of the Hazardous Item
      *  0..1
      *  Hazardous Item
      *  Marking Identifier
@@ -215,7 +217,7 @@ class HazardousItemType
     /**
      * BBIE
      *  Hazardous Item. Hazard Class Identifier. Identifier
-     *  Identifies a hazard class applicable to dangerous goods as defined by the relevant regulation authority, such as the IMDG Class Number of the SOLAS Convention of IMO and the ADR/RID Class Number for the road/rail environment.
+     *  An identifier for the hazard class applicable to this hazardous item as defined by the relevant regulation authority (e.g., the IMDG Class Number of the SOLAS Convention of IMO and the ADR/RID Class Number for the road/rail environment).
      *  0..1
      *  Hazardous Item
      *  Hazard Class Identifier
@@ -230,7 +232,7 @@ class HazardousItemType
     /**
      * BBIE
      *  Hazardous Item. Net_ Weight. Measure
-     *  The total net weight of hazardous goods; the weight of the goods plus packaging.
+     *  The net weight of this hazardous item, excluding packaging.
      *  0..1
      *  Hazardous Item
      *  Net
@@ -245,7 +247,7 @@ class HazardousItemType
     /**
      * BBIE
      *  Hazardous Item. Net_ Volume. Measure
-     *  The volume of hazardous goods net of packaging and transport equipment.
+     *  The volume of this hazardous item, excluding packaging and transport equipment.
      *  0..1
      *  Hazardous Item
      *  Net
@@ -260,7 +262,7 @@ class HazardousItemType
     /**
      * BBIE
      *  Hazardous Item. Quantity
-     *  The quantity of goods that are hazardous.
+     *  The quantity of goods items in this hazardous item that are hazardous.
      *  0..1
      *  Hazardous Item
      *  Quantity
@@ -274,10 +276,11 @@ class HazardousItemType
     /**
      * ASBIE
      *  Hazardous Item. Contact_ Party. Party
-     *  Associates the Hazardous Item with details of an individual, group, or body that is the contact in case of hazard incident.
+     *  The individual, group, or body to be contacted in case of a hazardous incident associated with this item.
      *  0..1
      *  Hazardous Item
      *  Contact
+     *  Party
      *  Party
      *  Party
      *
@@ -288,9 +291,10 @@ class HazardousItemType
     /**
      * ASBIE
      *  Hazardous Item. Secondary Hazard
-     *  Associates the Hazardous Item with information about secondary hazards.
+     *  A secondary hazard associated with this hazardous item.
      *  0..n
      *  Hazardous Item
+     *  Secondary Hazard
      *  Secondary Hazard
      *  Secondary Hazard
      *
@@ -303,9 +307,10 @@ class HazardousItemType
     /**
      * ASBIE
      *  Hazardous Item. Hazardous Goods Transit
-     *  Associates the Hazardous Item with information about the transportation of hazardous goods.
+     *  Information related to the transit of this kind of hazardous goods.
      *  0..n
      *  Hazardous Item
+     *  Hazardous Goods Transit
      *  Hazardous Goods Transit
      *  Hazardous Goods Transit
      *
@@ -318,10 +323,11 @@ class HazardousItemType
     /**
      * ASBIE
      *  Hazardous Item. Emergency_ Temperature. Temperature
-     *  Associates the Hazardous Item with the temperature at which emergency procedures apply during the handling of temperature-controlled hazardous goods.
+     *  The threshold temperature at which emergency procedures apply in the handling of temperature-controlled goods.
      *  0..1
      *  Hazardous Item
      *  Emergency
+     *  Temperature
      *  Temperature
      *  Temperature
      *
@@ -332,10 +338,11 @@ class HazardousItemType
     /**
      * ASBIE
      *  Hazardous Item. Flashpoint_ Temperature. Temperature
-     *  Associates the Hazardous Item with the lowest temperature at which the vapor of a combustible liquid can be made to ignite momentarily in air, known in hazardous goods procedures as the flashpoint.
+     *  The flashpoint temperature of this hazardous item; i.e., the lowest temperature at which vapors above a volatile combustible substance ignite in air when exposed to flame.
      *  0..1
      *  Hazardous Item
      *  Flashpoint
+     *  Temperature
      *  Temperature
      *  Temperature
      *
@@ -346,10 +353,11 @@ class HazardousItemType
     /**
      * ASBIE
      *  Hazardous Item. Additional_ Temperature. Temperature
-     *  Information providing details of temperatures relevant to the handling of hazardous goods.
+     *  Another temperature relevant to the handling of this hazardous item.
      *  0..n
      *  Hazardous Item
      *  Additional
+     *  Temperature
      *  Temperature
      *  Temperature
      *
@@ -364,13 +372,13 @@ class HazardousItemType
      *
      * BBIE
      *  Hazardous Item. Identifier
-     *  The identifier for a Hazardous Item.
+     *  An identifier for this hazardous item.
      *  0..1
      *  Hazardous Item
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "Round Up"
+     *  Round Up
      *
      * @return \horstoeko\ubl\entities\cbc\ID
      */
@@ -384,13 +392,13 @@ class HazardousItemType
      *
      * BBIE
      *  Hazardous Item. Identifier
-     *  The identifier for a Hazardous Item.
+     *  An identifier for this hazardous item.
      *  0..1
      *  Hazardous Item
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "Round Up"
+     *  Round Up
      *
      * @param \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
@@ -406,13 +414,13 @@ class HazardousItemType
      *
      * BBIE
      *  Hazardous Item. Placard Notation. Text
-     *  The placard notation corresponding to the hazard class of the hazardous commodity. Can also be the hazard identification number of the orange placard (upper part) required on the means of transport.
+     *  Text of the placard notation corresponding to the hazard class of this hazardous item. Can also be the hazard identification number of the orange placard (upper part) required on the means of transport.
      *  0..1
      *  Hazardous Item
      *  Placard Notation
      *  Text
      *  Text. Type
-     *  "5.1"
+     *  5.1
      *
      * @return \horstoeko\ubl\entities\cbc\PlacardNotation
      */
@@ -426,13 +434,13 @@ class HazardousItemType
      *
      * BBIE
      *  Hazardous Item. Placard Notation. Text
-     *  The placard notation corresponding to the hazard class of the hazardous commodity. Can also be the hazard identification number of the orange placard (upper part) required on the means of transport.
+     *  Text of the placard notation corresponding to the hazard class of this hazardous item. Can also be the hazard identification number of the orange placard (upper part) required on the means of transport.
      *  0..1
      *  Hazardous Item
      *  Placard Notation
      *  Text
      *  Text. Type
-     *  "5.1"
+     *  5.1
      *
      * @param \horstoeko\ubl\entities\cbc\PlacardNotation $placardNotation
      * @return self
@@ -448,13 +456,13 @@ class HazardousItemType
      *
      * BBIE
      *  Hazardous Item. Placard Endorsement. Text
-     *  The placard endorsement that is to be shown on the shipping papers for the hazardous commodity. Can also be used for the number of the orange placard (lower part) required on the means of transport.
+     *  Text of the placard endorsement that is to be shown on the shipping papers for this hazardous item. Can also be used for the number of the orange placard (lower part) required on the means of transport.
      *  0..1
      *  Hazardous Item
      *  Placard Endorsement
      *  Text
      *  Text. Type
-     *  "2"
+     *  2
      *
      * @return \horstoeko\ubl\entities\cbc\PlacardEndorsement
      */
@@ -468,13 +476,13 @@ class HazardousItemType
      *
      * BBIE
      *  Hazardous Item. Placard Endorsement. Text
-     *  The placard endorsement that is to be shown on the shipping papers for the hazardous commodity. Can also be used for the number of the orange placard (lower part) required on the means of transport.
+     *  Text of the placard endorsement that is to be shown on the shipping papers for this hazardous item. Can also be used for the number of the orange placard (lower part) required on the means of transport.
      *  0..1
      *  Hazardous Item
      *  Placard Endorsement
      *  Text
      *  Text. Type
-     *  "2"
+     *  2
      *
      * @param \horstoeko\ubl\entities\cbc\PlacardEndorsement $placardEndorsement
      * @return self
@@ -486,20 +494,87 @@ class HazardousItemType
     }
 
     /**
-     * Gets as additionalInformation
+     * Adds as additionalInformation
      *
      * BBIE
      *  Hazardous Item. Additional_ Information. Text
-     *  Additional information about the hazardous substance. Can be used to specify information such as the type of regulatory requirements that apply to a description.
-     *  0..1
+     *  Text providing further information about the hazardous substance.
+     *  0..n
      *  Hazardous Item
      *  Additional
      *  Information
      *  Text
      *  Text. Type
-     *  "Must be stored away from flammable materials" "N.O.S. or a Waste Characteristics Code in conjunction with an EPA Waste Stream code"
+     *  Must be stored away from flammable materials N.O.S. or a Waste Characteristics Code in conjunction with an EPA Waste Stream code
      *
-     * @return \horstoeko\ubl\entities\cbc\AdditionalInformation
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\AdditionalInformation $additionalInformation
+     */
+    public function addToAdditionalInformation(\horstoeko\ubl\entities\cbc\AdditionalInformation $additionalInformation)
+    {
+        $this->additionalInformation[] = $additionalInformation;
+        return $this;
+    }
+
+    /**
+     * isset additionalInformation
+     *
+     * BBIE
+     *  Hazardous Item. Additional_ Information. Text
+     *  Text providing further information about the hazardous substance.
+     *  0..n
+     *  Hazardous Item
+     *  Additional
+     *  Information
+     *  Text
+     *  Text. Type
+     *  Must be stored away from flammable materials N.O.S. or a Waste Characteristics Code in conjunction with an EPA Waste Stream code
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetAdditionalInformation($index)
+    {
+        return isset($this->additionalInformation[$index]);
+    }
+
+    /**
+     * unset additionalInformation
+     *
+     * BBIE
+     *  Hazardous Item. Additional_ Information. Text
+     *  Text providing further information about the hazardous substance.
+     *  0..n
+     *  Hazardous Item
+     *  Additional
+     *  Information
+     *  Text
+     *  Text. Type
+     *  Must be stored away from flammable materials N.O.S. or a Waste Characteristics Code in conjunction with an EPA Waste Stream code
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetAdditionalInformation($index)
+    {
+        unset($this->additionalInformation[$index]);
+    }
+
+    /**
+     * Gets as additionalInformation
+     *
+     * BBIE
+     *  Hazardous Item. Additional_ Information. Text
+     *  Text providing further information about the hazardous substance.
+     *  0..n
+     *  Hazardous Item
+     *  Additional
+     *  Information
+     *  Text
+     *  Text. Type
+     *  Must be stored away from flammable materials N.O.S. or a Waste Characteristics Code in conjunction with an EPA Waste Stream code
+     *
+     * @return \horstoeko\ubl\entities\cbc\AdditionalInformation[]
      */
     public function getAdditionalInformation()
     {
@@ -511,19 +586,19 @@ class HazardousItemType
      *
      * BBIE
      *  Hazardous Item. Additional_ Information. Text
-     *  Additional information about the hazardous substance. Can be used to specify information such as the type of regulatory requirements that apply to a description.
-     *  0..1
+     *  Text providing further information about the hazardous substance.
+     *  0..n
      *  Hazardous Item
      *  Additional
      *  Information
      *  Text
      *  Text. Type
-     *  "Must be stored away from flammable materials" "N.O.S. or a Waste Characteristics Code in conjunction with an EPA Waste Stream code"
+     *  Must be stored away from flammable materials N.O.S. or a Waste Characteristics Code in conjunction with an EPA Waste Stream code
      *
-     * @param \horstoeko\ubl\entities\cbc\AdditionalInformation $additionalInformation
+     * @param \horstoeko\ubl\entities\cbc\AdditionalInformation[] $additionalInformation
      * @return self
      */
-    public function setAdditionalInformation(\horstoeko\ubl\entities\cbc\AdditionalInformation $additionalInformation)
+    public function setAdditionalInformation(array $additionalInformation)
     {
         $this->additionalInformation = $additionalInformation;
         return $this;
@@ -534,7 +609,7 @@ class HazardousItemType
      *
      * BBIE
      *  Hazardous Item. UNDG Code. Code
-     *  The identifier assigned to transportable hazardous goods by the United Nations, expressed as a code.
+     *  The UN code for this kind of hazardous item.
      *  0..1
      *  Hazardous Item
      *  UNDG Code
@@ -554,7 +629,7 @@ class HazardousItemType
      *
      * BBIE
      *  Hazardous Item. UNDG Code. Code
-     *  The identifier assigned to transportable hazardous goods by the United Nations, expressed as a code.
+     *  The UN code for this kind of hazardous item.
      *  0..1
      *  Hazardous Item
      *  UNDG Code
@@ -576,7 +651,7 @@ class HazardousItemType
      *
      * BBIE
      *  Hazardous Item. Emergency Procedures Code. Code
-     *  The emergency procedures for the Hazardous Item, expressed as a code.
+     *  A code signifying the emergency procedures for this hazardous item.
      *  0..1
      *  Hazardous Item
      *  Emergency Procedures Code
@@ -596,7 +671,7 @@ class HazardousItemType
      *
      * BBIE
      *  Hazardous Item. Emergency Procedures Code. Code
-     *  The emergency procedures for the Hazardous Item, expressed as a code.
+     *  A code signifying the emergency procedures for this hazardous item.
      *  0..1
      *  Hazardous Item
      *  Emergency Procedures Code
@@ -618,7 +693,7 @@ class HazardousItemType
      *
      * BBIE
      *  Hazardous Item. Medical First Aid Guide Code. Code
-     *  The identifier of a medical first aid guide that is relevant to specific hazardous goods, expressed as a code.
+     *  A code signifying a medical first aid guide appropriate to this hazardous item.
      *  0..1
      *  Hazardous Item
      *  Medical First Aid Guide Code
@@ -638,7 +713,7 @@ class HazardousItemType
      *
      * BBIE
      *  Hazardous Item. Medical First Aid Guide Code. Code
-     *  The identifier of a medical first aid guide that is relevant to specific hazardous goods, expressed as a code.
+     *  A code signifying a medical first aid guide appropriate to this hazardous item.
      *  0..1
      *  Hazardous Item
      *  Medical First Aid Guide Code
@@ -660,14 +735,14 @@ class HazardousItemType
      *
      * BBIE
      *  Hazardous Item. Technical_ Name. Name
-     *  The full technical name of the specific hazardous substance.
+     *  The full technical name of a specific hazardous substance contained in this goods item.
      *  0..1
      *  Hazardous Item
      *  Technical
      *  Name
      *  Name
      *  Name. Type
-     *  "Granular Sodium Chlorate WeedKiller"
+     *  Granular Sodium Chlorate WeedKiller
      *
      * @return \horstoeko\ubl\entities\cbc\TechnicalName
      */
@@ -681,14 +756,14 @@ class HazardousItemType
      *
      * BBIE
      *  Hazardous Item. Technical_ Name. Name
-     *  The full technical name of the specific hazardous substance.
+     *  The full technical name of a specific hazardous substance contained in this goods item.
      *  0..1
      *  Hazardous Item
      *  Technical
      *  Name
      *  Name
      *  Name. Type
-     *  "Granular Sodium Chlorate WeedKiller"
+     *  Granular Sodium Chlorate WeedKiller
      *
      * @param \horstoeko\ubl\entities\cbc\TechnicalName $technicalName
      * @return self
@@ -744,7 +819,7 @@ class HazardousItemType
      *
      * BBIE
      *  Hazardous Item. Hazardous Category Code. Code
-     *  Code specifying a kind of hazard for a material.
+     *  A code signifying a kind of hazard for a material.
      *  0..1
      *  Hazardous Item
      *  Hazardous Category Code
@@ -764,7 +839,7 @@ class HazardousItemType
      *
      * BBIE
      *  Hazardous Item. Hazardous Category Code. Code
-     *  Code specifying a kind of hazard for a material.
+     *  A code signifying a kind of hazard for a material.
      *  0..1
      *  Hazardous Item
      *  Hazardous Category Code
@@ -786,7 +861,7 @@ class HazardousItemType
      *
      * BBIE
      *  Hazardous Item. Upper_ Orange Hazard Placard Identifier. Identifier
-     *  Specifies the identity number for the upper part of the orange hazard placard required on the means of transport.
+     *  The number for the upper part of the orange hazard placard required on the means of transport.
      *  0..1
      *  Hazardous Item
      *  Upper
@@ -807,7 +882,7 @@ class HazardousItemType
      *
      * BBIE
      *  Hazardous Item. Upper_ Orange Hazard Placard Identifier. Identifier
-     *  Specifies the identity number for the upper part of the orange hazard placard required on the means of transport.
+     *  The number for the upper part of the orange hazard placard required on the means of transport.
      *  0..1
      *  Hazardous Item
      *  Upper
@@ -830,7 +905,7 @@ class HazardousItemType
      *
      * BBIE
      *  Hazardous Item. Lower_ Orange Hazard Placard Identifier. Identifier
-     *  Specifies the identity number for the lower part of the orange hazard placard required on the means of transport.
+     *  The number for the lower part of the orange hazard placard required on the means of transport.
      *  0..1
      *  Hazardous Item
      *  Lower
@@ -851,7 +926,7 @@ class HazardousItemType
      *
      * BBIE
      *  Hazardous Item. Lower_ Orange Hazard Placard Identifier. Identifier
-     *  Specifies the identity number for the lower part of the orange hazard placard required on the means of transport.
+     *  The number for the lower part of the orange hazard placard required on the means of transport.
      *  0..1
      *  Hazardous Item
      *  Lower
@@ -874,7 +949,7 @@ class HazardousItemType
      *
      * BBIE
      *  Hazardous Item. Marking Identifier. Identifier
-     *  Identifies the marking of dangerous goods.
+     *  An identifier to the marking of the Hazardous Item
      *  0..1
      *  Hazardous Item
      *  Marking Identifier
@@ -894,7 +969,7 @@ class HazardousItemType
      *
      * BBIE
      *  Hazardous Item. Marking Identifier. Identifier
-     *  Identifies the marking of dangerous goods.
+     *  An identifier to the marking of the Hazardous Item
      *  0..1
      *  Hazardous Item
      *  Marking Identifier
@@ -916,7 +991,7 @@ class HazardousItemType
      *
      * BBIE
      *  Hazardous Item. Hazard Class Identifier. Identifier
-     *  Identifies a hazard class applicable to dangerous goods as defined by the relevant regulation authority, such as the IMDG Class Number of the SOLAS Convention of IMO and the ADR/RID Class Number for the road/rail environment.
+     *  An identifier for the hazard class applicable to this hazardous item as defined by the relevant regulation authority (e.g., the IMDG Class Number of the SOLAS Convention of IMO and the ADR/RID Class Number for the road/rail environment).
      *  0..1
      *  Hazardous Item
      *  Hazard Class Identifier
@@ -936,7 +1011,7 @@ class HazardousItemType
      *
      * BBIE
      *  Hazardous Item. Hazard Class Identifier. Identifier
-     *  Identifies a hazard class applicable to dangerous goods as defined by the relevant regulation authority, such as the IMDG Class Number of the SOLAS Convention of IMO and the ADR/RID Class Number for the road/rail environment.
+     *  An identifier for the hazard class applicable to this hazardous item as defined by the relevant regulation authority (e.g., the IMDG Class Number of the SOLAS Convention of IMO and the ADR/RID Class Number for the road/rail environment).
      *  0..1
      *  Hazardous Item
      *  Hazard Class Identifier
@@ -958,7 +1033,7 @@ class HazardousItemType
      *
      * BBIE
      *  Hazardous Item. Net_ Weight. Measure
-     *  The total net weight of hazardous goods; the weight of the goods plus packaging.
+     *  The net weight of this hazardous item, excluding packaging.
      *  0..1
      *  Hazardous Item
      *  Net
@@ -978,7 +1053,7 @@ class HazardousItemType
      *
      * BBIE
      *  Hazardous Item. Net_ Weight. Measure
-     *  The total net weight of hazardous goods; the weight of the goods plus packaging.
+     *  The net weight of this hazardous item, excluding packaging.
      *  0..1
      *  Hazardous Item
      *  Net
@@ -1000,7 +1075,7 @@ class HazardousItemType
      *
      * BBIE
      *  Hazardous Item. Net_ Volume. Measure
-     *  The volume of hazardous goods net of packaging and transport equipment.
+     *  The volume of this hazardous item, excluding packaging and transport equipment.
      *  0..1
      *  Hazardous Item
      *  Net
@@ -1020,7 +1095,7 @@ class HazardousItemType
      *
      * BBIE
      *  Hazardous Item. Net_ Volume. Measure
-     *  The volume of hazardous goods net of packaging and transport equipment.
+     *  The volume of this hazardous item, excluding packaging and transport equipment.
      *  0..1
      *  Hazardous Item
      *  Net
@@ -1042,7 +1117,7 @@ class HazardousItemType
      *
      * BBIE
      *  Hazardous Item. Quantity
-     *  The quantity of goods that are hazardous.
+     *  The quantity of goods items in this hazardous item that are hazardous.
      *  0..1
      *  Hazardous Item
      *  Quantity
@@ -1061,7 +1136,7 @@ class HazardousItemType
      *
      * BBIE
      *  Hazardous Item. Quantity
-     *  The quantity of goods that are hazardous.
+     *  The quantity of goods items in this hazardous item that are hazardous.
      *  0..1
      *  Hazardous Item
      *  Quantity
@@ -1082,10 +1157,11 @@ class HazardousItemType
      *
      * ASBIE
      *  Hazardous Item. Contact_ Party. Party
-     *  Associates the Hazardous Item with details of an individual, group, or body that is the contact in case of hazard incident.
+     *  The individual, group, or body to be contacted in case of a hazardous incident associated with this item.
      *  0..1
      *  Hazardous Item
      *  Contact
+     *  Party
      *  Party
      *  Party
      *
@@ -1101,10 +1177,11 @@ class HazardousItemType
      *
      * ASBIE
      *  Hazardous Item. Contact_ Party. Party
-     *  Associates the Hazardous Item with details of an individual, group, or body that is the contact in case of hazard incident.
+     *  The individual, group, or body to be contacted in case of a hazardous incident associated with this item.
      *  0..1
      *  Hazardous Item
      *  Contact
+     *  Party
      *  Party
      *  Party
      *
@@ -1122,9 +1199,10 @@ class HazardousItemType
      *
      * ASBIE
      *  Hazardous Item. Secondary Hazard
-     *  Associates the Hazardous Item with information about secondary hazards.
+     *  A secondary hazard associated with this hazardous item.
      *  0..n
      *  Hazardous Item
+     *  Secondary Hazard
      *  Secondary Hazard
      *  Secondary Hazard
      *
@@ -1142,9 +1220,10 @@ class HazardousItemType
      *
      * ASBIE
      *  Hazardous Item. Secondary Hazard
-     *  Associates the Hazardous Item with information about secondary hazards.
+     *  A secondary hazard associated with this hazardous item.
      *  0..n
      *  Hazardous Item
+     *  Secondary Hazard
      *  Secondary Hazard
      *  Secondary Hazard
      *
@@ -1161,9 +1240,10 @@ class HazardousItemType
      *
      * ASBIE
      *  Hazardous Item. Secondary Hazard
-     *  Associates the Hazardous Item with information about secondary hazards.
+     *  A secondary hazard associated with this hazardous item.
      *  0..n
      *  Hazardous Item
+     *  Secondary Hazard
      *  Secondary Hazard
      *  Secondary Hazard
      *
@@ -1180,9 +1260,10 @@ class HazardousItemType
      *
      * ASBIE
      *  Hazardous Item. Secondary Hazard
-     *  Associates the Hazardous Item with information about secondary hazards.
+     *  A secondary hazard associated with this hazardous item.
      *  0..n
      *  Hazardous Item
+     *  Secondary Hazard
      *  Secondary Hazard
      *  Secondary Hazard
      *
@@ -1198,9 +1279,10 @@ class HazardousItemType
      *
      * ASBIE
      *  Hazardous Item. Secondary Hazard
-     *  Associates the Hazardous Item with information about secondary hazards.
+     *  A secondary hazard associated with this hazardous item.
      *  0..n
      *  Hazardous Item
+     *  Secondary Hazard
      *  Secondary Hazard
      *  Secondary Hazard
      *
@@ -1218,9 +1300,10 @@ class HazardousItemType
      *
      * ASBIE
      *  Hazardous Item. Hazardous Goods Transit
-     *  Associates the Hazardous Item with information about the transportation of hazardous goods.
+     *  Information related to the transit of this kind of hazardous goods.
      *  0..n
      *  Hazardous Item
+     *  Hazardous Goods Transit
      *  Hazardous Goods Transit
      *  Hazardous Goods Transit
      *
@@ -1238,9 +1321,10 @@ class HazardousItemType
      *
      * ASBIE
      *  Hazardous Item. Hazardous Goods Transit
-     *  Associates the Hazardous Item with information about the transportation of hazardous goods.
+     *  Information related to the transit of this kind of hazardous goods.
      *  0..n
      *  Hazardous Item
+     *  Hazardous Goods Transit
      *  Hazardous Goods Transit
      *  Hazardous Goods Transit
      *
@@ -1257,9 +1341,10 @@ class HazardousItemType
      *
      * ASBIE
      *  Hazardous Item. Hazardous Goods Transit
-     *  Associates the Hazardous Item with information about the transportation of hazardous goods.
+     *  Information related to the transit of this kind of hazardous goods.
      *  0..n
      *  Hazardous Item
+     *  Hazardous Goods Transit
      *  Hazardous Goods Transit
      *  Hazardous Goods Transit
      *
@@ -1276,9 +1361,10 @@ class HazardousItemType
      *
      * ASBIE
      *  Hazardous Item. Hazardous Goods Transit
-     *  Associates the Hazardous Item with information about the transportation of hazardous goods.
+     *  Information related to the transit of this kind of hazardous goods.
      *  0..n
      *  Hazardous Item
+     *  Hazardous Goods Transit
      *  Hazardous Goods Transit
      *  Hazardous Goods Transit
      *
@@ -1294,9 +1380,10 @@ class HazardousItemType
      *
      * ASBIE
      *  Hazardous Item. Hazardous Goods Transit
-     *  Associates the Hazardous Item with information about the transportation of hazardous goods.
+     *  Information related to the transit of this kind of hazardous goods.
      *  0..n
      *  Hazardous Item
+     *  Hazardous Goods Transit
      *  Hazardous Goods Transit
      *  Hazardous Goods Transit
      *
@@ -1314,10 +1401,11 @@ class HazardousItemType
      *
      * ASBIE
      *  Hazardous Item. Emergency_ Temperature. Temperature
-     *  Associates the Hazardous Item with the temperature at which emergency procedures apply during the handling of temperature-controlled hazardous goods.
+     *  The threshold temperature at which emergency procedures apply in the handling of temperature-controlled goods.
      *  0..1
      *  Hazardous Item
      *  Emergency
+     *  Temperature
      *  Temperature
      *  Temperature
      *
@@ -1333,10 +1421,11 @@ class HazardousItemType
      *
      * ASBIE
      *  Hazardous Item. Emergency_ Temperature. Temperature
-     *  Associates the Hazardous Item with the temperature at which emergency procedures apply during the handling of temperature-controlled hazardous goods.
+     *  The threshold temperature at which emergency procedures apply in the handling of temperature-controlled goods.
      *  0..1
      *  Hazardous Item
      *  Emergency
+     *  Temperature
      *  Temperature
      *  Temperature
      *
@@ -1354,10 +1443,11 @@ class HazardousItemType
      *
      * ASBIE
      *  Hazardous Item. Flashpoint_ Temperature. Temperature
-     *  Associates the Hazardous Item with the lowest temperature at which the vapor of a combustible liquid can be made to ignite momentarily in air, known in hazardous goods procedures as the flashpoint.
+     *  The flashpoint temperature of this hazardous item; i.e., the lowest temperature at which vapors above a volatile combustible substance ignite in air when exposed to flame.
      *  0..1
      *  Hazardous Item
      *  Flashpoint
+     *  Temperature
      *  Temperature
      *  Temperature
      *
@@ -1373,10 +1463,11 @@ class HazardousItemType
      *
      * ASBIE
      *  Hazardous Item. Flashpoint_ Temperature. Temperature
-     *  Associates the Hazardous Item with the lowest temperature at which the vapor of a combustible liquid can be made to ignite momentarily in air, known in hazardous goods procedures as the flashpoint.
+     *  The flashpoint temperature of this hazardous item; i.e., the lowest temperature at which vapors above a volatile combustible substance ignite in air when exposed to flame.
      *  0..1
      *  Hazardous Item
      *  Flashpoint
+     *  Temperature
      *  Temperature
      *  Temperature
      *
@@ -1394,10 +1485,11 @@ class HazardousItemType
      *
      * ASBIE
      *  Hazardous Item. Additional_ Temperature. Temperature
-     *  Information providing details of temperatures relevant to the handling of hazardous goods.
+     *  Another temperature relevant to the handling of this hazardous item.
      *  0..n
      *  Hazardous Item
      *  Additional
+     *  Temperature
      *  Temperature
      *  Temperature
      *
@@ -1415,10 +1507,11 @@ class HazardousItemType
      *
      * ASBIE
      *  Hazardous Item. Additional_ Temperature. Temperature
-     *  Information providing details of temperatures relevant to the handling of hazardous goods.
+     *  Another temperature relevant to the handling of this hazardous item.
      *  0..n
      *  Hazardous Item
      *  Additional
+     *  Temperature
      *  Temperature
      *  Temperature
      *
@@ -1435,10 +1528,11 @@ class HazardousItemType
      *
      * ASBIE
      *  Hazardous Item. Additional_ Temperature. Temperature
-     *  Information providing details of temperatures relevant to the handling of hazardous goods.
+     *  Another temperature relevant to the handling of this hazardous item.
      *  0..n
      *  Hazardous Item
      *  Additional
+     *  Temperature
      *  Temperature
      *  Temperature
      *
@@ -1455,10 +1549,11 @@ class HazardousItemType
      *
      * ASBIE
      *  Hazardous Item. Additional_ Temperature. Temperature
-     *  Information providing details of temperatures relevant to the handling of hazardous goods.
+     *  Another temperature relevant to the handling of this hazardous item.
      *  0..n
      *  Hazardous Item
      *  Additional
+     *  Temperature
      *  Temperature
      *  Temperature
      *
@@ -1474,10 +1569,11 @@ class HazardousItemType
      *
      * ASBIE
      *  Hazardous Item. Additional_ Temperature. Temperature
-     *  Information providing details of temperatures relevant to the handling of hazardous goods.
+     *  Another temperature relevant to the handling of this hazardous item.
      *  0..n
      *  Hazardous Item
      *  Additional
+     *  Temperature
      *  Temperature
      *  Temperature
      *

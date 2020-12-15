@@ -14,3 +14,6 @@ horstoeko\ubl\entities\cac\PriceType:
         allowanceCharge:
             -
                 Valid: null
+        pricingExchangeRate:
+            -
+                Valid: null

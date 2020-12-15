@@ -43,7 +43,11 @@ horstoeko\ubl\entities\cac\AllowanceChargeType:
             accessor:
                 getter: getAllowanceChargeReason
                 setter: setAllowanceChargeReason
-            type: horstoeko\ubl\entities\cbc\AllowanceChargeReason
+            xml_list:
+                inline: true
+                entry_name: AllowanceChargeReason
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\AllowanceChargeReason>
         multiplierFactorNumeric:
             expose: true
             access_type: public_method
@@ -54,7 +58,7 @@ horstoeko\ubl\entities\cac\AllowanceChargeType:
             accessor:
                 getter: getMultiplierFactorNumeric
                 setter: setMultiplierFactorNumeric
-            type: float
+            type: horstoeko\ubl\entities\cbc\MultiplierFactorNumeric
         prepaidIndicator:
             expose: true
             access_type: public_method
@@ -76,7 +80,7 @@ horstoeko\ubl\entities\cac\AllowanceChargeType:
             accessor:
                 getter: getSequenceNumeric
                 setter: setSequenceNumeric
-            type: float
+            type: horstoeko\ubl\entities\cbc\SequenceNumeric
         amount:
             expose: true
             access_type: public_method
@@ -121,6 +125,17 @@ horstoeko\ubl\entities\cac\AllowanceChargeType:
                 getter: getAccountingCost
                 setter: setAccountingCost
             type: horstoeko\ubl\entities\cbc\AccountingCost
+        perUnitAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: PerUnitAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPerUnitAmount
+                setter: setPerUnitAmount
+            type: horstoeko\ubl\entities\cbc\PerUnitAmount
         taxCategory:
             expose: true
             access_type: public_method

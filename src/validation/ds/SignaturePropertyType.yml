@@ -1,0 +1,7 @@
+horstoeko\ubl\entities\ds\SignaturePropertyType:
+    properties:
+        target:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

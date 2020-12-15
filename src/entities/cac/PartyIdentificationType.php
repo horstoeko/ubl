@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Party Identification. Details
- *  Information about a party's identification.
+ *  A class to define an identifier for a party.
  *  Party Identification
  * XSD Type: PartyIdentificationType
  */
@@ -17,7 +17,7 @@ class PartyIdentificationType
     /**
      * BBIE
      *  Party Identification. Identifier
-     *  Identifies a party.
+     *  An identifier for the party.
      *  1
      *  Party Identification
      *  Identifier
@@ -33,7 +33,7 @@ class PartyIdentificationType
      *
      * BBIE
      *  Party Identification. Identifier
-     *  Identifies a party.
+     *  An identifier for the party.
      *  1
      *  Party Identification
      *  Identifier
@@ -52,7 +52,7 @@ class PartyIdentificationType
      *
      * BBIE
      *  Party Identification. Identifier
-     *  Identifies a party.
+     *  An identifier for the party.
      *  1
      *  Party Identification
      *  Identifier

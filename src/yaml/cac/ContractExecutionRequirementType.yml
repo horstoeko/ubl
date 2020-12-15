@@ -1,0 +1,43 @@
+horstoeko\ubl\entities\cac\ContractExecutionRequirementType:
+    properties:
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: Name
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getName
+                setter: setName
+            xml_list:
+                inline: true
+                entry_name: Name
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Name>
+        executionRequirementCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ExecutionRequirementCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getExecutionRequirementCode
+                setter: setExecutionRequirementCode
+            type: horstoeko\ubl\entities\cbc\ExecutionRequirementCode
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: Description
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>

@@ -1,0 +1,9 @@
+horstoeko\ubl\entities\cac\EnergyTaxReportType:
+    properties:
+        taxScheme:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

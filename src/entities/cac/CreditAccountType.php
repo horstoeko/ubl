@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Credit Account. Details
- *  Information about a Credit Account (for sales on account).
+ *  A class to identify a credit account for sales on account.
  *  Credit Account
  * XSD Type: CreditAccountType
  */
@@ -17,13 +17,13 @@ class CreditAccountType
     /**
      * BBIE
      *  Credit Account. Account Identifier. Identifier
-     *  Identifies the Credit Account.
+     *  An identifier for this credit account.
      *  1
      *  Credit Account
      *  Account Identifier
      *  Identifier
      *  Identifier. Type
-     *  "Customer Code 29"
+     *  Customer Code 29
      *
      * @var \horstoeko\ubl\entities\cbc\AccountID $accountID
      */
@@ -34,13 +34,13 @@ class CreditAccountType
      *
      * BBIE
      *  Credit Account. Account Identifier. Identifier
-     *  Identifies the Credit Account.
+     *  An identifier for this credit account.
      *  1
      *  Credit Account
      *  Account Identifier
      *  Identifier
      *  Identifier. Type
-     *  "Customer Code 29"
+     *  Customer Code 29
      *
      * @return \horstoeko\ubl\entities\cbc\AccountID
      */
@@ -54,13 +54,13 @@ class CreditAccountType
      *
      * BBIE
      *  Credit Account. Account Identifier. Identifier
-     *  Identifies the Credit Account.
+     *  An identifier for this credit account.
      *  1
      *  Credit Account
      *  Account Identifier
      *  Identifier
      *  Identifier. Type
-     *  "Customer Code 29"
+     *  Customer Code 29
      *
      * @param \horstoeko\ubl\entities\cbc\AccountID $accountID
      * @return self

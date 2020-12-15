@@ -1,0 +1,14 @@
+horstoeko\ubl\entities\cac\PromotionalEventLineItemType:
+    properties:
+        amount:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        eventLineItem:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

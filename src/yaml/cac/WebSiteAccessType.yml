@@ -1,0 +1,35 @@
+horstoeko\ubl\entities\cac\WebSiteAccessType:
+    properties:
+        uRI:
+            expose: true
+            access_type: public_method
+            serialized_name: URI
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getURI
+                setter: setURI
+            type: horstoeko\ubl\entities\cbc\URI
+        password:
+            expose: true
+            access_type: public_method
+            serialized_name: Password
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPassword
+                setter: setPassword
+            type: horstoeko\ubl\entities\cbc\Password
+        login:
+            expose: true
+            access_type: public_method
+            serialized_name: Login
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getLogin
+                setter: setLogin
+            type: horstoeko\ubl\entities\cbc\Login

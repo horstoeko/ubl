@@ -1,0 +1,65 @@
+horstoeko\ubl\entities\cac\EconomicOperatorShortListType:
+    properties:
+        limitationDescription:
+            expose: true
+            access_type: public_method
+            serialized_name: LimitationDescription
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getLimitationDescription
+                setter: setLimitationDescription
+            xml_list:
+                inline: true
+                entry_name: LimitationDescription
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\LimitationDescription>
+        expectedQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: ExpectedQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getExpectedQuantity
+                setter: setExpectedQuantity
+            type: horstoeko\ubl\entities\cbc\ExpectedQuantity
+        maximumQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: MaximumQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMaximumQuantity
+                setter: setMaximumQuantity
+            type: horstoeko\ubl\entities\cbc\MaximumQuantity
+        minimumQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: MinimumQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMinimumQuantity
+                setter: setMinimumQuantity
+            type: horstoeko\ubl\entities\cbc\MinimumQuantity
+        preSelectedParty:
+            expose: true
+            access_type: public_method
+            serialized_name: PreSelectedParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPreSelectedParty
+                setter: setPreSelectedParty
+            xml_list:
+                inline: true
+                entry_name: PreSelectedParty
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\PreSelectedParty>

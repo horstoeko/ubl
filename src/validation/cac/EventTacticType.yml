@@ -1,0 +1,12 @@
+horstoeko\ubl\entities\cac\EventTacticType:
+    properties:
+        eventTacticEnumeration:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        period:
+            -
+                Valid: null

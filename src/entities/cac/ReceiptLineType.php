@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Receipt Line. Details
- *  Information about a Receipt Line.
+ *  A class to define a line in a Receipt Advice.
  *  Receipt Line
  * XSD Type: ReceiptLineType
  */
@@ -17,7 +17,7 @@ class ReceiptLineType
     /**
      * BBIE
      *  Receipt Line. Identifier
-     *  Identifies the Receipt Line.
+     *  An identifier for this receipt line.
      *  1
      *  Receipt Line
      *  Identifier
@@ -31,7 +31,7 @@ class ReceiptLineType
     /**
      * BBIE
      *  Receipt Line. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this receipt line.
      *  0..1
      *  Receipt Line
      *  UUID
@@ -45,16 +45,18 @@ class ReceiptLineType
     /**
      * BBIE
      *  Receipt Line. Note. Text
-     *  Free-form text applying to the Receipt Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Receipt Line
      *  Note
      *  Text
      *  Text. Type
      *
-     * @var \horstoeko\ubl\entities\cbc\Note $note
+     * @var \horstoeko\ubl\entities\cbc\Note[] $note
      */
-    private $note = null;
+    private $note = [
+        
+    ];
 
     /**
      * BBIE
@@ -89,7 +91,7 @@ class ReceiptLineType
     /**
      * BBIE
      *  Receipt Line. Shortage Action Code. Code
-     *  The action that the Delivery Party wishes the Despatch Party to take as a result of the shortage, expressed as a code.
+     *  A code signifying the action that the delivery party wishes the despatch party to take as the result of a shortage.
      *  0..1
      *  Receipt Line
      *  Shortage Action Code
@@ -118,7 +120,7 @@ class ReceiptLineType
     /**
      * BBIE
      *  Receipt Line. Reject Reason Code. Code
-     *  The reason for rejection, expressed as a code.
+     *  The reason for a rejection, expressed as a code.
      *  0..1
      *  Receipt Line
      *  Reject Reason Code
@@ -132,22 +134,24 @@ class ReceiptLineType
     /**
      * BBIE
      *  Receipt Line. Reject_ Reason. Text
-     *  The reason for rejection.
-     *  0..1
+     *  The reason for a rejection, expressed as text.
+     *  0..n
      *  Receipt Line
      *  Reject
      *  Reason
      *  Text
      *  Text. Type
      *
-     * @var \horstoeko\ubl\entities\cbc\RejectReason $rejectReason
+     * @var \horstoeko\ubl\entities\cbc\RejectReason[] $rejectReason
      */
-    private $rejectReason = null;
+    private $rejectReason = [
+        
+    ];
 
     /**
      * BBIE
      *  Receipt Line. Reject Action Code. Code
-     *  The action that the Delivery Party wishes the Despatch Party to take as a result of the rejection, expressed as a code.
+     *  A code signifying the action that the delivery party wishes the despatch party to take as the result of a rejection.
      *  0..1
      *  Receipt Line
      *  Reject Action Code
@@ -160,11 +164,26 @@ class ReceiptLineType
 
     /**
      * BBIE
-     *  Receipt Line. Oversupply Quantity. Quantity
-     *  The quanitity over-supplied i.e. the quantity over and above that ordered.
+     *  Receipt Line. Quantity Discrepancy Code. Code
+     *  A code signifying the type of a discrepancy in quantity.
      *  0..1
      *  Receipt Line
-     *  Oversupply Quantity
+     *  Quantity Discrepancy Code
+     *  Code
+     *  Code. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\QuantityDiscrepancyCode $quantityDiscrepancyCode
+     */
+    private $quantityDiscrepancyCode = null;
+
+    /**
+     * BBIE
+     *  Receipt Line. Oversupply_ Quantity. Quantity
+     *  The quantity over-supplied, i.e., the quantity over and above the quantity ordered.
+     *  0..1
+     *  Receipt Line
+     *  Oversupply
+     *  Quantity
      *  Quantity
      *  Quantity. Type
      *
@@ -175,7 +194,7 @@ class ReceiptLineType
     /**
      * BBIE
      *  Receipt Line. Received_ Date. Date
-     *  The date on which the good/services are received.
+     *  The date on which the goods or services were received.
      *  0..1
      *  Receipt Line
      *  Received
@@ -204,7 +223,7 @@ class ReceiptLineType
     /**
      * BBIE
      *  Receipt Line. Timing Complaint. Text
-     *  A complaint about the timing of delivery.
+     *  A complaint about the timing of delivery, expressed as text.
      *  0..1
      *  Receipt Line
      *  Timing Complaint
@@ -218,9 +237,10 @@ class ReceiptLineType
     /**
      * ASBIE
      *  Receipt Line. Order Line Reference
-     *  An association to Order Line Reference.
+     *  A reference to the order line associated with this receipt line.
      *  0..1
      *  Receipt Line
+     *  Order Line Reference
      *  Order Line Reference
      *  Order Line Reference
      *
@@ -231,10 +251,11 @@ class ReceiptLineType
     /**
      * ASBIE
      *  Receipt Line. Despatch_ Line Reference. Line Reference
-     *  An associative reference to Despatch Line.
+     *  A reference to a despatch line associated with this receipt line.
      *  0..n
      *  Receipt Line
      *  Despatch
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -247,9 +268,10 @@ class ReceiptLineType
     /**
      * ASBIE
      *  Receipt Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this receipt line.
      *  0..n
      *  Receipt Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -262,9 +284,10 @@ class ReceiptLineType
     /**
      * ASBIE
      *  Receipt Line. Item
-     *  An association to Item.
+     *  An item associated with this receipt line.
      *  0..n
      *  Receipt Line
+     *  Item
      *  Item
      *  Item
      *
@@ -277,9 +300,10 @@ class ReceiptLineType
     /**
      * ASBIE
      *  Receipt Line. Shipment
-     *  An association to Shipment.
+     *  A shipment associated with this receipt line.
      *  0..n
      *  Receipt Line
+     *  Shipment
      *  Shipment
      *  Shipment
      *
@@ -294,7 +318,7 @@ class ReceiptLineType
      *
      * BBIE
      *  Receipt Line. Identifier
-     *  Identifies the Receipt Line.
+     *  An identifier for this receipt line.
      *  1
      *  Receipt Line
      *  Identifier
@@ -313,7 +337,7 @@ class ReceiptLineType
      *
      * BBIE
      *  Receipt Line. Identifier
-     *  Identifies the Receipt Line.
+     *  An identifier for this receipt line.
      *  1
      *  Receipt Line
      *  Identifier
@@ -334,7 +358,7 @@ class ReceiptLineType
      *
      * BBIE
      *  Receipt Line. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this receipt line.
      *  0..1
      *  Receipt Line
      *  UUID
@@ -353,7 +377,7 @@ class ReceiptLineType
      *
      * BBIE
      *  Receipt Line. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this receipt line.
      *  0..1
      *  Receipt Line
      *  UUID
@@ -370,18 +394,79 @@ class ReceiptLineType
     }
 
     /**
-     * Gets as note
+     * Adds as note
      *
      * BBIE
      *  Receipt Line. Note. Text
-     *  Free-form text applying to the Receipt Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Receipt Line
      *  Note
      *  Text
      *  Text. Type
      *
-     * @return \horstoeko\ubl\entities\cbc\Note
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\Note $note
+     */
+    public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
+    {
+        $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * isset note
+     *
+     * BBIE
+     *  Receipt Line. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Receipt Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetNote($index)
+    {
+        return isset($this->note[$index]);
+    }
+
+    /**
+     * unset note
+     *
+     * BBIE
+     *  Receipt Line. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Receipt Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetNote($index)
+    {
+        unset($this->note[$index]);
+    }
+
+    /**
+     * Gets as note
+     *
+     * BBIE
+     *  Receipt Line. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Receipt Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\Note[]
      */
     public function getNote()
     {
@@ -393,17 +478,17 @@ class ReceiptLineType
      *
      * BBIE
      *  Receipt Line. Note. Text
-     *  Free-form text applying to the Receipt Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Receipt Line
      *  Note
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
-    public function setNote(\horstoeko\ubl\entities\cbc\Note $note)
+    public function setNote(array $note)
     {
         $this->note = $note;
         return $this;
@@ -498,7 +583,7 @@ class ReceiptLineType
      *
      * BBIE
      *  Receipt Line. Shortage Action Code. Code
-     *  The action that the Delivery Party wishes the Despatch Party to take as a result of the shortage, expressed as a code.
+     *  A code signifying the action that the delivery party wishes the despatch party to take as the result of a shortage.
      *  0..1
      *  Receipt Line
      *  Shortage Action Code
@@ -517,7 +602,7 @@ class ReceiptLineType
      *
      * BBIE
      *  Receipt Line. Shortage Action Code. Code
-     *  The action that the Delivery Party wishes the Despatch Party to take as a result of the shortage, expressed as a code.
+     *  A code signifying the action that the delivery party wishes the despatch party to take as the result of a shortage.
      *  0..1
      *  Receipt Line
      *  Shortage Action Code
@@ -580,7 +665,7 @@ class ReceiptLineType
      *
      * BBIE
      *  Receipt Line. Reject Reason Code. Code
-     *  The reason for rejection, expressed as a code.
+     *  The reason for a rejection, expressed as a code.
      *  0..1
      *  Receipt Line
      *  Reject Reason Code
@@ -599,7 +684,7 @@ class ReceiptLineType
      *
      * BBIE
      *  Receipt Line. Reject Reason Code. Code
-     *  The reason for rejection, expressed as a code.
+     *  The reason for a rejection, expressed as a code.
      *  0..1
      *  Receipt Line
      *  Reject Reason Code
@@ -616,19 +701,83 @@ class ReceiptLineType
     }
 
     /**
-     * Gets as rejectReason
+     * Adds as rejectReason
      *
      * BBIE
      *  Receipt Line. Reject_ Reason. Text
-     *  The reason for rejection.
-     *  0..1
+     *  The reason for a rejection, expressed as text.
+     *  0..n
      *  Receipt Line
      *  Reject
      *  Reason
      *  Text
      *  Text. Type
      *
-     * @return \horstoeko\ubl\entities\cbc\RejectReason
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\RejectReason $rejectReason
+     */
+    public function addToRejectReason(\horstoeko\ubl\entities\cbc\RejectReason $rejectReason)
+    {
+        $this->rejectReason[] = $rejectReason;
+        return $this;
+    }
+
+    /**
+     * isset rejectReason
+     *
+     * BBIE
+     *  Receipt Line. Reject_ Reason. Text
+     *  The reason for a rejection, expressed as text.
+     *  0..n
+     *  Receipt Line
+     *  Reject
+     *  Reason
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetRejectReason($index)
+    {
+        return isset($this->rejectReason[$index]);
+    }
+
+    /**
+     * unset rejectReason
+     *
+     * BBIE
+     *  Receipt Line. Reject_ Reason. Text
+     *  The reason for a rejection, expressed as text.
+     *  0..n
+     *  Receipt Line
+     *  Reject
+     *  Reason
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetRejectReason($index)
+    {
+        unset($this->rejectReason[$index]);
+    }
+
+    /**
+     * Gets as rejectReason
+     *
+     * BBIE
+     *  Receipt Line. Reject_ Reason. Text
+     *  The reason for a rejection, expressed as text.
+     *  0..n
+     *  Receipt Line
+     *  Reject
+     *  Reason
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\RejectReason[]
      */
     public function getRejectReason()
     {
@@ -640,18 +789,18 @@ class ReceiptLineType
      *
      * BBIE
      *  Receipt Line. Reject_ Reason. Text
-     *  The reason for rejection.
-     *  0..1
+     *  The reason for a rejection, expressed as text.
+     *  0..n
      *  Receipt Line
      *  Reject
      *  Reason
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\RejectReason $rejectReason
+     * @param \horstoeko\ubl\entities\cbc\RejectReason[] $rejectReason
      * @return self
      */
-    public function setRejectReason(\horstoeko\ubl\entities\cbc\RejectReason $rejectReason)
+    public function setRejectReason(array $rejectReason)
     {
         $this->rejectReason = $rejectReason;
         return $this;
@@ -662,7 +811,7 @@ class ReceiptLineType
      *
      * BBIE
      *  Receipt Line. Reject Action Code. Code
-     *  The action that the Delivery Party wishes the Despatch Party to take as a result of the rejection, expressed as a code.
+     *  A code signifying the action that the delivery party wishes the despatch party to take as the result of a rejection.
      *  0..1
      *  Receipt Line
      *  Reject Action Code
@@ -681,7 +830,7 @@ class ReceiptLineType
      *
      * BBIE
      *  Receipt Line. Reject Action Code. Code
-     *  The action that the Delivery Party wishes the Despatch Party to take as a result of the rejection, expressed as a code.
+     *  A code signifying the action that the delivery party wishes the despatch party to take as the result of a rejection.
      *  0..1
      *  Receipt Line
      *  Reject Action Code
@@ -698,14 +847,55 @@ class ReceiptLineType
     }
 
     /**
+     * Gets as quantityDiscrepancyCode
+     *
+     * BBIE
+     *  Receipt Line. Quantity Discrepancy Code. Code
+     *  A code signifying the type of a discrepancy in quantity.
+     *  0..1
+     *  Receipt Line
+     *  Quantity Discrepancy Code
+     *  Code
+     *  Code. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\QuantityDiscrepancyCode
+     */
+    public function getQuantityDiscrepancyCode()
+    {
+        return $this->quantityDiscrepancyCode;
+    }
+
+    /**
+     * Sets a new quantityDiscrepancyCode
+     *
+     * BBIE
+     *  Receipt Line. Quantity Discrepancy Code. Code
+     *  A code signifying the type of a discrepancy in quantity.
+     *  0..1
+     *  Receipt Line
+     *  Quantity Discrepancy Code
+     *  Code
+     *  Code. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\QuantityDiscrepancyCode $quantityDiscrepancyCode
+     * @return self
+     */
+    public function setQuantityDiscrepancyCode(\horstoeko\ubl\entities\cbc\QuantityDiscrepancyCode $quantityDiscrepancyCode)
+    {
+        $this->quantityDiscrepancyCode = $quantityDiscrepancyCode;
+        return $this;
+    }
+
+    /**
      * Gets as oversupplyQuantity
      *
      * BBIE
-     *  Receipt Line. Oversupply Quantity. Quantity
-     *  The quanitity over-supplied i.e. the quantity over and above that ordered.
+     *  Receipt Line. Oversupply_ Quantity. Quantity
+     *  The quantity over-supplied, i.e., the quantity over and above the quantity ordered.
      *  0..1
      *  Receipt Line
-     *  Oversupply Quantity
+     *  Oversupply
+     *  Quantity
      *  Quantity
      *  Quantity. Type
      *
@@ -720,11 +910,12 @@ class ReceiptLineType
      * Sets a new oversupplyQuantity
      *
      * BBIE
-     *  Receipt Line. Oversupply Quantity. Quantity
-     *  The quanitity over-supplied i.e. the quantity over and above that ordered.
+     *  Receipt Line. Oversupply_ Quantity. Quantity
+     *  The quantity over-supplied, i.e., the quantity over and above the quantity ordered.
      *  0..1
      *  Receipt Line
-     *  Oversupply Quantity
+     *  Oversupply
+     *  Quantity
      *  Quantity
      *  Quantity. Type
      *
@@ -742,7 +933,7 @@ class ReceiptLineType
      *
      * BBIE
      *  Receipt Line. Received_ Date. Date
-     *  The date on which the good/services are received.
+     *  The date on which the goods or services were received.
      *  0..1
      *  Receipt Line
      *  Received
@@ -762,7 +953,7 @@ class ReceiptLineType
      *
      * BBIE
      *  Receipt Line. Received_ Date. Date
-     *  The date on which the good/services are received.
+     *  The date on which the goods or services were received.
      *  0..1
      *  Receipt Line
      *  Received
@@ -824,7 +1015,7 @@ class ReceiptLineType
      *
      * BBIE
      *  Receipt Line. Timing Complaint. Text
-     *  A complaint about the timing of delivery.
+     *  A complaint about the timing of delivery, expressed as text.
      *  0..1
      *  Receipt Line
      *  Timing Complaint
@@ -843,7 +1034,7 @@ class ReceiptLineType
      *
      * BBIE
      *  Receipt Line. Timing Complaint. Text
-     *  A complaint about the timing of delivery.
+     *  A complaint about the timing of delivery, expressed as text.
      *  0..1
      *  Receipt Line
      *  Timing Complaint
@@ -864,9 +1055,10 @@ class ReceiptLineType
      *
      * ASBIE
      *  Receipt Line. Order Line Reference
-     *  An association to Order Line Reference.
+     *  A reference to the order line associated with this receipt line.
      *  0..1
      *  Receipt Line
+     *  Order Line Reference
      *  Order Line Reference
      *  Order Line Reference
      *
@@ -882,9 +1074,10 @@ class ReceiptLineType
      *
      * ASBIE
      *  Receipt Line. Order Line Reference
-     *  An association to Order Line Reference.
+     *  A reference to the order line associated with this receipt line.
      *  0..1
      *  Receipt Line
+     *  Order Line Reference
      *  Order Line Reference
      *  Order Line Reference
      *
@@ -902,10 +1095,11 @@ class ReceiptLineType
      *
      * ASBIE
      *  Receipt Line. Despatch_ Line Reference. Line Reference
-     *  An associative reference to Despatch Line.
+     *  A reference to a despatch line associated with this receipt line.
      *  0..n
      *  Receipt Line
      *  Despatch
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -923,10 +1117,11 @@ class ReceiptLineType
      *
      * ASBIE
      *  Receipt Line. Despatch_ Line Reference. Line Reference
-     *  An associative reference to Despatch Line.
+     *  A reference to a despatch line associated with this receipt line.
      *  0..n
      *  Receipt Line
      *  Despatch
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -943,10 +1138,11 @@ class ReceiptLineType
      *
      * ASBIE
      *  Receipt Line. Despatch_ Line Reference. Line Reference
-     *  An associative reference to Despatch Line.
+     *  A reference to a despatch line associated with this receipt line.
      *  0..n
      *  Receipt Line
      *  Despatch
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -963,10 +1159,11 @@ class ReceiptLineType
      *
      * ASBIE
      *  Receipt Line. Despatch_ Line Reference. Line Reference
-     *  An associative reference to Despatch Line.
+     *  A reference to a despatch line associated with this receipt line.
      *  0..n
      *  Receipt Line
      *  Despatch
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -982,10 +1179,11 @@ class ReceiptLineType
      *
      * ASBIE
      *  Receipt Line. Despatch_ Line Reference. Line Reference
-     *  An associative reference to Despatch Line.
+     *  A reference to a despatch line associated with this receipt line.
      *  0..n
      *  Receipt Line
      *  Despatch
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -1003,9 +1201,10 @@ class ReceiptLineType
      *
      * ASBIE
      *  Receipt Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this receipt line.
      *  0..n
      *  Receipt Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1023,9 +1222,10 @@ class ReceiptLineType
      *
      * ASBIE
      *  Receipt Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this receipt line.
      *  0..n
      *  Receipt Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1042,9 +1242,10 @@ class ReceiptLineType
      *
      * ASBIE
      *  Receipt Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this receipt line.
      *  0..n
      *  Receipt Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1061,9 +1262,10 @@ class ReceiptLineType
      *
      * ASBIE
      *  Receipt Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this receipt line.
      *  0..n
      *  Receipt Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1079,9 +1281,10 @@ class ReceiptLineType
      *
      * ASBIE
      *  Receipt Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this receipt line.
      *  0..n
      *  Receipt Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1099,9 +1302,10 @@ class ReceiptLineType
      *
      * ASBIE
      *  Receipt Line. Item
-     *  An association to Item.
+     *  An item associated with this receipt line.
      *  0..n
      *  Receipt Line
+     *  Item
      *  Item
      *  Item
      *
@@ -1119,9 +1323,10 @@ class ReceiptLineType
      *
      * ASBIE
      *  Receipt Line. Item
-     *  An association to Item.
+     *  An item associated with this receipt line.
      *  0..n
      *  Receipt Line
+     *  Item
      *  Item
      *  Item
      *
@@ -1138,9 +1343,10 @@ class ReceiptLineType
      *
      * ASBIE
      *  Receipt Line. Item
-     *  An association to Item.
+     *  An item associated with this receipt line.
      *  0..n
      *  Receipt Line
+     *  Item
      *  Item
      *  Item
      *
@@ -1157,9 +1363,10 @@ class ReceiptLineType
      *
      * ASBIE
      *  Receipt Line. Item
-     *  An association to Item.
+     *  An item associated with this receipt line.
      *  0..n
      *  Receipt Line
+     *  Item
      *  Item
      *  Item
      *
@@ -1175,9 +1382,10 @@ class ReceiptLineType
      *
      * ASBIE
      *  Receipt Line. Item
-     *  An association to Item.
+     *  An item associated with this receipt line.
      *  0..n
      *  Receipt Line
+     *  Item
      *  Item
      *  Item
      *
@@ -1195,9 +1403,10 @@ class ReceiptLineType
      *
      * ASBIE
      *  Receipt Line. Shipment
-     *  An association to Shipment.
+     *  A shipment associated with this receipt line.
      *  0..n
      *  Receipt Line
+     *  Shipment
      *  Shipment
      *  Shipment
      *
@@ -1215,9 +1424,10 @@ class ReceiptLineType
      *
      * ASBIE
      *  Receipt Line. Shipment
-     *  An association to Shipment.
+     *  A shipment associated with this receipt line.
      *  0..n
      *  Receipt Line
+     *  Shipment
      *  Shipment
      *  Shipment
      *
@@ -1234,9 +1444,10 @@ class ReceiptLineType
      *
      * ASBIE
      *  Receipt Line. Shipment
-     *  An association to Shipment.
+     *  A shipment associated with this receipt line.
      *  0..n
      *  Receipt Line
+     *  Shipment
      *  Shipment
      *  Shipment
      *
@@ -1253,9 +1464,10 @@ class ReceiptLineType
      *
      * ASBIE
      *  Receipt Line. Shipment
-     *  An association to Shipment.
+     *  A shipment associated with this receipt line.
      *  0..n
      *  Receipt Line
+     *  Shipment
      *  Shipment
      *  Shipment
      *
@@ -1271,9 +1483,10 @@ class ReceiptLineType
      *
      * ASBIE
      *  Receipt Line. Shipment
-     *  An association to Shipment.
+     *  A shipment associated with this receipt line.
      *  0..n
      *  Receipt Line
+     *  Shipment
      *  Shipment
      *  Shipment
      *

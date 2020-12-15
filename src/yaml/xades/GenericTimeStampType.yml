@@ -1,0 +1,82 @@
+horstoeko\ubl\entities\xades\GenericTimeStampType:
+    properties:
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: Id
+            accessor:
+                getter: getId
+                setter: setId
+            xml_attribute: true
+            type: string
+        include:
+            expose: true
+            access_type: public_method
+            serialized_name: Include
+            xml_element:
+                cdata: false
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            accessor:
+                getter: getInclude
+                setter: setInclude
+            xml_list:
+                inline: true
+                entry_name: Include
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            type: array<horstoeko\ubl\entities\xades\IncludeXsd>
+        referenceInfo:
+            expose: true
+            access_type: public_method
+            serialized_name: ReferenceInfo
+            xml_element:
+                cdata: false
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            accessor:
+                getter: getReferenceInfo
+                setter: setReferenceInfo
+            xml_list:
+                inline: true
+                entry_name: ReferenceInfo
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            type: array<horstoeko\ubl\entities\xades\ReferenceInfo>
+        canonicalizationMethod:
+            expose: true
+            access_type: public_method
+            serialized_name: CanonicalizationMethod
+            xml_element:
+                cdata: false
+                namespace: 'http://www.w3.org/2000/09/xmldsig#'
+            accessor:
+                getter: getCanonicalizationMethod
+                setter: setCanonicalizationMethod
+            type: horstoeko\ubl\entities\ds\CanonicalizationMethod
+        encapsulatedTimeStamp:
+            expose: true
+            access_type: public_method
+            serialized_name: EncapsulatedTimeStamp
+            xml_element:
+                cdata: false
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            accessor:
+                getter: getEncapsulatedTimeStamp
+                setter: setEncapsulatedTimeStamp
+            xml_list:
+                inline: true
+                entry_name: EncapsulatedTimeStamp
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            type: array<horstoeko\ubl\entities\xades\EncapsulatedPKIDataType>
+        xMLTimeStamp:
+            expose: true
+            access_type: public_method
+            serialized_name: XMLTimeStamp
+            xml_element:
+                cdata: false
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            accessor:
+                getter: getXMLTimeStamp
+                setter: setXMLTimeStamp
+            xml_list:
+                inline: true
+                entry_name: XMLTimeStamp
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            type: array<horstoeko\ubl\entities\xades\AnyType>

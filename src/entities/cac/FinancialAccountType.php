@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Financial Account. Details
- *  Information about a Financial Account.
+ *  A class to describe a financial account.
  *  Financial Account
  * XSD Type: FinancialAccountType
  */
@@ -17,7 +17,7 @@ class FinancialAccountType
     /**
      * BBIE
      *  Financial Account. Identifier
-     *  The identifier for the Financial Account; the Bank Account Number.
+     *  The identifier for this financial account; the bank account number.
      *  0..1
      *  Financial Account
      *  Identifier
@@ -32,7 +32,7 @@ class FinancialAccountType
     /**
      * BBIE
      *  Financial Account. Name
-     *  The name of the Financial Account.
+     *  The name of this financial account.
      *  0..1
      *  Financial Account
      *  Name
@@ -45,8 +45,23 @@ class FinancialAccountType
 
     /**
      * BBIE
+     *  Financial Account. Alias_ Name. Name
+     *  An alias for the name of this financial account, to be used in place of the actual account name for security reasons.
+     *  0..1
+     *  Financial Account
+     *  Alias
+     *  Name
+     *  Name
+     *  Name. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\AliasName $aliasName
+     */
+    private $aliasName = null;
+
+    /**
+     * BBIE
      *  Financial Account. Account Type Code. Code
-     *  The type of Financial Account, expressed as a code.
+     *  A code signifying the type of this financial account.
      *  0..1
      *  Financial Account
      *  Account Type Code
@@ -59,12 +74,28 @@ class FinancialAccountType
 
     /**
      * BBIE
+     *  Financial Account. Account Format Code. Code
+     *  A code signifying the format of this financial account.
+     *  0..1
+     *  Financial Account
+     *  Account Format Code
+     *  Code
+     *  Code. Type
+     *  ISO20022 Clearing System Identification Code
+     *
+     * @var \horstoeko\ubl\entities\cbc\AccountFormatCode $accountFormatCode
+     */
+    private $accountFormatCode = null;
+
+    /**
+     * BBIE
      *  Financial Account. Currency Code. Code
-     *  The currency in which the Financial Account is held, expressed as a code.
+     *  A code signifying the currency in which this financial account is held.
      *  0..1
      *  Financial Account
      *  Currency Code
      *  Code
+     *  Currency
      *  Currency_ Code. Type
      *
      * @var \horstoeko\ubl\entities\cbc\CurrencyCode $currencyCode
@@ -74,7 +105,7 @@ class FinancialAccountType
     /**
      * BBIE
      *  Financial Account. Payment_ Note. Text
-     *  Free-form text applying to the Payment to the owner of this account.
+     *  Free-form text applying to the Payment for the owner of this account.
      *  0..n
      *  Financial Account
      *  Payment
@@ -91,10 +122,11 @@ class FinancialAccountType
     /**
      * ASBIE
      *  Financial Account. Financial Institution_ Branch. Branch
-     *  An association to Financial Institution Branch.
+     *  The branch of the financial institution associated with this financial account.
      *  0..1
      *  Financial Account
      *  Financial Institution
+     *  Branch
      *  Branch
      *  Branch
      *
@@ -105,9 +137,10 @@ class FinancialAccountType
     /**
      * ASBIE
      *  Financial Account. Country
-     *  An association to Country.
+     *  The country in which the holder of the financial account is domiciled.
      *  0..1
      *  Financial Account
+     *  Country
      *  Country
      *  Country
      *
@@ -120,7 +153,7 @@ class FinancialAccountType
      *
      * BBIE
      *  Financial Account. Identifier
-     *  The identifier for the Financial Account; the Bank Account Number.
+     *  The identifier for this financial account; the bank account number.
      *  0..1
      *  Financial Account
      *  Identifier
@@ -140,7 +173,7 @@ class FinancialAccountType
      *
      * BBIE
      *  Financial Account. Identifier
-     *  The identifier for the Financial Account; the Bank Account Number.
+     *  The identifier for this financial account; the bank account number.
      *  0..1
      *  Financial Account
      *  Identifier
@@ -162,7 +195,7 @@ class FinancialAccountType
      *
      * BBIE
      *  Financial Account. Name
-     *  The name of the Financial Account.
+     *  The name of this financial account.
      *  0..1
      *  Financial Account
      *  Name
@@ -181,7 +214,7 @@ class FinancialAccountType
      *
      * BBIE
      *  Financial Account. Name
-     *  The name of the Financial Account.
+     *  The name of this financial account.
      *  0..1
      *  Financial Account
      *  Name
@@ -198,11 +231,53 @@ class FinancialAccountType
     }
 
     /**
+     * Gets as aliasName
+     *
+     * BBIE
+     *  Financial Account. Alias_ Name. Name
+     *  An alias for the name of this financial account, to be used in place of the actual account name for security reasons.
+     *  0..1
+     *  Financial Account
+     *  Alias
+     *  Name
+     *  Name
+     *  Name. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\AliasName
+     */
+    public function getAliasName()
+    {
+        return $this->aliasName;
+    }
+
+    /**
+     * Sets a new aliasName
+     *
+     * BBIE
+     *  Financial Account. Alias_ Name. Name
+     *  An alias for the name of this financial account, to be used in place of the actual account name for security reasons.
+     *  0..1
+     *  Financial Account
+     *  Alias
+     *  Name
+     *  Name
+     *  Name. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\AliasName $aliasName
+     * @return self
+     */
+    public function setAliasName(\horstoeko\ubl\entities\cbc\AliasName $aliasName)
+    {
+        $this->aliasName = $aliasName;
+        return $this;
+    }
+
+    /**
      * Gets as accountTypeCode
      *
      * BBIE
      *  Financial Account. Account Type Code. Code
-     *  The type of Financial Account, expressed as a code.
+     *  A code signifying the type of this financial account.
      *  0..1
      *  Financial Account
      *  Account Type Code
@@ -221,7 +296,7 @@ class FinancialAccountType
      *
      * BBIE
      *  Financial Account. Account Type Code. Code
-     *  The type of Financial Account, expressed as a code.
+     *  A code signifying the type of this financial account.
      *  0..1
      *  Financial Account
      *  Account Type Code
@@ -238,15 +313,58 @@ class FinancialAccountType
     }
 
     /**
+     * Gets as accountFormatCode
+     *
+     * BBIE
+     *  Financial Account. Account Format Code. Code
+     *  A code signifying the format of this financial account.
+     *  0..1
+     *  Financial Account
+     *  Account Format Code
+     *  Code
+     *  Code. Type
+     *  ISO20022 Clearing System Identification Code
+     *
+     * @return \horstoeko\ubl\entities\cbc\AccountFormatCode
+     */
+    public function getAccountFormatCode()
+    {
+        return $this->accountFormatCode;
+    }
+
+    /**
+     * Sets a new accountFormatCode
+     *
+     * BBIE
+     *  Financial Account. Account Format Code. Code
+     *  A code signifying the format of this financial account.
+     *  0..1
+     *  Financial Account
+     *  Account Format Code
+     *  Code
+     *  Code. Type
+     *  ISO20022 Clearing System Identification Code
+     *
+     * @param \horstoeko\ubl\entities\cbc\AccountFormatCode $accountFormatCode
+     * @return self
+     */
+    public function setAccountFormatCode(\horstoeko\ubl\entities\cbc\AccountFormatCode $accountFormatCode)
+    {
+        $this->accountFormatCode = $accountFormatCode;
+        return $this;
+    }
+
+    /**
      * Gets as currencyCode
      *
      * BBIE
      *  Financial Account. Currency Code. Code
-     *  The currency in which the Financial Account is held, expressed as a code.
+     *  A code signifying the currency in which this financial account is held.
      *  0..1
      *  Financial Account
      *  Currency Code
      *  Code
+     *  Currency
      *  Currency_ Code. Type
      *
      * @return \horstoeko\ubl\entities\cbc\CurrencyCode
@@ -261,11 +379,12 @@ class FinancialAccountType
      *
      * BBIE
      *  Financial Account. Currency Code. Code
-     *  The currency in which the Financial Account is held, expressed as a code.
+     *  A code signifying the currency in which this financial account is held.
      *  0..1
      *  Financial Account
      *  Currency Code
      *  Code
+     *  Currency
      *  Currency_ Code. Type
      *
      * @param \horstoeko\ubl\entities\cbc\CurrencyCode $currencyCode
@@ -282,7 +401,7 @@ class FinancialAccountType
      *
      * BBIE
      *  Financial Account. Payment_ Note. Text
-     *  Free-form text applying to the Payment to the owner of this account.
+     *  Free-form text applying to the Payment for the owner of this account.
      *  0..n
      *  Financial Account
      *  Payment
@@ -304,7 +423,7 @@ class FinancialAccountType
      *
      * BBIE
      *  Financial Account. Payment_ Note. Text
-     *  Free-form text applying to the Payment to the owner of this account.
+     *  Free-form text applying to the Payment for the owner of this account.
      *  0..n
      *  Financial Account
      *  Payment
@@ -325,7 +444,7 @@ class FinancialAccountType
      *
      * BBIE
      *  Financial Account. Payment_ Note. Text
-     *  Free-form text applying to the Payment to the owner of this account.
+     *  Free-form text applying to the Payment for the owner of this account.
      *  0..n
      *  Financial Account
      *  Payment
@@ -346,7 +465,7 @@ class FinancialAccountType
      *
      * BBIE
      *  Financial Account. Payment_ Note. Text
-     *  Free-form text applying to the Payment to the owner of this account.
+     *  Free-form text applying to the Payment for the owner of this account.
      *  0..n
      *  Financial Account
      *  Payment
@@ -366,7 +485,7 @@ class FinancialAccountType
      *
      * BBIE
      *  Financial Account. Payment_ Note. Text
-     *  Free-form text applying to the Payment to the owner of this account.
+     *  Free-form text applying to the Payment for the owner of this account.
      *  0..n
      *  Financial Account
      *  Payment
@@ -388,10 +507,11 @@ class FinancialAccountType
      *
      * ASBIE
      *  Financial Account. Financial Institution_ Branch. Branch
-     *  An association to Financial Institution Branch.
+     *  The branch of the financial institution associated with this financial account.
      *  0..1
      *  Financial Account
      *  Financial Institution
+     *  Branch
      *  Branch
      *  Branch
      *
@@ -407,10 +527,11 @@ class FinancialAccountType
      *
      * ASBIE
      *  Financial Account. Financial Institution_ Branch. Branch
-     *  An association to Financial Institution Branch.
+     *  The branch of the financial institution associated with this financial account.
      *  0..1
      *  Financial Account
      *  Financial Institution
+     *  Branch
      *  Branch
      *  Branch
      *
@@ -428,9 +549,10 @@ class FinancialAccountType
      *
      * ASBIE
      *  Financial Account. Country
-     *  An association to Country.
+     *  The country in which the holder of the financial account is domiciled.
      *  0..1
      *  Financial Account
+     *  Country
      *  Country
      *  Country
      *
@@ -446,9 +568,10 @@ class FinancialAccountType
      *
      * ASBIE
      *  Financial Account. Country
-     *  An association to Country.
+     *  The country in which the holder of the financial account is domiciled.
      *  0..1
      *  Financial Account
+     *  Country
      *  Country
      *  Country
      *

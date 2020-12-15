@@ -22,3 +22,73 @@ horstoeko\ubl\entities\cac\MaritimeTransportType:
                 getter: getVesselName
                 setter: setVesselName
             type: horstoeko\ubl\entities\cbc\VesselName
+        radioCallSignID:
+            expose: true
+            access_type: public_method
+            serialized_name: RadioCallSignID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getRadioCallSignID
+                setter: setRadioCallSignID
+            type: horstoeko\ubl\entities\cbc\RadioCallSignID
+        shipsRequirements:
+            expose: true
+            access_type: public_method
+            serialized_name: ShipsRequirements
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getShipsRequirements
+                setter: setShipsRequirements
+            xml_list:
+                inline: true
+                entry_name: ShipsRequirements
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\ShipsRequirements>
+        grossTonnageMeasure:
+            expose: true
+            access_type: public_method
+            serialized_name: GrossTonnageMeasure
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getGrossTonnageMeasure
+                setter: setGrossTonnageMeasure
+            type: horstoeko\ubl\entities\cbc\GrossTonnageMeasure
+        netTonnageMeasure:
+            expose: true
+            access_type: public_method
+            serialized_name: NetTonnageMeasure
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getNetTonnageMeasure
+                setter: setNetTonnageMeasure
+            type: horstoeko\ubl\entities\cbc\NetTonnageMeasure
+        registryCertificateDocumentReference:
+            expose: true
+            access_type: public_method
+            serialized_name: RegistryCertificateDocumentReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getRegistryCertificateDocumentReference
+                setter: setRegistryCertificateDocumentReference
+            type: horstoeko\ubl\entities\cac\RegistryCertificateDocumentReference
+        registryPortLocation:
+            expose: true
+            access_type: public_method
+            serialized_name: RegistryPortLocation
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getRegistryPortLocation
+                setter: setRegistryPortLocation
+            type: horstoeko\ubl\entities\cac\RegistryPortLocation

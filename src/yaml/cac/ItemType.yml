@@ -36,7 +36,7 @@ horstoeko\ubl\entities\cac\ItemType:
             accessor:
                 getter: getPackSizeNumeric
                 setter: setPackSizeNumeric
-            type: float
+            type: horstoeko\ubl\entities\cbc\PackSizeNumeric
         catalogueIndicator:
             expose: true
             access_type: public_method
@@ -80,7 +80,11 @@ horstoeko\ubl\entities\cac\ItemType:
             accessor:
                 getter: getAdditionalInformation
                 setter: setAdditionalInformation
-            type: horstoeko\ubl\entities\cbc\AdditionalInformation
+            xml_list:
+                inline: true
+                entry_name: AdditionalInformation
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\AdditionalInformation>
         keyword:
             expose: true
             access_type: public_method
@@ -368,3 +372,33 @@ horstoeko\ubl\entities\cac\ItemType:
                 entry_name: ItemInstance
                 namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
             type: array<horstoeko\ubl\entities\cac\ItemInstance>
+        certificate:
+            expose: true
+            access_type: public_method
+            serialized_name: Certificate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getCertificate
+                setter: setCertificate
+            xml_list:
+                inline: true
+                entry_name: Certificate
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\Certificate>
+        dimension:
+            expose: true
+            access_type: public_method
+            serialized_name: Dimension
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getDimension
+                setter: setDimension
+            xml_list:
+                inline: true
+                entry_name: Dimension
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\Dimension>

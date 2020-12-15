@@ -1,0 +1,83 @@
+horstoeko\ubl\entities\cac\SubcontractTermsType:
+    properties:
+        rate:
+            expose: true
+            access_type: public_method
+            serialized_name: Rate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getRate
+                setter: setRate
+            type: horstoeko\ubl\entities\cbc\Rate
+        unknownPriceIndicator:
+            expose: true
+            access_type: public_method
+            serialized_name: UnknownPriceIndicator
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getUnknownPriceIndicator
+                setter: setUnknownPriceIndicator
+            type: bool
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: Description
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>
+        amount:
+            expose: true
+            access_type: public_method
+            serialized_name: Amount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAmount
+                setter: setAmount
+            type: horstoeko\ubl\entities\cbc\Amount
+        subcontractingConditionsCode:
+            expose: true
+            access_type: public_method
+            serialized_name: SubcontractingConditionsCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getSubcontractingConditionsCode
+                setter: setSubcontractingConditionsCode
+            type: horstoeko\ubl\entities\cbc\SubcontractingConditionsCode
+        maximumPercent:
+            expose: true
+            access_type: public_method
+            serialized_name: MaximumPercent
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMaximumPercent
+                setter: setMaximumPercent
+            type: horstoeko\ubl\entities\cbc\MaximumPercent
+        minimumPercent:
+            expose: true
+            access_type: public_method
+            serialized_name: MinimumPercent
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMinimumPercent
+                setter: setMinimumPercent
+            type: horstoeko\ubl\entities\cbc\MinimumPercent

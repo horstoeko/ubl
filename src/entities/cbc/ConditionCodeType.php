@@ -2,7 +2,7 @@
 
 namespace horstoeko\ubl\entities\cbc;
 
-use horstoeko\ubl\entities\qdt\TransportationStatusCodeType;
+use horstoeko\ubl\entities\udt\CodeType;
 
 /**
  * Class representing ConditionCodeType
@@ -10,7 +10,7 @@ use horstoeko\ubl\entities\qdt\TransportationStatusCodeType;
  *
  * XSD Type: ConditionCodeType
  */
-class ConditionCodeType extends TransportationStatusCodeType
+class ConditionCodeType extends CodeType
 {
 
 

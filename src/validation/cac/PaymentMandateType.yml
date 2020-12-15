@@ -1,0 +1,17 @@
+horstoeko\ubl\entities\cac\PaymentMandateType:
+    properties:
+        payerParty:
+            -
+                Valid: null
+        payerFinancialAccount:
+            -
+                Valid: null
+        validityPeriod:
+            -
+                Valid: null
+        paymentReversalPeriod:
+            -
+                Valid: null
+        clause:
+            -
+                Valid: null

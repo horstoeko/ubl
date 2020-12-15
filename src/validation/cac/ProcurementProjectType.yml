@@ -1,0 +1,28 @@
+horstoeko\ubl\entities\cac\ProcurementProjectType:
+    properties:
+        name:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        requestedTenderTotal:
+            -
+                Valid: null
+        mainCommodityClassification:
+            -
+                Valid: null
+        additionalCommodityClassification:
+            -
+                Valid: null
+        realizedLocation:
+            -
+                Valid: null
+        plannedPeriod:
+            -
+                Valid: null
+        contractExtension:
+            -
+                Valid: null
+        requestForTenderLine:
+            -
+                Valid: null

@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Air Transport. Details
- *  Information related to an aircraft.
+ *  A class to identify a specific aircraft used for transportation.
  *  Air Transport
  * XSD Type: AirTransportType
  */
@@ -17,7 +17,7 @@ class AirTransportType
     /**
      * BBIE
      *  Air Transport. Aircraft Identifier. Identifier
-     *  Identifies a specific aircraft.
+     *  An identifer for a specific aircraft.
      *  1
      *  Air Transport
      *  Aircraft Identifier
@@ -33,7 +33,7 @@ class AirTransportType
      *
      * BBIE
      *  Air Transport. Aircraft Identifier. Identifier
-     *  Identifies a specific aircraft.
+     *  An identifer for a specific aircraft.
      *  1
      *  Air Transport
      *  Aircraft Identifier
@@ -52,7 +52,7 @@ class AirTransportType
      *
      * BBIE
      *  Air Transport. Aircraft Identifier. Identifier
-     *  Identifies a specific aircraft.
+     *  An identifer for a specific aircraft.
      *  1
      *  Air Transport
      *  Aircraft Identifier

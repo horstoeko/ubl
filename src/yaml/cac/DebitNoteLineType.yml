@@ -32,7 +32,11 @@ horstoeko\ubl\entities\cac\DebitNoteLineType:
             accessor:
                 getter: getNote
                 setter: setNote
-            type: horstoeko\ubl\entities\cbc\Note
+            xml_list:
+                inline: true
+                entry_name: Note
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Note>
         debitedQuantity:
             expose: true
             access_type: public_method
@@ -88,6 +92,17 @@ horstoeko\ubl\entities\cac\DebitNoteLineType:
                 getter: getAccountingCost
                 setter: setAccountingCost
             type: horstoeko\ubl\entities\cbc\AccountingCost
+        paymentPurposeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: PaymentPurposeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPaymentPurposeCode
+                setter: setPaymentPurposeCode
+            type: horstoeko\ubl\entities\cbc\PaymentPurposeCode
         discrepancyResponse:
             expose: true
             access_type: public_method
@@ -204,6 +219,21 @@ horstoeko\ubl\entities\cac\DebitNoteLineType:
                 entry_name: TaxTotal
                 namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
             type: array<horstoeko\ubl\entities\cac\TaxTotal>
+        allowanceCharge:
+            expose: true
+            access_type: public_method
+            serialized_name: AllowanceCharge
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getAllowanceCharge
+                setter: setAllowanceCharge
+            xml_list:
+                inline: true
+                entry_name: AllowanceCharge
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\AllowanceCharge>
         item:
             expose: true
             access_type: public_method
@@ -226,3 +256,18 @@ horstoeko\ubl\entities\cac\DebitNoteLineType:
                 getter: getPrice
                 setter: setPrice
             type: horstoeko\ubl\entities\cac\Price
+        subDebitNoteLine:
+            expose: true
+            access_type: public_method
+            serialized_name: SubDebitNoteLine
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getSubDebitNoteLine
+                setter: setSubDebitNoteLine
+            xml_list:
+                inline: true
+                entry_name: SubDebitNoteLine
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\SubDebitNoteLine>

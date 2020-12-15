@@ -1,0 +1,35 @@
+horstoeko\ubl\entities\cac\EventCommentType:
+    properties:
+        comment:
+            expose: true
+            access_type: public_method
+            serialized_name: Comment
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getComment
+                setter: setComment
+            type: horstoeko\ubl\entities\cbc\Comment
+        issueDate:
+            expose: true
+            access_type: public_method
+            serialized_name: IssueDate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getIssueDate
+                setter: setIssueDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        issueTime:
+            expose: true
+            access_type: public_method
+            serialized_name: IssueTime
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getIssueTime
+                setter: setIssueTime
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time

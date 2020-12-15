@@ -1,0 +1,17 @@
+horstoeko\ubl\entities\ds\ReferenceType:
+    properties:
+        transforms:
+            -
+                Valid: null
+        digestMethod:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        digestValue:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

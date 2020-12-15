@@ -1,0 +1,24 @@
+horstoeko\ubl\entities\xades\SignaturePolicyIdentifierType:
+    properties:
+        signaturePolicyId:
+            expose: true
+            access_type: public_method
+            serialized_name: SignaturePolicyId
+            xml_element:
+                cdata: false
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            accessor:
+                getter: getSignaturePolicyId
+                setter: setSignaturePolicyId
+            type: horstoeko\ubl\entities\xades\SignaturePolicyIdType
+        signaturePolicyImplied:
+            expose: true
+            access_type: public_method
+            serialized_name: SignaturePolicyImplied
+            xml_element:
+                cdata: false
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            accessor:
+                getter: getSignaturePolicyImplied
+                setter: setSignaturePolicyImplied
+            type: string

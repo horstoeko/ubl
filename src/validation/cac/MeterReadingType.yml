@@ -1,0 +1,27 @@
+horstoeko\ubl\entities\cac\MeterReadingType:
+    properties:
+        previousMeterReadingDate:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        previousMeterQuantity:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        latestMeterReadingDate:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        latestMeterQuantity:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        deliveredQuantity:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

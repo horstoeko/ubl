@@ -1,0 +1,13 @@
+horstoeko\ubl\entities\cac\ServiceFrequencyType:
+    properties:
+        weekDayCode:
+            expose: true
+            access_type: public_method
+            serialized_name: WeekDayCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getWeekDayCode
+                setter: setWeekDayCode
+            type: horstoeko\ubl\entities\cbc\WeekDayCode

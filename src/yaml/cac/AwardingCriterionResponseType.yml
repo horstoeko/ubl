@@ -1,0 +1,91 @@
+horstoeko\ubl\entities\cac\AwardingCriterionResponseType:
+    properties:
+        iD:
+            expose: true
+            access_type: public_method
+            serialized_name: ID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getID
+                setter: setID
+            type: horstoeko\ubl\entities\cbc\ID
+        awardingCriterionID:
+            expose: true
+            access_type: public_method
+            serialized_name: AwardingCriterionID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAwardingCriterionID
+                setter: setAwardingCriterionID
+            type: horstoeko\ubl\entities\cbc\AwardingCriterionID
+        awardingCriterionDescription:
+            expose: true
+            access_type: public_method
+            serialized_name: AwardingCriterionDescription
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAwardingCriterionDescription
+                setter: setAwardingCriterionDescription
+            xml_list:
+                inline: true
+                entry_name: AwardingCriterionDescription
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\AwardingCriterionDescription>
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: Description
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>
+        quantity:
+            expose: true
+            access_type: public_method
+            serialized_name: Quantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getQuantity
+                setter: setQuantity
+            type: horstoeko\ubl\entities\cbc\Quantity
+        amount:
+            expose: true
+            access_type: public_method
+            serialized_name: Amount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAmount
+                setter: setAmount
+            type: horstoeko\ubl\entities\cbc\Amount
+        subordinateAwardingCriterionResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: SubordinateAwardingCriterionResponse
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getSubordinateAwardingCriterionResponse
+                setter: setSubordinateAwardingCriterionResponse
+            xml_list:
+                inline: true
+                entry_name: SubordinateAwardingCriterionResponse
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\SubordinateAwardingCriterionResponse>

@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Transport Equipment Seal. Details
- *  Information about a transport equipment seal (a security device attached to the doors of a shipping container).
+ *  A class to describe a device (a transport equipment seal) for securing the doors of a shipping container.
  *  Transport Equipment Seal
  *  Container Seal
  * XSD Type: TransportEquipmentSealType
@@ -18,13 +18,13 @@ class TransportEquipmentSealType
     /**
      * BBIE
      *  Transport Equipment Seal. Identifier
-     *  Identifies the seal.
+     *  An identifier for this transport equipment seal.
      *  1
      *  Transport Equipment Seal
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "ACS1234"
+     *  ACS1234
      *
      * @var \horstoeko\ubl\entities\cbc\ID $iD
      */
@@ -33,7 +33,7 @@ class TransportEquipmentSealType
     /**
      * BBIE
      *  Transport Equipment Seal. Seal Issuer Type Code. Code
-     *  The type of party that issues and is responsible for a seal, expressed as a code.
+     *  A code signifying the type of party that issues and is responsible for this transport equipment seal.
      *  0..1
      *  Transport Equipment Seal
      *  Seal Issuer Type Code
@@ -47,7 +47,7 @@ class TransportEquipmentSealType
     /**
      * BBIE
      *  Transport Equipment Seal. Condition. Text
-     *  Information about the condition of a seal.
+     *  The condition of this transport equipment seal.
      *  0..1
      *  Transport Equipment Seal
      *  Condition
@@ -61,7 +61,7 @@ class TransportEquipmentSealType
     /**
      * BBIE
      *  Transport Equipment Seal. Seal Status Code. Code
-     *  The status of a seal, expressed as a code.
+     *  A code signifying the condition of this transport equipment seal.
      *  0..1
      *  Transport Equipment Seal
      *  Seal Status Code
@@ -75,7 +75,7 @@ class TransportEquipmentSealType
     /**
      * BBIE
      *  Transport Equipment Seal. Sealing Party Type. Text
-     *  Textual description of the role of a sealing party.
+     *  The role of the sealing party.
      *  0..1
      *  Transport Equipment Seal
      *  Sealing Party Type
@@ -92,13 +92,13 @@ class TransportEquipmentSealType
      *
      * BBIE
      *  Transport Equipment Seal. Identifier
-     *  Identifies the seal.
+     *  An identifier for this transport equipment seal.
      *  1
      *  Transport Equipment Seal
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "ACS1234"
+     *  ACS1234
      *
      * @return \horstoeko\ubl\entities\cbc\ID
      */
@@ -112,13 +112,13 @@ class TransportEquipmentSealType
      *
      * BBIE
      *  Transport Equipment Seal. Identifier
-     *  Identifies the seal.
+     *  An identifier for this transport equipment seal.
      *  1
      *  Transport Equipment Seal
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "ACS1234"
+     *  ACS1234
      *
      * @param \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
@@ -134,7 +134,7 @@ class TransportEquipmentSealType
      *
      * BBIE
      *  Transport Equipment Seal. Seal Issuer Type Code. Code
-     *  The type of party that issues and is responsible for a seal, expressed as a code.
+     *  A code signifying the type of party that issues and is responsible for this transport equipment seal.
      *  0..1
      *  Transport Equipment Seal
      *  Seal Issuer Type Code
@@ -153,7 +153,7 @@ class TransportEquipmentSealType
      *
      * BBIE
      *  Transport Equipment Seal. Seal Issuer Type Code. Code
-     *  The type of party that issues and is responsible for a seal, expressed as a code.
+     *  A code signifying the type of party that issues and is responsible for this transport equipment seal.
      *  0..1
      *  Transport Equipment Seal
      *  Seal Issuer Type Code
@@ -174,7 +174,7 @@ class TransportEquipmentSealType
      *
      * BBIE
      *  Transport Equipment Seal. Condition. Text
-     *  Information about the condition of a seal.
+     *  The condition of this transport equipment seal.
      *  0..1
      *  Transport Equipment Seal
      *  Condition
@@ -193,7 +193,7 @@ class TransportEquipmentSealType
      *
      * BBIE
      *  Transport Equipment Seal. Condition. Text
-     *  Information about the condition of a seal.
+     *  The condition of this transport equipment seal.
      *  0..1
      *  Transport Equipment Seal
      *  Condition
@@ -214,7 +214,7 @@ class TransportEquipmentSealType
      *
      * BBIE
      *  Transport Equipment Seal. Seal Status Code. Code
-     *  The status of a seal, expressed as a code.
+     *  A code signifying the condition of this transport equipment seal.
      *  0..1
      *  Transport Equipment Seal
      *  Seal Status Code
@@ -233,7 +233,7 @@ class TransportEquipmentSealType
      *
      * BBIE
      *  Transport Equipment Seal. Seal Status Code. Code
-     *  The status of a seal, expressed as a code.
+     *  A code signifying the condition of this transport equipment seal.
      *  0..1
      *  Transport Equipment Seal
      *  Seal Status Code
@@ -254,7 +254,7 @@ class TransportEquipmentSealType
      *
      * BBIE
      *  Transport Equipment Seal. Sealing Party Type. Text
-     *  Textual description of the role of a sealing party.
+     *  The role of the sealing party.
      *  0..1
      *  Transport Equipment Seal
      *  Sealing Party Type
@@ -274,7 +274,7 @@ class TransportEquipmentSealType
      *
      * BBIE
      *  Transport Equipment Seal. Sealing Party Type. Text
-     *  Textual description of the role of a sealing party.
+     *  The role of the sealing party.
      *  0..1
      *  Transport Equipment Seal
      *  Sealing Party Type

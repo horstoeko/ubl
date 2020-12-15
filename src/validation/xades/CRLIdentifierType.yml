@@ -1,0 +1,18 @@
+horstoeko\ubl\entities\xades\CRLIdentifierType:
+    properties:
+        issuer:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        issueTime:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        number:
+            -
+                Regex:
+                    pattern: '~[\-+]?[0-9]+~'
+                    groups:
+                        - xsd_rules

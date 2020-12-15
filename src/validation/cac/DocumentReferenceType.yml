@@ -8,3 +8,12 @@ horstoeko\ubl\entities\cac\DocumentReferenceType:
         attachment:
             -
                 Valid: null
+        validityPeriod:
+            -
+                Valid: null
+        issuerParty:
+            -
+                Valid: null
+        resultOfVerification:
+            -
+                Valid: null

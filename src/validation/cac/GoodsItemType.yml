@@ -1,10 +1,5 @@
 horstoeko\ubl\entities\cac\GoodsItemType:
     properties:
-        iD:
-            -
-                NotNull:
-                    groups:
-                        - xsd_rules
         item:
             -
                 Valid: null
@@ -24,5 +19,29 @@ horstoeko\ubl\entities\cac\GoodsItemType:
             -
                 Valid: null
         originAddress:
+            -
+                Valid: null
+        delivery:
+            -
+                Valid: null
+        pickup:
+            -
+                Valid: null
+        despatch:
+            -
+                Valid: null
+        measurementDimension:
+            -
+                Valid: null
+        containingPackage:
+            -
+                Valid: null
+        shipmentDocumentReference:
+            -
+                Valid: null
+        minimumTemperature:
+            -
+                Valid: null
+        maximumTemperature:
             -
                 Valid: null

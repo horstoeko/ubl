@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Reminder Line. Details
- *  Information about a Line on a Reminder document.
+ *  A class to define a line in a Reminder document.
  *  Reminder Line
  * XSD Type: ReminderLineType
  */
@@ -17,7 +17,7 @@ class ReminderLineType
     /**
      * BBIE
      *  Reminder Line. Identifier
-     *  Identifies the Reminder Line.
+     *  An identifier for this reminder line.
      *  1
      *  Reminder Line
      *  Identifier
@@ -31,21 +31,23 @@ class ReminderLineType
     /**
      * BBIE
      *  Reminder Line. Note. Text
-     *  Free-form text applying to the Reminder Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Reminder Line
      *  Note
      *  Text
      *  Text. Type
      *
-     * @var \horstoeko\ubl\entities\cbc\Note $note
+     * @var \horstoeko\ubl\entities\cbc\Note[] $note
      */
-    private $note = null;
+    private $note = [
+        
+    ];
 
     /**
      * BBIE
      *  Reminder Line. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this reminder line.
      *  0..1
      *  Reminder Line
      *  UUID
@@ -59,7 +61,7 @@ class ReminderLineType
     /**
      * BBIE
      *  Reminder Line. Balance Brought Forward_ Indicator. Indicator
-     *  If true, indicates that the Remonder Line contains a balance brought forward.
+     *  An indication that this reminder line contains a balance brought forward (true) or does not (false).
      *  0..1
      *  Reminder Line
      *  Balance Brought Forward
@@ -74,7 +76,7 @@ class ReminderLineType
     /**
      * BBIE
      *  Reminder Line. Debit_ Line Amount. Amount
-     *  The amount debited on the Reminder Line.
+     *  The amount debited on this reminder line.
      *  0..1
      *  Reminder Line
      *  Debit
@@ -89,7 +91,7 @@ class ReminderLineType
     /**
      * BBIE
      *  Reminder Line. Credit_ Line Amount. Amount
-     *  The amount credited on the Reminder Line.
+     *  The amount credited on this reminder line.
      *  0..1
      *  Reminder Line
      *  Credit
@@ -104,7 +106,7 @@ class ReminderLineType
     /**
      * BBIE
      *  Reminder Line. Accounting Cost Code. Code
-     *  The buyer's accounting code applied to the Reminder Line.
+     *  The buyer's accounting cost centre for this reminder line, expressed as a code.
      *  0..1
      *  Reminder Line
      *  Accounting Cost Code
@@ -118,7 +120,7 @@ class ReminderLineType
     /**
      * BBIE
      *  Reminder Line. Accounting Cost. Text
-     *  The buyer's accounting code applied to the Reminder Line, expressed as text.
+     *  The buyer's accounting cost centre for this reminder line, expressed as text.
      *  0..1
      *  Reminder Line
      *  Accounting Cost
@@ -130,12 +132,56 @@ class ReminderLineType
     private $accountingCost = null;
 
     /**
+     * BBIE
+     *  Reminder Line. Penalty_ Surcharge Percent. Percent
+     *  The penalty for late payment, expressed as a percentage.
+     *  0..1
+     *  Reminder Line
+     *  Penalty
+     *  Surcharge Percent
+     *  Percent
+     *  Percent. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\PenaltySurchargePercent $penaltySurchargePercent
+     */
+    private $penaltySurchargePercent = null;
+
+    /**
+     * BBIE
+     *  Reminder Line. Amount
+     *  The amount on this reminder line.
+     *  0..1
+     *  Reminder Line
+     *  Amount
+     *  Amount
+     *  Amount. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\Amount $amount
+     */
+    private $amount = null;
+
+    /**
+     * BBIE
+     *  Reminder Line. Payment Purpose Code. Code
+     *  A code signifying the business purpose for this payment.
+     *  0..1
+     *  Reminder Line
+     *  Payment Purpose Code
+     *  Code
+     *  Code. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\PaymentPurposeCode $paymentPurposeCode
+     */
+    private $paymentPurposeCode = null;
+
+    /**
      * ASBIE
      *  Reminder Line. Reminder_ Period. Period
-     *  An association to Period.
+     *  A period to which this reminder line applies.
      *  0..n
      *  Reminder Line
      *  Reminder
+     *  Period
      *  Period
      *  Period
      *
@@ -148,9 +194,10 @@ class ReminderLineType
     /**
      * ASBIE
      *  Reminder Line. Billing Reference
-     *  An association to Billing Reference
+     *  A reference to a billing document associated with this reminder line.
      *  0..n
      *  Reminder Line
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -163,9 +210,10 @@ class ReminderLineType
     /**
      * ASBIE
      *  Reminder Line. Exchange Rate
-     *  An association to Exchange Rate (between the Reminder Line Currency and the Related Document currency).
+     *  The rate of exchange between the currency of the Reminder and the currency of the document described in the BillingReference.
      *  0..1
      *  Reminder Line
+     *  Exchange Rate
      *  Exchange Rate
      *  Exchange Rate
      *
@@ -178,7 +226,7 @@ class ReminderLineType
      *
      * BBIE
      *  Reminder Line. Identifier
-     *  Identifies the Reminder Line.
+     *  An identifier for this reminder line.
      *  1
      *  Reminder Line
      *  Identifier
@@ -197,7 +245,7 @@ class ReminderLineType
      *
      * BBIE
      *  Reminder Line. Identifier
-     *  Identifies the Reminder Line.
+     *  An identifier for this reminder line.
      *  1
      *  Reminder Line
      *  Identifier
@@ -214,18 +262,79 @@ class ReminderLineType
     }
 
     /**
-     * Gets as note
+     * Adds as note
      *
      * BBIE
      *  Reminder Line. Note. Text
-     *  Free-form text applying to the Reminder Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Reminder Line
      *  Note
      *  Text
      *  Text. Type
      *
-     * @return \horstoeko\ubl\entities\cbc\Note
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\Note $note
+     */
+    public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
+    {
+        $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * isset note
+     *
+     * BBIE
+     *  Reminder Line. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Reminder Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetNote($index)
+    {
+        return isset($this->note[$index]);
+    }
+
+    /**
+     * unset note
+     *
+     * BBIE
+     *  Reminder Line. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Reminder Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetNote($index)
+    {
+        unset($this->note[$index]);
+    }
+
+    /**
+     * Gets as note
+     *
+     * BBIE
+     *  Reminder Line. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Reminder Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\Note[]
      */
     public function getNote()
     {
@@ -237,17 +346,17 @@ class ReminderLineType
      *
      * BBIE
      *  Reminder Line. Note. Text
-     *  Free-form text applying to the Reminder Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Reminder Line
      *  Note
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
-    public function setNote(\horstoeko\ubl\entities\cbc\Note $note)
+    public function setNote(array $note)
     {
         $this->note = $note;
         return $this;
@@ -258,7 +367,7 @@ class ReminderLineType
      *
      * BBIE
      *  Reminder Line. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this reminder line.
      *  0..1
      *  Reminder Line
      *  UUID
@@ -277,7 +386,7 @@ class ReminderLineType
      *
      * BBIE
      *  Reminder Line. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this reminder line.
      *  0..1
      *  Reminder Line
      *  UUID
@@ -298,7 +407,7 @@ class ReminderLineType
      *
      * BBIE
      *  Reminder Line. Balance Brought Forward_ Indicator. Indicator
-     *  If true, indicates that the Remonder Line contains a balance brought forward.
+     *  An indication that this reminder line contains a balance brought forward (true) or does not (false).
      *  0..1
      *  Reminder Line
      *  Balance Brought Forward
@@ -318,7 +427,7 @@ class ReminderLineType
      *
      * BBIE
      *  Reminder Line. Balance Brought Forward_ Indicator. Indicator
-     *  If true, indicates that the Remonder Line contains a balance brought forward.
+     *  An indication that this reminder line contains a balance brought forward (true) or does not (false).
      *  0..1
      *  Reminder Line
      *  Balance Brought Forward
@@ -340,7 +449,7 @@ class ReminderLineType
      *
      * BBIE
      *  Reminder Line. Debit_ Line Amount. Amount
-     *  The amount debited on the Reminder Line.
+     *  The amount debited on this reminder line.
      *  0..1
      *  Reminder Line
      *  Debit
@@ -360,7 +469,7 @@ class ReminderLineType
      *
      * BBIE
      *  Reminder Line. Debit_ Line Amount. Amount
-     *  The amount debited on the Reminder Line.
+     *  The amount debited on this reminder line.
      *  0..1
      *  Reminder Line
      *  Debit
@@ -382,7 +491,7 @@ class ReminderLineType
      *
      * BBIE
      *  Reminder Line. Credit_ Line Amount. Amount
-     *  The amount credited on the Reminder Line.
+     *  The amount credited on this reminder line.
      *  0..1
      *  Reminder Line
      *  Credit
@@ -402,7 +511,7 @@ class ReminderLineType
      *
      * BBIE
      *  Reminder Line. Credit_ Line Amount. Amount
-     *  The amount credited on the Reminder Line.
+     *  The amount credited on this reminder line.
      *  0..1
      *  Reminder Line
      *  Credit
@@ -424,7 +533,7 @@ class ReminderLineType
      *
      * BBIE
      *  Reminder Line. Accounting Cost Code. Code
-     *  The buyer's accounting code applied to the Reminder Line.
+     *  The buyer's accounting cost centre for this reminder line, expressed as a code.
      *  0..1
      *  Reminder Line
      *  Accounting Cost Code
@@ -443,7 +552,7 @@ class ReminderLineType
      *
      * BBIE
      *  Reminder Line. Accounting Cost Code. Code
-     *  The buyer's accounting code applied to the Reminder Line.
+     *  The buyer's accounting cost centre for this reminder line, expressed as a code.
      *  0..1
      *  Reminder Line
      *  Accounting Cost Code
@@ -464,7 +573,7 @@ class ReminderLineType
      *
      * BBIE
      *  Reminder Line. Accounting Cost. Text
-     *  The buyer's accounting code applied to the Reminder Line, expressed as text.
+     *  The buyer's accounting cost centre for this reminder line, expressed as text.
      *  0..1
      *  Reminder Line
      *  Accounting Cost
@@ -483,7 +592,7 @@ class ReminderLineType
      *
      * BBIE
      *  Reminder Line. Accounting Cost. Text
-     *  The buyer's accounting code applied to the Reminder Line, expressed as text.
+     *  The buyer's accounting cost centre for this reminder line, expressed as text.
      *  0..1
      *  Reminder Line
      *  Accounting Cost
@@ -500,14 +609,137 @@ class ReminderLineType
     }
 
     /**
+     * Gets as penaltySurchargePercent
+     *
+     * BBIE
+     *  Reminder Line. Penalty_ Surcharge Percent. Percent
+     *  The penalty for late payment, expressed as a percentage.
+     *  0..1
+     *  Reminder Line
+     *  Penalty
+     *  Surcharge Percent
+     *  Percent
+     *  Percent. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\PenaltySurchargePercent
+     */
+    public function getPenaltySurchargePercent()
+    {
+        return $this->penaltySurchargePercent;
+    }
+
+    /**
+     * Sets a new penaltySurchargePercent
+     *
+     * BBIE
+     *  Reminder Line. Penalty_ Surcharge Percent. Percent
+     *  The penalty for late payment, expressed as a percentage.
+     *  0..1
+     *  Reminder Line
+     *  Penalty
+     *  Surcharge Percent
+     *  Percent
+     *  Percent. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\PenaltySurchargePercent $penaltySurchargePercent
+     * @return self
+     */
+    public function setPenaltySurchargePercent(\horstoeko\ubl\entities\cbc\PenaltySurchargePercent $penaltySurchargePercent)
+    {
+        $this->penaltySurchargePercent = $penaltySurchargePercent;
+        return $this;
+    }
+
+    /**
+     * Gets as amount
+     *
+     * BBIE
+     *  Reminder Line. Amount
+     *  The amount on this reminder line.
+     *  0..1
+     *  Reminder Line
+     *  Amount
+     *  Amount
+     *  Amount. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\Amount
+     */
+    public function getAmount()
+    {
+        return $this->amount;
+    }
+
+    /**
+     * Sets a new amount
+     *
+     * BBIE
+     *  Reminder Line. Amount
+     *  The amount on this reminder line.
+     *  0..1
+     *  Reminder Line
+     *  Amount
+     *  Amount
+     *  Amount. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\Amount $amount
+     * @return self
+     */
+    public function setAmount(\horstoeko\ubl\entities\cbc\Amount $amount)
+    {
+        $this->amount = $amount;
+        return $this;
+    }
+
+    /**
+     * Gets as paymentPurposeCode
+     *
+     * BBIE
+     *  Reminder Line. Payment Purpose Code. Code
+     *  A code signifying the business purpose for this payment.
+     *  0..1
+     *  Reminder Line
+     *  Payment Purpose Code
+     *  Code
+     *  Code. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\PaymentPurposeCode
+     */
+    public function getPaymentPurposeCode()
+    {
+        return $this->paymentPurposeCode;
+    }
+
+    /**
+     * Sets a new paymentPurposeCode
+     *
+     * BBIE
+     *  Reminder Line. Payment Purpose Code. Code
+     *  A code signifying the business purpose for this payment.
+     *  0..1
+     *  Reminder Line
+     *  Payment Purpose Code
+     *  Code
+     *  Code. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\PaymentPurposeCode $paymentPurposeCode
+     * @return self
+     */
+    public function setPaymentPurposeCode(\horstoeko\ubl\entities\cbc\PaymentPurposeCode $paymentPurposeCode)
+    {
+        $this->paymentPurposeCode = $paymentPurposeCode;
+        return $this;
+    }
+
+    /**
      * Adds as reminderPeriod
      *
      * ASBIE
      *  Reminder Line. Reminder_ Period. Period
-     *  An association to Period.
+     *  A period to which this reminder line applies.
      *  0..n
      *  Reminder Line
      *  Reminder
+     *  Period
      *  Period
      *  Period
      *
@@ -525,10 +757,11 @@ class ReminderLineType
      *
      * ASBIE
      *  Reminder Line. Reminder_ Period. Period
-     *  An association to Period.
+     *  A period to which this reminder line applies.
      *  0..n
      *  Reminder Line
      *  Reminder
+     *  Period
      *  Period
      *  Period
      *
@@ -545,10 +778,11 @@ class ReminderLineType
      *
      * ASBIE
      *  Reminder Line. Reminder_ Period. Period
-     *  An association to Period.
+     *  A period to which this reminder line applies.
      *  0..n
      *  Reminder Line
      *  Reminder
+     *  Period
      *  Period
      *  Period
      *
@@ -565,10 +799,11 @@ class ReminderLineType
      *
      * ASBIE
      *  Reminder Line. Reminder_ Period. Period
-     *  An association to Period.
+     *  A period to which this reminder line applies.
      *  0..n
      *  Reminder Line
      *  Reminder
+     *  Period
      *  Period
      *  Period
      *
@@ -584,10 +819,11 @@ class ReminderLineType
      *
      * ASBIE
      *  Reminder Line. Reminder_ Period. Period
-     *  An association to Period.
+     *  A period to which this reminder line applies.
      *  0..n
      *  Reminder Line
      *  Reminder
+     *  Period
      *  Period
      *  Period
      *
@@ -605,9 +841,10 @@ class ReminderLineType
      *
      * ASBIE
      *  Reminder Line. Billing Reference
-     *  An association to Billing Reference
+     *  A reference to a billing document associated with this reminder line.
      *  0..n
      *  Reminder Line
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -625,9 +862,10 @@ class ReminderLineType
      *
      * ASBIE
      *  Reminder Line. Billing Reference
-     *  An association to Billing Reference
+     *  A reference to a billing document associated with this reminder line.
      *  0..n
      *  Reminder Line
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -644,9 +882,10 @@ class ReminderLineType
      *
      * ASBIE
      *  Reminder Line. Billing Reference
-     *  An association to Billing Reference
+     *  A reference to a billing document associated with this reminder line.
      *  0..n
      *  Reminder Line
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -663,9 +902,10 @@ class ReminderLineType
      *
      * ASBIE
      *  Reminder Line. Billing Reference
-     *  An association to Billing Reference
+     *  A reference to a billing document associated with this reminder line.
      *  0..n
      *  Reminder Line
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -681,9 +921,10 @@ class ReminderLineType
      *
      * ASBIE
      *  Reminder Line. Billing Reference
-     *  An association to Billing Reference
+     *  A reference to a billing document associated with this reminder line.
      *  0..n
      *  Reminder Line
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -701,9 +942,10 @@ class ReminderLineType
      *
      * ASBIE
      *  Reminder Line. Exchange Rate
-     *  An association to Exchange Rate (between the Reminder Line Currency and the Related Document currency).
+     *  The rate of exchange between the currency of the Reminder and the currency of the document described in the BillingReference.
      *  0..1
      *  Reminder Line
+     *  Exchange Rate
      *  Exchange Rate
      *  Exchange Rate
      *
@@ -719,9 +961,10 @@ class ReminderLineType
      *
      * ASBIE
      *  Reminder Line. Exchange Rate
-     *  An association to Exchange Rate (between the Reminder Line Currency and the Related Document currency).
+     *  The rate of exchange between the currency of the Reminder and the currency of the document described in the BillingReference.
      *  0..1
      *  Reminder Line
+     *  Exchange Rate
      *  Exchange Rate
      *  Exchange Rate
      *

@@ -21,7 +21,11 @@ horstoeko\ubl\entities\cac\PaymentTermsType:
             accessor:
                 getter: getPaymentMeansID
                 setter: setPaymentMeansID
-            type: horstoeko\ubl\entities\cbc\PaymentMeansID
+            xml_list:
+                inline: true
+                entry_name: PaymentMeansID
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\PaymentMeansID>
         prepaidPaymentReferenceID:
             expose: true
             access_type: public_method
@@ -69,7 +73,7 @@ horstoeko\ubl\entities\cac\PaymentTermsType:
             accessor:
                 getter: getSettlementDiscountPercent
                 setter: setSettlementDiscountPercent
-            type: float
+            type: horstoeko\ubl\entities\cbc\SettlementDiscountPercent
         penaltySurchargePercent:
             expose: true
             access_type: public_method
@@ -80,7 +84,18 @@ horstoeko\ubl\entities\cac\PaymentTermsType:
             accessor:
                 getter: getPenaltySurchargePercent
                 setter: setPenaltySurchargePercent
-            type: float
+            type: horstoeko\ubl\entities\cbc\PenaltySurchargePercent
+        paymentPercent:
+            expose: true
+            access_type: public_method
+            serialized_name: PaymentPercent
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPaymentPercent
+                setter: setPaymentPercent
+            type: horstoeko\ubl\entities\cbc\PaymentPercent
         amount:
             expose: true
             access_type: public_method
@@ -92,6 +107,72 @@ horstoeko\ubl\entities\cac\PaymentTermsType:
                 getter: getAmount
                 setter: setAmount
             type: horstoeko\ubl\entities\cbc\Amount
+        settlementDiscountAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: SettlementDiscountAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getSettlementDiscountAmount
+                setter: setSettlementDiscountAmount
+            type: horstoeko\ubl\entities\cbc\SettlementDiscountAmount
+        penaltyAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: PenaltyAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPenaltyAmount
+                setter: setPenaltyAmount
+            type: horstoeko\ubl\entities\cbc\PenaltyAmount
+        paymentTermsDetailsURI:
+            expose: true
+            access_type: public_method
+            serialized_name: PaymentTermsDetailsURI
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPaymentTermsDetailsURI
+                setter: setPaymentTermsDetailsURI
+            type: horstoeko\ubl\entities\cbc\PaymentTermsDetailsURI
+        paymentDueDate:
+            expose: true
+            access_type: public_method
+            serialized_name: PaymentDueDate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPaymentDueDate
+                setter: setPaymentDueDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        installmentDueDate:
+            expose: true
+            access_type: public_method
+            serialized_name: InstallmentDueDate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getInstallmentDueDate
+                setter: setInstallmentDueDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        invoicingPartyReference:
+            expose: true
+            access_type: public_method
+            serialized_name: InvoicingPartyReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getInvoicingPartyReference
+                setter: setInvoicingPartyReference
+            type: horstoeko\ubl\entities\cbc\InvoicingPartyReference
         settlementPeriod:
             expose: true
             access_type: public_method
@@ -114,3 +195,25 @@ horstoeko\ubl\entities\cac\PaymentTermsType:
                 getter: getPenaltyPeriod
                 setter: setPenaltyPeriod
             type: horstoeko\ubl\entities\cac\PenaltyPeriod
+        exchangeRate:
+            expose: true
+            access_type: public_method
+            serialized_name: ExchangeRate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getExchangeRate
+                setter: setExchangeRate
+            type: horstoeko\ubl\entities\cac\ExchangeRate
+        validityPeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: ValidityPeriod
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getValidityPeriod
+                setter: setValidityPeriod
+            type: horstoeko\ubl\entities\cac\ValidityPeriod

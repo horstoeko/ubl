@@ -21,7 +21,11 @@ horstoeko\ubl\entities\cac\LocationType:
             accessor:
                 getter: getDescription
                 setter: setDescription
-            type: horstoeko\ubl\entities\cbc\Description
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>
         conditions:
             expose: true
             access_type: public_method
@@ -32,7 +36,11 @@ horstoeko\ubl\entities\cac\LocationType:
             accessor:
                 getter: getConditions
                 setter: setConditions
-            type: horstoeko\ubl\entities\cbc\Conditions
+            xml_list:
+                inline: true
+                entry_name: Conditions
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Conditions>
         countrySubentity:
             expose: true
             access_type: public_method
@@ -55,6 +63,39 @@ horstoeko\ubl\entities\cac\LocationType:
                 getter: getCountrySubentityCode
                 setter: setCountrySubentityCode
             type: horstoeko\ubl\entities\cbc\CountrySubentityCode
+        locationTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LocationTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getLocationTypeCode
+                setter: setLocationTypeCode
+            type: horstoeko\ubl\entities\cbc\LocationTypeCode
+        informationURI:
+            expose: true
+            access_type: public_method
+            serialized_name: InformationURI
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getInformationURI
+                setter: setInformationURI
+            type: horstoeko\ubl\entities\cbc\InformationURI
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: Name
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getName
+                setter: setName
+            type: horstoeko\ubl\entities\cbc\Name
         validityPeriod:
             expose: true
             access_type: public_method
@@ -81,3 +122,33 @@ horstoeko\ubl\entities\cac\LocationType:
                 getter: getAddress
                 setter: setAddress
             type: horstoeko\ubl\entities\cac\Address
+        subsidiaryLocation:
+            expose: true
+            access_type: public_method
+            serialized_name: SubsidiaryLocation
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getSubsidiaryLocation
+                setter: setSubsidiaryLocation
+            xml_list:
+                inline: true
+                entry_name: SubsidiaryLocation
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\SubsidiaryLocation>
+        locationCoordinate:
+            expose: true
+            access_type: public_method
+            serialized_name: LocationCoordinate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getLocationCoordinate
+                setter: setLocationCoordinate
+            xml_list:
+                inline: true
+                entry_name: LocationCoordinate
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\LocationCoordinate>

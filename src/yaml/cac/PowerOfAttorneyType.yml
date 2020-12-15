@@ -1,0 +1,102 @@
+horstoeko\ubl\entities\cac\PowerOfAttorneyType:
+    properties:
+        iD:
+            expose: true
+            access_type: public_method
+            serialized_name: ID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getID
+                setter: setID
+            type: horstoeko\ubl\entities\cbc\ID
+        issueDate:
+            expose: true
+            access_type: public_method
+            serialized_name: IssueDate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getIssueDate
+                setter: setIssueDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        issueTime:
+            expose: true
+            access_type: public_method
+            serialized_name: IssueTime
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getIssueTime
+                setter: setIssueTime
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: Description
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>
+        notaryParty:
+            expose: true
+            access_type: public_method
+            serialized_name: NotaryParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getNotaryParty
+                setter: setNotaryParty
+            type: horstoeko\ubl\entities\cac\NotaryParty
+        agentParty:
+            expose: true
+            access_type: public_method
+            serialized_name: AgentParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getAgentParty
+                setter: setAgentParty
+            type: horstoeko\ubl\entities\cac\AgentParty
+        witnessParty:
+            expose: true
+            access_type: public_method
+            serialized_name: WitnessParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getWitnessParty
+                setter: setWitnessParty
+            xml_list:
+                inline: true
+                entry_name: WitnessParty
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\WitnessParty>
+        mandateDocumentReference:
+            expose: true
+            access_type: public_method
+            serialized_name: MandateDocumentReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getMandateDocumentReference
+                setter: setMandateDocumentReference
+            xml_list:
+                inline: true
+                entry_name: MandateDocumentReference
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\MandateDocumentReference>

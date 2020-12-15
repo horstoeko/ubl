@@ -1,0 +1,38 @@
+horstoeko\ubl\entities\cac\ActivityDataLineType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        supplyChainActivityTypeCode:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        buyerCustomerParty:
+            -
+                Valid: null
+        sellerSupplierParty:
+            -
+                Valid: null
+        activityPeriod:
+            -
+                Valid: null
+        activityOriginLocation:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        activityFinalLocation:
+            -
+                Valid: null
+        salesItem:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

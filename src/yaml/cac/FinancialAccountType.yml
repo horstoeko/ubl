@@ -22,6 +22,17 @@ horstoeko\ubl\entities\cac\FinancialAccountType:
                 getter: getName
                 setter: setName
             type: horstoeko\ubl\entities\cbc\Name
+        aliasName:
+            expose: true
+            access_type: public_method
+            serialized_name: AliasName
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAliasName
+                setter: setAliasName
+            type: horstoeko\ubl\entities\cbc\AliasName
         accountTypeCode:
             expose: true
             access_type: public_method
@@ -33,6 +44,17 @@ horstoeko\ubl\entities\cac\FinancialAccountType:
                 getter: getAccountTypeCode
                 setter: setAccountTypeCode
             type: horstoeko\ubl\entities\cbc\AccountTypeCode
+        accountFormatCode:
+            expose: true
+            access_type: public_method
+            serialized_name: AccountFormatCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAccountFormatCode
+                setter: setAccountFormatCode
+            type: horstoeko\ubl\entities\cbc\AccountFormatCode
         currencyCode:
             expose: true
             access_type: public_method

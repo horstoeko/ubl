@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Party Name. Details
- *  Information about a party's name.
+ *  A class for defining the name of a party.
  *  Party Name
  * XSD Type: PartyNameType
  */
@@ -23,7 +23,7 @@ class PartyNameType
      *  Name
      *  Name
      *  Name. Type
-     *  "Microsoft"
+     *  Microsoft
      *
      * @var \horstoeko\ubl\entities\cbc\Name $name
      */
@@ -40,7 +40,7 @@ class PartyNameType
      *  Name
      *  Name
      *  Name. Type
-     *  "Microsoft"
+     *  Microsoft
      *
      * @return \horstoeko\ubl\entities\cbc\Name
      */
@@ -60,7 +60,7 @@ class PartyNameType
      *  Name
      *  Name
      *  Name. Type
-     *  "Microsoft"
+     *  Microsoft
      *
      * @param \horstoeko\ubl\entities\cbc\Name $name
      * @return self

@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Tax Total. Details
- *  Information about a total amount of a particular type of tax.
+ *  A class to describe the total tax for a particular taxation scheme.
  *  Tax Total
  * XSD Type: TaxTotalType
  */
@@ -17,7 +17,7 @@ class TaxTotalType
     /**
      * BBIE
      *  Tax Total. Tax Amount. Amount
-     *  The total tax amount for particular tax scheme e.g. VAT; the sum of each of the tax subtotals for each tax category within the tax scheme.
+     *  The total tax amount for a particular taxation scheme, e.g., VAT; the sum of the tax subtotals for each tax category within the taxation scheme.
      *  1
      *  Tax Total
      *  Tax Amount
@@ -31,7 +31,7 @@ class TaxTotalType
     /**
      * BBIE
      *  Tax Total. Rounding Amount. Amount
-     *  The rounding amount (positive or negative) added to the calculated tax total to produce the rounded TotalTaxAmount.
+     *  The rounding amount (positive or negative) added to the calculated tax total to produce the rounded TaxAmount.
      *  0..1
      *  Tax Total
      *  Rounding Amount
@@ -45,7 +45,7 @@ class TaxTotalType
     /**
      * BBIE
      *  Tax Total. Tax Evidence_ Indicator. Indicator
-     *  An indicator as to whether these totals are recognized as legal evidence for taxation purposes.
+     *  An indicator that this total is recognized as legal evidence for taxation purposes (true) or not (false).
      *  0..1
      *  Tax Total
      *  Tax Evidence
@@ -59,11 +59,27 @@ class TaxTotalType
     private $taxEvidenceIndicator = null;
 
     /**
+     * BBIE
+     *  Tax Total. Tax Included_ Indicator. Indicator
+     *  An indicator that tax is included in the calculation (true) or not (false).
+     *  0..1
+     *  Tax Total
+     *  Tax Included
+     *  Indicator
+     *  Indicator
+     *  Indicator. Type
+     *
+     * @var bool $taxIncludedIndicator
+     */
+    private $taxIncludedIndicator = null;
+
+    /**
      * ASBIE
      *  Tax Total. Tax Subtotal
-     *  An association to Tax Subtotal.
+     *  One of the subtotals the sum of which equals the total tax amount for a particular taxation scheme.
      *  0..n
      *  Tax Total
+     *  Tax Subtotal
      *  Tax Subtotal
      *  Tax Subtotal
      *
@@ -78,7 +94,7 @@ class TaxTotalType
      *
      * BBIE
      *  Tax Total. Tax Amount. Amount
-     *  The total tax amount for particular tax scheme e.g. VAT; the sum of each of the tax subtotals for each tax category within the tax scheme.
+     *  The total tax amount for a particular taxation scheme, e.g., VAT; the sum of the tax subtotals for each tax category within the taxation scheme.
      *  1
      *  Tax Total
      *  Tax Amount
@@ -97,7 +113,7 @@ class TaxTotalType
      *
      * BBIE
      *  Tax Total. Tax Amount. Amount
-     *  The total tax amount for particular tax scheme e.g. VAT; the sum of each of the tax subtotals for each tax category within the tax scheme.
+     *  The total tax amount for a particular taxation scheme, e.g., VAT; the sum of the tax subtotals for each tax category within the taxation scheme.
      *  1
      *  Tax Total
      *  Tax Amount
@@ -118,7 +134,7 @@ class TaxTotalType
      *
      * BBIE
      *  Tax Total. Rounding Amount. Amount
-     *  The rounding amount (positive or negative) added to the calculated tax total to produce the rounded TotalTaxAmount.
+     *  The rounding amount (positive or negative) added to the calculated tax total to produce the rounded TaxAmount.
      *  0..1
      *  Tax Total
      *  Rounding Amount
@@ -137,7 +153,7 @@ class TaxTotalType
      *
      * BBIE
      *  Tax Total. Rounding Amount. Amount
-     *  The rounding amount (positive or negative) added to the calculated tax total to produce the rounded TotalTaxAmount.
+     *  The rounding amount (positive or negative) added to the calculated tax total to produce the rounded TaxAmount.
      *  0..1
      *  Tax Total
      *  Rounding Amount
@@ -158,7 +174,7 @@ class TaxTotalType
      *
      * BBIE
      *  Tax Total. Tax Evidence_ Indicator. Indicator
-     *  An indicator as to whether these totals are recognized as legal evidence for taxation purposes.
+     *  An indicator that this total is recognized as legal evidence for taxation purposes (true) or not (false).
      *  0..1
      *  Tax Total
      *  Tax Evidence
@@ -179,7 +195,7 @@ class TaxTotalType
      *
      * BBIE
      *  Tax Total. Tax Evidence_ Indicator. Indicator
-     *  An indicator as to whether these totals are recognized as legal evidence for taxation purposes.
+     *  An indicator that this total is recognized as legal evidence for taxation purposes (true) or not (false).
      *  0..1
      *  Tax Total
      *  Tax Evidence
@@ -198,13 +214,56 @@ class TaxTotalType
     }
 
     /**
+     * Gets as taxIncludedIndicator
+     *
+     * BBIE
+     *  Tax Total. Tax Included_ Indicator. Indicator
+     *  An indicator that tax is included in the calculation (true) or not (false).
+     *  0..1
+     *  Tax Total
+     *  Tax Included
+     *  Indicator
+     *  Indicator
+     *  Indicator. Type
+     *
+     * @return bool
+     */
+    public function getTaxIncludedIndicator()
+    {
+        return $this->taxIncludedIndicator;
+    }
+
+    /**
+     * Sets a new taxIncludedIndicator
+     *
+     * BBIE
+     *  Tax Total. Tax Included_ Indicator. Indicator
+     *  An indicator that tax is included in the calculation (true) or not (false).
+     *  0..1
+     *  Tax Total
+     *  Tax Included
+     *  Indicator
+     *  Indicator
+     *  Indicator. Type
+     *
+     * @param bool $taxIncludedIndicator
+     * @return self
+     */
+    public function setTaxIncludedIndicator($taxIncludedIndicator)
+    {
+        $this->taxIncludedIndicator = $taxIncludedIndicator;
+        return $this;
+    }
+
+    /**
      * Adds as taxSubtotal
      *
      * ASBIE
      *  Tax Total. Tax Subtotal
-     *  An association to Tax Subtotal.
+     *  One of the subtotals the sum of which equals the total tax amount for a particular taxation scheme.
      *  0..n
      *  Tax Total
+     *  Tax Subtotal
      *  Tax Subtotal
      *  Tax Subtotal
      *
@@ -222,9 +281,10 @@ class TaxTotalType
      *
      * ASBIE
      *  Tax Total. Tax Subtotal
-     *  An association to Tax Subtotal.
+     *  One of the subtotals the sum of which equals the total tax amount for a particular taxation scheme.
      *  0..n
      *  Tax Total
+     *  Tax Subtotal
      *  Tax Subtotal
      *  Tax Subtotal
      *
@@ -241,9 +301,10 @@ class TaxTotalType
      *
      * ASBIE
      *  Tax Total. Tax Subtotal
-     *  An association to Tax Subtotal.
+     *  One of the subtotals the sum of which equals the total tax amount for a particular taxation scheme.
      *  0..n
      *  Tax Total
+     *  Tax Subtotal
      *  Tax Subtotal
      *  Tax Subtotal
      *
@@ -260,9 +321,10 @@ class TaxTotalType
      *
      * ASBIE
      *  Tax Total. Tax Subtotal
-     *  An association to Tax Subtotal.
+     *  One of the subtotals the sum of which equals the total tax amount for a particular taxation scheme.
      *  0..n
      *  Tax Total
+     *  Tax Subtotal
      *  Tax Subtotal
      *  Tax Subtotal
      *
@@ -278,9 +340,10 @@ class TaxTotalType
      *
      * ASBIE
      *  Tax Total. Tax Subtotal
-     *  An association to Tax Subtotal.
+     *  One of the subtotals the sum of which equals the total tax amount for a particular taxation scheme.
      *  0..n
      *  Tax Total
+     *  Tax Subtotal
      *  Tax Subtotal
      *  Tax Subtotal
      *

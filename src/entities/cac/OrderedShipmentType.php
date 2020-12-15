@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Ordered Shipment. Details
- *  Information about an Ordered Shipment.
+ *  A class to describe an ordered shipment.
  *  Ordered Shipment
  * XSD Type: OrderedShipmentType
  */
@@ -17,9 +17,10 @@ class OrderedShipmentType
     /**
      * ASBIE
      *  Ordered Shipment. Shipment
-     *  An association to Shipment.
+     *  The ordered shipment.
      *  1
      *  Ordered Shipment
+     *  Shipment
      *  Shipment
      *  Shipment
      *
@@ -30,9 +31,10 @@ class OrderedShipmentType
     /**
      * ASBIE
      *  Ordered Shipment. Package
-     *  An association to Package.
+     *  A package in this ordered shipment.
      *  0..n
      *  Ordered Shipment
+     *  Package
      *  Package
      *  Package
      *
@@ -47,9 +49,10 @@ class OrderedShipmentType
      *
      * ASBIE
      *  Ordered Shipment. Shipment
-     *  An association to Shipment.
+     *  The ordered shipment.
      *  1
      *  Ordered Shipment
+     *  Shipment
      *  Shipment
      *  Shipment
      *
@@ -65,9 +68,10 @@ class OrderedShipmentType
      *
      * ASBIE
      *  Ordered Shipment. Shipment
-     *  An association to Shipment.
+     *  The ordered shipment.
      *  1
      *  Ordered Shipment
+     *  Shipment
      *  Shipment
      *  Shipment
      *
@@ -85,9 +89,10 @@ class OrderedShipmentType
      *
      * ASBIE
      *  Ordered Shipment. Package
-     *  An association to Package.
+     *  A package in this ordered shipment.
      *  0..n
      *  Ordered Shipment
+     *  Package
      *  Package
      *  Package
      *
@@ -105,9 +110,10 @@ class OrderedShipmentType
      *
      * ASBIE
      *  Ordered Shipment. Package
-     *  An association to Package.
+     *  A package in this ordered shipment.
      *  0..n
      *  Ordered Shipment
+     *  Package
      *  Package
      *  Package
      *
@@ -124,9 +130,10 @@ class OrderedShipmentType
      *
      * ASBIE
      *  Ordered Shipment. Package
-     *  An association to Package.
+     *  A package in this ordered shipment.
      *  0..n
      *  Ordered Shipment
+     *  Package
      *  Package
      *  Package
      *
@@ -143,9 +150,10 @@ class OrderedShipmentType
      *
      * ASBIE
      *  Ordered Shipment. Package
-     *  An association to Package.
+     *  A package in this ordered shipment.
      *  0..n
      *  Ordered Shipment
+     *  Package
      *  Package
      *  Package
      *
@@ -161,9 +169,10 @@ class OrderedShipmentType
      *
      * ASBIE
      *  Ordered Shipment. Package
-     *  An association to Package.
+     *  A package in this ordered shipment.
      *  0..n
      *  Ordered Shipment
+     *  Package
      *  Package
      *  Package
      *

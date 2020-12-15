@@ -1,0 +1,12 @@
+horstoeko\ubl\entities\cac\PromotionalSpecificationType:
+    properties:
+        promotionalEventLineItem:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        eventTactic:
+            -
+                Valid: null

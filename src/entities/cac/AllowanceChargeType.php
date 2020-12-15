@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Allowance Charge. Details
- *  Information about a charge or discount price component.
+ *  A class to describe information about a charge or discount as applied to a price component.
  *  Allowance Charge
  * XSD Type: AllowanceChargeType
  */
@@ -17,7 +17,7 @@ class AllowanceChargeType
     /**
      * BBIE
      *  Allowance Charge. Identifier
-     *  Identifies an Allowance Charge.
+     *  An identifier for this allowance or charge.
      *  0..1
      *  Allowance Charge
      *  Identifier
@@ -31,7 +31,7 @@ class AllowanceChargeType
     /**
      * BBIE
      *  Allowance Charge. Charge_ Indicator. Indicator
-     *  Indicates whether the Allowance Charge is a charge (true) or a discount (false).
+     *  An indicator that this AllowanceCharge describes a charge (true) or a discount (false).
      *  1
      *  Allowance Charge
      *  Charge
@@ -46,11 +46,12 @@ class AllowanceChargeType
     /**
      * BBIE
      *  Allowance Charge. Allowance Charge Reason Code. Code
-     *  The reason for the Allowance Charge, expressed as a code.
+     *  A mutually agreed code signifying the reason for this allowance or charge.
      *  0..1
      *  Allowance Charge
      *  Allowance Charge Reason Code
      *  Code
+     *  Allowance Charge Reason
      *  Allowance Charge Reason_ Code. Type
      *
      * @var \horstoeko\ubl\entities\cbc\AllowanceChargeReasonCode $allowanceChargeReasonCode
@@ -60,22 +61,24 @@ class AllowanceChargeType
     /**
      * BBIE
      *  Allowance Charge. Allowance Charge_ Reason. Text
-     *  The reason for the Allowance Charge, expressed as text.
-     *  0..1
+     *  The reason for this allowance or charge.
+     *  0..n
      *  Allowance Charge
      *  Allowance Charge
      *  Reason
      *  Text
      *  Text. Type
      *
-     * @var \horstoeko\ubl\entities\cbc\AllowanceChargeReason $allowanceChargeReason
+     * @var \horstoeko\ubl\entities\cbc\AllowanceChargeReason[] $allowanceChargeReason
      */
-    private $allowanceChargeReason = null;
+    private $allowanceChargeReason = [
+        
+    ];
 
     /**
      * BBIE
      *  Allowance Charge. Multiplier_ Factor. Numeric
-     *  The factor applied to the Base Amount to calculate the Allowance Charge.
+     *  A number by which the base amount is multiplied to calculate the actual amount of this allowance or charge.
      *  0..1
      *  Allowance Charge
      *  Multiplier
@@ -84,14 +87,14 @@ class AllowanceChargeType
      *  Numeric. Type
      *  0.20
      *
-     * @var float $multiplierFactorNumeric
+     * @var \horstoeko\ubl\entities\cbc\MultiplierFactorNumeric $multiplierFactorNumeric
      */
     private $multiplierFactorNumeric = null;
 
     /**
      * BBIE
      *  Allowance Charge. Prepaid_ Indicator. Indicator
-     *  Indicates whether the Allowance Charge is prepaid (true) or not (false).
+     *  An indicator that this allowance or charge is prepaid (true) or not (false).
      *  0..1
      *  Allowance Charge
      *  Prepaid
@@ -106,7 +109,7 @@ class AllowanceChargeType
     /**
      * BBIE
      *  Allowance Charge. Sequence. Numeric
-     *  Identifies the numerical order sequence in which Allowance Charges are calculated when multiple Allowance Charges apply. If all Allowance Charges apply to the same Base Amount, SequenceNumeric will be '1' for all Allowance Charges.
+     *  A number indicating the order of this allowance or charge in the sequence of calculations applied when there are multiple allowances or charges.
      *  0..1
      *  Allowance Charge
      *  Sequence
@@ -114,14 +117,14 @@ class AllowanceChargeType
      *  Numeric. Type
      *  1, 2, 3, 4, etc.
      *
-     * @var float $sequenceNumeric
+     * @var \horstoeko\ubl\entities\cbc\SequenceNumeric $sequenceNumeric
      */
     private $sequenceNumeric = null;
 
     /**
      * BBIE
      *  Allowance Charge. Amount
-     *  The Allowance Charge amount.
+     *  The monetary amount of this allowance or charge to be applied.
      *  1
      *  Allowance Charge
      *  Amount
@@ -136,7 +139,7 @@ class AllowanceChargeType
     /**
      * BBIE
      *  Allowance Charge. Base_ Amount. Amount
-     *  The amount to which the MultiplierFactorNumeric is applied to calculate the Allowance Charge.
+     *  The monetary amount to which the multiplier factor is applied in calculating the amount of this allowance or charge.
      *  0..1
      *  Allowance Charge
      *  Base
@@ -151,7 +154,7 @@ class AllowanceChargeType
     /**
      * BBIE
      *  Allowance Charge. Accounting Cost Code. Code
-     *  The buyer's accounting code as applied to the Allowance Charge.
+     *  The accounting cost centre used by the buyer to account for this allowance or charge, expressed as a code.
      *  0..1
      *  Allowance Charge
      *  Accounting Cost Code
@@ -165,7 +168,7 @@ class AllowanceChargeType
     /**
      * BBIE
      *  Allowance Charge. Accounting Cost. Text
-     *  The buyer's accounting code as applied to the Allowance Charge expressed as text.
+     *  The accounting cost centre used by the buyer to account for this allowance or charge, expressed as text.
      *  0..1
      *  Allowance Charge
      *  Accounting Cost
@@ -177,11 +180,27 @@ class AllowanceChargeType
     private $accountingCost = null;
 
     /**
+     * BBIE
+     *  Allowance Charge. Per Unit_ Amount. Amount
+     *  The allowance or charge per item; the total allowance or charge is calculated by multiplying the per unit amount by the quantity of items, either at the level of the individual transaction line or for the total number of items in the document, depending on the context in which it appears.
+     *  0..1
+     *  Allowance Charge
+     *  Per Unit
+     *  Amount
+     *  Amount
+     *  Amount. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\PerUnitAmount $perUnitAmount
+     */
+    private $perUnitAmount = null;
+
+    /**
      * ASBIE
      *  Allowance Charge. Tax Category
-     *  An association to Tax Category.
+     *  A tax category applicable to this allowance or charge.
      *  0..n
      *  Allowance Charge
+     *  Tax Category
      *  Tax Category
      *  Tax Category
      *
@@ -194,9 +213,10 @@ class AllowanceChargeType
     /**
      * ASBIE
      *  Allowance Charge. Tax Total
-     *  An association to Tax Total.
+     *  The total of all the taxes applicable to this allowance or charge.
      *  0..1
      *  Allowance Charge
+     *  Tax Total
      *  Tax Total
      *  Tax Total
      *
@@ -207,9 +227,10 @@ class AllowanceChargeType
     /**
      * ASBIE
      *  Allowance Charge. Payment Means
-     *  An association to Payment Means.
+     *  A means of payment for this allowance or charge.
      *  0..n
      *  Allowance Charge
+     *  Payment Means
      *  Payment Means
      *  Payment Means
      *
@@ -224,7 +245,7 @@ class AllowanceChargeType
      *
      * BBIE
      *  Allowance Charge. Identifier
-     *  Identifies an Allowance Charge.
+     *  An identifier for this allowance or charge.
      *  0..1
      *  Allowance Charge
      *  Identifier
@@ -243,7 +264,7 @@ class AllowanceChargeType
      *
      * BBIE
      *  Allowance Charge. Identifier
-     *  Identifies an Allowance Charge.
+     *  An identifier for this allowance or charge.
      *  0..1
      *  Allowance Charge
      *  Identifier
@@ -264,7 +285,7 @@ class AllowanceChargeType
      *
      * BBIE
      *  Allowance Charge. Charge_ Indicator. Indicator
-     *  Indicates whether the Allowance Charge is a charge (true) or a discount (false).
+     *  An indicator that this AllowanceCharge describes a charge (true) or a discount (false).
      *  1
      *  Allowance Charge
      *  Charge
@@ -284,7 +305,7 @@ class AllowanceChargeType
      *
      * BBIE
      *  Allowance Charge. Charge_ Indicator. Indicator
-     *  Indicates whether the Allowance Charge is a charge (true) or a discount (false).
+     *  An indicator that this AllowanceCharge describes a charge (true) or a discount (false).
      *  1
      *  Allowance Charge
      *  Charge
@@ -306,11 +327,12 @@ class AllowanceChargeType
      *
      * BBIE
      *  Allowance Charge. Allowance Charge Reason Code. Code
-     *  The reason for the Allowance Charge, expressed as a code.
+     *  A mutually agreed code signifying the reason for this allowance or charge.
      *  0..1
      *  Allowance Charge
      *  Allowance Charge Reason Code
      *  Code
+     *  Allowance Charge Reason
      *  Allowance Charge Reason_ Code. Type
      *
      * @return \horstoeko\ubl\entities\cbc\AllowanceChargeReasonCode
@@ -325,11 +347,12 @@ class AllowanceChargeType
      *
      * BBIE
      *  Allowance Charge. Allowance Charge Reason Code. Code
-     *  The reason for the Allowance Charge, expressed as a code.
+     *  A mutually agreed code signifying the reason for this allowance or charge.
      *  0..1
      *  Allowance Charge
      *  Allowance Charge Reason Code
      *  Code
+     *  Allowance Charge Reason
      *  Allowance Charge Reason_ Code. Type
      *
      * @param \horstoeko\ubl\entities\cbc\AllowanceChargeReasonCode $allowanceChargeReasonCode
@@ -342,19 +365,83 @@ class AllowanceChargeType
     }
 
     /**
-     * Gets as allowanceChargeReason
+     * Adds as allowanceChargeReason
      *
      * BBIE
      *  Allowance Charge. Allowance Charge_ Reason. Text
-     *  The reason for the Allowance Charge, expressed as text.
-     *  0..1
+     *  The reason for this allowance or charge.
+     *  0..n
      *  Allowance Charge
      *  Allowance Charge
      *  Reason
      *  Text
      *  Text. Type
      *
-     * @return \horstoeko\ubl\entities\cbc\AllowanceChargeReason
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\AllowanceChargeReason $allowanceChargeReason
+     */
+    public function addToAllowanceChargeReason(\horstoeko\ubl\entities\cbc\AllowanceChargeReason $allowanceChargeReason)
+    {
+        $this->allowanceChargeReason[] = $allowanceChargeReason;
+        return $this;
+    }
+
+    /**
+     * isset allowanceChargeReason
+     *
+     * BBIE
+     *  Allowance Charge. Allowance Charge_ Reason. Text
+     *  The reason for this allowance or charge.
+     *  0..n
+     *  Allowance Charge
+     *  Allowance Charge
+     *  Reason
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetAllowanceChargeReason($index)
+    {
+        return isset($this->allowanceChargeReason[$index]);
+    }
+
+    /**
+     * unset allowanceChargeReason
+     *
+     * BBIE
+     *  Allowance Charge. Allowance Charge_ Reason. Text
+     *  The reason for this allowance or charge.
+     *  0..n
+     *  Allowance Charge
+     *  Allowance Charge
+     *  Reason
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetAllowanceChargeReason($index)
+    {
+        unset($this->allowanceChargeReason[$index]);
+    }
+
+    /**
+     * Gets as allowanceChargeReason
+     *
+     * BBIE
+     *  Allowance Charge. Allowance Charge_ Reason. Text
+     *  The reason for this allowance or charge.
+     *  0..n
+     *  Allowance Charge
+     *  Allowance Charge
+     *  Reason
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\AllowanceChargeReason[]
      */
     public function getAllowanceChargeReason()
     {
@@ -366,18 +453,18 @@ class AllowanceChargeType
      *
      * BBIE
      *  Allowance Charge. Allowance Charge_ Reason. Text
-     *  The reason for the Allowance Charge, expressed as text.
-     *  0..1
+     *  The reason for this allowance or charge.
+     *  0..n
      *  Allowance Charge
      *  Allowance Charge
      *  Reason
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AllowanceChargeReason $allowanceChargeReason
+     * @param \horstoeko\ubl\entities\cbc\AllowanceChargeReason[] $allowanceChargeReason
      * @return self
      */
-    public function setAllowanceChargeReason(\horstoeko\ubl\entities\cbc\AllowanceChargeReason $allowanceChargeReason)
+    public function setAllowanceChargeReason(array $allowanceChargeReason)
     {
         $this->allowanceChargeReason = $allowanceChargeReason;
         return $this;
@@ -388,7 +475,7 @@ class AllowanceChargeType
      *
      * BBIE
      *  Allowance Charge. Multiplier_ Factor. Numeric
-     *  The factor applied to the Base Amount to calculate the Allowance Charge.
+     *  A number by which the base amount is multiplied to calculate the actual amount of this allowance or charge.
      *  0..1
      *  Allowance Charge
      *  Multiplier
@@ -397,7 +484,7 @@ class AllowanceChargeType
      *  Numeric. Type
      *  0.20
      *
-     * @return float
+     * @return \horstoeko\ubl\entities\cbc\MultiplierFactorNumeric
      */
     public function getMultiplierFactorNumeric()
     {
@@ -409,7 +496,7 @@ class AllowanceChargeType
      *
      * BBIE
      *  Allowance Charge. Multiplier_ Factor. Numeric
-     *  The factor applied to the Base Amount to calculate the Allowance Charge.
+     *  A number by which the base amount is multiplied to calculate the actual amount of this allowance or charge.
      *  0..1
      *  Allowance Charge
      *  Multiplier
@@ -418,10 +505,10 @@ class AllowanceChargeType
      *  Numeric. Type
      *  0.20
      *
-     * @param float $multiplierFactorNumeric
+     * @param \horstoeko\ubl\entities\cbc\MultiplierFactorNumeric $multiplierFactorNumeric
      * @return self
      */
-    public function setMultiplierFactorNumeric($multiplierFactorNumeric)
+    public function setMultiplierFactorNumeric(\horstoeko\ubl\entities\cbc\MultiplierFactorNumeric $multiplierFactorNumeric)
     {
         $this->multiplierFactorNumeric = $multiplierFactorNumeric;
         return $this;
@@ -432,7 +519,7 @@ class AllowanceChargeType
      *
      * BBIE
      *  Allowance Charge. Prepaid_ Indicator. Indicator
-     *  Indicates whether the Allowance Charge is prepaid (true) or not (false).
+     *  An indicator that this allowance or charge is prepaid (true) or not (false).
      *  0..1
      *  Allowance Charge
      *  Prepaid
@@ -452,7 +539,7 @@ class AllowanceChargeType
      *
      * BBIE
      *  Allowance Charge. Prepaid_ Indicator. Indicator
-     *  Indicates whether the Allowance Charge is prepaid (true) or not (false).
+     *  An indicator that this allowance or charge is prepaid (true) or not (false).
      *  0..1
      *  Allowance Charge
      *  Prepaid
@@ -474,7 +561,7 @@ class AllowanceChargeType
      *
      * BBIE
      *  Allowance Charge. Sequence. Numeric
-     *  Identifies the numerical order sequence in which Allowance Charges are calculated when multiple Allowance Charges apply. If all Allowance Charges apply to the same Base Amount, SequenceNumeric will be '1' for all Allowance Charges.
+     *  A number indicating the order of this allowance or charge in the sequence of calculations applied when there are multiple allowances or charges.
      *  0..1
      *  Allowance Charge
      *  Sequence
@@ -482,7 +569,7 @@ class AllowanceChargeType
      *  Numeric. Type
      *  1, 2, 3, 4, etc.
      *
-     * @return float
+     * @return \horstoeko\ubl\entities\cbc\SequenceNumeric
      */
     public function getSequenceNumeric()
     {
@@ -494,7 +581,7 @@ class AllowanceChargeType
      *
      * BBIE
      *  Allowance Charge. Sequence. Numeric
-     *  Identifies the numerical order sequence in which Allowance Charges are calculated when multiple Allowance Charges apply. If all Allowance Charges apply to the same Base Amount, SequenceNumeric will be '1' for all Allowance Charges.
+     *  A number indicating the order of this allowance or charge in the sequence of calculations applied when there are multiple allowances or charges.
      *  0..1
      *  Allowance Charge
      *  Sequence
@@ -502,10 +589,10 @@ class AllowanceChargeType
      *  Numeric. Type
      *  1, 2, 3, 4, etc.
      *
-     * @param float $sequenceNumeric
+     * @param \horstoeko\ubl\entities\cbc\SequenceNumeric $sequenceNumeric
      * @return self
      */
-    public function setSequenceNumeric($sequenceNumeric)
+    public function setSequenceNumeric(\horstoeko\ubl\entities\cbc\SequenceNumeric $sequenceNumeric)
     {
         $this->sequenceNumeric = $sequenceNumeric;
         return $this;
@@ -516,7 +603,7 @@ class AllowanceChargeType
      *
      * BBIE
      *  Allowance Charge. Amount
-     *  The Allowance Charge amount.
+     *  The monetary amount of this allowance or charge to be applied.
      *  1
      *  Allowance Charge
      *  Amount
@@ -536,7 +623,7 @@ class AllowanceChargeType
      *
      * BBIE
      *  Allowance Charge. Amount
-     *  The Allowance Charge amount.
+     *  The monetary amount of this allowance or charge to be applied.
      *  1
      *  Allowance Charge
      *  Amount
@@ -558,7 +645,7 @@ class AllowanceChargeType
      *
      * BBIE
      *  Allowance Charge. Base_ Amount. Amount
-     *  The amount to which the MultiplierFactorNumeric is applied to calculate the Allowance Charge.
+     *  The monetary amount to which the multiplier factor is applied in calculating the amount of this allowance or charge.
      *  0..1
      *  Allowance Charge
      *  Base
@@ -578,7 +665,7 @@ class AllowanceChargeType
      *
      * BBIE
      *  Allowance Charge. Base_ Amount. Amount
-     *  The amount to which the MultiplierFactorNumeric is applied to calculate the Allowance Charge.
+     *  The monetary amount to which the multiplier factor is applied in calculating the amount of this allowance or charge.
      *  0..1
      *  Allowance Charge
      *  Base
@@ -600,7 +687,7 @@ class AllowanceChargeType
      *
      * BBIE
      *  Allowance Charge. Accounting Cost Code. Code
-     *  The buyer's accounting code as applied to the Allowance Charge.
+     *  The accounting cost centre used by the buyer to account for this allowance or charge, expressed as a code.
      *  0..1
      *  Allowance Charge
      *  Accounting Cost Code
@@ -619,7 +706,7 @@ class AllowanceChargeType
      *
      * BBIE
      *  Allowance Charge. Accounting Cost Code. Code
-     *  The buyer's accounting code as applied to the Allowance Charge.
+     *  The accounting cost centre used by the buyer to account for this allowance or charge, expressed as a code.
      *  0..1
      *  Allowance Charge
      *  Accounting Cost Code
@@ -640,7 +727,7 @@ class AllowanceChargeType
      *
      * BBIE
      *  Allowance Charge. Accounting Cost. Text
-     *  The buyer's accounting code as applied to the Allowance Charge expressed as text.
+     *  The accounting cost centre used by the buyer to account for this allowance or charge, expressed as text.
      *  0..1
      *  Allowance Charge
      *  Accounting Cost
@@ -659,7 +746,7 @@ class AllowanceChargeType
      *
      * BBIE
      *  Allowance Charge. Accounting Cost. Text
-     *  The buyer's accounting code as applied to the Allowance Charge expressed as text.
+     *  The accounting cost centre used by the buyer to account for this allowance or charge, expressed as text.
      *  0..1
      *  Allowance Charge
      *  Accounting Cost
@@ -676,13 +763,56 @@ class AllowanceChargeType
     }
 
     /**
+     * Gets as perUnitAmount
+     *
+     * BBIE
+     *  Allowance Charge. Per Unit_ Amount. Amount
+     *  The allowance or charge per item; the total allowance or charge is calculated by multiplying the per unit amount by the quantity of items, either at the level of the individual transaction line or for the total number of items in the document, depending on the context in which it appears.
+     *  0..1
+     *  Allowance Charge
+     *  Per Unit
+     *  Amount
+     *  Amount
+     *  Amount. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\PerUnitAmount
+     */
+    public function getPerUnitAmount()
+    {
+        return $this->perUnitAmount;
+    }
+
+    /**
+     * Sets a new perUnitAmount
+     *
+     * BBIE
+     *  Allowance Charge. Per Unit_ Amount. Amount
+     *  The allowance or charge per item; the total allowance or charge is calculated by multiplying the per unit amount by the quantity of items, either at the level of the individual transaction line or for the total number of items in the document, depending on the context in which it appears.
+     *  0..1
+     *  Allowance Charge
+     *  Per Unit
+     *  Amount
+     *  Amount
+     *  Amount. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\PerUnitAmount $perUnitAmount
+     * @return self
+     */
+    public function setPerUnitAmount(\horstoeko\ubl\entities\cbc\PerUnitAmount $perUnitAmount)
+    {
+        $this->perUnitAmount = $perUnitAmount;
+        return $this;
+    }
+
+    /**
      * Adds as taxCategory
      *
      * ASBIE
      *  Allowance Charge. Tax Category
-     *  An association to Tax Category.
+     *  A tax category applicable to this allowance or charge.
      *  0..n
      *  Allowance Charge
+     *  Tax Category
      *  Tax Category
      *  Tax Category
      *
@@ -700,9 +830,10 @@ class AllowanceChargeType
      *
      * ASBIE
      *  Allowance Charge. Tax Category
-     *  An association to Tax Category.
+     *  A tax category applicable to this allowance or charge.
      *  0..n
      *  Allowance Charge
+     *  Tax Category
      *  Tax Category
      *  Tax Category
      *
@@ -719,9 +850,10 @@ class AllowanceChargeType
      *
      * ASBIE
      *  Allowance Charge. Tax Category
-     *  An association to Tax Category.
+     *  A tax category applicable to this allowance or charge.
      *  0..n
      *  Allowance Charge
+     *  Tax Category
      *  Tax Category
      *  Tax Category
      *
@@ -738,9 +870,10 @@ class AllowanceChargeType
      *
      * ASBIE
      *  Allowance Charge. Tax Category
-     *  An association to Tax Category.
+     *  A tax category applicable to this allowance or charge.
      *  0..n
      *  Allowance Charge
+     *  Tax Category
      *  Tax Category
      *  Tax Category
      *
@@ -756,9 +889,10 @@ class AllowanceChargeType
      *
      * ASBIE
      *  Allowance Charge. Tax Category
-     *  An association to Tax Category.
+     *  A tax category applicable to this allowance or charge.
      *  0..n
      *  Allowance Charge
+     *  Tax Category
      *  Tax Category
      *  Tax Category
      *
@@ -776,9 +910,10 @@ class AllowanceChargeType
      *
      * ASBIE
      *  Allowance Charge. Tax Total
-     *  An association to Tax Total.
+     *  The total of all the taxes applicable to this allowance or charge.
      *  0..1
      *  Allowance Charge
+     *  Tax Total
      *  Tax Total
      *  Tax Total
      *
@@ -794,9 +929,10 @@ class AllowanceChargeType
      *
      * ASBIE
      *  Allowance Charge. Tax Total
-     *  An association to Tax Total.
+     *  The total of all the taxes applicable to this allowance or charge.
      *  0..1
      *  Allowance Charge
+     *  Tax Total
      *  Tax Total
      *  Tax Total
      *
@@ -814,9 +950,10 @@ class AllowanceChargeType
      *
      * ASBIE
      *  Allowance Charge. Payment Means
-     *  An association to Payment Means.
+     *  A means of payment for this allowance or charge.
      *  0..n
      *  Allowance Charge
+     *  Payment Means
      *  Payment Means
      *  Payment Means
      *
@@ -834,9 +971,10 @@ class AllowanceChargeType
      *
      * ASBIE
      *  Allowance Charge. Payment Means
-     *  An association to Payment Means.
+     *  A means of payment for this allowance or charge.
      *  0..n
      *  Allowance Charge
+     *  Payment Means
      *  Payment Means
      *  Payment Means
      *
@@ -853,9 +991,10 @@ class AllowanceChargeType
      *
      * ASBIE
      *  Allowance Charge. Payment Means
-     *  An association to Payment Means.
+     *  A means of payment for this allowance or charge.
      *  0..n
      *  Allowance Charge
+     *  Payment Means
      *  Payment Means
      *  Payment Means
      *
@@ -872,9 +1011,10 @@ class AllowanceChargeType
      *
      * ASBIE
      *  Allowance Charge. Payment Means
-     *  An association to Payment Means.
+     *  A means of payment for this allowance or charge.
      *  0..n
      *  Allowance Charge
+     *  Payment Means
      *  Payment Means
      *  Payment Means
      *
@@ -890,9 +1030,10 @@ class AllowanceChargeType
      *
      * ASBIE
      *  Allowance Charge. Payment Means
-     *  An association to Payment Means.
+     *  A means of payment for this allowance or charge.
      *  0..n
      *  Allowance Charge
+     *  Payment Means
      *  Payment Means
      *  Payment Means
      *

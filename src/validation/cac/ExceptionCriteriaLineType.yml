@@ -1,0 +1,30 @@
+horstoeko\ubl\entities\cac\ExceptionCriteriaLineType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        thresholdValueComparisonCode:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        thresholdQuantity:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        effectivePeriod:
+            -
+                Valid: null
+        supplyItem:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        forecastExceptionCriterionLine:
+            -
+                Valid: null

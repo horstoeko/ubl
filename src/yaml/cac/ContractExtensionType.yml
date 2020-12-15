@@ -1,0 +1,65 @@
+horstoeko\ubl\entities\cac\ContractExtensionType:
+    properties:
+        optionsDescription:
+            expose: true
+            access_type: public_method
+            serialized_name: OptionsDescription
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getOptionsDescription
+                setter: setOptionsDescription
+            xml_list:
+                inline: true
+                entry_name: OptionsDescription
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\OptionsDescription>
+        minimumNumberNumeric:
+            expose: true
+            access_type: public_method
+            serialized_name: MinimumNumberNumeric
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMinimumNumberNumeric
+                setter: setMinimumNumberNumeric
+            type: horstoeko\ubl\entities\cbc\MinimumNumberNumeric
+        maximumNumberNumeric:
+            expose: true
+            access_type: public_method
+            serialized_name: MaximumNumberNumeric
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMaximumNumberNumeric
+                setter: setMaximumNumberNumeric
+            type: horstoeko\ubl\entities\cbc\MaximumNumberNumeric
+        optionValidityPeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: OptionValidityPeriod
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getOptionValidityPeriod
+                setter: setOptionValidityPeriod
+            type: horstoeko\ubl\entities\cac\OptionValidityPeriod
+        renewal:
+            expose: true
+            access_type: public_method
+            serialized_name: Renewal
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getRenewal
+                setter: setRenewal
+            xml_list:
+                inline: true
+                entry_name: Renewal
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\Renewal>

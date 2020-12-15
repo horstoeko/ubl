@@ -1,0 +1,22 @@
+horstoeko\ubl\entities\cac\InstructionForReturnsLineType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        quantity:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        manufacturerParty:
+            -
+                Valid: null
+        item:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

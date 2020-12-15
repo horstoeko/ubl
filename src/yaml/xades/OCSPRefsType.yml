@@ -1,0 +1,17 @@
+horstoeko\ubl\entities\xades\OCSPRefsType:
+    properties:
+        oCSPRef:
+            expose: true
+            access_type: public_method
+            serialized_name: OCSPRef
+            xml_element:
+                cdata: false
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            accessor:
+                getter: getOCSPRef
+                setter: setOCSPRef
+            xml_list:
+                inline: true
+                entry_name: OCSPRef
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            type: array<horstoeko\ubl\entities\xades\OCSPRefType>

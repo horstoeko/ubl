@@ -1,0 +1,7 @@
+horstoeko\ubl\entities\xades\DocumentationReferencesType:
+    properties:
+        documentationReference:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

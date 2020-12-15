@@ -1,0 +1,8 @@
+horstoeko\ubl\entities\cac\MeterType:
+    properties:
+        meterReading:
+            -
+                Valid: null
+        meterProperty:
+            -
+                Valid: null

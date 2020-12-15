@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Payment. Details
- *  Information directly relating to a specific payment.
+ *  A class to describe a payment.
  *  Payment
  * XSD Type: PaymentType
  */
@@ -17,7 +17,7 @@ class PaymentType
     /**
      * BBIE
      *  Payment. Identifier
-     *  Identifies the payment.
+     *  An identifier for this payment.
      *  0..1
      *  Payment
      *  Identifier
@@ -31,7 +31,7 @@ class PaymentType
     /**
      * BBIE
      *  Payment. Paid_ Amount. Amount
-     *  The amount paid.
+     *  The amount of this payment.
      *  0..1
      *  Payment
      *  Paid
@@ -46,7 +46,7 @@ class PaymentType
     /**
      * BBIE
      *  Payment. Received_ Date. Date
-     *  The date on which the payment was received.
+     *  The date on which this payment was received.
      *  0..1
      *  Payment
      *  Received
@@ -61,7 +61,7 @@ class PaymentType
     /**
      * BBIE
      *  Payment. Paid_ Date. Date
-     *  The date at which the payment was made.
+     *  The date on which this payment was made.
      *  0..1
      *  Payment
      *  Paid
@@ -76,7 +76,7 @@ class PaymentType
     /**
      * BBIE
      *  Payment. Paid_ Time. Time
-     *  The time at which the payment was made.
+     *  The time at which this payment was made.
      *  0..1
      *  Payment
      *  Paid
@@ -91,7 +91,7 @@ class PaymentType
     /**
      * BBIE
      *  Payment. Instruction Identifier. Identifier
-     *  Identifies the Payment Instruction.
+     *  An identifier for the payment instruction.
      *  0..1
      *  Payment
      *  Instruction Identifier
@@ -107,7 +107,7 @@ class PaymentType
      *
      * BBIE
      *  Payment. Identifier
-     *  Identifies the payment.
+     *  An identifier for this payment.
      *  0..1
      *  Payment
      *  Identifier
@@ -126,7 +126,7 @@ class PaymentType
      *
      * BBIE
      *  Payment. Identifier
-     *  Identifies the payment.
+     *  An identifier for this payment.
      *  0..1
      *  Payment
      *  Identifier
@@ -147,7 +147,7 @@ class PaymentType
      *
      * BBIE
      *  Payment. Paid_ Amount. Amount
-     *  The amount paid.
+     *  The amount of this payment.
      *  0..1
      *  Payment
      *  Paid
@@ -167,7 +167,7 @@ class PaymentType
      *
      * BBIE
      *  Payment. Paid_ Amount. Amount
-     *  The amount paid.
+     *  The amount of this payment.
      *  0..1
      *  Payment
      *  Paid
@@ -189,7 +189,7 @@ class PaymentType
      *
      * BBIE
      *  Payment. Received_ Date. Date
-     *  The date on which the payment was received.
+     *  The date on which this payment was received.
      *  0..1
      *  Payment
      *  Received
@@ -209,7 +209,7 @@ class PaymentType
      *
      * BBIE
      *  Payment. Received_ Date. Date
-     *  The date on which the payment was received.
+     *  The date on which this payment was received.
      *  0..1
      *  Payment
      *  Received
@@ -231,7 +231,7 @@ class PaymentType
      *
      * BBIE
      *  Payment. Paid_ Date. Date
-     *  The date at which the payment was made.
+     *  The date on which this payment was made.
      *  0..1
      *  Payment
      *  Paid
@@ -251,7 +251,7 @@ class PaymentType
      *
      * BBIE
      *  Payment. Paid_ Date. Date
-     *  The date at which the payment was made.
+     *  The date on which this payment was made.
      *  0..1
      *  Payment
      *  Paid
@@ -273,7 +273,7 @@ class PaymentType
      *
      * BBIE
      *  Payment. Paid_ Time. Time
-     *  The time at which the payment was made.
+     *  The time at which this payment was made.
      *  0..1
      *  Payment
      *  Paid
@@ -293,7 +293,7 @@ class PaymentType
      *
      * BBIE
      *  Payment. Paid_ Time. Time
-     *  The time at which the payment was made.
+     *  The time at which this payment was made.
      *  0..1
      *  Payment
      *  Paid
@@ -315,7 +315,7 @@ class PaymentType
      *
      * BBIE
      *  Payment. Instruction Identifier. Identifier
-     *  Identifies the Payment Instruction.
+     *  An identifier for the payment instruction.
      *  0..1
      *  Payment
      *  Instruction Identifier
@@ -334,7 +334,7 @@ class PaymentType
      *
      * BBIE
      *  Payment. Instruction Identifier. Identifier
-     *  Identifies the Payment Instruction.
+     *  An identifier for the payment instruction.
      *  0..1
      *  Payment
      *  Instruction Identifier

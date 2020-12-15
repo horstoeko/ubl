@@ -38,6 +38,9 @@ horstoeko\ubl\entities\cac\CatalogueLineType:
         complementaryRelatedItem:
             -
                 Valid: null
+        replacedRelatedItem:
+            -
+                Valid: null
         requiredItemLocationQuantity:
             -
                 Valid: null
@@ -49,5 +52,14 @@ horstoeko\ubl\entities\cac\CatalogueLineType:
                 NotNull:
                     groups:
                         - xsd_rules
+            -
+                Valid: null
+        keywordItemProperty:
+            -
+                Valid: null
+        callForTendersLineReference:
+            -
+                Valid: null
+        callForTendersDocumentReference:
             -
                 Valid: null

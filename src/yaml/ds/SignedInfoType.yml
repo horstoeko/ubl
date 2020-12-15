@@ -1,0 +1,48 @@
+horstoeko\ubl\entities\ds\SignedInfoType:
+    properties:
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: Id
+            accessor:
+                getter: getId
+                setter: setId
+            xml_attribute: true
+            type: string
+        canonicalizationMethod:
+            expose: true
+            access_type: public_method
+            serialized_name: CanonicalizationMethod
+            xml_element:
+                cdata: false
+                namespace: 'http://www.w3.org/2000/09/xmldsig#'
+            accessor:
+                getter: getCanonicalizationMethod
+                setter: setCanonicalizationMethod
+            type: horstoeko\ubl\entities\ds\CanonicalizationMethod
+        signatureMethod:
+            expose: true
+            access_type: public_method
+            serialized_name: SignatureMethod
+            xml_element:
+                cdata: false
+                namespace: 'http://www.w3.org/2000/09/xmldsig#'
+            accessor:
+                getter: getSignatureMethod
+                setter: setSignatureMethod
+            type: horstoeko\ubl\entities\ds\SignatureMethod
+        reference:
+            expose: true
+            access_type: public_method
+            serialized_name: Reference
+            xml_element:
+                cdata: false
+                namespace: 'http://www.w3.org/2000/09/xmldsig#'
+            accessor:
+                getter: getReference
+                setter: setReference
+            xml_list:
+                inline: true
+                entry_name: Reference
+                namespace: 'http://www.w3.org/2000/09/xmldsig#'
+            type: array<horstoeko\ubl\entities\ds\Reference>

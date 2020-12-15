@@ -1,0 +1,15 @@
+horstoeko\ubl\entities\cac\EnvironmentalEmissionType:
+    properties:
+        environmentalEmissionTypeCode:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        valueMeasure:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        emissionCalculationMethod:
+            -
+                Valid: null

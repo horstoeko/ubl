@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Pricing Reference. Details
- *  A reference to Pricing Information.
+ *  A reference to the basis for pricing. This may be based on a catalogue or a quoted amount from a price list and include some alternative pricing conditions.
  *  Pricing Reference
  * XSD Type: PricingReferenceType
  */
@@ -17,10 +17,11 @@ class PricingReferenceType
     /**
      * ASBIE
      *  Pricing Reference. Original_ Item Location Quantity. Item Location Quantity
-     *  An association to the original Item Location Quantity.
+     *  An original set of location-specific properties (e.g., price and quantity) associated with this item.
      *  0..1
      *  Pricing Reference
      *  Original
+     *  Item Location Quantity
      *  Item Location Quantity
      *  Item Location Quantity
      *
@@ -37,6 +38,7 @@ class PricingReferenceType
      *  Alternative Condition
      *  Price
      *  Price
+     *  Price
      *
      * @var \horstoeko\ubl\entities\cac\AlternativeConditionPrice[] $alternativeConditionPrice
      */
@@ -49,10 +51,11 @@ class PricingReferenceType
      *
      * ASBIE
      *  Pricing Reference. Original_ Item Location Quantity. Item Location Quantity
-     *  An association to the original Item Location Quantity.
+     *  An original set of location-specific properties (e.g., price and quantity) associated with this item.
      *  0..1
      *  Pricing Reference
      *  Original
+     *  Item Location Quantity
      *  Item Location Quantity
      *  Item Location Quantity
      *
@@ -68,10 +71,11 @@ class PricingReferenceType
      *
      * ASBIE
      *  Pricing Reference. Original_ Item Location Quantity. Item Location Quantity
-     *  An association to the original Item Location Quantity.
+     *  An original set of location-specific properties (e.g., price and quantity) associated with this item.
      *  0..1
      *  Pricing Reference
      *  Original
+     *  Item Location Quantity
      *  Item Location Quantity
      *  Item Location Quantity
      *
@@ -95,6 +99,7 @@ class PricingReferenceType
      *  Alternative Condition
      *  Price
      *  Price
+     *  Price
      *
      * @return self
      * @param \horstoeko\ubl\entities\cac\AlternativeConditionPrice $alternativeConditionPrice
@@ -114,6 +119,7 @@ class PricingReferenceType
      *  0..n
      *  Pricing Reference
      *  Alternative Condition
+     *  Price
      *  Price
      *  Price
      *
@@ -136,6 +142,7 @@ class PricingReferenceType
      *  Alternative Condition
      *  Price
      *  Price
+     *  Price
      *
      * @param int|string $index
      * @return void
@@ -156,6 +163,7 @@ class PricingReferenceType
      *  Alternative Condition
      *  Price
      *  Price
+     *  Price
      *
      * @return \horstoeko\ubl\entities\cac\AlternativeConditionPrice[]
      */
@@ -173,6 +181,7 @@ class PricingReferenceType
      *  0..n
      *  Pricing Reference
      *  Alternative Condition
+     *  Price
      *  Price
      *  Price
      *

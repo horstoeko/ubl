@@ -1,0 +1,11 @@
+horstoeko\ubl\entities\cac\EventType:
+    properties:
+        currentStatus:
+            -
+                Valid: null
+        contact:
+            -
+                Valid: null
+        occurenceLocation:
+            -
+                Valid: null

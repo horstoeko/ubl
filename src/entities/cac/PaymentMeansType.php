@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Payment Means. Details
- *  Information about Payment Means.
+ *  A class to describe a means of payment.
  *  Payment Means
  * XSD Type: PaymentMeansType
  */
@@ -17,7 +17,7 @@ class PaymentMeansType
     /**
      * BBIE
      *  Payment Means. Identifier
-     *  Identifies the Payment Means.
+     *  An identifier for this means of payment.
      *  0..1
      *  Payment Means
      *  Identifier
@@ -31,11 +31,12 @@ class PaymentMeansType
     /**
      * BBIE
      *  Payment Means. Payment Means Code. Code
-     *  The Payment Means expressed as a code
+     *  A code signifying the type of this means of payment.
      *  1
      *  Payment Means
      *  Payment Means Code
      *  Code
+     *  Payment Means
      *  Payment Means_ Code. Type
      *
      * @var \horstoeko\ubl\entities\cbc\PaymentMeansCode $paymentMeansCode
@@ -45,7 +46,7 @@ class PaymentMeansType
     /**
      * BBIE
      *  Payment Means. Payment Due Date. Date
-     *  The date on which payment is due for the Payment Means.
+     *  The date on which payment is due for this means of payment.
      *  0..1
      *  Payment Means
      *  Payment Due Date
@@ -59,7 +60,7 @@ class PaymentMeansType
     /**
      * BBIE
      *  Payment Means. Payment Channel Code. Code
-     *  The Payment Channel, expressed as a code.
+     *  A code signifying the payment channel for this means of payment.
      *  0..1
      *  Payment Means
      *  Payment Channel Code
@@ -73,7 +74,7 @@ class PaymentMeansType
     /**
      * BBIE
      *  Payment Means. Instruction Identifier. Identifier
-     *  Identifies the Payment Instruction.
+     *  An identifier for the payment instruction.
      *  0..1
      *  Payment Means
      *  Instruction Identifier
@@ -87,7 +88,7 @@ class PaymentMeansType
     /**
      * BBIE
      *  Payment Means. Instruction_ Note. Text
-     *  Free-form text applying to the Payment.
+     *  Free-form text conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Payment Means
      *  Instruction
@@ -104,7 +105,7 @@ class PaymentMeansType
     /**
      * BBIE
      *  Payment Means. Payment Identifier. Identifier
-     *  Identifies the Payment(s).
+     *  An identifier for a payment made using this means of payment.
      *  0..n
      *  Payment Means
      *  Payment Identifier
@@ -120,9 +121,10 @@ class PaymentMeansType
     /**
      * ASBIE
      *  Payment Means. Card Account
-     *  An association to Card Account.
+     *  A credit card, debit card, or charge card account that constitutes this means of payment.
      *  0..1
      *  Payment Means
+     *  Card Account
      *  Card Account
      *  Card Account
      *
@@ -133,10 +135,11 @@ class PaymentMeansType
     /**
      * ASBIE
      *  Payment Means. Payer_ Financial Account. Financial Account
-     *  An association to the payer's Financial Account.
+     *  The payer's financial account.
      *  0..1
      *  Payment Means
      *  Payer
+     *  Financial Account
      *  Financial Account
      *  Financial Account
      *
@@ -147,10 +150,11 @@ class PaymentMeansType
     /**
      * ASBIE
      *  Payment Means. Payee_ Financial Account. Financial Account
-     *  An association to the payee's Financial Account.
+     *  The payee's financial account.
      *  0..1
      *  Payment Means
      *  Payee
+     *  Financial Account
      *  Financial Account
      *  Financial Account
      *
@@ -161,9 +165,10 @@ class PaymentMeansType
     /**
      * ASBIE
      *  Payment Means. Credit Account
-     *  An association to Credit Account.
+     *  A credit account associated with this means of payment.
      *  0..1
      *  Payment Means
+     *  Credit Account
      *  Credit Account
      *  Credit Account
      *
@@ -172,11 +177,39 @@ class PaymentMeansType
     private $creditAccount = null;
 
     /**
+     * ASBIE
+     *  Payment Means. Payment Mandate
+     *  The payment mandate associated with this means of payment.
+     *  0..1
+     *  Payment Means
+     *  Payment Mandate
+     *  Payment Mandate
+     *  Payment Mandate
+     *
+     * @var \horstoeko\ubl\entities\cac\PaymentMandate $paymentMandate
+     */
+    private $paymentMandate = null;
+
+    /**
+     * ASBIE
+     *  Payment Means. Trade Financing
+     *  A trade finance agreement applicable to this means of payment.
+     *  0..1
+     *  Payment Means
+     *  Trade Financing
+     *  Trade Financing
+     *  Trade Financing
+     *
+     * @var \horstoeko\ubl\entities\cac\TradeFinancing $tradeFinancing
+     */
+    private $tradeFinancing = null;
+
+    /**
      * Gets as iD
      *
      * BBIE
      *  Payment Means. Identifier
-     *  Identifies the Payment Means.
+     *  An identifier for this means of payment.
      *  0..1
      *  Payment Means
      *  Identifier
@@ -195,7 +228,7 @@ class PaymentMeansType
      *
      * BBIE
      *  Payment Means. Identifier
-     *  Identifies the Payment Means.
+     *  An identifier for this means of payment.
      *  0..1
      *  Payment Means
      *  Identifier
@@ -216,11 +249,12 @@ class PaymentMeansType
      *
      * BBIE
      *  Payment Means. Payment Means Code. Code
-     *  The Payment Means expressed as a code
+     *  A code signifying the type of this means of payment.
      *  1
      *  Payment Means
      *  Payment Means Code
      *  Code
+     *  Payment Means
      *  Payment Means_ Code. Type
      *
      * @return \horstoeko\ubl\entities\cbc\PaymentMeansCode
@@ -235,11 +269,12 @@ class PaymentMeansType
      *
      * BBIE
      *  Payment Means. Payment Means Code. Code
-     *  The Payment Means expressed as a code
+     *  A code signifying the type of this means of payment.
      *  1
      *  Payment Means
      *  Payment Means Code
      *  Code
+     *  Payment Means
      *  Payment Means_ Code. Type
      *
      * @param \horstoeko\ubl\entities\cbc\PaymentMeansCode $paymentMeansCode
@@ -256,7 +291,7 @@ class PaymentMeansType
      *
      * BBIE
      *  Payment Means. Payment Due Date. Date
-     *  The date on which payment is due for the Payment Means.
+     *  The date on which payment is due for this means of payment.
      *  0..1
      *  Payment Means
      *  Payment Due Date
@@ -275,7 +310,7 @@ class PaymentMeansType
      *
      * BBIE
      *  Payment Means. Payment Due Date. Date
-     *  The date on which payment is due for the Payment Means.
+     *  The date on which payment is due for this means of payment.
      *  0..1
      *  Payment Means
      *  Payment Due Date
@@ -296,7 +331,7 @@ class PaymentMeansType
      *
      * BBIE
      *  Payment Means. Payment Channel Code. Code
-     *  The Payment Channel, expressed as a code.
+     *  A code signifying the payment channel for this means of payment.
      *  0..1
      *  Payment Means
      *  Payment Channel Code
@@ -315,7 +350,7 @@ class PaymentMeansType
      *
      * BBIE
      *  Payment Means. Payment Channel Code. Code
-     *  The Payment Channel, expressed as a code.
+     *  A code signifying the payment channel for this means of payment.
      *  0..1
      *  Payment Means
      *  Payment Channel Code
@@ -336,7 +371,7 @@ class PaymentMeansType
      *
      * BBIE
      *  Payment Means. Instruction Identifier. Identifier
-     *  Identifies the Payment Instruction.
+     *  An identifier for the payment instruction.
      *  0..1
      *  Payment Means
      *  Instruction Identifier
@@ -355,7 +390,7 @@ class PaymentMeansType
      *
      * BBIE
      *  Payment Means. Instruction Identifier. Identifier
-     *  Identifies the Payment Instruction.
+     *  An identifier for the payment instruction.
      *  0..1
      *  Payment Means
      *  Instruction Identifier
@@ -376,7 +411,7 @@ class PaymentMeansType
      *
      * BBIE
      *  Payment Means. Instruction_ Note. Text
-     *  Free-form text applying to the Payment.
+     *  Free-form text conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Payment Means
      *  Instruction
@@ -398,7 +433,7 @@ class PaymentMeansType
      *
      * BBIE
      *  Payment Means. Instruction_ Note. Text
-     *  Free-form text applying to the Payment.
+     *  Free-form text conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Payment Means
      *  Instruction
@@ -419,7 +454,7 @@ class PaymentMeansType
      *
      * BBIE
      *  Payment Means. Instruction_ Note. Text
-     *  Free-form text applying to the Payment.
+     *  Free-form text conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Payment Means
      *  Instruction
@@ -440,7 +475,7 @@ class PaymentMeansType
      *
      * BBIE
      *  Payment Means. Instruction_ Note. Text
-     *  Free-form text applying to the Payment.
+     *  Free-form text conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Payment Means
      *  Instruction
@@ -460,7 +495,7 @@ class PaymentMeansType
      *
      * BBIE
      *  Payment Means. Instruction_ Note. Text
-     *  Free-form text applying to the Payment.
+     *  Free-form text conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Payment Means
      *  Instruction
@@ -482,7 +517,7 @@ class PaymentMeansType
      *
      * BBIE
      *  Payment Means. Payment Identifier. Identifier
-     *  Identifies the Payment(s).
+     *  An identifier for a payment made using this means of payment.
      *  0..n
      *  Payment Means
      *  Payment Identifier
@@ -503,7 +538,7 @@ class PaymentMeansType
      *
      * BBIE
      *  Payment Means. Payment Identifier. Identifier
-     *  Identifies the Payment(s).
+     *  An identifier for a payment made using this means of payment.
      *  0..n
      *  Payment Means
      *  Payment Identifier
@@ -523,7 +558,7 @@ class PaymentMeansType
      *
      * BBIE
      *  Payment Means. Payment Identifier. Identifier
-     *  Identifies the Payment(s).
+     *  An identifier for a payment made using this means of payment.
      *  0..n
      *  Payment Means
      *  Payment Identifier
@@ -543,7 +578,7 @@ class PaymentMeansType
      *
      * BBIE
      *  Payment Means. Payment Identifier. Identifier
-     *  Identifies the Payment(s).
+     *  An identifier for a payment made using this means of payment.
      *  0..n
      *  Payment Means
      *  Payment Identifier
@@ -562,7 +597,7 @@ class PaymentMeansType
      *
      * BBIE
      *  Payment Means. Payment Identifier. Identifier
-     *  Identifies the Payment(s).
+     *  An identifier for a payment made using this means of payment.
      *  0..n
      *  Payment Means
      *  Payment Identifier
@@ -583,9 +618,10 @@ class PaymentMeansType
      *
      * ASBIE
      *  Payment Means. Card Account
-     *  An association to Card Account.
+     *  A credit card, debit card, or charge card account that constitutes this means of payment.
      *  0..1
      *  Payment Means
+     *  Card Account
      *  Card Account
      *  Card Account
      *
@@ -601,9 +637,10 @@ class PaymentMeansType
      *
      * ASBIE
      *  Payment Means. Card Account
-     *  An association to Card Account.
+     *  A credit card, debit card, or charge card account that constitutes this means of payment.
      *  0..1
      *  Payment Means
+     *  Card Account
      *  Card Account
      *  Card Account
      *
@@ -621,10 +658,11 @@ class PaymentMeansType
      *
      * ASBIE
      *  Payment Means. Payer_ Financial Account. Financial Account
-     *  An association to the payer's Financial Account.
+     *  The payer's financial account.
      *  0..1
      *  Payment Means
      *  Payer
+     *  Financial Account
      *  Financial Account
      *  Financial Account
      *
@@ -640,10 +678,11 @@ class PaymentMeansType
      *
      * ASBIE
      *  Payment Means. Payer_ Financial Account. Financial Account
-     *  An association to the payer's Financial Account.
+     *  The payer's financial account.
      *  0..1
      *  Payment Means
      *  Payer
+     *  Financial Account
      *  Financial Account
      *  Financial Account
      *
@@ -661,10 +700,11 @@ class PaymentMeansType
      *
      * ASBIE
      *  Payment Means. Payee_ Financial Account. Financial Account
-     *  An association to the payee's Financial Account.
+     *  The payee's financial account.
      *  0..1
      *  Payment Means
      *  Payee
+     *  Financial Account
      *  Financial Account
      *  Financial Account
      *
@@ -680,10 +720,11 @@ class PaymentMeansType
      *
      * ASBIE
      *  Payment Means. Payee_ Financial Account. Financial Account
-     *  An association to the payee's Financial Account.
+     *  The payee's financial account.
      *  0..1
      *  Payment Means
      *  Payee
+     *  Financial Account
      *  Financial Account
      *  Financial Account
      *
@@ -701,9 +742,10 @@ class PaymentMeansType
      *
      * ASBIE
      *  Payment Means. Credit Account
-     *  An association to Credit Account.
+     *  A credit account associated with this means of payment.
      *  0..1
      *  Payment Means
+     *  Credit Account
      *  Credit Account
      *  Credit Account
      *
@@ -719,9 +761,10 @@ class PaymentMeansType
      *
      * ASBIE
      *  Payment Means. Credit Account
-     *  An association to Credit Account.
+     *  A credit account associated with this means of payment.
      *  0..1
      *  Payment Means
+     *  Credit Account
      *  Credit Account
      *  Credit Account
      *
@@ -731,6 +774,86 @@ class PaymentMeansType
     public function setCreditAccount(\horstoeko\ubl\entities\cac\CreditAccount $creditAccount)
     {
         $this->creditAccount = $creditAccount;
+        return $this;
+    }
+
+    /**
+     * Gets as paymentMandate
+     *
+     * ASBIE
+     *  Payment Means. Payment Mandate
+     *  The payment mandate associated with this means of payment.
+     *  0..1
+     *  Payment Means
+     *  Payment Mandate
+     *  Payment Mandate
+     *  Payment Mandate
+     *
+     * @return \horstoeko\ubl\entities\cac\PaymentMandate
+     */
+    public function getPaymentMandate()
+    {
+        return $this->paymentMandate;
+    }
+
+    /**
+     * Sets a new paymentMandate
+     *
+     * ASBIE
+     *  Payment Means. Payment Mandate
+     *  The payment mandate associated with this means of payment.
+     *  0..1
+     *  Payment Means
+     *  Payment Mandate
+     *  Payment Mandate
+     *  Payment Mandate
+     *
+     * @param \horstoeko\ubl\entities\cac\PaymentMandate $paymentMandate
+     * @return self
+     */
+    public function setPaymentMandate(\horstoeko\ubl\entities\cac\PaymentMandate $paymentMandate)
+    {
+        $this->paymentMandate = $paymentMandate;
+        return $this;
+    }
+
+    /**
+     * Gets as tradeFinancing
+     *
+     * ASBIE
+     *  Payment Means. Trade Financing
+     *  A trade finance agreement applicable to this means of payment.
+     *  0..1
+     *  Payment Means
+     *  Trade Financing
+     *  Trade Financing
+     *  Trade Financing
+     *
+     * @return \horstoeko\ubl\entities\cac\TradeFinancing
+     */
+    public function getTradeFinancing()
+    {
+        return $this->tradeFinancing;
+    }
+
+    /**
+     * Sets a new tradeFinancing
+     *
+     * ASBIE
+     *  Payment Means. Trade Financing
+     *  A trade finance agreement applicable to this means of payment.
+     *  0..1
+     *  Payment Means
+     *  Trade Financing
+     *  Trade Financing
+     *  Trade Financing
+     *
+     * @param \horstoeko\ubl\entities\cac\TradeFinancing $tradeFinancing
+     * @return self
+     */
+    public function setTradeFinancing(\horstoeko\ubl\entities\cac\TradeFinancing $tradeFinancing)
+    {
+        $this->tradeFinancing = $tradeFinancing;
         return $this;
     }
 

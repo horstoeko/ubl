@@ -32,7 +32,11 @@ horstoeko\ubl\entities\cac\InvoiceLineType:
             accessor:
                 getter: getNote
                 setter: setNote
-            type: horstoeko\ubl\entities\cbc\Note
+            xml_list:
+                inline: true
+                entry_name: Note
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Note>
         invoicedQuantity:
             expose: true
             access_type: public_method
@@ -88,6 +92,17 @@ horstoeko\ubl\entities\cac\InvoiceLineType:
                 getter: getAccountingCost
                 setter: setAccountingCost
             type: horstoeko\ubl\entities\cbc\AccountingCost
+        paymentPurposeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: PaymentPurposeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPaymentPurposeCode
+                setter: setPaymentPurposeCode
+            type: horstoeko\ubl\entities\cbc\PaymentPurposeCode
         freeOfChargeIndicator:
             expose: true
             access_type: public_method
@@ -99,6 +114,21 @@ horstoeko\ubl\entities\cac\InvoiceLineType:
                 getter: getFreeOfChargeIndicator
                 setter: setFreeOfChargeIndicator
             type: bool
+        invoicePeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: InvoicePeriod
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getInvoicePeriod
+                setter: setInvoicePeriod
+            xml_list:
+                inline: true
+                entry_name: InvoicePeriod
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\InvoicePeriod>
         orderLineReference:
             expose: true
             access_type: public_method
@@ -256,6 +286,21 @@ horstoeko\ubl\entities\cac\InvoiceLineType:
                 entry_name: TaxTotal
                 namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
             type: array<horstoeko\ubl\entities\cac\TaxTotal>
+        withholdingTaxTotal:
+            expose: true
+            access_type: public_method
+            serialized_name: WithholdingTaxTotal
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getWithholdingTaxTotal
+                setter: setWithholdingTaxTotal
+            xml_list:
+                inline: true
+                entry_name: WithholdingTaxTotal
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\WithholdingTaxTotal>
         item:
             expose: true
             access_type: public_method
@@ -289,3 +334,29 @@ horstoeko\ubl\entities\cac\InvoiceLineType:
                 getter: getDeliveryTerms
                 setter: setDeliveryTerms
             type: horstoeko\ubl\entities\cac\DeliveryTerms
+        subInvoiceLine:
+            expose: true
+            access_type: public_method
+            serialized_name: SubInvoiceLine
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getSubInvoiceLine
+                setter: setSubInvoiceLine
+            xml_list:
+                inline: true
+                entry_name: SubInvoiceLine
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\SubInvoiceLine>
+        itemPriceExtension:
+            expose: true
+            access_type: public_method
+            serialized_name: ItemPriceExtension
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getItemPriceExtension
+                setter: setItemPriceExtension
+            type: horstoeko\ubl\entities\cac\ItemPriceExtension

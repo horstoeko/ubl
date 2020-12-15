@@ -43,7 +43,11 @@ horstoeko\ubl\entities\cac\ShipmentType:
             accessor:
                 getter: getHandlingInstructions
                 setter: setHandlingInstructions
-            type: horstoeko\ubl\entities\cbc\HandlingInstructions
+            xml_list:
+                inline: true
+                entry_name: HandlingInstructions
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\HandlingInstructions>
         information:
             expose: true
             access_type: public_method
@@ -54,7 +58,11 @@ horstoeko\ubl\entities\cac\ShipmentType:
             accessor:
                 getter: getInformation
                 setter: setInformation
-            type: horstoeko\ubl\entities\cbc\Information
+            xml_list:
+                inline: true
+                entry_name: Information
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Information>
         grossWeightMeasure:
             expose: true
             access_type: public_method
@@ -228,6 +236,17 @@ horstoeko\ubl\entities\cac\ShipmentType:
                 getter: getSplitConsignmentIndicator
                 setter: setSplitConsignmentIndicator
             type: bool
+        consignmentQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: ConsignmentQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getConsignmentQuantity
+                setter: setConsignmentQuantity
+            type: horstoeko\ubl\entities\cbc\ConsignmentQuantity
         consignment:
             expose: true
             access_type: public_method
@@ -238,7 +257,11 @@ horstoeko\ubl\entities\cac\ShipmentType:
             accessor:
                 getter: getConsignment
                 setter: setConsignment
-            type: horstoeko\ubl\entities\cac\Consignment
+            xml_list:
+                inline: true
+                entry_name: Consignment
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\Consignment>
         goodsItem:
             expose: true
             access_type: public_method
@@ -295,6 +318,17 @@ horstoeko\ubl\entities\cac\ShipmentType:
                 entry_name: TransportHandlingUnit
                 namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
             type: array<horstoeko\ubl\entities\cac\TransportHandlingUnit>
+        returnAddress:
+            expose: true
+            access_type: public_method
+            serialized_name: ReturnAddress
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getReturnAddress
+                setter: setReturnAddress
+            type: horstoeko\ubl\entities\cac\ReturnAddress
         originAddress:
             expose: true
             access_type: public_method

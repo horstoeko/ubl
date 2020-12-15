@@ -21,7 +21,7 @@ horstoeko\ubl\entities\cac\DocumentDistributionType:
             accessor:
                 getter: getMaximumCopiesNumeric
                 setter: setMaximumCopiesNumeric
-            type: float
+            type: horstoeko\ubl\entities\cbc\MaximumCopiesNumeric
         party:
             expose: true
             access_type: public_method

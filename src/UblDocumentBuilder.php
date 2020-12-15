@@ -10,41 +10,49 @@
 namespace horstoeko\ubl;
 
 use \DateTime;
+use \horstoeko\stringmanagement\StringUtils;
 use \horstoeko\ubl\entities\cbc\ID;
 use \horstoeko\ubl\entities\cbc\Name;
 use \horstoeko\ubl\entities\cbc\Note;
 use \horstoeko\ubl\entities\cac\Party;
-use \horstoeko\ubl\entities\main\Invoice;
-use \horstoeko\ubl\entities\cac\TaxScheme;
-use \horstoeko\ubl\entities\cac\PartyName;
-use \horstoeko\ubl\entities\cac\PartyTaxScheme;
-use \horstoeko\ubl\entities\cbc\InvoiceTypeCode;
-use \horstoeko\ubl\entities\cac\PartyIdentification;
-use \horstoeko\ubl\entities\cbc\DocumentCurrencyCode;
-use \horstoeko\ubl\entities\cac\AccountingSupplierParty;
+use \horstoeko\ubl\entities\cac\Address;
 use \horstoeko\ubl\entities\cac\Contact;
-use \horstoeko\ubl\entities\cac\PostalAddress;
-use \horstoeko\ubl\entities\cbc\AdditionalStreetName;
+use \horstoeko\ubl\entities\cac\Country;
+use \horstoeko\ubl\entities\cbc\Telefax;
+use \horstoeko\ubl\entities\cac\Delivery;
 use \horstoeko\ubl\entities\cbc\CityName;
+use \horstoeko\ubl\entities\main\Invoice;
+use \horstoeko\ubl\entities\cac\PartyName;
+use \horstoeko\ubl\entities\cac\TaxScheme;
 use \horstoeko\ubl\entities\cbc\CompanyID;
+use \horstoeko\ubl\entities\cbc\Telephone;
+use \horstoeko\ubl\entities\cac\PayeeParty;
 use \horstoeko\ubl\entities\cbc\PostalZone;
 use \horstoeko\ubl\entities\cbc\StreetName;
-use \horstoeko\ubl\entities\cac\Country;
+use \horstoeko\ubl\entities\cbc\SalesOrderID;
+use \horstoeko\ubl\entities\cac\DeliveryParty;
+use \horstoeko\ubl\entities\cac\PostalAddress;
+use \horstoeko\ubl\entities\cac\OrderReference;
+use \horstoeko\ubl\entities\cac\PartyTaxScheme;
+use \horstoeko\ubl\entities\cbc\ElectronicMail;
+use \horstoeko\ubl\entities\cbc\CustomizationID;
+use \horstoeko\ubl\entities\cbc\InvoiceTypeCode;
+use \horstoeko\ubl\entities\cac\DeliveryLocation;
 use \horstoeko\ubl\entities\cac\PartyLegalEntity;
 use \horstoeko\ubl\entities\cbc\CountrySubentity;
-use \horstoeko\ubl\entities\cbc\ElectronicMail;
-use \horstoeko\ubl\entities\cbc\IdentificationCode;
 use \horstoeko\ubl\entities\cbc\RegistrationName;
-use \horstoeko\ubl\entities\cbc\Telefax;
-use \horstoeko\ubl\entities\cbc\Telephone;
-use \horstoeko\ubl\entities\cac\AccountingCustomerParty;
-use \horstoeko\ubl\entities\cac\Address;
-use \horstoeko\ubl\entities\cac\Delivery;
-use \horstoeko\ubl\entities\cac\DeliveryLocation;
-use \horstoeko\ubl\entities\cac\DeliveryParty;
-use \horstoeko\ubl\entities\cac\PayeeParty;
+use \horstoeko\ubl\entities\cbc\IdentificationCode;
+use \horstoeko\ubl\entities\cac\PartyIdentification;
+use \horstoeko\ubl\entities\cbc\AdditionalStreetName;
+use \horstoeko\ubl\entities\cbc\DocumentCurrencyCode;
 use \horstoeko\ubl\entities\cac\TaxRepresentativeParty;
-use \horstoeko\ubl\entities\cbc\CustomizationID;
+use \horstoeko\ubl\entities\cac\AccountingCustomerParty;
+use \horstoeko\ubl\entities\cac\AccountingSupplierParty;
+use \horstoeko\ubl\entities\cac\AdditionalDocumentReference;
+use \horstoeko\ubl\entities\cac\ContractDocumentReference;
+use horstoeko\ubl\entities\cbc\BuyerReference;
+use horstoeko\ubl\entities\cbc\DocumentDescription;
+use \horstoeko\ubl\entities\cbc\DocumentTypeCode;
 
 /**
  * Class representing the ubl invoice builder
@@ -194,7 +202,7 @@ class UblDocumentBuilder extends UblDocument
      */
     public function setDocumentBuyerReference(string $buyerreference): UblDocumentBuilder
     {
-        $this->invoiceObject->setBuyerReference($buyerreference);
+        $this->invoiceObject->setBuyerReference(new BuyerReference($buyerreference));
         return $this;
     }
 
@@ -1085,6 +1093,129 @@ class UblDocumentBuilder extends UblDocument
         $payeeParty->setContact($contact);
 
         $this->invoiceObject->setPayeeParty($payeeParty);
+
+        return $this;
+    }
+
+    // TODO: DeliveryTerms goes here
+
+    /**
+     * Set details of the associated order confirmation
+     *
+     * @param string $issuerassignedid
+     * An identifier issued by the seller for a referenced sales order (Order confirmation number)
+     * @param DateTime|null $issueddate
+     * Order confirmation date
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentSellerOrderReferencedDocument(string $issuerassignedid, ?DateTime $issueddate = null): UblDocumentBuilder
+    {
+        $orderReference = $this->invoiceObject->getOrderReference() ?? $this->invoiceObject->setOrderReference(new OrderReference())->getOrderReference();
+
+        $orderReference->setSalesOrderID(new SalesOrderID($issuerassignedid));
+        $this->invoiceObject->setOrderReference($orderReference);
+
+        return $this;
+    }
+
+    /**
+     * Set details of the related buyer order
+     *
+     * @param string $issuerassignedid
+     * An identifier issued by the buyer for a referenced order (order number)
+     * @param DateTime|null $issueddate
+     * Date of order
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentBuyerOrderReferencedDocument(string $issuerassignedid, ?DateTime $issueddate = null): UblDocumentBuilder
+    {
+        $orderReference = $this->invoiceObject->getOrderReference() ?? $this->invoiceObject->setOrderReference(new OrderReference())->getOrderReference();
+
+        $orderReference->setID(new Id($issuerassignedid));
+        if ($issueddate != null) $orderReference->setIssueDate($issueddate);
+
+        $this->invoiceObject->setOrderReference($orderReference);
+
+        return $this;
+    }
+
+    /**
+     * Set details of the associated contract
+     *
+     * @param string $issuerassignedid
+     * The contract reference should be assigned once in the context of the specific trade relationship and for a
+     * defined period of time (contract number)
+     * @param DateTime|null $issueddate
+     * Contract date
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentContractReferencedDocument(string $issuerassignedid, ?DateTime $issueddate = null): UblDocumentBuilder
+    {
+        $contractReference =
+            isset($this->invoiceObject->getContractDocumentReference()[0]) ?
+            $this->invoiceObject->getContractDocumentReference()[0] :
+            $this->invoiceObject->addToContractDocumentReference(new ContractDocumentReference())->getContractDocumentReference()[0];
+
+        $contractReference->setId(new Id($issuerassignedid));
+        if ($issueddate != null) $contractReference->setIssueDate($issueddate);
+
+        return $this;
+    }
+
+    /**
+     * Set information about billing documents that provide evidence of claims made in the bill
+     *
+     * __Notes__
+     *  - The documents justifying the invoice can be used to reference a document number, which should be
+     *    known to the recipient, as well as an external document (referenced by a URL) or an embedded document (such
+     *    as a timesheet as a PDF file). The option of linking to an external document is e.g. required when it comes
+     *    to large attachments and / or sensitive information, e.g. for personal services, which must be separated
+     *    from the bill
+     *  - Use ZugferdDocumentReader::firstDocumentAdditionalReferencedDocument and
+     *    ZugferdDocumentReader::nextDocumentAdditionalReferencedDocument to seek between multiple additional referenced
+     *    documents
+     *
+     * @param string $issuerassignedid
+     * The identifier of the tender or lot to which the invoice relates, or an identifier specified by the seller for
+     * an object on which the invoice is based, or an identifier of the document on which the invoice is based.
+     * @param string|null $typecode
+     * Type of referenced document (See codelist UNTDID 1001)
+     *  - Code 916 "reference paper" is used to reference the identification of the document on which the invoice is based
+     *  - Code 50 "Price / sales catalog response" is used to reference the tender or the lot
+     *  - Code 130 "invoice data sheet" is used to reference an identifier for an object specified by the seller.
+     * @param string|null $uriid
+     * The Uniform Resource Locator (URL) at which the external document is available. A means of finding the resource
+     * including the primary access method intended for it, e.g. http: // or ftp: //. The location of the external document
+     * must be used if the buyer needs additional information to support the amounts billed. External documents are not part
+     * of the invoice. Access to external documents can involve certain risks.
+     * @param string|array|null $name
+     * A description of the document, e.g. Hourly billing, usage or consumption report, etc.
+     * @param string|null $reftypecode
+     * The identifier for the identification scheme of the identifier of the item invoiced. If it is not clear to the
+     * recipient which scheme is used for the identifier, an identifier of the scheme should be used, which must be selected
+     * from UNTDID 1153 in accordance with the code list entries.
+     * @param DateTime|null $issueddate
+     * Document date
+     * @param string|null $binarydatafilename
+     * Contains a file name of an attachment document embedded as a binary object
+     * @return ZugferdDocumentBuilder
+     */
+    public function addDocumentAdditionalReferencedDocument(string $issuerassignedid, ?string $typecode = null, ?string $uriid = null, ?string $name = null, ?string $reftypecode = null, ?DateTime $issueddate = null, ?string $binarydatafilename = null): UblDocumentBuilder
+    {
+        $additionalrefdoc = $this->invoiceObject->addToAdditionalDocumentReference(new AdditionalDocumentReference())->getAdditionalDocumentReference();
+        $additionalrefdoc = $additionalrefdoc[count($additionalrefdoc) - 1];
+
+        if (!StringUtils::stringIsNullOrEmpty($issuerassignedid))
+            $additionalrefdoc->setID(new Id($issuerassignedid));
+
+        if (!StringUtils::stringIsNullOrEmpty($name))
+            $additionalrefdoc->addToDocumentDescription(new DocumentDescription($name));
+
+        if (!StringUtils::stringIsNullOrEmpty($typecode))
+            $additionalrefdoc->setDocumentTypeCode(new DocumentTypeCode($typecode));
+
+        if ($issueddate != null)
+            $additionalrefdoc->setIssueDate($issueddate);
 
         return $this;
     }

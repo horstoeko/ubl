@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Status. Details
- *  The information relevant to a condition or a position of an object.
+ *  A class to describe the condition or position of an object.
  *  Status
  * XSD Type: StatusType
  */
@@ -17,13 +17,12 @@ class StatusType
     /**
      * BBIE
      *  Status. Condition Code. Code
-     *  A code specifying the status condition of the related object.
+     *  Specifies the status condition of the related object.
      *  0..1
      *  Status
      *  Condition Code
      *  Code
-     *  Transportation Status_ Code. Type
-     *  UN/ECE Rec 24
+     *  Code. Type
      *
      * @var \horstoeko\ubl\entities\cbc\ConditionCode $conditionCode
      */
@@ -31,12 +30,11 @@ class StatusType
 
     /**
      * BBIE
-     *  Status. Reference_ Date. Date
-     *  A reference date value for this status.
+     *  Status. Reference Date. Date
+     *  The reference date for this status.
      *  0..1
      *  Status
-     *  Reference
-     *  Date
+     *  Reference Date
      *  Date
      *  Date. Type
      *
@@ -46,12 +44,11 @@ class StatusType
 
     /**
      * BBIE
-     *  Status. Reference_ Time. Time
-     *  A reference time value for this status.
+     *  Status. Reference Time. Time
+     *  The reference time for this status.
      *  0..1
      *  Status
-     *  Reference
-     *  Time
+     *  Reference Time
      *  Time
      *  Time. Type
      *
@@ -62,21 +59,23 @@ class StatusType
     /**
      * BBIE
      *  Status. Description. Text
-     *  A textual description of this status.
-     *  0..1
+     *  Text describing this status.
+     *  0..n
      *  Status
      *  Description
      *  Text
      *  Text. Type
      *
-     * @var \horstoeko\ubl\entities\cbc\Description $description
+     * @var \horstoeko\ubl\entities\cbc\Description[] $description
      */
-    private $description = null;
+    private $description = [
+        
+    ];
 
     /**
      * BBIE
      *  Status. Status Reason Code. Code
-     *  A code specifying a reason for a status condition.
+     *  The reason for this status condition or position, expressed as a code.
      *  0..1
      *  Status
      *  Status Reason Code
@@ -90,25 +89,27 @@ class StatusType
     /**
      * BBIE
      *  Status. Status_ Reason. Text
-     *  The reason, expressed as text, for this status condition or position.
-     *  0..1
+     *  The reason for this status condition or position, expressed as text.
+     *  0..n
      *  Status
      *  Status
      *  Reason
      *  Text
      *  Text. Type
      *
-     * @var \horstoeko\ubl\entities\cbc\StatusReason $statusReason
+     * @var \horstoeko\ubl\entities\cbc\StatusReason[] $statusReason
      */
-    private $statusReason = null;
+    private $statusReason = [
+        
+    ];
 
     /**
      * BBIE
-     *  Status. Sequence. Identifier
-     *  A unique identifier of the sequence of this status.
+     *  Status. Sequence Identifier. Identifier
+     *  A sequence identifier for this status.
      *  0..1
      *  Status
-     *  Sequence
+     *  Sequence Identifier
      *  Identifier
      *  Identifier. Type
      *
@@ -120,15 +121,17 @@ class StatusType
      * BBIE
      *  Status. Text
      *  Provides any textual information related to this status.
-     *  0..1
+     *  0..n
      *  Status
      *  Text
      *  Text
      *  Text. Type
      *
-     * @var \horstoeko\ubl\entities\cbc\Text $text
+     * @var \horstoeko\ubl\entities\cbc\Text[] $text
      */
-    private $text = null;
+    private $text = [
+        
+    ];
 
     /**
      * BBIE
@@ -148,29 +151,58 @@ class StatusType
     /**
      * BBIE
      *  Status. Percent
-     *  Specifies a percentage relevant to a specific status.
+     *  A percentage meaningful in the context of this status.
      *  0..1
      *  Status
      *  Percent
      *  Percent
      *  Percent. Type
      *
-     * @var float $percent
+     * @var \horstoeko\ubl\entities\cbc\Percent $percent
      */
     private $percent = null;
+
+    /**
+     * BBIE
+     *  Status. Reliability Percent. Percent
+     *  The reliability of this status, expressed as a percentage.
+     *  0..1
+     *  Status
+     *  Reliability Percent
+     *  Percent
+     *  Percent. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\ReliabilityPercent $reliabilityPercent
+     */
+    private $reliabilityPercent = null;
+
+    /**
+     * ASBIE
+     *  Status. Condition
+     *  Measurements that quantify the condition of the objects covered by the status.
+     *  0..n
+     *  Status
+     *  Condition
+     *  Condition
+     *  Condition
+     *
+     * @var \horstoeko\ubl\entities\cac\Condition[] $condition
+     */
+    private $condition = [
+        
+    ];
 
     /**
      * Gets as conditionCode
      *
      * BBIE
      *  Status. Condition Code. Code
-     *  A code specifying the status condition of the related object.
+     *  Specifies the status condition of the related object.
      *  0..1
      *  Status
      *  Condition Code
      *  Code
-     *  Transportation Status_ Code. Type
-     *  UN/ECE Rec 24
+     *  Code. Type
      *
      * @return \horstoeko\ubl\entities\cbc\ConditionCode
      */
@@ -184,13 +216,12 @@ class StatusType
      *
      * BBIE
      *  Status. Condition Code. Code
-     *  A code specifying the status condition of the related object.
+     *  Specifies the status condition of the related object.
      *  0..1
      *  Status
      *  Condition Code
      *  Code
-     *  Transportation Status_ Code. Type
-     *  UN/ECE Rec 24
+     *  Code. Type
      *
      * @param \horstoeko\ubl\entities\cbc\ConditionCode $conditionCode
      * @return self
@@ -205,12 +236,11 @@ class StatusType
      * Gets as referenceDate
      *
      * BBIE
-     *  Status. Reference_ Date. Date
-     *  A reference date value for this status.
+     *  Status. Reference Date. Date
+     *  The reference date for this status.
      *  0..1
      *  Status
-     *  Reference
-     *  Date
+     *  Reference Date
      *  Date
      *  Date. Type
      *
@@ -225,12 +255,11 @@ class StatusType
      * Sets a new referenceDate
      *
      * BBIE
-     *  Status. Reference_ Date. Date
-     *  A reference date value for this status.
+     *  Status. Reference Date. Date
+     *  The reference date for this status.
      *  0..1
      *  Status
-     *  Reference
-     *  Date
+     *  Reference Date
      *  Date
      *  Date. Type
      *
@@ -247,12 +276,11 @@ class StatusType
      * Gets as referenceTime
      *
      * BBIE
-     *  Status. Reference_ Time. Time
-     *  A reference time value for this status.
+     *  Status. Reference Time. Time
+     *  The reference time for this status.
      *  0..1
      *  Status
-     *  Reference
-     *  Time
+     *  Reference Time
      *  Time
      *  Time. Type
      *
@@ -267,12 +295,11 @@ class StatusType
      * Sets a new referenceTime
      *
      * BBIE
-     *  Status. Reference_ Time. Time
-     *  A reference time value for this status.
+     *  Status. Reference Time. Time
+     *  The reference time for this status.
      *  0..1
      *  Status
-     *  Reference
-     *  Time
+     *  Reference Time
      *  Time
      *  Time. Type
      *
@@ -286,18 +313,79 @@ class StatusType
     }
 
     /**
-     * Gets as description
+     * Adds as description
      *
      * BBIE
      *  Status. Description. Text
-     *  A textual description of this status.
-     *  0..1
+     *  Text describing this status.
+     *  0..n
      *  Status
      *  Description
      *  Text
      *  Text. Type
      *
-     * @return \horstoeko\ubl\entities\cbc\Description
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\Description $description
+     */
+    public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
+    {
+        $this->description[] = $description;
+        return $this;
+    }
+
+    /**
+     * isset description
+     *
+     * BBIE
+     *  Status. Description. Text
+     *  Text describing this status.
+     *  0..n
+     *  Status
+     *  Description
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetDescription($index)
+    {
+        return isset($this->description[$index]);
+    }
+
+    /**
+     * unset description
+     *
+     * BBIE
+     *  Status. Description. Text
+     *  Text describing this status.
+     *  0..n
+     *  Status
+     *  Description
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetDescription($index)
+    {
+        unset($this->description[$index]);
+    }
+
+    /**
+     * Gets as description
+     *
+     * BBIE
+     *  Status. Description. Text
+     *  Text describing this status.
+     *  0..n
+     *  Status
+     *  Description
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\Description[]
      */
     public function getDescription()
     {
@@ -309,17 +397,17 @@ class StatusType
      *
      * BBIE
      *  Status. Description. Text
-     *  A textual description of this status.
-     *  0..1
+     *  Text describing this status.
+     *  0..n
      *  Status
      *  Description
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
-    public function setDescription(\horstoeko\ubl\entities\cbc\Description $description)
+    public function setDescription(array $description)
     {
         $this->description = $description;
         return $this;
@@ -330,7 +418,7 @@ class StatusType
      *
      * BBIE
      *  Status. Status Reason Code. Code
-     *  A code specifying a reason for a status condition.
+     *  The reason for this status condition or position, expressed as a code.
      *  0..1
      *  Status
      *  Status Reason Code
@@ -349,7 +437,7 @@ class StatusType
      *
      * BBIE
      *  Status. Status Reason Code. Code
-     *  A code specifying a reason for a status condition.
+     *  The reason for this status condition or position, expressed as a code.
      *  0..1
      *  Status
      *  Status Reason Code
@@ -366,19 +454,83 @@ class StatusType
     }
 
     /**
-     * Gets as statusReason
+     * Adds as statusReason
      *
      * BBIE
      *  Status. Status_ Reason. Text
-     *  The reason, expressed as text, for this status condition or position.
-     *  0..1
+     *  The reason for this status condition or position, expressed as text.
+     *  0..n
      *  Status
      *  Status
      *  Reason
      *  Text
      *  Text. Type
      *
-     * @return \horstoeko\ubl\entities\cbc\StatusReason
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\StatusReason $statusReason
+     */
+    public function addToStatusReason(\horstoeko\ubl\entities\cbc\StatusReason $statusReason)
+    {
+        $this->statusReason[] = $statusReason;
+        return $this;
+    }
+
+    /**
+     * isset statusReason
+     *
+     * BBIE
+     *  Status. Status_ Reason. Text
+     *  The reason for this status condition or position, expressed as text.
+     *  0..n
+     *  Status
+     *  Status
+     *  Reason
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetStatusReason($index)
+    {
+        return isset($this->statusReason[$index]);
+    }
+
+    /**
+     * unset statusReason
+     *
+     * BBIE
+     *  Status. Status_ Reason. Text
+     *  The reason for this status condition or position, expressed as text.
+     *  0..n
+     *  Status
+     *  Status
+     *  Reason
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetStatusReason($index)
+    {
+        unset($this->statusReason[$index]);
+    }
+
+    /**
+     * Gets as statusReason
+     *
+     * BBIE
+     *  Status. Status_ Reason. Text
+     *  The reason for this status condition or position, expressed as text.
+     *  0..n
+     *  Status
+     *  Status
+     *  Reason
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\StatusReason[]
      */
     public function getStatusReason()
     {
@@ -390,18 +542,18 @@ class StatusType
      *
      * BBIE
      *  Status. Status_ Reason. Text
-     *  The reason, expressed as text, for this status condition or position.
-     *  0..1
+     *  The reason for this status condition or position, expressed as text.
+     *  0..n
      *  Status
      *  Status
      *  Reason
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\StatusReason $statusReason
+     * @param \horstoeko\ubl\entities\cbc\StatusReason[] $statusReason
      * @return self
      */
-    public function setStatusReason(\horstoeko\ubl\entities\cbc\StatusReason $statusReason)
+    public function setStatusReason(array $statusReason)
     {
         $this->statusReason = $statusReason;
         return $this;
@@ -411,11 +563,11 @@ class StatusType
      * Gets as sequenceID
      *
      * BBIE
-     *  Status. Sequence. Identifier
-     *  A unique identifier of the sequence of this status.
+     *  Status. Sequence Identifier. Identifier
+     *  A sequence identifier for this status.
      *  0..1
      *  Status
-     *  Sequence
+     *  Sequence Identifier
      *  Identifier
      *  Identifier. Type
      *
@@ -430,11 +582,11 @@ class StatusType
      * Sets a new sequenceID
      *
      * BBIE
-     *  Status. Sequence. Identifier
-     *  A unique identifier of the sequence of this status.
+     *  Status. Sequence Identifier. Identifier
+     *  A sequence identifier for this status.
      *  0..1
      *  Status
-     *  Sequence
+     *  Sequence Identifier
      *  Identifier
      *  Identifier. Type
      *
@@ -448,18 +600,79 @@ class StatusType
     }
 
     /**
-     * Gets as text
+     * Adds as text
      *
      * BBIE
      *  Status. Text
      *  Provides any textual information related to this status.
-     *  0..1
+     *  0..n
      *  Status
      *  Text
      *  Text
      *  Text. Type
      *
-     * @return \horstoeko\ubl\entities\cbc\Text
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\Text $text
+     */
+    public function addToText(\horstoeko\ubl\entities\cbc\Text $text)
+    {
+        $this->text[] = $text;
+        return $this;
+    }
+
+    /**
+     * isset text
+     *
+     * BBIE
+     *  Status. Text
+     *  Provides any textual information related to this status.
+     *  0..n
+     *  Status
+     *  Text
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetText($index)
+    {
+        return isset($this->text[$index]);
+    }
+
+    /**
+     * unset text
+     *
+     * BBIE
+     *  Status. Text
+     *  Provides any textual information related to this status.
+     *  0..n
+     *  Status
+     *  Text
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetText($index)
+    {
+        unset($this->text[$index]);
+    }
+
+    /**
+     * Gets as text
+     *
+     * BBIE
+     *  Status. Text
+     *  Provides any textual information related to this status.
+     *  0..n
+     *  Status
+     *  Text
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\Text[]
      */
     public function getText()
     {
@@ -472,16 +685,16 @@ class StatusType
      * BBIE
      *  Status. Text
      *  Provides any textual information related to this status.
-     *  0..1
+     *  0..n
      *  Status
      *  Text
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Text $text
+     * @param \horstoeko\ubl\entities\cbc\Text[] $text
      * @return self
      */
-    public function setText(\horstoeko\ubl\entities\cbc\Text $text)
+    public function setText(array $text)
     {
         $this->text = $text;
         return $this;
@@ -534,14 +747,14 @@ class StatusType
      *
      * BBIE
      *  Status. Percent
-     *  Specifies a percentage relevant to a specific status.
+     *  A percentage meaningful in the context of this status.
      *  0..1
      *  Status
      *  Percent
      *  Percent
      *  Percent. Type
      *
-     * @return float
+     * @return \horstoeko\ubl\entities\cbc\Percent
      */
     public function getPercent()
     {
@@ -553,19 +766,160 @@ class StatusType
      *
      * BBIE
      *  Status. Percent
-     *  Specifies a percentage relevant to a specific status.
+     *  A percentage meaningful in the context of this status.
      *  0..1
      *  Status
      *  Percent
      *  Percent
      *  Percent. Type
      *
-     * @param float $percent
+     * @param \horstoeko\ubl\entities\cbc\Percent $percent
      * @return self
      */
-    public function setPercent($percent)
+    public function setPercent(\horstoeko\ubl\entities\cbc\Percent $percent)
     {
         $this->percent = $percent;
+        return $this;
+    }
+
+    /**
+     * Gets as reliabilityPercent
+     *
+     * BBIE
+     *  Status. Reliability Percent. Percent
+     *  The reliability of this status, expressed as a percentage.
+     *  0..1
+     *  Status
+     *  Reliability Percent
+     *  Percent
+     *  Percent. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\ReliabilityPercent
+     */
+    public function getReliabilityPercent()
+    {
+        return $this->reliabilityPercent;
+    }
+
+    /**
+     * Sets a new reliabilityPercent
+     *
+     * BBIE
+     *  Status. Reliability Percent. Percent
+     *  The reliability of this status, expressed as a percentage.
+     *  0..1
+     *  Status
+     *  Reliability Percent
+     *  Percent
+     *  Percent. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\ReliabilityPercent $reliabilityPercent
+     * @return self
+     */
+    public function setReliabilityPercent(\horstoeko\ubl\entities\cbc\ReliabilityPercent $reliabilityPercent)
+    {
+        $this->reliabilityPercent = $reliabilityPercent;
+        return $this;
+    }
+
+    /**
+     * Adds as condition
+     *
+     * ASBIE
+     *  Status. Condition
+     *  Measurements that quantify the condition of the objects covered by the status.
+     *  0..n
+     *  Status
+     *  Condition
+     *  Condition
+     *  Condition
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\Condition $condition
+     */
+    public function addToCondition(\horstoeko\ubl\entities\cac\Condition $condition)
+    {
+        $this->condition[] = $condition;
+        return $this;
+    }
+
+    /**
+     * isset condition
+     *
+     * ASBIE
+     *  Status. Condition
+     *  Measurements that quantify the condition of the objects covered by the status.
+     *  0..n
+     *  Status
+     *  Condition
+     *  Condition
+     *  Condition
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetCondition($index)
+    {
+        return isset($this->condition[$index]);
+    }
+
+    /**
+     * unset condition
+     *
+     * ASBIE
+     *  Status. Condition
+     *  Measurements that quantify the condition of the objects covered by the status.
+     *  0..n
+     *  Status
+     *  Condition
+     *  Condition
+     *  Condition
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetCondition($index)
+    {
+        unset($this->condition[$index]);
+    }
+
+    /**
+     * Gets as condition
+     *
+     * ASBIE
+     *  Status. Condition
+     *  Measurements that quantify the condition of the objects covered by the status.
+     *  0..n
+     *  Status
+     *  Condition
+     *  Condition
+     *  Condition
+     *
+     * @return \horstoeko\ubl\entities\cac\Condition[]
+     */
+    public function getCondition()
+    {
+        return $this->condition;
+    }
+
+    /**
+     * Sets a new condition
+     *
+     * ASBIE
+     *  Status. Condition
+     *  Measurements that quantify the condition of the objects covered by the status.
+     *  0..n
+     *  Status
+     *  Condition
+     *  Condition
+     *  Condition
+     *
+     * @param \horstoeko\ubl\entities\cac\Condition[] $condition
+     * @return self
+     */
+    public function setCondition(array $condition)
+    {
+        $this->condition = $condition;
         return $this;
     }
 

@@ -1,0 +1,13 @@
+horstoeko\ubl\entities\cac\UtilityItemType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        taxCategory:
+            -
+                Valid: null
+        contract:
+            -
+                Valid: null

@@ -1,0 +1,28 @@
+horstoeko\ubl\entities\cac\TelecommunicationsSupplyLineType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        phoneNumber:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        exchangeRate:
+            -
+                Valid: null
+        allowanceCharge:
+            -
+                Valid: null
+        taxTotal:
+            -
+                Valid: null
+        telecommunicationsService:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

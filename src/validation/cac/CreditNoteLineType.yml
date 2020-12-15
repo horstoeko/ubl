@@ -5,6 +5,12 @@ horstoeko\ubl\entities\cac\CreditNoteLineType:
                 NotNull:
                     groups:
                         - xsd_rules
+        invoicePeriod:
+            -
+                Valid: null
+        orderLineReference:
+            -
+                Valid: null
         discrepancyResponse:
             -
                 Valid: null
@@ -23,15 +29,33 @@ horstoeko\ubl\entities\cac\CreditNoteLineType:
         pricingReference:
             -
                 Valid: null
+        originatorParty:
+            -
+                Valid: null
         delivery:
             -
                 Valid: null
+        paymentTerms:
+            -
+                Valid: null
         taxTotal:
+            -
+                Valid: null
+        allowanceCharge:
             -
                 Valid: null
         item:
             -
                 Valid: null
         price:
+            -
+                Valid: null
+        deliveryTerms:
+            -
+                Valid: null
+        subCreditNoteLine:
+            -
+                Valid: null
+        itemPriceExtension:
             -
                 Valid: null

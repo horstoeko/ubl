@@ -1,0 +1,5 @@
+horstoeko\ubl\entities\cac\RequestedTenderTotalType:
+    properties:
+        applicableTaxCategory:
+            -
+                Valid: null

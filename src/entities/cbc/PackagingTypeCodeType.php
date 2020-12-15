@@ -2,7 +2,7 @@
 
 namespace horstoeko\ubl\entities\cbc;
 
-use horstoeko\ubl\entities\qdt\PackagingTypeCodeType as PackagingTypeCodeTypeBase;
+use horstoeko\ubl\entities\udt\CodeType;
 
 /**
  * Class representing PackagingTypeCodeType
@@ -10,7 +10,7 @@ use horstoeko\ubl\entities\qdt\PackagingTypeCodeType as PackagingTypeCodeTypeBas
  *
  * XSD Type: PackagingTypeCodeType
  */
-class PackagingTypeCodeType extends PackagingTypeCodeTypeBase
+class PackagingTypeCodeType extends CodeType
 {
 
 

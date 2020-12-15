@@ -1,0 +1,79 @@
+horstoeko\ubl\entities\cac\ImmobilizedSecurityType:
+    properties:
+        immobilizationCertificateID:
+            expose: true
+            access_type: public_method
+            serialized_name: ImmobilizationCertificateID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getImmobilizationCertificateID
+                setter: setImmobilizationCertificateID
+            type: horstoeko\ubl\entities\cbc\ImmobilizationCertificateID
+        securityID:
+            expose: true
+            access_type: public_method
+            serialized_name: SecurityID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getSecurityID
+                setter: setSecurityID
+            type: horstoeko\ubl\entities\cbc\SecurityID
+        issueDate:
+            expose: true
+            access_type: public_method
+            serialized_name: IssueDate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getIssueDate
+                setter: setIssueDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        faceValueAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: FaceValueAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getFaceValueAmount
+                setter: setFaceValueAmount
+            type: horstoeko\ubl\entities\cbc\FaceValueAmount
+        marketValueAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: MarketValueAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMarketValueAmount
+                setter: setMarketValueAmount
+            type: horstoeko\ubl\entities\cbc\MarketValueAmount
+        sharesNumberQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: SharesNumberQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getSharesNumberQuantity
+                setter: setSharesNumberQuantity
+            type: horstoeko\ubl\entities\cbc\SharesNumberQuantity
+        issuerParty:
+            expose: true
+            access_type: public_method
+            serialized_name: IssuerParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getIssuerParty
+                setter: setIssuerParty
+            type: horstoeko\ubl\entities\cac\IssuerParty

@@ -43,6 +43,12 @@ horstoeko\ubl\entities\cac\CertificateOfOriginApplicationType:
                         - xsd_rules
             -
                 Valid: null
+        exporterParty:
+            -
+                Valid: null
+        importerParty:
+            -
+                Valid: null
         issuingCountry:
             -
                 NotNull:

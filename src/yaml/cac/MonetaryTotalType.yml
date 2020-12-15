@@ -88,3 +88,14 @@ horstoeko\ubl\entities\cac\MonetaryTotalType:
                 getter: getPayableAmount
                 setter: setPayableAmount
             type: horstoeko\ubl\entities\cbc\PayableAmount
+        payableAlternativeAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: PayableAlternativeAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPayableAlternativeAmount
+                setter: setPayableAlternativeAmount
+            type: horstoeko\ubl\entities\cbc\PayableAlternativeAmount

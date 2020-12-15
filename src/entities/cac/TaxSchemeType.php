@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Tax Scheme. Details
- *  Information about a tax scheme.
+ *  A class to describe a taxation scheme (e.g., VAT, State tax, County tax).
  *  Tax Scheme
  * XSD Type: TaxSchemeType
  */
@@ -17,13 +17,13 @@ class TaxSchemeType
     /**
      * BBIE
      *  Tax Scheme. Identifier
-     *  Identifies the tax scheme.
+     *  An identifier for this taxation scheme.
      *  0..1
      *  Tax Scheme
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "VAT", "GST"
+     *  http://www.unece.org/uncefact/codelist/standard/EDIFICASEU_TaxExemptionReason_D09B.xsd
      *
      * @var \horstoeko\ubl\entities\cbc\ID $iD
      */
@@ -32,13 +32,13 @@ class TaxSchemeType
     /**
      * BBIE
      *  Tax Scheme. Name
-     *  The name of the tax scheme.
+     *  The name of this taxation scheme.
      *  0..1
      *  Tax Scheme
      *  Name
      *  Name
      *  Name. Type
-     *  "Value Added Tax", "Wholesale Tax", "Sales Tax", "State Tax"
+     *  Value Added Tax , Wholesale Tax , Sales Tax , State Tax
      *
      * @var \horstoeko\ubl\entities\cbc\Name $name
      */
@@ -47,13 +47,13 @@ class TaxSchemeType
     /**
      * BBIE
      *  Tax Scheme. Tax Type Code. Code
-     *  An identifier for the tax type.
+     *  A code signifying the type of tax.
      *  0..1
      *  Tax Scheme
      *  Tax Type Code
      *  Code
      *  Code. Type
-     *  "Consumption", "Sales"
+     *  Consumption , Sales
      *
      * @var \horstoeko\ubl\entities\cbc\TaxTypeCode $taxTypeCode
      */
@@ -62,11 +62,12 @@ class TaxSchemeType
     /**
      * BBIE
      *  Tax Scheme. Currency Code. Code
-     *  The currency in which the tax is collected and reported, expressed as a code.
+     *  A code signifying the currency in which the tax is collected and reported.
      *  0..1
      *  Tax Scheme
      *  Currency Code
      *  Code
+     *  Currency
      *  Currency_ Code. Type
      *
      * @var \horstoeko\ubl\entities\cbc\CurrencyCode $currencyCode
@@ -76,10 +77,11 @@ class TaxSchemeType
     /**
      * ASBIE
      *  Tax Scheme. Jurisdiction Region_ Address. Address
-     *  An association with Address (of taxation jurisdiction).
+     *  A geographic area in which this taxation scheme applies.
      *  0..n
      *  Tax Scheme
      *  Jurisdiction Region
+     *  Address
      *  Address
      *  Address
      *
@@ -94,13 +96,13 @@ class TaxSchemeType
      *
      * BBIE
      *  Tax Scheme. Identifier
-     *  Identifies the tax scheme.
+     *  An identifier for this taxation scheme.
      *  0..1
      *  Tax Scheme
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "VAT", "GST"
+     *  http://www.unece.org/uncefact/codelist/standard/EDIFICASEU_TaxExemptionReason_D09B.xsd
      *
      * @return \horstoeko\ubl\entities\cbc\ID
      */
@@ -114,13 +116,13 @@ class TaxSchemeType
      *
      * BBIE
      *  Tax Scheme. Identifier
-     *  Identifies the tax scheme.
+     *  An identifier for this taxation scheme.
      *  0..1
      *  Tax Scheme
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "VAT", "GST"
+     *  http://www.unece.org/uncefact/codelist/standard/EDIFICASEU_TaxExemptionReason_D09B.xsd
      *
      * @param \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
@@ -136,13 +138,13 @@ class TaxSchemeType
      *
      * BBIE
      *  Tax Scheme. Name
-     *  The name of the tax scheme.
+     *  The name of this taxation scheme.
      *  0..1
      *  Tax Scheme
      *  Name
      *  Name
      *  Name. Type
-     *  "Value Added Tax", "Wholesale Tax", "Sales Tax", "State Tax"
+     *  Value Added Tax , Wholesale Tax , Sales Tax , State Tax
      *
      * @return \horstoeko\ubl\entities\cbc\Name
      */
@@ -156,13 +158,13 @@ class TaxSchemeType
      *
      * BBIE
      *  Tax Scheme. Name
-     *  The name of the tax scheme.
+     *  The name of this taxation scheme.
      *  0..1
      *  Tax Scheme
      *  Name
      *  Name
      *  Name. Type
-     *  "Value Added Tax", "Wholesale Tax", "Sales Tax", "State Tax"
+     *  Value Added Tax , Wholesale Tax , Sales Tax , State Tax
      *
      * @param \horstoeko\ubl\entities\cbc\Name $name
      * @return self
@@ -178,13 +180,13 @@ class TaxSchemeType
      *
      * BBIE
      *  Tax Scheme. Tax Type Code. Code
-     *  An identifier for the tax type.
+     *  A code signifying the type of tax.
      *  0..1
      *  Tax Scheme
      *  Tax Type Code
      *  Code
      *  Code. Type
-     *  "Consumption", "Sales"
+     *  Consumption , Sales
      *
      * @return \horstoeko\ubl\entities\cbc\TaxTypeCode
      */
@@ -198,13 +200,13 @@ class TaxSchemeType
      *
      * BBIE
      *  Tax Scheme. Tax Type Code. Code
-     *  An identifier for the tax type.
+     *  A code signifying the type of tax.
      *  0..1
      *  Tax Scheme
      *  Tax Type Code
      *  Code
      *  Code. Type
-     *  "Consumption", "Sales"
+     *  Consumption , Sales
      *
      * @param \horstoeko\ubl\entities\cbc\TaxTypeCode $taxTypeCode
      * @return self
@@ -220,11 +222,12 @@ class TaxSchemeType
      *
      * BBIE
      *  Tax Scheme. Currency Code. Code
-     *  The currency in which the tax is collected and reported, expressed as a code.
+     *  A code signifying the currency in which the tax is collected and reported.
      *  0..1
      *  Tax Scheme
      *  Currency Code
      *  Code
+     *  Currency
      *  Currency_ Code. Type
      *
      * @return \horstoeko\ubl\entities\cbc\CurrencyCode
@@ -239,11 +242,12 @@ class TaxSchemeType
      *
      * BBIE
      *  Tax Scheme. Currency Code. Code
-     *  The currency in which the tax is collected and reported, expressed as a code.
+     *  A code signifying the currency in which the tax is collected and reported.
      *  0..1
      *  Tax Scheme
      *  Currency Code
      *  Code
+     *  Currency
      *  Currency_ Code. Type
      *
      * @param \horstoeko\ubl\entities\cbc\CurrencyCode $currencyCode
@@ -260,10 +264,11 @@ class TaxSchemeType
      *
      * ASBIE
      *  Tax Scheme. Jurisdiction Region_ Address. Address
-     *  An association with Address (of taxation jurisdiction).
+     *  A geographic area in which this taxation scheme applies.
      *  0..n
      *  Tax Scheme
      *  Jurisdiction Region
+     *  Address
      *  Address
      *  Address
      *
@@ -281,10 +286,11 @@ class TaxSchemeType
      *
      * ASBIE
      *  Tax Scheme. Jurisdiction Region_ Address. Address
-     *  An association with Address (of taxation jurisdiction).
+     *  A geographic area in which this taxation scheme applies.
      *  0..n
      *  Tax Scheme
      *  Jurisdiction Region
+     *  Address
      *  Address
      *  Address
      *
@@ -301,10 +307,11 @@ class TaxSchemeType
      *
      * ASBIE
      *  Tax Scheme. Jurisdiction Region_ Address. Address
-     *  An association with Address (of taxation jurisdiction).
+     *  A geographic area in which this taxation scheme applies.
      *  0..n
      *  Tax Scheme
      *  Jurisdiction Region
+     *  Address
      *  Address
      *  Address
      *
@@ -321,10 +328,11 @@ class TaxSchemeType
      *
      * ASBIE
      *  Tax Scheme. Jurisdiction Region_ Address. Address
-     *  An association with Address (of taxation jurisdiction).
+     *  A geographic area in which this taxation scheme applies.
      *  0..n
      *  Tax Scheme
      *  Jurisdiction Region
+     *  Address
      *  Address
      *  Address
      *
@@ -340,10 +348,11 @@ class TaxSchemeType
      *
      * ASBIE
      *  Tax Scheme. Jurisdiction Region_ Address. Address
-     *  An association with Address (of taxation jurisdiction).
+     *  A geographic area in which this taxation scheme applies.
      *  0..n
      *  Tax Scheme
      *  Jurisdiction Region
+     *  Address
      *  Address
      *  Address
      *

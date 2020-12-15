@@ -1,0 +1,17 @@
+horstoeko\ubl\entities\cac\TendererQualificationRequestType:
+    properties:
+        requiredBusinessClassificationScheme:
+            -
+                Valid: null
+        technicalEvaluationCriterion:
+            -
+                Valid: null
+        financialEvaluationCriterion:
+            -
+                Valid: null
+        specificTendererRequirement:
+            -
+                Valid: null
+        economicOperatorRole:
+            -
+                Valid: null

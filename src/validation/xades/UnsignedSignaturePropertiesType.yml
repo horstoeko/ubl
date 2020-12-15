@@ -1,0 +1,41 @@
+horstoeko\ubl\entities\xades\UnsignedSignaturePropertiesType:
+    properties:
+        counterSignature:
+            -
+                Valid: null
+        signatureTimeStamp:
+            -
+                Valid: null
+        completeCertificateRefs:
+            -
+                Valid: null
+        completeRevocationRefs:
+            -
+                Valid: null
+        attributeCertificateRefs:
+            -
+                Valid: null
+        attributeRevocationRefs:
+            -
+                Valid: null
+        sigAndRefsTimeStamp:
+            -
+                Valid: null
+        refsOnlyTimeStamp:
+            -
+                Valid: null
+        certificateValues:
+            -
+                Valid: null
+        revocationValues:
+            -
+                Valid: null
+        attrAuthoritiesCertValues:
+            -
+                Valid: null
+        attributeRevocationValues:
+            -
+                Valid: null
+        archiveTimeStamp:
+            -
+                Valid: null

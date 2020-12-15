@@ -1,0 +1,23 @@
+horstoeko\ubl\entities\cac\QualifyingPartyType:
+    properties:
+        businessClassificationScheme:
+            -
+                Valid: null
+        technicalCapability:
+            -
+                Valid: null
+        financialCapability:
+            -
+                Valid: null
+        completedTask:
+            -
+                Valid: null
+        declaration:
+            -
+                Valid: null
+        party:
+            -
+                Valid: null
+        economicOperatorRole:
+            -
+                Valid: null

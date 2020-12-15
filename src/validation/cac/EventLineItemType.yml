@@ -1,0 +1,15 @@
+horstoeko\ubl\entities\cac\EventLineItemType:
+    properties:
+        participatingLocationsLocation:
+            -
+                Valid: null
+        retailPlannedImpact:
+            -
+                Valid: null
+        supplyItem:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

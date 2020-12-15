@@ -1,0 +1,22 @@
+horstoeko\ubl\entities\ds\KeyInfoType:
+    properties:
+        keyValue:
+            -
+                Valid: null
+        retrievalMethod:
+            -
+                Valid: null
+        x509Data:
+            -
+                Valid: null
+        pGPData:
+            -
+                Valid: null
+        sPKIData:
+            -
+                Count:
+                    max: 2
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

@@ -1,0 +1,8 @@
+horstoeko\ubl\entities\xadesb\ValidationDataType:
+    properties:
+        certificateValues:
+            -
+                Valid: null
+        revocationValues:
+            -
+                Valid: null

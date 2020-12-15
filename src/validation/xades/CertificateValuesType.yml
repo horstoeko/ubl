@@ -1,0 +1,5 @@
+horstoeko\ubl\entities\xades\CertificateValuesType:
+    properties:
+        otherCertificate:
+            -
+                Valid: null

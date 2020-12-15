@@ -1,0 +1,3 @@
+horstoeko\ubl\entities\cbc\ServiceName:
+    xml_root_name: ServiceName
+    xml_root_namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'

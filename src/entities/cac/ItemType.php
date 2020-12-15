@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Item. Details
- *  Information directly relating to an item.
+ *  A class to describe an item of trade. It includes a generic description applicable to all examples of the item together with optional subsidiary descriptions of any number of actual instances of the type.
  *  Item
  *  article, product, goods item
  * XSD Type: ItemType
@@ -18,7 +18,7 @@ class ItemType
     /**
      * BBIE
      *  Item. Description. Text
-     *  Free-form field that can be used to give a text description of the item.
+     *  Text describing this item.
      *  0..n
      *  Item
      *  Description
@@ -34,7 +34,7 @@ class ItemType
     /**
      * BBIE
      *  Item. Pack Quantity. Quantity
-     *  The unit packaging quantity.
+     *  The unit packaging quantity; the number of subunits making up this item.
      *  0..1
      *  Item
      *  Pack Quantity
@@ -48,21 +48,21 @@ class ItemType
     /**
      * BBIE
      *  Item. Pack Size. Numeric
-     *  The number of items in a pack.
+     *  The number of items in a pack of this item.
      *  0..1
      *  Item
      *  Pack Size
      *  Numeric
      *  Numeric. Type
      *
-     * @var float $packSizeNumeric
+     * @var \horstoeko\ubl\entities\cbc\PackSizeNumeric $packSizeNumeric
      */
     private $packSizeNumeric = null;
 
     /**
      * BBIE
      *  Item. Catalogue_ Indicator. Indicator
-     *  Indicates whether the item was ordered from a Catalogue (true) or not (false).
+     *  An indicator that this item was ordered from a catalogue (true) or not (false).
      *  0..1
      *  Item
      *  Catalogue
@@ -77,7 +77,7 @@ class ItemType
     /**
      * BBIE
      *  Item. Name
-     *  A short name optionally given to an item, such as a name from a Catalogue, as distinct from a description.
+     *  A short name optionally given to this item, such as a name from a catalogue, as distinct from a description.
      *  0..1
      *  Item
      *  Name
@@ -91,7 +91,7 @@ class ItemType
     /**
      * BBIE
      *  Item. Hazardous Risk_ Indicator. Indicator
-     *  Indicates whether the item as delivered is hazardous.
+     *  An indication that the transported item, as delivered, is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).
      *  0..1
      *  Item
      *  Hazardous Risk
@@ -107,22 +107,24 @@ class ItemType
     /**
      * BBIE
      *  Item. Additional_ Information. Text
-     *  Provides more details of the item (e.g., the URL of a relevant web page).
-     *  0..1
+     *  Further details regarding this item (e.g., the URL of a relevant web page).
+     *  0..n
      *  Item
      *  Additional
      *  Information
      *  Text
      *  Text. Type
      *
-     * @var \horstoeko\ubl\entities\cbc\AdditionalInformation $additionalInformation
+     * @var \horstoeko\ubl\entities\cbc\AdditionalInformation[] $additionalInformation
      */
-    private $additionalInformation = null;
+    private $additionalInformation = [
+        
+    ];
 
     /**
      * BBIE
      *  Item. Keyword. Text
-     *  A Seller Party-defined search string for the item. Also could be synonyms for identifying the item.
+     *  A keyword (search string) for this item, assigned by the seller party. Can also be a synonym for the name of the item.
      *  0..n
      *  Item
      *  Keyword
@@ -138,7 +140,7 @@ class ItemType
     /**
      * BBIE
      *  Item. Brand Name. Name
-     *  Brand name for the item.
+     *  A brand name of this item.
      *  0..n
      *  Item
      *  Brand Name
@@ -155,13 +157,13 @@ class ItemType
     /**
      * BBIE
      *  Item. Model Name. Name
-     *  Model name for the item.
+     *  A model name of this item.
      *  0..n
      *  Item
      *  Model Name
      *  Name
      *  Name. Type
-     *  "VW Beetle"
+     *  VW Beetle
      *
      * @var \horstoeko\ubl\entities\cbc\ModelName[] $modelName
      */
@@ -172,10 +174,11 @@ class ItemType
     /**
      * ASBIE
      *  Item. Buyers_ Item Identification. Item Identification
-     *  Associates the item with its identification according to the buyer's system.
+     *  Identifying information for this item, assigned by the buyer.
      *  0..1
      *  Item
      *  Buyers
+     *  Item Identification
      *  Item Identification
      *  Item Identification
      *
@@ -186,10 +189,11 @@ class ItemType
     /**
      * ASBIE
      *  Item. Sellers_ Item Identification. Item Identification
-     *  Associates the item with its identification according to the seller's system.
+     *  Identifying information for this item, assigned by the seller.
      *  0..1
      *  Item
      *  Sellers
+     *  Item Identification
      *  Item Identification
      *  Item Identification
      *
@@ -200,10 +204,11 @@ class ItemType
     /**
      * ASBIE
      *  Item. Manufacturers_ Item Identification. Item Identification
-     *  Associates the item with its identification according to the manufacturer's system.
+     *  Identifying information for this item, assigned by the manufacturer.
      *  0..n
      *  Item
      *  Manufacturers
+     *  Item Identification
      *  Item Identification
      *  Item Identification
      *
@@ -216,10 +221,11 @@ class ItemType
     /**
      * ASBIE
      *  Item. Standard_ Item Identification. Item Identification
-     *  Associates the item with its identification according to a standard system.
+     *  Identifying information for this item, assigned according to a standard system.
      *  0..1
      *  Item
      *  Standard
+     *  Item Identification
      *  Item Identification
      *  Item Identification
      *
@@ -230,10 +236,11 @@ class ItemType
     /**
      * ASBIE
      *  Item. Catalogue_ Item Identification. Item Identification
-     *  Associates the item with its identification according to a cataloguing system.
+     *  Identifying information for this item, assigned according to a cataloguing system.
      *  0..1
      *  Item
      *  Catalogue
+     *  Item Identification
      *  Item Identification
      *  Item Identification
      *
@@ -244,10 +251,11 @@ class ItemType
     /**
      * ASBIE
      *  Item. Additional_ Item Identification. Item Identification
-     *  Associates the item with other identification means.
+     *  An additional identifier for this item.
      *  0..n
      *  Item
      *  Additional
+     *  Item Identification
      *  Item Identification
      *  Item Identification
      *
@@ -260,10 +268,11 @@ class ItemType
     /**
      * ASBIE
      *  Item. Catalogue_ Document Reference. Document Reference
-     *  An associative reference to Catalogue.
+     *  A reference to the catalogue in which this item appears.
      *  0..1
      *  Item
      *  Catalogue
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -274,10 +283,11 @@ class ItemType
     /**
      * ASBIE
      *  Item. Item Specification_ Document Reference. Document Reference
-     *  An associative reference to a document providing Item specification.
+     *  A reference to a specification document for this item.
      *  0..n
      *  Item
      *  Item Specification
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -290,10 +300,11 @@ class ItemType
     /**
      * ASBIE
      *  Item. Origin_ Country. Country
-     *  Associates the item with its country of origin.
+     *  The country of origin of this item.
      *  0..1
      *  Item
      *  Origin
+     *  Country
      *  Country
      *  Country
      *
@@ -304,9 +315,10 @@ class ItemType
     /**
      * ASBIE
      *  Item. Commodity Classification
-     *  Associates the item with its classification(s) according to a commodity classifying system.
+     *  A classification of this item according to a specific system for classifying commodities.
      *  0..n
      *  Item
+     *  Commodity Classification
      *  Commodity Classification
      *  Commodity Classification
      *
@@ -319,9 +331,10 @@ class ItemType
     /**
      * ASBIE
      *  Item. Transaction Conditions
-     *  Associates the item with sales conditions appertaining to it.
+     *  A set of sales conditions applying to this item.
      *  0..n
      *  Item
+     *  Transaction Conditions
      *  Transaction Conditions
      *  Transaction Conditions
      *
@@ -334,9 +347,10 @@ class ItemType
     /**
      * ASBIE
      *  Item. Hazardous Item
-     *  Associates the item with its hazardous item information.
+     *  Information pertaining to this item as a hazardous item.
      *  0..n
      *  Item
+     *  Hazardous Item
      *  Hazardous Item
      *  Hazardous Item
      *
@@ -349,10 +363,11 @@ class ItemType
     /**
      * ASBIE
      *  Item. Classified_ Tax Category. Tax Category
-     *  Classifies the item using one or more categories of taxes.
+     *  A tax category applicable to this item.
      *  0..n
      *  Item
      *  Classified
+     *  Tax Category
      *  Tax Category
      *  Tax Category
      *
@@ -365,10 +380,11 @@ class ItemType
     /**
      * ASBIE
      *  Item. Additional_ Item Property. Item Property
-     *  Associates the item with a set of additional properties.
+     *  An additional property of this item.
      *  0..n
      *  Item
      *  Additional
+     *  Item Property
      *  Item Property
      *  Item Property
      *
@@ -381,10 +397,11 @@ class ItemType
     /**
      * ASBIE
      *  Item. Manufacturer_ Party. Party
-     *  Associates the item with its manufacturer.
+     *  The manufacturer of this item.
      *  0..n
      *  Item
      *  Manufacturer
+     *  Party
      *  Party
      *  Party
      *
@@ -397,10 +414,11 @@ class ItemType
     /**
      * ASBIE
      *  Item. Information Content Provider_ Party. Party
-     *  Associates the item with the party responsible for the its specification.
+     *  The party responsible for specification of this item.
      *  0..1
      *  Item
      *  Information Content Provider
+     *  Party
      *  Party
      *  Party
      *
@@ -411,10 +429,11 @@ class ItemType
     /**
      * ASBIE
      *  Item. Origin_ Address. Address
-     *  Associates the item with the region of origin (not the country).
+     *  A region (not country) of origin of this item.
      *  0..n
      *  Item
      *  Origin
+     *  Address
      *  Address
      *  Address
      *
@@ -427,9 +446,10 @@ class ItemType
     /**
      * ASBIE
      *  Item. Item Instance
-     *  An association to Item Instance.
+     *  A trackable, unique instantiation of this item.
      *  0..n
      *  Item
+     *  Item Instance
      *  Item Instance
      *  Item Instance
      *
@@ -440,11 +460,43 @@ class ItemType
     ];
 
     /**
+     * ASBIE
+     *  Item. Certificate
+     *  A certificate associated with this item.
+     *  0..n
+     *  Item
+     *  Certificate
+     *  Certificate
+     *  Certificate
+     *
+     * @var \horstoeko\ubl\entities\cac\Certificate[] $certificate
+     */
+    private $certificate = [
+        
+    ];
+
+    /**
+     * ASBIE
+     *  Item. Dimension
+     *  One of the measurable dimensions (length, mass, weight, or volume) of this item.
+     *  0..n
+     *  Item
+     *  Dimension
+     *  Dimension
+     *  Dimension
+     *
+     * @var \horstoeko\ubl\entities\cac\Dimension[] $dimension
+     */
+    private $dimension = [
+        
+    ];
+
+    /**
      * Adds as description
      *
      * BBIE
      *  Item. Description. Text
-     *  Free-form field that can be used to give a text description of the item.
+     *  Text describing this item.
      *  0..n
      *  Item
      *  Description
@@ -465,7 +517,7 @@ class ItemType
      *
      * BBIE
      *  Item. Description. Text
-     *  Free-form field that can be used to give a text description of the item.
+     *  Text describing this item.
      *  0..n
      *  Item
      *  Description
@@ -485,7 +537,7 @@ class ItemType
      *
      * BBIE
      *  Item. Description. Text
-     *  Free-form field that can be used to give a text description of the item.
+     *  Text describing this item.
      *  0..n
      *  Item
      *  Description
@@ -505,7 +557,7 @@ class ItemType
      *
      * BBIE
      *  Item. Description. Text
-     *  Free-form field that can be used to give a text description of the item.
+     *  Text describing this item.
      *  0..n
      *  Item
      *  Description
@@ -524,7 +576,7 @@ class ItemType
      *
      * BBIE
      *  Item. Description. Text
-     *  Free-form field that can be used to give a text description of the item.
+     *  Text describing this item.
      *  0..n
      *  Item
      *  Description
@@ -545,7 +597,7 @@ class ItemType
      *
      * BBIE
      *  Item. Pack Quantity. Quantity
-     *  The unit packaging quantity.
+     *  The unit packaging quantity; the number of subunits making up this item.
      *  0..1
      *  Item
      *  Pack Quantity
@@ -564,7 +616,7 @@ class ItemType
      *
      * BBIE
      *  Item. Pack Quantity. Quantity
-     *  The unit packaging quantity.
+     *  The unit packaging quantity; the number of subunits making up this item.
      *  0..1
      *  Item
      *  Pack Quantity
@@ -585,14 +637,14 @@ class ItemType
      *
      * BBIE
      *  Item. Pack Size. Numeric
-     *  The number of items in a pack.
+     *  The number of items in a pack of this item.
      *  0..1
      *  Item
      *  Pack Size
      *  Numeric
      *  Numeric. Type
      *
-     * @return float
+     * @return \horstoeko\ubl\entities\cbc\PackSizeNumeric
      */
     public function getPackSizeNumeric()
     {
@@ -604,17 +656,17 @@ class ItemType
      *
      * BBIE
      *  Item. Pack Size. Numeric
-     *  The number of items in a pack.
+     *  The number of items in a pack of this item.
      *  0..1
      *  Item
      *  Pack Size
      *  Numeric
      *  Numeric. Type
      *
-     * @param float $packSizeNumeric
+     * @param \horstoeko\ubl\entities\cbc\PackSizeNumeric $packSizeNumeric
      * @return self
      */
-    public function setPackSizeNumeric($packSizeNumeric)
+    public function setPackSizeNumeric(\horstoeko\ubl\entities\cbc\PackSizeNumeric $packSizeNumeric)
     {
         $this->packSizeNumeric = $packSizeNumeric;
         return $this;
@@ -625,7 +677,7 @@ class ItemType
      *
      * BBIE
      *  Item. Catalogue_ Indicator. Indicator
-     *  Indicates whether the item was ordered from a Catalogue (true) or not (false).
+     *  An indicator that this item was ordered from a catalogue (true) or not (false).
      *  0..1
      *  Item
      *  Catalogue
@@ -645,7 +697,7 @@ class ItemType
      *
      * BBIE
      *  Item. Catalogue_ Indicator. Indicator
-     *  Indicates whether the item was ordered from a Catalogue (true) or not (false).
+     *  An indicator that this item was ordered from a catalogue (true) or not (false).
      *  0..1
      *  Item
      *  Catalogue
@@ -667,7 +719,7 @@ class ItemType
      *
      * BBIE
      *  Item. Name
-     *  A short name optionally given to an item, such as a name from a Catalogue, as distinct from a description.
+     *  A short name optionally given to this item, such as a name from a catalogue, as distinct from a description.
      *  0..1
      *  Item
      *  Name
@@ -686,7 +738,7 @@ class ItemType
      *
      * BBIE
      *  Item. Name
-     *  A short name optionally given to an item, such as a name from a Catalogue, as distinct from a description.
+     *  A short name optionally given to this item, such as a name from a catalogue, as distinct from a description.
      *  0..1
      *  Item
      *  Name
@@ -707,7 +759,7 @@ class ItemType
      *
      * BBIE
      *  Item. Hazardous Risk_ Indicator. Indicator
-     *  Indicates whether the item as delivered is hazardous.
+     *  An indication that the transported item, as delivered, is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).
      *  0..1
      *  Item
      *  Hazardous Risk
@@ -728,7 +780,7 @@ class ItemType
      *
      * BBIE
      *  Item. Hazardous Risk_ Indicator. Indicator
-     *  Indicates whether the item as delivered is hazardous.
+     *  An indication that the transported item, as delivered, is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).
      *  0..1
      *  Item
      *  Hazardous Risk
@@ -747,19 +799,83 @@ class ItemType
     }
 
     /**
-     * Gets as additionalInformation
+     * Adds as additionalInformation
      *
      * BBIE
      *  Item. Additional_ Information. Text
-     *  Provides more details of the item (e.g., the URL of a relevant web page).
-     *  0..1
+     *  Further details regarding this item (e.g., the URL of a relevant web page).
+     *  0..n
      *  Item
      *  Additional
      *  Information
      *  Text
      *  Text. Type
      *
-     * @return \horstoeko\ubl\entities\cbc\AdditionalInformation
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\AdditionalInformation $additionalInformation
+     */
+    public function addToAdditionalInformation(\horstoeko\ubl\entities\cbc\AdditionalInformation $additionalInformation)
+    {
+        $this->additionalInformation[] = $additionalInformation;
+        return $this;
+    }
+
+    /**
+     * isset additionalInformation
+     *
+     * BBIE
+     *  Item. Additional_ Information. Text
+     *  Further details regarding this item (e.g., the URL of a relevant web page).
+     *  0..n
+     *  Item
+     *  Additional
+     *  Information
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetAdditionalInformation($index)
+    {
+        return isset($this->additionalInformation[$index]);
+    }
+
+    /**
+     * unset additionalInformation
+     *
+     * BBIE
+     *  Item. Additional_ Information. Text
+     *  Further details regarding this item (e.g., the URL of a relevant web page).
+     *  0..n
+     *  Item
+     *  Additional
+     *  Information
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetAdditionalInformation($index)
+    {
+        unset($this->additionalInformation[$index]);
+    }
+
+    /**
+     * Gets as additionalInformation
+     *
+     * BBIE
+     *  Item. Additional_ Information. Text
+     *  Further details regarding this item (e.g., the URL of a relevant web page).
+     *  0..n
+     *  Item
+     *  Additional
+     *  Information
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\AdditionalInformation[]
      */
     public function getAdditionalInformation()
     {
@@ -771,18 +887,18 @@ class ItemType
      *
      * BBIE
      *  Item. Additional_ Information. Text
-     *  Provides more details of the item (e.g., the URL of a relevant web page).
-     *  0..1
+     *  Further details regarding this item (e.g., the URL of a relevant web page).
+     *  0..n
      *  Item
      *  Additional
      *  Information
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AdditionalInformation $additionalInformation
+     * @param \horstoeko\ubl\entities\cbc\AdditionalInformation[] $additionalInformation
      * @return self
      */
-    public function setAdditionalInformation(\horstoeko\ubl\entities\cbc\AdditionalInformation $additionalInformation)
+    public function setAdditionalInformation(array $additionalInformation)
     {
         $this->additionalInformation = $additionalInformation;
         return $this;
@@ -793,7 +909,7 @@ class ItemType
      *
      * BBIE
      *  Item. Keyword. Text
-     *  A Seller Party-defined search string for the item. Also could be synonyms for identifying the item.
+     *  A keyword (search string) for this item, assigned by the seller party. Can also be a synonym for the name of the item.
      *  0..n
      *  Item
      *  Keyword
@@ -814,7 +930,7 @@ class ItemType
      *
      * BBIE
      *  Item. Keyword. Text
-     *  A Seller Party-defined search string for the item. Also could be synonyms for identifying the item.
+     *  A keyword (search string) for this item, assigned by the seller party. Can also be a synonym for the name of the item.
      *  0..n
      *  Item
      *  Keyword
@@ -834,7 +950,7 @@ class ItemType
      *
      * BBIE
      *  Item. Keyword. Text
-     *  A Seller Party-defined search string for the item. Also could be synonyms for identifying the item.
+     *  A keyword (search string) for this item, assigned by the seller party. Can also be a synonym for the name of the item.
      *  0..n
      *  Item
      *  Keyword
@@ -854,7 +970,7 @@ class ItemType
      *
      * BBIE
      *  Item. Keyword. Text
-     *  A Seller Party-defined search string for the item. Also could be synonyms for identifying the item.
+     *  A keyword (search string) for this item, assigned by the seller party. Can also be a synonym for the name of the item.
      *  0..n
      *  Item
      *  Keyword
@@ -873,7 +989,7 @@ class ItemType
      *
      * BBIE
      *  Item. Keyword. Text
-     *  A Seller Party-defined search string for the item. Also could be synonyms for identifying the item.
+     *  A keyword (search string) for this item, assigned by the seller party. Can also be a synonym for the name of the item.
      *  0..n
      *  Item
      *  Keyword
@@ -894,7 +1010,7 @@ class ItemType
      *
      * BBIE
      *  Item. Brand Name. Name
-     *  Brand name for the item.
+     *  A brand name of this item.
      *  0..n
      *  Item
      *  Brand Name
@@ -916,7 +1032,7 @@ class ItemType
      *
      * BBIE
      *  Item. Brand Name. Name
-     *  Brand name for the item.
+     *  A brand name of this item.
      *  0..n
      *  Item
      *  Brand Name
@@ -937,7 +1053,7 @@ class ItemType
      *
      * BBIE
      *  Item. Brand Name. Name
-     *  Brand name for the item.
+     *  A brand name of this item.
      *  0..n
      *  Item
      *  Brand Name
@@ -958,7 +1074,7 @@ class ItemType
      *
      * BBIE
      *  Item. Brand Name. Name
-     *  Brand name for the item.
+     *  A brand name of this item.
      *  0..n
      *  Item
      *  Brand Name
@@ -978,7 +1094,7 @@ class ItemType
      *
      * BBIE
      *  Item. Brand Name. Name
-     *  Brand name for the item.
+     *  A brand name of this item.
      *  0..n
      *  Item
      *  Brand Name
@@ -1000,13 +1116,13 @@ class ItemType
      *
      * BBIE
      *  Item. Model Name. Name
-     *  Model name for the item.
+     *  A model name of this item.
      *  0..n
      *  Item
      *  Model Name
      *  Name
      *  Name. Type
-     *  "VW Beetle"
+     *  VW Beetle
      *
      * @return self
      * @param \horstoeko\ubl\entities\cbc\ModelName $modelName
@@ -1022,13 +1138,13 @@ class ItemType
      *
      * BBIE
      *  Item. Model Name. Name
-     *  Model name for the item.
+     *  A model name of this item.
      *  0..n
      *  Item
      *  Model Name
      *  Name
      *  Name. Type
-     *  "VW Beetle"
+     *  VW Beetle
      *
      * @param int|string $index
      * @return bool
@@ -1043,13 +1159,13 @@ class ItemType
      *
      * BBIE
      *  Item. Model Name. Name
-     *  Model name for the item.
+     *  A model name of this item.
      *  0..n
      *  Item
      *  Model Name
      *  Name
      *  Name. Type
-     *  "VW Beetle"
+     *  VW Beetle
      *
      * @param int|string $index
      * @return void
@@ -1064,13 +1180,13 @@ class ItemType
      *
      * BBIE
      *  Item. Model Name. Name
-     *  Model name for the item.
+     *  A model name of this item.
      *  0..n
      *  Item
      *  Model Name
      *  Name
      *  Name. Type
-     *  "VW Beetle"
+     *  VW Beetle
      *
      * @return \horstoeko\ubl\entities\cbc\ModelName[]
      */
@@ -1084,13 +1200,13 @@ class ItemType
      *
      * BBIE
      *  Item. Model Name. Name
-     *  Model name for the item.
+     *  A model name of this item.
      *  0..n
      *  Item
      *  Model Name
      *  Name
      *  Name. Type
-     *  "VW Beetle"
+     *  VW Beetle
      *
      * @param \horstoeko\ubl\entities\cbc\ModelName[] $modelName
      * @return self
@@ -1106,10 +1222,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Buyers_ Item Identification. Item Identification
-     *  Associates the item with its identification according to the buyer's system.
+     *  Identifying information for this item, assigned by the buyer.
      *  0..1
      *  Item
      *  Buyers
+     *  Item Identification
      *  Item Identification
      *  Item Identification
      *
@@ -1125,10 +1242,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Buyers_ Item Identification. Item Identification
-     *  Associates the item with its identification according to the buyer's system.
+     *  Identifying information for this item, assigned by the buyer.
      *  0..1
      *  Item
      *  Buyers
+     *  Item Identification
      *  Item Identification
      *  Item Identification
      *
@@ -1146,10 +1264,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Sellers_ Item Identification. Item Identification
-     *  Associates the item with its identification according to the seller's system.
+     *  Identifying information for this item, assigned by the seller.
      *  0..1
      *  Item
      *  Sellers
+     *  Item Identification
      *  Item Identification
      *  Item Identification
      *
@@ -1165,10 +1284,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Sellers_ Item Identification. Item Identification
-     *  Associates the item with its identification according to the seller's system.
+     *  Identifying information for this item, assigned by the seller.
      *  0..1
      *  Item
      *  Sellers
+     *  Item Identification
      *  Item Identification
      *  Item Identification
      *
@@ -1186,10 +1306,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Manufacturers_ Item Identification. Item Identification
-     *  Associates the item with its identification according to the manufacturer's system.
+     *  Identifying information for this item, assigned by the manufacturer.
      *  0..n
      *  Item
      *  Manufacturers
+     *  Item Identification
      *  Item Identification
      *  Item Identification
      *
@@ -1207,10 +1328,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Manufacturers_ Item Identification. Item Identification
-     *  Associates the item with its identification according to the manufacturer's system.
+     *  Identifying information for this item, assigned by the manufacturer.
      *  0..n
      *  Item
      *  Manufacturers
+     *  Item Identification
      *  Item Identification
      *  Item Identification
      *
@@ -1227,10 +1349,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Manufacturers_ Item Identification. Item Identification
-     *  Associates the item with its identification according to the manufacturer's system.
+     *  Identifying information for this item, assigned by the manufacturer.
      *  0..n
      *  Item
      *  Manufacturers
+     *  Item Identification
      *  Item Identification
      *  Item Identification
      *
@@ -1247,10 +1370,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Manufacturers_ Item Identification. Item Identification
-     *  Associates the item with its identification according to the manufacturer's system.
+     *  Identifying information for this item, assigned by the manufacturer.
      *  0..n
      *  Item
      *  Manufacturers
+     *  Item Identification
      *  Item Identification
      *  Item Identification
      *
@@ -1266,10 +1390,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Manufacturers_ Item Identification. Item Identification
-     *  Associates the item with its identification according to the manufacturer's system.
+     *  Identifying information for this item, assigned by the manufacturer.
      *  0..n
      *  Item
      *  Manufacturers
+     *  Item Identification
      *  Item Identification
      *  Item Identification
      *
@@ -1287,10 +1412,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Standard_ Item Identification. Item Identification
-     *  Associates the item with its identification according to a standard system.
+     *  Identifying information for this item, assigned according to a standard system.
      *  0..1
      *  Item
      *  Standard
+     *  Item Identification
      *  Item Identification
      *  Item Identification
      *
@@ -1306,10 +1432,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Standard_ Item Identification. Item Identification
-     *  Associates the item with its identification according to a standard system.
+     *  Identifying information for this item, assigned according to a standard system.
      *  0..1
      *  Item
      *  Standard
+     *  Item Identification
      *  Item Identification
      *  Item Identification
      *
@@ -1327,10 +1454,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Catalogue_ Item Identification. Item Identification
-     *  Associates the item with its identification according to a cataloguing system.
+     *  Identifying information for this item, assigned according to a cataloguing system.
      *  0..1
      *  Item
      *  Catalogue
+     *  Item Identification
      *  Item Identification
      *  Item Identification
      *
@@ -1346,10 +1474,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Catalogue_ Item Identification. Item Identification
-     *  Associates the item with its identification according to a cataloguing system.
+     *  Identifying information for this item, assigned according to a cataloguing system.
      *  0..1
      *  Item
      *  Catalogue
+     *  Item Identification
      *  Item Identification
      *  Item Identification
      *
@@ -1367,10 +1496,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Additional_ Item Identification. Item Identification
-     *  Associates the item with other identification means.
+     *  An additional identifier for this item.
      *  0..n
      *  Item
      *  Additional
+     *  Item Identification
      *  Item Identification
      *  Item Identification
      *
@@ -1388,10 +1518,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Additional_ Item Identification. Item Identification
-     *  Associates the item with other identification means.
+     *  An additional identifier for this item.
      *  0..n
      *  Item
      *  Additional
+     *  Item Identification
      *  Item Identification
      *  Item Identification
      *
@@ -1408,10 +1539,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Additional_ Item Identification. Item Identification
-     *  Associates the item with other identification means.
+     *  An additional identifier for this item.
      *  0..n
      *  Item
      *  Additional
+     *  Item Identification
      *  Item Identification
      *  Item Identification
      *
@@ -1428,10 +1560,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Additional_ Item Identification. Item Identification
-     *  Associates the item with other identification means.
+     *  An additional identifier for this item.
      *  0..n
      *  Item
      *  Additional
+     *  Item Identification
      *  Item Identification
      *  Item Identification
      *
@@ -1447,10 +1580,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Additional_ Item Identification. Item Identification
-     *  Associates the item with other identification means.
+     *  An additional identifier for this item.
      *  0..n
      *  Item
      *  Additional
+     *  Item Identification
      *  Item Identification
      *  Item Identification
      *
@@ -1468,10 +1602,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Catalogue_ Document Reference. Document Reference
-     *  An associative reference to Catalogue.
+     *  A reference to the catalogue in which this item appears.
      *  0..1
      *  Item
      *  Catalogue
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1487,10 +1622,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Catalogue_ Document Reference. Document Reference
-     *  An associative reference to Catalogue.
+     *  A reference to the catalogue in which this item appears.
      *  0..1
      *  Item
      *  Catalogue
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1508,10 +1644,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Item Specification_ Document Reference. Document Reference
-     *  An associative reference to a document providing Item specification.
+     *  A reference to a specification document for this item.
      *  0..n
      *  Item
      *  Item Specification
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1529,10 +1666,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Item Specification_ Document Reference. Document Reference
-     *  An associative reference to a document providing Item specification.
+     *  A reference to a specification document for this item.
      *  0..n
      *  Item
      *  Item Specification
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1549,10 +1687,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Item Specification_ Document Reference. Document Reference
-     *  An associative reference to a document providing Item specification.
+     *  A reference to a specification document for this item.
      *  0..n
      *  Item
      *  Item Specification
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1569,10 +1708,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Item Specification_ Document Reference. Document Reference
-     *  An associative reference to a document providing Item specification.
+     *  A reference to a specification document for this item.
      *  0..n
      *  Item
      *  Item Specification
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1588,10 +1728,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Item Specification_ Document Reference. Document Reference
-     *  An associative reference to a document providing Item specification.
+     *  A reference to a specification document for this item.
      *  0..n
      *  Item
      *  Item Specification
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1609,10 +1750,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Origin_ Country. Country
-     *  Associates the item with its country of origin.
+     *  The country of origin of this item.
      *  0..1
      *  Item
      *  Origin
+     *  Country
      *  Country
      *  Country
      *
@@ -1628,10 +1770,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Origin_ Country. Country
-     *  Associates the item with its country of origin.
+     *  The country of origin of this item.
      *  0..1
      *  Item
      *  Origin
+     *  Country
      *  Country
      *  Country
      *
@@ -1649,9 +1792,10 @@ class ItemType
      *
      * ASBIE
      *  Item. Commodity Classification
-     *  Associates the item with its classification(s) according to a commodity classifying system.
+     *  A classification of this item according to a specific system for classifying commodities.
      *  0..n
      *  Item
+     *  Commodity Classification
      *  Commodity Classification
      *  Commodity Classification
      *
@@ -1669,9 +1813,10 @@ class ItemType
      *
      * ASBIE
      *  Item. Commodity Classification
-     *  Associates the item with its classification(s) according to a commodity classifying system.
+     *  A classification of this item according to a specific system for classifying commodities.
      *  0..n
      *  Item
+     *  Commodity Classification
      *  Commodity Classification
      *  Commodity Classification
      *
@@ -1688,9 +1833,10 @@ class ItemType
      *
      * ASBIE
      *  Item. Commodity Classification
-     *  Associates the item with its classification(s) according to a commodity classifying system.
+     *  A classification of this item according to a specific system for classifying commodities.
      *  0..n
      *  Item
+     *  Commodity Classification
      *  Commodity Classification
      *  Commodity Classification
      *
@@ -1707,9 +1853,10 @@ class ItemType
      *
      * ASBIE
      *  Item. Commodity Classification
-     *  Associates the item with its classification(s) according to a commodity classifying system.
+     *  A classification of this item according to a specific system for classifying commodities.
      *  0..n
      *  Item
+     *  Commodity Classification
      *  Commodity Classification
      *  Commodity Classification
      *
@@ -1725,9 +1872,10 @@ class ItemType
      *
      * ASBIE
      *  Item. Commodity Classification
-     *  Associates the item with its classification(s) according to a commodity classifying system.
+     *  A classification of this item according to a specific system for classifying commodities.
      *  0..n
      *  Item
+     *  Commodity Classification
      *  Commodity Classification
      *  Commodity Classification
      *
@@ -1745,9 +1893,10 @@ class ItemType
      *
      * ASBIE
      *  Item. Transaction Conditions
-     *  Associates the item with sales conditions appertaining to it.
+     *  A set of sales conditions applying to this item.
      *  0..n
      *  Item
+     *  Transaction Conditions
      *  Transaction Conditions
      *  Transaction Conditions
      *
@@ -1765,9 +1914,10 @@ class ItemType
      *
      * ASBIE
      *  Item. Transaction Conditions
-     *  Associates the item with sales conditions appertaining to it.
+     *  A set of sales conditions applying to this item.
      *  0..n
      *  Item
+     *  Transaction Conditions
      *  Transaction Conditions
      *  Transaction Conditions
      *
@@ -1784,9 +1934,10 @@ class ItemType
      *
      * ASBIE
      *  Item. Transaction Conditions
-     *  Associates the item with sales conditions appertaining to it.
+     *  A set of sales conditions applying to this item.
      *  0..n
      *  Item
+     *  Transaction Conditions
      *  Transaction Conditions
      *  Transaction Conditions
      *
@@ -1803,9 +1954,10 @@ class ItemType
      *
      * ASBIE
      *  Item. Transaction Conditions
-     *  Associates the item with sales conditions appertaining to it.
+     *  A set of sales conditions applying to this item.
      *  0..n
      *  Item
+     *  Transaction Conditions
      *  Transaction Conditions
      *  Transaction Conditions
      *
@@ -1821,9 +1973,10 @@ class ItemType
      *
      * ASBIE
      *  Item. Transaction Conditions
-     *  Associates the item with sales conditions appertaining to it.
+     *  A set of sales conditions applying to this item.
      *  0..n
      *  Item
+     *  Transaction Conditions
      *  Transaction Conditions
      *  Transaction Conditions
      *
@@ -1841,9 +1994,10 @@ class ItemType
      *
      * ASBIE
      *  Item. Hazardous Item
-     *  Associates the item with its hazardous item information.
+     *  Information pertaining to this item as a hazardous item.
      *  0..n
      *  Item
+     *  Hazardous Item
      *  Hazardous Item
      *  Hazardous Item
      *
@@ -1861,9 +2015,10 @@ class ItemType
      *
      * ASBIE
      *  Item. Hazardous Item
-     *  Associates the item with its hazardous item information.
+     *  Information pertaining to this item as a hazardous item.
      *  0..n
      *  Item
+     *  Hazardous Item
      *  Hazardous Item
      *  Hazardous Item
      *
@@ -1880,9 +2035,10 @@ class ItemType
      *
      * ASBIE
      *  Item. Hazardous Item
-     *  Associates the item with its hazardous item information.
+     *  Information pertaining to this item as a hazardous item.
      *  0..n
      *  Item
+     *  Hazardous Item
      *  Hazardous Item
      *  Hazardous Item
      *
@@ -1899,9 +2055,10 @@ class ItemType
      *
      * ASBIE
      *  Item. Hazardous Item
-     *  Associates the item with its hazardous item information.
+     *  Information pertaining to this item as a hazardous item.
      *  0..n
      *  Item
+     *  Hazardous Item
      *  Hazardous Item
      *  Hazardous Item
      *
@@ -1917,9 +2074,10 @@ class ItemType
      *
      * ASBIE
      *  Item. Hazardous Item
-     *  Associates the item with its hazardous item information.
+     *  Information pertaining to this item as a hazardous item.
      *  0..n
      *  Item
+     *  Hazardous Item
      *  Hazardous Item
      *  Hazardous Item
      *
@@ -1937,10 +2095,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Classified_ Tax Category. Tax Category
-     *  Classifies the item using one or more categories of taxes.
+     *  A tax category applicable to this item.
      *  0..n
      *  Item
      *  Classified
+     *  Tax Category
      *  Tax Category
      *  Tax Category
      *
@@ -1958,10 +2117,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Classified_ Tax Category. Tax Category
-     *  Classifies the item using one or more categories of taxes.
+     *  A tax category applicable to this item.
      *  0..n
      *  Item
      *  Classified
+     *  Tax Category
      *  Tax Category
      *  Tax Category
      *
@@ -1978,10 +2138,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Classified_ Tax Category. Tax Category
-     *  Classifies the item using one or more categories of taxes.
+     *  A tax category applicable to this item.
      *  0..n
      *  Item
      *  Classified
+     *  Tax Category
      *  Tax Category
      *  Tax Category
      *
@@ -1998,10 +2159,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Classified_ Tax Category. Tax Category
-     *  Classifies the item using one or more categories of taxes.
+     *  A tax category applicable to this item.
      *  0..n
      *  Item
      *  Classified
+     *  Tax Category
      *  Tax Category
      *  Tax Category
      *
@@ -2017,10 +2179,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Classified_ Tax Category. Tax Category
-     *  Classifies the item using one or more categories of taxes.
+     *  A tax category applicable to this item.
      *  0..n
      *  Item
      *  Classified
+     *  Tax Category
      *  Tax Category
      *  Tax Category
      *
@@ -2038,10 +2201,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Additional_ Item Property. Item Property
-     *  Associates the item with a set of additional properties.
+     *  An additional property of this item.
      *  0..n
      *  Item
      *  Additional
+     *  Item Property
      *  Item Property
      *  Item Property
      *
@@ -2059,10 +2223,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Additional_ Item Property. Item Property
-     *  Associates the item with a set of additional properties.
+     *  An additional property of this item.
      *  0..n
      *  Item
      *  Additional
+     *  Item Property
      *  Item Property
      *  Item Property
      *
@@ -2079,10 +2244,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Additional_ Item Property. Item Property
-     *  Associates the item with a set of additional properties.
+     *  An additional property of this item.
      *  0..n
      *  Item
      *  Additional
+     *  Item Property
      *  Item Property
      *  Item Property
      *
@@ -2099,10 +2265,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Additional_ Item Property. Item Property
-     *  Associates the item with a set of additional properties.
+     *  An additional property of this item.
      *  0..n
      *  Item
      *  Additional
+     *  Item Property
      *  Item Property
      *  Item Property
      *
@@ -2118,10 +2285,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Additional_ Item Property. Item Property
-     *  Associates the item with a set of additional properties.
+     *  An additional property of this item.
      *  0..n
      *  Item
      *  Additional
+     *  Item Property
      *  Item Property
      *  Item Property
      *
@@ -2139,10 +2307,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Manufacturer_ Party. Party
-     *  Associates the item with its manufacturer.
+     *  The manufacturer of this item.
      *  0..n
      *  Item
      *  Manufacturer
+     *  Party
      *  Party
      *  Party
      *
@@ -2160,10 +2329,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Manufacturer_ Party. Party
-     *  Associates the item with its manufacturer.
+     *  The manufacturer of this item.
      *  0..n
      *  Item
      *  Manufacturer
+     *  Party
      *  Party
      *  Party
      *
@@ -2180,10 +2350,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Manufacturer_ Party. Party
-     *  Associates the item with its manufacturer.
+     *  The manufacturer of this item.
      *  0..n
      *  Item
      *  Manufacturer
+     *  Party
      *  Party
      *  Party
      *
@@ -2200,10 +2371,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Manufacturer_ Party. Party
-     *  Associates the item with its manufacturer.
+     *  The manufacturer of this item.
      *  0..n
      *  Item
      *  Manufacturer
+     *  Party
      *  Party
      *  Party
      *
@@ -2219,10 +2391,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Manufacturer_ Party. Party
-     *  Associates the item with its manufacturer.
+     *  The manufacturer of this item.
      *  0..n
      *  Item
      *  Manufacturer
+     *  Party
      *  Party
      *  Party
      *
@@ -2240,10 +2413,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Information Content Provider_ Party. Party
-     *  Associates the item with the party responsible for the its specification.
+     *  The party responsible for specification of this item.
      *  0..1
      *  Item
      *  Information Content Provider
+     *  Party
      *  Party
      *  Party
      *
@@ -2259,10 +2433,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Information Content Provider_ Party. Party
-     *  Associates the item with the party responsible for the its specification.
+     *  The party responsible for specification of this item.
      *  0..1
      *  Item
      *  Information Content Provider
+     *  Party
      *  Party
      *  Party
      *
@@ -2280,10 +2455,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Origin_ Address. Address
-     *  Associates the item with the region of origin (not the country).
+     *  A region (not country) of origin of this item.
      *  0..n
      *  Item
      *  Origin
+     *  Address
      *  Address
      *  Address
      *
@@ -2301,10 +2477,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Origin_ Address. Address
-     *  Associates the item with the region of origin (not the country).
+     *  A region (not country) of origin of this item.
      *  0..n
      *  Item
      *  Origin
+     *  Address
      *  Address
      *  Address
      *
@@ -2321,10 +2498,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Origin_ Address. Address
-     *  Associates the item with the region of origin (not the country).
+     *  A region (not country) of origin of this item.
      *  0..n
      *  Item
      *  Origin
+     *  Address
      *  Address
      *  Address
      *
@@ -2341,10 +2519,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Origin_ Address. Address
-     *  Associates the item with the region of origin (not the country).
+     *  A region (not country) of origin of this item.
      *  0..n
      *  Item
      *  Origin
+     *  Address
      *  Address
      *  Address
      *
@@ -2360,10 +2539,11 @@ class ItemType
      *
      * ASBIE
      *  Item. Origin_ Address. Address
-     *  Associates the item with the region of origin (not the country).
+     *  A region (not country) of origin of this item.
      *  0..n
      *  Item
      *  Origin
+     *  Address
      *  Address
      *  Address
      *
@@ -2381,9 +2561,10 @@ class ItemType
      *
      * ASBIE
      *  Item. Item Instance
-     *  An association to Item Instance.
+     *  A trackable, unique instantiation of this item.
      *  0..n
      *  Item
+     *  Item Instance
      *  Item Instance
      *  Item Instance
      *
@@ -2401,9 +2582,10 @@ class ItemType
      *
      * ASBIE
      *  Item. Item Instance
-     *  An association to Item Instance.
+     *  A trackable, unique instantiation of this item.
      *  0..n
      *  Item
+     *  Item Instance
      *  Item Instance
      *  Item Instance
      *
@@ -2420,9 +2602,10 @@ class ItemType
      *
      * ASBIE
      *  Item. Item Instance
-     *  An association to Item Instance.
+     *  A trackable, unique instantiation of this item.
      *  0..n
      *  Item
+     *  Item Instance
      *  Item Instance
      *  Item Instance
      *
@@ -2439,9 +2622,10 @@ class ItemType
      *
      * ASBIE
      *  Item. Item Instance
-     *  An association to Item Instance.
+     *  A trackable, unique instantiation of this item.
      *  0..n
      *  Item
+     *  Item Instance
      *  Item Instance
      *  Item Instance
      *
@@ -2457,9 +2641,10 @@ class ItemType
      *
      * ASBIE
      *  Item. Item Instance
-     *  An association to Item Instance.
+     *  A trackable, unique instantiation of this item.
      *  0..n
      *  Item
+     *  Item Instance
      *  Item Instance
      *  Item Instance
      *
@@ -2469,6 +2654,208 @@ class ItemType
     public function setItemInstance(array $itemInstance)
     {
         $this->itemInstance = $itemInstance;
+        return $this;
+    }
+
+    /**
+     * Adds as certificate
+     *
+     * ASBIE
+     *  Item. Certificate
+     *  A certificate associated with this item.
+     *  0..n
+     *  Item
+     *  Certificate
+     *  Certificate
+     *  Certificate
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\Certificate $certificate
+     */
+    public function addToCertificate(\horstoeko\ubl\entities\cac\Certificate $certificate)
+    {
+        $this->certificate[] = $certificate;
+        return $this;
+    }
+
+    /**
+     * isset certificate
+     *
+     * ASBIE
+     *  Item. Certificate
+     *  A certificate associated with this item.
+     *  0..n
+     *  Item
+     *  Certificate
+     *  Certificate
+     *  Certificate
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetCertificate($index)
+    {
+        return isset($this->certificate[$index]);
+    }
+
+    /**
+     * unset certificate
+     *
+     * ASBIE
+     *  Item. Certificate
+     *  A certificate associated with this item.
+     *  0..n
+     *  Item
+     *  Certificate
+     *  Certificate
+     *  Certificate
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetCertificate($index)
+    {
+        unset($this->certificate[$index]);
+    }
+
+    /**
+     * Gets as certificate
+     *
+     * ASBIE
+     *  Item. Certificate
+     *  A certificate associated with this item.
+     *  0..n
+     *  Item
+     *  Certificate
+     *  Certificate
+     *  Certificate
+     *
+     * @return \horstoeko\ubl\entities\cac\Certificate[]
+     */
+    public function getCertificate()
+    {
+        return $this->certificate;
+    }
+
+    /**
+     * Sets a new certificate
+     *
+     * ASBIE
+     *  Item. Certificate
+     *  A certificate associated with this item.
+     *  0..n
+     *  Item
+     *  Certificate
+     *  Certificate
+     *  Certificate
+     *
+     * @param \horstoeko\ubl\entities\cac\Certificate[] $certificate
+     * @return self
+     */
+    public function setCertificate(array $certificate)
+    {
+        $this->certificate = $certificate;
+        return $this;
+    }
+
+    /**
+     * Adds as dimension
+     *
+     * ASBIE
+     *  Item. Dimension
+     *  One of the measurable dimensions (length, mass, weight, or volume) of this item.
+     *  0..n
+     *  Item
+     *  Dimension
+     *  Dimension
+     *  Dimension
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\Dimension $dimension
+     */
+    public function addToDimension(\horstoeko\ubl\entities\cac\Dimension $dimension)
+    {
+        $this->dimension[] = $dimension;
+        return $this;
+    }
+
+    /**
+     * isset dimension
+     *
+     * ASBIE
+     *  Item. Dimension
+     *  One of the measurable dimensions (length, mass, weight, or volume) of this item.
+     *  0..n
+     *  Item
+     *  Dimension
+     *  Dimension
+     *  Dimension
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetDimension($index)
+    {
+        return isset($this->dimension[$index]);
+    }
+
+    /**
+     * unset dimension
+     *
+     * ASBIE
+     *  Item. Dimension
+     *  One of the measurable dimensions (length, mass, weight, or volume) of this item.
+     *  0..n
+     *  Item
+     *  Dimension
+     *  Dimension
+     *  Dimension
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetDimension($index)
+    {
+        unset($this->dimension[$index]);
+    }
+
+    /**
+     * Gets as dimension
+     *
+     * ASBIE
+     *  Item. Dimension
+     *  One of the measurable dimensions (length, mass, weight, or volume) of this item.
+     *  0..n
+     *  Item
+     *  Dimension
+     *  Dimension
+     *  Dimension
+     *
+     * @return \horstoeko\ubl\entities\cac\Dimension[]
+     */
+    public function getDimension()
+    {
+        return $this->dimension;
+    }
+
+    /**
+     * Sets a new dimension
+     *
+     * ASBIE
+     *  Item. Dimension
+     *  One of the measurable dimensions (length, mass, weight, or volume) of this item.
+     *  0..n
+     *  Item
+     *  Dimension
+     *  Dimension
+     *  Dimension
+     *
+     * @param \horstoeko\ubl\entities\cac\Dimension[] $dimension
+     * @return self
+     */
+    public function setDimension(array $dimension)
+    {
+        $this->dimension = $dimension;
         return $this;
     }
 

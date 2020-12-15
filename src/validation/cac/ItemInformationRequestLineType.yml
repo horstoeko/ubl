@@ -1,0 +1,16 @@
+horstoeko\ubl\entities\cac\ItemInformationRequestLineType:
+    properties:
+        period:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        salesItem:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

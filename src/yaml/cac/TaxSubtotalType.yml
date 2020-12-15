@@ -32,7 +32,7 @@ horstoeko\ubl\entities\cac\TaxSubtotalType:
             accessor:
                 getter: getCalculationSequenceNumeric
                 setter: setCalculationSequenceNumeric
-            type: float
+            type: horstoeko\ubl\entities\cbc\CalculationSequenceNumeric
         transactionCurrencyTaxAmount:
             expose: true
             access_type: public_method
@@ -54,7 +54,7 @@ horstoeko\ubl\entities\cac\TaxSubtotalType:
             accessor:
                 getter: getPercent
                 setter: setPercent
-            type: float
+            type: horstoeko\ubl\entities\cbc\Percent
         baseUnitMeasure:
             expose: true
             access_type: public_method
@@ -98,7 +98,7 @@ horstoeko\ubl\entities\cac\TaxSubtotalType:
             accessor:
                 getter: getTierRatePercent
                 setter: setTierRatePercent
-            type: float
+            type: horstoeko\ubl\entities\cbc\TierRatePercent
         taxCategory:
             expose: true
             access_type: public_method

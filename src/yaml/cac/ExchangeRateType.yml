@@ -21,7 +21,7 @@ horstoeko\ubl\entities\cac\ExchangeRateType:
             accessor:
                 getter: getSourceCurrencyBaseRate
                 setter: setSourceCurrencyBaseRate
-            type: float
+            type: horstoeko\ubl\entities\cbc\SourceCurrencyBaseRate
         targetCurrencyCode:
             expose: true
             access_type: public_method
@@ -43,7 +43,7 @@ horstoeko\ubl\entities\cac\ExchangeRateType:
             accessor:
                 getter: getTargetCurrencyBaseRate
                 setter: setTargetCurrencyBaseRate
-            type: float
+            type: horstoeko\ubl\entities\cbc\TargetCurrencyBaseRate
         exchangeMarketID:
             expose: true
             access_type: public_method
@@ -65,7 +65,7 @@ horstoeko\ubl\entities\cac\ExchangeRateType:
             accessor:
                 getter: getCalculationRate
                 setter: setCalculationRate
-            type: float
+            type: horstoeko\ubl\entities\cbc\CalculationRate
         mathematicOperatorCode:
             expose: true
             access_type: public_method

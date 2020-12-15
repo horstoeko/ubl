@@ -1,0 +1,539 @@
+horstoeko\ubl\entities\cac\TenderingTermsType:
+    properties:
+        awardingMethodTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: AwardingMethodTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAwardingMethodTypeCode
+                setter: setAwardingMethodTypeCode
+            type: horstoeko\ubl\entities\cbc\AwardingMethodTypeCode
+        priceEvaluationCode:
+            expose: true
+            access_type: public_method
+            serialized_name: PriceEvaluationCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPriceEvaluationCode
+                setter: setPriceEvaluationCode
+            type: horstoeko\ubl\entities\cbc\PriceEvaluationCode
+        maximumVariantQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: MaximumVariantQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMaximumVariantQuantity
+                setter: setMaximumVariantQuantity
+            type: horstoeko\ubl\entities\cbc\MaximumVariantQuantity
+        variantConstraintIndicator:
+            expose: true
+            access_type: public_method
+            serialized_name: VariantConstraintIndicator
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getVariantConstraintIndicator
+                setter: setVariantConstraintIndicator
+            type: bool
+        acceptedVariantsDescription:
+            expose: true
+            access_type: public_method
+            serialized_name: AcceptedVariantsDescription
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAcceptedVariantsDescription
+                setter: setAcceptedVariantsDescription
+            xml_list:
+                inline: true
+                entry_name: AcceptedVariantsDescription
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\AcceptedVariantsDescription>
+        priceRevisionFormulaDescription:
+            expose: true
+            access_type: public_method
+            serialized_name: PriceRevisionFormulaDescription
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPriceRevisionFormulaDescription
+                setter: setPriceRevisionFormulaDescription
+            xml_list:
+                inline: true
+                entry_name: PriceRevisionFormulaDescription
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\PriceRevisionFormulaDescription>
+        fundingProgramCode:
+            expose: true
+            access_type: public_method
+            serialized_name: FundingProgramCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getFundingProgramCode
+                setter: setFundingProgramCode
+            type: horstoeko\ubl\entities\cbc\FundingProgramCode
+        fundingProgram:
+            expose: true
+            access_type: public_method
+            serialized_name: FundingProgram
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getFundingProgram
+                setter: setFundingProgram
+            xml_list:
+                inline: true
+                entry_name: FundingProgram
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\FundingProgram>
+        maximumAdvertisementAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: MaximumAdvertisementAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMaximumAdvertisementAmount
+                setter: setMaximumAdvertisementAmount
+            type: horstoeko\ubl\entities\cbc\MaximumAdvertisementAmount
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: Note
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getNote
+                setter: setNote
+            xml_list:
+                inline: true
+                entry_name: Note
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Note>
+        paymentFrequencyCode:
+            expose: true
+            access_type: public_method
+            serialized_name: PaymentFrequencyCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPaymentFrequencyCode
+                setter: setPaymentFrequencyCode
+            type: horstoeko\ubl\entities\cbc\PaymentFrequencyCode
+        economicOperatorRegistryURI:
+            expose: true
+            access_type: public_method
+            serialized_name: EconomicOperatorRegistryURI
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getEconomicOperatorRegistryURI
+                setter: setEconomicOperatorRegistryURI
+            type: horstoeko\ubl\entities\cbc\EconomicOperatorRegistryURI
+        requiredCurriculaIndicator:
+            expose: true
+            access_type: public_method
+            serialized_name: RequiredCurriculaIndicator
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getRequiredCurriculaIndicator
+                setter: setRequiredCurriculaIndicator
+            type: bool
+        otherConditionsIndicator:
+            expose: true
+            access_type: public_method
+            serialized_name: OtherConditionsIndicator
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getOtherConditionsIndicator
+                setter: setOtherConditionsIndicator
+            type: bool
+        additionalConditions:
+            expose: true
+            access_type: public_method
+            serialized_name: AdditionalConditions
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAdditionalConditions
+                setter: setAdditionalConditions
+            xml_list:
+                inline: true
+                entry_name: AdditionalConditions
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\AdditionalConditions>
+        latestSecurityClearanceDate:
+            expose: true
+            access_type: public_method
+            serialized_name: LatestSecurityClearanceDate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getLatestSecurityClearanceDate
+                setter: setLatestSecurityClearanceDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        documentationFeeAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: DocumentationFeeAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDocumentationFeeAmount
+                setter: setDocumentationFeeAmount
+            type: horstoeko\ubl\entities\cbc\DocumentationFeeAmount
+        penaltyClause:
+            expose: true
+            access_type: public_method
+            serialized_name: PenaltyClause
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPenaltyClause
+                setter: setPenaltyClause
+            xml_list:
+                inline: true
+                entry_name: PenaltyClause
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\PenaltyClause>
+        requiredFinancialGuarantee:
+            expose: true
+            access_type: public_method
+            serialized_name: RequiredFinancialGuarantee
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getRequiredFinancialGuarantee
+                setter: setRequiredFinancialGuarantee
+            xml_list:
+                inline: true
+                entry_name: RequiredFinancialGuarantee
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\RequiredFinancialGuarantee>
+        procurementLegislationDocumentReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ProcurementLegislationDocumentReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getProcurementLegislationDocumentReference
+                setter: setProcurementLegislationDocumentReference
+            type: horstoeko\ubl\entities\cac\ProcurementLegislationDocumentReference
+        fiscalLegislationDocumentReference:
+            expose: true
+            access_type: public_method
+            serialized_name: FiscalLegislationDocumentReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getFiscalLegislationDocumentReference
+                setter: setFiscalLegislationDocumentReference
+            type: horstoeko\ubl\entities\cac\FiscalLegislationDocumentReference
+        environmentalLegislationDocumentReference:
+            expose: true
+            access_type: public_method
+            serialized_name: EnvironmentalLegislationDocumentReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getEnvironmentalLegislationDocumentReference
+                setter: setEnvironmentalLegislationDocumentReference
+            type: horstoeko\ubl\entities\cac\EnvironmentalLegislationDocumentReference
+        employmentLegislationDocumentReference:
+            expose: true
+            access_type: public_method
+            serialized_name: EmploymentLegislationDocumentReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getEmploymentLegislationDocumentReference
+                setter: setEmploymentLegislationDocumentReference
+            type: horstoeko\ubl\entities\cac\EmploymentLegislationDocumentReference
+        contractualDocumentReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ContractualDocumentReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getContractualDocumentReference
+                setter: setContractualDocumentReference
+            xml_list:
+                inline: true
+                entry_name: ContractualDocumentReference
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\ContractualDocumentReference>
+        callForTendersDocumentReference:
+            expose: true
+            access_type: public_method
+            serialized_name: CallForTendersDocumentReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getCallForTendersDocumentReference
+                setter: setCallForTendersDocumentReference
+            type: horstoeko\ubl\entities\cac\CallForTendersDocumentReference
+        warrantyValidityPeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: WarrantyValidityPeriod
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getWarrantyValidityPeriod
+                setter: setWarrantyValidityPeriod
+            type: horstoeko\ubl\entities\cac\WarrantyValidityPeriod
+        paymentTerms:
+            expose: true
+            access_type: public_method
+            serialized_name: PaymentTerms
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPaymentTerms
+                setter: setPaymentTerms
+            xml_list:
+                inline: true
+                entry_name: PaymentTerms
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\PaymentTerms>
+        tendererQualificationRequest:
+            expose: true
+            access_type: public_method
+            serialized_name: TendererQualificationRequest
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getTendererQualificationRequest
+                setter: setTendererQualificationRequest
+            xml_list:
+                inline: true
+                entry_name: TendererQualificationRequest
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\TendererQualificationRequest>
+        allowedSubcontractTerms:
+            expose: true
+            access_type: public_method
+            serialized_name: AllowedSubcontractTerms
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getAllowedSubcontractTerms
+                setter: setAllowedSubcontractTerms
+            xml_list:
+                inline: true
+                entry_name: AllowedSubcontractTerms
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\AllowedSubcontractTerms>
+        tenderPreparation:
+            expose: true
+            access_type: public_method
+            serialized_name: TenderPreparation
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getTenderPreparation
+                setter: setTenderPreparation
+            xml_list:
+                inline: true
+                entry_name: TenderPreparation
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\TenderPreparation>
+        contractExecutionRequirement:
+            expose: true
+            access_type: public_method
+            serialized_name: ContractExecutionRequirement
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getContractExecutionRequirement
+                setter: setContractExecutionRequirement
+            xml_list:
+                inline: true
+                entry_name: ContractExecutionRequirement
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\ContractExecutionRequirement>
+        awardingTerms:
+            expose: true
+            access_type: public_method
+            serialized_name: AwardingTerms
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getAwardingTerms
+                setter: setAwardingTerms
+            type: horstoeko\ubl\entities\cac\AwardingTerms
+        additionalInformationParty:
+            expose: true
+            access_type: public_method
+            serialized_name: AdditionalInformationParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getAdditionalInformationParty
+                setter: setAdditionalInformationParty
+            type: horstoeko\ubl\entities\cac\AdditionalInformationParty
+        documentProviderParty:
+            expose: true
+            access_type: public_method
+            serialized_name: DocumentProviderParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getDocumentProviderParty
+                setter: setDocumentProviderParty
+            type: horstoeko\ubl\entities\cac\DocumentProviderParty
+        tenderRecipientParty:
+            expose: true
+            access_type: public_method
+            serialized_name: TenderRecipientParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getTenderRecipientParty
+                setter: setTenderRecipientParty
+            type: horstoeko\ubl\entities\cac\TenderRecipientParty
+        contractResponsibleParty:
+            expose: true
+            access_type: public_method
+            serialized_name: ContractResponsibleParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getContractResponsibleParty
+                setter: setContractResponsibleParty
+            type: horstoeko\ubl\entities\cac\ContractResponsibleParty
+        tenderEvaluationParty:
+            expose: true
+            access_type: public_method
+            serialized_name: TenderEvaluationParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getTenderEvaluationParty
+                setter: setTenderEvaluationParty
+            xml_list:
+                inline: true
+                entry_name: TenderEvaluationParty
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\TenderEvaluationParty>
+        tenderValidityPeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: TenderValidityPeriod
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getTenderValidityPeriod
+                setter: setTenderValidityPeriod
+            type: horstoeko\ubl\entities\cac\TenderValidityPeriod
+        contractAcceptancePeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: ContractAcceptancePeriod
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getContractAcceptancePeriod
+                setter: setContractAcceptancePeriod
+            type: horstoeko\ubl\entities\cac\ContractAcceptancePeriod
+        appealTerms:
+            expose: true
+            access_type: public_method
+            serialized_name: AppealTerms
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getAppealTerms
+                setter: setAppealTerms
+            type: horstoeko\ubl\entities\cac\AppealTerms
+        language:
+            expose: true
+            access_type: public_method
+            serialized_name: Language
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getLanguage
+                setter: setLanguage
+            xml_list:
+                inline: true
+                entry_name: Language
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\Language>
+        budgetAccountLine:
+            expose: true
+            access_type: public_method
+            serialized_name: BudgetAccountLine
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getBudgetAccountLine
+                setter: setBudgetAccountLine
+            xml_list:
+                inline: true
+                entry_name: BudgetAccountLine
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\BudgetAccountLine>
+        replacedNoticeDocumentReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ReplacedNoticeDocumentReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getReplacedNoticeDocumentReference
+                setter: setReplacedNoticeDocumentReference
+            type: horstoeko\ubl\entities\cac\ReplacedNoticeDocumentReference

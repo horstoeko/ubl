@@ -1,0 +1,11 @@
+horstoeko\ubl\entities\xades\CompleteRevocationRefsType:
+    properties:
+        cRLRefs:
+            -
+                Valid: null
+        oCSPRefs:
+            -
+                Valid: null
+        otherRefs:
+            -
+                Valid: null

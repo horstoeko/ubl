@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Catalogue Line. Details
- *  The basic element of Catalogue; something that can be bought.
+ *  A class to define a line in a Catalogue describing a purchasable item.
  *  Catalogue Line
  * XSD Type: CatalogueLineType
  */
@@ -17,13 +17,13 @@ class CatalogueLineType
     /**
      * BBIE
      *  Catalogue Line. Identifier
-     *  A unique instance identifier for the line in this Catalogue document.
+     *  An identifier for the line in the catalogue.
      *  1
      *  Catalogue Line
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "1"
+     *  1
      *
      * @var \horstoeko\ubl\entities\cbc\ID $iD
      */
@@ -32,13 +32,13 @@ class CatalogueLineType
     /**
      * BBIE
      *  Catalogue Line. Action Code. Code
-     *  Code indicating the action required for this item to synchronize with external repositories.
+     *  A code signifying the action required to synchronize this catalogue line. Recommend codes (delete, update, add)
      *  0..1
      *  Catalogue Line
      *  Action Code
      *  Code
      *  Code. Type
-     *  "Replace", "Update", "Delete","Add"
+     *  Replace , Update , Delete , Add
      *
      * @var \horstoeko\ubl\entities\cbc\ActionCode $actionCode
      */
@@ -47,13 +47,13 @@ class CatalogueLineType
     /**
      * BBIE
      *  Catalogue Line. Life Cycle Status Code. Code
-     *  Code indicating availability of this line.
+     *  A code signifying the life cycle status of this catalogue line. Examples are pre-order, end of production
      *  0..1
      *  Catalogue Line
      *  Life Cycle Status Code
      *  Code
      *  Code. Type
-     *  "new - announcement only", "new and available", "deleted - announcement only"
+     *  new - announcement only , new and available , deleted - announcement only
      *
      * @var \horstoeko\ubl\entities\cbc\LifeCycleStatusCode $lifeCycleStatusCode
      */
@@ -62,13 +62,13 @@ class CatalogueLineType
     /**
      * BBIE
      *  Catalogue Line. Contract Subdivision. Text
-     *  Identifies a subdivision of a contract or tender.
+     *  A subdivision of a contract or tender covering this catalogue line.
      *  0..1
      *  Catalogue Line
      *  Contract Subdivision
      *  Text
      *  Text. Type
-     *  "Installation", "Phase One", Support and Maintenance"
+     *  Installation , Phase One , Support and Maintenance
      *
      * @var \horstoeko\ubl\entities\cbc\ContractSubdivision $contractSubdivision
      */
@@ -77,7 +77,7 @@ class CatalogueLineType
     /**
      * BBIE
      *  Catalogue Line. Note. Text
-     *  Free-text note used for non-structured information about the line in the specific Catalogue document (intended to be human readable).
+     *  Free-form text conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Catalogue Line
      *  Note
@@ -93,7 +93,7 @@ class CatalogueLineType
     /**
      * BBIE
      *  Catalogue Line. Orderable_ Indicator. Indicator
-     *  Indicates whether the line is orderable (that is, not just for information only).
+     *  An indicator that this catalogue line describes an orderable item (true) or is included for reference purposes only (false).
      *  0..1
      *  Catalogue Line
      *  Orderable
@@ -109,7 +109,7 @@ class CatalogueLineType
     /**
      * BBIE
      *  Catalogue Line. Orderable_ Unit. Text
-     *  The unit that can be ordered.
+     *  A textual description of the units in which the item described in this catalogue line can be ordered.
      *  0..1
      *  Catalogue Line
      *  Orderable
@@ -124,13 +124,13 @@ class CatalogueLineType
     /**
      * BBIE
      *  Catalogue Line. Content Unit. Quantity
-     *  The quantity of the order unit of measure of the line.
+     *  The numeric quantity of the ordering unit (and units of measure) of the catalogue line.
      *  0..1
      *  Catalogue Line
      *  Content Unit
      *  Quantity
      *  Quantity. Type
-     *  If order unit measure identifier is "each", then content unit quantity is "1".
+     *  If order unit measure identifier is each , then content unit quantity is 1 .
      *
      * @var \horstoeko\ubl\entities\cbc\ContentUnitQuantity $contentUnitQuantity
      */
@@ -146,21 +146,21 @@ class CatalogueLineType
      *  Numeric
      *  Numeric. Type
      *
-     * @var float $orderQuantityIncrementNumeric
+     * @var \horstoeko\ubl\entities\cbc\OrderQuantityIncrementNumeric $orderQuantityIncrementNumeric
      */
     private $orderQuantityIncrementNumeric = null;
 
     /**
      * BBIE
      *  Catalogue Line. Minimum_ Order Quantity. Quantity
-     *  The minimum amount of items that can be ordered.
+     *  The minimum amount of the item described in this catalogue line that can be ordered.
      *  0..1
      *  Catalogue Line
      *  Minimum
      *  Order Quantity
      *  Quantity
      *  Quantity. Type
-     *  "10 boxes"
+     *  10 boxes
      *
      * @var \horstoeko\ubl\entities\cbc\MinimumOrderQuantity $minimumOrderQuantity
      */
@@ -169,14 +169,14 @@ class CatalogueLineType
     /**
      * BBIE
      *  Catalogue Line. Maximum_ Order Quantity. Quantity
-     *  The maximum amount of items that can be ordered.
+     *  The maximum amount of the item described in this catalogue line that can be ordered.
      *  0..1
      *  Catalogue Line
      *  Maximum
      *  Order Quantity
      *  Quantity
      *  Quantity. Type
-     *  "1 tonne"
+     *  1 tonne
      *
      * @var \horstoeko\ubl\entities\cbc\MaximumOrderQuantity $maximumOrderQuantity
      */
@@ -185,14 +185,14 @@ class CatalogueLineType
     /**
      * BBIE
      *  Catalogue Line. Warranty_ Information. Text
-     *  Information regarding the warranty for the good or service. Warranty may be provided by any Party (can be described in the assiciation to Warranty Party).
+     *  Text about a warranty (provided by WarrantyParty) for the good or service described in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Warranty
      *  Information
      *  Text
      *  Text. Type
-     *  "Unless specified otherwise and in addition to any rights the Customer may have under statute, Dell warrants to the Customer that Dell branded Products (excluding third party products and software), will be free from defects in materials and workmanship affecting normal use for a period of one year from invoice date ('Standard Warranty')."
+     *  Unless specified otherwise and in addition to any rights the Customer may have under statute, Dell warrants to the Customer that Dell branded Products (excluding third party products and software), will be free from defects in materials and workmanship affecting normal use for a period of one year from invoice date ( Standard Warranty ).
      *
      * @var \horstoeko\ubl\entities\cbc\WarrantyInformation[] $warrantyInformation
      */
@@ -203,14 +203,14 @@ class CatalogueLineType
     /**
      * BBIE
      *  Catalogue Line. Pack Level Code. Code
-     *  The level of packaging involved.
+     *  A mutually agreed code signifying the level of packaging associated with the item described in this catalogue line.
      *  0..1
      *  Catalogue Line
      *  Pack Level Code
      *  Code
      *  Code. Type
      *  Consumer Unit, Trading Unit
-     *  "level 2", "Group 4"
+     *  level 2 , Group 4
      *
      * @var \horstoeko\ubl\entities\cbc\PackLevelCode $packLevelCode
      */
@@ -219,10 +219,11 @@ class CatalogueLineType
     /**
      * ASBIE
      *  Catalogue Line. Contractor_ Customer Party. Customer Party
-     *  The Customer Party responsible for the contract to which the Catalogue relates.
+     *  The customer responsible for the contract with which this catalogue line is associated.
      *  0..1
      *  Catalogue Line
      *  Contractor
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -233,10 +234,11 @@ class CatalogueLineType
     /**
      * ASBIE
      *  Catalogue Line. Seller_ Supplier Party. Supplier Party
-     *  An association to Seller of the item.
+     *  The seller/supplier responsible for the contract with which this catalogue line is associated.
      *  0..1
      *  Catalogue Line
      *  Seller
+     *  Supplier Party
      *  Supplier Party
      *  Supplier Party
      *
@@ -247,10 +249,11 @@ class CatalogueLineType
     /**
      * ASBIE
      *  Catalogue Line. Warranty_ Party. Party
-     *  The party responsible for the Warranty.
+     *  The party responsible for any warranty associated with the item described in this catalogue line.
      *  0..1
      *  Catalogue Line
      *  Warranty
+     *  Party
      *  Party
      *  Party
      *
@@ -261,10 +264,11 @@ class CatalogueLineType
     /**
      * ASBIE
      *  Catalogue Line. Warranty Validity_ Period. Period
-     *  The period for which the Warranty is valid.
+     *  The period for which a warranty associated with the item in this catalogue line is valid.
      *  0..1
      *  Catalogue Line
      *  Warranty Validity
+     *  Period
      *  Period
      *  Period
      *
@@ -275,10 +279,11 @@ class CatalogueLineType
     /**
      * ASBIE
      *  Catalogue Line. Line Validity_ Period. Period
-     *  The period for which the Catalogue Line is valid.
+     *  The period for which the information in this catalogue line is valid.
      *  0..1
      *  Catalogue Line
      *  Line Validity
+     *  Period
      *  Period
      *  Period
      *
@@ -289,9 +294,10 @@ class CatalogueLineType
     /**
      * ASBIE
      *  Catalogue Line. Item Comparison
-     *  An association to comparative details for this Item.
+     *  A combination of price and quantity used to provide price comparisons based on different sizes of order.
      *  0..n
      *  Catalogue Line
+     *  Item Comparison
      *  Item Comparison
      *  Item Comparison
      *
@@ -304,10 +310,11 @@ class CatalogueLineType
     /**
      * ASBIE
      *  Catalogue Line. Component_ Related Item. Related Item
-     *  An association that describes any catalogue items that may be components of this Item.
+     *  An item that may be a component of the item in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Component
+     *  Related Item
      *  Related Item
      *  Related Item
      *
@@ -320,10 +327,11 @@ class CatalogueLineType
     /**
      * ASBIE
      *  Catalogue Line. Accessory_ Related Item. Related Item
-     *  An association that describes any catalogue items that may be optional accessories to this Item.
+     *  An item that may be an optional accessory of the item in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Accessory
+     *  Related Item
      *  Related Item
      *  Related Item
      *
@@ -336,10 +344,11 @@ class CatalogueLineType
     /**
      * ASBIE
      *  Catalogue Line. Required_ Related Item. Related Item
-     *  An association that describes any catalogue items that may be required for this Item.
+     *  An item that may be required for the item in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Required
+     *  Related Item
      *  Related Item
      *  Related Item
      *
@@ -352,10 +361,11 @@ class CatalogueLineType
     /**
      * ASBIE
      *  Catalogue Line. Replacement_ Related Item. Related Item
-     *  An association that describes any catalogue items that may be replacements for this Item.
+     *  An item that may be a replacement for the item in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Replacement
+     *  Related Item
      *  Related Item
      *  Related Item
      *
@@ -368,10 +378,11 @@ class CatalogueLineType
     /**
      * ASBIE
      *  Catalogue Line. Complementary_ Related Item. Related Item
-     *  An association that describes any catalogue items that may complement this Item.
+     *  An item that may complement the item in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Complementary
+     *  Related Item
      *  Related Item
      *  Related Item
      *
@@ -383,11 +394,29 @@ class CatalogueLineType
 
     /**
      * ASBIE
+     *  Catalogue Line. Replaced_ Related Item. Related Item
+     *  An item in an existing catalogue that is being replaced by the item in this catalogue line.
+     *  0..n
+     *  Catalogue Line
+     *  Replaced
+     *  Related Item
+     *  Related Item
+     *  Related Item
+     *
+     * @var \horstoeko\ubl\entities\cac\ReplacedRelatedItem[] $replacedRelatedItem
+     */
+    private $replacedRelatedItem = [
+        
+    ];
+
+    /**
+     * ASBIE
      *  Catalogue Line. Required_ Item Location Quantity. Item Location Quantity
-     *  An association to the description of properties related to locations and quantities of the Item.
+     *  Properties of the item in this catalogue line that are dependent on location and quantity.
      *  0..n
      *  Catalogue Line
      *  Required
+     *  Item Location Quantity
      *  Item Location Quantity
      *  Item Location Quantity
      *
@@ -400,9 +429,10 @@ class CatalogueLineType
     /**
      * ASBIE
      *  Catalogue Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this catalogue line.
      *  0..n
      *  Catalogue Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -415,9 +445,10 @@ class CatalogueLineType
     /**
      * ASBIE
      *  Catalogue Line. Item
-     *  An association to the Item itself.
+     *  A specification of the item itself.
      *  1
      *  Catalogue Line
+     *  Item
      *  Item
      *  Item
      *
@@ -426,17 +457,64 @@ class CatalogueLineType
     private $item = null;
 
     /**
+     * ASBIE
+     *  Catalogue Line. Keyword_ Item Property. Item Property
+     *  A property of the item in this catalogue line.
+     *  0..n
+     *  Catalogue Line
+     *  Keyword
+     *  Item Property
+     *  Item Property
+     *  Item Property
+     *
+     * @var \horstoeko\ubl\entities\cac\KeywordItemProperty[] $keywordItemProperty
+     */
+    private $keywordItemProperty = [
+        
+    ];
+
+    /**
+     * ASBIE
+     *  Catalogue Line. Call For Tenders_ Line Reference. Line Reference
+     *  Reference to a Line on a Call For Tenders document.
+     *  0..1
+     *  Catalogue Line
+     *  Call For Tenders
+     *  Line Reference
+     *  Line Reference
+     *  Line Reference
+     *
+     * @var \horstoeko\ubl\entities\cac\CallForTendersLineReference $callForTendersLineReference
+     */
+    private $callForTendersLineReference = null;
+
+    /**
+     * ASBIE
+     *  Catalogue Line. Call For Tenders_ Document Reference. Document Reference
+     *  A class defining references to a Call For Tenders document.
+     *  0..1
+     *  Catalogue Line
+     *  Call For Tenders
+     *  Document Reference
+     *  Document Reference
+     *  Document Reference
+     *
+     * @var \horstoeko\ubl\entities\cac\CallForTendersDocumentReference $callForTendersDocumentReference
+     */
+    private $callForTendersDocumentReference = null;
+
+    /**
      * Gets as iD
      *
      * BBIE
      *  Catalogue Line. Identifier
-     *  A unique instance identifier for the line in this Catalogue document.
+     *  An identifier for the line in the catalogue.
      *  1
      *  Catalogue Line
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "1"
+     *  1
      *
      * @return \horstoeko\ubl\entities\cbc\ID
      */
@@ -450,13 +528,13 @@ class CatalogueLineType
      *
      * BBIE
      *  Catalogue Line. Identifier
-     *  A unique instance identifier for the line in this Catalogue document.
+     *  An identifier for the line in the catalogue.
      *  1
      *  Catalogue Line
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "1"
+     *  1
      *
      * @param \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
@@ -472,13 +550,13 @@ class CatalogueLineType
      *
      * BBIE
      *  Catalogue Line. Action Code. Code
-     *  Code indicating the action required for this item to synchronize with external repositories.
+     *  A code signifying the action required to synchronize this catalogue line. Recommend codes (delete, update, add)
      *  0..1
      *  Catalogue Line
      *  Action Code
      *  Code
      *  Code. Type
-     *  "Replace", "Update", "Delete","Add"
+     *  Replace , Update , Delete , Add
      *
      * @return \horstoeko\ubl\entities\cbc\ActionCode
      */
@@ -492,13 +570,13 @@ class CatalogueLineType
      *
      * BBIE
      *  Catalogue Line. Action Code. Code
-     *  Code indicating the action required for this item to synchronize with external repositories.
+     *  A code signifying the action required to synchronize this catalogue line. Recommend codes (delete, update, add)
      *  0..1
      *  Catalogue Line
      *  Action Code
      *  Code
      *  Code. Type
-     *  "Replace", "Update", "Delete","Add"
+     *  Replace , Update , Delete , Add
      *
      * @param \horstoeko\ubl\entities\cbc\ActionCode $actionCode
      * @return self
@@ -514,13 +592,13 @@ class CatalogueLineType
      *
      * BBIE
      *  Catalogue Line. Life Cycle Status Code. Code
-     *  Code indicating availability of this line.
+     *  A code signifying the life cycle status of this catalogue line. Examples are pre-order, end of production
      *  0..1
      *  Catalogue Line
      *  Life Cycle Status Code
      *  Code
      *  Code. Type
-     *  "new - announcement only", "new and available", "deleted - announcement only"
+     *  new - announcement only , new and available , deleted - announcement only
      *
      * @return \horstoeko\ubl\entities\cbc\LifeCycleStatusCode
      */
@@ -534,13 +612,13 @@ class CatalogueLineType
      *
      * BBIE
      *  Catalogue Line. Life Cycle Status Code. Code
-     *  Code indicating availability of this line.
+     *  A code signifying the life cycle status of this catalogue line. Examples are pre-order, end of production
      *  0..1
      *  Catalogue Line
      *  Life Cycle Status Code
      *  Code
      *  Code. Type
-     *  "new - announcement only", "new and available", "deleted - announcement only"
+     *  new - announcement only , new and available , deleted - announcement only
      *
      * @param \horstoeko\ubl\entities\cbc\LifeCycleStatusCode $lifeCycleStatusCode
      * @return self
@@ -556,13 +634,13 @@ class CatalogueLineType
      *
      * BBIE
      *  Catalogue Line. Contract Subdivision. Text
-     *  Identifies a subdivision of a contract or tender.
+     *  A subdivision of a contract or tender covering this catalogue line.
      *  0..1
      *  Catalogue Line
      *  Contract Subdivision
      *  Text
      *  Text. Type
-     *  "Installation", "Phase One", Support and Maintenance"
+     *  Installation , Phase One , Support and Maintenance
      *
      * @return \horstoeko\ubl\entities\cbc\ContractSubdivision
      */
@@ -576,13 +654,13 @@ class CatalogueLineType
      *
      * BBIE
      *  Catalogue Line. Contract Subdivision. Text
-     *  Identifies a subdivision of a contract or tender.
+     *  A subdivision of a contract or tender covering this catalogue line.
      *  0..1
      *  Catalogue Line
      *  Contract Subdivision
      *  Text
      *  Text. Type
-     *  "Installation", "Phase One", Support and Maintenance"
+     *  Installation , Phase One , Support and Maintenance
      *
      * @param \horstoeko\ubl\entities\cbc\ContractSubdivision $contractSubdivision
      * @return self
@@ -598,7 +676,7 @@ class CatalogueLineType
      *
      * BBIE
      *  Catalogue Line. Note. Text
-     *  Free-text note used for non-structured information about the line in the specific Catalogue document (intended to be human readable).
+     *  Free-form text conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Catalogue Line
      *  Note
@@ -619,7 +697,7 @@ class CatalogueLineType
      *
      * BBIE
      *  Catalogue Line. Note. Text
-     *  Free-text note used for non-structured information about the line in the specific Catalogue document (intended to be human readable).
+     *  Free-form text conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Catalogue Line
      *  Note
@@ -639,7 +717,7 @@ class CatalogueLineType
      *
      * BBIE
      *  Catalogue Line. Note. Text
-     *  Free-text note used for non-structured information about the line in the specific Catalogue document (intended to be human readable).
+     *  Free-form text conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Catalogue Line
      *  Note
@@ -659,7 +737,7 @@ class CatalogueLineType
      *
      * BBIE
      *  Catalogue Line. Note. Text
-     *  Free-text note used for non-structured information about the line in the specific Catalogue document (intended to be human readable).
+     *  Free-form text conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Catalogue Line
      *  Note
@@ -678,7 +756,7 @@ class CatalogueLineType
      *
      * BBIE
      *  Catalogue Line. Note. Text
-     *  Free-text note used for non-structured information about the line in the specific Catalogue document (intended to be human readable).
+     *  Free-form text conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Catalogue Line
      *  Note
@@ -699,7 +777,7 @@ class CatalogueLineType
      *
      * BBIE
      *  Catalogue Line. Orderable_ Indicator. Indicator
-     *  Indicates whether the line is orderable (that is, not just for information only).
+     *  An indicator that this catalogue line describes an orderable item (true) or is included for reference purposes only (false).
      *  0..1
      *  Catalogue Line
      *  Orderable
@@ -720,7 +798,7 @@ class CatalogueLineType
      *
      * BBIE
      *  Catalogue Line. Orderable_ Indicator. Indicator
-     *  Indicates whether the line is orderable (that is, not just for information only).
+     *  An indicator that this catalogue line describes an orderable item (true) or is included for reference purposes only (false).
      *  0..1
      *  Catalogue Line
      *  Orderable
@@ -743,7 +821,7 @@ class CatalogueLineType
      *
      * BBIE
      *  Catalogue Line. Orderable_ Unit. Text
-     *  The unit that can be ordered.
+     *  A textual description of the units in which the item described in this catalogue line can be ordered.
      *  0..1
      *  Catalogue Line
      *  Orderable
@@ -763,7 +841,7 @@ class CatalogueLineType
      *
      * BBIE
      *  Catalogue Line. Orderable_ Unit. Text
-     *  The unit that can be ordered.
+     *  A textual description of the units in which the item described in this catalogue line can be ordered.
      *  0..1
      *  Catalogue Line
      *  Orderable
@@ -785,13 +863,13 @@ class CatalogueLineType
      *
      * BBIE
      *  Catalogue Line. Content Unit. Quantity
-     *  The quantity of the order unit of measure of the line.
+     *  The numeric quantity of the ordering unit (and units of measure) of the catalogue line.
      *  0..1
      *  Catalogue Line
      *  Content Unit
      *  Quantity
      *  Quantity. Type
-     *  If order unit measure identifier is "each", then content unit quantity is "1".
+     *  If order unit measure identifier is each , then content unit quantity is 1 .
      *
      * @return \horstoeko\ubl\entities\cbc\ContentUnitQuantity
      */
@@ -805,13 +883,13 @@ class CatalogueLineType
      *
      * BBIE
      *  Catalogue Line. Content Unit. Quantity
-     *  The quantity of the order unit of measure of the line.
+     *  The numeric quantity of the ordering unit (and units of measure) of the catalogue line.
      *  0..1
      *  Catalogue Line
      *  Content Unit
      *  Quantity
      *  Quantity. Type
-     *  If order unit measure identifier is "each", then content unit quantity is "1".
+     *  If order unit measure identifier is each , then content unit quantity is 1 .
      *
      * @param \horstoeko\ubl\entities\cbc\ContentUnitQuantity $contentUnitQuantity
      * @return self
@@ -834,7 +912,7 @@ class CatalogueLineType
      *  Numeric
      *  Numeric. Type
      *
-     * @return float
+     * @return \horstoeko\ubl\entities\cbc\OrderQuantityIncrementNumeric
      */
     public function getOrderQuantityIncrementNumeric()
     {
@@ -853,10 +931,10 @@ class CatalogueLineType
      *  Numeric
      *  Numeric. Type
      *
-     * @param float $orderQuantityIncrementNumeric
+     * @param \horstoeko\ubl\entities\cbc\OrderQuantityIncrementNumeric $orderQuantityIncrementNumeric
      * @return self
      */
-    public function setOrderQuantityIncrementNumeric($orderQuantityIncrementNumeric)
+    public function setOrderQuantityIncrementNumeric(\horstoeko\ubl\entities\cbc\OrderQuantityIncrementNumeric $orderQuantityIncrementNumeric)
     {
         $this->orderQuantityIncrementNumeric = $orderQuantityIncrementNumeric;
         return $this;
@@ -867,14 +945,14 @@ class CatalogueLineType
      *
      * BBIE
      *  Catalogue Line. Minimum_ Order Quantity. Quantity
-     *  The minimum amount of items that can be ordered.
+     *  The minimum amount of the item described in this catalogue line that can be ordered.
      *  0..1
      *  Catalogue Line
      *  Minimum
      *  Order Quantity
      *  Quantity
      *  Quantity. Type
-     *  "10 boxes"
+     *  10 boxes
      *
      * @return \horstoeko\ubl\entities\cbc\MinimumOrderQuantity
      */
@@ -888,14 +966,14 @@ class CatalogueLineType
      *
      * BBIE
      *  Catalogue Line. Minimum_ Order Quantity. Quantity
-     *  The minimum amount of items that can be ordered.
+     *  The minimum amount of the item described in this catalogue line that can be ordered.
      *  0..1
      *  Catalogue Line
      *  Minimum
      *  Order Quantity
      *  Quantity
      *  Quantity. Type
-     *  "10 boxes"
+     *  10 boxes
      *
      * @param \horstoeko\ubl\entities\cbc\MinimumOrderQuantity $minimumOrderQuantity
      * @return self
@@ -911,14 +989,14 @@ class CatalogueLineType
      *
      * BBIE
      *  Catalogue Line. Maximum_ Order Quantity. Quantity
-     *  The maximum amount of items that can be ordered.
+     *  The maximum amount of the item described in this catalogue line that can be ordered.
      *  0..1
      *  Catalogue Line
      *  Maximum
      *  Order Quantity
      *  Quantity
      *  Quantity. Type
-     *  "1 tonne"
+     *  1 tonne
      *
      * @return \horstoeko\ubl\entities\cbc\MaximumOrderQuantity
      */
@@ -932,14 +1010,14 @@ class CatalogueLineType
      *
      * BBIE
      *  Catalogue Line. Maximum_ Order Quantity. Quantity
-     *  The maximum amount of items that can be ordered.
+     *  The maximum amount of the item described in this catalogue line that can be ordered.
      *  0..1
      *  Catalogue Line
      *  Maximum
      *  Order Quantity
      *  Quantity
      *  Quantity. Type
-     *  "1 tonne"
+     *  1 tonne
      *
      * @param \horstoeko\ubl\entities\cbc\MaximumOrderQuantity $maximumOrderQuantity
      * @return self
@@ -955,14 +1033,14 @@ class CatalogueLineType
      *
      * BBIE
      *  Catalogue Line. Warranty_ Information. Text
-     *  Information regarding the warranty for the good or service. Warranty may be provided by any Party (can be described in the assiciation to Warranty Party).
+     *  Text about a warranty (provided by WarrantyParty) for the good or service described in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Warranty
      *  Information
      *  Text
      *  Text. Type
-     *  "Unless specified otherwise and in addition to any rights the Customer may have under statute, Dell warrants to the Customer that Dell branded Products (excluding third party products and software), will be free from defects in materials and workmanship affecting normal use for a period of one year from invoice date ('Standard Warranty')."
+     *  Unless specified otherwise and in addition to any rights the Customer may have under statute, Dell warrants to the Customer that Dell branded Products (excluding third party products and software), will be free from defects in materials and workmanship affecting normal use for a period of one year from invoice date ( Standard Warranty ).
      *
      * @return self
      * @param \horstoeko\ubl\entities\cbc\WarrantyInformation $warrantyInformation
@@ -978,14 +1056,14 @@ class CatalogueLineType
      *
      * BBIE
      *  Catalogue Line. Warranty_ Information. Text
-     *  Information regarding the warranty for the good or service. Warranty may be provided by any Party (can be described in the assiciation to Warranty Party).
+     *  Text about a warranty (provided by WarrantyParty) for the good or service described in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Warranty
      *  Information
      *  Text
      *  Text. Type
-     *  "Unless specified otherwise and in addition to any rights the Customer may have under statute, Dell warrants to the Customer that Dell branded Products (excluding third party products and software), will be free from defects in materials and workmanship affecting normal use for a period of one year from invoice date ('Standard Warranty')."
+     *  Unless specified otherwise and in addition to any rights the Customer may have under statute, Dell warrants to the Customer that Dell branded Products (excluding third party products and software), will be free from defects in materials and workmanship affecting normal use for a period of one year from invoice date ( Standard Warranty ).
      *
      * @param int|string $index
      * @return bool
@@ -1000,14 +1078,14 @@ class CatalogueLineType
      *
      * BBIE
      *  Catalogue Line. Warranty_ Information. Text
-     *  Information regarding the warranty for the good or service. Warranty may be provided by any Party (can be described in the assiciation to Warranty Party).
+     *  Text about a warranty (provided by WarrantyParty) for the good or service described in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Warranty
      *  Information
      *  Text
      *  Text. Type
-     *  "Unless specified otherwise and in addition to any rights the Customer may have under statute, Dell warrants to the Customer that Dell branded Products (excluding third party products and software), will be free from defects in materials and workmanship affecting normal use for a period of one year from invoice date ('Standard Warranty')."
+     *  Unless specified otherwise and in addition to any rights the Customer may have under statute, Dell warrants to the Customer that Dell branded Products (excluding third party products and software), will be free from defects in materials and workmanship affecting normal use for a period of one year from invoice date ( Standard Warranty ).
      *
      * @param int|string $index
      * @return void
@@ -1022,14 +1100,14 @@ class CatalogueLineType
      *
      * BBIE
      *  Catalogue Line. Warranty_ Information. Text
-     *  Information regarding the warranty for the good or service. Warranty may be provided by any Party (can be described in the assiciation to Warranty Party).
+     *  Text about a warranty (provided by WarrantyParty) for the good or service described in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Warranty
      *  Information
      *  Text
      *  Text. Type
-     *  "Unless specified otherwise and in addition to any rights the Customer may have under statute, Dell warrants to the Customer that Dell branded Products (excluding third party products and software), will be free from defects in materials and workmanship affecting normal use for a period of one year from invoice date ('Standard Warranty')."
+     *  Unless specified otherwise and in addition to any rights the Customer may have under statute, Dell warrants to the Customer that Dell branded Products (excluding third party products and software), will be free from defects in materials and workmanship affecting normal use for a period of one year from invoice date ( Standard Warranty ).
      *
      * @return \horstoeko\ubl\entities\cbc\WarrantyInformation[]
      */
@@ -1043,14 +1121,14 @@ class CatalogueLineType
      *
      * BBIE
      *  Catalogue Line. Warranty_ Information. Text
-     *  Information regarding the warranty for the good or service. Warranty may be provided by any Party (can be described in the assiciation to Warranty Party).
+     *  Text about a warranty (provided by WarrantyParty) for the good or service described in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Warranty
      *  Information
      *  Text
      *  Text. Type
-     *  "Unless specified otherwise and in addition to any rights the Customer may have under statute, Dell warrants to the Customer that Dell branded Products (excluding third party products and software), will be free from defects in materials and workmanship affecting normal use for a period of one year from invoice date ('Standard Warranty')."
+     *  Unless specified otherwise and in addition to any rights the Customer may have under statute, Dell warrants to the Customer that Dell branded Products (excluding third party products and software), will be free from defects in materials and workmanship affecting normal use for a period of one year from invoice date ( Standard Warranty ).
      *
      * @param \horstoeko\ubl\entities\cbc\WarrantyInformation[] $warrantyInformation
      * @return self
@@ -1066,14 +1144,14 @@ class CatalogueLineType
      *
      * BBIE
      *  Catalogue Line. Pack Level Code. Code
-     *  The level of packaging involved.
+     *  A mutually agreed code signifying the level of packaging associated with the item described in this catalogue line.
      *  0..1
      *  Catalogue Line
      *  Pack Level Code
      *  Code
      *  Code. Type
      *  Consumer Unit, Trading Unit
-     *  "level 2", "Group 4"
+     *  level 2 , Group 4
      *
      * @return \horstoeko\ubl\entities\cbc\PackLevelCode
      */
@@ -1087,14 +1165,14 @@ class CatalogueLineType
      *
      * BBIE
      *  Catalogue Line. Pack Level Code. Code
-     *  The level of packaging involved.
+     *  A mutually agreed code signifying the level of packaging associated with the item described in this catalogue line.
      *  0..1
      *  Catalogue Line
      *  Pack Level Code
      *  Code
      *  Code. Type
      *  Consumer Unit, Trading Unit
-     *  "level 2", "Group 4"
+     *  level 2 , Group 4
      *
      * @param \horstoeko\ubl\entities\cbc\PackLevelCode $packLevelCode
      * @return self
@@ -1110,10 +1188,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Contractor_ Customer Party. Customer Party
-     *  The Customer Party responsible for the contract to which the Catalogue relates.
+     *  The customer responsible for the contract with which this catalogue line is associated.
      *  0..1
      *  Catalogue Line
      *  Contractor
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -1129,10 +1208,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Contractor_ Customer Party. Customer Party
-     *  The Customer Party responsible for the contract to which the Catalogue relates.
+     *  The customer responsible for the contract with which this catalogue line is associated.
      *  0..1
      *  Catalogue Line
      *  Contractor
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -1150,10 +1230,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Seller_ Supplier Party. Supplier Party
-     *  An association to Seller of the item.
+     *  The seller/supplier responsible for the contract with which this catalogue line is associated.
      *  0..1
      *  Catalogue Line
      *  Seller
+     *  Supplier Party
      *  Supplier Party
      *  Supplier Party
      *
@@ -1169,10 +1250,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Seller_ Supplier Party. Supplier Party
-     *  An association to Seller of the item.
+     *  The seller/supplier responsible for the contract with which this catalogue line is associated.
      *  0..1
      *  Catalogue Line
      *  Seller
+     *  Supplier Party
      *  Supplier Party
      *  Supplier Party
      *
@@ -1190,10 +1272,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Warranty_ Party. Party
-     *  The party responsible for the Warranty.
+     *  The party responsible for any warranty associated with the item described in this catalogue line.
      *  0..1
      *  Catalogue Line
      *  Warranty
+     *  Party
      *  Party
      *  Party
      *
@@ -1209,10 +1292,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Warranty_ Party. Party
-     *  The party responsible for the Warranty.
+     *  The party responsible for any warranty associated with the item described in this catalogue line.
      *  0..1
      *  Catalogue Line
      *  Warranty
+     *  Party
      *  Party
      *  Party
      *
@@ -1230,10 +1314,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Warranty Validity_ Period. Period
-     *  The period for which the Warranty is valid.
+     *  The period for which a warranty associated with the item in this catalogue line is valid.
      *  0..1
      *  Catalogue Line
      *  Warranty Validity
+     *  Period
      *  Period
      *  Period
      *
@@ -1249,10 +1334,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Warranty Validity_ Period. Period
-     *  The period for which the Warranty is valid.
+     *  The period for which a warranty associated with the item in this catalogue line is valid.
      *  0..1
      *  Catalogue Line
      *  Warranty Validity
+     *  Period
      *  Period
      *  Period
      *
@@ -1270,10 +1356,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Line Validity_ Period. Period
-     *  The period for which the Catalogue Line is valid.
+     *  The period for which the information in this catalogue line is valid.
      *  0..1
      *  Catalogue Line
      *  Line Validity
+     *  Period
      *  Period
      *  Period
      *
@@ -1289,10 +1376,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Line Validity_ Period. Period
-     *  The period for which the Catalogue Line is valid.
+     *  The period for which the information in this catalogue line is valid.
      *  0..1
      *  Catalogue Line
      *  Line Validity
+     *  Period
      *  Period
      *  Period
      *
@@ -1310,9 +1398,10 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Item Comparison
-     *  An association to comparative details for this Item.
+     *  A combination of price and quantity used to provide price comparisons based on different sizes of order.
      *  0..n
      *  Catalogue Line
+     *  Item Comparison
      *  Item Comparison
      *  Item Comparison
      *
@@ -1330,9 +1419,10 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Item Comparison
-     *  An association to comparative details for this Item.
+     *  A combination of price and quantity used to provide price comparisons based on different sizes of order.
      *  0..n
      *  Catalogue Line
+     *  Item Comparison
      *  Item Comparison
      *  Item Comparison
      *
@@ -1349,9 +1439,10 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Item Comparison
-     *  An association to comparative details for this Item.
+     *  A combination of price and quantity used to provide price comparisons based on different sizes of order.
      *  0..n
      *  Catalogue Line
+     *  Item Comparison
      *  Item Comparison
      *  Item Comparison
      *
@@ -1368,9 +1459,10 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Item Comparison
-     *  An association to comparative details for this Item.
+     *  A combination of price and quantity used to provide price comparisons based on different sizes of order.
      *  0..n
      *  Catalogue Line
+     *  Item Comparison
      *  Item Comparison
      *  Item Comparison
      *
@@ -1386,9 +1478,10 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Item Comparison
-     *  An association to comparative details for this Item.
+     *  A combination of price and quantity used to provide price comparisons based on different sizes of order.
      *  0..n
      *  Catalogue Line
+     *  Item Comparison
      *  Item Comparison
      *  Item Comparison
      *
@@ -1406,10 +1499,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Component_ Related Item. Related Item
-     *  An association that describes any catalogue items that may be components of this Item.
+     *  An item that may be a component of the item in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Component
+     *  Related Item
      *  Related Item
      *  Related Item
      *
@@ -1427,10 +1521,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Component_ Related Item. Related Item
-     *  An association that describes any catalogue items that may be components of this Item.
+     *  An item that may be a component of the item in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Component
+     *  Related Item
      *  Related Item
      *  Related Item
      *
@@ -1447,10 +1542,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Component_ Related Item. Related Item
-     *  An association that describes any catalogue items that may be components of this Item.
+     *  An item that may be a component of the item in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Component
+     *  Related Item
      *  Related Item
      *  Related Item
      *
@@ -1467,10 +1563,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Component_ Related Item. Related Item
-     *  An association that describes any catalogue items that may be components of this Item.
+     *  An item that may be a component of the item in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Component
+     *  Related Item
      *  Related Item
      *  Related Item
      *
@@ -1486,10 +1583,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Component_ Related Item. Related Item
-     *  An association that describes any catalogue items that may be components of this Item.
+     *  An item that may be a component of the item in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Component
+     *  Related Item
      *  Related Item
      *  Related Item
      *
@@ -1507,10 +1605,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Accessory_ Related Item. Related Item
-     *  An association that describes any catalogue items that may be optional accessories to this Item.
+     *  An item that may be an optional accessory of the item in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Accessory
+     *  Related Item
      *  Related Item
      *  Related Item
      *
@@ -1528,10 +1627,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Accessory_ Related Item. Related Item
-     *  An association that describes any catalogue items that may be optional accessories to this Item.
+     *  An item that may be an optional accessory of the item in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Accessory
+     *  Related Item
      *  Related Item
      *  Related Item
      *
@@ -1548,10 +1648,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Accessory_ Related Item. Related Item
-     *  An association that describes any catalogue items that may be optional accessories to this Item.
+     *  An item that may be an optional accessory of the item in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Accessory
+     *  Related Item
      *  Related Item
      *  Related Item
      *
@@ -1568,10 +1669,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Accessory_ Related Item. Related Item
-     *  An association that describes any catalogue items that may be optional accessories to this Item.
+     *  An item that may be an optional accessory of the item in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Accessory
+     *  Related Item
      *  Related Item
      *  Related Item
      *
@@ -1587,10 +1689,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Accessory_ Related Item. Related Item
-     *  An association that describes any catalogue items that may be optional accessories to this Item.
+     *  An item that may be an optional accessory of the item in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Accessory
+     *  Related Item
      *  Related Item
      *  Related Item
      *
@@ -1608,10 +1711,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Required_ Related Item. Related Item
-     *  An association that describes any catalogue items that may be required for this Item.
+     *  An item that may be required for the item in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Required
+     *  Related Item
      *  Related Item
      *  Related Item
      *
@@ -1629,10 +1733,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Required_ Related Item. Related Item
-     *  An association that describes any catalogue items that may be required for this Item.
+     *  An item that may be required for the item in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Required
+     *  Related Item
      *  Related Item
      *  Related Item
      *
@@ -1649,10 +1754,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Required_ Related Item. Related Item
-     *  An association that describes any catalogue items that may be required for this Item.
+     *  An item that may be required for the item in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Required
+     *  Related Item
      *  Related Item
      *  Related Item
      *
@@ -1669,10 +1775,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Required_ Related Item. Related Item
-     *  An association that describes any catalogue items that may be required for this Item.
+     *  An item that may be required for the item in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Required
+     *  Related Item
      *  Related Item
      *  Related Item
      *
@@ -1688,10 +1795,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Required_ Related Item. Related Item
-     *  An association that describes any catalogue items that may be required for this Item.
+     *  An item that may be required for the item in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Required
+     *  Related Item
      *  Related Item
      *  Related Item
      *
@@ -1709,10 +1817,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Replacement_ Related Item. Related Item
-     *  An association that describes any catalogue items that may be replacements for this Item.
+     *  An item that may be a replacement for the item in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Replacement
+     *  Related Item
      *  Related Item
      *  Related Item
      *
@@ -1730,10 +1839,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Replacement_ Related Item. Related Item
-     *  An association that describes any catalogue items that may be replacements for this Item.
+     *  An item that may be a replacement for the item in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Replacement
+     *  Related Item
      *  Related Item
      *  Related Item
      *
@@ -1750,10 +1860,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Replacement_ Related Item. Related Item
-     *  An association that describes any catalogue items that may be replacements for this Item.
+     *  An item that may be a replacement for the item in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Replacement
+     *  Related Item
      *  Related Item
      *  Related Item
      *
@@ -1770,10 +1881,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Replacement_ Related Item. Related Item
-     *  An association that describes any catalogue items that may be replacements for this Item.
+     *  An item that may be a replacement for the item in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Replacement
+     *  Related Item
      *  Related Item
      *  Related Item
      *
@@ -1789,10 +1901,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Replacement_ Related Item. Related Item
-     *  An association that describes any catalogue items that may be replacements for this Item.
+     *  An item that may be a replacement for the item in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Replacement
+     *  Related Item
      *  Related Item
      *  Related Item
      *
@@ -1810,10 +1923,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Complementary_ Related Item. Related Item
-     *  An association that describes any catalogue items that may complement this Item.
+     *  An item that may complement the item in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Complementary
+     *  Related Item
      *  Related Item
      *  Related Item
      *
@@ -1831,10 +1945,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Complementary_ Related Item. Related Item
-     *  An association that describes any catalogue items that may complement this Item.
+     *  An item that may complement the item in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Complementary
+     *  Related Item
      *  Related Item
      *  Related Item
      *
@@ -1851,10 +1966,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Complementary_ Related Item. Related Item
-     *  An association that describes any catalogue items that may complement this Item.
+     *  An item that may complement the item in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Complementary
+     *  Related Item
      *  Related Item
      *  Related Item
      *
@@ -1871,10 +1987,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Complementary_ Related Item. Related Item
-     *  An association that describes any catalogue items that may complement this Item.
+     *  An item that may complement the item in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Complementary
+     *  Related Item
      *  Related Item
      *  Related Item
      *
@@ -1890,10 +2007,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Complementary_ Related Item. Related Item
-     *  An association that describes any catalogue items that may complement this Item.
+     *  An item that may complement the item in this catalogue line.
      *  0..n
      *  Catalogue Line
      *  Complementary
+     *  Related Item
      *  Related Item
      *  Related Item
      *
@@ -1907,14 +2025,121 @@ class CatalogueLineType
     }
 
     /**
+     * Adds as replacedRelatedItem
+     *
+     * ASBIE
+     *  Catalogue Line. Replaced_ Related Item. Related Item
+     *  An item in an existing catalogue that is being replaced by the item in this catalogue line.
+     *  0..n
+     *  Catalogue Line
+     *  Replaced
+     *  Related Item
+     *  Related Item
+     *  Related Item
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\ReplacedRelatedItem $replacedRelatedItem
+     */
+    public function addToReplacedRelatedItem(\horstoeko\ubl\entities\cac\ReplacedRelatedItem $replacedRelatedItem)
+    {
+        $this->replacedRelatedItem[] = $replacedRelatedItem;
+        return $this;
+    }
+
+    /**
+     * isset replacedRelatedItem
+     *
+     * ASBIE
+     *  Catalogue Line. Replaced_ Related Item. Related Item
+     *  An item in an existing catalogue that is being replaced by the item in this catalogue line.
+     *  0..n
+     *  Catalogue Line
+     *  Replaced
+     *  Related Item
+     *  Related Item
+     *  Related Item
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetReplacedRelatedItem($index)
+    {
+        return isset($this->replacedRelatedItem[$index]);
+    }
+
+    /**
+     * unset replacedRelatedItem
+     *
+     * ASBIE
+     *  Catalogue Line. Replaced_ Related Item. Related Item
+     *  An item in an existing catalogue that is being replaced by the item in this catalogue line.
+     *  0..n
+     *  Catalogue Line
+     *  Replaced
+     *  Related Item
+     *  Related Item
+     *  Related Item
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetReplacedRelatedItem($index)
+    {
+        unset($this->replacedRelatedItem[$index]);
+    }
+
+    /**
+     * Gets as replacedRelatedItem
+     *
+     * ASBIE
+     *  Catalogue Line. Replaced_ Related Item. Related Item
+     *  An item in an existing catalogue that is being replaced by the item in this catalogue line.
+     *  0..n
+     *  Catalogue Line
+     *  Replaced
+     *  Related Item
+     *  Related Item
+     *  Related Item
+     *
+     * @return \horstoeko\ubl\entities\cac\ReplacedRelatedItem[]
+     */
+    public function getReplacedRelatedItem()
+    {
+        return $this->replacedRelatedItem;
+    }
+
+    /**
+     * Sets a new replacedRelatedItem
+     *
+     * ASBIE
+     *  Catalogue Line. Replaced_ Related Item. Related Item
+     *  An item in an existing catalogue that is being replaced by the item in this catalogue line.
+     *  0..n
+     *  Catalogue Line
+     *  Replaced
+     *  Related Item
+     *  Related Item
+     *  Related Item
+     *
+     * @param \horstoeko\ubl\entities\cac\ReplacedRelatedItem[] $replacedRelatedItem
+     * @return self
+     */
+    public function setReplacedRelatedItem(array $replacedRelatedItem)
+    {
+        $this->replacedRelatedItem = $replacedRelatedItem;
+        return $this;
+    }
+
+    /**
      * Adds as requiredItemLocationQuantity
      *
      * ASBIE
      *  Catalogue Line. Required_ Item Location Quantity. Item Location Quantity
-     *  An association to the description of properties related to locations and quantities of the Item.
+     *  Properties of the item in this catalogue line that are dependent on location and quantity.
      *  0..n
      *  Catalogue Line
      *  Required
+     *  Item Location Quantity
      *  Item Location Quantity
      *  Item Location Quantity
      *
@@ -1932,10 +2157,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Required_ Item Location Quantity. Item Location Quantity
-     *  An association to the description of properties related to locations and quantities of the Item.
+     *  Properties of the item in this catalogue line that are dependent on location and quantity.
      *  0..n
      *  Catalogue Line
      *  Required
+     *  Item Location Quantity
      *  Item Location Quantity
      *  Item Location Quantity
      *
@@ -1952,10 +2178,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Required_ Item Location Quantity. Item Location Quantity
-     *  An association to the description of properties related to locations and quantities of the Item.
+     *  Properties of the item in this catalogue line that are dependent on location and quantity.
      *  0..n
      *  Catalogue Line
      *  Required
+     *  Item Location Quantity
      *  Item Location Quantity
      *  Item Location Quantity
      *
@@ -1972,10 +2199,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Required_ Item Location Quantity. Item Location Quantity
-     *  An association to the description of properties related to locations and quantities of the Item.
+     *  Properties of the item in this catalogue line that are dependent on location and quantity.
      *  0..n
      *  Catalogue Line
      *  Required
+     *  Item Location Quantity
      *  Item Location Quantity
      *  Item Location Quantity
      *
@@ -1991,10 +2219,11 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Required_ Item Location Quantity. Item Location Quantity
-     *  An association to the description of properties related to locations and quantities of the Item.
+     *  Properties of the item in this catalogue line that are dependent on location and quantity.
      *  0..n
      *  Catalogue Line
      *  Required
+     *  Item Location Quantity
      *  Item Location Quantity
      *  Item Location Quantity
      *
@@ -2012,9 +2241,10 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this catalogue line.
      *  0..n
      *  Catalogue Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -2032,9 +2262,10 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this catalogue line.
      *  0..n
      *  Catalogue Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -2051,9 +2282,10 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this catalogue line.
      *  0..n
      *  Catalogue Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -2070,9 +2302,10 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this catalogue line.
      *  0..n
      *  Catalogue Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -2088,9 +2321,10 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this catalogue line.
      *  0..n
      *  Catalogue Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -2108,9 +2342,10 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Item
-     *  An association to the Item itself.
+     *  A specification of the item itself.
      *  1
      *  Catalogue Line
+     *  Item
      *  Item
      *  Item
      *
@@ -2126,9 +2361,10 @@ class CatalogueLineType
      *
      * ASBIE
      *  Catalogue Line. Item
-     *  An association to the Item itself.
+     *  A specification of the item itself.
      *  1
      *  Catalogue Line
+     *  Item
      *  Item
      *  Item
      *
@@ -2138,6 +2374,196 @@ class CatalogueLineType
     public function setItem(\horstoeko\ubl\entities\cac\Item $item)
     {
         $this->item = $item;
+        return $this;
+    }
+
+    /**
+     * Adds as keywordItemProperty
+     *
+     * ASBIE
+     *  Catalogue Line. Keyword_ Item Property. Item Property
+     *  A property of the item in this catalogue line.
+     *  0..n
+     *  Catalogue Line
+     *  Keyword
+     *  Item Property
+     *  Item Property
+     *  Item Property
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\KeywordItemProperty $keywordItemProperty
+     */
+    public function addToKeywordItemProperty(\horstoeko\ubl\entities\cac\KeywordItemProperty $keywordItemProperty)
+    {
+        $this->keywordItemProperty[] = $keywordItemProperty;
+        return $this;
+    }
+
+    /**
+     * isset keywordItemProperty
+     *
+     * ASBIE
+     *  Catalogue Line. Keyword_ Item Property. Item Property
+     *  A property of the item in this catalogue line.
+     *  0..n
+     *  Catalogue Line
+     *  Keyword
+     *  Item Property
+     *  Item Property
+     *  Item Property
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetKeywordItemProperty($index)
+    {
+        return isset($this->keywordItemProperty[$index]);
+    }
+
+    /**
+     * unset keywordItemProperty
+     *
+     * ASBIE
+     *  Catalogue Line. Keyword_ Item Property. Item Property
+     *  A property of the item in this catalogue line.
+     *  0..n
+     *  Catalogue Line
+     *  Keyword
+     *  Item Property
+     *  Item Property
+     *  Item Property
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetKeywordItemProperty($index)
+    {
+        unset($this->keywordItemProperty[$index]);
+    }
+
+    /**
+     * Gets as keywordItemProperty
+     *
+     * ASBIE
+     *  Catalogue Line. Keyword_ Item Property. Item Property
+     *  A property of the item in this catalogue line.
+     *  0..n
+     *  Catalogue Line
+     *  Keyword
+     *  Item Property
+     *  Item Property
+     *  Item Property
+     *
+     * @return \horstoeko\ubl\entities\cac\KeywordItemProperty[]
+     */
+    public function getKeywordItemProperty()
+    {
+        return $this->keywordItemProperty;
+    }
+
+    /**
+     * Sets a new keywordItemProperty
+     *
+     * ASBIE
+     *  Catalogue Line. Keyword_ Item Property. Item Property
+     *  A property of the item in this catalogue line.
+     *  0..n
+     *  Catalogue Line
+     *  Keyword
+     *  Item Property
+     *  Item Property
+     *  Item Property
+     *
+     * @param \horstoeko\ubl\entities\cac\KeywordItemProperty[] $keywordItemProperty
+     * @return self
+     */
+    public function setKeywordItemProperty(array $keywordItemProperty)
+    {
+        $this->keywordItemProperty = $keywordItemProperty;
+        return $this;
+    }
+
+    /**
+     * Gets as callForTendersLineReference
+     *
+     * ASBIE
+     *  Catalogue Line. Call For Tenders_ Line Reference. Line Reference
+     *  Reference to a Line on a Call For Tenders document.
+     *  0..1
+     *  Catalogue Line
+     *  Call For Tenders
+     *  Line Reference
+     *  Line Reference
+     *  Line Reference
+     *
+     * @return \horstoeko\ubl\entities\cac\CallForTendersLineReference
+     */
+    public function getCallForTendersLineReference()
+    {
+        return $this->callForTendersLineReference;
+    }
+
+    /**
+     * Sets a new callForTendersLineReference
+     *
+     * ASBIE
+     *  Catalogue Line. Call For Tenders_ Line Reference. Line Reference
+     *  Reference to a Line on a Call For Tenders document.
+     *  0..1
+     *  Catalogue Line
+     *  Call For Tenders
+     *  Line Reference
+     *  Line Reference
+     *  Line Reference
+     *
+     * @param \horstoeko\ubl\entities\cac\CallForTendersLineReference $callForTendersLineReference
+     * @return self
+     */
+    public function setCallForTendersLineReference(\horstoeko\ubl\entities\cac\CallForTendersLineReference $callForTendersLineReference)
+    {
+        $this->callForTendersLineReference = $callForTendersLineReference;
+        return $this;
+    }
+
+    /**
+     * Gets as callForTendersDocumentReference
+     *
+     * ASBIE
+     *  Catalogue Line. Call For Tenders_ Document Reference. Document Reference
+     *  A class defining references to a Call For Tenders document.
+     *  0..1
+     *  Catalogue Line
+     *  Call For Tenders
+     *  Document Reference
+     *  Document Reference
+     *  Document Reference
+     *
+     * @return \horstoeko\ubl\entities\cac\CallForTendersDocumentReference
+     */
+    public function getCallForTendersDocumentReference()
+    {
+        return $this->callForTendersDocumentReference;
+    }
+
+    /**
+     * Sets a new callForTendersDocumentReference
+     *
+     * ASBIE
+     *  Catalogue Line. Call For Tenders_ Document Reference. Document Reference
+     *  A class defining references to a Call For Tenders document.
+     *  0..1
+     *  Catalogue Line
+     *  Call For Tenders
+     *  Document Reference
+     *  Document Reference
+     *  Document Reference
+     *
+     * @param \horstoeko\ubl\entities\cac\CallForTendersDocumentReference $callForTendersDocumentReference
+     * @return self
+     */
+    public function setCallForTendersDocumentReference(\horstoeko\ubl\entities\cac\CallForTendersDocumentReference $callForTendersDocumentReference)
+    {
+        $this->callForTendersDocumentReference = $callForTendersDocumentReference;
         return $this;
     }
 

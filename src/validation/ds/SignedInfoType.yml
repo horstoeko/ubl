@@ -1,0 +1,23 @@
+horstoeko\ubl\entities\ds\SignedInfoType:
+    properties:
+        canonicalizationMethod:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        signatureMethod:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        reference:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

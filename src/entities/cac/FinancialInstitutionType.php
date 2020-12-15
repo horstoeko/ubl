@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Financial Institution. Details
- *  Information about a Financial Institution.
+ *  A class to describe a financial institution.
  *  Financial Institution
  * XSD Type: FinancialInstitutionType
  */
@@ -17,7 +17,7 @@ class FinancialInstitutionType
     /**
      * BBIE
      *  Financial Institution. Identifier
-     *  The identifier for the Financial Institution expressed as a code; ISO 9362 BIC (Bank Identification Code) is recommended.
+     *  An identifier for this financial institution. It is recommended that the ISO 9362 Bank Identification Code (BIC) be used as the ID.
      *  0..1
      *  Financial Institution
      *  Identifier
@@ -31,7 +31,7 @@ class FinancialInstitutionType
     /**
      * BBIE
      *  Financial Institution. Name
-     *  The name of the Financial Institution.
+     *  The name of this financial institution.
      *  0..1
      *  Financial Institution
      *  Name
@@ -45,9 +45,10 @@ class FinancialInstitutionType
     /**
      * ASBIE
      *  Financial Institution. Address
-     *  An association to Address.
+     *  The address of this financial institution.
      *  0..1
      *  Financial Institution
+     *  Address
      *  Address
      *  Address
      *
@@ -60,7 +61,7 @@ class FinancialInstitutionType
      *
      * BBIE
      *  Financial Institution. Identifier
-     *  The identifier for the Financial Institution expressed as a code; ISO 9362 BIC (Bank Identification Code) is recommended.
+     *  An identifier for this financial institution. It is recommended that the ISO 9362 Bank Identification Code (BIC) be used as the ID.
      *  0..1
      *  Financial Institution
      *  Identifier
@@ -79,7 +80,7 @@ class FinancialInstitutionType
      *
      * BBIE
      *  Financial Institution. Identifier
-     *  The identifier for the Financial Institution expressed as a code; ISO 9362 BIC (Bank Identification Code) is recommended.
+     *  An identifier for this financial institution. It is recommended that the ISO 9362 Bank Identification Code (BIC) be used as the ID.
      *  0..1
      *  Financial Institution
      *  Identifier
@@ -100,7 +101,7 @@ class FinancialInstitutionType
      *
      * BBIE
      *  Financial Institution. Name
-     *  The name of the Financial Institution.
+     *  The name of this financial institution.
      *  0..1
      *  Financial Institution
      *  Name
@@ -119,7 +120,7 @@ class FinancialInstitutionType
      *
      * BBIE
      *  Financial Institution. Name
-     *  The name of the Financial Institution.
+     *  The name of this financial institution.
      *  0..1
      *  Financial Institution
      *  Name
@@ -140,9 +141,10 @@ class FinancialInstitutionType
      *
      * ASBIE
      *  Financial Institution. Address
-     *  An association to Address.
+     *  The address of this financial institution.
      *  0..1
      *  Financial Institution
+     *  Address
      *  Address
      *  Address
      *
@@ -158,9 +160,10 @@ class FinancialInstitutionType
      *
      * ASBIE
      *  Financial Institution. Address
-     *  An association to Address.
+     *  The address of this financial institution.
      *  0..1
      *  Financial Institution
+     *  Address
      *  Address
      *  Address
      *

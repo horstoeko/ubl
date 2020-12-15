@@ -2,7 +2,7 @@
 
 namespace horstoeko\ubl\entities\cbc;
 
-use horstoeko\ubl\entities\qdt\TransportEquipmentTypeCodeType as TransportEquipmentTypeCodeTypeBase;
+use horstoeko\ubl\entities\udt\CodeType;
 
 /**
  * Class representing TransportEquipmentTypeCodeType
@@ -10,7 +10,7 @@ use horstoeko\ubl\entities\qdt\TransportEquipmentTypeCodeType as TransportEquipm
  *
  * XSD Type: TransportEquipmentTypeCodeType
  */
-class TransportEquipmentTypeCodeType extends TransportEquipmentTypeCodeTypeBase
+class TransportEquipmentTypeCodeType extends CodeType
 {
 
 

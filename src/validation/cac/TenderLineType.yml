@@ -1,0 +1,29 @@
+horstoeko\ubl\entities\cac\TenderLineType:
+    properties:
+        documentReference:
+            -
+                Valid: null
+        item:
+            -
+                Valid: null
+        offeredItemLocationQuantity:
+            -
+                Valid: null
+        replacementRelatedItem:
+            -
+                Valid: null
+        warrantyParty:
+            -
+                Valid: null
+        warrantyValidityPeriod:
+            -
+                Valid: null
+        subTenderLine:
+            -
+                Valid: null
+        callForTendersLineReference:
+            -
+                Valid: null
+        callForTendersDocumentReference:
+            -
+                Valid: null

@@ -1,0 +1,3 @@
+horstoeko\ubl\entities\cac\ActivityProperty:
+    xml_root_name: ActivityProperty
+    xml_root_namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'

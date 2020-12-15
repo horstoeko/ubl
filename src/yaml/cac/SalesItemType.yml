@@ -1,0 +1,69 @@
+horstoeko\ubl\entities\cac\SalesItemType:
+    properties:
+        quantity:
+            expose: true
+            access_type: public_method
+            serialized_name: Quantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getQuantity
+                setter: setQuantity
+            type: horstoeko\ubl\entities\cbc\Quantity
+        activityProperty:
+            expose: true
+            access_type: public_method
+            serialized_name: ActivityProperty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getActivityProperty
+                setter: setActivityProperty
+            xml_list:
+                inline: true
+                entry_name: ActivityProperty
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\ActivityProperty>
+        taxExclusivePrice:
+            expose: true
+            access_type: public_method
+            serialized_name: TaxExclusivePrice
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getTaxExclusivePrice
+                setter: setTaxExclusivePrice
+            xml_list:
+                inline: true
+                entry_name: TaxExclusivePrice
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\TaxExclusivePrice>
+        taxInclusivePrice:
+            expose: true
+            access_type: public_method
+            serialized_name: TaxInclusivePrice
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getTaxInclusivePrice
+                setter: setTaxInclusivePrice
+            xml_list:
+                inline: true
+                entry_name: TaxInclusivePrice
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\TaxInclusivePrice>
+        item:
+            expose: true
+            access_type: public_method
+            serialized_name: Item
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getItem
+                setter: setItem
+            type: horstoeko\ubl\entities\cac\Item

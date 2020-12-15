@@ -1,0 +1,62 @@
+horstoeko\ubl\entities\cac\EnergyWaterSupplyType:
+    properties:
+        consumptionReport:
+            expose: true
+            access_type: public_method
+            serialized_name: ConsumptionReport
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getConsumptionReport
+                setter: setConsumptionReport
+            xml_list:
+                inline: true
+                entry_name: ConsumptionReport
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\ConsumptionReport>
+        energyTaxReport:
+            expose: true
+            access_type: public_method
+            serialized_name: EnergyTaxReport
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getEnergyTaxReport
+                setter: setEnergyTaxReport
+            xml_list:
+                inline: true
+                entry_name: EnergyTaxReport
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\EnergyTaxReport>
+        consumptionAverage:
+            expose: true
+            access_type: public_method
+            serialized_name: ConsumptionAverage
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getConsumptionAverage
+                setter: setConsumptionAverage
+            xml_list:
+                inline: true
+                entry_name: ConsumptionAverage
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\ConsumptionAverage>
+        energyWaterConsumptionCorrection:
+            expose: true
+            access_type: public_method
+            serialized_name: EnergyWaterConsumptionCorrection
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getEnergyWaterConsumptionCorrection
+                setter: setEnergyWaterConsumptionCorrection
+            xml_list:
+                inline: true
+                entry_name: EnergyWaterConsumptionCorrection
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\EnergyWaterConsumptionCorrection>

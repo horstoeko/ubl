@@ -1,0 +1,5 @@
+horstoeko\ubl\entities\xades\CommitmentTypeQualifiersListType:
+    properties:
+        commitmentTypeQualifier:
+            -
+                Valid: null

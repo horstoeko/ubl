@@ -1,0 +1,5 @@
+horstoeko\ubl\entities\xades\SignaturePolicyIdentifierType:
+    properties:
+        signaturePolicyId:
+            -
+                Valid: null

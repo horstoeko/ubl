@@ -48,6 +48,28 @@ horstoeko\ubl\entities\cac\TransportMeansType:
                 getter: getDirectionCode
                 setter: setDirectionCode
             type: horstoeko\ubl\entities\cbc\DirectionCode
+        transportMeansTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: TransportMeansTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTransportMeansTypeCode
+                setter: setTransportMeansTypeCode
+            type: horstoeko\ubl\entities\cbc\TransportMeansTypeCode
+        tradeServiceCode:
+            expose: true
+            access_type: public_method
+            serialized_name: TradeServiceCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTradeServiceCode
+                setter: setTradeServiceCode
+            type: horstoeko\ubl\entities\cbc\TradeServiceCode
         stowage:
             expose: true
             access_type: public_method
@@ -114,3 +136,18 @@ horstoeko\ubl\entities\cac\TransportMeansType:
                 getter: getOwnerParty
                 setter: setOwnerParty
             type: horstoeko\ubl\entities\cac\OwnerParty
+        measurementDimension:
+            expose: true
+            access_type: public_method
+            serialized_name: MeasurementDimension
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getMeasurementDimension
+                setter: setMeasurementDimension
+            xml_list:
+                inline: true
+                entry_name: MeasurementDimension
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\MeasurementDimension>

@@ -1,0 +1,8 @@
+horstoeko\ubl\entities\cac\ContractExtensionType:
+    properties:
+        optionValidityPeriod:
+            -
+                Valid: null
+        renewal:
+            -
+                Valid: null

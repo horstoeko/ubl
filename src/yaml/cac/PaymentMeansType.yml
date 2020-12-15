@@ -129,3 +129,25 @@ horstoeko\ubl\entities\cac\PaymentMeansType:
                 getter: getCreditAccount
                 setter: setCreditAccount
             type: horstoeko\ubl\entities\cac\CreditAccount
+        paymentMandate:
+            expose: true
+            access_type: public_method
+            serialized_name: PaymentMandate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPaymentMandate
+                setter: setPaymentMandate
+            type: horstoeko\ubl\entities\cac\PaymentMandate
+        tradeFinancing:
+            expose: true
+            access_type: public_method
+            serialized_name: TradeFinancing
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getTradeFinancing
+                setter: setTradeFinancing
+            type: horstoeko\ubl\entities\cac\TradeFinancing

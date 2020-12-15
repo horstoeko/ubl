@@ -1,0 +1,32 @@
+horstoeko\ubl\entities\cac\TransportScheduleType:
+    properties:
+        sequenceNumeric:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        statusLocation:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        actualArrivalTransportEvent:
+            -
+                Valid: null
+        actualDepartureTransportEvent:
+            -
+                Valid: null
+        estimatedDepartureTransportEvent:
+            -
+                Valid: null
+        estimatedArrivalTransportEvent:
+            -
+                Valid: null
+        plannedDepartureTransportEvent:
+            -
+                Valid: null
+        plannedArrivalTransportEvent:
+            -
+                Valid: null

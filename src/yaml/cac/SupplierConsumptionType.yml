@@ -1,0 +1,76 @@
+horstoeko\ubl\entities\cac\SupplierConsumptionType:
+    properties:
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: Description
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>
+        utilitySupplierParty:
+            expose: true
+            access_type: public_method
+            serialized_name: UtilitySupplierParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getUtilitySupplierParty
+                setter: setUtilitySupplierParty
+            type: horstoeko\ubl\entities\cac\UtilitySupplierParty
+        utilityCustomerParty:
+            expose: true
+            access_type: public_method
+            serialized_name: UtilityCustomerParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getUtilityCustomerParty
+                setter: setUtilityCustomerParty
+            type: horstoeko\ubl\entities\cac\UtilityCustomerParty
+        consumption:
+            expose: true
+            access_type: public_method
+            serialized_name: Consumption
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getConsumption
+                setter: setConsumption
+            type: horstoeko\ubl\entities\cac\Consumption
+        contract:
+            expose: true
+            access_type: public_method
+            serialized_name: Contract
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getContract
+                setter: setContract
+            type: horstoeko\ubl\entities\cac\Contract
+        consumptionLine:
+            expose: true
+            access_type: public_method
+            serialized_name: ConsumptionLine
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getConsumptionLine
+                setter: setConsumptionLine
+            xml_list:
+                inline: true
+                entry_name: ConsumptionLine
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\ConsumptionLine>

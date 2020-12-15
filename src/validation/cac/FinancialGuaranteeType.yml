@@ -1,0 +1,10 @@
+horstoeko\ubl\entities\cac\FinancialGuaranteeType:
+    properties:
+        guaranteeTypeCode:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        constitutionPeriod:
+            -
+                Valid: null

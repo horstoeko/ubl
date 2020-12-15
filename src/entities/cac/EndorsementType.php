@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Endorsement. Details
- *  Details of an endorsement on the document.
+ *  A class to describe an endorsement of a document.
  *  Endorsement
  * XSD Type: EndorsementType
  */
@@ -17,7 +17,7 @@ class EndorsementType
     /**
      * BBIE
      *  Endorsement. Document. Identifier
-     *  Identifies the endorsement.
+     *  An identifier for this endorsement.
      *  1
      *  Endorsement
      *  Document
@@ -31,7 +31,7 @@ class EndorsementType
     /**
      * BBIE
      *  Endorsement. Approval Status. Text
-     *  Specifies the status of the endorsement.
+     *  The status of this endorsement.
      *  1
      *  Endorsement
      *  Approval Status
@@ -46,7 +46,7 @@ class EndorsementType
     /**
      * BBIE
      *  Endorsement. Remarks. Text
-     *  Remarks by the endorsing party.
+     *  Remarks provided by the endorsing party.
      *  0..n
      *  Endorsement
      *  Remarks
@@ -62,9 +62,10 @@ class EndorsementType
     /**
      * ASBIE
      *  Endorsement. Endorser Party
-     *  The type of party providing the endorsement.
+     *  The type of party providing this endorsement.
      *  1
      *  Endorsement
+     *  Endorser Party
      *  Endorser Party
      *  Endorser Party
      *
@@ -75,9 +76,10 @@ class EndorsementType
     /**
      * ASBIE
      *  Endorsement. Signature
-     *  One or more signatures applied to the endorsement.
+     *  A signature applied to this endorsement.
      *  0..n
      *  Endorsement
+     *  Signature
      *  Signature
      *  Signature
      *
@@ -92,7 +94,7 @@ class EndorsementType
      *
      * BBIE
      *  Endorsement. Document. Identifier
-     *  Identifies the endorsement.
+     *  An identifier for this endorsement.
      *  1
      *  Endorsement
      *  Document
@@ -111,7 +113,7 @@ class EndorsementType
      *
      * BBIE
      *  Endorsement. Document. Identifier
-     *  Identifies the endorsement.
+     *  An identifier for this endorsement.
      *  1
      *  Endorsement
      *  Document
@@ -132,7 +134,7 @@ class EndorsementType
      *
      * BBIE
      *  Endorsement. Approval Status. Text
-     *  Specifies the status of the endorsement.
+     *  The status of this endorsement.
      *  1
      *  Endorsement
      *  Approval Status
@@ -152,7 +154,7 @@ class EndorsementType
      *
      * BBIE
      *  Endorsement. Approval Status. Text
-     *  Specifies the status of the endorsement.
+     *  The status of this endorsement.
      *  1
      *  Endorsement
      *  Approval Status
@@ -174,7 +176,7 @@ class EndorsementType
      *
      * BBIE
      *  Endorsement. Remarks. Text
-     *  Remarks by the endorsing party.
+     *  Remarks provided by the endorsing party.
      *  0..n
      *  Endorsement
      *  Remarks
@@ -195,7 +197,7 @@ class EndorsementType
      *
      * BBIE
      *  Endorsement. Remarks. Text
-     *  Remarks by the endorsing party.
+     *  Remarks provided by the endorsing party.
      *  0..n
      *  Endorsement
      *  Remarks
@@ -215,7 +217,7 @@ class EndorsementType
      *
      * BBIE
      *  Endorsement. Remarks. Text
-     *  Remarks by the endorsing party.
+     *  Remarks provided by the endorsing party.
      *  0..n
      *  Endorsement
      *  Remarks
@@ -235,7 +237,7 @@ class EndorsementType
      *
      * BBIE
      *  Endorsement. Remarks. Text
-     *  Remarks by the endorsing party.
+     *  Remarks provided by the endorsing party.
      *  0..n
      *  Endorsement
      *  Remarks
@@ -254,7 +256,7 @@ class EndorsementType
      *
      * BBIE
      *  Endorsement. Remarks. Text
-     *  Remarks by the endorsing party.
+     *  Remarks provided by the endorsing party.
      *  0..n
      *  Endorsement
      *  Remarks
@@ -275,9 +277,10 @@ class EndorsementType
      *
      * ASBIE
      *  Endorsement. Endorser Party
-     *  The type of party providing the endorsement.
+     *  The type of party providing this endorsement.
      *  1
      *  Endorsement
+     *  Endorser Party
      *  Endorser Party
      *  Endorser Party
      *
@@ -293,9 +296,10 @@ class EndorsementType
      *
      * ASBIE
      *  Endorsement. Endorser Party
-     *  The type of party providing the endorsement.
+     *  The type of party providing this endorsement.
      *  1
      *  Endorsement
+     *  Endorser Party
      *  Endorser Party
      *  Endorser Party
      *
@@ -313,9 +317,10 @@ class EndorsementType
      *
      * ASBIE
      *  Endorsement. Signature
-     *  One or more signatures applied to the endorsement.
+     *  A signature applied to this endorsement.
      *  0..n
      *  Endorsement
+     *  Signature
      *  Signature
      *  Signature
      *
@@ -333,9 +338,10 @@ class EndorsementType
      *
      * ASBIE
      *  Endorsement. Signature
-     *  One or more signatures applied to the endorsement.
+     *  A signature applied to this endorsement.
      *  0..n
      *  Endorsement
+     *  Signature
      *  Signature
      *  Signature
      *
@@ -352,9 +358,10 @@ class EndorsementType
      *
      * ASBIE
      *  Endorsement. Signature
-     *  One or more signatures applied to the endorsement.
+     *  A signature applied to this endorsement.
      *  0..n
      *  Endorsement
+     *  Signature
      *  Signature
      *  Signature
      *
@@ -371,9 +378,10 @@ class EndorsementType
      *
      * ASBIE
      *  Endorsement. Signature
-     *  One or more signatures applied to the endorsement.
+     *  A signature applied to this endorsement.
      *  0..n
      *  Endorsement
+     *  Signature
      *  Signature
      *  Signature
      *
@@ -389,9 +397,10 @@ class EndorsementType
      *
      * ASBIE
      *  Endorsement. Signature
-     *  One or more signatures applied to the endorsement.
+     *  A signature applied to this endorsement.
      *  0..n
      *  Endorsement
+     *  Signature
      *  Signature
      *  Signature
      *

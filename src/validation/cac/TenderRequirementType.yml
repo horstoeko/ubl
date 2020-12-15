@@ -1,0 +1,10 @@
+horstoeko\ubl\entities\cac\TenderRequirementType:
+    properties:
+        name:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        templateDocumentReference:
+            -
+                Valid: null

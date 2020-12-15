@@ -1,0 +1,10 @@
+horstoeko\ubl\entities\cac\CustomsDeclarationType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        issuerParty:
+            -
+                Valid: null

@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Document Response. Details
- *  Information about responses to a document (at the application level).
+ *  A class to describe an application-level response to a document.
  *  Document Response
  * XSD Type: DocumentResponseType
  */
@@ -17,9 +17,10 @@ class DocumentResponseType
     /**
      * ASBIE
      *  Document Response. Response
-     *  The response to the document.
+     *  A response to the document as a whole.
      *  1
      *  Document Response
+     *  Response
      *  Response
      *  Response
      *
@@ -30,23 +31,27 @@ class DocumentResponseType
     /**
      * ASBIE
      *  Document Response. Document Reference
-     *  An association to Document Reference.
-     *  1
+     *  A referenced document.
+     *  1..n
      *  Document Response
      *  Document Reference
      *  Document Reference
+     *  Document Reference
      *
-     * @var \horstoeko\ubl\entities\cac\DocumentReference $documentReference
+     * @var \horstoeko\ubl\entities\cac\DocumentReference[] $documentReference
      */
-    private $documentReference = null;
+    private $documentReference = [
+        
+    ];
 
     /**
      * ASBIE
      *  Document Response. Issuer_ Party. Party
-     *  The party who issued a document.
+     *  The party that issued the document.
      *  0..1
      *  Document Response
      *  Issuer
+     *  Party
      *  Party
      *  Party
      *
@@ -57,10 +62,11 @@ class DocumentResponseType
     /**
      * ASBIE
      *  Document Response. Recipient_ Party. Party
-     *  The party for whom the document is intended.
+     *  The party for which the document is intended.
      *  0..1
      *  Document Response
      *  Recipient
+     *  Party
      *  Party
      *  Party
      *
@@ -71,9 +77,10 @@ class DocumentResponseType
     /**
      * ASBIE
      *  Document Response. Line Response
-     *  Response to various lines in the document.
+     *  A response to a particular line in the document.
      *  0..n
      *  Document Response
+     *  Line Response
      *  Line Response
      *  Line Response
      *
@@ -88,9 +95,10 @@ class DocumentResponseType
      *
      * ASBIE
      *  Document Response. Response
-     *  The response to the document.
+     *  A response to the document as a whole.
      *  1
      *  Document Response
+     *  Response
      *  Response
      *  Response
      *
@@ -106,9 +114,10 @@ class DocumentResponseType
      *
      * ASBIE
      *  Document Response. Response
-     *  The response to the document.
+     *  A response to the document as a whole.
      *  1
      *  Document Response
+     *  Response
      *  Response
      *  Response
      *
@@ -122,17 +131,79 @@ class DocumentResponseType
     }
 
     /**
+     * Adds as documentReference
+     *
+     * ASBIE
+     *  Document Response. Document Reference
+     *  A referenced document.
+     *  1..n
+     *  Document Response
+     *  Document Reference
+     *  Document Reference
+     *  Document Reference
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\DocumentReference $documentReference
+     */
+    public function addToDocumentReference(\horstoeko\ubl\entities\cac\DocumentReference $documentReference)
+    {
+        $this->documentReference[] = $documentReference;
+        return $this;
+    }
+
+    /**
+     * isset documentReference
+     *
+     * ASBIE
+     *  Document Response. Document Reference
+     *  A referenced document.
+     *  1..n
+     *  Document Response
+     *  Document Reference
+     *  Document Reference
+     *  Document Reference
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetDocumentReference($index)
+    {
+        return isset($this->documentReference[$index]);
+    }
+
+    /**
+     * unset documentReference
+     *
+     * ASBIE
+     *  Document Response. Document Reference
+     *  A referenced document.
+     *  1..n
+     *  Document Response
+     *  Document Reference
+     *  Document Reference
+     *  Document Reference
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetDocumentReference($index)
+    {
+        unset($this->documentReference[$index]);
+    }
+
+    /**
      * Gets as documentReference
      *
      * ASBIE
      *  Document Response. Document Reference
-     *  An association to Document Reference.
-     *  1
+     *  A referenced document.
+     *  1..n
      *  Document Response
      *  Document Reference
      *  Document Reference
+     *  Document Reference
      *
-     * @return \horstoeko\ubl\entities\cac\DocumentReference
+     * @return \horstoeko\ubl\entities\cac\DocumentReference[]
      */
     public function getDocumentReference()
     {
@@ -144,16 +215,17 @@ class DocumentResponseType
      *
      * ASBIE
      *  Document Response. Document Reference
-     *  An association to Document Reference.
-     *  1
+     *  A referenced document.
+     *  1..n
      *  Document Response
      *  Document Reference
      *  Document Reference
+     *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\DocumentReference $documentReference
+     * @param \horstoeko\ubl\entities\cac\DocumentReference[] $documentReference
      * @return self
      */
-    public function setDocumentReference(\horstoeko\ubl\entities\cac\DocumentReference $documentReference)
+    public function setDocumentReference(array $documentReference)
     {
         $this->documentReference = $documentReference;
         return $this;
@@ -164,10 +236,11 @@ class DocumentResponseType
      *
      * ASBIE
      *  Document Response. Issuer_ Party. Party
-     *  The party who issued a document.
+     *  The party that issued the document.
      *  0..1
      *  Document Response
      *  Issuer
+     *  Party
      *  Party
      *  Party
      *
@@ -183,10 +256,11 @@ class DocumentResponseType
      *
      * ASBIE
      *  Document Response. Issuer_ Party. Party
-     *  The party who issued a document.
+     *  The party that issued the document.
      *  0..1
      *  Document Response
      *  Issuer
+     *  Party
      *  Party
      *  Party
      *
@@ -204,10 +278,11 @@ class DocumentResponseType
      *
      * ASBIE
      *  Document Response. Recipient_ Party. Party
-     *  The party for whom the document is intended.
+     *  The party for which the document is intended.
      *  0..1
      *  Document Response
      *  Recipient
+     *  Party
      *  Party
      *  Party
      *
@@ -223,10 +298,11 @@ class DocumentResponseType
      *
      * ASBIE
      *  Document Response. Recipient_ Party. Party
-     *  The party for whom the document is intended.
+     *  The party for which the document is intended.
      *  0..1
      *  Document Response
      *  Recipient
+     *  Party
      *  Party
      *  Party
      *
@@ -244,9 +320,10 @@ class DocumentResponseType
      *
      * ASBIE
      *  Document Response. Line Response
-     *  Response to various lines in the document.
+     *  A response to a particular line in the document.
      *  0..n
      *  Document Response
+     *  Line Response
      *  Line Response
      *  Line Response
      *
@@ -264,9 +341,10 @@ class DocumentResponseType
      *
      * ASBIE
      *  Document Response. Line Response
-     *  Response to various lines in the document.
+     *  A response to a particular line in the document.
      *  0..n
      *  Document Response
+     *  Line Response
      *  Line Response
      *  Line Response
      *
@@ -283,9 +361,10 @@ class DocumentResponseType
      *
      * ASBIE
      *  Document Response. Line Response
-     *  Response to various lines in the document.
+     *  A response to a particular line in the document.
      *  0..n
      *  Document Response
+     *  Line Response
      *  Line Response
      *  Line Response
      *
@@ -302,9 +381,10 @@ class DocumentResponseType
      *
      * ASBIE
      *  Document Response. Line Response
-     *  Response to various lines in the document.
+     *  A response to a particular line in the document.
      *  0..n
      *  Document Response
+     *  Line Response
      *  Line Response
      *  Line Response
      *
@@ -320,9 +400,10 @@ class DocumentResponseType
      *
      * ASBIE
      *  Document Response. Line Response
-     *  Response to various lines in the document.
+     *  A response to a particular line in the document.
      *  0..n
      *  Document Response
+     *  Line Response
      *  Line Response
      *  Line Response
      *

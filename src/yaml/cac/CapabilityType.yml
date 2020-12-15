@@ -1,0 +1,76 @@
+horstoeko\ubl\entities\cac\CapabilityType:
+    properties:
+        capabilityTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: CapabilityTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getCapabilityTypeCode
+                setter: setCapabilityTypeCode
+            type: horstoeko\ubl\entities\cbc\CapabilityTypeCode
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: Description
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>
+        valueAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: ValueAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getValueAmount
+                setter: setValueAmount
+            type: horstoeko\ubl\entities\cbc\ValueAmount
+        valueQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: ValueQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getValueQuantity
+                setter: setValueQuantity
+            type: horstoeko\ubl\entities\cbc\ValueQuantity
+        evidenceSupplied:
+            expose: true
+            access_type: public_method
+            serialized_name: EvidenceSupplied
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getEvidenceSupplied
+                setter: setEvidenceSupplied
+            xml_list:
+                inline: true
+                entry_name: EvidenceSupplied
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\EvidenceSupplied>
+        validityPeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: ValidityPeriod
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getValidityPeriod
+                setter: setValidityPeriod
+            type: horstoeko\ubl\entities\cac\ValidityPeriod

@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Corporate Registration Scheme. Details
- *  Information directly relating a scheme for corporate registration of businesses.
+ *  A class to describe a scheme for corporate registration.
  *  Corporate Registration Scheme
  * XSD Type: CorporateRegistrationSchemeType
  */
@@ -17,13 +17,13 @@ class CorporateRegistrationSchemeType
     /**
      * BBIE
      *  Corporate Registration Scheme. Identifier
-     *  Identifies the scheme.
+     *  An identifier for this registration scheme.
      *  0..1
      *  Corporate Registration Scheme
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "ASIC" in Australia
+     *  ASIC in Australia
      *
      * @var \horstoeko\ubl\entities\cbc\ID $iD
      */
@@ -32,13 +32,13 @@ class CorporateRegistrationSchemeType
     /**
      * BBIE
      *  Corporate Registration Scheme. Name
-     *  Identifies the scheme by name.
+     *  The name of this registration scheme.
      *  0..1
      *  Corporate Registration Scheme
      *  Name
      *  Name
      *  Name. Type
-     *  "Australian Securities and Investment Commission" in Australia
+     *  Australian Securities and Investment Commission in Australia
      *
      * @var \horstoeko\ubl\entities\cbc\Name $name
      */
@@ -47,13 +47,13 @@ class CorporateRegistrationSchemeType
     /**
      * BBIE
      *  Corporate Registration Scheme. Corporate Registration Type Code. Code
-     *  Identifies the type of scheme.
+     *  A code signifying the type of this registration scheme.
      *  0..1
      *  Corporate Registration Scheme
      *  Corporate Registration Type Code
      *  Code
      *  Code. Type
-     *  "ACN"
+     *  ACN
      *
      * @var \horstoeko\ubl\entities\cbc\CorporateRegistrationTypeCode $corporateRegistrationTypeCode
      */
@@ -62,12 +62,14 @@ class CorporateRegistrationSchemeType
     /**
      * ASBIE
      *  Corporate Registration Scheme. Jurisdiction Region_ Address. Address
-     *  Associates the registration scheme with particulars that identify and locate the geographic area to which the scheme applies.
+     *  A geographic area in which this registration scheme applies.
      *  0..n
      *  Corporate Registration Scheme
      *  Jurisdiction Region
      *  Address
      *  Address
+     *  Address
+     *  England , Wales
      *
      * @var \horstoeko\ubl\entities\cac\JurisdictionRegionAddress[] $jurisdictionRegionAddress
      */
@@ -80,13 +82,13 @@ class CorporateRegistrationSchemeType
      *
      * BBIE
      *  Corporate Registration Scheme. Identifier
-     *  Identifies the scheme.
+     *  An identifier for this registration scheme.
      *  0..1
      *  Corporate Registration Scheme
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "ASIC" in Australia
+     *  ASIC in Australia
      *
      * @return \horstoeko\ubl\entities\cbc\ID
      */
@@ -100,13 +102,13 @@ class CorporateRegistrationSchemeType
      *
      * BBIE
      *  Corporate Registration Scheme. Identifier
-     *  Identifies the scheme.
+     *  An identifier for this registration scheme.
      *  0..1
      *  Corporate Registration Scheme
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "ASIC" in Australia
+     *  ASIC in Australia
      *
      * @param \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
@@ -122,13 +124,13 @@ class CorporateRegistrationSchemeType
      *
      * BBIE
      *  Corporate Registration Scheme. Name
-     *  Identifies the scheme by name.
+     *  The name of this registration scheme.
      *  0..1
      *  Corporate Registration Scheme
      *  Name
      *  Name
      *  Name. Type
-     *  "Australian Securities and Investment Commission" in Australia
+     *  Australian Securities and Investment Commission in Australia
      *
      * @return \horstoeko\ubl\entities\cbc\Name
      */
@@ -142,13 +144,13 @@ class CorporateRegistrationSchemeType
      *
      * BBIE
      *  Corporate Registration Scheme. Name
-     *  Identifies the scheme by name.
+     *  The name of this registration scheme.
      *  0..1
      *  Corporate Registration Scheme
      *  Name
      *  Name
      *  Name. Type
-     *  "Australian Securities and Investment Commission" in Australia
+     *  Australian Securities and Investment Commission in Australia
      *
      * @param \horstoeko\ubl\entities\cbc\Name $name
      * @return self
@@ -164,13 +166,13 @@ class CorporateRegistrationSchemeType
      *
      * BBIE
      *  Corporate Registration Scheme. Corporate Registration Type Code. Code
-     *  Identifies the type of scheme.
+     *  A code signifying the type of this registration scheme.
      *  0..1
      *  Corporate Registration Scheme
      *  Corporate Registration Type Code
      *  Code
      *  Code. Type
-     *  "ACN"
+     *  ACN
      *
      * @return \horstoeko\ubl\entities\cbc\CorporateRegistrationTypeCode
      */
@@ -184,13 +186,13 @@ class CorporateRegistrationSchemeType
      *
      * BBIE
      *  Corporate Registration Scheme. Corporate Registration Type Code. Code
-     *  Identifies the type of scheme.
+     *  A code signifying the type of this registration scheme.
      *  0..1
      *  Corporate Registration Scheme
      *  Corporate Registration Type Code
      *  Code
      *  Code. Type
-     *  "ACN"
+     *  ACN
      *
      * @param \horstoeko\ubl\entities\cbc\CorporateRegistrationTypeCode $corporateRegistrationTypeCode
      * @return self
@@ -206,12 +208,14 @@ class CorporateRegistrationSchemeType
      *
      * ASBIE
      *  Corporate Registration Scheme. Jurisdiction Region_ Address. Address
-     *  Associates the registration scheme with particulars that identify and locate the geographic area to which the scheme applies.
+     *  A geographic area in which this registration scheme applies.
      *  0..n
      *  Corporate Registration Scheme
      *  Jurisdiction Region
      *  Address
      *  Address
+     *  Address
+     *  England , Wales
      *
      * @return self
      * @param \horstoeko\ubl\entities\cac\JurisdictionRegionAddress $jurisdictionRegionAddress
@@ -227,12 +231,14 @@ class CorporateRegistrationSchemeType
      *
      * ASBIE
      *  Corporate Registration Scheme. Jurisdiction Region_ Address. Address
-     *  Associates the registration scheme with particulars that identify and locate the geographic area to which the scheme applies.
+     *  A geographic area in which this registration scheme applies.
      *  0..n
      *  Corporate Registration Scheme
      *  Jurisdiction Region
      *  Address
      *  Address
+     *  Address
+     *  England , Wales
      *
      * @param int|string $index
      * @return bool
@@ -247,12 +253,14 @@ class CorporateRegistrationSchemeType
      *
      * ASBIE
      *  Corporate Registration Scheme. Jurisdiction Region_ Address. Address
-     *  Associates the registration scheme with particulars that identify and locate the geographic area to which the scheme applies.
+     *  A geographic area in which this registration scheme applies.
      *  0..n
      *  Corporate Registration Scheme
      *  Jurisdiction Region
      *  Address
      *  Address
+     *  Address
+     *  England , Wales
      *
      * @param int|string $index
      * @return void
@@ -267,12 +275,14 @@ class CorporateRegistrationSchemeType
      *
      * ASBIE
      *  Corporate Registration Scheme. Jurisdiction Region_ Address. Address
-     *  Associates the registration scheme with particulars that identify and locate the geographic area to which the scheme applies.
+     *  A geographic area in which this registration scheme applies.
      *  0..n
      *  Corporate Registration Scheme
      *  Jurisdiction Region
      *  Address
      *  Address
+     *  Address
+     *  England , Wales
      *
      * @return \horstoeko\ubl\entities\cac\JurisdictionRegionAddress[]
      */
@@ -286,12 +296,14 @@ class CorporateRegistrationSchemeType
      *
      * ASBIE
      *  Corporate Registration Scheme. Jurisdiction Region_ Address. Address
-     *  Associates the registration scheme with particulars that identify and locate the geographic area to which the scheme applies.
+     *  A geographic area in which this registration scheme applies.
      *  0..n
      *  Corporate Registration Scheme
      *  Jurisdiction Region
      *  Address
      *  Address
+     *  Address
+     *  England , Wales
      *
      * @param \horstoeko\ubl\entities\cac\JurisdictionRegionAddress[] $jurisdictionRegionAddress
      * @return self

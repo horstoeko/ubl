@@ -5,6 +5,30 @@ horstoeko\ubl\entities\cac\ConsignmentType:
                 NotNull:
                     groups:
                         - xsd_rules
+        consolidatedShipment:
+            -
+                Valid: null
+        customsDeclaration:
+            -
+                Valid: null
+        requestedPickupTransportEvent:
+            -
+                Valid: null
+        requestedDeliveryTransportEvent:
+            -
+                Valid: null
+        plannedPickupTransportEvent:
+            -
+                Valid: null
+        plannedDeliveryTransportEvent:
+            -
+                Valid: null
+        status:
+            -
+                Valid: null
+        childConsignment:
+            -
+                Valid: null
         consigneeParty:
             -
                 Valid: null
@@ -32,6 +56,30 @@ horstoeko\ubl\entities\cac\ConsignmentType:
         finalDeliveryParty:
             -
                 Valid: null
+        performingCarrierParty:
+            -
+                Valid: null
+        substituteCarrierParty:
+            -
+                Valid: null
+        logisticsOperatorParty:
+            -
+                Valid: null
+        transportAdvisorParty:
+            -
+                Valid: null
+        hazardousItemNotificationParty:
+            -
+                Valid: null
+        insuranceParty:
+            -
+                Valid: null
+        mortgageHolderParty:
+            -
+                Valid: null
+        billOfLadingHolderParty:
+            -
+                Valid: null
         originalDepartureCountry:
             -
                 Valid: null
@@ -42,6 +90,9 @@ horstoeko\ubl\entities\cac\ConsignmentType:
             -
                 Valid: null
         transportContract:
+            -
+                Valid: null
+        transportEvent:
             -
                 Valid: null
         originalDespatchTransportationService:
@@ -56,6 +107,36 @@ horstoeko\ubl\entities\cac\ConsignmentType:
         paymentTerms:
             -
                 Valid: null
+        collectPaymentTerms:
+            -
+                Valid: null
+        disbursementPaymentTerms:
+            -
+                Valid: null
+        prepaidPaymentTerms:
+            -
+                Valid: null
         freightAllowanceCharge:
+            -
+                Valid: null
+        extraAllowanceCharge:
+            -
+                Valid: null
+        mainCarriageShipmentStage:
+            -
+                Valid: null
+        preCarriageShipmentStage:
+            -
+                Valid: null
+        onCarriageShipmentStage:
+            -
+                Valid: null
+        transportHandlingUnit:
+            -
+                Valid: null
+        firstArrivalPortLocation:
+            -
+                Valid: null
+        lastExitPortLocation:
             -
                 Valid: null

@@ -28,6 +28,9 @@ horstoeko\ubl\entities\main\InvoiceType:
         receiptDocumentReference:
             -
                 Valid: null
+        statementDocumentReference:
+            -
+                Valid: null
         originatorDocumentReference:
             -
                 Valid: null
@@ -35,6 +38,9 @@ horstoeko\ubl\entities\main\InvoiceType:
             -
                 Valid: null
         additionalDocumentReference:
+            -
+                Valid: null
+        projectReference:
             -
                 Valid: null
         signature:
@@ -97,6 +103,9 @@ horstoeko\ubl\entities\main\InvoiceType:
             -
                 Valid: null
         taxTotal:
+            -
+                Valid: null
+        withholdingTaxTotal:
             -
                 Valid: null
         legalMonetaryTotal:

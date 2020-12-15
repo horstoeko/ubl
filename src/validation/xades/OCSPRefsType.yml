@@ -1,0 +1,9 @@
+horstoeko\ubl\entities\xades\OCSPRefsType:
+    properties:
+        oCSPRef:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Country. Details
- *  Information about a geopolitical country.
+ *  A class to describe a country.
  *  Country
  * XSD Type: CountryType
  */
@@ -17,11 +17,12 @@ class CountryType
     /**
      * BBIE
      *  Country. Identification Code. Code
-     *  An identifier for the Country.
+     *  A code signifying this country.
      *  0..1
      *  Country
      *  Identification Code
      *  Code
+     *  Country Identification
      *  Country Identification_ Code. Type
      *
      * @var \horstoeko\ubl\entities\cbc\IdentificationCode $identificationCode
@@ -31,13 +32,13 @@ class CountryType
     /**
      * BBIE
      *  Country. Name
-     *  The name of the Country.
+     *  The name of this country.
      *  0..1
      *  Country
      *  Name
      *  Name
      *  Name. Type
-     *  “SOUTH AFRICA”
+     *  SOUTH AFRICA
      *
      * @var \horstoeko\ubl\entities\cbc\Name $name
      */
@@ -48,11 +49,12 @@ class CountryType
      *
      * BBIE
      *  Country. Identification Code. Code
-     *  An identifier for the Country.
+     *  A code signifying this country.
      *  0..1
      *  Country
      *  Identification Code
      *  Code
+     *  Country Identification
      *  Country Identification_ Code. Type
      *
      * @return \horstoeko\ubl\entities\cbc\IdentificationCode
@@ -67,11 +69,12 @@ class CountryType
      *
      * BBIE
      *  Country. Identification Code. Code
-     *  An identifier for the Country.
+     *  A code signifying this country.
      *  0..1
      *  Country
      *  Identification Code
      *  Code
+     *  Country Identification
      *  Country Identification_ Code. Type
      *
      * @param \horstoeko\ubl\entities\cbc\IdentificationCode $identificationCode
@@ -88,13 +91,13 @@ class CountryType
      *
      * BBIE
      *  Country. Name
-     *  The name of the Country.
+     *  The name of this country.
      *  0..1
      *  Country
      *  Name
      *  Name
      *  Name. Type
-     *  “SOUTH AFRICA”
+     *  SOUTH AFRICA
      *
      * @return \horstoeko\ubl\entities\cbc\Name
      */
@@ -108,13 +111,13 @@ class CountryType
      *
      * BBIE
      *  Country. Name
-     *  The name of the Country.
+     *  The name of this country.
      *  0..1
      *  Country
      *  Name
      *  Name
      *  Name. Type
-     *  “SOUTH AFRICA”
+     *  SOUTH AFRICA
      *
      * @param \horstoeko\ubl\entities\cbc\Name $name
      * @return self

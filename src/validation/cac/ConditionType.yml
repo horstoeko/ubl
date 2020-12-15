@@ -1,0 +1,7 @@
+horstoeko\ubl\entities\cac\ConditionType:
+    properties:
+        attributeID:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

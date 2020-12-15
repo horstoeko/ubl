@@ -1,0 +1,5 @@
+horstoeko\ubl\entities\sac\SignatureInformationType:
+    properties:
+        signature:
+            -
+                Valid: null

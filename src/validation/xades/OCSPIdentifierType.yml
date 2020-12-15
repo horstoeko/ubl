@@ -1,0 +1,14 @@
+horstoeko\ubl\entities\xades\OCSPIdentifierType:
+    properties:
+        responderID:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        producedAt:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

@@ -69,7 +69,7 @@ horstoeko\ubl\entities\cac\PriceType:
             accessor:
                 getter: getOrderableUnitFactorRate
                 setter: setOrderableUnitFactorRate
-            type: float
+            type: horstoeko\ubl\entities\cbc\OrderableUnitFactorRate
         validityPeriod:
             expose: true
             access_type: public_method
@@ -111,3 +111,14 @@ horstoeko\ubl\entities\cac\PriceType:
                 entry_name: AllowanceCharge
                 namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
             type: array<horstoeko\ubl\entities\cac\AllowanceCharge>
+        pricingExchangeRate:
+            expose: true
+            access_type: public_method
+            serialized_name: PricingExchangeRate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPricingExchangeRate
+                setter: setPricingExchangeRate
+            type: horstoeko\ubl\entities\cac\PricingExchangeRate

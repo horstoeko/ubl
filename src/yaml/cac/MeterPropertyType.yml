@@ -1,0 +1,61 @@
+horstoeko\ubl\entities\cac\MeterPropertyType:
+    properties:
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: Name
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getName
+                setter: setName
+            type: horstoeko\ubl\entities\cbc\Name
+        nameCode:
+            expose: true
+            access_type: public_method
+            serialized_name: NameCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getNameCode
+                setter: setNameCode
+            type: horstoeko\ubl\entities\cbc\NameCode
+        value:
+            expose: true
+            access_type: public_method
+            serialized_name: Value
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getValue
+                setter: setValue
+            type: horstoeko\ubl\entities\cbc\Value
+        valueQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: ValueQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getValueQuantity
+                setter: setValueQuantity
+            type: horstoeko\ubl\entities\cbc\ValueQuantity
+        valueQualifier:
+            expose: true
+            access_type: public_method
+            serialized_name: ValueQualifier
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getValueQualifier
+                setter: setValueQualifier
+            xml_list:
+                inline: true
+                entry_name: ValueQualifier
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\ValueQualifier>

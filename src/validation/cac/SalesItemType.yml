@@ -1,0 +1,23 @@
+horstoeko\ubl\entities\cac\SalesItemType:
+    properties:
+        quantity:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        activityProperty:
+            -
+                Valid: null
+        taxExclusivePrice:
+            -
+                Valid: null
+        taxInclusivePrice:
+            -
+                Valid: null
+        item:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

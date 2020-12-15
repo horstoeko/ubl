@@ -1,0 +1,24 @@
+horstoeko\ubl\entities\cac\RequestForTenderLineType:
+    properties:
+        documentReference:
+            -
+                Valid: null
+        deliveryPeriod:
+            -
+                Valid: null
+        requiredItemLocationQuantity:
+            -
+                Valid: null
+        warrantyValidityPeriod:
+            -
+                Valid: null
+        item:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        subRequestForTenderLine:
+            -
+                Valid: null

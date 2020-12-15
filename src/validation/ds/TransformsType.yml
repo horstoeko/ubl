@@ -1,0 +1,9 @@
+horstoeko\ubl\entities\ds\TransformsType:
+    properties:
+        transform:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

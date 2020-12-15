@@ -1,0 +1,39 @@
+horstoeko\ubl\entities\cac\BudgetAccountLineType:
+    properties:
+        iD:
+            expose: true
+            access_type: public_method
+            serialized_name: ID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getID
+                setter: setID
+            type: horstoeko\ubl\entities\cbc\ID
+        totalAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: TotalAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTotalAmount
+                setter: setTotalAmount
+            type: horstoeko\ubl\entities\cbc\TotalAmount
+        budgetAccount:
+            expose: true
+            access_type: public_method
+            serialized_name: BudgetAccount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getBudgetAccount
+                setter: setBudgetAccount
+            xml_list:
+                inline: true
+                entry_name: BudgetAccount
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\BudgetAccount>

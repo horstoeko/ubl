@@ -1,0 +1,5 @@
+horstoeko\ubl\entities\ds\X509DataType:
+    properties:
+        x509IssuerSerial:
+            -
+                Valid: null

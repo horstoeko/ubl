@@ -1,0 +1,8 @@
+horstoeko\ubl\entities\cac\PickupType:
+    properties:
+        pickupLocation:
+            -
+                Valid: null
+        pickupParty:
+            -
+                Valid: null

@@ -1,0 +1,17 @@
+horstoeko\ubl\entities\xades\CRLRefsType:
+    properties:
+        cRLRef:
+            expose: true
+            access_type: public_method
+            serialized_name: CRLRef
+            xml_element:
+                cdata: false
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            accessor:
+                getter: getCRLRef
+                setter: setCRLRef
+            xml_list:
+                inline: true
+                entry_name: CRLRef
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            type: array<horstoeko\ubl\entities\xades\CRLRefType>

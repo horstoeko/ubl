@@ -1,0 +1,18 @@
+horstoeko\ubl\entities\cac\PowerOfAttorneyType:
+    properties:
+        notaryParty:
+            -
+                Valid: null
+        agentParty:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        witnessParty:
+            -
+                Valid: null
+        mandateDocumentReference:
+            -
+                Valid: null

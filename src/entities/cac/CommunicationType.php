@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Communication. Details
- *  Information about a means of communication.
+ *  A class to describe a means of communication.
  *  Communication
  * XSD Type: CommunicationType
  */
@@ -22,6 +22,7 @@ class CommunicationType
      *  Communication
      *  Channel Code
      *  Code
+     *  Channel
      *  Channel_ Code. Type
      *  Phone Fax Email
      *
@@ -47,13 +48,13 @@ class CommunicationType
     /**
      * BBIE
      *  Communication. Value. Text
-     *  The communication value, such as phone number or email address.
+     *  An identifying value (phone number, email address, etc.) for this channel of communication
      *  0..1
      *  Communication
      *  Value
      *  Text
      *  Text. Type
-     *  "+44 1 2345 6789" "president@whitehouse.com"
+     *  +44 1 2345 6789 president@whitehouse.com
      *
      * @var \horstoeko\ubl\entities\cbc\Value $value
      */
@@ -69,6 +70,7 @@ class CommunicationType
      *  Communication
      *  Channel Code
      *  Code
+     *  Channel
      *  Channel_ Code. Type
      *  Phone Fax Email
      *
@@ -89,6 +91,7 @@ class CommunicationType
      *  Communication
      *  Channel Code
      *  Code
+     *  Channel
      *  Channel_ Code. Type
      *  Phone Fax Email
      *
@@ -148,13 +151,13 @@ class CommunicationType
      *
      * BBIE
      *  Communication. Value. Text
-     *  The communication value, such as phone number or email address.
+     *  An identifying value (phone number, email address, etc.) for this channel of communication
      *  0..1
      *  Communication
      *  Value
      *  Text
      *  Text. Type
-     *  "+44 1 2345 6789" "president@whitehouse.com"
+     *  +44 1 2345 6789 president@whitehouse.com
      *
      * @return \horstoeko\ubl\entities\cbc\Value
      */
@@ -168,13 +171,13 @@ class CommunicationType
      *
      * BBIE
      *  Communication. Value. Text
-     *  The communication value, such as phone number or email address.
+     *  An identifying value (phone number, email address, etc.) for this channel of communication
      *  0..1
      *  Communication
      *  Value
      *  Text
      *  Text. Type
-     *  "+44 1 2345 6789" "president@whitehouse.com"
+     *  +44 1 2345 6789 president@whitehouse.com
      *
      * @param \horstoeko\ubl\entities\cbc\Value $value
      * @return self

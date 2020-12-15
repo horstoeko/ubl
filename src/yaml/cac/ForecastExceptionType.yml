@@ -1,0 +1,90 @@
+horstoeko\ubl\entities\cac\ForecastExceptionType:
+    properties:
+        forecastPurposeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ForecastPurposeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getForecastPurposeCode
+                setter: setForecastPurposeCode
+            type: horstoeko\ubl\entities\cbc\ForecastPurposeCode
+        forecastTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ForecastTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getForecastTypeCode
+                setter: setForecastTypeCode
+            type: horstoeko\ubl\entities\cbc\ForecastTypeCode
+        issueDate:
+            expose: true
+            access_type: public_method
+            serialized_name: IssueDate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getIssueDate
+                setter: setIssueDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        issueTime:
+            expose: true
+            access_type: public_method
+            serialized_name: IssueTime
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getIssueTime
+                setter: setIssueTime
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time
+        dataSourceCode:
+            expose: true
+            access_type: public_method
+            serialized_name: DataSourceCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDataSourceCode
+                setter: setDataSourceCode
+            type: horstoeko\ubl\entities\cbc\DataSourceCode
+        comparisonDataCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ComparisonDataCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getComparisonDataCode
+                setter: setComparisonDataCode
+            type: horstoeko\ubl\entities\cbc\ComparisonDataCode
+        comparisonForecastIssueTime:
+            expose: true
+            access_type: public_method
+            serialized_name: ComparisonForecastIssueTime
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getComparisonForecastIssueTime
+                setter: setComparisonForecastIssueTime
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time
+        comparisonForecastIssueDate:
+            expose: true
+            access_type: public_method
+            serialized_name: ComparisonForecastIssueDate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getComparisonForecastIssueDate
+                setter: setComparisonForecastIssueDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date

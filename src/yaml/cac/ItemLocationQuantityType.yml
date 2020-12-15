@@ -115,3 +115,40 @@ horstoeko\ubl\entities\cac\ItemLocationQuantityType:
                 entry_name: ApplicableTaxCategory
                 namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
             type: array<horstoeko\ubl\entities\cac\ApplicableTaxCategory>
+        package:
+            expose: true
+            access_type: public_method
+            serialized_name: Package
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPackage
+                setter: setPackage
+            type: horstoeko\ubl\entities\cac\Package
+        allowanceCharge:
+            expose: true
+            access_type: public_method
+            serialized_name: AllowanceCharge
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getAllowanceCharge
+                setter: setAllowanceCharge
+            xml_list:
+                inline: true
+                entry_name: AllowanceCharge
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\AllowanceCharge>
+        dependentPriceReference:
+            expose: true
+            access_type: public_method
+            serialized_name: DependentPriceReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getDependentPriceReference
+                setter: setDependentPriceReference
+            type: horstoeko\ubl\entities\cac\DependentPriceReference

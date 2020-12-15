@@ -1,0 +1,9 @@
+horstoeko\ubl\entities\xades\ClaimedRolesListType:
+    properties:
+        claimedRole:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

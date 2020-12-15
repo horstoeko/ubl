@@ -1,0 +1,26 @@
+horstoeko\ubl\entities\cac\TransportExecutionTermsType:
+    properties:
+        paymentTerms:
+            -
+                Valid: null
+        deliveryTerms:
+            -
+                Valid: null
+        bonusPaymentTerms:
+            -
+                Valid: null
+        commissionPaymentTerms:
+            -
+                Valid: null
+        penaltyPaymentTerms:
+            -
+                Valid: null
+        environmentalEmission:
+            -
+                Valid: null
+        notificationRequirement:
+            -
+                Valid: null
+        serviceChargePaymentTerms:
+            -
+                Valid: null

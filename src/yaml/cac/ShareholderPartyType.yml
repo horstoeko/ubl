@@ -1,0 +1,24 @@
+horstoeko\ubl\entities\cac\ShareholderPartyType:
+    properties:
+        partecipationPercent:
+            expose: true
+            access_type: public_method
+            serialized_name: PartecipationPercent
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPartecipationPercent
+                setter: setPartecipationPercent
+            type: horstoeko\ubl\entities\cbc\PartecipationPercent
+        party:
+            expose: true
+            access_type: public_method
+            serialized_name: Party
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getParty
+                setter: setParty
+            type: horstoeko\ubl\entities\cac\Party

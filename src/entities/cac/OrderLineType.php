@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Order Line. Details
- *  Information about an Order Line.
+ *  A class to define a line in an order document (e.g., Order, Order Change, or Order Response) describing an item being ordered.
  *  Order Line
  * XSD Type: OrderLineType
  */
@@ -17,11 +17,12 @@ class OrderLineType
     /**
      * BBIE
      *  Order Line. Substitution Status Code. Code
-     *  A code indicating the substitution status of the Order Line. Order Line may indicate that a substitute is proposed by the buyer or by the seller (in Order Response) or that a substitution has been made by the seller (in Order Response).
+     *  A code signifying the substitution status of the item on this order line. The order line may indicate that the substitute is proposed by the buyer (in Order) or by the seller (in Order Response) or that a substitution has been made by the seller (in Order Response).
      *  0..1
      *  Order Line
      *  Substitution Status Code
      *  Code
+     *  Substitution Status
      *  Substitution Status_ Code. Type
      *
      * @var \horstoeko\ubl\entities\cbc\SubstitutionStatusCode $substitutionStatusCode
@@ -31,23 +32,26 @@ class OrderLineType
     /**
      * BBIE
      *  Order Line. Note. Text
-     *  Free-form text applying to the Order Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Order Line
      *  Note
      *  Text
      *  Text. Type
      *
-     * @var \horstoeko\ubl\entities\cbc\Note $note
+     * @var \horstoeko\ubl\entities\cbc\Note[] $note
      */
-    private $note = null;
+    private $note = [
+        
+    ];
 
     /**
      * ASBIE
      *  Order Line. Line Item
-     *  An association to Line Item.
+     *  The line item itself.
      *  1
      *  Order Line
+     *  Line Item
      *  Line Item
      *  Line Item
      *
@@ -58,10 +62,11 @@ class OrderLineType
     /**
      * ASBIE
      *  Order Line. Seller Proposed Substitute_ Line Item. Line Item
-     *  Substitute Line Items proposed by the seller (in Order Response).
+     *  In Order Response, a line item proposed by the seller describing a product that might substitute for the product described in this order line.
      *  0..n
      *  Order Line
      *  Seller Proposed Substitute
+     *  Line Item
      *  Line Item
      *  Line Item
      *
@@ -74,10 +79,11 @@ class OrderLineType
     /**
      * ASBIE
      *  Order Line. Seller Substituted_ Line Item. Line Item
-     *  Item(s) replaced by the seller. The original ordered quantity and pricing may be different from the substituted item. However, when an item is substituted by the seller, it is assumed that other information, such as shipment details, will be the same.
+     *  In Order Response, a line item that has replaced the original order line item. The specified quantity and pricing may differ from those in the original line item, but when a line item is substituted by the seller, it is assumed that other information, such as shipment details, will remain the same.
      *  0..n
      *  Order Line
      *  Seller Substituted
+     *  Line Item
      *  Line Item
      *  Line Item
      *
@@ -90,10 +96,11 @@ class OrderLineType
     /**
      * ASBIE
      *  Order Line. Buyer Proposed Substitute_ Line Item. Line Item
-     *  Possible alternatives, proposed by the buyer, to the Line Item.
+     *  A description of an item proposed by the buyer as a possible alternative to the item associated with this order line.
      *  0..n
      *  Order Line
      *  Buyer Proposed Substitute
+     *  Line Item
      *  Line Item
      *  Line Item
      *
@@ -106,10 +113,11 @@ class OrderLineType
     /**
      * ASBIE
      *  Order Line. Catalogue_ Line Reference. Line Reference
-     *  An associative reference to Catalogue Line.
+     *  A reference to a catalogue line associated with this order line.
      *  0..1
      *  Order Line
      *  Catalogue
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -120,10 +128,11 @@ class OrderLineType
     /**
      * ASBIE
      *  Order Line. Quotation_ Line Reference. Line Reference
-     *  an associative reference to Quotation Line.
+     *  A reference to a quotation line associated with this order line.
      *  0..1
      *  Order Line
      *  Quotation
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -133,10 +142,27 @@ class OrderLineType
 
     /**
      * ASBIE
-     *  Order Line. Document Reference
-     *  An association to Document Reference.
+     *  Order Line. Order Line Reference
+     *  A reference to another order line, such as in a replacement order or another line on the same order that is related.
      *  0..n
      *  Order Line
+     *  Order Line Reference
+     *  Order Line Reference
+     *  Order Line Reference
+     *
+     * @var \horstoeko\ubl\entities\cac\OrderLineReference[] $orderLineReference
+     */
+    private $orderLineReference = [
+        
+    ];
+
+    /**
+     * ASBIE
+     *  Order Line. Document Reference
+     *  A reference to a document associated with this order line.
+     *  0..n
+     *  Order Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -151,11 +177,12 @@ class OrderLineType
      *
      * BBIE
      *  Order Line. Substitution Status Code. Code
-     *  A code indicating the substitution status of the Order Line. Order Line may indicate that a substitute is proposed by the buyer or by the seller (in Order Response) or that a substitution has been made by the seller (in Order Response).
+     *  A code signifying the substitution status of the item on this order line. The order line may indicate that the substitute is proposed by the buyer (in Order) or by the seller (in Order Response) or that a substitution has been made by the seller (in Order Response).
      *  0..1
      *  Order Line
      *  Substitution Status Code
      *  Code
+     *  Substitution Status
      *  Substitution Status_ Code. Type
      *
      * @return \horstoeko\ubl\entities\cbc\SubstitutionStatusCode
@@ -170,11 +197,12 @@ class OrderLineType
      *
      * BBIE
      *  Order Line. Substitution Status Code. Code
-     *  A code indicating the substitution status of the Order Line. Order Line may indicate that a substitute is proposed by the buyer or by the seller (in Order Response) or that a substitution has been made by the seller (in Order Response).
+     *  A code signifying the substitution status of the item on this order line. The order line may indicate that the substitute is proposed by the buyer (in Order) or by the seller (in Order Response) or that a substitution has been made by the seller (in Order Response).
      *  0..1
      *  Order Line
      *  Substitution Status Code
      *  Code
+     *  Substitution Status
      *  Substitution Status_ Code. Type
      *
      * @param \horstoeko\ubl\entities\cbc\SubstitutionStatusCode $substitutionStatusCode
@@ -187,18 +215,79 @@ class OrderLineType
     }
 
     /**
-     * Gets as note
+     * Adds as note
      *
      * BBIE
      *  Order Line. Note. Text
-     *  Free-form text applying to the Order Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Order Line
      *  Note
      *  Text
      *  Text. Type
      *
-     * @return \horstoeko\ubl\entities\cbc\Note
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\Note $note
+     */
+    public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
+    {
+        $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * isset note
+     *
+     * BBIE
+     *  Order Line. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Order Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetNote($index)
+    {
+        return isset($this->note[$index]);
+    }
+
+    /**
+     * unset note
+     *
+     * BBIE
+     *  Order Line. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Order Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetNote($index)
+    {
+        unset($this->note[$index]);
+    }
+
+    /**
+     * Gets as note
+     *
+     * BBIE
+     *  Order Line. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Order Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\Note[]
      */
     public function getNote()
     {
@@ -210,17 +299,17 @@ class OrderLineType
      *
      * BBIE
      *  Order Line. Note. Text
-     *  Free-form text applying to the Order Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Order Line
      *  Note
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
-    public function setNote(\horstoeko\ubl\entities\cbc\Note $note)
+    public function setNote(array $note)
     {
         $this->note = $note;
         return $this;
@@ -231,9 +320,10 @@ class OrderLineType
      *
      * ASBIE
      *  Order Line. Line Item
-     *  An association to Line Item.
+     *  The line item itself.
      *  1
      *  Order Line
+     *  Line Item
      *  Line Item
      *  Line Item
      *
@@ -249,9 +339,10 @@ class OrderLineType
      *
      * ASBIE
      *  Order Line. Line Item
-     *  An association to Line Item.
+     *  The line item itself.
      *  1
      *  Order Line
+     *  Line Item
      *  Line Item
      *  Line Item
      *
@@ -269,10 +360,11 @@ class OrderLineType
      *
      * ASBIE
      *  Order Line. Seller Proposed Substitute_ Line Item. Line Item
-     *  Substitute Line Items proposed by the seller (in Order Response).
+     *  In Order Response, a line item proposed by the seller describing a product that might substitute for the product described in this order line.
      *  0..n
      *  Order Line
      *  Seller Proposed Substitute
+     *  Line Item
      *  Line Item
      *  Line Item
      *
@@ -290,10 +382,11 @@ class OrderLineType
      *
      * ASBIE
      *  Order Line. Seller Proposed Substitute_ Line Item. Line Item
-     *  Substitute Line Items proposed by the seller (in Order Response).
+     *  In Order Response, a line item proposed by the seller describing a product that might substitute for the product described in this order line.
      *  0..n
      *  Order Line
      *  Seller Proposed Substitute
+     *  Line Item
      *  Line Item
      *  Line Item
      *
@@ -310,10 +403,11 @@ class OrderLineType
      *
      * ASBIE
      *  Order Line. Seller Proposed Substitute_ Line Item. Line Item
-     *  Substitute Line Items proposed by the seller (in Order Response).
+     *  In Order Response, a line item proposed by the seller describing a product that might substitute for the product described in this order line.
      *  0..n
      *  Order Line
      *  Seller Proposed Substitute
+     *  Line Item
      *  Line Item
      *  Line Item
      *
@@ -330,10 +424,11 @@ class OrderLineType
      *
      * ASBIE
      *  Order Line. Seller Proposed Substitute_ Line Item. Line Item
-     *  Substitute Line Items proposed by the seller (in Order Response).
+     *  In Order Response, a line item proposed by the seller describing a product that might substitute for the product described in this order line.
      *  0..n
      *  Order Line
      *  Seller Proposed Substitute
+     *  Line Item
      *  Line Item
      *  Line Item
      *
@@ -349,10 +444,11 @@ class OrderLineType
      *
      * ASBIE
      *  Order Line. Seller Proposed Substitute_ Line Item. Line Item
-     *  Substitute Line Items proposed by the seller (in Order Response).
+     *  In Order Response, a line item proposed by the seller describing a product that might substitute for the product described in this order line.
      *  0..n
      *  Order Line
      *  Seller Proposed Substitute
+     *  Line Item
      *  Line Item
      *  Line Item
      *
@@ -370,10 +466,11 @@ class OrderLineType
      *
      * ASBIE
      *  Order Line. Seller Substituted_ Line Item. Line Item
-     *  Item(s) replaced by the seller. The original ordered quantity and pricing may be different from the substituted item. However, when an item is substituted by the seller, it is assumed that other information, such as shipment details, will be the same.
+     *  In Order Response, a line item that has replaced the original order line item. The specified quantity and pricing may differ from those in the original line item, but when a line item is substituted by the seller, it is assumed that other information, such as shipment details, will remain the same.
      *  0..n
      *  Order Line
      *  Seller Substituted
+     *  Line Item
      *  Line Item
      *  Line Item
      *
@@ -391,10 +488,11 @@ class OrderLineType
      *
      * ASBIE
      *  Order Line. Seller Substituted_ Line Item. Line Item
-     *  Item(s) replaced by the seller. The original ordered quantity and pricing may be different from the substituted item. However, when an item is substituted by the seller, it is assumed that other information, such as shipment details, will be the same.
+     *  In Order Response, a line item that has replaced the original order line item. The specified quantity and pricing may differ from those in the original line item, but when a line item is substituted by the seller, it is assumed that other information, such as shipment details, will remain the same.
      *  0..n
      *  Order Line
      *  Seller Substituted
+     *  Line Item
      *  Line Item
      *  Line Item
      *
@@ -411,10 +509,11 @@ class OrderLineType
      *
      * ASBIE
      *  Order Line. Seller Substituted_ Line Item. Line Item
-     *  Item(s) replaced by the seller. The original ordered quantity and pricing may be different from the substituted item. However, when an item is substituted by the seller, it is assumed that other information, such as shipment details, will be the same.
+     *  In Order Response, a line item that has replaced the original order line item. The specified quantity and pricing may differ from those in the original line item, but when a line item is substituted by the seller, it is assumed that other information, such as shipment details, will remain the same.
      *  0..n
      *  Order Line
      *  Seller Substituted
+     *  Line Item
      *  Line Item
      *  Line Item
      *
@@ -431,10 +530,11 @@ class OrderLineType
      *
      * ASBIE
      *  Order Line. Seller Substituted_ Line Item. Line Item
-     *  Item(s) replaced by the seller. The original ordered quantity and pricing may be different from the substituted item. However, when an item is substituted by the seller, it is assumed that other information, such as shipment details, will be the same.
+     *  In Order Response, a line item that has replaced the original order line item. The specified quantity and pricing may differ from those in the original line item, but when a line item is substituted by the seller, it is assumed that other information, such as shipment details, will remain the same.
      *  0..n
      *  Order Line
      *  Seller Substituted
+     *  Line Item
      *  Line Item
      *  Line Item
      *
@@ -450,10 +550,11 @@ class OrderLineType
      *
      * ASBIE
      *  Order Line. Seller Substituted_ Line Item. Line Item
-     *  Item(s) replaced by the seller. The original ordered quantity and pricing may be different from the substituted item. However, when an item is substituted by the seller, it is assumed that other information, such as shipment details, will be the same.
+     *  In Order Response, a line item that has replaced the original order line item. The specified quantity and pricing may differ from those in the original line item, but when a line item is substituted by the seller, it is assumed that other information, such as shipment details, will remain the same.
      *  0..n
      *  Order Line
      *  Seller Substituted
+     *  Line Item
      *  Line Item
      *  Line Item
      *
@@ -471,10 +572,11 @@ class OrderLineType
      *
      * ASBIE
      *  Order Line. Buyer Proposed Substitute_ Line Item. Line Item
-     *  Possible alternatives, proposed by the buyer, to the Line Item.
+     *  A description of an item proposed by the buyer as a possible alternative to the item associated with this order line.
      *  0..n
      *  Order Line
      *  Buyer Proposed Substitute
+     *  Line Item
      *  Line Item
      *  Line Item
      *
@@ -492,10 +594,11 @@ class OrderLineType
      *
      * ASBIE
      *  Order Line. Buyer Proposed Substitute_ Line Item. Line Item
-     *  Possible alternatives, proposed by the buyer, to the Line Item.
+     *  A description of an item proposed by the buyer as a possible alternative to the item associated with this order line.
      *  0..n
      *  Order Line
      *  Buyer Proposed Substitute
+     *  Line Item
      *  Line Item
      *  Line Item
      *
@@ -512,10 +615,11 @@ class OrderLineType
      *
      * ASBIE
      *  Order Line. Buyer Proposed Substitute_ Line Item. Line Item
-     *  Possible alternatives, proposed by the buyer, to the Line Item.
+     *  A description of an item proposed by the buyer as a possible alternative to the item associated with this order line.
      *  0..n
      *  Order Line
      *  Buyer Proposed Substitute
+     *  Line Item
      *  Line Item
      *  Line Item
      *
@@ -532,10 +636,11 @@ class OrderLineType
      *
      * ASBIE
      *  Order Line. Buyer Proposed Substitute_ Line Item. Line Item
-     *  Possible alternatives, proposed by the buyer, to the Line Item.
+     *  A description of an item proposed by the buyer as a possible alternative to the item associated with this order line.
      *  0..n
      *  Order Line
      *  Buyer Proposed Substitute
+     *  Line Item
      *  Line Item
      *  Line Item
      *
@@ -551,10 +656,11 @@ class OrderLineType
      *
      * ASBIE
      *  Order Line. Buyer Proposed Substitute_ Line Item. Line Item
-     *  Possible alternatives, proposed by the buyer, to the Line Item.
+     *  A description of an item proposed by the buyer as a possible alternative to the item associated with this order line.
      *  0..n
      *  Order Line
      *  Buyer Proposed Substitute
+     *  Line Item
      *  Line Item
      *  Line Item
      *
@@ -572,10 +678,11 @@ class OrderLineType
      *
      * ASBIE
      *  Order Line. Catalogue_ Line Reference. Line Reference
-     *  An associative reference to Catalogue Line.
+     *  A reference to a catalogue line associated with this order line.
      *  0..1
      *  Order Line
      *  Catalogue
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -591,10 +698,11 @@ class OrderLineType
      *
      * ASBIE
      *  Order Line. Catalogue_ Line Reference. Line Reference
-     *  An associative reference to Catalogue Line.
+     *  A reference to a catalogue line associated with this order line.
      *  0..1
      *  Order Line
      *  Catalogue
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -612,10 +720,11 @@ class OrderLineType
      *
      * ASBIE
      *  Order Line. Quotation_ Line Reference. Line Reference
-     *  an associative reference to Quotation Line.
+     *  A reference to a quotation line associated with this order line.
      *  0..1
      *  Order Line
      *  Quotation
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -631,10 +740,11 @@ class OrderLineType
      *
      * ASBIE
      *  Order Line. Quotation_ Line Reference. Line Reference
-     *  an associative reference to Quotation Line.
+     *  A reference to a quotation line associated with this order line.
      *  0..1
      *  Order Line
      *  Quotation
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -648,13 +758,115 @@ class OrderLineType
     }
 
     /**
+     * Adds as orderLineReference
+     *
+     * ASBIE
+     *  Order Line. Order Line Reference
+     *  A reference to another order line, such as in a replacement order or another line on the same order that is related.
+     *  0..n
+     *  Order Line
+     *  Order Line Reference
+     *  Order Line Reference
+     *  Order Line Reference
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\OrderLineReference $orderLineReference
+     */
+    public function addToOrderLineReference(\horstoeko\ubl\entities\cac\OrderLineReference $orderLineReference)
+    {
+        $this->orderLineReference[] = $orderLineReference;
+        return $this;
+    }
+
+    /**
+     * isset orderLineReference
+     *
+     * ASBIE
+     *  Order Line. Order Line Reference
+     *  A reference to another order line, such as in a replacement order or another line on the same order that is related.
+     *  0..n
+     *  Order Line
+     *  Order Line Reference
+     *  Order Line Reference
+     *  Order Line Reference
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetOrderLineReference($index)
+    {
+        return isset($this->orderLineReference[$index]);
+    }
+
+    /**
+     * unset orderLineReference
+     *
+     * ASBIE
+     *  Order Line. Order Line Reference
+     *  A reference to another order line, such as in a replacement order or another line on the same order that is related.
+     *  0..n
+     *  Order Line
+     *  Order Line Reference
+     *  Order Line Reference
+     *  Order Line Reference
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetOrderLineReference($index)
+    {
+        unset($this->orderLineReference[$index]);
+    }
+
+    /**
+     * Gets as orderLineReference
+     *
+     * ASBIE
+     *  Order Line. Order Line Reference
+     *  A reference to another order line, such as in a replacement order or another line on the same order that is related.
+     *  0..n
+     *  Order Line
+     *  Order Line Reference
+     *  Order Line Reference
+     *  Order Line Reference
+     *
+     * @return \horstoeko\ubl\entities\cac\OrderLineReference[]
+     */
+    public function getOrderLineReference()
+    {
+        return $this->orderLineReference;
+    }
+
+    /**
+     * Sets a new orderLineReference
+     *
+     * ASBIE
+     *  Order Line. Order Line Reference
+     *  A reference to another order line, such as in a replacement order or another line on the same order that is related.
+     *  0..n
+     *  Order Line
+     *  Order Line Reference
+     *  Order Line Reference
+     *  Order Line Reference
+     *
+     * @param \horstoeko\ubl\entities\cac\OrderLineReference[] $orderLineReference
+     * @return self
+     */
+    public function setOrderLineReference(array $orderLineReference)
+    {
+        $this->orderLineReference = $orderLineReference;
+        return $this;
+    }
+
+    /**
      * Adds as documentReference
      *
      * ASBIE
      *  Order Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this order line.
      *  0..n
      *  Order Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -672,9 +884,10 @@ class OrderLineType
      *
      * ASBIE
      *  Order Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this order line.
      *  0..n
      *  Order Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -691,9 +904,10 @@ class OrderLineType
      *
      * ASBIE
      *  Order Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this order line.
      *  0..n
      *  Order Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -710,9 +924,10 @@ class OrderLineType
      *
      * ASBIE
      *  Order Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this order line.
      *  0..n
      *  Order Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -728,9 +943,10 @@ class OrderLineType
      *
      * ASBIE
      *  Order Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this order line.
      *  0..n
      *  Order Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *

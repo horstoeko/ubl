@@ -88,6 +88,17 @@ horstoeko\ubl\entities\cac\DeliveryType:
                 getter: getLatestDeliveryTime
                 setter: setLatestDeliveryTime
             type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time
+        releaseID:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getReleaseID
+                setter: setReleaseID
+            type: horstoeko\ubl\entities\cbc\ReleaseID
         trackingID:
             expose: true
             access_type: public_method
@@ -121,6 +132,17 @@ horstoeko\ubl\entities\cac\DeliveryType:
                 getter: getDeliveryLocation
                 setter: setDeliveryLocation
             type: horstoeko\ubl\entities\cac\DeliveryLocation
+        alternativeDeliveryLocation:
+            expose: true
+            access_type: public_method
+            serialized_name: AlternativeDeliveryLocation
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getAlternativeDeliveryLocation
+                setter: setAlternativeDeliveryLocation
+            type: horstoeko\ubl\entities\cac\AlternativeDeliveryLocation
         requestedDeliveryPeriod:
             expose: true
             access_type: public_method
@@ -154,6 +176,17 @@ horstoeko\ubl\entities\cac\DeliveryType:
                 getter: getEstimatedDeliveryPeriod
                 setter: setEstimatedDeliveryPeriod
             type: horstoeko\ubl\entities\cac\EstimatedDeliveryPeriod
+        carrierParty:
+            expose: true
+            access_type: public_method
+            serialized_name: CarrierParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getCarrierParty
+                setter: setCarrierParty
+            type: horstoeko\ubl\entities\cac\CarrierParty
         deliveryParty:
             expose: true
             access_type: public_method
@@ -165,6 +198,21 @@ horstoeko\ubl\entities\cac\DeliveryType:
                 getter: getDeliveryParty
                 setter: setDeliveryParty
             type: horstoeko\ubl\entities\cac\DeliveryParty
+        notifyParty:
+            expose: true
+            access_type: public_method
+            serialized_name: NotifyParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getNotifyParty
+                setter: setNotifyParty
+            xml_list:
+                inline: true
+                entry_name: NotifyParty
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\NotifyParty>
         despatch:
             expose: true
             access_type: public_method
@@ -176,3 +224,51 @@ horstoeko\ubl\entities\cac\DeliveryType:
                 getter: getDespatch
                 setter: setDespatch
             type: horstoeko\ubl\entities\cac\Despatch
+        deliveryTerms:
+            expose: true
+            access_type: public_method
+            serialized_name: DeliveryTerms
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getDeliveryTerms
+                setter: setDeliveryTerms
+            xml_list:
+                inline: true
+                entry_name: DeliveryTerms
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\DeliveryTerms>
+        minimumDeliveryUnit:
+            expose: true
+            access_type: public_method
+            serialized_name: MinimumDeliveryUnit
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getMinimumDeliveryUnit
+                setter: setMinimumDeliveryUnit
+            type: horstoeko\ubl\entities\cac\MinimumDeliveryUnit
+        maximumDeliveryUnit:
+            expose: true
+            access_type: public_method
+            serialized_name: MaximumDeliveryUnit
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getMaximumDeliveryUnit
+                setter: setMaximumDeliveryUnit
+            type: horstoeko\ubl\entities\cac\MaximumDeliveryUnit
+        shipment:
+            expose: true
+            access_type: public_method
+            serialized_name: Shipment
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getShipment
+                setter: setShipment
+            type: horstoeko\ubl\entities\cac\Shipment

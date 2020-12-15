@@ -54,7 +54,11 @@ horstoeko\ubl\entities\cac\ClassificationSchemeType:
             accessor:
                 getter: getNote
                 setter: setNote
-            type: horstoeko\ubl\entities\cbc\Note
+            xml_list:
+                inline: true
+                entry_name: Note
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Note>
         name:
             expose: true
             access_type: public_method

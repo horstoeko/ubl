@@ -1,0 +1,3 @@
+horstoeko\ubl\entities\cac\MaximumDeliveryUnit:
+    xml_root_name: MaximumDeliveryUnit
+    xml_root_namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'

@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Stowage. Details
- *  A location on board a means of transport where specified goods or transport equipment have been or are to be stowed.
+ *  A class to describe a location on board a means of transport where specified goods or transport equipment have been stowed or are to be stowed.
  *  Stowage
  * XSD Type: StowageType
  */
@@ -17,7 +17,7 @@ class StowageType
     /**
      * BBIE
      *  Stowage. Location Identifier. Identifier
-     *  Identifies a location on board a means of transport where specified goods or transport equipment have been or are to be stowed.
+     *  An identifier for the location.
      *  0..1
      *  Stowage
      *  Location Identifier
@@ -32,7 +32,7 @@ class StowageType
     /**
      * BBIE
      *  Stowage. Location. Text
-     *  Describes a location on board a means of transport where specified goods or transport equipment have been or are to be stowed.
+     *  Text describing the location.
      *  0..n
      *  Stowage
      *  Location
@@ -49,10 +49,11 @@ class StowageType
     /**
      * ASBIE
      *  Stowage. Measurement_ Dimension. Dimension
-     *  Associates any measurements (including lengths, mass, and volume) for this stowage.
+     *  A measurable dimension (length, mass, weight, or volume) of this stowage.
      *  0..n
      *  Stowage
      *  Measurement
+     *  Dimension
      *  Dimension
      *  Dimension
      *
@@ -67,7 +68,7 @@ class StowageType
      *
      * BBIE
      *  Stowage. Location Identifier. Identifier
-     *  Identifies a location on board a means of transport where specified goods or transport equipment have been or are to be stowed.
+     *  An identifier for the location.
      *  0..1
      *  Stowage
      *  Location Identifier
@@ -87,7 +88,7 @@ class StowageType
      *
      * BBIE
      *  Stowage. Location Identifier. Identifier
-     *  Identifies a location on board a means of transport where specified goods or transport equipment have been or are to be stowed.
+     *  An identifier for the location.
      *  0..1
      *  Stowage
      *  Location Identifier
@@ -109,7 +110,7 @@ class StowageType
      *
      * BBIE
      *  Stowage. Location. Text
-     *  Describes a location on board a means of transport where specified goods or transport equipment have been or are to be stowed.
+     *  Text describing the location.
      *  0..n
      *  Stowage
      *  Location
@@ -131,7 +132,7 @@ class StowageType
      *
      * BBIE
      *  Stowage. Location. Text
-     *  Describes a location on board a means of transport where specified goods or transport equipment have been or are to be stowed.
+     *  Text describing the location.
      *  0..n
      *  Stowage
      *  Location
@@ -152,7 +153,7 @@ class StowageType
      *
      * BBIE
      *  Stowage. Location. Text
-     *  Describes a location on board a means of transport where specified goods or transport equipment have been or are to be stowed.
+     *  Text describing the location.
      *  0..n
      *  Stowage
      *  Location
@@ -173,7 +174,7 @@ class StowageType
      *
      * BBIE
      *  Stowage. Location. Text
-     *  Describes a location on board a means of transport where specified goods or transport equipment have been or are to be stowed.
+     *  Text describing the location.
      *  0..n
      *  Stowage
      *  Location
@@ -193,7 +194,7 @@ class StowageType
      *
      * BBIE
      *  Stowage. Location. Text
-     *  Describes a location on board a means of transport where specified goods or transport equipment have been or are to be stowed.
+     *  Text describing the location.
      *  0..n
      *  Stowage
      *  Location
@@ -215,10 +216,11 @@ class StowageType
      *
      * ASBIE
      *  Stowage. Measurement_ Dimension. Dimension
-     *  Associates any measurements (including lengths, mass, and volume) for this stowage.
+     *  A measurable dimension (length, mass, weight, or volume) of this stowage.
      *  0..n
      *  Stowage
      *  Measurement
+     *  Dimension
      *  Dimension
      *  Dimension
      *
@@ -236,10 +238,11 @@ class StowageType
      *
      * ASBIE
      *  Stowage. Measurement_ Dimension. Dimension
-     *  Associates any measurements (including lengths, mass, and volume) for this stowage.
+     *  A measurable dimension (length, mass, weight, or volume) of this stowage.
      *  0..n
      *  Stowage
      *  Measurement
+     *  Dimension
      *  Dimension
      *  Dimension
      *
@@ -256,10 +259,11 @@ class StowageType
      *
      * ASBIE
      *  Stowage. Measurement_ Dimension. Dimension
-     *  Associates any measurements (including lengths, mass, and volume) for this stowage.
+     *  A measurable dimension (length, mass, weight, or volume) of this stowage.
      *  0..n
      *  Stowage
      *  Measurement
+     *  Dimension
      *  Dimension
      *  Dimension
      *
@@ -276,10 +280,11 @@ class StowageType
      *
      * ASBIE
      *  Stowage. Measurement_ Dimension. Dimension
-     *  Associates any measurements (including lengths, mass, and volume) for this stowage.
+     *  A measurable dimension (length, mass, weight, or volume) of this stowage.
      *  0..n
      *  Stowage
      *  Measurement
+     *  Dimension
      *  Dimension
      *  Dimension
      *
@@ -295,10 +300,11 @@ class StowageType
      *
      * ASBIE
      *  Stowage. Measurement_ Dimension. Dimension
-     *  Associates any measurements (including lengths, mass, and volume) for this stowage.
+     *  A measurable dimension (length, mass, weight, or volume) of this stowage.
      *  0..n
      *  Stowage
      *  Measurement
+     *  Dimension
      *  Dimension
      *  Dimension
      *

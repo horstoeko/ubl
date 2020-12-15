@@ -6,3 +6,9 @@ horstoeko\ubl\entities\cac\LocationType:
         address:
             -
                 Valid: null
+        subsidiaryLocation:
+            -
+                Valid: null
+        locationCoordinate:
+            -
+                Valid: null

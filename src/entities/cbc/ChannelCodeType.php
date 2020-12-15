@@ -2,7 +2,7 @@
 
 namespace horstoeko\ubl\entities\cbc;
 
-use horstoeko\ubl\entities\qdt\ChannelCodeType as ChannelCodeTypeBase;
+use horstoeko\ubl\entities\udt\CodeType;
 
 /**
  * Class representing ChannelCodeType
@@ -10,7 +10,7 @@ use horstoeko\ubl\entities\qdt\ChannelCodeType as ChannelCodeTypeBase;
  *
  * XSD Type: ChannelCodeType
  */
-class ChannelCodeType extends ChannelCodeTypeBase
+class ChannelCodeType extends CodeType
 {
 
 

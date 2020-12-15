@@ -1,0 +1,10 @@
+horstoeko\ubl\entities\xades\DataObjectFormatType:
+    properties:
+        objectReference:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        objectIdentifier:
+            -
+                Valid: null

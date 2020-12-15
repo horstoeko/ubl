@@ -1,0 +1,5 @@
+horstoeko\ubl\entities\cac\AwardingCriterionType:
+    properties:
+        subordinateAwardingCriterion:
+            -
+                Valid: null

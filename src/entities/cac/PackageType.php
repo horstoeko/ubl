@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Package. Details
- *  Information about a package.
+ *  A class to describe a package.
  *  Package
  * XSD Type: PackageType
  */
@@ -17,7 +17,7 @@ class PackageType
     /**
      * BBIE
      *  Package. Identifier
-     *  Identifies the package.
+     *  An identifier for this package.
      *  0..1
      *  Package
      *  Identifier
@@ -31,7 +31,7 @@ class PackageType
     /**
      * BBIE
      *  Package. Quantity
-     *  The quantity (of items) contained in the package.
+     *  The quantity of items contained in this package.
      *  0..1
      *  Package
      *  Quantity
@@ -45,7 +45,7 @@ class PackageType
     /**
      * BBIE
      *  Package. Returnable Material_ Indicator. Indicator
-     *  Indicates whether the packaging material is returnable (true) or not (false).
+     *  An indicator that the packaging material is returnable (true) or not (false).
      *  0..1
      *  Package
      *  Returnable Material
@@ -60,7 +60,7 @@ class PackageType
     /**
      * BBIE
      *  Package. Package Level Code. Code
-     *  Code specifying a level of packaging.
+     *  A code signifying a level of packaging.
      *  0..1
      *  Package
      *  Package Level Code
@@ -74,11 +74,12 @@ class PackageType
     /**
      * BBIE
      *  Package. Packaging Type Code. Code
-     *  Code specifying the type of packaging of an item.
+     *  A code signifying a type of packaging.
      *  0..1
      *  Package
      *  Packaging Type Code
      *  Code
+     *  Packaging Type
      *  Packaging Type_ Code. Type
      *  Package classification code
      *
@@ -89,7 +90,7 @@ class PackageType
     /**
      * BBIE
      *  Package. Packing Material. Text
-     *  Description of the type of packaging of an item.
+     *  Text describing the packaging material.
      *  0..n
      *  Package
      *  Packing Material
@@ -103,12 +104,28 @@ class PackageType
     ];
 
     /**
+     * BBIE
+     *  Package. Trace_ Identifier. Identifier
+     *  An identifier for use in tracing this package, such as the EPC number used in RFID.
+     *  0..1
+     *  Package
+     *  Trace
+     *  Identifier
+     *  Identifier
+     *  Identifier. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\TraceID $traceID
+     */
+    private $traceID = null;
+
+    /**
      * ASBIE
      *  Package. Contained_ Package. Package
-     *  An association to Contained Package; used to describe a package within a package.
+     *  A package contained within this package.
      *  0..n
      *  Package
      *  Contained
+     *  Package
      *  Package
      *  Package
      *
@@ -120,10 +137,26 @@ class PackageType
 
     /**
      * ASBIE
+     *  Package. Containing_ Transport Equipment. Transport Equipment
+     *  The piece of transport equipment containing this package.
+     *  0..1
+     *  Package
+     *  Containing
+     *  Transport Equipment
+     *  Transport Equipment
+     *  Transport Equipment
+     *
+     * @var \horstoeko\ubl\entities\cac\ContainingTransportEquipment $containingTransportEquipment
+     */
+    private $containingTransportEquipment = null;
+
+    /**
+     * ASBIE
      *  Package. Goods Item
-     *  An association to Goods Item.
+     *  A goods item included in this package.
      *  0..n
      *  Package
+     *  Goods Item
      *  Goods Item
      *  Goods Item
      *
@@ -136,10 +169,11 @@ class PackageType
     /**
      * ASBIE
      *  Package. Measurement_ Dimension. Dimension
-     *  An association to describe the measurement dimensions of the package.
+     *  A measurable dimension (length, mass, weight, or volume) of this package.
      *  0..n
      *  Package
      *  Measurement
+     *  Dimension
      *  Dimension
      *  Dimension
      *
@@ -152,9 +186,10 @@ class PackageType
     /**
      * ASBIE
      *  Package. Delivery Unit
-     *  An association to Delivery Units in the package.
+     *  A delivery unit within this package.
      *  0..n
      *  Package
+     *  Delivery Unit
      *  Delivery Unit
      *  Delivery Unit
      *
@@ -165,11 +200,53 @@ class PackageType
     ];
 
     /**
+     * ASBIE
+     *  Package. Delivery
+     *  The delivery of this package.
+     *  0..1
+     *  Package
+     *  Delivery
+     *  Delivery
+     *  Delivery
+     *
+     * @var \horstoeko\ubl\entities\cac\Delivery $delivery
+     */
+    private $delivery = null;
+
+    /**
+     * ASBIE
+     *  Package. Pickup
+     *  The pickup of this package.
+     *  0..1
+     *  Package
+     *  Pickup
+     *  Pickup
+     *  Pickup
+     *
+     * @var \horstoeko\ubl\entities\cac\Pickup $pickup
+     */
+    private $pickup = null;
+
+    /**
+     * ASBIE
+     *  Package. Despatch
+     *  The despatch of this package.
+     *  0..1
+     *  Package
+     *  Despatch
+     *  Despatch
+     *  Despatch
+     *
+     * @var \horstoeko\ubl\entities\cac\Despatch $despatch
+     */
+    private $despatch = null;
+
+    /**
      * Gets as iD
      *
      * BBIE
      *  Package. Identifier
-     *  Identifies the package.
+     *  An identifier for this package.
      *  0..1
      *  Package
      *  Identifier
@@ -188,7 +265,7 @@ class PackageType
      *
      * BBIE
      *  Package. Identifier
-     *  Identifies the package.
+     *  An identifier for this package.
      *  0..1
      *  Package
      *  Identifier
@@ -209,7 +286,7 @@ class PackageType
      *
      * BBIE
      *  Package. Quantity
-     *  The quantity (of items) contained in the package.
+     *  The quantity of items contained in this package.
      *  0..1
      *  Package
      *  Quantity
@@ -228,7 +305,7 @@ class PackageType
      *
      * BBIE
      *  Package. Quantity
-     *  The quantity (of items) contained in the package.
+     *  The quantity of items contained in this package.
      *  0..1
      *  Package
      *  Quantity
@@ -249,7 +326,7 @@ class PackageType
      *
      * BBIE
      *  Package. Returnable Material_ Indicator. Indicator
-     *  Indicates whether the packaging material is returnable (true) or not (false).
+     *  An indicator that the packaging material is returnable (true) or not (false).
      *  0..1
      *  Package
      *  Returnable Material
@@ -269,7 +346,7 @@ class PackageType
      *
      * BBIE
      *  Package. Returnable Material_ Indicator. Indicator
-     *  Indicates whether the packaging material is returnable (true) or not (false).
+     *  An indicator that the packaging material is returnable (true) or not (false).
      *  0..1
      *  Package
      *  Returnable Material
@@ -291,7 +368,7 @@ class PackageType
      *
      * BBIE
      *  Package. Package Level Code. Code
-     *  Code specifying a level of packaging.
+     *  A code signifying a level of packaging.
      *  0..1
      *  Package
      *  Package Level Code
@@ -310,7 +387,7 @@ class PackageType
      *
      * BBIE
      *  Package. Package Level Code. Code
-     *  Code specifying a level of packaging.
+     *  A code signifying a level of packaging.
      *  0..1
      *  Package
      *  Package Level Code
@@ -331,11 +408,12 @@ class PackageType
      *
      * BBIE
      *  Package. Packaging Type Code. Code
-     *  Code specifying the type of packaging of an item.
+     *  A code signifying a type of packaging.
      *  0..1
      *  Package
      *  Packaging Type Code
      *  Code
+     *  Packaging Type
      *  Packaging Type_ Code. Type
      *  Package classification code
      *
@@ -351,11 +429,12 @@ class PackageType
      *
      * BBIE
      *  Package. Packaging Type Code. Code
-     *  Code specifying the type of packaging of an item.
+     *  A code signifying a type of packaging.
      *  0..1
      *  Package
      *  Packaging Type Code
      *  Code
+     *  Packaging Type
      *  Packaging Type_ Code. Type
      *  Package classification code
      *
@@ -373,7 +452,7 @@ class PackageType
      *
      * BBIE
      *  Package. Packing Material. Text
-     *  Description of the type of packaging of an item.
+     *  Text describing the packaging material.
      *  0..n
      *  Package
      *  Packing Material
@@ -394,7 +473,7 @@ class PackageType
      *
      * BBIE
      *  Package. Packing Material. Text
-     *  Description of the type of packaging of an item.
+     *  Text describing the packaging material.
      *  0..n
      *  Package
      *  Packing Material
@@ -414,7 +493,7 @@ class PackageType
      *
      * BBIE
      *  Package. Packing Material. Text
-     *  Description of the type of packaging of an item.
+     *  Text describing the packaging material.
      *  0..n
      *  Package
      *  Packing Material
@@ -434,7 +513,7 @@ class PackageType
      *
      * BBIE
      *  Package. Packing Material. Text
-     *  Description of the type of packaging of an item.
+     *  Text describing the packaging material.
      *  0..n
      *  Package
      *  Packing Material
@@ -453,7 +532,7 @@ class PackageType
      *
      * BBIE
      *  Package. Packing Material. Text
-     *  Description of the type of packaging of an item.
+     *  Text describing the packaging material.
      *  0..n
      *  Package
      *  Packing Material
@@ -470,14 +549,57 @@ class PackageType
     }
 
     /**
+     * Gets as traceID
+     *
+     * BBIE
+     *  Package. Trace_ Identifier. Identifier
+     *  An identifier for use in tracing this package, such as the EPC number used in RFID.
+     *  0..1
+     *  Package
+     *  Trace
+     *  Identifier
+     *  Identifier
+     *  Identifier. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\TraceID
+     */
+    public function getTraceID()
+    {
+        return $this->traceID;
+    }
+
+    /**
+     * Sets a new traceID
+     *
+     * BBIE
+     *  Package. Trace_ Identifier. Identifier
+     *  An identifier for use in tracing this package, such as the EPC number used in RFID.
+     *  0..1
+     *  Package
+     *  Trace
+     *  Identifier
+     *  Identifier
+     *  Identifier. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\TraceID $traceID
+     * @return self
+     */
+    public function setTraceID(\horstoeko\ubl\entities\cbc\TraceID $traceID)
+    {
+        $this->traceID = $traceID;
+        return $this;
+    }
+
+    /**
      * Adds as containedPackage
      *
      * ASBIE
      *  Package. Contained_ Package. Package
-     *  An association to Contained Package; used to describe a package within a package.
+     *  A package contained within this package.
      *  0..n
      *  Package
      *  Contained
+     *  Package
      *  Package
      *  Package
      *
@@ -495,10 +617,11 @@ class PackageType
      *
      * ASBIE
      *  Package. Contained_ Package. Package
-     *  An association to Contained Package; used to describe a package within a package.
+     *  A package contained within this package.
      *  0..n
      *  Package
      *  Contained
+     *  Package
      *  Package
      *  Package
      *
@@ -515,10 +638,11 @@ class PackageType
      *
      * ASBIE
      *  Package. Contained_ Package. Package
-     *  An association to Contained Package; used to describe a package within a package.
+     *  A package contained within this package.
      *  0..n
      *  Package
      *  Contained
+     *  Package
      *  Package
      *  Package
      *
@@ -535,10 +659,11 @@ class PackageType
      *
      * ASBIE
      *  Package. Contained_ Package. Package
-     *  An association to Contained Package; used to describe a package within a package.
+     *  A package contained within this package.
      *  0..n
      *  Package
      *  Contained
+     *  Package
      *  Package
      *  Package
      *
@@ -554,10 +679,11 @@ class PackageType
      *
      * ASBIE
      *  Package. Contained_ Package. Package
-     *  An association to Contained Package; used to describe a package within a package.
+     *  A package contained within this package.
      *  0..n
      *  Package
      *  Contained
+     *  Package
      *  Package
      *  Package
      *
@@ -571,13 +697,56 @@ class PackageType
     }
 
     /**
+     * Gets as containingTransportEquipment
+     *
+     * ASBIE
+     *  Package. Containing_ Transport Equipment. Transport Equipment
+     *  The piece of transport equipment containing this package.
+     *  0..1
+     *  Package
+     *  Containing
+     *  Transport Equipment
+     *  Transport Equipment
+     *  Transport Equipment
+     *
+     * @return \horstoeko\ubl\entities\cac\ContainingTransportEquipment
+     */
+    public function getContainingTransportEquipment()
+    {
+        return $this->containingTransportEquipment;
+    }
+
+    /**
+     * Sets a new containingTransportEquipment
+     *
+     * ASBIE
+     *  Package. Containing_ Transport Equipment. Transport Equipment
+     *  The piece of transport equipment containing this package.
+     *  0..1
+     *  Package
+     *  Containing
+     *  Transport Equipment
+     *  Transport Equipment
+     *  Transport Equipment
+     *
+     * @param \horstoeko\ubl\entities\cac\ContainingTransportEquipment $containingTransportEquipment
+     * @return self
+     */
+    public function setContainingTransportEquipment(\horstoeko\ubl\entities\cac\ContainingTransportEquipment $containingTransportEquipment)
+    {
+        $this->containingTransportEquipment = $containingTransportEquipment;
+        return $this;
+    }
+
+    /**
      * Adds as goodsItem
      *
      * ASBIE
      *  Package. Goods Item
-     *  An association to Goods Item.
+     *  A goods item included in this package.
      *  0..n
      *  Package
+     *  Goods Item
      *  Goods Item
      *  Goods Item
      *
@@ -595,9 +764,10 @@ class PackageType
      *
      * ASBIE
      *  Package. Goods Item
-     *  An association to Goods Item.
+     *  A goods item included in this package.
      *  0..n
      *  Package
+     *  Goods Item
      *  Goods Item
      *  Goods Item
      *
@@ -614,9 +784,10 @@ class PackageType
      *
      * ASBIE
      *  Package. Goods Item
-     *  An association to Goods Item.
+     *  A goods item included in this package.
      *  0..n
      *  Package
+     *  Goods Item
      *  Goods Item
      *  Goods Item
      *
@@ -633,9 +804,10 @@ class PackageType
      *
      * ASBIE
      *  Package. Goods Item
-     *  An association to Goods Item.
+     *  A goods item included in this package.
      *  0..n
      *  Package
+     *  Goods Item
      *  Goods Item
      *  Goods Item
      *
@@ -651,9 +823,10 @@ class PackageType
      *
      * ASBIE
      *  Package. Goods Item
-     *  An association to Goods Item.
+     *  A goods item included in this package.
      *  0..n
      *  Package
+     *  Goods Item
      *  Goods Item
      *  Goods Item
      *
@@ -671,10 +844,11 @@ class PackageType
      *
      * ASBIE
      *  Package. Measurement_ Dimension. Dimension
-     *  An association to describe the measurement dimensions of the package.
+     *  A measurable dimension (length, mass, weight, or volume) of this package.
      *  0..n
      *  Package
      *  Measurement
+     *  Dimension
      *  Dimension
      *  Dimension
      *
@@ -692,10 +866,11 @@ class PackageType
      *
      * ASBIE
      *  Package. Measurement_ Dimension. Dimension
-     *  An association to describe the measurement dimensions of the package.
+     *  A measurable dimension (length, mass, weight, or volume) of this package.
      *  0..n
      *  Package
      *  Measurement
+     *  Dimension
      *  Dimension
      *  Dimension
      *
@@ -712,10 +887,11 @@ class PackageType
      *
      * ASBIE
      *  Package. Measurement_ Dimension. Dimension
-     *  An association to describe the measurement dimensions of the package.
+     *  A measurable dimension (length, mass, weight, or volume) of this package.
      *  0..n
      *  Package
      *  Measurement
+     *  Dimension
      *  Dimension
      *  Dimension
      *
@@ -732,10 +908,11 @@ class PackageType
      *
      * ASBIE
      *  Package. Measurement_ Dimension. Dimension
-     *  An association to describe the measurement dimensions of the package.
+     *  A measurable dimension (length, mass, weight, or volume) of this package.
      *  0..n
      *  Package
      *  Measurement
+     *  Dimension
      *  Dimension
      *  Dimension
      *
@@ -751,10 +928,11 @@ class PackageType
      *
      * ASBIE
      *  Package. Measurement_ Dimension. Dimension
-     *  An association to describe the measurement dimensions of the package.
+     *  A measurable dimension (length, mass, weight, or volume) of this package.
      *  0..n
      *  Package
      *  Measurement
+     *  Dimension
      *  Dimension
      *  Dimension
      *
@@ -772,9 +950,10 @@ class PackageType
      *
      * ASBIE
      *  Package. Delivery Unit
-     *  An association to Delivery Units in the package.
+     *  A delivery unit within this package.
      *  0..n
      *  Package
+     *  Delivery Unit
      *  Delivery Unit
      *  Delivery Unit
      *
@@ -792,9 +971,10 @@ class PackageType
      *
      * ASBIE
      *  Package. Delivery Unit
-     *  An association to Delivery Units in the package.
+     *  A delivery unit within this package.
      *  0..n
      *  Package
+     *  Delivery Unit
      *  Delivery Unit
      *  Delivery Unit
      *
@@ -811,9 +991,10 @@ class PackageType
      *
      * ASBIE
      *  Package. Delivery Unit
-     *  An association to Delivery Units in the package.
+     *  A delivery unit within this package.
      *  0..n
      *  Package
+     *  Delivery Unit
      *  Delivery Unit
      *  Delivery Unit
      *
@@ -830,9 +1011,10 @@ class PackageType
      *
      * ASBIE
      *  Package. Delivery Unit
-     *  An association to Delivery Units in the package.
+     *  A delivery unit within this package.
      *  0..n
      *  Package
+     *  Delivery Unit
      *  Delivery Unit
      *  Delivery Unit
      *
@@ -848,9 +1030,10 @@ class PackageType
      *
      * ASBIE
      *  Package. Delivery Unit
-     *  An association to Delivery Units in the package.
+     *  A delivery unit within this package.
      *  0..n
      *  Package
+     *  Delivery Unit
      *  Delivery Unit
      *  Delivery Unit
      *
@@ -860,6 +1043,126 @@ class PackageType
     public function setDeliveryUnit(array $deliveryUnit)
     {
         $this->deliveryUnit = $deliveryUnit;
+        return $this;
+    }
+
+    /**
+     * Gets as delivery
+     *
+     * ASBIE
+     *  Package. Delivery
+     *  The delivery of this package.
+     *  0..1
+     *  Package
+     *  Delivery
+     *  Delivery
+     *  Delivery
+     *
+     * @return \horstoeko\ubl\entities\cac\Delivery
+     */
+    public function getDelivery()
+    {
+        return $this->delivery;
+    }
+
+    /**
+     * Sets a new delivery
+     *
+     * ASBIE
+     *  Package. Delivery
+     *  The delivery of this package.
+     *  0..1
+     *  Package
+     *  Delivery
+     *  Delivery
+     *  Delivery
+     *
+     * @param \horstoeko\ubl\entities\cac\Delivery $delivery
+     * @return self
+     */
+    public function setDelivery(\horstoeko\ubl\entities\cac\Delivery $delivery)
+    {
+        $this->delivery = $delivery;
+        return $this;
+    }
+
+    /**
+     * Gets as pickup
+     *
+     * ASBIE
+     *  Package. Pickup
+     *  The pickup of this package.
+     *  0..1
+     *  Package
+     *  Pickup
+     *  Pickup
+     *  Pickup
+     *
+     * @return \horstoeko\ubl\entities\cac\Pickup
+     */
+    public function getPickup()
+    {
+        return $this->pickup;
+    }
+
+    /**
+     * Sets a new pickup
+     *
+     * ASBIE
+     *  Package. Pickup
+     *  The pickup of this package.
+     *  0..1
+     *  Package
+     *  Pickup
+     *  Pickup
+     *  Pickup
+     *
+     * @param \horstoeko\ubl\entities\cac\Pickup $pickup
+     * @return self
+     */
+    public function setPickup(\horstoeko\ubl\entities\cac\Pickup $pickup)
+    {
+        $this->pickup = $pickup;
+        return $this;
+    }
+
+    /**
+     * Gets as despatch
+     *
+     * ASBIE
+     *  Package. Despatch
+     *  The despatch of this package.
+     *  0..1
+     *  Package
+     *  Despatch
+     *  Despatch
+     *  Despatch
+     *
+     * @return \horstoeko\ubl\entities\cac\Despatch
+     */
+    public function getDespatch()
+    {
+        return $this->despatch;
+    }
+
+    /**
+     * Sets a new despatch
+     *
+     * ASBIE
+     *  Package. Despatch
+     *  The despatch of this package.
+     *  0..1
+     *  Package
+     *  Despatch
+     *  Despatch
+     *  Despatch
+     *
+     * @param \horstoeko\ubl\entities\cac\Despatch $despatch
+     * @return self
+     */
+    public function setDespatch(\horstoeko\ubl\entities\cac\Despatch $despatch)
+    {
+        $this->despatch = $despatch;
         return $this;
     }
 

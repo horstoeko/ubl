@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Price List. Details
- *  Information about a Price List.
+ *  A class to describe a price list.
  *  Price List
  * XSD Type: PriceListType
  */
@@ -17,7 +17,7 @@ class PriceListType
     /**
      * BBIE
      *  Price List. Identifier
-     *  Identifies the Price List.
+     *  An identifier for this price list.
      *  0..1
      *  Price List
      *  Identifier
@@ -31,13 +31,13 @@ class PriceListType
     /**
      * BBIE
      *  Price List. Status Code. Code
-     *  Identifies whether the price list is an 'original', 'copy', 'revision', or 'cancellation'.
+     *  A code signifying whether this price list is an original, copy, revision, or cancellation.
      *  0..1
      *  Price List
      *  Status Code
      *  Code
      *  Code. Type
-     *  "new - announcement only", "new and available", "deleted - announcement only"
+     *  new - announcement only , new and available , deleted - announcement only
      *
      * @var \horstoeko\ubl\entities\cbc\StatusCode $statusCode
      */
@@ -46,10 +46,11 @@ class PriceListType
     /**
      * ASBIE
      *  Price List. Validity_ Period. Period
-     *  An association to Validity Period.
+     *  A period during which this price list is valid.
      *  0..n
      *  Price List
      *  Validity
+     *  Period
      *  Period
      *  Period
      *
@@ -62,10 +63,11 @@ class PriceListType
     /**
      * ASBIE
      *  Price List. Previous_ Price List. Price List
-     *  An association to Previous Price List.
+     *  The previous price list.
      *  0..1
      *  Price List
      *  Previous
+     *  Price List
      *  Price List
      *  Price List
      *
@@ -78,7 +80,7 @@ class PriceListType
      *
      * BBIE
      *  Price List. Identifier
-     *  Identifies the Price List.
+     *  An identifier for this price list.
      *  0..1
      *  Price List
      *  Identifier
@@ -97,7 +99,7 @@ class PriceListType
      *
      * BBIE
      *  Price List. Identifier
-     *  Identifies the Price List.
+     *  An identifier for this price list.
      *  0..1
      *  Price List
      *  Identifier
@@ -118,13 +120,13 @@ class PriceListType
      *
      * BBIE
      *  Price List. Status Code. Code
-     *  Identifies whether the price list is an 'original', 'copy', 'revision', or 'cancellation'.
+     *  A code signifying whether this price list is an original, copy, revision, or cancellation.
      *  0..1
      *  Price List
      *  Status Code
      *  Code
      *  Code. Type
-     *  "new - announcement only", "new and available", "deleted - announcement only"
+     *  new - announcement only , new and available , deleted - announcement only
      *
      * @return \horstoeko\ubl\entities\cbc\StatusCode
      */
@@ -138,13 +140,13 @@ class PriceListType
      *
      * BBIE
      *  Price List. Status Code. Code
-     *  Identifies whether the price list is an 'original', 'copy', 'revision', or 'cancellation'.
+     *  A code signifying whether this price list is an original, copy, revision, or cancellation.
      *  0..1
      *  Price List
      *  Status Code
      *  Code
      *  Code. Type
-     *  "new - announcement only", "new and available", "deleted - announcement only"
+     *  new - announcement only , new and available , deleted - announcement only
      *
      * @param \horstoeko\ubl\entities\cbc\StatusCode $statusCode
      * @return self
@@ -160,10 +162,11 @@ class PriceListType
      *
      * ASBIE
      *  Price List. Validity_ Period. Period
-     *  An association to Validity Period.
+     *  A period during which this price list is valid.
      *  0..n
      *  Price List
      *  Validity
+     *  Period
      *  Period
      *  Period
      *
@@ -181,10 +184,11 @@ class PriceListType
      *
      * ASBIE
      *  Price List. Validity_ Period. Period
-     *  An association to Validity Period.
+     *  A period during which this price list is valid.
      *  0..n
      *  Price List
      *  Validity
+     *  Period
      *  Period
      *  Period
      *
@@ -201,10 +205,11 @@ class PriceListType
      *
      * ASBIE
      *  Price List. Validity_ Period. Period
-     *  An association to Validity Period.
+     *  A period during which this price list is valid.
      *  0..n
      *  Price List
      *  Validity
+     *  Period
      *  Period
      *  Period
      *
@@ -221,10 +226,11 @@ class PriceListType
      *
      * ASBIE
      *  Price List. Validity_ Period. Period
-     *  An association to Validity Period.
+     *  A period during which this price list is valid.
      *  0..n
      *  Price List
      *  Validity
+     *  Period
      *  Period
      *  Period
      *
@@ -240,10 +246,11 @@ class PriceListType
      *
      * ASBIE
      *  Price List. Validity_ Period. Period
-     *  An association to Validity Period.
+     *  A period during which this price list is valid.
      *  0..n
      *  Price List
      *  Validity
+     *  Period
      *  Period
      *  Period
      *
@@ -261,10 +268,11 @@ class PriceListType
      *
      * ASBIE
      *  Price List. Previous_ Price List. Price List
-     *  An association to Previous Price List.
+     *  The previous price list.
      *  0..1
      *  Price List
      *  Previous
+     *  Price List
      *  Price List
      *  Price List
      *
@@ -280,10 +288,11 @@ class PriceListType
      *
      * ASBIE
      *  Price List. Previous_ Price List. Price List
-     *  An association to Previous Price List.
+     *  The previous price list.
      *  0..1
      *  Price List
      *  Previous
+     *  Price List
      *  Price List
      *  Price List
      *

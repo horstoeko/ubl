@@ -13,3 +13,9 @@ horstoeko\ubl\entities\cac\QuotationLineType:
         sellerProposedSubstituteLineItem:
             -
                 Valid: null
+        alternativeLineItem:
+            -
+                Valid: null
+        requestLineReference:
+            -
+                Valid: null

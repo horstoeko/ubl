@@ -1,0 +1,190 @@
+horstoeko\ubl\entities\cac\TenderResultType:
+    properties:
+        tenderResultCode:
+            expose: true
+            access_type: public_method
+            serialized_name: TenderResultCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTenderResultCode
+                setter: setTenderResultCode
+            type: horstoeko\ubl\entities\cbc\TenderResultCode
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: Description
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>
+        advertisementAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: AdvertisementAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAdvertisementAmount
+                setter: setAdvertisementAmount
+            type: horstoeko\ubl\entities\cbc\AdvertisementAmount
+        awardDate:
+            expose: true
+            access_type: public_method
+            serialized_name: AwardDate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAwardDate
+                setter: setAwardDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        awardTime:
+            expose: true
+            access_type: public_method
+            serialized_name: AwardTime
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAwardTime
+                setter: setAwardTime
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time
+        receivedTenderQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: ReceivedTenderQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getReceivedTenderQuantity
+                setter: setReceivedTenderQuantity
+            type: horstoeko\ubl\entities\cbc\ReceivedTenderQuantity
+        lowerTenderAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: LowerTenderAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getLowerTenderAmount
+                setter: setLowerTenderAmount
+            type: horstoeko\ubl\entities\cbc\LowerTenderAmount
+        higherTenderAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: HigherTenderAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getHigherTenderAmount
+                setter: setHigherTenderAmount
+            type: horstoeko\ubl\entities\cbc\HigherTenderAmount
+        startDate:
+            expose: true
+            access_type: public_method
+            serialized_name: StartDate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getStartDate
+                setter: setStartDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        receivedElectronicTenderQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: ReceivedElectronicTenderQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getReceivedElectronicTenderQuantity
+                setter: setReceivedElectronicTenderQuantity
+            type: horstoeko\ubl\entities\cbc\ReceivedElectronicTenderQuantity
+        receivedForeignTenderQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: ReceivedForeignTenderQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getReceivedForeignTenderQuantity
+                setter: setReceivedForeignTenderQuantity
+            type: horstoeko\ubl\entities\cbc\ReceivedForeignTenderQuantity
+        contract:
+            expose: true
+            access_type: public_method
+            serialized_name: Contract
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getContract
+                setter: setContract
+            type: horstoeko\ubl\entities\cac\Contract
+        awardedTenderedProject:
+            expose: true
+            access_type: public_method
+            serialized_name: AwardedTenderedProject
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getAwardedTenderedProject
+                setter: setAwardedTenderedProject
+            type: horstoeko\ubl\entities\cac\AwardedTenderedProject
+        contractFormalizationPeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: ContractFormalizationPeriod
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getContractFormalizationPeriod
+                setter: setContractFormalizationPeriod
+            type: horstoeko\ubl\entities\cac\ContractFormalizationPeriod
+        subcontractTerms:
+            expose: true
+            access_type: public_method
+            serialized_name: SubcontractTerms
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getSubcontractTerms
+                setter: setSubcontractTerms
+            xml_list:
+                inline: true
+                entry_name: SubcontractTerms
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\SubcontractTerms>
+        winningParty:
+            expose: true
+            access_type: public_method
+            serialized_name: WinningParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getWinningParty
+                setter: setWinningParty
+            xml_list:
+                inline: true
+                entry_name: WinningParty
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\WinningParty>

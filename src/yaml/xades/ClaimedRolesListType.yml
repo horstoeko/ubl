@@ -1,0 +1,17 @@
+horstoeko\ubl\entities\xades\ClaimedRolesListType:
+    properties:
+        claimedRole:
+            expose: true
+            access_type: public_method
+            serialized_name: ClaimedRole
+            xml_element:
+                cdata: false
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            accessor:
+                getter: getClaimedRole
+                setter: setClaimedRole
+            xml_list:
+                inline: true
+                entry_name: ClaimedRole
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            type: array<horstoeko\ubl\entities\xades\AnyType>

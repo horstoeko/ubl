@@ -2,7 +2,7 @@
 
 namespace horstoeko\ubl\entities\cbc;
 
-use horstoeko\ubl\entities\qdt\DocumentStatusCodeType as DocumentStatusCodeTypeBase;
+use horstoeko\ubl\entities\udt\CodeType;
 
 /**
  * Class representing DocumentStatusCodeType
@@ -10,7 +10,7 @@ use horstoeko\ubl\entities\qdt\DocumentStatusCodeType as DocumentStatusCodeTypeB
  *
  * XSD Type: DocumentStatusCodeType
  */
-class DocumentStatusCodeType extends DocumentStatusCodeTypeBase
+class DocumentStatusCodeType extends CodeType
 {
 
 

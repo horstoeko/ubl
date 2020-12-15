@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Party. Details
- *  Information about an organization, sub-organization, or individual fulfilling a role in a business process.
+ *  A class to describe an organization, sub-organization, or individual fulfilling a role in a business process.
  *  Party
  * XSD Type: PartyType
  */
@@ -17,7 +17,7 @@ class PartyType
     /**
      * BBIE
      *  Party. Mark Care_ Indicator. Indicator
-     *  Indicates whether a party is C/O (care of).
+     *  An indicator that this party is "care of" (c/o) (true) or not (false).
      *  0..1
      *  Party
      *  Mark Care
@@ -32,7 +32,7 @@ class PartyType
     /**
      * BBIE
      *  Party. Mark Attention_ Indicator. Indicator
-     *  Indicates whether a party is 'FAO' (for the attention of).
+     *  An indicator that this party is "for the attention of" (FAO) (true) or not (false).
      *  0..1
      *  Party
      *  Mark Attention
@@ -47,7 +47,7 @@ class PartyType
     /**
      * BBIE
      *  Party. Website_ URI. Identifier
-     *  The Uniform Resource Identifier (URI) of the party.
+     *  The Uniform Resource Identifier (URI) that identifies this party's web site; i.e., the web site's Uniform Resource Locator (URL).
      *  0..1
      *  Party
      *  Website
@@ -62,7 +62,7 @@ class PartyType
     /**
      * BBIE
      *  Party. Logo Reference. Identifier
-     *  A party's logo.
+     *  An identifier for this party's logo.
      *  0..1
      *  Party
      *  Logo Reference
@@ -77,7 +77,7 @@ class PartyType
     /**
      * BBIE
      *  Party. Endpoint Identifier. Identifier
-     *  Identifies the end point of the routing service, e.g., EAN Location Number, GLN.
+     *  An identifier for the end point of the routing service (e.g., EAN Location Number, GLN).
      *  0..1
      *  Party
      *  Endpoint Identifier
@@ -90,11 +90,27 @@ class PartyType
     private $endpointID = null;
 
     /**
+     * BBIE
+     *  Party. Industry Classification Code. Code
+     *  This party's Industry Classification Code.
+     *  0..1
+     *  Party
+     *  Industry Classification Code
+     *  Code
+     *  Code. Type
+     *  Public authority , NAIC codes
+     *
+     * @var \horstoeko\ubl\entities\cbc\IndustryClassificationCode $industryClassificationCode
+     */
+    private $industryClassificationCode = null;
+
+    /**
      * ASBIE
      *  Party. Party Identification
-     *  An association to Party Identification.
+     *  An identifier for this party.
      *  0..n
      *  Party
+     *  Party Identification
      *  Party Identification
      *  Party Identification
      *
@@ -107,9 +123,10 @@ class PartyType
     /**
      * ASBIE
      *  Party. Party Name
-     *  An association to Party Name.
+     *  A name for this party.
      *  0..n
      *  Party
+     *  Party Name
      *  Party Name
      *  Party Name
      *
@@ -122,9 +139,10 @@ class PartyType
     /**
      * ASBIE
      *  Party. Language
-     *  An association to Language.
+     *  The language associated with this party.
      *  0..1
      *  Party
+     *  Language
      *  Language
      *  Language
      *
@@ -141,6 +159,7 @@ class PartyType
      *  Postal
      *  Address
      *  Address
+     *  Address
      *
      * @var \horstoeko\ubl\entities\cac\PostalAddress $postalAddress
      */
@@ -149,10 +168,11 @@ class PartyType
     /**
      * ASBIE
      *  Party. Physical_ Location. Location
-     *  The party's physical location.
+     *  The physical location of this party.
      *  0..1
      *  Party
      *  Physical
+     *  Location
      *  Location
      *  Location
      *
@@ -163,9 +183,10 @@ class PartyType
     /**
      * ASBIE
      *  Party. Party Tax Scheme
-     *  An association to Party Tax Scheme.
+     *  A tax scheme applying to this party.
      *  0..n
      *  Party
+     *  Party Tax Scheme
      *  Party Tax Scheme
      *  Party Tax Scheme
      *
@@ -178,9 +199,10 @@ class PartyType
     /**
      * ASBIE
      *  Party. Party Legal Entity
-     *  An association to Party Legal Entity.
+     *  A description of this party as a legal entity.
      *  0..n
      *  Party
+     *  Party Legal Entity
      *  Party Legal Entity
      *  Party Legal Entity
      *
@@ -193,9 +215,10 @@ class PartyType
     /**
      * ASBIE
      *  Party. Contact
-     *  An association to Contact.
+     *  The primary contact for this party.
      *  0..1
      *  Party
+     *  Contact
      *  Contact
      *  Contact
      *
@@ -206,36 +229,87 @@ class PartyType
     /**
      * ASBIE
      *  Party. Person
-     *  An association to a person.
-     *  0..1
+     *  A person associated with this party.
+     *  0..n
      *  Party
      *  Person
      *  Person
+     *  Person
      *
-     * @var \horstoeko\ubl\entities\cac\Person $person
+     * @var \horstoeko\ubl\entities\cac\Person[] $person
      */
-    private $person = null;
+    private $person = [
+        
+    ];
 
     /**
      * ASBIE
      *  Party. Agent_ Party. Party
-     *  An association to another party who acts as an agent for this party.
+     *  A party who acts as an agent for this party.
      *  0..1
      *  Party
      *  Agent
      *  Party
      *  Party
+     *  Party
+     *  Customs Broker
      *
      * @var \horstoeko\ubl\entities\cac\AgentParty $agentParty
      */
     private $agentParty = null;
 
     /**
+     * ASBIE
+     *  Party. Service Provider Party
+     *  A party providing a service to this party.
+     *  0..n
+     *  Party
+     *  Service Provider Party
+     *  Service Provider Party
+     *  Service Provider Party
+     *
+     * @var \horstoeko\ubl\entities\cac\ServiceProviderParty[] $serviceProviderParty
+     */
+    private $serviceProviderParty = [
+        
+    ];
+
+    /**
+     * ASBIE
+     *  Party. Power Of Attorney
+     *  A power of attorney associated with this party.
+     *  0..n
+     *  Party
+     *  Power Of Attorney
+     *  Power Of Attorney
+     *  Power Of Attorney
+     *
+     * @var \horstoeko\ubl\entities\cac\PowerOfAttorney[] $powerOfAttorney
+     */
+    private $powerOfAttorney = [
+        
+    ];
+
+    /**
+     * ASBIE
+     *  Party. Financial Account
+     *  The financial account associated with this party.
+     *  0..1
+     *  Party
+     *  Financial Account
+     *  Financial Account
+     *  Financial Account
+     *
+     * @var \horstoeko\ubl\entities\cac\FinancialAccount $financialAccount
+     */
+    private $financialAccount = null;
+
+    /**
      * Gets as markCareIndicator
      *
      * BBIE
      *  Party. Mark Care_ Indicator. Indicator
-     *  Indicates whether a party is C/O (care of).
+     *  An indicator that this party is "care of" (c/o) (true) or not (false).
      *  0..1
      *  Party
      *  Mark Care
@@ -255,7 +329,7 @@ class PartyType
      *
      * BBIE
      *  Party. Mark Care_ Indicator. Indicator
-     *  Indicates whether a party is C/O (care of).
+     *  An indicator that this party is "care of" (c/o) (true) or not (false).
      *  0..1
      *  Party
      *  Mark Care
@@ -277,7 +351,7 @@ class PartyType
      *
      * BBIE
      *  Party. Mark Attention_ Indicator. Indicator
-     *  Indicates whether a party is 'FAO' (for the attention of).
+     *  An indicator that this party is "for the attention of" (FAO) (true) or not (false).
      *  0..1
      *  Party
      *  Mark Attention
@@ -297,7 +371,7 @@ class PartyType
      *
      * BBIE
      *  Party. Mark Attention_ Indicator. Indicator
-     *  Indicates whether a party is 'FAO' (for the attention of).
+     *  An indicator that this party is "for the attention of" (FAO) (true) or not (false).
      *  0..1
      *  Party
      *  Mark Attention
@@ -319,7 +393,7 @@ class PartyType
      *
      * BBIE
      *  Party. Website_ URI. Identifier
-     *  The Uniform Resource Identifier (URI) of the party.
+     *  The Uniform Resource Identifier (URI) that identifies this party's web site; i.e., the web site's Uniform Resource Locator (URL).
      *  0..1
      *  Party
      *  Website
@@ -339,7 +413,7 @@ class PartyType
      *
      * BBIE
      *  Party. Website_ URI. Identifier
-     *  The Uniform Resource Identifier (URI) of the party.
+     *  The Uniform Resource Identifier (URI) that identifies this party's web site; i.e., the web site's Uniform Resource Locator (URL).
      *  0..1
      *  Party
      *  Website
@@ -361,7 +435,7 @@ class PartyType
      *
      * BBIE
      *  Party. Logo Reference. Identifier
-     *  A party's logo.
+     *  An identifier for this party's logo.
      *  0..1
      *  Party
      *  Logo Reference
@@ -381,7 +455,7 @@ class PartyType
      *
      * BBIE
      *  Party. Logo Reference. Identifier
-     *  A party's logo.
+     *  An identifier for this party's logo.
      *  0..1
      *  Party
      *  Logo Reference
@@ -403,7 +477,7 @@ class PartyType
      *
      * BBIE
      *  Party. Endpoint Identifier. Identifier
-     *  Identifies the end point of the routing service, e.g., EAN Location Number, GLN.
+     *  An identifier for the end point of the routing service (e.g., EAN Location Number, GLN).
      *  0..1
      *  Party
      *  Endpoint Identifier
@@ -423,7 +497,7 @@ class PartyType
      *
      * BBIE
      *  Party. Endpoint Identifier. Identifier
-     *  Identifies the end point of the routing service, e.g., EAN Location Number, GLN.
+     *  An identifier for the end point of the routing service (e.g., EAN Location Number, GLN).
      *  0..1
      *  Party
      *  Endpoint Identifier
@@ -441,13 +515,56 @@ class PartyType
     }
 
     /**
+     * Gets as industryClassificationCode
+     *
+     * BBIE
+     *  Party. Industry Classification Code. Code
+     *  This party's Industry Classification Code.
+     *  0..1
+     *  Party
+     *  Industry Classification Code
+     *  Code
+     *  Code. Type
+     *  Public authority , NAIC codes
+     *
+     * @return \horstoeko\ubl\entities\cbc\IndustryClassificationCode
+     */
+    public function getIndustryClassificationCode()
+    {
+        return $this->industryClassificationCode;
+    }
+
+    /**
+     * Sets a new industryClassificationCode
+     *
+     * BBIE
+     *  Party. Industry Classification Code. Code
+     *  This party's Industry Classification Code.
+     *  0..1
+     *  Party
+     *  Industry Classification Code
+     *  Code
+     *  Code. Type
+     *  Public authority , NAIC codes
+     *
+     * @param \horstoeko\ubl\entities\cbc\IndustryClassificationCode $industryClassificationCode
+     * @return self
+     */
+    public function setIndustryClassificationCode(\horstoeko\ubl\entities\cbc\IndustryClassificationCode $industryClassificationCode)
+    {
+        $this->industryClassificationCode = $industryClassificationCode;
+        return $this;
+    }
+
+    /**
      * Adds as partyIdentification
      *
      * ASBIE
      *  Party. Party Identification
-     *  An association to Party Identification.
+     *  An identifier for this party.
      *  0..n
      *  Party
+     *  Party Identification
      *  Party Identification
      *  Party Identification
      *
@@ -465,9 +582,10 @@ class PartyType
      *
      * ASBIE
      *  Party. Party Identification
-     *  An association to Party Identification.
+     *  An identifier for this party.
      *  0..n
      *  Party
+     *  Party Identification
      *  Party Identification
      *  Party Identification
      *
@@ -484,9 +602,10 @@ class PartyType
      *
      * ASBIE
      *  Party. Party Identification
-     *  An association to Party Identification.
+     *  An identifier for this party.
      *  0..n
      *  Party
+     *  Party Identification
      *  Party Identification
      *  Party Identification
      *
@@ -503,9 +622,10 @@ class PartyType
      *
      * ASBIE
      *  Party. Party Identification
-     *  An association to Party Identification.
+     *  An identifier for this party.
      *  0..n
      *  Party
+     *  Party Identification
      *  Party Identification
      *  Party Identification
      *
@@ -521,9 +641,10 @@ class PartyType
      *
      * ASBIE
      *  Party. Party Identification
-     *  An association to Party Identification.
+     *  An identifier for this party.
      *  0..n
      *  Party
+     *  Party Identification
      *  Party Identification
      *  Party Identification
      *
@@ -541,9 +662,10 @@ class PartyType
      *
      * ASBIE
      *  Party. Party Name
-     *  An association to Party Name.
+     *  A name for this party.
      *  0..n
      *  Party
+     *  Party Name
      *  Party Name
      *  Party Name
      *
@@ -561,9 +683,10 @@ class PartyType
      *
      * ASBIE
      *  Party. Party Name
-     *  An association to Party Name.
+     *  A name for this party.
      *  0..n
      *  Party
+     *  Party Name
      *  Party Name
      *  Party Name
      *
@@ -580,9 +703,10 @@ class PartyType
      *
      * ASBIE
      *  Party. Party Name
-     *  An association to Party Name.
+     *  A name for this party.
      *  0..n
      *  Party
+     *  Party Name
      *  Party Name
      *  Party Name
      *
@@ -599,9 +723,10 @@ class PartyType
      *
      * ASBIE
      *  Party. Party Name
-     *  An association to Party Name.
+     *  A name for this party.
      *  0..n
      *  Party
+     *  Party Name
      *  Party Name
      *  Party Name
      *
@@ -617,9 +742,10 @@ class PartyType
      *
      * ASBIE
      *  Party. Party Name
-     *  An association to Party Name.
+     *  A name for this party.
      *  0..n
      *  Party
+     *  Party Name
      *  Party Name
      *  Party Name
      *
@@ -637,9 +763,10 @@ class PartyType
      *
      * ASBIE
      *  Party. Language
-     *  An association to Language.
+     *  The language associated with this party.
      *  0..1
      *  Party
+     *  Language
      *  Language
      *  Language
      *
@@ -655,9 +782,10 @@ class PartyType
      *
      * ASBIE
      *  Party. Language
-     *  An association to Language.
+     *  The language associated with this party.
      *  0..1
      *  Party
+     *  Language
      *  Language
      *  Language
      *
@@ -681,6 +809,7 @@ class PartyType
      *  Postal
      *  Address
      *  Address
+     *  Address
      *
      * @return \horstoeko\ubl\entities\cac\PostalAddress
      */
@@ -700,6 +829,7 @@ class PartyType
      *  Postal
      *  Address
      *  Address
+     *  Address
      *
      * @param \horstoeko\ubl\entities\cac\PostalAddress $postalAddress
      * @return self
@@ -715,10 +845,11 @@ class PartyType
      *
      * ASBIE
      *  Party. Physical_ Location. Location
-     *  The party's physical location.
+     *  The physical location of this party.
      *  0..1
      *  Party
      *  Physical
+     *  Location
      *  Location
      *  Location
      *
@@ -734,10 +865,11 @@ class PartyType
      *
      * ASBIE
      *  Party. Physical_ Location. Location
-     *  The party's physical location.
+     *  The physical location of this party.
      *  0..1
      *  Party
      *  Physical
+     *  Location
      *  Location
      *  Location
      *
@@ -755,9 +887,10 @@ class PartyType
      *
      * ASBIE
      *  Party. Party Tax Scheme
-     *  An association to Party Tax Scheme.
+     *  A tax scheme applying to this party.
      *  0..n
      *  Party
+     *  Party Tax Scheme
      *  Party Tax Scheme
      *  Party Tax Scheme
      *
@@ -775,9 +908,10 @@ class PartyType
      *
      * ASBIE
      *  Party. Party Tax Scheme
-     *  An association to Party Tax Scheme.
+     *  A tax scheme applying to this party.
      *  0..n
      *  Party
+     *  Party Tax Scheme
      *  Party Tax Scheme
      *  Party Tax Scheme
      *
@@ -794,9 +928,10 @@ class PartyType
      *
      * ASBIE
      *  Party. Party Tax Scheme
-     *  An association to Party Tax Scheme.
+     *  A tax scheme applying to this party.
      *  0..n
      *  Party
+     *  Party Tax Scheme
      *  Party Tax Scheme
      *  Party Tax Scheme
      *
@@ -813,9 +948,10 @@ class PartyType
      *
      * ASBIE
      *  Party. Party Tax Scheme
-     *  An association to Party Tax Scheme.
+     *  A tax scheme applying to this party.
      *  0..n
      *  Party
+     *  Party Tax Scheme
      *  Party Tax Scheme
      *  Party Tax Scheme
      *
@@ -831,9 +967,10 @@ class PartyType
      *
      * ASBIE
      *  Party. Party Tax Scheme
-     *  An association to Party Tax Scheme.
+     *  A tax scheme applying to this party.
      *  0..n
      *  Party
+     *  Party Tax Scheme
      *  Party Tax Scheme
      *  Party Tax Scheme
      *
@@ -851,9 +988,10 @@ class PartyType
      *
      * ASBIE
      *  Party. Party Legal Entity
-     *  An association to Party Legal Entity.
+     *  A description of this party as a legal entity.
      *  0..n
      *  Party
+     *  Party Legal Entity
      *  Party Legal Entity
      *  Party Legal Entity
      *
@@ -871,9 +1009,10 @@ class PartyType
      *
      * ASBIE
      *  Party. Party Legal Entity
-     *  An association to Party Legal Entity.
+     *  A description of this party as a legal entity.
      *  0..n
      *  Party
+     *  Party Legal Entity
      *  Party Legal Entity
      *  Party Legal Entity
      *
@@ -890,9 +1029,10 @@ class PartyType
      *
      * ASBIE
      *  Party. Party Legal Entity
-     *  An association to Party Legal Entity.
+     *  A description of this party as a legal entity.
      *  0..n
      *  Party
+     *  Party Legal Entity
      *  Party Legal Entity
      *  Party Legal Entity
      *
@@ -909,9 +1049,10 @@ class PartyType
      *
      * ASBIE
      *  Party. Party Legal Entity
-     *  An association to Party Legal Entity.
+     *  A description of this party as a legal entity.
      *  0..n
      *  Party
+     *  Party Legal Entity
      *  Party Legal Entity
      *  Party Legal Entity
      *
@@ -927,9 +1068,10 @@ class PartyType
      *
      * ASBIE
      *  Party. Party Legal Entity
-     *  An association to Party Legal Entity.
+     *  A description of this party as a legal entity.
      *  0..n
      *  Party
+     *  Party Legal Entity
      *  Party Legal Entity
      *  Party Legal Entity
      *
@@ -947,9 +1089,10 @@ class PartyType
      *
      * ASBIE
      *  Party. Contact
-     *  An association to Contact.
+     *  The primary contact for this party.
      *  0..1
      *  Party
+     *  Contact
      *  Contact
      *  Contact
      *
@@ -965,9 +1108,10 @@ class PartyType
      *
      * ASBIE
      *  Party. Contact
-     *  An association to Contact.
+     *  The primary contact for this party.
      *  0..1
      *  Party
+     *  Contact
      *  Contact
      *  Contact
      *
@@ -981,17 +1125,79 @@ class PartyType
     }
 
     /**
+     * Adds as person
+     *
+     * ASBIE
+     *  Party. Person
+     *  A person associated with this party.
+     *  0..n
+     *  Party
+     *  Person
+     *  Person
+     *  Person
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\Person $person
+     */
+    public function addToPerson(\horstoeko\ubl\entities\cac\Person $person)
+    {
+        $this->person[] = $person;
+        return $this;
+    }
+
+    /**
+     * isset person
+     *
+     * ASBIE
+     *  Party. Person
+     *  A person associated with this party.
+     *  0..n
+     *  Party
+     *  Person
+     *  Person
+     *  Person
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetPerson($index)
+    {
+        return isset($this->person[$index]);
+    }
+
+    /**
+     * unset person
+     *
+     * ASBIE
+     *  Party. Person
+     *  A person associated with this party.
+     *  0..n
+     *  Party
+     *  Person
+     *  Person
+     *  Person
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetPerson($index)
+    {
+        unset($this->person[$index]);
+    }
+
+    /**
      * Gets as person
      *
      * ASBIE
      *  Party. Person
-     *  An association to a person.
-     *  0..1
+     *  A person associated with this party.
+     *  0..n
      *  Party
      *  Person
      *  Person
+     *  Person
      *
-     * @return \horstoeko\ubl\entities\cac\Person
+     * @return \horstoeko\ubl\entities\cac\Person[]
      */
     public function getPerson()
     {
@@ -1003,16 +1209,17 @@ class PartyType
      *
      * ASBIE
      *  Party. Person
-     *  An association to a person.
-     *  0..1
+     *  A person associated with this party.
+     *  0..n
      *  Party
      *  Person
      *  Person
+     *  Person
      *
-     * @param \horstoeko\ubl\entities\cac\Person $person
+     * @param \horstoeko\ubl\entities\cac\Person[] $person
      * @return self
      */
-    public function setPerson(\horstoeko\ubl\entities\cac\Person $person)
+    public function setPerson(array $person)
     {
         $this->person = $person;
         return $this;
@@ -1023,12 +1230,14 @@ class PartyType
      *
      * ASBIE
      *  Party. Agent_ Party. Party
-     *  An association to another party who acts as an agent for this party.
+     *  A party who acts as an agent for this party.
      *  0..1
      *  Party
      *  Agent
      *  Party
      *  Party
+     *  Party
+     *  Customs Broker
      *
      * @return \horstoeko\ubl\entities\cac\AgentParty
      */
@@ -1042,12 +1251,14 @@ class PartyType
      *
      * ASBIE
      *  Party. Agent_ Party. Party
-     *  An association to another party who acts as an agent for this party.
+     *  A party who acts as an agent for this party.
      *  0..1
      *  Party
      *  Agent
      *  Party
      *  Party
+     *  Party
+     *  Customs Broker
      *
      * @param \horstoeko\ubl\entities\cac\AgentParty $agentParty
      * @return self
@@ -1055,6 +1266,248 @@ class PartyType
     public function setAgentParty(\horstoeko\ubl\entities\cac\AgentParty $agentParty)
     {
         $this->agentParty = $agentParty;
+        return $this;
+    }
+
+    /**
+     * Adds as serviceProviderParty
+     *
+     * ASBIE
+     *  Party. Service Provider Party
+     *  A party providing a service to this party.
+     *  0..n
+     *  Party
+     *  Service Provider Party
+     *  Service Provider Party
+     *  Service Provider Party
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\ServiceProviderParty $serviceProviderParty
+     */
+    public function addToServiceProviderParty(\horstoeko\ubl\entities\cac\ServiceProviderParty $serviceProviderParty)
+    {
+        $this->serviceProviderParty[] = $serviceProviderParty;
+        return $this;
+    }
+
+    /**
+     * isset serviceProviderParty
+     *
+     * ASBIE
+     *  Party. Service Provider Party
+     *  A party providing a service to this party.
+     *  0..n
+     *  Party
+     *  Service Provider Party
+     *  Service Provider Party
+     *  Service Provider Party
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetServiceProviderParty($index)
+    {
+        return isset($this->serviceProviderParty[$index]);
+    }
+
+    /**
+     * unset serviceProviderParty
+     *
+     * ASBIE
+     *  Party. Service Provider Party
+     *  A party providing a service to this party.
+     *  0..n
+     *  Party
+     *  Service Provider Party
+     *  Service Provider Party
+     *  Service Provider Party
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetServiceProviderParty($index)
+    {
+        unset($this->serviceProviderParty[$index]);
+    }
+
+    /**
+     * Gets as serviceProviderParty
+     *
+     * ASBIE
+     *  Party. Service Provider Party
+     *  A party providing a service to this party.
+     *  0..n
+     *  Party
+     *  Service Provider Party
+     *  Service Provider Party
+     *  Service Provider Party
+     *
+     * @return \horstoeko\ubl\entities\cac\ServiceProviderParty[]
+     */
+    public function getServiceProviderParty()
+    {
+        return $this->serviceProviderParty;
+    }
+
+    /**
+     * Sets a new serviceProviderParty
+     *
+     * ASBIE
+     *  Party. Service Provider Party
+     *  A party providing a service to this party.
+     *  0..n
+     *  Party
+     *  Service Provider Party
+     *  Service Provider Party
+     *  Service Provider Party
+     *
+     * @param \horstoeko\ubl\entities\cac\ServiceProviderParty[] $serviceProviderParty
+     * @return self
+     */
+    public function setServiceProviderParty(array $serviceProviderParty)
+    {
+        $this->serviceProviderParty = $serviceProviderParty;
+        return $this;
+    }
+
+    /**
+     * Adds as powerOfAttorney
+     *
+     * ASBIE
+     *  Party. Power Of Attorney
+     *  A power of attorney associated with this party.
+     *  0..n
+     *  Party
+     *  Power Of Attorney
+     *  Power Of Attorney
+     *  Power Of Attorney
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\PowerOfAttorney $powerOfAttorney
+     */
+    public function addToPowerOfAttorney(\horstoeko\ubl\entities\cac\PowerOfAttorney $powerOfAttorney)
+    {
+        $this->powerOfAttorney[] = $powerOfAttorney;
+        return $this;
+    }
+
+    /**
+     * isset powerOfAttorney
+     *
+     * ASBIE
+     *  Party. Power Of Attorney
+     *  A power of attorney associated with this party.
+     *  0..n
+     *  Party
+     *  Power Of Attorney
+     *  Power Of Attorney
+     *  Power Of Attorney
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetPowerOfAttorney($index)
+    {
+        return isset($this->powerOfAttorney[$index]);
+    }
+
+    /**
+     * unset powerOfAttorney
+     *
+     * ASBIE
+     *  Party. Power Of Attorney
+     *  A power of attorney associated with this party.
+     *  0..n
+     *  Party
+     *  Power Of Attorney
+     *  Power Of Attorney
+     *  Power Of Attorney
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetPowerOfAttorney($index)
+    {
+        unset($this->powerOfAttorney[$index]);
+    }
+
+    /**
+     * Gets as powerOfAttorney
+     *
+     * ASBIE
+     *  Party. Power Of Attorney
+     *  A power of attorney associated with this party.
+     *  0..n
+     *  Party
+     *  Power Of Attorney
+     *  Power Of Attorney
+     *  Power Of Attorney
+     *
+     * @return \horstoeko\ubl\entities\cac\PowerOfAttorney[]
+     */
+    public function getPowerOfAttorney()
+    {
+        return $this->powerOfAttorney;
+    }
+
+    /**
+     * Sets a new powerOfAttorney
+     *
+     * ASBIE
+     *  Party. Power Of Attorney
+     *  A power of attorney associated with this party.
+     *  0..n
+     *  Party
+     *  Power Of Attorney
+     *  Power Of Attorney
+     *  Power Of Attorney
+     *
+     * @param \horstoeko\ubl\entities\cac\PowerOfAttorney[] $powerOfAttorney
+     * @return self
+     */
+    public function setPowerOfAttorney(array $powerOfAttorney)
+    {
+        $this->powerOfAttorney = $powerOfAttorney;
+        return $this;
+    }
+
+    /**
+     * Gets as financialAccount
+     *
+     * ASBIE
+     *  Party. Financial Account
+     *  The financial account associated with this party.
+     *  0..1
+     *  Party
+     *  Financial Account
+     *  Financial Account
+     *  Financial Account
+     *
+     * @return \horstoeko\ubl\entities\cac\FinancialAccount
+     */
+    public function getFinancialAccount()
+    {
+        return $this->financialAccount;
+    }
+
+    /**
+     * Sets a new financialAccount
+     *
+     * ASBIE
+     *  Party. Financial Account
+     *  The financial account associated with this party.
+     *  0..1
+     *  Party
+     *  Financial Account
+     *  Financial Account
+     *  Financial Account
+     *
+     * @param \horstoeko\ubl\entities\cac\FinancialAccount $financialAccount
+     * @return self
+     */
+    public function setFinancialAccount(\horstoeko\ubl\entities\cac\FinancialAccount $financialAccount)
+    {
+        $this->financialAccount = $financialAccount;
         return $this;
     }
 

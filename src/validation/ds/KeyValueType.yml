@@ -1,0 +1,8 @@
+horstoeko\ubl\entities\ds\KeyValueType:
+    properties:
+        dSAKeyValue:
+            -
+                Valid: null
+        rSAKeyValue:
+            -
+                Valid: null

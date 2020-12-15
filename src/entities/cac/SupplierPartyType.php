@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Supplier Party. Details
- *  Information about the Supplier Party.
+ *  A class to describe a supplier party.
  *  Supplier Party
  * XSD Type: SupplierPartyType
  */
@@ -17,7 +17,7 @@ class SupplierPartyType
     /**
      * BBIE
      *  Supplier Party. Customer Assigned_ Account Identifier. Identifier
-     *  The customer's internal identifier for the supplier.
+     *  An identifier for this supplier party, assigned by the customer.
      *  0..1
      *  Supplier Party
      *  Customer Assigned
@@ -32,7 +32,7 @@ class SupplierPartyType
     /**
      * BBIE
      *  Supplier Party. Additional_ Account Identifier. Identifier
-     *  The customer's internal identifier for the supplier.
+     *  An additional identifier for this supplier party.
      *  0..n
      *  Supplier Party
      *  Additional
@@ -49,13 +49,12 @@ class SupplierPartyType
     /**
      * BBIE
      *  Supplier Party. Data Sending Capability. Text
-     *  Capability to send invoice data via the purchase card provider (VISA/MasterCard/American Express).
+     *  Text describing the supplier's ability to send invoice data via a purchase card provider (e.g., VISA, MasterCard, American Express).
      *  0..1
      *  Supplier Party
      *  Data Sending Capability
      *  Text
      *  Text. Type
-     *  The customer's internal identifier for the supplier.
      *
      * @var \horstoeko\ubl\entities\cbc\DataSendingCapability $dataSendingCapability
      */
@@ -64,9 +63,10 @@ class SupplierPartyType
     /**
      * ASBIE
      *  Supplier Party. Party
-     *  An association to Party.
+     *  The supplier party itself.
      *  0..1
      *  Supplier Party
+     *  Party
      *  Party
      *  Party
      *
@@ -77,10 +77,11 @@ class SupplierPartyType
     /**
      * ASBIE
      *  Supplier Party. Despatch_ Contact. Contact
-     *  An association to Despatch Contact.
+     *  A contact at this supplier party for despatches (pickups).
      *  0..1
      *  Supplier Party
      *  Despatch
+     *  Contact
      *  Contact
      *  Contact
      *
@@ -91,10 +92,11 @@ class SupplierPartyType
     /**
      * ASBIE
      *  Supplier Party. Accounting_ Contact. Contact
-     *  An association to Supplier Accounting Contact.
+     *  A contact at this supplier party for accounting.
      *  0..1
      *  Supplier Party
      *  Accounting
+     *  Contact
      *  Contact
      *  Contact
      *
@@ -105,10 +107,11 @@ class SupplierPartyType
     /**
      * ASBIE
      *  Supplier Party. Seller_ Contact. Contact
-     *  An association to Seller.
+     *  The primary contact for this supplier party.
      *  0..1
      *  Supplier Party
      *  Seller
+     *  Contact
      *  Contact
      *  Contact
      *
@@ -121,7 +124,7 @@ class SupplierPartyType
      *
      * BBIE
      *  Supplier Party. Customer Assigned_ Account Identifier. Identifier
-     *  The customer's internal identifier for the supplier.
+     *  An identifier for this supplier party, assigned by the customer.
      *  0..1
      *  Supplier Party
      *  Customer Assigned
@@ -141,7 +144,7 @@ class SupplierPartyType
      *
      * BBIE
      *  Supplier Party. Customer Assigned_ Account Identifier. Identifier
-     *  The customer's internal identifier for the supplier.
+     *  An identifier for this supplier party, assigned by the customer.
      *  0..1
      *  Supplier Party
      *  Customer Assigned
@@ -163,7 +166,7 @@ class SupplierPartyType
      *
      * BBIE
      *  Supplier Party. Additional_ Account Identifier. Identifier
-     *  The customer's internal identifier for the supplier.
+     *  An additional identifier for this supplier party.
      *  0..n
      *  Supplier Party
      *  Additional
@@ -185,7 +188,7 @@ class SupplierPartyType
      *
      * BBIE
      *  Supplier Party. Additional_ Account Identifier. Identifier
-     *  The customer's internal identifier for the supplier.
+     *  An additional identifier for this supplier party.
      *  0..n
      *  Supplier Party
      *  Additional
@@ -206,7 +209,7 @@ class SupplierPartyType
      *
      * BBIE
      *  Supplier Party. Additional_ Account Identifier. Identifier
-     *  The customer's internal identifier for the supplier.
+     *  An additional identifier for this supplier party.
      *  0..n
      *  Supplier Party
      *  Additional
@@ -227,7 +230,7 @@ class SupplierPartyType
      *
      * BBIE
      *  Supplier Party. Additional_ Account Identifier. Identifier
-     *  The customer's internal identifier for the supplier.
+     *  An additional identifier for this supplier party.
      *  0..n
      *  Supplier Party
      *  Additional
@@ -247,7 +250,7 @@ class SupplierPartyType
      *
      * BBIE
      *  Supplier Party. Additional_ Account Identifier. Identifier
-     *  The customer's internal identifier for the supplier.
+     *  An additional identifier for this supplier party.
      *  0..n
      *  Supplier Party
      *  Additional
@@ -269,13 +272,12 @@ class SupplierPartyType
      *
      * BBIE
      *  Supplier Party. Data Sending Capability. Text
-     *  Capability to send invoice data via the purchase card provider (VISA/MasterCard/American Express).
+     *  Text describing the supplier's ability to send invoice data via a purchase card provider (e.g., VISA, MasterCard, American Express).
      *  0..1
      *  Supplier Party
      *  Data Sending Capability
      *  Text
      *  Text. Type
-     *  The customer's internal identifier for the supplier.
      *
      * @return \horstoeko\ubl\entities\cbc\DataSendingCapability
      */
@@ -289,13 +291,12 @@ class SupplierPartyType
      *
      * BBIE
      *  Supplier Party. Data Sending Capability. Text
-     *  Capability to send invoice data via the purchase card provider (VISA/MasterCard/American Express).
+     *  Text describing the supplier's ability to send invoice data via a purchase card provider (e.g., VISA, MasterCard, American Express).
      *  0..1
      *  Supplier Party
      *  Data Sending Capability
      *  Text
      *  Text. Type
-     *  The customer's internal identifier for the supplier.
      *
      * @param \horstoeko\ubl\entities\cbc\DataSendingCapability $dataSendingCapability
      * @return self
@@ -311,9 +312,10 @@ class SupplierPartyType
      *
      * ASBIE
      *  Supplier Party. Party
-     *  An association to Party.
+     *  The supplier party itself.
      *  0..1
      *  Supplier Party
+     *  Party
      *  Party
      *  Party
      *
@@ -329,9 +331,10 @@ class SupplierPartyType
      *
      * ASBIE
      *  Supplier Party. Party
-     *  An association to Party.
+     *  The supplier party itself.
      *  0..1
      *  Supplier Party
+     *  Party
      *  Party
      *  Party
      *
@@ -349,10 +352,11 @@ class SupplierPartyType
      *
      * ASBIE
      *  Supplier Party. Despatch_ Contact. Contact
-     *  An association to Despatch Contact.
+     *  A contact at this supplier party for despatches (pickups).
      *  0..1
      *  Supplier Party
      *  Despatch
+     *  Contact
      *  Contact
      *  Contact
      *
@@ -368,10 +372,11 @@ class SupplierPartyType
      *
      * ASBIE
      *  Supplier Party. Despatch_ Contact. Contact
-     *  An association to Despatch Contact.
+     *  A contact at this supplier party for despatches (pickups).
      *  0..1
      *  Supplier Party
      *  Despatch
+     *  Contact
      *  Contact
      *  Contact
      *
@@ -389,10 +394,11 @@ class SupplierPartyType
      *
      * ASBIE
      *  Supplier Party. Accounting_ Contact. Contact
-     *  An association to Supplier Accounting Contact.
+     *  A contact at this supplier party for accounting.
      *  0..1
      *  Supplier Party
      *  Accounting
+     *  Contact
      *  Contact
      *  Contact
      *
@@ -408,10 +414,11 @@ class SupplierPartyType
      *
      * ASBIE
      *  Supplier Party. Accounting_ Contact. Contact
-     *  An association to Supplier Accounting Contact.
+     *  A contact at this supplier party for accounting.
      *  0..1
      *  Supplier Party
      *  Accounting
+     *  Contact
      *  Contact
      *  Contact
      *
@@ -429,10 +436,11 @@ class SupplierPartyType
      *
      * ASBIE
      *  Supplier Party. Seller_ Contact. Contact
-     *  An association to Seller.
+     *  The primary contact for this supplier party.
      *  0..1
      *  Supplier Party
      *  Seller
+     *  Contact
      *  Contact
      *  Contact
      *
@@ -448,10 +456,11 @@ class SupplierPartyType
      *
      * ASBIE
      *  Supplier Party. Seller_ Contact. Contact
-     *  An association to Seller.
+     *  The primary contact for this supplier party.
      *  0..1
      *  Supplier Party
      *  Seller
+     *  Contact
      *  Contact
      *  Contact
      *

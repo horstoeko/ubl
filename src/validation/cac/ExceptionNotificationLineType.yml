@@ -1,0 +1,33 @@
+horstoeko\ubl\entities\cac\ExceptionNotificationLineType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        comparedValueMeasure:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        sourceValueMeasure:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        exceptionObservationPeriod:
+            -
+                Valid: null
+        documentReference:
+            -
+                Valid: null
+        forecastException:
+            -
+                Valid: null
+        supplyItem:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

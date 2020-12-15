@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Quotation Line. Details
- *  Information about a Quotation Line.
+ *  A class to define a line in a Quotation.
  *  Quotation Line
  * XSD Type: QuotationLineType
  */
@@ -17,7 +17,7 @@ class QuotationLineType
     /**
      * BBIE
      *  Quotation Line. Identifier
-     *  Identifies the Quotation Line Item.
+     *  An identifier for this quotation line.
      *  0..1
      *  Quotation Line
      *  Identifier
@@ -31,16 +31,18 @@ class QuotationLineType
     /**
      * BBIE
      *  Quotation Line. Note. Text
-     *  Free-form text applying to the Quotation Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Quotation Line
      *  Note
      *  Text
      *  Text. Type
      *
-     * @var \horstoeko\ubl\entities\cbc\Note $note
+     * @var \horstoeko\ubl\entities\cbc\Note[] $note
      */
-    private $note = null;
+    private $note = [
+        
+    ];
 
     /**
      * BBIE
@@ -59,7 +61,7 @@ class QuotationLineType
     /**
      * BBIE
      *  Quotation Line. Line Extension Amount. Amount
-     *  The total amount for the Quotation Line, including Allowance Charges but net of taxes.
+     *  The total amount for this quotation line, including allowance charges but net of taxes.
      *  0..1
      *  Quotation Line
      *  Line Extension Amount
@@ -73,7 +75,7 @@ class QuotationLineType
     /**
      * BBIE
      *  Quotation Line. Total_ Tax Amount. Amount
-     *  The total tax amount for the Quotation Line.
+     *  The total tax amount for this quotation line.
      *  0..1
      *  Quotation Line
      *  Total
@@ -86,11 +88,26 @@ class QuotationLineType
     private $totalTaxAmount = null;
 
     /**
+     * BBIE
+     *  Quotation Line. Request For Quotation Line Identifier. Identifier
+     *  An identifier for the line in the Request for Quotation to which this line is a response.
+     *  0..1
+     *  Quotation Line
+     *  Request For Quotation Line Identifier
+     *  Identifier
+     *  Identifier. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\RequestForQuotationLineID $requestForQuotationLineID
+     */
+    private $requestForQuotationLineID = null;
+
+    /**
      * ASBIE
      *  Quotation Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this quotation line.
      *  0..n
      *  Quotation Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -103,9 +120,10 @@ class QuotationLineType
     /**
      * ASBIE
      *  Quotation Line. Line Item
-     *  An association to Line Item.
+     *  The item that is the subject of this quotation line.
      *  1
      *  Quotation Line
+     *  Line Item
      *  Line Item
      *  Line Item
      *
@@ -116,10 +134,11 @@ class QuotationLineType
     /**
      * ASBIE
      *  Quotation Line. Seller Proposed Substitute_ Line Item. Line Item
-     *  An association to a proposed substitute Line Item.
+     *  An item proposed by the seller as a substitute for the item that is the subject of this quotation line.
      *  0..n
      *  Quotation Line
      *  Seller Proposed Substitute
+     *  Line Item
      *  Line Item
      *  Line Item
      *
@@ -130,11 +149,43 @@ class QuotationLineType
     ];
 
     /**
+     * ASBIE
+     *  Quotation Line. Alternative_ Line Item. Line Item
+     *  An item proposed by the seller as an alternative to the item that is the subject of this quotation line.
+     *  0..n
+     *  Quotation Line
+     *  Alternative
+     *  Line Item
+     *  Line Item
+     *  Line Item
+     *
+     * @var \horstoeko\ubl\entities\cac\AlternativeLineItem[] $alternativeLineItem
+     */
+    private $alternativeLineItem = [
+        
+    ];
+
+    /**
+     * ASBIE
+     *  Quotation Line. Request_ Line Reference. Line Reference
+     *  A reference to the line in the Request for Quotation to which this line is a response.
+     *  0..1
+     *  Quotation Line
+     *  Request
+     *  Line Reference
+     *  Line Reference
+     *  Line Reference
+     *
+     * @var \horstoeko\ubl\entities\cac\RequestLineReference $requestLineReference
+     */
+    private $requestLineReference = null;
+
+    /**
      * Gets as iD
      *
      * BBIE
      *  Quotation Line. Identifier
-     *  Identifies the Quotation Line Item.
+     *  An identifier for this quotation line.
      *  0..1
      *  Quotation Line
      *  Identifier
@@ -153,7 +204,7 @@ class QuotationLineType
      *
      * BBIE
      *  Quotation Line. Identifier
-     *  Identifies the Quotation Line Item.
+     *  An identifier for this quotation line.
      *  0..1
      *  Quotation Line
      *  Identifier
@@ -170,18 +221,79 @@ class QuotationLineType
     }
 
     /**
-     * Gets as note
+     * Adds as note
      *
      * BBIE
      *  Quotation Line. Note. Text
-     *  Free-form text applying to the Quotation Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Quotation Line
      *  Note
      *  Text
      *  Text. Type
      *
-     * @return \horstoeko\ubl\entities\cbc\Note
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\Note $note
+     */
+    public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
+    {
+        $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * isset note
+     *
+     * BBIE
+     *  Quotation Line. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Quotation Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetNote($index)
+    {
+        return isset($this->note[$index]);
+    }
+
+    /**
+     * unset note
+     *
+     * BBIE
+     *  Quotation Line. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Quotation Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetNote($index)
+    {
+        unset($this->note[$index]);
+    }
+
+    /**
+     * Gets as note
+     *
+     * BBIE
+     *  Quotation Line. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Quotation Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\Note[]
      */
     public function getNote()
     {
@@ -193,17 +305,17 @@ class QuotationLineType
      *
      * BBIE
      *  Quotation Line. Note. Text
-     *  Free-form text applying to the Quotation Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Quotation Line
      *  Note
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
-    public function setNote(\horstoeko\ubl\entities\cbc\Note $note)
+    public function setNote(array $note)
     {
         $this->note = $note;
         return $this;
@@ -254,7 +366,7 @@ class QuotationLineType
      *
      * BBIE
      *  Quotation Line. Line Extension Amount. Amount
-     *  The total amount for the Quotation Line, including Allowance Charges but net of taxes.
+     *  The total amount for this quotation line, including allowance charges but net of taxes.
      *  0..1
      *  Quotation Line
      *  Line Extension Amount
@@ -273,7 +385,7 @@ class QuotationLineType
      *
      * BBIE
      *  Quotation Line. Line Extension Amount. Amount
-     *  The total amount for the Quotation Line, including Allowance Charges but net of taxes.
+     *  The total amount for this quotation line, including allowance charges but net of taxes.
      *  0..1
      *  Quotation Line
      *  Line Extension Amount
@@ -294,7 +406,7 @@ class QuotationLineType
      *
      * BBIE
      *  Quotation Line. Total_ Tax Amount. Amount
-     *  The total tax amount for the Quotation Line.
+     *  The total tax amount for this quotation line.
      *  0..1
      *  Quotation Line
      *  Total
@@ -314,7 +426,7 @@ class QuotationLineType
      *
      * BBIE
      *  Quotation Line. Total_ Tax Amount. Amount
-     *  The total tax amount for the Quotation Line.
+     *  The total tax amount for this quotation line.
      *  0..1
      *  Quotation Line
      *  Total
@@ -332,13 +444,54 @@ class QuotationLineType
     }
 
     /**
+     * Gets as requestForQuotationLineID
+     *
+     * BBIE
+     *  Quotation Line. Request For Quotation Line Identifier. Identifier
+     *  An identifier for the line in the Request for Quotation to which this line is a response.
+     *  0..1
+     *  Quotation Line
+     *  Request For Quotation Line Identifier
+     *  Identifier
+     *  Identifier. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\RequestForQuotationLineID
+     */
+    public function getRequestForQuotationLineID()
+    {
+        return $this->requestForQuotationLineID;
+    }
+
+    /**
+     * Sets a new requestForQuotationLineID
+     *
+     * BBIE
+     *  Quotation Line. Request For Quotation Line Identifier. Identifier
+     *  An identifier for the line in the Request for Quotation to which this line is a response.
+     *  0..1
+     *  Quotation Line
+     *  Request For Quotation Line Identifier
+     *  Identifier
+     *  Identifier. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\RequestForQuotationLineID $requestForQuotationLineID
+     * @return self
+     */
+    public function setRequestForQuotationLineID(\horstoeko\ubl\entities\cbc\RequestForQuotationLineID $requestForQuotationLineID)
+    {
+        $this->requestForQuotationLineID = $requestForQuotationLineID;
+        return $this;
+    }
+
+    /**
      * Adds as documentReference
      *
      * ASBIE
      *  Quotation Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this quotation line.
      *  0..n
      *  Quotation Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -356,9 +509,10 @@ class QuotationLineType
      *
      * ASBIE
      *  Quotation Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this quotation line.
      *  0..n
      *  Quotation Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -375,9 +529,10 @@ class QuotationLineType
      *
      * ASBIE
      *  Quotation Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this quotation line.
      *  0..n
      *  Quotation Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -394,9 +549,10 @@ class QuotationLineType
      *
      * ASBIE
      *  Quotation Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this quotation line.
      *  0..n
      *  Quotation Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -412,9 +568,10 @@ class QuotationLineType
      *
      * ASBIE
      *  Quotation Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this quotation line.
      *  0..n
      *  Quotation Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -432,9 +589,10 @@ class QuotationLineType
      *
      * ASBIE
      *  Quotation Line. Line Item
-     *  An association to Line Item.
+     *  The item that is the subject of this quotation line.
      *  1
      *  Quotation Line
+     *  Line Item
      *  Line Item
      *  Line Item
      *
@@ -450,9 +608,10 @@ class QuotationLineType
      *
      * ASBIE
      *  Quotation Line. Line Item
-     *  An association to Line Item.
+     *  The item that is the subject of this quotation line.
      *  1
      *  Quotation Line
+     *  Line Item
      *  Line Item
      *  Line Item
      *
@@ -470,10 +629,11 @@ class QuotationLineType
      *
      * ASBIE
      *  Quotation Line. Seller Proposed Substitute_ Line Item. Line Item
-     *  An association to a proposed substitute Line Item.
+     *  An item proposed by the seller as a substitute for the item that is the subject of this quotation line.
      *  0..n
      *  Quotation Line
      *  Seller Proposed Substitute
+     *  Line Item
      *  Line Item
      *  Line Item
      *
@@ -491,10 +651,11 @@ class QuotationLineType
      *
      * ASBIE
      *  Quotation Line. Seller Proposed Substitute_ Line Item. Line Item
-     *  An association to a proposed substitute Line Item.
+     *  An item proposed by the seller as a substitute for the item that is the subject of this quotation line.
      *  0..n
      *  Quotation Line
      *  Seller Proposed Substitute
+     *  Line Item
      *  Line Item
      *  Line Item
      *
@@ -511,10 +672,11 @@ class QuotationLineType
      *
      * ASBIE
      *  Quotation Line. Seller Proposed Substitute_ Line Item. Line Item
-     *  An association to a proposed substitute Line Item.
+     *  An item proposed by the seller as a substitute for the item that is the subject of this quotation line.
      *  0..n
      *  Quotation Line
      *  Seller Proposed Substitute
+     *  Line Item
      *  Line Item
      *  Line Item
      *
@@ -531,10 +693,11 @@ class QuotationLineType
      *
      * ASBIE
      *  Quotation Line. Seller Proposed Substitute_ Line Item. Line Item
-     *  An association to a proposed substitute Line Item.
+     *  An item proposed by the seller as a substitute for the item that is the subject of this quotation line.
      *  0..n
      *  Quotation Line
      *  Seller Proposed Substitute
+     *  Line Item
      *  Line Item
      *  Line Item
      *
@@ -550,10 +713,11 @@ class QuotationLineType
      *
      * ASBIE
      *  Quotation Line. Seller Proposed Substitute_ Line Item. Line Item
-     *  An association to a proposed substitute Line Item.
+     *  An item proposed by the seller as a substitute for the item that is the subject of this quotation line.
      *  0..n
      *  Quotation Line
      *  Seller Proposed Substitute
+     *  Line Item
      *  Line Item
      *  Line Item
      *
@@ -563,6 +727,154 @@ class QuotationLineType
     public function setSellerProposedSubstituteLineItem(array $sellerProposedSubstituteLineItem)
     {
         $this->sellerProposedSubstituteLineItem = $sellerProposedSubstituteLineItem;
+        return $this;
+    }
+
+    /**
+     * Adds as alternativeLineItem
+     *
+     * ASBIE
+     *  Quotation Line. Alternative_ Line Item. Line Item
+     *  An item proposed by the seller as an alternative to the item that is the subject of this quotation line.
+     *  0..n
+     *  Quotation Line
+     *  Alternative
+     *  Line Item
+     *  Line Item
+     *  Line Item
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\AlternativeLineItem $alternativeLineItem
+     */
+    public function addToAlternativeLineItem(\horstoeko\ubl\entities\cac\AlternativeLineItem $alternativeLineItem)
+    {
+        $this->alternativeLineItem[] = $alternativeLineItem;
+        return $this;
+    }
+
+    /**
+     * isset alternativeLineItem
+     *
+     * ASBIE
+     *  Quotation Line. Alternative_ Line Item. Line Item
+     *  An item proposed by the seller as an alternative to the item that is the subject of this quotation line.
+     *  0..n
+     *  Quotation Line
+     *  Alternative
+     *  Line Item
+     *  Line Item
+     *  Line Item
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetAlternativeLineItem($index)
+    {
+        return isset($this->alternativeLineItem[$index]);
+    }
+
+    /**
+     * unset alternativeLineItem
+     *
+     * ASBIE
+     *  Quotation Line. Alternative_ Line Item. Line Item
+     *  An item proposed by the seller as an alternative to the item that is the subject of this quotation line.
+     *  0..n
+     *  Quotation Line
+     *  Alternative
+     *  Line Item
+     *  Line Item
+     *  Line Item
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetAlternativeLineItem($index)
+    {
+        unset($this->alternativeLineItem[$index]);
+    }
+
+    /**
+     * Gets as alternativeLineItem
+     *
+     * ASBIE
+     *  Quotation Line. Alternative_ Line Item. Line Item
+     *  An item proposed by the seller as an alternative to the item that is the subject of this quotation line.
+     *  0..n
+     *  Quotation Line
+     *  Alternative
+     *  Line Item
+     *  Line Item
+     *  Line Item
+     *
+     * @return \horstoeko\ubl\entities\cac\AlternativeLineItem[]
+     */
+    public function getAlternativeLineItem()
+    {
+        return $this->alternativeLineItem;
+    }
+
+    /**
+     * Sets a new alternativeLineItem
+     *
+     * ASBIE
+     *  Quotation Line. Alternative_ Line Item. Line Item
+     *  An item proposed by the seller as an alternative to the item that is the subject of this quotation line.
+     *  0..n
+     *  Quotation Line
+     *  Alternative
+     *  Line Item
+     *  Line Item
+     *  Line Item
+     *
+     * @param \horstoeko\ubl\entities\cac\AlternativeLineItem[] $alternativeLineItem
+     * @return self
+     */
+    public function setAlternativeLineItem(array $alternativeLineItem)
+    {
+        $this->alternativeLineItem = $alternativeLineItem;
+        return $this;
+    }
+
+    /**
+     * Gets as requestLineReference
+     *
+     * ASBIE
+     *  Quotation Line. Request_ Line Reference. Line Reference
+     *  A reference to the line in the Request for Quotation to which this line is a response.
+     *  0..1
+     *  Quotation Line
+     *  Request
+     *  Line Reference
+     *  Line Reference
+     *  Line Reference
+     *
+     * @return \horstoeko\ubl\entities\cac\RequestLineReference
+     */
+    public function getRequestLineReference()
+    {
+        return $this->requestLineReference;
+    }
+
+    /**
+     * Sets a new requestLineReference
+     *
+     * ASBIE
+     *  Quotation Line. Request_ Line Reference. Line Reference
+     *  A reference to the line in the Request for Quotation to which this line is a response.
+     *  0..1
+     *  Quotation Line
+     *  Request
+     *  Line Reference
+     *  Line Reference
+     *  Line Reference
+     *
+     * @param \horstoeko\ubl\entities\cac\RequestLineReference $requestLineReference
+     * @return self
+     */
+    public function setRequestLineReference(\horstoeko\ubl\entities\cac\RequestLineReference $requestLineReference)
+    {
+        $this->requestLineReference = $requestLineReference;
         return $this;
     }
 

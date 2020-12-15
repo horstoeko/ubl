@@ -1,0 +1,12 @@
+horstoeko\ubl\entities\cac\ActivityPropertyType:
+    properties:
+        name:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        value:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

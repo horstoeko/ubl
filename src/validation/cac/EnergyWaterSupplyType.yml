@@ -1,0 +1,14 @@
+horstoeko\ubl\entities\cac\EnergyWaterSupplyType:
+    properties:
+        consumptionReport:
+            -
+                Valid: null
+        energyTaxReport:
+            -
+                Valid: null
+        consumptionAverage:
+            -
+                Valid: null
+        energyWaterConsumptionCorrection:
+            -
+                Valid: null

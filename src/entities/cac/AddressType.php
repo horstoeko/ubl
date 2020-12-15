@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Address. Details
- *  Information about a structured address.
+ *  A class to define common information related to an address.
  *  Address
  * XSD Type: AddressType
  */
@@ -17,7 +17,7 @@ class AddressType
     /**
      * BBIE
      *  Address. Identifier
-     *  An identifier for a specific address within a scheme of registered addresses.
+     *  An identifier for this address within an agreed scheme of address identifiers.
      *  0..1
      *  Address
      *  Identifier
@@ -32,7 +32,7 @@ class AddressType
     /**
      * BBIE
      *  Address. Address Type Code. Code
-     *  A code specifying the type of this address, such as business address or home address.
+     *  A mutually agreed code signifying the type of this address.
      *  0..1
      *  Address
      *  Address Type Code
@@ -46,7 +46,7 @@ class AddressType
     /**
      * BBIE
      *  Address. Address Format Code. Code
-     *  A code specifying the format of this address.
+     *  A mutually agreed code signifying the format of this address.
      *  0..1
      *  Address
      *  Address Format Code
@@ -60,14 +60,14 @@ class AddressType
     /**
      * BBIE
      *  Address. Postbox. Text
-     *  A post office box number.
+     *  A post office box number registered for postal delivery by a postal service provider.
      *  0..1
      *  Address
      *  Postbox
      *  Text
      *  Text. Type
      *  PostBox, PO Box
-     *  "123"
+     *  123
      *
      * @var \horstoeko\ubl\entities\cbc\Postbox $postbox
      */
@@ -76,14 +76,14 @@ class AddressType
     /**
      * BBIE
      *  Address. Floor. Text
-     *  An addressable floor of a building.
+     *  An identifiable floor of a building.
      *  0..1
      *  Address
      *  Floor
      *  Text
      *  Text. Type
      *  SubPremiseNumber
-     *  "30"
+     *  30
      *
      * @var \horstoeko\ubl\entities\cbc\Floor $floor
      */
@@ -92,14 +92,14 @@ class AddressType
     /**
      * BBIE
      *  Address. Room. Text
-     *  A room, suite, or apartment of a building.
+     *  An identifiable room, suite, or apartment of a building.
      *  0..1
      *  Address
      *  Room
      *  Text
      *  Text. Type
      *  SubPremiseNumber
-     *  "Reception"
+     *  Reception
      *
      * @var \horstoeko\ubl\entities\cbc\Room $room
      */
@@ -108,14 +108,14 @@ class AddressType
     /**
      * BBIE
      *  Address. Street Name. Name
-     *  The name of a street.
+     *  The name of the street, road, avenue, way, etc. to which the number of the building is attached.
      *  0..1
      *  Address
      *  Street Name
      *  Name
      *  Name. Type
      *  Thoroughfare
-     *  "Kwun Tong Road"
+     *  Kwun Tong Road
      *
      * @var \horstoeko\ubl\entities\cbc\StreetName $streetName
      */
@@ -124,7 +124,7 @@ class AddressType
     /**
      * BBIE
      *  Address. Additional_ Street Name. Name
-     *  An additional name of a street used to further specify the street name.
+     *  An additional street name used to further clarify the address.
      *  0..1
      *  Address
      *  Additional
@@ -132,7 +132,7 @@ class AddressType
      *  Name
      *  Name. Type
      *  Thoroughfare
-     *  "Cnr Aberdeen Road"
+     *  Cnr Aberdeen Road
      *
      * @var \horstoeko\ubl\entities\cbc\AdditionalStreetName $additionalStreetName
      */
@@ -141,7 +141,7 @@ class AddressType
     /**
      * BBIE
      *  Address. Block Name. Name
-     *  The block name, expressed as text, for an area surrounded by streets and usually containing several buildings for this address.
+     *  The name of the block (an area surrounded by streets and usually containing several buildings) in which this address is located.
      *  0..1
      *  Address
      *  Block Name
@@ -163,7 +163,7 @@ class AddressType
      *  Name
      *  Name. Type
      *  BuildingName
-     *  "Plot 421"
+     *  Plot 421
      *
      * @var \horstoeko\ubl\entities\cbc\BuildingName $buildingName
      */
@@ -172,14 +172,14 @@ class AddressType
     /**
      * BBIE
      *  Address. Building Number. Text
-     *  The number of a building.
+     *  The number of a building within the street.
      *  0..1
      *  Address
      *  Building Number
      *  Text
      *  Text. Type
      *  PremiseNumber
-     *  "388"
+     *  388
      *
      * @var \horstoeko\ubl\entities\cbc\BuildingNumber $buildingNumber
      */
@@ -188,7 +188,7 @@ class AddressType
     /**
      * BBIE
      *  Address. Inhouse_ Mail. Text
-     *  A specific location within a building.
+     *  The specific identifable location within a building where mail is delivered.
      *  0..1
      *  Address
      *  Inhouse
@@ -204,14 +204,14 @@ class AddressType
     /**
      * BBIE
      *  Address. Department. Text
-     *  An addressable department of an organization.
+     *  The department of the addressee.
      *  0..1
      *  Address
      *  Department
      *  Text
      *  Text. Type
      *  Department
-     *  "Accounts Payable"
+     *  Accounts Payable
      *
      * @var \horstoeko\ubl\entities\cbc\Department $department
      */
@@ -220,7 +220,7 @@ class AddressType
     /**
      * BBIE
      *  Address. Mark Attention. Text
-     *  The name, expressed as text, of a person or department in the organization to whom incoming mail is marked with words such as 'for the attention of' or 'FAO' or 'ATTN' for this address.
+     *  The name, expressed as text, of a person or department in an organization to whose attention incoming mail is directed; corresponds to the printed forms "for the attention of", "FAO", and ATTN:".
      *  0..1
      *  Address
      *  Mark Attention
@@ -234,7 +234,7 @@ class AddressType
     /**
      * BBIE
      *  Address. Mark Care. Text
-     *  The name, expressed as text, of a person or organization at this address to whom incoming mail is marked with words such as 'care of' or 'C/O'.
+     *  The name, expressed as text, of a person or organization at this address into whose care incoming mail is entrusted; corresponds to the printed forms "care of" and "c/o".
      *  0..1
      *  Address
      *  Mark Care
@@ -248,7 +248,7 @@ class AddressType
     /**
      * BBIE
      *  Address. Plot Identification. Text
-     *  The textual expression of the unique identifier for the piece of land on which this address is located such as a plot number.
+     *  An identifier (e.g., a parcel number) for the piece of land associated with this address.
      *  0..1
      *  Address
      *  Plot Identification
@@ -262,7 +262,7 @@ class AddressType
     /**
      * BBIE
      *  Address. City Subdivision Name. Name
-     *  A name, expressed as text, of a subdivision of a city for this address, for example, a district or borough.
+     *  The name of the subdivision of a city, town, or village in which this address is located, such as the name of its district or borough.
      *  0..1
      *  Address
      *  City Subdivision Name
@@ -283,7 +283,7 @@ class AddressType
      *  Name
      *  Name. Type
      *  LocalityName
-     *  "Hong Kong"
+     *  Hong Kong
      *
      * @var \horstoeko\ubl\entities\cbc\CityName $cityName
      */
@@ -292,7 +292,7 @@ class AddressType
     /**
      * BBIE
      *  Address. Postal_ Zone. Text
-     *  The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code.
+     *  The postal identifier for this address according to the relevant national postal service, such as a ZIP code or Post Code.
      *  0..1
      *  Address
      *  Postal
@@ -300,7 +300,7 @@ class AddressType
      *  Text
      *  Text. Type
      *  PostalCodeNumber
-     *  "SW11 4EW" "2500 GG"
+     *  SW11 4EW 2500 GG
      *
      * @var \horstoeko\ubl\entities\cbc\PostalZone $postalZone
      */
@@ -309,14 +309,14 @@ class AddressType
     /**
      * BBIE
      *  Address. Country Subentity. Text
-     *  A territorial division of a country, such as a county or state.
+     *  The political or administrative division of a country in which this address is located, such as the name of its county, province, or state, expressed as text.
      *  0..1
      *  Address
      *  Country Subentity
      *  Text
      *  Text. Type
      *  AdministrativeArea, State, Country, Shire, Canton
-     *  "Florida","Tamilnadu"
+     *  Florida , Tamilnadu
      *
      * @var \horstoeko\ubl\entities\cbc\CountrySubentity $countrySubentity
      */
@@ -325,7 +325,7 @@ class AddressType
     /**
      * BBIE
      *  Address. Country Subentity Code. Code
-     *  A territorial division of a country, such as a county or state, expressed as a code.
+     *  The political or administrative division of a country in which this address is located, such as a county, province, or state, expressed as a code (typically nationally agreed).
      *  0..1
      *  Address
      *  Country Subentity Code
@@ -340,14 +340,14 @@ class AddressType
     /**
      * BBIE
      *  Address. Region. Text
-     *  An addressable region or group of countries.
+     *  The recognized geographic or economic region or group of countries in which this address is located.
      *  0..1
      *  Address
      *  Region
      *  Text
      *  Text. Type
      *  LocalityName, Economic Zone
-     *  "European Union"
+     *  European Union
      *
      * @var \horstoeko\ubl\entities\cbc\Region $region
      */
@@ -356,14 +356,14 @@ class AddressType
     /**
      * BBIE
      *  Address. District. Text
-     *  A geographical division of a country.
+     *  The district or geographical division of a country or region in which this address is located.
      *  0..1
      *  Address
      *  District
      *  Text
      *  Text. Type
      *  LocalityName, Area
-     *  "East Coast"
+     *  East Coast
      *
      * @var \horstoeko\ubl\entities\cbc\District $district
      */
@@ -372,13 +372,13 @@ class AddressType
     /**
      * BBIE
      *  Address. Timezone Offset. Text
-     *  For the time zone in which the address is situated, the measure of time offset from Universal Coordinated Time (UTC).
+     *  The time zone in which this address is located (as an offset from Universal Coordinated Time (UTC)) at the time of exchange.
      *  0..1
      *  Address
      *  Timezone Offset
      *  Text
      *  Text. Type
-     *  "+8:00" "-3:00"
+     *  +8:00 -3:00
      *
      * @var \horstoeko\ubl\entities\cbc\TimezoneOffset $timezoneOffset
      */
@@ -387,9 +387,10 @@ class AddressType
     /**
      * ASBIE
      *  Address. Address Line
-     *  An association to Address Line.
+     *  An unstructured address line.
      *  0..n
      *  Address
+     *  Address Line
      *  Address Line
      *  Address Line
      *
@@ -402,9 +403,10 @@ class AddressType
     /**
      * ASBIE
      *  Address. Country
-     *  An association to Country.
+     *  The country in which this address is situated.
      *  0..1
      *  Address
+     *  Country
      *  Country
      *  Country
      *
@@ -415,22 +417,25 @@ class AddressType
     /**
      * ASBIE
      *  Address. Location Coordinate
-     *  An association to Location Coordinate.
-     *  0..1
+     *  The geographical coordinates of this address.
+     *  0..n
      *  Address
      *  Location Coordinate
      *  Location Coordinate
+     *  Location Coordinate
      *
-     * @var \horstoeko\ubl\entities\cac\LocationCoordinate $locationCoordinate
+     * @var \horstoeko\ubl\entities\cac\LocationCoordinate[] $locationCoordinate
      */
-    private $locationCoordinate = null;
+    private $locationCoordinate = [
+        
+    ];
 
     /**
      * Gets as iD
      *
      * BBIE
      *  Address. Identifier
-     *  An identifier for a specific address within a scheme of registered addresses.
+     *  An identifier for this address within an agreed scheme of address identifiers.
      *  0..1
      *  Address
      *  Identifier
@@ -450,7 +455,7 @@ class AddressType
      *
      * BBIE
      *  Address. Identifier
-     *  An identifier for a specific address within a scheme of registered addresses.
+     *  An identifier for this address within an agreed scheme of address identifiers.
      *  0..1
      *  Address
      *  Identifier
@@ -472,7 +477,7 @@ class AddressType
      *
      * BBIE
      *  Address. Address Type Code. Code
-     *  A code specifying the type of this address, such as business address or home address.
+     *  A mutually agreed code signifying the type of this address.
      *  0..1
      *  Address
      *  Address Type Code
@@ -491,7 +496,7 @@ class AddressType
      *
      * BBIE
      *  Address. Address Type Code. Code
-     *  A code specifying the type of this address, such as business address or home address.
+     *  A mutually agreed code signifying the type of this address.
      *  0..1
      *  Address
      *  Address Type Code
@@ -512,7 +517,7 @@ class AddressType
      *
      * BBIE
      *  Address. Address Format Code. Code
-     *  A code specifying the format of this address.
+     *  A mutually agreed code signifying the format of this address.
      *  0..1
      *  Address
      *  Address Format Code
@@ -531,7 +536,7 @@ class AddressType
      *
      * BBIE
      *  Address. Address Format Code. Code
-     *  A code specifying the format of this address.
+     *  A mutually agreed code signifying the format of this address.
      *  0..1
      *  Address
      *  Address Format Code
@@ -552,14 +557,14 @@ class AddressType
      *
      * BBIE
      *  Address. Postbox. Text
-     *  A post office box number.
+     *  A post office box number registered for postal delivery by a postal service provider.
      *  0..1
      *  Address
      *  Postbox
      *  Text
      *  Text. Type
      *  PostBox, PO Box
-     *  "123"
+     *  123
      *
      * @return \horstoeko\ubl\entities\cbc\Postbox
      */
@@ -573,14 +578,14 @@ class AddressType
      *
      * BBIE
      *  Address. Postbox. Text
-     *  A post office box number.
+     *  A post office box number registered for postal delivery by a postal service provider.
      *  0..1
      *  Address
      *  Postbox
      *  Text
      *  Text. Type
      *  PostBox, PO Box
-     *  "123"
+     *  123
      *
      * @param \horstoeko\ubl\entities\cbc\Postbox $postbox
      * @return self
@@ -596,14 +601,14 @@ class AddressType
      *
      * BBIE
      *  Address. Floor. Text
-     *  An addressable floor of a building.
+     *  An identifiable floor of a building.
      *  0..1
      *  Address
      *  Floor
      *  Text
      *  Text. Type
      *  SubPremiseNumber
-     *  "30"
+     *  30
      *
      * @return \horstoeko\ubl\entities\cbc\Floor
      */
@@ -617,14 +622,14 @@ class AddressType
      *
      * BBIE
      *  Address. Floor. Text
-     *  An addressable floor of a building.
+     *  An identifiable floor of a building.
      *  0..1
      *  Address
      *  Floor
      *  Text
      *  Text. Type
      *  SubPremiseNumber
-     *  "30"
+     *  30
      *
      * @param \horstoeko\ubl\entities\cbc\Floor $floor
      * @return self
@@ -640,14 +645,14 @@ class AddressType
      *
      * BBIE
      *  Address. Room. Text
-     *  A room, suite, or apartment of a building.
+     *  An identifiable room, suite, or apartment of a building.
      *  0..1
      *  Address
      *  Room
      *  Text
      *  Text. Type
      *  SubPremiseNumber
-     *  "Reception"
+     *  Reception
      *
      * @return \horstoeko\ubl\entities\cbc\Room
      */
@@ -661,14 +666,14 @@ class AddressType
      *
      * BBIE
      *  Address. Room. Text
-     *  A room, suite, or apartment of a building.
+     *  An identifiable room, suite, or apartment of a building.
      *  0..1
      *  Address
      *  Room
      *  Text
      *  Text. Type
      *  SubPremiseNumber
-     *  "Reception"
+     *  Reception
      *
      * @param \horstoeko\ubl\entities\cbc\Room $room
      * @return self
@@ -684,14 +689,14 @@ class AddressType
      *
      * BBIE
      *  Address. Street Name. Name
-     *  The name of a street.
+     *  The name of the street, road, avenue, way, etc. to which the number of the building is attached.
      *  0..1
      *  Address
      *  Street Name
      *  Name
      *  Name. Type
      *  Thoroughfare
-     *  "Kwun Tong Road"
+     *  Kwun Tong Road
      *
      * @return \horstoeko\ubl\entities\cbc\StreetName
      */
@@ -705,14 +710,14 @@ class AddressType
      *
      * BBIE
      *  Address. Street Name. Name
-     *  The name of a street.
+     *  The name of the street, road, avenue, way, etc. to which the number of the building is attached.
      *  0..1
      *  Address
      *  Street Name
      *  Name
      *  Name. Type
      *  Thoroughfare
-     *  "Kwun Tong Road"
+     *  Kwun Tong Road
      *
      * @param \horstoeko\ubl\entities\cbc\StreetName $streetName
      * @return self
@@ -728,7 +733,7 @@ class AddressType
      *
      * BBIE
      *  Address. Additional_ Street Name. Name
-     *  An additional name of a street used to further specify the street name.
+     *  An additional street name used to further clarify the address.
      *  0..1
      *  Address
      *  Additional
@@ -736,7 +741,7 @@ class AddressType
      *  Name
      *  Name. Type
      *  Thoroughfare
-     *  "Cnr Aberdeen Road"
+     *  Cnr Aberdeen Road
      *
      * @return \horstoeko\ubl\entities\cbc\AdditionalStreetName
      */
@@ -750,7 +755,7 @@ class AddressType
      *
      * BBIE
      *  Address. Additional_ Street Name. Name
-     *  An additional name of a street used to further specify the street name.
+     *  An additional street name used to further clarify the address.
      *  0..1
      *  Address
      *  Additional
@@ -758,7 +763,7 @@ class AddressType
      *  Name
      *  Name. Type
      *  Thoroughfare
-     *  "Cnr Aberdeen Road"
+     *  Cnr Aberdeen Road
      *
      * @param \horstoeko\ubl\entities\cbc\AdditionalStreetName $additionalStreetName
      * @return self
@@ -774,7 +779,7 @@ class AddressType
      *
      * BBIE
      *  Address. Block Name. Name
-     *  The block name, expressed as text, for an area surrounded by streets and usually containing several buildings for this address.
+     *  The name of the block (an area surrounded by streets and usually containing several buildings) in which this address is located.
      *  0..1
      *  Address
      *  Block Name
@@ -794,7 +799,7 @@ class AddressType
      *
      * BBIE
      *  Address. Block Name. Name
-     *  The block name, expressed as text, for an area surrounded by streets and usually containing several buildings for this address.
+     *  The name of the block (an area surrounded by streets and usually containing several buildings) in which this address is located.
      *  0..1
      *  Address
      *  Block Name
@@ -823,7 +828,7 @@ class AddressType
      *  Name
      *  Name. Type
      *  BuildingName
-     *  "Plot 421"
+     *  Plot 421
      *
      * @return \horstoeko\ubl\entities\cbc\BuildingName
      */
@@ -844,7 +849,7 @@ class AddressType
      *  Name
      *  Name. Type
      *  BuildingName
-     *  "Plot 421"
+     *  Plot 421
      *
      * @param \horstoeko\ubl\entities\cbc\BuildingName $buildingName
      * @return self
@@ -860,14 +865,14 @@ class AddressType
      *
      * BBIE
      *  Address. Building Number. Text
-     *  The number of a building.
+     *  The number of a building within the street.
      *  0..1
      *  Address
      *  Building Number
      *  Text
      *  Text. Type
      *  PremiseNumber
-     *  "388"
+     *  388
      *
      * @return \horstoeko\ubl\entities\cbc\BuildingNumber
      */
@@ -881,14 +886,14 @@ class AddressType
      *
      * BBIE
      *  Address. Building Number. Text
-     *  The number of a building.
+     *  The number of a building within the street.
      *  0..1
      *  Address
      *  Building Number
      *  Text
      *  Text. Type
      *  PremiseNumber
-     *  "388"
+     *  388
      *
      * @param \horstoeko\ubl\entities\cbc\BuildingNumber $buildingNumber
      * @return self
@@ -904,7 +909,7 @@ class AddressType
      *
      * BBIE
      *  Address. Inhouse_ Mail. Text
-     *  A specific location within a building.
+     *  The specific identifable location within a building where mail is delivered.
      *  0..1
      *  Address
      *  Inhouse
@@ -925,7 +930,7 @@ class AddressType
      *
      * BBIE
      *  Address. Inhouse_ Mail. Text
-     *  A specific location within a building.
+     *  The specific identifable location within a building where mail is delivered.
      *  0..1
      *  Address
      *  Inhouse
@@ -948,14 +953,14 @@ class AddressType
      *
      * BBIE
      *  Address. Department. Text
-     *  An addressable department of an organization.
+     *  The department of the addressee.
      *  0..1
      *  Address
      *  Department
      *  Text
      *  Text. Type
      *  Department
-     *  "Accounts Payable"
+     *  Accounts Payable
      *
      * @return \horstoeko\ubl\entities\cbc\Department
      */
@@ -969,14 +974,14 @@ class AddressType
      *
      * BBIE
      *  Address. Department. Text
-     *  An addressable department of an organization.
+     *  The department of the addressee.
      *  0..1
      *  Address
      *  Department
      *  Text
      *  Text. Type
      *  Department
-     *  "Accounts Payable"
+     *  Accounts Payable
      *
      * @param \horstoeko\ubl\entities\cbc\Department $department
      * @return self
@@ -992,7 +997,7 @@ class AddressType
      *
      * BBIE
      *  Address. Mark Attention. Text
-     *  The name, expressed as text, of a person or department in the organization to whom incoming mail is marked with words such as 'for the attention of' or 'FAO' or 'ATTN' for this address.
+     *  The name, expressed as text, of a person or department in an organization to whose attention incoming mail is directed; corresponds to the printed forms "for the attention of", "FAO", and ATTN:".
      *  0..1
      *  Address
      *  Mark Attention
@@ -1011,7 +1016,7 @@ class AddressType
      *
      * BBIE
      *  Address. Mark Attention. Text
-     *  The name, expressed as text, of a person or department in the organization to whom incoming mail is marked with words such as 'for the attention of' or 'FAO' or 'ATTN' for this address.
+     *  The name, expressed as text, of a person or department in an organization to whose attention incoming mail is directed; corresponds to the printed forms "for the attention of", "FAO", and ATTN:".
      *  0..1
      *  Address
      *  Mark Attention
@@ -1032,7 +1037,7 @@ class AddressType
      *
      * BBIE
      *  Address. Mark Care. Text
-     *  The name, expressed as text, of a person or organization at this address to whom incoming mail is marked with words such as 'care of' or 'C/O'.
+     *  The name, expressed as text, of a person or organization at this address into whose care incoming mail is entrusted; corresponds to the printed forms "care of" and "c/o".
      *  0..1
      *  Address
      *  Mark Care
@@ -1051,7 +1056,7 @@ class AddressType
      *
      * BBIE
      *  Address. Mark Care. Text
-     *  The name, expressed as text, of a person or organization at this address to whom incoming mail is marked with words such as 'care of' or 'C/O'.
+     *  The name, expressed as text, of a person or organization at this address into whose care incoming mail is entrusted; corresponds to the printed forms "care of" and "c/o".
      *  0..1
      *  Address
      *  Mark Care
@@ -1072,7 +1077,7 @@ class AddressType
      *
      * BBIE
      *  Address. Plot Identification. Text
-     *  The textual expression of the unique identifier for the piece of land on which this address is located such as a plot number.
+     *  An identifier (e.g., a parcel number) for the piece of land associated with this address.
      *  0..1
      *  Address
      *  Plot Identification
@@ -1091,7 +1096,7 @@ class AddressType
      *
      * BBIE
      *  Address. Plot Identification. Text
-     *  The textual expression of the unique identifier for the piece of land on which this address is located such as a plot number.
+     *  An identifier (e.g., a parcel number) for the piece of land associated with this address.
      *  0..1
      *  Address
      *  Plot Identification
@@ -1112,7 +1117,7 @@ class AddressType
      *
      * BBIE
      *  Address. City Subdivision Name. Name
-     *  A name, expressed as text, of a subdivision of a city for this address, for example, a district or borough.
+     *  The name of the subdivision of a city, town, or village in which this address is located, such as the name of its district or borough.
      *  0..1
      *  Address
      *  City Subdivision Name
@@ -1131,7 +1136,7 @@ class AddressType
      *
      * BBIE
      *  Address. City Subdivision Name. Name
-     *  A name, expressed as text, of a subdivision of a city for this address, for example, a district or borough.
+     *  The name of the subdivision of a city, town, or village in which this address is located, such as the name of its district or borough.
      *  0..1
      *  Address
      *  City Subdivision Name
@@ -1159,7 +1164,7 @@ class AddressType
      *  Name
      *  Name. Type
      *  LocalityName
-     *  "Hong Kong"
+     *  Hong Kong
      *
      * @return \horstoeko\ubl\entities\cbc\CityName
      */
@@ -1180,7 +1185,7 @@ class AddressType
      *  Name
      *  Name. Type
      *  LocalityName
-     *  "Hong Kong"
+     *  Hong Kong
      *
      * @param \horstoeko\ubl\entities\cbc\CityName $cityName
      * @return self
@@ -1196,7 +1201,7 @@ class AddressType
      *
      * BBIE
      *  Address. Postal_ Zone. Text
-     *  The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code.
+     *  The postal identifier for this address according to the relevant national postal service, such as a ZIP code or Post Code.
      *  0..1
      *  Address
      *  Postal
@@ -1204,7 +1209,7 @@ class AddressType
      *  Text
      *  Text. Type
      *  PostalCodeNumber
-     *  "SW11 4EW" "2500 GG"
+     *  SW11 4EW 2500 GG
      *
      * @return \horstoeko\ubl\entities\cbc\PostalZone
      */
@@ -1218,7 +1223,7 @@ class AddressType
      *
      * BBIE
      *  Address. Postal_ Zone. Text
-     *  The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code.
+     *  The postal identifier for this address according to the relevant national postal service, such as a ZIP code or Post Code.
      *  0..1
      *  Address
      *  Postal
@@ -1226,7 +1231,7 @@ class AddressType
      *  Text
      *  Text. Type
      *  PostalCodeNumber
-     *  "SW11 4EW" "2500 GG"
+     *  SW11 4EW 2500 GG
      *
      * @param \horstoeko\ubl\entities\cbc\PostalZone $postalZone
      * @return self
@@ -1242,14 +1247,14 @@ class AddressType
      *
      * BBIE
      *  Address. Country Subentity. Text
-     *  A territorial division of a country, such as a county or state.
+     *  The political or administrative division of a country in which this address is located, such as the name of its county, province, or state, expressed as text.
      *  0..1
      *  Address
      *  Country Subentity
      *  Text
      *  Text. Type
      *  AdministrativeArea, State, Country, Shire, Canton
-     *  "Florida","Tamilnadu"
+     *  Florida , Tamilnadu
      *
      * @return \horstoeko\ubl\entities\cbc\CountrySubentity
      */
@@ -1263,14 +1268,14 @@ class AddressType
      *
      * BBIE
      *  Address. Country Subentity. Text
-     *  A territorial division of a country, such as a county or state.
+     *  The political or administrative division of a country in which this address is located, such as the name of its county, province, or state, expressed as text.
      *  0..1
      *  Address
      *  Country Subentity
      *  Text
      *  Text. Type
      *  AdministrativeArea, State, Country, Shire, Canton
-     *  "Florida","Tamilnadu"
+     *  Florida , Tamilnadu
      *
      * @param \horstoeko\ubl\entities\cbc\CountrySubentity $countrySubentity
      * @return self
@@ -1286,7 +1291,7 @@ class AddressType
      *
      * BBIE
      *  Address. Country Subentity Code. Code
-     *  A territorial division of a country, such as a county or state, expressed as a code.
+     *  The political or administrative division of a country in which this address is located, such as a county, province, or state, expressed as a code (typically nationally agreed).
      *  0..1
      *  Address
      *  Country Subentity Code
@@ -1306,7 +1311,7 @@ class AddressType
      *
      * BBIE
      *  Address. Country Subentity Code. Code
-     *  A territorial division of a country, such as a county or state, expressed as a code.
+     *  The political or administrative division of a country in which this address is located, such as a county, province, or state, expressed as a code (typically nationally agreed).
      *  0..1
      *  Address
      *  Country Subentity Code
@@ -1328,14 +1333,14 @@ class AddressType
      *
      * BBIE
      *  Address. Region. Text
-     *  An addressable region or group of countries.
+     *  The recognized geographic or economic region or group of countries in which this address is located.
      *  0..1
      *  Address
      *  Region
      *  Text
      *  Text. Type
      *  LocalityName, Economic Zone
-     *  "European Union"
+     *  European Union
      *
      * @return \horstoeko\ubl\entities\cbc\Region
      */
@@ -1349,14 +1354,14 @@ class AddressType
      *
      * BBIE
      *  Address. Region. Text
-     *  An addressable region or group of countries.
+     *  The recognized geographic or economic region or group of countries in which this address is located.
      *  0..1
      *  Address
      *  Region
      *  Text
      *  Text. Type
      *  LocalityName, Economic Zone
-     *  "European Union"
+     *  European Union
      *
      * @param \horstoeko\ubl\entities\cbc\Region $region
      * @return self
@@ -1372,14 +1377,14 @@ class AddressType
      *
      * BBIE
      *  Address. District. Text
-     *  A geographical division of a country.
+     *  The district or geographical division of a country or region in which this address is located.
      *  0..1
      *  Address
      *  District
      *  Text
      *  Text. Type
      *  LocalityName, Area
-     *  "East Coast"
+     *  East Coast
      *
      * @return \horstoeko\ubl\entities\cbc\District
      */
@@ -1393,14 +1398,14 @@ class AddressType
      *
      * BBIE
      *  Address. District. Text
-     *  A geographical division of a country.
+     *  The district or geographical division of a country or region in which this address is located.
      *  0..1
      *  Address
      *  District
      *  Text
      *  Text. Type
      *  LocalityName, Area
-     *  "East Coast"
+     *  East Coast
      *
      * @param \horstoeko\ubl\entities\cbc\District $district
      * @return self
@@ -1416,13 +1421,13 @@ class AddressType
      *
      * BBIE
      *  Address. Timezone Offset. Text
-     *  For the time zone in which the address is situated, the measure of time offset from Universal Coordinated Time (UTC).
+     *  The time zone in which this address is located (as an offset from Universal Coordinated Time (UTC)) at the time of exchange.
      *  0..1
      *  Address
      *  Timezone Offset
      *  Text
      *  Text. Type
-     *  "+8:00" "-3:00"
+     *  +8:00 -3:00
      *
      * @return \horstoeko\ubl\entities\cbc\TimezoneOffset
      */
@@ -1436,13 +1441,13 @@ class AddressType
      *
      * BBIE
      *  Address. Timezone Offset. Text
-     *  For the time zone in which the address is situated, the measure of time offset from Universal Coordinated Time (UTC).
+     *  The time zone in which this address is located (as an offset from Universal Coordinated Time (UTC)) at the time of exchange.
      *  0..1
      *  Address
      *  Timezone Offset
      *  Text
      *  Text. Type
-     *  "+8:00" "-3:00"
+     *  +8:00 -3:00
      *
      * @param \horstoeko\ubl\entities\cbc\TimezoneOffset $timezoneOffset
      * @return self
@@ -1458,9 +1463,10 @@ class AddressType
      *
      * ASBIE
      *  Address. Address Line
-     *  An association to Address Line.
+     *  An unstructured address line.
      *  0..n
      *  Address
+     *  Address Line
      *  Address Line
      *  Address Line
      *
@@ -1478,9 +1484,10 @@ class AddressType
      *
      * ASBIE
      *  Address. Address Line
-     *  An association to Address Line.
+     *  An unstructured address line.
      *  0..n
      *  Address
+     *  Address Line
      *  Address Line
      *  Address Line
      *
@@ -1497,9 +1504,10 @@ class AddressType
      *
      * ASBIE
      *  Address. Address Line
-     *  An association to Address Line.
+     *  An unstructured address line.
      *  0..n
      *  Address
+     *  Address Line
      *  Address Line
      *  Address Line
      *
@@ -1516,9 +1524,10 @@ class AddressType
      *
      * ASBIE
      *  Address. Address Line
-     *  An association to Address Line.
+     *  An unstructured address line.
      *  0..n
      *  Address
+     *  Address Line
      *  Address Line
      *  Address Line
      *
@@ -1534,9 +1543,10 @@ class AddressType
      *
      * ASBIE
      *  Address. Address Line
-     *  An association to Address Line.
+     *  An unstructured address line.
      *  0..n
      *  Address
+     *  Address Line
      *  Address Line
      *  Address Line
      *
@@ -1554,9 +1564,10 @@ class AddressType
      *
      * ASBIE
      *  Address. Country
-     *  An association to Country.
+     *  The country in which this address is situated.
      *  0..1
      *  Address
+     *  Country
      *  Country
      *  Country
      *
@@ -1572,9 +1583,10 @@ class AddressType
      *
      * ASBIE
      *  Address. Country
-     *  An association to Country.
+     *  The country in which this address is situated.
      *  0..1
      *  Address
+     *  Country
      *  Country
      *  Country
      *
@@ -1588,17 +1600,79 @@ class AddressType
     }
 
     /**
+     * Adds as locationCoordinate
+     *
+     * ASBIE
+     *  Address. Location Coordinate
+     *  The geographical coordinates of this address.
+     *  0..n
+     *  Address
+     *  Location Coordinate
+     *  Location Coordinate
+     *  Location Coordinate
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\LocationCoordinate $locationCoordinate
+     */
+    public function addToLocationCoordinate(\horstoeko\ubl\entities\cac\LocationCoordinate $locationCoordinate)
+    {
+        $this->locationCoordinate[] = $locationCoordinate;
+        return $this;
+    }
+
+    /**
+     * isset locationCoordinate
+     *
+     * ASBIE
+     *  Address. Location Coordinate
+     *  The geographical coordinates of this address.
+     *  0..n
+     *  Address
+     *  Location Coordinate
+     *  Location Coordinate
+     *  Location Coordinate
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetLocationCoordinate($index)
+    {
+        return isset($this->locationCoordinate[$index]);
+    }
+
+    /**
+     * unset locationCoordinate
+     *
+     * ASBIE
+     *  Address. Location Coordinate
+     *  The geographical coordinates of this address.
+     *  0..n
+     *  Address
+     *  Location Coordinate
+     *  Location Coordinate
+     *  Location Coordinate
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetLocationCoordinate($index)
+    {
+        unset($this->locationCoordinate[$index]);
+    }
+
+    /**
      * Gets as locationCoordinate
      *
      * ASBIE
      *  Address. Location Coordinate
-     *  An association to Location Coordinate.
-     *  0..1
+     *  The geographical coordinates of this address.
+     *  0..n
      *  Address
      *  Location Coordinate
      *  Location Coordinate
+     *  Location Coordinate
      *
-     * @return \horstoeko\ubl\entities\cac\LocationCoordinate
+     * @return \horstoeko\ubl\entities\cac\LocationCoordinate[]
      */
     public function getLocationCoordinate()
     {
@@ -1610,16 +1684,17 @@ class AddressType
      *
      * ASBIE
      *  Address. Location Coordinate
-     *  An association to Location Coordinate.
-     *  0..1
+     *  The geographical coordinates of this address.
+     *  0..n
      *  Address
      *  Location Coordinate
      *  Location Coordinate
+     *  Location Coordinate
      *
-     * @param \horstoeko\ubl\entities\cac\LocationCoordinate $locationCoordinate
+     * @param \horstoeko\ubl\entities\cac\LocationCoordinate[] $locationCoordinate
      * @return self
      */
-    public function setLocationCoordinate(\horstoeko\ubl\entities\cac\LocationCoordinate $locationCoordinate)
+    public function setLocationCoordinate(array $locationCoordinate)
     {
         $this->locationCoordinate = $locationCoordinate;
         return $this;

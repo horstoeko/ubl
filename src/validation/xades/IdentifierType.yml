@@ -1,0 +1,10 @@
+horstoeko\ubl\entities\xades\IdentifierType:
+    properties:
+        qualifier:
+            -
+                Choice:
+                    choices:
+                        - OIDAsURI
+                        - OIDAsURN
+                    groups:
+                        - xsd_rules

@@ -1,0 +1,143 @@
+horstoeko\ubl\entities\cac\TenderedProjectType:
+    properties:
+        variantID:
+            expose: true
+            access_type: public_method
+            serialized_name: VariantID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getVariantID
+                setter: setVariantID
+            type: horstoeko\ubl\entities\cbc\VariantID
+        feeAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: FeeAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getFeeAmount
+                setter: setFeeAmount
+            type: horstoeko\ubl\entities\cbc\FeeAmount
+        feeDescription:
+            expose: true
+            access_type: public_method
+            serialized_name: FeeDescription
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getFeeDescription
+                setter: setFeeDescription
+            xml_list:
+                inline: true
+                entry_name: FeeDescription
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\FeeDescription>
+        tenderEnvelopeID:
+            expose: true
+            access_type: public_method
+            serialized_name: TenderEnvelopeID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTenderEnvelopeID
+                setter: setTenderEnvelopeID
+            type: horstoeko\ubl\entities\cbc\TenderEnvelopeID
+        tenderEnvelopeTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: TenderEnvelopeTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTenderEnvelopeTypeCode
+                setter: setTenderEnvelopeTypeCode
+            type: horstoeko\ubl\entities\cbc\TenderEnvelopeTypeCode
+        procurementProjectLot:
+            expose: true
+            access_type: public_method
+            serialized_name: ProcurementProjectLot
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getProcurementProjectLot
+                setter: setProcurementProjectLot
+            type: horstoeko\ubl\entities\cac\ProcurementProjectLot
+        evidenceDocumentReference:
+            expose: true
+            access_type: public_method
+            serialized_name: EvidenceDocumentReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getEvidenceDocumentReference
+                setter: setEvidenceDocumentReference
+            xml_list:
+                inline: true
+                entry_name: EvidenceDocumentReference
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\EvidenceDocumentReference>
+        taxTotal:
+            expose: true
+            access_type: public_method
+            serialized_name: TaxTotal
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getTaxTotal
+                setter: setTaxTotal
+            xml_list:
+                inline: true
+                entry_name: TaxTotal
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\TaxTotal>
+        legalMonetaryTotal:
+            expose: true
+            access_type: public_method
+            serialized_name: LegalMonetaryTotal
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getLegalMonetaryTotal
+                setter: setLegalMonetaryTotal
+            type: horstoeko\ubl\entities\cac\LegalMonetaryTotal
+        tenderLine:
+            expose: true
+            access_type: public_method
+            serialized_name: TenderLine
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getTenderLine
+                setter: setTenderLine
+            xml_list:
+                inline: true
+                entry_name: TenderLine
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\TenderLine>
+        awardingCriterionResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: AwardingCriterionResponse
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getAwardingCriterionResponse
+                setter: setAwardingCriterionResponse
+            xml_list:
+                inline: true
+                entry_name: AwardingCriterionResponse
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\AwardingCriterionResponse>

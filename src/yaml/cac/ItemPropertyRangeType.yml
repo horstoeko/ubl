@@ -1,0 +1,24 @@
+horstoeko\ubl\entities\cac\ItemPropertyRangeType:
+    properties:
+        minimumValue:
+            expose: true
+            access_type: public_method
+            serialized_name: MinimumValue
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMinimumValue
+                setter: setMinimumValue
+            type: horstoeko\ubl\entities\cbc\MinimumValue
+        maximumValue:
+            expose: true
+            access_type: public_method
+            serialized_name: MaximumValue
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMaximumValue
+                setter: setMaximumValue
+            type: horstoeko\ubl\entities\cbc\MaximumValue

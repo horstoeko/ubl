@@ -1,0 +1,43 @@
+horstoeko\ubl\entities\cac\PromotionalSpecificationType:
+    properties:
+        specificationID:
+            expose: true
+            access_type: public_method
+            serialized_name: SpecificationID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getSpecificationID
+                setter: setSpecificationID
+            type: horstoeko\ubl\entities\cbc\SpecificationID
+        promotionalEventLineItem:
+            expose: true
+            access_type: public_method
+            serialized_name: PromotionalEventLineItem
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPromotionalEventLineItem
+                setter: setPromotionalEventLineItem
+            xml_list:
+                inline: true
+                entry_name: PromotionalEventLineItem
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\PromotionalEventLineItem>
+        eventTactic:
+            expose: true
+            access_type: public_method
+            serialized_name: EventTactic
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getEventTactic
+                setter: setEventTactic
+            xml_list:
+                inline: true
+                entry_name: EventTactic
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\EventTactic>

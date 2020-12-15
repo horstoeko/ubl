@@ -1,0 +1,24 @@
+horstoeko\ubl\entities\xades\SPUserNoticeType:
+    properties:
+        noticeRef:
+            expose: true
+            access_type: public_method
+            serialized_name: NoticeRef
+            xml_element:
+                cdata: false
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            accessor:
+                getter: getNoticeRef
+                setter: setNoticeRef
+            type: horstoeko\ubl\entities\xades\NoticeReferenceType
+        explicitText:
+            expose: true
+            access_type: public_method
+            serialized_name: ExplicitText
+            xml_element:
+                cdata: false
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            accessor:
+                getter: getExplicitText
+                setter: setExplicitText
+            type: string

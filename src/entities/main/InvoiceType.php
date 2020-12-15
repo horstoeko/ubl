@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\main;
  *
  * ABIE
  *  Invoice. Details
- *  The document used to request payment.
+ *  A document used to request payment.
  *  Invoice
  * XSD Type: InvoiceType
  */
@@ -24,7 +24,7 @@ class InvoiceType
     /**
      * BBIE
      *  Invoice. UBL Version Identifier. Identifier
-     *  The earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+     *  Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
      *  0..1
      *  Invoice
      *  UBL Version Identifier
@@ -68,8 +68,23 @@ class InvoiceType
 
     /**
      * BBIE
+     *  Invoice. Profile Execution Identifier. Identifier
+     *  Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+     *  0..1
+     *  Invoice
+     *  Profile Execution Identifier
+     *  Identifier
+     *  Identifier. Type
+     *  BPP-1001
+     *
+     * @var \horstoeko\ubl\entities\cbc\ProfileExecutionID $profileExecutionID
+     */
+    private $profileExecutionID = null;
+
+    /**
+     * BBIE
      *  Invoice. Identifier
-     *  An identifier for the Invoice assigned by the Creditor.
+     *  An identifier for this document, assigned by the sender.
      *  1
      *  Invoice
      *  Identifier
@@ -84,7 +99,7 @@ class InvoiceType
     /**
      * BBIE
      *  Invoice. Copy_ Indicator. Indicator
-     *  Indicates whether a document is a copy (true) or not (false).
+     *  Indicates whether this document is a copy (true) or not (false).
      *  0..1
      *  Invoice
      *  Copy
@@ -99,7 +114,7 @@ class InvoiceType
     /**
      * BBIE
      *  Invoice. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for an instance of this document.
      *  0..1
      *  Invoice
      *  UUID
@@ -113,7 +128,7 @@ class InvoiceType
     /**
      * BBIE
      *  Invoice. Issue Date. Date
-     *  The date assigned by the Creditor on which the Invoice was issued.
+     *  The date, assigned by the sender, on which this document was issued.
      *  1
      *  Invoice
      *  Issue Date
@@ -128,7 +143,7 @@ class InvoiceType
     /**
      * BBIE
      *  Invoice. Issue Time. Time
-     *  The time assigned by the Creditor at which the Invoice was issued.
+     *  The time, assigned by the sender, at which this document was issued.
      *  0..1
      *  Invoice
      *  Issue Time
@@ -141,8 +156,22 @@ class InvoiceType
 
     /**
      * BBIE
+     *  Invoice. Due Date. Date
+     *  The date on which Invoice is due.
+     *  0..1
+     *  Invoice
+     *  Due Date
+     *  Date
+     *  Date. Type
+     *
+     * @var \DateTime $dueDate
+     */
+    private $dueDate = null;
+
+    /**
+     * BBIE
      *  Invoice. Invoice Type Code. Code
-     *  Code specifying the type of the Invoice.
+     *  A code signifying the type of the Invoice.
      *  0..1
      *  Invoice
      *  Invoice Type Code
@@ -156,7 +185,7 @@ class InvoiceType
     /**
      * BBIE
      *  Invoice. Note. Text
-     *  Free-form text applying to the Invoice. This element may contain notes or any other similar information that is not contained explicitly in another structure.
+     *  Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Invoice
      *  Note
@@ -165,7 +194,9 @@ class InvoiceType
      *
      * @var \horstoeko\ubl\entities\cbc\Note[] $note
      */
-    private $note = [];
+    private $note = [
+        
+    ];
 
     /**
      * BBIE
@@ -184,12 +215,13 @@ class InvoiceType
     /**
      * BBIE
      *  Invoice. Document_ Currency Code. Code
-     *  The currency in which the Document is presented. This may be the same currency as the pricing or as the tax.
+     *  A code signifying the default currency for this document.
      *  0..1
      *  Invoice
      *  Document
      *  Currency Code
      *  Code
+     *  Currency
      *  Currency_ Code. Type
      *
      * @var \horstoeko\ubl\entities\cbc\DocumentCurrencyCode $documentCurrencyCode
@@ -199,12 +231,13 @@ class InvoiceType
     /**
      * BBIE
      *  Invoice. Tax_ Currency Code. Code
-     *  The currency used for tax amounts in the Invoice.
+     *  A code signifying the currency used for tax amounts in the Invoice.
      *  0..1
      *  Invoice
      *  Tax
      *  Currency Code
      *  Code
+     *  Currency
      *  Currency_ Code. Type
      *
      * @var \horstoeko\ubl\entities\cbc\TaxCurrencyCode $taxCurrencyCode
@@ -214,12 +247,13 @@ class InvoiceType
     /**
      * BBIE
      *  Invoice. Pricing_ Currency Code. Code
-     *  The currency used for prices in the Invoice.
+     *  A code signifying the currency used for prices in the Invoice.
      *  0..1
      *  Invoice
      *  Pricing
      *  Currency Code
      *  Code
+     *  Currency
      *  Currency_ Code. Type
      *
      * @var \horstoeko\ubl\entities\cbc\PricingCurrencyCode $pricingCurrencyCode
@@ -229,12 +263,13 @@ class InvoiceType
     /**
      * BBIE
      *  Invoice. Payment_ Currency Code. Code
-     *  The currency used for payment in the Invoice.
+     *  A code signifying the currency used for payment in the Invoice.
      *  0..1
      *  Invoice
      *  Payment
      *  Currency Code
      *  Code
+     *  Currency
      *  Currency_ Code. Type
      *
      * @var \horstoeko\ubl\entities\cbc\PaymentCurrencyCode $paymentCurrencyCode
@@ -244,12 +279,13 @@ class InvoiceType
     /**
      * BBIE
      *  Invoice. Payment Alternative_ Currency Code. Code
-     *  The alternative currency used for payment in the Invoice.
+     *  A code signifying the alternative currency used for payment in the Invoice.
      *  0..1
      *  Invoice
      *  Payment Alternative
      *  Currency Code
      *  Code
+     *  Currency
      *  Currency_ Code. Type
      *
      * @var \horstoeko\ubl\entities\cbc\PaymentAlternativeCurrencyCode $paymentAlternativeCurrencyCode
@@ -259,7 +295,7 @@ class InvoiceType
     /**
      * BBIE
      *  Invoice. Accounting Cost Code. Code
-     *  The Buyer's accounting code applied to the Invoice as a whole.
+     *  The buyer's accounting code, applied to the Invoice as a whole.
      *  0..1
      *  Invoice
      *  Accounting Cost Code
@@ -273,7 +309,7 @@ class InvoiceType
     /**
      * BBIE
      *  Invoice. Accounting Cost. Text
-     *  The Buyer's accounting code applied to the Invoice as a whole, expressed as text.
+     *  The buyer's accounting code, applied to the Invoice as a whole, expressed as text.
      *  0..1
      *  Invoice
      *  Accounting Cost
@@ -294,34 +330,49 @@ class InvoiceType
      *  Numeric
      *  Numeric. Type
      *
-     * @var float $lineCountNumeric
+     * @var \horstoeko\ubl\entities\cbc\LineCountNumeric $lineCountNumeric
      */
     private $lineCountNumeric = null;
 
     /**
+     * BBIE
+     *  Invoice. Buyer_ Reference. Text
+     *  A reference provided by the buyer used for internal routing of the document.
+     *  0..1
+     *  Invoice
+     *  Buyer
+     *  Reference
+     *  Text
+     *  Text. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\BuyerReference $buyerReference
      */
     private $buyerReference = null;
 
     /**
      * ASBIE
      *  Invoice. Invoice_ Period. Period
-     *  An association to period(s) to which the Invoice applies.
+     *  A period to which the Invoice applies.
      *  0..n
      *  Invoice
      *  Invoice
      *  Period
      *  Period
+     *  Period
      *
      * @var \horstoeko\ubl\entities\cac\InvoicePeriod[] $invoicePeriod
      */
-    private $invoicePeriod = [];
+    private $invoicePeriod = [
+        
+    ];
 
     /**
      * ASBIE
      *  Invoice. Order Reference
-     *  An association to Order Reference.
+     *  A reference to the Order with which this Invoice is associated.
      *  0..1
      *  Invoice
+     *  Order Reference
      *  Order Reference
      *  Order Reference
      *
@@ -332,106 +383,161 @@ class InvoiceType
     /**
      * ASBIE
      *  Invoice. Billing Reference
-     *  An association to Billing Reference.
+     *  A reference to a billing document associated with this document.
      *  0..n
      *  Invoice
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
      * @var \horstoeko\ubl\entities\cac\BillingReference[] $billingReference
      */
-    private $billingReference = [];
+    private $billingReference = [
+        
+    ];
 
     /**
      * ASBIE
      *  Invoice. Despatch_ Document Reference. Document Reference
-     *  An associative reference to Despatch Advice.
+     *  A reference to a Despatch Advice associated with this document.
      *  0..n
      *  Invoice
      *  Despatch
      *  Document Reference
      *  Document Reference
+     *  Document Reference
      *
      * @var \horstoeko\ubl\entities\cac\DespatchDocumentReference[] $despatchDocumentReference
      */
-    private $despatchDocumentReference = [];
+    private $despatchDocumentReference = [
+        
+    ];
 
     /**
      * ASBIE
      *  Invoice. Receipt_ Document Reference. Document Reference
-     *  An associative reference to Receipt Advice.
+     *  A reference to a Receipt Advice associated with this document.
      *  0..n
      *  Invoice
      *  Receipt
      *  Document Reference
      *  Document Reference
+     *  Document Reference
      *
      * @var \horstoeko\ubl\entities\cac\ReceiptDocumentReference[] $receiptDocumentReference
      */
-    private $receiptDocumentReference = [];
+    private $receiptDocumentReference = [
+        
+    ];
+
+    /**
+     * ASBIE
+     *  Invoice. Statement_ Document Reference. Document Reference
+     *  A reference to a Statement associated with this document.
+     *  0..n
+     *  Invoice
+     *  Statement
+     *  Document Reference
+     *  Document Reference
+     *  Document Reference
+     *
+     * @var \horstoeko\ubl\entities\cac\StatementDocumentReference[] $statementDocumentReference
+     */
+    private $statementDocumentReference = [
+        
+    ];
 
     /**
      * ASBIE
      *  Invoice. Originator_ Document Reference. Document Reference
-     *  An associative reference to Originator Document.
+     *  A reference to an originator document associated with this document.
      *  0..n
      *  Invoice
      *  Originator
      *  Document Reference
      *  Document Reference
+     *  Document Reference
      *
      * @var \horstoeko\ubl\entities\cac\OriginatorDocumentReference[] $originatorDocumentReference
      */
-    private $originatorDocumentReference = [];
+    private $originatorDocumentReference = [
+        
+    ];
 
     /**
      * ASBIE
      *  Invoice. Contract_ Document Reference. Document Reference
-     *  An associative reference to Contract.
+     *  A reference to a contract associated with this document.
      *  0..n
      *  Invoice
      *  Contract
      *  Document Reference
      *  Document Reference
+     *  Document Reference
      *
      * @var \horstoeko\ubl\entities\cac\ContractDocumentReference[] $contractDocumentReference
      */
-    private $contractDocumentReference = [];
+    private $contractDocumentReference = [
+        
+    ];
 
     /**
      * ASBIE
      *  Invoice. Additional_ Document Reference. Document Reference
-     *  An associative reference to Additional Document.
+     *  A reference to an additional document associated with this document.
      *  0..n
      *  Invoice
      *  Additional
      *  Document Reference
      *  Document Reference
+     *  Document Reference
      *
      * @var \horstoeko\ubl\entities\cac\AdditionalDocumentReference[] $additionalDocumentReference
      */
-    private $additionalDocumentReference = [];
+    private $additionalDocumentReference = [
+        
+    ];
+
+    /**
+     * ASBIE
+     *  Invoice. Project Reference
+     *  Information about a project.
+     *  0..n
+     *  Invoice
+     *  Project Reference
+     *  Project Reference
+     *  Project Reference
+     *
+     * @var \horstoeko\ubl\entities\cac\ProjectReference[] $projectReference
+     */
+    private $projectReference = [
+        
+    ];
 
     /**
      * ASBIE
      *  Invoice. Signature
-     *  An association to Signature.
+     *  A signature applied to this document.
      *  0..n
      *  Invoice
+     *  Signature
      *  Signature
      *  Signature
      *
      * @var \horstoeko\ubl\entities\cac\Signature[] $signature
      */
-    private $signature = [];
+    private $signature = [
+        
+    ];
 
     /**
      * ASBIE
      *  Invoice. Accounting_ Supplier Party. Supplier Party
-     *  An association to the Accounting Supplier Party.
+     *  The accounting supplier party.
      *  1
      *  Invoice
      *  Accounting
+     *  Supplier Party
      *  Supplier Party
      *  Supplier Party
      *
@@ -442,10 +548,11 @@ class InvoiceType
     /**
      * ASBIE
      *  Invoice. Accounting_ Customer Party. Customer Party
-     *  An association to the Accounting Customer Party.
+     *  The accounting customer party.
      *  1
      *  Invoice
      *  Accounting
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -456,10 +563,11 @@ class InvoiceType
     /**
      * ASBIE
      *  Invoice. Payee_ Party. Party
-     *  An association to the Payee.
+     *  The payee.
      *  0..1
      *  Invoice
      *  Payee
+     *  Party
      *  Party
      *  Party
      *
@@ -470,10 +578,11 @@ class InvoiceType
     /**
      * ASBIE
      *  Invoice. Buyer_ Customer Party. Customer Party
-     *  An association to the Buyer.
+     *  The buyer.
      *  0..1
      *  Invoice
      *  Buyer
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -484,10 +593,11 @@ class InvoiceType
     /**
      * ASBIE
      *  Invoice. Seller_ Supplier Party. Supplier Party
-     *  An association to the Seller.
+     *  The seller.
      *  0..1
      *  Invoice
      *  Seller
+     *  Supplier Party
      *  Supplier Party
      *  Supplier Party
      *
@@ -498,10 +608,11 @@ class InvoiceType
     /**
      * ASBIE
      *  Invoice. Tax Representative_ Party. Party
-     *  An association to the Tax Representative.
+     *  The tax representative.
      *  0..1
      *  Invoice
      *  Tax Representative
+     *  Party
      *  Party
      *  Party
      *
@@ -512,22 +623,26 @@ class InvoiceType
     /**
      * ASBIE
      *  Invoice. Delivery
-     *  An association to Delivery.
+     *  A delivery associated with this document.
      *  0..n
      *  Invoice
+     *  Delivery
      *  Delivery
      *  Delivery
      *
      * @var \horstoeko\ubl\entities\cac\Delivery[] $delivery
      */
-    private $delivery = [];
+    private $delivery = [
+        
+    ];
 
     /**
      * ASBIE
      *  Invoice. Delivery Terms
-     *  An association to Delivery Terms.
+     *  A set of delivery terms associated with this document.
      *  0..1
      *  Invoice
+     *  Delivery Terms
      *  Delivery Terms
      *  Delivery Terms
      *
@@ -538,63 +653,76 @@ class InvoiceType
     /**
      * ASBIE
      *  Invoice. Payment Means
-     *  An association to Payment Means.
+     *  Expected means of payment.
      *  0..n
      *  Invoice
+     *  Payment Means
      *  Payment Means
      *  Payment Means
      *
      * @var \horstoeko\ubl\entities\cac\PaymentMeans[] $paymentMeans
      */
-    private $paymentMeans = [];
+    private $paymentMeans = [
+        
+    ];
 
     /**
      * ASBIE
      *  Invoice. Payment Terms
-     *  An association to Payment Terms.
+     *  A set of payment terms associated with this document.
      *  0..n
      *  Invoice
+     *  Payment Terms
      *  Payment Terms
      *  Payment Terms
      *
      * @var \horstoeko\ubl\entities\cac\PaymentTerms[] $paymentTerms
      */
-    private $paymentTerms = [];
+    private $paymentTerms = [
+        
+    ];
 
     /**
      * ASBIE
      *  Invoice. Prepaid_ Payment. Payment
-     *  An association to prepaid payment(s).
+     *  A prepaid payment.
      *  0..n
      *  Invoice
      *  Prepaid
      *  Payment
      *  Payment
+     *  Payment
      *
      * @var \horstoeko\ubl\entities\cac\PrepaidPayment[] $prepaidPayment
      */
-    private $prepaidPayment = [];
+    private $prepaidPayment = [
+        
+    ];
 
     /**
      * ASBIE
      *  Invoice. Allowance Charge
-     *  An association to Allowances and Charges that apply to the Invoice as a whole.
+     *  A discount or charge that applies to a price component.
      *  0..n
      *  Invoice
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *
      * @var \horstoeko\ubl\entities\cac\AllowanceCharge[] $allowanceCharge
      */
-    private $allowanceCharge = [];
+    private $allowanceCharge = [
+        
+    ];
 
     /**
      * ASBIE
      *  Invoice. Tax_ Exchange Rate. Exchange Rate
-     *  An association to Exchange Rate between the Document Currency and the Tax Currency.
+     *  The exchange rate between the document currency and the tax currency.
      *  0..1
      *  Invoice
      *  Tax
+     *  Exchange Rate
      *  Exchange Rate
      *  Exchange Rate
      *
@@ -605,10 +733,11 @@ class InvoiceType
     /**
      * ASBIE
      *  Invoice. Pricing_ Exchange Rate. Exchange Rate
-     *  An association to Exchange Rate between the Document Currency and the Pricing Currency.
+     *  The exchange rate between the document currency and the pricing currency.
      *  0..1
      *  Invoice
      *  Pricing
+     *  Exchange Rate
      *  Exchange Rate
      *  Exchange Rate
      *
@@ -619,10 +748,11 @@ class InvoiceType
     /**
      * ASBIE
      *  Invoice. Payment_ Exchange Rate. Exchange Rate
-     *  An association to Exchange Rate between the Document Currency and the Payment Currency.
+     *  The exchange rate between the document currency and the payment currency.
      *  0..1
      *  Invoice
      *  Payment
+     *  Exchange Rate
      *  Exchange Rate
      *  Exchange Rate
      *
@@ -633,10 +763,11 @@ class InvoiceType
     /**
      * ASBIE
      *  Invoice. Payment Alternative_ Exchange Rate. Exchange Rate
-     *  An association to Exchange Rate between the Document Currency and the Payment Alternative Currency.
+     *  The exchange rate between the document currency and the payment alternative currency.
      *  0..1
      *  Invoice
      *  Payment Alternative
+     *  Exchange Rate
      *  Exchange Rate
      *  Exchange Rate
      *
@@ -647,23 +778,44 @@ class InvoiceType
     /**
      * ASBIE
      *  Invoice. Tax Total
-     *  An association to tax total for specific tax types/rates.
+     *  The total amount of a specific type of tax.
      *  0..n
      *  Invoice
+     *  Tax Total
      *  Tax Total
      *  Tax Total
      *
      * @var \horstoeko\ubl\entities\cac\TaxTotal[] $taxTotal
      */
-    private $taxTotal = [];
+    private $taxTotal = [
+        
+    ];
+
+    /**
+     * ASBIE
+     *  Invoice. Withholding_ Tax Total. Tax Total
+     *  The total withholding tax.
+     *  0..n
+     *  Invoice
+     *  Withholding
+     *  Tax Total
+     *  Tax Total
+     *  Tax Total
+     *
+     * @var \horstoeko\ubl\entities\cac\WithholdingTaxTotal[] $withholdingTaxTotal
+     */
+    private $withholdingTaxTotal = [
+        
+    ];
 
     /**
      * ASBIE
      *  Invoice. Legal_ Monetary Total. Monetary Total
-     *  An association to the total amount payable on the Invoice, including Allowances, Charges, and Taxes.
+     *  The total amount payable on the Invoice, including Allowances, Charges, and Taxes.
      *  1
      *  Invoice
      *  Legal
+     *  Monetary Total
      *  Monetary Total
      *  Monetary Total
      *
@@ -674,15 +826,18 @@ class InvoiceType
     /**
      * ASBIE
      *  Invoice. Invoice Line
-     *  An association to one or more Invoice Lines.
+     *  A line describing an invoice item.
      *  1..n
      *  Invoice
+     *  Invoice Line
      *  Invoice Line
      *  Invoice Line
      *
      * @var \horstoeko\ubl\entities\cac\InvoiceLine[] $invoiceLine
      */
-    private $invoiceLine = [];
+    private $invoiceLine = [
+        
+    ];
 
     /**
      * Adds as uBLExtension
@@ -755,7 +910,7 @@ class InvoiceType
      *
      * BBIE
      *  Invoice. UBL Version Identifier. Identifier
-     *  The earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+     *  Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
      *  0..1
      *  Invoice
      *  UBL Version Identifier
@@ -775,7 +930,7 @@ class InvoiceType
      *
      * BBIE
      *  Invoice. UBL Version Identifier. Identifier
-     *  The earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+     *  Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
      *  0..1
      *  Invoice
      *  UBL Version Identifier
@@ -877,11 +1032,53 @@ class InvoiceType
     }
 
     /**
+     * Gets as profileExecutionID
+     *
+     * BBIE
+     *  Invoice. Profile Execution Identifier. Identifier
+     *  Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+     *  0..1
+     *  Invoice
+     *  Profile Execution Identifier
+     *  Identifier
+     *  Identifier. Type
+     *  BPP-1001
+     *
+     * @return \horstoeko\ubl\entities\cbc\ProfileExecutionID
+     */
+    public function getProfileExecutionID()
+    {
+        return $this->profileExecutionID;
+    }
+
+    /**
+     * Sets a new profileExecutionID
+     *
+     * BBIE
+     *  Invoice. Profile Execution Identifier. Identifier
+     *  Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+     *  0..1
+     *  Invoice
+     *  Profile Execution Identifier
+     *  Identifier
+     *  Identifier. Type
+     *  BPP-1001
+     *
+     * @param \horstoeko\ubl\entities\cbc\ProfileExecutionID $profileExecutionID
+     * @return self
+     */
+    public function setProfileExecutionID(\horstoeko\ubl\entities\cbc\ProfileExecutionID $profileExecutionID)
+    {
+        $this->profileExecutionID = $profileExecutionID;
+        return $this;
+    }
+
+    /**
      * Gets as iD
      *
      * BBIE
      *  Invoice. Identifier
-     *  An identifier for the Invoice assigned by the Creditor.
+     *  An identifier for this document, assigned by the sender.
      *  1
      *  Invoice
      *  Identifier
@@ -901,7 +1098,7 @@ class InvoiceType
      *
      * BBIE
      *  Invoice. Identifier
-     *  An identifier for the Invoice assigned by the Creditor.
+     *  An identifier for this document, assigned by the sender.
      *  1
      *  Invoice
      *  Identifier
@@ -923,7 +1120,7 @@ class InvoiceType
      *
      * BBIE
      *  Invoice. Copy_ Indicator. Indicator
-     *  Indicates whether a document is a copy (true) or not (false).
+     *  Indicates whether this document is a copy (true) or not (false).
      *  0..1
      *  Invoice
      *  Copy
@@ -943,7 +1140,7 @@ class InvoiceType
      *
      * BBIE
      *  Invoice. Copy_ Indicator. Indicator
-     *  Indicates whether a document is a copy (true) or not (false).
+     *  Indicates whether this document is a copy (true) or not (false).
      *  0..1
      *  Invoice
      *  Copy
@@ -965,7 +1162,7 @@ class InvoiceType
      *
      * BBIE
      *  Invoice. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for an instance of this document.
      *  0..1
      *  Invoice
      *  UUID
@@ -984,7 +1181,7 @@ class InvoiceType
      *
      * BBIE
      *  Invoice. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for an instance of this document.
      *  0..1
      *  Invoice
      *  UUID
@@ -1005,7 +1202,7 @@ class InvoiceType
      *
      * BBIE
      *  Invoice. Issue Date. Date
-     *  The date assigned by the Creditor on which the Invoice was issued.
+     *  The date, assigned by the sender, on which this document was issued.
      *  1
      *  Invoice
      *  Issue Date
@@ -1025,7 +1222,7 @@ class InvoiceType
      *
      * BBIE
      *  Invoice. Issue Date. Date
-     *  The date assigned by the Creditor on which the Invoice was issued.
+     *  The date, assigned by the sender, on which this document was issued.
      *  1
      *  Invoice
      *  Issue Date
@@ -1047,7 +1244,7 @@ class InvoiceType
      *
      * BBIE
      *  Invoice. Issue Time. Time
-     *  The time assigned by the Creditor at which the Invoice was issued.
+     *  The time, assigned by the sender, at which this document was issued.
      *  0..1
      *  Invoice
      *  Issue Time
@@ -1066,7 +1263,7 @@ class InvoiceType
      *
      * BBIE
      *  Invoice. Issue Time. Time
-     *  The time assigned by the Creditor at which the Invoice was issued.
+     *  The time, assigned by the sender, at which this document was issued.
      *  0..1
      *  Invoice
      *  Issue Time
@@ -1083,11 +1280,51 @@ class InvoiceType
     }
 
     /**
+     * Gets as dueDate
+     *
+     * BBIE
+     *  Invoice. Due Date. Date
+     *  The date on which Invoice is due.
+     *  0..1
+     *  Invoice
+     *  Due Date
+     *  Date
+     *  Date. Type
+     *
+     * @return \DateTime
+     */
+    public function getDueDate()
+    {
+        return $this->dueDate;
+    }
+
+    /**
+     * Sets a new dueDate
+     *
+     * BBIE
+     *  Invoice. Due Date. Date
+     *  The date on which Invoice is due.
+     *  0..1
+     *  Invoice
+     *  Due Date
+     *  Date
+     *  Date. Type
+     *
+     * @param \DateTime $dueDate
+     * @return self
+     */
+    public function setDueDate(\DateTime $dueDate)
+    {
+        $this->dueDate = $dueDate;
+        return $this;
+    }
+
+    /**
      * Gets as invoiceTypeCode
      *
      * BBIE
      *  Invoice. Invoice Type Code. Code
-     *  Code specifying the type of the Invoice.
+     *  A code signifying the type of the Invoice.
      *  0..1
      *  Invoice
      *  Invoice Type Code
@@ -1106,7 +1343,7 @@ class InvoiceType
      *
      * BBIE
      *  Invoice. Invoice Type Code. Code
-     *  Code specifying the type of the Invoice.
+     *  A code signifying the type of the Invoice.
      *  0..1
      *  Invoice
      *  Invoice Type Code
@@ -1127,7 +1364,7 @@ class InvoiceType
      *
      * BBIE
      *  Invoice. Note. Text
-     *  Free-form text applying to the Invoice. This element may contain notes or any other similar information that is not contained explicitly in another structure.
+     *  Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Invoice
      *  Note
@@ -1148,7 +1385,7 @@ class InvoiceType
      *
      * BBIE
      *  Invoice. Note. Text
-     *  Free-form text applying to the Invoice. This element may contain notes or any other similar information that is not contained explicitly in another structure.
+     *  Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Invoice
      *  Note
@@ -1168,7 +1405,7 @@ class InvoiceType
      *
      * BBIE
      *  Invoice. Note. Text
-     *  Free-form text applying to the Invoice. This element may contain notes or any other similar information that is not contained explicitly in another structure.
+     *  Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Invoice
      *  Note
@@ -1188,7 +1425,7 @@ class InvoiceType
      *
      * BBIE
      *  Invoice. Note. Text
-     *  Free-form text applying to the Invoice. This element may contain notes or any other similar information that is not contained explicitly in another structure.
+     *  Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Invoice
      *  Note
@@ -1207,7 +1444,7 @@ class InvoiceType
      *
      * BBIE
      *  Invoice. Note. Text
-     *  Free-form text applying to the Invoice. This element may contain notes or any other similar information that is not contained explicitly in another structure.
+     *  Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Invoice
      *  Note
@@ -1268,12 +1505,13 @@ class InvoiceType
      *
      * BBIE
      *  Invoice. Document_ Currency Code. Code
-     *  The currency in which the Document is presented. This may be the same currency as the pricing or as the tax.
+     *  A code signifying the default currency for this document.
      *  0..1
      *  Invoice
      *  Document
      *  Currency Code
      *  Code
+     *  Currency
      *  Currency_ Code. Type
      *
      * @return \horstoeko\ubl\entities\cbc\DocumentCurrencyCode
@@ -1288,12 +1526,13 @@ class InvoiceType
      *
      * BBIE
      *  Invoice. Document_ Currency Code. Code
-     *  The currency in which the Document is presented. This may be the same currency as the pricing or as the tax.
+     *  A code signifying the default currency for this document.
      *  0..1
      *  Invoice
      *  Document
      *  Currency Code
      *  Code
+     *  Currency
      *  Currency_ Code. Type
      *
      * @param \horstoeko\ubl\entities\cbc\DocumentCurrencyCode $documentCurrencyCode
@@ -1310,12 +1549,13 @@ class InvoiceType
      *
      * BBIE
      *  Invoice. Tax_ Currency Code. Code
-     *  The currency used for tax amounts in the Invoice.
+     *  A code signifying the currency used for tax amounts in the Invoice.
      *  0..1
      *  Invoice
      *  Tax
      *  Currency Code
      *  Code
+     *  Currency
      *  Currency_ Code. Type
      *
      * @return \horstoeko\ubl\entities\cbc\TaxCurrencyCode
@@ -1330,12 +1570,13 @@ class InvoiceType
      *
      * BBIE
      *  Invoice. Tax_ Currency Code. Code
-     *  The currency used for tax amounts in the Invoice.
+     *  A code signifying the currency used for tax amounts in the Invoice.
      *  0..1
      *  Invoice
      *  Tax
      *  Currency Code
      *  Code
+     *  Currency
      *  Currency_ Code. Type
      *
      * @param \horstoeko\ubl\entities\cbc\TaxCurrencyCode $taxCurrencyCode
@@ -1352,12 +1593,13 @@ class InvoiceType
      *
      * BBIE
      *  Invoice. Pricing_ Currency Code. Code
-     *  The currency used for prices in the Invoice.
+     *  A code signifying the currency used for prices in the Invoice.
      *  0..1
      *  Invoice
      *  Pricing
      *  Currency Code
      *  Code
+     *  Currency
      *  Currency_ Code. Type
      *
      * @return \horstoeko\ubl\entities\cbc\PricingCurrencyCode
@@ -1372,12 +1614,13 @@ class InvoiceType
      *
      * BBIE
      *  Invoice. Pricing_ Currency Code. Code
-     *  The currency used for prices in the Invoice.
+     *  A code signifying the currency used for prices in the Invoice.
      *  0..1
      *  Invoice
      *  Pricing
      *  Currency Code
      *  Code
+     *  Currency
      *  Currency_ Code. Type
      *
      * @param \horstoeko\ubl\entities\cbc\PricingCurrencyCode $pricingCurrencyCode
@@ -1394,12 +1637,13 @@ class InvoiceType
      *
      * BBIE
      *  Invoice. Payment_ Currency Code. Code
-     *  The currency used for payment in the Invoice.
+     *  A code signifying the currency used for payment in the Invoice.
      *  0..1
      *  Invoice
      *  Payment
      *  Currency Code
      *  Code
+     *  Currency
      *  Currency_ Code. Type
      *
      * @return \horstoeko\ubl\entities\cbc\PaymentCurrencyCode
@@ -1414,12 +1658,13 @@ class InvoiceType
      *
      * BBIE
      *  Invoice. Payment_ Currency Code. Code
-     *  The currency used for payment in the Invoice.
+     *  A code signifying the currency used for payment in the Invoice.
      *  0..1
      *  Invoice
      *  Payment
      *  Currency Code
      *  Code
+     *  Currency
      *  Currency_ Code. Type
      *
      * @param \horstoeko\ubl\entities\cbc\PaymentCurrencyCode $paymentCurrencyCode
@@ -1436,12 +1681,13 @@ class InvoiceType
      *
      * BBIE
      *  Invoice. Payment Alternative_ Currency Code. Code
-     *  The alternative currency used for payment in the Invoice.
+     *  A code signifying the alternative currency used for payment in the Invoice.
      *  0..1
      *  Invoice
      *  Payment Alternative
      *  Currency Code
      *  Code
+     *  Currency
      *  Currency_ Code. Type
      *
      * @return \horstoeko\ubl\entities\cbc\PaymentAlternativeCurrencyCode
@@ -1456,12 +1702,13 @@ class InvoiceType
      *
      * BBIE
      *  Invoice. Payment Alternative_ Currency Code. Code
-     *  The alternative currency used for payment in the Invoice.
+     *  A code signifying the alternative currency used for payment in the Invoice.
      *  0..1
      *  Invoice
      *  Payment Alternative
      *  Currency Code
      *  Code
+     *  Currency
      *  Currency_ Code. Type
      *
      * @param \horstoeko\ubl\entities\cbc\PaymentAlternativeCurrencyCode $paymentAlternativeCurrencyCode
@@ -1478,7 +1725,7 @@ class InvoiceType
      *
      * BBIE
      *  Invoice. Accounting Cost Code. Code
-     *  The Buyer's accounting code applied to the Invoice as a whole.
+     *  The buyer's accounting code, applied to the Invoice as a whole.
      *  0..1
      *  Invoice
      *  Accounting Cost Code
@@ -1497,7 +1744,7 @@ class InvoiceType
      *
      * BBIE
      *  Invoice. Accounting Cost Code. Code
-     *  The Buyer's accounting code applied to the Invoice as a whole.
+     *  The buyer's accounting code, applied to the Invoice as a whole.
      *  0..1
      *  Invoice
      *  Accounting Cost Code
@@ -1518,7 +1765,7 @@ class InvoiceType
      *
      * BBIE
      *  Invoice. Accounting Cost. Text
-     *  The Buyer's accounting code applied to the Invoice as a whole, expressed as text.
+     *  The buyer's accounting code, applied to the Invoice as a whole, expressed as text.
      *  0..1
      *  Invoice
      *  Accounting Cost
@@ -1537,7 +1784,7 @@ class InvoiceType
      *
      * BBIE
      *  Invoice. Accounting Cost. Text
-     *  The Buyer's accounting code applied to the Invoice as a whole, expressed as text.
+     *  The buyer's accounting code, applied to the Invoice as a whole, expressed as text.
      *  0..1
      *  Invoice
      *  Accounting Cost
@@ -1565,7 +1812,7 @@ class InvoiceType
      *  Numeric
      *  Numeric. Type
      *
-     * @return float
+     * @return \horstoeko\ubl\entities\cbc\LineCountNumeric
      */
     public function getLineCountNumeric()
     {
@@ -1584,28 +1831,52 @@ class InvoiceType
      *  Numeric
      *  Numeric. Type
      *
-     * @param float $lineCountNumeric
+     * @param \horstoeko\ubl\entities\cbc\LineCountNumeric $lineCountNumeric
      * @return self
      */
-    public function setLineCountNumeric($lineCountNumeric)
+    public function setLineCountNumeric(\horstoeko\ubl\entities\cbc\LineCountNumeric $lineCountNumeric)
     {
         $this->lineCountNumeric = $lineCountNumeric;
         return $this;
     }
 
     /**
-     * @return string buyerReference
+     * Gets as buyerReference
+     *
+     * BBIE
+     *  Invoice. Buyer_ Reference. Text
+     *  A reference provided by the buyer used for internal routing of the document.
+     *  0..1
+     *  Invoice
+     *  Buyer
+     *  Reference
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\BuyerReference
      */
-    public function getBuyerReference(): ?string
+    public function getBuyerReference()
     {
         return $this->buyerReference;
     }
 
     /**
-     * @param string $buyerReference
+     * Sets a new buyerReference
+     *
+     * BBIE
+     *  Invoice. Buyer_ Reference. Text
+     *  A reference provided by the buyer used for internal routing of the document.
+     *  0..1
+     *  Invoice
+     *  Buyer
+     *  Reference
+     *  Text
+     *  Text. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\BuyerReference $buyerReference
      * @return self
      */
-    public function setBuyerReference(string $buyerReference)
+    public function setBuyerReference(\horstoeko\ubl\entities\cbc\BuyerReference $buyerReference)
     {
         $this->buyerReference = $buyerReference;
         return $this;
@@ -1616,10 +1887,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Invoice_ Period. Period
-     *  An association to period(s) to which the Invoice applies.
+     *  A period to which the Invoice applies.
      *  0..n
      *  Invoice
      *  Invoice
+     *  Period
      *  Period
      *  Period
      *
@@ -1637,10 +1909,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Invoice_ Period. Period
-     *  An association to period(s) to which the Invoice applies.
+     *  A period to which the Invoice applies.
      *  0..n
      *  Invoice
      *  Invoice
+     *  Period
      *  Period
      *  Period
      *
@@ -1657,10 +1930,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Invoice_ Period. Period
-     *  An association to period(s) to which the Invoice applies.
+     *  A period to which the Invoice applies.
      *  0..n
      *  Invoice
      *  Invoice
+     *  Period
      *  Period
      *  Period
      *
@@ -1677,10 +1951,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Invoice_ Period. Period
-     *  An association to period(s) to which the Invoice applies.
+     *  A period to which the Invoice applies.
      *  0..n
      *  Invoice
      *  Invoice
+     *  Period
      *  Period
      *  Period
      *
@@ -1696,10 +1971,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Invoice_ Period. Period
-     *  An association to period(s) to which the Invoice applies.
+     *  A period to which the Invoice applies.
      *  0..n
      *  Invoice
      *  Invoice
+     *  Period
      *  Period
      *  Period
      *
@@ -1717,9 +1993,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Order Reference
-     *  An association to Order Reference.
+     *  A reference to the Order with which this Invoice is associated.
      *  0..1
      *  Invoice
+     *  Order Reference
      *  Order Reference
      *  Order Reference
      *
@@ -1735,9 +2012,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Order Reference
-     *  An association to Order Reference.
+     *  A reference to the Order with which this Invoice is associated.
      *  0..1
      *  Invoice
+     *  Order Reference
      *  Order Reference
      *  Order Reference
      *
@@ -1755,9 +2033,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Billing Reference
-     *  An association to Billing Reference.
+     *  A reference to a billing document associated with this document.
      *  0..n
      *  Invoice
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -1775,9 +2054,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Billing Reference
-     *  An association to Billing Reference.
+     *  A reference to a billing document associated with this document.
      *  0..n
      *  Invoice
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -1794,9 +2074,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Billing Reference
-     *  An association to Billing Reference.
+     *  A reference to a billing document associated with this document.
      *  0..n
      *  Invoice
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -1813,9 +2094,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Billing Reference
-     *  An association to Billing Reference.
+     *  A reference to a billing document associated with this document.
      *  0..n
      *  Invoice
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -1831,9 +2113,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Billing Reference
-     *  An association to Billing Reference.
+     *  A reference to a billing document associated with this document.
      *  0..n
      *  Invoice
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -1851,10 +2134,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Despatch_ Document Reference. Document Reference
-     *  An associative reference to Despatch Advice.
+     *  A reference to a Despatch Advice associated with this document.
      *  0..n
      *  Invoice
      *  Despatch
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1872,10 +2156,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Despatch_ Document Reference. Document Reference
-     *  An associative reference to Despatch Advice.
+     *  A reference to a Despatch Advice associated with this document.
      *  0..n
      *  Invoice
      *  Despatch
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1892,10 +2177,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Despatch_ Document Reference. Document Reference
-     *  An associative reference to Despatch Advice.
+     *  A reference to a Despatch Advice associated with this document.
      *  0..n
      *  Invoice
      *  Despatch
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1912,10 +2198,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Despatch_ Document Reference. Document Reference
-     *  An associative reference to Despatch Advice.
+     *  A reference to a Despatch Advice associated with this document.
      *  0..n
      *  Invoice
      *  Despatch
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1931,10 +2218,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Despatch_ Document Reference. Document Reference
-     *  An associative reference to Despatch Advice.
+     *  A reference to a Despatch Advice associated with this document.
      *  0..n
      *  Invoice
      *  Despatch
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1952,10 +2240,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Receipt_ Document Reference. Document Reference
-     *  An associative reference to Receipt Advice.
+     *  A reference to a Receipt Advice associated with this document.
      *  0..n
      *  Invoice
      *  Receipt
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1973,10 +2262,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Receipt_ Document Reference. Document Reference
-     *  An associative reference to Receipt Advice.
+     *  A reference to a Receipt Advice associated with this document.
      *  0..n
      *  Invoice
      *  Receipt
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1993,10 +2283,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Receipt_ Document Reference. Document Reference
-     *  An associative reference to Receipt Advice.
+     *  A reference to a Receipt Advice associated with this document.
      *  0..n
      *  Invoice
      *  Receipt
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -2013,10 +2304,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Receipt_ Document Reference. Document Reference
-     *  An associative reference to Receipt Advice.
+     *  A reference to a Receipt Advice associated with this document.
      *  0..n
      *  Invoice
      *  Receipt
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -2032,10 +2324,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Receipt_ Document Reference. Document Reference
-     *  An associative reference to Receipt Advice.
+     *  A reference to a Receipt Advice associated with this document.
      *  0..n
      *  Invoice
      *  Receipt
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -2049,14 +2342,121 @@ class InvoiceType
     }
 
     /**
+     * Adds as statementDocumentReference
+     *
+     * ASBIE
+     *  Invoice. Statement_ Document Reference. Document Reference
+     *  A reference to a Statement associated with this document.
+     *  0..n
+     *  Invoice
+     *  Statement
+     *  Document Reference
+     *  Document Reference
+     *  Document Reference
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\StatementDocumentReference $statementDocumentReference
+     */
+    public function addToStatementDocumentReference(\horstoeko\ubl\entities\cac\StatementDocumentReference $statementDocumentReference)
+    {
+        $this->statementDocumentReference[] = $statementDocumentReference;
+        return $this;
+    }
+
+    /**
+     * isset statementDocumentReference
+     *
+     * ASBIE
+     *  Invoice. Statement_ Document Reference. Document Reference
+     *  A reference to a Statement associated with this document.
+     *  0..n
+     *  Invoice
+     *  Statement
+     *  Document Reference
+     *  Document Reference
+     *  Document Reference
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetStatementDocumentReference($index)
+    {
+        return isset($this->statementDocumentReference[$index]);
+    }
+
+    /**
+     * unset statementDocumentReference
+     *
+     * ASBIE
+     *  Invoice. Statement_ Document Reference. Document Reference
+     *  A reference to a Statement associated with this document.
+     *  0..n
+     *  Invoice
+     *  Statement
+     *  Document Reference
+     *  Document Reference
+     *  Document Reference
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetStatementDocumentReference($index)
+    {
+        unset($this->statementDocumentReference[$index]);
+    }
+
+    /**
+     * Gets as statementDocumentReference
+     *
+     * ASBIE
+     *  Invoice. Statement_ Document Reference. Document Reference
+     *  A reference to a Statement associated with this document.
+     *  0..n
+     *  Invoice
+     *  Statement
+     *  Document Reference
+     *  Document Reference
+     *  Document Reference
+     *
+     * @return \horstoeko\ubl\entities\cac\StatementDocumentReference[]
+     */
+    public function getStatementDocumentReference()
+    {
+        return $this->statementDocumentReference;
+    }
+
+    /**
+     * Sets a new statementDocumentReference
+     *
+     * ASBIE
+     *  Invoice. Statement_ Document Reference. Document Reference
+     *  A reference to a Statement associated with this document.
+     *  0..n
+     *  Invoice
+     *  Statement
+     *  Document Reference
+     *  Document Reference
+     *  Document Reference
+     *
+     * @param \horstoeko\ubl\entities\cac\StatementDocumentReference[] $statementDocumentReference
+     * @return self
+     */
+    public function setStatementDocumentReference(array $statementDocumentReference)
+    {
+        $this->statementDocumentReference = $statementDocumentReference;
+        return $this;
+    }
+
+    /**
      * Adds as originatorDocumentReference
      *
      * ASBIE
      *  Invoice. Originator_ Document Reference. Document Reference
-     *  An associative reference to Originator Document.
+     *  A reference to an originator document associated with this document.
      *  0..n
      *  Invoice
      *  Originator
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -2074,10 +2474,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Originator_ Document Reference. Document Reference
-     *  An associative reference to Originator Document.
+     *  A reference to an originator document associated with this document.
      *  0..n
      *  Invoice
      *  Originator
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -2094,10 +2495,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Originator_ Document Reference. Document Reference
-     *  An associative reference to Originator Document.
+     *  A reference to an originator document associated with this document.
      *  0..n
      *  Invoice
      *  Originator
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -2114,10 +2516,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Originator_ Document Reference. Document Reference
-     *  An associative reference to Originator Document.
+     *  A reference to an originator document associated with this document.
      *  0..n
      *  Invoice
      *  Originator
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -2133,10 +2536,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Originator_ Document Reference. Document Reference
-     *  An associative reference to Originator Document.
+     *  A reference to an originator document associated with this document.
      *  0..n
      *  Invoice
      *  Originator
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -2154,10 +2558,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Contract_ Document Reference. Document Reference
-     *  An associative reference to Contract.
+     *  A reference to a contract associated with this document.
      *  0..n
      *  Invoice
      *  Contract
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -2175,10 +2580,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Contract_ Document Reference. Document Reference
-     *  An associative reference to Contract.
+     *  A reference to a contract associated with this document.
      *  0..n
      *  Invoice
      *  Contract
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -2195,10 +2601,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Contract_ Document Reference. Document Reference
-     *  An associative reference to Contract.
+     *  A reference to a contract associated with this document.
      *  0..n
      *  Invoice
      *  Contract
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -2215,10 +2622,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Contract_ Document Reference. Document Reference
-     *  An associative reference to Contract.
+     *  A reference to a contract associated with this document.
      *  0..n
      *  Invoice
      *  Contract
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -2234,10 +2642,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Contract_ Document Reference. Document Reference
-     *  An associative reference to Contract.
+     *  A reference to a contract associated with this document.
      *  0..n
      *  Invoice
      *  Contract
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -2255,10 +2664,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Additional_ Document Reference. Document Reference
-     *  An associative reference to Additional Document.
+     *  A reference to an additional document associated with this document.
      *  0..n
      *  Invoice
      *  Additional
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -2276,10 +2686,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Additional_ Document Reference. Document Reference
-     *  An associative reference to Additional Document.
+     *  A reference to an additional document associated with this document.
      *  0..n
      *  Invoice
      *  Additional
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -2296,10 +2707,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Additional_ Document Reference. Document Reference
-     *  An associative reference to Additional Document.
+     *  A reference to an additional document associated with this document.
      *  0..n
      *  Invoice
      *  Additional
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -2316,10 +2728,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Additional_ Document Reference. Document Reference
-     *  An associative reference to Additional Document.
+     *  A reference to an additional document associated with this document.
      *  0..n
      *  Invoice
      *  Additional
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -2335,10 +2748,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Additional_ Document Reference. Document Reference
-     *  An associative reference to Additional Document.
+     *  A reference to an additional document associated with this document.
      *  0..n
      *  Invoice
      *  Additional
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -2352,13 +2766,115 @@ class InvoiceType
     }
 
     /**
+     * Adds as projectReference
+     *
+     * ASBIE
+     *  Invoice. Project Reference
+     *  Information about a project.
+     *  0..n
+     *  Invoice
+     *  Project Reference
+     *  Project Reference
+     *  Project Reference
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\ProjectReference $projectReference
+     */
+    public function addToProjectReference(\horstoeko\ubl\entities\cac\ProjectReference $projectReference)
+    {
+        $this->projectReference[] = $projectReference;
+        return $this;
+    }
+
+    /**
+     * isset projectReference
+     *
+     * ASBIE
+     *  Invoice. Project Reference
+     *  Information about a project.
+     *  0..n
+     *  Invoice
+     *  Project Reference
+     *  Project Reference
+     *  Project Reference
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetProjectReference($index)
+    {
+        return isset($this->projectReference[$index]);
+    }
+
+    /**
+     * unset projectReference
+     *
+     * ASBIE
+     *  Invoice. Project Reference
+     *  Information about a project.
+     *  0..n
+     *  Invoice
+     *  Project Reference
+     *  Project Reference
+     *  Project Reference
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetProjectReference($index)
+    {
+        unset($this->projectReference[$index]);
+    }
+
+    /**
+     * Gets as projectReference
+     *
+     * ASBIE
+     *  Invoice. Project Reference
+     *  Information about a project.
+     *  0..n
+     *  Invoice
+     *  Project Reference
+     *  Project Reference
+     *  Project Reference
+     *
+     * @return \horstoeko\ubl\entities\cac\ProjectReference[]
+     */
+    public function getProjectReference()
+    {
+        return $this->projectReference;
+    }
+
+    /**
+     * Sets a new projectReference
+     *
+     * ASBIE
+     *  Invoice. Project Reference
+     *  Information about a project.
+     *  0..n
+     *  Invoice
+     *  Project Reference
+     *  Project Reference
+     *  Project Reference
+     *
+     * @param \horstoeko\ubl\entities\cac\ProjectReference[] $projectReference
+     * @return self
+     */
+    public function setProjectReference(array $projectReference)
+    {
+        $this->projectReference = $projectReference;
+        return $this;
+    }
+
+    /**
      * Adds as signature
      *
      * ASBIE
      *  Invoice. Signature
-     *  An association to Signature.
+     *  A signature applied to this document.
      *  0..n
      *  Invoice
+     *  Signature
      *  Signature
      *  Signature
      *
@@ -2376,9 +2892,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Signature
-     *  An association to Signature.
+     *  A signature applied to this document.
      *  0..n
      *  Invoice
+     *  Signature
      *  Signature
      *  Signature
      *
@@ -2395,9 +2912,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Signature
-     *  An association to Signature.
+     *  A signature applied to this document.
      *  0..n
      *  Invoice
+     *  Signature
      *  Signature
      *  Signature
      *
@@ -2414,9 +2932,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Signature
-     *  An association to Signature.
+     *  A signature applied to this document.
      *  0..n
      *  Invoice
+     *  Signature
      *  Signature
      *  Signature
      *
@@ -2432,9 +2951,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Signature
-     *  An association to Signature.
+     *  A signature applied to this document.
      *  0..n
      *  Invoice
+     *  Signature
      *  Signature
      *  Signature
      *
@@ -2452,10 +2972,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Accounting_ Supplier Party. Supplier Party
-     *  An association to the Accounting Supplier Party.
+     *  The accounting supplier party.
      *  1
      *  Invoice
      *  Accounting
+     *  Supplier Party
      *  Supplier Party
      *  Supplier Party
      *
@@ -2471,10 +2992,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Accounting_ Supplier Party. Supplier Party
-     *  An association to the Accounting Supplier Party.
+     *  The accounting supplier party.
      *  1
      *  Invoice
      *  Accounting
+     *  Supplier Party
      *  Supplier Party
      *  Supplier Party
      *
@@ -2492,10 +3014,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Accounting_ Customer Party. Customer Party
-     *  An association to the Accounting Customer Party.
+     *  The accounting customer party.
      *  1
      *  Invoice
      *  Accounting
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -2511,10 +3034,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Accounting_ Customer Party. Customer Party
-     *  An association to the Accounting Customer Party.
+     *  The accounting customer party.
      *  1
      *  Invoice
      *  Accounting
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -2532,10 +3056,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Payee_ Party. Party
-     *  An association to the Payee.
+     *  The payee.
      *  0..1
      *  Invoice
      *  Payee
+     *  Party
      *  Party
      *  Party
      *
@@ -2551,10 +3076,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Payee_ Party. Party
-     *  An association to the Payee.
+     *  The payee.
      *  0..1
      *  Invoice
      *  Payee
+     *  Party
      *  Party
      *  Party
      *
@@ -2572,10 +3098,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Buyer_ Customer Party. Customer Party
-     *  An association to the Buyer.
+     *  The buyer.
      *  0..1
      *  Invoice
      *  Buyer
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -2591,10 +3118,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Buyer_ Customer Party. Customer Party
-     *  An association to the Buyer.
+     *  The buyer.
      *  0..1
      *  Invoice
      *  Buyer
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -2612,10 +3140,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Seller_ Supplier Party. Supplier Party
-     *  An association to the Seller.
+     *  The seller.
      *  0..1
      *  Invoice
      *  Seller
+     *  Supplier Party
      *  Supplier Party
      *  Supplier Party
      *
@@ -2631,10 +3160,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Seller_ Supplier Party. Supplier Party
-     *  An association to the Seller.
+     *  The seller.
      *  0..1
      *  Invoice
      *  Seller
+     *  Supplier Party
      *  Supplier Party
      *  Supplier Party
      *
@@ -2652,10 +3182,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Tax Representative_ Party. Party
-     *  An association to the Tax Representative.
+     *  The tax representative.
      *  0..1
      *  Invoice
      *  Tax Representative
+     *  Party
      *  Party
      *  Party
      *
@@ -2671,10 +3202,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Tax Representative_ Party. Party
-     *  An association to the Tax Representative.
+     *  The tax representative.
      *  0..1
      *  Invoice
      *  Tax Representative
+     *  Party
      *  Party
      *  Party
      *
@@ -2692,9 +3224,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Delivery
-     *  An association to Delivery.
+     *  A delivery associated with this document.
      *  0..n
      *  Invoice
+     *  Delivery
      *  Delivery
      *  Delivery
      *
@@ -2712,9 +3245,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Delivery
-     *  An association to Delivery.
+     *  A delivery associated with this document.
      *  0..n
      *  Invoice
+     *  Delivery
      *  Delivery
      *  Delivery
      *
@@ -2731,9 +3265,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Delivery
-     *  An association to Delivery.
+     *  A delivery associated with this document.
      *  0..n
      *  Invoice
+     *  Delivery
      *  Delivery
      *  Delivery
      *
@@ -2750,9 +3285,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Delivery
-     *  An association to Delivery.
+     *  A delivery associated with this document.
      *  0..n
      *  Invoice
+     *  Delivery
      *  Delivery
      *  Delivery
      *
@@ -2768,9 +3304,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Delivery
-     *  An association to Delivery.
+     *  A delivery associated with this document.
      *  0..n
      *  Invoice
+     *  Delivery
      *  Delivery
      *  Delivery
      *
@@ -2788,9 +3325,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Delivery Terms
-     *  An association to Delivery Terms.
+     *  A set of delivery terms associated with this document.
      *  0..1
      *  Invoice
+     *  Delivery Terms
      *  Delivery Terms
      *  Delivery Terms
      *
@@ -2806,9 +3344,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Delivery Terms
-     *  An association to Delivery Terms.
+     *  A set of delivery terms associated with this document.
      *  0..1
      *  Invoice
+     *  Delivery Terms
      *  Delivery Terms
      *  Delivery Terms
      *
@@ -2826,9 +3365,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Payment Means
-     *  An association to Payment Means.
+     *  Expected means of payment.
      *  0..n
      *  Invoice
+     *  Payment Means
      *  Payment Means
      *  Payment Means
      *
@@ -2846,9 +3386,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Payment Means
-     *  An association to Payment Means.
+     *  Expected means of payment.
      *  0..n
      *  Invoice
+     *  Payment Means
      *  Payment Means
      *  Payment Means
      *
@@ -2865,9 +3406,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Payment Means
-     *  An association to Payment Means.
+     *  Expected means of payment.
      *  0..n
      *  Invoice
+     *  Payment Means
      *  Payment Means
      *  Payment Means
      *
@@ -2884,9 +3426,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Payment Means
-     *  An association to Payment Means.
+     *  Expected means of payment.
      *  0..n
      *  Invoice
+     *  Payment Means
      *  Payment Means
      *  Payment Means
      *
@@ -2902,9 +3445,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Payment Means
-     *  An association to Payment Means.
+     *  Expected means of payment.
      *  0..n
      *  Invoice
+     *  Payment Means
      *  Payment Means
      *  Payment Means
      *
@@ -2922,9 +3466,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Payment Terms
-     *  An association to Payment Terms.
+     *  A set of payment terms associated with this document.
      *  0..n
      *  Invoice
+     *  Payment Terms
      *  Payment Terms
      *  Payment Terms
      *
@@ -2942,9 +3487,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Payment Terms
-     *  An association to Payment Terms.
+     *  A set of payment terms associated with this document.
      *  0..n
      *  Invoice
+     *  Payment Terms
      *  Payment Terms
      *  Payment Terms
      *
@@ -2961,9 +3507,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Payment Terms
-     *  An association to Payment Terms.
+     *  A set of payment terms associated with this document.
      *  0..n
      *  Invoice
+     *  Payment Terms
      *  Payment Terms
      *  Payment Terms
      *
@@ -2980,9 +3527,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Payment Terms
-     *  An association to Payment Terms.
+     *  A set of payment terms associated with this document.
      *  0..n
      *  Invoice
+     *  Payment Terms
      *  Payment Terms
      *  Payment Terms
      *
@@ -2998,9 +3546,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Payment Terms
-     *  An association to Payment Terms.
+     *  A set of payment terms associated with this document.
      *  0..n
      *  Invoice
+     *  Payment Terms
      *  Payment Terms
      *  Payment Terms
      *
@@ -3018,10 +3567,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Prepaid_ Payment. Payment
-     *  An association to prepaid payment(s).
+     *  A prepaid payment.
      *  0..n
      *  Invoice
      *  Prepaid
+     *  Payment
      *  Payment
      *  Payment
      *
@@ -3039,10 +3589,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Prepaid_ Payment. Payment
-     *  An association to prepaid payment(s).
+     *  A prepaid payment.
      *  0..n
      *  Invoice
      *  Prepaid
+     *  Payment
      *  Payment
      *  Payment
      *
@@ -3059,10 +3610,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Prepaid_ Payment. Payment
-     *  An association to prepaid payment(s).
+     *  A prepaid payment.
      *  0..n
      *  Invoice
      *  Prepaid
+     *  Payment
      *  Payment
      *  Payment
      *
@@ -3079,10 +3631,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Prepaid_ Payment. Payment
-     *  An association to prepaid payment(s).
+     *  A prepaid payment.
      *  0..n
      *  Invoice
      *  Prepaid
+     *  Payment
      *  Payment
      *  Payment
      *
@@ -3098,10 +3651,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Prepaid_ Payment. Payment
-     *  An association to prepaid payment(s).
+     *  A prepaid payment.
      *  0..n
      *  Invoice
      *  Prepaid
+     *  Payment
      *  Payment
      *  Payment
      *
@@ -3119,9 +3673,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Allowance Charge
-     *  An association to Allowances and Charges that apply to the Invoice as a whole.
+     *  A discount or charge that applies to a price component.
      *  0..n
      *  Invoice
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *
@@ -3139,9 +3694,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Allowance Charge
-     *  An association to Allowances and Charges that apply to the Invoice as a whole.
+     *  A discount or charge that applies to a price component.
      *  0..n
      *  Invoice
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *
@@ -3158,9 +3714,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Allowance Charge
-     *  An association to Allowances and Charges that apply to the Invoice as a whole.
+     *  A discount or charge that applies to a price component.
      *  0..n
      *  Invoice
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *
@@ -3177,9 +3734,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Allowance Charge
-     *  An association to Allowances and Charges that apply to the Invoice as a whole.
+     *  A discount or charge that applies to a price component.
      *  0..n
      *  Invoice
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *
@@ -3195,9 +3753,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Allowance Charge
-     *  An association to Allowances and Charges that apply to the Invoice as a whole.
+     *  A discount or charge that applies to a price component.
      *  0..n
      *  Invoice
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *
@@ -3215,10 +3774,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Tax_ Exchange Rate. Exchange Rate
-     *  An association to Exchange Rate between the Document Currency and the Tax Currency.
+     *  The exchange rate between the document currency and the tax currency.
      *  0..1
      *  Invoice
      *  Tax
+     *  Exchange Rate
      *  Exchange Rate
      *  Exchange Rate
      *
@@ -3234,10 +3794,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Tax_ Exchange Rate. Exchange Rate
-     *  An association to Exchange Rate between the Document Currency and the Tax Currency.
+     *  The exchange rate between the document currency and the tax currency.
      *  0..1
      *  Invoice
      *  Tax
+     *  Exchange Rate
      *  Exchange Rate
      *  Exchange Rate
      *
@@ -3255,10 +3816,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Pricing_ Exchange Rate. Exchange Rate
-     *  An association to Exchange Rate between the Document Currency and the Pricing Currency.
+     *  The exchange rate between the document currency and the pricing currency.
      *  0..1
      *  Invoice
      *  Pricing
+     *  Exchange Rate
      *  Exchange Rate
      *  Exchange Rate
      *
@@ -3274,10 +3836,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Pricing_ Exchange Rate. Exchange Rate
-     *  An association to Exchange Rate between the Document Currency and the Pricing Currency.
+     *  The exchange rate between the document currency and the pricing currency.
      *  0..1
      *  Invoice
      *  Pricing
+     *  Exchange Rate
      *  Exchange Rate
      *  Exchange Rate
      *
@@ -3295,10 +3858,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Payment_ Exchange Rate. Exchange Rate
-     *  An association to Exchange Rate between the Document Currency and the Payment Currency.
+     *  The exchange rate between the document currency and the payment currency.
      *  0..1
      *  Invoice
      *  Payment
+     *  Exchange Rate
      *  Exchange Rate
      *  Exchange Rate
      *
@@ -3314,10 +3878,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Payment_ Exchange Rate. Exchange Rate
-     *  An association to Exchange Rate between the Document Currency and the Payment Currency.
+     *  The exchange rate between the document currency and the payment currency.
      *  0..1
      *  Invoice
      *  Payment
+     *  Exchange Rate
      *  Exchange Rate
      *  Exchange Rate
      *
@@ -3335,10 +3900,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Payment Alternative_ Exchange Rate. Exchange Rate
-     *  An association to Exchange Rate between the Document Currency and the Payment Alternative Currency.
+     *  The exchange rate between the document currency and the payment alternative currency.
      *  0..1
      *  Invoice
      *  Payment Alternative
+     *  Exchange Rate
      *  Exchange Rate
      *  Exchange Rate
      *
@@ -3354,10 +3920,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Payment Alternative_ Exchange Rate. Exchange Rate
-     *  An association to Exchange Rate between the Document Currency and the Payment Alternative Currency.
+     *  The exchange rate between the document currency and the payment alternative currency.
      *  0..1
      *  Invoice
      *  Payment Alternative
+     *  Exchange Rate
      *  Exchange Rate
      *  Exchange Rate
      *
@@ -3375,9 +3942,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Tax Total
-     *  An association to tax total for specific tax types/rates.
+     *  The total amount of a specific type of tax.
      *  0..n
      *  Invoice
+     *  Tax Total
      *  Tax Total
      *  Tax Total
      *
@@ -3395,9 +3963,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Tax Total
-     *  An association to tax total for specific tax types/rates.
+     *  The total amount of a specific type of tax.
      *  0..n
      *  Invoice
+     *  Tax Total
      *  Tax Total
      *  Tax Total
      *
@@ -3414,9 +3983,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Tax Total
-     *  An association to tax total for specific tax types/rates.
+     *  The total amount of a specific type of tax.
      *  0..n
      *  Invoice
+     *  Tax Total
      *  Tax Total
      *  Tax Total
      *
@@ -3433,9 +4003,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Tax Total
-     *  An association to tax total for specific tax types/rates.
+     *  The total amount of a specific type of tax.
      *  0..n
      *  Invoice
+     *  Tax Total
      *  Tax Total
      *  Tax Total
      *
@@ -3451,9 +4022,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Tax Total
-     *  An association to tax total for specific tax types/rates.
+     *  The total amount of a specific type of tax.
      *  0..n
      *  Invoice
+     *  Tax Total
      *  Tax Total
      *  Tax Total
      *
@@ -3467,14 +4039,121 @@ class InvoiceType
     }
 
     /**
+     * Adds as withholdingTaxTotal
+     *
+     * ASBIE
+     *  Invoice. Withholding_ Tax Total. Tax Total
+     *  The total withholding tax.
+     *  0..n
+     *  Invoice
+     *  Withholding
+     *  Tax Total
+     *  Tax Total
+     *  Tax Total
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\WithholdingTaxTotal $withholdingTaxTotal
+     */
+    public function addToWithholdingTaxTotal(\horstoeko\ubl\entities\cac\WithholdingTaxTotal $withholdingTaxTotal)
+    {
+        $this->withholdingTaxTotal[] = $withholdingTaxTotal;
+        return $this;
+    }
+
+    /**
+     * isset withholdingTaxTotal
+     *
+     * ASBIE
+     *  Invoice. Withholding_ Tax Total. Tax Total
+     *  The total withholding tax.
+     *  0..n
+     *  Invoice
+     *  Withholding
+     *  Tax Total
+     *  Tax Total
+     *  Tax Total
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetWithholdingTaxTotal($index)
+    {
+        return isset($this->withholdingTaxTotal[$index]);
+    }
+
+    /**
+     * unset withholdingTaxTotal
+     *
+     * ASBIE
+     *  Invoice. Withholding_ Tax Total. Tax Total
+     *  The total withholding tax.
+     *  0..n
+     *  Invoice
+     *  Withholding
+     *  Tax Total
+     *  Tax Total
+     *  Tax Total
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetWithholdingTaxTotal($index)
+    {
+        unset($this->withholdingTaxTotal[$index]);
+    }
+
+    /**
+     * Gets as withholdingTaxTotal
+     *
+     * ASBIE
+     *  Invoice. Withholding_ Tax Total. Tax Total
+     *  The total withholding tax.
+     *  0..n
+     *  Invoice
+     *  Withholding
+     *  Tax Total
+     *  Tax Total
+     *  Tax Total
+     *
+     * @return \horstoeko\ubl\entities\cac\WithholdingTaxTotal[]
+     */
+    public function getWithholdingTaxTotal()
+    {
+        return $this->withholdingTaxTotal;
+    }
+
+    /**
+     * Sets a new withholdingTaxTotal
+     *
+     * ASBIE
+     *  Invoice. Withholding_ Tax Total. Tax Total
+     *  The total withholding tax.
+     *  0..n
+     *  Invoice
+     *  Withholding
+     *  Tax Total
+     *  Tax Total
+     *  Tax Total
+     *
+     * @param \horstoeko\ubl\entities\cac\WithholdingTaxTotal[] $withholdingTaxTotal
+     * @return self
+     */
+    public function setWithholdingTaxTotal(array $withholdingTaxTotal)
+    {
+        $this->withholdingTaxTotal = $withholdingTaxTotal;
+        return $this;
+    }
+
+    /**
      * Gets as legalMonetaryTotal
      *
      * ASBIE
      *  Invoice. Legal_ Monetary Total. Monetary Total
-     *  An association to the total amount payable on the Invoice, including Allowances, Charges, and Taxes.
+     *  The total amount payable on the Invoice, including Allowances, Charges, and Taxes.
      *  1
      *  Invoice
      *  Legal
+     *  Monetary Total
      *  Monetary Total
      *  Monetary Total
      *
@@ -3490,10 +4169,11 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Legal_ Monetary Total. Monetary Total
-     *  An association to the total amount payable on the Invoice, including Allowances, Charges, and Taxes.
+     *  The total amount payable on the Invoice, including Allowances, Charges, and Taxes.
      *  1
      *  Invoice
      *  Legal
+     *  Monetary Total
      *  Monetary Total
      *  Monetary Total
      *
@@ -3511,9 +4191,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Invoice Line
-     *  An association to one or more Invoice Lines.
+     *  A line describing an invoice item.
      *  1..n
      *  Invoice
+     *  Invoice Line
      *  Invoice Line
      *  Invoice Line
      *
@@ -3531,9 +4212,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Invoice Line
-     *  An association to one or more Invoice Lines.
+     *  A line describing an invoice item.
      *  1..n
      *  Invoice
+     *  Invoice Line
      *  Invoice Line
      *  Invoice Line
      *
@@ -3550,9 +4232,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Invoice Line
-     *  An association to one or more Invoice Lines.
+     *  A line describing an invoice item.
      *  1..n
      *  Invoice
+     *  Invoice Line
      *  Invoice Line
      *  Invoice Line
      *
@@ -3569,9 +4252,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Invoice Line
-     *  An association to one or more Invoice Lines.
+     *  A line describing an invoice item.
      *  1..n
      *  Invoice
+     *  Invoice Line
      *  Invoice Line
      *  Invoice Line
      *
@@ -3587,9 +4271,10 @@ class InvoiceType
      *
      * ASBIE
      *  Invoice. Invoice Line
-     *  An association to one or more Invoice Lines.
+     *  A line describing an invoice item.
      *  1..n
      *  Invoice
+     *  Invoice Line
      *  Invoice Line
      *  Invoice Line
      *
@@ -3601,4 +4286,7 @@ class InvoiceType
         $this->invoiceLine = $invoiceLine;
         return $this;
     }
+
+
 }
+

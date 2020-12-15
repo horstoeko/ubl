@@ -1,0 +1,24 @@
+horstoeko\ubl\entities\cac\WinningPartyType:
+    properties:
+        rank:
+            expose: true
+            access_type: public_method
+            serialized_name: Rank
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getRank
+                setter: setRank
+            type: horstoeko\ubl\entities\cbc\Rank
+        party:
+            expose: true
+            access_type: public_method
+            serialized_name: Party
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getParty
+                setter: setParty
+            type: horstoeko\ubl\entities\cac\Party

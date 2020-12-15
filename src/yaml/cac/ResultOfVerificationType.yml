@@ -1,0 +1,90 @@
+horstoeko\ubl\entities\cac\ResultOfVerificationType:
+    properties:
+        validatorID:
+            expose: true
+            access_type: public_method
+            serialized_name: ValidatorID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getValidatorID
+                setter: setValidatorID
+            type: horstoeko\ubl\entities\cbc\ValidatorID
+        validationResultCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ValidationResultCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getValidationResultCode
+                setter: setValidationResultCode
+            type: horstoeko\ubl\entities\cbc\ValidationResultCode
+        validationDate:
+            expose: true
+            access_type: public_method
+            serialized_name: ValidationDate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getValidationDate
+                setter: setValidationDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        validationTime:
+            expose: true
+            access_type: public_method
+            serialized_name: ValidationTime
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getValidationTime
+                setter: setValidationTime
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time
+        validateProcess:
+            expose: true
+            access_type: public_method
+            serialized_name: ValidateProcess
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getValidateProcess
+                setter: setValidateProcess
+            type: horstoeko\ubl\entities\cbc\ValidateProcess
+        validateTool:
+            expose: true
+            access_type: public_method
+            serialized_name: ValidateTool
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getValidateTool
+                setter: setValidateTool
+            type: horstoeko\ubl\entities\cbc\ValidateTool
+        validateToolVersion:
+            expose: true
+            access_type: public_method
+            serialized_name: ValidateToolVersion
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getValidateToolVersion
+                setter: setValidateToolVersion
+            type: horstoeko\ubl\entities\cbc\ValidateToolVersion
+        signatoryParty:
+            expose: true
+            access_type: public_method
+            serialized_name: SignatoryParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getSignatoryParty
+                setter: setSignatoryParty
+            type: horstoeko\ubl\entities\cac\SignatoryParty

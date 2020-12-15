@@ -33,6 +33,28 @@ horstoeko\ubl\entities\cac\ContractType:
                 getter: getIssueTime
                 setter: setIssueTime
             type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time
+        nominationDate:
+            expose: true
+            access_type: public_method
+            serialized_name: NominationDate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getNominationDate
+                setter: setNominationDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        nominationTime:
+            expose: true
+            access_type: public_method
+            serialized_name: NominationTime
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getNominationTime
+                setter: setNominationTime
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time
         contractTypeCode:
             expose: true
             access_type: public_method
@@ -55,6 +77,47 @@ horstoeko\ubl\entities\cac\ContractType:
                 getter: getContractType
                 setter: setContractType
             type: horstoeko\ubl\entities\cbc\ContractType
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: Note
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getNote
+                setter: setNote
+            xml_list:
+                inline: true
+                entry_name: Note
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Note>
+        versionID:
+            expose: true
+            access_type: public_method
+            serialized_name: VersionID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getVersionID
+                setter: setVersionID
+            type: horstoeko\ubl\entities\cbc\VersionID
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: Description
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>
         validityPeriod:
             expose: true
             access_type: public_method
@@ -81,3 +144,25 @@ horstoeko\ubl\entities\cac\ContractType:
                 entry_name: ContractDocumentReference
                 namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
             type: array<horstoeko\ubl\entities\cac\ContractDocumentReference>
+        nominationPeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: NominationPeriod
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getNominationPeriod
+                setter: setNominationPeriod
+            type: horstoeko\ubl\entities\cac\NominationPeriod
+        contractualDelivery:
+            expose: true
+            access_type: public_method
+            serialized_name: ContractualDelivery
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getContractualDelivery
+                setter: setContractualDelivery
+            type: horstoeko\ubl\entities\cac\ContractualDelivery

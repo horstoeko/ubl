@@ -30,3 +30,12 @@ horstoeko\ubl\entities\cac\PartyType:
         agentParty:
             -
                 Valid: null
+        serviceProviderParty:
+            -
+                Valid: null
+        powerOfAttorney:
+            -
+                Valid: null
+        financialAccount:
+            -
+                Valid: null

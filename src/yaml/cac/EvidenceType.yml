@@ -1,0 +1,87 @@
+horstoeko\ubl\entities\cac\EvidenceType:
+    properties:
+        iD:
+            expose: true
+            access_type: public_method
+            serialized_name: ID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getID
+                setter: setID
+            type: horstoeko\ubl\entities\cbc\ID
+        evidenceTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: EvidenceTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getEvidenceTypeCode
+                setter: setEvidenceTypeCode
+            type: horstoeko\ubl\entities\cbc\EvidenceTypeCode
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: Description
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>
+        candidateStatement:
+            expose: true
+            access_type: public_method
+            serialized_name: CandidateStatement
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getCandidateStatement
+                setter: setCandidateStatement
+            xml_list:
+                inline: true
+                entry_name: CandidateStatement
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\CandidateStatement>
+        evidenceIssuingParty:
+            expose: true
+            access_type: public_method
+            serialized_name: EvidenceIssuingParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getEvidenceIssuingParty
+                setter: setEvidenceIssuingParty
+            type: horstoeko\ubl\entities\cac\EvidenceIssuingParty
+        documentReference:
+            expose: true
+            access_type: public_method
+            serialized_name: DocumentReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getDocumentReference
+                setter: setDocumentReference
+            type: horstoeko\ubl\entities\cac\DocumentReference
+        language:
+            expose: true
+            access_type: public_method
+            serialized_name: Language
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getLanguage
+                setter: setLanguage
+            type: horstoeko\ubl\entities\cac\Language

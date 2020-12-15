@@ -32,7 +32,11 @@ horstoeko\ubl\entities\cac\ReceiptLineType:
             accessor:
                 getter: getNote
                 setter: setNote
-            type: horstoeko\ubl\entities\cbc\Note
+            xml_list:
+                inline: true
+                entry_name: Note
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Note>
         receivedQuantity:
             expose: true
             access_type: public_method
@@ -98,7 +102,11 @@ horstoeko\ubl\entities\cac\ReceiptLineType:
             accessor:
                 getter: getRejectReason
                 setter: setRejectReason
-            type: horstoeko\ubl\entities\cbc\RejectReason
+            xml_list:
+                inline: true
+                entry_name: RejectReason
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\RejectReason>
         rejectActionCode:
             expose: true
             access_type: public_method
@@ -110,6 +118,17 @@ horstoeko\ubl\entities\cac\ReceiptLineType:
                 getter: getRejectActionCode
                 setter: setRejectActionCode
             type: horstoeko\ubl\entities\cbc\RejectActionCode
+        quantityDiscrepancyCode:
+            expose: true
+            access_type: public_method
+            serialized_name: QuantityDiscrepancyCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getQuantityDiscrepancyCode
+                setter: setQuantityDiscrepancyCode
+            type: horstoeko\ubl\entities\cbc\QuantityDiscrepancyCode
         oversupplyQuantity:
             expose: true
             access_type: public_method

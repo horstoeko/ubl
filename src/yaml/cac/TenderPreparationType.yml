@@ -1,0 +1,80 @@
+horstoeko\ubl\entities\cac\TenderPreparationType:
+    properties:
+        tenderEnvelopeID:
+            expose: true
+            access_type: public_method
+            serialized_name: TenderEnvelopeID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTenderEnvelopeID
+                setter: setTenderEnvelopeID
+            type: horstoeko\ubl\entities\cbc\TenderEnvelopeID
+        tenderEnvelopeTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: TenderEnvelopeTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTenderEnvelopeTypeCode
+                setter: setTenderEnvelopeTypeCode
+            type: horstoeko\ubl\entities\cbc\TenderEnvelopeTypeCode
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: Description
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>
+        openTenderID:
+            expose: true
+            access_type: public_method
+            serialized_name: OpenTenderID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getOpenTenderID
+                setter: setOpenTenderID
+            type: horstoeko\ubl\entities\cbc\OpenTenderID
+        procurementProjectLot:
+            expose: true
+            access_type: public_method
+            serialized_name: ProcurementProjectLot
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getProcurementProjectLot
+                setter: setProcurementProjectLot
+            xml_list:
+                inline: true
+                entry_name: ProcurementProjectLot
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\ProcurementProjectLot>
+        documentTenderRequirement:
+            expose: true
+            access_type: public_method
+            serialized_name: DocumentTenderRequirement
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getDocumentTenderRequirement
+                setter: setDocumentTenderRequirement
+            xml_list:
+                inline: true
+                entry_name: DocumentTenderRequirement
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\DocumentTenderRequirement>

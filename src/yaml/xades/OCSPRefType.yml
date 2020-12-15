@@ -1,0 +1,24 @@
+horstoeko\ubl\entities\xades\OCSPRefType:
+    properties:
+        oCSPIdentifier:
+            expose: true
+            access_type: public_method
+            serialized_name: OCSPIdentifier
+            xml_element:
+                cdata: false
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            accessor:
+                getter: getOCSPIdentifier
+                setter: setOCSPIdentifier
+            type: horstoeko\ubl\entities\xades\OCSPIdentifierType
+        digestAlgAndValue:
+            expose: true
+            access_type: public_method
+            serialized_name: DigestAlgAndValue
+            xml_element:
+                cdata: false
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            accessor:
+                getter: getDigestAlgAndValue
+                setter: setDigestAlgAndValue
+            type: horstoeko\ubl\entities\xades\DigestAlgAndValueType

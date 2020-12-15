@@ -6,3 +6,9 @@ horstoeko\ubl\entities\cac\PaymentTermsType:
         penaltyPeriod:
             -
                 Valid: null
+        exchangeRate:
+            -
+                Valid: null
+        validityPeriod:
+            -
+                Valid: null

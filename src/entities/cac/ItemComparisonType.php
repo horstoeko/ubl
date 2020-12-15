@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Item Comparison. Details
- *  Used to compare different items based on cost, quantity, or measurements.
+ *  A class to provide information about price and quantity of an item for use in price comparisons based on price, quantity, or measurements.
  *  Item Comparison
  * XSD Type: ItemComparisonType
  */
@@ -16,11 +16,11 @@ class ItemComparisonType
 
     /**
      * BBIE
-     *  Item Comparison. Price. Amount
-     *  The price for the comparison quantity of the item.
+     *  Item Comparison. Price Amount. Amount
+     *  The price for the Item Comparison
      *  0..1
      *  Item Comparison
-     *  Price
+     *  Price Amount
      *  Amount
      *  Amount. Type
      *
@@ -31,13 +31,13 @@ class ItemComparisonType
     /**
      * BBIE
      *  Item Comparison. Quantity
-     *  The quantity used for price comparison with other items.
+     *  The quantity for which this comparison is valid.
      *  0..1
      *  Item Comparison
      *  Quantity
      *  Quantity
      *  Quantity. Type
-     *  "per unit"
+     *  per unit
      *
      * @var \horstoeko\ubl\entities\cbc\Quantity $quantity
      */
@@ -47,11 +47,11 @@ class ItemComparisonType
      * Gets as priceAmount
      *
      * BBIE
-     *  Item Comparison. Price. Amount
-     *  The price for the comparison quantity of the item.
+     *  Item Comparison. Price Amount. Amount
+     *  The price for the Item Comparison
      *  0..1
      *  Item Comparison
-     *  Price
+     *  Price Amount
      *  Amount
      *  Amount. Type
      *
@@ -66,11 +66,11 @@ class ItemComparisonType
      * Sets a new priceAmount
      *
      * BBIE
-     *  Item Comparison. Price. Amount
-     *  The price for the comparison quantity of the item.
+     *  Item Comparison. Price Amount. Amount
+     *  The price for the Item Comparison
      *  0..1
      *  Item Comparison
-     *  Price
+     *  Price Amount
      *  Amount
      *  Amount. Type
      *
@@ -88,13 +88,13 @@ class ItemComparisonType
      *
      * BBIE
      *  Item Comparison. Quantity
-     *  The quantity used for price comparison with other items.
+     *  The quantity for which this comparison is valid.
      *  0..1
      *  Item Comparison
      *  Quantity
      *  Quantity
      *  Quantity. Type
-     *  "per unit"
+     *  per unit
      *
      * @return \horstoeko\ubl\entities\cbc\Quantity
      */
@@ -108,13 +108,13 @@ class ItemComparisonType
      *
      * BBIE
      *  Item Comparison. Quantity
-     *  The quantity used for price comparison with other items.
+     *  The quantity for which this comparison is valid.
      *  0..1
      *  Item Comparison
      *  Quantity
      *  Quantity
      *  Quantity. Type
-     *  "per unit"
+     *  per unit
      *
      * @param \horstoeko\ubl\entities\cbc\Quantity $quantity
      * @return self

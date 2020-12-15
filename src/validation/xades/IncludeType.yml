@@ -1,0 +1,7 @@
+horstoeko\ubl\entities\xades\IncludeType:
+    properties:
+        uRI:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

@@ -1,0 +1,8 @@
+horstoeko\ubl\entities\cac\DependentPriceReferenceType:
+    properties:
+        locationAddress:
+            -
+                Valid: null
+        dependentLineReference:
+            -
+                Valid: null

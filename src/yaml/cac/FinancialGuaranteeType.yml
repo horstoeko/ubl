@@ -1,0 +1,61 @@
+horstoeko\ubl\entities\cac\FinancialGuaranteeType:
+    properties:
+        guaranteeTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: GuaranteeTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getGuaranteeTypeCode
+                setter: setGuaranteeTypeCode
+            type: horstoeko\ubl\entities\cbc\GuaranteeTypeCode
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: Description
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>
+        liabilityAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: LiabilityAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getLiabilityAmount
+                setter: setLiabilityAmount
+            type: horstoeko\ubl\entities\cbc\LiabilityAmount
+        amountRate:
+            expose: true
+            access_type: public_method
+            serialized_name: AmountRate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAmountRate
+                setter: setAmountRate
+            type: horstoeko\ubl\entities\cbc\AmountRate
+        constitutionPeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: ConstitutionPeriod
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getConstitutionPeriod
+                setter: setConstitutionPeriod
+            type: horstoeko\ubl\entities\cac\ConstitutionPeriod

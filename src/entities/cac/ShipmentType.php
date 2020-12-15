@@ -7,9 +7,8 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Shipment. Details
- *  Information about a shipment.
+ *  A class defining an identifiable collection of one or more goods items to be transported between the seller party and the buyer party. This information may be defined within a commercial contract. A shipment can be transported in different consignments (e.g., split for logistical purposes).
  *  Shipment
- *  Consignment
  * XSD Type: ShipmentType
  */
 class ShipmentType
@@ -18,7 +17,7 @@ class ShipmentType
     /**
      * BBIE
      *  Shipment. Identifier
-     *  Identifies a shipment.
+     *  An identifier for this shipment.
      *  1
      *  Shipment
      *  Identifier
@@ -32,11 +31,11 @@ class ShipmentType
 
     /**
      * BBIE
-     *  Shipment. Shipping Priority Level. Code
-     *  The priority or level of service required for a shipment, expressed as a code.
+     *  Shipment. Shipping Priority Level Code. Code
+     *  A code signifying the priority or level of service required for this shipment.
      *  0..1
      *  Shipment
-     *  Shipping Priority Level
+     *  Shipping Priority Level Code
      *  Code
      *  Code. Type
      *  Service Level, Service Priority
@@ -48,7 +47,7 @@ class ShipmentType
     /**
      * BBIE
      *  Shipment. Handling Code. Code
-     *  The handling required for a shipment, expressed as a code.
+     *  The handling required for this shipment, expressed as a code.
      *  0..1
      *  Shipment
      *  Handling Code
@@ -63,31 +62,35 @@ class ShipmentType
     /**
      * BBIE
      *  Shipment. Handling_ Instructions. Text
-     *  Free-form text describing Handling Instructions for a shipment.
-     *  0..1
+     *  The handling required for this shipment, expressed as text.
+     *  0..n
      *  Shipment
      *  Handling
      *  Instructions
      *  Text
      *  Text. Type
      *
-     * @var \horstoeko\ubl\entities\cbc\HandlingInstructions $handlingInstructions
+     * @var \horstoeko\ubl\entities\cbc\HandlingInstructions[] $handlingInstructions
      */
-    private $handlingInstructions = null;
+    private $handlingInstructions = [
+        
+    ];
 
     /**
      * BBIE
      *  Shipment. Information. Text
-     *  Free-form text applying to a shipment. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text pertinent to this shipment, conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Shipment
      *  Information
      *  Text
      *  Text. Type
      *
-     * @var \horstoeko\ubl\entities\cbc\Information $information
+     * @var \horstoeko\ubl\entities\cbc\Information[] $information
      */
-    private $information = null;
+    private $information = [
+        
+    ];
 
     /**
      * BBIE
@@ -107,7 +110,7 @@ class ShipmentType
     /**
      * BBIE
      *  Shipment. Net_ Weight. Measure
-     *  The total net weight of a shipment; the weight of the goods plus packaging.
+     *  The net weight of this shipment, excluding packaging.
      *  0..1
      *  Shipment
      *  Net
@@ -122,7 +125,7 @@ class ShipmentType
     /**
      * BBIE
      *  Shipment. Net Net_ Weight. Measure
-     *  The weight of the goods net of packaging and transport equipment.
+     *  The total net weight of this shipment, excluding packaging and transport equipment.
      *  0..1
      *  Shipment
      *  Net Net
@@ -137,7 +140,7 @@ class ShipmentType
     /**
      * BBIE
      *  Shipment. Gross_ Volume. Measure
-     *  The total volume of the goods in a shipment plus packaging.
+     *  The total volume of the goods in this shipment, including packaging.
      *  0..1
      *  Shipment
      *  Gross
@@ -152,7 +155,7 @@ class ShipmentType
     /**
      * BBIE
      *  Shipment. Net_ Volume. Measure
-     *  The volume of a shipment net of packaging and transport equipment.
+     *  The total volume of the goods in this shipment, excluding packaging and transport equipment.
      *  0..1
      *  Shipment
      *  Net
@@ -167,7 +170,7 @@ class ShipmentType
     /**
      * BBIE
      *  Shipment. Total_ Goods Item Quantity. Quantity
-     *  Count of the total number of goods items within a shipment.
+     *  The total number of goods items in this shipment.
      *  0..1
      *  Shipment
      *  Total
@@ -182,7 +185,7 @@ class ShipmentType
     /**
      * BBIE
      *  Shipment. Total_ Transport Handling Unit Quantity. Quantity
-     *  Count of the number of pieces of transport handling equipment in a shipment, such as pallets, boxes, and cases.
+     *  The number of pieces of transport handling equipment (pallets, boxes, cases, etc.) in this shipment.
      *  0..1
      *  Shipment
      *  Total
@@ -198,7 +201,7 @@ class ShipmentType
     /**
      * BBIE
      *  Shipment. Insurance_ Value. Amount
-     *  The total sum covered by an insurance for the shipment.
+     *  The amount covered by insurance for this shipment.
      *  0..1
      *  Shipment
      *  Insurance
@@ -214,7 +217,7 @@ class ShipmentType
     /**
      * BBIE
      *  Shipment. Declared Customs_ Value. Amount
-     *  Amount declared for customs purposes of those goods in a shipment which are subject to the same customs procedure, and have the same tariff/statistical heading, country information, and duty regime.
+     *  The total declared value for customs purposes of those goods in this shipment that are subject to the same customs procedure and have the same tariff/statistical heading, country information, and duty regime.
      *  0..1
      *  Shipment
      *  Declared Customs
@@ -229,7 +232,7 @@ class ShipmentType
     /**
      * BBIE
      *  Shipment. Declared For Carriage_ Value. Amount
-     *  Value, declared by the shipper or his agent solely for the purpose of varying the carrier's level of liability from that provided in the contract of carriage, in case of loss or damage to goods or delayed delivery.
+     *  The value of this shipment, declared by the shipper or his agent solely for the purpose of varying the carrier's level of liability from that provided in the contract of carriage, in case of loss or damage to goods or delayed delivery.
      *  0..1
      *  Shipment
      *  Declared For Carriage
@@ -245,7 +248,7 @@ class ShipmentType
     /**
      * BBIE
      *  Shipment. Declared Statistics_ Value. Amount
-     *  Value declared for statistical purposes of those goods in a consignment which have the same statistical heading.
+     *  The value, declared for statistical purposes, of those goods in this shipment that have the same statistical heading.
      *  0..1
      *  Shipment
      *  Declared Statistics
@@ -261,7 +264,7 @@ class ShipmentType
     /**
      * BBIE
      *  Shipment. Free On Board_ Value. Amount
-     *  Monetary amount that has to be or has been paid as calculated under the applicable trade delivery.
+     *  The monetary amount that has to be or has been paid as calculated under the applicable trade delivery.
      *  0..1
      *  Shipment
      *  Free On Board
@@ -277,7 +280,7 @@ class ShipmentType
     /**
      * BBIE
      *  Shipment. Special_ Instructions. Text
-     *  Special instructions relating to a shipment.
+     *  Special instructions relating to this shipment.
      *  0..n
      *  Shipment
      *  Special
@@ -294,7 +297,7 @@ class ShipmentType
     /**
      * BBIE
      *  Shipment. Delivery_ Instructions. Text
-     *  Delivery instructions relating to a shipment.
+     *  Delivery instructions relating to this shipment.
      *  0..n
      *  Shipment
      *  Delivery
@@ -311,7 +314,7 @@ class ShipmentType
     /**
      * BBIE
      *  Shipment. Split Consignment_ Indicator. Indicator
-     *  Indicates whether the consignment has been split in transit.
+     *  An indicator that the consignment has been split in transit (true) or not (false).
      *  0..1
      *  Shipment
      *  Split Consignment
@@ -324,24 +327,43 @@ class ShipmentType
     private $splitConsignmentIndicator = null;
 
     /**
+     * BBIE
+     *  Shipment. Consignment_ Quantity. Quantity
+     *  The total number of consignments within this shipment.
+     *  0..1
+     *  Shipment
+     *  Consignment
+     *  Quantity
+     *  Quantity
+     *  Quantity. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\ConsignmentQuantity $consignmentQuantity
+     */
+    private $consignmentQuantity = null;
+
+    /**
      * ASBIE
      *  Shipment. Consignment
-     *  An association to Consignment covering the shipment.
-     *  1
+     *  A consignment covering this shipment.
+     *  0..n
      *  Shipment
      *  Consignment
      *  Consignment
+     *  Consignment
      *
-     * @var \horstoeko\ubl\entities\cac\Consignment $consignment
+     * @var \horstoeko\ubl\entities\cac\Consignment[] $consignment
      */
-    private $consignment = null;
+    private $consignment = [
+        
+    ];
 
     /**
      * ASBIE
      *  Shipment. Goods Item
-     *  An association to Goods Item (for Bulk Goods).
+     *  A goods item included in this shipment.
      *  0..n
      *  Shipment
+     *  Goods Item
      *  Goods Item
      *  Goods Item
      *
@@ -354,9 +376,10 @@ class ShipmentType
     /**
      * ASBIE
      *  Shipment. Shipment Stage
-     *  An association to Shipment Stage.
+     *  A stage in the transport movement of this shipment.
      *  0..n
      *  Shipment
+     *  Shipment Stage
      *  Shipment Stage
      *  Shipment Stage
      *
@@ -369,9 +392,10 @@ class ShipmentType
     /**
      * ASBIE
      *  Shipment. Delivery
-     *  An association to Delivery.
+     *  The delivery of this shipment.
      *  0..1
      *  Shipment
+     *  Delivery
      *  Delivery
      *  Delivery
      *
@@ -382,9 +406,10 @@ class ShipmentType
     /**
      * ASBIE
      *  Shipment. Transport Handling Unit
-     *  An association to Transport Handling Unit used for loose and containerized goods.
+     *  A transport handling unit associated with this shipment.
      *  0..n
      *  Shipment
+     *  Transport Handling Unit
      *  Transport Handling Unit
      *  Transport Handling Unit
      *
@@ -396,11 +421,27 @@ class ShipmentType
 
     /**
      * ASBIE
+     *  Shipment. Return_ Address. Address
+     *  The address to which a shipment should be returned.
+     *  0..1
+     *  Shipment
+     *  Return
+     *  Address
+     *  Address
+     *  Address
+     *
+     * @var \horstoeko\ubl\entities\cac\ReturnAddress $returnAddress
+     */
+    private $returnAddress = null;
+
+    /**
+     * ASBIE
      *  Shipment. Origin_ Address. Address
-     *  An association to the region in which the goods have been produced or manufactured, according to criteria laid down for the purposes of application of the Customs tariff, or quantitative restrictions, or of any other measure related to trade.
+     *  The region in which the goods have been produced or manufactured, according to criteria laid down for the purposes of application of the customs tariff, or of quantitative restrictions, or of any other measure related to trade.
      *  0..1
      *  Shipment
      *  Origin
+     *  Address
      *  Address
      *  Address
      *
@@ -411,10 +452,11 @@ class ShipmentType
     /**
      * ASBIE
      *  Shipment. First Arrival Port_ Location. Location
-     *  Identifies the first arrival location. This would be a port for sea, airport for air, and border post for land crossing.
+     *  The first arrival location of a shipment. This would be a port for sea, an airport for air, a terminal for rail, or a border post for land crossing.
      *  0..1
      *  Shipment
      *  First Arrival Port
+     *  Location
      *  Location
      *  Location
      *
@@ -425,10 +467,11 @@ class ShipmentType
     /**
      * ASBIE
      *  Shipment. Last Exit Port_ Location. Location
-     *  Identifies the final exporting location. This would be a port for sea, airport for air, and border post for land crossing.
+     *  The final exporting location for a shipment. This would be a port for sea, an airport for air, a terminal for rail, or a border post for land crossing.
      *  0..1
      *  Shipment
      *  Last Exit Port
+     *  Location
      *  Location
      *  Location
      *
@@ -439,12 +482,14 @@ class ShipmentType
     /**
      * ASBIE
      *  Shipment. Export_ Country. Country
-     *  Identifies the country from which the goods are originally exported without any commercial transaction taking place in intermediate countries.
+     *  The country from which the goods were originally exported, without any commercial transaction taking place in intermediate countries.
      *  0..1
      *  Shipment
      *  Export
      *  Country
      *  Country
+     *  Country
+     *  Country of exportation (WCO ID 062)
      *
      * @var \horstoeko\ubl\entities\cac\ExportCountry $exportCountry
      */
@@ -453,12 +498,14 @@ class ShipmentType
     /**
      * ASBIE
      *  Shipment. Freight_ Allowance Charge. Allowance Charge
-     *  Costs incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the contract of carriage. In addition to transport costs, this may include such elements as packing, documentation, loading, unloading, and insurance (to the extent that they relate to the freight costs).
+     *  A cost incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the contract of carriage. In addition to transport costs, this may include such elements as packing, documentation, loading, unloading, and insurance to the extent that they relate to the freight costs.
      *  0..n
      *  Shipment
      *  Freight
      *  Allowance Charge
      *  Allowance Charge
+     *  Allowance Charge
+     *  Freight Costs
      *
      * @var \horstoeko\ubl\entities\cac\FreightAllowanceCharge[] $freightAllowanceCharge
      */
@@ -471,7 +518,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Identifier
-     *  Identifies a shipment.
+     *  An identifier for this shipment.
      *  1
      *  Shipment
      *  Identifier
@@ -491,7 +538,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Identifier
-     *  Identifies a shipment.
+     *  An identifier for this shipment.
      *  1
      *  Shipment
      *  Identifier
@@ -512,11 +559,11 @@ class ShipmentType
      * Gets as shippingPriorityLevelCode
      *
      * BBIE
-     *  Shipment. Shipping Priority Level. Code
-     *  The priority or level of service required for a shipment, expressed as a code.
+     *  Shipment. Shipping Priority Level Code. Code
+     *  A code signifying the priority or level of service required for this shipment.
      *  0..1
      *  Shipment
-     *  Shipping Priority Level
+     *  Shipping Priority Level Code
      *  Code
      *  Code. Type
      *  Service Level, Service Priority
@@ -532,11 +579,11 @@ class ShipmentType
      * Sets a new shippingPriorityLevelCode
      *
      * BBIE
-     *  Shipment. Shipping Priority Level. Code
-     *  The priority or level of service required for a shipment, expressed as a code.
+     *  Shipment. Shipping Priority Level Code. Code
+     *  A code signifying the priority or level of service required for this shipment.
      *  0..1
      *  Shipment
-     *  Shipping Priority Level
+     *  Shipping Priority Level Code
      *  Code
      *  Code. Type
      *  Service Level, Service Priority
@@ -555,7 +602,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Handling Code. Code
-     *  The handling required for a shipment, expressed as a code.
+     *  The handling required for this shipment, expressed as a code.
      *  0..1
      *  Shipment
      *  Handling Code
@@ -575,7 +622,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Handling Code. Code
-     *  The handling required for a shipment, expressed as a code.
+     *  The handling required for this shipment, expressed as a code.
      *  0..1
      *  Shipment
      *  Handling Code
@@ -593,19 +640,83 @@ class ShipmentType
     }
 
     /**
-     * Gets as handlingInstructions
+     * Adds as handlingInstructions
      *
      * BBIE
      *  Shipment. Handling_ Instructions. Text
-     *  Free-form text describing Handling Instructions for a shipment.
-     *  0..1
+     *  The handling required for this shipment, expressed as text.
+     *  0..n
      *  Shipment
      *  Handling
      *  Instructions
      *  Text
      *  Text. Type
      *
-     * @return \horstoeko\ubl\entities\cbc\HandlingInstructions
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\HandlingInstructions $handlingInstructions
+     */
+    public function addToHandlingInstructions(\horstoeko\ubl\entities\cbc\HandlingInstructions $handlingInstructions)
+    {
+        $this->handlingInstructions[] = $handlingInstructions;
+        return $this;
+    }
+
+    /**
+     * isset handlingInstructions
+     *
+     * BBIE
+     *  Shipment. Handling_ Instructions. Text
+     *  The handling required for this shipment, expressed as text.
+     *  0..n
+     *  Shipment
+     *  Handling
+     *  Instructions
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetHandlingInstructions($index)
+    {
+        return isset($this->handlingInstructions[$index]);
+    }
+
+    /**
+     * unset handlingInstructions
+     *
+     * BBIE
+     *  Shipment. Handling_ Instructions. Text
+     *  The handling required for this shipment, expressed as text.
+     *  0..n
+     *  Shipment
+     *  Handling
+     *  Instructions
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetHandlingInstructions($index)
+    {
+        unset($this->handlingInstructions[$index]);
+    }
+
+    /**
+     * Gets as handlingInstructions
+     *
+     * BBIE
+     *  Shipment. Handling_ Instructions. Text
+     *  The handling required for this shipment, expressed as text.
+     *  0..n
+     *  Shipment
+     *  Handling
+     *  Instructions
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\HandlingInstructions[]
      */
     public function getHandlingInstructions()
     {
@@ -617,21 +728,82 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Handling_ Instructions. Text
-     *  Free-form text describing Handling Instructions for a shipment.
-     *  0..1
+     *  The handling required for this shipment, expressed as text.
+     *  0..n
      *  Shipment
      *  Handling
      *  Instructions
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\HandlingInstructions $handlingInstructions
+     * @param \horstoeko\ubl\entities\cbc\HandlingInstructions[] $handlingInstructions
      * @return self
      */
-    public function setHandlingInstructions(\horstoeko\ubl\entities\cbc\HandlingInstructions $handlingInstructions)
+    public function setHandlingInstructions(array $handlingInstructions)
     {
         $this->handlingInstructions = $handlingInstructions;
         return $this;
+    }
+
+    /**
+     * Adds as information
+     *
+     * BBIE
+     *  Shipment. Information. Text
+     *  Free-form text pertinent to this shipment, conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Shipment
+     *  Information
+     *  Text
+     *  Text. Type
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\Information $information
+     */
+    public function addToInformation(\horstoeko\ubl\entities\cbc\Information $information)
+    {
+        $this->information[] = $information;
+        return $this;
+    }
+
+    /**
+     * isset information
+     *
+     * BBIE
+     *  Shipment. Information. Text
+     *  Free-form text pertinent to this shipment, conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Shipment
+     *  Information
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetInformation($index)
+    {
+        return isset($this->information[$index]);
+    }
+
+    /**
+     * unset information
+     *
+     * BBIE
+     *  Shipment. Information. Text
+     *  Free-form text pertinent to this shipment, conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Shipment
+     *  Information
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetInformation($index)
+    {
+        unset($this->information[$index]);
     }
 
     /**
@@ -639,14 +811,14 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Information. Text
-     *  Free-form text applying to a shipment. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text pertinent to this shipment, conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Shipment
      *  Information
      *  Text
      *  Text. Type
      *
-     * @return \horstoeko\ubl\entities\cbc\Information
+     * @return \horstoeko\ubl\entities\cbc\Information[]
      */
     public function getInformation()
     {
@@ -658,17 +830,17 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Information. Text
-     *  Free-form text applying to a shipment. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text pertinent to this shipment, conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Shipment
      *  Information
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Information $information
+     * @param \horstoeko\ubl\entities\cbc\Information[] $information
      * @return self
      */
-    public function setInformation(\horstoeko\ubl\entities\cbc\Information $information)
+    public function setInformation(array $information)
     {
         $this->information = $information;
         return $this;
@@ -721,7 +893,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Net_ Weight. Measure
-     *  The total net weight of a shipment; the weight of the goods plus packaging.
+     *  The net weight of this shipment, excluding packaging.
      *  0..1
      *  Shipment
      *  Net
@@ -741,7 +913,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Net_ Weight. Measure
-     *  The total net weight of a shipment; the weight of the goods plus packaging.
+     *  The net weight of this shipment, excluding packaging.
      *  0..1
      *  Shipment
      *  Net
@@ -763,7 +935,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Net Net_ Weight. Measure
-     *  The weight of the goods net of packaging and transport equipment.
+     *  The total net weight of this shipment, excluding packaging and transport equipment.
      *  0..1
      *  Shipment
      *  Net Net
@@ -783,7 +955,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Net Net_ Weight. Measure
-     *  The weight of the goods net of packaging and transport equipment.
+     *  The total net weight of this shipment, excluding packaging and transport equipment.
      *  0..1
      *  Shipment
      *  Net Net
@@ -805,7 +977,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Gross_ Volume. Measure
-     *  The total volume of the goods in a shipment plus packaging.
+     *  The total volume of the goods in this shipment, including packaging.
      *  0..1
      *  Shipment
      *  Gross
@@ -825,7 +997,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Gross_ Volume. Measure
-     *  The total volume of the goods in a shipment plus packaging.
+     *  The total volume of the goods in this shipment, including packaging.
      *  0..1
      *  Shipment
      *  Gross
@@ -847,7 +1019,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Net_ Volume. Measure
-     *  The volume of a shipment net of packaging and transport equipment.
+     *  The total volume of the goods in this shipment, excluding packaging and transport equipment.
      *  0..1
      *  Shipment
      *  Net
@@ -867,7 +1039,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Net_ Volume. Measure
-     *  The volume of a shipment net of packaging and transport equipment.
+     *  The total volume of the goods in this shipment, excluding packaging and transport equipment.
      *  0..1
      *  Shipment
      *  Net
@@ -889,7 +1061,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Total_ Goods Item Quantity. Quantity
-     *  Count of the total number of goods items within a shipment.
+     *  The total number of goods items in this shipment.
      *  0..1
      *  Shipment
      *  Total
@@ -909,7 +1081,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Total_ Goods Item Quantity. Quantity
-     *  Count of the total number of goods items within a shipment.
+     *  The total number of goods items in this shipment.
      *  0..1
      *  Shipment
      *  Total
@@ -931,7 +1103,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Total_ Transport Handling Unit Quantity. Quantity
-     *  Count of the number of pieces of transport handling equipment in a shipment, such as pallets, boxes, and cases.
+     *  The number of pieces of transport handling equipment (pallets, boxes, cases, etc.) in this shipment.
      *  0..1
      *  Shipment
      *  Total
@@ -952,7 +1124,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Total_ Transport Handling Unit Quantity. Quantity
-     *  Count of the number of pieces of transport handling equipment in a shipment, such as pallets, boxes, and cases.
+     *  The number of pieces of transport handling equipment (pallets, boxes, cases, etc.) in this shipment.
      *  0..1
      *  Shipment
      *  Total
@@ -975,7 +1147,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Insurance_ Value. Amount
-     *  The total sum covered by an insurance for the shipment.
+     *  The amount covered by insurance for this shipment.
      *  0..1
      *  Shipment
      *  Insurance
@@ -996,7 +1168,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Insurance_ Value. Amount
-     *  The total sum covered by an insurance for the shipment.
+     *  The amount covered by insurance for this shipment.
      *  0..1
      *  Shipment
      *  Insurance
@@ -1019,7 +1191,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Declared Customs_ Value. Amount
-     *  Amount declared for customs purposes of those goods in a shipment which are subject to the same customs procedure, and have the same tariff/statistical heading, country information, and duty regime.
+     *  The total declared value for customs purposes of those goods in this shipment that are subject to the same customs procedure and have the same tariff/statistical heading, country information, and duty regime.
      *  0..1
      *  Shipment
      *  Declared Customs
@@ -1039,7 +1211,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Declared Customs_ Value. Amount
-     *  Amount declared for customs purposes of those goods in a shipment which are subject to the same customs procedure, and have the same tariff/statistical heading, country information, and duty regime.
+     *  The total declared value for customs purposes of those goods in this shipment that are subject to the same customs procedure and have the same tariff/statistical heading, country information, and duty regime.
      *  0..1
      *  Shipment
      *  Declared Customs
@@ -1061,7 +1233,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Declared For Carriage_ Value. Amount
-     *  Value, declared by the shipper or his agent solely for the purpose of varying the carrier's level of liability from that provided in the contract of carriage, in case of loss or damage to goods or delayed delivery.
+     *  The value of this shipment, declared by the shipper or his agent solely for the purpose of varying the carrier's level of liability from that provided in the contract of carriage, in case of loss or damage to goods or delayed delivery.
      *  0..1
      *  Shipment
      *  Declared For Carriage
@@ -1082,7 +1254,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Declared For Carriage_ Value. Amount
-     *  Value, declared by the shipper or his agent solely for the purpose of varying the carrier's level of liability from that provided in the contract of carriage, in case of loss or damage to goods or delayed delivery.
+     *  The value of this shipment, declared by the shipper or his agent solely for the purpose of varying the carrier's level of liability from that provided in the contract of carriage, in case of loss or damage to goods or delayed delivery.
      *  0..1
      *  Shipment
      *  Declared For Carriage
@@ -1105,7 +1277,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Declared Statistics_ Value. Amount
-     *  Value declared for statistical purposes of those goods in a consignment which have the same statistical heading.
+     *  The value, declared for statistical purposes, of those goods in this shipment that have the same statistical heading.
      *  0..1
      *  Shipment
      *  Declared Statistics
@@ -1126,7 +1298,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Declared Statistics_ Value. Amount
-     *  Value declared for statistical purposes of those goods in a consignment which have the same statistical heading.
+     *  The value, declared for statistical purposes, of those goods in this shipment that have the same statistical heading.
      *  0..1
      *  Shipment
      *  Declared Statistics
@@ -1149,7 +1321,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Free On Board_ Value. Amount
-     *  Monetary amount that has to be or has been paid as calculated under the applicable trade delivery.
+     *  The monetary amount that has to be or has been paid as calculated under the applicable trade delivery.
      *  0..1
      *  Shipment
      *  Free On Board
@@ -1170,7 +1342,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Free On Board_ Value. Amount
-     *  Monetary amount that has to be or has been paid as calculated under the applicable trade delivery.
+     *  The monetary amount that has to be or has been paid as calculated under the applicable trade delivery.
      *  0..1
      *  Shipment
      *  Free On Board
@@ -1193,7 +1365,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Special_ Instructions. Text
-     *  Special instructions relating to a shipment.
+     *  Special instructions relating to this shipment.
      *  0..n
      *  Shipment
      *  Special
@@ -1215,7 +1387,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Special_ Instructions. Text
-     *  Special instructions relating to a shipment.
+     *  Special instructions relating to this shipment.
      *  0..n
      *  Shipment
      *  Special
@@ -1236,7 +1408,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Special_ Instructions. Text
-     *  Special instructions relating to a shipment.
+     *  Special instructions relating to this shipment.
      *  0..n
      *  Shipment
      *  Special
@@ -1257,7 +1429,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Special_ Instructions. Text
-     *  Special instructions relating to a shipment.
+     *  Special instructions relating to this shipment.
      *  0..n
      *  Shipment
      *  Special
@@ -1277,7 +1449,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Special_ Instructions. Text
-     *  Special instructions relating to a shipment.
+     *  Special instructions relating to this shipment.
      *  0..n
      *  Shipment
      *  Special
@@ -1299,7 +1471,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Delivery_ Instructions. Text
-     *  Delivery instructions relating to a shipment.
+     *  Delivery instructions relating to this shipment.
      *  0..n
      *  Shipment
      *  Delivery
@@ -1321,7 +1493,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Delivery_ Instructions. Text
-     *  Delivery instructions relating to a shipment.
+     *  Delivery instructions relating to this shipment.
      *  0..n
      *  Shipment
      *  Delivery
@@ -1342,7 +1514,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Delivery_ Instructions. Text
-     *  Delivery instructions relating to a shipment.
+     *  Delivery instructions relating to this shipment.
      *  0..n
      *  Shipment
      *  Delivery
@@ -1363,7 +1535,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Delivery_ Instructions. Text
-     *  Delivery instructions relating to a shipment.
+     *  Delivery instructions relating to this shipment.
      *  0..n
      *  Shipment
      *  Delivery
@@ -1383,7 +1555,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Delivery_ Instructions. Text
-     *  Delivery instructions relating to a shipment.
+     *  Delivery instructions relating to this shipment.
      *  0..n
      *  Shipment
      *  Delivery
@@ -1405,7 +1577,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Split Consignment_ Indicator. Indicator
-     *  Indicates whether the consignment has been split in transit.
+     *  An indicator that the consignment has been split in transit (true) or not (false).
      *  0..1
      *  Shipment
      *  Split Consignment
@@ -1425,7 +1597,7 @@ class ShipmentType
      *
      * BBIE
      *  Shipment. Split Consignment_ Indicator. Indicator
-     *  Indicates whether the consignment has been split in transit.
+     *  An indicator that the consignment has been split in transit (true) or not (false).
      *  0..1
      *  Shipment
      *  Split Consignment
@@ -1443,17 +1615,121 @@ class ShipmentType
     }
 
     /**
+     * Gets as consignmentQuantity
+     *
+     * BBIE
+     *  Shipment. Consignment_ Quantity. Quantity
+     *  The total number of consignments within this shipment.
+     *  0..1
+     *  Shipment
+     *  Consignment
+     *  Quantity
+     *  Quantity
+     *  Quantity. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\ConsignmentQuantity
+     */
+    public function getConsignmentQuantity()
+    {
+        return $this->consignmentQuantity;
+    }
+
+    /**
+     * Sets a new consignmentQuantity
+     *
+     * BBIE
+     *  Shipment. Consignment_ Quantity. Quantity
+     *  The total number of consignments within this shipment.
+     *  0..1
+     *  Shipment
+     *  Consignment
+     *  Quantity
+     *  Quantity
+     *  Quantity. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\ConsignmentQuantity $consignmentQuantity
+     * @return self
+     */
+    public function setConsignmentQuantity(\horstoeko\ubl\entities\cbc\ConsignmentQuantity $consignmentQuantity)
+    {
+        $this->consignmentQuantity = $consignmentQuantity;
+        return $this;
+    }
+
+    /**
+     * Adds as consignment
+     *
+     * ASBIE
+     *  Shipment. Consignment
+     *  A consignment covering this shipment.
+     *  0..n
+     *  Shipment
+     *  Consignment
+     *  Consignment
+     *  Consignment
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\Consignment $consignment
+     */
+    public function addToConsignment(\horstoeko\ubl\entities\cac\Consignment $consignment)
+    {
+        $this->consignment[] = $consignment;
+        return $this;
+    }
+
+    /**
+     * isset consignment
+     *
+     * ASBIE
+     *  Shipment. Consignment
+     *  A consignment covering this shipment.
+     *  0..n
+     *  Shipment
+     *  Consignment
+     *  Consignment
+     *  Consignment
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetConsignment($index)
+    {
+        return isset($this->consignment[$index]);
+    }
+
+    /**
+     * unset consignment
+     *
+     * ASBIE
+     *  Shipment. Consignment
+     *  A consignment covering this shipment.
+     *  0..n
+     *  Shipment
+     *  Consignment
+     *  Consignment
+     *  Consignment
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetConsignment($index)
+    {
+        unset($this->consignment[$index]);
+    }
+
+    /**
      * Gets as consignment
      *
      * ASBIE
      *  Shipment. Consignment
-     *  An association to Consignment covering the shipment.
-     *  1
+     *  A consignment covering this shipment.
+     *  0..n
      *  Shipment
      *  Consignment
      *  Consignment
+     *  Consignment
      *
-     * @return \horstoeko\ubl\entities\cac\Consignment
+     * @return \horstoeko\ubl\entities\cac\Consignment[]
      */
     public function getConsignment()
     {
@@ -1465,16 +1741,17 @@ class ShipmentType
      *
      * ASBIE
      *  Shipment. Consignment
-     *  An association to Consignment covering the shipment.
-     *  1
+     *  A consignment covering this shipment.
+     *  0..n
      *  Shipment
      *  Consignment
      *  Consignment
+     *  Consignment
      *
-     * @param \horstoeko\ubl\entities\cac\Consignment $consignment
+     * @param \horstoeko\ubl\entities\cac\Consignment[] $consignment
      * @return self
      */
-    public function setConsignment(\horstoeko\ubl\entities\cac\Consignment $consignment)
+    public function setConsignment(array $consignment)
     {
         $this->consignment = $consignment;
         return $this;
@@ -1485,9 +1762,10 @@ class ShipmentType
      *
      * ASBIE
      *  Shipment. Goods Item
-     *  An association to Goods Item (for Bulk Goods).
+     *  A goods item included in this shipment.
      *  0..n
      *  Shipment
+     *  Goods Item
      *  Goods Item
      *  Goods Item
      *
@@ -1505,9 +1783,10 @@ class ShipmentType
      *
      * ASBIE
      *  Shipment. Goods Item
-     *  An association to Goods Item (for Bulk Goods).
+     *  A goods item included in this shipment.
      *  0..n
      *  Shipment
+     *  Goods Item
      *  Goods Item
      *  Goods Item
      *
@@ -1524,9 +1803,10 @@ class ShipmentType
      *
      * ASBIE
      *  Shipment. Goods Item
-     *  An association to Goods Item (for Bulk Goods).
+     *  A goods item included in this shipment.
      *  0..n
      *  Shipment
+     *  Goods Item
      *  Goods Item
      *  Goods Item
      *
@@ -1543,9 +1823,10 @@ class ShipmentType
      *
      * ASBIE
      *  Shipment. Goods Item
-     *  An association to Goods Item (for Bulk Goods).
+     *  A goods item included in this shipment.
      *  0..n
      *  Shipment
+     *  Goods Item
      *  Goods Item
      *  Goods Item
      *
@@ -1561,9 +1842,10 @@ class ShipmentType
      *
      * ASBIE
      *  Shipment. Goods Item
-     *  An association to Goods Item (for Bulk Goods).
+     *  A goods item included in this shipment.
      *  0..n
      *  Shipment
+     *  Goods Item
      *  Goods Item
      *  Goods Item
      *
@@ -1581,9 +1863,10 @@ class ShipmentType
      *
      * ASBIE
      *  Shipment. Shipment Stage
-     *  An association to Shipment Stage.
+     *  A stage in the transport movement of this shipment.
      *  0..n
      *  Shipment
+     *  Shipment Stage
      *  Shipment Stage
      *  Shipment Stage
      *
@@ -1601,9 +1884,10 @@ class ShipmentType
      *
      * ASBIE
      *  Shipment. Shipment Stage
-     *  An association to Shipment Stage.
+     *  A stage in the transport movement of this shipment.
      *  0..n
      *  Shipment
+     *  Shipment Stage
      *  Shipment Stage
      *  Shipment Stage
      *
@@ -1620,9 +1904,10 @@ class ShipmentType
      *
      * ASBIE
      *  Shipment. Shipment Stage
-     *  An association to Shipment Stage.
+     *  A stage in the transport movement of this shipment.
      *  0..n
      *  Shipment
+     *  Shipment Stage
      *  Shipment Stage
      *  Shipment Stage
      *
@@ -1639,9 +1924,10 @@ class ShipmentType
      *
      * ASBIE
      *  Shipment. Shipment Stage
-     *  An association to Shipment Stage.
+     *  A stage in the transport movement of this shipment.
      *  0..n
      *  Shipment
+     *  Shipment Stage
      *  Shipment Stage
      *  Shipment Stage
      *
@@ -1657,9 +1943,10 @@ class ShipmentType
      *
      * ASBIE
      *  Shipment. Shipment Stage
-     *  An association to Shipment Stage.
+     *  A stage in the transport movement of this shipment.
      *  0..n
      *  Shipment
+     *  Shipment Stage
      *  Shipment Stage
      *  Shipment Stage
      *
@@ -1677,9 +1964,10 @@ class ShipmentType
      *
      * ASBIE
      *  Shipment. Delivery
-     *  An association to Delivery.
+     *  The delivery of this shipment.
      *  0..1
      *  Shipment
+     *  Delivery
      *  Delivery
      *  Delivery
      *
@@ -1695,9 +1983,10 @@ class ShipmentType
      *
      * ASBIE
      *  Shipment. Delivery
-     *  An association to Delivery.
+     *  The delivery of this shipment.
      *  0..1
      *  Shipment
+     *  Delivery
      *  Delivery
      *  Delivery
      *
@@ -1715,9 +2004,10 @@ class ShipmentType
      *
      * ASBIE
      *  Shipment. Transport Handling Unit
-     *  An association to Transport Handling Unit used for loose and containerized goods.
+     *  A transport handling unit associated with this shipment.
      *  0..n
      *  Shipment
+     *  Transport Handling Unit
      *  Transport Handling Unit
      *  Transport Handling Unit
      *
@@ -1735,9 +2025,10 @@ class ShipmentType
      *
      * ASBIE
      *  Shipment. Transport Handling Unit
-     *  An association to Transport Handling Unit used for loose and containerized goods.
+     *  A transport handling unit associated with this shipment.
      *  0..n
      *  Shipment
+     *  Transport Handling Unit
      *  Transport Handling Unit
      *  Transport Handling Unit
      *
@@ -1754,9 +2045,10 @@ class ShipmentType
      *
      * ASBIE
      *  Shipment. Transport Handling Unit
-     *  An association to Transport Handling Unit used for loose and containerized goods.
+     *  A transport handling unit associated with this shipment.
      *  0..n
      *  Shipment
+     *  Transport Handling Unit
      *  Transport Handling Unit
      *  Transport Handling Unit
      *
@@ -1773,9 +2065,10 @@ class ShipmentType
      *
      * ASBIE
      *  Shipment. Transport Handling Unit
-     *  An association to Transport Handling Unit used for loose and containerized goods.
+     *  A transport handling unit associated with this shipment.
      *  0..n
      *  Shipment
+     *  Transport Handling Unit
      *  Transport Handling Unit
      *  Transport Handling Unit
      *
@@ -1791,9 +2084,10 @@ class ShipmentType
      *
      * ASBIE
      *  Shipment. Transport Handling Unit
-     *  An association to Transport Handling Unit used for loose and containerized goods.
+     *  A transport handling unit associated with this shipment.
      *  0..n
      *  Shipment
+     *  Transport Handling Unit
      *  Transport Handling Unit
      *  Transport Handling Unit
      *
@@ -1807,14 +2101,57 @@ class ShipmentType
     }
 
     /**
+     * Gets as returnAddress
+     *
+     * ASBIE
+     *  Shipment. Return_ Address. Address
+     *  The address to which a shipment should be returned.
+     *  0..1
+     *  Shipment
+     *  Return
+     *  Address
+     *  Address
+     *  Address
+     *
+     * @return \horstoeko\ubl\entities\cac\ReturnAddress
+     */
+    public function getReturnAddress()
+    {
+        return $this->returnAddress;
+    }
+
+    /**
+     * Sets a new returnAddress
+     *
+     * ASBIE
+     *  Shipment. Return_ Address. Address
+     *  The address to which a shipment should be returned.
+     *  0..1
+     *  Shipment
+     *  Return
+     *  Address
+     *  Address
+     *  Address
+     *
+     * @param \horstoeko\ubl\entities\cac\ReturnAddress $returnAddress
+     * @return self
+     */
+    public function setReturnAddress(\horstoeko\ubl\entities\cac\ReturnAddress $returnAddress)
+    {
+        $this->returnAddress = $returnAddress;
+        return $this;
+    }
+
+    /**
      * Gets as originAddress
      *
      * ASBIE
      *  Shipment. Origin_ Address. Address
-     *  An association to the region in which the goods have been produced or manufactured, according to criteria laid down for the purposes of application of the Customs tariff, or quantitative restrictions, or of any other measure related to trade.
+     *  The region in which the goods have been produced or manufactured, according to criteria laid down for the purposes of application of the customs tariff, or of quantitative restrictions, or of any other measure related to trade.
      *  0..1
      *  Shipment
      *  Origin
+     *  Address
      *  Address
      *  Address
      *
@@ -1830,10 +2167,11 @@ class ShipmentType
      *
      * ASBIE
      *  Shipment. Origin_ Address. Address
-     *  An association to the region in which the goods have been produced or manufactured, according to criteria laid down for the purposes of application of the Customs tariff, or quantitative restrictions, or of any other measure related to trade.
+     *  The region in which the goods have been produced or manufactured, according to criteria laid down for the purposes of application of the customs tariff, or of quantitative restrictions, or of any other measure related to trade.
      *  0..1
      *  Shipment
      *  Origin
+     *  Address
      *  Address
      *  Address
      *
@@ -1851,10 +2189,11 @@ class ShipmentType
      *
      * ASBIE
      *  Shipment. First Arrival Port_ Location. Location
-     *  Identifies the first arrival location. This would be a port for sea, airport for air, and border post for land crossing.
+     *  The first arrival location of a shipment. This would be a port for sea, an airport for air, a terminal for rail, or a border post for land crossing.
      *  0..1
      *  Shipment
      *  First Arrival Port
+     *  Location
      *  Location
      *  Location
      *
@@ -1870,10 +2209,11 @@ class ShipmentType
      *
      * ASBIE
      *  Shipment. First Arrival Port_ Location. Location
-     *  Identifies the first arrival location. This would be a port for sea, airport for air, and border post for land crossing.
+     *  The first arrival location of a shipment. This would be a port for sea, an airport for air, a terminal for rail, or a border post for land crossing.
      *  0..1
      *  Shipment
      *  First Arrival Port
+     *  Location
      *  Location
      *  Location
      *
@@ -1891,10 +2231,11 @@ class ShipmentType
      *
      * ASBIE
      *  Shipment. Last Exit Port_ Location. Location
-     *  Identifies the final exporting location. This would be a port for sea, airport for air, and border post for land crossing.
+     *  The final exporting location for a shipment. This would be a port for sea, an airport for air, a terminal for rail, or a border post for land crossing.
      *  0..1
      *  Shipment
      *  Last Exit Port
+     *  Location
      *  Location
      *  Location
      *
@@ -1910,10 +2251,11 @@ class ShipmentType
      *
      * ASBIE
      *  Shipment. Last Exit Port_ Location. Location
-     *  Identifies the final exporting location. This would be a port for sea, airport for air, and border post for land crossing.
+     *  The final exporting location for a shipment. This would be a port for sea, an airport for air, a terminal for rail, or a border post for land crossing.
      *  0..1
      *  Shipment
      *  Last Exit Port
+     *  Location
      *  Location
      *  Location
      *
@@ -1931,12 +2273,14 @@ class ShipmentType
      *
      * ASBIE
      *  Shipment. Export_ Country. Country
-     *  Identifies the country from which the goods are originally exported without any commercial transaction taking place in intermediate countries.
+     *  The country from which the goods were originally exported, without any commercial transaction taking place in intermediate countries.
      *  0..1
      *  Shipment
      *  Export
      *  Country
      *  Country
+     *  Country
+     *  Country of exportation (WCO ID 062)
      *
      * @return \horstoeko\ubl\entities\cac\ExportCountry
      */
@@ -1950,12 +2294,14 @@ class ShipmentType
      *
      * ASBIE
      *  Shipment. Export_ Country. Country
-     *  Identifies the country from which the goods are originally exported without any commercial transaction taking place in intermediate countries.
+     *  The country from which the goods were originally exported, without any commercial transaction taking place in intermediate countries.
      *  0..1
      *  Shipment
      *  Export
      *  Country
      *  Country
+     *  Country
+     *  Country of exportation (WCO ID 062)
      *
      * @param \horstoeko\ubl\entities\cac\ExportCountry $exportCountry
      * @return self
@@ -1971,12 +2317,14 @@ class ShipmentType
      *
      * ASBIE
      *  Shipment. Freight_ Allowance Charge. Allowance Charge
-     *  Costs incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the contract of carriage. In addition to transport costs, this may include such elements as packing, documentation, loading, unloading, and insurance (to the extent that they relate to the freight costs).
+     *  A cost incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the contract of carriage. In addition to transport costs, this may include such elements as packing, documentation, loading, unloading, and insurance to the extent that they relate to the freight costs.
      *  0..n
      *  Shipment
      *  Freight
      *  Allowance Charge
      *  Allowance Charge
+     *  Allowance Charge
+     *  Freight Costs
      *
      * @return self
      * @param \horstoeko\ubl\entities\cac\FreightAllowanceCharge $freightAllowanceCharge
@@ -1992,12 +2340,14 @@ class ShipmentType
      *
      * ASBIE
      *  Shipment. Freight_ Allowance Charge. Allowance Charge
-     *  Costs incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the contract of carriage. In addition to transport costs, this may include such elements as packing, documentation, loading, unloading, and insurance (to the extent that they relate to the freight costs).
+     *  A cost incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the contract of carriage. In addition to transport costs, this may include such elements as packing, documentation, loading, unloading, and insurance to the extent that they relate to the freight costs.
      *  0..n
      *  Shipment
      *  Freight
      *  Allowance Charge
      *  Allowance Charge
+     *  Allowance Charge
+     *  Freight Costs
      *
      * @param int|string $index
      * @return bool
@@ -2012,12 +2362,14 @@ class ShipmentType
      *
      * ASBIE
      *  Shipment. Freight_ Allowance Charge. Allowance Charge
-     *  Costs incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the contract of carriage. In addition to transport costs, this may include such elements as packing, documentation, loading, unloading, and insurance (to the extent that they relate to the freight costs).
+     *  A cost incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the contract of carriage. In addition to transport costs, this may include such elements as packing, documentation, loading, unloading, and insurance to the extent that they relate to the freight costs.
      *  0..n
      *  Shipment
      *  Freight
      *  Allowance Charge
      *  Allowance Charge
+     *  Allowance Charge
+     *  Freight Costs
      *
      * @param int|string $index
      * @return void
@@ -2032,12 +2384,14 @@ class ShipmentType
      *
      * ASBIE
      *  Shipment. Freight_ Allowance Charge. Allowance Charge
-     *  Costs incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the contract of carriage. In addition to transport costs, this may include such elements as packing, documentation, loading, unloading, and insurance (to the extent that they relate to the freight costs).
+     *  A cost incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the contract of carriage. In addition to transport costs, this may include such elements as packing, documentation, loading, unloading, and insurance to the extent that they relate to the freight costs.
      *  0..n
      *  Shipment
      *  Freight
      *  Allowance Charge
      *  Allowance Charge
+     *  Allowance Charge
+     *  Freight Costs
      *
      * @return \horstoeko\ubl\entities\cac\FreightAllowanceCharge[]
      */
@@ -2051,12 +2405,14 @@ class ShipmentType
      *
      * ASBIE
      *  Shipment. Freight_ Allowance Charge. Allowance Charge
-     *  Costs incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the contract of carriage. In addition to transport costs, this may include such elements as packing, documentation, loading, unloading, and insurance (to the extent that they relate to the freight costs).
+     *  A cost incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the contract of carriage. In addition to transport costs, this may include such elements as packing, documentation, loading, unloading, and insurance to the extent that they relate to the freight costs.
      *  0..n
      *  Shipment
      *  Freight
      *  Allowance Charge
      *  Allowance Charge
+     *  Allowance Charge
+     *  Freight Costs
      *
      * @param \horstoeko\ubl\entities\cac\FreightAllowanceCharge[] $freightAllowanceCharge
      * @return self

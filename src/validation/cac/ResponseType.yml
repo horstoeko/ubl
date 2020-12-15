@@ -1,7 +1,5 @@
 horstoeko\ubl\entities\cac\ResponseType:
     properties:
-        referenceID:
+        status:
             -
-                NotNull:
-                    groups:
-                        - xsd_rules
+                Valid: null

@@ -1,0 +1,14 @@
+horstoeko\ubl\entities\xades\NoticeReferenceType:
+    properties:
+        organization:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        noticeNumbers:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

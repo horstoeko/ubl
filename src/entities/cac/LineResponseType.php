@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Line Response. Details
- *  A response to a Line in a Document.
+ *  A class to describe responses to a line in a document.
  *  Line Response
  * XSD Type: LineResponseType
  */
@@ -17,9 +17,10 @@ class LineResponseType
     /**
      * ASBIE
      *  Line Response. Line Reference
-     *  An association to Line Reference.
+     *  A reference to the line being responded to.
      *  1
      *  Line Response
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -30,9 +31,10 @@ class LineResponseType
     /**
      * ASBIE
      *  Line Response. Response
-     *  An association to Response.
+     *  A response to the referenced line.
      *  1..n
      *  Line Response
+     *  Response
      *  Response
      *  Response
      *
@@ -47,9 +49,10 @@ class LineResponseType
      *
      * ASBIE
      *  Line Response. Line Reference
-     *  An association to Line Reference.
+     *  A reference to the line being responded to.
      *  1
      *  Line Response
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -65,9 +68,10 @@ class LineResponseType
      *
      * ASBIE
      *  Line Response. Line Reference
-     *  An association to Line Reference.
+     *  A reference to the line being responded to.
      *  1
      *  Line Response
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -85,9 +89,10 @@ class LineResponseType
      *
      * ASBIE
      *  Line Response. Response
-     *  An association to Response.
+     *  A response to the referenced line.
      *  1..n
      *  Line Response
+     *  Response
      *  Response
      *  Response
      *
@@ -105,9 +110,10 @@ class LineResponseType
      *
      * ASBIE
      *  Line Response. Response
-     *  An association to Response.
+     *  A response to the referenced line.
      *  1..n
      *  Line Response
+     *  Response
      *  Response
      *  Response
      *
@@ -124,9 +130,10 @@ class LineResponseType
      *
      * ASBIE
      *  Line Response. Response
-     *  An association to Response.
+     *  A response to the referenced line.
      *  1..n
      *  Line Response
+     *  Response
      *  Response
      *  Response
      *
@@ -143,9 +150,10 @@ class LineResponseType
      *
      * ASBIE
      *  Line Response. Response
-     *  An association to Response.
+     *  A response to the referenced line.
      *  1..n
      *  Line Response
+     *  Response
      *  Response
      *  Response
      *
@@ -161,9 +169,10 @@ class LineResponseType
      *
      * ASBIE
      *  Line Response. Response
-     *  An association to Response.
+     *  A response to the referenced line.
      *  1..n
      *  Line Response
+     *  Response
      *  Response
      *  Response
      *

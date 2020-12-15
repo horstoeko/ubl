@@ -1,0 +1,69 @@
+horstoeko\ubl\entities\cac\TendererRequirementType:
+    properties:
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: Name
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getName
+                setter: setName
+            xml_list:
+                inline: true
+                entry_name: Name
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Name>
+        tendererRequirementTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: TendererRequirementTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTendererRequirementTypeCode
+                setter: setTendererRequirementTypeCode
+            type: horstoeko\ubl\entities\cbc\TendererRequirementTypeCode
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: Description
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>
+        legalReference:
+            expose: true
+            access_type: public_method
+            serialized_name: LegalReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getLegalReference
+                setter: setLegalReference
+            type: horstoeko\ubl\entities\cbc\LegalReference
+        suggestedEvidence:
+            expose: true
+            access_type: public_method
+            serialized_name: SuggestedEvidence
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getSuggestedEvidence
+                setter: setSuggestedEvidence
+            xml_list:
+                inline: true
+                entry_name: SuggestedEvidence
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\SuggestedEvidence>

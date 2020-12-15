@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Debit Note Line. Details
- *  Information about a Debit Note Line.
+ *  A class to define a line in a Debit Note.
  *  Debit Note Line
  * XSD Type: DebitNoteLineType
  */
@@ -17,7 +17,7 @@ class DebitNoteLineType
     /**
      * BBIE
      *  Debit Note Line. Identifier
-     *  Identifies the Debit Note Line.
+     *  An identifier for this debit note line.
      *  1
      *  Debit Note Line
      *  Identifier
@@ -31,7 +31,7 @@ class DebitNoteLineType
     /**
      * BBIE
      *  Debit Note Line. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this debit note line.
      *  0..1
      *  Debit Note Line
      *  UUID
@@ -45,21 +45,23 @@ class DebitNoteLineType
     /**
      * BBIE
      *  Debit Note Line. Note. Text
-     *  Free-form text applying to the Debit Note Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Debit Note Line
      *  Note
      *  Text
      *  Text. Type
      *
-     * @var \horstoeko\ubl\entities\cbc\Note $note
+     * @var \horstoeko\ubl\entities\cbc\Note[] $note
      */
-    private $note = null;
+    private $note = [
+        
+    ];
 
     /**
      * BBIE
      *  Debit Note Line. Debited_ Quantity. Quantity
-     *  The quantity of Items debited.
+     *  The quantity of Items debited in this debit note line.
      *  0..1
      *  Debit Note Line
      *  Debited
@@ -74,7 +76,7 @@ class DebitNoteLineType
     /**
      * BBIE
      *  Debit Note Line. Line Extension Amount. Amount
-     *  The total amount for the Debit Note Line, including Allowance Charges but net of taxes.
+     *  The total amount for this debit note line, including allowance charges but net of taxes.
      *  1
      *  Debit Note Line
      *  Line Extension Amount
@@ -88,7 +90,7 @@ class DebitNoteLineType
     /**
      * BBIE
      *  Debit Note Line. Tax Point Date. Date
-     *  The date of the Debit Note Line, used to indicate the point at which tax becomes applicable.
+     *  The date of this debit note line, used to indicate the point at which tax becomes applicable.
      *  0..1
      *  Debit Note Line
      *  Tax Point Date
@@ -102,7 +104,7 @@ class DebitNoteLineType
     /**
      * BBIE
      *  Debit Note Line. Accounting Cost Code. Code
-     *  The buyer's accounting code applied to the Debit Note Line.
+     *  The buyer's accounting cost centre for this debit note line, expressed as a code.
      *  0..1
      *  Debit Note Line
      *  Accounting Cost Code
@@ -116,7 +118,7 @@ class DebitNoteLineType
     /**
      * BBIE
      *  Debit Note Line. Accounting Cost. Text
-     *  The buyer's accounting code applied to the Debit Note Line, expressed as text.
+     *  The buyer's accounting cost centre for this debit note line, expressed as text.
      *  0..1
      *  Debit Note Line
      *  Accounting Cost
@@ -128,12 +130,27 @@ class DebitNoteLineType
     private $accountingCost = null;
 
     /**
+     * BBIE
+     *  Debit Note Line. Payment Purpose Code. Code
+     *  A code signifying the business purpose for this payment.
+     *  0..1
+     *  Debit Note Line
+     *  Payment Purpose Code
+     *  Code
+     *  Code. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\PaymentPurposeCode $paymentPurposeCode
+     */
+    private $paymentPurposeCode = null;
+
+    /**
      * ASBIE
      *  Debit Note Line. Discrepancy_ Response. Response
-     *  An association to Discrepancy Response; the reason for the Debit.
+     *  A reason for the debit.
      *  0..n
      *  Debit Note Line
      *  Discrepancy
+     *  Response
      *  Response
      *  Response
      *
@@ -146,10 +163,11 @@ class DebitNoteLineType
     /**
      * ASBIE
      *  Debit Note Line. Despatch_ Line Reference. Line Reference
-     *  An associative reference to Despatch Line.
+     *  A reference to a despatch line associated with this debit note line.
      *  0..n
      *  Debit Note Line
      *  Despatch
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -162,10 +180,11 @@ class DebitNoteLineType
     /**
      * ASBIE
      *  Debit Note Line. Receipt_ Line Reference. Line Reference
-     *  An associative reference to Receipt Line.
+     *  A reference to a receipt line associated with this debit note line.
      *  0..n
      *  Debit Note Line
      *  Receipt
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -178,9 +197,10 @@ class DebitNoteLineType
     /**
      * ASBIE
      *  Debit Note Line. Billing Reference
-     *  An association to Billing Reference.
+     *  A reference to a billing document associated with this debit note line.
      *  0..n
      *  Debit Note Line
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -193,9 +213,10 @@ class DebitNoteLineType
     /**
      * ASBIE
      *  Debit Note Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this debit note line.
      *  0..n
      *  Debit Note Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -208,9 +229,10 @@ class DebitNoteLineType
     /**
      * ASBIE
      *  Debit Note Line. Pricing Reference
-     *  An association to Pricing Reference.
+     *  A reference to pricing and item location information associated with this debit note line.
      *  0..1
      *  Debit Note Line
+     *  Pricing Reference
      *  Pricing Reference
      *  Pricing Reference
      *
@@ -221,9 +243,10 @@ class DebitNoteLineType
     /**
      * ASBIE
      *  Debit Note Line. Delivery
-     *  An association to Delivery.
+     *  A delivery associated with this debit note line.
      *  0..n
      *  Debit Note Line
+     *  Delivery
      *  Delivery
      *  Delivery
      *
@@ -236,9 +259,10 @@ class DebitNoteLineType
     /**
      * ASBIE
      *  Debit Note Line. Tax Total
-     *  An association to Tax Total.
+     *  A total amount of taxes of a particular kind applicable to this debit note line.
      *  0..n
      *  Debit Note Line
+     *  Tax Total
      *  Tax Total
      *  Tax Total
      *
@@ -250,10 +274,27 @@ class DebitNoteLineType
 
     /**
      * ASBIE
+     *  Debit Note Line. Allowance Charge
+     *  An allowance or charge associated with this debit note.
+     *  0..n
+     *  Debit Note Line
+     *  Allowance Charge
+     *  Allowance Charge
+     *  Allowance Charge
+     *
+     * @var \horstoeko\ubl\entities\cac\AllowanceCharge[] $allowanceCharge
+     */
+    private $allowanceCharge = [
+        
+    ];
+
+    /**
+     * ASBIE
      *  Debit Note Line. Item
-     *  An association to Item
+     *  The item associated with this debit note line.
      *  0..1
      *  Debit Note Line
+     *  Item
      *  Item
      *  Item
      *
@@ -264,22 +305,41 @@ class DebitNoteLineType
     /**
      * ASBIE
      *  Debit Note Line. Price
-     *  An association to Price.
+     *  The price of the item associated with this debit note line.
      *  0..1
      *  Debit Note Line
      *  Price
      *  Price
+     *  Price
+     *  Unit Price, Base Price
      *
      * @var \horstoeko\ubl\entities\cac\Price $price
      */
     private $price = null;
 
     /**
+     * ASBIE
+     *  Debit Note Line. Sub_ Debit Note Line. Debit Note Line
+     *  A recursive description of a debit note line subsidiary to this debit note line.
+     *  0..n
+     *  Debit Note Line
+     *  Sub
+     *  Debit Note Line
+     *  Debit Note Line
+     *  Debit Note Line
+     *
+     * @var \horstoeko\ubl\entities\cac\SubDebitNoteLine[] $subDebitNoteLine
+     */
+    private $subDebitNoteLine = [
+        
+    ];
+
+    /**
      * Gets as iD
      *
      * BBIE
      *  Debit Note Line. Identifier
-     *  Identifies the Debit Note Line.
+     *  An identifier for this debit note line.
      *  1
      *  Debit Note Line
      *  Identifier
@@ -298,7 +358,7 @@ class DebitNoteLineType
      *
      * BBIE
      *  Debit Note Line. Identifier
-     *  Identifies the Debit Note Line.
+     *  An identifier for this debit note line.
      *  1
      *  Debit Note Line
      *  Identifier
@@ -319,7 +379,7 @@ class DebitNoteLineType
      *
      * BBIE
      *  Debit Note Line. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this debit note line.
      *  0..1
      *  Debit Note Line
      *  UUID
@@ -338,7 +398,7 @@ class DebitNoteLineType
      *
      * BBIE
      *  Debit Note Line. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this debit note line.
      *  0..1
      *  Debit Note Line
      *  UUID
@@ -355,18 +415,79 @@ class DebitNoteLineType
     }
 
     /**
-     * Gets as note
+     * Adds as note
      *
      * BBIE
      *  Debit Note Line. Note. Text
-     *  Free-form text applying to the Debit Note Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Debit Note Line
      *  Note
      *  Text
      *  Text. Type
      *
-     * @return \horstoeko\ubl\entities\cbc\Note
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\Note $note
+     */
+    public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
+    {
+        $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * isset note
+     *
+     * BBIE
+     *  Debit Note Line. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Debit Note Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetNote($index)
+    {
+        return isset($this->note[$index]);
+    }
+
+    /**
+     * unset note
+     *
+     * BBIE
+     *  Debit Note Line. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Debit Note Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetNote($index)
+    {
+        unset($this->note[$index]);
+    }
+
+    /**
+     * Gets as note
+     *
+     * BBIE
+     *  Debit Note Line. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Debit Note Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\Note[]
      */
     public function getNote()
     {
@@ -378,17 +499,17 @@ class DebitNoteLineType
      *
      * BBIE
      *  Debit Note Line. Note. Text
-     *  Free-form text applying to the Debit Note Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Debit Note Line
      *  Note
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
-    public function setNote(\horstoeko\ubl\entities\cbc\Note $note)
+    public function setNote(array $note)
     {
         $this->note = $note;
         return $this;
@@ -399,7 +520,7 @@ class DebitNoteLineType
      *
      * BBIE
      *  Debit Note Line. Debited_ Quantity. Quantity
-     *  The quantity of Items debited.
+     *  The quantity of Items debited in this debit note line.
      *  0..1
      *  Debit Note Line
      *  Debited
@@ -419,7 +540,7 @@ class DebitNoteLineType
      *
      * BBIE
      *  Debit Note Line. Debited_ Quantity. Quantity
-     *  The quantity of Items debited.
+     *  The quantity of Items debited in this debit note line.
      *  0..1
      *  Debit Note Line
      *  Debited
@@ -441,7 +562,7 @@ class DebitNoteLineType
      *
      * BBIE
      *  Debit Note Line. Line Extension Amount. Amount
-     *  The total amount for the Debit Note Line, including Allowance Charges but net of taxes.
+     *  The total amount for this debit note line, including allowance charges but net of taxes.
      *  1
      *  Debit Note Line
      *  Line Extension Amount
@@ -460,7 +581,7 @@ class DebitNoteLineType
      *
      * BBIE
      *  Debit Note Line. Line Extension Amount. Amount
-     *  The total amount for the Debit Note Line, including Allowance Charges but net of taxes.
+     *  The total amount for this debit note line, including allowance charges but net of taxes.
      *  1
      *  Debit Note Line
      *  Line Extension Amount
@@ -481,7 +602,7 @@ class DebitNoteLineType
      *
      * BBIE
      *  Debit Note Line. Tax Point Date. Date
-     *  The date of the Debit Note Line, used to indicate the point at which tax becomes applicable.
+     *  The date of this debit note line, used to indicate the point at which tax becomes applicable.
      *  0..1
      *  Debit Note Line
      *  Tax Point Date
@@ -500,7 +621,7 @@ class DebitNoteLineType
      *
      * BBIE
      *  Debit Note Line. Tax Point Date. Date
-     *  The date of the Debit Note Line, used to indicate the point at which tax becomes applicable.
+     *  The date of this debit note line, used to indicate the point at which tax becomes applicable.
      *  0..1
      *  Debit Note Line
      *  Tax Point Date
@@ -521,7 +642,7 @@ class DebitNoteLineType
      *
      * BBIE
      *  Debit Note Line. Accounting Cost Code. Code
-     *  The buyer's accounting code applied to the Debit Note Line.
+     *  The buyer's accounting cost centre for this debit note line, expressed as a code.
      *  0..1
      *  Debit Note Line
      *  Accounting Cost Code
@@ -540,7 +661,7 @@ class DebitNoteLineType
      *
      * BBIE
      *  Debit Note Line. Accounting Cost Code. Code
-     *  The buyer's accounting code applied to the Debit Note Line.
+     *  The buyer's accounting cost centre for this debit note line, expressed as a code.
      *  0..1
      *  Debit Note Line
      *  Accounting Cost Code
@@ -561,7 +682,7 @@ class DebitNoteLineType
      *
      * BBIE
      *  Debit Note Line. Accounting Cost. Text
-     *  The buyer's accounting code applied to the Debit Note Line, expressed as text.
+     *  The buyer's accounting cost centre for this debit note line, expressed as text.
      *  0..1
      *  Debit Note Line
      *  Accounting Cost
@@ -580,7 +701,7 @@ class DebitNoteLineType
      *
      * BBIE
      *  Debit Note Line. Accounting Cost. Text
-     *  The buyer's accounting code applied to the Debit Note Line, expressed as text.
+     *  The buyer's accounting cost centre for this debit note line, expressed as text.
      *  0..1
      *  Debit Note Line
      *  Accounting Cost
@@ -597,14 +718,55 @@ class DebitNoteLineType
     }
 
     /**
+     * Gets as paymentPurposeCode
+     *
+     * BBIE
+     *  Debit Note Line. Payment Purpose Code. Code
+     *  A code signifying the business purpose for this payment.
+     *  0..1
+     *  Debit Note Line
+     *  Payment Purpose Code
+     *  Code
+     *  Code. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\PaymentPurposeCode
+     */
+    public function getPaymentPurposeCode()
+    {
+        return $this->paymentPurposeCode;
+    }
+
+    /**
+     * Sets a new paymentPurposeCode
+     *
+     * BBIE
+     *  Debit Note Line. Payment Purpose Code. Code
+     *  A code signifying the business purpose for this payment.
+     *  0..1
+     *  Debit Note Line
+     *  Payment Purpose Code
+     *  Code
+     *  Code. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\PaymentPurposeCode $paymentPurposeCode
+     * @return self
+     */
+    public function setPaymentPurposeCode(\horstoeko\ubl\entities\cbc\PaymentPurposeCode $paymentPurposeCode)
+    {
+        $this->paymentPurposeCode = $paymentPurposeCode;
+        return $this;
+    }
+
+    /**
      * Adds as discrepancyResponse
      *
      * ASBIE
      *  Debit Note Line. Discrepancy_ Response. Response
-     *  An association to Discrepancy Response; the reason for the Debit.
+     *  A reason for the debit.
      *  0..n
      *  Debit Note Line
      *  Discrepancy
+     *  Response
      *  Response
      *  Response
      *
@@ -622,10 +784,11 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Discrepancy_ Response. Response
-     *  An association to Discrepancy Response; the reason for the Debit.
+     *  A reason for the debit.
      *  0..n
      *  Debit Note Line
      *  Discrepancy
+     *  Response
      *  Response
      *  Response
      *
@@ -642,10 +805,11 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Discrepancy_ Response. Response
-     *  An association to Discrepancy Response; the reason for the Debit.
+     *  A reason for the debit.
      *  0..n
      *  Debit Note Line
      *  Discrepancy
+     *  Response
      *  Response
      *  Response
      *
@@ -662,10 +826,11 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Discrepancy_ Response. Response
-     *  An association to Discrepancy Response; the reason for the Debit.
+     *  A reason for the debit.
      *  0..n
      *  Debit Note Line
      *  Discrepancy
+     *  Response
      *  Response
      *  Response
      *
@@ -681,10 +846,11 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Discrepancy_ Response. Response
-     *  An association to Discrepancy Response; the reason for the Debit.
+     *  A reason for the debit.
      *  0..n
      *  Debit Note Line
      *  Discrepancy
+     *  Response
      *  Response
      *  Response
      *
@@ -702,10 +868,11 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Despatch_ Line Reference. Line Reference
-     *  An associative reference to Despatch Line.
+     *  A reference to a despatch line associated with this debit note line.
      *  0..n
      *  Debit Note Line
      *  Despatch
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -723,10 +890,11 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Despatch_ Line Reference. Line Reference
-     *  An associative reference to Despatch Line.
+     *  A reference to a despatch line associated with this debit note line.
      *  0..n
      *  Debit Note Line
      *  Despatch
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -743,10 +911,11 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Despatch_ Line Reference. Line Reference
-     *  An associative reference to Despatch Line.
+     *  A reference to a despatch line associated with this debit note line.
      *  0..n
      *  Debit Note Line
      *  Despatch
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -763,10 +932,11 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Despatch_ Line Reference. Line Reference
-     *  An associative reference to Despatch Line.
+     *  A reference to a despatch line associated with this debit note line.
      *  0..n
      *  Debit Note Line
      *  Despatch
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -782,10 +952,11 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Despatch_ Line Reference. Line Reference
-     *  An associative reference to Despatch Line.
+     *  A reference to a despatch line associated with this debit note line.
      *  0..n
      *  Debit Note Line
      *  Despatch
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -803,10 +974,11 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Receipt_ Line Reference. Line Reference
-     *  An associative reference to Receipt Line.
+     *  A reference to a receipt line associated with this debit note line.
      *  0..n
      *  Debit Note Line
      *  Receipt
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -824,10 +996,11 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Receipt_ Line Reference. Line Reference
-     *  An associative reference to Receipt Line.
+     *  A reference to a receipt line associated with this debit note line.
      *  0..n
      *  Debit Note Line
      *  Receipt
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -844,10 +1017,11 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Receipt_ Line Reference. Line Reference
-     *  An associative reference to Receipt Line.
+     *  A reference to a receipt line associated with this debit note line.
      *  0..n
      *  Debit Note Line
      *  Receipt
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -864,10 +1038,11 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Receipt_ Line Reference. Line Reference
-     *  An associative reference to Receipt Line.
+     *  A reference to a receipt line associated with this debit note line.
      *  0..n
      *  Debit Note Line
      *  Receipt
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -883,10 +1058,11 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Receipt_ Line Reference. Line Reference
-     *  An associative reference to Receipt Line.
+     *  A reference to a receipt line associated with this debit note line.
      *  0..n
      *  Debit Note Line
      *  Receipt
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -904,9 +1080,10 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Billing Reference
-     *  An association to Billing Reference.
+     *  A reference to a billing document associated with this debit note line.
      *  0..n
      *  Debit Note Line
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -924,9 +1101,10 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Billing Reference
-     *  An association to Billing Reference.
+     *  A reference to a billing document associated with this debit note line.
      *  0..n
      *  Debit Note Line
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -943,9 +1121,10 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Billing Reference
-     *  An association to Billing Reference.
+     *  A reference to a billing document associated with this debit note line.
      *  0..n
      *  Debit Note Line
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -962,9 +1141,10 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Billing Reference
-     *  An association to Billing Reference.
+     *  A reference to a billing document associated with this debit note line.
      *  0..n
      *  Debit Note Line
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -980,9 +1160,10 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Billing Reference
-     *  An association to Billing Reference.
+     *  A reference to a billing document associated with this debit note line.
      *  0..n
      *  Debit Note Line
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -1000,9 +1181,10 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this debit note line.
      *  0..n
      *  Debit Note Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1020,9 +1202,10 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this debit note line.
      *  0..n
      *  Debit Note Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1039,9 +1222,10 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this debit note line.
      *  0..n
      *  Debit Note Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1058,9 +1242,10 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this debit note line.
      *  0..n
      *  Debit Note Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1076,9 +1261,10 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this debit note line.
      *  0..n
      *  Debit Note Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1096,9 +1282,10 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Pricing Reference
-     *  An association to Pricing Reference.
+     *  A reference to pricing and item location information associated with this debit note line.
      *  0..1
      *  Debit Note Line
+     *  Pricing Reference
      *  Pricing Reference
      *  Pricing Reference
      *
@@ -1114,9 +1301,10 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Pricing Reference
-     *  An association to Pricing Reference.
+     *  A reference to pricing and item location information associated with this debit note line.
      *  0..1
      *  Debit Note Line
+     *  Pricing Reference
      *  Pricing Reference
      *  Pricing Reference
      *
@@ -1134,9 +1322,10 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Delivery
-     *  An association to Delivery.
+     *  A delivery associated with this debit note line.
      *  0..n
      *  Debit Note Line
+     *  Delivery
      *  Delivery
      *  Delivery
      *
@@ -1154,9 +1343,10 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Delivery
-     *  An association to Delivery.
+     *  A delivery associated with this debit note line.
      *  0..n
      *  Debit Note Line
+     *  Delivery
      *  Delivery
      *  Delivery
      *
@@ -1173,9 +1363,10 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Delivery
-     *  An association to Delivery.
+     *  A delivery associated with this debit note line.
      *  0..n
      *  Debit Note Line
+     *  Delivery
      *  Delivery
      *  Delivery
      *
@@ -1192,9 +1383,10 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Delivery
-     *  An association to Delivery.
+     *  A delivery associated with this debit note line.
      *  0..n
      *  Debit Note Line
+     *  Delivery
      *  Delivery
      *  Delivery
      *
@@ -1210,9 +1402,10 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Delivery
-     *  An association to Delivery.
+     *  A delivery associated with this debit note line.
      *  0..n
      *  Debit Note Line
+     *  Delivery
      *  Delivery
      *  Delivery
      *
@@ -1230,9 +1423,10 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Tax Total
-     *  An association to Tax Total.
+     *  A total amount of taxes of a particular kind applicable to this debit note line.
      *  0..n
      *  Debit Note Line
+     *  Tax Total
      *  Tax Total
      *  Tax Total
      *
@@ -1250,9 +1444,10 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Tax Total
-     *  An association to Tax Total.
+     *  A total amount of taxes of a particular kind applicable to this debit note line.
      *  0..n
      *  Debit Note Line
+     *  Tax Total
      *  Tax Total
      *  Tax Total
      *
@@ -1269,9 +1464,10 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Tax Total
-     *  An association to Tax Total.
+     *  A total amount of taxes of a particular kind applicable to this debit note line.
      *  0..n
      *  Debit Note Line
+     *  Tax Total
      *  Tax Total
      *  Tax Total
      *
@@ -1288,9 +1484,10 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Tax Total
-     *  An association to Tax Total.
+     *  A total amount of taxes of a particular kind applicable to this debit note line.
      *  0..n
      *  Debit Note Line
+     *  Tax Total
      *  Tax Total
      *  Tax Total
      *
@@ -1306,9 +1503,10 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Tax Total
-     *  An association to Tax Total.
+     *  A total amount of taxes of a particular kind applicable to this debit note line.
      *  0..n
      *  Debit Note Line
+     *  Tax Total
      *  Tax Total
      *  Tax Total
      *
@@ -1322,13 +1520,115 @@ class DebitNoteLineType
     }
 
     /**
+     * Adds as allowanceCharge
+     *
+     * ASBIE
+     *  Debit Note Line. Allowance Charge
+     *  An allowance or charge associated with this debit note.
+     *  0..n
+     *  Debit Note Line
+     *  Allowance Charge
+     *  Allowance Charge
+     *  Allowance Charge
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge
+     */
+    public function addToAllowanceCharge(\horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge)
+    {
+        $this->allowanceCharge[] = $allowanceCharge;
+        return $this;
+    }
+
+    /**
+     * isset allowanceCharge
+     *
+     * ASBIE
+     *  Debit Note Line. Allowance Charge
+     *  An allowance or charge associated with this debit note.
+     *  0..n
+     *  Debit Note Line
+     *  Allowance Charge
+     *  Allowance Charge
+     *  Allowance Charge
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetAllowanceCharge($index)
+    {
+        return isset($this->allowanceCharge[$index]);
+    }
+
+    /**
+     * unset allowanceCharge
+     *
+     * ASBIE
+     *  Debit Note Line. Allowance Charge
+     *  An allowance or charge associated with this debit note.
+     *  0..n
+     *  Debit Note Line
+     *  Allowance Charge
+     *  Allowance Charge
+     *  Allowance Charge
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetAllowanceCharge($index)
+    {
+        unset($this->allowanceCharge[$index]);
+    }
+
+    /**
+     * Gets as allowanceCharge
+     *
+     * ASBIE
+     *  Debit Note Line. Allowance Charge
+     *  An allowance or charge associated with this debit note.
+     *  0..n
+     *  Debit Note Line
+     *  Allowance Charge
+     *  Allowance Charge
+     *  Allowance Charge
+     *
+     * @return \horstoeko\ubl\entities\cac\AllowanceCharge[]
+     */
+    public function getAllowanceCharge()
+    {
+        return $this->allowanceCharge;
+    }
+
+    /**
+     * Sets a new allowanceCharge
+     *
+     * ASBIE
+     *  Debit Note Line. Allowance Charge
+     *  An allowance or charge associated with this debit note.
+     *  0..n
+     *  Debit Note Line
+     *  Allowance Charge
+     *  Allowance Charge
+     *  Allowance Charge
+     *
+     * @param \horstoeko\ubl\entities\cac\AllowanceCharge[] $allowanceCharge
+     * @return self
+     */
+    public function setAllowanceCharge(array $allowanceCharge)
+    {
+        $this->allowanceCharge = $allowanceCharge;
+        return $this;
+    }
+
+    /**
      * Gets as item
      *
      * ASBIE
      *  Debit Note Line. Item
-     *  An association to Item
+     *  The item associated with this debit note line.
      *  0..1
      *  Debit Note Line
+     *  Item
      *  Item
      *  Item
      *
@@ -1344,9 +1644,10 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Item
-     *  An association to Item
+     *  The item associated with this debit note line.
      *  0..1
      *  Debit Note Line
+     *  Item
      *  Item
      *  Item
      *
@@ -1364,11 +1665,13 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Price
-     *  An association to Price.
+     *  The price of the item associated with this debit note line.
      *  0..1
      *  Debit Note Line
      *  Price
      *  Price
+     *  Price
+     *  Unit Price, Base Price
      *
      * @return \horstoeko\ubl\entities\cac\Price
      */
@@ -1382,11 +1685,13 @@ class DebitNoteLineType
      *
      * ASBIE
      *  Debit Note Line. Price
-     *  An association to Price.
+     *  The price of the item associated with this debit note line.
      *  0..1
      *  Debit Note Line
      *  Price
      *  Price
+     *  Price
+     *  Unit Price, Base Price
      *
      * @param \horstoeko\ubl\entities\cac\Price $price
      * @return self
@@ -1394,6 +1699,112 @@ class DebitNoteLineType
     public function setPrice(\horstoeko\ubl\entities\cac\Price $price)
     {
         $this->price = $price;
+        return $this;
+    }
+
+    /**
+     * Adds as subDebitNoteLine
+     *
+     * ASBIE
+     *  Debit Note Line. Sub_ Debit Note Line. Debit Note Line
+     *  A recursive description of a debit note line subsidiary to this debit note line.
+     *  0..n
+     *  Debit Note Line
+     *  Sub
+     *  Debit Note Line
+     *  Debit Note Line
+     *  Debit Note Line
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\SubDebitNoteLine $subDebitNoteLine
+     */
+    public function addToSubDebitNoteLine(\horstoeko\ubl\entities\cac\SubDebitNoteLine $subDebitNoteLine)
+    {
+        $this->subDebitNoteLine[] = $subDebitNoteLine;
+        return $this;
+    }
+
+    /**
+     * isset subDebitNoteLine
+     *
+     * ASBIE
+     *  Debit Note Line. Sub_ Debit Note Line. Debit Note Line
+     *  A recursive description of a debit note line subsidiary to this debit note line.
+     *  0..n
+     *  Debit Note Line
+     *  Sub
+     *  Debit Note Line
+     *  Debit Note Line
+     *  Debit Note Line
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetSubDebitNoteLine($index)
+    {
+        return isset($this->subDebitNoteLine[$index]);
+    }
+
+    /**
+     * unset subDebitNoteLine
+     *
+     * ASBIE
+     *  Debit Note Line. Sub_ Debit Note Line. Debit Note Line
+     *  A recursive description of a debit note line subsidiary to this debit note line.
+     *  0..n
+     *  Debit Note Line
+     *  Sub
+     *  Debit Note Line
+     *  Debit Note Line
+     *  Debit Note Line
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetSubDebitNoteLine($index)
+    {
+        unset($this->subDebitNoteLine[$index]);
+    }
+
+    /**
+     * Gets as subDebitNoteLine
+     *
+     * ASBIE
+     *  Debit Note Line. Sub_ Debit Note Line. Debit Note Line
+     *  A recursive description of a debit note line subsidiary to this debit note line.
+     *  0..n
+     *  Debit Note Line
+     *  Sub
+     *  Debit Note Line
+     *  Debit Note Line
+     *  Debit Note Line
+     *
+     * @return \horstoeko\ubl\entities\cac\SubDebitNoteLine[]
+     */
+    public function getSubDebitNoteLine()
+    {
+        return $this->subDebitNoteLine;
+    }
+
+    /**
+     * Sets a new subDebitNoteLine
+     *
+     * ASBIE
+     *  Debit Note Line. Sub_ Debit Note Line. Debit Note Line
+     *  A recursive description of a debit note line subsidiary to this debit note line.
+     *  0..n
+     *  Debit Note Line
+     *  Sub
+     *  Debit Note Line
+     *  Debit Note Line
+     *  Debit Note Line
+     *
+     * @param \horstoeko\ubl\entities\cac\SubDebitNoteLine[] $subDebitNoteLine
+     * @return self
+     */
+    public function setSubDebitNoteLine(array $subDebitNoteLine)
+    {
+        $this->subDebitNoteLine = $subDebitNoteLine;
         return $this;
     }
 

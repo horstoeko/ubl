@@ -77,3 +77,14 @@ horstoeko\ubl\entities\cac\LocationCoordinateType:
                 getter: getLongitudeDirectionCode
                 setter: setLongitudeDirectionCode
             type: horstoeko\ubl\entities\cbc\LongitudeDirectionCode
+        altitudeMeasure:
+            expose: true
+            access_type: public_method
+            serialized_name: AltitudeMeasure
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAltitudeMeasure
+                setter: setAltitudeMeasure
+            type: horstoeko\ubl\entities\cbc\AltitudeMeasure

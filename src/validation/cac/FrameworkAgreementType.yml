@@ -1,0 +1,8 @@
+horstoeko\ubl\entities\cac\FrameworkAgreementType:
+    properties:
+        durationPeriod:
+            -
+                Valid: null
+        subsequentProcessTenderRequirement:
+            -
+                Valid: null

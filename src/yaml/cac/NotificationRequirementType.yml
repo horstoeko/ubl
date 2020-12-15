@@ -1,0 +1,80 @@
+horstoeko\ubl\entities\cac\NotificationRequirementType:
+    properties:
+        notificationTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: NotificationTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getNotificationTypeCode
+                setter: setNotificationTypeCode
+            type: horstoeko\ubl\entities\cbc\NotificationTypeCode
+        postEventNotificationDurationMeasure:
+            expose: true
+            access_type: public_method
+            serialized_name: PostEventNotificationDurationMeasure
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPostEventNotificationDurationMeasure
+                setter: setPostEventNotificationDurationMeasure
+            type: horstoeko\ubl\entities\cbc\PostEventNotificationDurationMeasure
+        preEventNotificationDurationMeasure:
+            expose: true
+            access_type: public_method
+            serialized_name: PreEventNotificationDurationMeasure
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPreEventNotificationDurationMeasure
+                setter: setPreEventNotificationDurationMeasure
+            type: horstoeko\ubl\entities\cbc\PreEventNotificationDurationMeasure
+        notifyParty:
+            expose: true
+            access_type: public_method
+            serialized_name: NotifyParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getNotifyParty
+                setter: setNotifyParty
+            xml_list:
+                inline: true
+                entry_name: NotifyParty
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\NotifyParty>
+        notificationPeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: NotificationPeriod
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getNotificationPeriod
+                setter: setNotificationPeriod
+            xml_list:
+                inline: true
+                entry_name: NotificationPeriod
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\NotificationPeriod>
+        notificationLocation:
+            expose: true
+            access_type: public_method
+            serialized_name: NotificationLocation
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getNotificationLocation
+                setter: setNotificationLocation
+            xml_list:
+                inline: true
+                entry_name: NotificationLocation
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\NotificationLocation>

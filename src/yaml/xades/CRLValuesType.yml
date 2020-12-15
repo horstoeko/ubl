@@ -1,0 +1,17 @@
+horstoeko\ubl\entities\xades\CRLValuesType:
+    properties:
+        encapsulatedCRLValue:
+            expose: true
+            access_type: public_method
+            serialized_name: EncapsulatedCRLValue
+            xml_element:
+                cdata: false
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            accessor:
+                getter: getEncapsulatedCRLValue
+                setter: setEncapsulatedCRLValue
+            xml_list:
+                inline: true
+                entry_name: EncapsulatedCRLValue
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            type: array<horstoeko\ubl\entities\xades\EncapsulatedPKIDataType>

@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Line Item. Details
- *  Information about a Line Item.
+ *  A class to describe a line item.
  *  Line Item
  * XSD Type: LineItemType
  */
@@ -17,7 +17,7 @@ class LineItemType
     /**
      * BBIE
      *  Line Item. Identifier
-     *  Identifies the Line Item assigned by the buyer.
+     *  An identifier for this line item, assigned by the buyer.
      *  1
      *  Line Item
      *  Identifier
@@ -31,7 +31,7 @@ class LineItemType
     /**
      * BBIE
      *  Line Item. Sales_ Order Identifier. Identifier
-     *  The identification given to a Line by the seller.
+     *  An identifier for this line item, assigned by the seller.
      *  0..1
      *  Line Item
      *  Sales
@@ -46,7 +46,7 @@ class LineItemType
     /**
      * BBIE
      *  Line Item. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this line item.
      *  0..1
      *  Line Item
      *  UUID
@@ -60,25 +60,28 @@ class LineItemType
     /**
      * BBIE
      *  Line Item. Note. Text
-     *  Free-form text applying to the Line Item. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Line Item
      *  Note
      *  Text
      *  Text. Type
      *
-     * @var \horstoeko\ubl\entities\cbc\Note $note
+     * @var \horstoeko\ubl\entities\cbc\Note[] $note
      */
-    private $note = null;
+    private $note = [
+        
+    ];
 
     /**
      * BBIE
      *  Line Item. Line Status Code. Code
-     *  Identifies the status of the Line with respect to its original state.
+     *  A code signifying the status of this line item with respect to its original state.
      *  0..1
      *  Line Item
      *  Line Status Code
      *  Code
+     *  Line Status
      *  Line Status_ Code. Type
      *
      * @var \horstoeko\ubl\entities\cbc\LineStatusCode $lineStatusCode
@@ -88,7 +91,7 @@ class LineItemType
     /**
      * BBIE
      *  Line Item. Quantity
-     *  The quantity of Items for the Line Item.
+     *  The quantity of items associated with this line item.
      *  0..1
      *  Line Item
      *  Quantity
@@ -102,7 +105,7 @@ class LineItemType
     /**
      * BBIE
      *  Line Item. Line Extension Amount. Amount
-     *  The total amount for the Line Item, including Allowance Charges but net of taxes.
+     *  The total amount for this line item, including allowance charges but net of taxes.
      *  0..1
      *  Line Item
      *  Line Extension Amount
@@ -116,7 +119,7 @@ class LineItemType
     /**
      * BBIE
      *  Line Item. Total_ Tax Amount. Amount
-     *  The total tax amount for the Line Item.
+     *  The total tax amount for this line item.
      *  0..1
      *  Line Item
      *  Total
@@ -131,7 +134,7 @@ class LineItemType
     /**
      * BBIE
      *  Line Item. Minimum_ Quantity. Quantity
-     *  The minimum quantity for the Item on the Line.
+     *  The minimum quantity of the item associated with this line.
      *  0..1
      *  Line Item
      *  Minimum
@@ -146,7 +149,7 @@ class LineItemType
     /**
      * BBIE
      *  Line Item. Maximum_ Quantity. Quantity
-     *  The maximum quantity for the Item on the Line.
+     *  The maximum quantity of the item associated with this line.
      *  0..1
      *  Line Item
      *  Maximum
@@ -161,7 +164,7 @@ class LineItemType
     /**
      * BBIE
      *  Line Item. Minimum_ Backorder. Quantity
-     *  The minimum back order quantity (where back order is allowed).
+     *  The minimum back order quantity of the item associated with this line (where back order is allowed).
      *  0..1
      *  Line Item
      *  Minimum
@@ -176,7 +179,7 @@ class LineItemType
     /**
      * BBIE
      *  Line Item. Maximum_ Backorder. Quantity
-     *  The maximum back order quantity (where back order is allowed).
+     *  The maximum back order quantity of the item associated with this line (where back order is allowed).
      *  0..1
      *  Line Item
      *  Maximum
@@ -190,11 +193,11 @@ class LineItemType
 
     /**
      * BBIE
-     *  Line Item. Inspection Method. Code
-     *  Inspection requirements for a Line Item, expressed as a code.
+     *  Line Item. Inspection Method Code. Code
+     *  A code signifying the inspection requirements for the item associated with this line item.
      *  0..1
      *  Line Item
-     *  Inspection Method
+     *  Inspection Method Code
      *  Code
      *  Code. Type
      *
@@ -205,7 +208,7 @@ class LineItemType
     /**
      * BBIE
      *  Line Item. Partial Delivery Indicator. Indicator
-     *  Indicates whether a partial delivery is allowed.
+     *  An indicator that a partial delivery is allowed (true) or not (false).
      *  0..1
      *  Line Item
      *  Partial Delivery Indicator
@@ -219,7 +222,7 @@ class LineItemType
     /**
      * BBIE
      *  Line Item. Back Order Allowed Indicator. Indicator
-     *  Indicates whether back order is allowed.
+     *  An indicator that back order is allowed (true) or not (false).
      *  0..1
      *  Line Item
      *  Back Order Allowed Indicator
@@ -233,7 +236,7 @@ class LineItemType
     /**
      * BBIE
      *  Line Item. Accounting Cost Code. Code
-     *  The buyer's accounting code applied to the Line Item.
+     *  The buyer's accounting cost centre for this line item, expressed as a code.
      *  0..1
      *  Line Item
      *  Accounting Cost Code
@@ -247,7 +250,7 @@ class LineItemType
     /**
      * BBIE
      *  Line Item. Accounting Cost. Text
-     *  The buyer's accounting code applied to the Line Item, expressed as text.
+     *  The buyer's accounting cost centre for this line item, expressed as text.
      *  0..1
      *  Line Item
      *  Accounting Cost
@@ -259,11 +262,30 @@ class LineItemType
     private $accountingCost = null;
 
     /**
-     * ASBIE
-     *  Line Item. Delivery
-     *  An association to Delivery.
+     * BBIE
+     *  Line Item. Warranty_ Information. Text
+     *  Text describing a warranty (provided by WarrantyParty) for the good or service described in this line item.
      *  0..n
      *  Line Item
+     *  Warranty
+     *  Information
+     *  Text
+     *  Text. Type
+     *  Unless specified otherwise and in addition to any rights the Customer may have under statute, Dell warrants to the Customer that Dell branded Products (excluding third party products and software), will be free from defects in materials and workmanship affecting normal use for a period of one year from invoice date ( Standard Warranty ).
+     *
+     * @var \horstoeko\ubl\entities\cbc\WarrantyInformation[] $warrantyInformation
+     */
+    private $warrantyInformation = [
+        
+    ];
+
+    /**
+     * ASBIE
+     *  Line Item. Delivery
+     *  A delivery associated with this line item.
+     *  0..n
+     *  Line Item
+     *  Delivery
      *  Delivery
      *  Delivery
      *
@@ -276,9 +298,10 @@ class LineItemType
     /**
      * ASBIE
      *  Line Item. Delivery Terms
-     *  An association to Delivery Terms.
+     *  Terms and conditions of the delivery associated with this line item.
      *  0..1
      *  Line Item
+     *  Delivery Terms
      *  Delivery Terms
      *  Delivery Terms
      *
@@ -289,10 +312,11 @@ class LineItemType
     /**
      * ASBIE
      *  Line Item. Originator_ Party. Party
-     *  The party who originated Order.
+     *  The party who originated the Order associated with this line item.
      *  0..1
      *  Line Item
      *  Originator
+     *  Party
      *  Party
      *  Party
      *
@@ -303,9 +327,10 @@ class LineItemType
     /**
      * ASBIE
      *  Line Item. Ordered Shipment
-     *  An association to Ordered Shipment.
+     *  An ordered shipment associated with this line item.
      *  0..n
      *  Line Item
+     *  Ordered Shipment
      *  Ordered Shipment
      *  Ordered Shipment
      *
@@ -318,9 +343,10 @@ class LineItemType
     /**
      * ASBIE
      *  Line Item. Pricing Reference
-     *  An association to Pricing Reference.
+     *  A reference to pricing and item location information associated with this line item.
      *  0..1
      *  Line Item
+     *  Pricing Reference
      *  Pricing Reference
      *  Pricing Reference
      *
@@ -331,9 +357,10 @@ class LineItemType
     /**
      * ASBIE
      *  Line Item. Allowance Charge
-     *  An association to Allowance Charge.
+     *  An allowance or charge associated with this line item.
      *  0..n
      *  Line Item
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *
@@ -346,9 +373,10 @@ class LineItemType
     /**
      * ASBIE
      *  Line Item. Price
-     *  An association to Price.
+     *  The price of the item of trade associated with this line item.
      *  0..1
      *  Line Item
+     *  Price
      *  Price
      *  Price
      *
@@ -359,9 +387,10 @@ class LineItemType
     /**
      * ASBIE
      *  Line Item. Item
-     *  An association to Item.
+     *  The item of trade associated with this line item.
      *  1
      *  Line Item
+     *  Item
      *  Item
      *  Item
      *
@@ -370,11 +399,105 @@ class LineItemType
     private $item = null;
 
     /**
+     * ASBIE
+     *  Line Item. Sub_ Line Item. Line Item
+     *  The subsidiary line items that constitute the main line item, such as in a bill of materials.
+     *  0..n
+     *  Line Item
+     *  Sub
+     *  Line Item
+     *  Line Item
+     *  Line Item
+     *
+     * @var \horstoeko\ubl\entities\cac\SubLineItem[] $subLineItem
+     */
+    private $subLineItem = [
+        
+    ];
+
+    /**
+     * ASBIE
+     *  Line Item. Warranty Validity_ Period. Period
+     *  The period during which the warranty associated with this line item is valid.
+     *  0..1
+     *  Line Item
+     *  Warranty Validity
+     *  Period
+     *  Period
+     *  Period
+     *
+     * @var \horstoeko\ubl\entities\cac\WarrantyValidityPeriod $warrantyValidityPeriod
+     */
+    private $warrantyValidityPeriod = null;
+
+    /**
+     * ASBIE
+     *  Line Item. Warranty_ Party. Party
+     *  The party responsible for any warranty associated with this line item.
+     *  0..1
+     *  Line Item
+     *  Warranty
+     *  Party
+     *  Party
+     *  Party
+     *
+     * @var \horstoeko\ubl\entities\cac\WarrantyParty $warrantyParty
+     */
+    private $warrantyParty = null;
+
+    /**
+     * ASBIE
+     *  Line Item. Tax Total
+     *  A total amount of taxes of a particular kind applicable to this item.
+     *  0..n
+     *  Line Item
+     *  Tax Total
+     *  Tax Total
+     *  Tax Total
+     *
+     * @var \horstoeko\ubl\entities\cac\TaxTotal[] $taxTotal
+     */
+    private $taxTotal = [
+        
+    ];
+
+    /**
+     * ASBIE
+     *  Line Item. Item_ Price Extension. Price Extension
+     *  The price extension, calculated by multiplying the price per unit by the quantity of items.
+     *  0..1
+     *  Line Item
+     *  Item
+     *  Price Extension
+     *  Price Extension
+     *  Price Extension
+     *
+     * @var \horstoeko\ubl\entities\cac\ItemPriceExtension $itemPriceExtension
+     */
+    private $itemPriceExtension = null;
+
+    /**
+     * ASBIE
+     *  Line Item. Line Reference
+     *  A reference to a line in a document associated with this line item.
+     *  0..n
+     *  Line Item
+     *  Line Reference
+     *  Line Reference
+     *  Line Reference
+     *
+     * @var \horstoeko\ubl\entities\cac\LineReference[] $lineReference
+     */
+    private $lineReference = [
+        
+    ];
+
+    /**
      * Gets as iD
      *
      * BBIE
      *  Line Item. Identifier
-     *  Identifies the Line Item assigned by the buyer.
+     *  An identifier for this line item, assigned by the buyer.
      *  1
      *  Line Item
      *  Identifier
@@ -393,7 +516,7 @@ class LineItemType
      *
      * BBIE
      *  Line Item. Identifier
-     *  Identifies the Line Item assigned by the buyer.
+     *  An identifier for this line item, assigned by the buyer.
      *  1
      *  Line Item
      *  Identifier
@@ -414,7 +537,7 @@ class LineItemType
      *
      * BBIE
      *  Line Item. Sales_ Order Identifier. Identifier
-     *  The identification given to a Line by the seller.
+     *  An identifier for this line item, assigned by the seller.
      *  0..1
      *  Line Item
      *  Sales
@@ -434,7 +557,7 @@ class LineItemType
      *
      * BBIE
      *  Line Item. Sales_ Order Identifier. Identifier
-     *  The identification given to a Line by the seller.
+     *  An identifier for this line item, assigned by the seller.
      *  0..1
      *  Line Item
      *  Sales
@@ -456,7 +579,7 @@ class LineItemType
      *
      * BBIE
      *  Line Item. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this line item.
      *  0..1
      *  Line Item
      *  UUID
@@ -475,7 +598,7 @@ class LineItemType
      *
      * BBIE
      *  Line Item. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this line item.
      *  0..1
      *  Line Item
      *  UUID
@@ -492,18 +615,79 @@ class LineItemType
     }
 
     /**
-     * Gets as note
+     * Adds as note
      *
      * BBIE
      *  Line Item. Note. Text
-     *  Free-form text applying to the Line Item. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Line Item
      *  Note
      *  Text
      *  Text. Type
      *
-     * @return \horstoeko\ubl\entities\cbc\Note
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\Note $note
+     */
+    public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
+    {
+        $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * isset note
+     *
+     * BBIE
+     *  Line Item. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Line Item
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetNote($index)
+    {
+        return isset($this->note[$index]);
+    }
+
+    /**
+     * unset note
+     *
+     * BBIE
+     *  Line Item. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Line Item
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetNote($index)
+    {
+        unset($this->note[$index]);
+    }
+
+    /**
+     * Gets as note
+     *
+     * BBIE
+     *  Line Item. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Line Item
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\Note[]
      */
     public function getNote()
     {
@@ -515,17 +699,17 @@ class LineItemType
      *
      * BBIE
      *  Line Item. Note. Text
-     *  Free-form text applying to the Line Item. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Line Item
      *  Note
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
-    public function setNote(\horstoeko\ubl\entities\cbc\Note $note)
+    public function setNote(array $note)
     {
         $this->note = $note;
         return $this;
@@ -536,11 +720,12 @@ class LineItemType
      *
      * BBIE
      *  Line Item. Line Status Code. Code
-     *  Identifies the status of the Line with respect to its original state.
+     *  A code signifying the status of this line item with respect to its original state.
      *  0..1
      *  Line Item
      *  Line Status Code
      *  Code
+     *  Line Status
      *  Line Status_ Code. Type
      *
      * @return \horstoeko\ubl\entities\cbc\LineStatusCode
@@ -555,11 +740,12 @@ class LineItemType
      *
      * BBIE
      *  Line Item. Line Status Code. Code
-     *  Identifies the status of the Line with respect to its original state.
+     *  A code signifying the status of this line item with respect to its original state.
      *  0..1
      *  Line Item
      *  Line Status Code
      *  Code
+     *  Line Status
      *  Line Status_ Code. Type
      *
      * @param \horstoeko\ubl\entities\cbc\LineStatusCode $lineStatusCode
@@ -576,7 +762,7 @@ class LineItemType
      *
      * BBIE
      *  Line Item. Quantity
-     *  The quantity of Items for the Line Item.
+     *  The quantity of items associated with this line item.
      *  0..1
      *  Line Item
      *  Quantity
@@ -595,7 +781,7 @@ class LineItemType
      *
      * BBIE
      *  Line Item. Quantity
-     *  The quantity of Items for the Line Item.
+     *  The quantity of items associated with this line item.
      *  0..1
      *  Line Item
      *  Quantity
@@ -616,7 +802,7 @@ class LineItemType
      *
      * BBIE
      *  Line Item. Line Extension Amount. Amount
-     *  The total amount for the Line Item, including Allowance Charges but net of taxes.
+     *  The total amount for this line item, including allowance charges but net of taxes.
      *  0..1
      *  Line Item
      *  Line Extension Amount
@@ -635,7 +821,7 @@ class LineItemType
      *
      * BBIE
      *  Line Item. Line Extension Amount. Amount
-     *  The total amount for the Line Item, including Allowance Charges but net of taxes.
+     *  The total amount for this line item, including allowance charges but net of taxes.
      *  0..1
      *  Line Item
      *  Line Extension Amount
@@ -656,7 +842,7 @@ class LineItemType
      *
      * BBIE
      *  Line Item. Total_ Tax Amount. Amount
-     *  The total tax amount for the Line Item.
+     *  The total tax amount for this line item.
      *  0..1
      *  Line Item
      *  Total
@@ -676,7 +862,7 @@ class LineItemType
      *
      * BBIE
      *  Line Item. Total_ Tax Amount. Amount
-     *  The total tax amount for the Line Item.
+     *  The total tax amount for this line item.
      *  0..1
      *  Line Item
      *  Total
@@ -698,7 +884,7 @@ class LineItemType
      *
      * BBIE
      *  Line Item. Minimum_ Quantity. Quantity
-     *  The minimum quantity for the Item on the Line.
+     *  The minimum quantity of the item associated with this line.
      *  0..1
      *  Line Item
      *  Minimum
@@ -718,7 +904,7 @@ class LineItemType
      *
      * BBIE
      *  Line Item. Minimum_ Quantity. Quantity
-     *  The minimum quantity for the Item on the Line.
+     *  The minimum quantity of the item associated with this line.
      *  0..1
      *  Line Item
      *  Minimum
@@ -740,7 +926,7 @@ class LineItemType
      *
      * BBIE
      *  Line Item. Maximum_ Quantity. Quantity
-     *  The maximum quantity for the Item on the Line.
+     *  The maximum quantity of the item associated with this line.
      *  0..1
      *  Line Item
      *  Maximum
@@ -760,7 +946,7 @@ class LineItemType
      *
      * BBIE
      *  Line Item. Maximum_ Quantity. Quantity
-     *  The maximum quantity for the Item on the Line.
+     *  The maximum quantity of the item associated with this line.
      *  0..1
      *  Line Item
      *  Maximum
@@ -782,7 +968,7 @@ class LineItemType
      *
      * BBIE
      *  Line Item. Minimum_ Backorder. Quantity
-     *  The minimum back order quantity (where back order is allowed).
+     *  The minimum back order quantity of the item associated with this line (where back order is allowed).
      *  0..1
      *  Line Item
      *  Minimum
@@ -802,7 +988,7 @@ class LineItemType
      *
      * BBIE
      *  Line Item. Minimum_ Backorder. Quantity
-     *  The minimum back order quantity (where back order is allowed).
+     *  The minimum back order quantity of the item associated with this line (where back order is allowed).
      *  0..1
      *  Line Item
      *  Minimum
@@ -824,7 +1010,7 @@ class LineItemType
      *
      * BBIE
      *  Line Item. Maximum_ Backorder. Quantity
-     *  The maximum back order quantity (where back order is allowed).
+     *  The maximum back order quantity of the item associated with this line (where back order is allowed).
      *  0..1
      *  Line Item
      *  Maximum
@@ -844,7 +1030,7 @@ class LineItemType
      *
      * BBIE
      *  Line Item. Maximum_ Backorder. Quantity
-     *  The maximum back order quantity (where back order is allowed).
+     *  The maximum back order quantity of the item associated with this line (where back order is allowed).
      *  0..1
      *  Line Item
      *  Maximum
@@ -865,11 +1051,11 @@ class LineItemType
      * Gets as inspectionMethodCode
      *
      * BBIE
-     *  Line Item. Inspection Method. Code
-     *  Inspection requirements for a Line Item, expressed as a code.
+     *  Line Item. Inspection Method Code. Code
+     *  A code signifying the inspection requirements for the item associated with this line item.
      *  0..1
      *  Line Item
-     *  Inspection Method
+     *  Inspection Method Code
      *  Code
      *  Code. Type
      *
@@ -884,11 +1070,11 @@ class LineItemType
      * Sets a new inspectionMethodCode
      *
      * BBIE
-     *  Line Item. Inspection Method. Code
-     *  Inspection requirements for a Line Item, expressed as a code.
+     *  Line Item. Inspection Method Code. Code
+     *  A code signifying the inspection requirements for the item associated with this line item.
      *  0..1
      *  Line Item
-     *  Inspection Method
+     *  Inspection Method Code
      *  Code
      *  Code. Type
      *
@@ -906,7 +1092,7 @@ class LineItemType
      *
      * BBIE
      *  Line Item. Partial Delivery Indicator. Indicator
-     *  Indicates whether a partial delivery is allowed.
+     *  An indicator that a partial delivery is allowed (true) or not (false).
      *  0..1
      *  Line Item
      *  Partial Delivery Indicator
@@ -925,7 +1111,7 @@ class LineItemType
      *
      * BBIE
      *  Line Item. Partial Delivery Indicator. Indicator
-     *  Indicates whether a partial delivery is allowed.
+     *  An indicator that a partial delivery is allowed (true) or not (false).
      *  0..1
      *  Line Item
      *  Partial Delivery Indicator
@@ -946,7 +1132,7 @@ class LineItemType
      *
      * BBIE
      *  Line Item. Back Order Allowed Indicator. Indicator
-     *  Indicates whether back order is allowed.
+     *  An indicator that back order is allowed (true) or not (false).
      *  0..1
      *  Line Item
      *  Back Order Allowed Indicator
@@ -965,7 +1151,7 @@ class LineItemType
      *
      * BBIE
      *  Line Item. Back Order Allowed Indicator. Indicator
-     *  Indicates whether back order is allowed.
+     *  An indicator that back order is allowed (true) or not (false).
      *  0..1
      *  Line Item
      *  Back Order Allowed Indicator
@@ -986,7 +1172,7 @@ class LineItemType
      *
      * BBIE
      *  Line Item. Accounting Cost Code. Code
-     *  The buyer's accounting code applied to the Line Item.
+     *  The buyer's accounting cost centre for this line item, expressed as a code.
      *  0..1
      *  Line Item
      *  Accounting Cost Code
@@ -1005,7 +1191,7 @@ class LineItemType
      *
      * BBIE
      *  Line Item. Accounting Cost Code. Code
-     *  The buyer's accounting code applied to the Line Item.
+     *  The buyer's accounting cost centre for this line item, expressed as a code.
      *  0..1
      *  Line Item
      *  Accounting Cost Code
@@ -1026,7 +1212,7 @@ class LineItemType
      *
      * BBIE
      *  Line Item. Accounting Cost. Text
-     *  The buyer's accounting code applied to the Line Item, expressed as text.
+     *  The buyer's accounting cost centre for this line item, expressed as text.
      *  0..1
      *  Line Item
      *  Accounting Cost
@@ -1045,7 +1231,7 @@ class LineItemType
      *
      * BBIE
      *  Line Item. Accounting Cost. Text
-     *  The buyer's accounting code applied to the Line Item, expressed as text.
+     *  The buyer's accounting cost centre for this line item, expressed as text.
      *  0..1
      *  Line Item
      *  Accounting Cost
@@ -1062,13 +1248,125 @@ class LineItemType
     }
 
     /**
+     * Adds as warrantyInformation
+     *
+     * BBIE
+     *  Line Item. Warranty_ Information. Text
+     *  Text describing a warranty (provided by WarrantyParty) for the good or service described in this line item.
+     *  0..n
+     *  Line Item
+     *  Warranty
+     *  Information
+     *  Text
+     *  Text. Type
+     *  Unless specified otherwise and in addition to any rights the Customer may have under statute, Dell warrants to the Customer that Dell branded Products (excluding third party products and software), will be free from defects in materials and workmanship affecting normal use for a period of one year from invoice date ( Standard Warranty ).
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\WarrantyInformation $warrantyInformation
+     */
+    public function addToWarrantyInformation(\horstoeko\ubl\entities\cbc\WarrantyInformation $warrantyInformation)
+    {
+        $this->warrantyInformation[] = $warrantyInformation;
+        return $this;
+    }
+
+    /**
+     * isset warrantyInformation
+     *
+     * BBIE
+     *  Line Item. Warranty_ Information. Text
+     *  Text describing a warranty (provided by WarrantyParty) for the good or service described in this line item.
+     *  0..n
+     *  Line Item
+     *  Warranty
+     *  Information
+     *  Text
+     *  Text. Type
+     *  Unless specified otherwise and in addition to any rights the Customer may have under statute, Dell warrants to the Customer that Dell branded Products (excluding third party products and software), will be free from defects in materials and workmanship affecting normal use for a period of one year from invoice date ( Standard Warranty ).
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetWarrantyInformation($index)
+    {
+        return isset($this->warrantyInformation[$index]);
+    }
+
+    /**
+     * unset warrantyInformation
+     *
+     * BBIE
+     *  Line Item. Warranty_ Information. Text
+     *  Text describing a warranty (provided by WarrantyParty) for the good or service described in this line item.
+     *  0..n
+     *  Line Item
+     *  Warranty
+     *  Information
+     *  Text
+     *  Text. Type
+     *  Unless specified otherwise and in addition to any rights the Customer may have under statute, Dell warrants to the Customer that Dell branded Products (excluding third party products and software), will be free from defects in materials and workmanship affecting normal use for a period of one year from invoice date ( Standard Warranty ).
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetWarrantyInformation($index)
+    {
+        unset($this->warrantyInformation[$index]);
+    }
+
+    /**
+     * Gets as warrantyInformation
+     *
+     * BBIE
+     *  Line Item. Warranty_ Information. Text
+     *  Text describing a warranty (provided by WarrantyParty) for the good or service described in this line item.
+     *  0..n
+     *  Line Item
+     *  Warranty
+     *  Information
+     *  Text
+     *  Text. Type
+     *  Unless specified otherwise and in addition to any rights the Customer may have under statute, Dell warrants to the Customer that Dell branded Products (excluding third party products and software), will be free from defects in materials and workmanship affecting normal use for a period of one year from invoice date ( Standard Warranty ).
+     *
+     * @return \horstoeko\ubl\entities\cbc\WarrantyInformation[]
+     */
+    public function getWarrantyInformation()
+    {
+        return $this->warrantyInformation;
+    }
+
+    /**
+     * Sets a new warrantyInformation
+     *
+     * BBIE
+     *  Line Item. Warranty_ Information. Text
+     *  Text describing a warranty (provided by WarrantyParty) for the good or service described in this line item.
+     *  0..n
+     *  Line Item
+     *  Warranty
+     *  Information
+     *  Text
+     *  Text. Type
+     *  Unless specified otherwise and in addition to any rights the Customer may have under statute, Dell warrants to the Customer that Dell branded Products (excluding third party products and software), will be free from defects in materials and workmanship affecting normal use for a period of one year from invoice date ( Standard Warranty ).
+     *
+     * @param \horstoeko\ubl\entities\cbc\WarrantyInformation[] $warrantyInformation
+     * @return self
+     */
+    public function setWarrantyInformation(array $warrantyInformation)
+    {
+        $this->warrantyInformation = $warrantyInformation;
+        return $this;
+    }
+
+    /**
      * Adds as delivery
      *
      * ASBIE
      *  Line Item. Delivery
-     *  An association to Delivery.
+     *  A delivery associated with this line item.
      *  0..n
      *  Line Item
+     *  Delivery
      *  Delivery
      *  Delivery
      *
@@ -1086,9 +1384,10 @@ class LineItemType
      *
      * ASBIE
      *  Line Item. Delivery
-     *  An association to Delivery.
+     *  A delivery associated with this line item.
      *  0..n
      *  Line Item
+     *  Delivery
      *  Delivery
      *  Delivery
      *
@@ -1105,9 +1404,10 @@ class LineItemType
      *
      * ASBIE
      *  Line Item. Delivery
-     *  An association to Delivery.
+     *  A delivery associated with this line item.
      *  0..n
      *  Line Item
+     *  Delivery
      *  Delivery
      *  Delivery
      *
@@ -1124,9 +1424,10 @@ class LineItemType
      *
      * ASBIE
      *  Line Item. Delivery
-     *  An association to Delivery.
+     *  A delivery associated with this line item.
      *  0..n
      *  Line Item
+     *  Delivery
      *  Delivery
      *  Delivery
      *
@@ -1142,9 +1443,10 @@ class LineItemType
      *
      * ASBIE
      *  Line Item. Delivery
-     *  An association to Delivery.
+     *  A delivery associated with this line item.
      *  0..n
      *  Line Item
+     *  Delivery
      *  Delivery
      *  Delivery
      *
@@ -1162,9 +1464,10 @@ class LineItemType
      *
      * ASBIE
      *  Line Item. Delivery Terms
-     *  An association to Delivery Terms.
+     *  Terms and conditions of the delivery associated with this line item.
      *  0..1
      *  Line Item
+     *  Delivery Terms
      *  Delivery Terms
      *  Delivery Terms
      *
@@ -1180,9 +1483,10 @@ class LineItemType
      *
      * ASBIE
      *  Line Item. Delivery Terms
-     *  An association to Delivery Terms.
+     *  Terms and conditions of the delivery associated with this line item.
      *  0..1
      *  Line Item
+     *  Delivery Terms
      *  Delivery Terms
      *  Delivery Terms
      *
@@ -1200,10 +1504,11 @@ class LineItemType
      *
      * ASBIE
      *  Line Item. Originator_ Party. Party
-     *  The party who originated Order.
+     *  The party who originated the Order associated with this line item.
      *  0..1
      *  Line Item
      *  Originator
+     *  Party
      *  Party
      *  Party
      *
@@ -1219,10 +1524,11 @@ class LineItemType
      *
      * ASBIE
      *  Line Item. Originator_ Party. Party
-     *  The party who originated Order.
+     *  The party who originated the Order associated with this line item.
      *  0..1
      *  Line Item
      *  Originator
+     *  Party
      *  Party
      *  Party
      *
@@ -1240,9 +1546,10 @@ class LineItemType
      *
      * ASBIE
      *  Line Item. Ordered Shipment
-     *  An association to Ordered Shipment.
+     *  An ordered shipment associated with this line item.
      *  0..n
      *  Line Item
+     *  Ordered Shipment
      *  Ordered Shipment
      *  Ordered Shipment
      *
@@ -1260,9 +1567,10 @@ class LineItemType
      *
      * ASBIE
      *  Line Item. Ordered Shipment
-     *  An association to Ordered Shipment.
+     *  An ordered shipment associated with this line item.
      *  0..n
      *  Line Item
+     *  Ordered Shipment
      *  Ordered Shipment
      *  Ordered Shipment
      *
@@ -1279,9 +1587,10 @@ class LineItemType
      *
      * ASBIE
      *  Line Item. Ordered Shipment
-     *  An association to Ordered Shipment.
+     *  An ordered shipment associated with this line item.
      *  0..n
      *  Line Item
+     *  Ordered Shipment
      *  Ordered Shipment
      *  Ordered Shipment
      *
@@ -1298,9 +1607,10 @@ class LineItemType
      *
      * ASBIE
      *  Line Item. Ordered Shipment
-     *  An association to Ordered Shipment.
+     *  An ordered shipment associated with this line item.
      *  0..n
      *  Line Item
+     *  Ordered Shipment
      *  Ordered Shipment
      *  Ordered Shipment
      *
@@ -1316,9 +1626,10 @@ class LineItemType
      *
      * ASBIE
      *  Line Item. Ordered Shipment
-     *  An association to Ordered Shipment.
+     *  An ordered shipment associated with this line item.
      *  0..n
      *  Line Item
+     *  Ordered Shipment
      *  Ordered Shipment
      *  Ordered Shipment
      *
@@ -1336,9 +1647,10 @@ class LineItemType
      *
      * ASBIE
      *  Line Item. Pricing Reference
-     *  An association to Pricing Reference.
+     *  A reference to pricing and item location information associated with this line item.
      *  0..1
      *  Line Item
+     *  Pricing Reference
      *  Pricing Reference
      *  Pricing Reference
      *
@@ -1354,9 +1666,10 @@ class LineItemType
      *
      * ASBIE
      *  Line Item. Pricing Reference
-     *  An association to Pricing Reference.
+     *  A reference to pricing and item location information associated with this line item.
      *  0..1
      *  Line Item
+     *  Pricing Reference
      *  Pricing Reference
      *  Pricing Reference
      *
@@ -1374,9 +1687,10 @@ class LineItemType
      *
      * ASBIE
      *  Line Item. Allowance Charge
-     *  An association to Allowance Charge.
+     *  An allowance or charge associated with this line item.
      *  0..n
      *  Line Item
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *
@@ -1394,9 +1708,10 @@ class LineItemType
      *
      * ASBIE
      *  Line Item. Allowance Charge
-     *  An association to Allowance Charge.
+     *  An allowance or charge associated with this line item.
      *  0..n
      *  Line Item
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *
@@ -1413,9 +1728,10 @@ class LineItemType
      *
      * ASBIE
      *  Line Item. Allowance Charge
-     *  An association to Allowance Charge.
+     *  An allowance or charge associated with this line item.
      *  0..n
      *  Line Item
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *
@@ -1432,9 +1748,10 @@ class LineItemType
      *
      * ASBIE
      *  Line Item. Allowance Charge
-     *  An association to Allowance Charge.
+     *  An allowance or charge associated with this line item.
      *  0..n
      *  Line Item
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *
@@ -1450,9 +1767,10 @@ class LineItemType
      *
      * ASBIE
      *  Line Item. Allowance Charge
-     *  An association to Allowance Charge.
+     *  An allowance or charge associated with this line item.
      *  0..n
      *  Line Item
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *
@@ -1470,9 +1788,10 @@ class LineItemType
      *
      * ASBIE
      *  Line Item. Price
-     *  An association to Price.
+     *  The price of the item of trade associated with this line item.
      *  0..1
      *  Line Item
+     *  Price
      *  Price
      *  Price
      *
@@ -1488,9 +1807,10 @@ class LineItemType
      *
      * ASBIE
      *  Line Item. Price
-     *  An association to Price.
+     *  The price of the item of trade associated with this line item.
      *  0..1
      *  Line Item
+     *  Price
      *  Price
      *  Price
      *
@@ -1508,9 +1828,10 @@ class LineItemType
      *
      * ASBIE
      *  Line Item. Item
-     *  An association to Item.
+     *  The item of trade associated with this line item.
      *  1
      *  Line Item
+     *  Item
      *  Item
      *  Item
      *
@@ -1526,9 +1847,10 @@ class LineItemType
      *
      * ASBIE
      *  Line Item. Item
-     *  An association to Item.
+     *  The item of trade associated with this line item.
      *  1
      *  Line Item
+     *  Item
      *  Item
      *  Item
      *
@@ -1538,6 +1860,440 @@ class LineItemType
     public function setItem(\horstoeko\ubl\entities\cac\Item $item)
     {
         $this->item = $item;
+        return $this;
+    }
+
+    /**
+     * Adds as subLineItem
+     *
+     * ASBIE
+     *  Line Item. Sub_ Line Item. Line Item
+     *  The subsidiary line items that constitute the main line item, such as in a bill of materials.
+     *  0..n
+     *  Line Item
+     *  Sub
+     *  Line Item
+     *  Line Item
+     *  Line Item
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\SubLineItem $subLineItem
+     */
+    public function addToSubLineItem(\horstoeko\ubl\entities\cac\SubLineItem $subLineItem)
+    {
+        $this->subLineItem[] = $subLineItem;
+        return $this;
+    }
+
+    /**
+     * isset subLineItem
+     *
+     * ASBIE
+     *  Line Item. Sub_ Line Item. Line Item
+     *  The subsidiary line items that constitute the main line item, such as in a bill of materials.
+     *  0..n
+     *  Line Item
+     *  Sub
+     *  Line Item
+     *  Line Item
+     *  Line Item
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetSubLineItem($index)
+    {
+        return isset($this->subLineItem[$index]);
+    }
+
+    /**
+     * unset subLineItem
+     *
+     * ASBIE
+     *  Line Item. Sub_ Line Item. Line Item
+     *  The subsidiary line items that constitute the main line item, such as in a bill of materials.
+     *  0..n
+     *  Line Item
+     *  Sub
+     *  Line Item
+     *  Line Item
+     *  Line Item
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetSubLineItem($index)
+    {
+        unset($this->subLineItem[$index]);
+    }
+
+    /**
+     * Gets as subLineItem
+     *
+     * ASBIE
+     *  Line Item. Sub_ Line Item. Line Item
+     *  The subsidiary line items that constitute the main line item, such as in a bill of materials.
+     *  0..n
+     *  Line Item
+     *  Sub
+     *  Line Item
+     *  Line Item
+     *  Line Item
+     *
+     * @return \horstoeko\ubl\entities\cac\SubLineItem[]
+     */
+    public function getSubLineItem()
+    {
+        return $this->subLineItem;
+    }
+
+    /**
+     * Sets a new subLineItem
+     *
+     * ASBIE
+     *  Line Item. Sub_ Line Item. Line Item
+     *  The subsidiary line items that constitute the main line item, such as in a bill of materials.
+     *  0..n
+     *  Line Item
+     *  Sub
+     *  Line Item
+     *  Line Item
+     *  Line Item
+     *
+     * @param \horstoeko\ubl\entities\cac\SubLineItem[] $subLineItem
+     * @return self
+     */
+    public function setSubLineItem(array $subLineItem)
+    {
+        $this->subLineItem = $subLineItem;
+        return $this;
+    }
+
+    /**
+     * Gets as warrantyValidityPeriod
+     *
+     * ASBIE
+     *  Line Item. Warranty Validity_ Period. Period
+     *  The period during which the warranty associated with this line item is valid.
+     *  0..1
+     *  Line Item
+     *  Warranty Validity
+     *  Period
+     *  Period
+     *  Period
+     *
+     * @return \horstoeko\ubl\entities\cac\WarrantyValidityPeriod
+     */
+    public function getWarrantyValidityPeriod()
+    {
+        return $this->warrantyValidityPeriod;
+    }
+
+    /**
+     * Sets a new warrantyValidityPeriod
+     *
+     * ASBIE
+     *  Line Item. Warranty Validity_ Period. Period
+     *  The period during which the warranty associated with this line item is valid.
+     *  0..1
+     *  Line Item
+     *  Warranty Validity
+     *  Period
+     *  Period
+     *  Period
+     *
+     * @param \horstoeko\ubl\entities\cac\WarrantyValidityPeriod $warrantyValidityPeriod
+     * @return self
+     */
+    public function setWarrantyValidityPeriod(\horstoeko\ubl\entities\cac\WarrantyValidityPeriod $warrantyValidityPeriod)
+    {
+        $this->warrantyValidityPeriod = $warrantyValidityPeriod;
+        return $this;
+    }
+
+    /**
+     * Gets as warrantyParty
+     *
+     * ASBIE
+     *  Line Item. Warranty_ Party. Party
+     *  The party responsible for any warranty associated with this line item.
+     *  0..1
+     *  Line Item
+     *  Warranty
+     *  Party
+     *  Party
+     *  Party
+     *
+     * @return \horstoeko\ubl\entities\cac\WarrantyParty
+     */
+    public function getWarrantyParty()
+    {
+        return $this->warrantyParty;
+    }
+
+    /**
+     * Sets a new warrantyParty
+     *
+     * ASBIE
+     *  Line Item. Warranty_ Party. Party
+     *  The party responsible for any warranty associated with this line item.
+     *  0..1
+     *  Line Item
+     *  Warranty
+     *  Party
+     *  Party
+     *  Party
+     *
+     * @param \horstoeko\ubl\entities\cac\WarrantyParty $warrantyParty
+     * @return self
+     */
+    public function setWarrantyParty(\horstoeko\ubl\entities\cac\WarrantyParty $warrantyParty)
+    {
+        $this->warrantyParty = $warrantyParty;
+        return $this;
+    }
+
+    /**
+     * Adds as taxTotal
+     *
+     * ASBIE
+     *  Line Item. Tax Total
+     *  A total amount of taxes of a particular kind applicable to this item.
+     *  0..n
+     *  Line Item
+     *  Tax Total
+     *  Tax Total
+     *  Tax Total
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\TaxTotal $taxTotal
+     */
+    public function addToTaxTotal(\horstoeko\ubl\entities\cac\TaxTotal $taxTotal)
+    {
+        $this->taxTotal[] = $taxTotal;
+        return $this;
+    }
+
+    /**
+     * isset taxTotal
+     *
+     * ASBIE
+     *  Line Item. Tax Total
+     *  A total amount of taxes of a particular kind applicable to this item.
+     *  0..n
+     *  Line Item
+     *  Tax Total
+     *  Tax Total
+     *  Tax Total
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetTaxTotal($index)
+    {
+        return isset($this->taxTotal[$index]);
+    }
+
+    /**
+     * unset taxTotal
+     *
+     * ASBIE
+     *  Line Item. Tax Total
+     *  A total amount of taxes of a particular kind applicable to this item.
+     *  0..n
+     *  Line Item
+     *  Tax Total
+     *  Tax Total
+     *  Tax Total
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetTaxTotal($index)
+    {
+        unset($this->taxTotal[$index]);
+    }
+
+    /**
+     * Gets as taxTotal
+     *
+     * ASBIE
+     *  Line Item. Tax Total
+     *  A total amount of taxes of a particular kind applicable to this item.
+     *  0..n
+     *  Line Item
+     *  Tax Total
+     *  Tax Total
+     *  Tax Total
+     *
+     * @return \horstoeko\ubl\entities\cac\TaxTotal[]
+     */
+    public function getTaxTotal()
+    {
+        return $this->taxTotal;
+    }
+
+    /**
+     * Sets a new taxTotal
+     *
+     * ASBIE
+     *  Line Item. Tax Total
+     *  A total amount of taxes of a particular kind applicable to this item.
+     *  0..n
+     *  Line Item
+     *  Tax Total
+     *  Tax Total
+     *  Tax Total
+     *
+     * @param \horstoeko\ubl\entities\cac\TaxTotal[] $taxTotal
+     * @return self
+     */
+    public function setTaxTotal(array $taxTotal)
+    {
+        $this->taxTotal = $taxTotal;
+        return $this;
+    }
+
+    /**
+     * Gets as itemPriceExtension
+     *
+     * ASBIE
+     *  Line Item. Item_ Price Extension. Price Extension
+     *  The price extension, calculated by multiplying the price per unit by the quantity of items.
+     *  0..1
+     *  Line Item
+     *  Item
+     *  Price Extension
+     *  Price Extension
+     *  Price Extension
+     *
+     * @return \horstoeko\ubl\entities\cac\ItemPriceExtension
+     */
+    public function getItemPriceExtension()
+    {
+        return $this->itemPriceExtension;
+    }
+
+    /**
+     * Sets a new itemPriceExtension
+     *
+     * ASBIE
+     *  Line Item. Item_ Price Extension. Price Extension
+     *  The price extension, calculated by multiplying the price per unit by the quantity of items.
+     *  0..1
+     *  Line Item
+     *  Item
+     *  Price Extension
+     *  Price Extension
+     *  Price Extension
+     *
+     * @param \horstoeko\ubl\entities\cac\ItemPriceExtension $itemPriceExtension
+     * @return self
+     */
+    public function setItemPriceExtension(\horstoeko\ubl\entities\cac\ItemPriceExtension $itemPriceExtension)
+    {
+        $this->itemPriceExtension = $itemPriceExtension;
+        return $this;
+    }
+
+    /**
+     * Adds as lineReference
+     *
+     * ASBIE
+     *  Line Item. Line Reference
+     *  A reference to a line in a document associated with this line item.
+     *  0..n
+     *  Line Item
+     *  Line Reference
+     *  Line Reference
+     *  Line Reference
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\LineReference $lineReference
+     */
+    public function addToLineReference(\horstoeko\ubl\entities\cac\LineReference $lineReference)
+    {
+        $this->lineReference[] = $lineReference;
+        return $this;
+    }
+
+    /**
+     * isset lineReference
+     *
+     * ASBIE
+     *  Line Item. Line Reference
+     *  A reference to a line in a document associated with this line item.
+     *  0..n
+     *  Line Item
+     *  Line Reference
+     *  Line Reference
+     *  Line Reference
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetLineReference($index)
+    {
+        return isset($this->lineReference[$index]);
+    }
+
+    /**
+     * unset lineReference
+     *
+     * ASBIE
+     *  Line Item. Line Reference
+     *  A reference to a line in a document associated with this line item.
+     *  0..n
+     *  Line Item
+     *  Line Reference
+     *  Line Reference
+     *  Line Reference
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetLineReference($index)
+    {
+        unset($this->lineReference[$index]);
+    }
+
+    /**
+     * Gets as lineReference
+     *
+     * ASBIE
+     *  Line Item. Line Reference
+     *  A reference to a line in a document associated with this line item.
+     *  0..n
+     *  Line Item
+     *  Line Reference
+     *  Line Reference
+     *  Line Reference
+     *
+     * @return \horstoeko\ubl\entities\cac\LineReference[]
+     */
+    public function getLineReference()
+    {
+        return $this->lineReference;
+    }
+
+    /**
+     * Sets a new lineReference
+     *
+     * ASBIE
+     *  Line Item. Line Reference
+     *  A reference to a line in a document associated with this line item.
+     *  0..n
+     *  Line Item
+     *  Line Reference
+     *  Line Reference
+     *  Line Reference
+     *
+     * @param \horstoeko\ubl\entities\cac\LineReference[] $lineReference
+     * @return self
+     */
+    public function setLineReference(array $lineReference)
+    {
+        $this->lineReference = $lineReference;
         return $this;
     }
 

@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Line Reference. Details
- *  Reference to a Line on a document.
+ *  A class to define a reference to a line in a document.
  *  Line Reference
  * XSD Type: LineReferenceType
  */
@@ -17,7 +17,7 @@ class LineReferenceType
     /**
      * BBIE
      *  Line Reference. Line Identifier. Identifier
-     *  Identifies the Line on the referenced document.
+     *  Identifies the referenced line in the document.
      *  1
      *  Line Reference
      *  Line Identifier
@@ -31,7 +31,7 @@ class LineReferenceType
     /**
      * BBIE
      *  Line Reference. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this line reference.
      *  0..1
      *  Line Reference
      *  UUID
@@ -45,11 +45,12 @@ class LineReferenceType
     /**
      * BBIE
      *  Line Reference. Line Status Code. Code
-     *  Identifies the status of the referenced Line with respect to its original state.
+     *  A code signifying the status of the referenced line with respect to its original state.
      *  0..1
      *  Line Reference
      *  Line Status Code
      *  Code
+     *  Line Status
      *  Line Status_ Code. Type
      *
      * @var \horstoeko\ubl\entities\cbc\LineStatusCode $lineStatusCode
@@ -59,9 +60,10 @@ class LineReferenceType
     /**
      * ASBIE
      *  Line Reference. Document Reference
-     *  An association to Document Reference.
+     *  A reference to the document containing the referenced line.
      *  0..1
      *  Line Reference
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -74,7 +76,7 @@ class LineReferenceType
      *
      * BBIE
      *  Line Reference. Line Identifier. Identifier
-     *  Identifies the Line on the referenced document.
+     *  Identifies the referenced line in the document.
      *  1
      *  Line Reference
      *  Line Identifier
@@ -93,7 +95,7 @@ class LineReferenceType
      *
      * BBIE
      *  Line Reference. Line Identifier. Identifier
-     *  Identifies the Line on the referenced document.
+     *  Identifies the referenced line in the document.
      *  1
      *  Line Reference
      *  Line Identifier
@@ -114,7 +116,7 @@ class LineReferenceType
      *
      * BBIE
      *  Line Reference. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this line reference.
      *  0..1
      *  Line Reference
      *  UUID
@@ -133,7 +135,7 @@ class LineReferenceType
      *
      * BBIE
      *  Line Reference. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this line reference.
      *  0..1
      *  Line Reference
      *  UUID
@@ -154,11 +156,12 @@ class LineReferenceType
      *
      * BBIE
      *  Line Reference. Line Status Code. Code
-     *  Identifies the status of the referenced Line with respect to its original state.
+     *  A code signifying the status of the referenced line with respect to its original state.
      *  0..1
      *  Line Reference
      *  Line Status Code
      *  Code
+     *  Line Status
      *  Line Status_ Code. Type
      *
      * @return \horstoeko\ubl\entities\cbc\LineStatusCode
@@ -173,11 +176,12 @@ class LineReferenceType
      *
      * BBIE
      *  Line Reference. Line Status Code. Code
-     *  Identifies the status of the referenced Line with respect to its original state.
+     *  A code signifying the status of the referenced line with respect to its original state.
      *  0..1
      *  Line Reference
      *  Line Status Code
      *  Code
+     *  Line Status
      *  Line Status_ Code. Type
      *
      * @param \horstoeko\ubl\entities\cbc\LineStatusCode $lineStatusCode
@@ -194,9 +198,10 @@ class LineReferenceType
      *
      * ASBIE
      *  Line Reference. Document Reference
-     *  An association to Document Reference.
+     *  A reference to the document containing the referenced line.
      *  0..1
      *  Line Reference
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -212,9 +217,10 @@ class LineReferenceType
      *
      * ASBIE
      *  Line Reference. Document Reference
-     *  An association to Document Reference.
+     *  A reference to the document containing the referenced line.
      *  0..1
      *  Line Reference
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *

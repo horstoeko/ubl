@@ -2,7 +2,7 @@
 
 namespace horstoeko\ubl\entities\cbc;
 
-use horstoeko\ubl\entities\qdt\CountryIdentificationCodeType;
+use horstoeko\ubl\entities\udt\CodeType;
 
 /**
  * Class representing IdentificationCodeType
@@ -10,7 +10,7 @@ use horstoeko\ubl\entities\qdt\CountryIdentificationCodeType;
  *
  * XSD Type: IdentificationCodeType
  */
-class IdentificationCodeType extends CountryIdentificationCodeType
+class IdentificationCodeType extends CodeType
 {
 
 

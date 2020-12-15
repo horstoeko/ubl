@@ -1,0 +1,110 @@
+horstoeko\ubl\entities\cac\TelecommunicationsSupplyLineType:
+    properties:
+        iD:
+            expose: true
+            access_type: public_method
+            serialized_name: ID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getID
+                setter: setID
+            type: horstoeko\ubl\entities\cbc\ID
+        phoneNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: PhoneNumber
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPhoneNumber
+                setter: setPhoneNumber
+            type: horstoeko\ubl\entities\cbc\PhoneNumber
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: Description
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>
+        lineExtensionAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: LineExtensionAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getLineExtensionAmount
+                setter: setLineExtensionAmount
+            type: horstoeko\ubl\entities\cbc\LineExtensionAmount
+        exchangeRate:
+            expose: true
+            access_type: public_method
+            serialized_name: ExchangeRate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getExchangeRate
+                setter: setExchangeRate
+            xml_list:
+                inline: true
+                entry_name: ExchangeRate
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\ExchangeRate>
+        allowanceCharge:
+            expose: true
+            access_type: public_method
+            serialized_name: AllowanceCharge
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getAllowanceCharge
+                setter: setAllowanceCharge
+            xml_list:
+                inline: true
+                entry_name: AllowanceCharge
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\AllowanceCharge>
+        taxTotal:
+            expose: true
+            access_type: public_method
+            serialized_name: TaxTotal
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getTaxTotal
+                setter: setTaxTotal
+            xml_list:
+                inline: true
+                entry_name: TaxTotal
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\TaxTotal>
+        telecommunicationsService:
+            expose: true
+            access_type: public_method
+            serialized_name: TelecommunicationsService
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getTelecommunicationsService
+                setter: setTelecommunicationsService
+            xml_list:
+                inline: true
+                entry_name: TelecommunicationsService
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\TelecommunicationsService>

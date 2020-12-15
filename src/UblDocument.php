@@ -76,6 +76,13 @@ abstract class UblDocument
         $this->serializerBuilder->addMetadataDir(dirname(__FILE__) . '/../src/yaml/main', 'horstoeko\ubl\entities\main');
         $this->serializerBuilder->addMetadataDir(dirname(__FILE__) . '/../src/yaml/qdt', 'horstoeko\ubl\entities\qdt');
         $this->serializerBuilder->addMetadataDir(dirname(__FILE__) . '/../src/yaml/udt', 'horstoeko\ubl\entities\udt');
+        $this->serializerBuilder->addMetadataDir(dirname(__FILE__) . '/../src/yaml/cct', 'horstoeko\ubl\entities\cct');
+        $this->serializerBuilder->addMetadataDir(dirname(__FILE__) . '/../src/yaml/csc', 'horstoeko\ubl\entities\csc');
+        $this->serializerBuilder->addMetadataDir(dirname(__FILE__) . '/../src/yaml/sac', 'horstoeko\ubl\entities\sac');
+        $this->serializerBuilder->addMetadataDir(dirname(__FILE__) . '/../src/yaml/sbc', 'horstoeko\ubl\entities\sbc');
+        $this->serializerBuilder->addMetadataDir(dirname(__FILE__) . '/../src/yaml/ds', 'horstoeko\ubl\entities\ds');
+        $this->serializerBuilder->addMetadataDir(dirname(__FILE__) . '/../src/yaml/xades', 'horstoeko\ubl\entities\xades');
+        $this->serializerBuilder->addMetadataDir(dirname(__FILE__) . '/../src/yaml/xadesb', 'horstoeko\ubl\entities\xadesb');
         $this->serializerBuilder->addDefaultListeners();
         $this->serializerBuilder->configureHandlers(function (HandlerRegistryInterface $handler) use ($serializerBuilder) {
             $serializerBuilder->addDefaultHandlers();

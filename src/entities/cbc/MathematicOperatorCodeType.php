@@ -2,7 +2,7 @@
 
 namespace horstoeko\ubl\entities\cbc;
 
-use horstoeko\ubl\entities\qdt\OperatorCodeType;
+use horstoeko\ubl\entities\udt\CodeType;
 
 /**
  * Class representing MathematicOperatorCodeType
@@ -10,7 +10,7 @@ use horstoeko\ubl\entities\qdt\OperatorCodeType;
  *
  * XSD Type: MathematicOperatorCodeType
  */
-class MathematicOperatorCodeType extends OperatorCodeType
+class MathematicOperatorCodeType extends CodeType
 {
 
 

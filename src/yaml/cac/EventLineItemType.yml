@@ -1,0 +1,50 @@
+horstoeko\ubl\entities\cac\EventLineItemType:
+    properties:
+        lineNumberNumeric:
+            expose: true
+            access_type: public_method
+            serialized_name: LineNumberNumeric
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getLineNumberNumeric
+                setter: setLineNumberNumeric
+            type: horstoeko\ubl\entities\cbc\LineNumberNumeric
+        participatingLocationsLocation:
+            expose: true
+            access_type: public_method
+            serialized_name: ParticipatingLocationsLocation
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getParticipatingLocationsLocation
+                setter: setParticipatingLocationsLocation
+            type: horstoeko\ubl\entities\cac\ParticipatingLocationsLocation
+        retailPlannedImpact:
+            expose: true
+            access_type: public_method
+            serialized_name: RetailPlannedImpact
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getRetailPlannedImpact
+                setter: setRetailPlannedImpact
+            xml_list:
+                inline: true
+                entry_name: RetailPlannedImpact
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\RetailPlannedImpact>
+        supplyItem:
+            expose: true
+            access_type: public_method
+            serialized_name: SupplyItem
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getSupplyItem
+                setter: setSupplyItem
+            type: horstoeko\ubl\entities\cac\SupplyItem

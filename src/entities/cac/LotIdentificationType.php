@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Lot Identification. Details
- *  Information about a lot (of Item Instances).
+ *  A class for defining a lot identifier (the identifier of a set of item instances that would be used in case of a recall of that item).
  *  Lot Identification
  * XSD Type: LotIdentificationType
  */
@@ -17,7 +17,7 @@ class LotIdentificationType
     /**
      * BBIE
      *  Lot Identification. Lot Number. Identifier
-     *  Identifies the lot.
+     *  An identifier for the lot.
      *  0..1
      *  Lot Identification
      *  Lot Number
@@ -45,10 +45,11 @@ class LotIdentificationType
     /**
      * ASBIE
      *  Lot Identification. Additional_ Item Property. Item Property
-     *  An association to Additional Item Property.
+     *  An additional property of the lot.
      *  0..n
      *  Lot Identification
      *  Additional
+     *  Item Property
      *  Item Property
      *  Item Property
      *
@@ -63,7 +64,7 @@ class LotIdentificationType
      *
      * BBIE
      *  Lot Identification. Lot Number. Identifier
-     *  Identifies the lot.
+     *  An identifier for the lot.
      *  0..1
      *  Lot Identification
      *  Lot Number
@@ -82,7 +83,7 @@ class LotIdentificationType
      *
      * BBIE
      *  Lot Identification. Lot Number. Identifier
-     *  Identifies the lot.
+     *  An identifier for the lot.
      *  0..1
      *  Lot Identification
      *  Lot Number
@@ -143,10 +144,11 @@ class LotIdentificationType
      *
      * ASBIE
      *  Lot Identification. Additional_ Item Property. Item Property
-     *  An association to Additional Item Property.
+     *  An additional property of the lot.
      *  0..n
      *  Lot Identification
      *  Additional
+     *  Item Property
      *  Item Property
      *  Item Property
      *
@@ -164,10 +166,11 @@ class LotIdentificationType
      *
      * ASBIE
      *  Lot Identification. Additional_ Item Property. Item Property
-     *  An association to Additional Item Property.
+     *  An additional property of the lot.
      *  0..n
      *  Lot Identification
      *  Additional
+     *  Item Property
      *  Item Property
      *  Item Property
      *
@@ -184,10 +187,11 @@ class LotIdentificationType
      *
      * ASBIE
      *  Lot Identification. Additional_ Item Property. Item Property
-     *  An association to Additional Item Property.
+     *  An additional property of the lot.
      *  0..n
      *  Lot Identification
      *  Additional
+     *  Item Property
      *  Item Property
      *  Item Property
      *
@@ -204,10 +208,11 @@ class LotIdentificationType
      *
      * ASBIE
      *  Lot Identification. Additional_ Item Property. Item Property
-     *  An association to Additional Item Property.
+     *  An additional property of the lot.
      *  0..n
      *  Lot Identification
      *  Additional
+     *  Item Property
      *  Item Property
      *  Item Property
      *
@@ -223,10 +228,11 @@ class LotIdentificationType
      *
      * ASBIE
      *  Lot Identification. Additional_ Item Property. Item Property
-     *  An association to Additional Item Property.
+     *  An additional property of the lot.
      *  0..n
      *  Lot Identification
      *  Additional
+     *  Item Property
      *  Item Property
      *  Item Property
      *

@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Language. Details
- *  Information about Language.
+ *  A class to describe a language.
  *  Language
  * XSD Type: LanguageType
  */
@@ -17,7 +17,7 @@ class LanguageType
     /**
      * BBIE
      *  Language. Identifier
-     *  An identifier for a language, expressed as a code.
+     *  An identifier for this language.
      *  0..1
      *  Language
      *  Identifier
@@ -31,7 +31,7 @@ class LanguageType
     /**
      * BBIE
      *  Language. Name
-     *  The name of the language.
+     *  The name of this language.
      *  0..1
      *  Language
      *  Name
@@ -45,7 +45,7 @@ class LanguageType
     /**
      * BBIE
      *  Language. Locale Code. Code
-     *  The locale where the language is used, expressed as a code.
+     *  A code signifying the locale in which this language is used.
      *  0..1
      *  Language
      *  Locale Code
@@ -61,7 +61,7 @@ class LanguageType
      *
      * BBIE
      *  Language. Identifier
-     *  An identifier for a language, expressed as a code.
+     *  An identifier for this language.
      *  0..1
      *  Language
      *  Identifier
@@ -80,7 +80,7 @@ class LanguageType
      *
      * BBIE
      *  Language. Identifier
-     *  An identifier for a language, expressed as a code.
+     *  An identifier for this language.
      *  0..1
      *  Language
      *  Identifier
@@ -101,7 +101,7 @@ class LanguageType
      *
      * BBIE
      *  Language. Name
-     *  The name of the language.
+     *  The name of this language.
      *  0..1
      *  Language
      *  Name
@@ -120,7 +120,7 @@ class LanguageType
      *
      * BBIE
      *  Language. Name
-     *  The name of the language.
+     *  The name of this language.
      *  0..1
      *  Language
      *  Name
@@ -141,7 +141,7 @@ class LanguageType
      *
      * BBIE
      *  Language. Locale Code. Code
-     *  The locale where the language is used, expressed as a code.
+     *  A code signifying the locale in which this language is used.
      *  0..1
      *  Language
      *  Locale Code
@@ -160,7 +160,7 @@ class LanguageType
      *
      * BBIE
      *  Language. Locale Code. Code
-     *  The locale where the language is used, expressed as a code.
+     *  A code signifying the locale in which this language is used.
      *  0..1
      *  Language
      *  Locale Code

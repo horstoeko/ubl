@@ -1,0 +1,42 @@
+horstoeko\ubl\entities\xadesb\ValidationDataType:
+    properties:
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: Id
+            accessor:
+                getter: getId
+                setter: setId
+            xml_attribute: true
+            type: string
+        uR:
+            expose: true
+            access_type: public_method
+            serialized_name: UR
+            accessor:
+                getter: getUR
+                setter: setUR
+            xml_attribute: true
+            type: string
+        certificateValues:
+            expose: true
+            access_type: public_method
+            serialized_name: CertificateValues
+            xml_element:
+                cdata: false
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            accessor:
+                getter: getCertificateValues
+                setter: setCertificateValues
+            type: horstoeko\ubl\entities\xades\CertificateValues
+        revocationValues:
+            expose: true
+            access_type: public_method
+            serialized_name: RevocationValues
+            xml_element:
+                cdata: false
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            accessor:
+                getter: getRevocationValues
+                setter: setRevocationValues
+            type: horstoeko\ubl\entities\xades\RevocationValues

@@ -21,7 +21,11 @@ horstoeko\ubl\entities\cac\DeliveryTermsType:
             accessor:
                 getter: getSpecialTerms
                 setter: setSpecialTerms
-            type: horstoeko\ubl\entities\cbc\SpecialTerms
+            xml_list:
+                inline: true
+                entry_name: SpecialTerms
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\SpecialTerms>
         lossRiskResponsibilityCode:
             expose: true
             access_type: public_method
@@ -43,7 +47,22 @@ horstoeko\ubl\entities\cac\DeliveryTermsType:
             accessor:
                 getter: getLossRisk
                 setter: setLossRisk
-            type: horstoeko\ubl\entities\cbc\LossRisk
+            xml_list:
+                inline: true
+                entry_name: LossRisk
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\LossRisk>
+        amount:
+            expose: true
+            access_type: public_method
+            serialized_name: Amount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAmount
+                setter: setAmount
+            type: horstoeko\ubl\entities\cbc\Amount
         deliveryLocation:
             expose: true
             access_type: public_method

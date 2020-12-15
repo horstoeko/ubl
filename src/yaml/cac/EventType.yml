@@ -1,0 +1,113 @@
+horstoeko\ubl\entities\cac\EventType:
+    properties:
+        identificationID:
+            expose: true
+            access_type: public_method
+            serialized_name: IdentificationID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getIdentificationID
+                setter: setIdentificationID
+            type: horstoeko\ubl\entities\cbc\IdentificationID
+        occurrenceDate:
+            expose: true
+            access_type: public_method
+            serialized_name: OccurrenceDate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getOccurrenceDate
+                setter: setOccurrenceDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        occurrenceTime:
+            expose: true
+            access_type: public_method
+            serialized_name: OccurrenceTime
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getOccurrenceTime
+                setter: setOccurrenceTime
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time
+        typeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: TypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTypeCode
+                setter: setTypeCode
+            type: horstoeko\ubl\entities\cbc\TypeCode
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: Description
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>
+        completionIndicator:
+            expose: true
+            access_type: public_method
+            serialized_name: CompletionIndicator
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getCompletionIndicator
+                setter: setCompletionIndicator
+            type: bool
+        currentStatus:
+            expose: true
+            access_type: public_method
+            serialized_name: CurrentStatus
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getCurrentStatus
+                setter: setCurrentStatus
+            xml_list:
+                inline: true
+                entry_name: CurrentStatus
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\CurrentStatus>
+        contact:
+            expose: true
+            access_type: public_method
+            serialized_name: Contact
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getContact
+                setter: setContact
+            xml_list:
+                inline: true
+                entry_name: Contact
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\Contact>
+        occurenceLocation:
+            expose: true
+            access_type: public_method
+            serialized_name: OccurenceLocation
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getOccurenceLocation
+                setter: setOccurenceLocation
+            type: horstoeko\ubl\entities\cac\OccurenceLocation

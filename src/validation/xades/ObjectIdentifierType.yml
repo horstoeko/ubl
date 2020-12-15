@@ -1,0 +1,15 @@
+horstoeko\ubl\entities\xades\ObjectIdentifierType:
+    properties:
+        identifier:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        documentationReferences:
+            -
+                Count:
+                    max: 2
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

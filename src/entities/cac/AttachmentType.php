@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Attachment. Details
- *  Information about an attached document. An attachment can be referred to externally (with the URI element) or internally (with the MIME reference element) or contained within the document itself (with the EmbeddedDocument element).
+ *  A class to describe an attached document. An attachment can refer to an external document or be included with the document being exchanged.
  *  Attachment
  * XSD Type: AttachmentType
  */
@@ -17,7 +17,7 @@ class AttachmentType
     /**
      * BBIE
      *  Attachment. Embedded_ Document. Binary Object
-     *  Contains an embedded document as a BLOB (binary large object).
+     *  A binary large object containing an attached document.
      *  0..1
      *  Attachment
      *  Embedded
@@ -32,9 +32,10 @@ class AttachmentType
     /**
      * ASBIE
      *  Attachment. External Reference
-     *  An attached document, externally referred to, referred to in the MIME location, or embedded.
+     *  A reference to an attached document that is external to the document(s) being exchanged.
      *  0..1
      *  Attachment
+     *  External Reference
      *  External Reference
      *  External Reference
      *
@@ -47,7 +48,7 @@ class AttachmentType
      *
      * BBIE
      *  Attachment. Embedded_ Document. Binary Object
-     *  Contains an embedded document as a BLOB (binary large object).
+     *  A binary large object containing an attached document.
      *  0..1
      *  Attachment
      *  Embedded
@@ -67,7 +68,7 @@ class AttachmentType
      *
      * BBIE
      *  Attachment. Embedded_ Document. Binary Object
-     *  Contains an embedded document as a BLOB (binary large object).
+     *  A binary large object containing an attached document.
      *  0..1
      *  Attachment
      *  Embedded
@@ -89,9 +90,10 @@ class AttachmentType
      *
      * ASBIE
      *  Attachment. External Reference
-     *  An attached document, externally referred to, referred to in the MIME location, or embedded.
+     *  A reference to an attached document that is external to the document(s) being exchanged.
      *  0..1
      *  Attachment
+     *  External Reference
      *  External Reference
      *  External Reference
      *
@@ -107,9 +109,10 @@ class AttachmentType
      *
      * ASBIE
      *  Attachment. External Reference
-     *  An attached document, externally referred to, referred to in the MIME location, or embedded.
+     *  A reference to an attached document that is external to the document(s) being exchanged.
      *  0..1
      *  Attachment
+     *  External Reference
      *  External Reference
      *  External Reference
      *

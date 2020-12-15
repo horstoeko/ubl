@@ -21,7 +21,11 @@ horstoeko\ubl\entities\cac\OrderLineType:
             accessor:
                 getter: getNote
                 setter: setNote
-            type: horstoeko\ubl\entities\cbc\Note
+            xml_list:
+                inline: true
+                entry_name: Note
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Note>
         lineItem:
             expose: true
             access_type: public_method
@@ -100,6 +104,21 @@ horstoeko\ubl\entities\cac\OrderLineType:
                 getter: getQuotationLineReference
                 setter: setQuotationLineReference
             type: horstoeko\ubl\entities\cac\QuotationLineReference
+        orderLineReference:
+            expose: true
+            access_type: public_method
+            serialized_name: OrderLineReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getOrderLineReference
+                setter: setOrderLineReference
+            xml_list:
+                inline: true
+                entry_name: OrderLineReference
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\OrderLineReference>
         documentReference:
             expose: true
             access_type: public_method

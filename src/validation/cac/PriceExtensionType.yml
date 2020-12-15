@@ -1,0 +1,10 @@
+horstoeko\ubl\entities\cac\PriceExtensionType:
+    properties:
+        amount:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        taxTotal:
+            -
+                Valid: null

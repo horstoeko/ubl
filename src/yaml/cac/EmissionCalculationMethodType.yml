@@ -1,0 +1,46 @@
+horstoeko\ubl\entities\cac\EmissionCalculationMethodType:
+    properties:
+        calculationMethodCode:
+            expose: true
+            access_type: public_method
+            serialized_name: CalculationMethodCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getCalculationMethodCode
+                setter: setCalculationMethodCode
+            type: horstoeko\ubl\entities\cbc\CalculationMethodCode
+        fullnessIndicationCode:
+            expose: true
+            access_type: public_method
+            serialized_name: FullnessIndicationCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getFullnessIndicationCode
+                setter: setFullnessIndicationCode
+            type: horstoeko\ubl\entities\cbc\FullnessIndicationCode
+        measurementFromLocation:
+            expose: true
+            access_type: public_method
+            serialized_name: MeasurementFromLocation
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getMeasurementFromLocation
+                setter: setMeasurementFromLocation
+            type: horstoeko\ubl\entities\cac\MeasurementFromLocation
+        measurementToLocation:
+            expose: true
+            access_type: public_method
+            serialized_name: MeasurementToLocation
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getMeasurementToLocation
+                setter: setMeasurementToLocation
+            type: horstoeko\ubl\entities\cac\MeasurementToLocation

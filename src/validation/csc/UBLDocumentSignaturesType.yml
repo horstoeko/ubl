@@ -1,0 +1,9 @@
+horstoeko\ubl\entities\csc\UBLDocumentSignaturesType:
+    properties:
+        signatureInformation:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

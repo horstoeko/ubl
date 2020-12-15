@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Catalogue Request Line. Details
- *  The basic element of Catalogue; something that can be bought.
+ *  A class to define a line describing a request for a catalogue line.
  *  Catalogue Request Line
  * XSD Type: CatalogueRequestLineType
  */
@@ -17,13 +17,13 @@ class CatalogueRequestLineType
     /**
      * BBIE
      *  Catalogue Request Line. Identifier
-     *  A unique instance identifier for the line in this Catalogue document.
+     *  An identifier for the requested catalogue line.
      *  1
      *  Catalogue Request Line
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "1"
+     *  1
      *
      * @var \horstoeko\ubl\entities\cbc\ID $iD
      */
@@ -32,13 +32,13 @@ class CatalogueRequestLineType
     /**
      * BBIE
      *  Catalogue Request Line. Contract Subdivision. Text
-     *  Identifies a subdivision of a contract or tender.
+     *  A subdivision of a contract or tender covering the line being requested.
      *  0..1
      *  Catalogue Request Line
      *  Contract Subdivision
      *  Text
      *  Text. Type
-     *  "Installation", "Phase One", Support and Maintenance"
+     *  Installation , Phase One , Support and Maintenance
      *
      * @var \horstoeko\ubl\entities\cbc\ContractSubdivision $contractSubdivision
      */
@@ -47,7 +47,7 @@ class CatalogueRequestLineType
     /**
      * BBIE
      *  Catalogue Request Line. Note. Text
-     *  Free-text note used for non-structured information about the line in the specific Catalogue document (intended to be human readable).
+     *  Free-form text conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Catalogue Request Line
      *  Note
@@ -63,10 +63,11 @@ class CatalogueRequestLineType
     /**
      * ASBIE
      *  Catalogue Request Line. Line Validity_ Period. Period
-     *  The period for which the Catalogue Line is valid.
+     *  The period for which the information in the requested catalogue line is valid.
      *  0..1
      *  Catalogue Request Line
      *  Line Validity
+     *  Period
      *  Period
      *  Period
      *
@@ -77,10 +78,11 @@ class CatalogueRequestLineType
     /**
      * ASBIE
      *  Catalogue Request Line. Required_ Item Location Quantity. Item Location Quantity
-     *  An association to the description of properties related to locations and quantities of the item.
+     *  Properties of the item in the requested catalogue line that are dependent on location and quantity.
      *  0..n
      *  Catalogue Request Line
      *  Required
+     *  Item Location Quantity
      *  Item Location Quantity
      *  Item Location Quantity
      *
@@ -93,9 +95,10 @@ class CatalogueRequestLineType
     /**
      * ASBIE
      *  Catalogue Request Line. Item
-     *  An association to the Item itself.
+     *  The item associated with the requested catalogue line.
      *  1
      *  Catalogue Request Line
+     *  Item
      *  Item
      *  Item
      *
@@ -108,13 +111,13 @@ class CatalogueRequestLineType
      *
      * BBIE
      *  Catalogue Request Line. Identifier
-     *  A unique instance identifier for the line in this Catalogue document.
+     *  An identifier for the requested catalogue line.
      *  1
      *  Catalogue Request Line
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "1"
+     *  1
      *
      * @return \horstoeko\ubl\entities\cbc\ID
      */
@@ -128,13 +131,13 @@ class CatalogueRequestLineType
      *
      * BBIE
      *  Catalogue Request Line. Identifier
-     *  A unique instance identifier for the line in this Catalogue document.
+     *  An identifier for the requested catalogue line.
      *  1
      *  Catalogue Request Line
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "1"
+     *  1
      *
      * @param \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
@@ -150,13 +153,13 @@ class CatalogueRequestLineType
      *
      * BBIE
      *  Catalogue Request Line. Contract Subdivision. Text
-     *  Identifies a subdivision of a contract or tender.
+     *  A subdivision of a contract or tender covering the line being requested.
      *  0..1
      *  Catalogue Request Line
      *  Contract Subdivision
      *  Text
      *  Text. Type
-     *  "Installation", "Phase One", Support and Maintenance"
+     *  Installation , Phase One , Support and Maintenance
      *
      * @return \horstoeko\ubl\entities\cbc\ContractSubdivision
      */
@@ -170,13 +173,13 @@ class CatalogueRequestLineType
      *
      * BBIE
      *  Catalogue Request Line. Contract Subdivision. Text
-     *  Identifies a subdivision of a contract or tender.
+     *  A subdivision of a contract or tender covering the line being requested.
      *  0..1
      *  Catalogue Request Line
      *  Contract Subdivision
      *  Text
      *  Text. Type
-     *  "Installation", "Phase One", Support and Maintenance"
+     *  Installation , Phase One , Support and Maintenance
      *
      * @param \horstoeko\ubl\entities\cbc\ContractSubdivision $contractSubdivision
      * @return self
@@ -192,7 +195,7 @@ class CatalogueRequestLineType
      *
      * BBIE
      *  Catalogue Request Line. Note. Text
-     *  Free-text note used for non-structured information about the line in the specific Catalogue document (intended to be human readable).
+     *  Free-form text conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Catalogue Request Line
      *  Note
@@ -213,7 +216,7 @@ class CatalogueRequestLineType
      *
      * BBIE
      *  Catalogue Request Line. Note. Text
-     *  Free-text note used for non-structured information about the line in the specific Catalogue document (intended to be human readable).
+     *  Free-form text conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Catalogue Request Line
      *  Note
@@ -233,7 +236,7 @@ class CatalogueRequestLineType
      *
      * BBIE
      *  Catalogue Request Line. Note. Text
-     *  Free-text note used for non-structured information about the line in the specific Catalogue document (intended to be human readable).
+     *  Free-form text conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Catalogue Request Line
      *  Note
@@ -253,7 +256,7 @@ class CatalogueRequestLineType
      *
      * BBIE
      *  Catalogue Request Line. Note. Text
-     *  Free-text note used for non-structured information about the line in the specific Catalogue document (intended to be human readable).
+     *  Free-form text conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Catalogue Request Line
      *  Note
@@ -272,7 +275,7 @@ class CatalogueRequestLineType
      *
      * BBIE
      *  Catalogue Request Line. Note. Text
-     *  Free-text note used for non-structured information about the line in the specific Catalogue document (intended to be human readable).
+     *  Free-form text conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Catalogue Request Line
      *  Note
@@ -293,10 +296,11 @@ class CatalogueRequestLineType
      *
      * ASBIE
      *  Catalogue Request Line. Line Validity_ Period. Period
-     *  The period for which the Catalogue Line is valid.
+     *  The period for which the information in the requested catalogue line is valid.
      *  0..1
      *  Catalogue Request Line
      *  Line Validity
+     *  Period
      *  Period
      *  Period
      *
@@ -312,10 +316,11 @@ class CatalogueRequestLineType
      *
      * ASBIE
      *  Catalogue Request Line. Line Validity_ Period. Period
-     *  The period for which the Catalogue Line is valid.
+     *  The period for which the information in the requested catalogue line is valid.
      *  0..1
      *  Catalogue Request Line
      *  Line Validity
+     *  Period
      *  Period
      *  Period
      *
@@ -333,10 +338,11 @@ class CatalogueRequestLineType
      *
      * ASBIE
      *  Catalogue Request Line. Required_ Item Location Quantity. Item Location Quantity
-     *  An association to the description of properties related to locations and quantities of the item.
+     *  Properties of the item in the requested catalogue line that are dependent on location and quantity.
      *  0..n
      *  Catalogue Request Line
      *  Required
+     *  Item Location Quantity
      *  Item Location Quantity
      *  Item Location Quantity
      *
@@ -354,10 +360,11 @@ class CatalogueRequestLineType
      *
      * ASBIE
      *  Catalogue Request Line. Required_ Item Location Quantity. Item Location Quantity
-     *  An association to the description of properties related to locations and quantities of the item.
+     *  Properties of the item in the requested catalogue line that are dependent on location and quantity.
      *  0..n
      *  Catalogue Request Line
      *  Required
+     *  Item Location Quantity
      *  Item Location Quantity
      *  Item Location Quantity
      *
@@ -374,10 +381,11 @@ class CatalogueRequestLineType
      *
      * ASBIE
      *  Catalogue Request Line. Required_ Item Location Quantity. Item Location Quantity
-     *  An association to the description of properties related to locations and quantities of the item.
+     *  Properties of the item in the requested catalogue line that are dependent on location and quantity.
      *  0..n
      *  Catalogue Request Line
      *  Required
+     *  Item Location Quantity
      *  Item Location Quantity
      *  Item Location Quantity
      *
@@ -394,10 +402,11 @@ class CatalogueRequestLineType
      *
      * ASBIE
      *  Catalogue Request Line. Required_ Item Location Quantity. Item Location Quantity
-     *  An association to the description of properties related to locations and quantities of the item.
+     *  Properties of the item in the requested catalogue line that are dependent on location and quantity.
      *  0..n
      *  Catalogue Request Line
      *  Required
+     *  Item Location Quantity
      *  Item Location Quantity
      *  Item Location Quantity
      *
@@ -413,10 +422,11 @@ class CatalogueRequestLineType
      *
      * ASBIE
      *  Catalogue Request Line. Required_ Item Location Quantity. Item Location Quantity
-     *  An association to the description of properties related to locations and quantities of the item.
+     *  Properties of the item in the requested catalogue line that are dependent on location and quantity.
      *  0..n
      *  Catalogue Request Line
      *  Required
+     *  Item Location Quantity
      *  Item Location Quantity
      *  Item Location Quantity
      *
@@ -434,9 +444,10 @@ class CatalogueRequestLineType
      *
      * ASBIE
      *  Catalogue Request Line. Item
-     *  An association to the Item itself.
+     *  The item associated with the requested catalogue line.
      *  1
      *  Catalogue Request Line
+     *  Item
      *  Item
      *  Item
      *
@@ -452,9 +463,10 @@ class CatalogueRequestLineType
      *
      * ASBIE
      *  Catalogue Request Line. Item
-     *  An association to the Item itself.
+     *  The item associated with the requested catalogue line.
      *  1
      *  Catalogue Request Line
+     *  Item
      *  Item
      *  Item
      *

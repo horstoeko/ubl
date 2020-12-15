@@ -1,0 +1,22 @@
+horstoeko\ubl\entities\cac\TenderResultType:
+    properties:
+        awardDate:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        contract:
+            -
+                Valid: null
+        awardedTenderedProject:
+            -
+                Valid: null
+        contractFormalizationPeriod:
+            -
+                Valid: null
+        subcontractTerms:
+            -
+                Valid: null
+        winningParty:
+            -
+                Valid: null

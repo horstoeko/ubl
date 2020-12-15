@@ -1,0 +1,7 @@
+horstoeko\ubl\entities\xades\CertifiedRolesListType:
+    properties:
+        certifiedRole:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

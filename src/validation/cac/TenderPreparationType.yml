@@ -1,0 +1,13 @@
+horstoeko\ubl\entities\cac\TenderPreparationType:
+    properties:
+        tenderEnvelopeID:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        procurementProjectLot:
+            -
+                Valid: null
+        documentTenderRequirement:
+            -
+                Valid: null

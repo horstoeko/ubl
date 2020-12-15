@@ -1,0 +1,10 @@
+horstoeko\ubl\entities\cac\DutyType:
+    properties:
+        amount:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        taxCategory:
+            -
+                Valid: null

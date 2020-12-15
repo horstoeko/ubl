@@ -1,0 +1,8 @@
+horstoeko\ubl\entities\cac\EmissionCalculationMethodType:
+    properties:
+        measurementFromLocation:
+            -
+                Valid: null
+        measurementToLocation:
+            -
+                Valid: null

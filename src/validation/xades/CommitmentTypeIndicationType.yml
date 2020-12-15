@@ -1,0 +1,12 @@
+horstoeko\ubl\entities\xades\CommitmentTypeIndicationType:
+    properties:
+        commitmentTypeId:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        commitmentTypeQualifiers:
+            -
+                Valid: null

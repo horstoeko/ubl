@@ -37,3 +37,40 @@ horstoeko\ubl\entities\cac\ResponseType:
                 entry_name: Description
                 namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
             type: array<horstoeko\ubl\entities\cbc\Description>
+        effectiveDate:
+            expose: true
+            access_type: public_method
+            serialized_name: EffectiveDate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getEffectiveDate
+                setter: setEffectiveDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        effectiveTime:
+            expose: true
+            access_type: public_method
+            serialized_name: EffectiveTime
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getEffectiveTime
+                setter: setEffectiveTime
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time
+        status:
+            expose: true
+            access_type: public_method
+            serialized_name: Status
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getStatus
+                setter: setStatus
+            xml_list:
+                inline: true
+                entry_name: Status
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\Status>

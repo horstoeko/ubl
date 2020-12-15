@@ -2,7 +2,7 @@
 
 namespace horstoeko\ubl\entities\cbc;
 
-use horstoeko\ubl\entities\qdt\CurrencyCodeType;
+use horstoeko\ubl\entities\udt\CodeType;
 
 /**
  * Class representing TaxCurrencyCodeType
@@ -10,7 +10,7 @@ use horstoeko\ubl\entities\qdt\CurrencyCodeType;
  *
  * XSD Type: TaxCurrencyCodeType
  */
-class TaxCurrencyCodeType extends CurrencyCodeType
+class TaxCurrencyCodeType extends CodeType
 {
 
 

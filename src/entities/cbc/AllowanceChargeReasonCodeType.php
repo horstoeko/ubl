@@ -2,7 +2,7 @@
 
 namespace horstoeko\ubl\entities\cbc;
 
-use horstoeko\ubl\entities\qdt\AllowanceChargeReasonCodeType as AllowanceChargeReasonCodeTypeBase;
+use horstoeko\ubl\entities\udt\CodeType;
 
 /**
  * Class representing AllowanceChargeReasonCodeType
@@ -10,7 +10,7 @@ use horstoeko\ubl\entities\qdt\AllowanceChargeReasonCodeType as AllowanceChargeR
  *
  * XSD Type: AllowanceChargeReasonCodeType
  */
-class AllowanceChargeReasonCodeType extends AllowanceChargeReasonCodeTypeBase
+class AllowanceChargeReasonCodeType extends CodeType
 {
 
 

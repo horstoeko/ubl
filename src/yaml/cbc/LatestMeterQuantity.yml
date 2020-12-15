@@ -1,0 +1,3 @@
+horstoeko\ubl\entities\cbc\LatestMeterQuantity:
+    xml_root_name: LatestMeterQuantity
+    xml_root_namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'

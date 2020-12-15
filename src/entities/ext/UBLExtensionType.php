@@ -12,30 +12,14 @@ class UBLExtensionType
 {
 
     /**
-     * BBIE
-     *  Extension. Identifier
-     *  
-     *  An identifier for the Extension assigned by the creator of the extension.
-     *  0..1
-     *  Extension
-     *  Identifier
-     *  Identifier
-     *  Identifier. Type
+     * An identifier for the Extension assigned by the creator of the extension.
      *
      * @var \horstoeko\ubl\entities\cbc\ID $iD
      */
     private $iD = null;
 
     /**
-     * BBIE
-     *  Extension. Name
-     *  
-     *  A name for the Extension assigned by the creator of the extension.
-     *  0..1
-     *  Extension
-     *  Name
-     *  Name
-     *  Name. Type
+     * A name for the Extension assigned by the creator of the extension.
      *
      * @var \horstoeko\ubl\entities\cbc\Name $name
      */
@@ -100,15 +84,7 @@ class UBLExtensionType
     /**
      * Gets as iD
      *
-     * BBIE
-     *  Extension. Identifier
-     *  
-     *  An identifier for the Extension assigned by the creator of the extension.
-     *  0..1
-     *  Extension
-     *  Identifier
-     *  Identifier
-     *  Identifier. Type
+     * An identifier for the Extension assigned by the creator of the extension.
      *
      * @return \horstoeko\ubl\entities\cbc\ID
      */
@@ -120,15 +96,7 @@ class UBLExtensionType
     /**
      * Sets a new iD
      *
-     * BBIE
-     *  Extension. Identifier
-     *  
-     *  An identifier for the Extension assigned by the creator of the extension.
-     *  0..1
-     *  Extension
-     *  Identifier
-     *  Identifier
-     *  Identifier. Type
+     * An identifier for the Extension assigned by the creator of the extension.
      *
      * @param \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
@@ -142,15 +110,7 @@ class UBLExtensionType
     /**
      * Gets as name
      *
-     * BBIE
-     *  Extension. Name
-     *  
-     *  A name for the Extension assigned by the creator of the extension.
-     *  0..1
-     *  Extension
-     *  Name
-     *  Name
-     *  Name. Type
+     * A name for the Extension assigned by the creator of the extension.
      *
      * @return \horstoeko\ubl\entities\cbc\Name
      */
@@ -162,15 +122,7 @@ class UBLExtensionType
     /**
      * Sets a new name
      *
-     * BBIE
-     *  Extension. Name
-     *  
-     *  A name for the Extension assigned by the creator of the extension.
-     *  0..1
-     *  Extension
-     *  Name
-     *  Name
-     *  Name. Type
+     * A name for the Extension assigned by the creator of the extension.
      *
      * @param \horstoeko\ubl\entities\cbc\Name $name
      * @return self

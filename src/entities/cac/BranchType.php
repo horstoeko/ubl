@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Branch. Details
- *  Information about a branch or division of an organization.
+ *  A class to describe a branch or a division of an organization.
  *  Branch
  * XSD Type: BranchType
  */
@@ -17,7 +17,7 @@ class BranchType
     /**
      * BBIE
      *  Branch. Identifier
-     *  An identifier for a branch or division of an organization.
+     *  An identifier for this branch or division of an organization.
      *  0..1
      *  Branch
      *  Identifier
@@ -31,7 +31,7 @@ class BranchType
     /**
      * BBIE
      *  Branch. Name
-     *  The name of a branch or division of an organization.
+     *  The name of this branch or division of an organization.
      *  0..1
      *  Branch
      *  Name
@@ -45,9 +45,10 @@ class BranchType
     /**
      * ASBIE
      *  Branch. Financial Institution
-     *  An association to Financial Institution.
+     *  The financial institution that this branch belongs to (if applicable).
      *  0..1
      *  Branch
+     *  Financial Institution
      *  Financial Institution
      *  Financial Institution
      *
@@ -58,9 +59,10 @@ class BranchType
     /**
      * ASBIE
      *  Branch. Address
-     *  An association to Address.
+     *  The address of this branch or division.
      *  0..1
      *  Branch
+     *  Address
      *  Address
      *  Address
      *
@@ -73,7 +75,7 @@ class BranchType
      *
      * BBIE
      *  Branch. Identifier
-     *  An identifier for a branch or division of an organization.
+     *  An identifier for this branch or division of an organization.
      *  0..1
      *  Branch
      *  Identifier
@@ -92,7 +94,7 @@ class BranchType
      *
      * BBIE
      *  Branch. Identifier
-     *  An identifier for a branch or division of an organization.
+     *  An identifier for this branch or division of an organization.
      *  0..1
      *  Branch
      *  Identifier
@@ -113,7 +115,7 @@ class BranchType
      *
      * BBIE
      *  Branch. Name
-     *  The name of a branch or division of an organization.
+     *  The name of this branch or division of an organization.
      *  0..1
      *  Branch
      *  Name
@@ -132,7 +134,7 @@ class BranchType
      *
      * BBIE
      *  Branch. Name
-     *  The name of a branch or division of an organization.
+     *  The name of this branch or division of an organization.
      *  0..1
      *  Branch
      *  Name
@@ -153,9 +155,10 @@ class BranchType
      *
      * ASBIE
      *  Branch. Financial Institution
-     *  An association to Financial Institution.
+     *  The financial institution that this branch belongs to (if applicable).
      *  0..1
      *  Branch
+     *  Financial Institution
      *  Financial Institution
      *  Financial Institution
      *
@@ -171,9 +174,10 @@ class BranchType
      *
      * ASBIE
      *  Branch. Financial Institution
-     *  An association to Financial Institution.
+     *  The financial institution that this branch belongs to (if applicable).
      *  0..1
      *  Branch
+     *  Financial Institution
      *  Financial Institution
      *  Financial Institution
      *
@@ -191,9 +195,10 @@ class BranchType
      *
      * ASBIE
      *  Branch. Address
-     *  An association to Address.
+     *  The address of this branch or division.
      *  0..1
      *  Branch
+     *  Address
      *  Address
      *  Address
      *
@@ -209,9 +214,10 @@ class BranchType
      *
      * ASBIE
      *  Branch. Address
-     *  An association to Address.
+     *  The address of this branch or division.
      *  0..1
      *  Branch
+     *  Address
      *  Address
      *  Address
      *

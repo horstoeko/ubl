@@ -6,3 +6,9 @@ horstoeko\ubl\entities\cac\ContractType:
         contractDocumentReference:
             -
                 Valid: null
+        nominationPeriod:
+            -
+                Valid: null
+        contractualDelivery:
+            -
+                Valid: null

@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Tax Subtotal. Details
- *  Information about the subtotal for a particular tax category within a tax scheme, such as standard rate within VAT.
+ *  A class to define the subtotal for a particular tax category within a particular taxation scheme, such as standard rate within VAT.
  *  Tax Subtotal
  * XSD Type: TaxSubtotalType
  */
@@ -32,7 +32,7 @@ class TaxSubtotalType
     /**
      * BBIE
      *  Tax Subtotal. Tax Amount. Amount
-     *  The amount of tax stated explicitly.
+     *  The amount of this tax subtotal.
      *  1
      *  Tax Subtotal
      *  Tax Amount
@@ -46,21 +46,21 @@ class TaxSubtotalType
     /**
      * BBIE
      *  Tax Subtotal. Calculation Sequence. Numeric
-     *  Identifies the numerical order sequence in which taxes are applied when multiple taxes are attracted. If all taxes apply to the same taxable amount, CalculationSequenceNumeric will be '1' for all taxes.
+     *  The number of this tax subtotal in the sequence of subtotals corresponding to the order in which multiple taxes are applied. If all taxes are applied to the same taxable amount (i.e., their order of application is inconsequential), then CalculationSequenceNumeric is 1 for all tax subtotals applied to a given amount.
      *  0..1
      *  Tax Subtotal
      *  Calculation Sequence
      *  Numeric
      *  Numeric. Type
      *
-     * @var float $calculationSequenceNumeric
+     * @var \horstoeko\ubl\entities\cbc\CalculationSequenceNumeric $calculationSequenceNumeric
      */
     private $calculationSequenceNumeric = null;
 
     /**
      * BBIE
      *  Tax Subtotal. Transaction Currency_ Tax Amount. Amount
-     *  The tax amount, expressed in the currency used for invoicing.
+     *  The amount of this tax subtotal, expressed in the currency used for invoicing.
      *  0..1
      *  Tax Subtotal
      *  Transaction Currency
@@ -75,21 +75,21 @@ class TaxSubtotalType
     /**
      * BBIE
      *  Tax Subtotal. Percent
-     *  The tax rate for the category, expressed as a percentage.
+     *  The tax rate of the tax category applied to this tax subtotal, expressed as a percentage.
      *  0..1
      *  Tax Subtotal
      *  Percent
      *  Percent
      *  Percent. Type
      *
-     * @var float $percent
+     * @var \horstoeko\ubl\entities\cbc\Percent $percent
      */
     private $percent = null;
 
     /**
      * BBIE
      *  Tax Subtotal. Base Unit Measure. Measure
-     *  Where a tax is applied at a certain rate per unit, the measure of units on which the tax calculation is based.
+     *  The unit of measure on which the tax calculation is based
      *  0..1
      *  Tax Subtotal
      *  Base Unit Measure
@@ -118,7 +118,7 @@ class TaxSubtotalType
     /**
      * BBIE
      *  Tax Subtotal. Tier Range. Text
-     *  Where a tax is tiered, the range of tiers applied in the calculation of the tax subtotal for the tax category.
+     *  Where a tax is tiered, the range of taxable amounts that determines the rate of tax applicable to this tax subtotal.
      *  0..1
      *  Tax Subtotal
      *  Tier Range
@@ -132,23 +132,24 @@ class TaxSubtotalType
     /**
      * BBIE
      *  Tax Subtotal. Tier Rate. Percent
-     *  Where a tax is tiered, the rate of tax applied to the range of tiers in the calculation of the tax subtotal for the tax category.
+     *  Where a tax is tiered, the tax rate that applies within a specified range of taxable amounts for this tax subtotal.
      *  0..1
      *  Tax Subtotal
      *  Tier Rate
      *  Percent
      *  Percent. Type
      *
-     * @var float $tierRatePercent
+     * @var \horstoeko\ubl\entities\cbc\TierRatePercent $tierRatePercent
      */
     private $tierRatePercent = null;
 
     /**
      * ASBIE
      *  Tax Subtotal. Tax Category
-     *  An association to Tax Category.
+     *  The tax category applicable to this subtotal.
      *  1
      *  Tax Subtotal
+     *  Tax Category
      *  Tax Category
      *  Tax Category
      *
@@ -203,7 +204,7 @@ class TaxSubtotalType
      *
      * BBIE
      *  Tax Subtotal. Tax Amount. Amount
-     *  The amount of tax stated explicitly.
+     *  The amount of this tax subtotal.
      *  1
      *  Tax Subtotal
      *  Tax Amount
@@ -222,7 +223,7 @@ class TaxSubtotalType
      *
      * BBIE
      *  Tax Subtotal. Tax Amount. Amount
-     *  The amount of tax stated explicitly.
+     *  The amount of this tax subtotal.
      *  1
      *  Tax Subtotal
      *  Tax Amount
@@ -243,14 +244,14 @@ class TaxSubtotalType
      *
      * BBIE
      *  Tax Subtotal. Calculation Sequence. Numeric
-     *  Identifies the numerical order sequence in which taxes are applied when multiple taxes are attracted. If all taxes apply to the same taxable amount, CalculationSequenceNumeric will be '1' for all taxes.
+     *  The number of this tax subtotal in the sequence of subtotals corresponding to the order in which multiple taxes are applied. If all taxes are applied to the same taxable amount (i.e., their order of application is inconsequential), then CalculationSequenceNumeric is 1 for all tax subtotals applied to a given amount.
      *  0..1
      *  Tax Subtotal
      *  Calculation Sequence
      *  Numeric
      *  Numeric. Type
      *
-     * @return float
+     * @return \horstoeko\ubl\entities\cbc\CalculationSequenceNumeric
      */
     public function getCalculationSequenceNumeric()
     {
@@ -262,17 +263,17 @@ class TaxSubtotalType
      *
      * BBIE
      *  Tax Subtotal. Calculation Sequence. Numeric
-     *  Identifies the numerical order sequence in which taxes are applied when multiple taxes are attracted. If all taxes apply to the same taxable amount, CalculationSequenceNumeric will be '1' for all taxes.
+     *  The number of this tax subtotal in the sequence of subtotals corresponding to the order in which multiple taxes are applied. If all taxes are applied to the same taxable amount (i.e., their order of application is inconsequential), then CalculationSequenceNumeric is 1 for all tax subtotals applied to a given amount.
      *  0..1
      *  Tax Subtotal
      *  Calculation Sequence
      *  Numeric
      *  Numeric. Type
      *
-     * @param float $calculationSequenceNumeric
+     * @param \horstoeko\ubl\entities\cbc\CalculationSequenceNumeric $calculationSequenceNumeric
      * @return self
      */
-    public function setCalculationSequenceNumeric($calculationSequenceNumeric)
+    public function setCalculationSequenceNumeric(\horstoeko\ubl\entities\cbc\CalculationSequenceNumeric $calculationSequenceNumeric)
     {
         $this->calculationSequenceNumeric = $calculationSequenceNumeric;
         return $this;
@@ -283,7 +284,7 @@ class TaxSubtotalType
      *
      * BBIE
      *  Tax Subtotal. Transaction Currency_ Tax Amount. Amount
-     *  The tax amount, expressed in the currency used for invoicing.
+     *  The amount of this tax subtotal, expressed in the currency used for invoicing.
      *  0..1
      *  Tax Subtotal
      *  Transaction Currency
@@ -303,7 +304,7 @@ class TaxSubtotalType
      *
      * BBIE
      *  Tax Subtotal. Transaction Currency_ Tax Amount. Amount
-     *  The tax amount, expressed in the currency used for invoicing.
+     *  The amount of this tax subtotal, expressed in the currency used for invoicing.
      *  0..1
      *  Tax Subtotal
      *  Transaction Currency
@@ -325,14 +326,14 @@ class TaxSubtotalType
      *
      * BBIE
      *  Tax Subtotal. Percent
-     *  The tax rate for the category, expressed as a percentage.
+     *  The tax rate of the tax category applied to this tax subtotal, expressed as a percentage.
      *  0..1
      *  Tax Subtotal
      *  Percent
      *  Percent
      *  Percent. Type
      *
-     * @return float
+     * @return \horstoeko\ubl\entities\cbc\Percent
      */
     public function getPercent()
     {
@@ -344,17 +345,17 @@ class TaxSubtotalType
      *
      * BBIE
      *  Tax Subtotal. Percent
-     *  The tax rate for the category, expressed as a percentage.
+     *  The tax rate of the tax category applied to this tax subtotal, expressed as a percentage.
      *  0..1
      *  Tax Subtotal
      *  Percent
      *  Percent
      *  Percent. Type
      *
-     * @param float $percent
+     * @param \horstoeko\ubl\entities\cbc\Percent $percent
      * @return self
      */
-    public function setPercent($percent)
+    public function setPercent(\horstoeko\ubl\entities\cbc\Percent $percent)
     {
         $this->percent = $percent;
         return $this;
@@ -365,7 +366,7 @@ class TaxSubtotalType
      *
      * BBIE
      *  Tax Subtotal. Base Unit Measure. Measure
-     *  Where a tax is applied at a certain rate per unit, the measure of units on which the tax calculation is based.
+     *  The unit of measure on which the tax calculation is based
      *  0..1
      *  Tax Subtotal
      *  Base Unit Measure
@@ -384,7 +385,7 @@ class TaxSubtotalType
      *
      * BBIE
      *  Tax Subtotal. Base Unit Measure. Measure
-     *  Where a tax is applied at a certain rate per unit, the measure of units on which the tax calculation is based.
+     *  The unit of measure on which the tax calculation is based
      *  0..1
      *  Tax Subtotal
      *  Base Unit Measure
@@ -447,7 +448,7 @@ class TaxSubtotalType
      *
      * BBIE
      *  Tax Subtotal. Tier Range. Text
-     *  Where a tax is tiered, the range of tiers applied in the calculation of the tax subtotal for the tax category.
+     *  Where a tax is tiered, the range of taxable amounts that determines the rate of tax applicable to this tax subtotal.
      *  0..1
      *  Tax Subtotal
      *  Tier Range
@@ -466,7 +467,7 @@ class TaxSubtotalType
      *
      * BBIE
      *  Tax Subtotal. Tier Range. Text
-     *  Where a tax is tiered, the range of tiers applied in the calculation of the tax subtotal for the tax category.
+     *  Where a tax is tiered, the range of taxable amounts that determines the rate of tax applicable to this tax subtotal.
      *  0..1
      *  Tax Subtotal
      *  Tier Range
@@ -487,14 +488,14 @@ class TaxSubtotalType
      *
      * BBIE
      *  Tax Subtotal. Tier Rate. Percent
-     *  Where a tax is tiered, the rate of tax applied to the range of tiers in the calculation of the tax subtotal for the tax category.
+     *  Where a tax is tiered, the tax rate that applies within a specified range of taxable amounts for this tax subtotal.
      *  0..1
      *  Tax Subtotal
      *  Tier Rate
      *  Percent
      *  Percent. Type
      *
-     * @return float
+     * @return \horstoeko\ubl\entities\cbc\TierRatePercent
      */
     public function getTierRatePercent()
     {
@@ -506,17 +507,17 @@ class TaxSubtotalType
      *
      * BBIE
      *  Tax Subtotal. Tier Rate. Percent
-     *  Where a tax is tiered, the rate of tax applied to the range of tiers in the calculation of the tax subtotal for the tax category.
+     *  Where a tax is tiered, the tax rate that applies within a specified range of taxable amounts for this tax subtotal.
      *  0..1
      *  Tax Subtotal
      *  Tier Rate
      *  Percent
      *  Percent. Type
      *
-     * @param float $tierRatePercent
+     * @param \horstoeko\ubl\entities\cbc\TierRatePercent $tierRatePercent
      * @return self
      */
-    public function setTierRatePercent($tierRatePercent)
+    public function setTierRatePercent(\horstoeko\ubl\entities\cbc\TierRatePercent $tierRatePercent)
     {
         $this->tierRatePercent = $tierRatePercent;
         return $this;
@@ -527,9 +528,10 @@ class TaxSubtotalType
      *
      * ASBIE
      *  Tax Subtotal. Tax Category
-     *  An association to Tax Category.
+     *  The tax category applicable to this subtotal.
      *  1
      *  Tax Subtotal
+     *  Tax Category
      *  Tax Category
      *  Tax Category
      *
@@ -545,9 +547,10 @@ class TaxSubtotalType
      *
      * ASBIE
      *  Tax Subtotal. Tax Category
-     *  An association to Tax Category.
+     *  The tax category applicable to this subtotal.
      *  1
      *  Tax Subtotal
+     *  Tax Category
      *  Tax Category
      *  Tax Category
      *

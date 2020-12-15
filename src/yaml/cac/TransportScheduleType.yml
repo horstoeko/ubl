@@ -1,0 +1,138 @@
+horstoeko\ubl\entities\cac\TransportScheduleType:
+    properties:
+        sequenceNumeric:
+            expose: true
+            access_type: public_method
+            serialized_name: SequenceNumeric
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getSequenceNumeric
+                setter: setSequenceNumeric
+            type: horstoeko\ubl\entities\cbc\SequenceNumeric
+        referenceDate:
+            expose: true
+            access_type: public_method
+            serialized_name: ReferenceDate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getReferenceDate
+                setter: setReferenceDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        referenceTime:
+            expose: true
+            access_type: public_method
+            serialized_name: ReferenceTime
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getReferenceTime
+                setter: setReferenceTime
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time
+        reliabilityPercent:
+            expose: true
+            access_type: public_method
+            serialized_name: ReliabilityPercent
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getReliabilityPercent
+                setter: setReliabilityPercent
+            type: horstoeko\ubl\entities\cbc\ReliabilityPercent
+        remarks:
+            expose: true
+            access_type: public_method
+            serialized_name: Remarks
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getRemarks
+                setter: setRemarks
+            xml_list:
+                inline: true
+                entry_name: Remarks
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Remarks>
+        statusLocation:
+            expose: true
+            access_type: public_method
+            serialized_name: StatusLocation
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getStatusLocation
+                setter: setStatusLocation
+            type: horstoeko\ubl\entities\cac\StatusLocation
+        actualArrivalTransportEvent:
+            expose: true
+            access_type: public_method
+            serialized_name: ActualArrivalTransportEvent
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getActualArrivalTransportEvent
+                setter: setActualArrivalTransportEvent
+            type: horstoeko\ubl\entities\cac\ActualArrivalTransportEvent
+        actualDepartureTransportEvent:
+            expose: true
+            access_type: public_method
+            serialized_name: ActualDepartureTransportEvent
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getActualDepartureTransportEvent
+                setter: setActualDepartureTransportEvent
+            type: horstoeko\ubl\entities\cac\ActualDepartureTransportEvent
+        estimatedDepartureTransportEvent:
+            expose: true
+            access_type: public_method
+            serialized_name: EstimatedDepartureTransportEvent
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getEstimatedDepartureTransportEvent
+                setter: setEstimatedDepartureTransportEvent
+            type: horstoeko\ubl\entities\cac\EstimatedDepartureTransportEvent
+        estimatedArrivalTransportEvent:
+            expose: true
+            access_type: public_method
+            serialized_name: EstimatedArrivalTransportEvent
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getEstimatedArrivalTransportEvent
+                setter: setEstimatedArrivalTransportEvent
+            type: horstoeko\ubl\entities\cac\EstimatedArrivalTransportEvent
+        plannedDepartureTransportEvent:
+            expose: true
+            access_type: public_method
+            serialized_name: PlannedDepartureTransportEvent
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPlannedDepartureTransportEvent
+                setter: setPlannedDepartureTransportEvent
+            type: horstoeko\ubl\entities\cac\PlannedDepartureTransportEvent
+        plannedArrivalTransportEvent:
+            expose: true
+            access_type: public_method
+            serialized_name: PlannedArrivalTransportEvent
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPlannedArrivalTransportEvent
+                setter: setPlannedArrivalTransportEvent
+            type: horstoeko\ubl\entities\cac\PlannedArrivalTransportEvent

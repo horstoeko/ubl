@@ -1,0 +1,14 @@
+horstoeko\ubl\entities\cac\PersonType:
+    properties:
+        contact:
+            -
+                Valid: null
+        financialAccount:
+            -
+                Valid: null
+        identityDocumentReference:
+            -
+                Valid: null
+        residenceAddress:
+            -
+                Valid: null

@@ -1,0 +1,14 @@
+horstoeko\ubl\entities\cac\ConsumptionHistoryType:
+    properties:
+        quantity:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        period:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

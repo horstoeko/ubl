@@ -1,0 +1,9 @@
+horstoeko\ubl\entities\xades\CRLRefsType:
+    properties:
+        cRLRef:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

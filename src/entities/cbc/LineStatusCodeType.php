@@ -2,7 +2,7 @@
 
 namespace horstoeko\ubl\entities\cbc;
 
-use horstoeko\ubl\entities\qdt\LineStatusCodeType as LineStatusCodeTypeBase;
+use horstoeko\ubl\entities\udt\CodeType;
 
 /**
  * Class representing LineStatusCodeType
@@ -10,7 +10,7 @@ use horstoeko\ubl\entities\qdt\LineStatusCodeType as LineStatusCodeTypeBase;
  *
  * XSD Type: LineStatusCodeType
  */
-class LineStatusCodeType extends LineStatusCodeTypeBase
+class LineStatusCodeType extends CodeType
 {
 
 

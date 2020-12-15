@@ -1,0 +1,7 @@
+horstoeko\ubl\entities\ds\TransformType:
+    properties:
+        algorithm:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

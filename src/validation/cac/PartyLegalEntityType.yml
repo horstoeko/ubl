@@ -6,3 +6,9 @@ horstoeko\ubl\entities\cac\PartyLegalEntityType:
         corporateRegistrationScheme:
             -
                 Valid: null
+        headOfficeParty:
+            -
+                Valid: null
+        shareholderParty:
+            -
+                Valid: null

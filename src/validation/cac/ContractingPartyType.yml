@@ -1,0 +1,15 @@
+horstoeko\ubl\entities\cac\ContractingPartyType:
+    properties:
+        contractingPartyType:
+            -
+                Valid: null
+        contractingActivity:
+            -
+                Valid: null
+        party:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

@@ -1,5 +1,16 @@
 horstoeko\ubl\entities\cac\ItemPropertyType:
     properties:
+        iD:
+            expose: true
+            access_type: public_method
+            serialized_name: ID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getID
+                setter: setID
+            type: horstoeko\ubl\entities\cbc\ID
         name:
             expose: true
             access_type: public_method
@@ -11,6 +22,28 @@ horstoeko\ubl\entities\cac\ItemPropertyType:
                 getter: getName
                 setter: setName
             type: horstoeko\ubl\entities\cbc\Name
+        nameCode:
+            expose: true
+            access_type: public_method
+            serialized_name: NameCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getNameCode
+                setter: setNameCode
+            type: horstoeko\ubl\entities\cbc\NameCode
+        testMethod:
+            expose: true
+            access_type: public_method
+            serialized_name: TestMethod
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTestMethod
+                setter: setTestMethod
+            type: horstoeko\ubl\entities\cbc\TestMethod
         value:
             expose: true
             access_type: public_method
@@ -22,6 +55,58 @@ horstoeko\ubl\entities\cac\ItemPropertyType:
                 getter: getValue
                 setter: setValue
             type: horstoeko\ubl\entities\cbc\Value
+        valueQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: ValueQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getValueQuantity
+                setter: setValueQuantity
+            type: horstoeko\ubl\entities\cbc\ValueQuantity
+        valueQualifier:
+            expose: true
+            access_type: public_method
+            serialized_name: ValueQualifier
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getValueQualifier
+                setter: setValueQualifier
+            xml_list:
+                inline: true
+                entry_name: ValueQualifier
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\ValueQualifier>
+        importanceCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ImportanceCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getImportanceCode
+                setter: setImportanceCode
+            type: horstoeko\ubl\entities\cbc\ImportanceCode
+        listValue:
+            expose: true
+            access_type: public_method
+            serialized_name: ListValue
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getListValue
+                setter: setListValue
+            xml_list:
+                inline: true
+                entry_name: ListValue
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\ListValue>
         usabilityPeriod:
             expose: true
             access_type: public_method
@@ -48,3 +133,25 @@ horstoeko\ubl\entities\cac\ItemPropertyType:
                 entry_name: ItemPropertyGroup
                 namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
             type: array<horstoeko\ubl\entities\cac\ItemPropertyGroup>
+        rangeDimension:
+            expose: true
+            access_type: public_method
+            serialized_name: RangeDimension
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getRangeDimension
+                setter: setRangeDimension
+            type: horstoeko\ubl\entities\cac\RangeDimension
+        itemPropertyRange:
+            expose: true
+            access_type: public_method
+            serialized_name: ItemPropertyRange
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getItemPropertyRange
+                setter: setItemPropertyRange
+            type: horstoeko\ubl\entities\cac\ItemPropertyRange

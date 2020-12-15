@@ -2,7 +2,7 @@
 
 namespace horstoeko\ubl\entities\cbc;
 
-use horstoeko\ubl\entities\qdt\PaymentMeansCodeType as PaymentMeansCodeTypeBase;
+use horstoeko\ubl\entities\udt\CodeType;
 
 /**
  * Class representing PaymentMeansCodeType
@@ -10,7 +10,7 @@ use horstoeko\ubl\entities\qdt\PaymentMeansCodeType as PaymentMeansCodeTypeBase;
  *
  * XSD Type: PaymentMeansCodeType
  */
-class PaymentMeansCodeType extends PaymentMeansCodeTypeBase
+class PaymentMeansCodeType extends CodeType
 {
 
 

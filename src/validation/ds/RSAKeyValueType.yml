@@ -1,0 +1,12 @@
+horstoeko\ubl\entities\ds\RSAKeyValueType:
+    properties:
+        modulus:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        exponent:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

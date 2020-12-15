@@ -44,6 +44,17 @@ horstoeko\ubl\entities\cac\DocumentReferenceType:
                 getter: getIssueDate
                 setter: setIssueDate
             type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        issueTime:
+            expose: true
+            access_type: public_method
+            serialized_name: IssueTime
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getIssueTime
+                setter: setIssueTime
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time
         documentTypeCode:
             expose: true
             access_type: public_method
@@ -81,6 +92,65 @@ horstoeko\ubl\entities\cac\DocumentReferenceType:
                 entry_name: XPath
                 namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
             type: array<horstoeko\ubl\entities\cbc\XPath>
+        languageID:
+            expose: true
+            access_type: public_method
+            serialized_name: LanguageID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getLanguageID
+                setter: setLanguageID
+            type: horstoeko\ubl\entities\cbc\LanguageID
+        localeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: LocaleCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getLocaleCode
+                setter: setLocaleCode
+            type: horstoeko\ubl\entities\cbc\LocaleCode
+        versionID:
+            expose: true
+            access_type: public_method
+            serialized_name: VersionID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getVersionID
+                setter: setVersionID
+            type: horstoeko\ubl\entities\cbc\VersionID
+        documentStatusCode:
+            expose: true
+            access_type: public_method
+            serialized_name: DocumentStatusCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDocumentStatusCode
+                setter: setDocumentStatusCode
+            type: horstoeko\ubl\entities\cbc\DocumentStatusCode
+        documentDescription:
+            expose: true
+            access_type: public_method
+            serialized_name: DocumentDescription
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDocumentDescription
+                setter: setDocumentDescription
+            xml_list:
+                inline: true
+                entry_name: DocumentDescription
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\DocumentDescription>
         attachment:
             expose: true
             access_type: public_method
@@ -92,3 +162,36 @@ horstoeko\ubl\entities\cac\DocumentReferenceType:
                 getter: getAttachment
                 setter: setAttachment
             type: horstoeko\ubl\entities\cac\Attachment
+        validityPeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: ValidityPeriod
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getValidityPeriod
+                setter: setValidityPeriod
+            type: horstoeko\ubl\entities\cac\ValidityPeriod
+        issuerParty:
+            expose: true
+            access_type: public_method
+            serialized_name: IssuerParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getIssuerParty
+                setter: setIssuerParty
+            type: horstoeko\ubl\entities\cac\IssuerParty
+        resultOfVerification:
+            expose: true
+            access_type: public_method
+            serialized_name: ResultOfVerification
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getResultOfVerification
+                setter: setResultOfVerification
+            type: horstoeko\ubl\entities\cac\ResultOfVerification

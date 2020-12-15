@@ -1,0 +1,30 @@
+horstoeko\ubl\entities\cac\CertificateType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        certificateTypeCode:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        certificateType:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        issuerParty:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        documentReference:
+            -
+                Valid: null
+        signature:
+            -
+                Valid: null

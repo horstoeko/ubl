@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Rail Transport. Details
- *  Describes a train.
+ *  A class defining details about a train wagon used as a means of transport.
  *  Rail Transport
  * XSD Type: RailTransportType
  */
@@ -17,7 +17,7 @@ class RailTransportType
     /**
      * BBIE
      *  Rail Transport. Train Identifier. Identifier
-     *  Identifies a train.
+     *  An identifier for the train used as the means of transport.
      *  1
      *  Rail Transport
      *  Train Identifier
@@ -32,7 +32,7 @@ class RailTransportType
     /**
      * BBIE
      *  Rail Transport. Rail Car Identifier. Identifier
-     *  Identifies the rail car on the train used for the means of transport.
+     *  An identifier for the rail car on the train used as the means of transport.
      *  0..1
      *  Rail Transport
      *  Rail Car Identifier
@@ -48,7 +48,7 @@ class RailTransportType
      *
      * BBIE
      *  Rail Transport. Train Identifier. Identifier
-     *  Identifies a train.
+     *  An identifier for the train used as the means of transport.
      *  1
      *  Rail Transport
      *  Train Identifier
@@ -68,7 +68,7 @@ class RailTransportType
      *
      * BBIE
      *  Rail Transport. Train Identifier. Identifier
-     *  Identifies a train.
+     *  An identifier for the train used as the means of transport.
      *  1
      *  Rail Transport
      *  Train Identifier
@@ -90,7 +90,7 @@ class RailTransportType
      *
      * BBIE
      *  Rail Transport. Rail Car Identifier. Identifier
-     *  Identifies the rail car on the train used for the means of transport.
+     *  An identifier for the rail car on the train used as the means of transport.
      *  0..1
      *  Rail Transport
      *  Rail Car Identifier
@@ -109,7 +109,7 @@ class RailTransportType
      *
      * BBIE
      *  Rail Transport. Rail Car Identifier. Identifier
-     *  Identifies the rail car on the train used for the means of transport.
+     *  An identifier for the rail car on the train used as the means of transport.
      *  0..1
      *  Rail Transport
      *  Rail Car Identifier

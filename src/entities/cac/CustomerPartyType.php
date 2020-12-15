@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Customer Party. Details
- *  Information about the Customer Party.
+ *  A class to describe a customer party.
  *  Customer Party
  * XSD Type: CustomerPartyType
  */
@@ -17,7 +17,7 @@ class CustomerPartyType
     /**
      * BBIE
      *  Customer Party. Customer Assigned_ Account Identifier. Identifier
-     *  An identifier for the Customer's account, assigned by the Customer itself.
+     *  An identifier for the customer's account, assigned by the customer itself.
      *  0..1
      *  Customer Party
      *  Customer Assigned
@@ -32,7 +32,7 @@ class CustomerPartyType
     /**
      * BBIE
      *  Customer Party. Supplier Assigned_ Account Identifier. Identifier
-     *  An identifier for the Customer's account, assigned by the Supplier.
+     *  An identifier for the customer's account, assigned by the supplier.
      *  0..1
      *  Customer Party
      *  Supplier Assigned
@@ -47,7 +47,7 @@ class CustomerPartyType
     /**
      * BBIE
      *  Customer Party. Additional_ Account Identifier. Identifier
-     *  An identifier for the Customer's account, assigned by a third party.
+     *  An identifier for the customer's account, assigned by a third party.
      *  0..n
      *  Customer Party
      *  Additional
@@ -64,9 +64,10 @@ class CustomerPartyType
     /**
      * ASBIE
      *  Customer Party. Party
-     *  An association to Party.
+     *  The customer party itself.
      *  0..1
      *  Customer Party
+     *  Party
      *  Party
      *  Party
      *
@@ -77,10 +78,11 @@ class CustomerPartyType
     /**
      * ASBIE
      *  Customer Party. Delivery_ Contact. Contact
-     *  An association to Delivery Contact.
+     *  A customer contact for deliveries.
      *  0..1
      *  Customer Party
      *  Delivery
+     *  Contact
      *  Contact
      *  Contact
      *
@@ -91,10 +93,11 @@ class CustomerPartyType
     /**
      * ASBIE
      *  Customer Party. Accounting_ Contact. Contact
-     *  An association to Accounting Contact (Customer).
+     *  A customer contact for accounting.
      *  0..1
      *  Customer Party
      *  Accounting
+     *  Contact
      *  Contact
      *  Contact
      *
@@ -105,10 +108,11 @@ class CustomerPartyType
     /**
      * ASBIE
      *  Customer Party. Buyer_ Contact. Contact
-     *  An association to Buyer Contact.
+     *  A customer contact for purchasing.
      *  0..1
      *  Customer Party
      *  Buyer
+     *  Contact
      *  Contact
      *  Contact
      *
@@ -121,7 +125,7 @@ class CustomerPartyType
      *
      * BBIE
      *  Customer Party. Customer Assigned_ Account Identifier. Identifier
-     *  An identifier for the Customer's account, assigned by the Customer itself.
+     *  An identifier for the customer's account, assigned by the customer itself.
      *  0..1
      *  Customer Party
      *  Customer Assigned
@@ -141,7 +145,7 @@ class CustomerPartyType
      *
      * BBIE
      *  Customer Party. Customer Assigned_ Account Identifier. Identifier
-     *  An identifier for the Customer's account, assigned by the Customer itself.
+     *  An identifier for the customer's account, assigned by the customer itself.
      *  0..1
      *  Customer Party
      *  Customer Assigned
@@ -163,7 +167,7 @@ class CustomerPartyType
      *
      * BBIE
      *  Customer Party. Supplier Assigned_ Account Identifier. Identifier
-     *  An identifier for the Customer's account, assigned by the Supplier.
+     *  An identifier for the customer's account, assigned by the supplier.
      *  0..1
      *  Customer Party
      *  Supplier Assigned
@@ -183,7 +187,7 @@ class CustomerPartyType
      *
      * BBIE
      *  Customer Party. Supplier Assigned_ Account Identifier. Identifier
-     *  An identifier for the Customer's account, assigned by the Supplier.
+     *  An identifier for the customer's account, assigned by the supplier.
      *  0..1
      *  Customer Party
      *  Supplier Assigned
@@ -205,7 +209,7 @@ class CustomerPartyType
      *
      * BBIE
      *  Customer Party. Additional_ Account Identifier. Identifier
-     *  An identifier for the Customer's account, assigned by a third party.
+     *  An identifier for the customer's account, assigned by a third party.
      *  0..n
      *  Customer Party
      *  Additional
@@ -227,7 +231,7 @@ class CustomerPartyType
      *
      * BBIE
      *  Customer Party. Additional_ Account Identifier. Identifier
-     *  An identifier for the Customer's account, assigned by a third party.
+     *  An identifier for the customer's account, assigned by a third party.
      *  0..n
      *  Customer Party
      *  Additional
@@ -248,7 +252,7 @@ class CustomerPartyType
      *
      * BBIE
      *  Customer Party. Additional_ Account Identifier. Identifier
-     *  An identifier for the Customer's account, assigned by a third party.
+     *  An identifier for the customer's account, assigned by a third party.
      *  0..n
      *  Customer Party
      *  Additional
@@ -269,7 +273,7 @@ class CustomerPartyType
      *
      * BBIE
      *  Customer Party. Additional_ Account Identifier. Identifier
-     *  An identifier for the Customer's account, assigned by a third party.
+     *  An identifier for the customer's account, assigned by a third party.
      *  0..n
      *  Customer Party
      *  Additional
@@ -289,7 +293,7 @@ class CustomerPartyType
      *
      * BBIE
      *  Customer Party. Additional_ Account Identifier. Identifier
-     *  An identifier for the Customer's account, assigned by a third party.
+     *  An identifier for the customer's account, assigned by a third party.
      *  0..n
      *  Customer Party
      *  Additional
@@ -311,9 +315,10 @@ class CustomerPartyType
      *
      * ASBIE
      *  Customer Party. Party
-     *  An association to Party.
+     *  The customer party itself.
      *  0..1
      *  Customer Party
+     *  Party
      *  Party
      *  Party
      *
@@ -329,9 +334,10 @@ class CustomerPartyType
      *
      * ASBIE
      *  Customer Party. Party
-     *  An association to Party.
+     *  The customer party itself.
      *  0..1
      *  Customer Party
+     *  Party
      *  Party
      *  Party
      *
@@ -349,10 +355,11 @@ class CustomerPartyType
      *
      * ASBIE
      *  Customer Party. Delivery_ Contact. Contact
-     *  An association to Delivery Contact.
+     *  A customer contact for deliveries.
      *  0..1
      *  Customer Party
      *  Delivery
+     *  Contact
      *  Contact
      *  Contact
      *
@@ -368,10 +375,11 @@ class CustomerPartyType
      *
      * ASBIE
      *  Customer Party. Delivery_ Contact. Contact
-     *  An association to Delivery Contact.
+     *  A customer contact for deliveries.
      *  0..1
      *  Customer Party
      *  Delivery
+     *  Contact
      *  Contact
      *  Contact
      *
@@ -389,10 +397,11 @@ class CustomerPartyType
      *
      * ASBIE
      *  Customer Party. Accounting_ Contact. Contact
-     *  An association to Accounting Contact (Customer).
+     *  A customer contact for accounting.
      *  0..1
      *  Customer Party
      *  Accounting
+     *  Contact
      *  Contact
      *  Contact
      *
@@ -408,10 +417,11 @@ class CustomerPartyType
      *
      * ASBIE
      *  Customer Party. Accounting_ Contact. Contact
-     *  An association to Accounting Contact (Customer).
+     *  A customer contact for accounting.
      *  0..1
      *  Customer Party
      *  Accounting
+     *  Contact
      *  Contact
      *  Contact
      *
@@ -429,10 +439,11 @@ class CustomerPartyType
      *
      * ASBIE
      *  Customer Party. Buyer_ Contact. Contact
-     *  An association to Buyer Contact.
+     *  A customer contact for purchasing.
      *  0..1
      *  Customer Party
      *  Buyer
+     *  Contact
      *  Contact
      *  Contact
      *
@@ -448,10 +459,11 @@ class CustomerPartyType
      *
      * ASBIE
      *  Customer Party. Buyer_ Contact. Contact
-     *  An association to Buyer Contact.
+     *  A customer contact for purchasing.
      *  0..1
      *  Customer Party
      *  Buyer
+     *  Contact
      *  Contact
      *  Contact
      *

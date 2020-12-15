@@ -1,0 +1,83 @@
+horstoeko\ubl\entities\cac\ConsumptionHistoryType:
+    properties:
+        meterNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: MeterNumber
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMeterNumber
+                setter: setMeterNumber
+            type: horstoeko\ubl\entities\cbc\MeterNumber
+        quantity:
+            expose: true
+            access_type: public_method
+            serialized_name: Quantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getQuantity
+                setter: setQuantity
+            type: horstoeko\ubl\entities\cbc\Quantity
+        amount:
+            expose: true
+            access_type: public_method
+            serialized_name: Amount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAmount
+                setter: setAmount
+            type: horstoeko\ubl\entities\cbc\Amount
+        consumptionLevelCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ConsumptionLevelCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getConsumptionLevelCode
+                setter: setConsumptionLevelCode
+            type: horstoeko\ubl\entities\cbc\ConsumptionLevelCode
+        consumptionLevel:
+            expose: true
+            access_type: public_method
+            serialized_name: ConsumptionLevel
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getConsumptionLevel
+                setter: setConsumptionLevel
+            type: horstoeko\ubl\entities\cbc\ConsumptionLevel
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: Description
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>
+        period:
+            expose: true
+            access_type: public_method
+            serialized_name: Period
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPeriod
+                setter: setPeriod
+            type: horstoeko\ubl\entities\cac\Period

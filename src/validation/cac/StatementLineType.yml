@@ -41,3 +41,9 @@ horstoeko\ubl\entities\cac\StatementLineType:
         exchangeRate:
             -
                 Valid: null
+        allowanceCharge:
+            -
+                Valid: null
+        collectedPayment:
+            -
+                Valid: null

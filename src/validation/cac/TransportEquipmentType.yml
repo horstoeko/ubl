@@ -18,6 +18,84 @@ horstoeko\ubl\entities\cac\TransportEquipmentType:
         loadingProofParty:
             -
                 Valid: null
+        supplierParty:
+            -
+                Valid: null
+        ownerParty:
+            -
+                Valid: null
+        operatingParty:
+            -
+                Valid: null
         loadingLocation:
+            -
+                Valid: null
+        unloadingLocation:
+            -
+                Valid: null
+        storageLocation:
+            -
+                Valid: null
+        positioningTransportEvent:
+            -
+                Valid: null
+        quarantineTransportEvent:
+            -
+                Valid: null
+        deliveryTransportEvent:
+            -
+                Valid: null
+        pickupTransportEvent:
+            -
+                Valid: null
+        handlingTransportEvent:
+            -
+                Valid: null
+        loadingTransportEvent:
+            -
+                Valid: null
+        transportEvent:
+            -
+                Valid: null
+        applicableTransportMeans:
+            -
+                Valid: null
+        haulageTradingTerms:
+            -
+                Valid: null
+        hazardousGoodsTransit:
+            -
+                Valid: null
+        packagedTransportHandlingUnit:
+            -
+                Valid: null
+        serviceAllowanceCharge:
+            -
+                Valid: null
+        freightAllowanceCharge:
+            -
+                Valid: null
+        attachedTransportEquipment:
+            -
+                Valid: null
+        delivery:
+            -
+                Valid: null
+        pickup:
+            -
+                Valid: null
+        despatch:
+            -
+                Valid: null
+        shipmentDocumentReference:
+            -
+                Valid: null
+        containedInTransportEquipment:
+            -
+                Valid: null
+        package:
+            -
+                Valid: null
+        goodsItem:
             -
                 Valid: null

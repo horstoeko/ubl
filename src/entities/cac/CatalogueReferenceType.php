@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Catalogue Reference. Details
- *  A reference to a Catalogue.
+ *  A class to define a reference to a catalogue.
  *  Catalogue Reference
  * XSD Type: CatalogueReferenceType
  */
@@ -17,7 +17,7 @@ class CatalogueReferenceType
     /**
      * BBIE
      *  Catalogue Reference. Identifier
-     *  An identifier for the Catalogue document.
+     *  An identifier for a specific catalogue.
      *  1
      *  Catalogue Reference
      *  Identifier
@@ -31,7 +31,7 @@ class CatalogueReferenceType
     /**
      * BBIE
      *  Catalogue Reference. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for a specific catalogue.
      *  0..1
      *  Catalogue Reference
      *  UUID
@@ -45,7 +45,7 @@ class CatalogueReferenceType
     /**
      * BBIE
      *  Catalogue Reference. Issue Date. Date
-     *  The date when the Catalogue was issued.
+     *  The date on which the catalogue was issued.
      *  0..1
      *  Catalogue Reference
      *  Issue Date
@@ -59,7 +59,7 @@ class CatalogueReferenceType
     /**
      * BBIE
      *  Catalogue Reference. Issue Time. Time
-     *  The time when the Catalogue was issued.
+     *  The time at which the catalogue was issued.
      *  0..1
      *  Catalogue Reference
      *  Issue Time
@@ -73,7 +73,7 @@ class CatalogueReferenceType
     /**
      * BBIE
      *  Catalogue Reference. Revision Date. Date
-     *  The date on which the information in the Catalogue was revised.
+     *  The date on which the information in the catalogue was last revised.
      *  0..1
      *  Catalogue Reference
      *  Revision Date
@@ -87,7 +87,7 @@ class CatalogueReferenceType
     /**
      * BBIE
      *  Catalogue Reference. Revision Time. Time
-     *  The time at which the information in the Catalogue was revised.
+     *  The time at which the information in the catalogue was last revised.
      *  0..1
      *  Catalogue Reference
      *  Revision Time
@@ -101,7 +101,7 @@ class CatalogueReferenceType
     /**
      * BBIE
      *  Catalogue Reference. Note. Text
-     *  A free-text note about the Catalogue. This is used for information which is only human readable.
+     *  Free-form text conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Catalogue Reference
      *  Note
@@ -117,13 +117,13 @@ class CatalogueReferenceType
     /**
      * BBIE
      *  Catalogue Reference. Description. Text
-     *  A description of the Catalogue.
+     *  Text describing the catalogue.
      *  0..n
      *  Catalogue Reference
      *  Description
      *  Text
      *  Text. Type
-     *  "computer accessories for laptops"
+     *  computer accessories for laptops
      *
      * @var \horstoeko\ubl\entities\cbc\Description[] $description
      */
@@ -134,13 +134,13 @@ class CatalogueReferenceType
     /**
      * BBIE
      *  Catalogue Reference. Version. Identifier
-     *  Indicates the current version of the Catalogue.
+     *  An identifier for the current version of the catalogue.
      *  0..1
      *  Catalogue Reference
      *  Version
      *  Identifier
      *  Identifier. Type
-     *  "1.1"
+     *  1.1
      *
      * @var \horstoeko\ubl\entities\cbc\VersionID $versionID
      */
@@ -149,14 +149,14 @@ class CatalogueReferenceType
     /**
      * BBIE
      *  Catalogue Reference. Previous_ Version. Identifier
-     *  Indicates the previous version (the version superseded by this Catalogue).
+     *  An identifier for the previous version of the catalogue that is superseded by this version.
      *  0..1
      *  Catalogue Reference
      *  Previous
      *  Version
      *  Identifier
      *  Identifier. Type
-     *  "1.0"
+     *  1.0
      *
      * @var \horstoeko\ubl\entities\cbc\PreviousVersionID $previousVersionID
      */
@@ -167,7 +167,7 @@ class CatalogueReferenceType
      *
      * BBIE
      *  Catalogue Reference. Identifier
-     *  An identifier for the Catalogue document.
+     *  An identifier for a specific catalogue.
      *  1
      *  Catalogue Reference
      *  Identifier
@@ -186,7 +186,7 @@ class CatalogueReferenceType
      *
      * BBIE
      *  Catalogue Reference. Identifier
-     *  An identifier for the Catalogue document.
+     *  An identifier for a specific catalogue.
      *  1
      *  Catalogue Reference
      *  Identifier
@@ -207,7 +207,7 @@ class CatalogueReferenceType
      *
      * BBIE
      *  Catalogue Reference. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for a specific catalogue.
      *  0..1
      *  Catalogue Reference
      *  UUID
@@ -226,7 +226,7 @@ class CatalogueReferenceType
      *
      * BBIE
      *  Catalogue Reference. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for a specific catalogue.
      *  0..1
      *  Catalogue Reference
      *  UUID
@@ -247,7 +247,7 @@ class CatalogueReferenceType
      *
      * BBIE
      *  Catalogue Reference. Issue Date. Date
-     *  The date when the Catalogue was issued.
+     *  The date on which the catalogue was issued.
      *  0..1
      *  Catalogue Reference
      *  Issue Date
@@ -266,7 +266,7 @@ class CatalogueReferenceType
      *
      * BBIE
      *  Catalogue Reference. Issue Date. Date
-     *  The date when the Catalogue was issued.
+     *  The date on which the catalogue was issued.
      *  0..1
      *  Catalogue Reference
      *  Issue Date
@@ -287,7 +287,7 @@ class CatalogueReferenceType
      *
      * BBIE
      *  Catalogue Reference. Issue Time. Time
-     *  The time when the Catalogue was issued.
+     *  The time at which the catalogue was issued.
      *  0..1
      *  Catalogue Reference
      *  Issue Time
@@ -306,7 +306,7 @@ class CatalogueReferenceType
      *
      * BBIE
      *  Catalogue Reference. Issue Time. Time
-     *  The time when the Catalogue was issued.
+     *  The time at which the catalogue was issued.
      *  0..1
      *  Catalogue Reference
      *  Issue Time
@@ -327,7 +327,7 @@ class CatalogueReferenceType
      *
      * BBIE
      *  Catalogue Reference. Revision Date. Date
-     *  The date on which the information in the Catalogue was revised.
+     *  The date on which the information in the catalogue was last revised.
      *  0..1
      *  Catalogue Reference
      *  Revision Date
@@ -346,7 +346,7 @@ class CatalogueReferenceType
      *
      * BBIE
      *  Catalogue Reference. Revision Date. Date
-     *  The date on which the information in the Catalogue was revised.
+     *  The date on which the information in the catalogue was last revised.
      *  0..1
      *  Catalogue Reference
      *  Revision Date
@@ -367,7 +367,7 @@ class CatalogueReferenceType
      *
      * BBIE
      *  Catalogue Reference. Revision Time. Time
-     *  The time at which the information in the Catalogue was revised.
+     *  The time at which the information in the catalogue was last revised.
      *  0..1
      *  Catalogue Reference
      *  Revision Time
@@ -386,7 +386,7 @@ class CatalogueReferenceType
      *
      * BBIE
      *  Catalogue Reference. Revision Time. Time
-     *  The time at which the information in the Catalogue was revised.
+     *  The time at which the information in the catalogue was last revised.
      *  0..1
      *  Catalogue Reference
      *  Revision Time
@@ -407,7 +407,7 @@ class CatalogueReferenceType
      *
      * BBIE
      *  Catalogue Reference. Note. Text
-     *  A free-text note about the Catalogue. This is used for information which is only human readable.
+     *  Free-form text conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Catalogue Reference
      *  Note
@@ -428,7 +428,7 @@ class CatalogueReferenceType
      *
      * BBIE
      *  Catalogue Reference. Note. Text
-     *  A free-text note about the Catalogue. This is used for information which is only human readable.
+     *  Free-form text conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Catalogue Reference
      *  Note
@@ -448,7 +448,7 @@ class CatalogueReferenceType
      *
      * BBIE
      *  Catalogue Reference. Note. Text
-     *  A free-text note about the Catalogue. This is used for information which is only human readable.
+     *  Free-form text conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Catalogue Reference
      *  Note
@@ -468,7 +468,7 @@ class CatalogueReferenceType
      *
      * BBIE
      *  Catalogue Reference. Note. Text
-     *  A free-text note about the Catalogue. This is used for information which is only human readable.
+     *  Free-form text conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Catalogue Reference
      *  Note
@@ -487,7 +487,7 @@ class CatalogueReferenceType
      *
      * BBIE
      *  Catalogue Reference. Note. Text
-     *  A free-text note about the Catalogue. This is used for information which is only human readable.
+     *  Free-form text conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Catalogue Reference
      *  Note
@@ -508,13 +508,13 @@ class CatalogueReferenceType
      *
      * BBIE
      *  Catalogue Reference. Description. Text
-     *  A description of the Catalogue.
+     *  Text describing the catalogue.
      *  0..n
      *  Catalogue Reference
      *  Description
      *  Text
      *  Text. Type
-     *  "computer accessories for laptops"
+     *  computer accessories for laptops
      *
      * @return self
      * @param \horstoeko\ubl\entities\cbc\Description $description
@@ -530,13 +530,13 @@ class CatalogueReferenceType
      *
      * BBIE
      *  Catalogue Reference. Description. Text
-     *  A description of the Catalogue.
+     *  Text describing the catalogue.
      *  0..n
      *  Catalogue Reference
      *  Description
      *  Text
      *  Text. Type
-     *  "computer accessories for laptops"
+     *  computer accessories for laptops
      *
      * @param int|string $index
      * @return bool
@@ -551,13 +551,13 @@ class CatalogueReferenceType
      *
      * BBIE
      *  Catalogue Reference. Description. Text
-     *  A description of the Catalogue.
+     *  Text describing the catalogue.
      *  0..n
      *  Catalogue Reference
      *  Description
      *  Text
      *  Text. Type
-     *  "computer accessories for laptops"
+     *  computer accessories for laptops
      *
      * @param int|string $index
      * @return void
@@ -572,13 +572,13 @@ class CatalogueReferenceType
      *
      * BBIE
      *  Catalogue Reference. Description. Text
-     *  A description of the Catalogue.
+     *  Text describing the catalogue.
      *  0..n
      *  Catalogue Reference
      *  Description
      *  Text
      *  Text. Type
-     *  "computer accessories for laptops"
+     *  computer accessories for laptops
      *
      * @return \horstoeko\ubl\entities\cbc\Description[]
      */
@@ -592,13 +592,13 @@ class CatalogueReferenceType
      *
      * BBIE
      *  Catalogue Reference. Description. Text
-     *  A description of the Catalogue.
+     *  Text describing the catalogue.
      *  0..n
      *  Catalogue Reference
      *  Description
      *  Text
      *  Text. Type
-     *  "computer accessories for laptops"
+     *  computer accessories for laptops
      *
      * @param \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
@@ -614,13 +614,13 @@ class CatalogueReferenceType
      *
      * BBIE
      *  Catalogue Reference. Version. Identifier
-     *  Indicates the current version of the Catalogue.
+     *  An identifier for the current version of the catalogue.
      *  0..1
      *  Catalogue Reference
      *  Version
      *  Identifier
      *  Identifier. Type
-     *  "1.1"
+     *  1.1
      *
      * @return \horstoeko\ubl\entities\cbc\VersionID
      */
@@ -634,13 +634,13 @@ class CatalogueReferenceType
      *
      * BBIE
      *  Catalogue Reference. Version. Identifier
-     *  Indicates the current version of the Catalogue.
+     *  An identifier for the current version of the catalogue.
      *  0..1
      *  Catalogue Reference
      *  Version
      *  Identifier
      *  Identifier. Type
-     *  "1.1"
+     *  1.1
      *
      * @param \horstoeko\ubl\entities\cbc\VersionID $versionID
      * @return self
@@ -656,14 +656,14 @@ class CatalogueReferenceType
      *
      * BBIE
      *  Catalogue Reference. Previous_ Version. Identifier
-     *  Indicates the previous version (the version superseded by this Catalogue).
+     *  An identifier for the previous version of the catalogue that is superseded by this version.
      *  0..1
      *  Catalogue Reference
      *  Previous
      *  Version
      *  Identifier
      *  Identifier. Type
-     *  "1.0"
+     *  1.0
      *
      * @return \horstoeko\ubl\entities\cbc\PreviousVersionID
      */
@@ -677,14 +677,14 @@ class CatalogueReferenceType
      *
      * BBIE
      *  Catalogue Reference. Previous_ Version. Identifier
-     *  Indicates the previous version (the version superseded by this Catalogue).
+     *  An identifier for the previous version of the catalogue that is superseded by this version.
      *  0..1
      *  Catalogue Reference
      *  Previous
      *  Version
      *  Identifier
      *  Identifier. Type
-     *  "1.0"
+     *  1.0
      *
      * @param \horstoeko\ubl\entities\cbc\PreviousVersionID $previousVersionID
      * @return self

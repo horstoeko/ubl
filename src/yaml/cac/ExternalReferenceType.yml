@@ -22,6 +22,17 @@ horstoeko\ubl\entities\cac\ExternalReferenceType:
                 getter: getDocumentHash
                 setter: setDocumentHash
             type: horstoeko\ubl\entities\cbc\DocumentHash
+        hashAlgorithmMethod:
+            expose: true
+            access_type: public_method
+            serialized_name: HashAlgorithmMethod
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getHashAlgorithmMethod
+                setter: setHashAlgorithmMethod
+            type: horstoeko\ubl\entities\cbc\HashAlgorithmMethod
         expiryDate:
             expose: true
             access_type: public_method
@@ -44,3 +55,73 @@ horstoeko\ubl\entities\cac\ExternalReferenceType:
                 getter: getExpiryTime
                 setter: setExpiryTime
             type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time
+        mimeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: MimeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMimeCode
+                setter: setMimeCode
+            type: horstoeko\ubl\entities\cbc\MimeCode
+        formatCode:
+            expose: true
+            access_type: public_method
+            serialized_name: FormatCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getFormatCode
+                setter: setFormatCode
+            type: horstoeko\ubl\entities\cbc\FormatCode
+        encodingCode:
+            expose: true
+            access_type: public_method
+            serialized_name: EncodingCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getEncodingCode
+                setter: setEncodingCode
+            type: horstoeko\ubl\entities\cbc\EncodingCode
+        characterSetCode:
+            expose: true
+            access_type: public_method
+            serialized_name: CharacterSetCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getCharacterSetCode
+                setter: setCharacterSetCode
+            type: horstoeko\ubl\entities\cbc\CharacterSetCode
+        fileName:
+            expose: true
+            access_type: public_method
+            serialized_name: FileName
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getFileName
+                setter: setFileName
+            type: horstoeko\ubl\entities\cbc\FileName
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: Description
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>

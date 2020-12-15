@@ -1,0 +1,11 @@
+horstoeko\ubl\entities\cac\CompletedTaskType:
+    properties:
+        evidenceSupplied:
+            -
+                Valid: null
+        period:
+            -
+                Valid: null
+        recipientCustomerParty:
+            -
+                Valid: null

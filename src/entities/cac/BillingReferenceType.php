@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Billing Reference. Details
- *  Information directly relating to a related document.
+ *  A class to define a reference to a billing document.
  *  Billing Reference
  * XSD Type: BillingReferenceType
  */
@@ -17,10 +17,11 @@ class BillingReferenceType
     /**
      * ASBIE
      *  Billing Reference. Invoice_ Document Reference. Document Reference
-     *  An associative reference to Invoice.
+     *  A reference to an invoice.
      *  0..1
      *  Billing Reference
      *  Invoice
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -31,10 +32,11 @@ class BillingReferenceType
     /**
      * ASBIE
      *  Billing Reference. Self Billed Invoice_ Document Reference. Document Reference
-     *  An associative reference to Self Billed Invoice.
+     *  A reference to a self billed invoice.
      *  0..1
      *  Billing Reference
      *  Self Billed Invoice
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -45,10 +47,11 @@ class BillingReferenceType
     /**
      * ASBIE
      *  Billing Reference. Credit Note_ Document Reference. Document Reference
-     *  An associative reference to Credit Note.
+     *  A reference to a credit note.
      *  0..1
      *  Billing Reference
      *  Credit Note
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -59,10 +62,11 @@ class BillingReferenceType
     /**
      * ASBIE
      *  Billing Reference. Self Billed Credit Note_ Document Reference. Document Reference
-     *  An associative reference to Self Billed Credit Note.
+     *  A reference to a self billed credit note.
      *  0..1
      *  Billing Reference
      *  Self Billed Credit Note
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -73,10 +77,11 @@ class BillingReferenceType
     /**
      * ASBIE
      *  Billing Reference. Debit Note_ Document Reference. Document Reference
-     *  An associative reference to Debit Note.
+     *  A reference to a debit note.
      *  0..1
      *  Billing Reference
      *  Debit Note
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -87,10 +92,11 @@ class BillingReferenceType
     /**
      * ASBIE
      *  Billing Reference. Reminder_ Document Reference. Document Reference
-     *  An associative reference to Reminder Document Reference
+     *  A reference to a billing reminder.
      *  0..1
      *  Billing Reference
      *  Reminder
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -101,10 +107,11 @@ class BillingReferenceType
     /**
      * ASBIE
      *  Billing Reference. Additional_ Document Reference. Document Reference
-     *  An associative reference to Additional Document.
+     *  A reference to an additional document.
      *  0..1
      *  Billing Reference
      *  Additional
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -115,9 +122,10 @@ class BillingReferenceType
     /**
      * ASBIE
      *  Billing Reference. Billing Reference Line
-     *  An association to Billing Reference Line.
+     *  A reference to a transaction line in the billing document.
      *  0..n
      *  Billing Reference
+     *  Billing Reference Line
      *  Billing Reference Line
      *  Billing Reference Line
      *
@@ -132,10 +140,11 @@ class BillingReferenceType
      *
      * ASBIE
      *  Billing Reference. Invoice_ Document Reference. Document Reference
-     *  An associative reference to Invoice.
+     *  A reference to an invoice.
      *  0..1
      *  Billing Reference
      *  Invoice
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -151,10 +160,11 @@ class BillingReferenceType
      *
      * ASBIE
      *  Billing Reference. Invoice_ Document Reference. Document Reference
-     *  An associative reference to Invoice.
+     *  A reference to an invoice.
      *  0..1
      *  Billing Reference
      *  Invoice
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -172,10 +182,11 @@ class BillingReferenceType
      *
      * ASBIE
      *  Billing Reference. Self Billed Invoice_ Document Reference. Document Reference
-     *  An associative reference to Self Billed Invoice.
+     *  A reference to a self billed invoice.
      *  0..1
      *  Billing Reference
      *  Self Billed Invoice
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -191,10 +202,11 @@ class BillingReferenceType
      *
      * ASBIE
      *  Billing Reference. Self Billed Invoice_ Document Reference. Document Reference
-     *  An associative reference to Self Billed Invoice.
+     *  A reference to a self billed invoice.
      *  0..1
      *  Billing Reference
      *  Self Billed Invoice
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -212,10 +224,11 @@ class BillingReferenceType
      *
      * ASBIE
      *  Billing Reference. Credit Note_ Document Reference. Document Reference
-     *  An associative reference to Credit Note.
+     *  A reference to a credit note.
      *  0..1
      *  Billing Reference
      *  Credit Note
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -231,10 +244,11 @@ class BillingReferenceType
      *
      * ASBIE
      *  Billing Reference. Credit Note_ Document Reference. Document Reference
-     *  An associative reference to Credit Note.
+     *  A reference to a credit note.
      *  0..1
      *  Billing Reference
      *  Credit Note
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -252,10 +266,11 @@ class BillingReferenceType
      *
      * ASBIE
      *  Billing Reference. Self Billed Credit Note_ Document Reference. Document Reference
-     *  An associative reference to Self Billed Credit Note.
+     *  A reference to a self billed credit note.
      *  0..1
      *  Billing Reference
      *  Self Billed Credit Note
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -271,10 +286,11 @@ class BillingReferenceType
      *
      * ASBIE
      *  Billing Reference. Self Billed Credit Note_ Document Reference. Document Reference
-     *  An associative reference to Self Billed Credit Note.
+     *  A reference to a self billed credit note.
      *  0..1
      *  Billing Reference
      *  Self Billed Credit Note
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -292,10 +308,11 @@ class BillingReferenceType
      *
      * ASBIE
      *  Billing Reference. Debit Note_ Document Reference. Document Reference
-     *  An associative reference to Debit Note.
+     *  A reference to a debit note.
      *  0..1
      *  Billing Reference
      *  Debit Note
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -311,10 +328,11 @@ class BillingReferenceType
      *
      * ASBIE
      *  Billing Reference. Debit Note_ Document Reference. Document Reference
-     *  An associative reference to Debit Note.
+     *  A reference to a debit note.
      *  0..1
      *  Billing Reference
      *  Debit Note
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -332,10 +350,11 @@ class BillingReferenceType
      *
      * ASBIE
      *  Billing Reference. Reminder_ Document Reference. Document Reference
-     *  An associative reference to Reminder Document Reference
+     *  A reference to a billing reminder.
      *  0..1
      *  Billing Reference
      *  Reminder
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -351,10 +370,11 @@ class BillingReferenceType
      *
      * ASBIE
      *  Billing Reference. Reminder_ Document Reference. Document Reference
-     *  An associative reference to Reminder Document Reference
+     *  A reference to a billing reminder.
      *  0..1
      *  Billing Reference
      *  Reminder
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -372,10 +392,11 @@ class BillingReferenceType
      *
      * ASBIE
      *  Billing Reference. Additional_ Document Reference. Document Reference
-     *  An associative reference to Additional Document.
+     *  A reference to an additional document.
      *  0..1
      *  Billing Reference
      *  Additional
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -391,10 +412,11 @@ class BillingReferenceType
      *
      * ASBIE
      *  Billing Reference. Additional_ Document Reference. Document Reference
-     *  An associative reference to Additional Document.
+     *  A reference to an additional document.
      *  0..1
      *  Billing Reference
      *  Additional
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -412,9 +434,10 @@ class BillingReferenceType
      *
      * ASBIE
      *  Billing Reference. Billing Reference Line
-     *  An association to Billing Reference Line.
+     *  A reference to a transaction line in the billing document.
      *  0..n
      *  Billing Reference
+     *  Billing Reference Line
      *  Billing Reference Line
      *  Billing Reference Line
      *
@@ -432,9 +455,10 @@ class BillingReferenceType
      *
      * ASBIE
      *  Billing Reference. Billing Reference Line
-     *  An association to Billing Reference Line.
+     *  A reference to a transaction line in the billing document.
      *  0..n
      *  Billing Reference
+     *  Billing Reference Line
      *  Billing Reference Line
      *  Billing Reference Line
      *
@@ -451,9 +475,10 @@ class BillingReferenceType
      *
      * ASBIE
      *  Billing Reference. Billing Reference Line
-     *  An association to Billing Reference Line.
+     *  A reference to a transaction line in the billing document.
      *  0..n
      *  Billing Reference
+     *  Billing Reference Line
      *  Billing Reference Line
      *  Billing Reference Line
      *
@@ -470,9 +495,10 @@ class BillingReferenceType
      *
      * ASBIE
      *  Billing Reference. Billing Reference Line
-     *  An association to Billing Reference Line.
+     *  A reference to a transaction line in the billing document.
      *  0..n
      *  Billing Reference
+     *  Billing Reference Line
      *  Billing Reference Line
      *  Billing Reference Line
      *
@@ -488,9 +514,10 @@ class BillingReferenceType
      *
      * ASBIE
      *  Billing Reference. Billing Reference Line
-     *  An association to Billing Reference Line.
+     *  A reference to a transaction line in the billing document.
      *  0..n
      *  Billing Reference
+     *  Billing Reference Line
      *  Billing Reference Line
      *  Billing Reference Line
      *

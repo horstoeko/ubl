@@ -65,7 +65,11 @@ horstoeko\ubl\entities\cac\CertificateOfOriginApplicationType:
             accessor:
                 getter: getRemarks
                 setter: setRemarks
-            type: horstoeko\ubl\entities\cbc\Remarks
+            xml_list:
+                inline: true
+                entry_name: Remarks
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Remarks>
         shipment:
             expose: true
             access_type: public_method
@@ -114,6 +118,28 @@ horstoeko\ubl\entities\cac\CertificateOfOriginApplicationType:
                 getter: getIssuerParty
                 setter: setIssuerParty
             type: horstoeko\ubl\entities\cac\IssuerParty
+        exporterParty:
+            expose: true
+            access_type: public_method
+            serialized_name: ExporterParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getExporterParty
+                setter: setExporterParty
+            type: horstoeko\ubl\entities\cac\ExporterParty
+        importerParty:
+            expose: true
+            access_type: public_method
+            serialized_name: ImporterParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getImporterParty
+                setter: setImporterParty
+            type: horstoeko\ubl\entities\cac\ImporterParty
         issuingCountry:
             expose: true
             access_type: public_method

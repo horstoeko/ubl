@@ -21,7 +21,11 @@ horstoeko\ubl\entities\cac\ReminderLineType:
             accessor:
                 getter: getNote
                 setter: setNote
-            type: horstoeko\ubl\entities\cbc\Note
+            xml_list:
+                inline: true
+                entry_name: Note
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Note>
         uUID:
             expose: true
             access_type: public_method
@@ -88,6 +92,39 @@ horstoeko\ubl\entities\cac\ReminderLineType:
                 getter: getAccountingCost
                 setter: setAccountingCost
             type: horstoeko\ubl\entities\cbc\AccountingCost
+        penaltySurchargePercent:
+            expose: true
+            access_type: public_method
+            serialized_name: PenaltySurchargePercent
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPenaltySurchargePercent
+                setter: setPenaltySurchargePercent
+            type: horstoeko\ubl\entities\cbc\PenaltySurchargePercent
+        amount:
+            expose: true
+            access_type: public_method
+            serialized_name: Amount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAmount
+                setter: setAmount
+            type: horstoeko\ubl\entities\cbc\Amount
+        paymentPurposeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: PaymentPurposeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPaymentPurposeCode
+                setter: setPaymentPurposeCode
+            type: horstoeko\ubl\entities\cbc\PaymentPurposeCode
         reminderPeriod:
             expose: true
             access_type: public_method

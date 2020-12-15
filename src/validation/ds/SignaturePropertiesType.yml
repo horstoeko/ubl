@@ -1,0 +1,9 @@
+horstoeko\ubl\entities\ds\SignaturePropertiesType:
+    properties:
+        signatureProperty:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

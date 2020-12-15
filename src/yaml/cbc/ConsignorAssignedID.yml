@@ -1,0 +1,3 @@
+horstoeko\ubl\entities\cbc\ConsignorAssignedID:
+    xml_root_name: ConsignorAssignedID
+    xml_root_namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'

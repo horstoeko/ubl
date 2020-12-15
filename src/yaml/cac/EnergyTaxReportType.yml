@@ -1,0 +1,46 @@
+horstoeko\ubl\entities\cac\EnergyTaxReportType:
+    properties:
+        taxEnergyAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: TaxEnergyAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTaxEnergyAmount
+                setter: setTaxEnergyAmount
+            type: horstoeko\ubl\entities\cbc\TaxEnergyAmount
+        taxEnergyOnAccountAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: TaxEnergyOnAccountAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTaxEnergyOnAccountAmount
+                setter: setTaxEnergyOnAccountAmount
+            type: horstoeko\ubl\entities\cbc\TaxEnergyOnAccountAmount
+        taxEnergyBalanceAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: TaxEnergyBalanceAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTaxEnergyBalanceAmount
+                setter: setTaxEnergyBalanceAmount
+            type: horstoeko\ubl\entities\cbc\TaxEnergyBalanceAmount
+        taxScheme:
+            expose: true
+            access_type: public_method
+            serialized_name: TaxScheme
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getTaxScheme
+                setter: setTaxScheme
+            type: horstoeko\ubl\entities\cac\TaxScheme

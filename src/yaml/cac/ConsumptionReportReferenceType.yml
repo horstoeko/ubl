@@ -1,0 +1,57 @@
+horstoeko\ubl\entities\cac\ConsumptionReportReferenceType:
+    properties:
+        consumptionReportID:
+            expose: true
+            access_type: public_method
+            serialized_name: ConsumptionReportID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getConsumptionReportID
+                setter: setConsumptionReportID
+            type: horstoeko\ubl\entities\cbc\ConsumptionReportID
+        consumptionType:
+            expose: true
+            access_type: public_method
+            serialized_name: ConsumptionType
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getConsumptionType
+                setter: setConsumptionType
+            type: horstoeko\ubl\entities\cbc\ConsumptionType
+        consumptionTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ConsumptionTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getConsumptionTypeCode
+                setter: setConsumptionTypeCode
+            type: horstoeko\ubl\entities\cbc\ConsumptionTypeCode
+        totalConsumedQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: TotalConsumedQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTotalConsumedQuantity
+                setter: setTotalConsumedQuantity
+            type: horstoeko\ubl\entities\cbc\TotalConsumedQuantity
+        period:
+            expose: true
+            access_type: public_method
+            serialized_name: Period
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPeriod
+                setter: setPeriod
+            type: horstoeko\ubl\entities\cac\Period

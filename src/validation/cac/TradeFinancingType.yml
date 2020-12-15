@@ -1,0 +1,21 @@
+horstoeko\ubl\entities\cac\TradeFinancingType:
+    properties:
+        contractDocumentReference:
+            -
+                Valid: null
+        documentReference:
+            -
+                Valid: null
+        financingParty:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        financingFinancialAccount:
+            -
+                Valid: null
+        clause:
+            -
+                Valid: null

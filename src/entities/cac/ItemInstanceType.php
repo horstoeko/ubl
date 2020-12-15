@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Item Instance. Details
- *  Information about a specific instance of an item.
+ *  A class to describe a specific, trackable instance of an item.
  *  Item Instance
  * XSD Type: ItemInstanceType
  */
@@ -17,7 +17,7 @@ class ItemInstanceType
     /**
      * BBIE
      *  Item Instance. Product Trace_ Identifier. Identifier
-     *  An identifier used for tracing the item, such as the EPC number used in RFID.
+     *  An identifier used for tracing this item instance, such as the EPC number used in RFID.
      *  0..1
      *  Item Instance
      *  Product Trace
@@ -32,7 +32,7 @@ class ItemInstanceType
     /**
      * BBIE
      *  Item Instance. Manufacture Date. Date
-     *  The date of manufacture of the Item Instance.
+     *  The date on which this item instance was manufactured.
      *  0..1
      *  Item Instance
      *  Manufacture Date
@@ -46,7 +46,7 @@ class ItemInstanceType
     /**
      * BBIE
      *  Item Instance. Manufacture Time. Time
-     *  The time of manufacture of the Item Instance.
+     *  The time at which this item instance was manufactured.
      *  0..1
      *  Item Instance
      *  Manufacture Time
@@ -59,8 +59,22 @@ class ItemInstanceType
 
     /**
      * BBIE
+     *  Item Instance. Best Before Date. Date
+     *  The date before which it is best to use this item instance.
+     *  0..1
+     *  Item Instance
+     *  Best Before Date
+     *  Date
+     *  Date. Type
+     *
+     * @var \DateTime $bestBeforeDate
+     */
+    private $bestBeforeDate = null;
+
+    /**
+     * BBIE
      *  Item Instance. Registration Identifier. Identifier
-     *  The registration identifier of the Item Instance.
+     *  The registration identifier of this item instance.
      *  0..1
      *  Item Instance
      *  Registration Identifier
@@ -75,7 +89,7 @@ class ItemInstanceType
     /**
      * BBIE
      *  Item Instance. Serial Identifier. Identifier
-     *  The serial number of the Item Instance.
+     *  The serial number of this item instance.
      *  0..1
      *  Item Instance
      *  Serial Identifier
@@ -90,10 +104,11 @@ class ItemInstanceType
     /**
      * ASBIE
      *  Item Instance. Additional_ Item Property. Item Property
-     *  An association to Additional Item Property.
+     *  An additional property of this item instance.
      *  0..n
      *  Item Instance
      *  Additional
+     *  Item Property
      *  Item Property
      *  Item Property
      *
@@ -106,9 +121,10 @@ class ItemInstanceType
     /**
      * ASBIE
      *  Item Instance. Lot Identification
-     *  Associates the item instance with its lot identification (the identification that allows recall of the item if necessary).
+     *  The lot identifier of this item instance (the identifier that allows recall of the item if necessary).
      *  0..1
      *  Item Instance
+     *  Lot Identification
      *  Lot Identification
      *  Lot Identification
      *
@@ -121,7 +137,7 @@ class ItemInstanceType
      *
      * BBIE
      *  Item Instance. Product Trace_ Identifier. Identifier
-     *  An identifier used for tracing the item, such as the EPC number used in RFID.
+     *  An identifier used for tracing this item instance, such as the EPC number used in RFID.
      *  0..1
      *  Item Instance
      *  Product Trace
@@ -141,7 +157,7 @@ class ItemInstanceType
      *
      * BBIE
      *  Item Instance. Product Trace_ Identifier. Identifier
-     *  An identifier used for tracing the item, such as the EPC number used in RFID.
+     *  An identifier used for tracing this item instance, such as the EPC number used in RFID.
      *  0..1
      *  Item Instance
      *  Product Trace
@@ -163,7 +179,7 @@ class ItemInstanceType
      *
      * BBIE
      *  Item Instance. Manufacture Date. Date
-     *  The date of manufacture of the Item Instance.
+     *  The date on which this item instance was manufactured.
      *  0..1
      *  Item Instance
      *  Manufacture Date
@@ -182,7 +198,7 @@ class ItemInstanceType
      *
      * BBIE
      *  Item Instance. Manufacture Date. Date
-     *  The date of manufacture of the Item Instance.
+     *  The date on which this item instance was manufactured.
      *  0..1
      *  Item Instance
      *  Manufacture Date
@@ -203,7 +219,7 @@ class ItemInstanceType
      *
      * BBIE
      *  Item Instance. Manufacture Time. Time
-     *  The time of manufacture of the Item Instance.
+     *  The time at which this item instance was manufactured.
      *  0..1
      *  Item Instance
      *  Manufacture Time
@@ -222,7 +238,7 @@ class ItemInstanceType
      *
      * BBIE
      *  Item Instance. Manufacture Time. Time
-     *  The time of manufacture of the Item Instance.
+     *  The time at which this item instance was manufactured.
      *  0..1
      *  Item Instance
      *  Manufacture Time
@@ -239,11 +255,51 @@ class ItemInstanceType
     }
 
     /**
+     * Gets as bestBeforeDate
+     *
+     * BBIE
+     *  Item Instance. Best Before Date. Date
+     *  The date before which it is best to use this item instance.
+     *  0..1
+     *  Item Instance
+     *  Best Before Date
+     *  Date
+     *  Date. Type
+     *
+     * @return \DateTime
+     */
+    public function getBestBeforeDate()
+    {
+        return $this->bestBeforeDate;
+    }
+
+    /**
+     * Sets a new bestBeforeDate
+     *
+     * BBIE
+     *  Item Instance. Best Before Date. Date
+     *  The date before which it is best to use this item instance.
+     *  0..1
+     *  Item Instance
+     *  Best Before Date
+     *  Date
+     *  Date. Type
+     *
+     * @param \DateTime $bestBeforeDate
+     * @return self
+     */
+    public function setBestBeforeDate(\DateTime $bestBeforeDate)
+    {
+        $this->bestBeforeDate = $bestBeforeDate;
+        return $this;
+    }
+
+    /**
      * Gets as registrationID
      *
      * BBIE
      *  Item Instance. Registration Identifier. Identifier
-     *  The registration identifier of the Item Instance.
+     *  The registration identifier of this item instance.
      *  0..1
      *  Item Instance
      *  Registration Identifier
@@ -263,7 +319,7 @@ class ItemInstanceType
      *
      * BBIE
      *  Item Instance. Registration Identifier. Identifier
-     *  The registration identifier of the Item Instance.
+     *  The registration identifier of this item instance.
      *  0..1
      *  Item Instance
      *  Registration Identifier
@@ -285,7 +341,7 @@ class ItemInstanceType
      *
      * BBIE
      *  Item Instance. Serial Identifier. Identifier
-     *  The serial number of the Item Instance.
+     *  The serial number of this item instance.
      *  0..1
      *  Item Instance
      *  Serial Identifier
@@ -305,7 +361,7 @@ class ItemInstanceType
      *
      * BBIE
      *  Item Instance. Serial Identifier. Identifier
-     *  The serial number of the Item Instance.
+     *  The serial number of this item instance.
      *  0..1
      *  Item Instance
      *  Serial Identifier
@@ -327,10 +383,11 @@ class ItemInstanceType
      *
      * ASBIE
      *  Item Instance. Additional_ Item Property. Item Property
-     *  An association to Additional Item Property.
+     *  An additional property of this item instance.
      *  0..n
      *  Item Instance
      *  Additional
+     *  Item Property
      *  Item Property
      *  Item Property
      *
@@ -348,10 +405,11 @@ class ItemInstanceType
      *
      * ASBIE
      *  Item Instance. Additional_ Item Property. Item Property
-     *  An association to Additional Item Property.
+     *  An additional property of this item instance.
      *  0..n
      *  Item Instance
      *  Additional
+     *  Item Property
      *  Item Property
      *  Item Property
      *
@@ -368,10 +426,11 @@ class ItemInstanceType
      *
      * ASBIE
      *  Item Instance. Additional_ Item Property. Item Property
-     *  An association to Additional Item Property.
+     *  An additional property of this item instance.
      *  0..n
      *  Item Instance
      *  Additional
+     *  Item Property
      *  Item Property
      *  Item Property
      *
@@ -388,10 +447,11 @@ class ItemInstanceType
      *
      * ASBIE
      *  Item Instance. Additional_ Item Property. Item Property
-     *  An association to Additional Item Property.
+     *  An additional property of this item instance.
      *  0..n
      *  Item Instance
      *  Additional
+     *  Item Property
      *  Item Property
      *  Item Property
      *
@@ -407,10 +467,11 @@ class ItemInstanceType
      *
      * ASBIE
      *  Item Instance. Additional_ Item Property. Item Property
-     *  An association to Additional Item Property.
+     *  An additional property of this item instance.
      *  0..n
      *  Item Instance
      *  Additional
+     *  Item Property
      *  Item Property
      *  Item Property
      *
@@ -428,9 +489,10 @@ class ItemInstanceType
      *
      * ASBIE
      *  Item Instance. Lot Identification
-     *  Associates the item instance with its lot identification (the identification that allows recall of the item if necessary).
+     *  The lot identifier of this item instance (the identifier that allows recall of the item if necessary).
      *  0..1
      *  Item Instance
+     *  Lot Identification
      *  Lot Identification
      *  Lot Identification
      *
@@ -446,9 +508,10 @@ class ItemInstanceType
      *
      * ASBIE
      *  Item Instance. Lot Identification
-     *  Associates the item instance with its lot identification (the identification that allows recall of the item if necessary).
+     *  The lot identifier of this item instance (the identifier that allows recall of the item if necessary).
      *  0..1
      *  Item Instance
+     *  Lot Identification
      *  Lot Identification
      *  Lot Identification
      *

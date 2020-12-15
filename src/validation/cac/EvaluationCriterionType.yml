@@ -1,0 +1,8 @@
+horstoeko\ubl\entities\cac\EvaluationCriterionType:
+    properties:
+        durationPeriod:
+            -
+                Valid: null
+        suggestedEvidence:
+            -
+                Valid: null

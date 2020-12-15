@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Item Identification. Details
- *  Information about item identification.
+ *  A class for assigning identifying information to an item.
  *  Item Identification
  * XSD Type: ItemIdentificationType
  */
@@ -17,13 +17,13 @@ class ItemIdentificationType
     /**
      * BBIE
      *  Item Identification. Identifier
-     *  An identifier for an item.
+     *  An identifier for the item.
      *  1
      *  Item Identification
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "CUST001" "3333-44-123"
+     *  CUST001 3333-44-123
      *
      * @var \horstoeko\ubl\entities\cbc\ID $iD
      */
@@ -32,7 +32,7 @@ class ItemIdentificationType
     /**
      * BBIE
      *  Item Identification. Extended_ Identifier. Identifier
-     *  An extended identifier for the item that identifies the item with specific properties, e.g., Item 123 = Chair / Item 123 Ext 45 = brown chair.
+     *  An extended identifier for the item that identifies the item with specific properties, e.g., Item 123 = Chair / Item 123 Ext 45 = brown chair. Two chairs can have the same item number, but one is brown. The other is white.
      *  0..1
      *  Item Identification
      *  Extended
@@ -45,11 +45,27 @@ class ItemIdentificationType
     private $extendedID = null;
 
     /**
+     * BBIE
+     *  Item Identification. Barcode_ Symbology Identifier. Identifier
+     *  An identifier for a system of barcodes.
+     *  0..1
+     *  Item Identification
+     *  Barcode
+     *  Symbology Identifier
+     *  Identifier
+     *  Identifier. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\BarcodeSymbologyID $barcodeSymbologyID
+     */
+    private $barcodeSymbologyID = null;
+
+    /**
      * ASBIE
      *  Item Identification. Physical Attribute
-     *  An association to Physical Attribute.
+     *  A physical attribute of the item.
      *  0..n
      *  Item Identification
+     *  Physical Attribute
      *  Physical Attribute
      *  Physical Attribute
      *
@@ -62,10 +78,11 @@ class ItemIdentificationType
     /**
      * ASBIE
      *  Item Identification. Measurement_ Dimension. Dimension
-     *  An association to Measurement Dimension.
+     *  A measurable dimension (length, mass, weight, or volume) of the item.
      *  0..n
      *  Item Identification
      *  Measurement
+     *  Dimension
      *  Dimension
      *  Dimension
      *
@@ -78,10 +95,11 @@ class ItemIdentificationType
     /**
      * ASBIE
      *  Item Identification. Issuer_ Party. Party
-     *  An association to Issuer Party i.e. the Party that issued the Item Identification.
+     *  The party that issued this item identification.
      *  0..1
      *  Item Identification
      *  Issuer
+     *  Party
      *  Party
      *  Party
      *
@@ -94,13 +112,13 @@ class ItemIdentificationType
      *
      * BBIE
      *  Item Identification. Identifier
-     *  An identifier for an item.
+     *  An identifier for the item.
      *  1
      *  Item Identification
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "CUST001" "3333-44-123"
+     *  CUST001 3333-44-123
      *
      * @return \horstoeko\ubl\entities\cbc\ID
      */
@@ -114,13 +132,13 @@ class ItemIdentificationType
      *
      * BBIE
      *  Item Identification. Identifier
-     *  An identifier for an item.
+     *  An identifier for the item.
      *  1
      *  Item Identification
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "CUST001" "3333-44-123"
+     *  CUST001 3333-44-123
      *
      * @param \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
@@ -136,7 +154,7 @@ class ItemIdentificationType
      *
      * BBIE
      *  Item Identification. Extended_ Identifier. Identifier
-     *  An extended identifier for the item that identifies the item with specific properties, e.g., Item 123 = Chair / Item 123 Ext 45 = brown chair.
+     *  An extended identifier for the item that identifies the item with specific properties, e.g., Item 123 = Chair / Item 123 Ext 45 = brown chair. Two chairs can have the same item number, but one is brown. The other is white.
      *  0..1
      *  Item Identification
      *  Extended
@@ -156,7 +174,7 @@ class ItemIdentificationType
      *
      * BBIE
      *  Item Identification. Extended_ Identifier. Identifier
-     *  An extended identifier for the item that identifies the item with specific properties, e.g., Item 123 = Chair / Item 123 Ext 45 = brown chair.
+     *  An extended identifier for the item that identifies the item with specific properties, e.g., Item 123 = Chair / Item 123 Ext 45 = brown chair. Two chairs can have the same item number, but one is brown. The other is white.
      *  0..1
      *  Item Identification
      *  Extended
@@ -174,13 +192,56 @@ class ItemIdentificationType
     }
 
     /**
+     * Gets as barcodeSymbologyID
+     *
+     * BBIE
+     *  Item Identification. Barcode_ Symbology Identifier. Identifier
+     *  An identifier for a system of barcodes.
+     *  0..1
+     *  Item Identification
+     *  Barcode
+     *  Symbology Identifier
+     *  Identifier
+     *  Identifier. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\BarcodeSymbologyID
+     */
+    public function getBarcodeSymbologyID()
+    {
+        return $this->barcodeSymbologyID;
+    }
+
+    /**
+     * Sets a new barcodeSymbologyID
+     *
+     * BBIE
+     *  Item Identification. Barcode_ Symbology Identifier. Identifier
+     *  An identifier for a system of barcodes.
+     *  0..1
+     *  Item Identification
+     *  Barcode
+     *  Symbology Identifier
+     *  Identifier
+     *  Identifier. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\BarcodeSymbologyID $barcodeSymbologyID
+     * @return self
+     */
+    public function setBarcodeSymbologyID(\horstoeko\ubl\entities\cbc\BarcodeSymbologyID $barcodeSymbologyID)
+    {
+        $this->barcodeSymbologyID = $barcodeSymbologyID;
+        return $this;
+    }
+
+    /**
      * Adds as physicalAttribute
      *
      * ASBIE
      *  Item Identification. Physical Attribute
-     *  An association to Physical Attribute.
+     *  A physical attribute of the item.
      *  0..n
      *  Item Identification
+     *  Physical Attribute
      *  Physical Attribute
      *  Physical Attribute
      *
@@ -198,9 +259,10 @@ class ItemIdentificationType
      *
      * ASBIE
      *  Item Identification. Physical Attribute
-     *  An association to Physical Attribute.
+     *  A physical attribute of the item.
      *  0..n
      *  Item Identification
+     *  Physical Attribute
      *  Physical Attribute
      *  Physical Attribute
      *
@@ -217,9 +279,10 @@ class ItemIdentificationType
      *
      * ASBIE
      *  Item Identification. Physical Attribute
-     *  An association to Physical Attribute.
+     *  A physical attribute of the item.
      *  0..n
      *  Item Identification
+     *  Physical Attribute
      *  Physical Attribute
      *  Physical Attribute
      *
@@ -236,9 +299,10 @@ class ItemIdentificationType
      *
      * ASBIE
      *  Item Identification. Physical Attribute
-     *  An association to Physical Attribute.
+     *  A physical attribute of the item.
      *  0..n
      *  Item Identification
+     *  Physical Attribute
      *  Physical Attribute
      *  Physical Attribute
      *
@@ -254,9 +318,10 @@ class ItemIdentificationType
      *
      * ASBIE
      *  Item Identification. Physical Attribute
-     *  An association to Physical Attribute.
+     *  A physical attribute of the item.
      *  0..n
      *  Item Identification
+     *  Physical Attribute
      *  Physical Attribute
      *  Physical Attribute
      *
@@ -274,10 +339,11 @@ class ItemIdentificationType
      *
      * ASBIE
      *  Item Identification. Measurement_ Dimension. Dimension
-     *  An association to Measurement Dimension.
+     *  A measurable dimension (length, mass, weight, or volume) of the item.
      *  0..n
      *  Item Identification
      *  Measurement
+     *  Dimension
      *  Dimension
      *  Dimension
      *
@@ -295,10 +361,11 @@ class ItemIdentificationType
      *
      * ASBIE
      *  Item Identification. Measurement_ Dimension. Dimension
-     *  An association to Measurement Dimension.
+     *  A measurable dimension (length, mass, weight, or volume) of the item.
      *  0..n
      *  Item Identification
      *  Measurement
+     *  Dimension
      *  Dimension
      *  Dimension
      *
@@ -315,10 +382,11 @@ class ItemIdentificationType
      *
      * ASBIE
      *  Item Identification. Measurement_ Dimension. Dimension
-     *  An association to Measurement Dimension.
+     *  A measurable dimension (length, mass, weight, or volume) of the item.
      *  0..n
      *  Item Identification
      *  Measurement
+     *  Dimension
      *  Dimension
      *  Dimension
      *
@@ -335,10 +403,11 @@ class ItemIdentificationType
      *
      * ASBIE
      *  Item Identification. Measurement_ Dimension. Dimension
-     *  An association to Measurement Dimension.
+     *  A measurable dimension (length, mass, weight, or volume) of the item.
      *  0..n
      *  Item Identification
      *  Measurement
+     *  Dimension
      *  Dimension
      *  Dimension
      *
@@ -354,10 +423,11 @@ class ItemIdentificationType
      *
      * ASBIE
      *  Item Identification. Measurement_ Dimension. Dimension
-     *  An association to Measurement Dimension.
+     *  A measurable dimension (length, mass, weight, or volume) of the item.
      *  0..n
      *  Item Identification
      *  Measurement
+     *  Dimension
      *  Dimension
      *  Dimension
      *
@@ -375,10 +445,11 @@ class ItemIdentificationType
      *
      * ASBIE
      *  Item Identification. Issuer_ Party. Party
-     *  An association to Issuer Party i.e. the Party that issued the Item Identification.
+     *  The party that issued this item identification.
      *  0..1
      *  Item Identification
      *  Issuer
+     *  Party
      *  Party
      *  Party
      *
@@ -394,10 +465,11 @@ class ItemIdentificationType
      *
      * ASBIE
      *  Item Identification. Issuer_ Party. Party
-     *  An association to Issuer Party i.e. the Party that issued the Item Identification.
+     *  The party that issued this item identification.
      *  0..1
      *  Item Identification
      *  Issuer
+     *  Party
      *  Party
      *  Party
      *

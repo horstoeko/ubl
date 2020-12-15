@@ -21,7 +21,11 @@ horstoeko\ubl\entities\cac\StatementLineType:
             accessor:
                 getter: getNote
                 setter: setNote
-            type: horstoeko\ubl\entities\cbc\Note
+            xml_list:
+                inline: true
+                entry_name: Note
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Note>
         uUID:
             expose: true
             access_type: public_method
@@ -77,6 +81,17 @@ horstoeko\ubl\entities\cac\StatementLineType:
                 getter: getBalanceAmount
                 setter: setBalanceAmount
             type: horstoeko\ubl\entities\cbc\BalanceAmount
+        paymentPurposeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: PaymentPurposeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPaymentPurposeCode
+                setter: setPaymentPurposeCode
+            type: horstoeko\ubl\entities\cbc\PaymentPurposeCode
         paymentMeans:
             expose: true
             access_type: public_method
@@ -225,3 +240,33 @@ horstoeko\ubl\entities\cac\StatementLineType:
                 getter: getExchangeRate
                 setter: setExchangeRate
             type: horstoeko\ubl\entities\cac\ExchangeRate
+        allowanceCharge:
+            expose: true
+            access_type: public_method
+            serialized_name: AllowanceCharge
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getAllowanceCharge
+                setter: setAllowanceCharge
+            xml_list:
+                inline: true
+                entry_name: AllowanceCharge
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\AllowanceCharge>
+        collectedPayment:
+            expose: true
+            access_type: public_method
+            serialized_name: CollectedPayment
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getCollectedPayment
+                setter: setCollectedPayment
+            xml_list:
+                inline: true
+                entry_name: CollectedPayment
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\CollectedPayment>

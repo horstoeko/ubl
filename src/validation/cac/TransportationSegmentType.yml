@@ -1,0 +1,27 @@
+horstoeko\ubl\entities\cac\TransportationSegmentType:
+    properties:
+        sequenceNumeric:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        transportationService:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        transportServiceProviderParty:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        referencedConsignment:
+            -
+                Valid: null
+        shipmentStage:
+            -
+                Valid: null

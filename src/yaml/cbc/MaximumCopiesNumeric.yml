@@ -1,0 +1,3 @@
+horstoeko\ubl\entities\cbc\MaximumCopiesNumeric:
+    xml_root_name: MaximumCopiesNumeric
+    xml_root_namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'

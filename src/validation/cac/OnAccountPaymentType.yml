@@ -1,0 +1,14 @@
+horstoeko\ubl\entities\cac\OnAccountPaymentType:
+    properties:
+        estimatedConsumedQuantity:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        paymentTerms:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

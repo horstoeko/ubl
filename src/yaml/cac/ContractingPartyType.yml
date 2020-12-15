@@ -1,0 +1,54 @@
+horstoeko\ubl\entities\cac\ContractingPartyType:
+    properties:
+        buyerProfileURI:
+            expose: true
+            access_type: public_method
+            serialized_name: BuyerProfileURI
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getBuyerProfileURI
+                setter: setBuyerProfileURI
+            type: horstoeko\ubl\entities\cbc\BuyerProfileURI
+        contractingPartyType:
+            expose: true
+            access_type: public_method
+            serialized_name: ContractingPartyType
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getContractingPartyType
+                setter: setContractingPartyType
+            xml_list:
+                inline: true
+                entry_name: ContractingPartyType
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\ContractingPartyType>
+        contractingActivity:
+            expose: true
+            access_type: public_method
+            serialized_name: ContractingActivity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getContractingActivity
+                setter: setContractingActivity
+            xml_list:
+                inline: true
+                entry_name: ContractingActivity
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\ContractingActivity>
+        party:
+            expose: true
+            access_type: public_method
+            serialized_name: Party
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getParty
+                setter: setParty
+            type: horstoeko\ubl\entities\cac\Party

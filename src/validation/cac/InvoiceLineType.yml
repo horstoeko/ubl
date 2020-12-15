@@ -10,6 +10,9 @@ horstoeko\ubl\entities\cac\InvoiceLineType:
                 NotNull:
                     groups:
                         - xsd_rules
+        invoicePeriod:
+            -
+                Valid: null
         orderLineReference:
             -
                 Valid: null
@@ -43,6 +46,9 @@ horstoeko\ubl\entities\cac\InvoiceLineType:
         taxTotal:
             -
                 Valid: null
+        withholdingTaxTotal:
+            -
+                Valid: null
         item:
             -
                 NotNull:
@@ -54,5 +60,11 @@ horstoeko\ubl\entities\cac\InvoiceLineType:
             -
                 Valid: null
         deliveryTerms:
+            -
+                Valid: null
+        subInvoiceLine:
+            -
+                Valid: null
+        itemPriceExtension:
             -
                 Valid: null

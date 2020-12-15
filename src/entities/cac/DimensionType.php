@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Dimension. Details
- *  Information about a measurable dimension of an item.
+ *  A class to define a measurable dimension (length, mass, weight, volume, or area) of an item.
  *  Dimension
  * XSD Type: DimensionType
  */
@@ -45,7 +45,7 @@ class DimensionType
     /**
      * BBIE
      *  Dimension. Description. Text
-     *  A description of the attribute or measurement of the attribute.
+     *  Text describing the measurement attribute.
      *  0..n
      *  Dimension
      *  Description
@@ -61,7 +61,7 @@ class DimensionType
     /**
      * BBIE
      *  Dimension. Minimum_ Measure. Measure
-     *  The minimum value in a range of measurement.
+     *  The minimum value in a range of measurement of this dimension.
      *  0..1
      *  Dimension
      *  Minimum
@@ -76,7 +76,7 @@ class DimensionType
     /**
      * BBIE
      *  Dimension. Maximum_ Measure. Measure
-     *  The maximum value in a range of measurement.
+     *  The maximum value in a range of measurement of this dimension.
      *  0..1
      *  Dimension
      *  Maximum
@@ -173,7 +173,7 @@ class DimensionType
      *
      * BBIE
      *  Dimension. Description. Text
-     *  A description of the attribute or measurement of the attribute.
+     *  Text describing the measurement attribute.
      *  0..n
      *  Dimension
      *  Description
@@ -194,7 +194,7 @@ class DimensionType
      *
      * BBIE
      *  Dimension. Description. Text
-     *  A description of the attribute or measurement of the attribute.
+     *  Text describing the measurement attribute.
      *  0..n
      *  Dimension
      *  Description
@@ -214,7 +214,7 @@ class DimensionType
      *
      * BBIE
      *  Dimension. Description. Text
-     *  A description of the attribute or measurement of the attribute.
+     *  Text describing the measurement attribute.
      *  0..n
      *  Dimension
      *  Description
@@ -234,7 +234,7 @@ class DimensionType
      *
      * BBIE
      *  Dimension. Description. Text
-     *  A description of the attribute or measurement of the attribute.
+     *  Text describing the measurement attribute.
      *  0..n
      *  Dimension
      *  Description
@@ -253,7 +253,7 @@ class DimensionType
      *
      * BBIE
      *  Dimension. Description. Text
-     *  A description of the attribute or measurement of the attribute.
+     *  Text describing the measurement attribute.
      *  0..n
      *  Dimension
      *  Description
@@ -274,7 +274,7 @@ class DimensionType
      *
      * BBIE
      *  Dimension. Minimum_ Measure. Measure
-     *  The minimum value in a range of measurement.
+     *  The minimum value in a range of measurement of this dimension.
      *  0..1
      *  Dimension
      *  Minimum
@@ -294,7 +294,7 @@ class DimensionType
      *
      * BBIE
      *  Dimension. Minimum_ Measure. Measure
-     *  The minimum value in a range of measurement.
+     *  The minimum value in a range of measurement of this dimension.
      *  0..1
      *  Dimension
      *  Minimum
@@ -316,7 +316,7 @@ class DimensionType
      *
      * BBIE
      *  Dimension. Maximum_ Measure. Measure
-     *  The maximum value in a range of measurement.
+     *  The maximum value in a range of measurement of this dimension.
      *  0..1
      *  Dimension
      *  Maximum
@@ -336,7 +336,7 @@ class DimensionType
      *
      * BBIE
      *  Dimension. Maximum_ Measure. Measure
-     *  The maximum value in a range of measurement.
+     *  The maximum value in a range of measurement of this dimension.
      *  0..1
      *  Dimension
      *  Maximum

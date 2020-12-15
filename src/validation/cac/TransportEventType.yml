@@ -5,11 +5,16 @@ horstoeko\ubl\entities\cac\TransportEventType:
                 Valid: null
         currentStatus:
             -
-                NotNull:
-                    groups:
-                        - xsd_rules
-            -
                 Valid: null
         contact:
+            -
+                Valid: null
+        location:
+            -
+                Valid: null
+        signature:
+            -
+                Valid: null
+        period:
             -
                 Valid: null

@@ -43,7 +43,11 @@ horstoeko\ubl\entities\cac\TransportHandlingUnitType:
             accessor:
                 getter: getHandlingInstructions
                 setter: setHandlingInstructions
-            type: horstoeko\ubl\entities\cbc\HandlingInstructions
+            xml_list:
+                inline: true
+                entry_name: HandlingInstructions
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\HandlingInstructions>
         hazardousRiskIndicator:
             expose: true
             access_type: public_method
@@ -107,6 +111,17 @@ horstoeko\ubl\entities\cac\TransportHandlingUnitType:
                 entry_name: ShippingMarks
                 namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
             type: array<horstoeko\ubl\entities\cbc\ShippingMarks>
+        traceID:
+            expose: true
+            access_type: public_method
+            serialized_name: TraceID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTraceID
+                setter: setTraceID
+            type: horstoeko\ubl\entities\cbc\TraceID
         handlingUnitDespatchLine:
             expose: true
             access_type: public_method
@@ -167,6 +182,21 @@ horstoeko\ubl\entities\cac\TransportHandlingUnitType:
                 entry_name: TransportEquipment
                 namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
             type: array<horstoeko\ubl\entities\cac\TransportEquipment>
+        transportMeans:
+            expose: true
+            access_type: public_method
+            serialized_name: TransportMeans
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getTransportMeans
+                setter: setTransportMeans
+            xml_list:
+                inline: true
+                entry_name: TransportMeans
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\TransportMeans>
         hazardousGoodsTransit:
             expose: true
             access_type: public_method
@@ -219,3 +249,115 @@ horstoeko\ubl\entities\cac\TransportHandlingUnitType:
                 getter: getMaximumTemperature
                 setter: setMaximumTemperature
             type: horstoeko\ubl\entities\cac\MaximumTemperature
+        goodsItem:
+            expose: true
+            access_type: public_method
+            serialized_name: GoodsItem
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getGoodsItem
+                setter: setGoodsItem
+            xml_list:
+                inline: true
+                entry_name: GoodsItem
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\GoodsItem>
+        floorSpaceMeasurementDimension:
+            expose: true
+            access_type: public_method
+            serialized_name: FloorSpaceMeasurementDimension
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getFloorSpaceMeasurementDimension
+                setter: setFloorSpaceMeasurementDimension
+            type: horstoeko\ubl\entities\cac\FloorSpaceMeasurementDimension
+        palletSpaceMeasurementDimension:
+            expose: true
+            access_type: public_method
+            serialized_name: PalletSpaceMeasurementDimension
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPalletSpaceMeasurementDimension
+                setter: setPalletSpaceMeasurementDimension
+            type: horstoeko\ubl\entities\cac\PalletSpaceMeasurementDimension
+        shipmentDocumentReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ShipmentDocumentReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getShipmentDocumentReference
+                setter: setShipmentDocumentReference
+            xml_list:
+                inline: true
+                entry_name: ShipmentDocumentReference
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\ShipmentDocumentReference>
+        status:
+            expose: true
+            access_type: public_method
+            serialized_name: Status
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getStatus
+                setter: setStatus
+            xml_list:
+                inline: true
+                entry_name: Status
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\Status>
+        customsDeclaration:
+            expose: true
+            access_type: public_method
+            serialized_name: CustomsDeclaration
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getCustomsDeclaration
+                setter: setCustomsDeclaration
+            xml_list:
+                inline: true
+                entry_name: CustomsDeclaration
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\CustomsDeclaration>
+        referencedShipment:
+            expose: true
+            access_type: public_method
+            serialized_name: ReferencedShipment
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getReferencedShipment
+                setter: setReferencedShipment
+            xml_list:
+                inline: true
+                entry_name: ReferencedShipment
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\ReferencedShipment>
+        package:
+            expose: true
+            access_type: public_method
+            serialized_name: Package
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPackage
+                setter: setPackage
+            xml_list:
+                inline: true
+                entry_name: Package
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\Package>

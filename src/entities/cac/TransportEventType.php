@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Transport Event. Details
- *  A significant occurrence or happening related to the transportation of goods.
+ *  A class to describe a significant occurrence or happening related to the transportation of goods.
  *  Transport Event
  * XSD Type: TransportEventType
  */
@@ -17,7 +17,7 @@ class TransportEventType
     /**
      * BBIE
      *  Transport Event. Identification. Identifier
-     *  An identifier for the event.
+     *  An identifier for this transport event within an agreed event identification scheme.
      *  0..1
      *  Transport Event
      *  Identification
@@ -31,7 +31,7 @@ class TransportEventType
     /**
      * BBIE
      *  Transport Event. Occurrence Date. Date
-     *  The date of an occurrence of the event.
+     *  The date of this transport event.
      *  0..1
      *  Transport Event
      *  Occurrence Date
@@ -45,7 +45,7 @@ class TransportEventType
     /**
      * BBIE
      *  Transport Event. Occurrence Time. Time
-     *  The time of an occurrence of the event.
+     *  The time of this transport event.
      *  0..1
      *  Transport Event
      *  Occurrence Time
@@ -59,7 +59,7 @@ class TransportEventType
     /**
      * BBIE
      *  Transport Event. Transport Event Type Code. Code
-     *  A code specifying the type of event.
+     *  A code signifying the type of this transport event.
      *  0..1
      *  Transport Event
      *  Transport Event Type Code
@@ -73,21 +73,23 @@ class TransportEventType
     /**
      * BBIE
      *  Transport Event. Description. Text
-     *  A textual description of the event.
-     *  0..1
+     *  Text describing this transport event.
+     *  0..n
      *  Transport Event
      *  Description
      *  Text
      *  Text. Type
      *
-     * @var \horstoeko\ubl\entities\cbc\Description $description
+     * @var \horstoeko\ubl\entities\cbc\Description[] $description
      */
-    private $description = null;
+    private $description = [
+        
+    ];
 
     /**
      * BBIE
      *  Transport Event. Completion_ Indicator. Indicator
-     *  Indicates if this event is completed.
+     *  An indicator that this transport event has been completed (true) or not (false).
      *  0..1
      *  Transport Event
      *  Completion
@@ -102,10 +104,11 @@ class TransportEventType
     /**
      * ASBIE
      *  Transport Event. Reported_ Shipment. Shipment
-     *  Information about the separately identifiable collection of goods items (available to be) transported from one consignor to one consignee via one or more modes of transport.
+     *  The shipment involved in this transport event.
      *  0..1
      *  Transport Event
      *  Reported
+     *  Shipment
      *  Shipment
      *  Shipment
      *
@@ -116,10 +119,11 @@ class TransportEventType
     /**
      * ASBIE
      *  Transport Event. Current_ Status. Status
-     *  The status of the event.
-     *  1..n
+     *  The current status of this transport event.
+     *  0..n
      *  Transport Event
      *  Current
+     *  Status
      *  Status
      *  Status
      *
@@ -132,9 +136,10 @@ class TransportEventType
     /**
      * ASBIE
      *  Transport Event. Contact
-     *  Any contacts for the event.
+     *  A contact associated with this transport event.
      *  0..n
      *  Transport Event
+     *  Contact
      *  Contact
      *  Contact
      *
@@ -145,11 +150,55 @@ class TransportEventType
     ];
 
     /**
+     * ASBIE
+     *  Transport Event. Location
+     *  The location associated with this transport event.
+     *  0..1
+     *  Transport Event
+     *  Location
+     *  Location
+     *  Location
+     *
+     * @var \horstoeko\ubl\entities\cac\Location $location
+     */
+    private $location = null;
+
+    /**
+     * ASBIE
+     *  Transport Event. Signature
+     *  A signature that can be used to sign for an entry or an exit at a transport location (e.g., port terminal).
+     *  0..1
+     *  Transport Event
+     *  Signature
+     *  Signature
+     *  Signature
+     *
+     * @var \horstoeko\ubl\entities\cac\Signature $signature
+     */
+    private $signature = null;
+
+    /**
+     * ASBIE
+     *  Transport Event. Period
+     *  A period of time associated with this transport event.
+     *  0..n
+     *  Transport Event
+     *  Period
+     *  Period
+     *  Period
+     *
+     * @var \horstoeko\ubl\entities\cac\Period[] $period
+     */
+    private $period = [
+        
+    ];
+
+    /**
      * Gets as identificationID
      *
      * BBIE
      *  Transport Event. Identification. Identifier
-     *  An identifier for the event.
+     *  An identifier for this transport event within an agreed event identification scheme.
      *  0..1
      *  Transport Event
      *  Identification
@@ -168,7 +217,7 @@ class TransportEventType
      *
      * BBIE
      *  Transport Event. Identification. Identifier
-     *  An identifier for the event.
+     *  An identifier for this transport event within an agreed event identification scheme.
      *  0..1
      *  Transport Event
      *  Identification
@@ -189,7 +238,7 @@ class TransportEventType
      *
      * BBIE
      *  Transport Event. Occurrence Date. Date
-     *  The date of an occurrence of the event.
+     *  The date of this transport event.
      *  0..1
      *  Transport Event
      *  Occurrence Date
@@ -208,7 +257,7 @@ class TransportEventType
      *
      * BBIE
      *  Transport Event. Occurrence Date. Date
-     *  The date of an occurrence of the event.
+     *  The date of this transport event.
      *  0..1
      *  Transport Event
      *  Occurrence Date
@@ -229,7 +278,7 @@ class TransportEventType
      *
      * BBIE
      *  Transport Event. Occurrence Time. Time
-     *  The time of an occurrence of the event.
+     *  The time of this transport event.
      *  0..1
      *  Transport Event
      *  Occurrence Time
@@ -248,7 +297,7 @@ class TransportEventType
      *
      * BBIE
      *  Transport Event. Occurrence Time. Time
-     *  The time of an occurrence of the event.
+     *  The time of this transport event.
      *  0..1
      *  Transport Event
      *  Occurrence Time
@@ -269,7 +318,7 @@ class TransportEventType
      *
      * BBIE
      *  Transport Event. Transport Event Type Code. Code
-     *  A code specifying the type of event.
+     *  A code signifying the type of this transport event.
      *  0..1
      *  Transport Event
      *  Transport Event Type Code
@@ -288,7 +337,7 @@ class TransportEventType
      *
      * BBIE
      *  Transport Event. Transport Event Type Code. Code
-     *  A code specifying the type of event.
+     *  A code signifying the type of this transport event.
      *  0..1
      *  Transport Event
      *  Transport Event Type Code
@@ -305,18 +354,79 @@ class TransportEventType
     }
 
     /**
-     * Gets as description
+     * Adds as description
      *
      * BBIE
      *  Transport Event. Description. Text
-     *  A textual description of the event.
-     *  0..1
+     *  Text describing this transport event.
+     *  0..n
      *  Transport Event
      *  Description
      *  Text
      *  Text. Type
      *
-     * @return \horstoeko\ubl\entities\cbc\Description
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\Description $description
+     */
+    public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
+    {
+        $this->description[] = $description;
+        return $this;
+    }
+
+    /**
+     * isset description
+     *
+     * BBIE
+     *  Transport Event. Description. Text
+     *  Text describing this transport event.
+     *  0..n
+     *  Transport Event
+     *  Description
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetDescription($index)
+    {
+        return isset($this->description[$index]);
+    }
+
+    /**
+     * unset description
+     *
+     * BBIE
+     *  Transport Event. Description. Text
+     *  Text describing this transport event.
+     *  0..n
+     *  Transport Event
+     *  Description
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetDescription($index)
+    {
+        unset($this->description[$index]);
+    }
+
+    /**
+     * Gets as description
+     *
+     * BBIE
+     *  Transport Event. Description. Text
+     *  Text describing this transport event.
+     *  0..n
+     *  Transport Event
+     *  Description
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\Description[]
      */
     public function getDescription()
     {
@@ -328,17 +438,17 @@ class TransportEventType
      *
      * BBIE
      *  Transport Event. Description. Text
-     *  A textual description of the event.
-     *  0..1
+     *  Text describing this transport event.
+     *  0..n
      *  Transport Event
      *  Description
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
-    public function setDescription(\horstoeko\ubl\entities\cbc\Description $description)
+    public function setDescription(array $description)
     {
         $this->description = $description;
         return $this;
@@ -349,7 +459,7 @@ class TransportEventType
      *
      * BBIE
      *  Transport Event. Completion_ Indicator. Indicator
-     *  Indicates if this event is completed.
+     *  An indicator that this transport event has been completed (true) or not (false).
      *  0..1
      *  Transport Event
      *  Completion
@@ -369,7 +479,7 @@ class TransportEventType
      *
      * BBIE
      *  Transport Event. Completion_ Indicator. Indicator
-     *  Indicates if this event is completed.
+     *  An indicator that this transport event has been completed (true) or not (false).
      *  0..1
      *  Transport Event
      *  Completion
@@ -391,10 +501,11 @@ class TransportEventType
      *
      * ASBIE
      *  Transport Event. Reported_ Shipment. Shipment
-     *  Information about the separately identifiable collection of goods items (available to be) transported from one consignor to one consignee via one or more modes of transport.
+     *  The shipment involved in this transport event.
      *  0..1
      *  Transport Event
      *  Reported
+     *  Shipment
      *  Shipment
      *  Shipment
      *
@@ -410,10 +521,11 @@ class TransportEventType
      *
      * ASBIE
      *  Transport Event. Reported_ Shipment. Shipment
-     *  Information about the separately identifiable collection of goods items (available to be) transported from one consignor to one consignee via one or more modes of transport.
+     *  The shipment involved in this transport event.
      *  0..1
      *  Transport Event
      *  Reported
+     *  Shipment
      *  Shipment
      *  Shipment
      *
@@ -431,10 +543,11 @@ class TransportEventType
      *
      * ASBIE
      *  Transport Event. Current_ Status. Status
-     *  The status of the event.
-     *  1..n
+     *  The current status of this transport event.
+     *  0..n
      *  Transport Event
      *  Current
+     *  Status
      *  Status
      *  Status
      *
@@ -452,10 +565,11 @@ class TransportEventType
      *
      * ASBIE
      *  Transport Event. Current_ Status. Status
-     *  The status of the event.
-     *  1..n
+     *  The current status of this transport event.
+     *  0..n
      *  Transport Event
      *  Current
+     *  Status
      *  Status
      *  Status
      *
@@ -472,10 +586,11 @@ class TransportEventType
      *
      * ASBIE
      *  Transport Event. Current_ Status. Status
-     *  The status of the event.
-     *  1..n
+     *  The current status of this transport event.
+     *  0..n
      *  Transport Event
      *  Current
+     *  Status
      *  Status
      *  Status
      *
@@ -492,10 +607,11 @@ class TransportEventType
      *
      * ASBIE
      *  Transport Event. Current_ Status. Status
-     *  The status of the event.
-     *  1..n
+     *  The current status of this transport event.
+     *  0..n
      *  Transport Event
      *  Current
+     *  Status
      *  Status
      *  Status
      *
@@ -511,10 +627,11 @@ class TransportEventType
      *
      * ASBIE
      *  Transport Event. Current_ Status. Status
-     *  The status of the event.
-     *  1..n
+     *  The current status of this transport event.
+     *  0..n
      *  Transport Event
      *  Current
+     *  Status
      *  Status
      *  Status
      *
@@ -532,9 +649,10 @@ class TransportEventType
      *
      * ASBIE
      *  Transport Event. Contact
-     *  Any contacts for the event.
+     *  A contact associated with this transport event.
      *  0..n
      *  Transport Event
+     *  Contact
      *  Contact
      *  Contact
      *
@@ -552,9 +670,10 @@ class TransportEventType
      *
      * ASBIE
      *  Transport Event. Contact
-     *  Any contacts for the event.
+     *  A contact associated with this transport event.
      *  0..n
      *  Transport Event
+     *  Contact
      *  Contact
      *  Contact
      *
@@ -571,9 +690,10 @@ class TransportEventType
      *
      * ASBIE
      *  Transport Event. Contact
-     *  Any contacts for the event.
+     *  A contact associated with this transport event.
      *  0..n
      *  Transport Event
+     *  Contact
      *  Contact
      *  Contact
      *
@@ -590,9 +710,10 @@ class TransportEventType
      *
      * ASBIE
      *  Transport Event. Contact
-     *  Any contacts for the event.
+     *  A contact associated with this transport event.
      *  0..n
      *  Transport Event
+     *  Contact
      *  Contact
      *  Contact
      *
@@ -608,9 +729,10 @@ class TransportEventType
      *
      * ASBIE
      *  Transport Event. Contact
-     *  Any contacts for the event.
+     *  A contact associated with this transport event.
      *  0..n
      *  Transport Event
+     *  Contact
      *  Contact
      *  Contact
      *
@@ -620,6 +742,187 @@ class TransportEventType
     public function setContact(array $contact)
     {
         $this->contact = $contact;
+        return $this;
+    }
+
+    /**
+     * Gets as location
+     *
+     * ASBIE
+     *  Transport Event. Location
+     *  The location associated with this transport event.
+     *  0..1
+     *  Transport Event
+     *  Location
+     *  Location
+     *  Location
+     *
+     * @return \horstoeko\ubl\entities\cac\Location
+     */
+    public function getLocation()
+    {
+        return $this->location;
+    }
+
+    /**
+     * Sets a new location
+     *
+     * ASBIE
+     *  Transport Event. Location
+     *  The location associated with this transport event.
+     *  0..1
+     *  Transport Event
+     *  Location
+     *  Location
+     *  Location
+     *
+     * @param \horstoeko\ubl\entities\cac\Location $location
+     * @return self
+     */
+    public function setLocation(\horstoeko\ubl\entities\cac\Location $location)
+    {
+        $this->location = $location;
+        return $this;
+    }
+
+    /**
+     * Gets as signature
+     *
+     * ASBIE
+     *  Transport Event. Signature
+     *  A signature that can be used to sign for an entry or an exit at a transport location (e.g., port terminal).
+     *  0..1
+     *  Transport Event
+     *  Signature
+     *  Signature
+     *  Signature
+     *
+     * @return \horstoeko\ubl\entities\cac\Signature
+     */
+    public function getSignature()
+    {
+        return $this->signature;
+    }
+
+    /**
+     * Sets a new signature
+     *
+     * ASBIE
+     *  Transport Event. Signature
+     *  A signature that can be used to sign for an entry or an exit at a transport location (e.g., port terminal).
+     *  0..1
+     *  Transport Event
+     *  Signature
+     *  Signature
+     *  Signature
+     *
+     * @param \horstoeko\ubl\entities\cac\Signature $signature
+     * @return self
+     */
+    public function setSignature(\horstoeko\ubl\entities\cac\Signature $signature)
+    {
+        $this->signature = $signature;
+        return $this;
+    }
+
+    /**
+     * Adds as period
+     *
+     * ASBIE
+     *  Transport Event. Period
+     *  A period of time associated with this transport event.
+     *  0..n
+     *  Transport Event
+     *  Period
+     *  Period
+     *  Period
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\Period $period
+     */
+    public function addToPeriod(\horstoeko\ubl\entities\cac\Period $period)
+    {
+        $this->period[] = $period;
+        return $this;
+    }
+
+    /**
+     * isset period
+     *
+     * ASBIE
+     *  Transport Event. Period
+     *  A period of time associated with this transport event.
+     *  0..n
+     *  Transport Event
+     *  Period
+     *  Period
+     *  Period
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetPeriod($index)
+    {
+        return isset($this->period[$index]);
+    }
+
+    /**
+     * unset period
+     *
+     * ASBIE
+     *  Transport Event. Period
+     *  A period of time associated with this transport event.
+     *  0..n
+     *  Transport Event
+     *  Period
+     *  Period
+     *  Period
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetPeriod($index)
+    {
+        unset($this->period[$index]);
+    }
+
+    /**
+     * Gets as period
+     *
+     * ASBIE
+     *  Transport Event. Period
+     *  A period of time associated with this transport event.
+     *  0..n
+     *  Transport Event
+     *  Period
+     *  Period
+     *  Period
+     *
+     * @return \horstoeko\ubl\entities\cac\Period[]
+     */
+    public function getPeriod()
+    {
+        return $this->period;
+    }
+
+    /**
+     * Sets a new period
+     *
+     * ASBIE
+     *  Transport Event. Period
+     *  A period of time associated with this transport event.
+     *  0..n
+     *  Transport Event
+     *  Period
+     *  Period
+     *  Period
+     *
+     * @param \horstoeko\ubl\entities\cac\Period[] $period
+     * @return self
+     */
+    public function setPeriod(array $period)
+    {
+        $this->period = $period;
         return $this;
     }
 

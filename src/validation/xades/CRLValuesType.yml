@@ -1,0 +1,7 @@
+horstoeko\ubl\entities\xades\CRLValuesType:
+    properties:
+        encapsulatedCRLValue:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

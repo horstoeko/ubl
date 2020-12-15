@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Payment Terms. Details
- *  Information about Payment Terms.
+ *  A class to describe a set of payment terms.
  *  Payment Terms
  * XSD Type: PaymentTermsType
  */
@@ -17,7 +17,7 @@ class PaymentTermsType
     /**
      * BBIE
      *  Payment Terms. Identifier
-     *  Identifies the Payment Terms.
+     *  An identifier for this set of payment terms.
      *  0..1
      *  Payment Terms
      *  Identifier
@@ -31,21 +31,23 @@ class PaymentTermsType
     /**
      * BBIE
      *  Payment Terms. Payment Means Identifier. Identifier
-     *  Identifies the applicable Payment Means.
-     *  0..1
+     *  An identifier for a means of payment associated with these payment terms.
+     *  0..n
      *  Payment Terms
      *  Payment Means Identifier
      *  Identifier
      *  Identifier. Type
      *
-     * @var \horstoeko\ubl\entities\cbc\PaymentMeansID $paymentMeansID
+     * @var \horstoeko\ubl\entities\cbc\PaymentMeansID[] $paymentMeansID
      */
-    private $paymentMeansID = null;
+    private $paymentMeansID = [
+        
+    ];
 
     /**
      * BBIE
      *  Payment Terms. Prepaid Payment Reference Identifier. Identifier
-     *  Identifies prepaid payment.
+     *  An identifier for a reference to a prepaid payment.
      *  0..1
      *  Payment Terms
      *  Prepaid Payment Reference Identifier
@@ -59,7 +61,7 @@ class PaymentTermsType
     /**
      * BBIE
      *  Payment Terms. Note. Text
-     *  Free-form text applying to the Payment Terms. This element may contain notes or any other similar information that is not contained explicitly in another structure.
+     *  Free-form text conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Payment Terms
      *  Note
@@ -75,7 +77,7 @@ class PaymentTermsType
     /**
      * BBIE
      *  Payment Terms. Reference_ Event Code. Code
-     *  The event from which terms are offered for a length of time, identified by a standard code.
+     *  A code signifying the event during which these terms are offered.
      *  0..1
      *  Payment Terms
      *  Reference
@@ -90,7 +92,7 @@ class PaymentTermsType
     /**
      * BBIE
      *  Payment Terms. Settlement_ Discount Percent. Percent
-     *  The settlement discount rate (percentage) offered for payment within the settlement period.
+     *  The percentage for the settlement discount that is offered for payment under these payment terms.
      *  0..1
      *  Payment Terms
      *  Settlement
@@ -98,14 +100,14 @@ class PaymentTermsType
      *  Percent
      *  Percent. Type
      *
-     * @var float $settlementDiscountPercent
+     * @var \horstoeko\ubl\entities\cbc\SettlementDiscountPercent $settlementDiscountPercent
      */
     private $settlementDiscountPercent = null;
 
     /**
      * BBIE
      *  Payment Terms. Penalty_ Surcharge Percent. Percent
-     *  The penalty rate (percentage) charged for late payment.
+     *  The penalty for payment after the settlement period, expressed as a percentage of the payment.
      *  0..1
      *  Payment Terms
      *  Penalty
@@ -113,14 +115,28 @@ class PaymentTermsType
      *  Percent
      *  Percent. Type
      *
-     * @var float $penaltySurchargePercent
+     * @var \horstoeko\ubl\entities\cbc\PenaltySurchargePercent $penaltySurchargePercent
      */
     private $penaltySurchargePercent = null;
 
     /**
      * BBIE
+     *  Payment Terms. Payment Percent. Percent
+     *  The part of a payment, expressed as a percent, relevant for these payment terms.
+     *  0..1
+     *  Payment Terms
+     *  Payment Percent
+     *  Percent
+     *  Percent. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\PaymentPercent $paymentPercent
+     */
+    private $paymentPercent = null;
+
+    /**
+     * BBIE
      *  Payment Terms. Amount
-     *  The payment amount for the Payment Terms.
+     *  The monetary amount covered by these payment terms.
      *  0..1
      *  Payment Terms
      *  Amount
@@ -132,12 +148,100 @@ class PaymentTermsType
     private $amount = null;
 
     /**
-     * ASBIE
-     *  Payment Terms. Settlement_ Period. Period
-     *  An association to Settlement Period.
+     * BBIE
+     *  Payment Terms. Settlement_ Discount Amount. Amount
+     *  The amount of a settlement discount offered for payment under these payment terms.
      *  0..1
      *  Payment Terms
      *  Settlement
+     *  Discount Amount
+     *  Amount
+     *  Amount. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\SettlementDiscountAmount $settlementDiscountAmount
+     */
+    private $settlementDiscountAmount = null;
+
+    /**
+     * BBIE
+     *  Payment Terms. Penalty_ Amount. Amount
+     *  The monetary amount of the penalty for payment after the settlement period.
+     *  0..1
+     *  Payment Terms
+     *  Penalty
+     *  Amount
+     *  Amount
+     *  Amount. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\PenaltyAmount $penaltyAmount
+     */
+    private $penaltyAmount = null;
+
+    /**
+     * BBIE
+     *  Payment Terms. Payment Terms Details URI. Identifier
+     *  The Uniform Resource Identifier (URI) of a document providing additional details regarding these payment terms.
+     *  0..1
+     *  Payment Terms
+     *  Payment Terms Details URI
+     *  Identifier
+     *  Identifier. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\PaymentTermsDetailsURI $paymentTermsDetailsURI
+     */
+    private $paymentTermsDetailsURI = null;
+
+    /**
+     * BBIE
+     *  Payment Terms. Payment Due Date. Date
+     *  The due date for these payment terms.
+     *  0..1
+     *  Payment Terms
+     *  Payment Due Date
+     *  Date
+     *  Date. Type
+     *
+     * @var \DateTime $paymentDueDate
+     */
+    private $paymentDueDate = null;
+
+    /**
+     * BBIE
+     *  Payment Terms. Installment Due Date. Date
+     *  The due date for an installment payment for these payment terms.
+     *  0..1
+     *  Payment Terms
+     *  Installment Due Date
+     *  Date
+     *  Date. Type
+     *
+     * @var \DateTime $installmentDueDate
+     */
+    private $installmentDueDate = null;
+
+    /**
+     * BBIE
+     *  Payment Terms. Invoicing Party_ Reference. Text
+     *  A reference to the payment terms used by the invoicing party. This may have been requested of the payer by the payee to accompany its remittance.
+     *  0..1
+     *  Payment Terms
+     *  Invoicing Party
+     *  Reference
+     *  Text
+     *  Text. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\InvoicingPartyReference $invoicingPartyReference
+     */
+    private $invoicingPartyReference = null;
+
+    /**
+     * ASBIE
+     *  Payment Terms. Settlement_ Period. Period
+     *  The period during which settlement may occur.
+     *  0..1
+     *  Payment Terms
+     *  Settlement
+     *  Period
      *  Period
      *  Period
      *
@@ -148,10 +252,11 @@ class PaymentTermsType
     /**
      * ASBIE
      *  Payment Terms. Penalty_ Period. Period
-     *  An association to Penalty Period.
+     *  The period during which penalties may apply.
      *  0..1
      *  Payment Terms
      *  Penalty
+     *  Period
      *  Period
      *  Period
      *
@@ -160,11 +265,40 @@ class PaymentTermsType
     private $penaltyPeriod = null;
 
     /**
+     * ASBIE
+     *  Payment Terms. Exchange Rate
+     *  The currency exchange rate for purposes of these payment terms.
+     *  0..1
+     *  Payment Terms
+     *  Exchange Rate
+     *  Exchange Rate
+     *  Exchange Rate
+     *
+     * @var \horstoeko\ubl\entities\cac\ExchangeRate $exchangeRate
+     */
+    private $exchangeRate = null;
+
+    /**
+     * ASBIE
+     *  Payment Terms. Validity_ Period. Period
+     *  The period during which these payment terms are valid.
+     *  0..1
+     *  Payment Terms
+     *  Validity
+     *  Period
+     *  Period
+     *  Period
+     *
+     * @var \horstoeko\ubl\entities\cac\ValidityPeriod $validityPeriod
+     */
+    private $validityPeriod = null;
+
+    /**
      * Gets as iD
      *
      * BBIE
      *  Payment Terms. Identifier
-     *  Identifies the Payment Terms.
+     *  An identifier for this set of payment terms.
      *  0..1
      *  Payment Terms
      *  Identifier
@@ -183,7 +317,7 @@ class PaymentTermsType
      *
      * BBIE
      *  Payment Terms. Identifier
-     *  Identifies the Payment Terms.
+     *  An identifier for this set of payment terms.
      *  0..1
      *  Payment Terms
      *  Identifier
@@ -200,18 +334,79 @@ class PaymentTermsType
     }
 
     /**
-     * Gets as paymentMeansID
+     * Adds as paymentMeansID
      *
      * BBIE
      *  Payment Terms. Payment Means Identifier. Identifier
-     *  Identifies the applicable Payment Means.
-     *  0..1
+     *  An identifier for a means of payment associated with these payment terms.
+     *  0..n
      *  Payment Terms
      *  Payment Means Identifier
      *  Identifier
      *  Identifier. Type
      *
-     * @return \horstoeko\ubl\entities\cbc\PaymentMeansID
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\PaymentMeansID $paymentMeansID
+     */
+    public function addToPaymentMeansID(\horstoeko\ubl\entities\cbc\PaymentMeansID $paymentMeansID)
+    {
+        $this->paymentMeansID[] = $paymentMeansID;
+        return $this;
+    }
+
+    /**
+     * isset paymentMeansID
+     *
+     * BBIE
+     *  Payment Terms. Payment Means Identifier. Identifier
+     *  An identifier for a means of payment associated with these payment terms.
+     *  0..n
+     *  Payment Terms
+     *  Payment Means Identifier
+     *  Identifier
+     *  Identifier. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetPaymentMeansID($index)
+    {
+        return isset($this->paymentMeansID[$index]);
+    }
+
+    /**
+     * unset paymentMeansID
+     *
+     * BBIE
+     *  Payment Terms. Payment Means Identifier. Identifier
+     *  An identifier for a means of payment associated with these payment terms.
+     *  0..n
+     *  Payment Terms
+     *  Payment Means Identifier
+     *  Identifier
+     *  Identifier. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetPaymentMeansID($index)
+    {
+        unset($this->paymentMeansID[$index]);
+    }
+
+    /**
+     * Gets as paymentMeansID
+     *
+     * BBIE
+     *  Payment Terms. Payment Means Identifier. Identifier
+     *  An identifier for a means of payment associated with these payment terms.
+     *  0..n
+     *  Payment Terms
+     *  Payment Means Identifier
+     *  Identifier
+     *  Identifier. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\PaymentMeansID[]
      */
     public function getPaymentMeansID()
     {
@@ -223,17 +418,17 @@ class PaymentTermsType
      *
      * BBIE
      *  Payment Terms. Payment Means Identifier. Identifier
-     *  Identifies the applicable Payment Means.
-     *  0..1
+     *  An identifier for a means of payment associated with these payment terms.
+     *  0..n
      *  Payment Terms
      *  Payment Means Identifier
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PaymentMeansID $paymentMeansID
+     * @param \horstoeko\ubl\entities\cbc\PaymentMeansID[] $paymentMeansID
      * @return self
      */
-    public function setPaymentMeansID(\horstoeko\ubl\entities\cbc\PaymentMeansID $paymentMeansID)
+    public function setPaymentMeansID(array $paymentMeansID)
     {
         $this->paymentMeansID = $paymentMeansID;
         return $this;
@@ -244,7 +439,7 @@ class PaymentTermsType
      *
      * BBIE
      *  Payment Terms. Prepaid Payment Reference Identifier. Identifier
-     *  Identifies prepaid payment.
+     *  An identifier for a reference to a prepaid payment.
      *  0..1
      *  Payment Terms
      *  Prepaid Payment Reference Identifier
@@ -263,7 +458,7 @@ class PaymentTermsType
      *
      * BBIE
      *  Payment Terms. Prepaid Payment Reference Identifier. Identifier
-     *  Identifies prepaid payment.
+     *  An identifier for a reference to a prepaid payment.
      *  0..1
      *  Payment Terms
      *  Prepaid Payment Reference Identifier
@@ -284,7 +479,7 @@ class PaymentTermsType
      *
      * BBIE
      *  Payment Terms. Note. Text
-     *  Free-form text applying to the Payment Terms. This element may contain notes or any other similar information that is not contained explicitly in another structure.
+     *  Free-form text conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Payment Terms
      *  Note
@@ -305,7 +500,7 @@ class PaymentTermsType
      *
      * BBIE
      *  Payment Terms. Note. Text
-     *  Free-form text applying to the Payment Terms. This element may contain notes or any other similar information that is not contained explicitly in another structure.
+     *  Free-form text conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Payment Terms
      *  Note
@@ -325,7 +520,7 @@ class PaymentTermsType
      *
      * BBIE
      *  Payment Terms. Note. Text
-     *  Free-form text applying to the Payment Terms. This element may contain notes or any other similar information that is not contained explicitly in another structure.
+     *  Free-form text conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Payment Terms
      *  Note
@@ -345,7 +540,7 @@ class PaymentTermsType
      *
      * BBIE
      *  Payment Terms. Note. Text
-     *  Free-form text applying to the Payment Terms. This element may contain notes or any other similar information that is not contained explicitly in another structure.
+     *  Free-form text conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Payment Terms
      *  Note
@@ -364,7 +559,7 @@ class PaymentTermsType
      *
      * BBIE
      *  Payment Terms. Note. Text
-     *  Free-form text applying to the Payment Terms. This element may contain notes or any other similar information that is not contained explicitly in another structure.
+     *  Free-form text conveying information that is not contained explicitly in other structures.
      *  0..n
      *  Payment Terms
      *  Note
@@ -385,7 +580,7 @@ class PaymentTermsType
      *
      * BBIE
      *  Payment Terms. Reference_ Event Code. Code
-     *  The event from which terms are offered for a length of time, identified by a standard code.
+     *  A code signifying the event during which these terms are offered.
      *  0..1
      *  Payment Terms
      *  Reference
@@ -405,7 +600,7 @@ class PaymentTermsType
      *
      * BBIE
      *  Payment Terms. Reference_ Event Code. Code
-     *  The event from which terms are offered for a length of time, identified by a standard code.
+     *  A code signifying the event during which these terms are offered.
      *  0..1
      *  Payment Terms
      *  Reference
@@ -427,7 +622,7 @@ class PaymentTermsType
      *
      * BBIE
      *  Payment Terms. Settlement_ Discount Percent. Percent
-     *  The settlement discount rate (percentage) offered for payment within the settlement period.
+     *  The percentage for the settlement discount that is offered for payment under these payment terms.
      *  0..1
      *  Payment Terms
      *  Settlement
@@ -435,7 +630,7 @@ class PaymentTermsType
      *  Percent
      *  Percent. Type
      *
-     * @return float
+     * @return \horstoeko\ubl\entities\cbc\SettlementDiscountPercent
      */
     public function getSettlementDiscountPercent()
     {
@@ -447,7 +642,7 @@ class PaymentTermsType
      *
      * BBIE
      *  Payment Terms. Settlement_ Discount Percent. Percent
-     *  The settlement discount rate (percentage) offered for payment within the settlement period.
+     *  The percentage for the settlement discount that is offered for payment under these payment terms.
      *  0..1
      *  Payment Terms
      *  Settlement
@@ -455,10 +650,10 @@ class PaymentTermsType
      *  Percent
      *  Percent. Type
      *
-     * @param float $settlementDiscountPercent
+     * @param \horstoeko\ubl\entities\cbc\SettlementDiscountPercent $settlementDiscountPercent
      * @return self
      */
-    public function setSettlementDiscountPercent($settlementDiscountPercent)
+    public function setSettlementDiscountPercent(\horstoeko\ubl\entities\cbc\SettlementDiscountPercent $settlementDiscountPercent)
     {
         $this->settlementDiscountPercent = $settlementDiscountPercent;
         return $this;
@@ -469,7 +664,7 @@ class PaymentTermsType
      *
      * BBIE
      *  Payment Terms. Penalty_ Surcharge Percent. Percent
-     *  The penalty rate (percentage) charged for late payment.
+     *  The penalty for payment after the settlement period, expressed as a percentage of the payment.
      *  0..1
      *  Payment Terms
      *  Penalty
@@ -477,7 +672,7 @@ class PaymentTermsType
      *  Percent
      *  Percent. Type
      *
-     * @return float
+     * @return \horstoeko\ubl\entities\cbc\PenaltySurchargePercent
      */
     public function getPenaltySurchargePercent()
     {
@@ -489,7 +684,7 @@ class PaymentTermsType
      *
      * BBIE
      *  Payment Terms. Penalty_ Surcharge Percent. Percent
-     *  The penalty rate (percentage) charged for late payment.
+     *  The penalty for payment after the settlement period, expressed as a percentage of the payment.
      *  0..1
      *  Payment Terms
      *  Penalty
@@ -497,12 +692,52 @@ class PaymentTermsType
      *  Percent
      *  Percent. Type
      *
-     * @param float $penaltySurchargePercent
+     * @param \horstoeko\ubl\entities\cbc\PenaltySurchargePercent $penaltySurchargePercent
      * @return self
      */
-    public function setPenaltySurchargePercent($penaltySurchargePercent)
+    public function setPenaltySurchargePercent(\horstoeko\ubl\entities\cbc\PenaltySurchargePercent $penaltySurchargePercent)
     {
         $this->penaltySurchargePercent = $penaltySurchargePercent;
+        return $this;
+    }
+
+    /**
+     * Gets as paymentPercent
+     *
+     * BBIE
+     *  Payment Terms. Payment Percent. Percent
+     *  The part of a payment, expressed as a percent, relevant for these payment terms.
+     *  0..1
+     *  Payment Terms
+     *  Payment Percent
+     *  Percent
+     *  Percent. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\PaymentPercent
+     */
+    public function getPaymentPercent()
+    {
+        return $this->paymentPercent;
+    }
+
+    /**
+     * Sets a new paymentPercent
+     *
+     * BBIE
+     *  Payment Terms. Payment Percent. Percent
+     *  The part of a payment, expressed as a percent, relevant for these payment terms.
+     *  0..1
+     *  Payment Terms
+     *  Payment Percent
+     *  Percent
+     *  Percent. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\PaymentPercent $paymentPercent
+     * @return self
+     */
+    public function setPaymentPercent(\horstoeko\ubl\entities\cbc\PaymentPercent $paymentPercent)
+    {
+        $this->paymentPercent = $paymentPercent;
         return $this;
     }
 
@@ -511,7 +746,7 @@ class PaymentTermsType
      *
      * BBIE
      *  Payment Terms. Amount
-     *  The payment amount for the Payment Terms.
+     *  The monetary amount covered by these payment terms.
      *  0..1
      *  Payment Terms
      *  Amount
@@ -530,7 +765,7 @@ class PaymentTermsType
      *
      * BBIE
      *  Payment Terms. Amount
-     *  The payment amount for the Payment Terms.
+     *  The monetary amount covered by these payment terms.
      *  0..1
      *  Payment Terms
      *  Amount
@@ -547,14 +782,261 @@ class PaymentTermsType
     }
 
     /**
+     * Gets as settlementDiscountAmount
+     *
+     * BBIE
+     *  Payment Terms. Settlement_ Discount Amount. Amount
+     *  The amount of a settlement discount offered for payment under these payment terms.
+     *  0..1
+     *  Payment Terms
+     *  Settlement
+     *  Discount Amount
+     *  Amount
+     *  Amount. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\SettlementDiscountAmount
+     */
+    public function getSettlementDiscountAmount()
+    {
+        return $this->settlementDiscountAmount;
+    }
+
+    /**
+     * Sets a new settlementDiscountAmount
+     *
+     * BBIE
+     *  Payment Terms. Settlement_ Discount Amount. Amount
+     *  The amount of a settlement discount offered for payment under these payment terms.
+     *  0..1
+     *  Payment Terms
+     *  Settlement
+     *  Discount Amount
+     *  Amount
+     *  Amount. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\SettlementDiscountAmount $settlementDiscountAmount
+     * @return self
+     */
+    public function setSettlementDiscountAmount(\horstoeko\ubl\entities\cbc\SettlementDiscountAmount $settlementDiscountAmount)
+    {
+        $this->settlementDiscountAmount = $settlementDiscountAmount;
+        return $this;
+    }
+
+    /**
+     * Gets as penaltyAmount
+     *
+     * BBIE
+     *  Payment Terms. Penalty_ Amount. Amount
+     *  The monetary amount of the penalty for payment after the settlement period.
+     *  0..1
+     *  Payment Terms
+     *  Penalty
+     *  Amount
+     *  Amount
+     *  Amount. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\PenaltyAmount
+     */
+    public function getPenaltyAmount()
+    {
+        return $this->penaltyAmount;
+    }
+
+    /**
+     * Sets a new penaltyAmount
+     *
+     * BBIE
+     *  Payment Terms. Penalty_ Amount. Amount
+     *  The monetary amount of the penalty for payment after the settlement period.
+     *  0..1
+     *  Payment Terms
+     *  Penalty
+     *  Amount
+     *  Amount
+     *  Amount. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\PenaltyAmount $penaltyAmount
+     * @return self
+     */
+    public function setPenaltyAmount(\horstoeko\ubl\entities\cbc\PenaltyAmount $penaltyAmount)
+    {
+        $this->penaltyAmount = $penaltyAmount;
+        return $this;
+    }
+
+    /**
+     * Gets as paymentTermsDetailsURI
+     *
+     * BBIE
+     *  Payment Terms. Payment Terms Details URI. Identifier
+     *  The Uniform Resource Identifier (URI) of a document providing additional details regarding these payment terms.
+     *  0..1
+     *  Payment Terms
+     *  Payment Terms Details URI
+     *  Identifier
+     *  Identifier. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\PaymentTermsDetailsURI
+     */
+    public function getPaymentTermsDetailsURI()
+    {
+        return $this->paymentTermsDetailsURI;
+    }
+
+    /**
+     * Sets a new paymentTermsDetailsURI
+     *
+     * BBIE
+     *  Payment Terms. Payment Terms Details URI. Identifier
+     *  The Uniform Resource Identifier (URI) of a document providing additional details regarding these payment terms.
+     *  0..1
+     *  Payment Terms
+     *  Payment Terms Details URI
+     *  Identifier
+     *  Identifier. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\PaymentTermsDetailsURI $paymentTermsDetailsURI
+     * @return self
+     */
+    public function setPaymentTermsDetailsURI(\horstoeko\ubl\entities\cbc\PaymentTermsDetailsURI $paymentTermsDetailsURI)
+    {
+        $this->paymentTermsDetailsURI = $paymentTermsDetailsURI;
+        return $this;
+    }
+
+    /**
+     * Gets as paymentDueDate
+     *
+     * BBIE
+     *  Payment Terms. Payment Due Date. Date
+     *  The due date for these payment terms.
+     *  0..1
+     *  Payment Terms
+     *  Payment Due Date
+     *  Date
+     *  Date. Type
+     *
+     * @return \DateTime
+     */
+    public function getPaymentDueDate()
+    {
+        return $this->paymentDueDate;
+    }
+
+    /**
+     * Sets a new paymentDueDate
+     *
+     * BBIE
+     *  Payment Terms. Payment Due Date. Date
+     *  The due date for these payment terms.
+     *  0..1
+     *  Payment Terms
+     *  Payment Due Date
+     *  Date
+     *  Date. Type
+     *
+     * @param \DateTime $paymentDueDate
+     * @return self
+     */
+    public function setPaymentDueDate(\DateTime $paymentDueDate)
+    {
+        $this->paymentDueDate = $paymentDueDate;
+        return $this;
+    }
+
+    /**
+     * Gets as installmentDueDate
+     *
+     * BBIE
+     *  Payment Terms. Installment Due Date. Date
+     *  The due date for an installment payment for these payment terms.
+     *  0..1
+     *  Payment Terms
+     *  Installment Due Date
+     *  Date
+     *  Date. Type
+     *
+     * @return \DateTime
+     */
+    public function getInstallmentDueDate()
+    {
+        return $this->installmentDueDate;
+    }
+
+    /**
+     * Sets a new installmentDueDate
+     *
+     * BBIE
+     *  Payment Terms. Installment Due Date. Date
+     *  The due date for an installment payment for these payment terms.
+     *  0..1
+     *  Payment Terms
+     *  Installment Due Date
+     *  Date
+     *  Date. Type
+     *
+     * @param \DateTime $installmentDueDate
+     * @return self
+     */
+    public function setInstallmentDueDate(\DateTime $installmentDueDate)
+    {
+        $this->installmentDueDate = $installmentDueDate;
+        return $this;
+    }
+
+    /**
+     * Gets as invoicingPartyReference
+     *
+     * BBIE
+     *  Payment Terms. Invoicing Party_ Reference. Text
+     *  A reference to the payment terms used by the invoicing party. This may have been requested of the payer by the payee to accompany its remittance.
+     *  0..1
+     *  Payment Terms
+     *  Invoicing Party
+     *  Reference
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\InvoicingPartyReference
+     */
+    public function getInvoicingPartyReference()
+    {
+        return $this->invoicingPartyReference;
+    }
+
+    /**
+     * Sets a new invoicingPartyReference
+     *
+     * BBIE
+     *  Payment Terms. Invoicing Party_ Reference. Text
+     *  A reference to the payment terms used by the invoicing party. This may have been requested of the payer by the payee to accompany its remittance.
+     *  0..1
+     *  Payment Terms
+     *  Invoicing Party
+     *  Reference
+     *  Text
+     *  Text. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\InvoicingPartyReference $invoicingPartyReference
+     * @return self
+     */
+    public function setInvoicingPartyReference(\horstoeko\ubl\entities\cbc\InvoicingPartyReference $invoicingPartyReference)
+    {
+        $this->invoicingPartyReference = $invoicingPartyReference;
+        return $this;
+    }
+
+    /**
      * Gets as settlementPeriod
      *
      * ASBIE
      *  Payment Terms. Settlement_ Period. Period
-     *  An association to Settlement Period.
+     *  The period during which settlement may occur.
      *  0..1
      *  Payment Terms
      *  Settlement
+     *  Period
      *  Period
      *  Period
      *
@@ -570,10 +1052,11 @@ class PaymentTermsType
      *
      * ASBIE
      *  Payment Terms. Settlement_ Period. Period
-     *  An association to Settlement Period.
+     *  The period during which settlement may occur.
      *  0..1
      *  Payment Terms
      *  Settlement
+     *  Period
      *  Period
      *  Period
      *
@@ -591,10 +1074,11 @@ class PaymentTermsType
      *
      * ASBIE
      *  Payment Terms. Penalty_ Period. Period
-     *  An association to Penalty Period.
+     *  The period during which penalties may apply.
      *  0..1
      *  Payment Terms
      *  Penalty
+     *  Period
      *  Period
      *  Period
      *
@@ -610,10 +1094,11 @@ class PaymentTermsType
      *
      * ASBIE
      *  Payment Terms. Penalty_ Period. Period
-     *  An association to Penalty Period.
+     *  The period during which penalties may apply.
      *  0..1
      *  Payment Terms
      *  Penalty
+     *  Period
      *  Period
      *  Period
      *
@@ -623,6 +1108,88 @@ class PaymentTermsType
     public function setPenaltyPeriod(\horstoeko\ubl\entities\cac\PenaltyPeriod $penaltyPeriod)
     {
         $this->penaltyPeriod = $penaltyPeriod;
+        return $this;
+    }
+
+    /**
+     * Gets as exchangeRate
+     *
+     * ASBIE
+     *  Payment Terms. Exchange Rate
+     *  The currency exchange rate for purposes of these payment terms.
+     *  0..1
+     *  Payment Terms
+     *  Exchange Rate
+     *  Exchange Rate
+     *  Exchange Rate
+     *
+     * @return \horstoeko\ubl\entities\cac\ExchangeRate
+     */
+    public function getExchangeRate()
+    {
+        return $this->exchangeRate;
+    }
+
+    /**
+     * Sets a new exchangeRate
+     *
+     * ASBIE
+     *  Payment Terms. Exchange Rate
+     *  The currency exchange rate for purposes of these payment terms.
+     *  0..1
+     *  Payment Terms
+     *  Exchange Rate
+     *  Exchange Rate
+     *  Exchange Rate
+     *
+     * @param \horstoeko\ubl\entities\cac\ExchangeRate $exchangeRate
+     * @return self
+     */
+    public function setExchangeRate(\horstoeko\ubl\entities\cac\ExchangeRate $exchangeRate)
+    {
+        $this->exchangeRate = $exchangeRate;
+        return $this;
+    }
+
+    /**
+     * Gets as validityPeriod
+     *
+     * ASBIE
+     *  Payment Terms. Validity_ Period. Period
+     *  The period during which these payment terms are valid.
+     *  0..1
+     *  Payment Terms
+     *  Validity
+     *  Period
+     *  Period
+     *  Period
+     *
+     * @return \horstoeko\ubl\entities\cac\ValidityPeriod
+     */
+    public function getValidityPeriod()
+    {
+        return $this->validityPeriod;
+    }
+
+    /**
+     * Sets a new validityPeriod
+     *
+     * ASBIE
+     *  Payment Terms. Validity_ Period. Period
+     *  The period during which these payment terms are valid.
+     *  0..1
+     *  Payment Terms
+     *  Validity
+     *  Period
+     *  Period
+     *  Period
+     *
+     * @param \horstoeko\ubl\entities\cac\ValidityPeriod $validityPeriod
+     * @return self
+     */
+    public function setValidityPeriod(\horstoeko\ubl\entities\cac\ValidityPeriod $validityPeriod)
+    {
+        $this->validityPeriod = $validityPeriod;
         return $this;
     }
 

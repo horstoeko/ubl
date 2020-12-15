@@ -1,0 +1,80 @@
+horstoeko\ubl\entities\cac\FrameworkAgreementType:
+    properties:
+        expectedOperatorQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: ExpectedOperatorQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getExpectedOperatorQuantity
+                setter: setExpectedOperatorQuantity
+            type: horstoeko\ubl\entities\cbc\ExpectedOperatorQuantity
+        maximumOperatorQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: MaximumOperatorQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMaximumOperatorQuantity
+                setter: setMaximumOperatorQuantity
+            type: horstoeko\ubl\entities\cbc\MaximumOperatorQuantity
+        justification:
+            expose: true
+            access_type: public_method
+            serialized_name: Justification
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getJustification
+                setter: setJustification
+            xml_list:
+                inline: true
+                entry_name: Justification
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Justification>
+        frequency:
+            expose: true
+            access_type: public_method
+            serialized_name: Frequency
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getFrequency
+                setter: setFrequency
+            xml_list:
+                inline: true
+                entry_name: Frequency
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Frequency>
+        durationPeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: DurationPeriod
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getDurationPeriod
+                setter: setDurationPeriod
+            type: horstoeko\ubl\entities\cac\DurationPeriod
+        subsequentProcessTenderRequirement:
+            expose: true
+            access_type: public_method
+            serialized_name: SubsequentProcessTenderRequirement
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getSubsequentProcessTenderRequirement
+                setter: setSubsequentProcessTenderRequirement
+            xml_list:
+                inline: true
+                entry_name: SubsequentProcessTenderRequirement
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\SubsequentProcessTenderRequirement>

@@ -21,7 +21,11 @@ horstoeko\ubl\entities\cac\QuotationLineType:
             accessor:
                 getter: getNote
                 setter: setNote
-            type: horstoeko\ubl\entities\cbc\Note
+            xml_list:
+                inline: true
+                entry_name: Note
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Note>
         quantity:
             expose: true
             access_type: public_method
@@ -55,6 +59,17 @@ horstoeko\ubl\entities\cac\QuotationLineType:
                 getter: getTotalTaxAmount
                 setter: setTotalTaxAmount
             type: horstoeko\ubl\entities\cbc\TotalTaxAmount
+        requestForQuotationLineID:
+            expose: true
+            access_type: public_method
+            serialized_name: RequestForQuotationLineID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getRequestForQuotationLineID
+                setter: setRequestForQuotationLineID
+            type: horstoeko\ubl\entities\cbc\RequestForQuotationLineID
         documentReference:
             expose: true
             access_type: public_method
@@ -96,3 +111,29 @@ horstoeko\ubl\entities\cac\QuotationLineType:
                 entry_name: SellerProposedSubstituteLineItem
                 namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
             type: array<horstoeko\ubl\entities\cac\SellerProposedSubstituteLineItem>
+        alternativeLineItem:
+            expose: true
+            access_type: public_method
+            serialized_name: AlternativeLineItem
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getAlternativeLineItem
+                setter: setAlternativeLineItem
+            xml_list:
+                inline: true
+                entry_name: AlternativeLineItem
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\AlternativeLineItem>
+        requestLineReference:
+            expose: true
+            access_type: public_method
+            serialized_name: RequestLineReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getRequestLineReference
+                setter: setRequestLineReference
+            type: horstoeko\ubl\entities\cac\RequestLineReference

@@ -1,0 +1,151 @@
+horstoeko\ubl\entities\cac\TransportExecutionTermsType:
+    properties:
+        transportUserSpecialTerms:
+            expose: true
+            access_type: public_method
+            serialized_name: TransportUserSpecialTerms
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTransportUserSpecialTerms
+                setter: setTransportUserSpecialTerms
+            xml_list:
+                inline: true
+                entry_name: TransportUserSpecialTerms
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\TransportUserSpecialTerms>
+        transportServiceProviderSpecialTerms:
+            expose: true
+            access_type: public_method
+            serialized_name: TransportServiceProviderSpecialTerms
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTransportServiceProviderSpecialTerms
+                setter: setTransportServiceProviderSpecialTerms
+            xml_list:
+                inline: true
+                entry_name: TransportServiceProviderSpecialTerms
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\TransportServiceProviderSpecialTerms>
+        changeConditions:
+            expose: true
+            access_type: public_method
+            serialized_name: ChangeConditions
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getChangeConditions
+                setter: setChangeConditions
+            xml_list:
+                inline: true
+                entry_name: ChangeConditions
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\ChangeConditions>
+        paymentTerms:
+            expose: true
+            access_type: public_method
+            serialized_name: PaymentTerms
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPaymentTerms
+                setter: setPaymentTerms
+            xml_list:
+                inline: true
+                entry_name: PaymentTerms
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\PaymentTerms>
+        deliveryTerms:
+            expose: true
+            access_type: public_method
+            serialized_name: DeliveryTerms
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getDeliveryTerms
+                setter: setDeliveryTerms
+            xml_list:
+                inline: true
+                entry_name: DeliveryTerms
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\DeliveryTerms>
+        bonusPaymentTerms:
+            expose: true
+            access_type: public_method
+            serialized_name: BonusPaymentTerms
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getBonusPaymentTerms
+                setter: setBonusPaymentTerms
+            type: horstoeko\ubl\entities\cac\BonusPaymentTerms
+        commissionPaymentTerms:
+            expose: true
+            access_type: public_method
+            serialized_name: CommissionPaymentTerms
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getCommissionPaymentTerms
+                setter: setCommissionPaymentTerms
+            type: horstoeko\ubl\entities\cac\CommissionPaymentTerms
+        penaltyPaymentTerms:
+            expose: true
+            access_type: public_method
+            serialized_name: PenaltyPaymentTerms
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPenaltyPaymentTerms
+                setter: setPenaltyPaymentTerms
+            type: horstoeko\ubl\entities\cac\PenaltyPaymentTerms
+        environmentalEmission:
+            expose: true
+            access_type: public_method
+            serialized_name: EnvironmentalEmission
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getEnvironmentalEmission
+                setter: setEnvironmentalEmission
+            xml_list:
+                inline: true
+                entry_name: EnvironmentalEmission
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\EnvironmentalEmission>
+        notificationRequirement:
+            expose: true
+            access_type: public_method
+            serialized_name: NotificationRequirement
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getNotificationRequirement
+                setter: setNotificationRequirement
+            xml_list:
+                inline: true
+                entry_name: NotificationRequirement
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\NotificationRequirement>
+        serviceChargePaymentTerms:
+            expose: true
+            access_type: public_method
+            serialized_name: ServiceChargePaymentTerms
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getServiceChargePaymentTerms
+                setter: setServiceChargePaymentTerms
+            type: horstoeko\ubl\entities\cac\ServiceChargePaymentTerms

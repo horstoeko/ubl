@@ -1,0 +1,16 @@
+horstoeko\ubl\entities\cac\ConsumptionPointType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        address:
+            -
+                Valid: null
+        webSiteAccess:
+            -
+                Valid: null
+        utilityMeter:
+            -
+                Valid: null

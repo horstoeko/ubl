@@ -1,0 +1,9 @@
+horstoeko\ubl\entities\xades\CounterSignatureType:
+    properties:
+        signature:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

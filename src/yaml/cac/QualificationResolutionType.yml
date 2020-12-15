@@ -1,0 +1,76 @@
+horstoeko\ubl\entities\cac\QualificationResolutionType:
+    properties:
+        admissionCode:
+            expose: true
+            access_type: public_method
+            serialized_name: AdmissionCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAdmissionCode
+                setter: setAdmissionCode
+            type: horstoeko\ubl\entities\cbc\AdmissionCode
+        exclusionReason:
+            expose: true
+            access_type: public_method
+            serialized_name: ExclusionReason
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getExclusionReason
+                setter: setExclusionReason
+            xml_list:
+                inline: true
+                entry_name: ExclusionReason
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\ExclusionReason>
+        resolution:
+            expose: true
+            access_type: public_method
+            serialized_name: Resolution
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getResolution
+                setter: setResolution
+            xml_list:
+                inline: true
+                entry_name: Resolution
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Resolution>
+        resolutionDate:
+            expose: true
+            access_type: public_method
+            serialized_name: ResolutionDate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getResolutionDate
+                setter: setResolutionDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        resolutionTime:
+            expose: true
+            access_type: public_method
+            serialized_name: ResolutionTime
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getResolutionTime
+                setter: setResolutionTime
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time
+        procurementProjectLot:
+            expose: true
+            access_type: public_method
+            serialized_name: ProcurementProjectLot
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getProcurementProjectLot
+                setter: setProcurementProjectLot
+            type: horstoeko\ubl\entities\cac\ProcurementProjectLot

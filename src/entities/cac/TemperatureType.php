@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Temperature. Details
- *  Information about temperature.
+ *  A class to describe a measurement of temperature.
  *  Temperature
  * XSD Type: TemperatureType
  */
@@ -17,7 +17,7 @@ class TemperatureType
     /**
      * BBIE
      *  Temperature. Attribute Identifier. Identifier
-     *  An identifier for temperature.
+     *  An identifier for this temperature measurement.
      *  1
      *  Temperature
      *  Attribute Identifier
@@ -31,7 +31,7 @@ class TemperatureType
     /**
      * BBIE
      *  Temperature. Measure
-     *  The temperature measurement value.
+     *  The value of this temperature measurement.
      *  1
      *  Temperature
      *  Measure
@@ -45,13 +45,13 @@ class TemperatureType
     /**
      * BBIE
      *  Temperature. Description. Text
-     *  A description of the temperature measurement.
+     *  Text describing this temperature measurement.
      *  0..n
      *  Temperature
      *  Description
      *  Text
      *  Text. Type
-     *  "at sea level"
+     *  at sea level
      *
      * @var \horstoeko\ubl\entities\cbc\Description[] $description
      */
@@ -64,7 +64,7 @@ class TemperatureType
      *
      * BBIE
      *  Temperature. Attribute Identifier. Identifier
-     *  An identifier for temperature.
+     *  An identifier for this temperature measurement.
      *  1
      *  Temperature
      *  Attribute Identifier
@@ -83,7 +83,7 @@ class TemperatureType
      *
      * BBIE
      *  Temperature. Attribute Identifier. Identifier
-     *  An identifier for temperature.
+     *  An identifier for this temperature measurement.
      *  1
      *  Temperature
      *  Attribute Identifier
@@ -104,7 +104,7 @@ class TemperatureType
      *
      * BBIE
      *  Temperature. Measure
-     *  The temperature measurement value.
+     *  The value of this temperature measurement.
      *  1
      *  Temperature
      *  Measure
@@ -123,7 +123,7 @@ class TemperatureType
      *
      * BBIE
      *  Temperature. Measure
-     *  The temperature measurement value.
+     *  The value of this temperature measurement.
      *  1
      *  Temperature
      *  Measure
@@ -144,13 +144,13 @@ class TemperatureType
      *
      * BBIE
      *  Temperature. Description. Text
-     *  A description of the temperature measurement.
+     *  Text describing this temperature measurement.
      *  0..n
      *  Temperature
      *  Description
      *  Text
      *  Text. Type
-     *  "at sea level"
+     *  at sea level
      *
      * @return self
      * @param \horstoeko\ubl\entities\cbc\Description $description
@@ -166,13 +166,13 @@ class TemperatureType
      *
      * BBIE
      *  Temperature. Description. Text
-     *  A description of the temperature measurement.
+     *  Text describing this temperature measurement.
      *  0..n
      *  Temperature
      *  Description
      *  Text
      *  Text. Type
-     *  "at sea level"
+     *  at sea level
      *
      * @param int|string $index
      * @return bool
@@ -187,13 +187,13 @@ class TemperatureType
      *
      * BBIE
      *  Temperature. Description. Text
-     *  A description of the temperature measurement.
+     *  Text describing this temperature measurement.
      *  0..n
      *  Temperature
      *  Description
      *  Text
      *  Text. Type
-     *  "at sea level"
+     *  at sea level
      *
      * @param int|string $index
      * @return void
@@ -208,13 +208,13 @@ class TemperatureType
      *
      * BBIE
      *  Temperature. Description. Text
-     *  A description of the temperature measurement.
+     *  Text describing this temperature measurement.
      *  0..n
      *  Temperature
      *  Description
      *  Text
      *  Text. Type
-     *  "at sea level"
+     *  at sea level
      *
      * @return \horstoeko\ubl\entities\cbc\Description[]
      */
@@ -228,13 +228,13 @@ class TemperatureType
      *
      * BBIE
      *  Temperature. Description. Text
-     *  A description of the temperature measurement.
+     *  Text describing this temperature measurement.
      *  0..n
      *  Temperature
      *  Description
      *  Text
      *  Text. Type
-     *  "at sea level"
+     *  at sea level
      *
      * @param \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self

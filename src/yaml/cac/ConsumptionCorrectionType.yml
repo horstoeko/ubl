@@ -1,0 +1,138 @@
+horstoeko\ubl\entities\cac\ConsumptionCorrectionType:
+    properties:
+        correctionType:
+            expose: true
+            access_type: public_method
+            serialized_name: CorrectionType
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getCorrectionType
+                setter: setCorrectionType
+            type: horstoeko\ubl\entities\cbc\CorrectionType
+        correctionTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: CorrectionTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getCorrectionTypeCode
+                setter: setCorrectionTypeCode
+            type: horstoeko\ubl\entities\cbc\CorrectionTypeCode
+        meterNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: MeterNumber
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMeterNumber
+                setter: setMeterNumber
+            type: horstoeko\ubl\entities\cbc\MeterNumber
+        gasPressureQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: GasPressureQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getGasPressureQuantity
+                setter: setGasPressureQuantity
+            type: horstoeko\ubl\entities\cbc\GasPressureQuantity
+        actualTemperatureReductionQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: ActualTemperatureReductionQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getActualTemperatureReductionQuantity
+                setter: setActualTemperatureReductionQuantity
+            type: horstoeko\ubl\entities\cbc\ActualTemperatureReductionQuantity
+        normalTemperatureReductionQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: NormalTemperatureReductionQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getNormalTemperatureReductionQuantity
+                setter: setNormalTemperatureReductionQuantity
+            type: horstoeko\ubl\entities\cbc\NormalTemperatureReductionQuantity
+        differenceTemperatureReductionQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: DifferenceTemperatureReductionQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDifferenceTemperatureReductionQuantity
+                setter: setDifferenceTemperatureReductionQuantity
+            type: horstoeko\ubl\entities\cbc\DifferenceTemperatureReductionQuantity
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: Description
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>
+        correctionUnitAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: CorrectionUnitAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getCorrectionUnitAmount
+                setter: setCorrectionUnitAmount
+            type: horstoeko\ubl\entities\cbc\CorrectionUnitAmount
+        consumptionEnergyQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: ConsumptionEnergyQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getConsumptionEnergyQuantity
+                setter: setConsumptionEnergyQuantity
+            type: horstoeko\ubl\entities\cbc\ConsumptionEnergyQuantity
+        consumptionWaterQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: ConsumptionWaterQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getConsumptionWaterQuantity
+                setter: setConsumptionWaterQuantity
+            type: horstoeko\ubl\entities\cbc\ConsumptionWaterQuantity
+        correctionAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: CorrectionAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getCorrectionAmount
+                setter: setCorrectionAmount
+            type: horstoeko\ubl\entities\cbc\CorrectionAmount

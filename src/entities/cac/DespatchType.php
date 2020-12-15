@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Despatch. Details
- *  Information about Despatch.
+ *  A class to describe the despatching of goods (their pickup for delivery).
  *  Despatch
  * XSD Type: DespatchType
  */
@@ -17,7 +17,7 @@ class DespatchType
     /**
      * BBIE
      *  Despatch. Identifier
-     *  The identifier for the Delivery.
+     *  An identifier for this despatch event.
      *  0..1
      *  Despatch
      *  Identifier
@@ -31,7 +31,7 @@ class DespatchType
     /**
      * BBIE
      *  Despatch. Requested_ Despatch Date. Date
-     *  The despatch (pick-up) date requested by the buyer.
+     *  The despatch (pickup) date requested, normally by the buyer.
      *  0..1
      *  Despatch
      *  Requested
@@ -46,7 +46,7 @@ class DespatchType
     /**
      * BBIE
      *  Despatch. Requested_ Despatch Time. Time
-     *  The despatch (pick-up) time requested by the buyer.
+     *  The despatch (pickup) time requested, normally by the buyer.
      *  0..1
      *  Despatch
      *  Requested
@@ -61,7 +61,7 @@ class DespatchType
     /**
      * BBIE
      *  Despatch. Estimated_ Despatch Date. Date
-     *  The despatch (pick-up) date estimated by the seller or Despatch.
+     *  The estimated despatch (pickup) date.
      *  0..1
      *  Despatch
      *  Estimated
@@ -76,7 +76,7 @@ class DespatchType
     /**
      * BBIE
      *  Despatch. Estimated_ Despatch Time. Time
-     *  The despatch (pick-up) time estimated by the seller or Despatch.
+     *  The estimated despatch (pickup) time.
      *  0..1
      *  Despatch
      *  Estimated
@@ -91,7 +91,7 @@ class DespatchType
     /**
      * BBIE
      *  Despatch. Actual_ Despatch Date. Date
-     *  The actual despatch (pick-up) date.
+     *  The actual despatch (pickup) date.
      *  0..1
      *  Despatch
      *  Actual
@@ -106,7 +106,7 @@ class DespatchType
     /**
      * BBIE
      *  Despatch. Actual_ Despatch Time. Time
-     *  The actual despatch (pick-up) time.
+     *  The actual despatch (pickup) time.
      *  0..1
      *  Despatch
      *  Actual
@@ -119,12 +119,73 @@ class DespatchType
     private $actualDespatchTime = null;
 
     /**
+     * BBIE
+     *  Despatch. Guaranteed_ Despatch Date. Date
+     *  The date guaranteed for the despatch (pickup).
+     *  0..1
+     *  Despatch
+     *  Guaranteed
+     *  Despatch Date
+     *  Date
+     *  Date. Type
+     *
+     * @var \DateTime $guaranteedDespatchDate
+     */
+    private $guaranteedDespatchDate = null;
+
+    /**
+     * BBIE
+     *  Despatch. Guaranteed_ Despatch Time. Time
+     *  The time guaranteed for the despatch (pickup).
+     *  0..1
+     *  Despatch
+     *  Guaranteed
+     *  Despatch Time
+     *  Time
+     *  Time. Type
+     *
+     * @var \DateTime $guaranteedDespatchTime
+     */
+    private $guaranteedDespatchTime = null;
+
+    /**
+     * BBIE
+     *  Despatch. Release. Identifier
+     *  An identifier for the release of the despatch used as security control or cargo control (pick-up).
+     *  0..1
+     *  Despatch
+     *  Release
+     *  Identifier
+     *  Identifier. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\ReleaseID $releaseID
+     */
+    private $releaseID = null;
+
+    /**
+     * BBIE
+     *  Despatch. Instructions. Text
+     *  Text describing any special instructions applying to the despatch (pickup).
+     *  0..n
+     *  Despatch
+     *  Instructions
+     *  Text
+     *  Text. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\Instructions[] $instructions
+     */
+    private $instructions = [
+        
+    ];
+
+    /**
      * ASBIE
      *  Despatch. Despatch_ Address. Address
-     *  An association to Despatch Address.
+     *  The address of the despatch (pickup).
      *  0..1
      *  Despatch
      *  Despatch
+     *  Address
      *  Address
      *  Address
      *
@@ -134,11 +195,27 @@ class DespatchType
 
     /**
      * ASBIE
-     *  Despatch. Despatch_ Party. Party
-     *  The party who despatched the delivery.
+     *  Despatch. Despatch_ Location. Location
+     *  The location of the despatch (pickup).
      *  0..1
      *  Despatch
      *  Despatch
+     *  Location
+     *  Location
+     *  Location
+     *
+     * @var \horstoeko\ubl\entities\cac\DespatchLocation $despatchLocation
+     */
+    private $despatchLocation = null;
+
+    /**
+     * ASBIE
+     *  Despatch. Despatch_ Party. Party
+     *  The party despatching the goods.
+     *  0..1
+     *  Despatch
+     *  Despatch
+     *  Party
      *  Party
      *  Party
      *
@@ -148,10 +225,43 @@ class DespatchType
 
     /**
      * ASBIE
-     *  Despatch. Contact
-     *  An association to Contact.
+     *  Despatch. Carrier_ Party. Party
+     *  The party carrying the goods.
      *  0..1
      *  Despatch
+     *  Carrier
+     *  Party
+     *  Party
+     *  Party
+     *
+     * @var \horstoeko\ubl\entities\cac\CarrierParty $carrierParty
+     */
+    private $carrierParty = null;
+
+    /**
+     * ASBIE
+     *  Despatch. Notify_ Party. Party
+     *  A party to be notified of this despatch (pickup).
+     *  0..n
+     *  Despatch
+     *  Notify
+     *  Party
+     *  Party
+     *  Party
+     *
+     * @var \horstoeko\ubl\entities\cac\NotifyParty[] $notifyParty
+     */
+    private $notifyParty = [
+        
+    ];
+
+    /**
+     * ASBIE
+     *  Despatch. Contact
+     *  The primary contact for this despatch (pickup).
+     *  0..1
+     *  Despatch
+     *  Contact
      *  Contact
      *  Contact
      *
@@ -160,11 +270,41 @@ class DespatchType
     private $contact = null;
 
     /**
+     * ASBIE
+     *  Despatch. Estimated Despatch_ Period. Period
+     *  The period estimated for the despatch (pickup) of goods.
+     *  0..1
+     *  Despatch
+     *  Estimated Despatch
+     *  Period
+     *  Period
+     *  Period
+     *
+     * @var \horstoeko\ubl\entities\cac\EstimatedDespatchPeriod $estimatedDespatchPeriod
+     */
+    private $estimatedDespatchPeriod = null;
+
+    /**
+     * ASBIE
+     *  Despatch. Requested Despatch_ Period. Period
+     *  The period requested for the despatch (pickup) of goods.
+     *  0..1
+     *  Despatch
+     *  Requested Despatch
+     *  Period
+     *  Period
+     *  Period
+     *
+     * @var \horstoeko\ubl\entities\cac\RequestedDespatchPeriod $requestedDespatchPeriod
+     */
+    private $requestedDespatchPeriod = null;
+
+    /**
      * Gets as iD
      *
      * BBIE
      *  Despatch. Identifier
-     *  The identifier for the Delivery.
+     *  An identifier for this despatch event.
      *  0..1
      *  Despatch
      *  Identifier
@@ -183,7 +323,7 @@ class DespatchType
      *
      * BBIE
      *  Despatch. Identifier
-     *  The identifier for the Delivery.
+     *  An identifier for this despatch event.
      *  0..1
      *  Despatch
      *  Identifier
@@ -204,7 +344,7 @@ class DespatchType
      *
      * BBIE
      *  Despatch. Requested_ Despatch Date. Date
-     *  The despatch (pick-up) date requested by the buyer.
+     *  The despatch (pickup) date requested, normally by the buyer.
      *  0..1
      *  Despatch
      *  Requested
@@ -224,7 +364,7 @@ class DespatchType
      *
      * BBIE
      *  Despatch. Requested_ Despatch Date. Date
-     *  The despatch (pick-up) date requested by the buyer.
+     *  The despatch (pickup) date requested, normally by the buyer.
      *  0..1
      *  Despatch
      *  Requested
@@ -246,7 +386,7 @@ class DespatchType
      *
      * BBIE
      *  Despatch. Requested_ Despatch Time. Time
-     *  The despatch (pick-up) time requested by the buyer.
+     *  The despatch (pickup) time requested, normally by the buyer.
      *  0..1
      *  Despatch
      *  Requested
@@ -266,7 +406,7 @@ class DespatchType
      *
      * BBIE
      *  Despatch. Requested_ Despatch Time. Time
-     *  The despatch (pick-up) time requested by the buyer.
+     *  The despatch (pickup) time requested, normally by the buyer.
      *  0..1
      *  Despatch
      *  Requested
@@ -288,7 +428,7 @@ class DespatchType
      *
      * BBIE
      *  Despatch. Estimated_ Despatch Date. Date
-     *  The despatch (pick-up) date estimated by the seller or Despatch.
+     *  The estimated despatch (pickup) date.
      *  0..1
      *  Despatch
      *  Estimated
@@ -308,7 +448,7 @@ class DespatchType
      *
      * BBIE
      *  Despatch. Estimated_ Despatch Date. Date
-     *  The despatch (pick-up) date estimated by the seller or Despatch.
+     *  The estimated despatch (pickup) date.
      *  0..1
      *  Despatch
      *  Estimated
@@ -330,7 +470,7 @@ class DespatchType
      *
      * BBIE
      *  Despatch. Estimated_ Despatch Time. Time
-     *  The despatch (pick-up) time estimated by the seller or Despatch.
+     *  The estimated despatch (pickup) time.
      *  0..1
      *  Despatch
      *  Estimated
@@ -350,7 +490,7 @@ class DespatchType
      *
      * BBIE
      *  Despatch. Estimated_ Despatch Time. Time
-     *  The despatch (pick-up) time estimated by the seller or Despatch.
+     *  The estimated despatch (pickup) time.
      *  0..1
      *  Despatch
      *  Estimated
@@ -372,7 +512,7 @@ class DespatchType
      *
      * BBIE
      *  Despatch. Actual_ Despatch Date. Date
-     *  The actual despatch (pick-up) date.
+     *  The actual despatch (pickup) date.
      *  0..1
      *  Despatch
      *  Actual
@@ -392,7 +532,7 @@ class DespatchType
      *
      * BBIE
      *  Despatch. Actual_ Despatch Date. Date
-     *  The actual despatch (pick-up) date.
+     *  The actual despatch (pickup) date.
      *  0..1
      *  Despatch
      *  Actual
@@ -414,7 +554,7 @@ class DespatchType
      *
      * BBIE
      *  Despatch. Actual_ Despatch Time. Time
-     *  The actual despatch (pick-up) time.
+     *  The actual despatch (pickup) time.
      *  0..1
      *  Despatch
      *  Actual
@@ -434,7 +574,7 @@ class DespatchType
      *
      * BBIE
      *  Despatch. Actual_ Despatch Time. Time
-     *  The actual despatch (pick-up) time.
+     *  The actual despatch (pickup) time.
      *  0..1
      *  Despatch
      *  Actual
@@ -452,14 +592,240 @@ class DespatchType
     }
 
     /**
+     * Gets as guaranteedDespatchDate
+     *
+     * BBIE
+     *  Despatch. Guaranteed_ Despatch Date. Date
+     *  The date guaranteed for the despatch (pickup).
+     *  0..1
+     *  Despatch
+     *  Guaranteed
+     *  Despatch Date
+     *  Date
+     *  Date. Type
+     *
+     * @return \DateTime
+     */
+    public function getGuaranteedDespatchDate()
+    {
+        return $this->guaranteedDespatchDate;
+    }
+
+    /**
+     * Sets a new guaranteedDespatchDate
+     *
+     * BBIE
+     *  Despatch. Guaranteed_ Despatch Date. Date
+     *  The date guaranteed for the despatch (pickup).
+     *  0..1
+     *  Despatch
+     *  Guaranteed
+     *  Despatch Date
+     *  Date
+     *  Date. Type
+     *
+     * @param \DateTime $guaranteedDespatchDate
+     * @return self
+     */
+    public function setGuaranteedDespatchDate(\DateTime $guaranteedDespatchDate)
+    {
+        $this->guaranteedDespatchDate = $guaranteedDespatchDate;
+        return $this;
+    }
+
+    /**
+     * Gets as guaranteedDespatchTime
+     *
+     * BBIE
+     *  Despatch. Guaranteed_ Despatch Time. Time
+     *  The time guaranteed for the despatch (pickup).
+     *  0..1
+     *  Despatch
+     *  Guaranteed
+     *  Despatch Time
+     *  Time
+     *  Time. Type
+     *
+     * @return \DateTime
+     */
+    public function getGuaranteedDespatchTime()
+    {
+        return $this->guaranteedDespatchTime;
+    }
+
+    /**
+     * Sets a new guaranteedDespatchTime
+     *
+     * BBIE
+     *  Despatch. Guaranteed_ Despatch Time. Time
+     *  The time guaranteed for the despatch (pickup).
+     *  0..1
+     *  Despatch
+     *  Guaranteed
+     *  Despatch Time
+     *  Time
+     *  Time. Type
+     *
+     * @param \DateTime $guaranteedDespatchTime
+     * @return self
+     */
+    public function setGuaranteedDespatchTime(\DateTime $guaranteedDespatchTime)
+    {
+        $this->guaranteedDespatchTime = $guaranteedDespatchTime;
+        return $this;
+    }
+
+    /**
+     * Gets as releaseID
+     *
+     * BBIE
+     *  Despatch. Release. Identifier
+     *  An identifier for the release of the despatch used as security control or cargo control (pick-up).
+     *  0..1
+     *  Despatch
+     *  Release
+     *  Identifier
+     *  Identifier. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\ReleaseID
+     */
+    public function getReleaseID()
+    {
+        return $this->releaseID;
+    }
+
+    /**
+     * Sets a new releaseID
+     *
+     * BBIE
+     *  Despatch. Release. Identifier
+     *  An identifier for the release of the despatch used as security control or cargo control (pick-up).
+     *  0..1
+     *  Despatch
+     *  Release
+     *  Identifier
+     *  Identifier. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\ReleaseID $releaseID
+     * @return self
+     */
+    public function setReleaseID(\horstoeko\ubl\entities\cbc\ReleaseID $releaseID)
+    {
+        $this->releaseID = $releaseID;
+        return $this;
+    }
+
+    /**
+     * Adds as instructions
+     *
+     * BBIE
+     *  Despatch. Instructions. Text
+     *  Text describing any special instructions applying to the despatch (pickup).
+     *  0..n
+     *  Despatch
+     *  Instructions
+     *  Text
+     *  Text. Type
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\Instructions $instructions
+     */
+    public function addToInstructions(\horstoeko\ubl\entities\cbc\Instructions $instructions)
+    {
+        $this->instructions[] = $instructions;
+        return $this;
+    }
+
+    /**
+     * isset instructions
+     *
+     * BBIE
+     *  Despatch. Instructions. Text
+     *  Text describing any special instructions applying to the despatch (pickup).
+     *  0..n
+     *  Despatch
+     *  Instructions
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetInstructions($index)
+    {
+        return isset($this->instructions[$index]);
+    }
+
+    /**
+     * unset instructions
+     *
+     * BBIE
+     *  Despatch. Instructions. Text
+     *  Text describing any special instructions applying to the despatch (pickup).
+     *  0..n
+     *  Despatch
+     *  Instructions
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetInstructions($index)
+    {
+        unset($this->instructions[$index]);
+    }
+
+    /**
+     * Gets as instructions
+     *
+     * BBIE
+     *  Despatch. Instructions. Text
+     *  Text describing any special instructions applying to the despatch (pickup).
+     *  0..n
+     *  Despatch
+     *  Instructions
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\Instructions[]
+     */
+    public function getInstructions()
+    {
+        return $this->instructions;
+    }
+
+    /**
+     * Sets a new instructions
+     *
+     * BBIE
+     *  Despatch. Instructions. Text
+     *  Text describing any special instructions applying to the despatch (pickup).
+     *  0..n
+     *  Despatch
+     *  Instructions
+     *  Text
+     *  Text. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\Instructions[] $instructions
+     * @return self
+     */
+    public function setInstructions(array $instructions)
+    {
+        $this->instructions = $instructions;
+        return $this;
+    }
+
+    /**
      * Gets as despatchAddress
      *
      * ASBIE
      *  Despatch. Despatch_ Address. Address
-     *  An association to Despatch Address.
+     *  The address of the despatch (pickup).
      *  0..1
      *  Despatch
      *  Despatch
+     *  Address
      *  Address
      *  Address
      *
@@ -475,10 +841,11 @@ class DespatchType
      *
      * ASBIE
      *  Despatch. Despatch_ Address. Address
-     *  An association to Despatch Address.
+     *  The address of the despatch (pickup).
      *  0..1
      *  Despatch
      *  Despatch
+     *  Address
      *  Address
      *  Address
      *
@@ -492,14 +859,57 @@ class DespatchType
     }
 
     /**
+     * Gets as despatchLocation
+     *
+     * ASBIE
+     *  Despatch. Despatch_ Location. Location
+     *  The location of the despatch (pickup).
+     *  0..1
+     *  Despatch
+     *  Despatch
+     *  Location
+     *  Location
+     *  Location
+     *
+     * @return \horstoeko\ubl\entities\cac\DespatchLocation
+     */
+    public function getDespatchLocation()
+    {
+        return $this->despatchLocation;
+    }
+
+    /**
+     * Sets a new despatchLocation
+     *
+     * ASBIE
+     *  Despatch. Despatch_ Location. Location
+     *  The location of the despatch (pickup).
+     *  0..1
+     *  Despatch
+     *  Despatch
+     *  Location
+     *  Location
+     *  Location
+     *
+     * @param \horstoeko\ubl\entities\cac\DespatchLocation $despatchLocation
+     * @return self
+     */
+    public function setDespatchLocation(\horstoeko\ubl\entities\cac\DespatchLocation $despatchLocation)
+    {
+        $this->despatchLocation = $despatchLocation;
+        return $this;
+    }
+
+    /**
      * Gets as despatchParty
      *
      * ASBIE
      *  Despatch. Despatch_ Party. Party
-     *  The party who despatched the delivery.
+     *  The party despatching the goods.
      *  0..1
      *  Despatch
      *  Despatch
+     *  Party
      *  Party
      *  Party
      *
@@ -515,10 +925,11 @@ class DespatchType
      *
      * ASBIE
      *  Despatch. Despatch_ Party. Party
-     *  The party who despatched the delivery.
+     *  The party despatching the goods.
      *  0..1
      *  Despatch
      *  Despatch
+     *  Party
      *  Party
      *  Party
      *
@@ -532,13 +943,162 @@ class DespatchType
     }
 
     /**
+     * Gets as carrierParty
+     *
+     * ASBIE
+     *  Despatch. Carrier_ Party. Party
+     *  The party carrying the goods.
+     *  0..1
+     *  Despatch
+     *  Carrier
+     *  Party
+     *  Party
+     *  Party
+     *
+     * @return \horstoeko\ubl\entities\cac\CarrierParty
+     */
+    public function getCarrierParty()
+    {
+        return $this->carrierParty;
+    }
+
+    /**
+     * Sets a new carrierParty
+     *
+     * ASBIE
+     *  Despatch. Carrier_ Party. Party
+     *  The party carrying the goods.
+     *  0..1
+     *  Despatch
+     *  Carrier
+     *  Party
+     *  Party
+     *  Party
+     *
+     * @param \horstoeko\ubl\entities\cac\CarrierParty $carrierParty
+     * @return self
+     */
+    public function setCarrierParty(\horstoeko\ubl\entities\cac\CarrierParty $carrierParty)
+    {
+        $this->carrierParty = $carrierParty;
+        return $this;
+    }
+
+    /**
+     * Adds as notifyParty
+     *
+     * ASBIE
+     *  Despatch. Notify_ Party. Party
+     *  A party to be notified of this despatch (pickup).
+     *  0..n
+     *  Despatch
+     *  Notify
+     *  Party
+     *  Party
+     *  Party
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\NotifyParty $notifyParty
+     */
+    public function addToNotifyParty(\horstoeko\ubl\entities\cac\NotifyParty $notifyParty)
+    {
+        $this->notifyParty[] = $notifyParty;
+        return $this;
+    }
+
+    /**
+     * isset notifyParty
+     *
+     * ASBIE
+     *  Despatch. Notify_ Party. Party
+     *  A party to be notified of this despatch (pickup).
+     *  0..n
+     *  Despatch
+     *  Notify
+     *  Party
+     *  Party
+     *  Party
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetNotifyParty($index)
+    {
+        return isset($this->notifyParty[$index]);
+    }
+
+    /**
+     * unset notifyParty
+     *
+     * ASBIE
+     *  Despatch. Notify_ Party. Party
+     *  A party to be notified of this despatch (pickup).
+     *  0..n
+     *  Despatch
+     *  Notify
+     *  Party
+     *  Party
+     *  Party
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetNotifyParty($index)
+    {
+        unset($this->notifyParty[$index]);
+    }
+
+    /**
+     * Gets as notifyParty
+     *
+     * ASBIE
+     *  Despatch. Notify_ Party. Party
+     *  A party to be notified of this despatch (pickup).
+     *  0..n
+     *  Despatch
+     *  Notify
+     *  Party
+     *  Party
+     *  Party
+     *
+     * @return \horstoeko\ubl\entities\cac\NotifyParty[]
+     */
+    public function getNotifyParty()
+    {
+        return $this->notifyParty;
+    }
+
+    /**
+     * Sets a new notifyParty
+     *
+     * ASBIE
+     *  Despatch. Notify_ Party. Party
+     *  A party to be notified of this despatch (pickup).
+     *  0..n
+     *  Despatch
+     *  Notify
+     *  Party
+     *  Party
+     *  Party
+     *
+     * @param \horstoeko\ubl\entities\cac\NotifyParty[] $notifyParty
+     * @return self
+     */
+    public function setNotifyParty(array $notifyParty)
+    {
+        $this->notifyParty = $notifyParty;
+        return $this;
+    }
+
+    /**
      * Gets as contact
      *
      * ASBIE
      *  Despatch. Contact
-     *  An association to Contact.
+     *  The primary contact for this despatch (pickup).
      *  0..1
      *  Despatch
+     *  Contact
      *  Contact
      *  Contact
      *
@@ -554,9 +1114,10 @@ class DespatchType
      *
      * ASBIE
      *  Despatch. Contact
-     *  An association to Contact.
+     *  The primary contact for this despatch (pickup).
      *  0..1
      *  Despatch
+     *  Contact
      *  Contact
      *  Contact
      *
@@ -566,6 +1127,90 @@ class DespatchType
     public function setContact(\horstoeko\ubl\entities\cac\Contact $contact)
     {
         $this->contact = $contact;
+        return $this;
+    }
+
+    /**
+     * Gets as estimatedDespatchPeriod
+     *
+     * ASBIE
+     *  Despatch. Estimated Despatch_ Period. Period
+     *  The period estimated for the despatch (pickup) of goods.
+     *  0..1
+     *  Despatch
+     *  Estimated Despatch
+     *  Period
+     *  Period
+     *  Period
+     *
+     * @return \horstoeko\ubl\entities\cac\EstimatedDespatchPeriod
+     */
+    public function getEstimatedDespatchPeriod()
+    {
+        return $this->estimatedDespatchPeriod;
+    }
+
+    /**
+     * Sets a new estimatedDespatchPeriod
+     *
+     * ASBIE
+     *  Despatch. Estimated Despatch_ Period. Period
+     *  The period estimated for the despatch (pickup) of goods.
+     *  0..1
+     *  Despatch
+     *  Estimated Despatch
+     *  Period
+     *  Period
+     *  Period
+     *
+     * @param \horstoeko\ubl\entities\cac\EstimatedDespatchPeriod $estimatedDespatchPeriod
+     * @return self
+     */
+    public function setEstimatedDespatchPeriod(\horstoeko\ubl\entities\cac\EstimatedDespatchPeriod $estimatedDespatchPeriod)
+    {
+        $this->estimatedDespatchPeriod = $estimatedDespatchPeriod;
+        return $this;
+    }
+
+    /**
+     * Gets as requestedDespatchPeriod
+     *
+     * ASBIE
+     *  Despatch. Requested Despatch_ Period. Period
+     *  The period requested for the despatch (pickup) of goods.
+     *  0..1
+     *  Despatch
+     *  Requested Despatch
+     *  Period
+     *  Period
+     *  Period
+     *
+     * @return \horstoeko\ubl\entities\cac\RequestedDespatchPeriod
+     */
+    public function getRequestedDespatchPeriod()
+    {
+        return $this->requestedDespatchPeriod;
+    }
+
+    /**
+     * Sets a new requestedDespatchPeriod
+     *
+     * ASBIE
+     *  Despatch. Requested Despatch_ Period. Period
+     *  The period requested for the despatch (pickup) of goods.
+     *  0..1
+     *  Despatch
+     *  Requested Despatch
+     *  Period
+     *  Period
+     *  Period
+     *
+     * @param \horstoeko\ubl\entities\cac\RequestedDespatchPeriod $requestedDespatchPeriod
+     * @return self
+     */
+    public function setRequestedDespatchPeriod(\horstoeko\ubl\entities\cac\RequestedDespatchPeriod $requestedDespatchPeriod)
+    {
+        $this->requestedDespatchPeriod = $requestedDespatchPeriod;
         return $this;
     }
 

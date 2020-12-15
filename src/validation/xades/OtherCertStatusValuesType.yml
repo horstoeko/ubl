@@ -1,0 +1,9 @@
+horstoeko\ubl\entities\xades\OtherCertStatusValuesType:
+    properties:
+        otherValue:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

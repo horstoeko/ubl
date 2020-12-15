@@ -1,0 +1,61 @@
+horstoeko\ubl\entities\cac\ServiceProviderPartyType:
+    properties:
+        iD:
+            expose: true
+            access_type: public_method
+            serialized_name: ID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getID
+                setter: setID
+            type: horstoeko\ubl\entities\cbc\ID
+        serviceTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ServiceTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getServiceTypeCode
+                setter: setServiceTypeCode
+            type: horstoeko\ubl\entities\cbc\ServiceTypeCode
+        serviceType:
+            expose: true
+            access_type: public_method
+            serialized_name: ServiceType
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getServiceType
+                setter: setServiceType
+            xml_list:
+                inline: true
+                entry_name: ServiceType
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\ServiceType>
+        party:
+            expose: true
+            access_type: public_method
+            serialized_name: Party
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getParty
+                setter: setParty
+            type: horstoeko\ubl\entities\cac\Party
+        sellerContact:
+            expose: true
+            access_type: public_method
+            serialized_name: SellerContact
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getSellerContact
+                setter: setSellerContact
+            type: horstoeko\ubl\entities\cac\SellerContact

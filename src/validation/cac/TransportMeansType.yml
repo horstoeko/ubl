@@ -18,3 +18,6 @@ horstoeko\ubl\entities\cac\TransportMeansType:
         ownerParty:
             -
                 Valid: null
+        measurementDimension:
+            -
+                Valid: null

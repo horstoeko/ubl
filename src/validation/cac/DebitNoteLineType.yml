@@ -34,9 +34,15 @@ horstoeko\ubl\entities\cac\DebitNoteLineType:
         taxTotal:
             -
                 Valid: null
+        allowanceCharge:
+            -
+                Valid: null
         item:
             -
                 Valid: null
         price:
+            -
+                Valid: null
+        subDebitNoteLine:
             -
                 Valid: null

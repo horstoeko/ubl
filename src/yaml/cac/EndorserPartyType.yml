@@ -21,7 +21,7 @@ horstoeko\ubl\entities\cac\EndorserPartyType:
             accessor:
                 getter: getSequenceNumeric
                 setter: setSequenceNumeric
-            type: float
+            type: horstoeko\ubl\entities\cbc\SequenceNumeric
         party:
             expose: true
             access_type: public_method

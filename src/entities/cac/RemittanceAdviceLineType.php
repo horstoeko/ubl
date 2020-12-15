@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Remittance Advice Line. Details
- *  Information about a Line on a Remittance Advice.
+ *  A class to define a line in a Remittance Advice.
  *  Remittance Advice Line
  * XSD Type: RemittanceAdviceLineType
  */
@@ -17,7 +17,7 @@ class RemittanceAdviceLineType
     /**
      * BBIE
      *  Remittance Advice Line. Identifier
-     *  Identifies the Remittance Advice Line.
+     *  An identifier for this remittance advice line.
      *  1
      *  Remittance Advice Line
      *  Identifier
@@ -31,21 +31,23 @@ class RemittanceAdviceLineType
     /**
      * BBIE
      *  Remittance Advice Line. Note. Text
-     *  Free-form text applying to the Remittance Advice Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Remittance Advice Line
      *  Note
      *  Text
      *  Text. Type
      *
-     * @var \horstoeko\ubl\entities\cbc\Note $note
+     * @var \horstoeko\ubl\entities\cbc\Note[] $note
      */
-    private $note = null;
+    private $note = [
+        
+    ];
 
     /**
      * BBIE
      *  Remittance Advice Line. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this remittance advice line.
      *  0..1
      *  Remittance Advice Line
      *  UUID
@@ -59,7 +61,7 @@ class RemittanceAdviceLineType
     /**
      * BBIE
      *  Remittance Advice Line. Debit_ Line Amount. Amount
-     *  The amount debited on the Remittance Advice Line.
+     *  The amount debited on this remittance advice line.
      *  0..1
      *  Remittance Advice Line
      *  Debit
@@ -74,7 +76,7 @@ class RemittanceAdviceLineType
     /**
      * BBIE
      *  Remittance Advice Line. Credit_ Line Amount. Amount
-     *  The amount credited on the Remittance Advice Line.
+     *  The amount credited on this remittance advice line.
      *  0..1
      *  Remittance Advice Line
      *  Credit
@@ -89,7 +91,7 @@ class RemittanceAdviceLineType
     /**
      * BBIE
      *  Remittance Advice Line. Balance Amount. Amount
-     *  The balance amount on the Remittance Advice Line.
+     *  The monetary balance associated with this remittance advice line.
      *  0..1
      *  Remittance Advice Line
      *  Balance Amount
@@ -101,12 +103,42 @@ class RemittanceAdviceLineType
     private $balanceAmount = null;
 
     /**
+     * BBIE
+     *  Remittance Advice Line. Payment Purpose Code. Code
+     *  A code signifying the business purpose for this payment.
+     *  0..1
+     *  Remittance Advice Line
+     *  Payment Purpose Code
+     *  Code
+     *  Code. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\PaymentPurposeCode $paymentPurposeCode
+     */
+    private $paymentPurposeCode = null;
+
+    /**
+     * BBIE
+     *  Remittance Advice Line. Invoicing Party_ Reference. Text
+     *  A reference to the order for payment used by the invoicing party. This may have been requested of the payer by the payee to accompany its remittance.
+     *  0..1
+     *  Remittance Advice Line
+     *  Invoicing Party
+     *  Reference
+     *  Text
+     *  Text. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\InvoicingPartyReference $invoicingPartyReference
+     */
+    private $invoicingPartyReference = null;
+
+    /**
      * ASBIE
      *  Remittance Advice Line. Accounting_ Supplier Party. Supplier Party
-     *  An association to Supplier Accounting Party.
+     *  The Accounting Supplier Party related to the remittance information reported on this Remittance Advice Line.
      *  0..1
      *  Remittance Advice Line
      *  Accounting
+     *  Supplier Party
      *  Supplier Party
      *  Supplier Party
      *
@@ -117,10 +149,11 @@ class RemittanceAdviceLineType
     /**
      * ASBIE
      *  Remittance Advice Line. Accounting_ Customer Party. Customer Party
-     *  An association to Customer Accounting Party.
+     *  The Accounting Customer Party related to the remittance information reported on this Remittance Advice Line.
      *  0..1
      *  Remittance Advice Line
      *  Accounting
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -131,10 +164,11 @@ class RemittanceAdviceLineType
     /**
      * ASBIE
      *  Remittance Advice Line. Buyer_ Customer Party. Customer Party
-     *  An association to Buyer.
+     *  The buyer associated with this remittance advice line.
      *  0..1
      *  Remittance Advice Line
      *  Buyer
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -145,10 +179,11 @@ class RemittanceAdviceLineType
     /**
      * ASBIE
      *  Remittance Advice Line. Seller_ Supplier Party. Supplier Party
-     *  An association to Seller.
+     *  The seller/supplier associated with this remittance advice line.
      *  0..1
      *  Remittance Advice Line
      *  Seller
+     *  Supplier Party
      *  Supplier Party
      *  Supplier Party
      *
@@ -159,10 +194,11 @@ class RemittanceAdviceLineType
     /**
      * ASBIE
      *  Remittance Advice Line. Originator_ Customer Party. Customer Party
-     *  An association to Originator.
+     *  The originating party.
      *  0..1
      *  Remittance Advice Line
      *  Originator
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -173,10 +209,11 @@ class RemittanceAdviceLineType
     /**
      * ASBIE
      *  Remittance Advice Line. Payee_ Party. Party
-     *  An association to Payee.
+     *  The payee.
      *  0..1
      *  Remittance Advice Line
      *  Payee
+     *  Party
      *  Party
      *  Party
      *
@@ -187,10 +224,11 @@ class RemittanceAdviceLineType
     /**
      * ASBIE
      *  Remittance Advice Line. Invoice_ Period. Period
-     *  An association to Invoice Period.
+     *  An invoice period to which this remittance advice line applies.
      *  0..n
      *  Remittance Advice Line
      *  Invoice
+     *  Period
      *  Period
      *  Period
      *
@@ -203,9 +241,10 @@ class RemittanceAdviceLineType
     /**
      * ASBIE
      *  Remittance Advice Line. Billing Reference
-     *  An association to Billing Reference.
+     *  A reference to a billing document associated with this remittance advice line.
      *  0..n
      *  Remittance Advice Line
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -218,9 +257,10 @@ class RemittanceAdviceLineType
     /**
      * ASBIE
      *  Remittance Advice Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this remittance advice line.
      *  0..n
      *  Remittance Advice Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -233,9 +273,10 @@ class RemittanceAdviceLineType
     /**
      * ASBIE
      *  Remittance Advice Line. Exchange Rate
-     *  An association to Exchange Rate (between the Remittance Advice Line currency and the Related Document currency).
+     *  The rate of exchange between the currency of the Remittance Advice and the currency of the document described in the BillingReference.
      *  0..1
      *  Remittance Advice Line
+     *  Exchange Rate
      *  Exchange Rate
      *  Exchange Rate
      *
@@ -248,7 +289,7 @@ class RemittanceAdviceLineType
      *
      * BBIE
      *  Remittance Advice Line. Identifier
-     *  Identifies the Remittance Advice Line.
+     *  An identifier for this remittance advice line.
      *  1
      *  Remittance Advice Line
      *  Identifier
@@ -267,7 +308,7 @@ class RemittanceAdviceLineType
      *
      * BBIE
      *  Remittance Advice Line. Identifier
-     *  Identifies the Remittance Advice Line.
+     *  An identifier for this remittance advice line.
      *  1
      *  Remittance Advice Line
      *  Identifier
@@ -284,18 +325,79 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * Gets as note
+     * Adds as note
      *
      * BBIE
      *  Remittance Advice Line. Note. Text
-     *  Free-form text applying to the Remittance Advice Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Remittance Advice Line
      *  Note
      *  Text
      *  Text. Type
      *
-     * @return \horstoeko\ubl\entities\cbc\Note
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\Note $note
+     */
+    public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
+    {
+        $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * isset note
+     *
+     * BBIE
+     *  Remittance Advice Line. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Remittance Advice Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetNote($index)
+    {
+        return isset($this->note[$index]);
+    }
+
+    /**
+     * unset note
+     *
+     * BBIE
+     *  Remittance Advice Line. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Remittance Advice Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetNote($index)
+    {
+        unset($this->note[$index]);
+    }
+
+    /**
+     * Gets as note
+     *
+     * BBIE
+     *  Remittance Advice Line. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Remittance Advice Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\Note[]
      */
     public function getNote()
     {
@@ -307,17 +409,17 @@ class RemittanceAdviceLineType
      *
      * BBIE
      *  Remittance Advice Line. Note. Text
-     *  Free-form text applying to the Remittance Advice Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Remittance Advice Line
      *  Note
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
-    public function setNote(\horstoeko\ubl\entities\cbc\Note $note)
+    public function setNote(array $note)
     {
         $this->note = $note;
         return $this;
@@ -328,7 +430,7 @@ class RemittanceAdviceLineType
      *
      * BBIE
      *  Remittance Advice Line. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this remittance advice line.
      *  0..1
      *  Remittance Advice Line
      *  UUID
@@ -347,7 +449,7 @@ class RemittanceAdviceLineType
      *
      * BBIE
      *  Remittance Advice Line. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this remittance advice line.
      *  0..1
      *  Remittance Advice Line
      *  UUID
@@ -368,7 +470,7 @@ class RemittanceAdviceLineType
      *
      * BBIE
      *  Remittance Advice Line. Debit_ Line Amount. Amount
-     *  The amount debited on the Remittance Advice Line.
+     *  The amount debited on this remittance advice line.
      *  0..1
      *  Remittance Advice Line
      *  Debit
@@ -388,7 +490,7 @@ class RemittanceAdviceLineType
      *
      * BBIE
      *  Remittance Advice Line. Debit_ Line Amount. Amount
-     *  The amount debited on the Remittance Advice Line.
+     *  The amount debited on this remittance advice line.
      *  0..1
      *  Remittance Advice Line
      *  Debit
@@ -410,7 +512,7 @@ class RemittanceAdviceLineType
      *
      * BBIE
      *  Remittance Advice Line. Credit_ Line Amount. Amount
-     *  The amount credited on the Remittance Advice Line.
+     *  The amount credited on this remittance advice line.
      *  0..1
      *  Remittance Advice Line
      *  Credit
@@ -430,7 +532,7 @@ class RemittanceAdviceLineType
      *
      * BBIE
      *  Remittance Advice Line. Credit_ Line Amount. Amount
-     *  The amount credited on the Remittance Advice Line.
+     *  The amount credited on this remittance advice line.
      *  0..1
      *  Remittance Advice Line
      *  Credit
@@ -452,7 +554,7 @@ class RemittanceAdviceLineType
      *
      * BBIE
      *  Remittance Advice Line. Balance Amount. Amount
-     *  The balance amount on the Remittance Advice Line.
+     *  The monetary balance associated with this remittance advice line.
      *  0..1
      *  Remittance Advice Line
      *  Balance Amount
@@ -471,7 +573,7 @@ class RemittanceAdviceLineType
      *
      * BBIE
      *  Remittance Advice Line. Balance Amount. Amount
-     *  The balance amount on the Remittance Advice Line.
+     *  The monetary balance associated with this remittance advice line.
      *  0..1
      *  Remittance Advice Line
      *  Balance Amount
@@ -488,14 +590,97 @@ class RemittanceAdviceLineType
     }
 
     /**
+     * Gets as paymentPurposeCode
+     *
+     * BBIE
+     *  Remittance Advice Line. Payment Purpose Code. Code
+     *  A code signifying the business purpose for this payment.
+     *  0..1
+     *  Remittance Advice Line
+     *  Payment Purpose Code
+     *  Code
+     *  Code. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\PaymentPurposeCode
+     */
+    public function getPaymentPurposeCode()
+    {
+        return $this->paymentPurposeCode;
+    }
+
+    /**
+     * Sets a new paymentPurposeCode
+     *
+     * BBIE
+     *  Remittance Advice Line. Payment Purpose Code. Code
+     *  A code signifying the business purpose for this payment.
+     *  0..1
+     *  Remittance Advice Line
+     *  Payment Purpose Code
+     *  Code
+     *  Code. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\PaymentPurposeCode $paymentPurposeCode
+     * @return self
+     */
+    public function setPaymentPurposeCode(\horstoeko\ubl\entities\cbc\PaymentPurposeCode $paymentPurposeCode)
+    {
+        $this->paymentPurposeCode = $paymentPurposeCode;
+        return $this;
+    }
+
+    /**
+     * Gets as invoicingPartyReference
+     *
+     * BBIE
+     *  Remittance Advice Line. Invoicing Party_ Reference. Text
+     *  A reference to the order for payment used by the invoicing party. This may have been requested of the payer by the payee to accompany its remittance.
+     *  0..1
+     *  Remittance Advice Line
+     *  Invoicing Party
+     *  Reference
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\InvoicingPartyReference
+     */
+    public function getInvoicingPartyReference()
+    {
+        return $this->invoicingPartyReference;
+    }
+
+    /**
+     * Sets a new invoicingPartyReference
+     *
+     * BBIE
+     *  Remittance Advice Line. Invoicing Party_ Reference. Text
+     *  A reference to the order for payment used by the invoicing party. This may have been requested of the payer by the payee to accompany its remittance.
+     *  0..1
+     *  Remittance Advice Line
+     *  Invoicing Party
+     *  Reference
+     *  Text
+     *  Text. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\InvoicingPartyReference $invoicingPartyReference
+     * @return self
+     */
+    public function setInvoicingPartyReference(\horstoeko\ubl\entities\cbc\InvoicingPartyReference $invoicingPartyReference)
+    {
+        $this->invoicingPartyReference = $invoicingPartyReference;
+        return $this;
+    }
+
+    /**
      * Gets as accountingSupplierParty
      *
      * ASBIE
      *  Remittance Advice Line. Accounting_ Supplier Party. Supplier Party
-     *  An association to Supplier Accounting Party.
+     *  The Accounting Supplier Party related to the remittance information reported on this Remittance Advice Line.
      *  0..1
      *  Remittance Advice Line
      *  Accounting
+     *  Supplier Party
      *  Supplier Party
      *  Supplier Party
      *
@@ -511,10 +696,11 @@ class RemittanceAdviceLineType
      *
      * ASBIE
      *  Remittance Advice Line. Accounting_ Supplier Party. Supplier Party
-     *  An association to Supplier Accounting Party.
+     *  The Accounting Supplier Party related to the remittance information reported on this Remittance Advice Line.
      *  0..1
      *  Remittance Advice Line
      *  Accounting
+     *  Supplier Party
      *  Supplier Party
      *  Supplier Party
      *
@@ -532,10 +718,11 @@ class RemittanceAdviceLineType
      *
      * ASBIE
      *  Remittance Advice Line. Accounting_ Customer Party. Customer Party
-     *  An association to Customer Accounting Party.
+     *  The Accounting Customer Party related to the remittance information reported on this Remittance Advice Line.
      *  0..1
      *  Remittance Advice Line
      *  Accounting
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -551,10 +738,11 @@ class RemittanceAdviceLineType
      *
      * ASBIE
      *  Remittance Advice Line. Accounting_ Customer Party. Customer Party
-     *  An association to Customer Accounting Party.
+     *  The Accounting Customer Party related to the remittance information reported on this Remittance Advice Line.
      *  0..1
      *  Remittance Advice Line
      *  Accounting
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -572,10 +760,11 @@ class RemittanceAdviceLineType
      *
      * ASBIE
      *  Remittance Advice Line. Buyer_ Customer Party. Customer Party
-     *  An association to Buyer.
+     *  The buyer associated with this remittance advice line.
      *  0..1
      *  Remittance Advice Line
      *  Buyer
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -591,10 +780,11 @@ class RemittanceAdviceLineType
      *
      * ASBIE
      *  Remittance Advice Line. Buyer_ Customer Party. Customer Party
-     *  An association to Buyer.
+     *  The buyer associated with this remittance advice line.
      *  0..1
      *  Remittance Advice Line
      *  Buyer
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -612,10 +802,11 @@ class RemittanceAdviceLineType
      *
      * ASBIE
      *  Remittance Advice Line. Seller_ Supplier Party. Supplier Party
-     *  An association to Seller.
+     *  The seller/supplier associated with this remittance advice line.
      *  0..1
      *  Remittance Advice Line
      *  Seller
+     *  Supplier Party
      *  Supplier Party
      *  Supplier Party
      *
@@ -631,10 +822,11 @@ class RemittanceAdviceLineType
      *
      * ASBIE
      *  Remittance Advice Line. Seller_ Supplier Party. Supplier Party
-     *  An association to Seller.
+     *  The seller/supplier associated with this remittance advice line.
      *  0..1
      *  Remittance Advice Line
      *  Seller
+     *  Supplier Party
      *  Supplier Party
      *  Supplier Party
      *
@@ -652,10 +844,11 @@ class RemittanceAdviceLineType
      *
      * ASBIE
      *  Remittance Advice Line. Originator_ Customer Party. Customer Party
-     *  An association to Originator.
+     *  The originating party.
      *  0..1
      *  Remittance Advice Line
      *  Originator
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -671,10 +864,11 @@ class RemittanceAdviceLineType
      *
      * ASBIE
      *  Remittance Advice Line. Originator_ Customer Party. Customer Party
-     *  An association to Originator.
+     *  The originating party.
      *  0..1
      *  Remittance Advice Line
      *  Originator
+     *  Customer Party
      *  Customer Party
      *  Customer Party
      *
@@ -692,10 +886,11 @@ class RemittanceAdviceLineType
      *
      * ASBIE
      *  Remittance Advice Line. Payee_ Party. Party
-     *  An association to Payee.
+     *  The payee.
      *  0..1
      *  Remittance Advice Line
      *  Payee
+     *  Party
      *  Party
      *  Party
      *
@@ -711,10 +906,11 @@ class RemittanceAdviceLineType
      *
      * ASBIE
      *  Remittance Advice Line. Payee_ Party. Party
-     *  An association to Payee.
+     *  The payee.
      *  0..1
      *  Remittance Advice Line
      *  Payee
+     *  Party
      *  Party
      *  Party
      *
@@ -732,10 +928,11 @@ class RemittanceAdviceLineType
      *
      * ASBIE
      *  Remittance Advice Line. Invoice_ Period. Period
-     *  An association to Invoice Period.
+     *  An invoice period to which this remittance advice line applies.
      *  0..n
      *  Remittance Advice Line
      *  Invoice
+     *  Period
      *  Period
      *  Period
      *
@@ -753,10 +950,11 @@ class RemittanceAdviceLineType
      *
      * ASBIE
      *  Remittance Advice Line. Invoice_ Period. Period
-     *  An association to Invoice Period.
+     *  An invoice period to which this remittance advice line applies.
      *  0..n
      *  Remittance Advice Line
      *  Invoice
+     *  Period
      *  Period
      *  Period
      *
@@ -773,10 +971,11 @@ class RemittanceAdviceLineType
      *
      * ASBIE
      *  Remittance Advice Line. Invoice_ Period. Period
-     *  An association to Invoice Period.
+     *  An invoice period to which this remittance advice line applies.
      *  0..n
      *  Remittance Advice Line
      *  Invoice
+     *  Period
      *  Period
      *  Period
      *
@@ -793,10 +992,11 @@ class RemittanceAdviceLineType
      *
      * ASBIE
      *  Remittance Advice Line. Invoice_ Period. Period
-     *  An association to Invoice Period.
+     *  An invoice period to which this remittance advice line applies.
      *  0..n
      *  Remittance Advice Line
      *  Invoice
+     *  Period
      *  Period
      *  Period
      *
@@ -812,10 +1012,11 @@ class RemittanceAdviceLineType
      *
      * ASBIE
      *  Remittance Advice Line. Invoice_ Period. Period
-     *  An association to Invoice Period.
+     *  An invoice period to which this remittance advice line applies.
      *  0..n
      *  Remittance Advice Line
      *  Invoice
+     *  Period
      *  Period
      *  Period
      *
@@ -833,9 +1034,10 @@ class RemittanceAdviceLineType
      *
      * ASBIE
      *  Remittance Advice Line. Billing Reference
-     *  An association to Billing Reference.
+     *  A reference to a billing document associated with this remittance advice line.
      *  0..n
      *  Remittance Advice Line
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -853,9 +1055,10 @@ class RemittanceAdviceLineType
      *
      * ASBIE
      *  Remittance Advice Line. Billing Reference
-     *  An association to Billing Reference.
+     *  A reference to a billing document associated with this remittance advice line.
      *  0..n
      *  Remittance Advice Line
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -872,9 +1075,10 @@ class RemittanceAdviceLineType
      *
      * ASBIE
      *  Remittance Advice Line. Billing Reference
-     *  An association to Billing Reference.
+     *  A reference to a billing document associated with this remittance advice line.
      *  0..n
      *  Remittance Advice Line
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -891,9 +1095,10 @@ class RemittanceAdviceLineType
      *
      * ASBIE
      *  Remittance Advice Line. Billing Reference
-     *  An association to Billing Reference.
+     *  A reference to a billing document associated with this remittance advice line.
      *  0..n
      *  Remittance Advice Line
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -909,9 +1114,10 @@ class RemittanceAdviceLineType
      *
      * ASBIE
      *  Remittance Advice Line. Billing Reference
-     *  An association to Billing Reference.
+     *  A reference to a billing document associated with this remittance advice line.
      *  0..n
      *  Remittance Advice Line
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -929,9 +1135,10 @@ class RemittanceAdviceLineType
      *
      * ASBIE
      *  Remittance Advice Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this remittance advice line.
      *  0..n
      *  Remittance Advice Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -949,9 +1156,10 @@ class RemittanceAdviceLineType
      *
      * ASBIE
      *  Remittance Advice Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this remittance advice line.
      *  0..n
      *  Remittance Advice Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -968,9 +1176,10 @@ class RemittanceAdviceLineType
      *
      * ASBIE
      *  Remittance Advice Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this remittance advice line.
      *  0..n
      *  Remittance Advice Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -987,9 +1196,10 @@ class RemittanceAdviceLineType
      *
      * ASBIE
      *  Remittance Advice Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this remittance advice line.
      *  0..n
      *  Remittance Advice Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1005,9 +1215,10 @@ class RemittanceAdviceLineType
      *
      * ASBIE
      *  Remittance Advice Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this remittance advice line.
      *  0..n
      *  Remittance Advice Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1025,9 +1236,10 @@ class RemittanceAdviceLineType
      *
      * ASBIE
      *  Remittance Advice Line. Exchange Rate
-     *  An association to Exchange Rate (between the Remittance Advice Line currency and the Related Document currency).
+     *  The rate of exchange between the currency of the Remittance Advice and the currency of the document described in the BillingReference.
      *  0..1
      *  Remittance Advice Line
+     *  Exchange Rate
      *  Exchange Rate
      *  Exchange Rate
      *
@@ -1043,9 +1255,10 @@ class RemittanceAdviceLineType
      *
      * ASBIE
      *  Remittance Advice Line. Exchange Rate
-     *  An association to Exchange Rate (between the Remittance Advice Line currency and the Related Document currency).
+     *  The rate of exchange between the currency of the Remittance Advice and the currency of the document described in the BillingReference.
      *  0..1
      *  Remittance Advice Line
+     *  Exchange Rate
      *  Exchange Rate
      *  Exchange Rate
      *

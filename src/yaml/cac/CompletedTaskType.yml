@@ -1,0 +1,87 @@
+horstoeko\ubl\entities\cac\CompletedTaskType:
+    properties:
+        annualAverageAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: AnnualAverageAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAnnualAverageAmount
+                setter: setAnnualAverageAmount
+            type: horstoeko\ubl\entities\cbc\AnnualAverageAmount
+        totalTaskAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: TotalTaskAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTotalTaskAmount
+                setter: setTotalTaskAmount
+            type: horstoeko\ubl\entities\cbc\TotalTaskAmount
+        partyCapacityAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: PartyCapacityAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPartyCapacityAmount
+                setter: setPartyCapacityAmount
+            type: horstoeko\ubl\entities\cbc\PartyCapacityAmount
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: Description
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>
+        evidenceSupplied:
+            expose: true
+            access_type: public_method
+            serialized_name: EvidenceSupplied
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getEvidenceSupplied
+                setter: setEvidenceSupplied
+            xml_list:
+                inline: true
+                entry_name: EvidenceSupplied
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\EvidenceSupplied>
+        period:
+            expose: true
+            access_type: public_method
+            serialized_name: Period
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPeriod
+                setter: setPeriod
+            type: horstoeko\ubl\entities\cac\Period
+        recipientCustomerParty:
+            expose: true
+            access_type: public_method
+            serialized_name: RecipientCustomerParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getRecipientCustomerParty
+                setter: setRecipientCustomerParty
+            type: horstoeko\ubl\entities\cac\RecipientCustomerParty

@@ -1,0 +1,19 @@
+horstoeko\ubl\entities\cac\StockAvailabilityReportLineType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        quantity:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        item:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

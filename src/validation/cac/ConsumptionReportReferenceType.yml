@@ -1,0 +1,19 @@
+horstoeko\ubl\entities\cac\ConsumptionReportReferenceType:
+    properties:
+        consumptionReportID:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        totalConsumedQuantity:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        period:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

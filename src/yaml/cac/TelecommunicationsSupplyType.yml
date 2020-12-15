@@ -1,0 +1,76 @@
+horstoeko\ubl\entities\cac\TelecommunicationsSupplyType:
+    properties:
+        telecommunicationsSupplyType:
+            expose: true
+            access_type: public_method
+            serialized_name: TelecommunicationsSupplyType
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTelecommunicationsSupplyType
+                setter: setTelecommunicationsSupplyType
+            type: horstoeko\ubl\entities\cbc\TelecommunicationsSupplyType
+        telecommunicationsSupplyTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: TelecommunicationsSupplyTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTelecommunicationsSupplyTypeCode
+                setter: setTelecommunicationsSupplyTypeCode
+            type: horstoeko\ubl\entities\cbc\TelecommunicationsSupplyTypeCode
+        privacyCode:
+            expose: true
+            access_type: public_method
+            serialized_name: PrivacyCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPrivacyCode
+                setter: setPrivacyCode
+            type: horstoeko\ubl\entities\cbc\PrivacyCode
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: Description
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>
+        totalAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: TotalAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTotalAmount
+                setter: setTotalAmount
+            type: horstoeko\ubl\entities\cbc\TotalAmount
+        telecommunicationsSupplyLine:
+            expose: true
+            access_type: public_method
+            serialized_name: TelecommunicationsSupplyLine
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getTelecommunicationsSupplyLine
+                setter: setTelecommunicationsSupplyLine
+            xml_list:
+                inline: true
+                entry_name: TelecommunicationsSupplyLine
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\TelecommunicationsSupplyLine>

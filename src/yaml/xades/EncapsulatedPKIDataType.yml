@@ -1,0 +1,30 @@
+horstoeko\ubl\entities\xades\EncapsulatedPKIDataType:
+    properties:
+        __value:
+            expose: true
+            xml_value: true
+            access_type: public_method
+            accessor:
+                getter: value
+                setter: value
+            type: GoetasWebservices\Xsd\XsdToPhp\Jms\Base64Encoded
+            xml_element:
+                cdata: false
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: Id
+            accessor:
+                getter: getId
+                setter: setId
+            xml_attribute: true
+            type: string
+        encoding:
+            expose: true
+            access_type: public_method
+            serialized_name: Encoding
+            accessor:
+                getter: getEncoding
+                setter: setEncoding
+            xml_attribute: true
+            type: string

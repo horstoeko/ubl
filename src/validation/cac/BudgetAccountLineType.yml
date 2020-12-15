@@ -1,0 +1,5 @@
+horstoeko\ubl\entities\cac\BudgetAccountLineType:
+    properties:
+        budgetAccount:
+            -
+                Valid: null

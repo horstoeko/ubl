@@ -1,0 +1,94 @@
+horstoeko\ubl\entities\cac\ActivityDataLineType:
+    properties:
+        iD:
+            expose: true
+            access_type: public_method
+            serialized_name: ID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getID
+                setter: setID
+            type: horstoeko\ubl\entities\cbc\ID
+        supplyChainActivityTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: SupplyChainActivityTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getSupplyChainActivityTypeCode
+                setter: setSupplyChainActivityTypeCode
+            type: horstoeko\ubl\entities\cbc\SupplyChainActivityTypeCode
+        buyerCustomerParty:
+            expose: true
+            access_type: public_method
+            serialized_name: BuyerCustomerParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getBuyerCustomerParty
+                setter: setBuyerCustomerParty
+            type: horstoeko\ubl\entities\cac\BuyerCustomerParty
+        sellerSupplierParty:
+            expose: true
+            access_type: public_method
+            serialized_name: SellerSupplierParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getSellerSupplierParty
+                setter: setSellerSupplierParty
+            type: horstoeko\ubl\entities\cac\SellerSupplierParty
+        activityPeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: ActivityPeriod
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getActivityPeriod
+                setter: setActivityPeriod
+            type: horstoeko\ubl\entities\cac\ActivityPeriod
+        activityOriginLocation:
+            expose: true
+            access_type: public_method
+            serialized_name: ActivityOriginLocation
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getActivityOriginLocation
+                setter: setActivityOriginLocation
+            type: horstoeko\ubl\entities\cac\ActivityOriginLocation
+        activityFinalLocation:
+            expose: true
+            access_type: public_method
+            serialized_name: ActivityFinalLocation
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getActivityFinalLocation
+                setter: setActivityFinalLocation
+            type: horstoeko\ubl\entities\cac\ActivityFinalLocation
+        salesItem:
+            expose: true
+            access_type: public_method
+            serialized_name: SalesItem
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getSalesItem
+                setter: setSalesItem
+            xml_list:
+                inline: true
+                entry_name: SalesItem
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\SalesItem>

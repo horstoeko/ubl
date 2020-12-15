@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Billing Reference Line. Details
- *  Information about a Billing Line.
+ *  A class to define a reference to a transaction line in a billing document.
  *  Billing Reference Line
  * XSD Type: BillingReferenceLineType
  */
@@ -17,7 +17,7 @@ class BillingReferenceLineType
     /**
      * BBIE
      *  Billing Reference Line. Identifier
-     *  An identifier for the Billing Line.
+     *  An identifier for this transaction line in a billing document.
      *  1
      *  Billing Reference Line
      *  Identifier
@@ -31,7 +31,7 @@ class BillingReferenceLineType
     /**
      * BBIE
      *  Billing Reference Line. Amount
-     *  The amount of the Billing Line, including Allowance Charges but net of taxes.
+     *  The monetary amount of the transaction line, including any allowances and charges but excluding taxes.
      *  0..1
      *  Billing Reference Line
      *  Amount
@@ -45,9 +45,10 @@ class BillingReferenceLineType
     /**
      * ASBIE
      *  Billing Reference Line. Allowance Charge
-     *  An association to Allowance Charge.
+     *  An allowance or charge applicable to the transaction line.
      *  0..n
      *  Billing Reference Line
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *
@@ -62,7 +63,7 @@ class BillingReferenceLineType
      *
      * BBIE
      *  Billing Reference Line. Identifier
-     *  An identifier for the Billing Line.
+     *  An identifier for this transaction line in a billing document.
      *  1
      *  Billing Reference Line
      *  Identifier
@@ -81,7 +82,7 @@ class BillingReferenceLineType
      *
      * BBIE
      *  Billing Reference Line. Identifier
-     *  An identifier for the Billing Line.
+     *  An identifier for this transaction line in a billing document.
      *  1
      *  Billing Reference Line
      *  Identifier
@@ -102,7 +103,7 @@ class BillingReferenceLineType
      *
      * BBIE
      *  Billing Reference Line. Amount
-     *  The amount of the Billing Line, including Allowance Charges but net of taxes.
+     *  The monetary amount of the transaction line, including any allowances and charges but excluding taxes.
      *  0..1
      *  Billing Reference Line
      *  Amount
@@ -121,7 +122,7 @@ class BillingReferenceLineType
      *
      * BBIE
      *  Billing Reference Line. Amount
-     *  The amount of the Billing Line, including Allowance Charges but net of taxes.
+     *  The monetary amount of the transaction line, including any allowances and charges but excluding taxes.
      *  0..1
      *  Billing Reference Line
      *  Amount
@@ -142,9 +143,10 @@ class BillingReferenceLineType
      *
      * ASBIE
      *  Billing Reference Line. Allowance Charge
-     *  An association to Allowance Charge.
+     *  An allowance or charge applicable to the transaction line.
      *  0..n
      *  Billing Reference Line
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *
@@ -162,9 +164,10 @@ class BillingReferenceLineType
      *
      * ASBIE
      *  Billing Reference Line. Allowance Charge
-     *  An association to Allowance Charge.
+     *  An allowance or charge applicable to the transaction line.
      *  0..n
      *  Billing Reference Line
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *
@@ -181,9 +184,10 @@ class BillingReferenceLineType
      *
      * ASBIE
      *  Billing Reference Line. Allowance Charge
-     *  An association to Allowance Charge.
+     *  An allowance or charge applicable to the transaction line.
      *  0..n
      *  Billing Reference Line
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *
@@ -200,9 +204,10 @@ class BillingReferenceLineType
      *
      * ASBIE
      *  Billing Reference Line. Allowance Charge
-     *  An association to Allowance Charge.
+     *  An allowance or charge applicable to the transaction line.
      *  0..n
      *  Billing Reference Line
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *
@@ -218,9 +223,10 @@ class BillingReferenceLineType
      *
      * ASBIE
      *  Billing Reference Line. Allowance Charge
-     *  An association to Allowance Charge.
+     *  An allowance or charge applicable to the transaction line.
      *  0..n
      *  Billing Reference Line
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *

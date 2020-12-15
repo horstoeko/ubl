@@ -1,0 +1,7 @@
+horstoeko\ubl\entities\cac\ServiceFrequencyType:
+    properties:
+        weekDayCode:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

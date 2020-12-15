@@ -22,3 +22,14 @@ horstoeko\ubl\entities\cac\ItemPropertyGroupType:
                 getter: getName
                 setter: setName
             type: horstoeko\ubl\entities\cbc\Name
+        importanceCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ImportanceCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getImportanceCode
+                setter: setImportanceCode
+            type: horstoeko\ubl\entities\cbc\ImportanceCode

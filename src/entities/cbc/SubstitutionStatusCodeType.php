@@ -2,7 +2,7 @@
 
 namespace horstoeko\ubl\entities\cbc;
 
-use horstoeko\ubl\entities\qdt\SubstitutionStatusCodeType as SubstitutionStatusCodeTypeBase;
+use horstoeko\ubl\entities\udt\CodeType;
 
 /**
  * Class representing SubstitutionStatusCodeType
@@ -10,7 +10,7 @@ use horstoeko\ubl\entities\qdt\SubstitutionStatusCodeType as SubstitutionStatusC
  *
  * XSD Type: SubstitutionStatusCodeType
  */
-class SubstitutionStatusCodeType extends SubstitutionStatusCodeTypeBase
+class SubstitutionStatusCodeType extends CodeType
 {
 
 

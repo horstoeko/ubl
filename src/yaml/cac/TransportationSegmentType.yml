@@ -1,0 +1,72 @@
+horstoeko\ubl\entities\cac\TransportationSegmentType:
+    properties:
+        sequenceNumeric:
+            expose: true
+            access_type: public_method
+            serialized_name: SequenceNumeric
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getSequenceNumeric
+                setter: setSequenceNumeric
+            type: horstoeko\ubl\entities\cbc\SequenceNumeric
+        transportExecutionPlanReferenceID:
+            expose: true
+            access_type: public_method
+            serialized_name: TransportExecutionPlanReferenceID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTransportExecutionPlanReferenceID
+                setter: setTransportExecutionPlanReferenceID
+            type: horstoeko\ubl\entities\cbc\TransportExecutionPlanReferenceID
+        transportationService:
+            expose: true
+            access_type: public_method
+            serialized_name: TransportationService
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getTransportationService
+                setter: setTransportationService
+            type: horstoeko\ubl\entities\cac\TransportationService
+        transportServiceProviderParty:
+            expose: true
+            access_type: public_method
+            serialized_name: TransportServiceProviderParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getTransportServiceProviderParty
+                setter: setTransportServiceProviderParty
+            type: horstoeko\ubl\entities\cac\TransportServiceProviderParty
+        referencedConsignment:
+            expose: true
+            access_type: public_method
+            serialized_name: ReferencedConsignment
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getReferencedConsignment
+                setter: setReferencedConsignment
+            type: horstoeko\ubl\entities\cac\ReferencedConsignment
+        shipmentStage:
+            expose: true
+            access_type: public_method
+            serialized_name: ShipmentStage
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getShipmentStage
+                setter: setShipmentStage
+            xml_list:
+                inline: true
+                entry_name: ShipmentStage
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\ShipmentStage>

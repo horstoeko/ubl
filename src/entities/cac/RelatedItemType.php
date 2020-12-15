@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Related Item. Details
- *  Information about the relationship between two items.
+ *  A class to describe the relationship to an item different from the item associated with the item line in which RelatedItem is used.
  *  Related Item
  * XSD Type: RelatedItemType
  */
@@ -23,7 +23,7 @@ class RelatedItemType
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "First", "Second"
+     *  First , Second
      *
      * @var \horstoeko\ubl\entities\cbc\ID $iD
      */
@@ -38,7 +38,7 @@ class RelatedItemType
      *  Quantity
      *  Quantity
      *  Quantity. Type
-     *  "6", "10mg per Kilo"
+     *  6 , 10mg per Kilo
      *
      * @var \horstoeko\ubl\entities\cbc\Quantity $quantity
      */
@@ -47,13 +47,13 @@ class RelatedItemType
     /**
      * BBIE
      *  Related Item. Description. Text
-     *  A description for the relationship.
+     *  Text describing the relationship.
      *  0..n
      *  Related Item
      *  Description
      *  Text
      *  Text. Type
-     *  "If used in wet conditions or extreme environments"
+     *  If used in wet conditions or extreme environments
      *
      * @var \horstoeko\ubl\entities\cbc\Description[] $description
      */
@@ -72,7 +72,7 @@ class RelatedItemType
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "First", "Second"
+     *  First , Second
      *
      * @return \horstoeko\ubl\entities\cbc\ID
      */
@@ -92,7 +92,7 @@ class RelatedItemType
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "First", "Second"
+     *  First , Second
      *
      * @param \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
@@ -114,7 +114,7 @@ class RelatedItemType
      *  Quantity
      *  Quantity
      *  Quantity. Type
-     *  "6", "10mg per Kilo"
+     *  6 , 10mg per Kilo
      *
      * @return \horstoeko\ubl\entities\cbc\Quantity
      */
@@ -134,7 +134,7 @@ class RelatedItemType
      *  Quantity
      *  Quantity
      *  Quantity. Type
-     *  "6", "10mg per Kilo"
+     *  6 , 10mg per Kilo
      *
      * @param \horstoeko\ubl\entities\cbc\Quantity $quantity
      * @return self
@@ -150,13 +150,13 @@ class RelatedItemType
      *
      * BBIE
      *  Related Item. Description. Text
-     *  A description for the relationship.
+     *  Text describing the relationship.
      *  0..n
      *  Related Item
      *  Description
      *  Text
      *  Text. Type
-     *  "If used in wet conditions or extreme environments"
+     *  If used in wet conditions or extreme environments
      *
      * @return self
      * @param \horstoeko\ubl\entities\cbc\Description $description
@@ -172,13 +172,13 @@ class RelatedItemType
      *
      * BBIE
      *  Related Item. Description. Text
-     *  A description for the relationship.
+     *  Text describing the relationship.
      *  0..n
      *  Related Item
      *  Description
      *  Text
      *  Text. Type
-     *  "If used in wet conditions or extreme environments"
+     *  If used in wet conditions or extreme environments
      *
      * @param int|string $index
      * @return bool
@@ -193,13 +193,13 @@ class RelatedItemType
      *
      * BBIE
      *  Related Item. Description. Text
-     *  A description for the relationship.
+     *  Text describing the relationship.
      *  0..n
      *  Related Item
      *  Description
      *  Text
      *  Text. Type
-     *  "If used in wet conditions or extreme environments"
+     *  If used in wet conditions or extreme environments
      *
      * @param int|string $index
      * @return void
@@ -214,13 +214,13 @@ class RelatedItemType
      *
      * BBIE
      *  Related Item. Description. Text
-     *  A description for the relationship.
+     *  Text describing the relationship.
      *  0..n
      *  Related Item
      *  Description
      *  Text
      *  Text. Type
-     *  "If used in wet conditions or extreme environments"
+     *  If used in wet conditions or extreme environments
      *
      * @return \horstoeko\ubl\entities\cbc\Description[]
      */
@@ -234,13 +234,13 @@ class RelatedItemType
      *
      * BBIE
      *  Related Item. Description. Text
-     *  A description for the relationship.
+     *  Text describing the relationship.
      *  0..n
      *  Related Item
      *  Description
      *  Text
      *  Text. Type
-     *  "If used in wet conditions or extreme environments"
+     *  If used in wet conditions or extreme environments
      *
      * @param \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self

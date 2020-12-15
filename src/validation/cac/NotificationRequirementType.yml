@@ -1,0 +1,16 @@
+horstoeko\ubl\entities\cac\NotificationRequirementType:
+    properties:
+        notificationTypeCode:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        notifyParty:
+            -
+                Valid: null
+        notificationPeriod:
+            -
+                Valid: null
+        notificationLocation:
+            -
+                Valid: null

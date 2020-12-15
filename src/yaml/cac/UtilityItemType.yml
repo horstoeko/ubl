@@ -1,0 +1,171 @@
+horstoeko\ubl\entities\cac\UtilityItemType:
+    properties:
+        iD:
+            expose: true
+            access_type: public_method
+            serialized_name: ID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getID
+                setter: setID
+            type: horstoeko\ubl\entities\cbc\ID
+        subscriberID:
+            expose: true
+            access_type: public_method
+            serialized_name: SubscriberID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getSubscriberID
+                setter: setSubscriberID
+            type: horstoeko\ubl\entities\cbc\SubscriberID
+        subscriberType:
+            expose: true
+            access_type: public_method
+            serialized_name: SubscriberType
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getSubscriberType
+                setter: setSubscriberType
+            type: horstoeko\ubl\entities\cbc\SubscriberType
+        subscriberTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: SubscriberTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getSubscriberTypeCode
+                setter: setSubscriberTypeCode
+            type: horstoeko\ubl\entities\cbc\SubscriberTypeCode
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: Description
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>
+        packQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: PackQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPackQuantity
+                setter: setPackQuantity
+            type: horstoeko\ubl\entities\cbc\PackQuantity
+        packSizeNumeric:
+            expose: true
+            access_type: public_method
+            serialized_name: PackSizeNumeric
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPackSizeNumeric
+                setter: setPackSizeNumeric
+            type: horstoeko\ubl\entities\cbc\PackSizeNumeric
+        consumptionType:
+            expose: true
+            access_type: public_method
+            serialized_name: ConsumptionType
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getConsumptionType
+                setter: setConsumptionType
+            type: horstoeko\ubl\entities\cbc\ConsumptionType
+        consumptionTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ConsumptionTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getConsumptionTypeCode
+                setter: setConsumptionTypeCode
+            type: horstoeko\ubl\entities\cbc\ConsumptionTypeCode
+        currentChargeType:
+            expose: true
+            access_type: public_method
+            serialized_name: CurrentChargeType
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getCurrentChargeType
+                setter: setCurrentChargeType
+            type: horstoeko\ubl\entities\cbc\CurrentChargeType
+        currentChargeTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: CurrentChargeTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getCurrentChargeTypeCode
+                setter: setCurrentChargeTypeCode
+            type: horstoeko\ubl\entities\cbc\CurrentChargeTypeCode
+        oneTimeChargeType:
+            expose: true
+            access_type: public_method
+            serialized_name: OneTimeChargeType
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getOneTimeChargeType
+                setter: setOneTimeChargeType
+            type: horstoeko\ubl\entities\cbc\OneTimeChargeType
+        oneTimeChargeTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: OneTimeChargeTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getOneTimeChargeTypeCode
+                setter: setOneTimeChargeTypeCode
+            type: horstoeko\ubl\entities\cbc\OneTimeChargeTypeCode
+        taxCategory:
+            expose: true
+            access_type: public_method
+            serialized_name: TaxCategory
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getTaxCategory
+                setter: setTaxCategory
+            type: horstoeko\ubl\entities\cac\TaxCategory
+        contract:
+            expose: true
+            access_type: public_method
+            serialized_name: Contract
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getContract
+                setter: setContract
+            type: horstoeko\ubl\entities\cac\Contract

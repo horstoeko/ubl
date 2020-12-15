@@ -246,6 +246,39 @@ horstoeko\ubl\entities\cac\GoodsItemType:
                 getter: getCustomsImportClassifiedIndicator
                 setter: setCustomsImportClassifiedIndicator
             type: bool
+        chargeableQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: ChargeableQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getChargeableQuantity
+                setter: setChargeableQuantity
+            type: horstoeko\ubl\entities\cbc\ChargeableQuantity
+        returnableQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: ReturnableQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getReturnableQuantity
+                setter: setReturnableQuantity
+            type: horstoeko\ubl\entities\cbc\ReturnableQuantity
+        traceID:
+            expose: true
+            access_type: public_method
+            serialized_name: TraceID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTraceID
+                setter: setTraceID
+            type: horstoeko\ubl\entities\cbc\TraceID
         item:
             expose: true
             access_type: public_method
@@ -347,3 +380,99 @@ horstoeko\ubl\entities\cac\GoodsItemType:
                 getter: getOriginAddress
                 setter: setOriginAddress
             type: horstoeko\ubl\entities\cac\OriginAddress
+        delivery:
+            expose: true
+            access_type: public_method
+            serialized_name: Delivery
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getDelivery
+                setter: setDelivery
+            type: horstoeko\ubl\entities\cac\Delivery
+        pickup:
+            expose: true
+            access_type: public_method
+            serialized_name: Pickup
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPickup
+                setter: setPickup
+            type: horstoeko\ubl\entities\cac\Pickup
+        despatch:
+            expose: true
+            access_type: public_method
+            serialized_name: Despatch
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getDespatch
+                setter: setDespatch
+            type: horstoeko\ubl\entities\cac\Despatch
+        measurementDimension:
+            expose: true
+            access_type: public_method
+            serialized_name: MeasurementDimension
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getMeasurementDimension
+                setter: setMeasurementDimension
+            xml_list:
+                inline: true
+                entry_name: MeasurementDimension
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\MeasurementDimension>
+        containingPackage:
+            expose: true
+            access_type: public_method
+            serialized_name: ContainingPackage
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getContainingPackage
+                setter: setContainingPackage
+            xml_list:
+                inline: true
+                entry_name: ContainingPackage
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\ContainingPackage>
+        shipmentDocumentReference:
+            expose: true
+            access_type: public_method
+            serialized_name: ShipmentDocumentReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getShipmentDocumentReference
+                setter: setShipmentDocumentReference
+            type: horstoeko\ubl\entities\cac\ShipmentDocumentReference
+        minimumTemperature:
+            expose: true
+            access_type: public_method
+            serialized_name: MinimumTemperature
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getMinimumTemperature
+                setter: setMinimumTemperature
+            type: horstoeko\ubl\entities\cac\MinimumTemperature
+        maximumTemperature:
+            expose: true
+            access_type: public_method
+            serialized_name: MaximumTemperature
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getMaximumTemperature
+                setter: setMaximumTemperature
+            type: horstoeko\ubl\entities\cac\MaximumTemperature

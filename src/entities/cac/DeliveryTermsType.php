@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Delivery Terms. Details
- *  Information about Delivery Terms.
+ *  A class for describing the terms and conditions applying to the delivery of goods.
  *  Delivery Terms
  * XSD Type: DeliveryTermsType
  */
@@ -17,7 +17,7 @@ class DeliveryTermsType
     /**
      * BBIE
      *  Delivery Terms. Identifier
-     *  Identifies the Delivery Terms.
+     *  An identifier for this description of delivery terms.
      *  0..1
      *  Delivery Terms
      *  Identifier
@@ -32,22 +32,24 @@ class DeliveryTermsType
     /**
      * BBIE
      *  Delivery Terms. Special_ Terms. Text
-     *  A description of special conditions relating to the Delivery Terms.
-     *  0..1
+     *  A description of any terms or conditions relating to the delivery items.
+     *  0..n
      *  Delivery Terms
      *  Special
      *  Terms
      *  Text
      *  Text. Type
      *
-     * @var \horstoeko\ubl\entities\cbc\SpecialTerms $specialTerms
+     * @var \horstoeko\ubl\entities\cbc\SpecialTerms[] $specialTerms
      */
-    private $specialTerms = null;
+    private $specialTerms = [
+        
+    ];
 
     /**
      * BBIE
      *  Delivery Terms. Loss Risk Responsibility Code. Code
-     *  An identifier for the responsibility for loss risk in the context of the Delivery Terms, expressed as a code.
+     *  A code that identifies one of various responsibilities for loss risk in the execution of the delivery.
      *  0..1
      *  Delivery Terms
      *  Loss Risk Responsibility Code
@@ -61,24 +63,41 @@ class DeliveryTermsType
     /**
      * BBIE
      *  Delivery Terms. Loss Risk. Text
-     *  A description of the loss risk in the context of the Delivery Terms.
-     *  0..1
+     *  A description of responsibility for risk of loss in execution of the delivery, expressed as text.
+     *  0..n
      *  Delivery Terms
      *  Loss Risk
      *  Text
      *  Text. Type
      *
-     * @var \horstoeko\ubl\entities\cbc\LossRisk $lossRisk
+     * @var \horstoeko\ubl\entities\cbc\LossRisk[] $lossRisk
      */
-    private $lossRisk = null;
+    private $lossRisk = [
+        
+    ];
+
+    /**
+     * BBIE
+     *  Delivery Terms. Amount
+     *  The monetary amount covered by these delivery terms.
+     *  0..1
+     *  Delivery Terms
+     *  Amount
+     *  Amount
+     *  Amount. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\Amount $amount
+     */
+    private $amount = null;
 
     /**
      * ASBIE
      *  Delivery Terms. Delivery_ Location. Location
-     *  An association to Location, e.g., a port.
+     *  The location for the contracted delivery.
      *  0..1
      *  Delivery Terms
      *  Delivery
+     *  Location
      *  Location
      *  Location
      *
@@ -89,9 +108,10 @@ class DeliveryTermsType
     /**
      * ASBIE
      *  Delivery Terms. Allowance Charge
-     *  An association to Allowance Charge.
+     *  An allowance or charge covered by these delivery terms.
      *  0..1
      *  Delivery Terms
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *
@@ -104,7 +124,7 @@ class DeliveryTermsType
      *
      * BBIE
      *  Delivery Terms. Identifier
-     *  Identifies the Delivery Terms.
+     *  An identifier for this description of delivery terms.
      *  0..1
      *  Delivery Terms
      *  Identifier
@@ -124,7 +144,7 @@ class DeliveryTermsType
      *
      * BBIE
      *  Delivery Terms. Identifier
-     *  Identifies the Delivery Terms.
+     *  An identifier for this description of delivery terms.
      *  0..1
      *  Delivery Terms
      *  Identifier
@@ -142,19 +162,83 @@ class DeliveryTermsType
     }
 
     /**
-     * Gets as specialTerms
+     * Adds as specialTerms
      *
      * BBIE
      *  Delivery Terms. Special_ Terms. Text
-     *  A description of special conditions relating to the Delivery Terms.
-     *  0..1
+     *  A description of any terms or conditions relating to the delivery items.
+     *  0..n
      *  Delivery Terms
      *  Special
      *  Terms
      *  Text
      *  Text. Type
      *
-     * @return \horstoeko\ubl\entities\cbc\SpecialTerms
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\SpecialTerms $specialTerms
+     */
+    public function addToSpecialTerms(\horstoeko\ubl\entities\cbc\SpecialTerms $specialTerms)
+    {
+        $this->specialTerms[] = $specialTerms;
+        return $this;
+    }
+
+    /**
+     * isset specialTerms
+     *
+     * BBIE
+     *  Delivery Terms. Special_ Terms. Text
+     *  A description of any terms or conditions relating to the delivery items.
+     *  0..n
+     *  Delivery Terms
+     *  Special
+     *  Terms
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetSpecialTerms($index)
+    {
+        return isset($this->specialTerms[$index]);
+    }
+
+    /**
+     * unset specialTerms
+     *
+     * BBIE
+     *  Delivery Terms. Special_ Terms. Text
+     *  A description of any terms or conditions relating to the delivery items.
+     *  0..n
+     *  Delivery Terms
+     *  Special
+     *  Terms
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetSpecialTerms($index)
+    {
+        unset($this->specialTerms[$index]);
+    }
+
+    /**
+     * Gets as specialTerms
+     *
+     * BBIE
+     *  Delivery Terms. Special_ Terms. Text
+     *  A description of any terms or conditions relating to the delivery items.
+     *  0..n
+     *  Delivery Terms
+     *  Special
+     *  Terms
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\SpecialTerms[]
      */
     public function getSpecialTerms()
     {
@@ -166,18 +250,18 @@ class DeliveryTermsType
      *
      * BBIE
      *  Delivery Terms. Special_ Terms. Text
-     *  A description of special conditions relating to the Delivery Terms.
-     *  0..1
+     *  A description of any terms or conditions relating to the delivery items.
+     *  0..n
      *  Delivery Terms
      *  Special
      *  Terms
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SpecialTerms $specialTerms
+     * @param \horstoeko\ubl\entities\cbc\SpecialTerms[] $specialTerms
      * @return self
      */
-    public function setSpecialTerms(\horstoeko\ubl\entities\cbc\SpecialTerms $specialTerms)
+    public function setSpecialTerms(array $specialTerms)
     {
         $this->specialTerms = $specialTerms;
         return $this;
@@ -188,7 +272,7 @@ class DeliveryTermsType
      *
      * BBIE
      *  Delivery Terms. Loss Risk Responsibility Code. Code
-     *  An identifier for the responsibility for loss risk in the context of the Delivery Terms, expressed as a code.
+     *  A code that identifies one of various responsibilities for loss risk in the execution of the delivery.
      *  0..1
      *  Delivery Terms
      *  Loss Risk Responsibility Code
@@ -207,7 +291,7 @@ class DeliveryTermsType
      *
      * BBIE
      *  Delivery Terms. Loss Risk Responsibility Code. Code
-     *  An identifier for the responsibility for loss risk in the context of the Delivery Terms, expressed as a code.
+     *  A code that identifies one of various responsibilities for loss risk in the execution of the delivery.
      *  0..1
      *  Delivery Terms
      *  Loss Risk Responsibility Code
@@ -224,18 +308,79 @@ class DeliveryTermsType
     }
 
     /**
-     * Gets as lossRisk
+     * Adds as lossRisk
      *
      * BBIE
      *  Delivery Terms. Loss Risk. Text
-     *  A description of the loss risk in the context of the Delivery Terms.
-     *  0..1
+     *  A description of responsibility for risk of loss in execution of the delivery, expressed as text.
+     *  0..n
      *  Delivery Terms
      *  Loss Risk
      *  Text
      *  Text. Type
      *
-     * @return \horstoeko\ubl\entities\cbc\LossRisk
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\LossRisk $lossRisk
+     */
+    public function addToLossRisk(\horstoeko\ubl\entities\cbc\LossRisk $lossRisk)
+    {
+        $this->lossRisk[] = $lossRisk;
+        return $this;
+    }
+
+    /**
+     * isset lossRisk
+     *
+     * BBIE
+     *  Delivery Terms. Loss Risk. Text
+     *  A description of responsibility for risk of loss in execution of the delivery, expressed as text.
+     *  0..n
+     *  Delivery Terms
+     *  Loss Risk
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetLossRisk($index)
+    {
+        return isset($this->lossRisk[$index]);
+    }
+
+    /**
+     * unset lossRisk
+     *
+     * BBIE
+     *  Delivery Terms. Loss Risk. Text
+     *  A description of responsibility for risk of loss in execution of the delivery, expressed as text.
+     *  0..n
+     *  Delivery Terms
+     *  Loss Risk
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetLossRisk($index)
+    {
+        unset($this->lossRisk[$index]);
+    }
+
+    /**
+     * Gets as lossRisk
+     *
+     * BBIE
+     *  Delivery Terms. Loss Risk. Text
+     *  A description of responsibility for risk of loss in execution of the delivery, expressed as text.
+     *  0..n
+     *  Delivery Terms
+     *  Loss Risk
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\LossRisk[]
      */
     public function getLossRisk()
     {
@@ -247,19 +392,59 @@ class DeliveryTermsType
      *
      * BBIE
      *  Delivery Terms. Loss Risk. Text
-     *  A description of the loss risk in the context of the Delivery Terms.
-     *  0..1
+     *  A description of responsibility for risk of loss in execution of the delivery, expressed as text.
+     *  0..n
      *  Delivery Terms
      *  Loss Risk
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LossRisk $lossRisk
+     * @param \horstoeko\ubl\entities\cbc\LossRisk[] $lossRisk
      * @return self
      */
-    public function setLossRisk(\horstoeko\ubl\entities\cbc\LossRisk $lossRisk)
+    public function setLossRisk(array $lossRisk)
     {
         $this->lossRisk = $lossRisk;
+        return $this;
+    }
+
+    /**
+     * Gets as amount
+     *
+     * BBIE
+     *  Delivery Terms. Amount
+     *  The monetary amount covered by these delivery terms.
+     *  0..1
+     *  Delivery Terms
+     *  Amount
+     *  Amount
+     *  Amount. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\Amount
+     */
+    public function getAmount()
+    {
+        return $this->amount;
+    }
+
+    /**
+     * Sets a new amount
+     *
+     * BBIE
+     *  Delivery Terms. Amount
+     *  The monetary amount covered by these delivery terms.
+     *  0..1
+     *  Delivery Terms
+     *  Amount
+     *  Amount
+     *  Amount. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\Amount $amount
+     * @return self
+     */
+    public function setAmount(\horstoeko\ubl\entities\cbc\Amount $amount)
+    {
+        $this->amount = $amount;
         return $this;
     }
 
@@ -268,10 +453,11 @@ class DeliveryTermsType
      *
      * ASBIE
      *  Delivery Terms. Delivery_ Location. Location
-     *  An association to Location, e.g., a port.
+     *  The location for the contracted delivery.
      *  0..1
      *  Delivery Terms
      *  Delivery
+     *  Location
      *  Location
      *  Location
      *
@@ -287,10 +473,11 @@ class DeliveryTermsType
      *
      * ASBIE
      *  Delivery Terms. Delivery_ Location. Location
-     *  An association to Location, e.g., a port.
+     *  The location for the contracted delivery.
      *  0..1
      *  Delivery Terms
      *  Delivery
+     *  Location
      *  Location
      *  Location
      *
@@ -308,9 +495,10 @@ class DeliveryTermsType
      *
      * ASBIE
      *  Delivery Terms. Allowance Charge
-     *  An association to Allowance Charge.
+     *  An allowance or charge covered by these delivery terms.
      *  0..1
      *  Delivery Terms
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *
@@ -326,9 +514,10 @@ class DeliveryTermsType
      *
      * ASBIE
      *  Delivery Terms. Allowance Charge
-     *  An association to Allowance Charge.
+     *  An allowance or charge covered by these delivery terms.
      *  0..1
      *  Delivery Terms
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *

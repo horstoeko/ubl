@@ -1,0 +1,176 @@
+horstoeko\ubl\entities\cac\QualifyingPartyType:
+    properties:
+        participationPercent:
+            expose: true
+            access_type: public_method
+            serialized_name: ParticipationPercent
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getParticipationPercent
+                setter: setParticipationPercent
+            type: horstoeko\ubl\entities\cbc\ParticipationPercent
+        personalSituation:
+            expose: true
+            access_type: public_method
+            serialized_name: PersonalSituation
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPersonalSituation
+                setter: setPersonalSituation
+            xml_list:
+                inline: true
+                entry_name: PersonalSituation
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\PersonalSituation>
+        operatingYearsQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: OperatingYearsQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getOperatingYearsQuantity
+                setter: setOperatingYearsQuantity
+            type: horstoeko\ubl\entities\cbc\OperatingYearsQuantity
+        employeeQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: EmployeeQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getEmployeeQuantity
+                setter: setEmployeeQuantity
+            type: horstoeko\ubl\entities\cbc\EmployeeQuantity
+        businessClassificationEvidenceID:
+            expose: true
+            access_type: public_method
+            serialized_name: BusinessClassificationEvidenceID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getBusinessClassificationEvidenceID
+                setter: setBusinessClassificationEvidenceID
+            type: horstoeko\ubl\entities\cbc\BusinessClassificationEvidenceID
+        businessIdentityEvidenceID:
+            expose: true
+            access_type: public_method
+            serialized_name: BusinessIdentityEvidenceID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getBusinessIdentityEvidenceID
+                setter: setBusinessIdentityEvidenceID
+            type: horstoeko\ubl\entities\cbc\BusinessIdentityEvidenceID
+        tendererRoleCode:
+            expose: true
+            access_type: public_method
+            serialized_name: TendererRoleCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTendererRoleCode
+                setter: setTendererRoleCode
+            type: horstoeko\ubl\entities\cbc\TendererRoleCode
+        businessClassificationScheme:
+            expose: true
+            access_type: public_method
+            serialized_name: BusinessClassificationScheme
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getBusinessClassificationScheme
+                setter: setBusinessClassificationScheme
+            type: horstoeko\ubl\entities\cac\BusinessClassificationScheme
+        technicalCapability:
+            expose: true
+            access_type: public_method
+            serialized_name: TechnicalCapability
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getTechnicalCapability
+                setter: setTechnicalCapability
+            xml_list:
+                inline: true
+                entry_name: TechnicalCapability
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\TechnicalCapability>
+        financialCapability:
+            expose: true
+            access_type: public_method
+            serialized_name: FinancialCapability
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getFinancialCapability
+                setter: setFinancialCapability
+            xml_list:
+                inline: true
+                entry_name: FinancialCapability
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\FinancialCapability>
+        completedTask:
+            expose: true
+            access_type: public_method
+            serialized_name: CompletedTask
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getCompletedTask
+                setter: setCompletedTask
+            xml_list:
+                inline: true
+                entry_name: CompletedTask
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\CompletedTask>
+        declaration:
+            expose: true
+            access_type: public_method
+            serialized_name: Declaration
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getDeclaration
+                setter: setDeclaration
+            xml_list:
+                inline: true
+                entry_name: Declaration
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\Declaration>
+        party:
+            expose: true
+            access_type: public_method
+            serialized_name: Party
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getParty
+                setter: setParty
+            type: horstoeko\ubl\entities\cac\Party
+        economicOperatorRole:
+            expose: true
+            access_type: public_method
+            serialized_name: EconomicOperatorRole
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getEconomicOperatorRole
+                setter: setEconomicOperatorRole
+            type: horstoeko\ubl\entities\cac\EconomicOperatorRole

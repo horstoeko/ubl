@@ -1,0 +1,46 @@
+horstoeko\ubl\entities\cac\DutyType:
+    properties:
+        amount:
+            expose: true
+            access_type: public_method
+            serialized_name: Amount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAmount
+                setter: setAmount
+            type: horstoeko\ubl\entities\cbc\Amount
+        duty:
+            expose: true
+            access_type: public_method
+            serialized_name: Duty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDuty
+                setter: setDuty
+            type: horstoeko\ubl\entities\cbc\Duty
+        dutyCode:
+            expose: true
+            access_type: public_method
+            serialized_name: DutyCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDutyCode
+                setter: setDutyCode
+            type: horstoeko\ubl\entities\cbc\DutyCode
+        taxCategory:
+            expose: true
+            access_type: public_method
+            serialized_name: TaxCategory
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getTaxCategory
+                setter: setTaxCategory
+            type: horstoeko\ubl\entities\cac\TaxCategory

@@ -1,0 +1,25 @@
+horstoeko\ubl\entities\cac\SupplierConsumptionType:
+    properties:
+        utilitySupplierParty:
+            -
+                Valid: null
+        utilityCustomerParty:
+            -
+                Valid: null
+        consumption:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        contract:
+            -
+                Valid: null
+        consumptionLine:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

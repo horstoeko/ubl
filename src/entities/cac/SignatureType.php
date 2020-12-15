@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Signature. Details
- *  Information about signature. A placeholder for signature.
+ *  A class to define a signature.
  *  Signature
  * XSD Type: SignatureType
  */
@@ -17,7 +17,7 @@ class SignatureType
     /**
      * BBIE
      *  Signature. Identifier
-     *  An identifier for the Signature.
+     *  An identifier for this signature.
      *  1
      *  Signature
      *  Identifier
@@ -31,21 +31,23 @@ class SignatureType
     /**
      * BBIE
      *  Signature. Note. Text
-     *  Free form text about the signature or the circumstances where the signature has been used.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures; in particular, information regarding the circumstances in which the signature is being used.
+     *  0..n
      *  Signature
      *  Note
      *  Text
      *  Text. Type
      *
-     * @var \horstoeko\ubl\entities\cbc\Note $note
+     * @var \horstoeko\ubl\entities\cbc\Note[] $note
      */
-    private $note = null;
+    private $note = [
+        
+    ];
 
     /**
      * BBIE
      *  Signature. Validation Date. Date
-     *  Specifies the date when the signature was approved.
+     *  The date upon which this signature was verified.
      *  0..1
      *  Signature
      *  Validation Date
@@ -59,7 +61,7 @@ class SignatureType
     /**
      * BBIE
      *  Signature. Validation Time. Time
-     *  Specifies the time when the signature was approved.
+     *  The time at which this signature was verified.
      *  0..1
      *  Signature
      *  Validation Time
@@ -72,11 +74,11 @@ class SignatureType
 
     /**
      * BBIE
-     *  Signature. Validator Identifier. Identifier
-     *  Identifies the organization, person, service or server that has validated the signature.
+     *  Signature. Validator. Identifier
+     *  An identifier for the organization, person, service, or server that verified this signature.
      *  0..1
      *  Signature
-     *  Validator Identifier
+     *  Validator
      *  Identifier
      *  Identifier. Type
      *
@@ -87,7 +89,7 @@ class SignatureType
     /**
      * BBIE
      *  Signature. Canonicalization Method. Text
-     *  The mathematical logic method used by the Signature.
+     *  The method used to perform XML canonicalization of this signature.
      *  0..1
      *  Signature
      *  Canonicalization Method
@@ -101,7 +103,7 @@ class SignatureType
     /**
      * BBIE
      *  Signature. Signature Method. Text
-     *  The method of signature.
+     *  Text describing the method of signature.
      *  0..1
      *  Signature
      *  Signature Method
@@ -115,10 +117,11 @@ class SignatureType
     /**
      * ASBIE
      *  Signature. Signatory_ Party. Party
-     *  An association to the signing Party.
-     *  1
+     *  The signing party.
+     *  0..1
      *  Signature
      *  Signatory
+     *  Party
      *  Party
      *  Party
      *
@@ -129,10 +132,11 @@ class SignatureType
     /**
      * ASBIE
      *  Signature. Digital Signature_ Attachment. Attachment
-     *  Refers to the actual encoded signature (e.g., in XMLDSIG format).
+     *  The actual encoded signature (e.g., in XMLDsig format).
      *  0..1
      *  Signature
      *  Digital Signature
+     *  Attachment
      *  Attachment
      *  Attachment
      *
@@ -143,10 +147,11 @@ class SignatureType
     /**
      * ASBIE
      *  Signature. Original_ Document Reference. Document Reference
-     *  A reference to the actual document that the signature applies to. For evidentiary purposes, this may be the document image that the signatory party saw when applying their signature.
+     *  A reference to the document that the signature applies to. For evidentiary purposes, this may be the document image that the signatory party saw when applying their signature.
      *  0..1
      *  Signature
      *  Original
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -159,7 +164,7 @@ class SignatureType
      *
      * BBIE
      *  Signature. Identifier
-     *  An identifier for the Signature.
+     *  An identifier for this signature.
      *  1
      *  Signature
      *  Identifier
@@ -178,7 +183,7 @@ class SignatureType
      *
      * BBIE
      *  Signature. Identifier
-     *  An identifier for the Signature.
+     *  An identifier for this signature.
      *  1
      *  Signature
      *  Identifier
@@ -195,18 +200,79 @@ class SignatureType
     }
 
     /**
-     * Gets as note
+     * Adds as note
      *
      * BBIE
      *  Signature. Note. Text
-     *  Free form text about the signature or the circumstances where the signature has been used.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures; in particular, information regarding the circumstances in which the signature is being used.
+     *  0..n
      *  Signature
      *  Note
      *  Text
      *  Text. Type
      *
-     * @return \horstoeko\ubl\entities\cbc\Note
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\Note $note
+     */
+    public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
+    {
+        $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * isset note
+     *
+     * BBIE
+     *  Signature. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures; in particular, information regarding the circumstances in which the signature is being used.
+     *  0..n
+     *  Signature
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetNote($index)
+    {
+        return isset($this->note[$index]);
+    }
+
+    /**
+     * unset note
+     *
+     * BBIE
+     *  Signature. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures; in particular, information regarding the circumstances in which the signature is being used.
+     *  0..n
+     *  Signature
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetNote($index)
+    {
+        unset($this->note[$index]);
+    }
+
+    /**
+     * Gets as note
+     *
+     * BBIE
+     *  Signature. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures; in particular, information regarding the circumstances in which the signature is being used.
+     *  0..n
+     *  Signature
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\Note[]
      */
     public function getNote()
     {
@@ -218,17 +284,17 @@ class SignatureType
      *
      * BBIE
      *  Signature. Note. Text
-     *  Free form text about the signature or the circumstances where the signature has been used.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures; in particular, information regarding the circumstances in which the signature is being used.
+     *  0..n
      *  Signature
      *  Note
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
-    public function setNote(\horstoeko\ubl\entities\cbc\Note $note)
+    public function setNote(array $note)
     {
         $this->note = $note;
         return $this;
@@ -239,7 +305,7 @@ class SignatureType
      *
      * BBIE
      *  Signature. Validation Date. Date
-     *  Specifies the date when the signature was approved.
+     *  The date upon which this signature was verified.
      *  0..1
      *  Signature
      *  Validation Date
@@ -258,7 +324,7 @@ class SignatureType
      *
      * BBIE
      *  Signature. Validation Date. Date
-     *  Specifies the date when the signature was approved.
+     *  The date upon which this signature was verified.
      *  0..1
      *  Signature
      *  Validation Date
@@ -279,7 +345,7 @@ class SignatureType
      *
      * BBIE
      *  Signature. Validation Time. Time
-     *  Specifies the time when the signature was approved.
+     *  The time at which this signature was verified.
      *  0..1
      *  Signature
      *  Validation Time
@@ -298,7 +364,7 @@ class SignatureType
      *
      * BBIE
      *  Signature. Validation Time. Time
-     *  Specifies the time when the signature was approved.
+     *  The time at which this signature was verified.
      *  0..1
      *  Signature
      *  Validation Time
@@ -318,11 +384,11 @@ class SignatureType
      * Gets as validatorID
      *
      * BBIE
-     *  Signature. Validator Identifier. Identifier
-     *  Identifies the organization, person, service or server that has validated the signature.
+     *  Signature. Validator. Identifier
+     *  An identifier for the organization, person, service, or server that verified this signature.
      *  0..1
      *  Signature
-     *  Validator Identifier
+     *  Validator
      *  Identifier
      *  Identifier. Type
      *
@@ -337,11 +403,11 @@ class SignatureType
      * Sets a new validatorID
      *
      * BBIE
-     *  Signature. Validator Identifier. Identifier
-     *  Identifies the organization, person, service or server that has validated the signature.
+     *  Signature. Validator. Identifier
+     *  An identifier for the organization, person, service, or server that verified this signature.
      *  0..1
      *  Signature
-     *  Validator Identifier
+     *  Validator
      *  Identifier
      *  Identifier. Type
      *
@@ -359,7 +425,7 @@ class SignatureType
      *
      * BBIE
      *  Signature. Canonicalization Method. Text
-     *  The mathematical logic method used by the Signature.
+     *  The method used to perform XML canonicalization of this signature.
      *  0..1
      *  Signature
      *  Canonicalization Method
@@ -378,7 +444,7 @@ class SignatureType
      *
      * BBIE
      *  Signature. Canonicalization Method. Text
-     *  The mathematical logic method used by the Signature.
+     *  The method used to perform XML canonicalization of this signature.
      *  0..1
      *  Signature
      *  Canonicalization Method
@@ -399,7 +465,7 @@ class SignatureType
      *
      * BBIE
      *  Signature. Signature Method. Text
-     *  The method of signature.
+     *  Text describing the method of signature.
      *  0..1
      *  Signature
      *  Signature Method
@@ -418,7 +484,7 @@ class SignatureType
      *
      * BBIE
      *  Signature. Signature Method. Text
-     *  The method of signature.
+     *  Text describing the method of signature.
      *  0..1
      *  Signature
      *  Signature Method
@@ -439,10 +505,11 @@ class SignatureType
      *
      * ASBIE
      *  Signature. Signatory_ Party. Party
-     *  An association to the signing Party.
-     *  1
+     *  The signing party.
+     *  0..1
      *  Signature
      *  Signatory
+     *  Party
      *  Party
      *  Party
      *
@@ -458,10 +525,11 @@ class SignatureType
      *
      * ASBIE
      *  Signature. Signatory_ Party. Party
-     *  An association to the signing Party.
-     *  1
+     *  The signing party.
+     *  0..1
      *  Signature
      *  Signatory
+     *  Party
      *  Party
      *  Party
      *
@@ -479,10 +547,11 @@ class SignatureType
      *
      * ASBIE
      *  Signature. Digital Signature_ Attachment. Attachment
-     *  Refers to the actual encoded signature (e.g., in XMLDSIG format).
+     *  The actual encoded signature (e.g., in XMLDsig format).
      *  0..1
      *  Signature
      *  Digital Signature
+     *  Attachment
      *  Attachment
      *  Attachment
      *
@@ -498,10 +567,11 @@ class SignatureType
      *
      * ASBIE
      *  Signature. Digital Signature_ Attachment. Attachment
-     *  Refers to the actual encoded signature (e.g., in XMLDSIG format).
+     *  The actual encoded signature (e.g., in XMLDsig format).
      *  0..1
      *  Signature
      *  Digital Signature
+     *  Attachment
      *  Attachment
      *  Attachment
      *
@@ -519,10 +589,11 @@ class SignatureType
      *
      * ASBIE
      *  Signature. Original_ Document Reference. Document Reference
-     *  A reference to the actual document that the signature applies to. For evidentiary purposes, this may be the document image that the signatory party saw when applying their signature.
+     *  A reference to the document that the signature applies to. For evidentiary purposes, this may be the document image that the signatory party saw when applying their signature.
      *  0..1
      *  Signature
      *  Original
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -538,10 +609,11 @@ class SignatureType
      *
      * ASBIE
      *  Signature. Original_ Document Reference. Document Reference
-     *  A reference to the actual document that the signature applies to. For evidentiary purposes, this may be the document image that the signatory party saw when applying their signature.
+     *  A reference to the document that the signature applies to. For evidentiary purposes, this may be the document image that the signatory party saw when applying their signature.
      *  0..1
      *  Signature
      *  Original
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *

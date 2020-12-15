@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Goods Item. Details
- *  A separately identifiable quantity of products of a single product type.
+ *  A class to describe a separately identifiable quantity of goods of a single product type.
  *  Goods Item
  * XSD Type: GoodsItemType
  */
@@ -17,8 +17,8 @@ class GoodsItemType
     /**
      * BBIE
      *  Goods Item. Identifier
-     *  An identifier for the goods item.
-     *  1
+     *  An identifier for this goods item.
+     *  0..1
      *  Goods Item
      *  Identifier
      *  Identifier
@@ -31,13 +31,12 @@ class GoodsItemType
     /**
      * BBIE
      *  Goods Item. Sequence Number. Identifier
-     *  Sequence number differentiating a specific goods item within a consignment.
+     *  A sequence number differentiating a specific goods item within a consignment.
      *  0..1
      *  Goods Item
      *  Sequence Number
      *  Identifier
      *  Identifier. Type
-     *  Customs item number (WCO ID 021), Sequence Position
      *
      * @var \horstoeko\ubl\entities\cbc\SequenceNumberID $sequenceNumberID
      */
@@ -46,7 +45,7 @@ class GoodsItemType
     /**
      * BBIE
      *  Goods Item. Description. Text
-     *  Plain language description of a goods item sufficient to identify it for customs, statistical, or transport purposes.
+     *  Text describing this goods item to identify it for customs, statistical, or transport purposes.
      *  0..n
      *  Goods Item
      *  Description
@@ -63,7 +62,7 @@ class GoodsItemType
     /**
      * BBIE
      *  Goods Item. Hazardous Risk_ Indicator. Indicator
-     *  Indicates whether the goods item includes hazardous items (dangerous goods).
+     *  An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).
      *  0..1
      *  Goods Item
      *  Hazardous Risk
@@ -79,7 +78,7 @@ class GoodsItemType
     /**
      * BBIE
      *  Goods Item. Declared Customs_ Value. Amount
-     *  Amount declared for Customs purposes of those goods in a consignment which are subject to the same Customs procedure and have the same tariff/statistical heading, country information, and duty regime.
+     *  The total declared value for customs purposes of the goods item.
      *  0..1
      *  Goods Item
      *  Declared Customs
@@ -95,7 +94,7 @@ class GoodsItemType
     /**
      * BBIE
      *  Goods Item. Declared For Carriage_ Value. Amount
-     *  Value declared by the shipper or his agent solely for the purpose of varying the carrier's level of liability from that provided in the contract of carriage in case of loss or damage to goods or delayed delivery.
+     *  The value of this goods item, declared by the shipper or his agent solely for the purpose of varying the carrier's level of liability from that provided in the contract of carriage, in case of loss or damage to goods or delayed delivery.
      *  0..1
      *  Goods Item
      *  Declared For Carriage
@@ -111,7 +110,7 @@ class GoodsItemType
     /**
      * BBIE
      *  Goods Item. Declared Statistics_ Value. Amount
-     *  Value declared for statistical purposes of those goods in a consignment which have the same statistical heading.
+     *  The total declared value of all the goods items in the same consignment with this goods item that have the same statistical heading.
      *  0..1
      *  Goods Item
      *  Declared Statistics
@@ -127,7 +126,7 @@ class GoodsItemType
     /**
      * BBIE
      *  Goods Item. Free On Board_ Value. Amount
-     *  Monetary amount that has to be or has been paid as calculated under the applicable trade delivery.
+     *  The monetary amount that has to be or has been paid as calculated under the applicable trade delivery.
      *  0..1
      *  Goods Item
      *  Free On Board
@@ -143,7 +142,7 @@ class GoodsItemType
     /**
      * BBIE
      *  Goods Item. Insurance_ Value. Amount
-     *  The amount covered by an insurance for a particular goods item.
+     *  The amount covered by insurance for this goods item.
      *  0..1
      *  Goods Item
      *  Insurance
@@ -159,13 +158,12 @@ class GoodsItemType
     /**
      * BBIE
      *  Goods Item. Value. Amount
-     *  Specifies the amount on which a duty, tax, or fee will be assessed.
+     *  The amount on which a duty, tax, or fee will be assessed.
      *  0..1
      *  Goods Item
      *  Value
      *  Amount
      *  Amount. Type
-     *  Duty/tax/fee assessment basis in value (WCO ID 116)
      *
      * @var \horstoeko\ubl\entities\cbc\ValueAmount $valueAmount
      */
@@ -174,7 +172,7 @@ class GoodsItemType
     /**
      * BBIE
      *  Goods Item. Gross_ Weight. Measure
-     *  Weight (mass) of goods, including packaging but excluding the carrier's equipment.
+     *  The weight of this goods item, including packing and packaging but excluding the carrier's equipment.
      *  0..1
      *  Goods Item
      *  Gross
@@ -190,7 +188,7 @@ class GoodsItemType
     /**
      * BBIE
      *  Goods Item. Net_ Weight. Measure
-     *  Weight (mass) of goods item, excluding all packing but including any packaging that normally goes with the goods.
+     *  The weight of this goods item, excluding packing but including packaging that normally accompanies the goods.
      *  0..1
      *  Goods Item
      *  Net
@@ -205,7 +203,7 @@ class GoodsItemType
     /**
      * BBIE
      *  Goods Item. Net Net_ Weight. Measure
-     *  Weight (mass) of goods without any packaging.
+     *  The total weight of this goods item, excluding all packing and packaging.
      *  0..1
      *  Goods Item
      *  Net Net
@@ -221,7 +219,7 @@ class GoodsItemType
     /**
      * BBIE
      *  Goods Item. Chargeable_ Weight. Measure
-     *  Gross weight (mass) on which a charge is to be based.
+     *  The weight on which a charge is to be based.
      *  0..1
      *  Goods Item
      *  Chargeable
@@ -236,7 +234,7 @@ class GoodsItemType
     /**
      * BBIE
      *  Goods Item. Gross_ Volume. Measure
-     *  Measurement normally arrived at by multiplying the maximum length, width, and height of the goods item.
+     *  The volume of this goods item, normally calculated by multiplying its maximum length, width, and height.
      *  0..1
      *  Goods Item
      *  Gross
@@ -267,7 +265,7 @@ class GoodsItemType
     /**
      * BBIE
      *  Goods Item. Quantity
-     *  Number of goods items.
+     *  The number of units making up this goods item.
      *  0..1
      *  Goods Item
      *  Quantity
@@ -280,21 +278,21 @@ class GoodsItemType
 
     /**
      * BBIE
-     *  Goods Item. Preference Criterion. Code
-     *  Specifies the treatment preference for this good according to international trading agreements.
+     *  Goods Item. Preference Criterion Code. Code
+     *  A code signifying the treatment preference for this goods item according to international trading agreements.
      *  0..1
      *  Goods Item
-     *  Preference Criterion
+     *  Preference Criterion Code
      *  Code
      *  Code. Type
-     *  "Preference Criterion" is used in the following manner in the paper CO of another country (e.g.):
-     * "A" - The good is "wholly obtained or produced entirely" in the territory of one or more of the NAFTA countries as reference in Article 415. Note: The purchase of a good in the territory does not necessarily render it "wholly obtained or produced". If the good is an agricultural good, see also criterion F and Annex 703.2. (Reference: Article 401(a), 415).
-     * "B" - ...
-     * "C" - ...
-     * "D" - ...
-     * "E" - ...
-     * "F" - The good is an originating agricultural good under preference criterion A,B, or C above and is not subjected to quantitative restriction in the importing NAFTA country because....
-     * Thus, the column "Preference Criterion" will indicate either A, B, C,...
+     *  Preference Criterion is used in the following manner in the paper CO of another country (e.g.):
+     * A - The good is wholly obtained or produced entirely in the territory of one or more of the NAFTA countries as reference in Article 415. Note: The purchase of a good in the territory does not necessarily render it wholly obtained or produced . If the good is an agricultural good, see also criterion F and Annex 703.2. (Reference: Article 401(a), 415).
+     * B - ...
+     * C - ...
+     * D - ...
+     * E - ...
+     * F - The good is an originating agricultural good under preference criterion A,B, or C above and is not subjected to quantitative restriction in the importing NAFTA country because....
+     * Thus, the column Preference Criterion will indicate either A, B, C,...
      *
      * @var \horstoeko\ubl\entities\cbc\PreferenceCriterionCode $preferenceCriterionCode
      */
@@ -303,7 +301,7 @@ class GoodsItemType
     /**
      * BBIE
      *  Goods Item. Required_ Customs Identifier. Identifier
-     *  Additional tariff codes required to specify a type of goods for Customs, transport, statistical, or other regulatory purposes.
+     *  An identifier for a set of tariff codes required to specify a type of goods for customs, transport, statistical, or other regulatory purposes.
      *  0..1
      *  Goods Item
      *  Required
@@ -319,7 +317,7 @@ class GoodsItemType
     /**
      * BBIE
      *  Goods Item. Customs Status Code. Code
-     *  Status of goods as identified by customs for regulation purposes.
+     *  A code assigned by customs to signify the status of this goods item.
      *  0..1
      *  Goods Item
      *  Customs Status Code
@@ -334,7 +332,7 @@ class GoodsItemType
     /**
      * BBIE
      *  Goods Item. Customs Tariff Quantity. Quantity
-     *  Quantity of the goods in the unit as required by Customs for tariff, statistical, or fiscal purposes.
+     *  Quantity of the units in this goods item as required by customs for tariff, statistical, or fiscal purposes.
      *  0..1
      *  Goods Item
      *  Customs Tariff Quantity
@@ -348,7 +346,7 @@ class GoodsItemType
     /**
      * BBIE
      *  Goods Item. Customs Import_ Classified Indicator. Indicator
-     *  Indicates whether the goods have been customs classified for import.
+     *  An indicator that this goods item has been classified for import by customs (true) or not (false).
      *  0..1
      *  Goods Item
      *  Customs Import
@@ -361,11 +359,57 @@ class GoodsItemType
     private $customsImportClassifiedIndicator = null;
 
     /**
+     * BBIE
+     *  Goods Item. Chargeable_ Quantity. Quantity
+     *  The number of units in the goods item to which charges apply.
+     *  0..1
+     *  Goods Item
+     *  Chargeable
+     *  Quantity
+     *  Quantity
+     *  Quantity. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\ChargeableQuantity $chargeableQuantity
+     */
+    private $chargeableQuantity = null;
+
+    /**
+     * BBIE
+     *  Goods Item. Returnable_ Quantity. Quantity
+     *  The number of units in the goods item that may be returned.
+     *  0..1
+     *  Goods Item
+     *  Returnable
+     *  Quantity
+     *  Quantity
+     *  Quantity. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\ReturnableQuantity $returnableQuantity
+     */
+    private $returnableQuantity = null;
+
+    /**
+     * BBIE
+     *  Goods Item. Trace_ Identifier. Identifier
+     *  An identifier for use in tracing this goods item, such as the EPC number used in RFID.
+     *  0..1
+     *  Goods Item
+     *  Trace
+     *  Identifier
+     *  Identifier
+     *  Identifier. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\TraceID $traceID
+     */
+    private $traceID = null;
+
+    /**
      * ASBIE
      *  Goods Item. Item
-     *  Association to a description of the good or service.
+     *  Product information relating to a goods item.
      *  0..n
      *  Goods Item
+     *  Item
      *  Item
      *  Item
      *
@@ -378,9 +422,10 @@ class GoodsItemType
     /**
      * ASBIE
      *  Goods Item. Goods Item Container
-     *  Association to describe the transporting of a goods item in a unit of transport equipment (e.g., container).
+     *  The transporting of a goods item in a unit of transport equipment (e.g., container).
      *  0..n
      *  Goods Item
+     *  Goods Item Container
      *  Goods Item Container
      *  Goods Item Container
      *
@@ -393,12 +438,14 @@ class GoodsItemType
     /**
      * ASBIE
      *  Goods Item. Freight_ Allowance Charge. Allowance Charge
-     *  Costs incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the contract of carriage. In addition to transport costs, this may include such elements as packing, documentation, loading, unloading, and insurance (to the extent that they relate to the freight costs).
+     *  A cost incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the contract of carriage. In addition to transport costs, this may include such elements as packing, documentation, loading, unloading, and insurance to the extent that they relate to the freight costs.
      *  0..n
      *  Goods Item
      *  Freight
      *  Allowance Charge
      *  Allowance Charge
+     *  Allowance Charge
+     *  Freight Costs
      *
      * @var \horstoeko\ubl\entities\cac\FreightAllowanceCharge[] $freightAllowanceCharge
      */
@@ -409,9 +456,10 @@ class GoodsItemType
     /**
      * ASBIE
      *  Goods Item. Invoice Line
-     *  Association to information directly relating to a line item of an invoice.
+     *  Information about an invoice line relating to this goods item.
      *  0..n
      *  Goods Item
+     *  Invoice Line
      *  Invoice Line
      *  Invoice Line
      *
@@ -424,11 +472,13 @@ class GoodsItemType
     /**
      * ASBIE
      *  Goods Item. Temperature
-     *  Any temperatures associated with the goods.
+     *  The temperature of the goods item.
      *  0..n
      *  Goods Item
      *  Temperature
      *  Temperature
+     *  Temperature
+     *  maximum, storage, minimum
      *
      * @var \horstoeko\ubl\entities\cac\Temperature[] $temperature
      */
@@ -439,10 +489,11 @@ class GoodsItemType
     /**
      * ASBIE
      *  Goods Item. Contained_ Goods Item. Goods Item
-     *  Associates with any other goods items contained in this goods item.
+     *  A goods item contained in this goods item.
      *  0..n
      *  Goods Item
      *  Contained
+     *  Goods Item
      *  Goods Item
      *  Goods Item
      *
@@ -455,24 +506,147 @@ class GoodsItemType
     /**
      * ASBIE
      *  Goods Item. Origin_ Address. Address
-     *  Region in which the goods have been produced or manufactured, according to criteria laid down for the purposes of application of the Customs tariff, or quantitative restrictions, or any other measure related to trade.
+     *  The region in which the goods have been produced or manufactured, according to criteria laid down for the purposes of application of the customs tariff, or of quantitative restrictions, or of any other measure related to trade.
      *  0..1
      *  Goods Item
      *  Origin
      *  Address
      *  Address
+     *  Address
+     *  Region of origin (WCO ID 066)
      *
      * @var \horstoeko\ubl\entities\cac\OriginAddress $originAddress
      */
     private $originAddress = null;
 
     /**
+     * ASBIE
+     *  Goods Item. Delivery
+     *  The delivery of this goods item.
+     *  0..1
+     *  Goods Item
+     *  Delivery
+     *  Delivery
+     *  Delivery
+     *
+     * @var \horstoeko\ubl\entities\cac\Delivery $delivery
+     */
+    private $delivery = null;
+
+    /**
+     * ASBIE
+     *  Goods Item. Pickup
+     *  The pickup of this goods item.
+     *  0..1
+     *  Goods Item
+     *  Pickup
+     *  Pickup
+     *  Pickup
+     *
+     * @var \horstoeko\ubl\entities\cac\Pickup $pickup
+     */
+    private $pickup = null;
+
+    /**
+     * ASBIE
+     *  Goods Item. Despatch
+     *  The despatch of this goods item.
+     *  0..1
+     *  Goods Item
+     *  Despatch
+     *  Despatch
+     *  Despatch
+     *
+     * @var \horstoeko\ubl\entities\cac\Despatch $despatch
+     */
+    private $despatch = null;
+
+    /**
+     * ASBIE
+     *  Goods Item. Measurement_ Dimension. Dimension
+     *  A measurable dimension (length, mass, weight, or volume) of this goods item.
+     *  0..n
+     *  Goods Item
+     *  Measurement
+     *  Dimension
+     *  Dimension
+     *  Dimension
+     *
+     * @var \horstoeko\ubl\entities\cac\MeasurementDimension[] $measurementDimension
+     */
+    private $measurementDimension = [
+        
+    ];
+
+    /**
+     * ASBIE
+     *  Goods Item. Containing_ Package. Package
+     *  A package containing this goods item.
+     *  0..n
+     *  Goods Item
+     *  Containing
+     *  Package
+     *  Package
+     *  Package
+     *
+     * @var \horstoeko\ubl\entities\cac\ContainingPackage[] $containingPackage
+     */
+    private $containingPackage = [
+        
+    ];
+
+    /**
+     * ASBIE
+     *  Goods Item. Shipment_ Document Reference. Document Reference
+     *  A reference to a shipping document associated with this goods item.
+     *  0..1
+     *  Goods Item
+     *  Shipment
+     *  Document Reference
+     *  Document Reference
+     *  Document Reference
+     *
+     * @var \horstoeko\ubl\entities\cac\ShipmentDocumentReference $shipmentDocumentReference
+     */
+    private $shipmentDocumentReference = null;
+
+    /**
+     * ASBIE
+     *  Goods Item. Minimum_ Temperature. Temperature
+     *  Information about minimum temperature.
+     *  0..1
+     *  Goods Item
+     *  Minimum
+     *  Temperature
+     *  Temperature
+     *  Temperature
+     *
+     * @var \horstoeko\ubl\entities\cac\MinimumTemperature $minimumTemperature
+     */
+    private $minimumTemperature = null;
+
+    /**
+     * ASBIE
+     *  Goods Item. Maximum_ Temperature. Temperature
+     *  Information about maximum temperature.
+     *  0..1
+     *  Goods Item
+     *  Maximum
+     *  Temperature
+     *  Temperature
+     *  Temperature
+     *
+     * @var \horstoeko\ubl\entities\cac\MaximumTemperature $maximumTemperature
+     */
+    private $maximumTemperature = null;
+
+    /**
      * Gets as iD
      *
      * BBIE
      *  Goods Item. Identifier
-     *  An identifier for the goods item.
-     *  1
+     *  An identifier for this goods item.
+     *  0..1
      *  Goods Item
      *  Identifier
      *  Identifier
@@ -490,8 +664,8 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Identifier
-     *  An identifier for the goods item.
-     *  1
+     *  An identifier for this goods item.
+     *  0..1
      *  Goods Item
      *  Identifier
      *  Identifier
@@ -511,13 +685,12 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Sequence Number. Identifier
-     *  Sequence number differentiating a specific goods item within a consignment.
+     *  A sequence number differentiating a specific goods item within a consignment.
      *  0..1
      *  Goods Item
      *  Sequence Number
      *  Identifier
      *  Identifier. Type
-     *  Customs item number (WCO ID 021), Sequence Position
      *
      * @return \horstoeko\ubl\entities\cbc\SequenceNumberID
      */
@@ -531,13 +704,12 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Sequence Number. Identifier
-     *  Sequence number differentiating a specific goods item within a consignment.
+     *  A sequence number differentiating a specific goods item within a consignment.
      *  0..1
      *  Goods Item
      *  Sequence Number
      *  Identifier
      *  Identifier. Type
-     *  Customs item number (WCO ID 021), Sequence Position
      *
      * @param \horstoeko\ubl\entities\cbc\SequenceNumberID $sequenceNumberID
      * @return self
@@ -553,7 +725,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Description. Text
-     *  Plain language description of a goods item sufficient to identify it for customs, statistical, or transport purposes.
+     *  Text describing this goods item to identify it for customs, statistical, or transport purposes.
      *  0..n
      *  Goods Item
      *  Description
@@ -575,7 +747,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Description. Text
-     *  Plain language description of a goods item sufficient to identify it for customs, statistical, or transport purposes.
+     *  Text describing this goods item to identify it for customs, statistical, or transport purposes.
      *  0..n
      *  Goods Item
      *  Description
@@ -596,7 +768,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Description. Text
-     *  Plain language description of a goods item sufficient to identify it for customs, statistical, or transport purposes.
+     *  Text describing this goods item to identify it for customs, statistical, or transport purposes.
      *  0..n
      *  Goods Item
      *  Description
@@ -617,7 +789,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Description. Text
-     *  Plain language description of a goods item sufficient to identify it for customs, statistical, or transport purposes.
+     *  Text describing this goods item to identify it for customs, statistical, or transport purposes.
      *  0..n
      *  Goods Item
      *  Description
@@ -637,7 +809,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Description. Text
-     *  Plain language description of a goods item sufficient to identify it for customs, statistical, or transport purposes.
+     *  Text describing this goods item to identify it for customs, statistical, or transport purposes.
      *  0..n
      *  Goods Item
      *  Description
@@ -659,7 +831,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Hazardous Risk_ Indicator. Indicator
-     *  Indicates whether the goods item includes hazardous items (dangerous goods).
+     *  An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).
      *  0..1
      *  Goods Item
      *  Hazardous Risk
@@ -680,7 +852,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Hazardous Risk_ Indicator. Indicator
-     *  Indicates whether the goods item includes hazardous items (dangerous goods).
+     *  An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).
      *  0..1
      *  Goods Item
      *  Hazardous Risk
@@ -703,7 +875,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Declared Customs_ Value. Amount
-     *  Amount declared for Customs purposes of those goods in a consignment which are subject to the same Customs procedure and have the same tariff/statistical heading, country information, and duty regime.
+     *  The total declared value for customs purposes of the goods item.
      *  0..1
      *  Goods Item
      *  Declared Customs
@@ -724,7 +896,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Declared Customs_ Value. Amount
-     *  Amount declared for Customs purposes of those goods in a consignment which are subject to the same Customs procedure and have the same tariff/statistical heading, country information, and duty regime.
+     *  The total declared value for customs purposes of the goods item.
      *  0..1
      *  Goods Item
      *  Declared Customs
@@ -747,7 +919,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Declared For Carriage_ Value. Amount
-     *  Value declared by the shipper or his agent solely for the purpose of varying the carrier's level of liability from that provided in the contract of carriage in case of loss or damage to goods or delayed delivery.
+     *  The value of this goods item, declared by the shipper or his agent solely for the purpose of varying the carrier's level of liability from that provided in the contract of carriage, in case of loss or damage to goods or delayed delivery.
      *  0..1
      *  Goods Item
      *  Declared For Carriage
@@ -768,7 +940,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Declared For Carriage_ Value. Amount
-     *  Value declared by the shipper or his agent solely for the purpose of varying the carrier's level of liability from that provided in the contract of carriage in case of loss or damage to goods or delayed delivery.
+     *  The value of this goods item, declared by the shipper or his agent solely for the purpose of varying the carrier's level of liability from that provided in the contract of carriage, in case of loss or damage to goods or delayed delivery.
      *  0..1
      *  Goods Item
      *  Declared For Carriage
@@ -791,7 +963,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Declared Statistics_ Value. Amount
-     *  Value declared for statistical purposes of those goods in a consignment which have the same statistical heading.
+     *  The total declared value of all the goods items in the same consignment with this goods item that have the same statistical heading.
      *  0..1
      *  Goods Item
      *  Declared Statistics
@@ -812,7 +984,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Declared Statistics_ Value. Amount
-     *  Value declared for statistical purposes of those goods in a consignment which have the same statistical heading.
+     *  The total declared value of all the goods items in the same consignment with this goods item that have the same statistical heading.
      *  0..1
      *  Goods Item
      *  Declared Statistics
@@ -835,7 +1007,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Free On Board_ Value. Amount
-     *  Monetary amount that has to be or has been paid as calculated under the applicable trade delivery.
+     *  The monetary amount that has to be or has been paid as calculated under the applicable trade delivery.
      *  0..1
      *  Goods Item
      *  Free On Board
@@ -856,7 +1028,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Free On Board_ Value. Amount
-     *  Monetary amount that has to be or has been paid as calculated under the applicable trade delivery.
+     *  The monetary amount that has to be or has been paid as calculated under the applicable trade delivery.
      *  0..1
      *  Goods Item
      *  Free On Board
@@ -879,7 +1051,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Insurance_ Value. Amount
-     *  The amount covered by an insurance for a particular goods item.
+     *  The amount covered by insurance for this goods item.
      *  0..1
      *  Goods Item
      *  Insurance
@@ -900,7 +1072,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Insurance_ Value. Amount
-     *  The amount covered by an insurance for a particular goods item.
+     *  The amount covered by insurance for this goods item.
      *  0..1
      *  Goods Item
      *  Insurance
@@ -923,13 +1095,12 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Value. Amount
-     *  Specifies the amount on which a duty, tax, or fee will be assessed.
+     *  The amount on which a duty, tax, or fee will be assessed.
      *  0..1
      *  Goods Item
      *  Value
      *  Amount
      *  Amount. Type
-     *  Duty/tax/fee assessment basis in value (WCO ID 116)
      *
      * @return \horstoeko\ubl\entities\cbc\ValueAmount
      */
@@ -943,13 +1114,12 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Value. Amount
-     *  Specifies the amount on which a duty, tax, or fee will be assessed.
+     *  The amount on which a duty, tax, or fee will be assessed.
      *  0..1
      *  Goods Item
      *  Value
      *  Amount
      *  Amount. Type
-     *  Duty/tax/fee assessment basis in value (WCO ID 116)
      *
      * @param \horstoeko\ubl\entities\cbc\ValueAmount $valueAmount
      * @return self
@@ -965,7 +1135,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Gross_ Weight. Measure
-     *  Weight (mass) of goods, including packaging but excluding the carrier's equipment.
+     *  The weight of this goods item, including packing and packaging but excluding the carrier's equipment.
      *  0..1
      *  Goods Item
      *  Gross
@@ -986,7 +1156,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Gross_ Weight. Measure
-     *  Weight (mass) of goods, including packaging but excluding the carrier's equipment.
+     *  The weight of this goods item, including packing and packaging but excluding the carrier's equipment.
      *  0..1
      *  Goods Item
      *  Gross
@@ -1009,7 +1179,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Net_ Weight. Measure
-     *  Weight (mass) of goods item, excluding all packing but including any packaging that normally goes with the goods.
+     *  The weight of this goods item, excluding packing but including packaging that normally accompanies the goods.
      *  0..1
      *  Goods Item
      *  Net
@@ -1029,7 +1199,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Net_ Weight. Measure
-     *  Weight (mass) of goods item, excluding all packing but including any packaging that normally goes with the goods.
+     *  The weight of this goods item, excluding packing but including packaging that normally accompanies the goods.
      *  0..1
      *  Goods Item
      *  Net
@@ -1051,7 +1221,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Net Net_ Weight. Measure
-     *  Weight (mass) of goods without any packaging.
+     *  The total weight of this goods item, excluding all packing and packaging.
      *  0..1
      *  Goods Item
      *  Net Net
@@ -1072,7 +1242,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Net Net_ Weight. Measure
-     *  Weight (mass) of goods without any packaging.
+     *  The total weight of this goods item, excluding all packing and packaging.
      *  0..1
      *  Goods Item
      *  Net Net
@@ -1095,7 +1265,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Chargeable_ Weight. Measure
-     *  Gross weight (mass) on which a charge is to be based.
+     *  The weight on which a charge is to be based.
      *  0..1
      *  Goods Item
      *  Chargeable
@@ -1115,7 +1285,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Chargeable_ Weight. Measure
-     *  Gross weight (mass) on which a charge is to be based.
+     *  The weight on which a charge is to be based.
      *  0..1
      *  Goods Item
      *  Chargeable
@@ -1137,7 +1307,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Gross_ Volume. Measure
-     *  Measurement normally arrived at by multiplying the maximum length, width, and height of the goods item.
+     *  The volume of this goods item, normally calculated by multiplying its maximum length, width, and height.
      *  0..1
      *  Goods Item
      *  Gross
@@ -1158,7 +1328,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Gross_ Volume. Measure
-     *  Measurement normally arrived at by multiplying the maximum length, width, and height of the goods item.
+     *  The volume of this goods item, normally calculated by multiplying its maximum length, width, and height.
      *  0..1
      *  Goods Item
      *  Gross
@@ -1223,7 +1393,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Quantity
-     *  Number of goods items.
+     *  The number of units making up this goods item.
      *  0..1
      *  Goods Item
      *  Quantity
@@ -1242,7 +1412,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Quantity
-     *  Number of goods items.
+     *  The number of units making up this goods item.
      *  0..1
      *  Goods Item
      *  Quantity
@@ -1262,21 +1432,21 @@ class GoodsItemType
      * Gets as preferenceCriterionCode
      *
      * BBIE
-     *  Goods Item. Preference Criterion. Code
-     *  Specifies the treatment preference for this good according to international trading agreements.
+     *  Goods Item. Preference Criterion Code. Code
+     *  A code signifying the treatment preference for this goods item according to international trading agreements.
      *  0..1
      *  Goods Item
-     *  Preference Criterion
+     *  Preference Criterion Code
      *  Code
      *  Code. Type
-     *  "Preference Criterion" is used in the following manner in the paper CO of another country (e.g.):
-     * "A" - The good is "wholly obtained or produced entirely" in the territory of one or more of the NAFTA countries as reference in Article 415. Note: The purchase of a good in the territory does not necessarily render it "wholly obtained or produced". If the good is an agricultural good, see also criterion F and Annex 703.2. (Reference: Article 401(a), 415).
-     * "B" - ...
-     * "C" - ...
-     * "D" - ...
-     * "E" - ...
-     * "F" - The good is an originating agricultural good under preference criterion A,B, or C above and is not subjected to quantitative restriction in the importing NAFTA country because....
-     * Thus, the column "Preference Criterion" will indicate either A, B, C,...
+     *  Preference Criterion is used in the following manner in the paper CO of another country (e.g.):
+     * A - The good is wholly obtained or produced entirely in the territory of one or more of the NAFTA countries as reference in Article 415. Note: The purchase of a good in the territory does not necessarily render it wholly obtained or produced . If the good is an agricultural good, see also criterion F and Annex 703.2. (Reference: Article 401(a), 415).
+     * B - ...
+     * C - ...
+     * D - ...
+     * E - ...
+     * F - The good is an originating agricultural good under preference criterion A,B, or C above and is not subjected to quantitative restriction in the importing NAFTA country because....
+     * Thus, the column Preference Criterion will indicate either A, B, C,...
      *
      * @return \horstoeko\ubl\entities\cbc\PreferenceCriterionCode
      */
@@ -1289,21 +1459,21 @@ class GoodsItemType
      * Sets a new preferenceCriterionCode
      *
      * BBIE
-     *  Goods Item. Preference Criterion. Code
-     *  Specifies the treatment preference for this good according to international trading agreements.
+     *  Goods Item. Preference Criterion Code. Code
+     *  A code signifying the treatment preference for this goods item according to international trading agreements.
      *  0..1
      *  Goods Item
-     *  Preference Criterion
+     *  Preference Criterion Code
      *  Code
      *  Code. Type
-     *  "Preference Criterion" is used in the following manner in the paper CO of another country (e.g.):
-     * "A" - The good is "wholly obtained or produced entirely" in the territory of one or more of the NAFTA countries as reference in Article 415. Note: The purchase of a good in the territory does not necessarily render it "wholly obtained or produced". If the good is an agricultural good, see also criterion F and Annex 703.2. (Reference: Article 401(a), 415).
-     * "B" - ...
-     * "C" - ...
-     * "D" - ...
-     * "E" - ...
-     * "F" - The good is an originating agricultural good under preference criterion A,B, or C above and is not subjected to quantitative restriction in the importing NAFTA country because....
-     * Thus, the column "Preference Criterion" will indicate either A, B, C,...
+     *  Preference Criterion is used in the following manner in the paper CO of another country (e.g.):
+     * A - The good is wholly obtained or produced entirely in the territory of one or more of the NAFTA countries as reference in Article 415. Note: The purchase of a good in the territory does not necessarily render it wholly obtained or produced . If the good is an agricultural good, see also criterion F and Annex 703.2. (Reference: Article 401(a), 415).
+     * B - ...
+     * C - ...
+     * D - ...
+     * E - ...
+     * F - The good is an originating agricultural good under preference criterion A,B, or C above and is not subjected to quantitative restriction in the importing NAFTA country because....
+     * Thus, the column Preference Criterion will indicate either A, B, C,...
      *
      * @param \horstoeko\ubl\entities\cbc\PreferenceCriterionCode $preferenceCriterionCode
      * @return self
@@ -1319,7 +1489,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Required_ Customs Identifier. Identifier
-     *  Additional tariff codes required to specify a type of goods for Customs, transport, statistical, or other regulatory purposes.
+     *  An identifier for a set of tariff codes required to specify a type of goods for customs, transport, statistical, or other regulatory purposes.
      *  0..1
      *  Goods Item
      *  Required
@@ -1340,7 +1510,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Required_ Customs Identifier. Identifier
-     *  Additional tariff codes required to specify a type of goods for Customs, transport, statistical, or other regulatory purposes.
+     *  An identifier for a set of tariff codes required to specify a type of goods for customs, transport, statistical, or other regulatory purposes.
      *  0..1
      *  Goods Item
      *  Required
@@ -1363,7 +1533,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Customs Status Code. Code
-     *  Status of goods as identified by customs for regulation purposes.
+     *  A code assigned by customs to signify the status of this goods item.
      *  0..1
      *  Goods Item
      *  Customs Status Code
@@ -1383,7 +1553,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Customs Status Code. Code
-     *  Status of goods as identified by customs for regulation purposes.
+     *  A code assigned by customs to signify the status of this goods item.
      *  0..1
      *  Goods Item
      *  Customs Status Code
@@ -1405,7 +1575,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Customs Tariff Quantity. Quantity
-     *  Quantity of the goods in the unit as required by Customs for tariff, statistical, or fiscal purposes.
+     *  Quantity of the units in this goods item as required by customs for tariff, statistical, or fiscal purposes.
      *  0..1
      *  Goods Item
      *  Customs Tariff Quantity
@@ -1424,7 +1594,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Customs Tariff Quantity. Quantity
-     *  Quantity of the goods in the unit as required by Customs for tariff, statistical, or fiscal purposes.
+     *  Quantity of the units in this goods item as required by customs for tariff, statistical, or fiscal purposes.
      *  0..1
      *  Goods Item
      *  Customs Tariff Quantity
@@ -1445,7 +1615,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Customs Import_ Classified Indicator. Indicator
-     *  Indicates whether the goods have been customs classified for import.
+     *  An indicator that this goods item has been classified for import by customs (true) or not (false).
      *  0..1
      *  Goods Item
      *  Customs Import
@@ -1465,7 +1635,7 @@ class GoodsItemType
      *
      * BBIE
      *  Goods Item. Customs Import_ Classified Indicator. Indicator
-     *  Indicates whether the goods have been customs classified for import.
+     *  An indicator that this goods item has been classified for import by customs (true) or not (false).
      *  0..1
      *  Goods Item
      *  Customs Import
@@ -1483,13 +1653,140 @@ class GoodsItemType
     }
 
     /**
+     * Gets as chargeableQuantity
+     *
+     * BBIE
+     *  Goods Item. Chargeable_ Quantity. Quantity
+     *  The number of units in the goods item to which charges apply.
+     *  0..1
+     *  Goods Item
+     *  Chargeable
+     *  Quantity
+     *  Quantity
+     *  Quantity. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\ChargeableQuantity
+     */
+    public function getChargeableQuantity()
+    {
+        return $this->chargeableQuantity;
+    }
+
+    /**
+     * Sets a new chargeableQuantity
+     *
+     * BBIE
+     *  Goods Item. Chargeable_ Quantity. Quantity
+     *  The number of units in the goods item to which charges apply.
+     *  0..1
+     *  Goods Item
+     *  Chargeable
+     *  Quantity
+     *  Quantity
+     *  Quantity. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\ChargeableQuantity $chargeableQuantity
+     * @return self
+     */
+    public function setChargeableQuantity(\horstoeko\ubl\entities\cbc\ChargeableQuantity $chargeableQuantity)
+    {
+        $this->chargeableQuantity = $chargeableQuantity;
+        return $this;
+    }
+
+    /**
+     * Gets as returnableQuantity
+     *
+     * BBIE
+     *  Goods Item. Returnable_ Quantity. Quantity
+     *  The number of units in the goods item that may be returned.
+     *  0..1
+     *  Goods Item
+     *  Returnable
+     *  Quantity
+     *  Quantity
+     *  Quantity. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\ReturnableQuantity
+     */
+    public function getReturnableQuantity()
+    {
+        return $this->returnableQuantity;
+    }
+
+    /**
+     * Sets a new returnableQuantity
+     *
+     * BBIE
+     *  Goods Item. Returnable_ Quantity. Quantity
+     *  The number of units in the goods item that may be returned.
+     *  0..1
+     *  Goods Item
+     *  Returnable
+     *  Quantity
+     *  Quantity
+     *  Quantity. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\ReturnableQuantity $returnableQuantity
+     * @return self
+     */
+    public function setReturnableQuantity(\horstoeko\ubl\entities\cbc\ReturnableQuantity $returnableQuantity)
+    {
+        $this->returnableQuantity = $returnableQuantity;
+        return $this;
+    }
+
+    /**
+     * Gets as traceID
+     *
+     * BBIE
+     *  Goods Item. Trace_ Identifier. Identifier
+     *  An identifier for use in tracing this goods item, such as the EPC number used in RFID.
+     *  0..1
+     *  Goods Item
+     *  Trace
+     *  Identifier
+     *  Identifier
+     *  Identifier. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\TraceID
+     */
+    public function getTraceID()
+    {
+        return $this->traceID;
+    }
+
+    /**
+     * Sets a new traceID
+     *
+     * BBIE
+     *  Goods Item. Trace_ Identifier. Identifier
+     *  An identifier for use in tracing this goods item, such as the EPC number used in RFID.
+     *  0..1
+     *  Goods Item
+     *  Trace
+     *  Identifier
+     *  Identifier
+     *  Identifier. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\TraceID $traceID
+     * @return self
+     */
+    public function setTraceID(\horstoeko\ubl\entities\cbc\TraceID $traceID)
+    {
+        $this->traceID = $traceID;
+        return $this;
+    }
+
+    /**
      * Adds as item
      *
      * ASBIE
      *  Goods Item. Item
-     *  Association to a description of the good or service.
+     *  Product information relating to a goods item.
      *  0..n
      *  Goods Item
+     *  Item
      *  Item
      *  Item
      *
@@ -1507,9 +1804,10 @@ class GoodsItemType
      *
      * ASBIE
      *  Goods Item. Item
-     *  Association to a description of the good or service.
+     *  Product information relating to a goods item.
      *  0..n
      *  Goods Item
+     *  Item
      *  Item
      *  Item
      *
@@ -1526,9 +1824,10 @@ class GoodsItemType
      *
      * ASBIE
      *  Goods Item. Item
-     *  Association to a description of the good or service.
+     *  Product information relating to a goods item.
      *  0..n
      *  Goods Item
+     *  Item
      *  Item
      *  Item
      *
@@ -1545,9 +1844,10 @@ class GoodsItemType
      *
      * ASBIE
      *  Goods Item. Item
-     *  Association to a description of the good or service.
+     *  Product information relating to a goods item.
      *  0..n
      *  Goods Item
+     *  Item
      *  Item
      *  Item
      *
@@ -1563,9 +1863,10 @@ class GoodsItemType
      *
      * ASBIE
      *  Goods Item. Item
-     *  Association to a description of the good or service.
+     *  Product information relating to a goods item.
      *  0..n
      *  Goods Item
+     *  Item
      *  Item
      *  Item
      *
@@ -1583,9 +1884,10 @@ class GoodsItemType
      *
      * ASBIE
      *  Goods Item. Goods Item Container
-     *  Association to describe the transporting of a goods item in a unit of transport equipment (e.g., container).
+     *  The transporting of a goods item in a unit of transport equipment (e.g., container).
      *  0..n
      *  Goods Item
+     *  Goods Item Container
      *  Goods Item Container
      *  Goods Item Container
      *
@@ -1603,9 +1905,10 @@ class GoodsItemType
      *
      * ASBIE
      *  Goods Item. Goods Item Container
-     *  Association to describe the transporting of a goods item in a unit of transport equipment (e.g., container).
+     *  The transporting of a goods item in a unit of transport equipment (e.g., container).
      *  0..n
      *  Goods Item
+     *  Goods Item Container
      *  Goods Item Container
      *  Goods Item Container
      *
@@ -1622,9 +1925,10 @@ class GoodsItemType
      *
      * ASBIE
      *  Goods Item. Goods Item Container
-     *  Association to describe the transporting of a goods item in a unit of transport equipment (e.g., container).
+     *  The transporting of a goods item in a unit of transport equipment (e.g., container).
      *  0..n
      *  Goods Item
+     *  Goods Item Container
      *  Goods Item Container
      *  Goods Item Container
      *
@@ -1641,9 +1945,10 @@ class GoodsItemType
      *
      * ASBIE
      *  Goods Item. Goods Item Container
-     *  Association to describe the transporting of a goods item in a unit of transport equipment (e.g., container).
+     *  The transporting of a goods item in a unit of transport equipment (e.g., container).
      *  0..n
      *  Goods Item
+     *  Goods Item Container
      *  Goods Item Container
      *  Goods Item Container
      *
@@ -1659,9 +1964,10 @@ class GoodsItemType
      *
      * ASBIE
      *  Goods Item. Goods Item Container
-     *  Association to describe the transporting of a goods item in a unit of transport equipment (e.g., container).
+     *  The transporting of a goods item in a unit of transport equipment (e.g., container).
      *  0..n
      *  Goods Item
+     *  Goods Item Container
      *  Goods Item Container
      *  Goods Item Container
      *
@@ -1679,12 +1985,14 @@ class GoodsItemType
      *
      * ASBIE
      *  Goods Item. Freight_ Allowance Charge. Allowance Charge
-     *  Costs incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the contract of carriage. In addition to transport costs, this may include such elements as packing, documentation, loading, unloading, and insurance (to the extent that they relate to the freight costs).
+     *  A cost incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the contract of carriage. In addition to transport costs, this may include such elements as packing, documentation, loading, unloading, and insurance to the extent that they relate to the freight costs.
      *  0..n
      *  Goods Item
      *  Freight
      *  Allowance Charge
      *  Allowance Charge
+     *  Allowance Charge
+     *  Freight Costs
      *
      * @return self
      * @param \horstoeko\ubl\entities\cac\FreightAllowanceCharge $freightAllowanceCharge
@@ -1700,12 +2008,14 @@ class GoodsItemType
      *
      * ASBIE
      *  Goods Item. Freight_ Allowance Charge. Allowance Charge
-     *  Costs incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the contract of carriage. In addition to transport costs, this may include such elements as packing, documentation, loading, unloading, and insurance (to the extent that they relate to the freight costs).
+     *  A cost incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the contract of carriage. In addition to transport costs, this may include such elements as packing, documentation, loading, unloading, and insurance to the extent that they relate to the freight costs.
      *  0..n
      *  Goods Item
      *  Freight
      *  Allowance Charge
      *  Allowance Charge
+     *  Allowance Charge
+     *  Freight Costs
      *
      * @param int|string $index
      * @return bool
@@ -1720,12 +2030,14 @@ class GoodsItemType
      *
      * ASBIE
      *  Goods Item. Freight_ Allowance Charge. Allowance Charge
-     *  Costs incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the contract of carriage. In addition to transport costs, this may include such elements as packing, documentation, loading, unloading, and insurance (to the extent that they relate to the freight costs).
+     *  A cost incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the contract of carriage. In addition to transport costs, this may include such elements as packing, documentation, loading, unloading, and insurance to the extent that they relate to the freight costs.
      *  0..n
      *  Goods Item
      *  Freight
      *  Allowance Charge
      *  Allowance Charge
+     *  Allowance Charge
+     *  Freight Costs
      *
      * @param int|string $index
      * @return void
@@ -1740,12 +2052,14 @@ class GoodsItemType
      *
      * ASBIE
      *  Goods Item. Freight_ Allowance Charge. Allowance Charge
-     *  Costs incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the contract of carriage. In addition to transport costs, this may include such elements as packing, documentation, loading, unloading, and insurance (to the extent that they relate to the freight costs).
+     *  A cost incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the contract of carriage. In addition to transport costs, this may include such elements as packing, documentation, loading, unloading, and insurance to the extent that they relate to the freight costs.
      *  0..n
      *  Goods Item
      *  Freight
      *  Allowance Charge
      *  Allowance Charge
+     *  Allowance Charge
+     *  Freight Costs
      *
      * @return \horstoeko\ubl\entities\cac\FreightAllowanceCharge[]
      */
@@ -1759,12 +2073,14 @@ class GoodsItemType
      *
      * ASBIE
      *  Goods Item. Freight_ Allowance Charge. Allowance Charge
-     *  Costs incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the contract of carriage. In addition to transport costs, this may include such elements as packing, documentation, loading, unloading, and insurance (to the extent that they relate to the freight costs).
+     *  A cost incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the contract of carriage. In addition to transport costs, this may include such elements as packing, documentation, loading, unloading, and insurance to the extent that they relate to the freight costs.
      *  0..n
      *  Goods Item
      *  Freight
      *  Allowance Charge
      *  Allowance Charge
+     *  Allowance Charge
+     *  Freight Costs
      *
      * @param \horstoeko\ubl\entities\cac\FreightAllowanceCharge[] $freightAllowanceCharge
      * @return self
@@ -1780,9 +2096,10 @@ class GoodsItemType
      *
      * ASBIE
      *  Goods Item. Invoice Line
-     *  Association to information directly relating to a line item of an invoice.
+     *  Information about an invoice line relating to this goods item.
      *  0..n
      *  Goods Item
+     *  Invoice Line
      *  Invoice Line
      *  Invoice Line
      *
@@ -1800,9 +2117,10 @@ class GoodsItemType
      *
      * ASBIE
      *  Goods Item. Invoice Line
-     *  Association to information directly relating to a line item of an invoice.
+     *  Information about an invoice line relating to this goods item.
      *  0..n
      *  Goods Item
+     *  Invoice Line
      *  Invoice Line
      *  Invoice Line
      *
@@ -1819,9 +2137,10 @@ class GoodsItemType
      *
      * ASBIE
      *  Goods Item. Invoice Line
-     *  Association to information directly relating to a line item of an invoice.
+     *  Information about an invoice line relating to this goods item.
      *  0..n
      *  Goods Item
+     *  Invoice Line
      *  Invoice Line
      *  Invoice Line
      *
@@ -1838,9 +2157,10 @@ class GoodsItemType
      *
      * ASBIE
      *  Goods Item. Invoice Line
-     *  Association to information directly relating to a line item of an invoice.
+     *  Information about an invoice line relating to this goods item.
      *  0..n
      *  Goods Item
+     *  Invoice Line
      *  Invoice Line
      *  Invoice Line
      *
@@ -1856,9 +2176,10 @@ class GoodsItemType
      *
      * ASBIE
      *  Goods Item. Invoice Line
-     *  Association to information directly relating to a line item of an invoice.
+     *  Information about an invoice line relating to this goods item.
      *  0..n
      *  Goods Item
+     *  Invoice Line
      *  Invoice Line
      *  Invoice Line
      *
@@ -1876,11 +2197,13 @@ class GoodsItemType
      *
      * ASBIE
      *  Goods Item. Temperature
-     *  Any temperatures associated with the goods.
+     *  The temperature of the goods item.
      *  0..n
      *  Goods Item
      *  Temperature
      *  Temperature
+     *  Temperature
+     *  maximum, storage, minimum
      *
      * @return self
      * @param \horstoeko\ubl\entities\cac\Temperature $temperature
@@ -1896,11 +2219,13 @@ class GoodsItemType
      *
      * ASBIE
      *  Goods Item. Temperature
-     *  Any temperatures associated with the goods.
+     *  The temperature of the goods item.
      *  0..n
      *  Goods Item
      *  Temperature
      *  Temperature
+     *  Temperature
+     *  maximum, storage, minimum
      *
      * @param int|string $index
      * @return bool
@@ -1915,11 +2240,13 @@ class GoodsItemType
      *
      * ASBIE
      *  Goods Item. Temperature
-     *  Any temperatures associated with the goods.
+     *  The temperature of the goods item.
      *  0..n
      *  Goods Item
      *  Temperature
      *  Temperature
+     *  Temperature
+     *  maximum, storage, minimum
      *
      * @param int|string $index
      * @return void
@@ -1934,11 +2261,13 @@ class GoodsItemType
      *
      * ASBIE
      *  Goods Item. Temperature
-     *  Any temperatures associated with the goods.
+     *  The temperature of the goods item.
      *  0..n
      *  Goods Item
      *  Temperature
      *  Temperature
+     *  Temperature
+     *  maximum, storage, minimum
      *
      * @return \horstoeko\ubl\entities\cac\Temperature[]
      */
@@ -1952,11 +2281,13 @@ class GoodsItemType
      *
      * ASBIE
      *  Goods Item. Temperature
-     *  Any temperatures associated with the goods.
+     *  The temperature of the goods item.
      *  0..n
      *  Goods Item
      *  Temperature
      *  Temperature
+     *  Temperature
+     *  maximum, storage, minimum
      *
      * @param \horstoeko\ubl\entities\cac\Temperature[] $temperature
      * @return self
@@ -1972,10 +2303,11 @@ class GoodsItemType
      *
      * ASBIE
      *  Goods Item. Contained_ Goods Item. Goods Item
-     *  Associates with any other goods items contained in this goods item.
+     *  A goods item contained in this goods item.
      *  0..n
      *  Goods Item
      *  Contained
+     *  Goods Item
      *  Goods Item
      *  Goods Item
      *
@@ -1993,10 +2325,11 @@ class GoodsItemType
      *
      * ASBIE
      *  Goods Item. Contained_ Goods Item. Goods Item
-     *  Associates with any other goods items contained in this goods item.
+     *  A goods item contained in this goods item.
      *  0..n
      *  Goods Item
      *  Contained
+     *  Goods Item
      *  Goods Item
      *  Goods Item
      *
@@ -2013,10 +2346,11 @@ class GoodsItemType
      *
      * ASBIE
      *  Goods Item. Contained_ Goods Item. Goods Item
-     *  Associates with any other goods items contained in this goods item.
+     *  A goods item contained in this goods item.
      *  0..n
      *  Goods Item
      *  Contained
+     *  Goods Item
      *  Goods Item
      *  Goods Item
      *
@@ -2033,10 +2367,11 @@ class GoodsItemType
      *
      * ASBIE
      *  Goods Item. Contained_ Goods Item. Goods Item
-     *  Associates with any other goods items contained in this goods item.
+     *  A goods item contained in this goods item.
      *  0..n
      *  Goods Item
      *  Contained
+     *  Goods Item
      *  Goods Item
      *  Goods Item
      *
@@ -2052,10 +2387,11 @@ class GoodsItemType
      *
      * ASBIE
      *  Goods Item. Contained_ Goods Item. Goods Item
-     *  Associates with any other goods items contained in this goods item.
+     *  A goods item contained in this goods item.
      *  0..n
      *  Goods Item
      *  Contained
+     *  Goods Item
      *  Goods Item
      *  Goods Item
      *
@@ -2073,12 +2409,14 @@ class GoodsItemType
      *
      * ASBIE
      *  Goods Item. Origin_ Address. Address
-     *  Region in which the goods have been produced or manufactured, according to criteria laid down for the purposes of application of the Customs tariff, or quantitative restrictions, or any other measure related to trade.
+     *  The region in which the goods have been produced or manufactured, according to criteria laid down for the purposes of application of the customs tariff, or of quantitative restrictions, or of any other measure related to trade.
      *  0..1
      *  Goods Item
      *  Origin
      *  Address
      *  Address
+     *  Address
+     *  Region of origin (WCO ID 066)
      *
      * @return \horstoeko\ubl\entities\cac\OriginAddress
      */
@@ -2092,12 +2430,14 @@ class GoodsItemType
      *
      * ASBIE
      *  Goods Item. Origin_ Address. Address
-     *  Region in which the goods have been produced or manufactured, according to criteria laid down for the purposes of application of the Customs tariff, or quantitative restrictions, or any other measure related to trade.
+     *  The region in which the goods have been produced or manufactured, according to criteria laid down for the purposes of application of the customs tariff, or of quantitative restrictions, or of any other measure related to trade.
      *  0..1
      *  Goods Item
      *  Origin
      *  Address
      *  Address
+     *  Address
+     *  Region of origin (WCO ID 066)
      *
      * @param \horstoeko\ubl\entities\cac\OriginAddress $originAddress
      * @return self
@@ -2105,6 +2445,464 @@ class GoodsItemType
     public function setOriginAddress(\horstoeko\ubl\entities\cac\OriginAddress $originAddress)
     {
         $this->originAddress = $originAddress;
+        return $this;
+    }
+
+    /**
+     * Gets as delivery
+     *
+     * ASBIE
+     *  Goods Item. Delivery
+     *  The delivery of this goods item.
+     *  0..1
+     *  Goods Item
+     *  Delivery
+     *  Delivery
+     *  Delivery
+     *
+     * @return \horstoeko\ubl\entities\cac\Delivery
+     */
+    public function getDelivery()
+    {
+        return $this->delivery;
+    }
+
+    /**
+     * Sets a new delivery
+     *
+     * ASBIE
+     *  Goods Item. Delivery
+     *  The delivery of this goods item.
+     *  0..1
+     *  Goods Item
+     *  Delivery
+     *  Delivery
+     *  Delivery
+     *
+     * @param \horstoeko\ubl\entities\cac\Delivery $delivery
+     * @return self
+     */
+    public function setDelivery(\horstoeko\ubl\entities\cac\Delivery $delivery)
+    {
+        $this->delivery = $delivery;
+        return $this;
+    }
+
+    /**
+     * Gets as pickup
+     *
+     * ASBIE
+     *  Goods Item. Pickup
+     *  The pickup of this goods item.
+     *  0..1
+     *  Goods Item
+     *  Pickup
+     *  Pickup
+     *  Pickup
+     *
+     * @return \horstoeko\ubl\entities\cac\Pickup
+     */
+    public function getPickup()
+    {
+        return $this->pickup;
+    }
+
+    /**
+     * Sets a new pickup
+     *
+     * ASBIE
+     *  Goods Item. Pickup
+     *  The pickup of this goods item.
+     *  0..1
+     *  Goods Item
+     *  Pickup
+     *  Pickup
+     *  Pickup
+     *
+     * @param \horstoeko\ubl\entities\cac\Pickup $pickup
+     * @return self
+     */
+    public function setPickup(\horstoeko\ubl\entities\cac\Pickup $pickup)
+    {
+        $this->pickup = $pickup;
+        return $this;
+    }
+
+    /**
+     * Gets as despatch
+     *
+     * ASBIE
+     *  Goods Item. Despatch
+     *  The despatch of this goods item.
+     *  0..1
+     *  Goods Item
+     *  Despatch
+     *  Despatch
+     *  Despatch
+     *
+     * @return \horstoeko\ubl\entities\cac\Despatch
+     */
+    public function getDespatch()
+    {
+        return $this->despatch;
+    }
+
+    /**
+     * Sets a new despatch
+     *
+     * ASBIE
+     *  Goods Item. Despatch
+     *  The despatch of this goods item.
+     *  0..1
+     *  Goods Item
+     *  Despatch
+     *  Despatch
+     *  Despatch
+     *
+     * @param \horstoeko\ubl\entities\cac\Despatch $despatch
+     * @return self
+     */
+    public function setDespatch(\horstoeko\ubl\entities\cac\Despatch $despatch)
+    {
+        $this->despatch = $despatch;
+        return $this;
+    }
+
+    /**
+     * Adds as measurementDimension
+     *
+     * ASBIE
+     *  Goods Item. Measurement_ Dimension. Dimension
+     *  A measurable dimension (length, mass, weight, or volume) of this goods item.
+     *  0..n
+     *  Goods Item
+     *  Measurement
+     *  Dimension
+     *  Dimension
+     *  Dimension
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\MeasurementDimension $measurementDimension
+     */
+    public function addToMeasurementDimension(\horstoeko\ubl\entities\cac\MeasurementDimension $measurementDimension)
+    {
+        $this->measurementDimension[] = $measurementDimension;
+        return $this;
+    }
+
+    /**
+     * isset measurementDimension
+     *
+     * ASBIE
+     *  Goods Item. Measurement_ Dimension. Dimension
+     *  A measurable dimension (length, mass, weight, or volume) of this goods item.
+     *  0..n
+     *  Goods Item
+     *  Measurement
+     *  Dimension
+     *  Dimension
+     *  Dimension
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetMeasurementDimension($index)
+    {
+        return isset($this->measurementDimension[$index]);
+    }
+
+    /**
+     * unset measurementDimension
+     *
+     * ASBIE
+     *  Goods Item. Measurement_ Dimension. Dimension
+     *  A measurable dimension (length, mass, weight, or volume) of this goods item.
+     *  0..n
+     *  Goods Item
+     *  Measurement
+     *  Dimension
+     *  Dimension
+     *  Dimension
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetMeasurementDimension($index)
+    {
+        unset($this->measurementDimension[$index]);
+    }
+
+    /**
+     * Gets as measurementDimension
+     *
+     * ASBIE
+     *  Goods Item. Measurement_ Dimension. Dimension
+     *  A measurable dimension (length, mass, weight, or volume) of this goods item.
+     *  0..n
+     *  Goods Item
+     *  Measurement
+     *  Dimension
+     *  Dimension
+     *  Dimension
+     *
+     * @return \horstoeko\ubl\entities\cac\MeasurementDimension[]
+     */
+    public function getMeasurementDimension()
+    {
+        return $this->measurementDimension;
+    }
+
+    /**
+     * Sets a new measurementDimension
+     *
+     * ASBIE
+     *  Goods Item. Measurement_ Dimension. Dimension
+     *  A measurable dimension (length, mass, weight, or volume) of this goods item.
+     *  0..n
+     *  Goods Item
+     *  Measurement
+     *  Dimension
+     *  Dimension
+     *  Dimension
+     *
+     * @param \horstoeko\ubl\entities\cac\MeasurementDimension[] $measurementDimension
+     * @return self
+     */
+    public function setMeasurementDimension(array $measurementDimension)
+    {
+        $this->measurementDimension = $measurementDimension;
+        return $this;
+    }
+
+    /**
+     * Adds as containingPackage
+     *
+     * ASBIE
+     *  Goods Item. Containing_ Package. Package
+     *  A package containing this goods item.
+     *  0..n
+     *  Goods Item
+     *  Containing
+     *  Package
+     *  Package
+     *  Package
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\ContainingPackage $containingPackage
+     */
+    public function addToContainingPackage(\horstoeko\ubl\entities\cac\ContainingPackage $containingPackage)
+    {
+        $this->containingPackage[] = $containingPackage;
+        return $this;
+    }
+
+    /**
+     * isset containingPackage
+     *
+     * ASBIE
+     *  Goods Item. Containing_ Package. Package
+     *  A package containing this goods item.
+     *  0..n
+     *  Goods Item
+     *  Containing
+     *  Package
+     *  Package
+     *  Package
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetContainingPackage($index)
+    {
+        return isset($this->containingPackage[$index]);
+    }
+
+    /**
+     * unset containingPackage
+     *
+     * ASBIE
+     *  Goods Item. Containing_ Package. Package
+     *  A package containing this goods item.
+     *  0..n
+     *  Goods Item
+     *  Containing
+     *  Package
+     *  Package
+     *  Package
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetContainingPackage($index)
+    {
+        unset($this->containingPackage[$index]);
+    }
+
+    /**
+     * Gets as containingPackage
+     *
+     * ASBIE
+     *  Goods Item. Containing_ Package. Package
+     *  A package containing this goods item.
+     *  0..n
+     *  Goods Item
+     *  Containing
+     *  Package
+     *  Package
+     *  Package
+     *
+     * @return \horstoeko\ubl\entities\cac\ContainingPackage[]
+     */
+    public function getContainingPackage()
+    {
+        return $this->containingPackage;
+    }
+
+    /**
+     * Sets a new containingPackage
+     *
+     * ASBIE
+     *  Goods Item. Containing_ Package. Package
+     *  A package containing this goods item.
+     *  0..n
+     *  Goods Item
+     *  Containing
+     *  Package
+     *  Package
+     *  Package
+     *
+     * @param \horstoeko\ubl\entities\cac\ContainingPackage[] $containingPackage
+     * @return self
+     */
+    public function setContainingPackage(array $containingPackage)
+    {
+        $this->containingPackage = $containingPackage;
+        return $this;
+    }
+
+    /**
+     * Gets as shipmentDocumentReference
+     *
+     * ASBIE
+     *  Goods Item. Shipment_ Document Reference. Document Reference
+     *  A reference to a shipping document associated with this goods item.
+     *  0..1
+     *  Goods Item
+     *  Shipment
+     *  Document Reference
+     *  Document Reference
+     *  Document Reference
+     *
+     * @return \horstoeko\ubl\entities\cac\ShipmentDocumentReference
+     */
+    public function getShipmentDocumentReference()
+    {
+        return $this->shipmentDocumentReference;
+    }
+
+    /**
+     * Sets a new shipmentDocumentReference
+     *
+     * ASBIE
+     *  Goods Item. Shipment_ Document Reference. Document Reference
+     *  A reference to a shipping document associated with this goods item.
+     *  0..1
+     *  Goods Item
+     *  Shipment
+     *  Document Reference
+     *  Document Reference
+     *  Document Reference
+     *
+     * @param \horstoeko\ubl\entities\cac\ShipmentDocumentReference $shipmentDocumentReference
+     * @return self
+     */
+    public function setShipmentDocumentReference(\horstoeko\ubl\entities\cac\ShipmentDocumentReference $shipmentDocumentReference)
+    {
+        $this->shipmentDocumentReference = $shipmentDocumentReference;
+        return $this;
+    }
+
+    /**
+     * Gets as minimumTemperature
+     *
+     * ASBIE
+     *  Goods Item. Minimum_ Temperature. Temperature
+     *  Information about minimum temperature.
+     *  0..1
+     *  Goods Item
+     *  Minimum
+     *  Temperature
+     *  Temperature
+     *  Temperature
+     *
+     * @return \horstoeko\ubl\entities\cac\MinimumTemperature
+     */
+    public function getMinimumTemperature()
+    {
+        return $this->minimumTemperature;
+    }
+
+    /**
+     * Sets a new minimumTemperature
+     *
+     * ASBIE
+     *  Goods Item. Minimum_ Temperature. Temperature
+     *  Information about minimum temperature.
+     *  0..1
+     *  Goods Item
+     *  Minimum
+     *  Temperature
+     *  Temperature
+     *  Temperature
+     *
+     * @param \horstoeko\ubl\entities\cac\MinimumTemperature $minimumTemperature
+     * @return self
+     */
+    public function setMinimumTemperature(\horstoeko\ubl\entities\cac\MinimumTemperature $minimumTemperature)
+    {
+        $this->minimumTemperature = $minimumTemperature;
+        return $this;
+    }
+
+    /**
+     * Gets as maximumTemperature
+     *
+     * ASBIE
+     *  Goods Item. Maximum_ Temperature. Temperature
+     *  Information about maximum temperature.
+     *  0..1
+     *  Goods Item
+     *  Maximum
+     *  Temperature
+     *  Temperature
+     *  Temperature
+     *
+     * @return \horstoeko\ubl\entities\cac\MaximumTemperature
+     */
+    public function getMaximumTemperature()
+    {
+        return $this->maximumTemperature;
+    }
+
+    /**
+     * Sets a new maximumTemperature
+     *
+     * ASBIE
+     *  Goods Item. Maximum_ Temperature. Temperature
+     *  Information about maximum temperature.
+     *  0..1
+     *  Goods Item
+     *  Maximum
+     *  Temperature
+     *  Temperature
+     *  Temperature
+     *
+     * @param \horstoeko\ubl\entities\cac\MaximumTemperature $maximumTemperature
+     * @return self
+     */
+    public function setMaximumTemperature(\horstoeko\ubl\entities\cac\MaximumTemperature $maximumTemperature)
+    {
+        $this->maximumTemperature = $maximumTemperature;
         return $this;
     }
 

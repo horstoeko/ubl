@@ -1,0 +1,9 @@
+horstoeko\ubl\entities\cac\WinningPartyType:
+    properties:
+        party:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

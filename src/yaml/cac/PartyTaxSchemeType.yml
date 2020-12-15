@@ -54,7 +54,11 @@ horstoeko\ubl\entities\cac\PartyTaxSchemeType:
             accessor:
                 getter: getExemptionReason
                 setter: setExemptionReason
-            type: horstoeko\ubl\entities\cbc\ExemptionReason
+            xml_list:
+                inline: true
+                entry_name: ExemptionReason
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\ExemptionReason>
         registrationAddress:
             expose: true
             access_type: public_method

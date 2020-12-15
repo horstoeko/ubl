@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Endorser Party. Details
- *  The party endorsing a document.
+ *  A class to describe the party endorsing a document.
  *  Endorser Party
  * XSD Type: EndorserPartyType
  */
@@ -17,7 +17,7 @@ class EndorserPartyType
     /**
      * BBIE
      *  Endorser Party. Role Code. Code
-     *  The role of the party providing the endorsement, e.g., Issuer, Embassy, Insurance, etc.
+     *  A code specifying the role of the party providing the endorsement (e.g., issuer, embassy, insurance, etc.).
      *  1
      *  Endorser Party
      *  Role Code
@@ -31,23 +31,24 @@ class EndorserPartyType
     /**
      * BBIE
      *  Endorser Party. Sequence. Numeric
-     *  The sequence in which the endorsements are to be applied.
+     *  A number indicating the order of the endorsement provided by this party in the sequence in which endorsements are to be applied.
      *  1
      *  Endorser Party
      *  Sequence
      *  Numeric
      *  Numeric. Type
      *
-     * @var float $sequenceNumeric
+     * @var \horstoeko\ubl\entities\cbc\SequenceNumeric $sequenceNumeric
      */
     private $sequenceNumeric = null;
 
     /**
      * ASBIE
      *  Endorser Party. Party
-     *  Details of the party endorsing the application.
+     *  The party endorsing the application.
      *  1
      *  Endorser Party
+     *  Party
      *  Party
      *  Party
      *
@@ -58,10 +59,11 @@ class EndorserPartyType
     /**
      * ASBIE
      *  Endorser Party. Signatory_ Contact. Contact
-     *  Details of the individual representing the exporter who signs the Certificate of Origin application before submitting it to the Issuer Party.
+     *  The individual representing the exporter who signs the Certificate of Origin application before submitting it to the issuer party.
      *  1
      *  Endorser Party
      *  Signatory
+     *  Contact
      *  Contact
      *  Contact
      *
@@ -74,7 +76,7 @@ class EndorserPartyType
      *
      * BBIE
      *  Endorser Party. Role Code. Code
-     *  The role of the party providing the endorsement, e.g., Issuer, Embassy, Insurance, etc.
+     *  A code specifying the role of the party providing the endorsement (e.g., issuer, embassy, insurance, etc.).
      *  1
      *  Endorser Party
      *  Role Code
@@ -93,7 +95,7 @@ class EndorserPartyType
      *
      * BBIE
      *  Endorser Party. Role Code. Code
-     *  The role of the party providing the endorsement, e.g., Issuer, Embassy, Insurance, etc.
+     *  A code specifying the role of the party providing the endorsement (e.g., issuer, embassy, insurance, etc.).
      *  1
      *  Endorser Party
      *  Role Code
@@ -114,14 +116,14 @@ class EndorserPartyType
      *
      * BBIE
      *  Endorser Party. Sequence. Numeric
-     *  The sequence in which the endorsements are to be applied.
+     *  A number indicating the order of the endorsement provided by this party in the sequence in which endorsements are to be applied.
      *  1
      *  Endorser Party
      *  Sequence
      *  Numeric
      *  Numeric. Type
      *
-     * @return float
+     * @return \horstoeko\ubl\entities\cbc\SequenceNumeric
      */
     public function getSequenceNumeric()
     {
@@ -133,17 +135,17 @@ class EndorserPartyType
      *
      * BBIE
      *  Endorser Party. Sequence. Numeric
-     *  The sequence in which the endorsements are to be applied.
+     *  A number indicating the order of the endorsement provided by this party in the sequence in which endorsements are to be applied.
      *  1
      *  Endorser Party
      *  Sequence
      *  Numeric
      *  Numeric. Type
      *
-     * @param float $sequenceNumeric
+     * @param \horstoeko\ubl\entities\cbc\SequenceNumeric $sequenceNumeric
      * @return self
      */
-    public function setSequenceNumeric($sequenceNumeric)
+    public function setSequenceNumeric(\horstoeko\ubl\entities\cbc\SequenceNumeric $sequenceNumeric)
     {
         $this->sequenceNumeric = $sequenceNumeric;
         return $this;
@@ -154,9 +156,10 @@ class EndorserPartyType
      *
      * ASBIE
      *  Endorser Party. Party
-     *  Details of the party endorsing the application.
+     *  The party endorsing the application.
      *  1
      *  Endorser Party
+     *  Party
      *  Party
      *  Party
      *
@@ -172,9 +175,10 @@ class EndorserPartyType
      *
      * ASBIE
      *  Endorser Party. Party
-     *  Details of the party endorsing the application.
+     *  The party endorsing the application.
      *  1
      *  Endorser Party
+     *  Party
      *  Party
      *  Party
      *
@@ -192,10 +196,11 @@ class EndorserPartyType
      *
      * ASBIE
      *  Endorser Party. Signatory_ Contact. Contact
-     *  Details of the individual representing the exporter who signs the Certificate of Origin application before submitting it to the Issuer Party.
+     *  The individual representing the exporter who signs the Certificate of Origin application before submitting it to the issuer party.
      *  1
      *  Endorser Party
      *  Signatory
+     *  Contact
      *  Contact
      *  Contact
      *
@@ -211,10 +216,11 @@ class EndorserPartyType
      *
      * ASBIE
      *  Endorser Party. Signatory_ Contact. Contact
-     *  Details of the individual representing the exporter who signs the Certificate of Origin application before submitting it to the Issuer Party.
+     *  The individual representing the exporter who signs the Certificate of Origin application before submitting it to the issuer party.
      *  1
      *  Endorser Party
      *  Signatory
+     *  Contact
      *  Contact
      *  Contact
      *

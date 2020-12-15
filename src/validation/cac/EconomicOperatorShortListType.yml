@@ -1,0 +1,5 @@
+horstoeko\ubl\entities\cac\EconomicOperatorShortListType:
+    properties:
+        preSelectedParty:
+            -
+                Valid: null

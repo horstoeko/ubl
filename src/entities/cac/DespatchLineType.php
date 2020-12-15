@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Despatch Line. Details
- *  Information about a Despatch Line.
+ *  A class to define a line in a Despatch Advice.
  *  Despatch Line
  * XSD Type: DespatchLineType
  */
@@ -17,7 +17,7 @@ class DespatchLineType
     /**
      * BBIE
      *  Despatch Line. Identifier
-     *  Identifies the Despatch Line.
+     *  An identifier for this despatch line.
      *  1
      *  Despatch Line
      *  Identifier
@@ -31,7 +31,7 @@ class DespatchLineType
     /**
      * BBIE
      *  Despatch Line. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this despatch line.
      *  0..1
      *  Despatch Line
      *  UUID
@@ -45,25 +45,28 @@ class DespatchLineType
     /**
      * BBIE
      *  Despatch Line. Note. Text
-     *  Free-form text applying to the Despatch Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Despatch Line
      *  Note
      *  Text
      *  Text. Type
      *
-     * @var \horstoeko\ubl\entities\cbc\Note $note
+     * @var \horstoeko\ubl\entities\cbc\Note[] $note
      */
-    private $note = null;
+    private $note = [
+        
+    ];
 
     /**
      * BBIE
      *  Despatch Line. Line Status Code. Code
-     *  Identifies the status of the Despatch Line with respect to its original state.
+     *  A code signifying the status of this despatch line with respect to its original state.
      *  0..1
      *  Despatch Line
      *  Line Status Code
      *  Code
+     *  Line Status
      *  Line Status_ Code. Type
      *
      * @var \horstoeko\ubl\entities\cbc\LineStatusCode $lineStatusCode
@@ -73,7 +76,7 @@ class DespatchLineType
     /**
      * BBIE
      *  Despatch Line. Delivered_ Quantity. Quantity
-     *  The quantity despatched.
+     *  The quantity despatched (picked up).
      *  0..1
      *  Despatch Line
      *  Delivered
@@ -88,7 +91,7 @@ class DespatchLineType
     /**
      * BBIE
      *  Despatch Line. Backorder_ Quantity. Quantity
-     *  The quantity on Back Order at the Supplier.
+     *  The quantity on back order at the supplier.
      *  0..1
      *  Despatch Line
      *  Backorder
@@ -103,17 +106,19 @@ class DespatchLineType
     /**
      * BBIE
      *  Despatch Line. Backorder_ Reason. Text
-     *  The reason for the Back Order.
-     *  0..1
+     *  The reason for the back order.
+     *  0..n
      *  Despatch Line
      *  Backorder
      *  Reason
      *  Text
      *  Text. Type
      *
-     * @var \horstoeko\ubl\entities\cbc\BackorderReason $backorderReason
+     * @var \horstoeko\ubl\entities\cbc\BackorderReason[] $backorderReason
      */
-    private $backorderReason = null;
+    private $backorderReason = [
+        
+    ];
 
     /**
      * BBIE
@@ -133,22 +138,24 @@ class DespatchLineType
     /**
      * BBIE
      *  Despatch Line. Outstanding_ Reason. Text
-     *  The reason for the Outstanding Quantity.
-     *  0..1
+     *  The reason for the outstanding quantity.
+     *  0..n
      *  Despatch Line
      *  Outstanding
      *  Reason
      *  Text
      *  Text. Type
      *
-     * @var \horstoeko\ubl\entities\cbc\OutstandingReason $outstandingReason
+     * @var \horstoeko\ubl\entities\cbc\OutstandingReason[] $outstandingReason
      */
-    private $outstandingReason = null;
+    private $outstandingReason = [
+        
+    ];
 
     /**
      * BBIE
      *  Despatch Line. Oversupply_ Quantity. Quantity
-     *  The quantity over-supplied.
+     *  The quantity over-supplied, i.e., the quantity over and above that ordered.
      *  0..1
      *  Despatch Line
      *  Oversupply
@@ -163,9 +170,10 @@ class DespatchLineType
     /**
      * ASBIE
      *  Despatch Line. Order Line Reference
-     *  An association to Order Line Reference.
+     *  A reference to an order line associated with this despatch line.
      *  1..n
      *  Despatch Line
+     *  Order Line Reference
      *  Order Line Reference
      *  Order Line Reference
      *
@@ -178,9 +186,10 @@ class DespatchLineType
     /**
      * ASBIE
      *  Despatch Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this despatch line.
      *  0..n
      *  Despatch Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -193,9 +202,10 @@ class DespatchLineType
     /**
      * ASBIE
      *  Despatch Line. Item
-     *  An association to Item.
+     *  The item associated with this despatch line.
      *  1
      *  Despatch Line
+     *  Item
      *  Item
      *  Item
      *
@@ -206,9 +216,10 @@ class DespatchLineType
     /**
      * ASBIE
      *  Despatch Line. Shipment
-     *  An association to Shipment.
+     *  A shipment associated with this despatch line.
      *  0..n
      *  Despatch Line
+     *  Shipment
      *  Shipment
      *  Shipment
      *
@@ -223,7 +234,7 @@ class DespatchLineType
      *
      * BBIE
      *  Despatch Line. Identifier
-     *  Identifies the Despatch Line.
+     *  An identifier for this despatch line.
      *  1
      *  Despatch Line
      *  Identifier
@@ -242,7 +253,7 @@ class DespatchLineType
      *
      * BBIE
      *  Despatch Line. Identifier
-     *  Identifies the Despatch Line.
+     *  An identifier for this despatch line.
      *  1
      *  Despatch Line
      *  Identifier
@@ -263,7 +274,7 @@ class DespatchLineType
      *
      * BBIE
      *  Despatch Line. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this despatch line.
      *  0..1
      *  Despatch Line
      *  UUID
@@ -282,7 +293,7 @@ class DespatchLineType
      *
      * BBIE
      *  Despatch Line. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this despatch line.
      *  0..1
      *  Despatch Line
      *  UUID
@@ -299,18 +310,79 @@ class DespatchLineType
     }
 
     /**
-     * Gets as note
+     * Adds as note
      *
      * BBIE
      *  Despatch Line. Note. Text
-     *  Free-form text applying to the Despatch Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Despatch Line
      *  Note
      *  Text
      *  Text. Type
      *
-     * @return \horstoeko\ubl\entities\cbc\Note
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\Note $note
+     */
+    public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
+    {
+        $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * isset note
+     *
+     * BBIE
+     *  Despatch Line. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Despatch Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetNote($index)
+    {
+        return isset($this->note[$index]);
+    }
+
+    /**
+     * unset note
+     *
+     * BBIE
+     *  Despatch Line. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Despatch Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetNote($index)
+    {
+        unset($this->note[$index]);
+    }
+
+    /**
+     * Gets as note
+     *
+     * BBIE
+     *  Despatch Line. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Despatch Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\Note[]
      */
     public function getNote()
     {
@@ -322,17 +394,17 @@ class DespatchLineType
      *
      * BBIE
      *  Despatch Line. Note. Text
-     *  Free-form text applying to the Despatch Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Despatch Line
      *  Note
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
-    public function setNote(\horstoeko\ubl\entities\cbc\Note $note)
+    public function setNote(array $note)
     {
         $this->note = $note;
         return $this;
@@ -343,11 +415,12 @@ class DespatchLineType
      *
      * BBIE
      *  Despatch Line. Line Status Code. Code
-     *  Identifies the status of the Despatch Line with respect to its original state.
+     *  A code signifying the status of this despatch line with respect to its original state.
      *  0..1
      *  Despatch Line
      *  Line Status Code
      *  Code
+     *  Line Status
      *  Line Status_ Code. Type
      *
      * @return \horstoeko\ubl\entities\cbc\LineStatusCode
@@ -362,11 +435,12 @@ class DespatchLineType
      *
      * BBIE
      *  Despatch Line. Line Status Code. Code
-     *  Identifies the status of the Despatch Line with respect to its original state.
+     *  A code signifying the status of this despatch line with respect to its original state.
      *  0..1
      *  Despatch Line
      *  Line Status Code
      *  Code
+     *  Line Status
      *  Line Status_ Code. Type
      *
      * @param \horstoeko\ubl\entities\cbc\LineStatusCode $lineStatusCode
@@ -383,7 +457,7 @@ class DespatchLineType
      *
      * BBIE
      *  Despatch Line. Delivered_ Quantity. Quantity
-     *  The quantity despatched.
+     *  The quantity despatched (picked up).
      *  0..1
      *  Despatch Line
      *  Delivered
@@ -403,7 +477,7 @@ class DespatchLineType
      *
      * BBIE
      *  Despatch Line. Delivered_ Quantity. Quantity
-     *  The quantity despatched.
+     *  The quantity despatched (picked up).
      *  0..1
      *  Despatch Line
      *  Delivered
@@ -425,7 +499,7 @@ class DespatchLineType
      *
      * BBIE
      *  Despatch Line. Backorder_ Quantity. Quantity
-     *  The quantity on Back Order at the Supplier.
+     *  The quantity on back order at the supplier.
      *  0..1
      *  Despatch Line
      *  Backorder
@@ -445,7 +519,7 @@ class DespatchLineType
      *
      * BBIE
      *  Despatch Line. Backorder_ Quantity. Quantity
-     *  The quantity on Back Order at the Supplier.
+     *  The quantity on back order at the supplier.
      *  0..1
      *  Despatch Line
      *  Backorder
@@ -463,19 +537,83 @@ class DespatchLineType
     }
 
     /**
-     * Gets as backorderReason
+     * Adds as backorderReason
      *
      * BBIE
      *  Despatch Line. Backorder_ Reason. Text
-     *  The reason for the Back Order.
-     *  0..1
+     *  The reason for the back order.
+     *  0..n
      *  Despatch Line
      *  Backorder
      *  Reason
      *  Text
      *  Text. Type
      *
-     * @return \horstoeko\ubl\entities\cbc\BackorderReason
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\BackorderReason $backorderReason
+     */
+    public function addToBackorderReason(\horstoeko\ubl\entities\cbc\BackorderReason $backorderReason)
+    {
+        $this->backorderReason[] = $backorderReason;
+        return $this;
+    }
+
+    /**
+     * isset backorderReason
+     *
+     * BBIE
+     *  Despatch Line. Backorder_ Reason. Text
+     *  The reason for the back order.
+     *  0..n
+     *  Despatch Line
+     *  Backorder
+     *  Reason
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetBackorderReason($index)
+    {
+        return isset($this->backorderReason[$index]);
+    }
+
+    /**
+     * unset backorderReason
+     *
+     * BBIE
+     *  Despatch Line. Backorder_ Reason. Text
+     *  The reason for the back order.
+     *  0..n
+     *  Despatch Line
+     *  Backorder
+     *  Reason
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetBackorderReason($index)
+    {
+        unset($this->backorderReason[$index]);
+    }
+
+    /**
+     * Gets as backorderReason
+     *
+     * BBIE
+     *  Despatch Line. Backorder_ Reason. Text
+     *  The reason for the back order.
+     *  0..n
+     *  Despatch Line
+     *  Backorder
+     *  Reason
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\BackorderReason[]
      */
     public function getBackorderReason()
     {
@@ -487,18 +625,18 @@ class DespatchLineType
      *
      * BBIE
      *  Despatch Line. Backorder_ Reason. Text
-     *  The reason for the Back Order.
-     *  0..1
+     *  The reason for the back order.
+     *  0..n
      *  Despatch Line
      *  Backorder
      *  Reason
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\BackorderReason $backorderReason
+     * @param \horstoeko\ubl\entities\cbc\BackorderReason[] $backorderReason
      * @return self
      */
-    public function setBackorderReason(\horstoeko\ubl\entities\cbc\BackorderReason $backorderReason)
+    public function setBackorderReason(array $backorderReason)
     {
         $this->backorderReason = $backorderReason;
         return $this;
@@ -547,19 +685,83 @@ class DespatchLineType
     }
 
     /**
-     * Gets as outstandingReason
+     * Adds as outstandingReason
      *
      * BBIE
      *  Despatch Line. Outstanding_ Reason. Text
-     *  The reason for the Outstanding Quantity.
-     *  0..1
+     *  The reason for the outstanding quantity.
+     *  0..n
      *  Despatch Line
      *  Outstanding
      *  Reason
      *  Text
      *  Text. Type
      *
-     * @return \horstoeko\ubl\entities\cbc\OutstandingReason
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\OutstandingReason $outstandingReason
+     */
+    public function addToOutstandingReason(\horstoeko\ubl\entities\cbc\OutstandingReason $outstandingReason)
+    {
+        $this->outstandingReason[] = $outstandingReason;
+        return $this;
+    }
+
+    /**
+     * isset outstandingReason
+     *
+     * BBIE
+     *  Despatch Line. Outstanding_ Reason. Text
+     *  The reason for the outstanding quantity.
+     *  0..n
+     *  Despatch Line
+     *  Outstanding
+     *  Reason
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetOutstandingReason($index)
+    {
+        return isset($this->outstandingReason[$index]);
+    }
+
+    /**
+     * unset outstandingReason
+     *
+     * BBIE
+     *  Despatch Line. Outstanding_ Reason. Text
+     *  The reason for the outstanding quantity.
+     *  0..n
+     *  Despatch Line
+     *  Outstanding
+     *  Reason
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetOutstandingReason($index)
+    {
+        unset($this->outstandingReason[$index]);
+    }
+
+    /**
+     * Gets as outstandingReason
+     *
+     * BBIE
+     *  Despatch Line. Outstanding_ Reason. Text
+     *  The reason for the outstanding quantity.
+     *  0..n
+     *  Despatch Line
+     *  Outstanding
+     *  Reason
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\OutstandingReason[]
      */
     public function getOutstandingReason()
     {
@@ -571,18 +773,18 @@ class DespatchLineType
      *
      * BBIE
      *  Despatch Line. Outstanding_ Reason. Text
-     *  The reason for the Outstanding Quantity.
-     *  0..1
+     *  The reason for the outstanding quantity.
+     *  0..n
      *  Despatch Line
      *  Outstanding
      *  Reason
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\OutstandingReason $outstandingReason
+     * @param \horstoeko\ubl\entities\cbc\OutstandingReason[] $outstandingReason
      * @return self
      */
-    public function setOutstandingReason(\horstoeko\ubl\entities\cbc\OutstandingReason $outstandingReason)
+    public function setOutstandingReason(array $outstandingReason)
     {
         $this->outstandingReason = $outstandingReason;
         return $this;
@@ -593,7 +795,7 @@ class DespatchLineType
      *
      * BBIE
      *  Despatch Line. Oversupply_ Quantity. Quantity
-     *  The quantity over-supplied.
+     *  The quantity over-supplied, i.e., the quantity over and above that ordered.
      *  0..1
      *  Despatch Line
      *  Oversupply
@@ -613,7 +815,7 @@ class DespatchLineType
      *
      * BBIE
      *  Despatch Line. Oversupply_ Quantity. Quantity
-     *  The quantity over-supplied.
+     *  The quantity over-supplied, i.e., the quantity over and above that ordered.
      *  0..1
      *  Despatch Line
      *  Oversupply
@@ -635,9 +837,10 @@ class DespatchLineType
      *
      * ASBIE
      *  Despatch Line. Order Line Reference
-     *  An association to Order Line Reference.
+     *  A reference to an order line associated with this despatch line.
      *  1..n
      *  Despatch Line
+     *  Order Line Reference
      *  Order Line Reference
      *  Order Line Reference
      *
@@ -655,9 +858,10 @@ class DespatchLineType
      *
      * ASBIE
      *  Despatch Line. Order Line Reference
-     *  An association to Order Line Reference.
+     *  A reference to an order line associated with this despatch line.
      *  1..n
      *  Despatch Line
+     *  Order Line Reference
      *  Order Line Reference
      *  Order Line Reference
      *
@@ -674,9 +878,10 @@ class DespatchLineType
      *
      * ASBIE
      *  Despatch Line. Order Line Reference
-     *  An association to Order Line Reference.
+     *  A reference to an order line associated with this despatch line.
      *  1..n
      *  Despatch Line
+     *  Order Line Reference
      *  Order Line Reference
      *  Order Line Reference
      *
@@ -693,9 +898,10 @@ class DespatchLineType
      *
      * ASBIE
      *  Despatch Line. Order Line Reference
-     *  An association to Order Line Reference.
+     *  A reference to an order line associated with this despatch line.
      *  1..n
      *  Despatch Line
+     *  Order Line Reference
      *  Order Line Reference
      *  Order Line Reference
      *
@@ -711,9 +917,10 @@ class DespatchLineType
      *
      * ASBIE
      *  Despatch Line. Order Line Reference
-     *  An association to Order Line Reference.
+     *  A reference to an order line associated with this despatch line.
      *  1..n
      *  Despatch Line
+     *  Order Line Reference
      *  Order Line Reference
      *  Order Line Reference
      *
@@ -731,9 +938,10 @@ class DespatchLineType
      *
      * ASBIE
      *  Despatch Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this despatch line.
      *  0..n
      *  Despatch Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -751,9 +959,10 @@ class DespatchLineType
      *
      * ASBIE
      *  Despatch Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this despatch line.
      *  0..n
      *  Despatch Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -770,9 +979,10 @@ class DespatchLineType
      *
      * ASBIE
      *  Despatch Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this despatch line.
      *  0..n
      *  Despatch Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -789,9 +999,10 @@ class DespatchLineType
      *
      * ASBIE
      *  Despatch Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this despatch line.
      *  0..n
      *  Despatch Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -807,9 +1018,10 @@ class DespatchLineType
      *
      * ASBIE
      *  Despatch Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this despatch line.
      *  0..n
      *  Despatch Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -827,9 +1039,10 @@ class DespatchLineType
      *
      * ASBIE
      *  Despatch Line. Item
-     *  An association to Item.
+     *  The item associated with this despatch line.
      *  1
      *  Despatch Line
+     *  Item
      *  Item
      *  Item
      *
@@ -845,9 +1058,10 @@ class DespatchLineType
      *
      * ASBIE
      *  Despatch Line. Item
-     *  An association to Item.
+     *  The item associated with this despatch line.
      *  1
      *  Despatch Line
+     *  Item
      *  Item
      *  Item
      *
@@ -865,9 +1079,10 @@ class DespatchLineType
      *
      * ASBIE
      *  Despatch Line. Shipment
-     *  An association to Shipment.
+     *  A shipment associated with this despatch line.
      *  0..n
      *  Despatch Line
+     *  Shipment
      *  Shipment
      *  Shipment
      *
@@ -885,9 +1100,10 @@ class DespatchLineType
      *
      * ASBIE
      *  Despatch Line. Shipment
-     *  An association to Shipment.
+     *  A shipment associated with this despatch line.
      *  0..n
      *  Despatch Line
+     *  Shipment
      *  Shipment
      *  Shipment
      *
@@ -904,9 +1120,10 @@ class DespatchLineType
      *
      * ASBIE
      *  Despatch Line. Shipment
-     *  An association to Shipment.
+     *  A shipment associated with this despatch line.
      *  0..n
      *  Despatch Line
+     *  Shipment
      *  Shipment
      *  Shipment
      *
@@ -923,9 +1140,10 @@ class DespatchLineType
      *
      * ASBIE
      *  Despatch Line. Shipment
-     *  An association to Shipment.
+     *  A shipment associated with this despatch line.
      *  0..n
      *  Despatch Line
+     *  Shipment
      *  Shipment
      *  Shipment
      *
@@ -941,9 +1159,10 @@ class DespatchLineType
      *
      * ASBIE
      *  Despatch Line. Shipment
-     *  An association to Shipment.
+     *  A shipment associated with this despatch line.
      *  0..n
      *  Despatch Line
+     *  Shipment
      *  Shipment
      *  Shipment
      *

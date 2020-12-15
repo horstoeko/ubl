@@ -1,0 +1,24 @@
+horstoeko\ubl\entities\xades\ResponderIDType:
+    properties:
+        byName:
+            expose: true
+            access_type: public_method
+            serialized_name: ByName
+            xml_element:
+                cdata: false
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            accessor:
+                getter: getByName
+                setter: setByName
+            type: string
+        byKey:
+            expose: true
+            access_type: public_method
+            serialized_name: ByKey
+            xml_element:
+                cdata: false
+                namespace: 'http://uri.etsi.org/01903/v1.3.2#'
+            accessor:
+                getter: getByKey
+                setter: setByKey
+            type: GoetasWebservices\Xsd\XsdToPhp\Jms\Base64Encoded

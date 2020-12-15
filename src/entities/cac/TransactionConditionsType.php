@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Transaction Conditions. Details
- *  Information about purchasing, sales, or payment conditions.
+ *  A class to describe purchasing, sales, or payment conditions.
  *  Transaction Conditions
  *  Payment Conditions, Sales Conditions
  * XSD Type: TransactionConditionsType
@@ -18,7 +18,7 @@ class TransactionConditionsType
     /**
      * BBIE
      *  Transaction Conditions. Identifier
-     *  Identifies conditions of the transaction, typically Purchase/Sales Conditions.
+     *  An identifier for conditions of the transaction, typically purchase/sales conditions.
      *  0..1
      *  Transaction Conditions
      *  Identifier
@@ -32,7 +32,7 @@ class TransactionConditionsType
     /**
      * BBIE
      *  Transaction Conditions. Action Code. Code
-     *  An action relating to sales or payment conditions, expressed as a code.
+     *  A code signifying a type of action relating to sales or payment conditions.
      *  0..1
      *  Transaction Conditions
      *  Action Code
@@ -46,7 +46,7 @@ class TransactionConditionsType
     /**
      * BBIE
      *  Transaction Conditions. Description. Text
-     *  The description of the transaction conditions.
+     *  Text describing the transaction conditions.
      *  0..n
      *  Transaction Conditions
      *  Description
@@ -62,9 +62,10 @@ class TransactionConditionsType
     /**
      * ASBIE
      *  Transaction Conditions. Document Reference
-     *  An association to Document Reference.
+     *  A document associated with these transaction conditions.
      *  0..n
      *  Transaction Conditions
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -79,7 +80,7 @@ class TransactionConditionsType
      *
      * BBIE
      *  Transaction Conditions. Identifier
-     *  Identifies conditions of the transaction, typically Purchase/Sales Conditions.
+     *  An identifier for conditions of the transaction, typically purchase/sales conditions.
      *  0..1
      *  Transaction Conditions
      *  Identifier
@@ -98,7 +99,7 @@ class TransactionConditionsType
      *
      * BBIE
      *  Transaction Conditions. Identifier
-     *  Identifies conditions of the transaction, typically Purchase/Sales Conditions.
+     *  An identifier for conditions of the transaction, typically purchase/sales conditions.
      *  0..1
      *  Transaction Conditions
      *  Identifier
@@ -119,7 +120,7 @@ class TransactionConditionsType
      *
      * BBIE
      *  Transaction Conditions. Action Code. Code
-     *  An action relating to sales or payment conditions, expressed as a code.
+     *  A code signifying a type of action relating to sales or payment conditions.
      *  0..1
      *  Transaction Conditions
      *  Action Code
@@ -138,7 +139,7 @@ class TransactionConditionsType
      *
      * BBIE
      *  Transaction Conditions. Action Code. Code
-     *  An action relating to sales or payment conditions, expressed as a code.
+     *  A code signifying a type of action relating to sales or payment conditions.
      *  0..1
      *  Transaction Conditions
      *  Action Code
@@ -159,7 +160,7 @@ class TransactionConditionsType
      *
      * BBIE
      *  Transaction Conditions. Description. Text
-     *  The description of the transaction conditions.
+     *  Text describing the transaction conditions.
      *  0..n
      *  Transaction Conditions
      *  Description
@@ -180,7 +181,7 @@ class TransactionConditionsType
      *
      * BBIE
      *  Transaction Conditions. Description. Text
-     *  The description of the transaction conditions.
+     *  Text describing the transaction conditions.
      *  0..n
      *  Transaction Conditions
      *  Description
@@ -200,7 +201,7 @@ class TransactionConditionsType
      *
      * BBIE
      *  Transaction Conditions. Description. Text
-     *  The description of the transaction conditions.
+     *  Text describing the transaction conditions.
      *  0..n
      *  Transaction Conditions
      *  Description
@@ -220,7 +221,7 @@ class TransactionConditionsType
      *
      * BBIE
      *  Transaction Conditions. Description. Text
-     *  The description of the transaction conditions.
+     *  Text describing the transaction conditions.
      *  0..n
      *  Transaction Conditions
      *  Description
@@ -239,7 +240,7 @@ class TransactionConditionsType
      *
      * BBIE
      *  Transaction Conditions. Description. Text
-     *  The description of the transaction conditions.
+     *  Text describing the transaction conditions.
      *  0..n
      *  Transaction Conditions
      *  Description
@@ -260,9 +261,10 @@ class TransactionConditionsType
      *
      * ASBIE
      *  Transaction Conditions. Document Reference
-     *  An association to Document Reference.
+     *  A document associated with these transaction conditions.
      *  0..n
      *  Transaction Conditions
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -280,9 +282,10 @@ class TransactionConditionsType
      *
      * ASBIE
      *  Transaction Conditions. Document Reference
-     *  An association to Document Reference.
+     *  A document associated with these transaction conditions.
      *  0..n
      *  Transaction Conditions
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -299,9 +302,10 @@ class TransactionConditionsType
      *
      * ASBIE
      *  Transaction Conditions. Document Reference
-     *  An association to Document Reference.
+     *  A document associated with these transaction conditions.
      *  0..n
      *  Transaction Conditions
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -318,9 +322,10 @@ class TransactionConditionsType
      *
      * ASBIE
      *  Transaction Conditions. Document Reference
-     *  An association to Document Reference.
+     *  A document associated with these transaction conditions.
      *  0..n
      *  Transaction Conditions
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -336,9 +341,10 @@ class TransactionConditionsType
      *
      * ASBIE
      *  Transaction Conditions. Document Reference
-     *  An association to Document Reference.
+     *  A document associated with these transaction conditions.
      *  0..n
      *  Transaction Conditions
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *

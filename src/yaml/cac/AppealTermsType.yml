@@ -1,0 +1,61 @@
+horstoeko\ubl\entities\cac\AppealTermsType:
+    properties:
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: Description
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>
+        presentationPeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: PresentationPeriod
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPresentationPeriod
+                setter: setPresentationPeriod
+            type: horstoeko\ubl\entities\cac\PresentationPeriod
+        appealInformationParty:
+            expose: true
+            access_type: public_method
+            serialized_name: AppealInformationParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getAppealInformationParty
+                setter: setAppealInformationParty
+            type: horstoeko\ubl\entities\cac\AppealInformationParty
+        appealReceiverParty:
+            expose: true
+            access_type: public_method
+            serialized_name: AppealReceiverParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getAppealReceiverParty
+                setter: setAppealReceiverParty
+            type: horstoeko\ubl\entities\cac\AppealReceiverParty
+        mediationParty:
+            expose: true
+            access_type: public_method
+            serialized_name: MediationParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getMediationParty
+                setter: setMediationParty
+            type: horstoeko\ubl\entities\cac\MediationParty

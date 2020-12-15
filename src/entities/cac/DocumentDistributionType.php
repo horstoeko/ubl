@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Document Distribution. Details
- *  The details of the distribution of the document among business partners.
+ *  A class to describe the distribution of a document to an interested party.
  *  Document Distribution
  * XSD Type: DocumentDistributionType
  */
@@ -17,7 +17,7 @@ class DocumentDistributionType
     /**
      * BBIE
      *  Document Distribution. Print_ Qualifier. Text
-     *  The access right for a Party to distribute the document.
+     *  Text describing the interested party's distribution rights.
      *  1
      *  Document Distribution
      *  Print
@@ -32,7 +32,7 @@ class DocumentDistributionType
     /**
      * BBIE
      *  Document Distribution. Maximum_ Copies. Numeric
-     *  Specifies the maximum number of copies of the document that the user can print.
+     *  The maximum number of printed copies of the document that the interested party is allowed to make.
      *  1
      *  Document Distribution
      *  Maximum
@@ -40,16 +40,17 @@ class DocumentDistributionType
      *  Numeric
      *  Numeric. Type
      *
-     * @var float $maximumCopiesNumeric
+     * @var \horstoeko\ubl\entities\cbc\MaximumCopiesNumeric $maximumCopiesNumeric
      */
     private $maximumCopiesNumeric = null;
 
     /**
      * ASBIE
      *  Document Distribution. Party
-     *  Details of the Party who can access the document.
+     *  The interested party to which the document should be distributed.
      *  1
      *  Document Distribution
+     *  Party
      *  Party
      *  Party
      *
@@ -62,7 +63,7 @@ class DocumentDistributionType
      *
      * BBIE
      *  Document Distribution. Print_ Qualifier. Text
-     *  The access right for a Party to distribute the document.
+     *  Text describing the interested party's distribution rights.
      *  1
      *  Document Distribution
      *  Print
@@ -82,7 +83,7 @@ class DocumentDistributionType
      *
      * BBIE
      *  Document Distribution. Print_ Qualifier. Text
-     *  The access right for a Party to distribute the document.
+     *  Text describing the interested party's distribution rights.
      *  1
      *  Document Distribution
      *  Print
@@ -104,7 +105,7 @@ class DocumentDistributionType
      *
      * BBIE
      *  Document Distribution. Maximum_ Copies. Numeric
-     *  Specifies the maximum number of copies of the document that the user can print.
+     *  The maximum number of printed copies of the document that the interested party is allowed to make.
      *  1
      *  Document Distribution
      *  Maximum
@@ -112,7 +113,7 @@ class DocumentDistributionType
      *  Numeric
      *  Numeric. Type
      *
-     * @return float
+     * @return \horstoeko\ubl\entities\cbc\MaximumCopiesNumeric
      */
     public function getMaximumCopiesNumeric()
     {
@@ -124,7 +125,7 @@ class DocumentDistributionType
      *
      * BBIE
      *  Document Distribution. Maximum_ Copies. Numeric
-     *  Specifies the maximum number of copies of the document that the user can print.
+     *  The maximum number of printed copies of the document that the interested party is allowed to make.
      *  1
      *  Document Distribution
      *  Maximum
@@ -132,10 +133,10 @@ class DocumentDistributionType
      *  Numeric
      *  Numeric. Type
      *
-     * @param float $maximumCopiesNumeric
+     * @param \horstoeko\ubl\entities\cbc\MaximumCopiesNumeric $maximumCopiesNumeric
      * @return self
      */
-    public function setMaximumCopiesNumeric($maximumCopiesNumeric)
+    public function setMaximumCopiesNumeric(\horstoeko\ubl\entities\cbc\MaximumCopiesNumeric $maximumCopiesNumeric)
     {
         $this->maximumCopiesNumeric = $maximumCopiesNumeric;
         return $this;
@@ -146,9 +147,10 @@ class DocumentDistributionType
      *
      * ASBIE
      *  Document Distribution. Party
-     *  Details of the Party who can access the document.
+     *  The interested party to which the document should be distributed.
      *  1
      *  Document Distribution
+     *  Party
      *  Party
      *  Party
      *
@@ -164,9 +166,10 @@ class DocumentDistributionType
      *
      * ASBIE
      *  Document Distribution. Party
-     *  Details of the Party who can access the document.
+     *  The interested party to which the document should be distributed.
      *  1
      *  Document Distribution
+     *  Party
      *  Party
      *  Party
      *

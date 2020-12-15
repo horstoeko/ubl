@@ -46,5 +46,10 @@ $ublBuilder->setDocumentPayeeAddress("Lieferantenstraße 20", null, null, "80333
 $ublBuilder->setDocumentPayeeLegalOrganisation("123456789", "0198", "[Seller trading name]");
 $ublBuilder->setDocumentPayeeContact("Horst Meier", "Einkauf", "+49-111-333", "+49-111-444", "info@kunde.de");
 
+$ublBuilder->setDocumentSellerOrderReferencedDocument("ABC123456789");
+$ublBuilder->setDocumentBuyerOrderReferencedDocument("65002278");
+$ublBuilder->setDocumentContractReferencedDocument("CR987654321", new DateTime());
+$ublBuilder->addDocumentAdditionalReferencedDocument("01_15_Anhang_01.pdf", null, null, "Aufschlüsselung der einzelnen Leistungspositionen");
+
 echo $ublBuilder->getContent();
 echo "\n\n";

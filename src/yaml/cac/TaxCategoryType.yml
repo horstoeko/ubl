@@ -32,7 +32,7 @@ horstoeko\ubl\entities\cac\TaxCategoryType:
             accessor:
                 getter: getPercent
                 setter: setPercent
-            type: float
+            type: horstoeko\ubl\entities\cbc\Percent
         baseUnitMeasure:
             expose: true
             access_type: public_method
@@ -76,7 +76,11 @@ horstoeko\ubl\entities\cac\TaxCategoryType:
             accessor:
                 getter: getTaxExemptionReason
                 setter: setTaxExemptionReason
-            type: horstoeko\ubl\entities\cbc\TaxExemptionReason
+            xml_list:
+                inline: true
+                entry_name: TaxExemptionReason
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\TaxExemptionReason>
         tierRange:
             expose: true
             access_type: public_method
@@ -98,7 +102,7 @@ horstoeko\ubl\entities\cac\TaxCategoryType:
             accessor:
                 getter: getTierRatePercent
                 setter: setTierRatePercent
-            type: float
+            type: horstoeko\ubl\entities\cbc\TierRatePercent
         taxScheme:
             expose: true
             access_type: public_method

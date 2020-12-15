@@ -1,0 +1,3 @@
+horstoeko\ubl\entities\cac\ExaminationTransportEvent:
+    xml_root_name: ExaminationTransportEvent
+    xml_root_namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'

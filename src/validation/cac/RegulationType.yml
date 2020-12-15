@@ -1,0 +1,7 @@
+horstoeko\ubl\entities\cac\RegulationType:
+    properties:
+        name:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

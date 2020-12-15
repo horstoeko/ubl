@@ -1,0 +1,23 @@
+horstoeko\ubl\entities\cac\PerformanceDataLineType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        performanceValueQuantity:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        performanceMetricTypeCode:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        period:
+            -
+                Valid: null
+        item:
+            -
+                Valid: null

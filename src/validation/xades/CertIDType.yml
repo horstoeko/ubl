@@ -1,0 +1,16 @@
+horstoeko\ubl\entities\xades\CertIDType:
+    properties:
+        certDigest:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        issuerSerial:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

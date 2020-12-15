@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Request For Quotation Line. Details
- *  Information about a Line on a Request For Quotation.
+ *  A class to define a line in a Request for Quotation.
  *  Request For Quotation Line
  * XSD Type: RequestForQuotationLineType
  */
@@ -17,7 +17,7 @@ class RequestForQuotationLineType
     /**
      * BBIE
      *  Request For Quotation Line. Identifier
-     *  Identifies the Request For Quotation Line.
+     *  An identifier for this line in the request for quotation.
      *  0..1
      *  Request For Quotation Line
      *  Identifier
@@ -31,7 +31,7 @@ class RequestForQuotationLineType
     /**
      * BBIE
      *  Request For Quotation Line. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this line in the request for quotation.
      *  0..1
      *  Request For Quotation Line
      *  UUID
@@ -45,23 +45,69 @@ class RequestForQuotationLineType
     /**
      * BBIE
      *  Request For Quotation Line. Note. Text
-     *  Free-form text applying to the Request For Quotation Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Request For Quotation Line
      *  Note
      *  Text
      *  Text. Type
      *
-     * @var \horstoeko\ubl\entities\cbc\Note $note
+     * @var \horstoeko\ubl\entities\cbc\Note[] $note
      */
-    private $note = null;
+    private $note = [
+        
+    ];
+
+    /**
+     * BBIE
+     *  Request For Quotation Line. Optional_ Line Item Indicator. Indicator
+     *  An indication whether this line is optional (true) or not (false) for purposes of this request for quotation.
+     *  0..1
+     *  Request For Quotation Line
+     *  Optional
+     *  Line Item Indicator
+     *  Indicator
+     *  Indicator. Type
+     *
+     * @var bool $optionalLineItemIndicator
+     */
+    private $optionalLineItemIndicator = null;
+
+    /**
+     * BBIE
+     *  Request For Quotation Line. Privacy Code. Code
+     *  A code signifying the level of confidentiality of this request for quotation line.
+     *  0..1
+     *  Request For Quotation Line
+     *  Privacy Code
+     *  Code
+     *  Code. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\PrivacyCode $privacyCode
+     */
+    private $privacyCode = null;
+
+    /**
+     * BBIE
+     *  Request For Quotation Line. Security Classification Code. Code
+     *  A code signifying the security classification of this request for quotation line.
+     *  0..1
+     *  Request For Quotation Line
+     *  Security Classification Code
+     *  Code
+     *  Code. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\SecurityClassificationCode $securityClassificationCode
+     */
+    private $securityClassificationCode = null;
 
     /**
      * ASBIE
      *  Request For Quotation Line. Document Reference
-     *  An association to Document Reference.
+     *  A document associated with this request for quotation line.
      *  0..n
      *  Request For Quotation Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -74,9 +120,10 @@ class RequestForQuotationLineType
     /**
      * ASBIE
      *  Request For Quotation Line. Line Item
-     *  An association to Line Item.
+     *  A description of the item for which a quotation is requested.
      *  1
      *  Request For Quotation Line
+     *  Line Item
      *  Line Item
      *  Line Item
      *
@@ -89,7 +136,7 @@ class RequestForQuotationLineType
      *
      * BBIE
      *  Request For Quotation Line. Identifier
-     *  Identifies the Request For Quotation Line.
+     *  An identifier for this line in the request for quotation.
      *  0..1
      *  Request For Quotation Line
      *  Identifier
@@ -108,7 +155,7 @@ class RequestForQuotationLineType
      *
      * BBIE
      *  Request For Quotation Line. Identifier
-     *  Identifies the Request For Quotation Line.
+     *  An identifier for this line in the request for quotation.
      *  0..1
      *  Request For Quotation Line
      *  Identifier
@@ -129,7 +176,7 @@ class RequestForQuotationLineType
      *
      * BBIE
      *  Request For Quotation Line. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this line in the request for quotation.
      *  0..1
      *  Request For Quotation Line
      *  UUID
@@ -148,7 +195,7 @@ class RequestForQuotationLineType
      *
      * BBIE
      *  Request For Quotation Line. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this line in the request for quotation.
      *  0..1
      *  Request For Quotation Line
      *  UUID
@@ -165,18 +212,79 @@ class RequestForQuotationLineType
     }
 
     /**
-     * Gets as note
+     * Adds as note
      *
      * BBIE
      *  Request For Quotation Line. Note. Text
-     *  Free-form text applying to the Request For Quotation Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Request For Quotation Line
      *  Note
      *  Text
      *  Text. Type
      *
-     * @return \horstoeko\ubl\entities\cbc\Note
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\Note $note
+     */
+    public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
+    {
+        $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * isset note
+     *
+     * BBIE
+     *  Request For Quotation Line. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Request For Quotation Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetNote($index)
+    {
+        return isset($this->note[$index]);
+    }
+
+    /**
+     * unset note
+     *
+     * BBIE
+     *  Request For Quotation Line. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Request For Quotation Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetNote($index)
+    {
+        unset($this->note[$index]);
+    }
+
+    /**
+     * Gets as note
+     *
+     * BBIE
+     *  Request For Quotation Line. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Request For Quotation Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\Note[]
      */
     public function getNote()
     {
@@ -188,19 +296,141 @@ class RequestForQuotationLineType
      *
      * BBIE
      *  Request For Quotation Line. Note. Text
-     *  Free-form text applying to the Request For Quotation Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Request For Quotation Line
      *  Note
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
-    public function setNote(\horstoeko\ubl\entities\cbc\Note $note)
+    public function setNote(array $note)
     {
         $this->note = $note;
+        return $this;
+    }
+
+    /**
+     * Gets as optionalLineItemIndicator
+     *
+     * BBIE
+     *  Request For Quotation Line. Optional_ Line Item Indicator. Indicator
+     *  An indication whether this line is optional (true) or not (false) for purposes of this request for quotation.
+     *  0..1
+     *  Request For Quotation Line
+     *  Optional
+     *  Line Item Indicator
+     *  Indicator
+     *  Indicator. Type
+     *
+     * @return bool
+     */
+    public function getOptionalLineItemIndicator()
+    {
+        return $this->optionalLineItemIndicator;
+    }
+
+    /**
+     * Sets a new optionalLineItemIndicator
+     *
+     * BBIE
+     *  Request For Quotation Line. Optional_ Line Item Indicator. Indicator
+     *  An indication whether this line is optional (true) or not (false) for purposes of this request for quotation.
+     *  0..1
+     *  Request For Quotation Line
+     *  Optional
+     *  Line Item Indicator
+     *  Indicator
+     *  Indicator. Type
+     *
+     * @param bool $optionalLineItemIndicator
+     * @return self
+     */
+    public function setOptionalLineItemIndicator($optionalLineItemIndicator)
+    {
+        $this->optionalLineItemIndicator = $optionalLineItemIndicator;
+        return $this;
+    }
+
+    /**
+     * Gets as privacyCode
+     *
+     * BBIE
+     *  Request For Quotation Line. Privacy Code. Code
+     *  A code signifying the level of confidentiality of this request for quotation line.
+     *  0..1
+     *  Request For Quotation Line
+     *  Privacy Code
+     *  Code
+     *  Code. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\PrivacyCode
+     */
+    public function getPrivacyCode()
+    {
+        return $this->privacyCode;
+    }
+
+    /**
+     * Sets a new privacyCode
+     *
+     * BBIE
+     *  Request For Quotation Line. Privacy Code. Code
+     *  A code signifying the level of confidentiality of this request for quotation line.
+     *  0..1
+     *  Request For Quotation Line
+     *  Privacy Code
+     *  Code
+     *  Code. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\PrivacyCode $privacyCode
+     * @return self
+     */
+    public function setPrivacyCode(\horstoeko\ubl\entities\cbc\PrivacyCode $privacyCode)
+    {
+        $this->privacyCode = $privacyCode;
+        return $this;
+    }
+
+    /**
+     * Gets as securityClassificationCode
+     *
+     * BBIE
+     *  Request For Quotation Line. Security Classification Code. Code
+     *  A code signifying the security classification of this request for quotation line.
+     *  0..1
+     *  Request For Quotation Line
+     *  Security Classification Code
+     *  Code
+     *  Code. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\SecurityClassificationCode
+     */
+    public function getSecurityClassificationCode()
+    {
+        return $this->securityClassificationCode;
+    }
+
+    /**
+     * Sets a new securityClassificationCode
+     *
+     * BBIE
+     *  Request For Quotation Line. Security Classification Code. Code
+     *  A code signifying the security classification of this request for quotation line.
+     *  0..1
+     *  Request For Quotation Line
+     *  Security Classification Code
+     *  Code
+     *  Code. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\SecurityClassificationCode $securityClassificationCode
+     * @return self
+     */
+    public function setSecurityClassificationCode(\horstoeko\ubl\entities\cbc\SecurityClassificationCode $securityClassificationCode)
+    {
+        $this->securityClassificationCode = $securityClassificationCode;
         return $this;
     }
 
@@ -209,9 +439,10 @@ class RequestForQuotationLineType
      *
      * ASBIE
      *  Request For Quotation Line. Document Reference
-     *  An association to Document Reference.
+     *  A document associated with this request for quotation line.
      *  0..n
      *  Request For Quotation Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -229,9 +460,10 @@ class RequestForQuotationLineType
      *
      * ASBIE
      *  Request For Quotation Line. Document Reference
-     *  An association to Document Reference.
+     *  A document associated with this request for quotation line.
      *  0..n
      *  Request For Quotation Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -248,9 +480,10 @@ class RequestForQuotationLineType
      *
      * ASBIE
      *  Request For Quotation Line. Document Reference
-     *  An association to Document Reference.
+     *  A document associated with this request for quotation line.
      *  0..n
      *  Request For Quotation Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -267,9 +500,10 @@ class RequestForQuotationLineType
      *
      * ASBIE
      *  Request For Quotation Line. Document Reference
-     *  An association to Document Reference.
+     *  A document associated with this request for quotation line.
      *  0..n
      *  Request For Quotation Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -285,9 +519,10 @@ class RequestForQuotationLineType
      *
      * ASBIE
      *  Request For Quotation Line. Document Reference
-     *  An association to Document Reference.
+     *  A document associated with this request for quotation line.
      *  0..n
      *  Request For Quotation Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -305,9 +540,10 @@ class RequestForQuotationLineType
      *
      * ASBIE
      *  Request For Quotation Line. Line Item
-     *  An association to Line Item.
+     *  A description of the item for which a quotation is requested.
      *  1
      *  Request For Quotation Line
+     *  Line Item
      *  Line Item
      *  Line Item
      *
@@ -323,9 +559,10 @@ class RequestForQuotationLineType
      *
      * ASBIE
      *  Request For Quotation Line. Line Item
-     *  An association to Line Item.
+     *  A description of the item for which a quotation is requested.
      *  1
      *  Request For Quotation Line
+     *  Line Item
      *  Line Item
      *  Line Item
      *

@@ -1,0 +1,109 @@
+horstoeko\ubl\entities\cac\ConsumptionPointType:
+    properties:
+        iD:
+            expose: true
+            access_type: public_method
+            serialized_name: ID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getID
+                setter: setID
+            type: horstoeko\ubl\entities\cbc\ID
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: Description
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>
+        subscriberID:
+            expose: true
+            access_type: public_method
+            serialized_name: SubscriberID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getSubscriberID
+                setter: setSubscriberID
+            type: horstoeko\ubl\entities\cbc\SubscriberID
+        subscriberType:
+            expose: true
+            access_type: public_method
+            serialized_name: SubscriberType
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getSubscriberType
+                setter: setSubscriberType
+            type: horstoeko\ubl\entities\cbc\SubscriberType
+        subscriberTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: SubscriberTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getSubscriberTypeCode
+                setter: setSubscriberTypeCode
+            type: horstoeko\ubl\entities\cbc\SubscriberTypeCode
+        totalDeliveredQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: TotalDeliveredQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTotalDeliveredQuantity
+                setter: setTotalDeliveredQuantity
+            type: horstoeko\ubl\entities\cbc\TotalDeliveredQuantity
+        address:
+            expose: true
+            access_type: public_method
+            serialized_name: Address
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getAddress
+                setter: setAddress
+            type: horstoeko\ubl\entities\cac\Address
+        webSiteAccess:
+            expose: true
+            access_type: public_method
+            serialized_name: WebSiteAccess
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getWebSiteAccess
+                setter: setWebSiteAccess
+            type: horstoeko\ubl\entities\cac\WebSiteAccess
+        utilityMeter:
+            expose: true
+            access_type: public_method
+            serialized_name: UtilityMeter
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getUtilityMeter
+                setter: setUtilityMeter
+            xml_list:
+                inline: true
+                entry_name: UtilityMeter
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\UtilityMeter>

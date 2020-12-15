@@ -1,0 +1,14 @@
+horstoeko\ubl\entities\xades\DigestAlgAndValueType:
+    properties:
+        digestMethod:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        digestValue:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

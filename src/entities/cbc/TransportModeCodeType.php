@@ -2,7 +2,7 @@
 
 namespace horstoeko\ubl\entities\cbc;
 
-use horstoeko\ubl\entities\qdt\TransportModeCodeType as TransportModeCodeTypeBase;
+use horstoeko\ubl\entities\udt\CodeType;
 
 /**
  * Class representing TransportModeCodeType
@@ -10,7 +10,7 @@ use horstoeko\ubl\entities\qdt\TransportModeCodeType as TransportModeCodeTypeBas
  *
  * XSD Type: TransportModeCodeType
  */
-class TransportModeCodeType extends TransportModeCodeTypeBase
+class TransportModeCodeType extends CodeType
 {
 
 

@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Price. Details
- *  Information about the price.
+ *  A class to describe a price, expressed in a data structure containing multiple properties (compare with UnstructuredPrice).
  *  Price
  * XSD Type: PriceType
  */
@@ -17,7 +17,7 @@ class PriceType
     /**
      * BBIE
      *  Price. Price Amount. Amount
-     *  The price amount.
+     *  The amount of the price.
      *  1
      *  Price
      *  Price Amount
@@ -33,7 +33,7 @@ class PriceType
     /**
      * BBIE
      *  Price. Base_ Quantity. Quantity
-     *  The actual quantity to which the price applies.
+     *  The quantity at which this price applies.
      *  0..1
      *  Price
      *  Base
@@ -48,14 +48,14 @@ class PriceType
     /**
      * BBIE
      *  Price. Price Change_ Reason. Text
-     *  The reason for the price change, expressed as text.
+     *  A reason for a price change.
      *  0..n
      *  Price
      *  Price Change
      *  Reason
      *  Text
      *  Text. Type
-     *  "Clearance of old stock", "New contract applies"
+     *  Clearance of old stock , New contract applies
      *
      * @var \horstoeko\ubl\entities\cbc\PriceChangeReason[] $priceChangeReason
      */
@@ -66,7 +66,7 @@ class PriceType
     /**
      * BBIE
      *  Price. Price Type Code. Code
-     *  The price type, expressed as a code.
+     *  The type of price, expressed as a code.
      *  0..1
      *  Price
      *  Price Type Code
@@ -80,7 +80,7 @@ class PriceType
     /**
      * BBIE
      *  Price. Price Type. Text
-     *  The price type, expressed as text.
+     *  The type of price, expressed as text.
      *  0..1
      *  Price
      *  Price Type
@@ -103,17 +103,18 @@ class PriceType
      *  Rate. Type
      *  Nails are priced by weight but ordered by quantity. So this would say how many nails per kilo
      *
-     * @var float $orderableUnitFactorRate
+     * @var \horstoeko\ubl\entities\cbc\OrderableUnitFactorRate $orderableUnitFactorRate
      */
     private $orderableUnitFactorRate = null;
 
     /**
      * ASBIE
      *  Price. Validity_ Period. Period
-     *  An association to Validity Period.
+     *  A period during which this price is valid.
      *  0..n
      *  Price
      *  Validity
+     *  Period
      *  Period
      *  Period
      *
@@ -126,9 +127,10 @@ class PriceType
     /**
      * ASBIE
      *  Price. Price List
-     *  A reference to a Price List.
+     *  Information about a price list applicable to this price.
      *  0..1
      *  Price
+     *  Price List
      *  Price List
      *  Price List
      *
@@ -139,9 +141,10 @@ class PriceType
     /**
      * ASBIE
      *  Price. Allowance Charge
-     *  An association to Allowance Charge.
+     *  An allowance or charge associated with this price.
      *  0..n
      *  Price
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *
@@ -152,11 +155,26 @@ class PriceType
     ];
 
     /**
+     * ASBIE
+     *  Price. Pricing_ Exchange Rate. Exchange Rate
+     *  The exchange rate applicable to this price, if it differs from the exchange rate applicable to the document as a whole.
+     *  0..1
+     *  Price
+     *  Pricing
+     *  Exchange Rate
+     *  Exchange Rate
+     *  Exchange Rate
+     *
+     * @var \horstoeko\ubl\entities\cac\PricingExchangeRate $pricingExchangeRate
+     */
+    private $pricingExchangeRate = null;
+
+    /**
      * Gets as priceAmount
      *
      * BBIE
      *  Price. Price Amount. Amount
-     *  The price amount.
+     *  The amount of the price.
      *  1
      *  Price
      *  Price Amount
@@ -177,7 +195,7 @@ class PriceType
      *
      * BBIE
      *  Price. Price Amount. Amount
-     *  The price amount.
+     *  The amount of the price.
      *  1
      *  Price
      *  Price Amount
@@ -200,7 +218,7 @@ class PriceType
      *
      * BBIE
      *  Price. Base_ Quantity. Quantity
-     *  The actual quantity to which the price applies.
+     *  The quantity at which this price applies.
      *  0..1
      *  Price
      *  Base
@@ -220,7 +238,7 @@ class PriceType
      *
      * BBIE
      *  Price. Base_ Quantity. Quantity
-     *  The actual quantity to which the price applies.
+     *  The quantity at which this price applies.
      *  0..1
      *  Price
      *  Base
@@ -242,14 +260,14 @@ class PriceType
      *
      * BBIE
      *  Price. Price Change_ Reason. Text
-     *  The reason for the price change, expressed as text.
+     *  A reason for a price change.
      *  0..n
      *  Price
      *  Price Change
      *  Reason
      *  Text
      *  Text. Type
-     *  "Clearance of old stock", "New contract applies"
+     *  Clearance of old stock , New contract applies
      *
      * @return self
      * @param \horstoeko\ubl\entities\cbc\PriceChangeReason $priceChangeReason
@@ -265,14 +283,14 @@ class PriceType
      *
      * BBIE
      *  Price. Price Change_ Reason. Text
-     *  The reason for the price change, expressed as text.
+     *  A reason for a price change.
      *  0..n
      *  Price
      *  Price Change
      *  Reason
      *  Text
      *  Text. Type
-     *  "Clearance of old stock", "New contract applies"
+     *  Clearance of old stock , New contract applies
      *
      * @param int|string $index
      * @return bool
@@ -287,14 +305,14 @@ class PriceType
      *
      * BBIE
      *  Price. Price Change_ Reason. Text
-     *  The reason for the price change, expressed as text.
+     *  A reason for a price change.
      *  0..n
      *  Price
      *  Price Change
      *  Reason
      *  Text
      *  Text. Type
-     *  "Clearance of old stock", "New contract applies"
+     *  Clearance of old stock , New contract applies
      *
      * @param int|string $index
      * @return void
@@ -309,14 +327,14 @@ class PriceType
      *
      * BBIE
      *  Price. Price Change_ Reason. Text
-     *  The reason for the price change, expressed as text.
+     *  A reason for a price change.
      *  0..n
      *  Price
      *  Price Change
      *  Reason
      *  Text
      *  Text. Type
-     *  "Clearance of old stock", "New contract applies"
+     *  Clearance of old stock , New contract applies
      *
      * @return \horstoeko\ubl\entities\cbc\PriceChangeReason[]
      */
@@ -330,14 +348,14 @@ class PriceType
      *
      * BBIE
      *  Price. Price Change_ Reason. Text
-     *  The reason for the price change, expressed as text.
+     *  A reason for a price change.
      *  0..n
      *  Price
      *  Price Change
      *  Reason
      *  Text
      *  Text. Type
-     *  "Clearance of old stock", "New contract applies"
+     *  Clearance of old stock , New contract applies
      *
      * @param \horstoeko\ubl\entities\cbc\PriceChangeReason[] $priceChangeReason
      * @return self
@@ -353,7 +371,7 @@ class PriceType
      *
      * BBIE
      *  Price. Price Type Code. Code
-     *  The price type, expressed as a code.
+     *  The type of price, expressed as a code.
      *  0..1
      *  Price
      *  Price Type Code
@@ -372,7 +390,7 @@ class PriceType
      *
      * BBIE
      *  Price. Price Type Code. Code
-     *  The price type, expressed as a code.
+     *  The type of price, expressed as a code.
      *  0..1
      *  Price
      *  Price Type Code
@@ -393,7 +411,7 @@ class PriceType
      *
      * BBIE
      *  Price. Price Type. Text
-     *  The price type, expressed as text.
+     *  The type of price, expressed as text.
      *  0..1
      *  Price
      *  Price Type
@@ -413,7 +431,7 @@ class PriceType
      *
      * BBIE
      *  Price. Price Type. Text
-     *  The price type, expressed as text.
+     *  The type of price, expressed as text.
      *  0..1
      *  Price
      *  Price Type
@@ -443,7 +461,7 @@ class PriceType
      *  Rate. Type
      *  Nails are priced by weight but ordered by quantity. So this would say how many nails per kilo
      *
-     * @return float
+     * @return \horstoeko\ubl\entities\cbc\OrderableUnitFactorRate
      */
     public function getOrderableUnitFactorRate()
     {
@@ -463,10 +481,10 @@ class PriceType
      *  Rate. Type
      *  Nails are priced by weight but ordered by quantity. So this would say how many nails per kilo
      *
-     * @param float $orderableUnitFactorRate
+     * @param \horstoeko\ubl\entities\cbc\OrderableUnitFactorRate $orderableUnitFactorRate
      * @return self
      */
-    public function setOrderableUnitFactorRate($orderableUnitFactorRate)
+    public function setOrderableUnitFactorRate(\horstoeko\ubl\entities\cbc\OrderableUnitFactorRate $orderableUnitFactorRate)
     {
         $this->orderableUnitFactorRate = $orderableUnitFactorRate;
         return $this;
@@ -477,10 +495,11 @@ class PriceType
      *
      * ASBIE
      *  Price. Validity_ Period. Period
-     *  An association to Validity Period.
+     *  A period during which this price is valid.
      *  0..n
      *  Price
      *  Validity
+     *  Period
      *  Period
      *  Period
      *
@@ -498,10 +517,11 @@ class PriceType
      *
      * ASBIE
      *  Price. Validity_ Period. Period
-     *  An association to Validity Period.
+     *  A period during which this price is valid.
      *  0..n
      *  Price
      *  Validity
+     *  Period
      *  Period
      *  Period
      *
@@ -518,10 +538,11 @@ class PriceType
      *
      * ASBIE
      *  Price. Validity_ Period. Period
-     *  An association to Validity Period.
+     *  A period during which this price is valid.
      *  0..n
      *  Price
      *  Validity
+     *  Period
      *  Period
      *  Period
      *
@@ -538,10 +559,11 @@ class PriceType
      *
      * ASBIE
      *  Price. Validity_ Period. Period
-     *  An association to Validity Period.
+     *  A period during which this price is valid.
      *  0..n
      *  Price
      *  Validity
+     *  Period
      *  Period
      *  Period
      *
@@ -557,10 +579,11 @@ class PriceType
      *
      * ASBIE
      *  Price. Validity_ Period. Period
-     *  An association to Validity Period.
+     *  A period during which this price is valid.
      *  0..n
      *  Price
      *  Validity
+     *  Period
      *  Period
      *  Period
      *
@@ -578,9 +601,10 @@ class PriceType
      *
      * ASBIE
      *  Price. Price List
-     *  A reference to a Price List.
+     *  Information about a price list applicable to this price.
      *  0..1
      *  Price
+     *  Price List
      *  Price List
      *  Price List
      *
@@ -596,9 +620,10 @@ class PriceType
      *
      * ASBIE
      *  Price. Price List
-     *  A reference to a Price List.
+     *  Information about a price list applicable to this price.
      *  0..1
      *  Price
+     *  Price List
      *  Price List
      *  Price List
      *
@@ -616,9 +641,10 @@ class PriceType
      *
      * ASBIE
      *  Price. Allowance Charge
-     *  An association to Allowance Charge.
+     *  An allowance or charge associated with this price.
      *  0..n
      *  Price
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *
@@ -636,9 +662,10 @@ class PriceType
      *
      * ASBIE
      *  Price. Allowance Charge
-     *  An association to Allowance Charge.
+     *  An allowance or charge associated with this price.
      *  0..n
      *  Price
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *
@@ -655,9 +682,10 @@ class PriceType
      *
      * ASBIE
      *  Price. Allowance Charge
-     *  An association to Allowance Charge.
+     *  An allowance or charge associated with this price.
      *  0..n
      *  Price
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *
@@ -674,9 +702,10 @@ class PriceType
      *
      * ASBIE
      *  Price. Allowance Charge
-     *  An association to Allowance Charge.
+     *  An allowance or charge associated with this price.
      *  0..n
      *  Price
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *
@@ -692,9 +721,10 @@ class PriceType
      *
      * ASBIE
      *  Price. Allowance Charge
-     *  An association to Allowance Charge.
+     *  An allowance or charge associated with this price.
      *  0..n
      *  Price
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *
@@ -704,6 +734,48 @@ class PriceType
     public function setAllowanceCharge(array $allowanceCharge)
     {
         $this->allowanceCharge = $allowanceCharge;
+        return $this;
+    }
+
+    /**
+     * Gets as pricingExchangeRate
+     *
+     * ASBIE
+     *  Price. Pricing_ Exchange Rate. Exchange Rate
+     *  The exchange rate applicable to this price, if it differs from the exchange rate applicable to the document as a whole.
+     *  0..1
+     *  Price
+     *  Pricing
+     *  Exchange Rate
+     *  Exchange Rate
+     *  Exchange Rate
+     *
+     * @return \horstoeko\ubl\entities\cac\PricingExchangeRate
+     */
+    public function getPricingExchangeRate()
+    {
+        return $this->pricingExchangeRate;
+    }
+
+    /**
+     * Sets a new pricingExchangeRate
+     *
+     * ASBIE
+     *  Price. Pricing_ Exchange Rate. Exchange Rate
+     *  The exchange rate applicable to this price, if it differs from the exchange rate applicable to the document as a whole.
+     *  0..1
+     *  Price
+     *  Pricing
+     *  Exchange Rate
+     *  Exchange Rate
+     *  Exchange Rate
+     *
+     * @param \horstoeko\ubl\entities\cac\PricingExchangeRate $pricingExchangeRate
+     * @return self
+     */
+    public function setPricingExchangeRate(\horstoeko\ubl\entities\cac\PricingExchangeRate $pricingExchangeRate)
+    {
+        $this->pricingExchangeRate = $pricingExchangeRate;
         return $this;
     }
 

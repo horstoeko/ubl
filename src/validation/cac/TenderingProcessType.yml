@@ -1,0 +1,35 @@
+horstoeko\ubl\entities\cac\TenderingProcessType:
+    properties:
+        documentAvailabilityPeriod:
+            -
+                Valid: null
+        tenderSubmissionDeadlinePeriod:
+            -
+                Valid: null
+        invitationSubmissionPeriod:
+            -
+                Valid: null
+        participationRequestReceptionPeriod:
+            -
+                Valid: null
+        noticeDocumentReference:
+            -
+                Valid: null
+        additionalDocumentReference:
+            -
+                Valid: null
+        processJustification:
+            -
+                Valid: null
+        economicOperatorShortList:
+            -
+                Valid: null
+        openTenderEvent:
+            -
+                Valid: null
+        auctionTerms:
+            -
+                Valid: null
+        frameworkAgreement:
+            -
+                Valid: null

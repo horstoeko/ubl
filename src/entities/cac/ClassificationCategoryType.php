@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Classification Category. Details
- *  Information about a Classification Category; a subdivision of a Classification Scheme.
+ *  A class to define a category within a classification scheme.
  *  Classification Category
  * XSD Type: ClassificationCategoryType
  */
@@ -17,14 +17,14 @@ class ClassificationCategoryType
     /**
      * BBIE
      *  Classification Category. Name
-     *  The name of the Classification Category.
+     *  The name of this category within the classification scheme.
      *  0..1
      *  Classification Category
      *  Name
      *  Name
      *  Name. Type
      *  Code List Name
-     *  "UNSPSC Class", "UNSPSC Segment", "UNSPSC Family"
+     *  UNSPSC Class , UNSPSC Segment , UNSPSC Family
      *
      * @var \horstoeko\ubl\entities\cbc\Name $name
      */
@@ -33,7 +33,7 @@ class ClassificationCategoryType
     /**
      * BBIE
      *  Classification Category. Code Value. Text
-     *  The Classification Category value.
+     *  The value of a code used to identify this category within the classification scheme.
      *  0..1
      *  Classification Category
      *  Code Value
@@ -49,14 +49,14 @@ class ClassificationCategoryType
     /**
      * BBIE
      *  Classification Category. Description. Text
-     *  The description of the Classification Category.
+     *  Text describing this category.
      *  0..n
      *  Classification Category
      *  Description
      *  Text
      *  Text. Type
      *  Code Name
-     *  "Electrical Goods", "Wooden Toys"
+     *  Electrical Goods , Wooden Toys
      *
      * @var \horstoeko\ubl\entities\cbc\Description[] $description
      */
@@ -67,10 +67,11 @@ class ClassificationCategoryType
     /**
      * ASBIE
      *  Classification Category. Categorizes_ Classification Category. Classification Category
-     *  An association to subcategories within the Category.
+     *  A recursive description of a subcategory of this category.
      *  0..n
      *  Classification Category
      *  Categorizes
+     *  Classification Category
      *  Classification Category
      *  Classification Category
      *
@@ -85,14 +86,14 @@ class ClassificationCategoryType
      *
      * BBIE
      *  Classification Category. Name
-     *  The name of the Classification Category.
+     *  The name of this category within the classification scheme.
      *  0..1
      *  Classification Category
      *  Name
      *  Name
      *  Name. Type
      *  Code List Name
-     *  "UNSPSC Class", "UNSPSC Segment", "UNSPSC Family"
+     *  UNSPSC Class , UNSPSC Segment , UNSPSC Family
      *
      * @return \horstoeko\ubl\entities\cbc\Name
      */
@@ -106,14 +107,14 @@ class ClassificationCategoryType
      *
      * BBIE
      *  Classification Category. Name
-     *  The name of the Classification Category.
+     *  The name of this category within the classification scheme.
      *  0..1
      *  Classification Category
      *  Name
      *  Name
      *  Name. Type
      *  Code List Name
-     *  "UNSPSC Class", "UNSPSC Segment", "UNSPSC Family"
+     *  UNSPSC Class , UNSPSC Segment , UNSPSC Family
      *
      * @param \horstoeko\ubl\entities\cbc\Name $name
      * @return self
@@ -129,7 +130,7 @@ class ClassificationCategoryType
      *
      * BBIE
      *  Classification Category. Code Value. Text
-     *  The Classification Category value.
+     *  The value of a code used to identify this category within the classification scheme.
      *  0..1
      *  Classification Category
      *  Code Value
@@ -150,7 +151,7 @@ class ClassificationCategoryType
      *
      * BBIE
      *  Classification Category. Code Value. Text
-     *  The Classification Category value.
+     *  The value of a code used to identify this category within the classification scheme.
      *  0..1
      *  Classification Category
      *  Code Value
@@ -173,14 +174,14 @@ class ClassificationCategoryType
      *
      * BBIE
      *  Classification Category. Description. Text
-     *  The description of the Classification Category.
+     *  Text describing this category.
      *  0..n
      *  Classification Category
      *  Description
      *  Text
      *  Text. Type
      *  Code Name
-     *  "Electrical Goods", "Wooden Toys"
+     *  Electrical Goods , Wooden Toys
      *
      * @return self
      * @param \horstoeko\ubl\entities\cbc\Description $description
@@ -196,14 +197,14 @@ class ClassificationCategoryType
      *
      * BBIE
      *  Classification Category. Description. Text
-     *  The description of the Classification Category.
+     *  Text describing this category.
      *  0..n
      *  Classification Category
      *  Description
      *  Text
      *  Text. Type
      *  Code Name
-     *  "Electrical Goods", "Wooden Toys"
+     *  Electrical Goods , Wooden Toys
      *
      * @param int|string $index
      * @return bool
@@ -218,14 +219,14 @@ class ClassificationCategoryType
      *
      * BBIE
      *  Classification Category. Description. Text
-     *  The description of the Classification Category.
+     *  Text describing this category.
      *  0..n
      *  Classification Category
      *  Description
      *  Text
      *  Text. Type
      *  Code Name
-     *  "Electrical Goods", "Wooden Toys"
+     *  Electrical Goods , Wooden Toys
      *
      * @param int|string $index
      * @return void
@@ -240,14 +241,14 @@ class ClassificationCategoryType
      *
      * BBIE
      *  Classification Category. Description. Text
-     *  The description of the Classification Category.
+     *  Text describing this category.
      *  0..n
      *  Classification Category
      *  Description
      *  Text
      *  Text. Type
      *  Code Name
-     *  "Electrical Goods", "Wooden Toys"
+     *  Electrical Goods , Wooden Toys
      *
      * @return \horstoeko\ubl\entities\cbc\Description[]
      */
@@ -261,14 +262,14 @@ class ClassificationCategoryType
      *
      * BBIE
      *  Classification Category. Description. Text
-     *  The description of the Classification Category.
+     *  Text describing this category.
      *  0..n
      *  Classification Category
      *  Description
      *  Text
      *  Text. Type
      *  Code Name
-     *  "Electrical Goods", "Wooden Toys"
+     *  Electrical Goods , Wooden Toys
      *
      * @param \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
@@ -284,10 +285,11 @@ class ClassificationCategoryType
      *
      * ASBIE
      *  Classification Category. Categorizes_ Classification Category. Classification Category
-     *  An association to subcategories within the Category.
+     *  A recursive description of a subcategory of this category.
      *  0..n
      *  Classification Category
      *  Categorizes
+     *  Classification Category
      *  Classification Category
      *  Classification Category
      *
@@ -305,10 +307,11 @@ class ClassificationCategoryType
      *
      * ASBIE
      *  Classification Category. Categorizes_ Classification Category. Classification Category
-     *  An association to subcategories within the Category.
+     *  A recursive description of a subcategory of this category.
      *  0..n
      *  Classification Category
      *  Categorizes
+     *  Classification Category
      *  Classification Category
      *  Classification Category
      *
@@ -325,10 +328,11 @@ class ClassificationCategoryType
      *
      * ASBIE
      *  Classification Category. Categorizes_ Classification Category. Classification Category
-     *  An association to subcategories within the Category.
+     *  A recursive description of a subcategory of this category.
      *  0..n
      *  Classification Category
      *  Categorizes
+     *  Classification Category
      *  Classification Category
      *  Classification Category
      *
@@ -345,10 +349,11 @@ class ClassificationCategoryType
      *
      * ASBIE
      *  Classification Category. Categorizes_ Classification Category. Classification Category
-     *  An association to subcategories within the Category.
+     *  A recursive description of a subcategory of this category.
      *  0..n
      *  Classification Category
      *  Categorizes
+     *  Classification Category
      *  Classification Category
      *  Classification Category
      *
@@ -364,10 +369,11 @@ class ClassificationCategoryType
      *
      * ASBIE
      *  Classification Category. Categorizes_ Classification Category. Classification Category
-     *  An association to subcategories within the Category.
+     *  A recursive description of a subcategory of this category.
      *  0..n
      *  Classification Category
      *  Categorizes
+     *  Classification Category
      *  Classification Category
      *  Classification Category
      *

@@ -22,6 +22,17 @@ horstoeko\ubl\entities\cac\ItemIdentificationType:
                 getter: getExtendedID
                 setter: setExtendedID
             type: horstoeko\ubl\entities\cbc\ExtendedID
+        barcodeSymbologyID:
+            expose: true
+            access_type: public_method
+            serialized_name: BarcodeSymbologyID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getBarcodeSymbologyID
+                setter: setBarcodeSymbologyID
+            type: horstoeko\ubl\entities\cbc\BarcodeSymbologyID
         physicalAttribute:
             expose: true
             access_type: public_method

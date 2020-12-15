@@ -1,0 +1,116 @@
+horstoeko\ubl\entities\cac\PaymentMandateType:
+    properties:
+        iD:
+            expose: true
+            access_type: public_method
+            serialized_name: ID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getID
+                setter: setID
+            type: horstoeko\ubl\entities\cbc\ID
+        mandateTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: MandateTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMandateTypeCode
+                setter: setMandateTypeCode
+            type: horstoeko\ubl\entities\cbc\MandateTypeCode
+        maximumPaymentInstructionsNumeric:
+            expose: true
+            access_type: public_method
+            serialized_name: MaximumPaymentInstructionsNumeric
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMaximumPaymentInstructionsNumeric
+                setter: setMaximumPaymentInstructionsNumeric
+            type: horstoeko\ubl\entities\cbc\MaximumPaymentInstructionsNumeric
+        maximumPaidAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: MaximumPaidAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMaximumPaidAmount
+                setter: setMaximumPaidAmount
+            type: horstoeko\ubl\entities\cbc\MaximumPaidAmount
+        signatureID:
+            expose: true
+            access_type: public_method
+            serialized_name: SignatureID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getSignatureID
+                setter: setSignatureID
+            type: horstoeko\ubl\entities\cbc\SignatureID
+        payerParty:
+            expose: true
+            access_type: public_method
+            serialized_name: PayerParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPayerParty
+                setter: setPayerParty
+            type: horstoeko\ubl\entities\cac\PayerParty
+        payerFinancialAccount:
+            expose: true
+            access_type: public_method
+            serialized_name: PayerFinancialAccount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPayerFinancialAccount
+                setter: setPayerFinancialAccount
+            type: horstoeko\ubl\entities\cac\PayerFinancialAccount
+        validityPeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: ValidityPeriod
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getValidityPeriod
+                setter: setValidityPeriod
+            type: horstoeko\ubl\entities\cac\ValidityPeriod
+        paymentReversalPeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: PaymentReversalPeriod
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPaymentReversalPeriod
+                setter: setPaymentReversalPeriod
+            type: horstoeko\ubl\entities\cac\PaymentReversalPeriod
+        clause:
+            expose: true
+            access_type: public_method
+            serialized_name: Clause
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getClause
+                setter: setClause
+            xml_list:
+                inline: true
+                entry_name: Clause
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\Clause>

@@ -2,7 +2,7 @@
 
 namespace horstoeko\ubl\entities\cbc;
 
-use horstoeko\ubl\entities\qdt\ChipCodeType;
+use horstoeko\ubl\entities\udt\CodeType;
 
 /**
  * Class representing CardChipCodeType
@@ -10,7 +10,7 @@ use horstoeko\ubl\entities\qdt\ChipCodeType;
  *
  * XSD Type: CardChipCodeType
  */
-class CardChipCodeType extends ChipCodeType
+class CardChipCodeType extends CodeType
 {
 
 

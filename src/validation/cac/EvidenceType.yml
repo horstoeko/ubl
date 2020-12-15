@@ -1,0 +1,11 @@
+horstoeko\ubl\entities\cac\EvidenceType:
+    properties:
+        evidenceIssuingParty:
+            -
+                Valid: null
+        documentReference:
+            -
+                Valid: null
+        language:
+            -
+                Valid: null

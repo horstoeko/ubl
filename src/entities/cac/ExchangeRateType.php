@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Exchange Rate. Details
- *  Information about Exchange Rate.
+ *  A class to define an exchange rate.
  *  Exchange Rate
  * XSD Type: ExchangeRateType
  */
@@ -17,12 +17,13 @@ class ExchangeRateType
     /**
      * BBIE
      *  Exchange Rate. Source_ Currency Code. Code
-     *  The reference currency for the Exchange Rate; the currency from which the exchange is being made (CC Definition).
+     *  The reference currency for this exchange rate; the currency from which the exchange is being made.
      *  1
      *  Exchange Rate
      *  Source
      *  Currency Code
      *  Code
+     *  Currency
      *  Currency_ Code. Type
      *
      * @var \horstoeko\ubl\entities\cbc\SourceCurrencyCode $sourceCurrencyCode
@@ -32,7 +33,7 @@ class ExchangeRateType
     /**
      * BBIE
      *  Exchange Rate. Source_ Currency Base Rate. Rate
-     *  The unit base of the source currency for currencies with small denominations.
+     *  In the case of a source currency with denominations of small value, the unit base.
      *  0..1
      *  Exchange Rate
      *  Source
@@ -40,19 +41,20 @@ class ExchangeRateType
      *  Rate
      *  Rate. Type
      *
-     * @var float $sourceCurrencyBaseRate
+     * @var \horstoeko\ubl\entities\cbc\SourceCurrencyBaseRate $sourceCurrencyBaseRate
      */
     private $sourceCurrencyBaseRate = null;
 
     /**
      * BBIE
      *  Exchange Rate. Target_ Currency Code. Code
-     *  The target currency for the Exchange Rate; the currency to which the exchange is being made (CC Definition).
+     *  The target currency for this exchange rate; the currency to which the exchange is being made.
      *  1
      *  Exchange Rate
      *  Target
      *  Currency Code
      *  Code
+     *  Currency
      *  Currency_ Code. Type
      *
      * @var \horstoeko\ubl\entities\cbc\TargetCurrencyCode $targetCurrencyCode
@@ -62,7 +64,7 @@ class ExchangeRateType
     /**
      * BBIE
      *  Exchange Rate. Target_ Currency Base Rate. Rate
-     *  The unit base of the target currency for currencies with small denominations.
+     *  In the case of a target currency with denominations of small value, the unit base.
      *  0..1
      *  Exchange Rate
      *  Target
@@ -70,14 +72,14 @@ class ExchangeRateType
      *  Rate
      *  Rate. Type
      *
-     * @var float $targetCurrencyBaseRate
+     * @var \horstoeko\ubl\entities\cbc\TargetCurrencyBaseRate $targetCurrencyBaseRate
      */
     private $targetCurrencyBaseRate = null;
 
     /**
      * BBIE
      *  Exchange Rate. Exchange Market Identifier. Identifier
-     *  Identifies the currency exchange market used as the source of the Exchange Rate.
+     *  An identifier for the currency exchange market used as the source of this exchange rate.
      *  0..1
      *  Exchange Rate
      *  Exchange Market Identifier
@@ -98,18 +100,19 @@ class ExchangeRateType
      *  Rate
      *  Rate. Type
      *
-     * @var float $calculationRate
+     * @var \horstoeko\ubl\entities\cbc\CalculationRate $calculationRate
      */
     private $calculationRate = null;
 
     /**
      * BBIE
      *  Exchange Rate. Mathematic Operator Code. Code
-     *  An identifier for whether the Calculation Rate should be used to multiply or to divide, expressed as a code.
+     *  A code signifying whether the calculation rate is a multiplier or a divisor.
      *  0..1
      *  Exchange Rate
      *  Mathematic Operator Code
      *  Code
+     *  Operator
      *  Operator_ Code. Type
      *
      * @var \horstoeko\ubl\entities\cbc\MathematicOperatorCode $mathematicOperatorCode
@@ -119,7 +122,7 @@ class ExchangeRateType
     /**
      * BBIE
      *  Exchange Rate. Date
-     *  The date of the Exchange.
+     *  The date on which the exchange rate was established.
      *  0..1
      *  Exchange Rate
      *  Date
@@ -133,10 +136,11 @@ class ExchangeRateType
     /**
      * ASBIE
      *  Exchange Rate. Foreign Exchange_ Contract. Contract
-     *  An association to Foreign Exchange Contract.
+     *  A contract for foreign exchange.
      *  0..1
      *  Exchange Rate
      *  Foreign Exchange
+     *  Contract
      *  Contract
      *  Contract
      *
@@ -149,12 +153,13 @@ class ExchangeRateType
      *
      * BBIE
      *  Exchange Rate. Source_ Currency Code. Code
-     *  The reference currency for the Exchange Rate; the currency from which the exchange is being made (CC Definition).
+     *  The reference currency for this exchange rate; the currency from which the exchange is being made.
      *  1
      *  Exchange Rate
      *  Source
      *  Currency Code
      *  Code
+     *  Currency
      *  Currency_ Code. Type
      *
      * @return \horstoeko\ubl\entities\cbc\SourceCurrencyCode
@@ -169,12 +174,13 @@ class ExchangeRateType
      *
      * BBIE
      *  Exchange Rate. Source_ Currency Code. Code
-     *  The reference currency for the Exchange Rate; the currency from which the exchange is being made (CC Definition).
+     *  The reference currency for this exchange rate; the currency from which the exchange is being made.
      *  1
      *  Exchange Rate
      *  Source
      *  Currency Code
      *  Code
+     *  Currency
      *  Currency_ Code. Type
      *
      * @param \horstoeko\ubl\entities\cbc\SourceCurrencyCode $sourceCurrencyCode
@@ -191,7 +197,7 @@ class ExchangeRateType
      *
      * BBIE
      *  Exchange Rate. Source_ Currency Base Rate. Rate
-     *  The unit base of the source currency for currencies with small denominations.
+     *  In the case of a source currency with denominations of small value, the unit base.
      *  0..1
      *  Exchange Rate
      *  Source
@@ -199,7 +205,7 @@ class ExchangeRateType
      *  Rate
      *  Rate. Type
      *
-     * @return float
+     * @return \horstoeko\ubl\entities\cbc\SourceCurrencyBaseRate
      */
     public function getSourceCurrencyBaseRate()
     {
@@ -211,7 +217,7 @@ class ExchangeRateType
      *
      * BBIE
      *  Exchange Rate. Source_ Currency Base Rate. Rate
-     *  The unit base of the source currency for currencies with small denominations.
+     *  In the case of a source currency with denominations of small value, the unit base.
      *  0..1
      *  Exchange Rate
      *  Source
@@ -219,10 +225,10 @@ class ExchangeRateType
      *  Rate
      *  Rate. Type
      *
-     * @param float $sourceCurrencyBaseRate
+     * @param \horstoeko\ubl\entities\cbc\SourceCurrencyBaseRate $sourceCurrencyBaseRate
      * @return self
      */
-    public function setSourceCurrencyBaseRate($sourceCurrencyBaseRate)
+    public function setSourceCurrencyBaseRate(\horstoeko\ubl\entities\cbc\SourceCurrencyBaseRate $sourceCurrencyBaseRate)
     {
         $this->sourceCurrencyBaseRate = $sourceCurrencyBaseRate;
         return $this;
@@ -233,12 +239,13 @@ class ExchangeRateType
      *
      * BBIE
      *  Exchange Rate. Target_ Currency Code. Code
-     *  The target currency for the Exchange Rate; the currency to which the exchange is being made (CC Definition).
+     *  The target currency for this exchange rate; the currency to which the exchange is being made.
      *  1
      *  Exchange Rate
      *  Target
      *  Currency Code
      *  Code
+     *  Currency
      *  Currency_ Code. Type
      *
      * @return \horstoeko\ubl\entities\cbc\TargetCurrencyCode
@@ -253,12 +260,13 @@ class ExchangeRateType
      *
      * BBIE
      *  Exchange Rate. Target_ Currency Code. Code
-     *  The target currency for the Exchange Rate; the currency to which the exchange is being made (CC Definition).
+     *  The target currency for this exchange rate; the currency to which the exchange is being made.
      *  1
      *  Exchange Rate
      *  Target
      *  Currency Code
      *  Code
+     *  Currency
      *  Currency_ Code. Type
      *
      * @param \horstoeko\ubl\entities\cbc\TargetCurrencyCode $targetCurrencyCode
@@ -275,7 +283,7 @@ class ExchangeRateType
      *
      * BBIE
      *  Exchange Rate. Target_ Currency Base Rate. Rate
-     *  The unit base of the target currency for currencies with small denominations.
+     *  In the case of a target currency with denominations of small value, the unit base.
      *  0..1
      *  Exchange Rate
      *  Target
@@ -283,7 +291,7 @@ class ExchangeRateType
      *  Rate
      *  Rate. Type
      *
-     * @return float
+     * @return \horstoeko\ubl\entities\cbc\TargetCurrencyBaseRate
      */
     public function getTargetCurrencyBaseRate()
     {
@@ -295,7 +303,7 @@ class ExchangeRateType
      *
      * BBIE
      *  Exchange Rate. Target_ Currency Base Rate. Rate
-     *  The unit base of the target currency for currencies with small denominations.
+     *  In the case of a target currency with denominations of small value, the unit base.
      *  0..1
      *  Exchange Rate
      *  Target
@@ -303,10 +311,10 @@ class ExchangeRateType
      *  Rate
      *  Rate. Type
      *
-     * @param float $targetCurrencyBaseRate
+     * @param \horstoeko\ubl\entities\cbc\TargetCurrencyBaseRate $targetCurrencyBaseRate
      * @return self
      */
-    public function setTargetCurrencyBaseRate($targetCurrencyBaseRate)
+    public function setTargetCurrencyBaseRate(\horstoeko\ubl\entities\cbc\TargetCurrencyBaseRate $targetCurrencyBaseRate)
     {
         $this->targetCurrencyBaseRate = $targetCurrencyBaseRate;
         return $this;
@@ -317,7 +325,7 @@ class ExchangeRateType
      *
      * BBIE
      *  Exchange Rate. Exchange Market Identifier. Identifier
-     *  Identifies the currency exchange market used as the source of the Exchange Rate.
+     *  An identifier for the currency exchange market used as the source of this exchange rate.
      *  0..1
      *  Exchange Rate
      *  Exchange Market Identifier
@@ -336,7 +344,7 @@ class ExchangeRateType
      *
      * BBIE
      *  Exchange Rate. Exchange Market Identifier. Identifier
-     *  Identifies the currency exchange market used as the source of the Exchange Rate.
+     *  An identifier for the currency exchange market used as the source of this exchange rate.
      *  0..1
      *  Exchange Rate
      *  Exchange Market Identifier
@@ -364,7 +372,7 @@ class ExchangeRateType
      *  Rate
      *  Rate. Type
      *
-     * @return float
+     * @return \horstoeko\ubl\entities\cbc\CalculationRate
      */
     public function getCalculationRate()
     {
@@ -383,10 +391,10 @@ class ExchangeRateType
      *  Rate
      *  Rate. Type
      *
-     * @param float $calculationRate
+     * @param \horstoeko\ubl\entities\cbc\CalculationRate $calculationRate
      * @return self
      */
-    public function setCalculationRate($calculationRate)
+    public function setCalculationRate(\horstoeko\ubl\entities\cbc\CalculationRate $calculationRate)
     {
         $this->calculationRate = $calculationRate;
         return $this;
@@ -397,11 +405,12 @@ class ExchangeRateType
      *
      * BBIE
      *  Exchange Rate. Mathematic Operator Code. Code
-     *  An identifier for whether the Calculation Rate should be used to multiply or to divide, expressed as a code.
+     *  A code signifying whether the calculation rate is a multiplier or a divisor.
      *  0..1
      *  Exchange Rate
      *  Mathematic Operator Code
      *  Code
+     *  Operator
      *  Operator_ Code. Type
      *
      * @return \horstoeko\ubl\entities\cbc\MathematicOperatorCode
@@ -416,11 +425,12 @@ class ExchangeRateType
      *
      * BBIE
      *  Exchange Rate. Mathematic Operator Code. Code
-     *  An identifier for whether the Calculation Rate should be used to multiply or to divide, expressed as a code.
+     *  A code signifying whether the calculation rate is a multiplier or a divisor.
      *  0..1
      *  Exchange Rate
      *  Mathematic Operator Code
      *  Code
+     *  Operator
      *  Operator_ Code. Type
      *
      * @param \horstoeko\ubl\entities\cbc\MathematicOperatorCode $mathematicOperatorCode
@@ -437,7 +447,7 @@ class ExchangeRateType
      *
      * BBIE
      *  Exchange Rate. Date
-     *  The date of the Exchange.
+     *  The date on which the exchange rate was established.
      *  0..1
      *  Exchange Rate
      *  Date
@@ -456,7 +466,7 @@ class ExchangeRateType
      *
      * BBIE
      *  Exchange Rate. Date
-     *  The date of the Exchange.
+     *  The date on which the exchange rate was established.
      *  0..1
      *  Exchange Rate
      *  Date
@@ -477,10 +487,11 @@ class ExchangeRateType
      *
      * ASBIE
      *  Exchange Rate. Foreign Exchange_ Contract. Contract
-     *  An association to Foreign Exchange Contract.
+     *  A contract for foreign exchange.
      *  0..1
      *  Exchange Rate
      *  Foreign Exchange
+     *  Contract
      *  Contract
      *  Contract
      *
@@ -496,10 +507,11 @@ class ExchangeRateType
      *
      * ASBIE
      *  Exchange Rate. Foreign Exchange_ Contract. Contract
-     *  An association to Foreign Exchange Contract.
+     *  A contract for foreign exchange.
      *  0..1
      *  Exchange Rate
      *  Foreign Exchange
+     *  Contract
      *  Contract
      *  Contract
      *

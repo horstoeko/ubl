@@ -1,0 +1,27 @@
+horstoeko\ubl\entities\ds\DSAKeyValueType:
+    properties:
+        p:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        q:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        'y':
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        seed:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        pgenCounter:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

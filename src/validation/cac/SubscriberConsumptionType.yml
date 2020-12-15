@@ -1,0 +1,21 @@
+horstoeko\ubl\entities\cac\SubscriberConsumptionType:
+    properties:
+        subscriberParty:
+            -
+                Valid: null
+        utilityConsumptionPoint:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        onAccountPayment:
+            -
+                Valid: null
+        consumption:
+            -
+                Valid: null
+        supplierConsumption:
+            -
+                Valid: null

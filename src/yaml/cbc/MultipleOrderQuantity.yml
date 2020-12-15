@@ -1,0 +1,3 @@
+horstoeko\ubl\entities\cbc\MultipleOrderQuantity:
+    xml_root_name: MultipleOrderQuantity
+    xml_root_namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'

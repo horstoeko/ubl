@@ -1,0 +1,24 @@
+horstoeko\ubl\entities\cac\CustomsDeclarationType:
+    properties:
+        iD:
+            expose: true
+            access_type: public_method
+            serialized_name: ID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getID
+                setter: setID
+            type: horstoeko\ubl\entities\cbc\ID
+        issuerParty:
+            expose: true
+            access_type: public_method
+            serialized_name: IssuerParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getIssuerParty
+                setter: setIssuerParty
+            type: horstoeko\ubl\entities\cac\IssuerParty

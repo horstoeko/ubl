@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Transport Handling Unit. Details
- *  A uniquely identifiable physical unit consisting of one or more packages (not necessarily containing the same articles) for enabling physical handling during the transport process.
+ *  A class to describe a uniquely identifiable unit consisting of one or more packages, goods items, or pieces of transport equipment.
  *  Transport Handling Unit
  *  Logistics Unit, Handling Unit, THU
  * XSD Type: TransportHandlingUnitType
@@ -18,7 +18,7 @@ class TransportHandlingUnitType
     /**
      * BBIE
      *  Transport Handling Unit. Identifier
-     *  Identifies the transport handling unit.
+     *  An identifier for this transport handling unit.
      *  0..1
      *  Transport Handling Unit
      *  Identifier
@@ -32,7 +32,7 @@ class TransportHandlingUnitType
     /**
      * BBIE
      *  Transport Handling Unit. Transport Handling Unit Type Code. Code
-     *  The type of transport handling unit, expressed as a code.
+     *  A code signifying the type of this transport handling unit.
      *  0..1
      *  Transport Handling Unit
      *  Transport Handling Unit Type Code
@@ -46,7 +46,7 @@ class TransportHandlingUnitType
     /**
      * BBIE
      *  Transport Handling Unit. Handling Code. Code
-     *  The handling required for a shipment, expressed as a code.
+     *  The handling required for this transport handling unit, expressed as a code.
      *  0..1
      *  Transport Handling Unit
      *  Handling Code
@@ -61,22 +61,24 @@ class TransportHandlingUnitType
     /**
      * BBIE
      *  Transport Handling Unit. Handling_ Instructions. Text
-     *  Free-form text describing handling instructions for a shipment.
-     *  0..1
+     *  The handling required for this transport handling unit, expressed as text.
+     *  0..n
      *  Transport Handling Unit
      *  Handling
      *  Instructions
      *  Text
      *  Text. Type
      *
-     * @var \horstoeko\ubl\entities\cbc\HandlingInstructions $handlingInstructions
+     * @var \horstoeko\ubl\entities\cbc\HandlingInstructions[] $handlingInstructions
      */
-    private $handlingInstructions = null;
+    private $handlingInstructions = [
+        
+    ];
 
     /**
      * BBIE
      *  Transport Handling Unit. Hazardous Risk_ Indicator. Indicator
-     *  Indicates whether the shipment contains hazardous materials.
+     *  An indicator that the materials contained in this transport handling unit are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).
      *  0..1
      *  Transport Handling Unit
      *  Hazardous Risk
@@ -92,7 +94,7 @@ class TransportHandlingUnitType
     /**
      * BBIE
      *  Transport Handling Unit. Total_ Goods Item Quantity. Quantity
-     *  The total number of goods items in the transport handling unit.
+     *  The total number of goods items in this transport handling unit.
      *  0..1
      *  Transport Handling Unit
      *  Total
@@ -107,7 +109,7 @@ class TransportHandlingUnitType
     /**
      * BBIE
      *  Transport Handling Unit. Total_ Package Quantity. Quantity
-     *  The total number of packages in the transport handling unit.
+     *  The total number of packages in this transport handling unit.
      *  0..1
      *  Transport Handling Unit
      *  Total
@@ -122,7 +124,7 @@ class TransportHandlingUnitType
     /**
      * BBIE
      *  Transport Handling Unit. Damage_ Remarks. Text
-     *  Description of a type of damage.
+     *  Text describing damage associated with this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Damage
@@ -139,7 +141,7 @@ class TransportHandlingUnitType
     /**
      * BBIE
      *  Transport Handling Unit. Shipping_ Marks. Text
-     *  Free-form description of the marks and numbers on a transport unit or package.
+     *  Text describing the marks and numbers on this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Shipping
@@ -155,12 +157,28 @@ class TransportHandlingUnitType
     ];
 
     /**
+     * BBIE
+     *  Transport Handling Unit. Trace_ Identifier. Identifier
+     *  An identifier for use in tracing this transport handling unit, such as the EPC number used in RFID.
+     *  0..1
+     *  Transport Handling Unit
+     *  Trace
+     *  Identifier
+     *  Identifier
+     *  Identifier. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\TraceID $traceID
+     */
+    private $traceID = null;
+
+    /**
      * ASBIE
      *  Transport Handling Unit. Handling Unit_ Despatch Line. Despatch Line
-     *  An association to Handling Unit Despatch Line.
+     *  A despatch line associated with this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Handling Unit
+     *  Despatch Line
      *  Despatch Line
      *  Despatch Line
      *
@@ -173,10 +191,11 @@ class TransportHandlingUnitType
     /**
      * ASBIE
      *  Transport Handling Unit. Actual_ Package. Package
-     *  An association to Actual Package.
+     *  A package contained in this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Actual
+     *  Package
      *  Package
      *  Package
      *
@@ -189,10 +208,11 @@ class TransportHandlingUnitType
     /**
      * ASBIE
      *  Transport Handling Unit. Received Handling Unit_ Receipt Line. Receipt Line
-     *  An association to Receipt Line.
+     *  A receipt line associated with this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Received Handling Unit
+     *  Receipt Line
      *  Receipt Line
      *  Receipt Line
      *
@@ -205,9 +225,10 @@ class TransportHandlingUnitType
     /**
      * ASBIE
      *  Transport Handling Unit. Transport Equipment
-     *  An association to Transport Equipment.
+     *  A piece of transport equipment associated with this transport handling unit.
      *  0..n
      *  Transport Handling Unit
+     *  Transport Equipment
      *  Transport Equipment
      *  Transport Equipment
      *
@@ -219,10 +240,27 @@ class TransportHandlingUnitType
 
     /**
      * ASBIE
-     *  Transport Handling Unit. Hazardous Goods Transit
-     *  An association to information about the transportation of hazardous goods.
+     *  Transport Handling Unit. Transport Means
+     *  A means of transport associated with this transport handling unit.
      *  0..n
      *  Transport Handling Unit
+     *  Transport Means
+     *  Transport Means
+     *  Transport Means
+     *
+     * @var \horstoeko\ubl\entities\cac\TransportMeans[] $transportMeans
+     */
+    private $transportMeans = [
+        
+    ];
+
+    /**
+     * ASBIE
+     *  Transport Handling Unit. Hazardous Goods Transit
+     *  Transit-related information regarding a type of hazardous goods contained in this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Hazardous Goods Transit
      *  Hazardous Goods Transit
      *  Hazardous Goods Transit
      *
@@ -235,10 +273,11 @@ class TransportHandlingUnitType
     /**
      * ASBIE
      *  Transport Handling Unit. Measurement_ Dimension. Dimension
-     *  An association to Dimension.
+     *  A measurable dimension (length, mass, weight, or volume) of this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Measurement
+     *  Dimension
      *  Dimension
      *  Dimension
      *
@@ -251,10 +290,11 @@ class TransportHandlingUnitType
     /**
      * ASBIE
      *  Transport Handling Unit. Minimum_ Temperature. Temperature
-     *  The minimum required operating temperature.
+     *  The minimum required operating temperature of this transport handling unit.
      *  0..1
      *  Transport Handling Unit
      *  Minimum
+     *  Temperature
      *  Temperature
      *  Temperature
      *
@@ -265,10 +305,11 @@ class TransportHandlingUnitType
     /**
      * ASBIE
      *  Transport Handling Unit. Maximum_ Temperature. Temperature
-     *  The maximum required operating temperature.
+     *  The maximum allowable operating temperature of this transport handling unit.
      *  0..1
      *  Transport Handling Unit
      *  Maximum
+     *  Temperature
      *  Temperature
      *  Temperature
      *
@@ -277,11 +318,139 @@ class TransportHandlingUnitType
     private $maximumTemperature = null;
 
     /**
+     * ASBIE
+     *  Transport Handling Unit. Goods Item
+     *  A goods item contained in this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Goods Item
+     *  Goods Item
+     *  Goods Item
+     *
+     * @var \horstoeko\ubl\entities\cac\GoodsItem[] $goodsItem
+     */
+    private $goodsItem = [
+        
+    ];
+
+    /**
+     * ASBIE
+     *  Transport Handling Unit. Floor Space Measurement_ Dimension. Dimension
+     *  The floor space measurement dimension associated with this transport handling unit.
+     *  0..1
+     *  Transport Handling Unit
+     *  Floor Space Measurement
+     *  Dimension
+     *  Dimension
+     *  Dimension
+     *
+     * @var \horstoeko\ubl\entities\cac\FloorSpaceMeasurementDimension $floorSpaceMeasurementDimension
+     */
+    private $floorSpaceMeasurementDimension = null;
+
+    /**
+     * ASBIE
+     *  Transport Handling Unit. Pallet Space Measurement_ Dimension. Dimension
+     *  The pallet space measurement dimension associated to this transport handling unit.
+     *  0..1
+     *  Transport Handling Unit
+     *  Pallet Space Measurement
+     *  Dimension
+     *  Dimension
+     *  Dimension
+     *
+     * @var \horstoeko\ubl\entities\cac\PalletSpaceMeasurementDimension $palletSpaceMeasurementDimension
+     */
+    private $palletSpaceMeasurementDimension = null;
+
+    /**
+     * ASBIE
+     *  Transport Handling Unit. Shipment_ Document Reference. Document Reference
+     *  A reference to a shipping document associated with this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Shipment
+     *  Document Reference
+     *  Document Reference
+     *  Document Reference
+     *
+     * @var \horstoeko\ubl\entities\cac\ShipmentDocumentReference[] $shipmentDocumentReference
+     */
+    private $shipmentDocumentReference = [
+        
+    ];
+
+    /**
+     * ASBIE
+     *  Transport Handling Unit. Status
+     *  The status of this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Status
+     *  Status
+     *  Status
+     *
+     * @var \horstoeko\ubl\entities\cac\Status[] $status
+     */
+    private $status = [
+        
+    ];
+
+    /**
+     * ASBIE
+     *  Transport Handling Unit. Customs Declaration
+     *  Describes identifiers or references relating to customs procedures.
+     *  0..n
+     *  Transport Handling Unit
+     *  Customs Declaration
+     *  Customs Declaration
+     *  Customs Declaration
+     *
+     * @var \horstoeko\ubl\entities\cac\CustomsDeclaration[] $customsDeclaration
+     */
+    private $customsDeclaration = [
+        
+    ];
+
+    /**
+     * ASBIE
+     *  Transport Handling Unit. Referenced_ Shipment. Shipment
+     *  A shipment associated with this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Referenced
+     *  Shipment
+     *  Shipment
+     *  Shipment
+     *
+     * @var \horstoeko\ubl\entities\cac\ReferencedShipment[] $referencedShipment
+     */
+    private $referencedShipment = [
+        
+    ];
+
+    /**
+     * ASBIE
+     *  Transport Handling Unit. Package
+     *  A package contained in this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Package
+     *  Package
+     *  Package
+     *
+     * @var \horstoeko\ubl\entities\cac\Package[] $package
+     */
+    private $package = [
+        
+    ];
+
+    /**
      * Gets as iD
      *
      * BBIE
      *  Transport Handling Unit. Identifier
-     *  Identifies the transport handling unit.
+     *  An identifier for this transport handling unit.
      *  0..1
      *  Transport Handling Unit
      *  Identifier
@@ -300,7 +469,7 @@ class TransportHandlingUnitType
      *
      * BBIE
      *  Transport Handling Unit. Identifier
-     *  Identifies the transport handling unit.
+     *  An identifier for this transport handling unit.
      *  0..1
      *  Transport Handling Unit
      *  Identifier
@@ -321,7 +490,7 @@ class TransportHandlingUnitType
      *
      * BBIE
      *  Transport Handling Unit. Transport Handling Unit Type Code. Code
-     *  The type of transport handling unit, expressed as a code.
+     *  A code signifying the type of this transport handling unit.
      *  0..1
      *  Transport Handling Unit
      *  Transport Handling Unit Type Code
@@ -340,7 +509,7 @@ class TransportHandlingUnitType
      *
      * BBIE
      *  Transport Handling Unit. Transport Handling Unit Type Code. Code
-     *  The type of transport handling unit, expressed as a code.
+     *  A code signifying the type of this transport handling unit.
      *  0..1
      *  Transport Handling Unit
      *  Transport Handling Unit Type Code
@@ -361,7 +530,7 @@ class TransportHandlingUnitType
      *
      * BBIE
      *  Transport Handling Unit. Handling Code. Code
-     *  The handling required for a shipment, expressed as a code.
+     *  The handling required for this transport handling unit, expressed as a code.
      *  0..1
      *  Transport Handling Unit
      *  Handling Code
@@ -381,7 +550,7 @@ class TransportHandlingUnitType
      *
      * BBIE
      *  Transport Handling Unit. Handling Code. Code
-     *  The handling required for a shipment, expressed as a code.
+     *  The handling required for this transport handling unit, expressed as a code.
      *  0..1
      *  Transport Handling Unit
      *  Handling Code
@@ -399,19 +568,83 @@ class TransportHandlingUnitType
     }
 
     /**
-     * Gets as handlingInstructions
+     * Adds as handlingInstructions
      *
      * BBIE
      *  Transport Handling Unit. Handling_ Instructions. Text
-     *  Free-form text describing handling instructions for a shipment.
-     *  0..1
+     *  The handling required for this transport handling unit, expressed as text.
+     *  0..n
      *  Transport Handling Unit
      *  Handling
      *  Instructions
      *  Text
      *  Text. Type
      *
-     * @return \horstoeko\ubl\entities\cbc\HandlingInstructions
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\HandlingInstructions $handlingInstructions
+     */
+    public function addToHandlingInstructions(\horstoeko\ubl\entities\cbc\HandlingInstructions $handlingInstructions)
+    {
+        $this->handlingInstructions[] = $handlingInstructions;
+        return $this;
+    }
+
+    /**
+     * isset handlingInstructions
+     *
+     * BBIE
+     *  Transport Handling Unit. Handling_ Instructions. Text
+     *  The handling required for this transport handling unit, expressed as text.
+     *  0..n
+     *  Transport Handling Unit
+     *  Handling
+     *  Instructions
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetHandlingInstructions($index)
+    {
+        return isset($this->handlingInstructions[$index]);
+    }
+
+    /**
+     * unset handlingInstructions
+     *
+     * BBIE
+     *  Transport Handling Unit. Handling_ Instructions. Text
+     *  The handling required for this transport handling unit, expressed as text.
+     *  0..n
+     *  Transport Handling Unit
+     *  Handling
+     *  Instructions
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetHandlingInstructions($index)
+    {
+        unset($this->handlingInstructions[$index]);
+    }
+
+    /**
+     * Gets as handlingInstructions
+     *
+     * BBIE
+     *  Transport Handling Unit. Handling_ Instructions. Text
+     *  The handling required for this transport handling unit, expressed as text.
+     *  0..n
+     *  Transport Handling Unit
+     *  Handling
+     *  Instructions
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\HandlingInstructions[]
      */
     public function getHandlingInstructions()
     {
@@ -423,18 +656,18 @@ class TransportHandlingUnitType
      *
      * BBIE
      *  Transport Handling Unit. Handling_ Instructions. Text
-     *  Free-form text describing handling instructions for a shipment.
-     *  0..1
+     *  The handling required for this transport handling unit, expressed as text.
+     *  0..n
      *  Transport Handling Unit
      *  Handling
      *  Instructions
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\HandlingInstructions $handlingInstructions
+     * @param \horstoeko\ubl\entities\cbc\HandlingInstructions[] $handlingInstructions
      * @return self
      */
-    public function setHandlingInstructions(\horstoeko\ubl\entities\cbc\HandlingInstructions $handlingInstructions)
+    public function setHandlingInstructions(array $handlingInstructions)
     {
         $this->handlingInstructions = $handlingInstructions;
         return $this;
@@ -445,7 +678,7 @@ class TransportHandlingUnitType
      *
      * BBIE
      *  Transport Handling Unit. Hazardous Risk_ Indicator. Indicator
-     *  Indicates whether the shipment contains hazardous materials.
+     *  An indicator that the materials contained in this transport handling unit are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).
      *  0..1
      *  Transport Handling Unit
      *  Hazardous Risk
@@ -466,7 +699,7 @@ class TransportHandlingUnitType
      *
      * BBIE
      *  Transport Handling Unit. Hazardous Risk_ Indicator. Indicator
-     *  Indicates whether the shipment contains hazardous materials.
+     *  An indicator that the materials contained in this transport handling unit are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).
      *  0..1
      *  Transport Handling Unit
      *  Hazardous Risk
@@ -489,7 +722,7 @@ class TransportHandlingUnitType
      *
      * BBIE
      *  Transport Handling Unit. Total_ Goods Item Quantity. Quantity
-     *  The total number of goods items in the transport handling unit.
+     *  The total number of goods items in this transport handling unit.
      *  0..1
      *  Transport Handling Unit
      *  Total
@@ -509,7 +742,7 @@ class TransportHandlingUnitType
      *
      * BBIE
      *  Transport Handling Unit. Total_ Goods Item Quantity. Quantity
-     *  The total number of goods items in the transport handling unit.
+     *  The total number of goods items in this transport handling unit.
      *  0..1
      *  Transport Handling Unit
      *  Total
@@ -531,7 +764,7 @@ class TransportHandlingUnitType
      *
      * BBIE
      *  Transport Handling Unit. Total_ Package Quantity. Quantity
-     *  The total number of packages in the transport handling unit.
+     *  The total number of packages in this transport handling unit.
      *  0..1
      *  Transport Handling Unit
      *  Total
@@ -551,7 +784,7 @@ class TransportHandlingUnitType
      *
      * BBIE
      *  Transport Handling Unit. Total_ Package Quantity. Quantity
-     *  The total number of packages in the transport handling unit.
+     *  The total number of packages in this transport handling unit.
      *  0..1
      *  Transport Handling Unit
      *  Total
@@ -573,7 +806,7 @@ class TransportHandlingUnitType
      *
      * BBIE
      *  Transport Handling Unit. Damage_ Remarks. Text
-     *  Description of a type of damage.
+     *  Text describing damage associated with this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Damage
@@ -595,7 +828,7 @@ class TransportHandlingUnitType
      *
      * BBIE
      *  Transport Handling Unit. Damage_ Remarks. Text
-     *  Description of a type of damage.
+     *  Text describing damage associated with this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Damage
@@ -616,7 +849,7 @@ class TransportHandlingUnitType
      *
      * BBIE
      *  Transport Handling Unit. Damage_ Remarks. Text
-     *  Description of a type of damage.
+     *  Text describing damage associated with this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Damage
@@ -637,7 +870,7 @@ class TransportHandlingUnitType
      *
      * BBIE
      *  Transport Handling Unit. Damage_ Remarks. Text
-     *  Description of a type of damage.
+     *  Text describing damage associated with this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Damage
@@ -657,7 +890,7 @@ class TransportHandlingUnitType
      *
      * BBIE
      *  Transport Handling Unit. Damage_ Remarks. Text
-     *  Description of a type of damage.
+     *  Text describing damage associated with this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Damage
@@ -679,7 +912,7 @@ class TransportHandlingUnitType
      *
      * BBIE
      *  Transport Handling Unit. Shipping_ Marks. Text
-     *  Free-form description of the marks and numbers on a transport unit or package.
+     *  Text describing the marks and numbers on this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Shipping
@@ -702,7 +935,7 @@ class TransportHandlingUnitType
      *
      * BBIE
      *  Transport Handling Unit. Shipping_ Marks. Text
-     *  Free-form description of the marks and numbers on a transport unit or package.
+     *  Text describing the marks and numbers on this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Shipping
@@ -724,7 +957,7 @@ class TransportHandlingUnitType
      *
      * BBIE
      *  Transport Handling Unit. Shipping_ Marks. Text
-     *  Free-form description of the marks and numbers on a transport unit or package.
+     *  Text describing the marks and numbers on this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Shipping
@@ -746,7 +979,7 @@ class TransportHandlingUnitType
      *
      * BBIE
      *  Transport Handling Unit. Shipping_ Marks. Text
-     *  Free-form description of the marks and numbers on a transport unit or package.
+     *  Text describing the marks and numbers on this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Shipping
@@ -767,7 +1000,7 @@ class TransportHandlingUnitType
      *
      * BBIE
      *  Transport Handling Unit. Shipping_ Marks. Text
-     *  Free-form description of the marks and numbers on a transport unit or package.
+     *  Text describing the marks and numbers on this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Shipping
@@ -786,14 +1019,57 @@ class TransportHandlingUnitType
     }
 
     /**
+     * Gets as traceID
+     *
+     * BBIE
+     *  Transport Handling Unit. Trace_ Identifier. Identifier
+     *  An identifier for use in tracing this transport handling unit, such as the EPC number used in RFID.
+     *  0..1
+     *  Transport Handling Unit
+     *  Trace
+     *  Identifier
+     *  Identifier
+     *  Identifier. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\TraceID
+     */
+    public function getTraceID()
+    {
+        return $this->traceID;
+    }
+
+    /**
+     * Sets a new traceID
+     *
+     * BBIE
+     *  Transport Handling Unit. Trace_ Identifier. Identifier
+     *  An identifier for use in tracing this transport handling unit, such as the EPC number used in RFID.
+     *  0..1
+     *  Transport Handling Unit
+     *  Trace
+     *  Identifier
+     *  Identifier
+     *  Identifier. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\TraceID $traceID
+     * @return self
+     */
+    public function setTraceID(\horstoeko\ubl\entities\cbc\TraceID $traceID)
+    {
+        $this->traceID = $traceID;
+        return $this;
+    }
+
+    /**
      * Adds as handlingUnitDespatchLine
      *
      * ASBIE
      *  Transport Handling Unit. Handling Unit_ Despatch Line. Despatch Line
-     *  An association to Handling Unit Despatch Line.
+     *  A despatch line associated with this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Handling Unit
+     *  Despatch Line
      *  Despatch Line
      *  Despatch Line
      *
@@ -811,10 +1087,11 @@ class TransportHandlingUnitType
      *
      * ASBIE
      *  Transport Handling Unit. Handling Unit_ Despatch Line. Despatch Line
-     *  An association to Handling Unit Despatch Line.
+     *  A despatch line associated with this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Handling Unit
+     *  Despatch Line
      *  Despatch Line
      *  Despatch Line
      *
@@ -831,10 +1108,11 @@ class TransportHandlingUnitType
      *
      * ASBIE
      *  Transport Handling Unit. Handling Unit_ Despatch Line. Despatch Line
-     *  An association to Handling Unit Despatch Line.
+     *  A despatch line associated with this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Handling Unit
+     *  Despatch Line
      *  Despatch Line
      *  Despatch Line
      *
@@ -851,10 +1129,11 @@ class TransportHandlingUnitType
      *
      * ASBIE
      *  Transport Handling Unit. Handling Unit_ Despatch Line. Despatch Line
-     *  An association to Handling Unit Despatch Line.
+     *  A despatch line associated with this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Handling Unit
+     *  Despatch Line
      *  Despatch Line
      *  Despatch Line
      *
@@ -870,10 +1149,11 @@ class TransportHandlingUnitType
      *
      * ASBIE
      *  Transport Handling Unit. Handling Unit_ Despatch Line. Despatch Line
-     *  An association to Handling Unit Despatch Line.
+     *  A despatch line associated with this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Handling Unit
+     *  Despatch Line
      *  Despatch Line
      *  Despatch Line
      *
@@ -891,10 +1171,11 @@ class TransportHandlingUnitType
      *
      * ASBIE
      *  Transport Handling Unit. Actual_ Package. Package
-     *  An association to Actual Package.
+     *  A package contained in this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Actual
+     *  Package
      *  Package
      *  Package
      *
@@ -912,10 +1193,11 @@ class TransportHandlingUnitType
      *
      * ASBIE
      *  Transport Handling Unit. Actual_ Package. Package
-     *  An association to Actual Package.
+     *  A package contained in this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Actual
+     *  Package
      *  Package
      *  Package
      *
@@ -932,10 +1214,11 @@ class TransportHandlingUnitType
      *
      * ASBIE
      *  Transport Handling Unit. Actual_ Package. Package
-     *  An association to Actual Package.
+     *  A package contained in this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Actual
+     *  Package
      *  Package
      *  Package
      *
@@ -952,10 +1235,11 @@ class TransportHandlingUnitType
      *
      * ASBIE
      *  Transport Handling Unit. Actual_ Package. Package
-     *  An association to Actual Package.
+     *  A package contained in this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Actual
+     *  Package
      *  Package
      *  Package
      *
@@ -971,10 +1255,11 @@ class TransportHandlingUnitType
      *
      * ASBIE
      *  Transport Handling Unit. Actual_ Package. Package
-     *  An association to Actual Package.
+     *  A package contained in this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Actual
+     *  Package
      *  Package
      *  Package
      *
@@ -992,10 +1277,11 @@ class TransportHandlingUnitType
      *
      * ASBIE
      *  Transport Handling Unit. Received Handling Unit_ Receipt Line. Receipt Line
-     *  An association to Receipt Line.
+     *  A receipt line associated with this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Received Handling Unit
+     *  Receipt Line
      *  Receipt Line
      *  Receipt Line
      *
@@ -1013,10 +1299,11 @@ class TransportHandlingUnitType
      *
      * ASBIE
      *  Transport Handling Unit. Received Handling Unit_ Receipt Line. Receipt Line
-     *  An association to Receipt Line.
+     *  A receipt line associated with this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Received Handling Unit
+     *  Receipt Line
      *  Receipt Line
      *  Receipt Line
      *
@@ -1033,10 +1320,11 @@ class TransportHandlingUnitType
      *
      * ASBIE
      *  Transport Handling Unit. Received Handling Unit_ Receipt Line. Receipt Line
-     *  An association to Receipt Line.
+     *  A receipt line associated with this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Received Handling Unit
+     *  Receipt Line
      *  Receipt Line
      *  Receipt Line
      *
@@ -1053,10 +1341,11 @@ class TransportHandlingUnitType
      *
      * ASBIE
      *  Transport Handling Unit. Received Handling Unit_ Receipt Line. Receipt Line
-     *  An association to Receipt Line.
+     *  A receipt line associated with this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Received Handling Unit
+     *  Receipt Line
      *  Receipt Line
      *  Receipt Line
      *
@@ -1072,10 +1361,11 @@ class TransportHandlingUnitType
      *
      * ASBIE
      *  Transport Handling Unit. Received Handling Unit_ Receipt Line. Receipt Line
-     *  An association to Receipt Line.
+     *  A receipt line associated with this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Received Handling Unit
+     *  Receipt Line
      *  Receipt Line
      *  Receipt Line
      *
@@ -1093,9 +1383,10 @@ class TransportHandlingUnitType
      *
      * ASBIE
      *  Transport Handling Unit. Transport Equipment
-     *  An association to Transport Equipment.
+     *  A piece of transport equipment associated with this transport handling unit.
      *  0..n
      *  Transport Handling Unit
+     *  Transport Equipment
      *  Transport Equipment
      *  Transport Equipment
      *
@@ -1113,9 +1404,10 @@ class TransportHandlingUnitType
      *
      * ASBIE
      *  Transport Handling Unit. Transport Equipment
-     *  An association to Transport Equipment.
+     *  A piece of transport equipment associated with this transport handling unit.
      *  0..n
      *  Transport Handling Unit
+     *  Transport Equipment
      *  Transport Equipment
      *  Transport Equipment
      *
@@ -1132,9 +1424,10 @@ class TransportHandlingUnitType
      *
      * ASBIE
      *  Transport Handling Unit. Transport Equipment
-     *  An association to Transport Equipment.
+     *  A piece of transport equipment associated with this transport handling unit.
      *  0..n
      *  Transport Handling Unit
+     *  Transport Equipment
      *  Transport Equipment
      *  Transport Equipment
      *
@@ -1151,9 +1444,10 @@ class TransportHandlingUnitType
      *
      * ASBIE
      *  Transport Handling Unit. Transport Equipment
-     *  An association to Transport Equipment.
+     *  A piece of transport equipment associated with this transport handling unit.
      *  0..n
      *  Transport Handling Unit
+     *  Transport Equipment
      *  Transport Equipment
      *  Transport Equipment
      *
@@ -1169,9 +1463,10 @@ class TransportHandlingUnitType
      *
      * ASBIE
      *  Transport Handling Unit. Transport Equipment
-     *  An association to Transport Equipment.
+     *  A piece of transport equipment associated with this transport handling unit.
      *  0..n
      *  Transport Handling Unit
+     *  Transport Equipment
      *  Transport Equipment
      *  Transport Equipment
      *
@@ -1185,13 +1480,115 @@ class TransportHandlingUnitType
     }
 
     /**
+     * Adds as transportMeans
+     *
+     * ASBIE
+     *  Transport Handling Unit. Transport Means
+     *  A means of transport associated with this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Transport Means
+     *  Transport Means
+     *  Transport Means
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\TransportMeans $transportMeans
+     */
+    public function addToTransportMeans(\horstoeko\ubl\entities\cac\TransportMeans $transportMeans)
+    {
+        $this->transportMeans[] = $transportMeans;
+        return $this;
+    }
+
+    /**
+     * isset transportMeans
+     *
+     * ASBIE
+     *  Transport Handling Unit. Transport Means
+     *  A means of transport associated with this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Transport Means
+     *  Transport Means
+     *  Transport Means
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetTransportMeans($index)
+    {
+        return isset($this->transportMeans[$index]);
+    }
+
+    /**
+     * unset transportMeans
+     *
+     * ASBIE
+     *  Transport Handling Unit. Transport Means
+     *  A means of transport associated with this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Transport Means
+     *  Transport Means
+     *  Transport Means
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetTransportMeans($index)
+    {
+        unset($this->transportMeans[$index]);
+    }
+
+    /**
+     * Gets as transportMeans
+     *
+     * ASBIE
+     *  Transport Handling Unit. Transport Means
+     *  A means of transport associated with this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Transport Means
+     *  Transport Means
+     *  Transport Means
+     *
+     * @return \horstoeko\ubl\entities\cac\TransportMeans[]
+     */
+    public function getTransportMeans()
+    {
+        return $this->transportMeans;
+    }
+
+    /**
+     * Sets a new transportMeans
+     *
+     * ASBIE
+     *  Transport Handling Unit. Transport Means
+     *  A means of transport associated with this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Transport Means
+     *  Transport Means
+     *  Transport Means
+     *
+     * @param \horstoeko\ubl\entities\cac\TransportMeans[] $transportMeans
+     * @return self
+     */
+    public function setTransportMeans(array $transportMeans)
+    {
+        $this->transportMeans = $transportMeans;
+        return $this;
+    }
+
+    /**
      * Adds as hazardousGoodsTransit
      *
      * ASBIE
      *  Transport Handling Unit. Hazardous Goods Transit
-     *  An association to information about the transportation of hazardous goods.
+     *  Transit-related information regarding a type of hazardous goods contained in this transport handling unit.
      *  0..n
      *  Transport Handling Unit
+     *  Hazardous Goods Transit
      *  Hazardous Goods Transit
      *  Hazardous Goods Transit
      *
@@ -1209,9 +1606,10 @@ class TransportHandlingUnitType
      *
      * ASBIE
      *  Transport Handling Unit. Hazardous Goods Transit
-     *  An association to information about the transportation of hazardous goods.
+     *  Transit-related information regarding a type of hazardous goods contained in this transport handling unit.
      *  0..n
      *  Transport Handling Unit
+     *  Hazardous Goods Transit
      *  Hazardous Goods Transit
      *  Hazardous Goods Transit
      *
@@ -1228,9 +1626,10 @@ class TransportHandlingUnitType
      *
      * ASBIE
      *  Transport Handling Unit. Hazardous Goods Transit
-     *  An association to information about the transportation of hazardous goods.
+     *  Transit-related information regarding a type of hazardous goods contained in this transport handling unit.
      *  0..n
      *  Transport Handling Unit
+     *  Hazardous Goods Transit
      *  Hazardous Goods Transit
      *  Hazardous Goods Transit
      *
@@ -1247,9 +1646,10 @@ class TransportHandlingUnitType
      *
      * ASBIE
      *  Transport Handling Unit. Hazardous Goods Transit
-     *  An association to information about the transportation of hazardous goods.
+     *  Transit-related information regarding a type of hazardous goods contained in this transport handling unit.
      *  0..n
      *  Transport Handling Unit
+     *  Hazardous Goods Transit
      *  Hazardous Goods Transit
      *  Hazardous Goods Transit
      *
@@ -1265,9 +1665,10 @@ class TransportHandlingUnitType
      *
      * ASBIE
      *  Transport Handling Unit. Hazardous Goods Transit
-     *  An association to information about the transportation of hazardous goods.
+     *  Transit-related information regarding a type of hazardous goods contained in this transport handling unit.
      *  0..n
      *  Transport Handling Unit
+     *  Hazardous Goods Transit
      *  Hazardous Goods Transit
      *  Hazardous Goods Transit
      *
@@ -1285,10 +1686,11 @@ class TransportHandlingUnitType
      *
      * ASBIE
      *  Transport Handling Unit. Measurement_ Dimension. Dimension
-     *  An association to Dimension.
+     *  A measurable dimension (length, mass, weight, or volume) of this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Measurement
+     *  Dimension
      *  Dimension
      *  Dimension
      *
@@ -1306,10 +1708,11 @@ class TransportHandlingUnitType
      *
      * ASBIE
      *  Transport Handling Unit. Measurement_ Dimension. Dimension
-     *  An association to Dimension.
+     *  A measurable dimension (length, mass, weight, or volume) of this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Measurement
+     *  Dimension
      *  Dimension
      *  Dimension
      *
@@ -1326,10 +1729,11 @@ class TransportHandlingUnitType
      *
      * ASBIE
      *  Transport Handling Unit. Measurement_ Dimension. Dimension
-     *  An association to Dimension.
+     *  A measurable dimension (length, mass, weight, or volume) of this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Measurement
+     *  Dimension
      *  Dimension
      *  Dimension
      *
@@ -1346,10 +1750,11 @@ class TransportHandlingUnitType
      *
      * ASBIE
      *  Transport Handling Unit. Measurement_ Dimension. Dimension
-     *  An association to Dimension.
+     *  A measurable dimension (length, mass, weight, or volume) of this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Measurement
+     *  Dimension
      *  Dimension
      *  Dimension
      *
@@ -1365,10 +1770,11 @@ class TransportHandlingUnitType
      *
      * ASBIE
      *  Transport Handling Unit. Measurement_ Dimension. Dimension
-     *  An association to Dimension.
+     *  A measurable dimension (length, mass, weight, or volume) of this transport handling unit.
      *  0..n
      *  Transport Handling Unit
      *  Measurement
+     *  Dimension
      *  Dimension
      *  Dimension
      *
@@ -1386,10 +1792,11 @@ class TransportHandlingUnitType
      *
      * ASBIE
      *  Transport Handling Unit. Minimum_ Temperature. Temperature
-     *  The minimum required operating temperature.
+     *  The minimum required operating temperature of this transport handling unit.
      *  0..1
      *  Transport Handling Unit
      *  Minimum
+     *  Temperature
      *  Temperature
      *  Temperature
      *
@@ -1405,10 +1812,11 @@ class TransportHandlingUnitType
      *
      * ASBIE
      *  Transport Handling Unit. Minimum_ Temperature. Temperature
-     *  The minimum required operating temperature.
+     *  The minimum required operating temperature of this transport handling unit.
      *  0..1
      *  Transport Handling Unit
      *  Minimum
+     *  Temperature
      *  Temperature
      *  Temperature
      *
@@ -1426,10 +1834,11 @@ class TransportHandlingUnitType
      *
      * ASBIE
      *  Transport Handling Unit. Maximum_ Temperature. Temperature
-     *  The maximum required operating temperature.
+     *  The maximum allowable operating temperature of this transport handling unit.
      *  0..1
      *  Transport Handling Unit
      *  Maximum
+     *  Temperature
      *  Temperature
      *  Temperature
      *
@@ -1445,10 +1854,11 @@ class TransportHandlingUnitType
      *
      * ASBIE
      *  Transport Handling Unit. Maximum_ Temperature. Temperature
-     *  The maximum required operating temperature.
+     *  The maximum allowable operating temperature of this transport handling unit.
      *  0..1
      *  Transport Handling Unit
      *  Maximum
+     *  Temperature
      *  Temperature
      *  Temperature
      *
@@ -1458,6 +1868,706 @@ class TransportHandlingUnitType
     public function setMaximumTemperature(\horstoeko\ubl\entities\cac\MaximumTemperature $maximumTemperature)
     {
         $this->maximumTemperature = $maximumTemperature;
+        return $this;
+    }
+
+    /**
+     * Adds as goodsItem
+     *
+     * ASBIE
+     *  Transport Handling Unit. Goods Item
+     *  A goods item contained in this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Goods Item
+     *  Goods Item
+     *  Goods Item
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\GoodsItem $goodsItem
+     */
+    public function addToGoodsItem(\horstoeko\ubl\entities\cac\GoodsItem $goodsItem)
+    {
+        $this->goodsItem[] = $goodsItem;
+        return $this;
+    }
+
+    /**
+     * isset goodsItem
+     *
+     * ASBIE
+     *  Transport Handling Unit. Goods Item
+     *  A goods item contained in this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Goods Item
+     *  Goods Item
+     *  Goods Item
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetGoodsItem($index)
+    {
+        return isset($this->goodsItem[$index]);
+    }
+
+    /**
+     * unset goodsItem
+     *
+     * ASBIE
+     *  Transport Handling Unit. Goods Item
+     *  A goods item contained in this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Goods Item
+     *  Goods Item
+     *  Goods Item
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetGoodsItem($index)
+    {
+        unset($this->goodsItem[$index]);
+    }
+
+    /**
+     * Gets as goodsItem
+     *
+     * ASBIE
+     *  Transport Handling Unit. Goods Item
+     *  A goods item contained in this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Goods Item
+     *  Goods Item
+     *  Goods Item
+     *
+     * @return \horstoeko\ubl\entities\cac\GoodsItem[]
+     */
+    public function getGoodsItem()
+    {
+        return $this->goodsItem;
+    }
+
+    /**
+     * Sets a new goodsItem
+     *
+     * ASBIE
+     *  Transport Handling Unit. Goods Item
+     *  A goods item contained in this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Goods Item
+     *  Goods Item
+     *  Goods Item
+     *
+     * @param \horstoeko\ubl\entities\cac\GoodsItem[] $goodsItem
+     * @return self
+     */
+    public function setGoodsItem(array $goodsItem)
+    {
+        $this->goodsItem = $goodsItem;
+        return $this;
+    }
+
+    /**
+     * Gets as floorSpaceMeasurementDimension
+     *
+     * ASBIE
+     *  Transport Handling Unit. Floor Space Measurement_ Dimension. Dimension
+     *  The floor space measurement dimension associated with this transport handling unit.
+     *  0..1
+     *  Transport Handling Unit
+     *  Floor Space Measurement
+     *  Dimension
+     *  Dimension
+     *  Dimension
+     *
+     * @return \horstoeko\ubl\entities\cac\FloorSpaceMeasurementDimension
+     */
+    public function getFloorSpaceMeasurementDimension()
+    {
+        return $this->floorSpaceMeasurementDimension;
+    }
+
+    /**
+     * Sets a new floorSpaceMeasurementDimension
+     *
+     * ASBIE
+     *  Transport Handling Unit. Floor Space Measurement_ Dimension. Dimension
+     *  The floor space measurement dimension associated with this transport handling unit.
+     *  0..1
+     *  Transport Handling Unit
+     *  Floor Space Measurement
+     *  Dimension
+     *  Dimension
+     *  Dimension
+     *
+     * @param \horstoeko\ubl\entities\cac\FloorSpaceMeasurementDimension $floorSpaceMeasurementDimension
+     * @return self
+     */
+    public function setFloorSpaceMeasurementDimension(\horstoeko\ubl\entities\cac\FloorSpaceMeasurementDimension $floorSpaceMeasurementDimension)
+    {
+        $this->floorSpaceMeasurementDimension = $floorSpaceMeasurementDimension;
+        return $this;
+    }
+
+    /**
+     * Gets as palletSpaceMeasurementDimension
+     *
+     * ASBIE
+     *  Transport Handling Unit. Pallet Space Measurement_ Dimension. Dimension
+     *  The pallet space measurement dimension associated to this transport handling unit.
+     *  0..1
+     *  Transport Handling Unit
+     *  Pallet Space Measurement
+     *  Dimension
+     *  Dimension
+     *  Dimension
+     *
+     * @return \horstoeko\ubl\entities\cac\PalletSpaceMeasurementDimension
+     */
+    public function getPalletSpaceMeasurementDimension()
+    {
+        return $this->palletSpaceMeasurementDimension;
+    }
+
+    /**
+     * Sets a new palletSpaceMeasurementDimension
+     *
+     * ASBIE
+     *  Transport Handling Unit. Pallet Space Measurement_ Dimension. Dimension
+     *  The pallet space measurement dimension associated to this transport handling unit.
+     *  0..1
+     *  Transport Handling Unit
+     *  Pallet Space Measurement
+     *  Dimension
+     *  Dimension
+     *  Dimension
+     *
+     * @param \horstoeko\ubl\entities\cac\PalletSpaceMeasurementDimension $palletSpaceMeasurementDimension
+     * @return self
+     */
+    public function setPalletSpaceMeasurementDimension(\horstoeko\ubl\entities\cac\PalletSpaceMeasurementDimension $palletSpaceMeasurementDimension)
+    {
+        $this->palletSpaceMeasurementDimension = $palletSpaceMeasurementDimension;
+        return $this;
+    }
+
+    /**
+     * Adds as shipmentDocumentReference
+     *
+     * ASBIE
+     *  Transport Handling Unit. Shipment_ Document Reference. Document Reference
+     *  A reference to a shipping document associated with this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Shipment
+     *  Document Reference
+     *  Document Reference
+     *  Document Reference
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\ShipmentDocumentReference $shipmentDocumentReference
+     */
+    public function addToShipmentDocumentReference(\horstoeko\ubl\entities\cac\ShipmentDocumentReference $shipmentDocumentReference)
+    {
+        $this->shipmentDocumentReference[] = $shipmentDocumentReference;
+        return $this;
+    }
+
+    /**
+     * isset shipmentDocumentReference
+     *
+     * ASBIE
+     *  Transport Handling Unit. Shipment_ Document Reference. Document Reference
+     *  A reference to a shipping document associated with this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Shipment
+     *  Document Reference
+     *  Document Reference
+     *  Document Reference
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetShipmentDocumentReference($index)
+    {
+        return isset($this->shipmentDocumentReference[$index]);
+    }
+
+    /**
+     * unset shipmentDocumentReference
+     *
+     * ASBIE
+     *  Transport Handling Unit. Shipment_ Document Reference. Document Reference
+     *  A reference to a shipping document associated with this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Shipment
+     *  Document Reference
+     *  Document Reference
+     *  Document Reference
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetShipmentDocumentReference($index)
+    {
+        unset($this->shipmentDocumentReference[$index]);
+    }
+
+    /**
+     * Gets as shipmentDocumentReference
+     *
+     * ASBIE
+     *  Transport Handling Unit. Shipment_ Document Reference. Document Reference
+     *  A reference to a shipping document associated with this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Shipment
+     *  Document Reference
+     *  Document Reference
+     *  Document Reference
+     *
+     * @return \horstoeko\ubl\entities\cac\ShipmentDocumentReference[]
+     */
+    public function getShipmentDocumentReference()
+    {
+        return $this->shipmentDocumentReference;
+    }
+
+    /**
+     * Sets a new shipmentDocumentReference
+     *
+     * ASBIE
+     *  Transport Handling Unit. Shipment_ Document Reference. Document Reference
+     *  A reference to a shipping document associated with this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Shipment
+     *  Document Reference
+     *  Document Reference
+     *  Document Reference
+     *
+     * @param \horstoeko\ubl\entities\cac\ShipmentDocumentReference[] $shipmentDocumentReference
+     * @return self
+     */
+    public function setShipmentDocumentReference(array $shipmentDocumentReference)
+    {
+        $this->shipmentDocumentReference = $shipmentDocumentReference;
+        return $this;
+    }
+
+    /**
+     * Adds as status
+     *
+     * ASBIE
+     *  Transport Handling Unit. Status
+     *  The status of this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Status
+     *  Status
+     *  Status
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\Status $status
+     */
+    public function addToStatus(\horstoeko\ubl\entities\cac\Status $status)
+    {
+        $this->status[] = $status;
+        return $this;
+    }
+
+    /**
+     * isset status
+     *
+     * ASBIE
+     *  Transport Handling Unit. Status
+     *  The status of this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Status
+     *  Status
+     *  Status
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetStatus($index)
+    {
+        return isset($this->status[$index]);
+    }
+
+    /**
+     * unset status
+     *
+     * ASBIE
+     *  Transport Handling Unit. Status
+     *  The status of this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Status
+     *  Status
+     *  Status
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetStatus($index)
+    {
+        unset($this->status[$index]);
+    }
+
+    /**
+     * Gets as status
+     *
+     * ASBIE
+     *  Transport Handling Unit. Status
+     *  The status of this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Status
+     *  Status
+     *  Status
+     *
+     * @return \horstoeko\ubl\entities\cac\Status[]
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Sets a new status
+     *
+     * ASBIE
+     *  Transport Handling Unit. Status
+     *  The status of this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Status
+     *  Status
+     *  Status
+     *
+     * @param \horstoeko\ubl\entities\cac\Status[] $status
+     * @return self
+     */
+    public function setStatus(array $status)
+    {
+        $this->status = $status;
+        return $this;
+    }
+
+    /**
+     * Adds as customsDeclaration
+     *
+     * ASBIE
+     *  Transport Handling Unit. Customs Declaration
+     *  Describes identifiers or references relating to customs procedures.
+     *  0..n
+     *  Transport Handling Unit
+     *  Customs Declaration
+     *  Customs Declaration
+     *  Customs Declaration
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\CustomsDeclaration $customsDeclaration
+     */
+    public function addToCustomsDeclaration(\horstoeko\ubl\entities\cac\CustomsDeclaration $customsDeclaration)
+    {
+        $this->customsDeclaration[] = $customsDeclaration;
+        return $this;
+    }
+
+    /**
+     * isset customsDeclaration
+     *
+     * ASBIE
+     *  Transport Handling Unit. Customs Declaration
+     *  Describes identifiers or references relating to customs procedures.
+     *  0..n
+     *  Transport Handling Unit
+     *  Customs Declaration
+     *  Customs Declaration
+     *  Customs Declaration
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetCustomsDeclaration($index)
+    {
+        return isset($this->customsDeclaration[$index]);
+    }
+
+    /**
+     * unset customsDeclaration
+     *
+     * ASBIE
+     *  Transport Handling Unit. Customs Declaration
+     *  Describes identifiers or references relating to customs procedures.
+     *  0..n
+     *  Transport Handling Unit
+     *  Customs Declaration
+     *  Customs Declaration
+     *  Customs Declaration
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetCustomsDeclaration($index)
+    {
+        unset($this->customsDeclaration[$index]);
+    }
+
+    /**
+     * Gets as customsDeclaration
+     *
+     * ASBIE
+     *  Transport Handling Unit. Customs Declaration
+     *  Describes identifiers or references relating to customs procedures.
+     *  0..n
+     *  Transport Handling Unit
+     *  Customs Declaration
+     *  Customs Declaration
+     *  Customs Declaration
+     *
+     * @return \horstoeko\ubl\entities\cac\CustomsDeclaration[]
+     */
+    public function getCustomsDeclaration()
+    {
+        return $this->customsDeclaration;
+    }
+
+    /**
+     * Sets a new customsDeclaration
+     *
+     * ASBIE
+     *  Transport Handling Unit. Customs Declaration
+     *  Describes identifiers or references relating to customs procedures.
+     *  0..n
+     *  Transport Handling Unit
+     *  Customs Declaration
+     *  Customs Declaration
+     *  Customs Declaration
+     *
+     * @param \horstoeko\ubl\entities\cac\CustomsDeclaration[] $customsDeclaration
+     * @return self
+     */
+    public function setCustomsDeclaration(array $customsDeclaration)
+    {
+        $this->customsDeclaration = $customsDeclaration;
+        return $this;
+    }
+
+    /**
+     * Adds as referencedShipment
+     *
+     * ASBIE
+     *  Transport Handling Unit. Referenced_ Shipment. Shipment
+     *  A shipment associated with this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Referenced
+     *  Shipment
+     *  Shipment
+     *  Shipment
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\ReferencedShipment $referencedShipment
+     */
+    public function addToReferencedShipment(\horstoeko\ubl\entities\cac\ReferencedShipment $referencedShipment)
+    {
+        $this->referencedShipment[] = $referencedShipment;
+        return $this;
+    }
+
+    /**
+     * isset referencedShipment
+     *
+     * ASBIE
+     *  Transport Handling Unit. Referenced_ Shipment. Shipment
+     *  A shipment associated with this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Referenced
+     *  Shipment
+     *  Shipment
+     *  Shipment
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetReferencedShipment($index)
+    {
+        return isset($this->referencedShipment[$index]);
+    }
+
+    /**
+     * unset referencedShipment
+     *
+     * ASBIE
+     *  Transport Handling Unit. Referenced_ Shipment. Shipment
+     *  A shipment associated with this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Referenced
+     *  Shipment
+     *  Shipment
+     *  Shipment
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetReferencedShipment($index)
+    {
+        unset($this->referencedShipment[$index]);
+    }
+
+    /**
+     * Gets as referencedShipment
+     *
+     * ASBIE
+     *  Transport Handling Unit. Referenced_ Shipment. Shipment
+     *  A shipment associated with this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Referenced
+     *  Shipment
+     *  Shipment
+     *  Shipment
+     *
+     * @return \horstoeko\ubl\entities\cac\ReferencedShipment[]
+     */
+    public function getReferencedShipment()
+    {
+        return $this->referencedShipment;
+    }
+
+    /**
+     * Sets a new referencedShipment
+     *
+     * ASBIE
+     *  Transport Handling Unit. Referenced_ Shipment. Shipment
+     *  A shipment associated with this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Referenced
+     *  Shipment
+     *  Shipment
+     *  Shipment
+     *
+     * @param \horstoeko\ubl\entities\cac\ReferencedShipment[] $referencedShipment
+     * @return self
+     */
+    public function setReferencedShipment(array $referencedShipment)
+    {
+        $this->referencedShipment = $referencedShipment;
+        return $this;
+    }
+
+    /**
+     * Adds as package
+     *
+     * ASBIE
+     *  Transport Handling Unit. Package
+     *  A package contained in this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Package
+     *  Package
+     *  Package
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\Package $package
+     */
+    public function addToPackage(\horstoeko\ubl\entities\cac\Package $package)
+    {
+        $this->package[] = $package;
+        return $this;
+    }
+
+    /**
+     * isset package
+     *
+     * ASBIE
+     *  Transport Handling Unit. Package
+     *  A package contained in this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Package
+     *  Package
+     *  Package
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetPackage($index)
+    {
+        return isset($this->package[$index]);
+    }
+
+    /**
+     * unset package
+     *
+     * ASBIE
+     *  Transport Handling Unit. Package
+     *  A package contained in this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Package
+     *  Package
+     *  Package
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetPackage($index)
+    {
+        unset($this->package[$index]);
+    }
+
+    /**
+     * Gets as package
+     *
+     * ASBIE
+     *  Transport Handling Unit. Package
+     *  A package contained in this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Package
+     *  Package
+     *  Package
+     *
+     * @return \horstoeko\ubl\entities\cac\Package[]
+     */
+    public function getPackage()
+    {
+        return $this->package;
+    }
+
+    /**
+     * Sets a new package
+     *
+     * ASBIE
+     *  Transport Handling Unit. Package
+     *  A package contained in this transport handling unit.
+     *  0..n
+     *  Transport Handling Unit
+     *  Package
+     *  Package
+     *  Package
+     *
+     * @param \horstoeko\ubl\entities\cac\Package[] $package
+     * @return self
+     */
+    public function setPackage(array $package)
+    {
+        $this->package = $package;
         return $this;
     }
 

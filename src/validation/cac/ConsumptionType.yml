@@ -1,0 +1,24 @@
+horstoeko\ubl\entities\cac\ConsumptionType:
+    properties:
+        mainPeriod:
+            -
+                Valid: null
+        allowanceCharge:
+            -
+                Valid: null
+        taxTotal:
+            -
+                Valid: null
+        energyWaterSupply:
+            -
+                Valid: null
+        telecommunicationsSupply:
+            -
+                Valid: null
+        legalMonetaryTotal:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

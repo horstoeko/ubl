@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Certificate Of Origin Application. Details
- *  A document that contains information of CO application.
+ *  A class to define an application for a Certificate of Origin (CoO).
  *  Certificate Of Origin Application
  * XSD Type: CertificateOfOriginApplicationType
  */
@@ -17,7 +17,7 @@ class CertificateOfOriginApplicationType
     /**
      * BBIE
      *  Certificate Of Origin Application. Reference. Identifier
-     *  Holds the unique number that identifies the Despatch Advice, typically according to the seller's system that generated the Despatch Advice.
+     *  An identifier for a reference as part of the CoO application.
      *  1
      *  Certificate Of Origin Application
      *  Reference
@@ -31,7 +31,7 @@ class CertificateOfOriginApplicationType
     /**
      * BBIE
      *  Certificate Of Origin Application. Certificate Type. Text
-     *  Type of CO. Type could be Ordinary, Re-export, Commonwealth Preferential etc.
+     *  The type of CoO being applied for (Ordinary, Re-export, Commonwealth Preferential, etc.).
      *  1
      *  Certificate Of Origin Application
      *  Certificate Type
@@ -45,7 +45,7 @@ class CertificateOfOriginApplicationType
     /**
      * BBIE
      *  Certificate Of Origin Application. Application Status Code. Code
-     *  Indicates the status of the application (revision, replacement, etc.).
+     *  A code signifying the status of the application (revision, replacement, etc.).
      *  0..1
      *  Certificate Of Origin Application
      *  Application Status Code
@@ -59,7 +59,7 @@ class CertificateOfOriginApplicationType
     /**
      * BBIE
      *  Certificate Of Origin Application. Original_ Job Identifier. Identifier
-     *  The latest Job Number given to the Origin application. This is used by the system to keep track of the amendments or cancellation of the origin application applied earlier.
+     *  The latest job number given to the CoO application. This is used by the system to keep track of amendments to or cancellation of any earlier applications.
      *  1
      *  Certificate Of Origin Application
      *  Original
@@ -74,7 +74,7 @@ class CertificateOfOriginApplicationType
     /**
      * BBIE
      *  Certificate Of Origin Application. Previous_ Job Identifier. Identifier
-     *  The previous Job Number assigned in case the application undergoes query or change. This is used by the system to keep track of the amendments or cancellation of the origin application applied earlier.
+     *  An identifier for the previous job used in case the application requires query or change.
      *  0..1
      *  Certificate Of Origin Application
      *  Previous
@@ -89,23 +89,26 @@ class CertificateOfOriginApplicationType
     /**
      * BBIE
      *  Certificate Of Origin Application. Remarks. Text
-     *  Remarks by the applicant for the Certificate of Origin Application.
-     *  0..1
+     *  Remarks by the applicant for the CoO.
+     *  0..n
      *  Certificate Of Origin Application
      *  Remarks
      *  Text
      *  Text. Type
      *
-     * @var \horstoeko\ubl\entities\cbc\Remarks $remarks
+     * @var \horstoeko\ubl\entities\cbc\Remarks[] $remarks
      */
-    private $remarks = null;
+    private $remarks = [
+        
+    ];
 
     /**
      * ASBIE
      *  Certificate Of Origin Application. Shipment
-     *  Information about the separately identifiable collection of goods items (available to be) transported from one consignor to one consignee via one or more modes of transport.
+     *  The shipment of goods covered by the CoO.
      *  1
      *  Certificate Of Origin Application
+     *  Shipment
      *  Shipment
      *  Shipment
      *
@@ -116,9 +119,10 @@ class CertificateOfOriginApplicationType
     /**
      * ASBIE
      *  Certificate Of Origin Application. Endorser Party
-     *  The party providing the endorsement.
+     *  A party providing an endorsement to the CoO.
      *  1..n
      *  Certificate Of Origin Application
+     *  Endorser Party
      *  Endorser Party
      *  Endorser Party
      *
@@ -131,10 +135,11 @@ class CertificateOfOriginApplicationType
     /**
      * ASBIE
      *  Certificate Of Origin Application. Preparation_ Party. Party
-     *  Details of an individual, a group, or a body that prepares the Certificate of Origin application.
+     *  The party (individual, group, or body) that prepared this CoO application.
      *  1
      *  Certificate Of Origin Application
      *  Preparation
+     *  Party
      *  Party
      *  Party
      *
@@ -145,10 +150,11 @@ class CertificateOfOriginApplicationType
     /**
      * ASBIE
      *  Certificate Of Origin Application. Issuer_ Party. Party
-     *  Details of the authorized organization that issued the Certificate of Origin.
+     *  The organization authorized to issue the CoO requested by this application.
      *  1
      *  Certificate Of Origin Application
      *  Issuer
+     *  Party
      *  Party
      *  Party
      *
@@ -158,11 +164,44 @@ class CertificateOfOriginApplicationType
 
     /**
      * ASBIE
+     *  Certificate Of Origin Application. Exporter_ Party. Party
+     *  The party making an export declaration, or on behalf of which the export declaration is made, and that is the owner of the goods or has similar right of disposal over them at the time when the declaration is accepted.
+     *  0..1
+     *  Certificate Of Origin Application
+     *  Exporter
+     *  Party
+     *  Party
+     *  Party
+     *  Exporter (WCO ID 41 and 42)
+     *
+     * @var \horstoeko\ubl\entities\cac\ExporterParty $exporterParty
+     */
+    private $exporterParty = null;
+
+    /**
+     * ASBIE
+     *  Certificate Of Origin Application. Importer_ Party. Party
+     *  The party making an import declaration, or on behalf of which a customs clearing agent or other authorized person makes an import declaration. This may include a person who has possession of the goods or to whom the goods are consigned.
+     *  0..1
+     *  Certificate Of Origin Application
+     *  Importer
+     *  Party
+     *  Party
+     *  Party
+     *  Importer (WCO ID 39 and 40)
+     *
+     * @var \horstoeko\ubl\entities\cac\ImporterParty $importerParty
+     */
+    private $importerParty = null;
+
+    /**
+     * ASBIE
      *  Certificate Of Origin Application. Issuing_ Country. Country
-     *  The country for which the Certificate of Origin is issued.
+     *  The country where the requested CoO will be issued.
      *  1
      *  Certificate Of Origin Application
      *  Issuing
+     *  Country
      *  Country
      *  Country
      *
@@ -173,9 +212,10 @@ class CertificateOfOriginApplicationType
     /**
      * ASBIE
      *  Certificate Of Origin Application. Document Distribution
-     *  The distribution of the Certificate of Origin to interested parties.
+     *  An interested party to which the CoO is to be distributed.
      *  0..n
      *  Certificate Of Origin Application
+     *  Document Distribution
      *  Document Distribution
      *  Document Distribution
      *
@@ -188,10 +228,11 @@ class CertificateOfOriginApplicationType
     /**
      * ASBIE
      *  Certificate Of Origin Application. Supporting_ Document Reference. Document Reference
-     *  An associative reference to a supporting document.
+     *  A reference to a document supporting this application.
      *  0..n
      *  Certificate Of Origin Application
      *  Supporting
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -204,9 +245,10 @@ class CertificateOfOriginApplicationType
     /**
      * ASBIE
      *  Certificate Of Origin Application. Signature
-     *  One or more signatures applied to the document instance.
+     *  A signature applied to this application.
      *  0..n
      *  Certificate Of Origin Application
+     *  Signature
      *  Signature
      *  Signature
      *
@@ -221,7 +263,7 @@ class CertificateOfOriginApplicationType
      *
      * BBIE
      *  Certificate Of Origin Application. Reference. Identifier
-     *  Holds the unique number that identifies the Despatch Advice, typically according to the seller's system that generated the Despatch Advice.
+     *  An identifier for a reference as part of the CoO application.
      *  1
      *  Certificate Of Origin Application
      *  Reference
@@ -240,7 +282,7 @@ class CertificateOfOriginApplicationType
      *
      * BBIE
      *  Certificate Of Origin Application. Reference. Identifier
-     *  Holds the unique number that identifies the Despatch Advice, typically according to the seller's system that generated the Despatch Advice.
+     *  An identifier for a reference as part of the CoO application.
      *  1
      *  Certificate Of Origin Application
      *  Reference
@@ -261,7 +303,7 @@ class CertificateOfOriginApplicationType
      *
      * BBIE
      *  Certificate Of Origin Application. Certificate Type. Text
-     *  Type of CO. Type could be Ordinary, Re-export, Commonwealth Preferential etc.
+     *  The type of CoO being applied for (Ordinary, Re-export, Commonwealth Preferential, etc.).
      *  1
      *  Certificate Of Origin Application
      *  Certificate Type
@@ -280,7 +322,7 @@ class CertificateOfOriginApplicationType
      *
      * BBIE
      *  Certificate Of Origin Application. Certificate Type. Text
-     *  Type of CO. Type could be Ordinary, Re-export, Commonwealth Preferential etc.
+     *  The type of CoO being applied for (Ordinary, Re-export, Commonwealth Preferential, etc.).
      *  1
      *  Certificate Of Origin Application
      *  Certificate Type
@@ -301,7 +343,7 @@ class CertificateOfOriginApplicationType
      *
      * BBIE
      *  Certificate Of Origin Application. Application Status Code. Code
-     *  Indicates the status of the application (revision, replacement, etc.).
+     *  A code signifying the status of the application (revision, replacement, etc.).
      *  0..1
      *  Certificate Of Origin Application
      *  Application Status Code
@@ -320,7 +362,7 @@ class CertificateOfOriginApplicationType
      *
      * BBIE
      *  Certificate Of Origin Application. Application Status Code. Code
-     *  Indicates the status of the application (revision, replacement, etc.).
+     *  A code signifying the status of the application (revision, replacement, etc.).
      *  0..1
      *  Certificate Of Origin Application
      *  Application Status Code
@@ -341,7 +383,7 @@ class CertificateOfOriginApplicationType
      *
      * BBIE
      *  Certificate Of Origin Application. Original_ Job Identifier. Identifier
-     *  The latest Job Number given to the Origin application. This is used by the system to keep track of the amendments or cancellation of the origin application applied earlier.
+     *  The latest job number given to the CoO application. This is used by the system to keep track of amendments to or cancellation of any earlier applications.
      *  1
      *  Certificate Of Origin Application
      *  Original
@@ -361,7 +403,7 @@ class CertificateOfOriginApplicationType
      *
      * BBIE
      *  Certificate Of Origin Application. Original_ Job Identifier. Identifier
-     *  The latest Job Number given to the Origin application. This is used by the system to keep track of the amendments or cancellation of the origin application applied earlier.
+     *  The latest job number given to the CoO application. This is used by the system to keep track of amendments to or cancellation of any earlier applications.
      *  1
      *  Certificate Of Origin Application
      *  Original
@@ -383,7 +425,7 @@ class CertificateOfOriginApplicationType
      *
      * BBIE
      *  Certificate Of Origin Application. Previous_ Job Identifier. Identifier
-     *  The previous Job Number assigned in case the application undergoes query or change. This is used by the system to keep track of the amendments or cancellation of the origin application applied earlier.
+     *  An identifier for the previous job used in case the application requires query or change.
      *  0..1
      *  Certificate Of Origin Application
      *  Previous
@@ -403,7 +445,7 @@ class CertificateOfOriginApplicationType
      *
      * BBIE
      *  Certificate Of Origin Application. Previous_ Job Identifier. Identifier
-     *  The previous Job Number assigned in case the application undergoes query or change. This is used by the system to keep track of the amendments or cancellation of the origin application applied earlier.
+     *  An identifier for the previous job used in case the application requires query or change.
      *  0..1
      *  Certificate Of Origin Application
      *  Previous
@@ -421,18 +463,79 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * Gets as remarks
+     * Adds as remarks
      *
      * BBIE
      *  Certificate Of Origin Application. Remarks. Text
-     *  Remarks by the applicant for the Certificate of Origin Application.
-     *  0..1
+     *  Remarks by the applicant for the CoO.
+     *  0..n
      *  Certificate Of Origin Application
      *  Remarks
      *  Text
      *  Text. Type
      *
-     * @return \horstoeko\ubl\entities\cbc\Remarks
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\Remarks $remarks
+     */
+    public function addToRemarks(\horstoeko\ubl\entities\cbc\Remarks $remarks)
+    {
+        $this->remarks[] = $remarks;
+        return $this;
+    }
+
+    /**
+     * isset remarks
+     *
+     * BBIE
+     *  Certificate Of Origin Application. Remarks. Text
+     *  Remarks by the applicant for the CoO.
+     *  0..n
+     *  Certificate Of Origin Application
+     *  Remarks
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetRemarks($index)
+    {
+        return isset($this->remarks[$index]);
+    }
+
+    /**
+     * unset remarks
+     *
+     * BBIE
+     *  Certificate Of Origin Application. Remarks. Text
+     *  Remarks by the applicant for the CoO.
+     *  0..n
+     *  Certificate Of Origin Application
+     *  Remarks
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetRemarks($index)
+    {
+        unset($this->remarks[$index]);
+    }
+
+    /**
+     * Gets as remarks
+     *
+     * BBIE
+     *  Certificate Of Origin Application. Remarks. Text
+     *  Remarks by the applicant for the CoO.
+     *  0..n
+     *  Certificate Of Origin Application
+     *  Remarks
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\Remarks[]
      */
     public function getRemarks()
     {
@@ -444,17 +547,17 @@ class CertificateOfOriginApplicationType
      *
      * BBIE
      *  Certificate Of Origin Application. Remarks. Text
-     *  Remarks by the applicant for the Certificate of Origin Application.
-     *  0..1
+     *  Remarks by the applicant for the CoO.
+     *  0..n
      *  Certificate Of Origin Application
      *  Remarks
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Remarks $remarks
+     * @param \horstoeko\ubl\entities\cbc\Remarks[] $remarks
      * @return self
      */
-    public function setRemarks(\horstoeko\ubl\entities\cbc\Remarks $remarks)
+    public function setRemarks(array $remarks)
     {
         $this->remarks = $remarks;
         return $this;
@@ -465,9 +568,10 @@ class CertificateOfOriginApplicationType
      *
      * ASBIE
      *  Certificate Of Origin Application. Shipment
-     *  Information about the separately identifiable collection of goods items (available to be) transported from one consignor to one consignee via one or more modes of transport.
+     *  The shipment of goods covered by the CoO.
      *  1
      *  Certificate Of Origin Application
+     *  Shipment
      *  Shipment
      *  Shipment
      *
@@ -483,9 +587,10 @@ class CertificateOfOriginApplicationType
      *
      * ASBIE
      *  Certificate Of Origin Application. Shipment
-     *  Information about the separately identifiable collection of goods items (available to be) transported from one consignor to one consignee via one or more modes of transport.
+     *  The shipment of goods covered by the CoO.
      *  1
      *  Certificate Of Origin Application
+     *  Shipment
      *  Shipment
      *  Shipment
      *
@@ -503,9 +608,10 @@ class CertificateOfOriginApplicationType
      *
      * ASBIE
      *  Certificate Of Origin Application. Endorser Party
-     *  The party providing the endorsement.
+     *  A party providing an endorsement to the CoO.
      *  1..n
      *  Certificate Of Origin Application
+     *  Endorser Party
      *  Endorser Party
      *  Endorser Party
      *
@@ -523,9 +629,10 @@ class CertificateOfOriginApplicationType
      *
      * ASBIE
      *  Certificate Of Origin Application. Endorser Party
-     *  The party providing the endorsement.
+     *  A party providing an endorsement to the CoO.
      *  1..n
      *  Certificate Of Origin Application
+     *  Endorser Party
      *  Endorser Party
      *  Endorser Party
      *
@@ -542,9 +649,10 @@ class CertificateOfOriginApplicationType
      *
      * ASBIE
      *  Certificate Of Origin Application. Endorser Party
-     *  The party providing the endorsement.
+     *  A party providing an endorsement to the CoO.
      *  1..n
      *  Certificate Of Origin Application
+     *  Endorser Party
      *  Endorser Party
      *  Endorser Party
      *
@@ -561,9 +669,10 @@ class CertificateOfOriginApplicationType
      *
      * ASBIE
      *  Certificate Of Origin Application. Endorser Party
-     *  The party providing the endorsement.
+     *  A party providing an endorsement to the CoO.
      *  1..n
      *  Certificate Of Origin Application
+     *  Endorser Party
      *  Endorser Party
      *  Endorser Party
      *
@@ -579,9 +688,10 @@ class CertificateOfOriginApplicationType
      *
      * ASBIE
      *  Certificate Of Origin Application. Endorser Party
-     *  The party providing the endorsement.
+     *  A party providing an endorsement to the CoO.
      *  1..n
      *  Certificate Of Origin Application
+     *  Endorser Party
      *  Endorser Party
      *  Endorser Party
      *
@@ -599,10 +709,11 @@ class CertificateOfOriginApplicationType
      *
      * ASBIE
      *  Certificate Of Origin Application. Preparation_ Party. Party
-     *  Details of an individual, a group, or a body that prepares the Certificate of Origin application.
+     *  The party (individual, group, or body) that prepared this CoO application.
      *  1
      *  Certificate Of Origin Application
      *  Preparation
+     *  Party
      *  Party
      *  Party
      *
@@ -618,10 +729,11 @@ class CertificateOfOriginApplicationType
      *
      * ASBIE
      *  Certificate Of Origin Application. Preparation_ Party. Party
-     *  Details of an individual, a group, or a body that prepares the Certificate of Origin application.
+     *  The party (individual, group, or body) that prepared this CoO application.
      *  1
      *  Certificate Of Origin Application
      *  Preparation
+     *  Party
      *  Party
      *  Party
      *
@@ -639,10 +751,11 @@ class CertificateOfOriginApplicationType
      *
      * ASBIE
      *  Certificate Of Origin Application. Issuer_ Party. Party
-     *  Details of the authorized organization that issued the Certificate of Origin.
+     *  The organization authorized to issue the CoO requested by this application.
      *  1
      *  Certificate Of Origin Application
      *  Issuer
+     *  Party
      *  Party
      *  Party
      *
@@ -658,10 +771,11 @@ class CertificateOfOriginApplicationType
      *
      * ASBIE
      *  Certificate Of Origin Application. Issuer_ Party. Party
-     *  Details of the authorized organization that issued the Certificate of Origin.
+     *  The organization authorized to issue the CoO requested by this application.
      *  1
      *  Certificate Of Origin Application
      *  Issuer
+     *  Party
      *  Party
      *  Party
      *
@@ -675,14 +789,103 @@ class CertificateOfOriginApplicationType
     }
 
     /**
+     * Gets as exporterParty
+     *
+     * ASBIE
+     *  Certificate Of Origin Application. Exporter_ Party. Party
+     *  The party making an export declaration, or on behalf of which the export declaration is made, and that is the owner of the goods or has similar right of disposal over them at the time when the declaration is accepted.
+     *  0..1
+     *  Certificate Of Origin Application
+     *  Exporter
+     *  Party
+     *  Party
+     *  Party
+     *  Exporter (WCO ID 41 and 42)
+     *
+     * @return \horstoeko\ubl\entities\cac\ExporterParty
+     */
+    public function getExporterParty()
+    {
+        return $this->exporterParty;
+    }
+
+    /**
+     * Sets a new exporterParty
+     *
+     * ASBIE
+     *  Certificate Of Origin Application. Exporter_ Party. Party
+     *  The party making an export declaration, or on behalf of which the export declaration is made, and that is the owner of the goods or has similar right of disposal over them at the time when the declaration is accepted.
+     *  0..1
+     *  Certificate Of Origin Application
+     *  Exporter
+     *  Party
+     *  Party
+     *  Party
+     *  Exporter (WCO ID 41 and 42)
+     *
+     * @param \horstoeko\ubl\entities\cac\ExporterParty $exporterParty
+     * @return self
+     */
+    public function setExporterParty(\horstoeko\ubl\entities\cac\ExporterParty $exporterParty)
+    {
+        $this->exporterParty = $exporterParty;
+        return $this;
+    }
+
+    /**
+     * Gets as importerParty
+     *
+     * ASBIE
+     *  Certificate Of Origin Application. Importer_ Party. Party
+     *  The party making an import declaration, or on behalf of which a customs clearing agent or other authorized person makes an import declaration. This may include a person who has possession of the goods or to whom the goods are consigned.
+     *  0..1
+     *  Certificate Of Origin Application
+     *  Importer
+     *  Party
+     *  Party
+     *  Party
+     *  Importer (WCO ID 39 and 40)
+     *
+     * @return \horstoeko\ubl\entities\cac\ImporterParty
+     */
+    public function getImporterParty()
+    {
+        return $this->importerParty;
+    }
+
+    /**
+     * Sets a new importerParty
+     *
+     * ASBIE
+     *  Certificate Of Origin Application. Importer_ Party. Party
+     *  The party making an import declaration, or on behalf of which a customs clearing agent or other authorized person makes an import declaration. This may include a person who has possession of the goods or to whom the goods are consigned.
+     *  0..1
+     *  Certificate Of Origin Application
+     *  Importer
+     *  Party
+     *  Party
+     *  Party
+     *  Importer (WCO ID 39 and 40)
+     *
+     * @param \horstoeko\ubl\entities\cac\ImporterParty $importerParty
+     * @return self
+     */
+    public function setImporterParty(\horstoeko\ubl\entities\cac\ImporterParty $importerParty)
+    {
+        $this->importerParty = $importerParty;
+        return $this;
+    }
+
+    /**
      * Gets as issuingCountry
      *
      * ASBIE
      *  Certificate Of Origin Application. Issuing_ Country. Country
-     *  The country for which the Certificate of Origin is issued.
+     *  The country where the requested CoO will be issued.
      *  1
      *  Certificate Of Origin Application
      *  Issuing
+     *  Country
      *  Country
      *  Country
      *
@@ -698,10 +901,11 @@ class CertificateOfOriginApplicationType
      *
      * ASBIE
      *  Certificate Of Origin Application. Issuing_ Country. Country
-     *  The country for which the Certificate of Origin is issued.
+     *  The country where the requested CoO will be issued.
      *  1
      *  Certificate Of Origin Application
      *  Issuing
+     *  Country
      *  Country
      *  Country
      *
@@ -719,9 +923,10 @@ class CertificateOfOriginApplicationType
      *
      * ASBIE
      *  Certificate Of Origin Application. Document Distribution
-     *  The distribution of the Certificate of Origin to interested parties.
+     *  An interested party to which the CoO is to be distributed.
      *  0..n
      *  Certificate Of Origin Application
+     *  Document Distribution
      *  Document Distribution
      *  Document Distribution
      *
@@ -739,9 +944,10 @@ class CertificateOfOriginApplicationType
      *
      * ASBIE
      *  Certificate Of Origin Application. Document Distribution
-     *  The distribution of the Certificate of Origin to interested parties.
+     *  An interested party to which the CoO is to be distributed.
      *  0..n
      *  Certificate Of Origin Application
+     *  Document Distribution
      *  Document Distribution
      *  Document Distribution
      *
@@ -758,9 +964,10 @@ class CertificateOfOriginApplicationType
      *
      * ASBIE
      *  Certificate Of Origin Application. Document Distribution
-     *  The distribution of the Certificate of Origin to interested parties.
+     *  An interested party to which the CoO is to be distributed.
      *  0..n
      *  Certificate Of Origin Application
+     *  Document Distribution
      *  Document Distribution
      *  Document Distribution
      *
@@ -777,9 +984,10 @@ class CertificateOfOriginApplicationType
      *
      * ASBIE
      *  Certificate Of Origin Application. Document Distribution
-     *  The distribution of the Certificate of Origin to interested parties.
+     *  An interested party to which the CoO is to be distributed.
      *  0..n
      *  Certificate Of Origin Application
+     *  Document Distribution
      *  Document Distribution
      *  Document Distribution
      *
@@ -795,9 +1003,10 @@ class CertificateOfOriginApplicationType
      *
      * ASBIE
      *  Certificate Of Origin Application. Document Distribution
-     *  The distribution of the Certificate of Origin to interested parties.
+     *  An interested party to which the CoO is to be distributed.
      *  0..n
      *  Certificate Of Origin Application
+     *  Document Distribution
      *  Document Distribution
      *  Document Distribution
      *
@@ -815,10 +1024,11 @@ class CertificateOfOriginApplicationType
      *
      * ASBIE
      *  Certificate Of Origin Application. Supporting_ Document Reference. Document Reference
-     *  An associative reference to a supporting document.
+     *  A reference to a document supporting this application.
      *  0..n
      *  Certificate Of Origin Application
      *  Supporting
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -836,10 +1046,11 @@ class CertificateOfOriginApplicationType
      *
      * ASBIE
      *  Certificate Of Origin Application. Supporting_ Document Reference. Document Reference
-     *  An associative reference to a supporting document.
+     *  A reference to a document supporting this application.
      *  0..n
      *  Certificate Of Origin Application
      *  Supporting
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -856,10 +1067,11 @@ class CertificateOfOriginApplicationType
      *
      * ASBIE
      *  Certificate Of Origin Application. Supporting_ Document Reference. Document Reference
-     *  An associative reference to a supporting document.
+     *  A reference to a document supporting this application.
      *  0..n
      *  Certificate Of Origin Application
      *  Supporting
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -876,10 +1088,11 @@ class CertificateOfOriginApplicationType
      *
      * ASBIE
      *  Certificate Of Origin Application. Supporting_ Document Reference. Document Reference
-     *  An associative reference to a supporting document.
+     *  A reference to a document supporting this application.
      *  0..n
      *  Certificate Of Origin Application
      *  Supporting
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -895,10 +1108,11 @@ class CertificateOfOriginApplicationType
      *
      * ASBIE
      *  Certificate Of Origin Application. Supporting_ Document Reference. Document Reference
-     *  An associative reference to a supporting document.
+     *  A reference to a document supporting this application.
      *  0..n
      *  Certificate Of Origin Application
      *  Supporting
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -916,9 +1130,10 @@ class CertificateOfOriginApplicationType
      *
      * ASBIE
      *  Certificate Of Origin Application. Signature
-     *  One or more signatures applied to the document instance.
+     *  A signature applied to this application.
      *  0..n
      *  Certificate Of Origin Application
+     *  Signature
      *  Signature
      *  Signature
      *
@@ -936,9 +1151,10 @@ class CertificateOfOriginApplicationType
      *
      * ASBIE
      *  Certificate Of Origin Application. Signature
-     *  One or more signatures applied to the document instance.
+     *  A signature applied to this application.
      *  0..n
      *  Certificate Of Origin Application
+     *  Signature
      *  Signature
      *  Signature
      *
@@ -955,9 +1171,10 @@ class CertificateOfOriginApplicationType
      *
      * ASBIE
      *  Certificate Of Origin Application. Signature
-     *  One or more signatures applied to the document instance.
+     *  A signature applied to this application.
      *  0..n
      *  Certificate Of Origin Application
+     *  Signature
      *  Signature
      *  Signature
      *
@@ -974,9 +1191,10 @@ class CertificateOfOriginApplicationType
      *
      * ASBIE
      *  Certificate Of Origin Application. Signature
-     *  One or more signatures applied to the document instance.
+     *  A signature applied to this application.
      *  0..n
      *  Certificate Of Origin Application
+     *  Signature
      *  Signature
      *  Signature
      *
@@ -992,9 +1210,10 @@ class CertificateOfOriginApplicationType
      *
      * ASBIE
      *  Certificate Of Origin Application. Signature
-     *  One or more signatures applied to the document instance.
+     *  A signature applied to this application.
      *  0..n
      *  Certificate Of Origin Application
+     *  Signature
      *  Signature
      *  Signature
      *

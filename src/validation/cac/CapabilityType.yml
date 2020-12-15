@@ -1,0 +1,8 @@
+horstoeko\ubl\entities\cac\CapabilityType:
+    properties:
+        evidenceSupplied:
+            -
+                Valid: null
+        validityPeriod:
+            -
+                Valid: null

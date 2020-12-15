@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Order Reference. Details
- *  Information about an Order Reference.
+ *  A class to define a reference to an Order.
  *  Order Reference
  * XSD Type: OrderReferenceType
  */
@@ -17,13 +17,13 @@ class OrderReferenceType
     /**
      * BBIE
      *  Order Reference. Identifier
-     *  Identifies the referenced Order assigned by the buyer.
+     *  An identifier for this order reference, assigned by the buyer.
      *  1
      *  Order Reference
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "PO-001" "3333-44-123"
+     *  PO-001 3333-44-123
      *
      * @var \horstoeko\ubl\entities\cbc\ID $iD
      */
@@ -31,11 +31,12 @@ class OrderReferenceType
 
     /**
      * BBIE
-     *  Order Reference. Sales Order Identifier. Identifier
-     *  Identifies the referenced Order assigned by the seller.
+     *  Order Reference. Sales_ Order Identifier. Identifier
+     *  An identifier for this order reference, assigned by the seller.
      *  0..1
      *  Order Reference
-     *  Sales Order Identifier
+     *  Sales
+     *  Order Identifier
      *  Identifier
      *  Identifier. Type
      *
@@ -61,7 +62,7 @@ class OrderReferenceType
     /**
      * BBIE
      *  Order Reference. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this order reference.
      *  0..1
      *  Order Reference
      *  UUID
@@ -103,25 +104,39 @@ class OrderReferenceType
     /**
      * BBIE
      *  Order Reference. Customer_ Reference. Text
-     *  A reference used (CRI) for tagging purchasing card transactions.
+     *  Text used for tagging purchasing card transactions.
      *  0..1
      *  Order Reference
      *  Customer
      *  Reference
      *  Text
      *  Text. Type
-     *  Customer Reference Identifier (CRI) when using a puchasing card
      *
      * @var \horstoeko\ubl\entities\cbc\CustomerReference $customerReference
      */
     private $customerReference = null;
 
     /**
-     * ASBIE
-     *  Order Reference. Document Reference
-     *  An association to Document Reference.
+     * BBIE
+     *  Order Reference. Order Type Code. Code
+     *  A code signifying the type of the referenced Order.
      *  0..1
      *  Order Reference
+     *  Order Type Code
+     *  Code
+     *  Code. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\OrderTypeCode $orderTypeCode
+     */
+    private $orderTypeCode = null;
+
+    /**
+     * ASBIE
+     *  Order Reference. Document Reference
+     *  A document associated with this reference to an Order.
+     *  0..1
+     *  Order Reference
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -134,13 +149,13 @@ class OrderReferenceType
      *
      * BBIE
      *  Order Reference. Identifier
-     *  Identifies the referenced Order assigned by the buyer.
+     *  An identifier for this order reference, assigned by the buyer.
      *  1
      *  Order Reference
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "PO-001" "3333-44-123"
+     *  PO-001 3333-44-123
      *
      * @return \horstoeko\ubl\entities\cbc\ID
      */
@@ -154,13 +169,13 @@ class OrderReferenceType
      *
      * BBIE
      *  Order Reference. Identifier
-     *  Identifies the referenced Order assigned by the buyer.
+     *  An identifier for this order reference, assigned by the buyer.
      *  1
      *  Order Reference
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "PO-001" "3333-44-123"
+     *  PO-001 3333-44-123
      *
      * @param \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
@@ -175,11 +190,12 @@ class OrderReferenceType
      * Gets as salesOrderID
      *
      * BBIE
-     *  Order Reference. Sales Order Identifier. Identifier
-     *  Identifies the referenced Order assigned by the seller.
+     *  Order Reference. Sales_ Order Identifier. Identifier
+     *  An identifier for this order reference, assigned by the seller.
      *  0..1
      *  Order Reference
-     *  Sales Order Identifier
+     *  Sales
+     *  Order Identifier
      *  Identifier
      *  Identifier. Type
      *
@@ -194,11 +210,12 @@ class OrderReferenceType
      * Sets a new salesOrderID
      *
      * BBIE
-     *  Order Reference. Sales Order Identifier. Identifier
-     *  Identifies the referenced Order assigned by the seller.
+     *  Order Reference. Sales_ Order Identifier. Identifier
+     *  An identifier for this order reference, assigned by the seller.
      *  0..1
      *  Order Reference
-     *  Sales Order Identifier
+     *  Sales
+     *  Order Identifier
      *  Identifier
      *  Identifier. Type
      *
@@ -258,7 +275,7 @@ class OrderReferenceType
      *
      * BBIE
      *  Order Reference. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this order reference.
      *  0..1
      *  Order Reference
      *  UUID
@@ -277,7 +294,7 @@ class OrderReferenceType
      *
      * BBIE
      *  Order Reference. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this order reference.
      *  0..1
      *  Order Reference
      *  UUID
@@ -378,14 +395,13 @@ class OrderReferenceType
      *
      * BBIE
      *  Order Reference. Customer_ Reference. Text
-     *  A reference used (CRI) for tagging purchasing card transactions.
+     *  Text used for tagging purchasing card transactions.
      *  0..1
      *  Order Reference
      *  Customer
      *  Reference
      *  Text
      *  Text. Type
-     *  Customer Reference Identifier (CRI) when using a puchasing card
      *
      * @return \horstoeko\ubl\entities\cbc\CustomerReference
      */
@@ -399,14 +415,13 @@ class OrderReferenceType
      *
      * BBIE
      *  Order Reference. Customer_ Reference. Text
-     *  A reference used (CRI) for tagging purchasing card transactions.
+     *  Text used for tagging purchasing card transactions.
      *  0..1
      *  Order Reference
      *  Customer
      *  Reference
      *  Text
      *  Text. Type
-     *  Customer Reference Identifier (CRI) when using a puchasing card
      *
      * @param \horstoeko\ubl\entities\cbc\CustomerReference $customerReference
      * @return self
@@ -418,13 +433,54 @@ class OrderReferenceType
     }
 
     /**
+     * Gets as orderTypeCode
+     *
+     * BBIE
+     *  Order Reference. Order Type Code. Code
+     *  A code signifying the type of the referenced Order.
+     *  0..1
+     *  Order Reference
+     *  Order Type Code
+     *  Code
+     *  Code. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\OrderTypeCode
+     */
+    public function getOrderTypeCode()
+    {
+        return $this->orderTypeCode;
+    }
+
+    /**
+     * Sets a new orderTypeCode
+     *
+     * BBIE
+     *  Order Reference. Order Type Code. Code
+     *  A code signifying the type of the referenced Order.
+     *  0..1
+     *  Order Reference
+     *  Order Type Code
+     *  Code
+     *  Code. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\OrderTypeCode $orderTypeCode
+     * @return self
+     */
+    public function setOrderTypeCode(\horstoeko\ubl\entities\cbc\OrderTypeCode $orderTypeCode)
+    {
+        $this->orderTypeCode = $orderTypeCode;
+        return $this;
+    }
+
+    /**
      * Gets as documentReference
      *
      * ASBIE
      *  Order Reference. Document Reference
-     *  An association to Document Reference.
+     *  A document associated with this reference to an Order.
      *  0..1
      *  Order Reference
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -440,9 +496,10 @@ class OrderReferenceType
      *
      * ASBIE
      *  Order Reference. Document Reference
-     *  An association to Document Reference.
+     *  A document associated with this reference to an Order.
      *  0..1
      *  Order Reference
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *

@@ -1,0 +1,35 @@
+horstoeko\ubl\entities\cac\DependentPriceReferenceType:
+    properties:
+        percent:
+            expose: true
+            access_type: public_method
+            serialized_name: Percent
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPercent
+                setter: setPercent
+            type: horstoeko\ubl\entities\cbc\Percent
+        locationAddress:
+            expose: true
+            access_type: public_method
+            serialized_name: LocationAddress
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getLocationAddress
+                setter: setLocationAddress
+            type: horstoeko\ubl\entities\cac\LocationAddress
+        dependentLineReference:
+            expose: true
+            access_type: public_method
+            serialized_name: DependentLineReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getDependentLineReference
+                setter: setDependentLineReference
+            type: horstoeko\ubl\entities\cac\DependentLineReference

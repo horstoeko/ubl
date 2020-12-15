@@ -1,0 +1,142 @@
+horstoeko\ubl\entities\cac\ExceptionCriteriaLineType:
+    properties:
+        iD:
+            expose: true
+            access_type: public_method
+            serialized_name: ID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getID
+                setter: setID
+            type: horstoeko\ubl\entities\cbc\ID
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: Note
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getNote
+                setter: setNote
+            xml_list:
+                inline: true
+                entry_name: Note
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Note>
+        thresholdValueComparisonCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ThresholdValueComparisonCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getThresholdValueComparisonCode
+                setter: setThresholdValueComparisonCode
+            type: horstoeko\ubl\entities\cbc\ThresholdValueComparisonCode
+        thresholdQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: ThresholdQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getThresholdQuantity
+                setter: setThresholdQuantity
+            type: horstoeko\ubl\entities\cbc\ThresholdQuantity
+        exceptionStatusCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ExceptionStatusCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getExceptionStatusCode
+                setter: setExceptionStatusCode
+            type: horstoeko\ubl\entities\cbc\ExceptionStatusCode
+        collaborationPriorityCode:
+            expose: true
+            access_type: public_method
+            serialized_name: CollaborationPriorityCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getCollaborationPriorityCode
+                setter: setCollaborationPriorityCode
+            type: horstoeko\ubl\entities\cbc\CollaborationPriorityCode
+        exceptionResolutionCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ExceptionResolutionCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getExceptionResolutionCode
+                setter: setExceptionResolutionCode
+            type: horstoeko\ubl\entities\cbc\ExceptionResolutionCode
+        supplyChainActivityTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: SupplyChainActivityTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getSupplyChainActivityTypeCode
+                setter: setSupplyChainActivityTypeCode
+            type: horstoeko\ubl\entities\cbc\SupplyChainActivityTypeCode
+        performanceMetricTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: PerformanceMetricTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPerformanceMetricTypeCode
+                setter: setPerformanceMetricTypeCode
+            type: horstoeko\ubl\entities\cbc\PerformanceMetricTypeCode
+        effectivePeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: EffectivePeriod
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getEffectivePeriod
+                setter: setEffectivePeriod
+            type: horstoeko\ubl\entities\cac\EffectivePeriod
+        supplyItem:
+            expose: true
+            access_type: public_method
+            serialized_name: SupplyItem
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getSupplyItem
+                setter: setSupplyItem
+            xml_list:
+                inline: true
+                entry_name: SupplyItem
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\SupplyItem>
+        forecastExceptionCriterionLine:
+            expose: true
+            access_type: public_method
+            serialized_name: ForecastExceptionCriterionLine
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getForecastExceptionCriterionLine
+                setter: setForecastExceptionCriterionLine
+            type: horstoeko\ubl\entities\cac\ForecastExceptionCriterionLine

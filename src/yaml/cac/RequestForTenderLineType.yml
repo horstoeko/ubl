@@ -1,0 +1,198 @@
+horstoeko\ubl\entities\cac\RequestForTenderLineType:
+    properties:
+        iD:
+            expose: true
+            access_type: public_method
+            serialized_name: ID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getID
+                setter: setID
+            type: horstoeko\ubl\entities\cbc\ID
+        uUID:
+            expose: true
+            access_type: public_method
+            serialized_name: UUID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getUUID
+                setter: setUUID
+            type: horstoeko\ubl\entities\cbc\UUID
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: Note
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getNote
+                setter: setNote
+            xml_list:
+                inline: true
+                entry_name: Note
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Note>
+        quantity:
+            expose: true
+            access_type: public_method
+            serialized_name: Quantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getQuantity
+                setter: setQuantity
+            type: horstoeko\ubl\entities\cbc\Quantity
+        minimumQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: MinimumQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMinimumQuantity
+                setter: setMinimumQuantity
+            type: horstoeko\ubl\entities\cbc\MinimumQuantity
+        maximumQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: MaximumQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMaximumQuantity
+                setter: setMaximumQuantity
+            type: horstoeko\ubl\entities\cbc\MaximumQuantity
+        taxIncludedIndicator:
+            expose: true
+            access_type: public_method
+            serialized_name: TaxIncludedIndicator
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTaxIncludedIndicator
+                setter: setTaxIncludedIndicator
+            type: bool
+        minimumAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: MinimumAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMinimumAmount
+                setter: setMinimumAmount
+            type: horstoeko\ubl\entities\cbc\MinimumAmount
+        maximumAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: MaximumAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMaximumAmount
+                setter: setMaximumAmount
+            type: horstoeko\ubl\entities\cbc\MaximumAmount
+        estimatedAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: EstimatedAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getEstimatedAmount
+                setter: setEstimatedAmount
+            type: horstoeko\ubl\entities\cbc\EstimatedAmount
+        documentReference:
+            expose: true
+            access_type: public_method
+            serialized_name: DocumentReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getDocumentReference
+                setter: setDocumentReference
+            xml_list:
+                inline: true
+                entry_name: DocumentReference
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\DocumentReference>
+        deliveryPeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: DeliveryPeriod
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getDeliveryPeriod
+                setter: setDeliveryPeriod
+            xml_list:
+                inline: true
+                entry_name: DeliveryPeriod
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\DeliveryPeriod>
+        requiredItemLocationQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: RequiredItemLocationQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getRequiredItemLocationQuantity
+                setter: setRequiredItemLocationQuantity
+            xml_list:
+                inline: true
+                entry_name: RequiredItemLocationQuantity
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\RequiredItemLocationQuantity>
+        warrantyValidityPeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: WarrantyValidityPeriod
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getWarrantyValidityPeriod
+                setter: setWarrantyValidityPeriod
+            type: horstoeko\ubl\entities\cac\WarrantyValidityPeriod
+        item:
+            expose: true
+            access_type: public_method
+            serialized_name: Item
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getItem
+                setter: setItem
+            type: horstoeko\ubl\entities\cac\Item
+        subRequestForTenderLine:
+            expose: true
+            access_type: public_method
+            serialized_name: SubRequestForTenderLine
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getSubRequestForTenderLine
+                setter: setSubRequestForTenderLine
+            xml_list:
+                inline: true
+                entry_name: SubRequestForTenderLine
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\SubRequestForTenderLine>

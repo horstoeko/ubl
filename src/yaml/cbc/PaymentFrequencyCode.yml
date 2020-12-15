@@ -1,0 +1,3 @@
+horstoeko\ubl\entities\cbc\PaymentFrequencyCode:
+    xml_root_name: PaymentFrequencyCode
+    xml_root_namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'

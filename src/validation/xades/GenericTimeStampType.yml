@@ -1,0 +1,14 @@
+horstoeko\ubl\entities\xades\GenericTimeStampType:
+    properties:
+        include:
+            -
+                Valid: null
+        referenceInfo:
+            -
+                Valid: null
+        canonicalizationMethod:
+            -
+                Valid: null
+        xMLTimeStamp:
+            -
+                Valid: null

@@ -77,6 +77,17 @@ horstoeko\ubl\entities\cac\OrderReferenceType:
                 getter: getCustomerReference
                 setter: setCustomerReference
             type: horstoeko\ubl\entities\cbc\CustomerReference
+        orderTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: OrderTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getOrderTypeCode
+                setter: setOrderTypeCode
+            type: horstoeko\ubl\entities\cbc\OrderTypeCode
         documentReference:
             expose: true
             access_type: public_method

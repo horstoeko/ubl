@@ -1,0 +1,22 @@
+horstoeko\ubl\entities\xades\SignaturePolicyIdType:
+    properties:
+        sigPolicyId:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        transforms:
+            -
+                Valid: null
+        sigPolicyHash:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        sigPolicyQualifiers:
+            -
+                Valid: null

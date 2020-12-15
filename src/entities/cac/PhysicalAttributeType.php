@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Physical Attribute. Details
- *  Information about physical attributes.
+ *  A class to describe a physical attribute.
  *  Physical Attribute
  * XSD Type: PhysicalAttributeType
  */
@@ -17,13 +17,13 @@ class PhysicalAttributeType
     /**
      * BBIE
      *  Physical Attribute. Attribute Identifier. Identifier
-     *  Identifies the physical attribute.
+     *  An identifier for this physical attribute.
      *  1
      *  Physical Attribute
      *  Attribute Identifier
      *  Identifier
      *  Identifier. Type
-     *  "colour" "style"
+     *  colour style
      *
      * @var \horstoeko\ubl\entities\cbc\AttributeID $attributeID
      */
@@ -32,7 +32,7 @@ class PhysicalAttributeType
     /**
      * BBIE
      *  Physical Attribute. Position Code. Code
-     *  The position of the physical attribute, expressed as a code.
+     *  A code signifying the position of this physical attribute.
      *  0..1
      *  Physical Attribute
      *  Position Code
@@ -46,13 +46,13 @@ class PhysicalAttributeType
     /**
      * BBIE
      *  Physical Attribute. Description Code. Code
-     *  The description of the physical attribute, expressed as a code.
+     *  A description of the physical attribute, expressed as a code.
      *  0..1
      *  Physical Attribute
      *  Description Code
      *  Code
      *  Code. Type
-     *  "XXL","Small"
+     *  XXL , Small
      *
      * @var \horstoeko\ubl\entities\cbc\DescriptionCode $descriptionCode
      */
@@ -61,7 +61,7 @@ class PhysicalAttributeType
     /**
      * BBIE
      *  Physical Attribute. Description. Text
-     *  The description of the physical attribute, expressed as text.
+     *  A description of the physical attribute, expressed as text.
      *  0..n
      *  Physical Attribute
      *  Description
@@ -79,13 +79,13 @@ class PhysicalAttributeType
      *
      * BBIE
      *  Physical Attribute. Attribute Identifier. Identifier
-     *  Identifies the physical attribute.
+     *  An identifier for this physical attribute.
      *  1
      *  Physical Attribute
      *  Attribute Identifier
      *  Identifier
      *  Identifier. Type
-     *  "colour" "style"
+     *  colour style
      *
      * @return \horstoeko\ubl\entities\cbc\AttributeID
      */
@@ -99,13 +99,13 @@ class PhysicalAttributeType
      *
      * BBIE
      *  Physical Attribute. Attribute Identifier. Identifier
-     *  Identifies the physical attribute.
+     *  An identifier for this physical attribute.
      *  1
      *  Physical Attribute
      *  Attribute Identifier
      *  Identifier
      *  Identifier. Type
-     *  "colour" "style"
+     *  colour style
      *
      * @param \horstoeko\ubl\entities\cbc\AttributeID $attributeID
      * @return self
@@ -121,7 +121,7 @@ class PhysicalAttributeType
      *
      * BBIE
      *  Physical Attribute. Position Code. Code
-     *  The position of the physical attribute, expressed as a code.
+     *  A code signifying the position of this physical attribute.
      *  0..1
      *  Physical Attribute
      *  Position Code
@@ -140,7 +140,7 @@ class PhysicalAttributeType
      *
      * BBIE
      *  Physical Attribute. Position Code. Code
-     *  The position of the physical attribute, expressed as a code.
+     *  A code signifying the position of this physical attribute.
      *  0..1
      *  Physical Attribute
      *  Position Code
@@ -161,13 +161,13 @@ class PhysicalAttributeType
      *
      * BBIE
      *  Physical Attribute. Description Code. Code
-     *  The description of the physical attribute, expressed as a code.
+     *  A description of the physical attribute, expressed as a code.
      *  0..1
      *  Physical Attribute
      *  Description Code
      *  Code
      *  Code. Type
-     *  "XXL","Small"
+     *  XXL , Small
      *
      * @return \horstoeko\ubl\entities\cbc\DescriptionCode
      */
@@ -181,13 +181,13 @@ class PhysicalAttributeType
      *
      * BBIE
      *  Physical Attribute. Description Code. Code
-     *  The description of the physical attribute, expressed as a code.
+     *  A description of the physical attribute, expressed as a code.
      *  0..1
      *  Physical Attribute
      *  Description Code
      *  Code
      *  Code. Type
-     *  "XXL","Small"
+     *  XXL , Small
      *
      * @param \horstoeko\ubl\entities\cbc\DescriptionCode $descriptionCode
      * @return self
@@ -203,7 +203,7 @@ class PhysicalAttributeType
      *
      * BBIE
      *  Physical Attribute. Description. Text
-     *  The description of the physical attribute, expressed as text.
+     *  A description of the physical attribute, expressed as text.
      *  0..n
      *  Physical Attribute
      *  Description
@@ -224,7 +224,7 @@ class PhysicalAttributeType
      *
      * BBIE
      *  Physical Attribute. Description. Text
-     *  The description of the physical attribute, expressed as text.
+     *  A description of the physical attribute, expressed as text.
      *  0..n
      *  Physical Attribute
      *  Description
@@ -244,7 +244,7 @@ class PhysicalAttributeType
      *
      * BBIE
      *  Physical Attribute. Description. Text
-     *  The description of the physical attribute, expressed as text.
+     *  A description of the physical attribute, expressed as text.
      *  0..n
      *  Physical Attribute
      *  Description
@@ -264,7 +264,7 @@ class PhysicalAttributeType
      *
      * BBIE
      *  Physical Attribute. Description. Text
-     *  The description of the physical attribute, expressed as text.
+     *  A description of the physical attribute, expressed as text.
      *  0..n
      *  Physical Attribute
      *  Description
@@ -283,7 +283,7 @@ class PhysicalAttributeType
      *
      * BBIE
      *  Physical Attribute. Description. Text
-     *  The description of the physical attribute, expressed as text.
+     *  A description of the physical attribute, expressed as text.
      *  0..n
      *  Physical Attribute
      *  Description

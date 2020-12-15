@@ -5,3 +5,42 @@ horstoeko\ubl\entities\cac\TransportationServiceType:
                 NotNull:
                     groups:
                         - xsd_rules
+        transportEquipment:
+            -
+                Valid: null
+        supportedTransportEquipment:
+            -
+                Valid: null
+        unsupportedTransportEquipment:
+            -
+                Valid: null
+        commodityClassification:
+            -
+                Valid: null
+        supportedCommodityClassification:
+            -
+                Valid: null
+        unsupportedCommodityClassification:
+            -
+                Valid: null
+        totalCapacityDimension:
+            -
+                Valid: null
+        shipmentStage:
+            -
+                Valid: null
+        transportEvent:
+            -
+                Valid: null
+        responsibleTransportServiceProviderParty:
+            -
+                Valid: null
+        environmentalEmission:
+            -
+                Valid: null
+        estimatedDurationPeriod:
+            -
+                Valid: null
+        scheduledServiceFrequency:
+            -
+                Valid: null

@@ -43,7 +43,11 @@ horstoeko\ubl\entities\cac\HazardousItemType:
             accessor:
                 getter: getAdditionalInformation
                 setter: setAdditionalInformation
-            type: horstoeko\ubl\entities\cbc\AdditionalInformation
+            xml_list:
+                inline: true
+                entry_name: AdditionalInformation
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\AdditionalInformation>
         uNDGCode:
             expose: true
             access_type: public_method

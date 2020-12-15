@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Invoice Line. Details
- *  Information about an Invoice Line.
+ *  A class to define a line in an Invoice.
  *  Invoice Line
  * XSD Type: InvoiceLineType
  */
@@ -17,7 +17,7 @@ class InvoiceLineType
     /**
      * BBIE
      *  Invoice Line. Identifier
-     *  Identifies the Invoice Line.
+     *  An identifier for this invoice line.
      *  1
      *  Invoice Line
      *  Identifier
@@ -31,7 +31,7 @@ class InvoiceLineType
     /**
      * BBIE
      *  Invoice Line. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this invoice line.
      *  0..1
      *  Invoice Line
      *  UUID
@@ -45,21 +45,23 @@ class InvoiceLineType
     /**
      * BBIE
      *  Invoice Line. Note. Text
-     *  Free-form text applying to the Invoice Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Invoice Line
      *  Note
      *  Text
      *  Text. Type
      *
-     * @var \horstoeko\ubl\entities\cbc\Note $note
+     * @var \horstoeko\ubl\entities\cbc\Note[] $note
      */
-    private $note = null;
+    private $note = [
+        
+    ];
 
     /**
      * BBIE
      *  Invoice Line. Invoiced_ Quantity. Quantity
-     *  The quantity (of Items) on the Invoice Line.
+     *  The quantity (of items) on this invoice line.
      *  0..1
      *  Invoice Line
      *  Invoiced
@@ -74,7 +76,7 @@ class InvoiceLineType
     /**
      * BBIE
      *  Invoice Line. Line Extension Amount. Amount
-     *  The total amount for the Invoice Line, including Allowance Charges but net of taxes.
+     *  The total amount for this invoice line, including allowance charges but net of taxes.
      *  1
      *  Invoice Line
      *  Line Extension Amount
@@ -88,7 +90,7 @@ class InvoiceLineType
     /**
      * BBIE
      *  Invoice Line. Tax Point Date. Date
-     *  The date of the Invoice Line, used to indicate the point at which tax becomes applicable.
+     *  The date of this invoice line, used to indicate the point at which tax becomes applicable.
      *  0..1
      *  Invoice Line
      *  Tax Point Date
@@ -102,7 +104,7 @@ class InvoiceLineType
     /**
      * BBIE
      *  Invoice Line. Accounting Cost Code. Code
-     *  The buyer's accounting code applied to the Invoice Line.
+     *  The buyer's accounting cost centre for this invoice line, expressed as a code.
      *  0..1
      *  Invoice Line
      *  Accounting Cost Code
@@ -116,7 +118,7 @@ class InvoiceLineType
     /**
      * BBIE
      *  Invoice Line. Accounting Cost. Text
-     *  The buyer's accounting code applied to the Invoice Line, expressed as text.
+     *  The buyer's accounting cost centre for this invoice line, expressed as text.
      *  0..1
      *  Invoice Line
      *  Accounting Cost
@@ -129,8 +131,22 @@ class InvoiceLineType
 
     /**
      * BBIE
+     *  Invoice Line. Payment Purpose Code. Code
+     *  A code signifying the business purpose for this payment.
+     *  0..1
+     *  Invoice Line
+     *  Payment Purpose Code
+     *  Code
+     *  Code. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\PaymentPurposeCode $paymentPurposeCode
+     */
+    private $paymentPurposeCode = null;
+
+    /**
+     * BBIE
      *  Invoice Line. Free Of Charge_ Indicator. Indicator
-     *  Indicates whether the Invoice Line is Free Of Charge (default = false).
+     *  An indicator that this invoice line is free of charge (true) or not (false). The default is false.
      *  0..1
      *  Invoice Line
      *  Free Of Charge
@@ -144,10 +160,28 @@ class InvoiceLineType
 
     /**
      * ASBIE
-     *  Invoice Line. Order Line Reference
-     *  An association to Order Line Reference.
+     *  Invoice Line. Invoice_ Period. Period
+     *  An invoice period to which this invoice line applies.
      *  0..n
      *  Invoice Line
+     *  Invoice
+     *  Period
+     *  Period
+     *  Period
+     *
+     * @var \horstoeko\ubl\entities\cac\InvoicePeriod[] $invoicePeriod
+     */
+    private $invoicePeriod = [
+        
+    ];
+
+    /**
+     * ASBIE
+     *  Invoice Line. Order Line Reference
+     *  A reference to an order line associated with this invoice line.
+     *  0..n
+     *  Invoice Line
+     *  Order Line Reference
      *  Order Line Reference
      *  Order Line Reference
      *
@@ -160,10 +194,11 @@ class InvoiceLineType
     /**
      * ASBIE
      *  Invoice Line. Despatch_ Line Reference. Line Reference
-     *  An associative reference to Despatch Line.
+     *  A reference to a despatch line associated with this invoice line.
      *  0..n
      *  Invoice Line
      *  Despatch
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -176,10 +211,11 @@ class InvoiceLineType
     /**
      * ASBIE
      *  Invoice Line. Receipt_ Line Reference. Line Reference
-     *  An associative reference to Receipt Line.
+     *  A reference to a receipt line associated with this invoice line.
      *  0..n
      *  Invoice Line
      *  Receipt
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -192,9 +228,10 @@ class InvoiceLineType
     /**
      * ASBIE
      *  Invoice Line. Billing Reference
-     *  An association to Billing Reference.
+     *  A reference to a billing document associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -207,9 +244,10 @@ class InvoiceLineType
     /**
      * ASBIE
      *  Invoice Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -222,9 +260,10 @@ class InvoiceLineType
     /**
      * ASBIE
      *  Invoice Line. Pricing Reference
-     *  An association to Pricing Reference.
+     *  A reference to pricing and item location information associated with this invoice line.
      *  0..1
      *  Invoice Line
+     *  Pricing Reference
      *  Pricing Reference
      *  Pricing Reference
      *
@@ -241,6 +280,7 @@ class InvoiceLineType
      *  Originator
      *  Party
      *  Party
+     *  Party
      *
      * @var \horstoeko\ubl\entities\cac\OriginatorParty $originatorParty
      */
@@ -249,9 +289,10 @@ class InvoiceLineType
     /**
      * ASBIE
      *  Invoice Line. Delivery
-     *  An association to Delivery.
+     *  A delivery associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Delivery
      *  Delivery
      *  Delivery
      *
@@ -264,9 +305,10 @@ class InvoiceLineType
     /**
      * ASBIE
      *  Invoice Line. Payment Terms
-     *  An association to Payment Terms.
+     *  A specification of payment terms associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Payment Terms
      *  Payment Terms
      *  Payment Terms
      *
@@ -279,9 +321,10 @@ class InvoiceLineType
     /**
      * ASBIE
      *  Invoice Line. Allowance Charge
-     *  An association to Allowance Charge.
+     *  An allowance or charge associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *
@@ -294,9 +337,10 @@ class InvoiceLineType
     /**
      * ASBIE
      *  Invoice Line. Tax Total
-     *  An association to Tax Total.
+     *  A total amount of taxes of a particular kind applicable to this invoice line.
      *  0..n
      *  Invoice Line
+     *  Tax Total
      *  Tax Total
      *  Tax Total
      *
@@ -308,10 +352,28 @@ class InvoiceLineType
 
     /**
      * ASBIE
+     *  Invoice Line. Withholding_ Tax Total. Tax Total
+     *  A reference to a TaxTotal class describing the amount that has been withhold by the authorities, e.g. if the creditor is in dept because of non paid taxes.
+     *  0..n
+     *  Invoice Line
+     *  Withholding
+     *  Tax Total
+     *  Tax Total
+     *  Tax Total
+     *
+     * @var \horstoeko\ubl\entities\cac\WithholdingTaxTotal[] $withholdingTaxTotal
+     */
+    private $withholdingTaxTotal = [
+        
+    ];
+
+    /**
+     * ASBIE
      *  Invoice Line. Item
-     *  An association to Item.
+     *  The item associated with this invoice line.
      *  1
      *  Invoice Line
+     *  Item
      *  Item
      *  Item
      *
@@ -322,11 +384,13 @@ class InvoiceLineType
     /**
      * ASBIE
      *  Invoice Line. Price
-     *  An association to Price.
+     *  The price of the item associated with this invoice line.
      *  0..1
      *  Invoice Line
      *  Price
      *  Price
+     *  Price
+     *  Unit Price, Base Price
      *
      * @var \horstoeko\ubl\entities\cac\Price $price
      */
@@ -335,9 +399,10 @@ class InvoiceLineType
     /**
      * ASBIE
      *  Invoice Line. Delivery Terms
-     *  An association to Delivery Terms.
+     *  Terms and conditions of the delivery associated with this invoice line.
      *  0..1
      *  Invoice Line
+     *  Delivery Terms
      *  Delivery Terms
      *  Delivery Terms
      *
@@ -346,11 +411,43 @@ class InvoiceLineType
     private $deliveryTerms = null;
 
     /**
+     * ASBIE
+     *  Invoice Line. Sub_ Invoice Line. Invoice Line
+     *  An invoice line subsidiary to this invoice line.
+     *  0..n
+     *  Invoice Line
+     *  Sub
+     *  Invoice Line
+     *  Invoice Line
+     *  Invoice Line
+     *
+     * @var \horstoeko\ubl\entities\cac\SubInvoiceLine[] $subInvoiceLine
+     */
+    private $subInvoiceLine = [
+        
+    ];
+
+    /**
+     * ASBIE
+     *  Invoice Line. Item_ Price Extension. Price Extension
+     *  The price extension, calculated by multiplying the price per unit by the quantity of items on this invoice line.
+     *  0..1
+     *  Invoice Line
+     *  Item
+     *  Price Extension
+     *  Price Extension
+     *  Price Extension
+     *
+     * @var \horstoeko\ubl\entities\cac\ItemPriceExtension $itemPriceExtension
+     */
+    private $itemPriceExtension = null;
+
+    /**
      * Gets as iD
      *
      * BBIE
      *  Invoice Line. Identifier
-     *  Identifies the Invoice Line.
+     *  An identifier for this invoice line.
      *  1
      *  Invoice Line
      *  Identifier
@@ -369,7 +466,7 @@ class InvoiceLineType
      *
      * BBIE
      *  Invoice Line. Identifier
-     *  Identifies the Invoice Line.
+     *  An identifier for this invoice line.
      *  1
      *  Invoice Line
      *  Identifier
@@ -390,7 +487,7 @@ class InvoiceLineType
      *
      * BBIE
      *  Invoice Line. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this invoice line.
      *  0..1
      *  Invoice Line
      *  UUID
@@ -409,7 +506,7 @@ class InvoiceLineType
      *
      * BBIE
      *  Invoice Line. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this invoice line.
      *  0..1
      *  Invoice Line
      *  UUID
@@ -426,18 +523,79 @@ class InvoiceLineType
     }
 
     /**
-     * Gets as note
+     * Adds as note
      *
      * BBIE
      *  Invoice Line. Note. Text
-     *  Free-form text applying to the Invoice Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Invoice Line
      *  Note
      *  Text
      *  Text. Type
      *
-     * @return \horstoeko\ubl\entities\cbc\Note
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\Note $note
+     */
+    public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
+    {
+        $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * isset note
+     *
+     * BBIE
+     *  Invoice Line. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Invoice Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetNote($index)
+    {
+        return isset($this->note[$index]);
+    }
+
+    /**
+     * unset note
+     *
+     * BBIE
+     *  Invoice Line. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Invoice Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetNote($index)
+    {
+        unset($this->note[$index]);
+    }
+
+    /**
+     * Gets as note
+     *
+     * BBIE
+     *  Invoice Line. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Invoice Line
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\Note[]
      */
     public function getNote()
     {
@@ -449,17 +607,17 @@ class InvoiceLineType
      *
      * BBIE
      *  Invoice Line. Note. Text
-     *  Free-form text applying to the Invoice Line. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Invoice Line
      *  Note
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
-    public function setNote(\horstoeko\ubl\entities\cbc\Note $note)
+    public function setNote(array $note)
     {
         $this->note = $note;
         return $this;
@@ -470,7 +628,7 @@ class InvoiceLineType
      *
      * BBIE
      *  Invoice Line. Invoiced_ Quantity. Quantity
-     *  The quantity (of Items) on the Invoice Line.
+     *  The quantity (of items) on this invoice line.
      *  0..1
      *  Invoice Line
      *  Invoiced
@@ -490,7 +648,7 @@ class InvoiceLineType
      *
      * BBIE
      *  Invoice Line. Invoiced_ Quantity. Quantity
-     *  The quantity (of Items) on the Invoice Line.
+     *  The quantity (of items) on this invoice line.
      *  0..1
      *  Invoice Line
      *  Invoiced
@@ -512,7 +670,7 @@ class InvoiceLineType
      *
      * BBIE
      *  Invoice Line. Line Extension Amount. Amount
-     *  The total amount for the Invoice Line, including Allowance Charges but net of taxes.
+     *  The total amount for this invoice line, including allowance charges but net of taxes.
      *  1
      *  Invoice Line
      *  Line Extension Amount
@@ -531,7 +689,7 @@ class InvoiceLineType
      *
      * BBIE
      *  Invoice Line. Line Extension Amount. Amount
-     *  The total amount for the Invoice Line, including Allowance Charges but net of taxes.
+     *  The total amount for this invoice line, including allowance charges but net of taxes.
      *  1
      *  Invoice Line
      *  Line Extension Amount
@@ -552,7 +710,7 @@ class InvoiceLineType
      *
      * BBIE
      *  Invoice Line. Tax Point Date. Date
-     *  The date of the Invoice Line, used to indicate the point at which tax becomes applicable.
+     *  The date of this invoice line, used to indicate the point at which tax becomes applicable.
      *  0..1
      *  Invoice Line
      *  Tax Point Date
@@ -571,7 +729,7 @@ class InvoiceLineType
      *
      * BBIE
      *  Invoice Line. Tax Point Date. Date
-     *  The date of the Invoice Line, used to indicate the point at which tax becomes applicable.
+     *  The date of this invoice line, used to indicate the point at which tax becomes applicable.
      *  0..1
      *  Invoice Line
      *  Tax Point Date
@@ -592,7 +750,7 @@ class InvoiceLineType
      *
      * BBIE
      *  Invoice Line. Accounting Cost Code. Code
-     *  The buyer's accounting code applied to the Invoice Line.
+     *  The buyer's accounting cost centre for this invoice line, expressed as a code.
      *  0..1
      *  Invoice Line
      *  Accounting Cost Code
@@ -611,7 +769,7 @@ class InvoiceLineType
      *
      * BBIE
      *  Invoice Line. Accounting Cost Code. Code
-     *  The buyer's accounting code applied to the Invoice Line.
+     *  The buyer's accounting cost centre for this invoice line, expressed as a code.
      *  0..1
      *  Invoice Line
      *  Accounting Cost Code
@@ -632,7 +790,7 @@ class InvoiceLineType
      *
      * BBIE
      *  Invoice Line. Accounting Cost. Text
-     *  The buyer's accounting code applied to the Invoice Line, expressed as text.
+     *  The buyer's accounting cost centre for this invoice line, expressed as text.
      *  0..1
      *  Invoice Line
      *  Accounting Cost
@@ -651,7 +809,7 @@ class InvoiceLineType
      *
      * BBIE
      *  Invoice Line. Accounting Cost. Text
-     *  The buyer's accounting code applied to the Invoice Line, expressed as text.
+     *  The buyer's accounting cost centre for this invoice line, expressed as text.
      *  0..1
      *  Invoice Line
      *  Accounting Cost
@@ -668,11 +826,51 @@ class InvoiceLineType
     }
 
     /**
+     * Gets as paymentPurposeCode
+     *
+     * BBIE
+     *  Invoice Line. Payment Purpose Code. Code
+     *  A code signifying the business purpose for this payment.
+     *  0..1
+     *  Invoice Line
+     *  Payment Purpose Code
+     *  Code
+     *  Code. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\PaymentPurposeCode
+     */
+    public function getPaymentPurposeCode()
+    {
+        return $this->paymentPurposeCode;
+    }
+
+    /**
+     * Sets a new paymentPurposeCode
+     *
+     * BBIE
+     *  Invoice Line. Payment Purpose Code. Code
+     *  A code signifying the business purpose for this payment.
+     *  0..1
+     *  Invoice Line
+     *  Payment Purpose Code
+     *  Code
+     *  Code. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\PaymentPurposeCode $paymentPurposeCode
+     * @return self
+     */
+    public function setPaymentPurposeCode(\horstoeko\ubl\entities\cbc\PaymentPurposeCode $paymentPurposeCode)
+    {
+        $this->paymentPurposeCode = $paymentPurposeCode;
+        return $this;
+    }
+
+    /**
      * Gets as freeOfChargeIndicator
      *
      * BBIE
      *  Invoice Line. Free Of Charge_ Indicator. Indicator
-     *  Indicates whether the Invoice Line is Free Of Charge (default = false).
+     *  An indicator that this invoice line is free of charge (true) or not (false). The default is false.
      *  0..1
      *  Invoice Line
      *  Free Of Charge
@@ -692,7 +890,7 @@ class InvoiceLineType
      *
      * BBIE
      *  Invoice Line. Free Of Charge_ Indicator. Indicator
-     *  Indicates whether the Invoice Line is Free Of Charge (default = false).
+     *  An indicator that this invoice line is free of charge (true) or not (false). The default is false.
      *  0..1
      *  Invoice Line
      *  Free Of Charge
@@ -710,13 +908,120 @@ class InvoiceLineType
     }
 
     /**
+     * Adds as invoicePeriod
+     *
+     * ASBIE
+     *  Invoice Line. Invoice_ Period. Period
+     *  An invoice period to which this invoice line applies.
+     *  0..n
+     *  Invoice Line
+     *  Invoice
+     *  Period
+     *  Period
+     *  Period
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\InvoicePeriod $invoicePeriod
+     */
+    public function addToInvoicePeriod(\horstoeko\ubl\entities\cac\InvoicePeriod $invoicePeriod)
+    {
+        $this->invoicePeriod[] = $invoicePeriod;
+        return $this;
+    }
+
+    /**
+     * isset invoicePeriod
+     *
+     * ASBIE
+     *  Invoice Line. Invoice_ Period. Period
+     *  An invoice period to which this invoice line applies.
+     *  0..n
+     *  Invoice Line
+     *  Invoice
+     *  Period
+     *  Period
+     *  Period
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetInvoicePeriod($index)
+    {
+        return isset($this->invoicePeriod[$index]);
+    }
+
+    /**
+     * unset invoicePeriod
+     *
+     * ASBIE
+     *  Invoice Line. Invoice_ Period. Period
+     *  An invoice period to which this invoice line applies.
+     *  0..n
+     *  Invoice Line
+     *  Invoice
+     *  Period
+     *  Period
+     *  Period
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetInvoicePeriod($index)
+    {
+        unset($this->invoicePeriod[$index]);
+    }
+
+    /**
+     * Gets as invoicePeriod
+     *
+     * ASBIE
+     *  Invoice Line. Invoice_ Period. Period
+     *  An invoice period to which this invoice line applies.
+     *  0..n
+     *  Invoice Line
+     *  Invoice
+     *  Period
+     *  Period
+     *  Period
+     *
+     * @return \horstoeko\ubl\entities\cac\InvoicePeriod[]
+     */
+    public function getInvoicePeriod()
+    {
+        return $this->invoicePeriod;
+    }
+
+    /**
+     * Sets a new invoicePeriod
+     *
+     * ASBIE
+     *  Invoice Line. Invoice_ Period. Period
+     *  An invoice period to which this invoice line applies.
+     *  0..n
+     *  Invoice Line
+     *  Invoice
+     *  Period
+     *  Period
+     *  Period
+     *
+     * @param \horstoeko\ubl\entities\cac\InvoicePeriod[] $invoicePeriod
+     * @return self
+     */
+    public function setInvoicePeriod(array $invoicePeriod)
+    {
+        $this->invoicePeriod = $invoicePeriod;
+        return $this;
+    }
+
+    /**
      * Adds as orderLineReference
      *
      * ASBIE
      *  Invoice Line. Order Line Reference
-     *  An association to Order Line Reference.
+     *  A reference to an order line associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Order Line Reference
      *  Order Line Reference
      *  Order Line Reference
      *
@@ -734,9 +1039,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Order Line Reference
-     *  An association to Order Line Reference.
+     *  A reference to an order line associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Order Line Reference
      *  Order Line Reference
      *  Order Line Reference
      *
@@ -753,9 +1059,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Order Line Reference
-     *  An association to Order Line Reference.
+     *  A reference to an order line associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Order Line Reference
      *  Order Line Reference
      *  Order Line Reference
      *
@@ -772,9 +1079,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Order Line Reference
-     *  An association to Order Line Reference.
+     *  A reference to an order line associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Order Line Reference
      *  Order Line Reference
      *  Order Line Reference
      *
@@ -790,9 +1098,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Order Line Reference
-     *  An association to Order Line Reference.
+     *  A reference to an order line associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Order Line Reference
      *  Order Line Reference
      *  Order Line Reference
      *
@@ -810,10 +1119,11 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Despatch_ Line Reference. Line Reference
-     *  An associative reference to Despatch Line.
+     *  A reference to a despatch line associated with this invoice line.
      *  0..n
      *  Invoice Line
      *  Despatch
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -831,10 +1141,11 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Despatch_ Line Reference. Line Reference
-     *  An associative reference to Despatch Line.
+     *  A reference to a despatch line associated with this invoice line.
      *  0..n
      *  Invoice Line
      *  Despatch
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -851,10 +1162,11 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Despatch_ Line Reference. Line Reference
-     *  An associative reference to Despatch Line.
+     *  A reference to a despatch line associated with this invoice line.
      *  0..n
      *  Invoice Line
      *  Despatch
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -871,10 +1183,11 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Despatch_ Line Reference. Line Reference
-     *  An associative reference to Despatch Line.
+     *  A reference to a despatch line associated with this invoice line.
      *  0..n
      *  Invoice Line
      *  Despatch
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -890,10 +1203,11 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Despatch_ Line Reference. Line Reference
-     *  An associative reference to Despatch Line.
+     *  A reference to a despatch line associated with this invoice line.
      *  0..n
      *  Invoice Line
      *  Despatch
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -911,10 +1225,11 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Receipt_ Line Reference. Line Reference
-     *  An associative reference to Receipt Line.
+     *  A reference to a receipt line associated with this invoice line.
      *  0..n
      *  Invoice Line
      *  Receipt
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -932,10 +1247,11 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Receipt_ Line Reference. Line Reference
-     *  An associative reference to Receipt Line.
+     *  A reference to a receipt line associated with this invoice line.
      *  0..n
      *  Invoice Line
      *  Receipt
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -952,10 +1268,11 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Receipt_ Line Reference. Line Reference
-     *  An associative reference to Receipt Line.
+     *  A reference to a receipt line associated with this invoice line.
      *  0..n
      *  Invoice Line
      *  Receipt
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -972,10 +1289,11 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Receipt_ Line Reference. Line Reference
-     *  An associative reference to Receipt Line.
+     *  A reference to a receipt line associated with this invoice line.
      *  0..n
      *  Invoice Line
      *  Receipt
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -991,10 +1309,11 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Receipt_ Line Reference. Line Reference
-     *  An associative reference to Receipt Line.
+     *  A reference to a receipt line associated with this invoice line.
      *  0..n
      *  Invoice Line
      *  Receipt
+     *  Line Reference
      *  Line Reference
      *  Line Reference
      *
@@ -1012,9 +1331,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Billing Reference
-     *  An association to Billing Reference.
+     *  A reference to a billing document associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -1032,9 +1352,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Billing Reference
-     *  An association to Billing Reference.
+     *  A reference to a billing document associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -1051,9 +1372,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Billing Reference
-     *  An association to Billing Reference.
+     *  A reference to a billing document associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -1070,9 +1392,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Billing Reference
-     *  An association to Billing Reference.
+     *  A reference to a billing document associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -1088,9 +1411,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Billing Reference
-     *  An association to Billing Reference.
+     *  A reference to a billing document associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Billing Reference
      *  Billing Reference
      *  Billing Reference
      *
@@ -1108,9 +1432,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1128,9 +1453,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1147,9 +1473,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1166,9 +1493,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1184,9 +1512,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Document Reference
-     *  An association to Document Reference.
+     *  A reference to a document associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Document Reference
      *  Document Reference
      *  Document Reference
      *
@@ -1204,9 +1533,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Pricing Reference
-     *  An association to Pricing Reference.
+     *  A reference to pricing and item location information associated with this invoice line.
      *  0..1
      *  Invoice Line
+     *  Pricing Reference
      *  Pricing Reference
      *  Pricing Reference
      *
@@ -1222,9 +1552,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Pricing Reference
-     *  An association to Pricing Reference.
+     *  A reference to pricing and item location information associated with this invoice line.
      *  0..1
      *  Invoice Line
+     *  Pricing Reference
      *  Pricing Reference
      *  Pricing Reference
      *
@@ -1248,6 +1579,7 @@ class InvoiceLineType
      *  Originator
      *  Party
      *  Party
+     *  Party
      *
      * @return \horstoeko\ubl\entities\cac\OriginatorParty
      */
@@ -1267,6 +1599,7 @@ class InvoiceLineType
      *  Originator
      *  Party
      *  Party
+     *  Party
      *
      * @param \horstoeko\ubl\entities\cac\OriginatorParty $originatorParty
      * @return self
@@ -1282,9 +1615,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Delivery
-     *  An association to Delivery.
+     *  A delivery associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Delivery
      *  Delivery
      *  Delivery
      *
@@ -1302,9 +1636,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Delivery
-     *  An association to Delivery.
+     *  A delivery associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Delivery
      *  Delivery
      *  Delivery
      *
@@ -1321,9 +1656,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Delivery
-     *  An association to Delivery.
+     *  A delivery associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Delivery
      *  Delivery
      *  Delivery
      *
@@ -1340,9 +1676,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Delivery
-     *  An association to Delivery.
+     *  A delivery associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Delivery
      *  Delivery
      *  Delivery
      *
@@ -1358,9 +1695,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Delivery
-     *  An association to Delivery.
+     *  A delivery associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Delivery
      *  Delivery
      *  Delivery
      *
@@ -1378,9 +1716,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Payment Terms
-     *  An association to Payment Terms.
+     *  A specification of payment terms associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Payment Terms
      *  Payment Terms
      *  Payment Terms
      *
@@ -1398,9 +1737,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Payment Terms
-     *  An association to Payment Terms.
+     *  A specification of payment terms associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Payment Terms
      *  Payment Terms
      *  Payment Terms
      *
@@ -1417,9 +1757,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Payment Terms
-     *  An association to Payment Terms.
+     *  A specification of payment terms associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Payment Terms
      *  Payment Terms
      *  Payment Terms
      *
@@ -1436,9 +1777,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Payment Terms
-     *  An association to Payment Terms.
+     *  A specification of payment terms associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Payment Terms
      *  Payment Terms
      *  Payment Terms
      *
@@ -1454,9 +1796,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Payment Terms
-     *  An association to Payment Terms.
+     *  A specification of payment terms associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Payment Terms
      *  Payment Terms
      *  Payment Terms
      *
@@ -1474,9 +1817,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Allowance Charge
-     *  An association to Allowance Charge.
+     *  An allowance or charge associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *
@@ -1494,9 +1838,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Allowance Charge
-     *  An association to Allowance Charge.
+     *  An allowance or charge associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *
@@ -1513,9 +1858,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Allowance Charge
-     *  An association to Allowance Charge.
+     *  An allowance or charge associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *
@@ -1532,9 +1878,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Allowance Charge
-     *  An association to Allowance Charge.
+     *  An allowance or charge associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *
@@ -1550,9 +1897,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Allowance Charge
-     *  An association to Allowance Charge.
+     *  An allowance or charge associated with this invoice line.
      *  0..n
      *  Invoice Line
+     *  Allowance Charge
      *  Allowance Charge
      *  Allowance Charge
      *
@@ -1570,9 +1918,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Tax Total
-     *  An association to Tax Total.
+     *  A total amount of taxes of a particular kind applicable to this invoice line.
      *  0..n
      *  Invoice Line
+     *  Tax Total
      *  Tax Total
      *  Tax Total
      *
@@ -1590,9 +1939,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Tax Total
-     *  An association to Tax Total.
+     *  A total amount of taxes of a particular kind applicable to this invoice line.
      *  0..n
      *  Invoice Line
+     *  Tax Total
      *  Tax Total
      *  Tax Total
      *
@@ -1609,9 +1959,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Tax Total
-     *  An association to Tax Total.
+     *  A total amount of taxes of a particular kind applicable to this invoice line.
      *  0..n
      *  Invoice Line
+     *  Tax Total
      *  Tax Total
      *  Tax Total
      *
@@ -1628,9 +1979,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Tax Total
-     *  An association to Tax Total.
+     *  A total amount of taxes of a particular kind applicable to this invoice line.
      *  0..n
      *  Invoice Line
+     *  Tax Total
      *  Tax Total
      *  Tax Total
      *
@@ -1646,9 +1998,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Tax Total
-     *  An association to Tax Total.
+     *  A total amount of taxes of a particular kind applicable to this invoice line.
      *  0..n
      *  Invoice Line
+     *  Tax Total
      *  Tax Total
      *  Tax Total
      *
@@ -1662,13 +2015,120 @@ class InvoiceLineType
     }
 
     /**
+     * Adds as withholdingTaxTotal
+     *
+     * ASBIE
+     *  Invoice Line. Withholding_ Tax Total. Tax Total
+     *  A reference to a TaxTotal class describing the amount that has been withhold by the authorities, e.g. if the creditor is in dept because of non paid taxes.
+     *  0..n
+     *  Invoice Line
+     *  Withholding
+     *  Tax Total
+     *  Tax Total
+     *  Tax Total
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\WithholdingTaxTotal $withholdingTaxTotal
+     */
+    public function addToWithholdingTaxTotal(\horstoeko\ubl\entities\cac\WithholdingTaxTotal $withholdingTaxTotal)
+    {
+        $this->withholdingTaxTotal[] = $withholdingTaxTotal;
+        return $this;
+    }
+
+    /**
+     * isset withholdingTaxTotal
+     *
+     * ASBIE
+     *  Invoice Line. Withholding_ Tax Total. Tax Total
+     *  A reference to a TaxTotal class describing the amount that has been withhold by the authorities, e.g. if the creditor is in dept because of non paid taxes.
+     *  0..n
+     *  Invoice Line
+     *  Withholding
+     *  Tax Total
+     *  Tax Total
+     *  Tax Total
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetWithholdingTaxTotal($index)
+    {
+        return isset($this->withholdingTaxTotal[$index]);
+    }
+
+    /**
+     * unset withholdingTaxTotal
+     *
+     * ASBIE
+     *  Invoice Line. Withholding_ Tax Total. Tax Total
+     *  A reference to a TaxTotal class describing the amount that has been withhold by the authorities, e.g. if the creditor is in dept because of non paid taxes.
+     *  0..n
+     *  Invoice Line
+     *  Withholding
+     *  Tax Total
+     *  Tax Total
+     *  Tax Total
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetWithholdingTaxTotal($index)
+    {
+        unset($this->withholdingTaxTotal[$index]);
+    }
+
+    /**
+     * Gets as withholdingTaxTotal
+     *
+     * ASBIE
+     *  Invoice Line. Withholding_ Tax Total. Tax Total
+     *  A reference to a TaxTotal class describing the amount that has been withhold by the authorities, e.g. if the creditor is in dept because of non paid taxes.
+     *  0..n
+     *  Invoice Line
+     *  Withholding
+     *  Tax Total
+     *  Tax Total
+     *  Tax Total
+     *
+     * @return \horstoeko\ubl\entities\cac\WithholdingTaxTotal[]
+     */
+    public function getWithholdingTaxTotal()
+    {
+        return $this->withholdingTaxTotal;
+    }
+
+    /**
+     * Sets a new withholdingTaxTotal
+     *
+     * ASBIE
+     *  Invoice Line. Withholding_ Tax Total. Tax Total
+     *  A reference to a TaxTotal class describing the amount that has been withhold by the authorities, e.g. if the creditor is in dept because of non paid taxes.
+     *  0..n
+     *  Invoice Line
+     *  Withholding
+     *  Tax Total
+     *  Tax Total
+     *  Tax Total
+     *
+     * @param \horstoeko\ubl\entities\cac\WithholdingTaxTotal[] $withholdingTaxTotal
+     * @return self
+     */
+    public function setWithholdingTaxTotal(array $withholdingTaxTotal)
+    {
+        $this->withholdingTaxTotal = $withholdingTaxTotal;
+        return $this;
+    }
+
+    /**
      * Gets as item
      *
      * ASBIE
      *  Invoice Line. Item
-     *  An association to Item.
+     *  The item associated with this invoice line.
      *  1
      *  Invoice Line
+     *  Item
      *  Item
      *  Item
      *
@@ -1684,9 +2144,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Item
-     *  An association to Item.
+     *  The item associated with this invoice line.
      *  1
      *  Invoice Line
+     *  Item
      *  Item
      *  Item
      *
@@ -1704,11 +2165,13 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Price
-     *  An association to Price.
+     *  The price of the item associated with this invoice line.
      *  0..1
      *  Invoice Line
      *  Price
      *  Price
+     *  Price
+     *  Unit Price, Base Price
      *
      * @return \horstoeko\ubl\entities\cac\Price
      */
@@ -1722,11 +2185,13 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Price
-     *  An association to Price.
+     *  The price of the item associated with this invoice line.
      *  0..1
      *  Invoice Line
      *  Price
      *  Price
+     *  Price
+     *  Unit Price, Base Price
      *
      * @param \horstoeko\ubl\entities\cac\Price $price
      * @return self
@@ -1742,9 +2207,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Delivery Terms
-     *  An association to Delivery Terms.
+     *  Terms and conditions of the delivery associated with this invoice line.
      *  0..1
      *  Invoice Line
+     *  Delivery Terms
      *  Delivery Terms
      *  Delivery Terms
      *
@@ -1760,9 +2226,10 @@ class InvoiceLineType
      *
      * ASBIE
      *  Invoice Line. Delivery Terms
-     *  An association to Delivery Terms.
+     *  Terms and conditions of the delivery associated with this invoice line.
      *  0..1
      *  Invoice Line
+     *  Delivery Terms
      *  Delivery Terms
      *  Delivery Terms
      *
@@ -1772,6 +2239,154 @@ class InvoiceLineType
     public function setDeliveryTerms(\horstoeko\ubl\entities\cac\DeliveryTerms $deliveryTerms)
     {
         $this->deliveryTerms = $deliveryTerms;
+        return $this;
+    }
+
+    /**
+     * Adds as subInvoiceLine
+     *
+     * ASBIE
+     *  Invoice Line. Sub_ Invoice Line. Invoice Line
+     *  An invoice line subsidiary to this invoice line.
+     *  0..n
+     *  Invoice Line
+     *  Sub
+     *  Invoice Line
+     *  Invoice Line
+     *  Invoice Line
+     *
+     * @return self
+     * @param \horstoeko\ubl\entities\cac\SubInvoiceLine $subInvoiceLine
+     */
+    public function addToSubInvoiceLine(\horstoeko\ubl\entities\cac\SubInvoiceLine $subInvoiceLine)
+    {
+        $this->subInvoiceLine[] = $subInvoiceLine;
+        return $this;
+    }
+
+    /**
+     * isset subInvoiceLine
+     *
+     * ASBIE
+     *  Invoice Line. Sub_ Invoice Line. Invoice Line
+     *  An invoice line subsidiary to this invoice line.
+     *  0..n
+     *  Invoice Line
+     *  Sub
+     *  Invoice Line
+     *  Invoice Line
+     *  Invoice Line
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetSubInvoiceLine($index)
+    {
+        return isset($this->subInvoiceLine[$index]);
+    }
+
+    /**
+     * unset subInvoiceLine
+     *
+     * ASBIE
+     *  Invoice Line. Sub_ Invoice Line. Invoice Line
+     *  An invoice line subsidiary to this invoice line.
+     *  0..n
+     *  Invoice Line
+     *  Sub
+     *  Invoice Line
+     *  Invoice Line
+     *  Invoice Line
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetSubInvoiceLine($index)
+    {
+        unset($this->subInvoiceLine[$index]);
+    }
+
+    /**
+     * Gets as subInvoiceLine
+     *
+     * ASBIE
+     *  Invoice Line. Sub_ Invoice Line. Invoice Line
+     *  An invoice line subsidiary to this invoice line.
+     *  0..n
+     *  Invoice Line
+     *  Sub
+     *  Invoice Line
+     *  Invoice Line
+     *  Invoice Line
+     *
+     * @return \horstoeko\ubl\entities\cac\SubInvoiceLine[]
+     */
+    public function getSubInvoiceLine()
+    {
+        return $this->subInvoiceLine;
+    }
+
+    /**
+     * Sets a new subInvoiceLine
+     *
+     * ASBIE
+     *  Invoice Line. Sub_ Invoice Line. Invoice Line
+     *  An invoice line subsidiary to this invoice line.
+     *  0..n
+     *  Invoice Line
+     *  Sub
+     *  Invoice Line
+     *  Invoice Line
+     *  Invoice Line
+     *
+     * @param \horstoeko\ubl\entities\cac\SubInvoiceLine[] $subInvoiceLine
+     * @return self
+     */
+    public function setSubInvoiceLine(array $subInvoiceLine)
+    {
+        $this->subInvoiceLine = $subInvoiceLine;
+        return $this;
+    }
+
+    /**
+     * Gets as itemPriceExtension
+     *
+     * ASBIE
+     *  Invoice Line. Item_ Price Extension. Price Extension
+     *  The price extension, calculated by multiplying the price per unit by the quantity of items on this invoice line.
+     *  0..1
+     *  Invoice Line
+     *  Item
+     *  Price Extension
+     *  Price Extension
+     *  Price Extension
+     *
+     * @return \horstoeko\ubl\entities\cac\ItemPriceExtension
+     */
+    public function getItemPriceExtension()
+    {
+        return $this->itemPriceExtension;
+    }
+
+    /**
+     * Sets a new itemPriceExtension
+     *
+     * ASBIE
+     *  Invoice Line. Item_ Price Extension. Price Extension
+     *  The price extension, calculated by multiplying the price per unit by the quantity of items on this invoice line.
+     *  0..1
+     *  Invoice Line
+     *  Item
+     *  Price Extension
+     *  Price Extension
+     *  Price Extension
+     *
+     * @param \horstoeko\ubl\entities\cac\ItemPriceExtension $itemPriceExtension
+     * @return self
+     */
+    public function setItemPriceExtension(\horstoeko\ubl\entities\cac\ItemPriceExtension $itemPriceExtension)
+    {
+        $this->itemPriceExtension = $itemPriceExtension;
         return $this;
     }
 

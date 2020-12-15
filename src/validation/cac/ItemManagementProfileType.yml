@@ -1,0 +1,19 @@
+horstoeko\ubl\entities\cac\ItemManagementProfileType:
+    properties:
+        effectivePeriod:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        item:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        itemLocationQuantity:
+            -
+                Valid: null

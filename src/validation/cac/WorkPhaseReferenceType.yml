@@ -1,0 +1,5 @@
+horstoeko\ubl\entities\cac\WorkPhaseReferenceType:
+    properties:
+        workOrderDocumentReference:
+            -
+                Valid: null

@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Monetary Total. Details
- *  Information about Monetary Totals.
+ *  A class to define a monetary total.
  *  Monetary Total
  * XSD Type: MonetaryTotalType
  */
@@ -17,7 +17,7 @@ class MonetaryTotalType
     /**
      * BBIE
      *  Monetary Total. Line Extension Amount. Amount
-     *  The total of Line Extension Amounts net of tax and settlement discounts, but inclusive of any applicable rounding amount.
+     *  The monetary amount of an extended transaction line, net of tax and settlement discounts, but inclusive of any applicable rounding amount.
      *  0..1
      *  Monetary Total
      *  Line Extension Amount
@@ -31,7 +31,7 @@ class MonetaryTotalType
     /**
      * BBIE
      *  Monetary Total. Tax Exclusive Amount. Amount
-     *  The total amount exclusive of taxes.
+     *  The monetary amount of an extended transaction line, exclusive of taxes.
      *  0..1
      *  Monetary Total
      *  Tax Exclusive Amount
@@ -45,7 +45,7 @@ class MonetaryTotalType
     /**
      * BBIE
      *  Monetary Total. Tax Inclusive Amount. Amount
-     *  The total amount inclusive of taxes.
+     *  The monetary amount including taxes; the sum of payable amount and prepaid amount.
      *  0..1
      *  Monetary Total
      *  Tax Inclusive Amount
@@ -58,11 +58,12 @@ class MonetaryTotalType
 
     /**
      * BBIE
-     *  Monetary Total. Allowance Total Amount. Amount
-     *  The total amount of all allowances.
+     *  Monetary Total. Allowance_ Total Amount. Amount
+     *  The total monetary amount of all allowances.
      *  0..1
      *  Monetary Total
-     *  Allowance Total Amount
+     *  Allowance
+     *  Total Amount
      *  Amount
      *  Amount. Type
      *
@@ -72,11 +73,12 @@ class MonetaryTotalType
 
     /**
      * BBIE
-     *  Monetary Total. Charge Total Amount. Amount
-     *  The total amount of all charges.
+     *  Monetary Total. Charge_ Total Amount. Amount
+     *  The total monetary amount of all charges.
      *  0..1
      *  Monetary Total
-     *  Charge Total Amount
+     *  Charge
+     *  Total Amount
      *  Amount
      *  Amount. Type
      *
@@ -87,7 +89,7 @@ class MonetaryTotalType
     /**
      * BBIE
      *  Monetary Total. Prepaid Amount. Amount
-     *  The total prepaid amount.
+     *  The total prepaid monetary amount.
      *  0..1
      *  Monetary Total
      *  Prepaid Amount
@@ -101,7 +103,7 @@ class MonetaryTotalType
     /**
      * BBIE
      *  Monetary Total. Payable_ Rounding Amount. Amount
-     *  The rounding amount (positive or negative) added to the calculated Line Extension Total Amount to produce the rounded Line Extension Total Amount.
+     *  The rounding amount (positive or negative) added to produce the line extension amount.
      *  0..1
      *  Monetary Total
      *  Payable
@@ -116,7 +118,7 @@ class MonetaryTotalType
     /**
      * BBIE
      *  Monetary Total. Payable_ Amount. Amount
-     *  The total amount to be paid.
+     *  The amount of the monetary total to be paid.
      *  1
      *  Monetary Total
      *  Payable
@@ -129,11 +131,26 @@ class MonetaryTotalType
     private $payableAmount = null;
 
     /**
+     * BBIE
+     *  Monetary Total. Payable_ Alternative Amount. Amount
+     *  The amount of the monetary total to be paid, expressed in an alternative currency.
+     *  0..1
+     *  Monetary Total
+     *  Payable
+     *  Alternative Amount
+     *  Amount
+     *  Amount. Type
+     *
+     * @var \horstoeko\ubl\entities\cbc\PayableAlternativeAmount $payableAlternativeAmount
+     */
+    private $payableAlternativeAmount = null;
+
+    /**
      * Gets as lineExtensionAmount
      *
      * BBIE
      *  Monetary Total. Line Extension Amount. Amount
-     *  The total of Line Extension Amounts net of tax and settlement discounts, but inclusive of any applicable rounding amount.
+     *  The monetary amount of an extended transaction line, net of tax and settlement discounts, but inclusive of any applicable rounding amount.
      *  0..1
      *  Monetary Total
      *  Line Extension Amount
@@ -152,7 +169,7 @@ class MonetaryTotalType
      *
      * BBIE
      *  Monetary Total. Line Extension Amount. Amount
-     *  The total of Line Extension Amounts net of tax and settlement discounts, but inclusive of any applicable rounding amount.
+     *  The monetary amount of an extended transaction line, net of tax and settlement discounts, but inclusive of any applicable rounding amount.
      *  0..1
      *  Monetary Total
      *  Line Extension Amount
@@ -173,7 +190,7 @@ class MonetaryTotalType
      *
      * BBIE
      *  Monetary Total. Tax Exclusive Amount. Amount
-     *  The total amount exclusive of taxes.
+     *  The monetary amount of an extended transaction line, exclusive of taxes.
      *  0..1
      *  Monetary Total
      *  Tax Exclusive Amount
@@ -192,7 +209,7 @@ class MonetaryTotalType
      *
      * BBIE
      *  Monetary Total. Tax Exclusive Amount. Amount
-     *  The total amount exclusive of taxes.
+     *  The monetary amount of an extended transaction line, exclusive of taxes.
      *  0..1
      *  Monetary Total
      *  Tax Exclusive Amount
@@ -213,7 +230,7 @@ class MonetaryTotalType
      *
      * BBIE
      *  Monetary Total. Tax Inclusive Amount. Amount
-     *  The total amount inclusive of taxes.
+     *  The monetary amount including taxes; the sum of payable amount and prepaid amount.
      *  0..1
      *  Monetary Total
      *  Tax Inclusive Amount
@@ -232,7 +249,7 @@ class MonetaryTotalType
      *
      * BBIE
      *  Monetary Total. Tax Inclusive Amount. Amount
-     *  The total amount inclusive of taxes.
+     *  The monetary amount including taxes; the sum of payable amount and prepaid amount.
      *  0..1
      *  Monetary Total
      *  Tax Inclusive Amount
@@ -252,11 +269,12 @@ class MonetaryTotalType
      * Gets as allowanceTotalAmount
      *
      * BBIE
-     *  Monetary Total. Allowance Total Amount. Amount
-     *  The total amount of all allowances.
+     *  Monetary Total. Allowance_ Total Amount. Amount
+     *  The total monetary amount of all allowances.
      *  0..1
      *  Monetary Total
-     *  Allowance Total Amount
+     *  Allowance
+     *  Total Amount
      *  Amount
      *  Amount. Type
      *
@@ -271,11 +289,12 @@ class MonetaryTotalType
      * Sets a new allowanceTotalAmount
      *
      * BBIE
-     *  Monetary Total. Allowance Total Amount. Amount
-     *  The total amount of all allowances.
+     *  Monetary Total. Allowance_ Total Amount. Amount
+     *  The total monetary amount of all allowances.
      *  0..1
      *  Monetary Total
-     *  Allowance Total Amount
+     *  Allowance
+     *  Total Amount
      *  Amount
      *  Amount. Type
      *
@@ -292,11 +311,12 @@ class MonetaryTotalType
      * Gets as chargeTotalAmount
      *
      * BBIE
-     *  Monetary Total. Charge Total Amount. Amount
-     *  The total amount of all charges.
+     *  Monetary Total. Charge_ Total Amount. Amount
+     *  The total monetary amount of all charges.
      *  0..1
      *  Monetary Total
-     *  Charge Total Amount
+     *  Charge
+     *  Total Amount
      *  Amount
      *  Amount. Type
      *
@@ -311,11 +331,12 @@ class MonetaryTotalType
      * Sets a new chargeTotalAmount
      *
      * BBIE
-     *  Monetary Total. Charge Total Amount. Amount
-     *  The total amount of all charges.
+     *  Monetary Total. Charge_ Total Amount. Amount
+     *  The total monetary amount of all charges.
      *  0..1
      *  Monetary Total
-     *  Charge Total Amount
+     *  Charge
+     *  Total Amount
      *  Amount
      *  Amount. Type
      *
@@ -333,7 +354,7 @@ class MonetaryTotalType
      *
      * BBIE
      *  Monetary Total. Prepaid Amount. Amount
-     *  The total prepaid amount.
+     *  The total prepaid monetary amount.
      *  0..1
      *  Monetary Total
      *  Prepaid Amount
@@ -352,7 +373,7 @@ class MonetaryTotalType
      *
      * BBIE
      *  Monetary Total. Prepaid Amount. Amount
-     *  The total prepaid amount.
+     *  The total prepaid monetary amount.
      *  0..1
      *  Monetary Total
      *  Prepaid Amount
@@ -373,7 +394,7 @@ class MonetaryTotalType
      *
      * BBIE
      *  Monetary Total. Payable_ Rounding Amount. Amount
-     *  The rounding amount (positive or negative) added to the calculated Line Extension Total Amount to produce the rounded Line Extension Total Amount.
+     *  The rounding amount (positive or negative) added to produce the line extension amount.
      *  0..1
      *  Monetary Total
      *  Payable
@@ -393,7 +414,7 @@ class MonetaryTotalType
      *
      * BBIE
      *  Monetary Total. Payable_ Rounding Amount. Amount
-     *  The rounding amount (positive or negative) added to the calculated Line Extension Total Amount to produce the rounded Line Extension Total Amount.
+     *  The rounding amount (positive or negative) added to produce the line extension amount.
      *  0..1
      *  Monetary Total
      *  Payable
@@ -415,7 +436,7 @@ class MonetaryTotalType
      *
      * BBIE
      *  Monetary Total. Payable_ Amount. Amount
-     *  The total amount to be paid.
+     *  The amount of the monetary total to be paid.
      *  1
      *  Monetary Total
      *  Payable
@@ -435,7 +456,7 @@ class MonetaryTotalType
      *
      * BBIE
      *  Monetary Total. Payable_ Amount. Amount
-     *  The total amount to be paid.
+     *  The amount of the monetary total to be paid.
      *  1
      *  Monetary Total
      *  Payable
@@ -449,6 +470,48 @@ class MonetaryTotalType
     public function setPayableAmount(\horstoeko\ubl\entities\cbc\PayableAmount $payableAmount)
     {
         $this->payableAmount = $payableAmount;
+        return $this;
+    }
+
+    /**
+     * Gets as payableAlternativeAmount
+     *
+     * BBIE
+     *  Monetary Total. Payable_ Alternative Amount. Amount
+     *  The amount of the monetary total to be paid, expressed in an alternative currency.
+     *  0..1
+     *  Monetary Total
+     *  Payable
+     *  Alternative Amount
+     *  Amount
+     *  Amount. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\PayableAlternativeAmount
+     */
+    public function getPayableAlternativeAmount()
+    {
+        return $this->payableAlternativeAmount;
+    }
+
+    /**
+     * Sets a new payableAlternativeAmount
+     *
+     * BBIE
+     *  Monetary Total. Payable_ Alternative Amount. Amount
+     *  The amount of the monetary total to be paid, expressed in an alternative currency.
+     *  0..1
+     *  Monetary Total
+     *  Payable
+     *  Alternative Amount
+     *  Amount
+     *  Amount. Type
+     *
+     * @param \horstoeko\ubl\entities\cbc\PayableAlternativeAmount $payableAlternativeAmount
+     * @return self
+     */
+    public function setPayableAlternativeAmount(\horstoeko\ubl\entities\cbc\PayableAlternativeAmount $payableAlternativeAmount)
+    {
+        $this->payableAlternativeAmount = $payableAlternativeAmount;
         return $this;
     }
 

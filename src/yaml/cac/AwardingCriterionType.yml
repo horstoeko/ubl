@@ -1,0 +1,165 @@
+horstoeko\ubl\entities\cac\AwardingCriterionType:
+    properties:
+        iD:
+            expose: true
+            access_type: public_method
+            serialized_name: ID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getID
+                setter: setID
+            type: horstoeko\ubl\entities\cbc\ID
+        awardingCriterionTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: AwardingCriterionTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAwardingCriterionTypeCode
+                setter: setAwardingCriterionTypeCode
+            type: horstoeko\ubl\entities\cbc\AwardingCriterionTypeCode
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: Description
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>
+        weightNumeric:
+            expose: true
+            access_type: public_method
+            serialized_name: WeightNumeric
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getWeightNumeric
+                setter: setWeightNumeric
+            type: horstoeko\ubl\entities\cbc\WeightNumeric
+        weight:
+            expose: true
+            access_type: public_method
+            serialized_name: Weight
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getWeight
+                setter: setWeight
+            xml_list:
+                inline: true
+                entry_name: Weight
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Weight>
+        calculationExpression:
+            expose: true
+            access_type: public_method
+            serialized_name: CalculationExpression
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getCalculationExpression
+                setter: setCalculationExpression
+            xml_list:
+                inline: true
+                entry_name: CalculationExpression
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\CalculationExpression>
+        calculationExpressionCode:
+            expose: true
+            access_type: public_method
+            serialized_name: CalculationExpressionCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getCalculationExpressionCode
+                setter: setCalculationExpressionCode
+            type: horstoeko\ubl\entities\cbc\CalculationExpressionCode
+        minimumQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: MinimumQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMinimumQuantity
+                setter: setMinimumQuantity
+            type: horstoeko\ubl\entities\cbc\MinimumQuantity
+        maximumQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: MaximumQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMaximumQuantity
+                setter: setMaximumQuantity
+            type: horstoeko\ubl\entities\cbc\MaximumQuantity
+        minimumAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: MinimumAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMinimumAmount
+                setter: setMinimumAmount
+            type: horstoeko\ubl\entities\cbc\MinimumAmount
+        maximumAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: MaximumAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMaximumAmount
+                setter: setMaximumAmount
+            type: horstoeko\ubl\entities\cbc\MaximumAmount
+        minimumImprovementBid:
+            expose: true
+            access_type: public_method
+            serialized_name: MinimumImprovementBid
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getMinimumImprovementBid
+                setter: setMinimumImprovementBid
+            xml_list:
+                inline: true
+                entry_name: MinimumImprovementBid
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\MinimumImprovementBid>
+        subordinateAwardingCriterion:
+            expose: true
+            access_type: public_method
+            serialized_name: SubordinateAwardingCriterion
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getSubordinateAwardingCriterion
+                setter: setSubordinateAwardingCriterion
+            xml_list:
+                inline: true
+                entry_name: SubordinateAwardingCriterion
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\SubordinateAwardingCriterion>

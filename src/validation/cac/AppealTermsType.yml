@@ -1,0 +1,14 @@
+horstoeko\ubl\entities\cac\AppealTermsType:
+    properties:
+        presentationPeriod:
+            -
+                Valid: null
+        appealInformationParty:
+            -
+                Valid: null
+        appealReceiverParty:
+            -
+                Valid: null
+        mediationParty:
+            -
+                Valid: null

@@ -1,0 +1,7 @@
+horstoeko\ubl\entities\cac\EvidenceSuppliedType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

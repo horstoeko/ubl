@@ -1,0 +1,8 @@
+horstoeko\ubl\entities\xades\SignedPropertiesType:
+    properties:
+        signedSignatureProperties:
+            -
+                Valid: null
+        signedDataObjectProperties:
+            -
+                Valid: null

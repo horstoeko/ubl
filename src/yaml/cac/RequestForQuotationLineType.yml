@@ -32,7 +32,44 @@ horstoeko\ubl\entities\cac\RequestForQuotationLineType:
             accessor:
                 getter: getNote
                 setter: setNote
-            type: horstoeko\ubl\entities\cbc\Note
+            xml_list:
+                inline: true
+                entry_name: Note
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Note>
+        optionalLineItemIndicator:
+            expose: true
+            access_type: public_method
+            serialized_name: OptionalLineItemIndicator
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getOptionalLineItemIndicator
+                setter: setOptionalLineItemIndicator
+            type: bool
+        privacyCode:
+            expose: true
+            access_type: public_method
+            serialized_name: PrivacyCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPrivacyCode
+                setter: setPrivacyCode
+            type: horstoeko\ubl\entities\cbc\PrivacyCode
+        securityClassificationCode:
+            expose: true
+            access_type: public_method
+            serialized_name: SecurityClassificationCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getSecurityClassificationCode
+                setter: setSecurityClassificationCode
+            type: horstoeko\ubl\entities\cbc\SecurityClassificationCode
         documentReference:
             expose: true
             access_type: public_method

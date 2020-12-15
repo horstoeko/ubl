@@ -32,7 +32,11 @@ horstoeko\ubl\entities\cac\DespatchLineType:
             accessor:
                 getter: getNote
                 setter: setNote
-            type: horstoeko\ubl\entities\cbc\Note
+            xml_list:
+                inline: true
+                entry_name: Note
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Note>
         lineStatusCode:
             expose: true
             access_type: public_method
@@ -76,7 +80,11 @@ horstoeko\ubl\entities\cac\DespatchLineType:
             accessor:
                 getter: getBackorderReason
                 setter: setBackorderReason
-            type: horstoeko\ubl\entities\cbc\BackorderReason
+            xml_list:
+                inline: true
+                entry_name: BackorderReason
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\BackorderReason>
         outstandingQuantity:
             expose: true
             access_type: public_method
@@ -98,7 +106,11 @@ horstoeko\ubl\entities\cac\DespatchLineType:
             accessor:
                 getter: getOutstandingReason
                 setter: setOutstandingReason
-            type: horstoeko\ubl\entities\cbc\OutstandingReason
+            xml_list:
+                inline: true
+                entry_name: OutstandingReason
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\OutstandingReason>
         oversupplyQuantity:
             expose: true
             access_type: public_method

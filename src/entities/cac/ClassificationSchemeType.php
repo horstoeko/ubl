@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Classification Scheme. Details
- *  Information about Classification Scheme; a scheme that defines a taxonomy for classifying goods or services.
+ *  A class to define a classification scheme, such as a taxonomy for classifying goods or services.
  *  Classification Scheme
  * XSD Type: ClassificationSchemeType
  */
@@ -17,7 +17,7 @@ class ClassificationSchemeType
     /**
      * BBIE
      *  Classification Scheme. Identifier
-     *  An identifier for the classification scheme.
+     *  An identifier for this classification scheme.
      *  1
      *  Classification Scheme
      *  Identifier
@@ -31,7 +31,7 @@ class ClassificationSchemeType
     /**
      * BBIE
      *  Classification Scheme. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this classification scheme.
      *  0..1
      *  Classification Scheme
      *  UUID
@@ -45,7 +45,7 @@ class ClassificationSchemeType
     /**
      * BBIE
      *  Classification Scheme. Last_ Revision Date. Date
-     *  The date at which the classification scheme was last revised.
+     *  The date on which this classification scheme was last revised.
      *  0..1
      *  Classification Scheme
      *  Last
@@ -60,7 +60,7 @@ class ClassificationSchemeType
     /**
      * BBIE
      *  Classification Scheme. Last_ Revision Time. Time
-     *  The time at which the classification scheme was last revised.
+     *  The time at which this classification scheme was last revised.
      *  0..1
      *  Classification Scheme
      *  Last
@@ -75,27 +75,29 @@ class ClassificationSchemeType
     /**
      * BBIE
      *  Classification Scheme. Note. Text
-     *  Free-form text applying to the Classification Scheme. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Classification Scheme
      *  Note
      *  Text
      *  Text. Type
      *
-     * @var \horstoeko\ubl\entities\cbc\Note $note
+     * @var \horstoeko\ubl\entities\cbc\Note[] $note
      */
-    private $note = null;
+    private $note = [
+        
+    ];
 
     /**
      * BBIE
      *  Classification Scheme. Name
-     *  The name of the Classification Scheme.
+     *  The name of this classification scheme.
      *  0..1
      *  Classification Scheme
      *  Name
      *  Name
      *  Name. Type
-     *  "UNSPSC"
+     *  UNSPSC
      *
      * @var \horstoeko\ubl\entities\cbc\Name $name
      */
@@ -104,13 +106,13 @@ class ClassificationSchemeType
     /**
      * BBIE
      *  Classification Scheme. Description. Text
-     *  A description of the Classification Scheme.
+     *  Text describing this classification scheme.
      *  0..n
      *  Classification Scheme
      *  Description
      *  Text
      *  Text. Type
-     *  "an open, global multi-sector standard for classification of products and services"
+     *  an open, global multi-sector standard for classification of products and services
      *
      * @var \horstoeko\ubl\entities\cbc\Description[] $description
      */
@@ -121,7 +123,7 @@ class ClassificationSchemeType
     /**
      * BBIE
      *  Classification Scheme. Agency Identifier. Identifier
-     *  Identifies the agency that maintains the Classification Scheme.
+     *  An identifier for the agency that maintains this classification scheme.
      *  0..1
      *  Classification Scheme
      *  Agency Identifier
@@ -136,7 +138,7 @@ class ClassificationSchemeType
     /**
      * BBIE
      *  Classification Scheme. Agency Name. Text
-     *  The name of the agency that maintains the Classification Scheme.
+     *  The name of the agency that maintains the classification scheme.
      *  0..1
      *  Classification Scheme
      *  Agency Name
@@ -150,7 +152,7 @@ class ClassificationSchemeType
     /**
      * BBIE
      *  Classification Scheme. Version. Identifier
-     *  Identifies the version of the Classification Scheme.
+     *  An identifier for the version of this classification scheme.
      *  0..1
      *  Classification Scheme
      *  Version
@@ -164,7 +166,7 @@ class ClassificationSchemeType
     /**
      * BBIE
      *  Classification Scheme. URI. Identifier
-     *  The Uniform Resource Identifier (URI) that identifies where the Classification is located.
+     *  The Uniform Resource Identifier (URI) of the documentation for this classification scheme.
      *  0..1
      *  Classification Scheme
      *  URI
@@ -178,7 +180,7 @@ class ClassificationSchemeType
     /**
      * BBIE
      *  Classification Scheme. Scheme_ URI. Identifier
-     *  The Uniform Resource Identifier (URI) that identifies where the Classification Scheme is located.
+     *  The Uniform Resource Identifier (URI) of this classification scheme.
      *  0..1
      *  Classification Scheme
      *  Scheme
@@ -193,7 +195,7 @@ class ClassificationSchemeType
     /**
      * BBIE
      *  Classification Scheme. Language. Identifier
-     *  Identifies the language of the Classification Scheme.
+     *  An identifier for the language of this classification scheme.
      *  0..1
      *  Classification Scheme
      *  Language
@@ -207,9 +209,10 @@ class ClassificationSchemeType
     /**
      * ASBIE
      *  Classification Scheme. Classification Category
-     *  An association to Classification Category.
+     *  A description of a category within this classification scheme.
      *  1..n
      *  Classification Scheme
+     *  Classification Category
      *  Classification Category
      *  Classification Category
      *
@@ -224,7 +227,7 @@ class ClassificationSchemeType
      *
      * BBIE
      *  Classification Scheme. Identifier
-     *  An identifier for the classification scheme.
+     *  An identifier for this classification scheme.
      *  1
      *  Classification Scheme
      *  Identifier
@@ -243,7 +246,7 @@ class ClassificationSchemeType
      *
      * BBIE
      *  Classification Scheme. Identifier
-     *  An identifier for the classification scheme.
+     *  An identifier for this classification scheme.
      *  1
      *  Classification Scheme
      *  Identifier
@@ -264,7 +267,7 @@ class ClassificationSchemeType
      *
      * BBIE
      *  Classification Scheme. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this classification scheme.
      *  0..1
      *  Classification Scheme
      *  UUID
@@ -283,7 +286,7 @@ class ClassificationSchemeType
      *
      * BBIE
      *  Classification Scheme. UUID. Identifier
-     *  A universally unique identifier for an instance of this ABIE.
+     *  A universally unique identifier for this classification scheme.
      *  0..1
      *  Classification Scheme
      *  UUID
@@ -304,7 +307,7 @@ class ClassificationSchemeType
      *
      * BBIE
      *  Classification Scheme. Last_ Revision Date. Date
-     *  The date at which the classification scheme was last revised.
+     *  The date on which this classification scheme was last revised.
      *  0..1
      *  Classification Scheme
      *  Last
@@ -324,7 +327,7 @@ class ClassificationSchemeType
      *
      * BBIE
      *  Classification Scheme. Last_ Revision Date. Date
-     *  The date at which the classification scheme was last revised.
+     *  The date on which this classification scheme was last revised.
      *  0..1
      *  Classification Scheme
      *  Last
@@ -346,7 +349,7 @@ class ClassificationSchemeType
      *
      * BBIE
      *  Classification Scheme. Last_ Revision Time. Time
-     *  The time at which the classification scheme was last revised.
+     *  The time at which this classification scheme was last revised.
      *  0..1
      *  Classification Scheme
      *  Last
@@ -366,7 +369,7 @@ class ClassificationSchemeType
      *
      * BBIE
      *  Classification Scheme. Last_ Revision Time. Time
-     *  The time at which the classification scheme was last revised.
+     *  The time at which this classification scheme was last revised.
      *  0..1
      *  Classification Scheme
      *  Last
@@ -384,18 +387,79 @@ class ClassificationSchemeType
     }
 
     /**
-     * Gets as note
+     * Adds as note
      *
      * BBIE
      *  Classification Scheme. Note. Text
-     *  Free-form text applying to the Classification Scheme. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Classification Scheme
      *  Note
      *  Text
      *  Text. Type
      *
-     * @return \horstoeko\ubl\entities\cbc\Note
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\Note $note
+     */
+    public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
+    {
+        $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * isset note
+     *
+     * BBIE
+     *  Classification Scheme. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Classification Scheme
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetNote($index)
+    {
+        return isset($this->note[$index]);
+    }
+
+    /**
+     * unset note
+     *
+     * BBIE
+     *  Classification Scheme. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Classification Scheme
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetNote($index)
+    {
+        unset($this->note[$index]);
+    }
+
+    /**
+     * Gets as note
+     *
+     * BBIE
+     *  Classification Scheme. Note. Text
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
+     *  Classification Scheme
+     *  Note
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\Note[]
      */
     public function getNote()
     {
@@ -407,17 +471,17 @@ class ClassificationSchemeType
      *
      * BBIE
      *  Classification Scheme. Note. Text
-     *  Free-form text applying to the Classification Scheme. This element may contain notes or any other similar information that is not contained explicitly in another structure.
-     *  0..1
+     *  Free-form text conveying information that is not contained explicitly in other structures.
+     *  0..n
      *  Classification Scheme
      *  Note
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
-    public function setNote(\horstoeko\ubl\entities\cbc\Note $note)
+    public function setNote(array $note)
     {
         $this->note = $note;
         return $this;
@@ -428,13 +492,13 @@ class ClassificationSchemeType
      *
      * BBIE
      *  Classification Scheme. Name
-     *  The name of the Classification Scheme.
+     *  The name of this classification scheme.
      *  0..1
      *  Classification Scheme
      *  Name
      *  Name
      *  Name. Type
-     *  "UNSPSC"
+     *  UNSPSC
      *
      * @return \horstoeko\ubl\entities\cbc\Name
      */
@@ -448,13 +512,13 @@ class ClassificationSchemeType
      *
      * BBIE
      *  Classification Scheme. Name
-     *  The name of the Classification Scheme.
+     *  The name of this classification scheme.
      *  0..1
      *  Classification Scheme
      *  Name
      *  Name
      *  Name. Type
-     *  "UNSPSC"
+     *  UNSPSC
      *
      * @param \horstoeko\ubl\entities\cbc\Name $name
      * @return self
@@ -470,13 +534,13 @@ class ClassificationSchemeType
      *
      * BBIE
      *  Classification Scheme. Description. Text
-     *  A description of the Classification Scheme.
+     *  Text describing this classification scheme.
      *  0..n
      *  Classification Scheme
      *  Description
      *  Text
      *  Text. Type
-     *  "an open, global multi-sector standard for classification of products and services"
+     *  an open, global multi-sector standard for classification of products and services
      *
      * @return self
      * @param \horstoeko\ubl\entities\cbc\Description $description
@@ -492,13 +556,13 @@ class ClassificationSchemeType
      *
      * BBIE
      *  Classification Scheme. Description. Text
-     *  A description of the Classification Scheme.
+     *  Text describing this classification scheme.
      *  0..n
      *  Classification Scheme
      *  Description
      *  Text
      *  Text. Type
-     *  "an open, global multi-sector standard for classification of products and services"
+     *  an open, global multi-sector standard for classification of products and services
      *
      * @param int|string $index
      * @return bool
@@ -513,13 +577,13 @@ class ClassificationSchemeType
      *
      * BBIE
      *  Classification Scheme. Description. Text
-     *  A description of the Classification Scheme.
+     *  Text describing this classification scheme.
      *  0..n
      *  Classification Scheme
      *  Description
      *  Text
      *  Text. Type
-     *  "an open, global multi-sector standard for classification of products and services"
+     *  an open, global multi-sector standard for classification of products and services
      *
      * @param int|string $index
      * @return void
@@ -534,13 +598,13 @@ class ClassificationSchemeType
      *
      * BBIE
      *  Classification Scheme. Description. Text
-     *  A description of the Classification Scheme.
+     *  Text describing this classification scheme.
      *  0..n
      *  Classification Scheme
      *  Description
      *  Text
      *  Text. Type
-     *  "an open, global multi-sector standard for classification of products and services"
+     *  an open, global multi-sector standard for classification of products and services
      *
      * @return \horstoeko\ubl\entities\cbc\Description[]
      */
@@ -554,13 +618,13 @@ class ClassificationSchemeType
      *
      * BBIE
      *  Classification Scheme. Description. Text
-     *  A description of the Classification Scheme.
+     *  Text describing this classification scheme.
      *  0..n
      *  Classification Scheme
      *  Description
      *  Text
      *  Text. Type
-     *  "an open, global multi-sector standard for classification of products and services"
+     *  an open, global multi-sector standard for classification of products and services
      *
      * @param \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
@@ -576,7 +640,7 @@ class ClassificationSchemeType
      *
      * BBIE
      *  Classification Scheme. Agency Identifier. Identifier
-     *  Identifies the agency that maintains the Classification Scheme.
+     *  An identifier for the agency that maintains this classification scheme.
      *  0..1
      *  Classification Scheme
      *  Agency Identifier
@@ -596,7 +660,7 @@ class ClassificationSchemeType
      *
      * BBIE
      *  Classification Scheme. Agency Identifier. Identifier
-     *  Identifies the agency that maintains the Classification Scheme.
+     *  An identifier for the agency that maintains this classification scheme.
      *  0..1
      *  Classification Scheme
      *  Agency Identifier
@@ -618,7 +682,7 @@ class ClassificationSchemeType
      *
      * BBIE
      *  Classification Scheme. Agency Name. Text
-     *  The name of the agency that maintains the Classification Scheme.
+     *  The name of the agency that maintains the classification scheme.
      *  0..1
      *  Classification Scheme
      *  Agency Name
@@ -637,7 +701,7 @@ class ClassificationSchemeType
      *
      * BBIE
      *  Classification Scheme. Agency Name. Text
-     *  The name of the agency that maintains the Classification Scheme.
+     *  The name of the agency that maintains the classification scheme.
      *  0..1
      *  Classification Scheme
      *  Agency Name
@@ -658,7 +722,7 @@ class ClassificationSchemeType
      *
      * BBIE
      *  Classification Scheme. Version. Identifier
-     *  Identifies the version of the Classification Scheme.
+     *  An identifier for the version of this classification scheme.
      *  0..1
      *  Classification Scheme
      *  Version
@@ -677,7 +741,7 @@ class ClassificationSchemeType
      *
      * BBIE
      *  Classification Scheme. Version. Identifier
-     *  Identifies the version of the Classification Scheme.
+     *  An identifier for the version of this classification scheme.
      *  0..1
      *  Classification Scheme
      *  Version
@@ -698,7 +762,7 @@ class ClassificationSchemeType
      *
      * BBIE
      *  Classification Scheme. URI. Identifier
-     *  The Uniform Resource Identifier (URI) that identifies where the Classification is located.
+     *  The Uniform Resource Identifier (URI) of the documentation for this classification scheme.
      *  0..1
      *  Classification Scheme
      *  URI
@@ -717,7 +781,7 @@ class ClassificationSchemeType
      *
      * BBIE
      *  Classification Scheme. URI. Identifier
-     *  The Uniform Resource Identifier (URI) that identifies where the Classification is located.
+     *  The Uniform Resource Identifier (URI) of the documentation for this classification scheme.
      *  0..1
      *  Classification Scheme
      *  URI
@@ -738,7 +802,7 @@ class ClassificationSchemeType
      *
      * BBIE
      *  Classification Scheme. Scheme_ URI. Identifier
-     *  The Uniform Resource Identifier (URI) that identifies where the Classification Scheme is located.
+     *  The Uniform Resource Identifier (URI) of this classification scheme.
      *  0..1
      *  Classification Scheme
      *  Scheme
@@ -758,7 +822,7 @@ class ClassificationSchemeType
      *
      * BBIE
      *  Classification Scheme. Scheme_ URI. Identifier
-     *  The Uniform Resource Identifier (URI) that identifies where the Classification Scheme is located.
+     *  The Uniform Resource Identifier (URI) of this classification scheme.
      *  0..1
      *  Classification Scheme
      *  Scheme
@@ -780,7 +844,7 @@ class ClassificationSchemeType
      *
      * BBIE
      *  Classification Scheme. Language. Identifier
-     *  Identifies the language of the Classification Scheme.
+     *  An identifier for the language of this classification scheme.
      *  0..1
      *  Classification Scheme
      *  Language
@@ -799,7 +863,7 @@ class ClassificationSchemeType
      *
      * BBIE
      *  Classification Scheme. Language. Identifier
-     *  Identifies the language of the Classification Scheme.
+     *  An identifier for the language of this classification scheme.
      *  0..1
      *  Classification Scheme
      *  Language
@@ -820,9 +884,10 @@ class ClassificationSchemeType
      *
      * ASBIE
      *  Classification Scheme. Classification Category
-     *  An association to Classification Category.
+     *  A description of a category within this classification scheme.
      *  1..n
      *  Classification Scheme
+     *  Classification Category
      *  Classification Category
      *  Classification Category
      *
@@ -840,9 +905,10 @@ class ClassificationSchemeType
      *
      * ASBIE
      *  Classification Scheme. Classification Category
-     *  An association to Classification Category.
+     *  A description of a category within this classification scheme.
      *  1..n
      *  Classification Scheme
+     *  Classification Category
      *  Classification Category
      *  Classification Category
      *
@@ -859,9 +925,10 @@ class ClassificationSchemeType
      *
      * ASBIE
      *  Classification Scheme. Classification Category
-     *  An association to Classification Category.
+     *  A description of a category within this classification scheme.
      *  1..n
      *  Classification Scheme
+     *  Classification Category
      *  Classification Category
      *  Classification Category
      *
@@ -878,9 +945,10 @@ class ClassificationSchemeType
      *
      * ASBIE
      *  Classification Scheme. Classification Category
-     *  An association to Classification Category.
+     *  A description of a category within this classification scheme.
      *  1..n
      *  Classification Scheme
+     *  Classification Category
      *  Classification Category
      *  Classification Category
      *
@@ -896,9 +964,10 @@ class ClassificationSchemeType
      *
      * ASBIE
      *  Classification Scheme. Classification Category
-     *  An association to Classification Category.
+     *  A description of a category within this classification scheme.
      *  1..n
      *  Classification Scheme
+     *  Classification Category
      *  Classification Category
      *  Classification Category
      *

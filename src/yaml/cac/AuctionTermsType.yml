@@ -1,0 +1,99 @@
+horstoeko\ubl\entities\cac\AuctionTermsType:
+    properties:
+        auctionConstraintIndicator:
+            expose: true
+            access_type: public_method
+            serialized_name: AuctionConstraintIndicator
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAuctionConstraintIndicator
+                setter: setAuctionConstraintIndicator
+            type: bool
+        justificationDescription:
+            expose: true
+            access_type: public_method
+            serialized_name: JustificationDescription
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getJustificationDescription
+                setter: setJustificationDescription
+            xml_list:
+                inline: true
+                entry_name: JustificationDescription
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\JustificationDescription>
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: Description
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>
+        processDescription:
+            expose: true
+            access_type: public_method
+            serialized_name: ProcessDescription
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getProcessDescription
+                setter: setProcessDescription
+            xml_list:
+                inline: true
+                entry_name: ProcessDescription
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\ProcessDescription>
+        conditionsDescription:
+            expose: true
+            access_type: public_method
+            serialized_name: ConditionsDescription
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getConditionsDescription
+                setter: setConditionsDescription
+            xml_list:
+                inline: true
+                entry_name: ConditionsDescription
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\ConditionsDescription>
+        electronicDeviceDescription:
+            expose: true
+            access_type: public_method
+            serialized_name: ElectronicDeviceDescription
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getElectronicDeviceDescription
+                setter: setElectronicDeviceDescription
+            xml_list:
+                inline: true
+                entry_name: ElectronicDeviceDescription
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\ElectronicDeviceDescription>
+        auctionURI:
+            expose: true
+            access_type: public_method
+            serialized_name: AuctionURI
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAuctionURI
+                setter: setAuctionURI
+            type: horstoeko\ubl\entities\cbc\AuctionURI

@@ -7,7 +7,7 @@ namespace horstoeko\ubl\entities\cac;
  *
  * ABIE
  *  Tax Category. Details
- *  Information about a tax category.
+ *  A class to describe one of the tax categories within a taxation scheme (e.g., High Rate VAT, Low Rate VAT).
  *  Tax Category
  * XSD Type: TaxCategoryType
  */
@@ -17,13 +17,13 @@ class TaxCategoryType
     /**
      * BBIE
      *  Tax Category. Identifier
-     *  Identifies the tax category.
+     *  An identifier for this tax category.
      *  0..1
      *  Tax Category
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "ZeroRatedGoods" "NotTaxable" "Standard Rate"
+     *  http://www.unece.org/uncefact/codelist/standard/UNECE_DutyorTaxorFeeCategoryCode_D09B.xsd
      *
      * @var \horstoeko\ubl\entities\cbc\ID $iD
      */
@@ -32,13 +32,13 @@ class TaxCategoryType
     /**
      * BBIE
      *  Tax Category. Name
-     *  The name of the tax category.
+     *  The name of this tax category.
      *  0..1
      *  Tax Category
      *  Name
      *  Name
      *  Name. Type
-     *  "Luxury Goods","Wine Equalization", "Exempt"
+     *  Luxury Goods , Wine Equalization , Exempt
      *
      * @var \horstoeko\ubl\entities\cbc\Name $name
      */
@@ -47,21 +47,21 @@ class TaxCategoryType
     /**
      * BBIE
      *  Tax Category. Percent
-     *  The tax rate for the category, expressed as a percentage.
+     *  The tax rate for this category, expressed as a percentage.
      *  0..1
      *  Tax Category
      *  Percent
      *  Percent
      *  Percent. Type
      *
-     * @var float $percent
+     * @var \horstoeko\ubl\entities\cbc\Percent $percent
      */
     private $percent = null;
 
     /**
      * BBIE
      *  Tax Category. Base Unit Measure. Measure
-     *  Where a tax is applied at a certain rate per unit, the measure of units on which the tax calculation is based.
+     *  A Unit of Measures used as the basic for the tax calculation applied at a certain rate per unit.
      *  0..1
      *  Tax Category
      *  Base Unit Measure
@@ -90,12 +90,13 @@ class TaxCategoryType
     /**
      * BBIE
      *  Tax Category. Tax Exemption Reason Code. Code
-     *  The reason for tax being exempted expressed as a code.
+     *  The reason for tax being exempted, expressed as a code.
      *  0..1
      *  Tax Category
      *  Tax Exemption Reason Code
      *  Code
      *  Code. Type
+     *  http://www.unece.org/uncefact/codelist/standard/UNECE_DutyTaxFeeTypeCode_D09B.xsd
      *
      * @var \horstoeko\ubl\entities\cbc\TaxExemptionReasonCode $taxExemptionReasonCode
      */
@@ -104,21 +105,23 @@ class TaxCategoryType
     /**
      * BBIE
      *  Tax Category. Tax Exemption Reason. Text
-     *  The reason for tax being exempted.
-     *  0..1
+     *  The reason for tax being exempted, expressed as text.
+     *  0..n
      *  Tax Category
      *  Tax Exemption Reason
      *  Text
      *  Text. Type
      *
-     * @var \horstoeko\ubl\entities\cbc\TaxExemptionReason $taxExemptionReason
+     * @var \horstoeko\ubl\entities\cbc\TaxExemptionReason[] $taxExemptionReason
      */
-    private $taxExemptionReason = null;
+    private $taxExemptionReason = [
+        
+    ];
 
     /**
      * BBIE
      *  Tax Category. Tier Range. Text
-     *  Where a tax is tiered, the range of tiers applied in the calculation of the tax subtotal for the tax category.
+     *  Where a tax is tiered, the range of taxable amounts that determines the rate of tax applicable to this tax category.
      *  0..1
      *  Tax Category
      *  Tier Range
@@ -132,23 +135,24 @@ class TaxCategoryType
     /**
      * BBIE
      *  Tax Category. Tier Rate. Percent
-     *  Where a tax is tiered, the rate of tax applied to the range of tiers in the calculation of the tax subtotal for the tax category.
+     *  Where a tax is tiered, the tax rate that applies within the specified range of taxable amounts for this tax category.
      *  0..1
      *  Tax Category
      *  Tier Rate
      *  Percent
      *  Percent. Type
      *
-     * @var float $tierRatePercent
+     * @var \horstoeko\ubl\entities\cbc\TierRatePercent $tierRatePercent
      */
     private $tierRatePercent = null;
 
     /**
      * ASBIE
      *  Tax Category. Tax Scheme
-     *  An association to Tax Scheme.
+     *  The taxation scheme within which this tax category is defined.
      *  1
      *  Tax Category
+     *  Tax Scheme
      *  Tax Scheme
      *  Tax Scheme
      *
@@ -161,13 +165,13 @@ class TaxCategoryType
      *
      * BBIE
      *  Tax Category. Identifier
-     *  Identifies the tax category.
+     *  An identifier for this tax category.
      *  0..1
      *  Tax Category
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "ZeroRatedGoods" "NotTaxable" "Standard Rate"
+     *  http://www.unece.org/uncefact/codelist/standard/UNECE_DutyorTaxorFeeCategoryCode_D09B.xsd
      *
      * @return \horstoeko\ubl\entities\cbc\ID
      */
@@ -181,13 +185,13 @@ class TaxCategoryType
      *
      * BBIE
      *  Tax Category. Identifier
-     *  Identifies the tax category.
+     *  An identifier for this tax category.
      *  0..1
      *  Tax Category
      *  Identifier
      *  Identifier
      *  Identifier. Type
-     *  "ZeroRatedGoods" "NotTaxable" "Standard Rate"
+     *  http://www.unece.org/uncefact/codelist/standard/UNECE_DutyorTaxorFeeCategoryCode_D09B.xsd
      *
      * @param \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
@@ -203,13 +207,13 @@ class TaxCategoryType
      *
      * BBIE
      *  Tax Category. Name
-     *  The name of the tax category.
+     *  The name of this tax category.
      *  0..1
      *  Tax Category
      *  Name
      *  Name
      *  Name. Type
-     *  "Luxury Goods","Wine Equalization", "Exempt"
+     *  Luxury Goods , Wine Equalization , Exempt
      *
      * @return \horstoeko\ubl\entities\cbc\Name
      */
@@ -223,13 +227,13 @@ class TaxCategoryType
      *
      * BBIE
      *  Tax Category. Name
-     *  The name of the tax category.
+     *  The name of this tax category.
      *  0..1
      *  Tax Category
      *  Name
      *  Name
      *  Name. Type
-     *  "Luxury Goods","Wine Equalization", "Exempt"
+     *  Luxury Goods , Wine Equalization , Exempt
      *
      * @param \horstoeko\ubl\entities\cbc\Name $name
      * @return self
@@ -245,14 +249,14 @@ class TaxCategoryType
      *
      * BBIE
      *  Tax Category. Percent
-     *  The tax rate for the category, expressed as a percentage.
+     *  The tax rate for this category, expressed as a percentage.
      *  0..1
      *  Tax Category
      *  Percent
      *  Percent
      *  Percent. Type
      *
-     * @return float
+     * @return \horstoeko\ubl\entities\cbc\Percent
      */
     public function getPercent()
     {
@@ -264,17 +268,17 @@ class TaxCategoryType
      *
      * BBIE
      *  Tax Category. Percent
-     *  The tax rate for the category, expressed as a percentage.
+     *  The tax rate for this category, expressed as a percentage.
      *  0..1
      *  Tax Category
      *  Percent
      *  Percent
      *  Percent. Type
      *
-     * @param float $percent
+     * @param \horstoeko\ubl\entities\cbc\Percent $percent
      * @return self
      */
-    public function setPercent($percent)
+    public function setPercent(\horstoeko\ubl\entities\cbc\Percent $percent)
     {
         $this->percent = $percent;
         return $this;
@@ -285,7 +289,7 @@ class TaxCategoryType
      *
      * BBIE
      *  Tax Category. Base Unit Measure. Measure
-     *  Where a tax is applied at a certain rate per unit, the measure of units on which the tax calculation is based.
+     *  A Unit of Measures used as the basic for the tax calculation applied at a certain rate per unit.
      *  0..1
      *  Tax Category
      *  Base Unit Measure
@@ -304,7 +308,7 @@ class TaxCategoryType
      *
      * BBIE
      *  Tax Category. Base Unit Measure. Measure
-     *  Where a tax is applied at a certain rate per unit, the measure of units on which the tax calculation is based.
+     *  A Unit of Measures used as the basic for the tax calculation applied at a certain rate per unit.
      *  0..1
      *  Tax Category
      *  Base Unit Measure
@@ -367,12 +371,13 @@ class TaxCategoryType
      *
      * BBIE
      *  Tax Category. Tax Exemption Reason Code. Code
-     *  The reason for tax being exempted expressed as a code.
+     *  The reason for tax being exempted, expressed as a code.
      *  0..1
      *  Tax Category
      *  Tax Exemption Reason Code
      *  Code
      *  Code. Type
+     *  http://www.unece.org/uncefact/codelist/standard/UNECE_DutyTaxFeeTypeCode_D09B.xsd
      *
      * @return \horstoeko\ubl\entities\cbc\TaxExemptionReasonCode
      */
@@ -386,12 +391,13 @@ class TaxCategoryType
      *
      * BBIE
      *  Tax Category. Tax Exemption Reason Code. Code
-     *  The reason for tax being exempted expressed as a code.
+     *  The reason for tax being exempted, expressed as a code.
      *  0..1
      *  Tax Category
      *  Tax Exemption Reason Code
      *  Code
      *  Code. Type
+     *  http://www.unece.org/uncefact/codelist/standard/UNECE_DutyTaxFeeTypeCode_D09B.xsd
      *
      * @param \horstoeko\ubl\entities\cbc\TaxExemptionReasonCode $taxExemptionReasonCode
      * @return self
@@ -403,18 +409,79 @@ class TaxCategoryType
     }
 
     /**
-     * Gets as taxExemptionReason
+     * Adds as taxExemptionReason
      *
      * BBIE
      *  Tax Category. Tax Exemption Reason. Text
-     *  The reason for tax being exempted.
-     *  0..1
+     *  The reason for tax being exempted, expressed as text.
+     *  0..n
      *  Tax Category
      *  Tax Exemption Reason
      *  Text
      *  Text. Type
      *
-     * @return \horstoeko\ubl\entities\cbc\TaxExemptionReason
+     * @return self
+     * @param \horstoeko\ubl\entities\cbc\TaxExemptionReason $taxExemptionReason
+     */
+    public function addToTaxExemptionReason(\horstoeko\ubl\entities\cbc\TaxExemptionReason $taxExemptionReason)
+    {
+        $this->taxExemptionReason[] = $taxExemptionReason;
+        return $this;
+    }
+
+    /**
+     * isset taxExemptionReason
+     *
+     * BBIE
+     *  Tax Category. Tax Exemption Reason. Text
+     *  The reason for tax being exempted, expressed as text.
+     *  0..n
+     *  Tax Category
+     *  Tax Exemption Reason
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetTaxExemptionReason($index)
+    {
+        return isset($this->taxExemptionReason[$index]);
+    }
+
+    /**
+     * unset taxExemptionReason
+     *
+     * BBIE
+     *  Tax Category. Tax Exemption Reason. Text
+     *  The reason for tax being exempted, expressed as text.
+     *  0..n
+     *  Tax Category
+     *  Tax Exemption Reason
+     *  Text
+     *  Text. Type
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetTaxExemptionReason($index)
+    {
+        unset($this->taxExemptionReason[$index]);
+    }
+
+    /**
+     * Gets as taxExemptionReason
+     *
+     * BBIE
+     *  Tax Category. Tax Exemption Reason. Text
+     *  The reason for tax being exempted, expressed as text.
+     *  0..n
+     *  Tax Category
+     *  Tax Exemption Reason
+     *  Text
+     *  Text. Type
+     *
+     * @return \horstoeko\ubl\entities\cbc\TaxExemptionReason[]
      */
     public function getTaxExemptionReason()
     {
@@ -426,17 +493,17 @@ class TaxCategoryType
      *
      * BBIE
      *  Tax Category. Tax Exemption Reason. Text
-     *  The reason for tax being exempted.
-     *  0..1
+     *  The reason for tax being exempted, expressed as text.
+     *  0..n
      *  Tax Category
      *  Tax Exemption Reason
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TaxExemptionReason $taxExemptionReason
+     * @param \horstoeko\ubl\entities\cbc\TaxExemptionReason[] $taxExemptionReason
      * @return self
      */
-    public function setTaxExemptionReason(\horstoeko\ubl\entities\cbc\TaxExemptionReason $taxExemptionReason)
+    public function setTaxExemptionReason(array $taxExemptionReason)
     {
         $this->taxExemptionReason = $taxExemptionReason;
         return $this;
@@ -447,7 +514,7 @@ class TaxCategoryType
      *
      * BBIE
      *  Tax Category. Tier Range. Text
-     *  Where a tax is tiered, the range of tiers applied in the calculation of the tax subtotal for the tax category.
+     *  Where a tax is tiered, the range of taxable amounts that determines the rate of tax applicable to this tax category.
      *  0..1
      *  Tax Category
      *  Tier Range
@@ -466,7 +533,7 @@ class TaxCategoryType
      *
      * BBIE
      *  Tax Category. Tier Range. Text
-     *  Where a tax is tiered, the range of tiers applied in the calculation of the tax subtotal for the tax category.
+     *  Where a tax is tiered, the range of taxable amounts that determines the rate of tax applicable to this tax category.
      *  0..1
      *  Tax Category
      *  Tier Range
@@ -487,14 +554,14 @@ class TaxCategoryType
      *
      * BBIE
      *  Tax Category. Tier Rate. Percent
-     *  Where a tax is tiered, the rate of tax applied to the range of tiers in the calculation of the tax subtotal for the tax category.
+     *  Where a tax is tiered, the tax rate that applies within the specified range of taxable amounts for this tax category.
      *  0..1
      *  Tax Category
      *  Tier Rate
      *  Percent
      *  Percent. Type
      *
-     * @return float
+     * @return \horstoeko\ubl\entities\cbc\TierRatePercent
      */
     public function getTierRatePercent()
     {
@@ -506,17 +573,17 @@ class TaxCategoryType
      *
      * BBIE
      *  Tax Category. Tier Rate. Percent
-     *  Where a tax is tiered, the rate of tax applied to the range of tiers in the calculation of the tax subtotal for the tax category.
+     *  Where a tax is tiered, the tax rate that applies within the specified range of taxable amounts for this tax category.
      *  0..1
      *  Tax Category
      *  Tier Rate
      *  Percent
      *  Percent. Type
      *
-     * @param float $tierRatePercent
+     * @param \horstoeko\ubl\entities\cbc\TierRatePercent $tierRatePercent
      * @return self
      */
-    public function setTierRatePercent($tierRatePercent)
+    public function setTierRatePercent(\horstoeko\ubl\entities\cbc\TierRatePercent $tierRatePercent)
     {
         $this->tierRatePercent = $tierRatePercent;
         return $this;
@@ -527,9 +594,10 @@ class TaxCategoryType
      *
      * ASBIE
      *  Tax Category. Tax Scheme
-     *  An association to Tax Scheme.
+     *  The taxation scheme within which this tax category is defined.
      *  1
      *  Tax Category
+     *  Tax Scheme
      *  Tax Scheme
      *  Tax Scheme
      *
@@ -545,9 +613,10 @@ class TaxCategoryType
      *
      * ASBIE
      *  Tax Category. Tax Scheme
-     *  An association to Tax Scheme.
+     *  The taxation scheme within which this tax category is defined.
      *  1
      *  Tax Category
+     *  Tax Scheme
      *  Tax Scheme
      *  Tax Scheme
      *

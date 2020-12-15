@@ -1,0 +1,10 @@
+horstoeko\ubl\entities\cac\ProjectReferenceType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        workPhaseReference:
+            -
+                Valid: null

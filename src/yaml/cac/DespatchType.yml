@@ -77,6 +77,54 @@ horstoeko\ubl\entities\cac\DespatchType:
                 getter: getActualDespatchTime
                 setter: setActualDespatchTime
             type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time
+        guaranteedDespatchDate:
+            expose: true
+            access_type: public_method
+            serialized_name: GuaranteedDespatchDate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getGuaranteedDespatchDate
+                setter: setGuaranteedDespatchDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        guaranteedDespatchTime:
+            expose: true
+            access_type: public_method
+            serialized_name: GuaranteedDespatchTime
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getGuaranteedDespatchTime
+                setter: setGuaranteedDespatchTime
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time
+        releaseID:
+            expose: true
+            access_type: public_method
+            serialized_name: ReleaseID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getReleaseID
+                setter: setReleaseID
+            type: horstoeko\ubl\entities\cbc\ReleaseID
+        instructions:
+            expose: true
+            access_type: public_method
+            serialized_name: Instructions
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getInstructions
+                setter: setInstructions
+            xml_list:
+                inline: true
+                entry_name: Instructions
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Instructions>
         despatchAddress:
             expose: true
             access_type: public_method
@@ -88,6 +136,17 @@ horstoeko\ubl\entities\cac\DespatchType:
                 getter: getDespatchAddress
                 setter: setDespatchAddress
             type: horstoeko\ubl\entities\cac\DespatchAddress
+        despatchLocation:
+            expose: true
+            access_type: public_method
+            serialized_name: DespatchLocation
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getDespatchLocation
+                setter: setDespatchLocation
+            type: horstoeko\ubl\entities\cac\DespatchLocation
         despatchParty:
             expose: true
             access_type: public_method
@@ -99,6 +158,32 @@ horstoeko\ubl\entities\cac\DespatchType:
                 getter: getDespatchParty
                 setter: setDespatchParty
             type: horstoeko\ubl\entities\cac\DespatchParty
+        carrierParty:
+            expose: true
+            access_type: public_method
+            serialized_name: CarrierParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getCarrierParty
+                setter: setCarrierParty
+            type: horstoeko\ubl\entities\cac\CarrierParty
+        notifyParty:
+            expose: true
+            access_type: public_method
+            serialized_name: NotifyParty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getNotifyParty
+                setter: setNotifyParty
+            xml_list:
+                inline: true
+                entry_name: NotifyParty
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\NotifyParty>
         contact:
             expose: true
             access_type: public_method
@@ -110,3 +195,25 @@ horstoeko\ubl\entities\cac\DespatchType:
                 getter: getContact
                 setter: setContact
             type: horstoeko\ubl\entities\cac\Contact
+        estimatedDespatchPeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: EstimatedDespatchPeriod
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getEstimatedDespatchPeriod
+                setter: setEstimatedDespatchPeriod
+            type: horstoeko\ubl\entities\cac\EstimatedDespatchPeriod
+        requestedDespatchPeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: RequestedDespatchPeriod
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getRequestedDespatchPeriod
+                setter: setRequestedDespatchPeriod
+            type: horstoeko\ubl\entities\cac\RequestedDespatchPeriod

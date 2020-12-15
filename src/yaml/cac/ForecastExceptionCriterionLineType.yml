@@ -1,0 +1,57 @@
+horstoeko\ubl\entities\cac\ForecastExceptionCriterionLineType:
+    properties:
+        forecastPurposeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ForecastPurposeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getForecastPurposeCode
+                setter: setForecastPurposeCode
+            type: horstoeko\ubl\entities\cbc\ForecastPurposeCode
+        forecastTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ForecastTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getForecastTypeCode
+                setter: setForecastTypeCode
+            type: horstoeko\ubl\entities\cbc\ForecastTypeCode
+        comparisonDataSourceCode:
+            expose: true
+            access_type: public_method
+            serialized_name: ComparisonDataSourceCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getComparisonDataSourceCode
+                setter: setComparisonDataSourceCode
+            type: horstoeko\ubl\entities\cbc\ComparisonDataSourceCode
+        dataSourceCode:
+            expose: true
+            access_type: public_method
+            serialized_name: DataSourceCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDataSourceCode
+                setter: setDataSourceCode
+            type: horstoeko\ubl\entities\cbc\DataSourceCode
+        timeDeltaDaysQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: TimeDeltaDaysQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTimeDeltaDaysQuantity
+                setter: setTimeDeltaDaysQuantity
+            type: horstoeko\ubl\entities\cbc\TimeDeltaDaysQuantity

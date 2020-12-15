@@ -1,0 +1,28 @@
+horstoeko\ubl\entities\cac\ForecastRevisionLineType:
+    properties:
+        iD:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        revisedForecastLineID:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        sourceForecastIssueDate:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        sourceForecastIssueTime:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        forecastPeriod:
+            -
+                Valid: null
+        salesItem:
+            -
+                Valid: null

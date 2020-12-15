@@ -1,0 +1,9 @@
+horstoeko\ubl\entities\xades\SigPolicyQualifiersListType:
+    properties:
+        sigPolicyQualifier:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

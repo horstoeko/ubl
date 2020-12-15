@@ -1,15 +1,5 @@
 horstoeko\ubl\entities\cac\ShipmentStageType:
     properties:
-        preCarriageIndicator:
-            -
-                NotNull:
-                    groups:
-                        - xsd_rules
-        onCarriageIndicator:
-            -
-                NotNull:
-                    groups:
-                        - xsd_rules
         transitPeriod:
             -
                 Valid: null
@@ -26,5 +16,122 @@ horstoeko\ubl\entities\cac\ShipmentStageType:
             -
                 Valid: null
         transshipPortLocation:
+            -
+                Valid: null
+        loadingTransportEvent:
+            -
+                Valid: null
+        examinationTransportEvent:
+            -
+                Valid: null
+        availabilityTransportEvent:
+            -
+                Valid: null
+        exportationTransportEvent:
+            -
+                Valid: null
+        dischargeTransportEvent:
+            -
+                Valid: null
+        warehousingTransportEvent:
+            -
+                Valid: null
+        takeoverTransportEvent:
+            -
+                Valid: null
+        optionalTakeoverTransportEvent:
+            -
+                Valid: null
+        dropoffTransportEvent:
+            -
+                Valid: null
+        actualPickupTransportEvent:
+            -
+                Valid: null
+        deliveryTransportEvent:
+            -
+                Valid: null
+        receiptTransportEvent:
+            -
+                Valid: null
+        storageTransportEvent:
+            -
+                Valid: null
+        acceptanceTransportEvent:
+            -
+                Valid: null
+        terminalOperatorParty:
+            -
+                Valid: null
+        customsAgentParty:
+            -
+                Valid: null
+        estimatedTransitPeriod:
+            -
+                Valid: null
+        freightAllowanceCharge:
+            -
+                Valid: null
+        freightChargeLocation:
+            -
+                Valid: null
+        detentionTransportEvent:
+            -
+                Valid: null
+        requestedDepartureTransportEvent:
+            -
+                Valid: null
+        requestedArrivalTransportEvent:
+            -
+                Valid: null
+        requestedWaypointTransportEvent:
+            -
+                Valid: null
+        plannedDepartureTransportEvent:
+            -
+                Valid: null
+        plannedArrivalTransportEvent:
+            -
+                Valid: null
+        plannedWaypointTransportEvent:
+            -
+                Valid: null
+        actualDepartureTransportEvent:
+            -
+                Valid: null
+        actualWaypointTransportEvent:
+            -
+                Valid: null
+        actualArrivalTransportEvent:
+            -
+                Valid: null
+        transportEvent:
+            -
+                Valid: null
+        estimatedDepartureTransportEvent:
+            -
+                Valid: null
+        estimatedArrivalTransportEvent:
+            -
+                Valid: null
+        passengerPerson:
+            -
+                Valid: null
+        driverPerson:
+            -
+                Valid: null
+        reportingPerson:
+            -
+                Valid: null
+        crewMemberPerson:
+            -
+                Valid: null
+        securityOfficerPerson:
+            -
+                Valid: null
+        masterPerson:
+            -
+                Valid: null
+        shipsSurgeonPerson:
             -
                 Valid: null

@@ -1,5 +1,16 @@
 horstoeko\ubl\entities\cac\PersonType:
     properties:
+        iD:
+            expose: true
+            access_type: public_method
+            serialized_name: ID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getID
+                setter: setID
+            type: horstoeko\ubl\entities\cbc\ID
         firstName:
             expose: true
             access_type: public_method
@@ -44,6 +55,17 @@ horstoeko\ubl\entities\cac\PersonType:
                 getter: getMiddleName
                 setter: setMiddleName
             type: horstoeko\ubl\entities\cbc\MiddleName
+        otherName:
+            expose: true
+            access_type: public_method
+            serialized_name: OtherName
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getOtherName
+                setter: setOtherName
+            type: horstoeko\ubl\entities\cbc\OtherName
         nameSuffix:
             expose: true
             access_type: public_method
@@ -66,6 +88,50 @@ horstoeko\ubl\entities\cac\PersonType:
                 getter: getJobTitle
                 setter: setJobTitle
             type: horstoeko\ubl\entities\cbc\JobTitle
+        nationalityID:
+            expose: true
+            access_type: public_method
+            serialized_name: NationalityID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getNationalityID
+                setter: setNationalityID
+            type: horstoeko\ubl\entities\cbc\NationalityID
+        genderCode:
+            expose: true
+            access_type: public_method
+            serialized_name: GenderCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getGenderCode
+                setter: setGenderCode
+            type: horstoeko\ubl\entities\cbc\GenderCode
+        birthDate:
+            expose: true
+            access_type: public_method
+            serialized_name: BirthDate
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getBirthDate
+                setter: setBirthDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        birthplaceName:
+            expose: true
+            access_type: public_method
+            serialized_name: BirthplaceName
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getBirthplaceName
+                setter: setBirthplaceName
+            type: horstoeko\ubl\entities\cbc\BirthplaceName
         organizationDepartment:
             expose: true
             access_type: public_method
@@ -77,3 +143,51 @@ horstoeko\ubl\entities\cac\PersonType:
                 getter: getOrganizationDepartment
                 setter: setOrganizationDepartment
             type: horstoeko\ubl\entities\cbc\OrganizationDepartment
+        contact:
+            expose: true
+            access_type: public_method
+            serialized_name: Contact
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getContact
+                setter: setContact
+            type: horstoeko\ubl\entities\cac\Contact
+        financialAccount:
+            expose: true
+            access_type: public_method
+            serialized_name: FinancialAccount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getFinancialAccount
+                setter: setFinancialAccount
+            type: horstoeko\ubl\entities\cac\FinancialAccount
+        identityDocumentReference:
+            expose: true
+            access_type: public_method
+            serialized_name: IdentityDocumentReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getIdentityDocumentReference
+                setter: setIdentityDocumentReference
+            xml_list:
+                inline: true
+                entry_name: IdentityDocumentReference
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\IdentityDocumentReference>
+        residenceAddress:
+            expose: true
+            access_type: public_method
+            serialized_name: ResidenceAddress
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getResidenceAddress
+                setter: setResidenceAddress
+            type: horstoeko\ubl\entities\cac\ResidenceAddress

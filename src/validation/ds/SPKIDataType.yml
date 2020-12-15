@@ -1,0 +1,7 @@
+horstoeko\ubl\entities\ds\SPKIDataType:
+    properties:
+        sPKISexp:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

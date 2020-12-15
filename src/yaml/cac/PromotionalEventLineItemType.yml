@@ -1,0 +1,24 @@
+horstoeko\ubl\entities\cac\PromotionalEventLineItemType:
+    properties:
+        amount:
+            expose: true
+            access_type: public_method
+            serialized_name: Amount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAmount
+                setter: setAmount
+            type: horstoeko\ubl\entities\cbc\Amount
+        eventLineItem:
+            expose: true
+            access_type: public_method
+            serialized_name: EventLineItem
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getEventLineItem
+                setter: setEventLineItem
+            type: horstoeko\ubl\entities\cac\EventLineItem

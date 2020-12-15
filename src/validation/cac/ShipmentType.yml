@@ -7,10 +7,6 @@ horstoeko\ubl\entities\cac\ShipmentType:
                         - xsd_rules
         consignment:
             -
-                NotNull:
-                    groups:
-                        - xsd_rules
-            -
                 Valid: null
         goodsItem:
             -
@@ -22,6 +18,9 @@ horstoeko\ubl\entities\cac\ShipmentType:
             -
                 Valid: null
         transportHandlingUnit:
+            -
+                Valid: null
+        returnAddress:
             -
                 Valid: null
         originAddress:

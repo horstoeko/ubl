@@ -1,0 +1,28 @@
+horstoeko\ubl\entities\cac\ConsumptionAverageType:
+    properties:
+        averageAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: AverageAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getAverageAmount
+                setter: setAverageAmount
+            type: horstoeko\ubl\entities\cbc\AverageAmount
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: Description
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>

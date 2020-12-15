@@ -43,7 +43,11 @@ horstoeko\ubl\entities\cac\StatusType:
             accessor:
                 getter: getDescription
                 setter: setDescription
-            type: horstoeko\ubl\entities\cbc\Description
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>
         statusReasonCode:
             expose: true
             access_type: public_method
@@ -65,7 +69,11 @@ horstoeko\ubl\entities\cac\StatusType:
             accessor:
                 getter: getStatusReason
                 setter: setStatusReason
-            type: horstoeko\ubl\entities\cbc\StatusReason
+            xml_list:
+                inline: true
+                entry_name: StatusReason
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\StatusReason>
         sequenceID:
             expose: true
             access_type: public_method
@@ -87,7 +95,11 @@ horstoeko\ubl\entities\cac\StatusType:
             accessor:
                 getter: getText
                 setter: setText
-            type: horstoeko\ubl\entities\cbc\Text
+            xml_list:
+                inline: true
+                entry_name: Text
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Text>
         indicationIndicator:
             expose: true
             access_type: public_method
@@ -109,4 +121,30 @@ horstoeko\ubl\entities\cac\StatusType:
             accessor:
                 getter: getPercent
                 setter: setPercent
-            type: float
+            type: horstoeko\ubl\entities\cbc\Percent
+        reliabilityPercent:
+            expose: true
+            access_type: public_method
+            serialized_name: ReliabilityPercent
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getReliabilityPercent
+                setter: setReliabilityPercent
+            type: horstoeko\ubl\entities\cbc\ReliabilityPercent
+        condition:
+            expose: true
+            access_type: public_method
+            serialized_name: Condition
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getCondition
+                setter: setCondition
+            xml_list:
+                inline: true
+                entry_name: Condition
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\Condition>

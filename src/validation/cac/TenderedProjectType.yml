@@ -1,0 +1,20 @@
+horstoeko\ubl\entities\cac\TenderedProjectType:
+    properties:
+        procurementProjectLot:
+            -
+                Valid: null
+        evidenceDocumentReference:
+            -
+                Valid: null
+        taxTotal:
+            -
+                Valid: null
+        legalMonetaryTotal:
+            -
+                Valid: null
+        tenderLine:
+            -
+                Valid: null
+        awardingCriterionResponse:
+            -
+                Valid: null

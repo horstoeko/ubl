@@ -1,0 +1,151 @@
+horstoeko\ubl\entities\cac\AwardingTermsType:
+    properties:
+        weightingAlgorithmCode:
+            expose: true
+            access_type: public_method
+            serialized_name: WeightingAlgorithmCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getWeightingAlgorithmCode
+                setter: setWeightingAlgorithmCode
+            type: horstoeko\ubl\entities\cbc\WeightingAlgorithmCode
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: Description
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>
+        technicalCommitteeDescription:
+            expose: true
+            access_type: public_method
+            serialized_name: TechnicalCommitteeDescription
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTechnicalCommitteeDescription
+                setter: setTechnicalCommitteeDescription
+            xml_list:
+                inline: true
+                entry_name: TechnicalCommitteeDescription
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\TechnicalCommitteeDescription>
+        lowTendersDescription:
+            expose: true
+            access_type: public_method
+            serialized_name: LowTendersDescription
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getLowTendersDescription
+                setter: setLowTendersDescription
+            xml_list:
+                inline: true
+                entry_name: LowTendersDescription
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\LowTendersDescription>
+        prizeIndicator:
+            expose: true
+            access_type: public_method
+            serialized_name: PrizeIndicator
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPrizeIndicator
+                setter: setPrizeIndicator
+            type: bool
+        prizeDescription:
+            expose: true
+            access_type: public_method
+            serialized_name: PrizeDescription
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPrizeDescription
+                setter: setPrizeDescription
+            xml_list:
+                inline: true
+                entry_name: PrizeDescription
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\PrizeDescription>
+        paymentDescription:
+            expose: true
+            access_type: public_method
+            serialized_name: PaymentDescription
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getPaymentDescription
+                setter: setPaymentDescription
+            xml_list:
+                inline: true
+                entry_name: PaymentDescription
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\PaymentDescription>
+        followupContractIndicator:
+            expose: true
+            access_type: public_method
+            serialized_name: FollowupContractIndicator
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getFollowupContractIndicator
+                setter: setFollowupContractIndicator
+            type: bool
+        bindingOnBuyerIndicator:
+            expose: true
+            access_type: public_method
+            serialized_name: BindingOnBuyerIndicator
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getBindingOnBuyerIndicator
+                setter: setBindingOnBuyerIndicator
+            type: bool
+        awardingCriterion:
+            expose: true
+            access_type: public_method
+            serialized_name: AwardingCriterion
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getAwardingCriterion
+                setter: setAwardingCriterion
+            xml_list:
+                inline: true
+                entry_name: AwardingCriterion
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\AwardingCriterion>
+        technicalCommitteePerson:
+            expose: true
+            access_type: public_method
+            serialized_name: TechnicalCommitteePerson
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getTechnicalCommitteePerson
+                setter: setTechnicalCommitteePerson
+            xml_list:
+                inline: true
+                entry_name: TechnicalCommitteePerson
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\TechnicalCommitteePerson>

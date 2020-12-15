@@ -1,0 +1,54 @@
+horstoeko\ubl\entities\cac\EnvironmentalEmissionType:
+    properties:
+        environmentalEmissionTypeCode:
+            expose: true
+            access_type: public_method
+            serialized_name: EnvironmentalEmissionTypeCode
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getEnvironmentalEmissionTypeCode
+                setter: setEnvironmentalEmissionTypeCode
+            type: horstoeko\ubl\entities\cbc\EnvironmentalEmissionTypeCode
+        valueMeasure:
+            expose: true
+            access_type: public_method
+            serialized_name: ValueMeasure
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getValueMeasure
+                setter: setValueMeasure
+            type: horstoeko\ubl\entities\cbc\ValueMeasure
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: Description
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            xml_list:
+                inline: true
+                entry_name: Description
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            type: array<horstoeko\ubl\entities\cbc\Description>
+        emissionCalculationMethod:
+            expose: true
+            access_type: public_method
+            serialized_name: EmissionCalculationMethod
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getEmissionCalculationMethod
+                setter: setEmissionCalculationMethod
+            xml_list:
+                inline: true
+                entry_name: EmissionCalculationMethod
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\EmissionCalculationMethod>

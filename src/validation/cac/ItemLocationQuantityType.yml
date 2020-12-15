@@ -12,3 +12,12 @@ horstoeko\ubl\entities\cac\ItemLocationQuantityType:
         applicableTaxCategory:
             -
                 Valid: null
+        package:
+            -
+                Valid: null
+        allowanceCharge:
+            -
+                Valid: null
+        dependentPriceReference:
+            -
+                Valid: null

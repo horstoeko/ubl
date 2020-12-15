@@ -102,7 +102,7 @@ horstoeko\ubl\entities\cac\CatalogueLineType:
             accessor:
                 getter: getOrderQuantityIncrementNumeric
                 setter: setOrderQuantityIncrementNumeric
-            type: float
+            type: horstoeko\ubl\entities\cbc\OrderQuantityIncrementNumeric
         minimumOrderQuantity:
             expose: true
             access_type: public_method
@@ -296,6 +296,21 @@ horstoeko\ubl\entities\cac\CatalogueLineType:
                 entry_name: ComplementaryRelatedItem
                 namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
             type: array<horstoeko\ubl\entities\cac\ComplementaryRelatedItem>
+        replacedRelatedItem:
+            expose: true
+            access_type: public_method
+            serialized_name: ReplacedRelatedItem
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getReplacedRelatedItem
+                setter: setReplacedRelatedItem
+            xml_list:
+                inline: true
+                entry_name: ReplacedRelatedItem
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\ReplacedRelatedItem>
         requiredItemLocationQuantity:
             expose: true
             access_type: public_method
@@ -337,3 +352,40 @@ horstoeko\ubl\entities\cac\CatalogueLineType:
                 getter: getItem
                 setter: setItem
             type: horstoeko\ubl\entities\cac\Item
+        keywordItemProperty:
+            expose: true
+            access_type: public_method
+            serialized_name: KeywordItemProperty
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getKeywordItemProperty
+                setter: setKeywordItemProperty
+            xml_list:
+                inline: true
+                entry_name: KeywordItemProperty
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\KeywordItemProperty>
+        callForTendersLineReference:
+            expose: true
+            access_type: public_method
+            serialized_name: CallForTendersLineReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getCallForTendersLineReference
+                setter: setCallForTendersLineReference
+            type: horstoeko\ubl\entities\cac\CallForTendersLineReference
+        callForTendersDocumentReference:
+            expose: true
+            access_type: public_method
+            serialized_name: CallForTendersDocumentReference
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getCallForTendersDocumentReference
+                setter: setCallForTendersDocumentReference
+            type: horstoeko\ubl\entities\cac\CallForTendersDocumentReference

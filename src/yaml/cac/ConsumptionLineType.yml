@@ -1,0 +1,135 @@
+horstoeko\ubl\entities\cac\ConsumptionLineType:
+    properties:
+        iD:
+            expose: true
+            access_type: public_method
+            serialized_name: ID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getID
+                setter: setID
+            type: horstoeko\ubl\entities\cbc\ID
+        parentDocumentLineReferenceID:
+            expose: true
+            access_type: public_method
+            serialized_name: ParentDocumentLineReferenceID
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getParentDocumentLineReferenceID
+                setter: setParentDocumentLineReferenceID
+            type: horstoeko\ubl\entities\cbc\ParentDocumentLineReferenceID
+        invoicedQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: InvoicedQuantity
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getInvoicedQuantity
+                setter: setInvoicedQuantity
+            type: horstoeko\ubl\entities\cbc\InvoicedQuantity
+        lineExtensionAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: LineExtensionAmount
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getLineExtensionAmount
+                setter: setLineExtensionAmount
+            type: horstoeko\ubl\entities\cbc\LineExtensionAmount
+        period:
+            expose: true
+            access_type: public_method
+            serialized_name: Period
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPeriod
+                setter: setPeriod
+            type: horstoeko\ubl\entities\cac\Period
+        delivery:
+            expose: true
+            access_type: public_method
+            serialized_name: Delivery
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getDelivery
+                setter: setDelivery
+            xml_list:
+                inline: true
+                entry_name: Delivery
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\Delivery>
+        allowanceCharge:
+            expose: true
+            access_type: public_method
+            serialized_name: AllowanceCharge
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getAllowanceCharge
+                setter: setAllowanceCharge
+            xml_list:
+                inline: true
+                entry_name: AllowanceCharge
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\AllowanceCharge>
+        taxTotal:
+            expose: true
+            access_type: public_method
+            serialized_name: TaxTotal
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getTaxTotal
+                setter: setTaxTotal
+            xml_list:
+                inline: true
+                entry_name: TaxTotal
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            type: array<horstoeko\ubl\entities\cac\TaxTotal>
+        utilityItem:
+            expose: true
+            access_type: public_method
+            serialized_name: UtilityItem
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getUtilityItem
+                setter: setUtilityItem
+            type: horstoeko\ubl\entities\cac\UtilityItem
+        price:
+            expose: true
+            access_type: public_method
+            serialized_name: Price
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getPrice
+                setter: setPrice
+            type: horstoeko\ubl\entities\cac\Price
+        unstructuredPrice:
+            expose: true
+            access_type: public_method
+            serialized_name: UnstructuredPrice
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
+            accessor:
+                getter: getUnstructuredPrice
+                setter: setUnstructuredPrice
+            type: horstoeko\ubl\entities\cac\UnstructuredPrice

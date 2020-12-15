@@ -33,6 +33,17 @@ horstoeko\ubl\entities\cac\TaxTotalType:
                 getter: getTaxEvidenceIndicator
                 setter: setTaxEvidenceIndicator
             type: bool
+        taxIncludedIndicator:
+            expose: true
+            access_type: public_method
+            serialized_name: TaxIncludedIndicator
+            xml_element:
+                cdata: false
+                namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+            accessor:
+                getter: getTaxIncludedIndicator
+                setter: setTaxIncludedIndicator
+            type: bool
         taxSubtotal:
             expose: true
             access_type: public_method
