@@ -8,18 +8,20 @@ use Symfony\Component\Validator\Constraints\Date;
 $ublBuilder = new UblDocumentBuilder();
 
 $ublBuilder->setDocumentCustomization("urn:cen.eu:en16931:2017#compliant#urn:xoev-de:kosit:standard:xrechnung_2.0");
-$ublBuilder->setDocumentInformation("1234", "380", new \DateTime(), "EUR");
-$ublBuilder->addDocumentNote("#ADU#Es gelten unsere Allgem. Geschäftsbedingungen, die Sie unter […] finden.");
-$ublBuilder->setDocumentBuyerReference("abc");
+$ublBuilder->setDocumentInformation("1234567", "380", \DateTime::createFromFormat("Y-m-d", "2018-04-13"), "EUR");
+$ublBuilder->addDocumentNote("#AAC#Invoice Note Description");
+$ublBuilder->setDocumentBuyerReference("90000000-03083-12");
+$ublBuilder->setDocumentBillingPeriod(\DateTime::createFromFormat("Y-m-d", "2018-04-13"), \DateTime::createFromFormat("Y-m-d", "2018-04-13"));
+$ublBuilder->setDocumentBuyerOrderReferencedDocument("65002278");
+$ublBuilder->setDocumentSellerOrderReferencedDocument("ABC123456789");
 
-$ublBuilder->setDocumentSeller("Lieferant GmbH", "549910");
-$ublBuilder->addDocumentSellerGlobalId("4000001123452", "0088");
-$ublBuilder->addDocumentSellerTaxRegistration("FC", "201/113/40209");
-$ublBuilder->addDocumentSellerTaxRegistration("VA", "DE123456789");
-$ublBuilder->setDocumentSellerAddress("Lieferantenstraße 20", null, null, "80333", "München", "DE", "Bayern");
-$ublBuilder->setDocumentSellerLegalOrganisation("123456789", "0198", "[Seller trading name]");
-$ublBuilder->setDocumentSellerContact("Heinz Müller", "", "", "", "");
+$ublBuilder->setDocumentSeller("", "");
+$ublBuilder->addDocumentSellerTaxRegistration("VAT", "ATU123456789");
+$ublBuilder->setDocumentSellerAddress("", "", "", "12345", "[Seller city]", "DE");
+$ublBuilder->setDocumentSellerLegalOrganisation("HRB 123", null, "[Seller name]");
+$ublBuilder->setDocumentSellerContact("Tim Tester", "", "012 3456789", "", "tim.tester@test.com");
 
+/*
 $ublBuilder->setDocumentBuyer("Kunden AG Mitte", "GE2020211");
 $ublBuilder->addDocumentBuyerGlobalId("4000001123452", "0088");
 $ublBuilder->addDocumentBuyerTaxRegistration("FC", "201/113/40209");
@@ -59,6 +61,5 @@ $ublBuilder->setDocumentReceivingAdviceReferencedDocument("RECIP-0003", new Date
 $ublBuilder->addDocumentPaymentMeanBankCard("VISA", "99933847576752", "Rolf Meier");
 
 $ublBuilder->addDocumentTaxSimple("S", "VAT", 20700379.33, 3933072.07, 19.0);
-$ublBuilder->setDocumentBillingPeriod(\DateTime::createFromFormat("Y-m-d", "2018-04-13"), \DateTime::createFromFormat("Y-m-d", "2018-04-13"));
-
+*/
 echo $ublBuilder->getContent() . PHP_EOL . PHP_EOL;
