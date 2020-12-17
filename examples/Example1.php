@@ -8,7 +8,7 @@ use Symfony\Component\Validator\Constraints\Date;
 $ublBuilder = new UblDocumentBuilder();
 
 $ublBuilder->setDocumentCustomization("urn:cen.eu:en16931:2017#compliant#urn:xoev-de:kosit:standard:xrechnung_2.0");
-$ublBuilder->setDocumentInformation("1234", "380", new \DateTime(), "EUR");
+$ublBuilder->setDocumentInformation("1234", "380", new \DateTime, "EUR");
 $ublBuilder->addDocumentNote("#ADU#Es gelten unsere Allgem. Geschäftsbedingungen, die Sie unter […] finden.");
 $ublBuilder->setDocumentBuyerReference("abc");
 
@@ -39,6 +39,7 @@ $ublBuilder->setDocumentSellerTaxRepresentativeContact("Heinz Müller", "FiBu", 
 $ublBuilder->setDocumentShipTo("Warehouse GmbH", "68");
 $ublBuilder->setDocumentShipToAddress("Kundenstraße 15", null, null, "69876", "Frankfurt", "DE", "Hessen");
 $ublBuilder->setDocumentShipToContact("Heinz Müller", "", "", "", "");
+$ublBuilder->setDocumentShipToLegalOrganisation("aa", "bb", "cc");
 
 $ublBuilder->setDocumentPayee("[payee name]", "payee0001");
 $ublBuilder->addDocumentPayeeGlobalId("38763267", "0088");

@@ -113,6 +113,14 @@
                 <td class="last"></td>
                 <td></td>
             </tr>
+                    <tr>
+                <td class="type" id="property_ublBuilderHelper">
+                                        protected                                        <a href="../../horstoeko/ubl/UblDocumentBuilderHelper.html"><abbr title="horstoeko\ubl\UblDocumentBuilderHelper">UblDocumentBuilderHelper</abbr></a>
+                </td>
+                <td>$ublBuilderHelper</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
             </table>
 
     
@@ -186,7 +194,7 @@ It is called before a XML is written</p>                </div>
                     <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_setDocumentInformation">setDocumentInformation</a>(string|null $documentno = null, string|null $documenttypecode = null, <a target="_blank" href="http://php.net/DateTime">DateTime</a>|null $documentdate = null, string|null $invoiceCurrency = null)
+                    <a href="#method_setDocumentInformation">setDocumentInformation</a>(string $documentno, string $documenttypecode, <a target="_blank" href="http://php.net/DateTime">DateTime</a> $documentdate, string $documentCurrencyCode)
         
                                             <p>Set main information about this document</p>                </div>
                 <div class="col-md-2"></div>
@@ -196,7 +204,7 @@ It is called before a XML is written</p>                </div>
                     <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_addDocumentNote">addDocumentNote</a>(string|null $note = null)
+                    <a href="#method_addDocumentNote">addDocumentNote</a>(string $note)
         
                                             <p>Adds a note to the document</p>                </div>
                 <div class="col-md-2"></div>
@@ -681,7 +689,7 @@ German translation: SEPA Lastschrift</p>                </div>
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         line 125</div>
+        <div class="location">at         line 132</div>
         <code>                    
     <strong>__construct</strong>()
         </code>
@@ -702,7 +710,7 @@ German translation: SEPA Lastschrift</p>                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_getInvoiceObject">
-        <div class="location">at         line 134</div>
+        <div class="location">at         line 142</div>
         <code>                    <abbr title="horstoeko\ubl\entities\main\Invoice">Invoice</abbr>
     <strong>getInvoiceObject</strong>()
         </code>
@@ -730,7 +738,7 @@ German translation: SEPA Lastschrift</p>                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_onBeforeGetContent">
-        <div class="location">at         line 145</div>
+        <div class="location">at         line 153</div>
         <code>            protected        void
     <strong>onBeforeGetContent</strong>()
         </code>
@@ -761,7 +769,7 @@ It is called before a XML is written</p>                                        
             </div>
                     <div class="method-item">
                     <h3 id="method_getContent">
-        <div class="location">at         line 155</div>
+        <div class="location">at         line 163</div>
         <code>                    string
     <strong>getContent</strong>()
         </code>
@@ -791,7 +799,7 @@ It is called before a XML is written</p>                                        
             </div>
                     <div class="method-item">
                     <h3 id="method_writeFile">
-        <div class="location">at         line 169</div>
+        <div class="location">at         line 177</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocument.html"><abbr title="horstoeko\ubl\UblDocument">UblDocument</abbr></a>
     <strong>writeFile</strong>(string $xmlfilename)
         </code>
@@ -832,7 +840,7 @@ saved to as XML</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentCustomization">
-        <div class="location">at         line 182</div>
+        <div class="location">at         line 190</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>setDocumentCustomization</strong>(string|null $customization = null)
         </code>
@@ -872,9 +880,9 @@ saved to as XML</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentInformation">
-        <div class="location">at         line 201</div>
+        <div class="location">at         line 209</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
-    <strong>setDocumentInformation</strong>(string|null $documentno = null, string|null $documenttypecode = null, <a target="_blank" href="http://php.net/DateTime">DateTime</a>|null $documentdate = null, string|null $invoiceCurrency = null)
+    <strong>setDocumentInformation</strong>(string $documentno, string $documenttypecode, <a target="_blank" href="http://php.net/DateTime">DateTime</a> $documentdate, string $documentCurrencyCode)
         </code>
     </h3>
     <div class="details">
@@ -888,24 +896,24 @@ saved to as XML</td>
 
                     <table class="table table-condensed">
                     <tr>
-                <td>string|null</td>
+                <td>string</td>
                 <td>$documentno</td>
                 <td>The document no issued by the seller</td>
             </tr>
                     <tr>
-                <td>string|null</td>
+                <td>string</td>
                 <td>$documenttypecode</td>
                 <td>The type of the document, See \horstoeko\codelists\ZugferdInvoiceType for details</td>
             </tr>
                     <tr>
-                <td><a target="_blank" href="http://php.net/DateTime">DateTime</a>|null</td>
+                <td><a target="_blank" href="http://php.net/DateTime">DateTime</a></td>
                 <td>$documentdate</td>
                 <td>Date of invoice
 The date when the document was issued by the seller</td>
             </tr>
                     <tr>
-                <td>string|null</td>
-                <td>$invoiceCurrency</td>
+                <td>string</td>
+                <td>$documentCurrencyCode</td>
                 <td>Code for the invoice currency
 The code for the invoice currency</td>
             </tr>
@@ -929,9 +937,9 @@ The code for the invoice currency</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_addDocumentNote">
-        <div class="location">at         line 225</div>
+        <div class="location">at         line 231</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
-    <strong>addDocumentNote</strong>(string|null $note = null)
+    <strong>addDocumentNote</strong>(string $note)
         </code>
     </h3>
     <div class="details">
@@ -945,7 +953,7 @@ The code for the invoice currency</td>
 
                     <table class="table table-condensed">
                     <tr>
-                <td>string|null</td>
+                <td>string</td>
                 <td>$note</td>
                 <td>The free-text to add as a document note</td>
             </tr>
@@ -969,7 +977,7 @@ The code for the invoice currency</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setIsDocumentCopy">
-        <div class="location">at         line 238</div>
+        <div class="location">at         line 245</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>setIsDocumentCopy</strong>()
         </code>
@@ -999,7 +1007,7 @@ The code for the invoice currency</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentBuyerReference">
-        <div class="location">at         line 258</div>
+        <div class="location">at         line 265</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>setDocumentBuyerReference</strong>(string|null $buyerreference = null)
         </code>
@@ -1044,7 +1052,7 @@ Cross Industry Invoice (CII).</p>                            </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentSeller">
-        <div class="location">at         line 276</div>
+        <div class="location">at         line 286</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>setDocumentSeller</strong>(string|null $name = null, string|null $id = null)
         </code>
@@ -1093,7 +1101,7 @@ and seller, e.g. a previously exchanged, buyer-assigned identifier of the seller
             </div>
                     <div class="method-item">
                     <h3 id="method_addDocumentSellerGlobalId">
-        <div class="location">at         line 306</div>
+        <div class="location">at         line 316</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>addDocumentSellerGlobalId</strong>(string|null $globalID = null, string|null $globalIDType = null)
         </code>
@@ -1146,7 +1154,7 @@ the list published by the ISO / IEC 6523 Maintenance Agency.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_addDocumentSellerTaxRegistration">
-        <div class="location">at         line 330</div>
+        <div class="location">at         line 340</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>addDocumentSellerTaxRegistration</strong>(string|null $taxregtype = null, string|null $taxregid = null)
         </code>
@@ -1196,7 +1204,7 @@ identification number, unless he uses a tax agent.</p>                          
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentSellerAddress">
-        <div class="location">at         line 364</div>
+        <div class="location">at         line 374</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>setDocumentSellerAddress</strong>(string|null $lineone = null, string|null $linetwo = null, string|null $linethree = null, string|null $postcode = null, string|null $city = null, string|null $country = null, string|null $subdivision = null)
         </code>
@@ -1271,7 +1279,7 @@ representation of names of countries and their subdivisions”</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentSellerLegalOrganisation">
-        <div class="location">at         line 410</div>
+        <div class="location">at         line 420</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>setDocumentSellerLegalOrganisation</strong>(string|null $legalorgid = null, string|null $legalorgtype = null, string|null $legalorgname = null)
         </code>
@@ -1326,7 +1334,7 @@ the company name). Note: This may be used if different from the seller's name.</
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentSellerContact">
-        <div class="location">at         line 446</div>
+        <div class="location">at         line 456</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>setDocumentSellerContact</strong>(string|null $contactpersonname = null, string|null $contactdepartmentname = null, string|null $contactphoneno = null, string|null $contactfaxno = null, string|null $contactemailadd = null)
         </code>
@@ -1387,7 +1395,7 @@ such as a personal name of the contact person</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentBuyer">
-        <div class="location">at         line 481</div>
+        <div class="location">at         line 491</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>setDocumentBuyer</strong>(string|null $name = null, string|null $id = null, string|null $description = null)
         </code>
@@ -1439,7 +1447,7 @@ it should be known to the buyer and buyer, e.g. a previously exchanged, seller-a
             </div>
                     <div class="method-item">
                     <h3 id="method_addDocumentBuyerGlobalId">
-        <div class="location">at         line 506</div>
+        <div class="location">at         line 516</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>addDocumentBuyerGlobalId</strong>(string|null $globalID = null, string|null $globalIDType = null)
         </code>
@@ -1486,7 +1494,7 @@ the list published by the ISO / IEC 6523 Maintenance Agency.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_addDocumentBuyerTaxRegistration">
-        <div class="location">at         line 532</div>
+        <div class="location">at         line 542</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>addDocumentBuyerTaxRegistration</strong>(string|null $taxregtype = null, string|null $taxregid = null)
         </code>
@@ -1536,7 +1544,7 @@ identification number, unless he uses a tax agent.</p>                          
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentBuyerAddress">
-        <div class="location">at         line 566</div>
+        <div class="location">at         line 576</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>setDocumentBuyerAddress</strong>(string|null $lineone = null, string|null $linetwo = null, string|null $linethree = null, string|null $postcode = null, string|null $city = null, string|null $country = null, string|null $subdivision = null)
         </code>
@@ -1611,7 +1619,7 @@ representation of names of countries and their subdivisions”</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentBuyerLegalOrganisation">
-        <div class="location">at         line 612</div>
+        <div class="location">at         line 622</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>setDocumentBuyerLegalOrganisation</strong>(string|null $legalorgid = null, string|null $legalorgtype = null, string|null $legalorgname = null)
         </code>
@@ -1666,7 +1674,7 @@ ISO/IEC 6523 list</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentBuyerContact">
-        <div class="location">at         line 647</div>
+        <div class="location">at         line 657</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>setDocumentBuyerContact</strong>(string|null $contactpersonname = null, string|null $contactdepartmentname = null, string|null $contactphoneno = null, string|null $contactfaxno = null, string|null $contactemailadd = null)
         </code>
@@ -1726,7 +1734,7 @@ ISO/IEC 6523 list</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentSellerTaxRepresentativeTradeParty">
-        <div class="location">at         line 680</div>
+        <div class="location">at         line 690</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>setDocumentSellerTaxRepresentativeTradeParty</strong>(string|null $name = null, string|null $id = null, string|null $description = null)
         </code>
@@ -1776,7 +1784,7 @@ ISO/IEC 6523 list</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_addDocumentSellerTaxRepresentativeGlobalId">
-        <div class="location">at         line 705</div>
+        <div class="location">at         line 715</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>addDocumentSellerTaxRepresentativeGlobalId</strong>(string|null $globalID = null, string|null $globalIDType = null)
         </code>
@@ -1823,7 +1831,7 @@ the list published by the ISO / IEC 6523 Maintenance Agency.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_addDocumentSellerTaxRepresentativeTaxRegistration">
-        <div class="location">at         line 722</div>
+        <div class="location">at         line 732</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>addDocumentSellerTaxRepresentativeTaxRegistration</strong>(string|null $taxregtype = null, string|null $taxregid = null)
         </code>
@@ -1868,7 +1876,7 @@ the list published by the ISO / IEC 6523 Maintenance Agency.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentSellerTaxRepresentativeAddress">
-        <div class="location">at         line 756</div>
+        <div class="location">at         line 766</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>setDocumentSellerTaxRepresentativeAddress</strong>(string|null $lineone = null, string|null $linetwo = null, string|null $linethree = null, string|null $postcode = null, string|null $city = null, string|null $country = null, string|null $subdivision = null)
         </code>
@@ -1943,7 +1951,7 @@ representation of names of countries and their subdivisions”</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentSellerTaxRepresentativeLegalOrganisation">
-        <div class="location">at         line 800</div>
+        <div class="location">at         line 810</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>setDocumentSellerTaxRepresentativeLegalOrganisation</strong>(string|null $legalorgid = null, string|null $legalorgtype = null, string|null $legalorgname = null)
         </code>
@@ -1996,7 +2004,7 @@ name (also known as the company name)</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentSellerTaxRepresentativeContact">
-        <div class="location">at         line 835</div>
+        <div class="location">at         line 845</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>setDocumentSellerTaxRepresentativeContact</strong>(string|null $contactpersonname = null, string|null $contactdepartmentname = null, string|null $contactphoneno = null, string|null $contactfaxno = null, string|null $contactemailadd = null)
         </code>
@@ -2056,7 +2064,7 @@ name (also known as the company name)</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentShipTo">
-        <div class="location">at         line 874</div>
+        <div class="location">at         line 884</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>setDocumentShipTo</strong>(string|null $name = null, string|null $id = null, string|null $description = null)
         </code>
@@ -2110,7 +2118,7 @@ a previously exchanged identifier assigned by the buyer or seller.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_addDocumentShipToGlobalId">
-        <div class="location">at         line 898</div>
+        <div class="location">at         line 908</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>addDocumentShipToGlobalId</strong>(string|null $globalID = null, string|null $globalIDType = null)
         </code>
@@ -2156,7 +2164,7 @@ the list published by the ISO / IEC 6523 Maintenance Agency.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_addDocumentShipToTaxRegistration">
-        <div class="location">at         line 917</div>
+        <div class="location">at         line 927</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>addDocumentShipToTaxRegistration</strong>(string|null $taxregtype = null, string|null $taxregid = null)
         </code>
@@ -2201,7 +2209,7 @@ the list published by the ISO / IEC 6523 Maintenance Agency.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentShipToAddress">
-        <div class="location">at         line 951</div>
+        <div class="location">at         line 961</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>setDocumentShipToAddress</strong>(string|null $lineone = null, string|null $linetwo = null, string|null $linethree = null, string|null $postcode = null, string|null $city = null, string|null $country = null, string|null $subdivision = null)
         </code>
@@ -2276,7 +2284,7 @@ representation of names of countries and their subdivisions”</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentShipToLegalOrganisation">
-        <div class="location">at         line 995</div>
+        <div class="location">at         line 1005</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>setDocumentShipToLegalOrganisation</strong>(string|null $legalorgid = null, string|null $legalorgtype = null, string|null $legalorgname = null)
         </code>
@@ -2331,7 +2339,7 @@ registration of the party. In particular, the following scheme codes are used: 0
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentShipToContact">
-        <div class="location">at         line 1016</div>
+        <div class="location">at         line 1040</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>setDocumentShipToContact</strong>(string|null $contactpersonname = null, string|null $contactdepartmentname = null, string|null $contactphoneno = null, string|null $contactfaxno = null, string|null $contactemailadd = null)
         </code>
@@ -2391,7 +2399,7 @@ registration of the party. In particular, the following scheme codes are used: 0
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentPayee">
-        <div class="location">at         line 1061</div>
+        <div class="location">at         line 1085</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>setDocumentPayee</strong>(string|null $name = null, string|null $id = null, string|null $description = null)
         </code>
@@ -2444,7 +2452,7 @@ a previously exchanged identifier assigned by the buyer or seller.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_addDocumentPayeeGlobalId">
-        <div class="location">at         line 1085</div>
+        <div class="location">at         line 1109</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>addDocumentPayeeGlobalId</strong>(string|null $globalID = null, string|null $globalIDType = null)
         </code>
@@ -2490,7 +2498,7 @@ the list published by the ISO / IEC 6523 Maintenance Agency.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_addDocumentPayeeTaxRegistration">
-        <div class="location">at         line 1104</div>
+        <div class="location">at         line 1128</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>addDocumentPayeeTaxRegistration</strong>(string|null $taxregtype = null, string|null $taxregid = null)
         </code>
@@ -2535,7 +2543,7 @@ the list published by the ISO / IEC 6523 Maintenance Agency.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentPayeeAddress">
-        <div class="location">at         line 1138</div>
+        <div class="location">at         line 1162</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>setDocumentPayeeAddress</strong>(string|null $lineone = null, string|null $linetwo = null, string|null $linethree = null, string|null $postcode = null, string|null $city = null, string|null $country = null, string|null $subdivision = null)
         </code>
@@ -2610,7 +2618,7 @@ representation of names of countries and their subdivisions”</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentPayeeLegalOrganisation">
-        <div class="location">at         line 1182</div>
+        <div class="location">at         line 1206</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>setDocumentPayeeLegalOrganisation</strong>(string|null $legalorgid = null, string|null $legalorgtype = null, string|null $legalorgname = null)
         </code>
@@ -2663,7 +2671,7 @@ the following scheme codes are used: 0021 : SWIFT, 0088 : EAN, 0060 : DUNS, 0177
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentPayeeContact">
-        <div class="location">at         line 1217</div>
+        <div class="location">at         line 1241</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>setDocumentPayeeContact</strong>(string|null $contactpersonname = null, string|null $contactdepartmentname = null, string|null $contactphoneno = null, string|null $contactfaxno = null, string|null $contactemailadd = null)
         </code>
@@ -2723,7 +2731,7 @@ the following scheme codes are used: 0021 : SWIFT, 0088 : EAN, 0060 : DUNS, 0177
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentSellerOrderReferencedDocument">
-        <div class="location">at         line 1250</div>
+        <div class="location">at         line 1274</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>setDocumentSellerOrderReferencedDocument</strong>(string|null $issuerassignedid = null, <a target="_blank" href="http://php.net/DateTime">DateTime</a>|null $issueddate = null)
         </code>
@@ -2768,7 +2776,7 @@ the following scheme codes are used: 0021 : SWIFT, 0088 : EAN, 0060 : DUNS, 0177
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentBuyerOrderReferencedDocument">
-        <div class="location">at         line 1269</div>
+        <div class="location">at         line 1293</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>setDocumentBuyerOrderReferencedDocument</strong>(string|null $issuerassignedid = null, <a target="_blank" href="http://php.net/DateTime">DateTime</a>|null $issueddate = null)
         </code>
@@ -2813,7 +2821,7 @@ the following scheme codes are used: 0021 : SWIFT, 0088 : EAN, 0060 : DUNS, 0177
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentContractReferencedDocument">
-        <div class="location">at         line 1292</div>
+        <div class="location">at         line 1316</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>setDocumentContractReferencedDocument</strong>(string|null $issuerassignedid = null, <a target="_blank" href="http://php.net/DateTime">DateTime</a>|null $issueddate = null)
         </code>
@@ -2859,7 +2867,7 @@ defined period of time (contract number)</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_addDocumentAdditionalReferencedDocument">
-        <div class="location">at         line 1343</div>
+        <div class="location">at         line 1367</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>addDocumentAdditionalReferencedDocument</strong>(string|null $issuerassignedid = null, string|null $typecode = null, string|null $uriid = null, string|null $name = null, string|null $reftypecode = null, <a target="_blank" href="http://php.net/DateTime">DateTime</a>|null $issueddate = null, string|null $binarydatafilename = null)
         </code>
@@ -2946,7 +2954,7 @@ from UNTDID 1153 in accordance with the code list entries.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentInvoiceReferencedDocument">
-        <div class="location">at         line 1400</div>
+        <div class="location">at         line 1424</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>setDocumentInvoiceReferencedDocument</strong>(string|null $issuerassignedid = null, <a target="_blank" href="http://php.net/DateTime">DateTime</a>|null $issueddate = null)
         </code>
@@ -2994,7 +3002,7 @@ from UNTDID 1153 in accordance with the code list entries.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentProcuringProject">
-        <div class="location">at         line 1425</div>
+        <div class="location">at         line 1449</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>setDocumentProcuringProject</strong>(string|null $id = null, <a target="_blank" href="http://php.net/DateTime">DateTime</a>|null $date = null)
         </code>
@@ -3039,7 +3047,7 @@ from UNTDID 1153 in accordance with the code list entries.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentDespatchAdviceReferencedDocument">
-        <div class="location">at         line 1451</div>
+        <div class="location">at         line 1475</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>setDocumentDespatchAdviceReferencedDocument</strong>(string|null $issuerassignedid = null, <a target="_blank" href="http://php.net/DateTime">DateTime</a>|null $issueddate = null)
         </code>
@@ -3084,7 +3092,7 @@ from UNTDID 1153 in accordance with the code list entries.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentReceivingAdviceReferencedDocument">
-        <div class="location">at         line 1473</div>
+        <div class="location">at         line 1497</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>setDocumentReceivingAdviceReferencedDocument</strong>(string|null $issuerassignedid = null, <a target="_blank" href="http://php.net/DateTime">DateTime</a>|null $issueddate = null)
         </code>
@@ -3129,7 +3137,7 @@ from UNTDID 1153 in accordance with the code list entries.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_addDocumentPaymentMean">
-        <div class="location">at         line 1540</div>
+        <div class="location">at         line 1564</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>addDocumentPaymentMean</strong>(string|null $typecode = null, string|null $information = null, string|null $cardType = null, string|null $cardId = null, string|null $cardHolderName = null, string|null $buyerIban = null, string|null $payeeIban = null, string|null $payeeAccountName = null, string|null $payeePropId = null, string|null $payeeBic = null, string|null $mandate = null)
         </code>
@@ -3223,7 +3231,7 @@ from UNTDID 1153 in accordance with the code list entries.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_addDocumentPaymentMeanSepaCreditTransfer">
-        <div class="location">at         line 1607</div>
+        <div class="location">at         line 1631</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>addDocumentPaymentMeanSepaCreditTransfer</strong>(string|null $payeeIban = null)
         </code>
@@ -3264,7 +3272,7 @@ German translation: SEPA-Überweisung</p>                                       
             </div>
                     <div class="method-item">
                     <h3 id="method_addDocumentPaymentMeanSepaDirectDebit">
-        <div class="location">at         line 1630</div>
+        <div class="location">at         line 1654</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>addDocumentPaymentMeanSepaDirectDebit</strong>(string|null $buyerIban = null, string|null $mandate = null)
         </code>
@@ -3312,7 +3320,7 @@ the Buyer of a SEPA direct debit, <strong>German translation:</strong> Mandatsre
             </div>
                     <div class="method-item">
                     <h3 id="method_addDocumentPaymentMeanBankCard">
-        <div class="location">at         line 1654</div>
+        <div class="location">at         line 1678</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>addDocumentPaymentMeanBankCard</strong>(string|null $cardType = null, string|null $cardId = null, string|null $cardHolderName = null)
         </code>
@@ -3364,7 +3372,7 @@ security for you automatically</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_addDocumentTax">
-        <div class="location">at         line 1747</div>
+        <div class="location">at         line 1771</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>addDocumentTax</strong>(string $categoryCode, string $typeCode, float $basisAmount, float $calculatedAmount, float $rateApplicablePercent, string|null $exemptionReason = null, string|null $exemptionReasonCode = null, float|null $lineTotalBasisAmount = null, float|null $allowanceChargeBasisAmount = null, <a target="_blank" href="http://php.net/DateTime">DateTime</a>|null $taxPointDate = null, string|null $dueDateTypeCode = null)
         </code>
@@ -3506,7 +3514,7 @@ supported by CII 16B:
             </div>
                     <div class="method-item">
                     <h3 id="method_addDocumentTaxSimple">
-        <div class="location">at         line 1831</div>
+        <div class="location">at         line 1855</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>addDocumentTaxSimple</strong>(string $categoryCode, string $typeCode, float $basisAmount, float $calculatedAmount, float $rateApplicablePercent)
         </code>
@@ -3593,7 +3601,7 @@ value 20 is given for 20% (and not 0.2)</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentBillingPeriod">
-        <div class="location">at         line 1847</div>
+        <div class="location">at         line 1871</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
     <strong>setDocumentBillingPeriod</strong>(<a target="_blank" href="http://php.net/DateTime">DateTime</a>|null $startdate = null, <a target="_blank" href="http://php.net/DateTime">DateTime</a>|null $endDate = null, string|null $description = null)
         </code>

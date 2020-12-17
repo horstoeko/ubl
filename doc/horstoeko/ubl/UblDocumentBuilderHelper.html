@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>horstoeko\ubl\UblDocumentBuilderHelper | horstoeko/ubl API</title>
+
+            <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/sami.css">
+        <script src="../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/typeahead.min.js"></script>
+        <script src="../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:horstoeko_ubl_UblDocumentBuilderHelper" data-root-path="../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../index.html">horstoeko/ubl API</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../classes.html">Classes</a></li>
+                                            <li><a href="../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../traits.html">Traits</a></li>
+                    <li><a href="../../doc-index.html">Index</a></li>
+                    <li><a href="../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../horstoeko.html">horstoeko</a></li><li class="backslash">\</li><li><a href="../../horstoeko/ubl.html">ubl</a></li><li class="backslash">\</li><li>UblDocumentBuilderHelper</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            UblDocumentBuilderHelper
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>UblDocumentBuilderHelper</strong>
+</p>
+
+        
+    
+
+            <div class="description">
+            <p>Class representing helper methods for the ubl invoice builder</p>                                </div>
+    
+    
+    
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_ublBuilder">
+                                        protected                                        <abbr title="horstoeko\ubl\horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr>
+                </td>
+                <td>$ublBuilder</td>
+                <td class="last">Internal reference to the builder</td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(<a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a> $ublBuilder)
+        
+                                            <p>Constructor</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="horstoeko\ubl\entities\main\Invoice">Invoice</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getInvoiceObject">getInvoiceObject</a>()
+        
+                                            <p>Returns the internal invoice object of the builder</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    void
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_assertNotEmptyAndNotNull">assertNotEmptyAndNotNull</a>(mixed $variable, string $exceotionMessage)
+        
+                                            <p>Checks if $variable is a string and it is not empty or null
+Checks if $variable is a DateTime object and it is not null</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="horstoeko\ubl\entities\cac\AccountingSupplierParty">AccountingSupplierParty</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_ensureAccountingSupplier">ensureAccountingSupplier</a>()
+        
+                                            <p>Make sure that there is an accounting supplier (seller)</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="horstoeko\ubl\entities\cac\Party">Party</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_ensureAccountingSupplierParty">ensureAccountingSupplierParty</a>()
+        
+                                            <p>Make sure that there is an accounting supplier with party object</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="horstoeko\ubl\entities\cac\PostalAddress">PostalAddress</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_ensureAccountingSupplierPartyPostalAddress">ensureAccountingSupplierPartyPostalAddress</a>()
+        
+                                            <p>Make sure that there is an accounting supplier with party object and the
+party object has an address object</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="horstoeko\ubl\entities\cac\PartyLegalEntity">PartyLegalEntity</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_ensureAccountingSupplierPartyLegalEntity">ensureAccountingSupplierPartyLegalEntity</a>()
+        
+                                            <p>Make sure that there is an accounting supplier with party object and the
+party object has an legalentity object</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="horstoeko\ubl\entities\cac\Contact">Contact</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_ensureAccountingSupplierPartyContact">ensureAccountingSupplierPartyContact</a>()
+        
+                                            <p>Make sure that there is an accounting supplier with party object and the
+party object has an contact object</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="horstoeko\ubl\entities\cac\AccountingCustomerParty">AccountingCustomerParty</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_ensureAccountingCustomer">ensureAccountingCustomer</a>()
+        
+                                            <p>Make sure that there is an accounting customer (buyer)</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="horstoeko\ubl\entities\cac\Party">Party</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_ensureAccountingCustomerParty">ensureAccountingCustomerParty</a>()
+        
+                                            <p>Make sure that there is an accounting customer with party object</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="horstoeko\ubl\entities\cac\PostalAddress">PostalAddress</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_ensureAccountingCustomerPostalAddress">ensureAccountingCustomerPostalAddress</a>()
+        
+                                            <p>Make sure that there is an accounting customer with party object and
+the party element contains a postal address object</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="horstoeko\ubl\entities\cac\PartyLegalEntity">PartyLegalEntity</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_ensureAccountingCustomerLegalEntity">ensureAccountingCustomerLegalEntity</a>()
+        
+                                            <p>Make sure that there is an accounting customer with party object and
+the party element contains a legal entity object</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="horstoeko\ubl\entities\cac\Contact">Contact</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_ensureAccountingCustomerContact">ensureAccountingCustomerContact</a>()
+        
+                                            <p>Make sure that there is an accounting customer with party object and
+the party element contains a contact object</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="horstoeko\ubl\entities\cac\TaxRepresentativeParty">TaxRepresentativeParty</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_ensureTaxRepresentativeTradeParty">ensureTaxRepresentativeTradeParty</a>()
+        
+                                            <p>Make sure that there is a tax representative trade party</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="horstoeko\ubl\entities\cac\PostalAddress">PostalAddress</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_ensureTaxRepresentativeTradePartyPostalAddress">ensureTaxRepresentativeTradePartyPostalAddress</a>()
+        
+                                            <p>Make sure that there is a tax representative trade party and the
+party has an address object</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="horstoeko\ubl\entities\cac\PartyLegalEntity">PartyLegalEntity</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_ensureTaxRepresentativeTradePartyLegalEntity">ensureTaxRepresentativeTradePartyLegalEntity</a>()
+        
+                                            <p>Make sure that there is a tax representative trade party and the
+party has an legal entity object</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="horstoeko\ubl\entities\cac\Contact">Contact</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_ensureTaxRepresentativeTradePartyContact">ensureTaxRepresentativeTradePartyContact</a>()
+        
+                                            <p>Make sure that there is a tax representative trade party and the
+party has an contact object</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="horstoeko\ubl\entities\cac\Delivery">Delivery</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_ensureDelivery">ensureDelivery</a>()
+        
+                                            <p>Make sure that there is a delivery object in the invoice</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="horstoeko\ubl\entities\cac\DeliveryParty">DeliveryParty</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_ensureDeliveryParty">ensureDeliveryParty</a>()
+        
+                                            <p>Make sure that there is a party object in the delivery object</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="horstoeko\ubl\entities\cac\DeliveryLocation">DeliveryLocation</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_ensureDeliveryLocation">ensureDeliveryLocation</a>()
+        
+                                            <p>Make sure that there is a location object in the delivery object</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="horstoeko\ubl\entities\cac\Address">Address</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_ensureDeliveryLocationAddress">ensureDeliveryLocationAddress</a>()
+        
+                                            <p>Make sure that the delivery location has an address object</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="horstoeko\ubl\entities\cac\PartyLegalEntity">PartyLegalEntity</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_ensureDeliveryPartyLegalEntity">ensureDeliveryPartyLegalEntity</a>()
+        
+                                            <p>Make sure that there is a legal entity object in the delivery party object</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="horstoeko\ubl\entities\cac\Contact">Contact</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_ensureDeliveryPartyContact">ensureDeliveryPartyContact</a>()
+        
+                                            <p>Make sure that there is a contact object in the delivery party object</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="horstoeko\ubl\entities\cac\PayeeParty">PayeeParty</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_ensurePayeeParty">ensurePayeeParty</a>()
+        
+                                            <p>Make sure that there is a payee party object in the invoice</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="horstoeko\ubl\entities\cac\PostalAddress">PostalAddress</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_ensurePayeePartyPostalAddress">ensurePayeePartyPostalAddress</a>()
+        
+                                            <p>Make sure that there is a payee party object in the invoice and
+the payee party has an address object</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="horstoeko\ubl\entities\cac\PartyLegalEntity">PartyLegalEntity</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_ensurePayeePartyLegalEntity">ensurePayeePartyLegalEntity</a>()
+        
+                                            <p>Make sure that there is a payee party object in the invoice and
+the payee party has an legal entity object</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="horstoeko\ubl\entities\cac\Contact">Contact</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_ensurePayeePartyPostalContact">ensurePayeePartyPostalContact</a>()
+        
+                                            <p>Make sure that there is a payee party object in the invoice and
+the payee party has an contact object</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="horstoeko\ubl\entities\cac\OrderReference">OrderReference</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_ensureOrderReference">ensureOrderReference</a>()
+        
+                                            <p>Make sure thet the invoice has an order reference object</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="horstoeko\ubl\entities\cac\ContractDocumentReference">ContractDocumentReference</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_ensureContractReference">ensureContractReference</a>()
+        
+                                            <p>Make sure thet the invoice has an contract reference object</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="horstoeko\ubl\entities\cac\ProjectReference">ProjectReference</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_ensureProjectReference">ensureProjectReference</a>()
+        
+                                            <p>Make sure thet the invoice has an project reference object</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="horstoeko\ubl\entities\cac\DespatchDocumentReference">DespatchDocumentReference</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_ensureDespatchDocumentReference">ensureDespatchDocumentReference</a>()
+        
+                                            <p>Make sure thet the invoice has an despatch document reference object</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="horstoeko\ubl\entities\cac\ReceiptDocumentReference">ReceiptDocumentReference</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_ensureReceiptDocumentReference">ensureReceiptDocumentReference</a>()
+        
+                                            <p>Make sure thet the invoice has an receipt document reference object</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="horstoeko\ubl\entities\cac\InvoicePeriod">InvoicePeriod</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_ensureBillingPeriod">ensureBillingPeriod</a>()
+        
+                                            <p>Make sure thet the invoice has an invoice period object</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at         line 57</div>
+        <code>                    
+    <strong>__construct</strong>(<a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a> $ublBuilder)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Constructor</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+                <td>$ublBuilder</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getInvoiceObject">
+        <div class="location">at         line 67</div>
+        <code>            protected        <abbr title="horstoeko\ubl\entities\main\Invoice">Invoice</abbr>
+    <strong>getInvoiceObject</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Returns the internal invoice object of the builder</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="horstoeko\ubl\entities\main\Invoice">Invoice</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_assertNotEmptyAndNotNull">
+        <div class="location">at         line 80</div>
+        <code>                    void
+    <strong>assertNotEmptyAndNotNull</strong>(mixed $variable, string $exceotionMessage)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Checks if $variable is a string and it is not empty or null
+Checks if $variable is a DateTime object and it is not null</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>mixed</td>
+                <td>$variable</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$exceotionMessage</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_ensureAccountingSupplier">
+        <div class="location">at         line 106</div>
+        <code>                    <abbr title="horstoeko\ubl\entities\cac\AccountingSupplierParty">AccountingSupplierParty</abbr>
+    <strong>ensureAccountingSupplier</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Make sure that there is an accounting supplier (seller)</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="horstoeko\ubl\entities\cac\AccountingSupplierParty">AccountingSupplierParty</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_ensureAccountingSupplierParty">
+        <div class="location">at         line 116</div>
+        <code>                    <abbr title="horstoeko\ubl\entities\cac\Party">Party</abbr>
+    <strong>ensureAccountingSupplierParty</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Make sure that there is an accounting supplier with party object</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="horstoeko\ubl\entities\cac\Party">Party</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_ensureAccountingSupplierPartyPostalAddress">
+        <div class="location">at         line 128</div>
+        <code>                    <abbr title="horstoeko\ubl\entities\cac\PostalAddress">PostalAddress</abbr>
+    <strong>ensureAccountingSupplierPartyPostalAddress</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Make sure that there is an accounting supplier with party object and the
+party object has an address object</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="horstoeko\ubl\entities\cac\PostalAddress">PostalAddress</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_ensureAccountingSupplierPartyLegalEntity">
+        <div class="location">at         line 140</div>
+        <code>                    <abbr title="horstoeko\ubl\entities\cac\PartyLegalEntity">PartyLegalEntity</abbr>
+    <strong>ensureAccountingSupplierPartyLegalEntity</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Make sure that there is an accounting supplier with party object and the
+party object has an legalentity object</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="horstoeko\ubl\entities\cac\PartyLegalEntity">PartyLegalEntity</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_ensureAccountingSupplierPartyContact">
+        <div class="location">at         line 152</div>
+        <code>                    <abbr title="horstoeko\ubl\entities\cac\Contact">Contact</abbr>
+    <strong>ensureAccountingSupplierPartyContact</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Make sure that there is an accounting supplier with party object and the
+party object has an contact object</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="horstoeko\ubl\entities\cac\Contact">Contact</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_ensureAccountingCustomer">
+        <div class="location">at         line 163</div>
+        <code>                    <abbr title="horstoeko\ubl\entities\cac\AccountingCustomerParty">AccountingCustomerParty</abbr>
+    <strong>ensureAccountingCustomer</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Make sure that there is an accounting customer (buyer)</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="horstoeko\ubl\entities\cac\AccountingCustomerParty">AccountingCustomerParty</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_ensureAccountingCustomerParty">
+        <div class="location">at         line 173</div>
+        <code>                    <abbr title="horstoeko\ubl\entities\cac\Party">Party</abbr>
+    <strong>ensureAccountingCustomerParty</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Make sure that there is an accounting customer with party object</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="horstoeko\ubl\entities\cac\Party">Party</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_ensureAccountingCustomerPostalAddress">
+        <div class="location">at         line 185</div>
+        <code>                    <abbr title="horstoeko\ubl\entities\cac\PostalAddress">PostalAddress</abbr>
+    <strong>ensureAccountingCustomerPostalAddress</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Make sure that there is an accounting customer with party object and
+the party element contains a postal address object</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="horstoeko\ubl\entities\cac\PostalAddress">PostalAddress</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_ensureAccountingCustomerLegalEntity">
+        <div class="location">at         line 197</div>
+        <code>                    <abbr title="horstoeko\ubl\entities\cac\PartyLegalEntity">PartyLegalEntity</abbr>
+    <strong>ensureAccountingCustomerLegalEntity</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Make sure that there is an accounting customer with party object and
+the party element contains a legal entity object</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="horstoeko\ubl\entities\cac\PartyLegalEntity">PartyLegalEntity</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_ensureAccountingCustomerContact">
+        <div class="location">at         line 209</div>
+        <code>                    <abbr title="horstoeko\ubl\entities\cac\Contact">Contact</abbr>
+    <strong>ensureAccountingCustomerContact</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Make sure that there is an accounting customer with party object and
+the party element contains a contact object</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="horstoeko\ubl\entities\cac\Contact">Contact</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_ensureTaxRepresentativeTradeParty">
+        <div class="location">at         line 220</div>
+        <code>                    <abbr title="horstoeko\ubl\entities\cac\TaxRepresentativeParty">TaxRepresentativeParty</abbr>
+    <strong>ensureTaxRepresentativeTradeParty</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Make sure that there is a tax representative trade party</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="horstoeko\ubl\entities\cac\TaxRepresentativeParty">TaxRepresentativeParty</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_ensureTaxRepresentativeTradePartyPostalAddress">
+        <div class="location">at         line 231</div>
+        <code>                    <abbr title="horstoeko\ubl\entities\cac\PostalAddress">PostalAddress</abbr>
+    <strong>ensureTaxRepresentativeTradePartyPostalAddress</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Make sure that there is a tax representative trade party and the
+party has an address object</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="horstoeko\ubl\entities\cac\PostalAddress">PostalAddress</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_ensureTaxRepresentativeTradePartyLegalEntity">
+        <div class="location">at         line 243</div>
+        <code>                    <abbr title="horstoeko\ubl\entities\cac\PartyLegalEntity">PartyLegalEntity</abbr>
+    <strong>ensureTaxRepresentativeTradePartyLegalEntity</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Make sure that there is a tax representative trade party and the
+party has an legal entity object</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="horstoeko\ubl\entities\cac\PartyLegalEntity">PartyLegalEntity</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_ensureTaxRepresentativeTradePartyContact">
+        <div class="location">at         line 255</div>
+        <code>                    <abbr title="horstoeko\ubl\entities\cac\Contact">Contact</abbr>
+    <strong>ensureTaxRepresentativeTradePartyContact</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Make sure that there is a tax representative trade party and the
+party has an contact object</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="horstoeko\ubl\entities\cac\Contact">Contact</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_ensureDelivery">
+        <div class="location">at         line 266</div>
+        <code>                    <abbr title="horstoeko\ubl\entities\cac\Delivery">Delivery</abbr>
+    <strong>ensureDelivery</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Make sure that there is a delivery object in the invoice</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="horstoeko\ubl\entities\cac\Delivery">Delivery</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_ensureDeliveryParty">
+        <div class="location">at         line 276</div>
+        <code>                    <abbr title="horstoeko\ubl\entities\cac\DeliveryParty">DeliveryParty</abbr>
+    <strong>ensureDeliveryParty</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Make sure that there is a party object in the delivery object</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="horstoeko\ubl\entities\cac\DeliveryParty">DeliveryParty</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_ensureDeliveryLocation">
+        <div class="location">at         line 287</div>
+        <code>                    <abbr title="horstoeko\ubl\entities\cac\DeliveryLocation">DeliveryLocation</abbr>
+    <strong>ensureDeliveryLocation</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Make sure that there is a location object in the delivery object</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="horstoeko\ubl\entities\cac\DeliveryLocation">DeliveryLocation</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_ensureDeliveryLocationAddress">
+        <div class="location">at         line 298</div>
+        <code>                    <abbr title="horstoeko\ubl\entities\cac\Address">Address</abbr>
+    <strong>ensureDeliveryLocationAddress</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Make sure that the delivery location has an address object</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="horstoeko\ubl\entities\cac\Address">Address</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_ensureDeliveryPartyLegalEntity">
+        <div class="location">at         line 309</div>
+        <code>                    <abbr title="horstoeko\ubl\entities\cac\PartyLegalEntity">PartyLegalEntity</abbr>
+    <strong>ensureDeliveryPartyLegalEntity</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Make sure that there is a legal entity object in the delivery party object</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="horstoeko\ubl\entities\cac\PartyLegalEntity">PartyLegalEntity</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_ensureDeliveryPartyContact">
+        <div class="location">at         line 320</div>
+        <code>                    <abbr title="horstoeko\ubl\entities\cac\Contact">Contact</abbr>
+    <strong>ensureDeliveryPartyContact</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Make sure that there is a contact object in the delivery party object</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="horstoeko\ubl\entities\cac\Contact">Contact</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_ensurePayeeParty">
+        <div class="location">at         line 331</div>
+        <code>                    <abbr title="horstoeko\ubl\entities\cac\PayeeParty">PayeeParty</abbr>
+    <strong>ensurePayeeParty</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Make sure that there is a payee party object in the invoice</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="horstoeko\ubl\entities\cac\PayeeParty">PayeeParty</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_ensurePayeePartyPostalAddress">
+        <div class="location">at         line 342</div>
+        <code>                    <abbr title="horstoeko\ubl\entities\cac\PostalAddress">PostalAddress</abbr>
+    <strong>ensurePayeePartyPostalAddress</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Make sure that there is a payee party object in the invoice and
+the payee party has an address object</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="horstoeko\ubl\entities\cac\PostalAddress">PostalAddress</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_ensurePayeePartyLegalEntity">
+        <div class="location">at         line 354</div>
+        <code>                    <abbr title="horstoeko\ubl\entities\cac\PartyLegalEntity">PartyLegalEntity</abbr>
+    <strong>ensurePayeePartyLegalEntity</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Make sure that there is a payee party object in the invoice and
+the payee party has an legal entity object</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="horstoeko\ubl\entities\cac\PartyLegalEntity">PartyLegalEntity</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_ensurePayeePartyPostalContact">
+        <div class="location">at         line 366</div>
+        <code>                    <abbr title="horstoeko\ubl\entities\cac\Contact">Contact</abbr>
+    <strong>ensurePayeePartyPostalContact</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Make sure that there is a payee party object in the invoice and
+the payee party has an contact object</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="horstoeko\ubl\entities\cac\Contact">Contact</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_ensureOrderReference">
+        <div class="location">at         line 377</div>
+        <code>                    <abbr title="horstoeko\ubl\entities\cac\OrderReference">OrderReference</abbr>
+    <strong>ensureOrderReference</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Make sure thet the invoice has an order reference object</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="horstoeko\ubl\entities\cac\OrderReference">OrderReference</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_ensureContractReference">
+        <div class="location">at         line 387</div>
+        <code>                    <abbr title="horstoeko\ubl\entities\cac\ContractDocumentReference">ContractDocumentReference</abbr>
+    <strong>ensureContractReference</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Make sure thet the invoice has an contract reference object</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="horstoeko\ubl\entities\cac\ContractDocumentReference">ContractDocumentReference</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_ensureProjectReference">
+        <div class="location">at         line 399</div>
+        <code>                    <abbr title="horstoeko\ubl\entities\cac\ProjectReference">ProjectReference</abbr>
+    <strong>ensureProjectReference</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Make sure thet the invoice has an project reference object</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="horstoeko\ubl\entities\cac\ProjectReference">ProjectReference</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_ensureDespatchDocumentReference">
+        <div class="location">at         line 411</div>
+        <code>                    <abbr title="horstoeko\ubl\entities\cac\DespatchDocumentReference">DespatchDocumentReference</abbr>
+    <strong>ensureDespatchDocumentReference</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Make sure thet the invoice has an despatch document reference object</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="horstoeko\ubl\entities\cac\DespatchDocumentReference">DespatchDocumentReference</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_ensureReceiptDocumentReference">
+        <div class="location">at         line 423</div>
+        <code>                    <abbr title="horstoeko\ubl\entities\cac\ReceiptDocumentReference">ReceiptDocumentReference</abbr>
+    <strong>ensureReceiptDocumentReference</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Make sure thet the invoice has an receipt document reference object</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="horstoeko\ubl\entities\cac\ReceiptDocumentReference">ReceiptDocumentReference</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_ensureBillingPeriod">
+        <div class="location">at         line 435</div>
+        <code>                    <abbr title="horstoeko\ubl\entities\cac\InvoicePeriod">InvoicePeriod</abbr>
+    <strong>ensureBillingPeriod</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Make sure thet the invoice has an invoice period object</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="horstoeko\ubl\entities\cac\InvoicePeriod">InvoicePeriod</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>
