@@ -12,9 +12,14 @@ namespace horstoeko\ubl;
 use \DateTime;
 use \horstoeko\ubl\entities\cbc\ID;
 use \horstoeko\ubl\entities\cbc\URI;
+use horstoeko\ubl\entities\cac\Item;
 use \horstoeko\ubl\entities\cbc\Name;
 use \horstoeko\ubl\entities\cbc\Note;
+use horstoeko\ubl\entities\cac\Price;
+use horstoeko\ubl\entities\cbc\Value;
 use \horstoeko\ubl\entities\cac\Party;
+use horstoeko\ubl\entities\cbc\Amount;
+use horstoeko\ubl\entities\cbc\LineID;
 use \horstoeko\ubl\entities\cac\Address;
 use \horstoeko\ubl\entities\cac\Contact;
 use \horstoeko\ubl\entities\cac\Country;
@@ -31,30 +36,43 @@ use \horstoeko\ubl\entities\cbc\CompanyID;
 use \horstoeko\ubl\entities\cbc\NetworkID;
 use \horstoeko\ubl\entities\cbc\TaxAmount;
 use \horstoeko\ubl\entities\cbc\Telephone;
+use horstoeko\ubl\entities\cbc\BaseAmount;
 use \horstoeko\ubl\entities\cac\Attachment;
 use \horstoeko\ubl\entities\cac\PayeeParty;
 use \horstoeko\ubl\entities\cbc\HolderName;
 use \horstoeko\ubl\entities\cbc\PostalZone;
 use \horstoeko\ubl\entities\cbc\StreetName;
 use \MimeTyper\Repository\MimeDbRepository;
+use horstoeko\ubl\entities\cac\InvoiceLine;
 use horstoeko\ubl\entities\cbc\Description;
+use horstoeko\ubl\entities\cbc\PriceAmount;
 use \horstoeko\stringmanagement\StringUtils;
 use \horstoeko\ubl\entities\cac\CardAccount;
 use \horstoeko\ubl\entities\cac\TaxCategory;
 use \horstoeko\ubl\entities\cac\TaxSubtotal;
+use horstoeko\ubl\entities\cac\PaymentTerms;
+use horstoeko\ubl\entities\cbc\BaseQuantity;
 use \horstoeko\ubl\entities\cac\PaymentMeans;
 use \horstoeko\ubl\entities\cbc\SalesOrderID;
 use horstoeko\ubl\entities\cac\InvoicePeriod;
+use horstoeko\ubl\entities\cac\OriginCountry;
+use horstoeko\ubl\entities\cbc\PayableAmount;
+use horstoeko\ubl\entities\cbc\PrepaidAmount;
+use horstoeko\ubl\entities\cbc\ValueQuantity;
 use \horstoeko\ubl\entities\cac\DeliveryParty;
 use \horstoeko\ubl\entities\cac\PostalAddress;
 use \horstoeko\ubl\entities\cbc\TaxableAmount;
+use horstoeko\ubl\entities\cbc\AccountingCost;
 use \horstoeko\ubl\entities\cac\OrderReference;
 use \horstoeko\ubl\entities\cac\PartyTaxScheme;
 use \horstoeko\ubl\entities\cac\PaymentMandate;
 use \horstoeko\ubl\entities\cbc\BuyerReference;
 use \horstoeko\ubl\entities\cbc\ElectronicMail;
+use horstoeko\ubl\entities\cac\AllowanceCharge;
+use horstoeko\ubl\entities\cbc\SequenceNumeric;
 use \horstoeko\ubl\entities\cbc\CustomizationID;
 use \horstoeko\ubl\entities\cbc\InvoiceTypeCode;
+use horstoeko\ubl\entities\cbc\InvoicedQuantity;
 use \horstoeko\ubl\entities\cac\BillingReference;
 use \horstoeko\ubl\entities\cac\DeliveryLocation;
 use \horstoeko\ubl\entities\cac\PartyLegalEntity;
@@ -63,28 +81,53 @@ use \horstoeko\ubl\entities\cbc\CountrySubentity;
 use \horstoeko\ubl\entities\cbc\DocumentTypeCode;
 use \horstoeko\ubl\entities\cbc\PaymentMeansCode;
 use \horstoeko\ubl\entities\cbc\RegistrationName;
+use horstoeko\ubl\entities\cbc\ChargeTotalAmount;
 use \horstoeko\ubl\entities\cac\ExternalReference;
+use horstoeko\ubl\entities\cac\LegalMonetaryTotal;
+use horstoeko\ubl\entities\cac\OrderLineReference;
+use horstoeko\ubl\entities\cbc\TaxExclusiveAmount;
 use horstoeko\ubl\entities\cbc\TaxExemptionReason;
+use horstoeko\ubl\entities\cbc\TaxInclusiveAmount;
 use \horstoeko\ubl\entities\cbc\IdentificationCode;
+use horstoeko\ubl\entities\cbc\LineExtensionAmount;
 use \horstoeko\ubl\entities\cac\PartyIdentification;
 use \horstoeko\ubl\entities\cbc\DocumentDescription;
+use horstoeko\ubl\entities\cbc\AllowanceTotalAmount;
 use \horstoeko\ubl\entities\cbc\AdditionalStreetName;
 use \horstoeko\ubl\entities\cbc\DocumentCurrencyCode;
+use horstoeko\ubl\entities\cac\ClassifiedTaxCategory;
+use horstoeko\ubl\entities\cbc\AllowanceChargeReason;
+use horstoeko\ubl\entities\cbc\PayableRoundingAmount;
 use \horstoeko\ubl\entities\cac\PayeeFinancialAccount;
 use \horstoeko\ubl\entities\cac\PayerFinancialAccount;
+use horstoeko\ubl\entities\cac\AdditionalItemProperty;
+use horstoeko\ubl\entities\cbc\ItemClassificationCode;
 use horstoeko\ubl\entities\cbc\TaxExemptionReasonCode;
 use \horstoeko\ubl\entities\cac\TaxRepresentativeParty;
 use \horstoeko\ubl\entities\cbc\PrimaryAccountNumberID;
+use horstoeko\ubl\entities\cac\CommodityClassification;
 use horstoeko\ubl\entities\cbc\ExceptionResolutionCode;
 use \horstoeko\ubl\entities\cac\AccountingCustomerParty;
 use \horstoeko\ubl\entities\cac\AccountingSupplierParty;
+use horstoeko\ubl\entities\cac\BuyersItemIdentification;
+use horstoeko\ubl\entities\cbc\AllowanceTotalAmountType;
 use \horstoeko\ubl\entities\cac\InvoiceDocumentReference;
 use \horstoeko\ubl\entities\cac\ReceiptDocumentReference;
+use horstoeko\ubl\entities\cac\SellersItemIdentification;
+use horstoeko\ubl\entities\cbc\AllowanceChargeReasonCode;
 use \horstoeko\ubl\entities\cac\ContractDocumentReference;
 use \horstoeko\ubl\entities\cac\DespatchDocumentReference;
+use horstoeko\ubl\entities\cac\StandardItemIdentification;
 use \horstoeko\ubl\entities\cac\FinancialInstitutionBranch;
 use \horstoeko\ubl\entities\cac\AdditionalDocumentReference;
+use horstoeko\ubl\entities\cac\AddressLine;
+use horstoeko\ubl\entities\cbc\CompanyLegalForm;
 use \horstoeko\ubl\entities\cbc\EmbeddedDocumentBinaryObject;
+use horstoeko\ubl\entities\cbc\EndpointID;
+use horstoeko\ubl\entities\cbc\Line;
+use horstoeko\ubl\entities\cbc\PaymentID;
+use horstoeko\ubl\entities\cbc\ProfileID;
+use horstoeko\ubl\entities\cbc\TaxCurrencyCode;
 
 /**
  * Class representing the ubl invoice builder
@@ -110,6 +153,13 @@ class UblDocumentBuilder extends UblDocument
      * @var \horstoeko\ubl\UblDocumentBuilderHelper
      */
     protected $ublBuilderHelper = null;
+
+    /**
+     * @internal Internal reference to the currently created document position
+     *
+     * @var \horstoeko\ubl\entities\cac\InvoiceLine
+     */
+    protected $currentPosition = null;
 
     /**
      * A list of supported mimetypes by binaryattachments
@@ -142,6 +192,16 @@ class UblDocumentBuilder extends UblDocument
     public function getInvoiceObject(): Invoice
     {
         return $this->invoiceObject;
+    }
+
+    /**
+     * Returns the currently created document position (invoice line)
+     *
+     * @return InvoiceLine
+     */
+    public function getCurrentPosition(): InvoiceLine
+    {
+        return $this->currentPosition;
     }
 
     /**
@@ -189,7 +249,25 @@ class UblDocumentBuilder extends UblDocument
      */
     public function setDocumentCustomization(?string $customization = null): UblDocumentBuilder
     {
-        $this->invoiceObject->setCustomizationID(new CustomizationID($customization));
+        if (!StringUtils::stringIsNullOrEmpty($customization)) {
+            $this->invoiceObject->setCustomizationID(new CustomizationID($customization));
+        }
+
+        return $this;
+    }
+
+    /**
+     * Set Profile
+     *
+     * @param string|null $profileId
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentProfile(?string $profileId = null): UblDocumentBuilder
+    {
+        if (!StringUtils::stringIsNullOrEmpty($profileId)) {
+            $this->invoiceObject->setProfileID(new ProfileID($profileId));
+        }
+
         return $this;
     }
 
@@ -204,9 +282,18 @@ class UblDocumentBuilder extends UblDocument
      * The date when the document was issued by the seller
      * @param string $documentCurrencyCode Code for the invoice currency
      * The code for the invoice currency
+     * @param DateTime|null $dueDate
+     * The date by which payment is due Note: The payment due date reflects the net payment due
+     * date. In the case of partial payments, this indicates the first due date of a net payment.
+     * The corresponding description of more complex payment terms can be given in BT-20.
+     * @param DateTime|null $taxPointDate
+     * The date when the VAT becomes accountable for the Seller and for the Buyer in so far as
+     * that date can be determined and differs from the date of issue of the invoice, according
+     * to the VAT directive.This element is required if the Value added tax point date is different
+     * from the Invoice issue date.
      * @return UblDocumentBuilder
      */
-    public function setDocumentInformation(string $documentno, string $documenttypecode, DateTime $documentdate, string $documentCurrencyCode): UblDocumentBuilder
+    public function setDocumentInformation(string $documentno, string $documenttypecode, DateTime $documentdate, string $documentCurrencyCode, ?string $taxCurrencyCode = null, ?DateTime $dueDate = null, ?DateTime $taxPointDate = null): UblDocumentBuilder
     {
         $this->ublBuilderHelper->assertNotEmptyAndNotNull($documentno, "Invoice number must not be empty");
         $this->ublBuilderHelper->assertNotEmptyAndNotNull($documenttypecode, "Invoice type code must not be empty");
@@ -217,6 +304,15 @@ class UblDocumentBuilder extends UblDocument
         $this->invoiceObject->setInvoiceTypeCode(new InvoiceTypeCode($documenttypecode));
         $this->invoiceObject->setIssueDate($documentdate);
         $this->invoiceObject->setDocumentCurrencyCode(new DocumentCurrencyCode($documentCurrencyCode));
+        $this->invoiceObject->setTaxCurrencyCode(new TaxCurrencyCode(StringUtils::stringIsNullOrEmpty($taxCurrencyCode) ? $documentCurrencyCode : $taxCurrencyCode));
+
+        if ($dueDate !== null) {
+            $this->invoiceObject->setDueDate($dueDate);
+        }
+
+        if ($taxPointDate !== null) {
+            $this->invoiceObject->setTaxPointDate($taxPointDate);
+        }
 
         return $this;
     }
@@ -230,9 +326,9 @@ class UblDocumentBuilder extends UblDocument
      */
     public function addDocumentNote(string $note): UblDocumentBuilder
     {
-        $this->ublBuilderHelper->assertNotEmptyAndNotNull($note, "The note must not be empy");
-
-        $this->invoiceObject->addToNote(new Note($note));
+        if (!StringUtils::stringIsNullOrEmpty($note)) {
+            $this->invoiceObject->addToNote(new Note($note));
+        }
 
         return $this;
     }
@@ -245,6 +341,48 @@ class UblDocumentBuilder extends UblDocument
     public function setIsDocumentCopy(): UblDocumentBuilder
     {
         $this->invoiceObject->setCopyIndicator(true);
+
+        return $this;
+    }
+
+    /**
+     * Document money summation
+     *
+     * @param float $grandTotalAmount Total invoice amount including sales tax
+     * @param float $duePayableAmount Payment amount due
+     * @param float $lineTotalAmount Sum of the net amounts of all invoice items
+     * @param float|null $chargeTotalAmount Sum of the surcharges at document level
+     * @param float|null $allowanceTotalAmount Sum of the discounts at document level
+     * @param float|null $taxBasisTotalAmount Total invoice amount excluding sales tax
+     * @param float|null $taxTotalAmount Total amount of the invoice sales tax, Total tax amount in the booking currency
+     * @param float|null $roundingAmount Rounding amount
+     * @param float|null $totalPrepaidAmount Prepayment amount
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentSummation(float $grandTotalAmount, float $duePayableAmount, ?float $lineTotalAmount = null, ?float $chargeTotalAmount = null, ?float $allowanceTotalAmount = null, ?float $taxBasisTotalAmount = null, ?float $taxTotalAmount = null, ?float $roundingAmount = null, ?float $totalPrepaidAmount = null): UblDocumentBuilder
+    {
+        $total = new LegalMonetaryTotal();
+
+        $total->setLineExtensionAmount((new LineExtensionAmount($lineTotalAmount))->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode()));
+        $total->setTaxExclusiveAmount((new TaxExclusiveAmount($lineTotalAmount))->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode()));
+        $total->setTaxInclusiveAmount((new TaxInclusiveAmount($grandTotalAmount))->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode()));
+        $total->setPayableAmount((new PayableAmount($duePayableAmount))->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode()));
+
+        if ($chargeTotalAmount !== null) {
+            $total->setChargeTotalAmount((new ChargeTotalAmount($chargeTotalAmount))->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode()));
+        }
+        if ($allowanceTotalAmount !== null) {
+            $total->setAllowanceTotalAmount((new AllowanceTotalAmount($allowanceTotalAmount))->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode()));
+        }
+        if ($roundingAmount !== null) {
+            $total->setPayableRoundingAmount((new PayableRoundingAmount($roundingAmount))->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode()));
+        }
+        if ($totalPrepaidAmount !== null) {
+            $total->setPrepaidAmount((new PrepaidAmount($totalPrepaidAmount))->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode()));
+        }
+
+        $this->invoiceObject->setLegalMonetaryTotal($total);
+
         return $this;
     }
 
@@ -281,9 +419,11 @@ class UblDocumentBuilder extends UblDocument
      * is key information. Multiple seller IDs can be assigned or specified. They can be differentiated
      * by using different identification schemes. If no scheme is given, it should be known to the buyer
      * and seller, e.g. a previously exchanged, buyer-assigned identifier of the seller
+     * @param string|null $idscheme
+     * The scheme identifier for the $id
      * @return UblDocumentBuilder
      */
-    public function setDocumentSeller(?string $name = null, ?string $id = null): UblDocumentBuilder
+    public function setDocumentSeller(?string $name = null, ?string $id = null, ?string $idscheme = null): UblDocumentBuilder
     {
         if (!StringUtils::stringIsNullOrEmpty($name)) {
             $party = $this->ublBuilderHelper->ensureAccountingSupplierParty();
@@ -291,7 +431,29 @@ class UblDocumentBuilder extends UblDocument
         }
         if (!StringUtils::stringIsNullOrEmpty($id)) {
             $party = $this->ublBuilderHelper->ensureAccountingSupplierParty();
-            $party->addToPartyIdentification((new PartyIdentification())->setID(new Id($id)));
+            if (!StringUtils::stringIsNullOrEmpty($idscheme)) {
+                $party->addToPartyIdentification((new PartyIdentification())->setID((new Id($id))->setSchemeID($idscheme)));
+            } else {
+                $party->addToPartyIdentification((new PartyIdentification())->setID(new Id($id)));
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Seller electronic address
+     *
+     * @param string|null $endpoint
+     * Identifies the Seller's electronic address to which the application level response to the invoice
+     * may be delivered.
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentSellerEndpointID(?string $endpoint = null, ?string $endpointScheme = null): UblDocumentBuilder
+    {
+        if (!StringUtils::stringIsNullOrEmpty($endpoint) && !StringUtils::stringIsNullOrEmpty($endpointScheme)) {
+            $party = $this->ublBuilderHelper->ensureAccountingSupplierParty();
+            $party->setEndpointID((new EndpointID($endpoint))->setSchemeID($endpointScheme));
         }
 
         return $this;
@@ -381,6 +543,10 @@ class UblDocumentBuilder extends UblDocument
             $postalAddress = $this->ublBuilderHelper->ensureAccountingSupplierPartyPostalAddress();
             $postalAddress->setAdditionalStreetName(new AdditionalStreetName($linetwo));
         }
+        if (!StringUtils::stringIsNullOrEmpty($linethree)) {
+            $postalAddress = $this->ublBuilderHelper->ensureAccountingSupplierPartyPostalAddress();
+            $postalAddress->addToAddressLine((new AddressLine())->setLine(new Line($linethree)));
+        }
         if (!StringUtils::stringIsNullOrEmpty($postcode)) {
             $postalAddress = $this->ublBuilderHelper->ensureAccountingSupplierPartyPostalAddress();
             $postalAddress->setPostalZone(new PostalZone($postcode));
@@ -415,9 +581,11 @@ class UblDocumentBuilder extends UblDocument
      * @param string|null $legalorgname
      * A name by which the seller is known, if different from the seller's name (also known as
      * the company name). Note: This may be used if different from the seller's name.
+     * @param string|null $legalform
+     * Additional legal information relevant for the Seller.
      * @return UblDocumentBuilder
      */
-    public function setDocumentSellerLegalOrganisation(?string $legalorgid = null, ?string $legalorgtype = null, ?string $legalorgname = null): UblDocumentBuilder
+    public function setDocumentSellerLegalOrganisation(?string $legalorgid = null, ?string $legalorgtype = null, ?string $legalorgname = null, ?string $legalform = null): UblDocumentBuilder
     {
         if (!StringUtils::stringIsNullOrEmpty($legalorgid)) {
             $partyLegalEntity = $this->ublBuilderHelper->ensureAccountingSupplierPartyLegalEntity();
@@ -425,13 +593,17 @@ class UblDocumentBuilder extends UblDocument
         }
         if (!StringUtils::stringIsNullOrEmpty($legalorgtype)) {
             $partyLegalEntity = $this->ublBuilderHelper->ensureAccountingSupplierPartyLegalEntity();
-            if ($partyLegalEntity->getCompanyID() != null) {
+            if ($partyLegalEntity->getCompanyID() !== null) {
                 $partyLegalEntity->getCompanyID()->setSchemeID($legalorgtype);
             }
         }
         if (!StringUtils::stringIsNullOrEmpty($legalorgname)) {
             $partyLegalEntity = $this->ublBuilderHelper->ensureAccountingSupplierPartyLegalEntity();
             $partyLegalEntity->setRegistrationName(new RegistrationName($legalorgname));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($legalform)) {
+            $partyLegalEntity = $this->ublBuilderHelper->ensureAccountingSupplierPartyLegalEntity();
+            $partyLegalEntity->setCompanyLegalForm(new CompanyLegalForm($legalform));
         }
 
         return $this;
@@ -484,11 +656,11 @@ class UblDocumentBuilder extends UblDocument
      * An identifier of the buyer. In many systems, buyer identification is key information. Multiple buyer IDs can be
      * assigned or specified. They can be differentiated by using different identification schemes. If no scheme is given,
      * it should be known to the buyer and buyer, e.g. a previously exchanged, seller-assigned identifier of the buyer
-     * @param string|null $description
-     * Further legal information about the buyer
+     * @param string|null $idscheme
+     * The scheme identifier for the $id
      * @return UblDocumentBuilder
      */
-    public function setDocumentBuyer(?string $name = null, ?string $id = null, ?string $description = null): UblDocumentBuilder
+    public function setDocumentBuyer(?string $name = null, ?string $id = null, ?string $idscheme = null): UblDocumentBuilder
     {
         if (!StringUtils::stringIsNullOrEmpty($name)) {
             $party = $this->ublBuilderHelper->ensureAccountingCustomerParty();
@@ -496,7 +668,30 @@ class UblDocumentBuilder extends UblDocument
         }
         if (!StringUtils::stringIsNullOrEmpty($id)) {
             $party = $this->ublBuilderHelper->ensureAccountingCustomerParty();
-            $party->addToPartyIdentification((new PartyIdentification())->setID(new Id($id)));
+            if (!StringUtils::stringIsNullOrEmpty($idscheme)) {
+                $party->addToPartyIdentification((new PartyIdentification())->setID((new Id($id))->setSchemeID($idscheme)));
+            } else {
+                $party->addToPartyIdentification((new PartyIdentification())->setID(new Id($id)));
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Buyer electronic address
+     *
+     * @param string|null $endpoint
+     * Identifies the Buyer's electronic address to which the invoice is delivered.
+     * @param string|null $endpointScheme
+     * The identification scheme identifier of the Buyer electronic address.
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentBuyerEndpointID(?string $endpoint = null, ?string $endpointScheme = null): UblDocumentBuilder
+    {
+        if (!StringUtils::stringIsNullOrEmpty($endpoint) && !StringUtils::stringIsNullOrEmpty($endpointScheme)) {
+            $party = $this->ublBuilderHelper->ensureAccountingCustomerParty();
+            $party->setEndpointID((new EndpointID($endpoint))->setSchemeID($endpointScheme));
         }
 
         return $this;
@@ -583,6 +778,10 @@ class UblDocumentBuilder extends UblDocument
             $postalAddress = $this->ublBuilderHelper->ensureAccountingCustomerPostalAddress();
             $postalAddress->setAdditionalStreetName(new AdditionalStreetName($linetwo));
         }
+        if (!StringUtils::stringIsNullOrEmpty($linethree)) {
+            $postalAddress = $this->ublBuilderHelper->ensureAccountingCustomerPostalAddress();
+            $postalAddress->addToAddressLine((new AddressLine())->setLine(new Line($linethree)));
+        }
         if (!StringUtils::stringIsNullOrEmpty($postcode)) {
             $postalAddress = $this->ublBuilderHelper->ensureAccountingCustomerPostalAddress();
             $postalAddress->setPostalZone(new PostalZone($postcode));
@@ -617,9 +816,11 @@ class UblDocumentBuilder extends UblDocument
      * @param string|null $legalorgname
      * A name by which the buyer is known, if different from the buyers name
      * (also known as the company name)
+     * @param string|null $legalform
+     * Additional legal information relevant for the Seller.
      * @return UblDocumentBuilder
      */
-    public function setDocumentBuyerLegalOrganisation(?string $legalorgid = null, ?string $legalorgtype = null, ?string $legalorgname = null): UblDocumentBuilder
+    public function setDocumentBuyerLegalOrganisation(?string $legalorgid = null, ?string $legalorgtype = null, ?string $legalorgname = null, ?string $legalform = null): UblDocumentBuilder
     {
         if (!StringUtils::stringIsNullOrEmpty($legalorgid)) {
             $partyLegalEntity = $this->ublBuilderHelper->ensureAccountingCustomerLegalEntity();
@@ -627,13 +828,17 @@ class UblDocumentBuilder extends UblDocument
         }
         if (!StringUtils::stringIsNullOrEmpty($legalorgtype)) {
             $partyLegalEntity = $this->ublBuilderHelper->ensureAccountingCustomerLegalEntity();
-            if ($partyLegalEntity->getCompanyID() != null) {
+            if ($partyLegalEntity->getCompanyID() !== null) {
                 $partyLegalEntity->getCompanyID()->setSchemeID($legalorgtype);
             }
         }
         if (!StringUtils::stringIsNullOrEmpty($legalorgname)) {
             $partyLegalEntity = $this->ublBuilderHelper->ensureAccountingCustomerLegalEntity();
             $partyLegalEntity->setRegistrationName(new RegistrationName($legalorgname));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($legalform)) {
+            $partyLegalEntity = $this->ublBuilderHelper->ensureAccountingCustomerLegalEntity();
+            $partyLegalEntity->setCompanyLegalForm(new CompanyLegalForm($legalform));
         }
 
         return $this;
@@ -683,11 +888,11 @@ class UblDocumentBuilder extends UblDocument
      * The full name of the seller's tax agent
      * @param string|null $id
      * An identifier of the sellers tax agent.
-     * @param string|null $description
-     * Further legal information that is relevant for the sellers tax agent
+     * @param string|null $idscheme
+     * The scheme identifier for the $id
      * @return UblDocumentBuilder
      */
-    public function setDocumentSellerTaxRepresentativeTradeParty(?string $name = null, ?string $id = null, ?string $description = null): UblDocumentBuilder
+    public function setDocumentSellerTaxRepresentative(?string $name = null, ?string $id = null, ?string $idscheme = null): UblDocumentBuilder
     {
         if (!StringUtils::stringIsNullOrEmpty($name)) {
             $taxRepresentativeParty = $this->ublBuilderHelper->ensureTaxRepresentativeTradeParty();
@@ -695,7 +900,11 @@ class UblDocumentBuilder extends UblDocument
         }
         if (!StringUtils::stringIsNullOrEmpty($id)) {
             $taxRepresentativeParty = $this->ublBuilderHelper->ensureTaxRepresentativeTradeParty();
-            $taxRepresentativeParty->addToPartyIdentification((new PartyIdentification())->setID(new Id($id)));
+            if (!StringUtils::stringIsNullOrEmpty($idscheme)) {
+                $taxRepresentativeParty->addToPartyIdentification((new PartyIdentification())->setID((new Id($id))->setSchemeID($idscheme)));
+            } else {
+                $taxRepresentativeParty->addToPartyIdentification((new PartyIdentification())->setID(new Id($id)));
+            }
         }
 
         return $this;
@@ -731,7 +940,7 @@ class UblDocumentBuilder extends UblDocument
      */
     public function addDocumentSellerTaxRepresentativeTaxRegistration(?string $taxregtype = null, ?string $taxregid = null): UblDocumentBuilder
     {
-        if (!StringUtils::stringIsNullOrEmpty($taxregtype) && StringUtils::stringIsNullOrEmpty($taxregid)) {
+        if (!StringUtils::stringIsNullOrEmpty($taxregtype) && !StringUtils::stringIsNullOrEmpty($taxregid)) {
             $taxRepresentativeParty = $this->ublBuilderHelper->ensureTaxRepresentativeTradeParty();
             $taxRepresentativeParty->addToPartyTaxScheme((new PartyTaxScheme())->setCompanyID((new CompanyID($taxregid)))->setTaxScheme((new TaxScheme())->setId(new Id($taxregtype))));
         }
@@ -773,6 +982,10 @@ class UblDocumentBuilder extends UblDocument
             $postalAddress = $this->ublBuilderHelper->ensureTaxRepresentativeTradePartyPostalAddress();
             $postalAddress->setAdditionalStreetName(new AdditionalStreetName($linetwo));
         }
+        if (!StringUtils::stringIsNullOrEmpty($linethree)) {
+            $postalAddress = $this->ublBuilderHelper->ensureTaxRepresentativeTradePartyPostalAddress();
+            $postalAddress->addToAddressLine((new AddressLine())->setLine(new Line($linethree)));
+        }
         if (!StringUtils::stringIsNullOrEmpty($postcode)) {
             $postalAddress = $this->ublBuilderHelper->ensureTaxRepresentativeTradePartyPostalAddress();
             $postalAddress->setPostalZone(new PostalZone($postcode));
@@ -805,9 +1018,11 @@ class UblDocumentBuilder extends UblDocument
      * @param string|null $legalorgname
      * A name by which the sellers tax agent is known, if different from the  sellers tax agent
      * name (also known as the company name)
+     * @param string|null $legalform
+     * Additional legal information relevant for the Seller.
      * @return UblDocumentBuilder
      */
-    public function setDocumentSellerTaxRepresentativeLegalOrganisation(?string $legalorgid = null, ?string $legalorgtype = null, ?string $legalorgname = null): UblDocumentBuilder
+    public function setDocumentSellerTaxRepresentativeLegalOrganisation(?string $legalorgid = null, ?string $legalorgtype = null, ?string $legalorgname = null, ?string $legalform = null): UblDocumentBuilder
     {
         if (!StringUtils::stringIsNullOrEmpty($legalorgid)) {
             $partyLegalEntity = $this->ublBuilderHelper->ensureTaxRepresentativeTradePartyLegalEntity();
@@ -815,13 +1030,17 @@ class UblDocumentBuilder extends UblDocument
         }
         if (!StringUtils::stringIsNullOrEmpty($legalorgtype)) {
             $partyLegalEntity = $this->ublBuilderHelper->ensureTaxRepresentativeTradePartyLegalEntity();
-            if ($partyLegalEntity->getCompanyID() != null) {
+            if ($partyLegalEntity->getCompanyID() !== null) {
                 $partyLegalEntity->getCompanyID()->setSchemeID($legalorgtype);
             }
         }
         if (!StringUtils::stringIsNullOrEmpty($legalorgname)) {
             $partyLegalEntity = $this->ublBuilderHelper->ensureTaxRepresentativeTradePartyLegalEntity();
             $partyLegalEntity->setRegistrationName(new RegistrationName($legalorgname));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($legalform)) {
+            $partyLegalEntity = $this->ublBuilderHelper->ensureTaxRepresentativeTradePartyLegalEntity();
+            $partyLegalEntity->setCompanyLegalForm(new CompanyLegalForm($legalform));
         }
 
         return $this;
@@ -877,19 +1096,23 @@ class UblDocumentBuilder extends UblDocument
      * Multiple IDs can be assigned or specified. They can be differentiated by using different
      * identification schemes. If no scheme is given, it should be known to the buyer and seller, e.g.
      * a previously exchanged identifier assigned by the buyer or seller.
-     * @param string|null $description
-     * Further legal information that is relevant for the party
+     * @param string|null $idscheme
+     * The scheme identifier for the $id
      * @return UblDocumentBuilder
      */
-    public function setDocumentShipTo(?string $name = null, ?string $id = null, ?string $description = null): UblDocumentBuilder
+    public function setDocumentShipTo(?string $name = null, ?string $id = null, ?string $idscheme = null): UblDocumentBuilder
     {
         if (!StringUtils::stringIsNullOrEmpty($name)) {
             $party = $this->ublBuilderHelper->ensureDeliveryParty();
             $party->addToPartyName((new PartyName())->setName((new Name($name))));
         }
         if (!StringUtils::stringIsNullOrEmpty($id)) {
-            $party = $this->ublBuilderHelper->ensureDeliveryParty();
-            $party->addToPartyIdentification((new PartyIdentification())->setID(new Id($id)));
+            $location = $this->ublBuilderHelper->ensureDeliveryLocation();
+            if (!StringUtils::stringIsNullOrEmpty($idscheme)) {
+                $location->setID((new ID($id))->setSchemeID($idscheme));
+            } else {
+                $location->setID(new ID($id));
+            }
         }
 
         return $this;
@@ -968,6 +1191,10 @@ class UblDocumentBuilder extends UblDocument
             $deliveryAddress = $this->ublBuilderHelper->ensureDeliveryLocationAddress();
             $deliveryAddress->setAdditionalStreetName(new AdditionalStreetName($linetwo));
         }
+        if (!StringUtils::stringIsNullOrEmpty($linethree)) {
+            $deliveryAddress = $this->ublBuilderHelper->ensureDeliveryLocationAddress();
+            $deliveryAddress->addToAddressLine((new AddressLine())->setLine(new Line($linethree)));
+        }
         if (!StringUtils::stringIsNullOrEmpty($postcode)) {
             $deliveryAddress = $this->ublBuilderHelper->ensureDeliveryLocationAddress();
             $deliveryAddress->setPostalZone(new PostalZone($postcode));
@@ -1000,9 +1227,11 @@ class UblDocumentBuilder extends UblDocument
      * 0060 : DUNS, 0177 : ODETTE
      * @param string|null $legalorgname A name by which the party is known, if different from the party's name
      * (also known as the company name)
+     * @param string|null $legalform
+     * Additional legal information relevant for the Seller.
      * @return UblDocumentBuilder
      */
-    public function setDocumentShipToLegalOrganisation(?string $legalorgid = null, ?string $legalorgtype = null, ?string $legalorgname = null): UblDocumentBuilder
+    public function setDocumentShipToLegalOrganisation(?string $legalorgid = null, ?string $legalorgtype = null, ?string $legalorgname = null, ?string $legalform = null): UblDocumentBuilder
     {
         if (!StringUtils::stringIsNullOrEmpty($legalorgid)) {
             $partyLegalEntity = $this->ublBuilderHelper->ensureDeliveryPartyLegalEntity();
@@ -1010,13 +1239,17 @@ class UblDocumentBuilder extends UblDocument
         }
         if (!StringUtils::stringIsNullOrEmpty($legalorgtype)) {
             $partyLegalEntity = $this->ublBuilderHelper->ensureDeliveryPartyLegalEntity();
-            if ($partyLegalEntity->getCompanyID() != null) {
+            if ($partyLegalEntity->getCompanyID() !== null) {
                 $partyLegalEntity->getCompanyID()->setSchemeID($legalorgtype);
             }
         }
         if (!StringUtils::stringIsNullOrEmpty($legalorgname)) {
             $partyLegalEntity = $this->ublBuilderHelper->ensureDeliveryPartyLegalEntity();
             $partyLegalEntity->setRegistrationName(new RegistrationName($legalorgname));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($legalform)) {
+            $partyLegalEntity = $this->ublBuilderHelper->ensureDeliveryPartyLegalEntity();
+            $partyLegalEntity->setCompanyLegalForm(new CompanyLegalForm($legalform));
         }
 
         return $this;
@@ -1059,6 +1292,23 @@ class UblDocumentBuilder extends UblDocument
         return $this;
     }
 
+    /**
+     * Set the date on which the supply of goods or services was made or completed
+     *
+     * @param DateTime|null $shipmentDate
+     * The date on which the supply of goods or services was made or completed
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentShipmentDate(?DateTime $shipmentDate = null): UblDocumentBuilder
+    {
+        if ($shipmentDate !== null) {
+            $delivery = $this->ublBuilderHelper->ensureDelivery();
+            $delivery->setActualDeliveryDate($shipmentDate);
+        }
+
+        return $this;
+    }
+
     // TODO: UltimateShipTo goes here...
 
     // TODO: ShipFrom goes here...
@@ -1078,11 +1328,11 @@ class UblDocumentBuilder extends UblDocument
      * An identifier for the party. Multiple IDs can be assigned or specified. They can be differentiated by using
      * different identification schemes. If no scheme is given, it should  be known to the buyer and seller, e.g.
      * a previously exchanged identifier assigned by the buyer or seller.
-     * @param string|null $description
-     * Further legal information that is relevant for the party
+     * @param string|null $idscheme
+     * The scheme identifier for the $id
      * @return UblDocumentBuilder
      */
-    public function setDocumentPayee(?string $name = null, ?string $id = null, ?string $description = null): UblDocumentBuilder
+    public function setDocumentPayee(?string $name = null, ?string $id = null, ?string $idscheme = null): UblDocumentBuilder
     {
         if (!StringUtils::stringIsNullOrEmpty($name)) {
             $payeeParty = $this->ublBuilderHelper->ensurePayeeParty();
@@ -1090,7 +1340,11 @@ class UblDocumentBuilder extends UblDocument
         }
         if (!StringUtils::stringIsNullOrEmpty($id)) {
             $payeeParty = $this->ublBuilderHelper->ensurePayeeParty();
-            $payeeParty->addToPartyIdentification((new PartyIdentification())->setID(new Id($id)));
+            if (!StringUtils::stringIsNullOrEmpty($idscheme)) {
+                $payeeParty->addToPartyIdentification((new PartyIdentification())->setID((new Id($id))->setSchemeID($idscheme)));
+            } else {
+                $payeeParty->addToPartyIdentification((new PartyIdentification())->setID(new Id($id)));
+            }
         }
 
         return $this;
@@ -1169,6 +1423,10 @@ class UblDocumentBuilder extends UblDocument
             $postalAddress = $this->ublBuilderHelper->ensurePayeePartyPostalAddress();
             $postalAddress->setAdditionalStreetName(new AdditionalStreetName($linetwo));
         }
+        if (!StringUtils::stringIsNullOrEmpty($linethree)) {
+            $postalAddress = $this->ublBuilderHelper->ensurePayeePartyPostalAddress();
+            $postalAddress->addToAddressLine((new AddressLine())->setLine(new Line($linethree)));
+        }
         if (!StringUtils::stringIsNullOrEmpty($postcode)) {
             $postalAddress = $this->ublBuilderHelper->ensurePayeePartyPostalAddress();
             $postalAddress->setPostalZone(new PostalZone($postcode));
@@ -1201,9 +1459,11 @@ class UblDocumentBuilder extends UblDocument
      * the following scheme codes are used: 0021 : SWIFT, 0088 : EAN, 0060 : DUNS, 0177 : ODETTE
      * @param string|null $legalorgname
      * A name by which the party is known, if different from the party's name (also known as the company name)
+     * @param string|null $legalform
+     * Additional legal information relevant for the Seller.
      * @return UblDocumentBuilder
      */
-    public function setDocumentPayeeLegalOrganisation(?string $legalorgid = null, ?string $legalorgtype = null, ?string $legalorgname = null): UblDocumentBuilder
+    public function setDocumentPayeeLegalOrganisation(?string $legalorgid = null, ?string $legalorgtype = null, ?string $legalorgname = null, ?string $legalform = null): UblDocumentBuilder
     {
         if (!StringUtils::stringIsNullOrEmpty($legalorgid)) {
             $partyLegalEntity = $this->ublBuilderHelper->ensurePayeePartyLegalEntity();
@@ -1211,13 +1471,17 @@ class UblDocumentBuilder extends UblDocument
         }
         if (!StringUtils::stringIsNullOrEmpty($legalorgtype)) {
             $partyLegalEntity = $this->ublBuilderHelper->ensurePayeePartyLegalEntity();
-            if ($partyLegalEntity->getCompanyID() != null) {
+            if ($partyLegalEntity->getCompanyID() !== null) {
                 $partyLegalEntity->getCompanyID()->setSchemeID($legalorgtype);
             }
         }
         if (!StringUtils::stringIsNullOrEmpty($legalorgname)) {
             $partyLegalEntity = $this->ublBuilderHelper->ensurePayeePartyLegalEntity();
             $partyLegalEntity->setRegistrationName(new RegistrationName($legalorgname));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($legalform)) {
+            $partyLegalEntity = $this->ublBuilderHelper->ensurePayeePartyLegalEntity();
+            $partyLegalEntity->setCompanyLegalForm(new CompanyLegalForm($legalform));
         }
 
         return $this;
@@ -1295,7 +1559,7 @@ class UblDocumentBuilder extends UblDocument
         if (!StringUtils::stringIsNullOrEmpty($issuerassignedid)) {
             $orderReference = $this->ublBuilderHelper->ensureOrderReference();
             $orderReference->setID(new Id($issuerassignedid));
-            if ($issueddate != null) {
+            if ($issueddate !== null) {
                 $orderReference->setIssueDate($issueddate);
             }
         }
@@ -1318,8 +1582,29 @@ class UblDocumentBuilder extends UblDocument
         if (!StringUtils::stringIsNullOrEmpty($issuerassignedid)) {
             $contractReference = $this->ublBuilderHelper->ensureContractReference();
             $contractReference->setId(new Id($issuerassignedid));
-            if ($issueddate != null) {
+            if ($issueddate !== null) {
                 $contractReference->setIssueDate($issueddate);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Set the identification of the call for tender or lot the invoice relates to.
+     *
+     * @param string|null $issuerassignedid
+     * The identification of the call for tender or lot the invoice relates to.
+     * @param DateTime|null $issueddate
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentOriginatorReferencedDocument(?string $issuerassignedid = null, ?DateTime $issueddate = null): UblDocumentBuilder
+    {
+        if (!StringUtils::stringIsNullOrEmpty($issuerassignedid)) {
+            $originatorReference = $this->ublBuilderHelper->ensureOriginatorReference();
+            $originatorReference->setID(new ID($issuerassignedid));
+            if ($issueddate !== null) {
+                $originatorReference->setIssueDate($issueddate);
             }
         }
 
@@ -1381,7 +1666,7 @@ class UblDocumentBuilder extends UblDocument
             $additionalrefdoc->setDocumentTypeCode(new DocumentTypeCode($typecode));
         }
 
-        if ($issueddate != null) {
+        if ($issueddate !== null) {
             $additionalrefdoc->setIssueDate($issueddate);
         }
 
@@ -1427,12 +1712,12 @@ class UblDocumentBuilder extends UblDocument
             $this->invoiceObject->getBillingReference()[0] :
             $this->invoiceObject->addToBillingReference(new BillingReference())->getBillingReference()[0];
 
-        $invoiceReference = $billingReference->getInvoiceDocumentReference() != null ?
+        $invoiceReference = $billingReference->getInvoiceDocumentReference() !== null ?
             $billingReference->getInvoiceDocumentReference :
             $billingReference->setInvoiceDocumentReference(new InvoiceDocumentReference())->getInvoiceDocumentReference();
 
         $invoiceReference->setId(new Id($issuerassignedid));
-        if ($issueddate != null) $invoiceReference->setIssueDate($issueddate);
+        if ($issueddate !== null) $invoiceReference->setIssueDate($issueddate);
 
         return $this;
     }
@@ -1451,7 +1736,7 @@ class UblDocumentBuilder extends UblDocument
         if (!StringUtils::stringIsNullOrEmpty($id)) {
             $procuringproject = $this->ublBuilderHelper->ensureProjectReference();
             $procuringproject->setID(new ID($id));
-            if ($date != null) {
+            if ($date !== null) {
                 $procuringproject->setIssueDate($date);
             }
         }
@@ -1477,7 +1762,7 @@ class UblDocumentBuilder extends UblDocument
         if (!StringUtils::stringIsNullOrEmpty($issuerassignedid)) {
             $despatchDocumentReference = $this->ublBuilderHelper->ensureDespatchDocumentReference();
             $despatchDocumentReference->setID(new ID($issuerassignedid));
-            if ($issueddate != null) {
+            if ($issueddate !== null) {
                 $despatchDocumentReference->setIssueDate($issueddate);
             }
         }
@@ -1499,7 +1784,7 @@ class UblDocumentBuilder extends UblDocument
         if (!StringUtils::stringIsNullOrEmpty($issuerassignedid)) {
             $receiptDocumentReference = $this->ublBuilderHelper->ensureReceiptDocumentReference();
             $receiptDocumentReference->setID(new ID($issuerassignedid));
-            if ($issueddate != null) {
+            if ($issueddate !== null) {
                 $receiptDocumentReference->setIssueDate($issueddate);
             }
         }
@@ -1561,7 +1846,7 @@ class UblDocumentBuilder extends UblDocument
      * is managed, such as the BIC or a national bank code, if required. No identification scheme is to be used.
      * @return UblDocumentBuilder
      */
-    public function addDocumentPaymentMean(?string $typecode = null, ?string $information = null, ?string $cardType = null, ?string $cardId = null, ?string $cardHolderName = null, ?string $buyerIban = null, ?string $payeeIban = null, ?string $payeeAccountName = null, ?string $payeePropId = null, ?string $payeeBic = null, ?string $mandate = null): UblDocumentBuilder
+    public function addDocumentPaymentMean(?string $typecode = null, ?string $information = null, ?string $cardType = null, ?string $cardId = null, ?string $cardHolderName = null, ?string $buyerIban = null, ?string $payeeIban = null, ?string $payeeAccountName = null, ?string $payeePropId = null, ?string $payeeBic = null, ?string $mandate = null, ?string $paxmentReference = null): UblDocumentBuilder
     {
         if ($typecode == "58") {
             return $this->addDocumentPaymentMeanSepaCreditTransfer($payeeIban);
@@ -1617,6 +1902,9 @@ class UblDocumentBuilder extends UblDocument
             $payeeFinancialAccount = $paymentMean->getPayeeFinancialAccount() ?? $paymentMean->setPayeeFinancialAccount(new PayeeFinancialAccount)->getPayeeFinancialAccount();
             $payeeFinancialAccount->setFinancialInstitutionBranch((new FinancialInstitutionBranch())->setID(new ID($payeeBic)));
         }
+        if (!StringUtils::stringIsNullOrEmpty($paxmentReference)) {
+            $paymentMean->addToPaymentID(new PaymentID($paxmentReference));
+        }
 
         return $this;
     }
@@ -1628,11 +1916,21 @@ class UblDocumentBuilder extends UblDocument
      * @param string|null $payeeIban
      * @return UblDocumentBuilder
      */
-    public function addDocumentPaymentMeanSepaCreditTransfer(?string $payeeIban = null): UblDocumentBuilder
+    public function addDocumentPaymentMeanSepaCreditTransfer(?string $payeeIban = null, ?string $payeeAccountName = null, ?string $payeePropId = null, ?string $payeeBic = null): UblDocumentBuilder
     {
         $paymentMean = new PaymentMeans();
-        $paymentMean->setPaymentMeansCode((new PaymentMeansCode("58"))->setName("SEPA credit transfer"));
+        $paymentMean->setPaymentMeansCode(new PaymentMeansCode("58"));
         $paymentMean->setPayeeFinancialAccount(new PayeeFinancialAccount())->getPayeeFinancialAccount()->setID(new ID($payeeIban));
+        if (!StringUtils::stringIsNullOrEmpty($payeeAccountName)) {
+            $payeeFinancialAccount = $paymentMean->getPayeeFinancialAccount() ?? $paymentMean->setPayeeFinancialAccount(new PayeeFinancialAccount)->getPayeeFinancialAccount();
+            $payeeFinancialAccount->setName(new Name($payeeAccountName));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($payeePropId)) {
+        }
+        if (!StringUtils::stringIsNullOrEmpty($payeeBic)) {
+            $payeeFinancialAccount = $paymentMean->getPayeeFinancialAccount() ?? $paymentMean->setPayeeFinancialAccount(new PayeeFinancialAccount)->getPayeeFinancialAccount();
+            $payeeFinancialAccount->setFinancialInstitutionBranch((new FinancialInstitutionBranch())->setID(new ID($payeeBic)));
+        }
 
         $this->invoiceObject->addToPaymentMeans($paymentMean);
 
@@ -1654,7 +1952,7 @@ class UblDocumentBuilder extends UblDocument
     public function addDocumentPaymentMeanSepaDirectDebit(?string $buyerIban = null, ?string $mandate = null): UblDocumentBuilder
     {
         $paymentMean = new PaymentMeans();
-        $paymentMean->setPaymentMeansCode((new PaymentMeansCode("59"))->setName("SEPA direct debit"));
+        $paymentMean->setPaymentMeansCode(new PaymentMeansCode("59"));
         $paymentMean->setPaymentMandate(new PaymentMandate())->getPaymentMandate()->setPayerFinancialAccount((new PayerFinancialAccount())->setID(new ID($buyerIban)))->setID(new ID($mandate));
 
         $this->invoiceObject->addToPaymentMeans($paymentMean);
@@ -1678,7 +1976,7 @@ class UblDocumentBuilder extends UblDocument
     public function addDocumentPaymentMeanBankCard(?string $cardType = null, ?string $cardId = null, ?string $cardHolderName = null): UblDocumentBuilder
     {
         $paymentMean = new PaymentMeans();
-        $paymentMean->setPaymentMeansCode((new PaymentMeansCode("48"))->setName("Bank card"));
+        $paymentMean->setPaymentMeansCode(new PaymentMeansCode("48"));
         $paymentMean->setCardAccount((new CardAccount)
             ->setPrimaryAccountNumberID(new PrimaryAccountNumberID(substr($cardId, -4)))
             ->setNetworkID(new NetworkID($cardType))
@@ -1772,12 +2070,11 @@ class UblDocumentBuilder extends UblDocument
     {
         $taxTotalAmount = 0.0;
 
-        $taxCurrencyCode = $this->invoiceObject->getTaxCurrencyCode() != null ? $this->invoiceObject->getTaxCurrencyCode()->value() : null;
-        $taxCurrencyCode = StringUtils::stringIsNullOrEmpty($taxCurrencyCode) == true ? $this->invoiceObject->getDocumentCurrencyCode()->value() : $taxCurrencyCode;
+        //$taxCurrencyCode = $this->invoiceObject->getTaxCurrencyCode() !== null ? $this->invoiceObject->getTaxCurrencyCode()->value() : null;
+        //$taxCurrencyCode = StringUtils::stringIsNullOrEmpty($taxCurrencyCode) == true ? $this->invoiceObject->getDocumentCurrencyCode()->value() : $taxCurrencyCode;
+        $taxCurrencyCode = $this->invoiceObject->getDocumentCurrencyCode()->value();
 
-        $taxTotal = isset($this->invoiceObject->getTaxTotal()[0]) ?
-            $this->invoiceObject->getTaxTotal()[0] :
-            $this->invoiceObject->addToTaxTotal(new TaxTotal())->getTaxTotal()[0];
+        $taxTotal = new TaxTotal();
 
         $taxSubTotal = new TaxSubtotal();
         $taxSubTotal->setTaxableAmount((new TaxableAmount($basisAmount))->setCurrencyID($taxCurrencyCode));
@@ -1788,7 +2085,180 @@ class UblDocumentBuilder extends UblDocument
             ->setTaxScheme((new TaxScheme())
                 ->setID(new ID($typeCode)));
 
-        if ($rateApplicablePercent != null) {
+        if ($rateApplicablePercent !== null) {
+            $taxCategory->setPercent(new Percent($rateApplicablePercent));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($exemptionReason)) {
+            $taxCategory->addToTaxExemptionReason(new TaxExemptionReason($exemptionReason));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($exemptionReasonCode)) {
+            $taxCategory->setTaxExemptionReasonCode(new TaxExemptionReasonCode($exemptionReasonCode));
+        }
+
+        $taxSubTotal->setTaxCategory($taxCategory);
+        $taxTotal->addToTaxSubtotal($taxSubTotal);
+
+        foreach ($taxTotal->getTaxSubtotal() as $taxSubTotal) {
+            $taxTotalAmount += $taxSubTotal->getTaxAmount()->value();
+        }
+
+        $taxTotal->setTaxAmount((new TaxAmount($taxTotalAmount))->setCurrencyID($taxCurrencyCode));
+
+        $this->invoiceObject->addToTaxTotal($taxTotal);
+
+        return $this;
+    }
+
+    /**
+     * Add a VAT breakdown (at document level) in a more simple way
+     *
+     * @param string $categoryCode
+     * Coded description of a sales tax category
+     *
+     * The following entries from UNTDID 5305 are used (details in brackets):
+     *  - Standard rate (sales tax is due according to the normal procedure)
+     *  - Goods to be taxed according to the zero rate (sales tax is charged with a percentage of zero)
+     *  - Tax exempt (USt./IGIC/IPSI)
+     *  - Reversal of the tax liability (the rules for reversing the tax liability at USt./IGIC/IPSI apply)
+     *  - VAT exempt for intra-community deliveries of goods (USt./IGIC/IPSI not levied due to rules on intra-community deliveries)
+     *  - Free export item, tax not levied (VAT / IGIC/IPSI not levied due to export outside the EU)
+     *  - Services outside the tax scope (sales are not subject to VAT / IGIC/IPSI)
+     *  - Canary Islands general indirect tax (IGIC tax applies)
+     *  - IPSI (tax for Ceuta / Melilla) applies.
+     *
+     * The codes for the VAT category are as follows:
+     *  - S = sales tax is due at the normal rate
+     *  - Z = goods to be taxed according to the zero rate
+     *  - E = tax exempt
+     *  - AE = reversal of tax liability
+     *  - K = VAT is not shown for intra-community deliveries
+     *  - G = tax not levied due to export outside the EU
+     *  - O = Outside the tax scope
+     *  - L = IGIC (Canary Islands)
+     *  - M = IPSI (Ceuta / Melilla)
+     * @param string $typeCode
+     * Coded description of a sales tax category. Note: Fixed value = "VAT"
+     * @param float $basisAmount
+     * Tax base amount, Each sales tax breakdown must show a category-specific tax base amount.
+     * @param float $calculatedAmount
+     * The total amount to be paid for the relevant VAT category. Note: Calculated by multiplying
+     * the amount to be taxed according to the sales tax category by the sales tax rate applicable
+     * for the sales tax category concerned
+     * @param float $rateApplicablePercent
+     * The sales tax rate, expressed as the percentage applicable to the sales tax category in
+     * question. Note: The code of the sales tax category and the category-specific sales tax rate
+     * must correspond to one another. The value to be given is the percentage. For example, the
+     * value 20 is given for 20% (and not 0.2)
+     * @return UblDocumentBuilder
+     */
+    public function addDocumentTaxSimple(string $categoryCode, string $typeCode, float $basisAmount, float $calculatedAmount, float $rateApplicablePercent): UblDocumentBuilder
+    {
+        return $this->addDocumentTax($categoryCode, $typeCode, $basisAmount, $calculatedAmount, $rateApplicablePercent);
+    }
+
+    /**
+     * Add a VAT breakdown (at document level)
+     *
+     * @param string $categoryCode
+     * Coded description of a sales tax category
+     *
+     * The following entries from UNTDID 5305 are used (details in brackets):
+     *  - Standard rate (sales tax is due according to the normal procedure)
+     *  - Goods to be taxed according to the zero rate (sales tax is charged with a percentage of zero)
+     *  - Tax exempt (USt./IGIC/IPSI)
+     *  - Reversal of the tax liability (the rules for reversing the tax liability at USt./IGIC/IPSI apply)
+     *  - VAT exempt for intra-community deliveries of goods (USt./IGIC/IPSI not levied due to rules on intra-community deliveries)
+     *  - Free export item, tax not levied (VAT / IGIC/IPSI not levied due to export outside the EU)
+     *  - Services outside the tax scope (sales are not subject to VAT / IGIC/IPSI)
+     *  - Canary Islands general indirect tax (IGIC tax applies)
+     *  - IPSI (tax for Ceuta / Melilla) applies.
+     *
+     * The codes for the VAT category are as follows:
+     *  - S = sales tax is due at the normal rate
+     *  - Z = goods to be taxed according to the zero rate
+     *  - E = tax exempt
+     *  - AE = reversal of tax liability
+     *  - K = VAT is not shown for intra-community deliveries
+     *  - G = tax not levied due to export outside the EU
+     *  - O = Outside the tax scope
+     *  - L = IGIC (Canary Islands)
+     *  - M = IPSI (Ceuta / Melilla)
+     * @param string $typeCode
+     * Coded description of a sales tax category. Note: Fixed value = "VAT"
+     * @param float $basisAmount
+     * Tax base amount, Each sales tax breakdown must show a category-specific tax base amount.
+     * @param float $calculatedAmount
+     * The total amount to be paid for the relevant VAT category. Note: Calculated by multiplying
+     * the amount to be taxed according to the sales tax category by the sales tax rate applicable
+     * for the sales tax category concerned
+     * @param float $rateApplicablePercent
+     * The sales tax rate, expressed as the percentage applicable to the sales tax category in
+     * question. Note: The code of the sales tax category and the category-specific sales tax rate
+     * must correspond to one another. The value to be given is the percentage. For example, the
+     * value 20 is given for 20% (and not 0.2)
+     * @param string|null $exemptionReason
+     * Reason for tax exemption (free text)
+     * @param string|null $exemptionReasonCode
+     * Reason given in code form for the exemption of the amount from VAT. Note: Code list issued
+     * and maintained by the Connecting Europe Facility.
+     * @param float|null $lineTotalBasisAmount
+     * Tax rate goods amount
+     * @param float|null $allowanceChargeBasisAmount
+     * Total amount of surcharges and deductions of the tax rate at document level
+     * @param DateTime|null $taxPointDate
+     * Specification of a date, in accordance with the sales tax guideline, on which the sales tax
+     * for the seller and for the buyer becomes relevant for accounting, insofar as this date can be
+     * determined and differs from the invoice date
+     * Note: The tax collection date for VAT purposes is usually the date the goods were delivered or
+     * the service was completed (the base tax date). There are a few variations. For further information,
+     * please refer to Article 226 (7) of Council Directive 2006/112 / EC. This element is required
+     * if the date set for the sales tax return differs from the invoice date. Both the buyer and the
+     * seller should use the delivery date for VAT returns, if provided by the seller.
+     * This is not used in Germany. Instead, the delivery and service date must be specified.
+     * @param string|null $dueDateTypeCode
+     * The code for the date on which sales tax becomes relevant for the seller and the buyer.
+     * The code must distinguish between the following entries from UNTDID 2005:
+     *  - date of issue of the invoice document
+     *  - actual delivery date
+     *  - Date of payment.
+     *
+     * The VAT Collection Date Code is used when the VAT Collection Date is not known for VAT purposes
+     * when the invoice is issued.
+     *
+     * The semantic values cited in the standard, which are represented by the values 3, 35, 432 in
+     * UNTDID2005, are mapped to the following values of UNTDID2475, which is the relevant code list
+     * supported by CII 16B:
+     *  - 5: date of issue of the invoice
+     *  - 29: Delivery date, current status
+     *  - 72: Paid to date
+     *
+     * In Germany, the date of delivery and service is decisive.
+     * @return UblDocumentBuilder
+     */
+    public function addDocumentTaxSubTotal(string $categoryCode, string $typeCode, float $basisAmount, float $calculatedAmount, float $rateApplicablePercent, ?string $exemptionReason = null, ?string $exemptionReasonCode = null, ?float $lineTotalBasisAmount = null, ?float $allowanceChargeBasisAmount = null, ?DateTime $taxPointDate = null, ?string $dueDateTypeCode = null): UblDocumentBuilder
+    {
+        $taxTotalAmount = 0.0;
+
+        //$taxCurrencyCode = $this->invoiceObject->getTaxCurrencyCode() !== null ? $this->invoiceObject->getTaxCurrencyCode()->value() : null;
+        //$taxCurrencyCode = StringUtils::stringIsNullOrEmpty($taxCurrencyCode) == true ? $this->invoiceObject->getDocumentCurrencyCode()->value() : $taxCurrencyCode;
+        $taxCurrencyCode = $this->invoiceObject->getDocumentCurrencyCode()->value();
+
+        if (count($this->invoiceObject->getTaxTotal()) <= 0) {
+            return $this;
+        }
+
+        $taxTotal = $this->invoiceObject->getTaxTotal()[count($this->invoiceObject->getTaxTotal()) - 1];
+
+        $taxSubTotal = new TaxSubtotal();
+        $taxSubTotal->setTaxableAmount((new TaxableAmount($basisAmount))->setCurrencyID($taxCurrencyCode));
+        $taxSubTotal->setTaxAmount((new TaxAmount($calculatedAmount))->setCurrencyID($taxCurrencyCode));
+
+        $taxCategory = (new TaxCategory())
+            ->setId(new ID($categoryCode))
+            ->setTaxScheme((new TaxScheme())
+                ->setID(new ID($typeCode)));
+
+        if ($rateApplicablePercent !== null) {
             $taxCategory->setPercent(new Percent($rateApplicablePercent));
         }
         if (!StringUtils::stringIsNullOrEmpty($exemptionReason)) {
@@ -1852,9 +2322,36 @@ class UblDocumentBuilder extends UblDocument
      * value 20 is given for 20% (and not 0.2)
      * @return UblDocumentBuilder
      */
-    public function addDocumentTaxSimple(string $categoryCode, string $typeCode, float $basisAmount, float $calculatedAmount, float $rateApplicablePercent): UblDocumentBuilder
+    public function addDocumentTaxSubTotalSimple(string $categoryCode, string $typeCode, float $basisAmount, float $calculatedAmount, float $rateApplicablePercent): UblDocumentBuilder
     {
-        return $this->addDocumentTax($categoryCode, $typeCode, $basisAmount, $calculatedAmount, $rateApplicablePercent);
+        return $this->addDocumentTaxSubTotal($categoryCode, $typeCode, $basisAmount, $calculatedAmount, $rateApplicablePercent);
+    }
+
+    /**
+     * Add Tax in foreign currency
+     *
+     * @param float $calculatedAmount
+     * The total amount to be paid for the relevant VAT category. Note: Calculated by multiplying
+     * the amount to be taxed according to the sales tax category by the sales tax rate applicable
+     * for the sales tax category concerned
+     * @return UblDocumentBuilder
+     */
+    public function addDocumentTaxInTaxCurrency(float $calculatedAmount): UblDocumentBuilder
+    {
+        $taxTotalAmount = 0.0;
+
+        $taxCurrencyCode = $this->invoiceObject->getTaxCurrencyCode() !== null ? $this->invoiceObject->getTaxCurrencyCode()->value() : null;
+
+        if (StringUtils::stringIsNullOrEmpty($taxCurrencyCode)) {
+            return $this;
+        }
+
+        $taxTotal = new TaxTotal();
+        $taxTotal->setTaxAmount((new TaxAmount($calculatedAmount))->setCurrencyID($taxCurrencyCode));
+
+        $this->invoiceObject->addToTaxTotal($taxTotal);
+
+        return $this;
     }
 
     /**
@@ -1870,11 +2367,11 @@ class UblDocumentBuilder extends UblDocument
      */
     public function setDocumentBillingPeriod(?DateTime $startdate = null, ?DateTime $endDate = null, ?string $description = null): UblDocumentBuilder
     {
-        if ($startdate != null) {
+        if ($startdate !== null) {
             $invoicePeriod = $this->ublBuilderHelper->ensureBillingPeriod();
             $invoicePeriod->setStartDate($startdate);
         }
-        if ($endDate != null) {
+        if ($endDate !== null) {
             $invoicePeriod = $this->ublBuilderHelper->ensureBillingPeriod();
             $invoicePeriod->setEndDate($endDate);
         }
@@ -1883,6 +2380,1107 @@ class UblDocumentBuilder extends UblDocument
             $invoicePeriod->addToDescription(new Description($description));
         }
 
+        return $this;
+    }
+
+    /**
+     * Add information about surcharges and charges applicable to the bill as a whole, Deductions,
+     * such as for withheld taxes may also be specified in this group
+     *
+     * @param float $actualAmount
+     * Amount of the surcharge or discount at document level
+     * @param boolean $isCharge
+     * Switch that indicates whether the following data refer to an surcharge or a discount, true means that
+     * this an charge
+     * @param string $taxCategoryCode
+     * A coded indication of which sales tax category applies to the surcharge or deduction at document level
+     *
+     * The following entries from UNTDID 5305 are used (details in brackets):
+     *  - Standard rate (sales tax is due according to the normal procedure)
+     *  - Goods to be taxed according to the zero rate (sales tax is charged with a percentage of zero)
+     *  - Tax exempt (USt./IGIC/IPSI)
+     *  - Reversal of the tax liability (the rules for reversing the tax liability at USt./IGIC/IPSI apply)
+     *  - VAT exempt for intra-community deliveries of goods (USt./IGIC/IPSI not levied due to rules on intra-community deliveries)
+     *  - Free export item, tax not levied (VAT / IGIC/IPSI not levied due to export outside the EU)
+     *  - Services outside the tax scope (sales are not subject to VAT / IGIC/IPSI)
+     *  - Canary Islands general indirect tax (IGIC tax applies)
+     *  - IPSI (tax for Ceuta / Melilla) applies.
+     *
+     * The codes for the VAT category are as follows:
+     *  - S = sales tax is due at the normal rate
+     *  - Z = goods to be taxed according to the zero rate
+     *  - E = tax exempt
+     *  - AE = reversal of tax liability
+     *  - K = VAT is not shown for intra-community deliveries
+     *  - G = tax not levied due to export outside the EU
+     *  - O = Outside the tax scope
+     *  - L = IGIC (Canary Islands)
+     *  - M = IPSI (Ceuta/Melilla)
+     * @param string $taxTypeCode
+     * Code for the VAT category of the surcharge or charge at document level. Note: Fixed value = "VAT"
+     * @param float $rateApplicablePercent
+     * VAT rate for the surcharge or discount on document level. Note: The code of the sales tax category
+     * and the category-specific sales tax rate must correspond to one another. The value to be given is
+     * the percentage. For example, the value 20 is given for 20% (and not 0.2)
+     * @param float|null $sequence
+     * Calculation order
+     * @param float|null $calculationPercent
+     * Percentage surcharge or discount at document level
+     * @param float|null $basisAmount
+     * The base amount that may be used in conjunction with the percentage of the surcharge or discount
+     * at document level to calculate the amount of the discount at document level
+     * @param float|null $basisQuantity
+     * Basismenge des Rabatts
+     * @param string|null $basisQuantityUnitCode
+     * Einheit der Preisbasismenge
+     *  - Codeliste: Rec. N°20 Vollständige Liste, In Recommendation N°20 Intro 2.a ist beschrieben, dass
+     *    beide Listen kombiniert anzuwenden sind.
+     *  - Codeliste: Rec. N°21 Vollständige Liste, In Recommendation N°20 Intro 2.a ist beschrieben, dass
+     *    beide Listen kombiniert anzuwenden sind.
+     * @param string|null $reasonCode
+     * The reason given as a code for the surcharge or discount at document level. Note: Use entries from
+     * the UNTDID 5189 code list. The code of the reason for the surcharge or discount at document level
+     * and the reason for the surcharge or discount at document level must correspond to each other
+     *
+     * Code list: UNTDID 7161 Complete list, code list: UNTDID 5189 Restricted
+     * Include PEPPOL subset:
+     *  - 41 - Bonus for works ahead of schedule
+     *  - 42 - Other bonus
+     *  - 60 - Manufacturer’s consumer discount
+     *  - 62 - Due to military status
+     *  - 63 - Due to work accident
+     *  - 64 - Special agreement
+     *  - 65 - Production error discount
+     *  - 66 - New outlet discount
+     *  - 67 - Sample discount
+     *  - 68 - End-of-range discount
+     *  - 70 - Incoterm discount
+     *  - 71 - Point of sales threshold allowance
+     *  - 88 - Material surcharge/deduction
+     *  - 95 - Discount
+     *  - 100 - Special rebate
+     *  - 102 - Fixed long term
+     *  - 103 - Temporary
+     *  - 104 - Standard
+     *  - 105 - Yearly turnover
+     * @param string|null $reason
+     * The reason given in text form for the surcharge or discount at document level
+     * @return UblDocumentBuilder
+     */
+    public function addDocumentAllowanceCharge(float $actualAmount, bool $isCharge, string $taxCategoryCode, string $taxTypeCode, float $rateApplicablePercent, ?float $sequence = null, ?float $calculationPercent = null, ?float $basisAmount = null, ?float $basisQuantity = null, ?string $basisQuantityUnitCode = null, ?string $reasonCode = null, ?string $reason = null): UblDocumentBuilder
+    {
+        $allowanceCharge = new AllowanceCharge();
+        $allowanceCharge->setAmount((new Amount($actualAmount))->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode()->value()));
+        $allowanceCharge->setChargeIndicator($isCharge);
+
+        if ($basisAmount !== null) {
+            $allowanceCharge->setBaseAmount((new BaseAmount($basisAmount))->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode()->value()));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($reason)) {
+            $allowanceCharge->addToAllowanceChargeReason(new AllowanceChargeReason($reason));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($reasonCode)) {
+            $allowanceCharge->setAllowanceChargeReasonCode(new AllowanceChargeReasonCode($reasonCode));
+        }
+        if ($sequence !== null) {
+            $allowanceCharge->setSequenceNumeric(new SequenceNumeric($sequence));
+        }
+
+        $taxCategory = new TaxCategory();
+        $taxCategory->setID(new ID($taxCategoryCode));
+        $taxCategory->setPercent(new Percent($rateApplicablePercent));
+        $taxCategory->setTaxScheme((new TaxScheme)->setID(new ID($taxTypeCode)));
+
+        $allowanceCharge->addToTaxCategory($taxCategory);
+
+        $this->invoiceObject->addToAllowanceCharge($allowanceCharge);
+
+        return $this;
+    }
+
+    // TODO: LogisticsServiceCharge goes here...
+
+    /**
+     * Add a payment term
+     *
+     * @param string|null $description
+     * A text description of the payment terms that apply to the payment amount due (including a
+     * description of possible penalties). Note: This element can contain multiple lines and
+     * multiple conditions.
+     * @return UblDocumentBuilder
+     */
+    public function addDocumentPaymentTerm(?string $description = null): UblDocumentBuilder
+    {
+        if (!StringUtils::stringIsNullOrEmpty($description)) {
+            $paymentTerms = new PaymentTerms();
+            $paymentTerms->addToNote(new Note($description));
+            $this->invoiceObject->addToPaymentTerms($paymentTerms);
+        }
+
+        return $this;
+    }
+
+    // TODO: DiscountTermsToPaymentTerms goes here...
+
+    /**
+     * Add an AccountingAccount
+     * Detailinformationen zur Buchungsreferenz
+     *
+     * @param string $id
+     * @return UblDocumentBuilder
+     */
+    public function addDocumentReceivableSpecifiedTradeAccountingAccount(string $id): UblDocumentBuilder
+    {
+        if (!StringUtils::stringIsNullOrEmpty($id)) {
+            $this->invoiceObject->setAccountingCost(new AccountingCost($id));
+        }
+
+        return $this;
+    }
+
+    /**
+     * Adds a new position (line) to document
+     *
+     * @param string $lineid
+     * A unique identifier for the relevant item within the invoice (item number)
+     * @return UblDocumentBuilder
+     */
+    public function addNewPosition(string $lineid): UblDocumentBuilder
+    {
+        if (!StringUtils::stringIsNullOrEmpty($lineid)) {
+            $this->currentPosition = (new InvoiceLine())->setID(new ID($lineid));
+            $this->invoiceObject->addToInvoiceLine($this->currentPosition);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Add detailed information on the free text on the position
+     *
+     * @param string $content
+     * A free text that contains unstructured information that is relevant to the invoice item
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentPositionNote(string $content): UblDocumentBuilder
+    {
+        if (!StringUtils::stringIsNullOrEmpty($content)) {
+            $this->currentPosition->addToNote(new Note($content));
+        }
+
+        return $this;
+    }
+
+    /**
+     * Add detailed information on the free text on the position
+     *
+     * @param string $content
+     * A free text that contains unstructured information that is relevant to the invoice item
+     * @return UblDocumentBuilder
+     */
+    public function addDocumentPositionNote(string $content): UblDocumentBuilder
+    {
+        if (!StringUtils::stringIsNullOrEmpty($content)) {
+            $this->currentPosition->addToNote(new Note($content));
+        }
+
+        return $this;
+    }
+
+    /**
+     * Adds product details to the last created position (line) in the document
+     *
+     * @param string $name
+     * A name of the item (item name)
+     * @param string|null $description
+     * A description of the item, the item description makes it possible to describe the item and its
+     * properties in more detail than is possible with the item name.
+     * @param string|null $sellerAssignedID
+     * An identifier assigned to the item by the seller
+     * @param string|null $buyerAssignedID
+     * An identifier assigned to the item by the buyer. The article number of the buyer is a clear,
+     * bilaterally agreed identification of the product. It can, for example, be the customer article
+     * number or the article number assigned by the manufacturer.
+     * @param string|null $globalIDType
+     * The scheme for $globalID
+     * @param string|null $globalID
+     * Identification of an article according to the registered scheme (Global identifier of the product,
+     * GTIN, ...)
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentPositionProductDetails(string $name, ?string $description = null, ?string $sellerAssignedID = null, ?string $buyerAssignedID = null, ?string $globalIDType = null, ?string $globalID = null): UblDocumentBuilder
+    {
+        $item = $this->ublBuilderHelper->ensureInvoiceLineItem();
+
+        $item->setName(new Name($name));
+
+        if (!StringUtils::stringIsNullOrEmpty($description)) {
+            $item->addToDescription(new Description($description));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($sellerAssignedID)) {
+            $item->setBuyersItemIdentification((new BuyersItemIdentification())->setID(new ID($sellerAssignedID)));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($buyerAssignedID)) {
+            $item->setSellersItemIdentification((new SellersItemIdentification())->setId(new ID($buyerAssignedID)));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($globalIDType) && !StringUtils::stringIsNullOrEmpty($globalID)) {
+            $item->setStandardItemIdentification((new StandardItemIdentification())->setID((new ID($globalID))->setSchemeID($globalIDType)));
+        }
+
+        return $this;
+    }
+
+    /**
+     * Add extra characteristics to the formerly added product.
+     * Contains information about the characteristics of the goods and services invoiced
+     *
+     * @param string $description
+     * The name of the attribute or property of the product such as "Colour"
+     * @param string $value
+     * The value of the attribute or property of the product such as "Red"
+     * @return UblDocumentBuilder
+     */
+    public function addDocumentPositionProductCharacteristic(string $description, string $value): UblDocumentBuilder
+    {
+        if (!StringUtils::stringIsNullOrEmpty($description) && !StringUtils::stringIsNullOrEmpty($value)) {
+            $itemProperty = new AdditionalItemProperty();
+            $itemProperty->setName(new Name($description));
+            $itemProperty->setValue(new Value($value));
+            $item = $this->ublBuilderHelper->ensureInvoiceLineItem();
+            $item->addToAdditionalItemProperty($itemProperty);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Add detailed information on product classification
+     *
+     * @param string $classCode
+     * A code for classifying the item by type or nature or essence or condition.
+     * __Note__: Classification codes are used to group similar items for different purposes, such as public
+     * procurement (using the Common Procurement Vocabulary [CPV]), e-commerce (UNSPSC), etc.
+     * @param string $listID
+     * The identifier for the identification scheme of the identifier of the article classification
+     * __Note__: The identification scheme must be selected from the entries from UNTDID 7143.
+     * @param string|null $listVersionID
+     * The version of the identification scheme
+     * @return UblDocumentBuilder
+     */
+    public function addDocumentPositionProductClassification(string $classCode, string $listID, ?string $listVersionID = null): UblDocumentBuilder
+    {
+        if (!StringUtils::stringIsNullOrEmpty($classCode) && !StringUtils::stringIsNullOrEmpty($listID)) {
+            $classification = new CommodityClassification();
+            $classification->setItemClassificationCode(new ItemClassificationCode($classCode));
+            $classification->getItemClassificationCode()->setListID($listID);
+            if (!StringUtils::stringIsNullOrEmpty($listVersionID)) {
+                $classification->getItemClassificationCode()->setListVersionID($listVersionID);
+            }
+            $item = $this->ublBuilderHelper->ensureInvoiceLineItem();
+            $item->addToCommodityClassification($classification);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Sets the detailed information on the product origin
+     *
+     * @param string $country
+     * The code indicating the country the goods came from
+     * __Note__: The lists of approved countries are maintained by the EN ISO 3166-1 Maintenance
+     * Agency “Codes for the representation of names of countries and their subdivisions”.
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentPositionProductOriginTradeCountry(string $country): UblDocumentBuilder
+    {
+        if (!StringUtils::stringIsNullOrEmpty($country)) {
+            $item = $this->ublBuilderHelper->ensureInvoiceLineItem();
+            $item->setOriginCountry((new OriginCountry())->setIdentificationCode(new IdentificationCode($country)));
+        }
+
+        return $this;
+    }
+
+    /**
+     * Add detailed information on included products. This information relates to the
+     * product that has just been added
+     *
+     * @param string $name
+     * Item name
+     * @param string|null $description
+     * Item description
+     * @param string|null $sellerAssignedID
+     * Item number of the seller
+     * @param string|null $buyerAssignedID
+     * Item number of the buyer
+     * __Note__: The identifier of the product is a unique, bilaterally agreed identification of the
+     * product. It can, for example, be the customer article number or the article number assigned by
+     * the manufacturer.
+     * @param string|null $globalID
+     * Global identifier of the product
+     * __Note__: The global identifier of the product is a label uniquely assigned by the manufacturer,
+     * which is based on the rules of a global registration organization.
+     * @param string|null $globalIDType
+     * Type of global item number
+     * In particular, the following codes can be used:
+     *  * 0021: SWIFT
+     *  * 0088: EAN
+     *  * 0060: DUNS
+     *  * 0177: ODETTE
+     * @param float|null $unitQuantity
+     * Included quantity
+     * @param string|null $unitCode
+     * Unit of measurement of the included quantity
+     * @return UblDocumentBuilder
+     */
+    public function addDocumentPositionReferencedProduct(string $name, ?string $description = null, ?string $sellerAssignedID = null, ?string $buyerAssignedID = null, ?string $globalID = null, ?string $globalIDType = null, ?float $unitQuantity = null, ?string $unitCode = null): UblDocumentBuilder
+    {
+        // TODO: Implement this
+        return $this;
+    }
+
+    /**
+     * Set details of the related buyer order position
+     *
+     * @param string $issuerassignedid
+     * An identifier issued by the buyer for a referenced order (order number)
+     * @param string $lineid
+     * An identifier for a position within an order placed by the buyer. Note: Reference is made to the order
+     * reference at the document level.
+     * @param DateTime|null $issueddate
+     * Date of order
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentPositionBuyerOrderReferencedDocument(string $issuerassignedid, string $lineid, ?DateTime $issueddate = null): UblDocumentBuilder
+    {
+        /* Is it allowed?
+        if (
+            $this->invoiceObject->getOrderReference() !== null &&
+            $this->invoiceObject->getOrderReference()->getID() !== null &&
+            !StringUtils::stringIsNullOrEmpty($this->invoiceObject->getOrderReference()->getID()->value())
+        ) {
+            $issuerassignedid = $this->invoiceObject->getOrderReference()->getID()->value();
+        }
+        */
+        if (!StringUtils::stringIsNullOrEmpty($issuerassignedid)) {
+            $orderLineReference = $this->ublBuilderHelper->ensureInvoiceLineOrderLineReference();
+            $orderLineReference->setOrderReference((new OrderReference())->setID(new ID($issuerassignedid)));
+        }
+
+        if (!StringUtils::stringIsNullOrEmpty($lineid)) {
+            $orderLineReference = $this->ublBuilderHelper->ensureInvoiceLineOrderLineReference();
+            $orderLineReference->setLineID(new LineID($lineid));
+        }
+
+        return $this;
+    }
+
+    /**
+     * Set details of the related contract position
+     *
+     * @param string $issuerassignedid
+     * The contract reference should be assigned once in the context of the specific trade relationship and for a
+     * defined period of time (contract number)
+     * @param string $lineid
+     * Identifier of the according contract position
+     * @param DateTime|null $issueddate
+     * Contract date
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentPositionContractReferencedDocument(string $issuerassignedid, string $lineid, ?DateTime $issueddate = null): UblDocumentBuilder
+    {
+        // TODO: Implement this
+        return $this;
+    }
+
+    /**
+     * Add a referennce to a ultimate customer order referenced document
+     *
+     * @param string $issuerassignedid
+     * @param string $lineid
+     * @param DateTime|null $issueddate
+     * @return UblDocumentBuilder
+     */
+    public function addDocumentPositionUltimateCustomerOrderReferencedDocument(string $issuerassignedid, string $lineid, ?DateTime $issueddate = null): UblDocumentBuilder
+    {
+        // TODO: Implement this
+        return $this;
+    }
+
+    /**
+     * Set the unit price excluding sales tax before deduction of the discount on the item price.
+     *
+     * @param float $amount
+     * The unit price excluding sales tax before deduction of the discount on the item price.
+     * Note: If the price is shown according to the net calculation, the price must also be shown
+     * according to the gross calculation.
+     * @param float|null $basisQuantity
+     * The number of item units for which the price applies (price base quantity)
+     * @param string|null $basisQuantityUnitCode
+     * The unit code of the number of item units for which the price applies (price base quantity)
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentPositionGrossPrice(float $amount, ?float $basisQuantity = null, ?string $basisQuantityUnitCode = null): UblDocumentBuilder
+    {
+        $price = new Price();
+        $price->setPriceAmount(new PriceAmount($amount));
+
+        if ($basisQuantity !== null && $basisQuantityUnitCode !== null) {
+            $price->setBaseQuantity((new BaseQuantity($basisQuantity))->setUnitCode($basisQuantityUnitCode));
+        }
+
+        $this->currentPosition->setPrice($price);
+
+        return $this;
+    }
+
+    /**
+     * Detailed information on surcharges and discounts on item gross price
+     *
+     * @param float $actualAmount
+     * Discount on the item price. The total discount subtracted from the gross price to calculate the
+     * net price. Note: Only applies if the discount is given per unit and is not included in the gross price.
+     * @param boolean $isCharge
+     * Switch for surcharge/discount, if true then its an charge
+     * @param float|null $basisAmount
+     * Base amount of the discount/surcharge
+     * @param string|null $reason
+     * Reason for surcharge/discount (free text)
+     * @param string|null $taxTypeCode
+     * @param string|null $taxCategoryCode
+     * @param float|null $rateApplicablePercent
+     * @param float|null $sequence
+     * @param string|null $reasonCode
+     * @return UblDocumentBuilder
+     */
+    public function addDocumentPositionGrossPriceAllowanceCharge(float $actualAmount, bool $isCharge, ?float $basisAmount = null, ?string $reason = null, ?string $taxTypeCode = null, ?string $taxCategoryCode = null, ?float $rateApplicablePercent = null, ?float $sequence = null, ?string $reasonCode = null): UblDocumentBuilder
+    {
+        $price = $this->currentPosition->getPrice();
+
+        if ($price == null) {
+            return $this;
+        }
+
+        $allowanceCharge = new AllowanceCharge();
+
+        $allowanceCharge->setChargeIndicator($isCharge);
+        $allowanceCharge->setAmount((new Amount($actualAmount))->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode()));
+
+        if ($basisAmount !== null) {
+            $allowanceCharge->setBaseAmount((new BaseAmount($basisAmount))->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode()));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($reason)) {
+            $allowanceCharge->addToAllowanceChargeReason(new AllowanceChargeReason($reason));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($reasonCode)) {
+            $allowanceCharge->setAllowanceChargeReasonCode(new AllowanceChargeReasonCode($reasonCode));
+        }
+        if ($sequence !== null) {
+            $allowanceCharge->setSequenceNumeric(new SequenceNumeric($sequence));
+        }
+
+        if (!StringUtils::stringIsNullOrEmpty($taxCategoryCode) && !StringUtils::stringIsNullOrEmpty($taxTypeCode)) {
+            $taxCategory = (new TaxCategory())
+                ->setId(new ID($taxCategoryCode))
+                ->setTaxScheme((new TaxScheme())
+                    ->setID(new ID($taxTypeCode)));
+
+            if ($rateApplicablePercent !== null) {
+                $taxCategory->setPercent(new Percent($rateApplicablePercent));
+            }
+
+            $allowanceCharge->addToTaxCategory($taxCategory);
+        }
+
+        $price->addToAllowanceCharge($allowanceCharge);
+
+        return $this;
+    }
+
+    /**
+     * Set detailed information on the net price of the item
+     *
+     * @param float $amount
+     * Net price of the item
+     * @param float|null $basisQuantity
+     * Base quantity at the item price
+     * @param string|null $basisQuantityUnitCode
+     * Code of the unit of measurement of the base quantity at the item price
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentPositionNetPrice(float $amount, ?float $basisQuantity = null, ?string $basisQuantityUnitCode = null): UblDocumentBuilder
+    {
+        $price = new Price();
+        $price->setPriceAmount((new PriceAmount($amount))->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode()));
+
+        if ($basisQuantity !== null && $basisQuantityUnitCode !== null) {
+            $price->setBaseQuantity((new BaseQuantity($basisQuantity))->setUnitCode($basisQuantityUnitCode));
+        }
+
+        $this->currentPosition->setPrice($price);
+
+        return $this;
+    }
+
+    /**
+     * Tax included for B2C on position level
+     *
+     * @param string $categoryCode
+     * Coded description of a sales tax category
+     *
+     * The following entries from UNTDID 5305 are used (details in brackets):
+     *  - Standard rate (sales tax is due according to the normal procedure)
+     *  - Goods to be taxed according to the zero rate (sales tax is charged with a percentage of zero)
+     *  - Tax exempt (USt./IGIC/IPSI)
+     *  - Reversal of the tax liability (the rules for reversing the tax liability at USt./IGIC/IPSI apply)
+     *  - VAT exempt for intra-community deliveries of goods (USt./IGIC/IPSI not levied due to rules on intra-community deliveries)
+     *  - Free export item, tax not levied (VAT / IGIC/IPSI not levied due to export outside the EU)
+     *  - Services outside the tax scope (sales are not subject to VAT / IGIC/IPSI)
+     *  - Canary Islands general indirect tax (IGIC tax applies)
+     *  - IPSI (tax for Ceuta / Melilla) applies.
+     *
+     * The codes for the VAT category are as follows:
+     *  - S = sales tax is due at the normal rate
+     *  - Z = goods to be taxed according to the zero rate
+     *  - E = tax exempt
+     *  - AE = reversal of tax liability
+     *  - K = VAT is not shown for intra-community deliveries
+     *  - G = tax not levied due to export outside the EU
+     *  - O = Outside the tax scope
+     *  - L = IGIC (Canary Islands)
+     *  - M = IPSI (Ceuta / Melilla)
+     * @param string $typeCode
+     * Coded description of a sales tax category. Note: Fixed value = "VAT"
+     * @param float $rateApplicablePercent
+     * The sales tax rate, expressed as the percentage applicable to the sales tax category in
+     * question. Note: The code of the sales tax category and the category-specific sales tax rate
+     * must correspond to one another. The value to be given is the percentage. For example, the
+     * value 20 is given for 20% (and not 0.2)
+     * @param float $calculatedAmount
+     * The total amount to be paid for the relevant VAT category. Note: Calculated by multiplying
+     * the amount to be taxed according to the sales tax category by the sales tax rate applicable
+     * for the sales tax category concerned
+     * @param string|null $exemptionReason
+     * Reason for tax exemption (free text)
+     * @param string|null $exemptionReasonCode
+     * Reason given in code form for the exemption of the amount from VAT. Note: Code list issued
+     * and maintained by the Connecting Europe Facility.
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentPositionNetPriceTax(string $categoryCode, string $typeCode, float $rateApplicablePercent, float $calculatedAmount, ?string $exemptionReason = null, ?string $exemptionReasonCode = null): UblDocumentBuilder
+    {
+        // TODO: Seems to be not possible in UBL
+        return $this;
+    }
+    /**
+     * Set the position Quantity
+     *
+     * @param float $billedQuantity
+     * The quantity of individual items (goods or services) billed in the relevant line
+     * @param string $billedQuantityUnitCode
+     * The unit of measure applicable to the amount billed. Note: The unit of measurement must be taken from the
+     * lists from UN / ECE Recommendation No. 20 "Codes for Units of Measure Used in International Trade" and
+     * UN / ECE Recommendation No. 21 "Codes for Passengers, Types of Cargo, Packages and Packaging Materials
+     * (with Complementary Codes for Package Names)" using the UN / ECE Rec No. 20 Intro 2.a) can be selected.
+     * It should be noted that in most cases it is not necessary for buyers and sellers to fully implement these
+     * lists in their software. Sellers only need to support the entities necessary for their goods and services;
+     * Buyers only need to verify that the units used in the invoice match those in other documents (such as in
+     * Contracts, catalogs, orders and shipping notifications) match the units used.
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentPositionQuantity(float $billedQuantity, string $billedQuantityUnitCode): UblDocumentBuilder
+    {
+        $this->currentPosition->setInvoicedQuantity((new InvoicedQuantity($billedQuantity))->setUnitCode($billedQuantityUnitCode));
+        return $this;
+    }
+
+    /**
+     * Set detailed information on the different ship-to party at item level
+     *
+     * @param string $name
+     * The name of the party to whom the goods are being delivered or for whom the services are being
+     * performed. Must be used if the recipient of the goods or services is not the same as the buyer.
+     * @param string|null $id
+     * An identifier for the place where the goods are delivered or where the services are provided.
+     * Multiple IDs can be assigned or specified. They can be differentiated by using different
+     * identification schemes. If no scheme is given, it should be known to the buyer and seller, e.g.
+     * a previously exchanged identifier assigned by the buyer or seller.
+     * @param string|null $description
+     * Further legal information that is relevant for the party
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentPositionShipTo(string $name, ?string $id = null, ?string $description = null): UblDocumentBuilder
+    {
+        // TODO: Implement this, if possible
+        return $this;
+    }
+
+    /**
+     * Add a global id for the Ship-to Trade Party
+     *
+     * @param string|null $globalID
+     * The identifier is uniquely assigned to a party by a global registration organization.
+     * @param string|null $globalIDType
+     * If the identifier is used for the identification scheme, it must be selected from the entries in
+     * the list published by the ISO / IEC 6523 Maintenance Agency.
+     * @return UblDocumentBuilder
+     */
+    public function addDocumentPositionShipToGlobalId(?string $globalID = null, ?string $globalIDType = null): UblDocumentBuilder
+    {
+        // TODO: Implement this, if possible
+        return $this;
+    }
+
+    /**
+     * Add Tax registration to Ship-To Trade party
+     *
+     * The local identification (defined by the party's address) of the party for tax purposes or a reference that enables the party
+     * to indicate his reporting status for tax purposes The sales tax identification number of the party
+     * Note: This information may affect how the buyer the invoice settled (such as in relation to social security contributions). So
+     * e.g. In some countries, if the party is not reported for tax, the buyer will withhold the tax amount and pay it on behalf of the
+     * party. Sales tax number with a prefixed country code. A supplier registered as subject to VAT must provide his sales tax
+     * identification number, unless he uses a tax agent.
+     *
+     * @param string|null $taxregtype
+     * Type of tax number of the party
+     * @param string|null $taxregid
+     * Tax number of the party or sales tax identification number of the (FC = Tax number, VA = Sales tax number)
+     * @return UblDocumentBuilder
+     */
+    public function addDocumentPositionShipToTaxRegistration(?string $taxregtype = null, ?string $taxregid = null): UblDocumentBuilder
+    {
+        // TODO: Implement this, if possible
+        return $this;
+    }
+
+    /**
+     * Sets the postal address of the Ship-To party
+     *
+     * @param string|null $lineone
+     * The main line in the product end users address. This is usually the street name and house number or
+     * the post office box
+     * @param string|null $linetwo
+     * Line 2 of the product end users address. This is an additional address line in an address that can be
+     * used to provide additional details in addition to the main line
+     * @param string|null $linethree
+     * Line 3 of the product end users address. This is an additional address line in an address that can be
+     * used to provide additional details in addition to the main line
+     * @param string|null $postcode
+     * Identifier for a group of properties, such as a zip code
+     * @param string|null $city
+     * Usual name of the city or municipality in which the product end users address is located
+     * @param string|null $country
+     * Code used to identify the country. If no tax agent is specified, this is the country in which the sales tax
+     * is due. The lists of approved countries are maintained by the EN ISO 3166-1 Maintenance Agency “Codes for the
+     * representation of names of countries and their subdivisions”
+     * @param string|null $subdivision
+     * The product end users state
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentPositionShipToAddress(?string $lineone = null, ?string $linetwo = null, ?string $linethree = null, ?string $postcode = null, ?string $city = null, ?string $country = null, ?string $subdivision = null): UblDocumentBuilder
+    {
+        // TODO: Implement this, if possible
+        return $this;
+    }
+
+    /**
+     * Set legal organisation of the Ship-To party on item level
+     *
+     * @param string|null $legalorgid
+     * An identifier issued by an official registrar that identifies the
+     * party as a legal entity or legal person. If no identification scheme ($legalorgtype) is provided,
+     * it should be known to the buyer or seller party
+     * @param string|null $legalorgtype
+     * registration of the party. In particular, the following scheme codes are used: 0021 : SWIFT, 0088 : EAN,
+     * 0060 : DUNS, 0177 : ODETTE
+     * @param string|null $legalorgname A name by which the party is known, if different from the party's name
+     * (also known as the company name)
+     * @param string|null $legalform
+     * Additional legal information relevant for the Seller.
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentPositionShipToLegalOrganisation(?string $legalorgid, ?string $legalorgtype, ?string $legalorgname, ?string $legalform = null): UblDocumentBuilder
+    {
+        // TODO: Implement this, if possible
+        return $this;
+    }
+
+    /**
+     * Set contact of the Ship-To party
+     *
+     * @param string|null $contactpersonname
+     * Contact point for a legal entity, such as a personal name of the contact person
+     * @param string|null $contactdepartmentname
+     * Contact point for a legal entity, such as a name of the department or office
+     * @param string|null $contactphoneno
+     * Detailed information on the party's phone number
+     * @param string|null $contactfaxno
+     * Detailed information on the party's fax number
+     * @param string|null $contactemailadd
+     * Detailed information on the party's email address
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentPositionShipToContact(?string $contactpersonname, ?string $contactdepartmentname, ?string $contactphoneno, ?string $contactfaxno, ?string $contactemailadd): UblDocumentBuilder
+    {
+        // TODO: Implement this, if possible
+        return $this;
+    }
+
+    /**
+     * Detailed information on the different end recipient
+     *
+     * @param string $name
+     * The name of the party to whom the goods are being delivered or for whom the services are being
+     * performed. Must be used if the recipient of the goods or services is not the same as the buyer.
+     * @param string|null $id
+     * An identifier for the party Multiple IDs can be assigned or specified. They can be differentiated
+     * by using different identification schemes. If no scheme is given, it should be known to the buyer
+     * and seller, e.g. a previously exchanged identifier assigned by the buyer or seller.
+     * @param string|null $description
+     * Further legal information that is relevant for the party
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentPositionUltimateShipTo(string $name, ?string $id = null, ?string $description = null): UblDocumentBuilder
+    {
+        // TODO: Implement this, if possible
+        return $this;
+    }
+
+    /**
+     * Add a global id for the Ship-to Trade Party
+     *
+     * @param string|null $globalID
+     * Global identifier of the parfty
+     * @param string|null $globalIDType
+     * Type of global identification number, must be selected from the entries in
+     * the list published by the ISO / IEC 6523 Maintenance Agency.
+     * @return UblDocumentBuilder
+     */
+    public function addDocumentPositionUltimateShipToGlobalId(?string $globalID = null, ?string $globalIDType = null): UblDocumentBuilder
+    {
+        // TODO: Implement this, if possible
+        return $this;
+    }
+
+    /**
+     * Add Tax registration to Ship-To Trade party
+     *
+     * @param string|null $taxregtype
+     * Type of tax number of the party
+     * @param string|null $taxregid
+     * Tax number of the party or sales tax identification number of the (FC = Tax number, VA = Sales tax number)
+     * @return UblDocumentBuilder
+     */
+    public function addDocumentPositionUltimateShipToTaxRegistration(?string $taxregtype = null, ?string $taxregid = null): UblDocumentBuilder
+    {
+        // TODO: Implement this, if possible
+        return $this;
+    }
+
+    /**
+     * Sets the postal address of the Ship-To party
+     *
+     * @param string|null $lineone
+     * The main line in the party's address. This is usually the street name and house number or
+     * the post office box
+     * @param string|null $linetwo
+     * Line 2 of the party's address. This is an additional address line in an address that can be
+     * used to provide additional details in addition to the main line
+     * @param string|null $linethree
+     * Line 3 of the party's address. This is an additional address line in an address that can be
+     * used to provide additional details in addition to the main line
+     * @param string|null $postcode
+     * Identifier for a group of properties, such as a zip code
+     * @param string|null $city
+     * Usual name of the city or municipality in which the party's address is located
+     * @param string|null $country
+     * Code used to identify the country. If no tax agent is specified, this is the country in which the sales tax
+     * is due. The lists of approved countries are maintained by the EN ISO 3166-1 Maintenance Agency “Codes for the
+     * representation of names of countries and their subdivisions”
+     * @param string|null $subdivision
+     * The party's state
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentPositionUltimateShipToAddress(?string $lineone = null, ?string $linetwo = null, ?string $linethree = null, ?string $postcode = null, ?string $city = null, ?string $country = null, ?string $subdivision = null): UblDocumentBuilder
+    {
+        // TODO: Implement this, if possible
+        return $this;
+    }
+
+    /**
+     * Set legal organisation of the Ship-To party
+     *
+     * @param string|null $legalorgid
+     * An identifier issued by an official registrar that identifies the
+     * party as a legal entity or legal person. If no identification scheme ($legalorgtype) is provided,
+     * it should be known to the buyer or seller party
+     * @param string|null $legalorgtype The identifier for the identification scheme of the legal
+     * registration of the party. In particular, the following scheme codes are used: 0021 : SWIFT, 0088 : EAN,
+     * 0060 : DUNS, 0177 : ODETTE
+     * @param string|null $legalorgname A name by which the party is known, if different from the party's name
+     * (also known as the company name)
+     * @param string|null $legalform
+     * Additional legal information relevant for the Seller.
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentPositionUltimateShipToLegalOrganisation(?string $legalorgid, ?string $legalorgtype, ?string $legalorgname, ?string $legalform = null): UblDocumentBuilder
+    {
+        // TODO: Implement this, if possible
+        return $this;
+    }
+
+    /**
+     * Set contact of the Ship-To party
+     *
+     * @param string|null $contactpersonname
+     * Contact point for a legal entity, such as a personal name of the contact person
+     * @param string|null $contactdepartmentname
+     * Contact point for a legal entity, such as a name of the department or office
+     * @param string|null $contactphoneno
+     * Detailed information on the party's phone number
+     * @param string|null $contactfaxno
+     * Detailed information on the party's fax number
+     * @param string|null $contactemailadd
+     * Detailed information on the party's email address
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentPositionUltimateShipToContact(?string $contactpersonname, ?string $contactdepartmentname, ?string $contactphoneno, ?string $contactfaxno, ?string $contactemailadd): UblDocumentBuilder
+    {
+        // TODO: Implement this, if possible
+        return $this;
+    }
+
+    /**
+     * Detailed information on the actual delivery on item level
+     *
+     * @param DateTime|null $date
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentPositionSupplyChainEvent(?DateTime $date): UblDocumentBuilder
+    {
+        // TODO: Implement this, if possible
+        return $this;
+    }
+
+    /**
+     * Detailed information on the associated shipping notification on item level
+     *
+     * @param string $issuerassignedid
+     * @param string|null $lineid
+     * @param DateTime|null $issueddate
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentPositionDespatchAdviceReferencedDocument(string $issuerassignedid, ?string $lineid = null, ?DateTime $issueddate = null): UblDocumentBuilder
+    {
+        // TODO: Implement this, if possible
+        return $this;
+    }
+
+    /**
+     * Detailed information on the associated shipping notification on item level
+     *
+     * @param string $issuerassignedid
+     * @param string|null $lineid
+     * @param DateTime|null $issueddate
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentPositionReceivingAdviceReferencedDocument(string $issuerassignedid, ?string $lineid = null, ?DateTime $issueddate = null): UblDocumentBuilder
+    {
+        // TODO: Implement this, if possible
+        return $this;
+    }
+
+    /**
+     * Detailed information on the associated delivery note on item level
+     *
+     * @param string $issuerassignedid
+     * @param string|null $lineid
+     * @param DateTime|null $issueddate
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentPositionDeliveryNoteReferencedDocument(string $issuerassignedid, ?string $lineid = null, ?DateTime $issueddate = null): UblDocumentBuilder
+    {
+        // TODO: Implement this, if possible
+        return $this;
+    }
+
+    /**
+     * Add information about the sales tax that applies to the goods and services invoiced
+     * in the relevant invoice line
+     *
+     * @param string $categoryCode
+     * Coded description of a sales tax category
+     *
+     * The following entries from UNTDID 5305 are used (details in brackets):
+     *  - Standard rate (sales tax is due according to the normal procedure)
+     *  - Goods to be taxed according to the zero rate (sales tax is charged with a percentage of zero)
+     *  - Tax exempt (USt./IGIC/IPSI)
+     *  - Reversal of the tax liability (the rules for reversing the tax liability at USt./IGIC/IPSI apply)
+     *  - VAT exempt for intra-community deliveries of goods (USt./IGIC/IPSI not levied due to rules on intra-community deliveries)
+     *  - Free export item, tax not levied (VAT / IGIC/IPSI not levied due to export outside the EU)
+     *  - Services outside the tax scope (sales are not subject to VAT / IGIC/IPSI)
+     *  - Canary Islands general indirect tax (IGIC tax applies)
+     *  - IPSI (tax for Ceuta / Melilla) applies.
+     *
+     * The codes for the VAT category are as follows:
+     *  - S = sales tax is due at the normal rate
+     *  - Z = goods to be taxed according to the zero rate
+     *  - E = tax exempt
+     *  - AE = reversal of tax liability
+     *  - K = VAT is not shown for intra-community deliveries
+     *  - G = tax not levied due to export outside the EU
+     *  - O = Outside the tax scope
+     *  - L = IGIC (Canary Islands)
+     *  - M = IPSI (Ceuta / Melilla)
+     * @param string $typeCode
+     * In EN 16931 only the tax type “sales tax” with the code “VAT” is supported. Should other types of tax be
+     * specified, such as an insurance tax or a mineral oil tax the EXTENDED profile must be used. The code for
+     * the tax type must then be taken from the code list UNTDID 5153.
+     * @param float $rateApplicablePercent
+     * The VAT rate applicable to the item invoiced and expressed as a percentage. Note: The code of the sales
+     * tax category and the category-specific sales tax rate  must correspond to one another. The value to be
+     * given is the percentage. For example, the value 20 is given for 20% (and not 0.2)
+     * @param string|null $exemptionReason
+     * Reason for tax exemption (free text)
+     * @param string|null $exemptionReasonCode
+     * Reason given in code form for the exemption of the amount from VAT. Note: Code list issued
+     * and maintained by the Connecting Europe Facility.
+     * @return UblDocumentBuilder
+     */
+    public function addDocumentPositionTax(string $categoryCode, string $typeCode, float $rateApplicablePercent, ?string $exemptionReason = null, ?string $exemptionReasonCode = null): UblDocumentBuilder
+    {
+        $item = $this->ublBuilderHelper->ensureInvoiceLineItem();
+
+        $taxCategory = (new ClassifiedTaxCategory())
+            ->setId(new ID($categoryCode))
+            ->setTaxScheme((new TaxScheme())
+                ->setID(new ID($typeCode)));
+
+        if ($rateApplicablePercent !== null) {
+            $taxCategory->setPercent(new Percent($rateApplicablePercent));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($exemptionReason)) {
+            $taxCategory->addToTaxExemptionReason(new TaxExemptionReason($exemptionReason));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($exemptionReasonCode)) {
+            $taxCategory->setTaxExemptionReasonCode(new TaxExemptionReasonCode($exemptionReasonCode));
+        }
+
+        $item->addToClassifiedTaxCategory($taxCategory);
+
+        return $this;
+    }
+
+    /**
+     * Set information about the period relevant for the invoice item.
+     * Note: Also known as the invoice line delivery period.
+     *
+     * @param DateTime|null $startdate
+     * Start of the billing period
+     * @param DateTime|null $endDate
+     * End of the billing period
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentPositionBillingPeriod(?DateTime $startdate, ?DateTime $endDate): UblDocumentBuilder
+    {
+        if ($startdate !== null) {
+            $invoicePeriod = $this->ublBuilderHelper->ensureInvoiceLineBillingPeriod();
+            $invoicePeriod->setStartDate($startdate);
+        }
+        if ($endDate !== null) {
+            $invoicePeriod = $this->ublBuilderHelper->ensureInvoiceLineBillingPeriod();
+            $invoicePeriod->setEndDate($endDate);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Add surcharges and discounts on position level
+     *
+     * @param float $actualAmount
+     * The surcharge/discount amount excluding sales tax
+     * @param boolean $isCharge
+     * Switch that indicates whether the following data refer to an allowance or a discount,
+     * true means that
+     * @param float|null $calculationPercent
+     * The percentage that may be used in conjunction with the base invoice line discount
+     * amount to calculate the invoice line discount amount
+     * @param float|null $basisAmount
+     * The base amount that may be used in conjunction with the invoice line discount percentage
+     * to calculate the invoice line discount amount
+     * @param string|null $reasonCode
+     * The reason given as a code for the invoice line discount
+     *
+     * __Notes__
+     *  - Use entries from the UNTDID 5189 code list (discounts) or the UNTDID 7161 code list
+     *    (surcharges). The invoice line discount reason code and the invoice line discount reason must
+     *    match.
+     *  - In the case of a discount, the code list UNTDID 5189 must be used.
+     *  - In the event of a surcharge, the code list UNTDID 7161 must be used.
+     *
+     * In particular, the following codes can be used:
+     *  - AA = Advertising
+     *  - ABL = Additional packaging
+     *  - ADR = Other services
+     *  - ADT = Pick-up
+     *  - FC = Freight service
+     *  - FI = Financing
+     *  - LA = Labelling
+     *
+     * Include PEPPOL subset:
+     *  - 41 - Bonus for works ahead of schedule
+     *  - 42 - Other bonus
+     *  - 60 - Manufacturer’s consumer discount
+     *  - 62 - Due to military status
+     *  - 63 - Due to work accident
+     *  - 64 - Special agreement
+     *  - 65 - Production error discount
+     *  - 66 - New outlet discount
+     *  - 67 - Sample discount
+     *  - 68 - End-of-range discount
+     *  - 70 - Incoterm discount
+     *  - 71 - Point of sales threshold allowance
+     *  - 88 - Material surcharge/deduction
+     *  - 95 - Discount
+     *  - 100 - Special rebate
+     *  - 102 - Fixed long term
+     *  - 103 - Temporary
+     *  - 104 - Standard
+     *  - 105 - Yearly turnover
+     *
+     * Codelists: UNTDID 7161 (Complete list), UNTDID 5189 (Restricted)
+     * @param string|null $reason
+     * The reason given in text form for the invoice item discount/surcharge
+     *
+     * __Notes__
+     *  - The invoice line discount reason code (BT-140) and the invoice line discount reason
+     *    (BT-139) must show the same allowance type.
+     *  - Each line item discount (BG-27) must include a corresponding line discount reason
+     *    (BT-139) or an appropriate line discount reason code (BT-140), or both.
+     *  - The code for the reason for the charge at the invoice line level (BT-145) and the
+     *    reason for the invoice line discount (BT-144) must show the same discount type
+     * @return UblDocumentBuilder
+     */
+    public function addDocumentPositionAllowanceCharge(float $actualAmount, bool $isCharge, ?float $calculationPercent = null, ?float $basisAmount = null, ?string $reasonCode = null, ?string $reason = null): UblDocumentBuilder
+    {
+        // TODO: Implement this if possible
+        return $this;
+    }
+
+    /**
+     * Set information on item totals
+     *
+     * @param float $lineTotalAmount
+     * The total amount of the invoice item.
+     * __Note:__ This is the "net" amount, that is, excluding sales tax, but including all surcharges
+     * and discounts applicable to the item level, as well as other taxes.
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentPositionLineSummation(float $lineTotalAmount): UblDocumentBuilder
+    {
+        $this->currentPosition->setLineExtensionAmount((new LineExtensionAmount($lineTotalAmount))->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode()));
         return $this;
     }
 

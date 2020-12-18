@@ -9,6 +9,7 @@
 
 namespace horstoeko\ubl;
 
+use horstoeko\ubl\entities\cac\Item;
 use horstoeko\ubl\entities\cac\Party;
 use horstoeko\ubl\UblDocumentBuilder;
 use horstoeko\ubl\entities\cac\Address;
@@ -17,6 +18,7 @@ use horstoeko\ubl\entities\cac\Delivery;
 use horstoeko\ubl\entities\main\Invoice;
 use horstoeko\ubl\entities\cac\PayeeParty;
 use horstoeko\stringmanagement\StringUtils;
+use horstoeko\ubl\entities\cac\InvoiceLine;
 use horstoeko\ubl\entities\cac\DeliveryParty;
 use horstoeko\ubl\entities\cac\InvoicePeriod;
 use horstoeko\ubl\entities\cac\PostalAddress;
@@ -24,12 +26,14 @@ use horstoeko\ubl\entities\cac\OrderReference;
 use horstoeko\ubl\entities\cac\DeliveryLocation;
 use horstoeko\ubl\entities\cac\PartyLegalEntity;
 use horstoeko\ubl\entities\cac\ProjectReference;
+use horstoeko\ubl\entities\cac\OrderLineReference;
 use horstoeko\ubl\entities\cac\TaxRepresentativeParty;
 use horstoeko\ubl\entities\cac\AccountingCustomerParty;
 use horstoeko\ubl\entities\cac\AccountingSupplierParty;
 use horstoeko\ubl\entities\cac\ReceiptDocumentReference;
 use horstoeko\ubl\entities\cac\ContractDocumentReference;
 use horstoeko\ubl\entities\cac\DespatchDocumentReference;
+use horstoeko\ubl\entities\cac\OriginatorDocumentReference;
 
 /**
  * Class representing helper methods for the ubl invoice builder
@@ -67,6 +71,16 @@ class UblDocumentBuilderHelper
     protected function getInvoiceObject(): Invoice
     {
         return $this->ublBuilder->getInvoiceObject();
+    }
+
+    /**
+     * Returns the currently created document position (invoice line)
+     *
+     * @return InvoiceLine
+     */
+    public function getCurrentPosition(): InvoiceLine
+    {
+        return $this->ublBuilder->getCurrentPosition();
     }
 
     /**
@@ -437,5 +451,51 @@ class UblDocumentBuilderHelper
         return isset($this->getInvoiceObject()->getInvoicePeriod()[0]) ?
             $this->getInvoiceObject()->getInvoicePeriod()[0] :
             $this->getInvoiceObject()->addToInvoicePeriod(new InvoicePeriod())->getInvoicePeriod()[0];
+    }
+
+    /**
+     * Make sure thet the invoice has an contract reference object
+     *
+     * @return OriginatorDocumentReference
+     */
+    public function ensureOriginatorReference(): OriginatorDocumentReference
+    {
+        return isset($this->getInvoiceObject()->getOriginatorDocumentReference()[0]) ?
+            $this->getInvoiceObject()->getOriginatorDocumentReference()[0] :
+            $this->getInvoiceObject()->addToOriginatorDocumentReference(new OriginatorDocumentReference())->getOriginatorDocumentReference()[0];
+    }
+
+    /**
+     * Makes sure that the current invoice line has an item object
+     *
+     * @return Item
+     */
+    public function ensureInvoiceLineItem(): Item
+    {
+        return $this->getCurrentPosition()->getItem() ?? $this->getCurrentPosition()->setItem(new Item())->getItem();
+    }
+
+    /**
+     * Make sure that the current invoice line has an order reference line object
+     *
+     * @return OrderLineReference
+     */
+    public function ensureInvoiceLineOrderLineReference(): OrderLineReference
+    {
+        return isset($this->getCurrentPosition()->getOrderLineReference()[0]) ?
+            $this->getCurrentPosition()->getOrderLineReference()[0] :
+            $this->getCurrentPosition()->addToOrderLineReference(new OrderLineReference())->getOrderLineReference()[0];
+    }
+
+    /**
+     * Make sure thet the invoice has an invoice period object
+     *
+     * @return InvoicePeriod
+     */
+    public function ensureInvoiceLineBillingPeriod(): InvoicePeriod
+    {
+        return isset($this->getCurrentPosition()->getInvoicePeriod()[0]) ?
+            $this->getCurrentPosition()->getInvoicePeriod()[0] :
+            $this->getCurrentPosition()->addToInvoicePeriod(new InvoicePeriod())->getInvoicePeriod()[0];
     }
 }

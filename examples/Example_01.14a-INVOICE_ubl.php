@@ -8,7 +8,7 @@ use Symfony\Component\Validator\Constraints\Date;
 $ublBuilder = new UblDocumentBuilder();
 
 $ublBuilder->setDocumentCustomization("urn:cen.eu:en16931:2017#compliant#urn:xoev-de:kosit:standard:xrechnung_2.0");
-$ublBuilder->setDocumentInformation("1234567", "380", \DateTime::createFromFormat("Y-m-d", "2018-04-13"), "EUR");
+$ublBuilder->setDocumentInformation("1234567", "380", \DateTime::createFromFormat("Y-m-d", "2018-04-13"), "EUR", "EUR", \DateTime::createFromFormat("Y-m-d", "2018-04-13"));
 $ublBuilder->addDocumentNote("#AAC#Invoice Note Description");
 $ublBuilder->setDocumentBuyerReference("90000000-03083-12");
 $ublBuilder->setDocumentBillingPeriod(\DateTime::createFromFormat("Y-m-d", "2018-04-13"), \DateTime::createFromFormat("Y-m-d", "2018-04-13"));
@@ -21,45 +21,39 @@ $ublBuilder->setDocumentSellerAddress("", "", "", "12345", "[Seller city]", "DE"
 $ublBuilder->setDocumentSellerLegalOrganisation("HRB 123", null, "[Seller name]");
 $ublBuilder->setDocumentSellerContact("Tim Tester", "", "012 3456789", "", "tim.tester@test.com");
 
-/*
-$ublBuilder->setDocumentBuyer("Kunden AG Mitte", "GE2020211");
-$ublBuilder->addDocumentBuyerGlobalId("4000001123452", "0088");
-$ublBuilder->addDocumentBuyerTaxRegistration("FC", "201/113/40209");
-$ublBuilder->addDocumentBuyerTaxRegistration("VA", "DE123456789");
-$ublBuilder->setDocumentBuyerAddress("Kundenstraße 15", null, null, "69876", "Frankfurt", "DE", "Hessen");
-$ublBuilder->setDocumentBuyerLegalOrganisation("999999999", "0198", "Kunden AG Holding");
-$ublBuilder->setDocumentBuyerContact("Horst Meier", "Einkauf", "+49-111-333", "+49-111-444", "info@kunde.de");
+$ublBuilder->setDocumentBuyer("", "138");
+$ublBuilder->addDocumentBuyerTaxRegistration("VAT", "DE12345ABC");
+$ublBuilder->setDocumentBuyerAddress("", "", "", "98765", "[Buyer city]", "DE");
+$ublBuilder->setDocumentBuyerLegalOrganisation("HRB 3456", null, "[Buyer name]");
+$ublBuilder->setDocumentBuyerContact("Tina Tester", "", "0800 123456", "", "tester@test.de");
 
-$ublBuilder->setDocumentSellerTaxRepresentativeTradeParty("[Seller tax representative name]", "tx0001");
-$ublBuilder->addDocumentSellerTaxRepresentativeGlobalId("123321123321", "0088");
-$ublBuilder->addDocumentSellerTaxRepresentativeTaxRegistration("FC", "201/113/40209");
-$ublBuilder->addDocumentSellerTaxRepresentativeTaxRegistration("VA", "DE123456789");
-$ublBuilder->setDocumentSellerTaxRepresentativeAddress("Lieferantenstraße 20", null, null, "80333", "München", "DE", "Bayern");
-$ublBuilder->setDocumentSellerTaxRepresentativeLegalOrganisation("123456789", "0198", "[Seller trading name]");
-$ublBuilder->setDocumentSellerTaxRepresentativeContact("Heinz Müller", "FiBu", "+49-111-22222", "+49-111-23232", "vat@lieferant.de");
+$ublBuilder->setDocumentPayee("[Payee name]", "74");
 
-$ublBuilder->setDocumentShipTo("Warehouse GmbH", "68");
-$ublBuilder->setDocumentShipToAddress("Kundenstraße 15", null, null, "69876", "Frankfurt", "DE", "Hessen");
-$ublBuilder->setDocumentShipToContact("Heinz Müller", "", "", "", "");
+$ublBuilder->setDocumentSellerTaxRepresentative("[Seller tax representative name]");
+$ublBuilder->setDocumentSellerTaxRepresentativeAddress("", "", "", "", "", "DE", "");
+$ublBuilder->addDocumentSellerTaxRepresentativeTaxRegistration("VAT", "DE124567");
 
-$ublBuilder->setDocumentPayee("[payee name]", "payee0001");
-$ublBuilder->addDocumentPayeeGlobalId("38763267", "0088");
-$ublBuilder->addDocumentPayeeTaxRegistration("DE366746532", "FC");
-$ublBuilder->setDocumentPayeeAddress("Lieferantenstraße 20", null, null, "80333", "München", "DE", "Bayern");
-$ublBuilder->setDocumentPayeeLegalOrganisation("123456789", "0198", "[Seller trading name]");
-$ublBuilder->setDocumentPayeeContact("Horst Meier", "Einkauf", "+49-111-333", "+49-111-444", "info@kunde.de");
+$ublBuilder->setDocumentShipTo("[Deliver to party name]", "68");
+$ublBuilder->setDocumentShipToAddress("[Deliver to street]", "4. OG", "", "98765", "[Deliver to city]", "DE", "Bayern");
 
-$ublBuilder->setDocumentSellerOrderReferencedDocument("ABC123456789");
-$ublBuilder->setDocumentBuyerOrderReferencedDocument("65002278");
-$ublBuilder->setDocumentContractReferencedDocument("CR987654321", new DateTime());
-$ublBuilder->addDocumentAdditionalReferencedDocument("01_15_Anhang_01.pdf", null, "http://web.de", "Aufschlüsselung der einzelnen Leistungspositionen", "", null, null);
-$ublBuilder->setDocumentInvoiceReferencedDocument("INV-00001", new DateTime());
-$ublBuilder->setDocumentProcuringProject("PROJ-0001");
-$ublBuilder->setDocumentDespatchAdviceReferencedDocument("DESP-0002", new DateTime());
-$ublBuilder->setDocumentReceivingAdviceReferencedDocument("RECIP-0003", new DateTime());
+$ublBuilder->addDocumentPaymentMean("58", "", "", "", "", "", "DE75512108001245126199", "", "", "", "");
 
-$ublBuilder->addDocumentPaymentMeanBankCard("VISA", "99933847576752", "Rolf Meier");
+$ublBuilder->addDocumentTax("S", "VAT", 10781.25, 2048.44, 19);
+$ublBuilder->setDocumentSummation(12829.69, 12829.69, 10781.25);
 
-$ublBuilder->addDocumentTaxSimple("S", "VAT", 20700379.33, 3933072.07, 19.0);
-*/
-echo $ublBuilder->getContent() . PHP_EOL . PHP_EOL;
+$ublBuilder->addNewPosition("1");
+$ublBuilder->setDocumentPositionProductDetails("Beratung", "");
+$ublBuilder->addDocumentPositionTax("S", "VAT", 19.0);
+$ublBuilder->setDocumentPositionNetPrice(143.75);
+$ublBuilder->setDocumentPositionQuantity(30, "XPP");
+$ublBuilder->setDocumentPositionLineSummation(4743.75);
+
+$ublBuilder->addNewPosition("2");
+$ublBuilder->setDocumentPositionProductDetails("Beratung", "");
+$ublBuilder->addDocumentPositionTax("S", "VAT", 19.0);
+$ublBuilder->setDocumentPositionNetPrice(143.75);
+$ublBuilder->setDocumentPositionQuantity(30, "XPP");
+$ublBuilder->setDocumentPositionLineSummation(6037.50);
+
+//echo $ublBuilder->getContent() . PHP_EOL . PHP_EOL;
+$ublBuilder->writeFile(dirname(__FILE__) . "/Example_01.14a-INVOICE_ubl.xml");

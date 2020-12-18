@@ -8,7 +8,7 @@ use Symfony\Component\Validator\Constraints\Date;
 $ublBuilder = new UblDocumentBuilder();
 
 $ublBuilder->setDocumentCustomization("urn:cen.eu:en16931:2017#compliant#urn:xoev-de:kosit:standard:xrechnung_2.0");
-$ublBuilder->setDocumentInformation("1234", "380", new \DateTime, "EUR");
+$ublBuilder->setDocumentInformation("1234", "380", new \DateTime, "EUR", "EUR", new \DateTime("+14 days"));
 $ublBuilder->addDocumentNote("#ADU#Es gelten unsere Allgem. Geschäftsbedingungen, die Sie unter […] finden.");
 $ublBuilder->setDocumentBuyerReference("abc");
 
@@ -28,7 +28,7 @@ $ublBuilder->setDocumentBuyerAddress("Kundenstraße 15", null, null, "69876", "F
 $ublBuilder->setDocumentBuyerLegalOrganisation("999999999", "0198", "Kunden AG Holding");
 $ublBuilder->setDocumentBuyerContact("Horst Meier", "Einkauf", "+49-111-333", "+49-111-444", "info@kunde.de");
 
-$ublBuilder->setDocumentSellerTaxRepresentativeTradeParty("[Seller tax representative name]", "tx0001");
+$ublBuilder->setDocumentSellerTaxRepresentative("[Seller tax representative name]", "tx0001");
 $ublBuilder->addDocumentSellerTaxRepresentativeGlobalId("123321123321", "0088");
 $ublBuilder->addDocumentSellerTaxRepresentativeTaxRegistration("FC", "201/113/40209");
 $ublBuilder->addDocumentSellerTaxRepresentativeTaxRegistration("VA", "DE123456789");
@@ -49,7 +49,7 @@ $ublBuilder->setDocumentPayeeLegalOrganisation("123456789", "0198", "[Seller tra
 $ublBuilder->setDocumentPayeeContact("Horst Meier", "Einkauf", "+49-111-333", "+49-111-444", "info@kunde.de");
 
 $ublBuilder->setDocumentSellerOrderReferencedDocument("ABC123456789");
-$ublBuilder->setDocumentBuyerOrderReferencedDocument("65002278");
+//$ublBuilder->setDocumentBuyerOrderReferencedDocument("65002278");
 $ublBuilder->setDocumentContractReferencedDocument("CR987654321", new DateTime());
 $ublBuilder->addDocumentAdditionalReferencedDocument("01_15_Anhang_01.pdf", null, "http://web.de", "Aufschlüsselung der einzelnen Leistungspositionen", "", null, null);
 $ublBuilder->setDocumentInvoiceReferencedDocument("INV-00001", new DateTime());
@@ -61,5 +61,24 @@ $ublBuilder->addDocumentPaymentMeanBankCard("VISA", "99933847576752", "Rolf Meie
 
 $ublBuilder->addDocumentTaxSimple("S", "VAT", 20700379.33, 3933072.07, 19.0);
 $ublBuilder->setDocumentBillingPeriod(\DateTime::createFromFormat("Y-m-d", "2018-04-13"), \DateTime::createFromFormat("Y-m-d", "2018-04-13"));
+
+$ublBuilder->addDocumentAllowanceCharge(19, false, "S", "VAT", 19, null, 19, 100, null, null, "AAA", "Testing");
+
+$ublBuilder->addNewPosition("1.0");
+$ublBuilder->addDocumentPositionNote("Erste Bemerkungen");
+$ublBuilder->addDocumentPositionNote("Zweite Bemerkungen");
+$ublBuilder->setDocumentPositionProductDetails("Name", "Beschreibung", "sellerid", "buyerid", "0088", "globalid");
+$ublBuilder->addDocumentPositionProductClassification("classcode", "listid", "listversionid");
+$ublBuilder->setDocumentPositionProductOriginTradeCountry("DE");
+$ublBuilder->setDocumentPositionBuyerOrderReferencedDocument("order", "orderline");
+$ublBuilder->addDocumentPositionProductCharacteristic("Color", "Red");
+//$ublBuilder->setDocumentPositionGrossPrice(12.0);
+//$ublBuilder->addDocumentPositionGrossPriceAllowanceCharge(2.0, false, 12.0, "Rabatt", "VAT", "S", 19.0, 1);
+$ublBuilder->setDocumentPositionNetPrice(10.0);
+$ublBuilder->setDocumentPositionQuantity(2, "C62");
+$ublBuilder->addDocumentPositionTax("S", "VAT", 19.0);
+$ublBuilder->setDocumentPositionLineSummation(100.0);
+
+$ublBuilder->setDocumentSummation(119.0, 119.0, 100);
 
 echo $ublBuilder->getContent() . PHP_EOL . PHP_EOL;
