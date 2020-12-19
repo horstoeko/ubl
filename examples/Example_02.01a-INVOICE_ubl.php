@@ -49,8 +49,8 @@ $ublBuilder->setDocumentShipmentDate(\DateTime::createFromFormat("Y-m-d", "2018-
 $ublBuilder->addDocumentPaymentMeanSepaCreditTransfer("DE75512108001245126199", "[Payment account name]", null, "[BIC]");
 $ublBuilder->addDocumentPaymentTerm("Bitte überweisen Sie bis zum 24.01.2015 auf das unten aufgeführte Konto.");
 
-$ublBuilder->addDocumentAllowanceCharge(0, true, "E", "VAT", 0, null, null, 0, null, null, "TAC", "Testing");
-$ublBuilder->addDocumentAllowanceCharge(0, false, "E", "VAT", 0, null, null, 0, null, null, "102", "Fixed long term");
+$ublBuilder->addDocumentAllowanceCharge(0, true, "E", "VAT", 0, null, null, 0, null, null, "TAC", "Testing", 0);
+$ublBuilder->addDocumentAllowanceCharge(0, false, "E", "VAT", 0, null, null, 0, null, null, "102", "Fixed long term", 0);
 
 $ublBuilder->addDocumentTax("S", "VAT", 10781.25, 2048.44, 19);
 $ublBuilder->addDocumentTaxSubTotal("E", "VAT", 0, 0, 0, "a reason");

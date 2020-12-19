@@ -125,6 +125,7 @@ use horstoeko\ubl\entities\cbc\CompanyLegalForm;
 use \horstoeko\ubl\entities\cbc\EmbeddedDocumentBinaryObject;
 use horstoeko\ubl\entities\cbc\EndpointID;
 use horstoeko\ubl\entities\cbc\Line;
+use horstoeko\ubl\entities\cbc\MultiplierFactorNumeric;
 use horstoeko\ubl\entities\cbc\PaymentID;
 use horstoeko\ubl\entities\cbc\ProfileID;
 use horstoeko\ubl\entities\cbc\TaxCurrencyCode;
@@ -2465,9 +2466,13 @@ class UblDocumentBuilder extends UblDocument
      *  - 105 - Yearly turnover
      * @param string|null $reason
      * The reason given in text form for the surcharge or discount at document level
+     * @param float|null $multiplierFactor
+     * The percentage that may be used, in conjunction with the document level allowance
+     * base amount, to calculate the document level allowance or charge amount.
+     * To state 20%, use value 20.
      * @return UblDocumentBuilder
      */
-    public function addDocumentAllowanceCharge(float $actualAmount, bool $isCharge, string $taxCategoryCode, string $taxTypeCode, float $rateApplicablePercent, ?float $sequence = null, ?float $calculationPercent = null, ?float $basisAmount = null, ?float $basisQuantity = null, ?string $basisQuantityUnitCode = null, ?string $reasonCode = null, ?string $reason = null): UblDocumentBuilder
+    public function addDocumentAllowanceCharge(float $actualAmount, bool $isCharge, string $taxCategoryCode, string $taxTypeCode, float $rateApplicablePercent, ?float $sequence = null, ?float $calculationPercent = null, ?float $basisAmount = null, ?float $basisQuantity = null, ?string $basisQuantityUnitCode = null, ?string $reasonCode = null, ?string $reason = null, ?float $multiplierFactor = null): UblDocumentBuilder
     {
         $allowanceCharge = new AllowanceCharge();
         $allowanceCharge->setAmount((new Amount($actualAmount))->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode()->value()));
@@ -2484,6 +2489,9 @@ class UblDocumentBuilder extends UblDocument
         }
         if ($sequence !== null) {
             $allowanceCharge->setSequenceNumeric(new SequenceNumeric($sequence));
+        }
+        if ($multiplierFactor !== null) {
+            $allowanceCharge->setMultiplierFactorNumeric(new MultiplierFactorNumeric($multiplierFactor));
         }
 
         $taxCategory = new TaxCategory();
@@ -3463,9 +3471,27 @@ class UblDocumentBuilder extends UblDocument
      *    reason for the invoice line discount (BT-144) must show the same discount type
      * @return UblDocumentBuilder
      */
-    public function addDocumentPositionAllowanceCharge(float $actualAmount, bool $isCharge, ?float $calculationPercent = null, ?float $basisAmount = null, ?string $reasonCode = null, ?string $reason = null): UblDocumentBuilder
+    public function addDocumentPositionAllowanceCharge(float $actualAmount, bool $isCharge, ?float $calculationPercent = null, ?float $basisAmount = null, ?string $reasonCode = null, ?string $reason = null, ?float $multiplierFactor = null): UblDocumentBuilder
     {
-        // TODO: Implement this if possible
+        $allowanceCharge = new AllowanceCharge();
+        $allowanceCharge->setAmount((new Amount($actualAmount))->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode()->value()));
+        $allowanceCharge->setChargeIndicator($isCharge);
+
+        if ($basisAmount !== null) {
+            $allowanceCharge->setBaseAmount((new BaseAmount($basisAmount))->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode()->value()));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($reason)) {
+            $allowanceCharge->addToAllowanceChargeReason(new AllowanceChargeReason($reason));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($reasonCode)) {
+            $allowanceCharge->setAllowanceChargeReasonCode(new AllowanceChargeReasonCode($reasonCode));
+        }
+        if ($multiplierFactor !== null) {
+            $allowanceCharge->setMultiplierFactorNumeric(new MultiplierFactorNumeric($multiplierFactor));
+        }
+
+        $this->currentPosition->addToAllowanceCharge($allowanceCharge);
+
         return $this;
     }
 
