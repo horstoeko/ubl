@@ -81,4 +81,4 @@ _backup*
 /*.phar
 /composer.lock
 /examples/fullpdf.pdf
-/examples/factur-x.xml
+/examples/*.xml

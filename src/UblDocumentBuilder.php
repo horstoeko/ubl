@@ -150,7 +150,6 @@ class UblDocumentBuilder extends UblDocument
         "text/csv",
         "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
         "application/vnd.oasis.opendocument.spreadsheet",
-        "application/xml",
     ];
 
     /**

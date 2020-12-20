@@ -18,7 +18,7 @@ $ublBuilder->setDocumentBuyerOrderReferencedDocument("65002278");
 $ublBuilder->setDocumentSellerOrderReferencedDocument("ABC123456789");
 $ublBuilder->setDocumentOriginatorReferencedDocument("ANG987654321");
 $ublBuilder->setDocumentContractReferencedDocument("0000000752");
-$ublBuilder->addDocumentAdditionalReferencedDocument("01_15_Anhang_01.pdf", "", "", "Aufschlüsselung der einzelnen Leistungspositionen", "", null, dirname(__FILE__) . "/Example1Attachment.xml");
+$ublBuilder->addDocumentAdditionalReferencedDocument("01_15_Anhang_01.pdf", "", "", "Aufschlüsselung der einzelnen Leistungspositionen", "", null, dirname(__FILE__) . "/attachment.pdf");
 $ublBuilder->setDocumentProcuringProject("PR12345678");
 
 $ublBuilder->setDocumentSeller("[Seller name]", "987654321", "0013");
