@@ -55,5 +55,4 @@ $ublBuilder->setDocumentPositionNetPrice(143.75);
 $ublBuilder->setDocumentPositionQuantity(30, "XPP");
 $ublBuilder->setDocumentPositionLineSummation(6037.50);
 
-//echo $ublBuilder->getContent() . PHP_EOL . PHP_EOL;
 $ublBuilder->writeFile(dirname(__FILE__) . "/Example_01.14a-INVOICE_ubl.xml");
