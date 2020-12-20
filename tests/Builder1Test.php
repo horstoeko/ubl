@@ -12,6 +12,11 @@ class Builder1Test extends BuilderBaseTest
         self::$document = new UblDocumentBuilder();
     }
 
+    public static function tearDownAfterClass(): void
+    {
+        self::$document->writeFile(dirname(__FILE__) . "/builder1.xml");
+    }
+
     public function testXmlGenerals(): void
     {
         $xml = $this->getXml();
@@ -49,5 +54,34 @@ class Builder1Test extends BuilderBaseTest
         $this->disableRenderXmlContent();
         $this->assertXPathValueWithIndex('/ubl:Invoice/cbc:Note', 0, "Single note");
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cbc:Note", 1);
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setIsDocumentCopy
+     */
+    public function testSetIsDocumentCopy(): void
+    {
+        (self::$document)->setIsDocumentCopy();
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValue('/ubl:Invoice/cbc:CopyIndicator', "true");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentSummation
+     */
+    public function testSetDocumentSummation(): void
+    {
+        (self::$document)->setDocumentSummation(119, 110, 100, 0, 0, 100, 19, 0, 9);
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValue('/ubl:Invoice/cac:LegalMonetaryTotal/cbc:LineExtensionAmount', "100.0");
+        $this->assertXPathValue('/ubl:Invoice/cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount', "100.0");
+        $this->assertXPathValue('/ubl:Invoice/cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount', "119.0");
+        $this->assertXPathValue('/ubl:Invoice/cac:LegalMonetaryTotal/cbc:AllowanceTotalAmount', "0.0");
+        $this->assertXPathValue('/ubl:Invoice/cac:LegalMonetaryTotal/cbc:ChargeTotalAmount', "0.0");
+        $this->assertXPathValue('/ubl:Invoice/cac:LegalMonetaryTotal/cbc:PrepaidAmount', "9.0");
+        $this->assertXPathValue('/ubl:Invoice/cac:LegalMonetaryTotal/cbc:PayableRoundingAmount', "0.0");
+        $this->assertXPathValue('/ubl:Invoice/cac:LegalMonetaryTotal/cbc:PayableAmount', "110.0");
     }
 }

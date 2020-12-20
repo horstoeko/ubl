@@ -1695,7 +1695,10 @@ class UblDocumentBuilder extends UblDocument
             $billingReference->setInvoiceDocumentReference(new InvoiceDocumentReference())->getInvoiceDocumentReference();
 
         $invoiceReference->setId(new Id($issuerassignedid));
-        if ($issueddate !== null) $invoiceReference->setIssueDate($issueddate);
+
+        if ($issueddate != null) {
+            $invoiceReference->setIssueDate($issueddate);
+        }
 
         return $this;
     }
