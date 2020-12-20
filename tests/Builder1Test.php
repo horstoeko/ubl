@@ -37,4 +37,17 @@ class Builder1Test extends BuilderBaseTest
         $this->assertXPathValue('/ubl:Invoice/cbc:DocumentCurrencyCode', "EUR");
         $this->assertXPathValue('/ubl:Invoice/cbc:TaxCurrencyCode', "EUR");
     }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentNote
+     */
+    public function testAddDocumentNote(): void
+    {
+        (self::$document)->addDocumentNote("Single note");
+        (self::$document)->addDocumentNote("");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cbc:Note', 0, "Single note");
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cbc:Note", 1);
+    }
 }

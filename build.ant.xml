@@ -259,13 +259,6 @@
                 </not>
             </condition>
         </fail>
-        <fail message="Schematron for EN16931 did not finish successfully">
-            <condition>
-                <not>
-                    <equals arg1="${result.schematron.en16931}" arg2="0"/>
-                </not>
-            </condition>
-        </fail>
         <echo message="Checked failure"/>
     </target>
     <target name="projectdoc" depends="prepare,downloadsami" description="Generator project documentation using Sami.">
