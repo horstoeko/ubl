@@ -49,7 +49,7 @@ class UblDocumentBuilderHelper
     /**
      * Internal reference to the builder
      *
-     * @var horstoeko\ubl\UblDocumentBuilder
+     * @var \horstoeko\ubl\UblDocumentBuilder
      */
     protected $ublBuilder = null;
 
@@ -104,8 +104,8 @@ class UblDocumentBuilderHelper
             }
         }
         if (gettype($variable) == "object") {
-            if (is_a($variable, DateTime::class)) {
-                if ($variable === null) {
+            if (is_a($variable, \DateTime::class)) {
+                if ($variable == null) {
                     throw new \Exception($exceotionMessage);
                 }
             }
@@ -137,7 +137,7 @@ class UblDocumentBuilderHelper
      * Make sure that there is an accounting supplier with party object and the
      * party object has an address object
      *
-     * @return Party
+     * @return PostalAddress
      */
     public function ensureAccountingSupplierPartyPostalAddress(): PostalAddress
     {
@@ -240,7 +240,7 @@ class UblDocumentBuilderHelper
      * Make sure that there is a tax representative trade party and the
      * party has an address object
      *
-     * @return TaxRepresentativeParty
+     * @return PostalAddress
      */
     public function ensureTaxRepresentativeTradePartyPostalAddress(): PostalAddress
     {
