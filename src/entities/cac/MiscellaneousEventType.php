@@ -75,7 +75,7 @@ class MiscellaneousEventType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MiscellaneousEventTypeCode $miscellaneousEventTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\MiscellaneousEventTypeCode $miscellaneousEventTypeCode
      * @return self
      */
     public function setMiscellaneousEventTypeCode(\horstoeko\ubl\entities\cbc\MiscellaneousEventTypeCode $miscellaneousEventTypeCode)
@@ -97,7 +97,7 @@ class MiscellaneousEventType
      *  Event Line Item
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\EventLineItem $eventLineItem
+     * @param  \horstoeko\ubl\entities\cac\EventLineItem $eventLineItem
      */
     public function addToEventLineItem(\horstoeko\ubl\entities\cac\EventLineItem $eventLineItem)
     {
@@ -117,7 +117,7 @@ class MiscellaneousEventType
      *  Event Line Item
      *  Event Line Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetEventLineItem($index)
@@ -137,7 +137,7 @@ class MiscellaneousEventType
      *  Event Line Item
      *  Event Line Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetEventLineItem($index)
@@ -176,7 +176,7 @@ class MiscellaneousEventType
      *  Event Line Item
      *  Event Line Item
      *
-     * @param \horstoeko\ubl\entities\cac\EventLineItem[] $eventLineItem
+     * @param  \horstoeko\ubl\entities\cac\EventLineItem[] $eventLineItem
      * @return self
      */
     public function setEventLineItem(array $eventLineItem)

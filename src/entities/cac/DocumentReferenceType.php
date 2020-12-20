@@ -297,7 +297,7 @@ class DocumentReferenceType
      *  Identifier. Type
      *  PO-001 3333-44-123
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -339,7 +339,7 @@ class DocumentReferenceType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $copyIndicator
+     * @param  bool $copyIndicator
      * @return self
      */
     public function setCopyIndicator($copyIndicator)
@@ -379,7 +379,7 @@ class DocumentReferenceType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\UUID $uUID
+     * @param  \horstoeko\ubl\entities\cbc\UUID $uUID
      * @return self
      */
     public function setUUID(\horstoeko\ubl\entities\cbc\UUID $uUID)
@@ -419,7 +419,7 @@ class DocumentReferenceType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $issueDate
+     * @param  \DateTime $issueDate
      * @return self
      */
     public function setIssueDate(\DateTime $issueDate)
@@ -459,7 +459,7 @@ class DocumentReferenceType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $issueTime
+     * @param  \DateTime $issueTime
      * @return self
      */
     public function setIssueTime(\DateTime $issueTime)
@@ -499,7 +499,7 @@ class DocumentReferenceType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\DocumentTypeCode $documentTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\DocumentTypeCode $documentTypeCode
      * @return self
      */
     public function setDocumentTypeCode(\horstoeko\ubl\entities\cbc\DocumentTypeCode $documentTypeCode)
@@ -539,7 +539,7 @@ class DocumentReferenceType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\DocumentType $documentType
+     * @param  \horstoeko\ubl\entities\cbc\DocumentType $documentType
      * @return self
      */
     public function setDocumentType(\horstoeko\ubl\entities\cbc\DocumentType $documentType)
@@ -561,7 +561,7 @@ class DocumentReferenceType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\XPath $xPath
+     * @param  \horstoeko\ubl\entities\cbc\XPath $xPath
      */
     public function addToXPath(\horstoeko\ubl\entities\cbc\XPath $xPath)
     {
@@ -581,7 +581,7 @@ class DocumentReferenceType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetXPath($index)
@@ -601,7 +601,7 @@ class DocumentReferenceType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetXPath($index)
@@ -640,7 +640,7 @@ class DocumentReferenceType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\XPath[] $xPath
+     * @param  \horstoeko\ubl\entities\cbc\XPath[] $xPath
      * @return self
      */
     public function setXPath(array $xPath)
@@ -680,7 +680,7 @@ class DocumentReferenceType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LanguageID $languageID
+     * @param  \horstoeko\ubl\entities\cbc\LanguageID $languageID
      * @return self
      */
     public function setLanguageID(\horstoeko\ubl\entities\cbc\LanguageID $languageID)
@@ -720,7 +720,7 @@ class DocumentReferenceType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LocaleCode $localeCode
+     * @param  \horstoeko\ubl\entities\cbc\LocaleCode $localeCode
      * @return self
      */
     public function setLocaleCode(\horstoeko\ubl\entities\cbc\LocaleCode $localeCode)
@@ -762,7 +762,7 @@ class DocumentReferenceType
      *  Identifier. Type
      *  1.1
      *
-     * @param \horstoeko\ubl\entities\cbc\VersionID $versionID
+     * @param  \horstoeko\ubl\entities\cbc\VersionID $versionID
      * @return self
      */
     public function setVersionID(\horstoeko\ubl\entities\cbc\VersionID $versionID)
@@ -804,7 +804,7 @@ class DocumentReferenceType
      *  Document Status
      *  Document Status_ Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\DocumentStatusCode $documentStatusCode
+     * @param  \horstoeko\ubl\entities\cbc\DocumentStatusCode $documentStatusCode
      * @return self
      */
     public function setDocumentStatusCode(\horstoeko\ubl\entities\cbc\DocumentStatusCode $documentStatusCode)
@@ -828,7 +828,7 @@ class DocumentReferenceType
      *  stock no longer provided
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\DocumentDescription $documentDescription
+     * @param  \horstoeko\ubl\entities\cbc\DocumentDescription $documentDescription
      */
     public function addToDocumentDescription(\horstoeko\ubl\entities\cbc\DocumentDescription $documentDescription)
     {
@@ -850,7 +850,7 @@ class DocumentReferenceType
      *  Text. Type
      *  stock no longer provided
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDocumentDescription($index)
@@ -872,7 +872,7 @@ class DocumentReferenceType
      *  Text. Type
      *  stock no longer provided
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDocumentDescription($index)
@@ -915,7 +915,7 @@ class DocumentReferenceType
      *  Text. Type
      *  stock no longer provided
      *
-     * @param \horstoeko\ubl\entities\cbc\DocumentDescription[] $documentDescription
+     * @param  \horstoeko\ubl\entities\cbc\DocumentDescription[] $documentDescription
      * @return self
      */
     public function setDocumentDescription(array $documentDescription)
@@ -955,7 +955,7 @@ class DocumentReferenceType
      *  Attachment
      *  Attachment
      *
-     * @param \horstoeko\ubl\entities\cac\Attachment $attachment
+     * @param  \horstoeko\ubl\entities\cac\Attachment $attachment
      * @return self
      */
     public function setAttachment(\horstoeko\ubl\entities\cac\Attachment $attachment)
@@ -997,7 +997,7 @@ class DocumentReferenceType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\ValidityPeriod $validityPeriod
+     * @param  \horstoeko\ubl\entities\cac\ValidityPeriod $validityPeriod
      * @return self
      */
     public function setValidityPeriod(\horstoeko\ubl\entities\cac\ValidityPeriod $validityPeriod)
@@ -1039,7 +1039,7 @@ class DocumentReferenceType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\IssuerParty $issuerParty
+     * @param  \horstoeko\ubl\entities\cac\IssuerParty $issuerParty
      * @return self
      */
     public function setIssuerParty(\horstoeko\ubl\entities\cac\IssuerParty $issuerParty)
@@ -1079,7 +1079,7 @@ class DocumentReferenceType
      *  Result Of Verification
      *  Result Of Verification
      *
-     * @param \horstoeko\ubl\entities\cac\ResultOfVerification $resultOfVerification
+     * @param  \horstoeko\ubl\entities\cac\ResultOfVerification $resultOfVerification
      * @return self
      */
     public function setResultOfVerification(\horstoeko\ubl\entities\cac\ResultOfVerification $resultOfVerification)

@@ -106,7 +106,7 @@ class CatalogueItemSpecificationUpdateLineType
      *  Identifier. Type
      *  1
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -148,7 +148,7 @@ class CatalogueItemSpecificationUpdateLineType
      *  Customer Party
      *  Customer Party
      *
-     * @param \horstoeko\ubl\entities\cac\ContractorCustomerParty $contractorCustomerParty
+     * @param  \horstoeko\ubl\entities\cac\ContractorCustomerParty $contractorCustomerParty
      * @return self
      */
     public function setContractorCustomerParty(\horstoeko\ubl\entities\cac\ContractorCustomerParty $contractorCustomerParty)
@@ -190,7 +190,7 @@ class CatalogueItemSpecificationUpdateLineType
      *  Supplier Party
      *  Supplier Party
      *
-     * @param \horstoeko\ubl\entities\cac\SellerSupplierParty $sellerSupplierParty
+     * @param  \horstoeko\ubl\entities\cac\SellerSupplierParty $sellerSupplierParty
      * @return self
      */
     public function setSellerSupplierParty(\horstoeko\ubl\entities\cac\SellerSupplierParty $sellerSupplierParty)
@@ -230,7 +230,7 @@ class CatalogueItemSpecificationUpdateLineType
      *  Item
      *  Item
      *
-     * @param \horstoeko\ubl\entities\cac\Item $item
+     * @param  \horstoeko\ubl\entities\cac\Item $item
      * @return self
      */
     public function setItem(\horstoeko\ubl\entities\cac\Item $item)

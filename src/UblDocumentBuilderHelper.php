@@ -87,8 +87,8 @@ class UblDocumentBuilderHelper
      * Checks if $variable is a string and it is not empty or null
      * Checks if $variable is a DateTime object and it is not null
      *
-     * @param mixed $variable
-     * @param string $exceotionMessage
+     * @param  mixed  $variable
+     * @param  string $exceotionMessage
      * @return void
      */
     public function assertNotEmptyAndNotNull($variable, string $exceotionMessage)

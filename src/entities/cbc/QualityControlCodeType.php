@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\CodeType;
 /**
  * Class representing QualityControlCodeType
  *
- *
  * XSD Type: QualityControlCodeType
  */
 class QualityControlCodeType extends CodeType

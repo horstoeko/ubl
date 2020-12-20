@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\CodeType;
 /**
  * Class representing SecurityClassificationCodeType
  *
- *
  * XSD Type: SecurityClassificationCodeType
  */
 class SecurityClassificationCodeType extends CodeType

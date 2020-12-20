@@ -269,7 +269,7 @@ class UtilityItemType
      *  Identifier. Type
      *  1
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -311,7 +311,7 @@ class UtilityItemType
      *  Identifier. Type
      *  98143211
      *
-     * @param \horstoeko\ubl\entities\cbc\SubscriberID $subscriberID
+     * @param  \horstoeko\ubl\entities\cbc\SubscriberID $subscriberID
      * @return self
      */
     public function setSubscriberID(\horstoeko\ubl\entities\cbc\SubscriberID $subscriberID)
@@ -351,7 +351,7 @@ class UtilityItemType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SubscriberType $subscriberType
+     * @param  \horstoeko\ubl\entities\cbc\SubscriberType $subscriberType
      * @return self
      */
     public function setSubscriberType(\horstoeko\ubl\entities\cbc\SubscriberType $subscriberType)
@@ -391,7 +391,7 @@ class UtilityItemType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SubscriberTypeCode $subscriberTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\SubscriberTypeCode $subscriberTypeCode
      * @return self
      */
     public function setSubscriberTypeCode(\horstoeko\ubl\entities\cbc\SubscriberTypeCode $subscriberTypeCode)
@@ -414,7 +414,7 @@ class UtilityItemType
      *  Basis price quarter (5.761 kWh per 35,58 cents), Transport of electricity, etc.
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -435,7 +435,7 @@ class UtilityItemType
      *  Text. Type
      *  Basis price quarter (5.761 kWh per 35,58 cents), Transport of electricity, etc.
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -456,7 +456,7 @@ class UtilityItemType
      *  Text. Type
      *  Basis price quarter (5.761 kWh per 35,58 cents), Transport of electricity, etc.
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -497,7 +497,7 @@ class UtilityItemType
      *  Text. Type
      *  Basis price quarter (5.761 kWh per 35,58 cents), Transport of electricity, etc.
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -539,7 +539,7 @@ class UtilityItemType
      *  Quantity. Type
      *  1
      *
-     * @param \horstoeko\ubl\entities\cbc\PackQuantity $packQuantity
+     * @param  \horstoeko\ubl\entities\cbc\PackQuantity $packQuantity
      * @return self
      */
     public function setPackQuantity(\horstoeko\ubl\entities\cbc\PackQuantity $packQuantity)
@@ -579,7 +579,7 @@ class UtilityItemType
      *  Numeric
      *  Numeric. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PackSizeNumeric $packSizeNumeric
+     * @param  \horstoeko\ubl\entities\cbc\PackSizeNumeric $packSizeNumeric
      * @return self
      */
     public function setPackSizeNumeric(\horstoeko\ubl\entities\cbc\PackSizeNumeric $packSizeNumeric)
@@ -621,7 +621,7 @@ class UtilityItemType
      *  Text. Type
      *  Consumption
      *
-     * @param \horstoeko\ubl\entities\cbc\ConsumptionType $consumptionType
+     * @param  \horstoeko\ubl\entities\cbc\ConsumptionType $consumptionType
      * @return self
      */
     public function setConsumptionType(\horstoeko\ubl\entities\cbc\ConsumptionType $consumptionType)
@@ -663,7 +663,7 @@ class UtilityItemType
      *  Code. Type
      *  Consumption
      *
-     * @param \horstoeko\ubl\entities\cbc\ConsumptionTypeCode $consumptionTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\ConsumptionTypeCode $consumptionTypeCode
      * @return self
      */
     public function setConsumptionTypeCode(\horstoeko\ubl\entities\cbc\ConsumptionTypeCode $consumptionTypeCode)
@@ -705,7 +705,7 @@ class UtilityItemType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CurrentChargeType $currentChargeType
+     * @param  \horstoeko\ubl\entities\cbc\CurrentChargeType $currentChargeType
      * @return self
      */
     public function setCurrentChargeType(\horstoeko\ubl\entities\cbc\CurrentChargeType $currentChargeType)
@@ -747,7 +747,7 @@ class UtilityItemType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CurrentChargeTypeCode $currentChargeTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\CurrentChargeTypeCode $currentChargeTypeCode
      * @return self
      */
     public function setCurrentChargeTypeCode(\horstoeko\ubl\entities\cbc\CurrentChargeTypeCode $currentChargeTypeCode)
@@ -789,7 +789,7 @@ class UtilityItemType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\OneTimeChargeType $oneTimeChargeType
+     * @param  \horstoeko\ubl\entities\cbc\OneTimeChargeType $oneTimeChargeType
      * @return self
      */
     public function setOneTimeChargeType(\horstoeko\ubl\entities\cbc\OneTimeChargeType $oneTimeChargeType)
@@ -831,7 +831,7 @@ class UtilityItemType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\OneTimeChargeTypeCode $oneTimeChargeTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\OneTimeChargeTypeCode $oneTimeChargeTypeCode
      * @return self
      */
     public function setOneTimeChargeTypeCode(\horstoeko\ubl\entities\cbc\OneTimeChargeTypeCode $oneTimeChargeTypeCode)
@@ -871,7 +871,7 @@ class UtilityItemType
      *  Tax Category
      *  Tax Category
      *
-     * @param \horstoeko\ubl\entities\cac\TaxCategory $taxCategory
+     * @param  \horstoeko\ubl\entities\cac\TaxCategory $taxCategory
      * @return self
      */
     public function setTaxCategory(\horstoeko\ubl\entities\cac\TaxCategory $taxCategory)
@@ -911,7 +911,7 @@ class UtilityItemType
      *  Contract
      *  Contract
      *
-     * @param \horstoeko\ubl\entities\cac\Contract $contract
+     * @param  \horstoeko\ubl\entities\cac\Contract $contract
      * @return self
      */
     public function setContract(\horstoeko\ubl\entities\cac\Contract $contract)

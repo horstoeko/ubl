@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing ChargeIndicatorType
  *
- *
  * XSD Type: ChargeIndicatorType
  */
 class ChargeIndicatorType
@@ -29,7 +28,7 @@ class ChargeIndicatorType
     /**
      * Gets or sets the inner value
      *
-     * @param bool $value
+     * @param  bool $value
      * @return bool
      */
     public function value()

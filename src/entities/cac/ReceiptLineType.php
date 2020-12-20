@@ -344,7 +344,7 @@ class ReceiptLineType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -384,7 +384,7 @@ class ReceiptLineType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\UUID $uUID
+     * @param  \horstoeko\ubl\entities\cbc\UUID $uUID
      * @return self
      */
     public function setUUID(\horstoeko\ubl\entities\cbc\UUID $uUID)
@@ -406,7 +406,7 @@ class ReceiptLineType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param  \horstoeko\ubl\entities\cbc\Note $note
      */
     public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
     {
@@ -426,7 +426,7 @@ class ReceiptLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNote($index)
@@ -446,7 +446,7 @@ class ReceiptLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNote($index)
@@ -485,7 +485,7 @@ class ReceiptLineType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note[] $note
+     * @param  \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
     public function setNote(array $note)
@@ -527,7 +527,7 @@ class ReceiptLineType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ReceivedQuantity $receivedQuantity
+     * @param  \horstoeko\ubl\entities\cbc\ReceivedQuantity $receivedQuantity
      * @return self
      */
     public function setReceivedQuantity(\horstoeko\ubl\entities\cbc\ReceivedQuantity $receivedQuantity)
@@ -569,7 +569,7 @@ class ReceiptLineType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ShortQuantity $shortQuantity
+     * @param  \horstoeko\ubl\entities\cbc\ShortQuantity $shortQuantity
      * @return self
      */
     public function setShortQuantity(\horstoeko\ubl\entities\cbc\ShortQuantity $shortQuantity)
@@ -609,7 +609,7 @@ class ReceiptLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ShortageActionCode $shortageActionCode
+     * @param  \horstoeko\ubl\entities\cbc\ShortageActionCode $shortageActionCode
      * @return self
      */
     public function setShortageActionCode(\horstoeko\ubl\entities\cbc\ShortageActionCode $shortageActionCode)
@@ -651,7 +651,7 @@ class ReceiptLineType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\RejectedQuantity $rejectedQuantity
+     * @param  \horstoeko\ubl\entities\cbc\RejectedQuantity $rejectedQuantity
      * @return self
      */
     public function setRejectedQuantity(\horstoeko\ubl\entities\cbc\RejectedQuantity $rejectedQuantity)
@@ -691,7 +691,7 @@ class ReceiptLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\RejectReasonCode $rejectReasonCode
+     * @param  \horstoeko\ubl\entities\cbc\RejectReasonCode $rejectReasonCode
      * @return self
      */
     public function setRejectReasonCode(\horstoeko\ubl\entities\cbc\RejectReasonCode $rejectReasonCode)
@@ -714,7 +714,7 @@ class ReceiptLineType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\RejectReason $rejectReason
+     * @param  \horstoeko\ubl\entities\cbc\RejectReason $rejectReason
      */
     public function addToRejectReason(\horstoeko\ubl\entities\cbc\RejectReason $rejectReason)
     {
@@ -735,7 +735,7 @@ class ReceiptLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetRejectReason($index)
@@ -756,7 +756,7 @@ class ReceiptLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetRejectReason($index)
@@ -797,7 +797,7 @@ class ReceiptLineType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\RejectReason[] $rejectReason
+     * @param  \horstoeko\ubl\entities\cbc\RejectReason[] $rejectReason
      * @return self
      */
     public function setRejectReason(array $rejectReason)
@@ -837,7 +837,7 @@ class ReceiptLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\RejectActionCode $rejectActionCode
+     * @param  \horstoeko\ubl\entities\cbc\RejectActionCode $rejectActionCode
      * @return self
      */
     public function setRejectActionCode(\horstoeko\ubl\entities\cbc\RejectActionCode $rejectActionCode)
@@ -877,7 +877,7 @@ class ReceiptLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\QuantityDiscrepancyCode $quantityDiscrepancyCode
+     * @param  \horstoeko\ubl\entities\cbc\QuantityDiscrepancyCode $quantityDiscrepancyCode
      * @return self
      */
     public function setQuantityDiscrepancyCode(\horstoeko\ubl\entities\cbc\QuantityDiscrepancyCode $quantityDiscrepancyCode)
@@ -919,7 +919,7 @@ class ReceiptLineType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\OversupplyQuantity $oversupplyQuantity
+     * @param  \horstoeko\ubl\entities\cbc\OversupplyQuantity $oversupplyQuantity
      * @return self
      */
     public function setOversupplyQuantity(\horstoeko\ubl\entities\cbc\OversupplyQuantity $oversupplyQuantity)
@@ -961,7 +961,7 @@ class ReceiptLineType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $receivedDate
+     * @param  \DateTime $receivedDate
      * @return self
      */
     public function setReceivedDate(\DateTime $receivedDate)
@@ -1001,7 +1001,7 @@ class ReceiptLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TimingComplaintCode $timingComplaintCode
+     * @param  \horstoeko\ubl\entities\cbc\TimingComplaintCode $timingComplaintCode
      * @return self
      */
     public function setTimingComplaintCode(\horstoeko\ubl\entities\cbc\TimingComplaintCode $timingComplaintCode)
@@ -1041,7 +1041,7 @@ class ReceiptLineType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TimingComplaint $timingComplaint
+     * @param  \horstoeko\ubl\entities\cbc\TimingComplaint $timingComplaint
      * @return self
      */
     public function setTimingComplaint(\horstoeko\ubl\entities\cbc\TimingComplaint $timingComplaint)
@@ -1081,7 +1081,7 @@ class ReceiptLineType
      *  Order Line Reference
      *  Order Line Reference
      *
-     * @param \horstoeko\ubl\entities\cac\OrderLineReference $orderLineReference
+     * @param  \horstoeko\ubl\entities\cac\OrderLineReference $orderLineReference
      * @return self
      */
     public function setOrderLineReference(\horstoeko\ubl\entities\cac\OrderLineReference $orderLineReference)
@@ -1104,7 +1104,7 @@ class ReceiptLineType
      *  Line Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\DespatchLineReference $despatchLineReference
+     * @param  \horstoeko\ubl\entities\cac\DespatchLineReference $despatchLineReference
      */
     public function addToDespatchLineReference(\horstoeko\ubl\entities\cac\DespatchLineReference $despatchLineReference)
     {
@@ -1125,7 +1125,7 @@ class ReceiptLineType
      *  Line Reference
      *  Line Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDespatchLineReference($index)
@@ -1146,7 +1146,7 @@ class ReceiptLineType
      *  Line Reference
      *  Line Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDespatchLineReference($index)
@@ -1187,7 +1187,7 @@ class ReceiptLineType
      *  Line Reference
      *  Line Reference
      *
-     * @param \horstoeko\ubl\entities\cac\DespatchLineReference[] $despatchLineReference
+     * @param  \horstoeko\ubl\entities\cac\DespatchLineReference[] $despatchLineReference
      * @return self
      */
     public function setDespatchLineReference(array $despatchLineReference)
@@ -1209,7 +1209,7 @@ class ReceiptLineType
      *  Document Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\DocumentReference $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference $documentReference
      */
     public function addToDocumentReference(\horstoeko\ubl\entities\cac\DocumentReference $documentReference)
     {
@@ -1229,7 +1229,7 @@ class ReceiptLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDocumentReference($index)
@@ -1249,7 +1249,7 @@ class ReceiptLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDocumentReference($index)
@@ -1288,7 +1288,7 @@ class ReceiptLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\DocumentReference[] $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference[] $documentReference
      * @return self
      */
     public function setDocumentReference(array $documentReference)
@@ -1310,7 +1310,7 @@ class ReceiptLineType
      *  Item
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Item $item
+     * @param  \horstoeko\ubl\entities\cac\Item $item
      */
     public function addToItem(\horstoeko\ubl\entities\cac\Item $item)
     {
@@ -1330,7 +1330,7 @@ class ReceiptLineType
      *  Item
      *  Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetItem($index)
@@ -1350,7 +1350,7 @@ class ReceiptLineType
      *  Item
      *  Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetItem($index)
@@ -1389,7 +1389,7 @@ class ReceiptLineType
      *  Item
      *  Item
      *
-     * @param \horstoeko\ubl\entities\cac\Item[] $item
+     * @param  \horstoeko\ubl\entities\cac\Item[] $item
      * @return self
      */
     public function setItem(array $item)
@@ -1411,7 +1411,7 @@ class ReceiptLineType
      *  Shipment
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Shipment $shipment
+     * @param  \horstoeko\ubl\entities\cac\Shipment $shipment
      */
     public function addToShipment(\horstoeko\ubl\entities\cac\Shipment $shipment)
     {
@@ -1431,7 +1431,7 @@ class ReceiptLineType
      *  Shipment
      *  Shipment
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetShipment($index)
@@ -1451,7 +1451,7 @@ class ReceiptLineType
      *  Shipment
      *  Shipment
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetShipment($index)
@@ -1490,7 +1490,7 @@ class ReceiptLineType
      *  Shipment
      *  Shipment
      *
-     * @param \horstoeko\ubl\entities\cac\Shipment[] $shipment
+     * @param  \horstoeko\ubl\entities\cac\Shipment[] $shipment
      * @return self
      */
     public function setShipment(array $shipment)

@@ -147,7 +147,7 @@ class PeriodType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $startDate
+     * @param  \DateTime $startDate
      * @return self
      */
     public function setStartDate(\DateTime $startDate)
@@ -187,7 +187,7 @@ class PeriodType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $startTime
+     * @param  \DateTime $startTime
      * @return self
      */
     public function setStartTime(\DateTime $startTime)
@@ -227,7 +227,7 @@ class PeriodType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $endDate
+     * @param  \DateTime $endDate
      * @return self
      */
     public function setEndDate(\DateTime $endDate)
@@ -267,7 +267,7 @@ class PeriodType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $endTime
+     * @param  \DateTime $endTime
      * @return self
      */
     public function setEndTime(\DateTime $endTime)
@@ -307,7 +307,7 @@ class PeriodType
      *  Measure
      *  Measure. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\DurationMeasure $durationMeasure
+     * @param  \horstoeko\ubl\entities\cbc\DurationMeasure $durationMeasure
      * @return self
      */
     public function setDurationMeasure(\horstoeko\ubl\entities\cbc\DurationMeasure $durationMeasure)
@@ -329,7 +329,7 @@ class PeriodType
      *  Code. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\DescriptionCode $descriptionCode
+     * @param  \horstoeko\ubl\entities\cbc\DescriptionCode $descriptionCode
      */
     public function addToDescriptionCode(\horstoeko\ubl\entities\cbc\DescriptionCode $descriptionCode)
     {
@@ -349,7 +349,7 @@ class PeriodType
      *  Code
      *  Code. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescriptionCode($index)
@@ -369,7 +369,7 @@ class PeriodType
      *  Code
      *  Code. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescriptionCode($index)
@@ -408,7 +408,7 @@ class PeriodType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\DescriptionCode[] $descriptionCode
+     * @param  \horstoeko\ubl\entities\cbc\DescriptionCode[] $descriptionCode
      * @return self
      */
     public function setDescriptionCode(array $descriptionCode)
@@ -430,7 +430,7 @@ class PeriodType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -450,7 +450,7 @@ class PeriodType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -470,7 +470,7 @@ class PeriodType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -509,7 +509,7 @@ class PeriodType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)

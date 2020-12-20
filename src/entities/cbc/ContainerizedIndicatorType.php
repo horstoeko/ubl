@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing ContainerizedIndicatorType
  *
- *
  * XSD Type: ContainerizedIndicatorType
  */
 class ContainerizedIndicatorType
@@ -29,7 +28,7 @@ class ContainerizedIndicatorType
     /**
      * Gets or sets the inner value
      *
-     * @param bool $value
+     * @param  bool $value
      * @return bool
      */
     public function value()

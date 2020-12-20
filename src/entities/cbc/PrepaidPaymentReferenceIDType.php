@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\IdentifierType;
 /**
  * Class representing PrepaidPaymentReferenceIDType
  *
- *
  * XSD Type: PrepaidPaymentReferenceIDType
  */
 class PrepaidPaymentReferenceIDType extends IdentifierType

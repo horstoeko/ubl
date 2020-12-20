@@ -73,7 +73,7 @@ class ContractExecutionRequirementType
      *  Name. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Name $name
+     * @param  \horstoeko\ubl\entities\cbc\Name $name
      */
     public function addToName(\horstoeko\ubl\entities\cbc\Name $name)
     {
@@ -93,7 +93,7 @@ class ContractExecutionRequirementType
      *  Name
      *  Name. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetName($index)
@@ -113,7 +113,7 @@ class ContractExecutionRequirementType
      *  Name
      *  Name. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetName($index)
@@ -152,7 +152,7 @@ class ContractExecutionRequirementType
      *  Name
      *  Name. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Name[] $name
+     * @param  \horstoeko\ubl\entities\cbc\Name[] $name
      * @return self
      */
     public function setName(array $name)
@@ -192,7 +192,7 @@ class ContractExecutionRequirementType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ExecutionRequirementCode $executionRequirementCode
+     * @param  \horstoeko\ubl\entities\cbc\ExecutionRequirementCode $executionRequirementCode
      * @return self
      */
     public function setExecutionRequirementCode(\horstoeko\ubl\entities\cbc\ExecutionRequirementCode $executionRequirementCode)
@@ -214,7 +214,7 @@ class ContractExecutionRequirementType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -234,7 +234,7 @@ class ContractExecutionRequirementType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -254,7 +254,7 @@ class ContractExecutionRequirementType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -293,7 +293,7 @@ class ContractExecutionRequirementType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)

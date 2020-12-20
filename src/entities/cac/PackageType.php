@@ -272,7 +272,7 @@ class PackageType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -312,7 +312,7 @@ class PackageType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Quantity $quantity
+     * @param  \horstoeko\ubl\entities\cbc\Quantity $quantity
      * @return self
      */
     public function setQuantity(\horstoeko\ubl\entities\cbc\Quantity $quantity)
@@ -354,7 +354,7 @@ class PackageType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $returnableMaterialIndicator
+     * @param  bool $returnableMaterialIndicator
      * @return self
      */
     public function setReturnableMaterialIndicator($returnableMaterialIndicator)
@@ -394,7 +394,7 @@ class PackageType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PackageLevelCode $packageLevelCode
+     * @param  \horstoeko\ubl\entities\cbc\PackageLevelCode $packageLevelCode
      * @return self
      */
     public function setPackageLevelCode(\horstoeko\ubl\entities\cbc\PackageLevelCode $packageLevelCode)
@@ -438,7 +438,7 @@ class PackageType
      *  Packaging Type_ Code. Type
      *  Package classification code
      *
-     * @param \horstoeko\ubl\entities\cbc\PackagingTypeCode $packagingTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\PackagingTypeCode $packagingTypeCode
      * @return self
      */
     public function setPackagingTypeCode(\horstoeko\ubl\entities\cbc\PackagingTypeCode $packagingTypeCode)
@@ -460,7 +460,7 @@ class PackageType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\PackingMaterial $packingMaterial
+     * @param  \horstoeko\ubl\entities\cbc\PackingMaterial $packingMaterial
      */
     public function addToPackingMaterial(\horstoeko\ubl\entities\cbc\PackingMaterial $packingMaterial)
     {
@@ -480,7 +480,7 @@ class PackageType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPackingMaterial($index)
@@ -500,7 +500,7 @@ class PackageType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPackingMaterial($index)
@@ -539,7 +539,7 @@ class PackageType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PackingMaterial[] $packingMaterial
+     * @param  \horstoeko\ubl\entities\cbc\PackingMaterial[] $packingMaterial
      * @return self
      */
     public function setPackingMaterial(array $packingMaterial)
@@ -581,7 +581,7 @@ class PackageType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TraceID $traceID
+     * @param  \horstoeko\ubl\entities\cbc\TraceID $traceID
      * @return self
      */
     public function setTraceID(\horstoeko\ubl\entities\cbc\TraceID $traceID)
@@ -604,7 +604,7 @@ class PackageType
      *  Package
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ContainedPackage $containedPackage
+     * @param  \horstoeko\ubl\entities\cac\ContainedPackage $containedPackage
      */
     public function addToContainedPackage(\horstoeko\ubl\entities\cac\ContainedPackage $containedPackage)
     {
@@ -625,7 +625,7 @@ class PackageType
      *  Package
      *  Package
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetContainedPackage($index)
@@ -646,7 +646,7 @@ class PackageType
      *  Package
      *  Package
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetContainedPackage($index)
@@ -687,7 +687,7 @@ class PackageType
      *  Package
      *  Package
      *
-     * @param \horstoeko\ubl\entities\cac\ContainedPackage[] $containedPackage
+     * @param  \horstoeko\ubl\entities\cac\ContainedPackage[] $containedPackage
      * @return self
      */
     public function setContainedPackage(array $containedPackage)
@@ -729,7 +729,7 @@ class PackageType
      *  Transport Equipment
      *  Transport Equipment
      *
-     * @param \horstoeko\ubl\entities\cac\ContainingTransportEquipment $containingTransportEquipment
+     * @param  \horstoeko\ubl\entities\cac\ContainingTransportEquipment $containingTransportEquipment
      * @return self
      */
     public function setContainingTransportEquipment(\horstoeko\ubl\entities\cac\ContainingTransportEquipment $containingTransportEquipment)
@@ -751,7 +751,7 @@ class PackageType
      *  Goods Item
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\GoodsItem $goodsItem
+     * @param  \horstoeko\ubl\entities\cac\GoodsItem $goodsItem
      */
     public function addToGoodsItem(\horstoeko\ubl\entities\cac\GoodsItem $goodsItem)
     {
@@ -771,7 +771,7 @@ class PackageType
      *  Goods Item
      *  Goods Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetGoodsItem($index)
@@ -791,7 +791,7 @@ class PackageType
      *  Goods Item
      *  Goods Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetGoodsItem($index)
@@ -830,7 +830,7 @@ class PackageType
      *  Goods Item
      *  Goods Item
      *
-     * @param \horstoeko\ubl\entities\cac\GoodsItem[] $goodsItem
+     * @param  \horstoeko\ubl\entities\cac\GoodsItem[] $goodsItem
      * @return self
      */
     public function setGoodsItem(array $goodsItem)
@@ -853,7 +853,7 @@ class PackageType
      *  Dimension
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\MeasurementDimension $measurementDimension
+     * @param  \horstoeko\ubl\entities\cac\MeasurementDimension $measurementDimension
      */
     public function addToMeasurementDimension(\horstoeko\ubl\entities\cac\MeasurementDimension $measurementDimension)
     {
@@ -874,7 +874,7 @@ class PackageType
      *  Dimension
      *  Dimension
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetMeasurementDimension($index)
@@ -895,7 +895,7 @@ class PackageType
      *  Dimension
      *  Dimension
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetMeasurementDimension($index)
@@ -936,7 +936,7 @@ class PackageType
      *  Dimension
      *  Dimension
      *
-     * @param \horstoeko\ubl\entities\cac\MeasurementDimension[] $measurementDimension
+     * @param  \horstoeko\ubl\entities\cac\MeasurementDimension[] $measurementDimension
      * @return self
      */
     public function setMeasurementDimension(array $measurementDimension)
@@ -958,7 +958,7 @@ class PackageType
      *  Delivery Unit
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\DeliveryUnit $deliveryUnit
+     * @param  \horstoeko\ubl\entities\cac\DeliveryUnit $deliveryUnit
      */
     public function addToDeliveryUnit(\horstoeko\ubl\entities\cac\DeliveryUnit $deliveryUnit)
     {
@@ -978,7 +978,7 @@ class PackageType
      *  Delivery Unit
      *  Delivery Unit
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDeliveryUnit($index)
@@ -998,7 +998,7 @@ class PackageType
      *  Delivery Unit
      *  Delivery Unit
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDeliveryUnit($index)
@@ -1037,7 +1037,7 @@ class PackageType
      *  Delivery Unit
      *  Delivery Unit
      *
-     * @param \horstoeko\ubl\entities\cac\DeliveryUnit[] $deliveryUnit
+     * @param  \horstoeko\ubl\entities\cac\DeliveryUnit[] $deliveryUnit
      * @return self
      */
     public function setDeliveryUnit(array $deliveryUnit)
@@ -1077,7 +1077,7 @@ class PackageType
      *  Delivery
      *  Delivery
      *
-     * @param \horstoeko\ubl\entities\cac\Delivery $delivery
+     * @param  \horstoeko\ubl\entities\cac\Delivery $delivery
      * @return self
      */
     public function setDelivery(\horstoeko\ubl\entities\cac\Delivery $delivery)
@@ -1117,7 +1117,7 @@ class PackageType
      *  Pickup
      *  Pickup
      *
-     * @param \horstoeko\ubl\entities\cac\Pickup $pickup
+     * @param  \horstoeko\ubl\entities\cac\Pickup $pickup
      * @return self
      */
     public function setPickup(\horstoeko\ubl\entities\cac\Pickup $pickup)
@@ -1157,7 +1157,7 @@ class PackageType
      *  Despatch
      *  Despatch
      *
-     * @param \horstoeko\ubl\entities\cac\Despatch $despatch
+     * @param  \horstoeko\ubl\entities\cac\Despatch $despatch
      * @return self
      */
     public function setDespatch(\horstoeko\ubl\entities\cac\Despatch $despatch)

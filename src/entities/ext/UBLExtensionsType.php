@@ -26,7 +26,7 @@ class UBLExtensionsType
      * A single extension for private use.
      *
      * @return self
-     * @param \horstoeko\ubl\entities\ext\UBLExtension $uBLExtension
+     * @param  \horstoeko\ubl\entities\ext\UBLExtension $uBLExtension
      */
     public function addToUBLExtension(\horstoeko\ubl\entities\ext\UBLExtension $uBLExtension)
     {
@@ -39,7 +39,7 @@ class UBLExtensionsType
      *
      * A single extension for private use.
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetUBLExtension($index)
@@ -52,7 +52,7 @@ class UBLExtensionsType
      *
      * A single extension for private use.
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetUBLExtension($index)
@@ -77,7 +77,7 @@ class UBLExtensionsType
      *
      * A single extension for private use.
      *
-     * @param \horstoeko\ubl\entities\ext\UBLExtension[] $uBLExtension
+     * @param  \horstoeko\ubl\entities\ext\UBLExtension[] $uBLExtension
      * @return self
      */
     public function setUBLExtension(array $uBLExtension)

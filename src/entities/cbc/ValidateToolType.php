@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing ValidateToolType
  *
- *
  * XSD Type: ValidateToolType
  */
 class ValidateToolType extends TextType

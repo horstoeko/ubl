@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\IdentifierType;
 /**
  * Class representing EconomicOperatorRegistryURIType
  *
- *
  * XSD Type: EconomicOperatorRegistryURIType
  */
 class EconomicOperatorRegistryURIType extends IdentifierType

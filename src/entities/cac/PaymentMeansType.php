@@ -235,7 +235,7 @@ class PaymentMeansType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -277,7 +277,7 @@ class PaymentMeansType
      *  Payment Means
      *  Payment Means_ Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PaymentMeansCode $paymentMeansCode
+     * @param  \horstoeko\ubl\entities\cbc\PaymentMeansCode $paymentMeansCode
      * @return self
      */
     public function setPaymentMeansCode(\horstoeko\ubl\entities\cbc\PaymentMeansCode $paymentMeansCode)
@@ -317,7 +317,7 @@ class PaymentMeansType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $paymentDueDate
+     * @param  \DateTime $paymentDueDate
      * @return self
      */
     public function setPaymentDueDate(\DateTime $paymentDueDate)
@@ -357,7 +357,7 @@ class PaymentMeansType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PaymentChannelCode $paymentChannelCode
+     * @param  \horstoeko\ubl\entities\cbc\PaymentChannelCode $paymentChannelCode
      * @return self
      */
     public function setPaymentChannelCode(\horstoeko\ubl\entities\cbc\PaymentChannelCode $paymentChannelCode)
@@ -397,7 +397,7 @@ class PaymentMeansType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\InstructionID $instructionID
+     * @param  \horstoeko\ubl\entities\cbc\InstructionID $instructionID
      * @return self
      */
     public function setInstructionID(\horstoeko\ubl\entities\cbc\InstructionID $instructionID)
@@ -420,7 +420,7 @@ class PaymentMeansType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\InstructionNote $instructionNote
+     * @param  \horstoeko\ubl\entities\cbc\InstructionNote $instructionNote
      */
     public function addToInstructionNote(\horstoeko\ubl\entities\cbc\InstructionNote $instructionNote)
     {
@@ -441,7 +441,7 @@ class PaymentMeansType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetInstructionNote($index)
@@ -462,7 +462,7 @@ class PaymentMeansType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetInstructionNote($index)
@@ -503,7 +503,7 @@ class PaymentMeansType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\InstructionNote[] $instructionNote
+     * @param  \horstoeko\ubl\entities\cbc\InstructionNote[] $instructionNote
      * @return self
      */
     public function setInstructionNote(array $instructionNote)
@@ -525,7 +525,7 @@ class PaymentMeansType
      *  Identifier. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\PaymentID $paymentID
+     * @param  \horstoeko\ubl\entities\cbc\PaymentID $paymentID
      */
     public function addToPaymentID(\horstoeko\ubl\entities\cbc\PaymentID $paymentID)
     {
@@ -545,7 +545,7 @@ class PaymentMeansType
      *  Identifier
      *  Identifier. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPaymentID($index)
@@ -565,7 +565,7 @@ class PaymentMeansType
      *  Identifier
      *  Identifier. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPaymentID($index)
@@ -604,7 +604,7 @@ class PaymentMeansType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PaymentID[] $paymentID
+     * @param  \horstoeko\ubl\entities\cbc\PaymentID[] $paymentID
      * @return self
      */
     public function setPaymentID(array $paymentID)
@@ -644,7 +644,7 @@ class PaymentMeansType
      *  Card Account
      *  Card Account
      *
-     * @param \horstoeko\ubl\entities\cac\CardAccount $cardAccount
+     * @param  \horstoeko\ubl\entities\cac\CardAccount $cardAccount
      * @return self
      */
     public function setCardAccount(\horstoeko\ubl\entities\cac\CardAccount $cardAccount)
@@ -686,7 +686,7 @@ class PaymentMeansType
      *  Financial Account
      *  Financial Account
      *
-     * @param \horstoeko\ubl\entities\cac\PayerFinancialAccount $payerFinancialAccount
+     * @param  \horstoeko\ubl\entities\cac\PayerFinancialAccount $payerFinancialAccount
      * @return self
      */
     public function setPayerFinancialAccount(\horstoeko\ubl\entities\cac\PayerFinancialAccount $payerFinancialAccount)
@@ -728,7 +728,7 @@ class PaymentMeansType
      *  Financial Account
      *  Financial Account
      *
-     * @param \horstoeko\ubl\entities\cac\PayeeFinancialAccount $payeeFinancialAccount
+     * @param  \horstoeko\ubl\entities\cac\PayeeFinancialAccount $payeeFinancialAccount
      * @return self
      */
     public function setPayeeFinancialAccount(\horstoeko\ubl\entities\cac\PayeeFinancialAccount $payeeFinancialAccount)
@@ -768,7 +768,7 @@ class PaymentMeansType
      *  Credit Account
      *  Credit Account
      *
-     * @param \horstoeko\ubl\entities\cac\CreditAccount $creditAccount
+     * @param  \horstoeko\ubl\entities\cac\CreditAccount $creditAccount
      * @return self
      */
     public function setCreditAccount(\horstoeko\ubl\entities\cac\CreditAccount $creditAccount)
@@ -808,7 +808,7 @@ class PaymentMeansType
      *  Payment Mandate
      *  Payment Mandate
      *
-     * @param \horstoeko\ubl\entities\cac\PaymentMandate $paymentMandate
+     * @param  \horstoeko\ubl\entities\cac\PaymentMandate $paymentMandate
      * @return self
      */
     public function setPaymentMandate(\horstoeko\ubl\entities\cac\PaymentMandate $paymentMandate)
@@ -848,7 +848,7 @@ class PaymentMeansType
      *  Trade Financing
      *  Trade Financing
      *
-     * @param \horstoeko\ubl\entities\cac\TradeFinancing $tradeFinancing
+     * @param  \horstoeko\ubl\entities\cac\TradeFinancing $tradeFinancing
      * @return self
      */
     public function setTradeFinancing(\horstoeko\ubl\entities\cac\TradeFinancing $tradeFinancing)

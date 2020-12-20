@@ -73,7 +73,7 @@ class WinningPartyType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Rank $rank
+     * @param  \horstoeko\ubl\entities\cbc\Rank $rank
      * @return self
      */
     public function setRank(\horstoeko\ubl\entities\cbc\Rank $rank)
@@ -113,7 +113,7 @@ class WinningPartyType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\Party $party
+     * @param  \horstoeko\ubl\entities\cac\Party $party
      * @return self
      */
     public function setParty(\horstoeko\ubl\entities\cac\Party $party)

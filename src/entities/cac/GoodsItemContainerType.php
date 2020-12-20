@@ -90,7 +90,7 @@ class GoodsItemContainerType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -132,7 +132,7 @@ class GoodsItemContainerType
      *  Quantity. Type
      *  Number of packages stuffed
      *
-     * @param \horstoeko\ubl\entities\cbc\Quantity $quantity
+     * @param  \horstoeko\ubl\entities\cbc\Quantity $quantity
      * @return self
      */
     public function setQuantity(\horstoeko\ubl\entities\cbc\Quantity $quantity)
@@ -154,7 +154,7 @@ class GoodsItemContainerType
      *  Transport Equipment
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\TransportEquipment $transportEquipment
+     * @param  \horstoeko\ubl\entities\cac\TransportEquipment $transportEquipment
      */
     public function addToTransportEquipment(\horstoeko\ubl\entities\cac\TransportEquipment $transportEquipment)
     {
@@ -174,7 +174,7 @@ class GoodsItemContainerType
      *  Transport Equipment
      *  Transport Equipment
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTransportEquipment($index)
@@ -194,7 +194,7 @@ class GoodsItemContainerType
      *  Transport Equipment
      *  Transport Equipment
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTransportEquipment($index)
@@ -233,7 +233,7 @@ class GoodsItemContainerType
      *  Transport Equipment
      *  Transport Equipment
      *
-     * @param \horstoeko\ubl\entities\cac\TransportEquipment[] $transportEquipment
+     * @param  \horstoeko\ubl\entities\cac\TransportEquipment[] $transportEquipment
      * @return self
      */
     public function setTransportEquipment(array $transportEquipment)

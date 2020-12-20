@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing LegalStatusIndicatorType
  *
- *
  * XSD Type: LegalStatusIndicatorType
  */
 class LegalStatusIndicatorType
@@ -29,7 +28,7 @@ class LegalStatusIndicatorType
     /**
      * Gets or sets the inner value
      *
-     * @param bool $value
+     * @param  bool $value
      * @return bool
      */
     public function value()

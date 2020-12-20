@@ -121,7 +121,7 @@ class DocumentResponseType
      *  Response
      *  Response
      *
-     * @param \horstoeko\ubl\entities\cac\Response $response
+     * @param  \horstoeko\ubl\entities\cac\Response $response
      * @return self
      */
     public function setResponse(\horstoeko\ubl\entities\cac\Response $response)
@@ -143,7 +143,7 @@ class DocumentResponseType
      *  Document Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\DocumentReference $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference $documentReference
      */
     public function addToDocumentReference(\horstoeko\ubl\entities\cac\DocumentReference $documentReference)
     {
@@ -163,7 +163,7 @@ class DocumentResponseType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDocumentReference($index)
@@ -183,7 +183,7 @@ class DocumentResponseType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDocumentReference($index)
@@ -222,7 +222,7 @@ class DocumentResponseType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\DocumentReference[] $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference[] $documentReference
      * @return self
      */
     public function setDocumentReference(array $documentReference)
@@ -264,7 +264,7 @@ class DocumentResponseType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\IssuerParty $issuerParty
+     * @param  \horstoeko\ubl\entities\cac\IssuerParty $issuerParty
      * @return self
      */
     public function setIssuerParty(\horstoeko\ubl\entities\cac\IssuerParty $issuerParty)
@@ -306,7 +306,7 @@ class DocumentResponseType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\RecipientParty $recipientParty
+     * @param  \horstoeko\ubl\entities\cac\RecipientParty $recipientParty
      * @return self
      */
     public function setRecipientParty(\horstoeko\ubl\entities\cac\RecipientParty $recipientParty)
@@ -328,7 +328,7 @@ class DocumentResponseType
      *  Line Response
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\LineResponse $lineResponse
+     * @param  \horstoeko\ubl\entities\cac\LineResponse $lineResponse
      */
     public function addToLineResponse(\horstoeko\ubl\entities\cac\LineResponse $lineResponse)
     {
@@ -348,7 +348,7 @@ class DocumentResponseType
      *  Line Response
      *  Line Response
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetLineResponse($index)
@@ -368,7 +368,7 @@ class DocumentResponseType
      *  Line Response
      *  Line Response
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetLineResponse($index)
@@ -407,7 +407,7 @@ class DocumentResponseType
      *  Line Response
      *  Line Response
      *
-     * @param \horstoeko\ubl\entities\cac\LineResponse[] $lineResponse
+     * @param  \horstoeko\ubl\entities\cac\LineResponse[] $lineResponse
      * @return self
      */
     public function setLineResponse(array $lineResponse)

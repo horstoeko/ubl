@@ -64,7 +64,7 @@ class AmountType
     /**
      * Gets or sets the inner value
      *
-     * @param float $value
+     * @param  float $value
      * @return float
      */
     public function value()
@@ -118,7 +118,7 @@ class AmountType
      *  string
      *  Reference UNECE Rec 9, using 3-letter alphabetic codes.
      *
-     * @param string $currencyID
+     * @param  string $currencyID
      * @return self
      */
     public function setCurrencyID($currencyID)
@@ -158,7 +158,7 @@ class AmountType
      *  Identifier
      *  string
      *
-     * @param string $currencyCodeListVersionID
+     * @param  string $currencyCodeListVersionID
      * @return self
      */
     public function setCurrencyCodeListVersionID($currencyCodeListVersionID)

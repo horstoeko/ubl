@@ -152,7 +152,7 @@ class SupplierPartyType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CustomerAssignedAccountID $customerAssignedAccountID
+     * @param  \horstoeko\ubl\entities\cbc\CustomerAssignedAccountID $customerAssignedAccountID
      * @return self
      */
     public function setCustomerAssignedAccountID(\horstoeko\ubl\entities\cbc\CustomerAssignedAccountID $customerAssignedAccountID)
@@ -175,7 +175,7 @@ class SupplierPartyType
      *  Identifier. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\AdditionalAccountID $additionalAccountID
+     * @param  \horstoeko\ubl\entities\cbc\AdditionalAccountID $additionalAccountID
      */
     public function addToAdditionalAccountID(\horstoeko\ubl\entities\cbc\AdditionalAccountID $additionalAccountID)
     {
@@ -196,7 +196,7 @@ class SupplierPartyType
      *  Identifier
      *  Identifier. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAdditionalAccountID($index)
@@ -217,7 +217,7 @@ class SupplierPartyType
      *  Identifier
      *  Identifier. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAdditionalAccountID($index)
@@ -258,7 +258,7 @@ class SupplierPartyType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AdditionalAccountID[] $additionalAccountID
+     * @param  \horstoeko\ubl\entities\cbc\AdditionalAccountID[] $additionalAccountID
      * @return self
      */
     public function setAdditionalAccountID(array $additionalAccountID)
@@ -298,7 +298,7 @@ class SupplierPartyType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\DataSendingCapability $dataSendingCapability
+     * @param  \horstoeko\ubl\entities\cbc\DataSendingCapability $dataSendingCapability
      * @return self
      */
     public function setDataSendingCapability(\horstoeko\ubl\entities\cbc\DataSendingCapability $dataSendingCapability)
@@ -338,7 +338,7 @@ class SupplierPartyType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\Party $party
+     * @param  \horstoeko\ubl\entities\cac\Party $party
      * @return self
      */
     public function setParty(\horstoeko\ubl\entities\cac\Party $party)
@@ -380,7 +380,7 @@ class SupplierPartyType
      *  Contact
      *  Contact
      *
-     * @param \horstoeko\ubl\entities\cac\DespatchContact $despatchContact
+     * @param  \horstoeko\ubl\entities\cac\DespatchContact $despatchContact
      * @return self
      */
     public function setDespatchContact(\horstoeko\ubl\entities\cac\DespatchContact $despatchContact)
@@ -422,7 +422,7 @@ class SupplierPartyType
      *  Contact
      *  Contact
      *
-     * @param \horstoeko\ubl\entities\cac\AccountingContact $accountingContact
+     * @param  \horstoeko\ubl\entities\cac\AccountingContact $accountingContact
      * @return self
      */
     public function setAccountingContact(\horstoeko\ubl\entities\cac\AccountingContact $accountingContact)
@@ -464,7 +464,7 @@ class SupplierPartyType
      *  Contact
      *  Contact
      *
-     * @param \horstoeko\ubl\entities\cac\SellerContact $sellerContact
+     * @param  \horstoeko\ubl\entities\cac\SellerContact $sellerContact
      * @return self
      */
     public function setSellerContact(\horstoeko\ubl\entities\cac\SellerContact $sellerContact)

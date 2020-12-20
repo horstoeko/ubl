@@ -64,7 +64,7 @@ class MeasureType
     /**
      * Gets or sets the inner value
      *
-     * @param float $value
+     * @param  float $value
      * @return float
      */
     public function value()
@@ -118,7 +118,7 @@ class MeasureType
      *  string
      *  Reference UNECE Rec. 20 and X12 355
      *
-     * @param string $unitCode
+     * @param  string $unitCode
      * @return self
      */
     public function setUnitCode($unitCode)
@@ -158,7 +158,7 @@ class MeasureType
      *  Identifier
      *  string
      *
-     * @param string $unitCodeListVersionID
+     * @param  string $unitCodeListVersionID
      * @return self
      */
     public function setUnitCodeListVersionID($unitCodeListVersionID)

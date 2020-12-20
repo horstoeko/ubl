@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\CodeType;
 /**
  * Class representing ConstitutionCodeType
  *
- *
  * XSD Type: ConstitutionCodeType
  */
 class ConstitutionCodeType extends CodeType

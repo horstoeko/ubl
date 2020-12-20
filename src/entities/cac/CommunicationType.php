@@ -95,7 +95,7 @@ class CommunicationType
      *  Channel_ Code. Type
      *  Phone Fax Email
      *
-     * @param \horstoeko\ubl\entities\cbc\ChannelCode $channelCode
+     * @param  \horstoeko\ubl\entities\cbc\ChannelCode $channelCode
      * @return self
      */
     public function setChannelCode(\horstoeko\ubl\entities\cbc\ChannelCode $channelCode)
@@ -137,7 +137,7 @@ class CommunicationType
      *  Text. Type
      *  Skype
      *
-     * @param \horstoeko\ubl\entities\cbc\Channel $channel
+     * @param  \horstoeko\ubl\entities\cbc\Channel $channel
      * @return self
      */
     public function setChannel(\horstoeko\ubl\entities\cbc\Channel $channel)
@@ -179,7 +179,7 @@ class CommunicationType
      *  Text. Type
      *  +44 1 2345 6789 president@whitehouse.com
      *
-     * @param \horstoeko\ubl\entities\cbc\Value $value
+     * @param  \horstoeko\ubl\entities\cbc\Value $value
      * @return self
      */
     public function setValue(\horstoeko\ubl\entities\cbc\Value $value)

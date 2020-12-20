@@ -315,7 +315,7 @@ class RemittanceAdviceLineType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -337,7 +337,7 @@ class RemittanceAdviceLineType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param  \horstoeko\ubl\entities\cbc\Note $note
      */
     public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
     {
@@ -357,7 +357,7 @@ class RemittanceAdviceLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNote($index)
@@ -377,7 +377,7 @@ class RemittanceAdviceLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNote($index)
@@ -416,7 +416,7 @@ class RemittanceAdviceLineType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note[] $note
+     * @param  \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
     public function setNote(array $note)
@@ -456,7 +456,7 @@ class RemittanceAdviceLineType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\UUID $uUID
+     * @param  \horstoeko\ubl\entities\cbc\UUID $uUID
      * @return self
      */
     public function setUUID(\horstoeko\ubl\entities\cbc\UUID $uUID)
@@ -498,7 +498,7 @@ class RemittanceAdviceLineType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\DebitLineAmount $debitLineAmount
+     * @param  \horstoeko\ubl\entities\cbc\DebitLineAmount $debitLineAmount
      * @return self
      */
     public function setDebitLineAmount(\horstoeko\ubl\entities\cbc\DebitLineAmount $debitLineAmount)
@@ -540,7 +540,7 @@ class RemittanceAdviceLineType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CreditLineAmount $creditLineAmount
+     * @param  \horstoeko\ubl\entities\cbc\CreditLineAmount $creditLineAmount
      * @return self
      */
     public function setCreditLineAmount(\horstoeko\ubl\entities\cbc\CreditLineAmount $creditLineAmount)
@@ -580,7 +580,7 @@ class RemittanceAdviceLineType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\BalanceAmount $balanceAmount
+     * @param  \horstoeko\ubl\entities\cbc\BalanceAmount $balanceAmount
      * @return self
      */
     public function setBalanceAmount(\horstoeko\ubl\entities\cbc\BalanceAmount $balanceAmount)
@@ -620,7 +620,7 @@ class RemittanceAdviceLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PaymentPurposeCode $paymentPurposeCode
+     * @param  \horstoeko\ubl\entities\cbc\PaymentPurposeCode $paymentPurposeCode
      * @return self
      */
     public function setPaymentPurposeCode(\horstoeko\ubl\entities\cbc\PaymentPurposeCode $paymentPurposeCode)
@@ -662,7 +662,7 @@ class RemittanceAdviceLineType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\InvoicingPartyReference $invoicingPartyReference
+     * @param  \horstoeko\ubl\entities\cbc\InvoicingPartyReference $invoicingPartyReference
      * @return self
      */
     public function setInvoicingPartyReference(\horstoeko\ubl\entities\cbc\InvoicingPartyReference $invoicingPartyReference)
@@ -704,7 +704,7 @@ class RemittanceAdviceLineType
      *  Supplier Party
      *  Supplier Party
      *
-     * @param \horstoeko\ubl\entities\cac\AccountingSupplierParty $accountingSupplierParty
+     * @param  \horstoeko\ubl\entities\cac\AccountingSupplierParty $accountingSupplierParty
      * @return self
      */
     public function setAccountingSupplierParty(\horstoeko\ubl\entities\cac\AccountingSupplierParty $accountingSupplierParty)
@@ -746,7 +746,7 @@ class RemittanceAdviceLineType
      *  Customer Party
      *  Customer Party
      *
-     * @param \horstoeko\ubl\entities\cac\AccountingCustomerParty $accountingCustomerParty
+     * @param  \horstoeko\ubl\entities\cac\AccountingCustomerParty $accountingCustomerParty
      * @return self
      */
     public function setAccountingCustomerParty(\horstoeko\ubl\entities\cac\AccountingCustomerParty $accountingCustomerParty)
@@ -788,7 +788,7 @@ class RemittanceAdviceLineType
      *  Customer Party
      *  Customer Party
      *
-     * @param \horstoeko\ubl\entities\cac\BuyerCustomerParty $buyerCustomerParty
+     * @param  \horstoeko\ubl\entities\cac\BuyerCustomerParty $buyerCustomerParty
      * @return self
      */
     public function setBuyerCustomerParty(\horstoeko\ubl\entities\cac\BuyerCustomerParty $buyerCustomerParty)
@@ -830,7 +830,7 @@ class RemittanceAdviceLineType
      *  Supplier Party
      *  Supplier Party
      *
-     * @param \horstoeko\ubl\entities\cac\SellerSupplierParty $sellerSupplierParty
+     * @param  \horstoeko\ubl\entities\cac\SellerSupplierParty $sellerSupplierParty
      * @return self
      */
     public function setSellerSupplierParty(\horstoeko\ubl\entities\cac\SellerSupplierParty $sellerSupplierParty)
@@ -872,7 +872,7 @@ class RemittanceAdviceLineType
      *  Customer Party
      *  Customer Party
      *
-     * @param \horstoeko\ubl\entities\cac\OriginatorCustomerParty $originatorCustomerParty
+     * @param  \horstoeko\ubl\entities\cac\OriginatorCustomerParty $originatorCustomerParty
      * @return self
      */
     public function setOriginatorCustomerParty(\horstoeko\ubl\entities\cac\OriginatorCustomerParty $originatorCustomerParty)
@@ -914,7 +914,7 @@ class RemittanceAdviceLineType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\PayeeParty $payeeParty
+     * @param  \horstoeko\ubl\entities\cac\PayeeParty $payeeParty
      * @return self
      */
     public function setPayeeParty(\horstoeko\ubl\entities\cac\PayeeParty $payeeParty)
@@ -937,7 +937,7 @@ class RemittanceAdviceLineType
      *  Period
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\InvoicePeriod $invoicePeriod
+     * @param  \horstoeko\ubl\entities\cac\InvoicePeriod $invoicePeriod
      */
     public function addToInvoicePeriod(\horstoeko\ubl\entities\cac\InvoicePeriod $invoicePeriod)
     {
@@ -958,7 +958,7 @@ class RemittanceAdviceLineType
      *  Period
      *  Period
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetInvoicePeriod($index)
@@ -979,7 +979,7 @@ class RemittanceAdviceLineType
      *  Period
      *  Period
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetInvoicePeriod($index)
@@ -1020,7 +1020,7 @@ class RemittanceAdviceLineType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\InvoicePeriod[] $invoicePeriod
+     * @param  \horstoeko\ubl\entities\cac\InvoicePeriod[] $invoicePeriod
      * @return self
      */
     public function setInvoicePeriod(array $invoicePeriod)
@@ -1042,7 +1042,7 @@ class RemittanceAdviceLineType
      *  Billing Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\BillingReference $billingReference
+     * @param  \horstoeko\ubl\entities\cac\BillingReference $billingReference
      */
     public function addToBillingReference(\horstoeko\ubl\entities\cac\BillingReference $billingReference)
     {
@@ -1062,7 +1062,7 @@ class RemittanceAdviceLineType
      *  Billing Reference
      *  Billing Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetBillingReference($index)
@@ -1082,7 +1082,7 @@ class RemittanceAdviceLineType
      *  Billing Reference
      *  Billing Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetBillingReference($index)
@@ -1121,7 +1121,7 @@ class RemittanceAdviceLineType
      *  Billing Reference
      *  Billing Reference
      *
-     * @param \horstoeko\ubl\entities\cac\BillingReference[] $billingReference
+     * @param  \horstoeko\ubl\entities\cac\BillingReference[] $billingReference
      * @return self
      */
     public function setBillingReference(array $billingReference)
@@ -1143,7 +1143,7 @@ class RemittanceAdviceLineType
      *  Document Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\DocumentReference $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference $documentReference
      */
     public function addToDocumentReference(\horstoeko\ubl\entities\cac\DocumentReference $documentReference)
     {
@@ -1163,7 +1163,7 @@ class RemittanceAdviceLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDocumentReference($index)
@@ -1183,7 +1183,7 @@ class RemittanceAdviceLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDocumentReference($index)
@@ -1222,7 +1222,7 @@ class RemittanceAdviceLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\DocumentReference[] $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference[] $documentReference
      * @return self
      */
     public function setDocumentReference(array $documentReference)
@@ -1262,7 +1262,7 @@ class RemittanceAdviceLineType
      *  Exchange Rate
      *  Exchange Rate
      *
-     * @param \horstoeko\ubl\entities\cac\ExchangeRate $exchangeRate
+     * @param  \horstoeko\ubl\entities\cac\ExchangeRate $exchangeRate
      * @return self
      */
     public function setExchangeRate(\horstoeko\ubl\entities\cac\ExchangeRate $exchangeRate)

@@ -140,7 +140,7 @@ class TelecommunicationsSupplyType
      *  Text. Type
      *  Itemized tele Statement
      *
-     * @param \horstoeko\ubl\entities\cbc\TelecommunicationsSupplyType $telecommunicationsSupplyType
+     * @param  \horstoeko\ubl\entities\cbc\TelecommunicationsSupplyType $telecommunicationsSupplyType
      * @return self
      */
     public function setTelecommunicationsSupplyType(\horstoeko\ubl\entities\cbc\TelecommunicationsSupplyType $telecommunicationsSupplyType)
@@ -182,7 +182,7 @@ class TelecommunicationsSupplyType
      *  Code. Type
      *  TeleExtended
      *
-     * @param \horstoeko\ubl\entities\cbc\TelecommunicationsSupplyTypeCode $telecommunicationsSupplyTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\TelecommunicationsSupplyTypeCode $telecommunicationsSupplyTypeCode
      * @return self
      */
     public function setTelecommunicationsSupplyTypeCode(\horstoeko\ubl\entities\cbc\TelecommunicationsSupplyTypeCode $telecommunicationsSupplyTypeCode)
@@ -224,7 +224,7 @@ class TelecommunicationsSupplyType
      *  Code. Type
      *  CompanyLevel
      *
-     * @param \horstoeko\ubl\entities\cbc\PrivacyCode $privacyCode
+     * @param  \horstoeko\ubl\entities\cbc\PrivacyCode $privacyCode
      * @return self
      */
     public function setPrivacyCode(\horstoeko\ubl\entities\cbc\PrivacyCode $privacyCode)
@@ -247,7 +247,7 @@ class TelecommunicationsSupplyType
      *  Extended conversation Statement January quarter 2008.
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -268,7 +268,7 @@ class TelecommunicationsSupplyType
      *  Text. Type
      *  Extended conversation Statement January quarter 2008.
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -289,7 +289,7 @@ class TelecommunicationsSupplyType
      *  Text. Type
      *  Extended conversation Statement January quarter 2008.
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -330,7 +330,7 @@ class TelecommunicationsSupplyType
      *  Text. Type
      *  Extended conversation Statement January quarter 2008.
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -372,7 +372,7 @@ class TelecommunicationsSupplyType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TotalAmount $totalAmount
+     * @param  \horstoeko\ubl\entities\cbc\TotalAmount $totalAmount
      * @return self
      */
     public function setTotalAmount(\horstoeko\ubl\entities\cbc\TotalAmount $totalAmount)
@@ -394,7 +394,7 @@ class TelecommunicationsSupplyType
      *  Telecommunications Supply Line
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\TelecommunicationsSupplyLine $telecommunicationsSupplyLine
+     * @param  \horstoeko\ubl\entities\cac\TelecommunicationsSupplyLine $telecommunicationsSupplyLine
      */
     public function addToTelecommunicationsSupplyLine(\horstoeko\ubl\entities\cac\TelecommunicationsSupplyLine $telecommunicationsSupplyLine)
     {
@@ -414,7 +414,7 @@ class TelecommunicationsSupplyType
      *  Telecommunications Supply Line
      *  Telecommunications Supply Line
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTelecommunicationsSupplyLine($index)
@@ -434,7 +434,7 @@ class TelecommunicationsSupplyType
      *  Telecommunications Supply Line
      *  Telecommunications Supply Line
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTelecommunicationsSupplyLine($index)
@@ -473,7 +473,7 @@ class TelecommunicationsSupplyType
      *  Telecommunications Supply Line
      *  Telecommunications Supply Line
      *
-     * @param \horstoeko\ubl\entities\cac\TelecommunicationsSupplyLine[] $telecommunicationsSupplyLine
+     * @param  \horstoeko\ubl\entities\cac\TelecommunicationsSupplyLine[] $telecommunicationsSupplyLine
      * @return self
      */
     public function setTelecommunicationsSupplyLine(array $telecommunicationsSupplyLine)

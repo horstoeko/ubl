@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing ActualDeliveryTimeType
  *
- *
  * XSD Type: ActualDeliveryTimeType
  */
 class ActualDeliveryTimeType
@@ -29,7 +28,7 @@ class ActualDeliveryTimeType
     /**
      * Gets or sets the inner value
      *
-     * @param \DateTime $value
+     * @param  \DateTime $value
      * @return \DateTime
      */
     public function value()

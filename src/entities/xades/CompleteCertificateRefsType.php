@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing CompleteCertificateRefsType
  *
- *
  * XSD Type: CompleteCertificateRefsType
  */
 class CompleteCertificateRefsType
@@ -34,7 +33,7 @@ class CompleteCertificateRefsType
     /**
      * Sets a new id
      *
-     * @param string $id
+     * @param  string $id
      * @return self
      */
     public function setId($id)
@@ -47,7 +46,7 @@ class CompleteCertificateRefsType
      * Adds as cert
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\CertIDType $cert
+     * @param  \horstoeko\ubl\entities\xades\CertIDType $cert
      */
     public function addToCertRefs(\horstoeko\ubl\entities\xades\CertIDType $cert)
     {
@@ -58,7 +57,7 @@ class CompleteCertificateRefsType
     /**
      * isset certRefs
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetCertRefs($index)
@@ -69,7 +68,7 @@ class CompleteCertificateRefsType
     /**
      * unset certRefs
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetCertRefs($index)
@@ -90,7 +89,7 @@ class CompleteCertificateRefsType
     /**
      * Sets a new certRefs
      *
-     * @param \horstoeko\ubl\entities\xades\CertIDType[] $certRefs
+     * @param  \horstoeko\ubl\entities\xades\CertIDType[] $certRefs
      * @return self
      */
     public function setCertRefs(array $certRefs)

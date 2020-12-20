@@ -671,7 +671,7 @@ class GoodsItemType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -711,7 +711,7 @@ class GoodsItemType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SequenceNumberID $sequenceNumberID
+     * @param  \horstoeko\ubl\entities\cbc\SequenceNumberID $sequenceNumberID
      * @return self
      */
     public function setSequenceNumberID(\horstoeko\ubl\entities\cbc\SequenceNumberID $sequenceNumberID)
@@ -734,7 +734,7 @@ class GoodsItemType
      *  Description of goods (WCO ID 137)
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -755,7 +755,7 @@ class GoodsItemType
      *  Text. Type
      *  Description of goods (WCO ID 137)
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -776,7 +776,7 @@ class GoodsItemType
      *  Text. Type
      *  Description of goods (WCO ID 137)
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -817,7 +817,7 @@ class GoodsItemType
      *  Text. Type
      *  Description of goods (WCO ID 137)
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -861,7 +861,7 @@ class GoodsItemType
      *  Indicator. Type
      *  default is negative
      *
-     * @param bool $hazardousRiskIndicator
+     * @param  bool $hazardousRiskIndicator
      * @return self
      */
     public function setHazardousRiskIndicator($hazardousRiskIndicator)
@@ -905,7 +905,7 @@ class GoodsItemType
      *  Amount. Type
      *  For Customs Value (WCO ID 108)
      *
-     * @param \horstoeko\ubl\entities\cbc\DeclaredCustomsValueAmount $declaredCustomsValueAmount
+     * @param  \horstoeko\ubl\entities\cbc\DeclaredCustomsValueAmount $declaredCustomsValueAmount
      * @return self
      */
     public function setDeclaredCustomsValueAmount(\horstoeko\ubl\entities\cbc\DeclaredCustomsValueAmount $declaredCustomsValueAmount)
@@ -949,7 +949,7 @@ class GoodsItemType
      *  Amount. Type
      *  Interest in delivery, declared value for carriage
      *
-     * @param \horstoeko\ubl\entities\cbc\DeclaredForCarriageValueAmount $declaredForCarriageValueAmount
+     * @param  \horstoeko\ubl\entities\cbc\DeclaredForCarriageValueAmount $declaredForCarriageValueAmount
      * @return self
      */
     public function setDeclaredForCarriageValueAmount(\horstoeko\ubl\entities\cbc\DeclaredForCarriageValueAmount $declaredForCarriageValueAmount)
@@ -993,7 +993,7 @@ class GoodsItemType
      *  Amount. Type
      *  Statistical Value (WCO ID 114)
      *
-     * @param \horstoeko\ubl\entities\cbc\DeclaredStatisticsValueAmount $declaredStatisticsValueAmount
+     * @param  \horstoeko\ubl\entities\cbc\DeclaredStatisticsValueAmount $declaredStatisticsValueAmount
      * @return self
      */
     public function setDeclaredStatisticsValueAmount(\horstoeko\ubl\entities\cbc\DeclaredStatisticsValueAmount $declaredStatisticsValueAmount)
@@ -1037,7 +1037,7 @@ class GoodsItemType
      *  Amount. Type
      *  FOB Value
      *
-     * @param \horstoeko\ubl\entities\cbc\FreeOnBoardValueAmount $freeOnBoardValueAmount
+     * @param  \horstoeko\ubl\entities\cbc\FreeOnBoardValueAmount $freeOnBoardValueAmount
      * @return self
      */
     public function setFreeOnBoardValueAmount(\horstoeko\ubl\entities\cbc\FreeOnBoardValueAmount $freeOnBoardValueAmount)
@@ -1081,7 +1081,7 @@ class GoodsItemType
      *  Amount. Type
      *  Value Insured
      *
-     * @param \horstoeko\ubl\entities\cbc\InsuranceValueAmount $insuranceValueAmount
+     * @param  \horstoeko\ubl\entities\cbc\InsuranceValueAmount $insuranceValueAmount
      * @return self
      */
     public function setInsuranceValueAmount(\horstoeko\ubl\entities\cbc\InsuranceValueAmount $insuranceValueAmount)
@@ -1121,7 +1121,7 @@ class GoodsItemType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ValueAmount $valueAmount
+     * @param  \horstoeko\ubl\entities\cbc\ValueAmount $valueAmount
      * @return self
      */
     public function setValueAmount(\horstoeko\ubl\entities\cbc\ValueAmount $valueAmount)
@@ -1165,7 +1165,7 @@ class GoodsItemType
      *  Measure. Type
      *  Actual Gross Weight
      *
-     * @param \horstoeko\ubl\entities\cbc\GrossWeightMeasure $grossWeightMeasure
+     * @param  \horstoeko\ubl\entities\cbc\GrossWeightMeasure $grossWeightMeasure
      * @return self
      */
     public function setGrossWeightMeasure(\horstoeko\ubl\entities\cbc\GrossWeightMeasure $grossWeightMeasure)
@@ -1207,7 +1207,7 @@ class GoodsItemType
      *  Measure
      *  Measure. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\NetWeightMeasure $netWeightMeasure
+     * @param  \horstoeko\ubl\entities\cbc\NetWeightMeasure $netWeightMeasure
      * @return self
      */
     public function setNetWeightMeasure(\horstoeko\ubl\entities\cbc\NetWeightMeasure $netWeightMeasure)
@@ -1251,7 +1251,7 @@ class GoodsItemType
      *  Measure. Type
      *  Customs Weight (WCO ID 128)
      *
-     * @param \horstoeko\ubl\entities\cbc\NetNetWeightMeasure $netNetWeightMeasure
+     * @param  \horstoeko\ubl\entities\cbc\NetNetWeightMeasure $netNetWeightMeasure
      * @return self
      */
     public function setNetNetWeightMeasure(\horstoeko\ubl\entities\cbc\NetNetWeightMeasure $netNetWeightMeasure)
@@ -1293,7 +1293,7 @@ class GoodsItemType
      *  Measure
      *  Measure. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ChargeableWeightMeasure $chargeableWeightMeasure
+     * @param  \horstoeko\ubl\entities\cbc\ChargeableWeightMeasure $chargeableWeightMeasure
      * @return self
      */
     public function setChargeableWeightMeasure(\horstoeko\ubl\entities\cbc\ChargeableWeightMeasure $chargeableWeightMeasure)
@@ -1337,7 +1337,7 @@ class GoodsItemType
      *  Measure. Type
      *  Volume, Gross Measurement Cube (GMC), Cube (WCO ID 134)
      *
-     * @param \horstoeko\ubl\entities\cbc\GrossVolumeMeasure $grossVolumeMeasure
+     * @param  \horstoeko\ubl\entities\cbc\GrossVolumeMeasure $grossVolumeMeasure
      * @return self
      */
     public function setGrossVolumeMeasure(\horstoeko\ubl\entities\cbc\GrossVolumeMeasure $grossVolumeMeasure)
@@ -1379,7 +1379,7 @@ class GoodsItemType
      *  Measure
      *  Measure. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\NetVolumeMeasure $netVolumeMeasure
+     * @param  \horstoeko\ubl\entities\cbc\NetVolumeMeasure $netVolumeMeasure
      * @return self
      */
     public function setNetVolumeMeasure(\horstoeko\ubl\entities\cbc\NetVolumeMeasure $netVolumeMeasure)
@@ -1419,7 +1419,7 @@ class GoodsItemType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Quantity $quantity
+     * @param  \horstoeko\ubl\entities\cbc\Quantity $quantity
      * @return self
      */
     public function setQuantity(\horstoeko\ubl\entities\cbc\Quantity $quantity)
@@ -1475,7 +1475,7 @@ class GoodsItemType
      * F - The good is an originating agricultural good under preference criterion A,B, or C above and is not subjected to quantitative restriction in the importing NAFTA country because....
      * Thus, the column Preference Criterion will indicate either A, B, C,...
      *
-     * @param \horstoeko\ubl\entities\cbc\PreferenceCriterionCode $preferenceCriterionCode
+     * @param  \horstoeko\ubl\entities\cbc\PreferenceCriterionCode $preferenceCriterionCode
      * @return self
      */
     public function setPreferenceCriterionCode(\horstoeko\ubl\entities\cbc\PreferenceCriterionCode $preferenceCriterionCode)
@@ -1519,7 +1519,7 @@ class GoodsItemType
      *  Identifier. Type
      *  Tariff code extensions (WCO ID 255)
      *
-     * @param \horstoeko\ubl\entities\cbc\RequiredCustomsID $requiredCustomsID
+     * @param  \horstoeko\ubl\entities\cbc\RequiredCustomsID $requiredCustomsID
      * @return self
      */
     public function setRequiredCustomsID(\horstoeko\ubl\entities\cbc\RequiredCustomsID $requiredCustomsID)
@@ -1561,7 +1561,7 @@ class GoodsItemType
      *  Code. Type
      *  Customs status of goods (WCO ID 094)
      *
-     * @param \horstoeko\ubl\entities\cbc\CustomsStatusCode $customsStatusCode
+     * @param  \horstoeko\ubl\entities\cbc\CustomsStatusCode $customsStatusCode
      * @return self
      */
     public function setCustomsStatusCode(\horstoeko\ubl\entities\cbc\CustomsStatusCode $customsStatusCode)
@@ -1601,7 +1601,7 @@ class GoodsItemType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CustomsTariffQuantity $customsTariffQuantity
+     * @param  \horstoeko\ubl\entities\cbc\CustomsTariffQuantity $customsTariffQuantity
      * @return self
      */
     public function setCustomsTariffQuantity(\horstoeko\ubl\entities\cbc\CustomsTariffQuantity $customsTariffQuantity)
@@ -1643,7 +1643,7 @@ class GoodsItemType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $customsImportClassifiedIndicator
+     * @param  bool $customsImportClassifiedIndicator
      * @return self
      */
     public function setCustomsImportClassifiedIndicator($customsImportClassifiedIndicator)
@@ -1685,7 +1685,7 @@ class GoodsItemType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ChargeableQuantity $chargeableQuantity
+     * @param  \horstoeko\ubl\entities\cbc\ChargeableQuantity $chargeableQuantity
      * @return self
      */
     public function setChargeableQuantity(\horstoeko\ubl\entities\cbc\ChargeableQuantity $chargeableQuantity)
@@ -1727,7 +1727,7 @@ class GoodsItemType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ReturnableQuantity $returnableQuantity
+     * @param  \horstoeko\ubl\entities\cbc\ReturnableQuantity $returnableQuantity
      * @return self
      */
     public function setReturnableQuantity(\horstoeko\ubl\entities\cbc\ReturnableQuantity $returnableQuantity)
@@ -1769,7 +1769,7 @@ class GoodsItemType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TraceID $traceID
+     * @param  \horstoeko\ubl\entities\cbc\TraceID $traceID
      * @return self
      */
     public function setTraceID(\horstoeko\ubl\entities\cbc\TraceID $traceID)
@@ -1791,7 +1791,7 @@ class GoodsItemType
      *  Item
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Item $item
+     * @param  \horstoeko\ubl\entities\cac\Item $item
      */
     public function addToItem(\horstoeko\ubl\entities\cac\Item $item)
     {
@@ -1811,7 +1811,7 @@ class GoodsItemType
      *  Item
      *  Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetItem($index)
@@ -1831,7 +1831,7 @@ class GoodsItemType
      *  Item
      *  Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetItem($index)
@@ -1870,7 +1870,7 @@ class GoodsItemType
      *  Item
      *  Item
      *
-     * @param \horstoeko\ubl\entities\cac\Item[] $item
+     * @param  \horstoeko\ubl\entities\cac\Item[] $item
      * @return self
      */
     public function setItem(array $item)
@@ -1892,7 +1892,7 @@ class GoodsItemType
      *  Goods Item Container
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\GoodsItemContainer $goodsItemContainer
+     * @param  \horstoeko\ubl\entities\cac\GoodsItemContainer $goodsItemContainer
      */
     public function addToGoodsItemContainer(\horstoeko\ubl\entities\cac\GoodsItemContainer $goodsItemContainer)
     {
@@ -1912,7 +1912,7 @@ class GoodsItemType
      *  Goods Item Container
      *  Goods Item Container
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetGoodsItemContainer($index)
@@ -1932,7 +1932,7 @@ class GoodsItemType
      *  Goods Item Container
      *  Goods Item Container
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetGoodsItemContainer($index)
@@ -1971,7 +1971,7 @@ class GoodsItemType
      *  Goods Item Container
      *  Goods Item Container
      *
-     * @param \horstoeko\ubl\entities\cac\GoodsItemContainer[] $goodsItemContainer
+     * @param  \horstoeko\ubl\entities\cac\GoodsItemContainer[] $goodsItemContainer
      * @return self
      */
     public function setGoodsItemContainer(array $goodsItemContainer)
@@ -1995,7 +1995,7 @@ class GoodsItemType
      *  Freight Costs
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\FreightAllowanceCharge $freightAllowanceCharge
+     * @param  \horstoeko\ubl\entities\cac\FreightAllowanceCharge $freightAllowanceCharge
      */
     public function addToFreightAllowanceCharge(\horstoeko\ubl\entities\cac\FreightAllowanceCharge $freightAllowanceCharge)
     {
@@ -2017,7 +2017,7 @@ class GoodsItemType
      *  Allowance Charge
      *  Freight Costs
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetFreightAllowanceCharge($index)
@@ -2039,7 +2039,7 @@ class GoodsItemType
      *  Allowance Charge
      *  Freight Costs
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetFreightAllowanceCharge($index)
@@ -2082,7 +2082,7 @@ class GoodsItemType
      *  Allowance Charge
      *  Freight Costs
      *
-     * @param \horstoeko\ubl\entities\cac\FreightAllowanceCharge[] $freightAllowanceCharge
+     * @param  \horstoeko\ubl\entities\cac\FreightAllowanceCharge[] $freightAllowanceCharge
      * @return self
      */
     public function setFreightAllowanceCharge(array $freightAllowanceCharge)
@@ -2104,7 +2104,7 @@ class GoodsItemType
      *  Invoice Line
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\InvoiceLine $invoiceLine
+     * @param  \horstoeko\ubl\entities\cac\InvoiceLine $invoiceLine
      */
     public function addToInvoiceLine(\horstoeko\ubl\entities\cac\InvoiceLine $invoiceLine)
     {
@@ -2124,7 +2124,7 @@ class GoodsItemType
      *  Invoice Line
      *  Invoice Line
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetInvoiceLine($index)
@@ -2144,7 +2144,7 @@ class GoodsItemType
      *  Invoice Line
      *  Invoice Line
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetInvoiceLine($index)
@@ -2183,7 +2183,7 @@ class GoodsItemType
      *  Invoice Line
      *  Invoice Line
      *
-     * @param \horstoeko\ubl\entities\cac\InvoiceLine[] $invoiceLine
+     * @param  \horstoeko\ubl\entities\cac\InvoiceLine[] $invoiceLine
      * @return self
      */
     public function setInvoiceLine(array $invoiceLine)
@@ -2206,7 +2206,7 @@ class GoodsItemType
      *  maximum, storage, minimum
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Temperature $temperature
+     * @param  \horstoeko\ubl\entities\cac\Temperature $temperature
      */
     public function addToTemperature(\horstoeko\ubl\entities\cac\Temperature $temperature)
     {
@@ -2227,7 +2227,7 @@ class GoodsItemType
      *  Temperature
      *  maximum, storage, minimum
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTemperature($index)
@@ -2248,7 +2248,7 @@ class GoodsItemType
      *  Temperature
      *  maximum, storage, minimum
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTemperature($index)
@@ -2289,7 +2289,7 @@ class GoodsItemType
      *  Temperature
      *  maximum, storage, minimum
      *
-     * @param \horstoeko\ubl\entities\cac\Temperature[] $temperature
+     * @param  \horstoeko\ubl\entities\cac\Temperature[] $temperature
      * @return self
      */
     public function setTemperature(array $temperature)
@@ -2312,7 +2312,7 @@ class GoodsItemType
      *  Goods Item
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ContainedGoodsItem $containedGoodsItem
+     * @param  \horstoeko\ubl\entities\cac\ContainedGoodsItem $containedGoodsItem
      */
     public function addToContainedGoodsItem(\horstoeko\ubl\entities\cac\ContainedGoodsItem $containedGoodsItem)
     {
@@ -2333,7 +2333,7 @@ class GoodsItemType
      *  Goods Item
      *  Goods Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetContainedGoodsItem($index)
@@ -2354,7 +2354,7 @@ class GoodsItemType
      *  Goods Item
      *  Goods Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetContainedGoodsItem($index)
@@ -2395,7 +2395,7 @@ class GoodsItemType
      *  Goods Item
      *  Goods Item
      *
-     * @param \horstoeko\ubl\entities\cac\ContainedGoodsItem[] $containedGoodsItem
+     * @param  \horstoeko\ubl\entities\cac\ContainedGoodsItem[] $containedGoodsItem
      * @return self
      */
     public function setContainedGoodsItem(array $containedGoodsItem)
@@ -2439,7 +2439,7 @@ class GoodsItemType
      *  Address
      *  Region of origin (WCO ID 066)
      *
-     * @param \horstoeko\ubl\entities\cac\OriginAddress $originAddress
+     * @param  \horstoeko\ubl\entities\cac\OriginAddress $originAddress
      * @return self
      */
     public function setOriginAddress(\horstoeko\ubl\entities\cac\OriginAddress $originAddress)
@@ -2479,7 +2479,7 @@ class GoodsItemType
      *  Delivery
      *  Delivery
      *
-     * @param \horstoeko\ubl\entities\cac\Delivery $delivery
+     * @param  \horstoeko\ubl\entities\cac\Delivery $delivery
      * @return self
      */
     public function setDelivery(\horstoeko\ubl\entities\cac\Delivery $delivery)
@@ -2519,7 +2519,7 @@ class GoodsItemType
      *  Pickup
      *  Pickup
      *
-     * @param \horstoeko\ubl\entities\cac\Pickup $pickup
+     * @param  \horstoeko\ubl\entities\cac\Pickup $pickup
      * @return self
      */
     public function setPickup(\horstoeko\ubl\entities\cac\Pickup $pickup)
@@ -2559,7 +2559,7 @@ class GoodsItemType
      *  Despatch
      *  Despatch
      *
-     * @param \horstoeko\ubl\entities\cac\Despatch $despatch
+     * @param  \horstoeko\ubl\entities\cac\Despatch $despatch
      * @return self
      */
     public function setDespatch(\horstoeko\ubl\entities\cac\Despatch $despatch)
@@ -2582,7 +2582,7 @@ class GoodsItemType
      *  Dimension
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\MeasurementDimension $measurementDimension
+     * @param  \horstoeko\ubl\entities\cac\MeasurementDimension $measurementDimension
      */
     public function addToMeasurementDimension(\horstoeko\ubl\entities\cac\MeasurementDimension $measurementDimension)
     {
@@ -2603,7 +2603,7 @@ class GoodsItemType
      *  Dimension
      *  Dimension
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetMeasurementDimension($index)
@@ -2624,7 +2624,7 @@ class GoodsItemType
      *  Dimension
      *  Dimension
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetMeasurementDimension($index)
@@ -2665,7 +2665,7 @@ class GoodsItemType
      *  Dimension
      *  Dimension
      *
-     * @param \horstoeko\ubl\entities\cac\MeasurementDimension[] $measurementDimension
+     * @param  \horstoeko\ubl\entities\cac\MeasurementDimension[] $measurementDimension
      * @return self
      */
     public function setMeasurementDimension(array $measurementDimension)
@@ -2688,7 +2688,7 @@ class GoodsItemType
      *  Package
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ContainingPackage $containingPackage
+     * @param  \horstoeko\ubl\entities\cac\ContainingPackage $containingPackage
      */
     public function addToContainingPackage(\horstoeko\ubl\entities\cac\ContainingPackage $containingPackage)
     {
@@ -2709,7 +2709,7 @@ class GoodsItemType
      *  Package
      *  Package
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetContainingPackage($index)
@@ -2730,7 +2730,7 @@ class GoodsItemType
      *  Package
      *  Package
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetContainingPackage($index)
@@ -2771,7 +2771,7 @@ class GoodsItemType
      *  Package
      *  Package
      *
-     * @param \horstoeko\ubl\entities\cac\ContainingPackage[] $containingPackage
+     * @param  \horstoeko\ubl\entities\cac\ContainingPackage[] $containingPackage
      * @return self
      */
     public function setContainingPackage(array $containingPackage)
@@ -2813,7 +2813,7 @@ class GoodsItemType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\ShipmentDocumentReference $shipmentDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\ShipmentDocumentReference $shipmentDocumentReference
      * @return self
      */
     public function setShipmentDocumentReference(\horstoeko\ubl\entities\cac\ShipmentDocumentReference $shipmentDocumentReference)
@@ -2855,7 +2855,7 @@ class GoodsItemType
      *  Temperature
      *  Temperature
      *
-     * @param \horstoeko\ubl\entities\cac\MinimumTemperature $minimumTemperature
+     * @param  \horstoeko\ubl\entities\cac\MinimumTemperature $minimumTemperature
      * @return self
      */
     public function setMinimumTemperature(\horstoeko\ubl\entities\cac\MinimumTemperature $minimumTemperature)
@@ -2897,7 +2897,7 @@ class GoodsItemType
      *  Temperature
      *  Temperature
      *
-     * @param \horstoeko\ubl\entities\cac\MaximumTemperature $maximumTemperature
+     * @param  \horstoeko\ubl\entities\cac\MaximumTemperature $maximumTemperature
      * @return self
      */
     public function setMaximumTemperature(\horstoeko\ubl\entities\cac\MaximumTemperature $maximumTemperature)

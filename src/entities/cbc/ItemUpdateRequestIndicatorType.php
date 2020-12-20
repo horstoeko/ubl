@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing ItemUpdateRequestIndicatorType
  *
- *
  * XSD Type: ItemUpdateRequestIndicatorType
  */
 class ItemUpdateRequestIndicatorType
@@ -29,7 +28,7 @@ class ItemUpdateRequestIndicatorType
     /**
      * Gets or sets the inner value
      *
-     * @param bool $value
+     * @param  bool $value
      * @return bool
      */
     public function value()

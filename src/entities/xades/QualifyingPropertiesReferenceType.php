@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing QualifyingPropertiesReferenceType
  *
- *
  * XSD Type: QualifyingPropertiesReferenceType
  */
 class QualifyingPropertiesReferenceType
@@ -34,7 +33,7 @@ class QualifyingPropertiesReferenceType
     /**
      * Sets a new uRI
      *
-     * @param string $uRI
+     * @param  string $uRI
      * @return self
      */
     public function setURI($uRI)
@@ -56,7 +55,7 @@ class QualifyingPropertiesReferenceType
     /**
      * Sets a new id
      *
-     * @param string $id
+     * @param  string $id
      * @return self
      */
     public function setId($id)

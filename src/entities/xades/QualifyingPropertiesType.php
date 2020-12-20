@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing QualifyingPropertiesType
  *
- *
  * XSD Type: QualifyingPropertiesType
  */
 class QualifyingPropertiesType
@@ -44,7 +43,7 @@ class QualifyingPropertiesType
     /**
      * Sets a new target
      *
-     * @param string $target
+     * @param  string $target
      * @return self
      */
     public function setTarget($target)
@@ -66,7 +65,7 @@ class QualifyingPropertiesType
     /**
      * Sets a new id
      *
-     * @param string $id
+     * @param  string $id
      * @return self
      */
     public function setId($id)
@@ -88,7 +87,7 @@ class QualifyingPropertiesType
     /**
      * Sets a new signedProperties
      *
-     * @param \horstoeko\ubl\entities\xades\SignedPropertiesType $signedProperties
+     * @param  \horstoeko\ubl\entities\xades\SignedPropertiesType $signedProperties
      * @return self
      */
     public function setSignedProperties(\horstoeko\ubl\entities\xades\SignedPropertiesType $signedProperties)
@@ -110,7 +109,7 @@ class QualifyingPropertiesType
     /**
      * Sets a new unsignedProperties
      *
-     * @param \horstoeko\ubl\entities\xades\UnsignedPropertiesType $unsignedProperties
+     * @param  \horstoeko\ubl\entities\xades\UnsignedPropertiesType $unsignedProperties
      * @return self
      */
     public function setUnsignedProperties(\horstoeko\ubl\entities\xades\UnsignedPropertiesType $unsignedProperties)

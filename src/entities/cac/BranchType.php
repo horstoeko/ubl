@@ -101,7 +101,7 @@ class BranchType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -141,7 +141,7 @@ class BranchType
      *  Name
      *  Name. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Name $name
+     * @param  \horstoeko\ubl\entities\cbc\Name $name
      * @return self
      */
     public function setName(\horstoeko\ubl\entities\cbc\Name $name)
@@ -181,7 +181,7 @@ class BranchType
      *  Financial Institution
      *  Financial Institution
      *
-     * @param \horstoeko\ubl\entities\cac\FinancialInstitution $financialInstitution
+     * @param  \horstoeko\ubl\entities\cac\FinancialInstitution $financialInstitution
      * @return self
      */
     public function setFinancialInstitution(\horstoeko\ubl\entities\cac\FinancialInstitution $financialInstitution)
@@ -221,7 +221,7 @@ class BranchType
      *  Address
      *  Address
      *
-     * @param \horstoeko\ubl\entities\cac\Address $address
+     * @param  \horstoeko\ubl\entities\cac\Address $address
      * @return self
      */
     public function setAddress(\horstoeko\ubl\entities\cac\Address $address)

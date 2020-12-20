@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\QuantityType;
 /**
  * Class representing TotalPackagesQuantityType
  *
- *
  * XSD Type: TotalPackagesQuantityType
  */
 class TotalPackagesQuantityType extends QuantityType

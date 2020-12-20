@@ -91,7 +91,7 @@ class DocumentDistributionType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PrintQualifier $printQualifier
+     * @param  \horstoeko\ubl\entities\cbc\PrintQualifier $printQualifier
      * @return self
      */
     public function setPrintQualifier(\horstoeko\ubl\entities\cbc\PrintQualifier $printQualifier)
@@ -133,7 +133,7 @@ class DocumentDistributionType
      *  Numeric
      *  Numeric. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MaximumCopiesNumeric $maximumCopiesNumeric
+     * @param  \horstoeko\ubl\entities\cbc\MaximumCopiesNumeric $maximumCopiesNumeric
      * @return self
      */
     public function setMaximumCopiesNumeric(\horstoeko\ubl\entities\cbc\MaximumCopiesNumeric $maximumCopiesNumeric)
@@ -173,7 +173,7 @@ class DocumentDistributionType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\Party $party
+     * @param  \horstoeko\ubl\entities\cac\Party $party
      * @return self
      */
     public function setParty(\horstoeko\ubl\entities\cac\Party $party)

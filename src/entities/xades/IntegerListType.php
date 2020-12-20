@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing IntegerListType
  *
- *
  * XSD Type: IntegerListType
  */
 class IntegerListType
@@ -22,7 +21,7 @@ class IntegerListType
      * Adds as int
      *
      * @return self
-     * @param int $int
+     * @param  int $int
      */
     public function addToInt($int)
     {
@@ -33,7 +32,7 @@ class IntegerListType
     /**
      * isset int
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetInt($index)
@@ -44,7 +43,7 @@ class IntegerListType
     /**
      * unset int
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetInt($index)
@@ -65,7 +64,7 @@ class IntegerListType
     /**
      * Sets a new int
      *
-     * @param int[] $int
+     * @param  int[] $int
      * @return self
      */
     public function setInt(array $int)

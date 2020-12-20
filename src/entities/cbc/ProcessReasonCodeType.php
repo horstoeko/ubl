@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\CodeType;
 /**
  * Class representing ProcessReasonCodeType
  *
- *
  * XSD Type: ProcessReasonCodeType
  */
 class ProcessReasonCodeType extends CodeType

@@ -105,7 +105,7 @@ class EventLineItemType
      *  Numeric
      *  Numeric. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LineNumberNumeric $lineNumberNumeric
+     * @param  \horstoeko\ubl\entities\cbc\LineNumberNumeric $lineNumberNumeric
      * @return self
      */
     public function setLineNumberNumeric(\horstoeko\ubl\entities\cbc\LineNumberNumeric $lineNumberNumeric)
@@ -147,7 +147,7 @@ class EventLineItemType
      *  Location
      *  Location
      *
-     * @param \horstoeko\ubl\entities\cac\ParticipatingLocationsLocation $participatingLocationsLocation
+     * @param  \horstoeko\ubl\entities\cac\ParticipatingLocationsLocation $participatingLocationsLocation
      * @return self
      */
     public function setParticipatingLocationsLocation(\horstoeko\ubl\entities\cac\ParticipatingLocationsLocation $participatingLocationsLocation)
@@ -169,7 +169,7 @@ class EventLineItemType
      *  Retail Planned Impact
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\RetailPlannedImpact $retailPlannedImpact
+     * @param  \horstoeko\ubl\entities\cac\RetailPlannedImpact $retailPlannedImpact
      */
     public function addToRetailPlannedImpact(\horstoeko\ubl\entities\cac\RetailPlannedImpact $retailPlannedImpact)
     {
@@ -189,7 +189,7 @@ class EventLineItemType
      *  Retail Planned Impact
      *  Retail Planned Impact
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetRetailPlannedImpact($index)
@@ -209,7 +209,7 @@ class EventLineItemType
      *  Retail Planned Impact
      *  Retail Planned Impact
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetRetailPlannedImpact($index)
@@ -248,7 +248,7 @@ class EventLineItemType
      *  Retail Planned Impact
      *  Retail Planned Impact
      *
-     * @param \horstoeko\ubl\entities\cac\RetailPlannedImpact[] $retailPlannedImpact
+     * @param  \horstoeko\ubl\entities\cac\RetailPlannedImpact[] $retailPlannedImpact
      * @return self
      */
     public function setRetailPlannedImpact(array $retailPlannedImpact)
@@ -290,7 +290,7 @@ class EventLineItemType
      *  Item
      *  Item
      *
-     * @param \horstoeko\ubl\entities\cac\SupplyItem $supplyItem
+     * @param  \horstoeko\ubl\entities\cac\SupplyItem $supplyItem
      * @return self
      */
     public function setSupplyItem(\horstoeko\ubl\entities\cac\SupplyItem $supplyItem)

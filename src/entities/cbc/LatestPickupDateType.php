@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing LatestPickupDateType
  *
- *
  * XSD Type: LatestPickupDateType
  */
 class LatestPickupDateType
@@ -29,7 +28,7 @@ class LatestPickupDateType
     /**
      * Gets or sets the inner value
      *
-     * @param \DateTime $value
+     * @param  \DateTime $value
      * @return \DateTime
      */
     public function value()

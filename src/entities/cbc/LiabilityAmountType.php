@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\AmountType;
 /**
  * Class representing LiabilityAmountType
  *
- *
  * XSD Type: LiabilityAmountType
  */
 class LiabilityAmountType extends AmountType

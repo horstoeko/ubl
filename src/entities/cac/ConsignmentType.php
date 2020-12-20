@@ -1617,7 +1617,7 @@ class ConsignmentType
      *  Identifier. Type
      *  Unique consignment reference number (UCR)
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -1659,7 +1659,7 @@ class ConsignmentType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CarrierAssignedID $carrierAssignedID
+     * @param  \horstoeko\ubl\entities\cbc\CarrierAssignedID $carrierAssignedID
      * @return self
      */
     public function setCarrierAssignedID(\horstoeko\ubl\entities\cbc\CarrierAssignedID $carrierAssignedID)
@@ -1701,7 +1701,7 @@ class ConsignmentType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ConsigneeAssignedID $consigneeAssignedID
+     * @param  \horstoeko\ubl\entities\cbc\ConsigneeAssignedID $consigneeAssignedID
      * @return self
      */
     public function setConsigneeAssignedID(\horstoeko\ubl\entities\cbc\ConsigneeAssignedID $consigneeAssignedID)
@@ -1743,7 +1743,7 @@ class ConsignmentType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ConsignorAssignedID $consignorAssignedID
+     * @param  \horstoeko\ubl\entities\cbc\ConsignorAssignedID $consignorAssignedID
      * @return self
      */
     public function setConsignorAssignedID(\horstoeko\ubl\entities\cbc\ConsignorAssignedID $consignorAssignedID)
@@ -1785,7 +1785,7 @@ class ConsignmentType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\FreightForwarderAssignedID $freightForwarderAssignedID
+     * @param  \horstoeko\ubl\entities\cbc\FreightForwarderAssignedID $freightForwarderAssignedID
      * @return self
      */
     public function setFreightForwarderAssignedID(\horstoeko\ubl\entities\cbc\FreightForwarderAssignedID $freightForwarderAssignedID)
@@ -1827,7 +1827,7 @@ class ConsignmentType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\BrokerAssignedID $brokerAssignedID
+     * @param  \horstoeko\ubl\entities\cbc\BrokerAssignedID $brokerAssignedID
      * @return self
      */
     public function setBrokerAssignedID(\horstoeko\ubl\entities\cbc\BrokerAssignedID $brokerAssignedID)
@@ -1869,7 +1869,7 @@ class ConsignmentType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ContractedCarrierAssignedID $contractedCarrierAssignedID
+     * @param  \horstoeko\ubl\entities\cbc\ContractedCarrierAssignedID $contractedCarrierAssignedID
      * @return self
      */
     public function setContractedCarrierAssignedID(\horstoeko\ubl\entities\cbc\ContractedCarrierAssignedID $contractedCarrierAssignedID)
@@ -1911,7 +1911,7 @@ class ConsignmentType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PerformingCarrierAssignedID $performingCarrierAssignedID
+     * @param  \horstoeko\ubl\entities\cbc\PerformingCarrierAssignedID $performingCarrierAssignedID
      * @return self
      */
     public function setPerformingCarrierAssignedID(\horstoeko\ubl\entities\cbc\PerformingCarrierAssignedID $performingCarrierAssignedID)
@@ -1934,7 +1934,7 @@ class ConsignmentType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\SummaryDescription $summaryDescription
+     * @param  \horstoeko\ubl\entities\cbc\SummaryDescription $summaryDescription
      */
     public function addToSummaryDescription(\horstoeko\ubl\entities\cbc\SummaryDescription $summaryDescription)
     {
@@ -1955,7 +1955,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSummaryDescription($index)
@@ -1976,7 +1976,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSummaryDescription($index)
@@ -2017,7 +2017,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SummaryDescription[] $summaryDescription
+     * @param  \horstoeko\ubl\entities\cbc\SummaryDescription[] $summaryDescription
      * @return self
      */
     public function setSummaryDescription(array $summaryDescription)
@@ -2059,7 +2059,7 @@ class ConsignmentType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TotalInvoiceAmount $totalInvoiceAmount
+     * @param  \horstoeko\ubl\entities\cbc\TotalInvoiceAmount $totalInvoiceAmount
      * @return self
      */
     public function setTotalInvoiceAmount(\horstoeko\ubl\entities\cbc\TotalInvoiceAmount $totalInvoiceAmount)
@@ -2101,7 +2101,7 @@ class ConsignmentType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\DeclaredCustomsValueAmount $declaredCustomsValueAmount
+     * @param  \horstoeko\ubl\entities\cbc\DeclaredCustomsValueAmount $declaredCustomsValueAmount
      * @return self
      */
     public function setDeclaredCustomsValueAmount(\horstoeko\ubl\entities\cbc\DeclaredCustomsValueAmount $declaredCustomsValueAmount)
@@ -2123,7 +2123,7 @@ class ConsignmentType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\TariffDescription $tariffDescription
+     * @param  \horstoeko\ubl\entities\cbc\TariffDescription $tariffDescription
      */
     public function addToTariffDescription(\horstoeko\ubl\entities\cbc\TariffDescription $tariffDescription)
     {
@@ -2143,7 +2143,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTariffDescription($index)
@@ -2163,7 +2163,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTariffDescription($index)
@@ -2202,7 +2202,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TariffDescription[] $tariffDescription
+     * @param  \horstoeko\ubl\entities\cbc\TariffDescription[] $tariffDescription
      * @return self
      */
     public function setTariffDescription(array $tariffDescription)
@@ -2244,7 +2244,7 @@ class ConsignmentType
      *  Code. Type
      *  Tariff code number (WCO ID 145)
      *
-     * @param \horstoeko\ubl\entities\cbc\TariffCode $tariffCode
+     * @param  \horstoeko\ubl\entities\cbc\TariffCode $tariffCode
      * @return self
      */
     public function setTariffCode(\horstoeko\ubl\entities\cbc\TariffCode $tariffCode)
@@ -2286,7 +2286,7 @@ class ConsignmentType
      *  Amount. Type
      *  Insurance Cost
      *
-     * @param \horstoeko\ubl\entities\cbc\InsurancePremiumAmount $insurancePremiumAmount
+     * @param  \horstoeko\ubl\entities\cbc\InsurancePremiumAmount $insurancePremiumAmount
      * @return self
      */
     public function setInsurancePremiumAmount(\horstoeko\ubl\entities\cbc\InsurancePremiumAmount $insurancePremiumAmount)
@@ -2332,7 +2332,7 @@ class ConsignmentType
      *  Total gross weight (WCO ID 131)
      *  Total cube of all goods items referred to as one consignment.
      *
-     * @param \horstoeko\ubl\entities\cbc\GrossWeightMeasure $grossWeightMeasure
+     * @param  \horstoeko\ubl\entities\cbc\GrossWeightMeasure $grossWeightMeasure
      * @return self
      */
     public function setGrossWeightMeasure(\horstoeko\ubl\entities\cbc\GrossWeightMeasure $grossWeightMeasure)
@@ -2374,7 +2374,7 @@ class ConsignmentType
      *  Measure
      *  Measure. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\NetWeightMeasure $netWeightMeasure
+     * @param  \horstoeko\ubl\entities\cbc\NetWeightMeasure $netWeightMeasure
      * @return self
      */
     public function setNetWeightMeasure(\horstoeko\ubl\entities\cbc\NetWeightMeasure $netWeightMeasure)
@@ -2416,7 +2416,7 @@ class ConsignmentType
      *  Measure
      *  Measure. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\NetNetWeightMeasure $netNetWeightMeasure
+     * @param  \horstoeko\ubl\entities\cbc\NetNetWeightMeasure $netNetWeightMeasure
      * @return self
      */
     public function setNetNetWeightMeasure(\horstoeko\ubl\entities\cbc\NetNetWeightMeasure $netNetWeightMeasure)
@@ -2460,7 +2460,7 @@ class ConsignmentType
      *  Measure. Type
      *  Chargeable Weight. Basis.Measure
      *
-     * @param \horstoeko\ubl\entities\cbc\ChargeableWeightMeasure $chargeableWeightMeasure
+     * @param  \horstoeko\ubl\entities\cbc\ChargeableWeightMeasure $chargeableWeightMeasure
      * @return self
      */
     public function setChargeableWeightMeasure(\horstoeko\ubl\entities\cbc\ChargeableWeightMeasure $chargeableWeightMeasure)
@@ -2504,7 +2504,7 @@ class ConsignmentType
      *  Measure. Type
      *  Cube
      *
-     * @param \horstoeko\ubl\entities\cbc\GrossVolumeMeasure $grossVolumeMeasure
+     * @param  \horstoeko\ubl\entities\cbc\GrossVolumeMeasure $grossVolumeMeasure
      * @return self
      */
     public function setGrossVolumeMeasure(\horstoeko\ubl\entities\cbc\GrossVolumeMeasure $grossVolumeMeasure)
@@ -2546,7 +2546,7 @@ class ConsignmentType
      *  Measure
      *  Measure. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\NetVolumeMeasure $netVolumeMeasure
+     * @param  \horstoeko\ubl\entities\cbc\NetVolumeMeasure $netVolumeMeasure
      * @return self
      */
     public function setNetVolumeMeasure(\horstoeko\ubl\entities\cbc\NetVolumeMeasure $netVolumeMeasure)
@@ -2588,7 +2588,7 @@ class ConsignmentType
      *  Measure
      *  Measure. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LoadingLengthMeasure $loadingLengthMeasure
+     * @param  \horstoeko\ubl\entities\cbc\LoadingLengthMeasure $loadingLengthMeasure
      * @return self
      */
     public function setLoadingLengthMeasure(\horstoeko\ubl\entities\cbc\LoadingLengthMeasure $loadingLengthMeasure)
@@ -2610,7 +2610,7 @@ class ConsignmentType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Remarks $remarks
+     * @param  \horstoeko\ubl\entities\cbc\Remarks $remarks
      */
     public function addToRemarks(\horstoeko\ubl\entities\cbc\Remarks $remarks)
     {
@@ -2630,7 +2630,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetRemarks($index)
@@ -2650,7 +2650,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetRemarks($index)
@@ -2689,7 +2689,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Remarks[] $remarks
+     * @param  \horstoeko\ubl\entities\cbc\Remarks[] $remarks
      * @return self
      */
     public function setRemarks(array $remarks)
@@ -2735,7 +2735,7 @@ class ConsignmentType
      *  Dangerous Goods RID Indicator
      *  default is negative
      *
-     * @param bool $hazardousRiskIndicator
+     * @param  bool $hazardousRiskIndicator
      * @return self
      */
     public function setHazardousRiskIndicator($hazardousRiskIndicator)
@@ -2779,7 +2779,7 @@ class ConsignmentType
      *  Indicator. Type
      *  default is negative
      *
-     * @param bool $animalFoodIndicator
+     * @param  bool $animalFoodIndicator
      * @return self
      */
     public function setAnimalFoodIndicator($animalFoodIndicator)
@@ -2823,7 +2823,7 @@ class ConsignmentType
      *  Indicator. Type
      *  default is negative
      *
-     * @param bool $humanFoodIndicator
+     * @param  bool $humanFoodIndicator
      * @return self
      */
     public function setHumanFoodIndicator($humanFoodIndicator)
@@ -2867,7 +2867,7 @@ class ConsignmentType
      *  Indicator. Type
      *  default is negative
      *
-     * @param bool $livestockIndicator
+     * @param  bool $livestockIndicator
      * @return self
      */
     public function setLivestockIndicator($livestockIndicator)
@@ -2911,7 +2911,7 @@ class ConsignmentType
      *  Indicator. Type
      *  default is negative
      *
-     * @param bool $bulkCargoIndicator
+     * @param  bool $bulkCargoIndicator
      * @return self
      */
     public function setBulkCargoIndicator($bulkCargoIndicator)
@@ -2955,7 +2955,7 @@ class ConsignmentType
      *  Indicator. Type
      *  default is negative
      *
-     * @param bool $containerizedIndicator
+     * @param  bool $containerizedIndicator
      * @return self
      */
     public function setContainerizedIndicator($containerizedIndicator)
@@ -2999,7 +2999,7 @@ class ConsignmentType
      *  Indicator. Type
      *  default is negative
      *
-     * @param bool $generalCargoIndicator
+     * @param  bool $generalCargoIndicator
      * @return self
      */
     public function setGeneralCargoIndicator($generalCargoIndicator)
@@ -3043,7 +3043,7 @@ class ConsignmentType
      *  Indicator. Type
      *  default is negative
      *
-     * @param bool $specialSecurityIndicator
+     * @param  bool $specialSecurityIndicator
      * @return self
      */
     public function setSpecialSecurityIndicator($specialSecurityIndicator)
@@ -3087,7 +3087,7 @@ class ConsignmentType
      *  Indicator. Type
      *  default is negative
      *
-     * @param bool $thirdPartyPayerIndicator
+     * @param  bool $thirdPartyPayerIndicator
      * @return self
      */
     public function setThirdPartyPayerIndicator($thirdPartyPayerIndicator)
@@ -3110,7 +3110,7 @@ class ConsignmentType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\CarrierServiceInstructions $carrierServiceInstructions
+     * @param  \horstoeko\ubl\entities\cbc\CarrierServiceInstructions $carrierServiceInstructions
      */
     public function addToCarrierServiceInstructions(\horstoeko\ubl\entities\cbc\CarrierServiceInstructions $carrierServiceInstructions)
     {
@@ -3131,7 +3131,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetCarrierServiceInstructions($index)
@@ -3152,7 +3152,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetCarrierServiceInstructions($index)
@@ -3193,7 +3193,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CarrierServiceInstructions[] $carrierServiceInstructions
+     * @param  \horstoeko\ubl\entities\cbc\CarrierServiceInstructions[] $carrierServiceInstructions
      * @return self
      */
     public function setCarrierServiceInstructions(array $carrierServiceInstructions)
@@ -3216,7 +3216,7 @@ class ConsignmentType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\CustomsClearanceServiceInstructions $customsClearanceServiceInstructions
+     * @param  \horstoeko\ubl\entities\cbc\CustomsClearanceServiceInstructions $customsClearanceServiceInstructions
      */
     public function addToCustomsClearanceServiceInstructions(\horstoeko\ubl\entities\cbc\CustomsClearanceServiceInstructions $customsClearanceServiceInstructions)
     {
@@ -3237,7 +3237,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetCustomsClearanceServiceInstructions($index)
@@ -3258,7 +3258,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetCustomsClearanceServiceInstructions($index)
@@ -3299,7 +3299,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CustomsClearanceServiceInstructions[] $customsClearanceServiceInstructions
+     * @param  \horstoeko\ubl\entities\cbc\CustomsClearanceServiceInstructions[] $customsClearanceServiceInstructions
      * @return self
      */
     public function setCustomsClearanceServiceInstructions(array $customsClearanceServiceInstructions)
@@ -3322,7 +3322,7 @@ class ConsignmentType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\ForwarderServiceInstructions $forwarderServiceInstructions
+     * @param  \horstoeko\ubl\entities\cbc\ForwarderServiceInstructions $forwarderServiceInstructions
      */
     public function addToForwarderServiceInstructions(\horstoeko\ubl\entities\cbc\ForwarderServiceInstructions $forwarderServiceInstructions)
     {
@@ -3343,7 +3343,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetForwarderServiceInstructions($index)
@@ -3364,7 +3364,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetForwarderServiceInstructions($index)
@@ -3405,7 +3405,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ForwarderServiceInstructions[] $forwarderServiceInstructions
+     * @param  \horstoeko\ubl\entities\cbc\ForwarderServiceInstructions[] $forwarderServiceInstructions
      * @return self
      */
     public function setForwarderServiceInstructions(array $forwarderServiceInstructions)
@@ -3428,7 +3428,7 @@ class ConsignmentType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\SpecialServiceInstructions $specialServiceInstructions
+     * @param  \horstoeko\ubl\entities\cbc\SpecialServiceInstructions $specialServiceInstructions
      */
     public function addToSpecialServiceInstructions(\horstoeko\ubl\entities\cbc\SpecialServiceInstructions $specialServiceInstructions)
     {
@@ -3449,7 +3449,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSpecialServiceInstructions($index)
@@ -3470,7 +3470,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSpecialServiceInstructions($index)
@@ -3511,7 +3511,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SpecialServiceInstructions[] $specialServiceInstructions
+     * @param  \horstoeko\ubl\entities\cbc\SpecialServiceInstructions[] $specialServiceInstructions
      * @return self
      */
     public function setSpecialServiceInstructions(array $specialServiceInstructions)
@@ -3551,7 +3551,7 @@ class ConsignmentType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SequenceID $sequenceID
+     * @param  \horstoeko\ubl\entities\cbc\SequenceID $sequenceID
      * @return self
      */
     public function setSequenceID(\horstoeko\ubl\entities\cbc\SequenceID $sequenceID)
@@ -3591,7 +3591,7 @@ class ConsignmentType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ShippingPriorityLevelCode $shippingPriorityLevelCode
+     * @param  \horstoeko\ubl\entities\cbc\ShippingPriorityLevelCode $shippingPriorityLevelCode
      * @return self
      */
     public function setShippingPriorityLevelCode(\horstoeko\ubl\entities\cbc\ShippingPriorityLevelCode $shippingPriorityLevelCode)
@@ -3633,7 +3633,7 @@ class ConsignmentType
      *  Code. Type
      *  Special Handling
      *
-     * @param \horstoeko\ubl\entities\cbc\HandlingCode $handlingCode
+     * @param  \horstoeko\ubl\entities\cbc\HandlingCode $handlingCode
      * @return self
      */
     public function setHandlingCode(\horstoeko\ubl\entities\cbc\HandlingCode $handlingCode)
@@ -3656,7 +3656,7 @@ class ConsignmentType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\HandlingInstructions $handlingInstructions
+     * @param  \horstoeko\ubl\entities\cbc\HandlingInstructions $handlingInstructions
      */
     public function addToHandlingInstructions(\horstoeko\ubl\entities\cbc\HandlingInstructions $handlingInstructions)
     {
@@ -3677,7 +3677,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetHandlingInstructions($index)
@@ -3698,7 +3698,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetHandlingInstructions($index)
@@ -3739,7 +3739,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\HandlingInstructions[] $handlingInstructions
+     * @param  \horstoeko\ubl\entities\cbc\HandlingInstructions[] $handlingInstructions
      * @return self
      */
     public function setHandlingInstructions(array $handlingInstructions)
@@ -3761,7 +3761,7 @@ class ConsignmentType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Information $information
+     * @param  \horstoeko\ubl\entities\cbc\Information $information
      */
     public function addToInformation(\horstoeko\ubl\entities\cbc\Information $information)
     {
@@ -3781,7 +3781,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetInformation($index)
@@ -3801,7 +3801,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetInformation($index)
@@ -3840,7 +3840,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Information[] $information
+     * @param  \horstoeko\ubl\entities\cbc\Information[] $information
      * @return self
      */
     public function setInformation(array $information)
@@ -3882,7 +3882,7 @@ class ConsignmentType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TotalGoodsItemQuantity $totalGoodsItemQuantity
+     * @param  \horstoeko\ubl\entities\cbc\TotalGoodsItemQuantity $totalGoodsItemQuantity
      * @return self
      */
     public function setTotalGoodsItemQuantity(\horstoeko\ubl\entities\cbc\TotalGoodsItemQuantity $totalGoodsItemQuantity)
@@ -3926,7 +3926,7 @@ class ConsignmentType
      *  Quantity. Type
      *  Number of THUs
      *
-     * @param \horstoeko\ubl\entities\cbc\TotalTransportHandlingUnitQuantity $totalTransportHandlingUnitQuantity
+     * @param  \horstoeko\ubl\entities\cbc\TotalTransportHandlingUnitQuantity $totalTransportHandlingUnitQuantity
      * @return self
      */
     public function setTotalTransportHandlingUnitQuantity(\horstoeko\ubl\entities\cbc\TotalTransportHandlingUnitQuantity $totalTransportHandlingUnitQuantity)
@@ -3970,7 +3970,7 @@ class ConsignmentType
      *  Amount. Type
      *  Value Insured
      *
-     * @param \horstoeko\ubl\entities\cbc\InsuranceValueAmount $insuranceValueAmount
+     * @param  \horstoeko\ubl\entities\cbc\InsuranceValueAmount $insuranceValueAmount
      * @return self
      */
     public function setInsuranceValueAmount(\horstoeko\ubl\entities\cbc\InsuranceValueAmount $insuranceValueAmount)
@@ -4014,7 +4014,7 @@ class ConsignmentType
      *  Amount. Type
      *  Declared value for carriage, Interest in delivery
      *
-     * @param \horstoeko\ubl\entities\cbc\DeclaredForCarriageValueAmount $declaredForCarriageValueAmount
+     * @param  \horstoeko\ubl\entities\cbc\DeclaredForCarriageValueAmount $declaredForCarriageValueAmount
      * @return self
      */
     public function setDeclaredForCarriageValueAmount(\horstoeko\ubl\entities\cbc\DeclaredForCarriageValueAmount $declaredForCarriageValueAmount)
@@ -4058,7 +4058,7 @@ class ConsignmentType
      *  Amount. Type
      *  Statistical Value
      *
-     * @param \horstoeko\ubl\entities\cbc\DeclaredStatisticsValueAmount $declaredStatisticsValueAmount
+     * @param  \horstoeko\ubl\entities\cbc\DeclaredStatisticsValueAmount $declaredStatisticsValueAmount
      * @return self
      */
     public function setDeclaredStatisticsValueAmount(\horstoeko\ubl\entities\cbc\DeclaredStatisticsValueAmount $declaredStatisticsValueAmount)
@@ -4102,7 +4102,7 @@ class ConsignmentType
      *  Amount. Type
      *  FOB Value
      *
-     * @param \horstoeko\ubl\entities\cbc\FreeOnBoardValueAmount $freeOnBoardValueAmount
+     * @param  \horstoeko\ubl\entities\cbc\FreeOnBoardValueAmount $freeOnBoardValueAmount
      * @return self
      */
     public function setFreeOnBoardValueAmount(\horstoeko\ubl\entities\cbc\FreeOnBoardValueAmount $freeOnBoardValueAmount)
@@ -4125,7 +4125,7 @@ class ConsignmentType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\SpecialInstructions $specialInstructions
+     * @param  \horstoeko\ubl\entities\cbc\SpecialInstructions $specialInstructions
      */
     public function addToSpecialInstructions(\horstoeko\ubl\entities\cbc\SpecialInstructions $specialInstructions)
     {
@@ -4146,7 +4146,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSpecialInstructions($index)
@@ -4167,7 +4167,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSpecialInstructions($index)
@@ -4208,7 +4208,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SpecialInstructions[] $specialInstructions
+     * @param  \horstoeko\ubl\entities\cbc\SpecialInstructions[] $specialInstructions
      * @return self
      */
     public function setSpecialInstructions(array $specialInstructions)
@@ -4250,7 +4250,7 @@ class ConsignmentType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $splitConsignmentIndicator
+     * @param  bool $splitConsignmentIndicator
      * @return self
      */
     public function setSplitConsignmentIndicator($splitConsignmentIndicator)
@@ -4273,7 +4273,7 @@ class ConsignmentType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\DeliveryInstructions $deliveryInstructions
+     * @param  \horstoeko\ubl\entities\cbc\DeliveryInstructions $deliveryInstructions
      */
     public function addToDeliveryInstructions(\horstoeko\ubl\entities\cbc\DeliveryInstructions $deliveryInstructions)
     {
@@ -4294,7 +4294,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDeliveryInstructions($index)
@@ -4315,7 +4315,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDeliveryInstructions($index)
@@ -4356,7 +4356,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\DeliveryInstructions[] $deliveryInstructions
+     * @param  \horstoeko\ubl\entities\cbc\DeliveryInstructions[] $deliveryInstructions
      * @return self
      */
     public function setDeliveryInstructions(array $deliveryInstructions)
@@ -4398,7 +4398,7 @@ class ConsignmentType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ConsignmentQuantity $consignmentQuantity
+     * @param  \horstoeko\ubl\entities\cbc\ConsignmentQuantity $consignmentQuantity
      * @return self
      */
     public function setConsignmentQuantity(\horstoeko\ubl\entities\cbc\ConsignmentQuantity $consignmentQuantity)
@@ -4442,7 +4442,7 @@ class ConsignmentType
      *  Indicator. Type
      *  default is negative
      *
-     * @param bool $consolidatableIndicator
+     * @param  bool $consolidatableIndicator
      * @return self
      */
     public function setConsolidatableIndicator($consolidatableIndicator)
@@ -4465,7 +4465,7 @@ class ConsignmentType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\HaulageInstructions $haulageInstructions
+     * @param  \horstoeko\ubl\entities\cbc\HaulageInstructions $haulageInstructions
      */
     public function addToHaulageInstructions(\horstoeko\ubl\entities\cbc\HaulageInstructions $haulageInstructions)
     {
@@ -4486,7 +4486,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetHaulageInstructions($index)
@@ -4507,7 +4507,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetHaulageInstructions($index)
@@ -4548,7 +4548,7 @@ class ConsignmentType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\HaulageInstructions[] $haulageInstructions
+     * @param  \horstoeko\ubl\entities\cbc\HaulageInstructions[] $haulageInstructions
      * @return self
      */
     public function setHaulageInstructions(array $haulageInstructions)
@@ -4590,7 +4590,7 @@ class ConsignmentType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LoadingSequenceID $loadingSequenceID
+     * @param  \horstoeko\ubl\entities\cbc\LoadingSequenceID $loadingSequenceID
      * @return self
      */
     public function setLoadingSequenceID(\horstoeko\ubl\entities\cbc\LoadingSequenceID $loadingSequenceID)
@@ -4630,7 +4630,7 @@ class ConsignmentType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ChildConsignmentQuantity $childConsignmentQuantity
+     * @param  \horstoeko\ubl\entities\cbc\ChildConsignmentQuantity $childConsignmentQuantity
      * @return self
      */
     public function setChildConsignmentQuantity(\horstoeko\ubl\entities\cbc\ChildConsignmentQuantity $childConsignmentQuantity)
@@ -4672,7 +4672,7 @@ class ConsignmentType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TotalPackagesQuantity $totalPackagesQuantity
+     * @param  \horstoeko\ubl\entities\cbc\TotalPackagesQuantity $totalPackagesQuantity
      * @return self
      */
     public function setTotalPackagesQuantity(\horstoeko\ubl\entities\cbc\TotalPackagesQuantity $totalPackagesQuantity)
@@ -4695,7 +4695,7 @@ class ConsignmentType
      *  Shipment
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ConsolidatedShipment $consolidatedShipment
+     * @param  \horstoeko\ubl\entities\cac\ConsolidatedShipment $consolidatedShipment
      */
     public function addToConsolidatedShipment(\horstoeko\ubl\entities\cac\ConsolidatedShipment $consolidatedShipment)
     {
@@ -4716,7 +4716,7 @@ class ConsignmentType
      *  Shipment
      *  Shipment
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetConsolidatedShipment($index)
@@ -4737,7 +4737,7 @@ class ConsignmentType
      *  Shipment
      *  Shipment
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetConsolidatedShipment($index)
@@ -4778,7 +4778,7 @@ class ConsignmentType
      *  Shipment
      *  Shipment
      *
-     * @param \horstoeko\ubl\entities\cac\ConsolidatedShipment[] $consolidatedShipment
+     * @param  \horstoeko\ubl\entities\cac\ConsolidatedShipment[] $consolidatedShipment
      * @return self
      */
     public function setConsolidatedShipment(array $consolidatedShipment)
@@ -4800,7 +4800,7 @@ class ConsignmentType
      *  Customs Declaration
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\CustomsDeclaration $customsDeclaration
+     * @param  \horstoeko\ubl\entities\cac\CustomsDeclaration $customsDeclaration
      */
     public function addToCustomsDeclaration(\horstoeko\ubl\entities\cac\CustomsDeclaration $customsDeclaration)
     {
@@ -4820,7 +4820,7 @@ class ConsignmentType
      *  Customs Declaration
      *  Customs Declaration
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetCustomsDeclaration($index)
@@ -4840,7 +4840,7 @@ class ConsignmentType
      *  Customs Declaration
      *  Customs Declaration
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetCustomsDeclaration($index)
@@ -4879,7 +4879,7 @@ class ConsignmentType
      *  Customs Declaration
      *  Customs Declaration
      *
-     * @param \horstoeko\ubl\entities\cac\CustomsDeclaration[] $customsDeclaration
+     * @param  \horstoeko\ubl\entities\cac\CustomsDeclaration[] $customsDeclaration
      * @return self
      */
     public function setCustomsDeclaration(array $customsDeclaration)
@@ -4921,7 +4921,7 @@ class ConsignmentType
      *  Transport Event
      *  Transport Event
      *
-     * @param \horstoeko\ubl\entities\cac\RequestedPickupTransportEvent $requestedPickupTransportEvent
+     * @param  \horstoeko\ubl\entities\cac\RequestedPickupTransportEvent $requestedPickupTransportEvent
      * @return self
      */
     public function setRequestedPickupTransportEvent(\horstoeko\ubl\entities\cac\RequestedPickupTransportEvent $requestedPickupTransportEvent)
@@ -4963,7 +4963,7 @@ class ConsignmentType
      *  Transport Event
      *  Transport Event
      *
-     * @param \horstoeko\ubl\entities\cac\RequestedDeliveryTransportEvent $requestedDeliveryTransportEvent
+     * @param  \horstoeko\ubl\entities\cac\RequestedDeliveryTransportEvent $requestedDeliveryTransportEvent
      * @return self
      */
     public function setRequestedDeliveryTransportEvent(\horstoeko\ubl\entities\cac\RequestedDeliveryTransportEvent $requestedDeliveryTransportEvent)
@@ -5005,7 +5005,7 @@ class ConsignmentType
      *  Transport Event
      *  Transport Event
      *
-     * @param \horstoeko\ubl\entities\cac\PlannedPickupTransportEvent $plannedPickupTransportEvent
+     * @param  \horstoeko\ubl\entities\cac\PlannedPickupTransportEvent $plannedPickupTransportEvent
      * @return self
      */
     public function setPlannedPickupTransportEvent(\horstoeko\ubl\entities\cac\PlannedPickupTransportEvent $plannedPickupTransportEvent)
@@ -5047,7 +5047,7 @@ class ConsignmentType
      *  Transport Event
      *  Transport Event
      *
-     * @param \horstoeko\ubl\entities\cac\PlannedDeliveryTransportEvent $plannedDeliveryTransportEvent
+     * @param  \horstoeko\ubl\entities\cac\PlannedDeliveryTransportEvent $plannedDeliveryTransportEvent
      * @return self
      */
     public function setPlannedDeliveryTransportEvent(\horstoeko\ubl\entities\cac\PlannedDeliveryTransportEvent $plannedDeliveryTransportEvent)
@@ -5069,7 +5069,7 @@ class ConsignmentType
      *  Status
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Status $status
+     * @param  \horstoeko\ubl\entities\cac\Status $status
      */
     public function addToStatus(\horstoeko\ubl\entities\cac\Status $status)
     {
@@ -5089,7 +5089,7 @@ class ConsignmentType
      *  Status
      *  Status
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetStatus($index)
@@ -5109,7 +5109,7 @@ class ConsignmentType
      *  Status
      *  Status
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetStatus($index)
@@ -5148,7 +5148,7 @@ class ConsignmentType
      *  Status
      *  Status
      *
-     * @param \horstoeko\ubl\entities\cac\Status[] $status
+     * @param  \horstoeko\ubl\entities\cac\Status[] $status
      * @return self
      */
     public function setStatus(array $status)
@@ -5171,7 +5171,7 @@ class ConsignmentType
      *  Consignment
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ChildConsignment $childConsignment
+     * @param  \horstoeko\ubl\entities\cac\ChildConsignment $childConsignment
      */
     public function addToChildConsignment(\horstoeko\ubl\entities\cac\ChildConsignment $childConsignment)
     {
@@ -5192,7 +5192,7 @@ class ConsignmentType
      *  Consignment
      *  Consignment
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetChildConsignment($index)
@@ -5213,7 +5213,7 @@ class ConsignmentType
      *  Consignment
      *  Consignment
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetChildConsignment($index)
@@ -5254,7 +5254,7 @@ class ConsignmentType
      *  Consignment
      *  Consignment
      *
-     * @param \horstoeko\ubl\entities\cac\ChildConsignment[] $childConsignment
+     * @param  \horstoeko\ubl\entities\cac\ChildConsignment[] $childConsignment
      * @return self
      */
     public function setChildConsignment(array $childConsignment)
@@ -5298,7 +5298,7 @@ class ConsignmentType
      *  Party
      *  Consignee (WCO ID 51 and 52)
      *
-     * @param \horstoeko\ubl\entities\cac\ConsigneeParty $consigneeParty
+     * @param  \horstoeko\ubl\entities\cac\ConsigneeParty $consigneeParty
      * @return self
      */
     public function setConsigneeParty(\horstoeko\ubl\entities\cac\ConsigneeParty $consigneeParty)
@@ -5342,7 +5342,7 @@ class ConsignmentType
      *  Party
      *  Exporter (WCO ID 41 and 42)
      *
-     * @param \horstoeko\ubl\entities\cac\ExporterParty $exporterParty
+     * @param  \horstoeko\ubl\entities\cac\ExporterParty $exporterParty
      * @return self
      */
     public function setExporterParty(\horstoeko\ubl\entities\cac\ExporterParty $exporterParty)
@@ -5386,7 +5386,7 @@ class ConsignmentType
      *  Party
      *  Consignor (WCO ID 71 and 72)
      *
-     * @param \horstoeko\ubl\entities\cac\ConsignorParty $consignorParty
+     * @param  \horstoeko\ubl\entities\cac\ConsignorParty $consignorParty
      * @return self
      */
     public function setConsignorParty(\horstoeko\ubl\entities\cac\ConsignorParty $consignorParty)
@@ -5430,7 +5430,7 @@ class ConsignmentType
      *  Party
      *  Importer (WCO ID 39 and 40)
      *
-     * @param \horstoeko\ubl\entities\cac\ImporterParty $importerParty
+     * @param  \horstoeko\ubl\entities\cac\ImporterParty $importerParty
      * @return self
      */
     public function setImporterParty(\horstoeko\ubl\entities\cac\ImporterParty $importerParty)
@@ -5474,7 +5474,7 @@ class ConsignmentType
      *  Party
      *  Transport Company, Shipping Line, NVOCC, Airline, Haulier, Courier, Carrier (WCO ID 49 and 50)
      *
-     * @param \horstoeko\ubl\entities\cac\CarrierParty $carrierParty
+     * @param  \horstoeko\ubl\entities\cac\CarrierParty $carrierParty
      * @return self
      */
     public function setCarrierParty(\horstoeko\ubl\entities\cac\CarrierParty $carrierParty)
@@ -5518,7 +5518,7 @@ class ConsignmentType
      *  Party
      *  Consolidator (WCO ID 192 AND 193)
      *
-     * @param \horstoeko\ubl\entities\cac\FreightForwarderParty $freightForwarderParty
+     * @param  \horstoeko\ubl\entities\cac\FreightForwarderParty $freightForwarderParty
      * @return self
      */
     public function setFreightForwarderParty(\horstoeko\ubl\entities\cac\FreightForwarderParty $freightForwarderParty)
@@ -5562,7 +5562,7 @@ class ConsignmentType
      *  Party
      *  WCO ID 57 and 58
      *
-     * @param \horstoeko\ubl\entities\cac\NotifyParty $notifyParty
+     * @param  \horstoeko\ubl\entities\cac\NotifyParty $notifyParty
      * @return self
      */
     public function setNotifyParty(\horstoeko\ubl\entities\cac\NotifyParty $notifyParty)
@@ -5604,7 +5604,7 @@ class ConsignmentType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\OriginalDespatchParty $originalDespatchParty
+     * @param  \horstoeko\ubl\entities\cac\OriginalDespatchParty $originalDespatchParty
      * @return self
      */
     public function setOriginalDespatchParty(\horstoeko\ubl\entities\cac\OriginalDespatchParty $originalDespatchParty)
@@ -5646,7 +5646,7 @@ class ConsignmentType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\FinalDeliveryParty $finalDeliveryParty
+     * @param  \horstoeko\ubl\entities\cac\FinalDeliveryParty $finalDeliveryParty
      * @return self
      */
     public function setFinalDeliveryParty(\horstoeko\ubl\entities\cac\FinalDeliveryParty $finalDeliveryParty)
@@ -5688,7 +5688,7 @@ class ConsignmentType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\PerformingCarrierParty $performingCarrierParty
+     * @param  \horstoeko\ubl\entities\cac\PerformingCarrierParty $performingCarrierParty
      * @return self
      */
     public function setPerformingCarrierParty(\horstoeko\ubl\entities\cac\PerformingCarrierParty $performingCarrierParty)
@@ -5730,7 +5730,7 @@ class ConsignmentType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\SubstituteCarrierParty $substituteCarrierParty
+     * @param  \horstoeko\ubl\entities\cac\SubstituteCarrierParty $substituteCarrierParty
      * @return self
      */
     public function setSubstituteCarrierParty(\horstoeko\ubl\entities\cac\SubstituteCarrierParty $substituteCarrierParty)
@@ -5772,7 +5772,7 @@ class ConsignmentType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\LogisticsOperatorParty $logisticsOperatorParty
+     * @param  \horstoeko\ubl\entities\cac\LogisticsOperatorParty $logisticsOperatorParty
      * @return self
      */
     public function setLogisticsOperatorParty(\horstoeko\ubl\entities\cac\LogisticsOperatorParty $logisticsOperatorParty)
@@ -5814,7 +5814,7 @@ class ConsignmentType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\TransportAdvisorParty $transportAdvisorParty
+     * @param  \horstoeko\ubl\entities\cac\TransportAdvisorParty $transportAdvisorParty
      * @return self
      */
     public function setTransportAdvisorParty(\horstoeko\ubl\entities\cac\TransportAdvisorParty $transportAdvisorParty)
@@ -5856,7 +5856,7 @@ class ConsignmentType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\HazardousItemNotificationParty $hazardousItemNotificationParty
+     * @param  \horstoeko\ubl\entities\cac\HazardousItemNotificationParty $hazardousItemNotificationParty
      * @return self
      */
     public function setHazardousItemNotificationParty(\horstoeko\ubl\entities\cac\HazardousItemNotificationParty $hazardousItemNotificationParty)
@@ -5898,7 +5898,7 @@ class ConsignmentType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\InsuranceParty $insuranceParty
+     * @param  \horstoeko\ubl\entities\cac\InsuranceParty $insuranceParty
      * @return self
      */
     public function setInsuranceParty(\horstoeko\ubl\entities\cac\InsuranceParty $insuranceParty)
@@ -5940,7 +5940,7 @@ class ConsignmentType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\MortgageHolderParty $mortgageHolderParty
+     * @param  \horstoeko\ubl\entities\cac\MortgageHolderParty $mortgageHolderParty
      * @return self
      */
     public function setMortgageHolderParty(\horstoeko\ubl\entities\cac\MortgageHolderParty $mortgageHolderParty)
@@ -5982,7 +5982,7 @@ class ConsignmentType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\BillOfLadingHolderParty $billOfLadingHolderParty
+     * @param  \horstoeko\ubl\entities\cac\BillOfLadingHolderParty $billOfLadingHolderParty
      * @return self
      */
     public function setBillOfLadingHolderParty(\horstoeko\ubl\entities\cac\BillOfLadingHolderParty $billOfLadingHolderParty)
@@ -6026,7 +6026,7 @@ class ConsignmentType
      *  Country
      *  Country of origin (WCO ID 062)
      *
-     * @param \horstoeko\ubl\entities\cac\OriginalDepartureCountry $originalDepartureCountry
+     * @param  \horstoeko\ubl\entities\cac\OriginalDepartureCountry $originalDepartureCountry
      * @return self
      */
     public function setOriginalDepartureCountry(\horstoeko\ubl\entities\cac\OriginalDepartureCountry $originalDepartureCountry)
@@ -6070,7 +6070,7 @@ class ConsignmentType
      *  Country
      *  Ultimate Destination Country, Country of Final Arrival, Country of Destination
      *
-     * @param \horstoeko\ubl\entities\cac\FinalDestinationCountry $finalDestinationCountry
+     * @param  \horstoeko\ubl\entities\cac\FinalDestinationCountry $finalDestinationCountry
      * @return self
      */
     public function setFinalDestinationCountry(\horstoeko\ubl\entities\cac\FinalDestinationCountry $finalDestinationCountry)
@@ -6094,7 +6094,7 @@ class ConsignmentType
      *  Country(ies) of routing (WCO ID 064)
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\TransitCountry $transitCountry
+     * @param  \horstoeko\ubl\entities\cac\TransitCountry $transitCountry
      */
     public function addToTransitCountry(\horstoeko\ubl\entities\cac\TransitCountry $transitCountry)
     {
@@ -6116,7 +6116,7 @@ class ConsignmentType
      *  Country
      *  Country(ies) of routing (WCO ID 064)
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTransitCountry($index)
@@ -6138,7 +6138,7 @@ class ConsignmentType
      *  Country
      *  Country(ies) of routing (WCO ID 064)
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTransitCountry($index)
@@ -6181,7 +6181,7 @@ class ConsignmentType
      *  Country
      *  Country(ies) of routing (WCO ID 064)
      *
-     * @param \horstoeko\ubl\entities\cac\TransitCountry[] $transitCountry
+     * @param  \horstoeko\ubl\entities\cac\TransitCountry[] $transitCountry
      * @return self
      */
     public function setTransitCountry(array $transitCountry)
@@ -6223,7 +6223,7 @@ class ConsignmentType
      *  Contract
      *  Contract
      *
-     * @param \horstoeko\ubl\entities\cac\TransportContract $transportContract
+     * @param  \horstoeko\ubl\entities\cac\TransportContract $transportContract
      * @return self
      */
     public function setTransportContract(\horstoeko\ubl\entities\cac\TransportContract $transportContract)
@@ -6245,7 +6245,7 @@ class ConsignmentType
      *  Transport Event
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\TransportEvent $transportEvent
+     * @param  \horstoeko\ubl\entities\cac\TransportEvent $transportEvent
      */
     public function addToTransportEvent(\horstoeko\ubl\entities\cac\TransportEvent $transportEvent)
     {
@@ -6265,7 +6265,7 @@ class ConsignmentType
      *  Transport Event
      *  Transport Event
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTransportEvent($index)
@@ -6285,7 +6285,7 @@ class ConsignmentType
      *  Transport Event
      *  Transport Event
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTransportEvent($index)
@@ -6324,7 +6324,7 @@ class ConsignmentType
      *  Transport Event
      *  Transport Event
      *
-     * @param \horstoeko\ubl\entities\cac\TransportEvent[] $transportEvent
+     * @param  \horstoeko\ubl\entities\cac\TransportEvent[] $transportEvent
      * @return self
      */
     public function setTransportEvent(array $transportEvent)
@@ -6368,7 +6368,7 @@ class ConsignmentType
      *  Transportation Service
      *  Door-to-door , Pier-to-door
      *
-     * @param \horstoeko\ubl\entities\cac\OriginalDespatchTransportationService $originalDespatchTransportationService
+     * @param  \horstoeko\ubl\entities\cac\OriginalDespatchTransportationService $originalDespatchTransportationService
      * @return self
      */
     public function setOriginalDespatchTransportationService(\horstoeko\ubl\entities\cac\OriginalDespatchTransportationService $originalDespatchTransportationService)
@@ -6412,7 +6412,7 @@ class ConsignmentType
      *  Transportation Service
      *  Door-to-door , Pier-to-door
      *
-     * @param \horstoeko\ubl\entities\cac\FinalDeliveryTransportationService $finalDeliveryTransportationService
+     * @param  \horstoeko\ubl\entities\cac\FinalDeliveryTransportationService $finalDeliveryTransportationService
      * @return self
      */
     public function setFinalDeliveryTransportationService(\horstoeko\ubl\entities\cac\FinalDeliveryTransportationService $finalDeliveryTransportationService)
@@ -6454,7 +6454,7 @@ class ConsignmentType
      *  Delivery Terms
      *  Trade Terms, INCOTERMS
      *
-     * @param \horstoeko\ubl\entities\cac\DeliveryTerms $deliveryTerms
+     * @param  \horstoeko\ubl\entities\cac\DeliveryTerms $deliveryTerms
      * @return self
      */
     public function setDeliveryTerms(\horstoeko\ubl\entities\cac\DeliveryTerms $deliveryTerms)
@@ -6494,7 +6494,7 @@ class ConsignmentType
      *  Payment Terms
      *  Payment Terms
      *
-     * @param \horstoeko\ubl\entities\cac\PaymentTerms $paymentTerms
+     * @param  \horstoeko\ubl\entities\cac\PaymentTerms $paymentTerms
      * @return self
      */
     public function setPaymentTerms(\horstoeko\ubl\entities\cac\PaymentTerms $paymentTerms)
@@ -6536,7 +6536,7 @@ class ConsignmentType
      *  Payment Terms
      *  Payment Terms
      *
-     * @param \horstoeko\ubl\entities\cac\CollectPaymentTerms $collectPaymentTerms
+     * @param  \horstoeko\ubl\entities\cac\CollectPaymentTerms $collectPaymentTerms
      * @return self
      */
     public function setCollectPaymentTerms(\horstoeko\ubl\entities\cac\CollectPaymentTerms $collectPaymentTerms)
@@ -6578,7 +6578,7 @@ class ConsignmentType
      *  Payment Terms
      *  Payment Terms
      *
-     * @param \horstoeko\ubl\entities\cac\DisbursementPaymentTerms $disbursementPaymentTerms
+     * @param  \horstoeko\ubl\entities\cac\DisbursementPaymentTerms $disbursementPaymentTerms
      * @return self
      */
     public function setDisbursementPaymentTerms(\horstoeko\ubl\entities\cac\DisbursementPaymentTerms $disbursementPaymentTerms)
@@ -6620,7 +6620,7 @@ class ConsignmentType
      *  Payment Terms
      *  Payment Terms
      *
-     * @param \horstoeko\ubl\entities\cac\PrepaidPaymentTerms $prepaidPaymentTerms
+     * @param  \horstoeko\ubl\entities\cac\PrepaidPaymentTerms $prepaidPaymentTerms
      * @return self
      */
     public function setPrepaidPaymentTerms(\horstoeko\ubl\entities\cac\PrepaidPaymentTerms $prepaidPaymentTerms)
@@ -6644,7 +6644,7 @@ class ConsignmentType
      *  Freight Costs
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\FreightAllowanceCharge $freightAllowanceCharge
+     * @param  \horstoeko\ubl\entities\cac\FreightAllowanceCharge $freightAllowanceCharge
      */
     public function addToFreightAllowanceCharge(\horstoeko\ubl\entities\cac\FreightAllowanceCharge $freightAllowanceCharge)
     {
@@ -6666,7 +6666,7 @@ class ConsignmentType
      *  Allowance Charge
      *  Freight Costs
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetFreightAllowanceCharge($index)
@@ -6688,7 +6688,7 @@ class ConsignmentType
      *  Allowance Charge
      *  Freight Costs
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetFreightAllowanceCharge($index)
@@ -6731,7 +6731,7 @@ class ConsignmentType
      *  Allowance Charge
      *  Freight Costs
      *
-     * @param \horstoeko\ubl\entities\cac\FreightAllowanceCharge[] $freightAllowanceCharge
+     * @param  \horstoeko\ubl\entities\cac\FreightAllowanceCharge[] $freightAllowanceCharge
      * @return self
      */
     public function setFreightAllowanceCharge(array $freightAllowanceCharge)
@@ -6754,7 +6754,7 @@ class ConsignmentType
      *  Allowance Charge
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ExtraAllowanceCharge $extraAllowanceCharge
+     * @param  \horstoeko\ubl\entities\cac\ExtraAllowanceCharge $extraAllowanceCharge
      */
     public function addToExtraAllowanceCharge(\horstoeko\ubl\entities\cac\ExtraAllowanceCharge $extraAllowanceCharge)
     {
@@ -6775,7 +6775,7 @@ class ConsignmentType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetExtraAllowanceCharge($index)
@@ -6796,7 +6796,7 @@ class ConsignmentType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetExtraAllowanceCharge($index)
@@ -6837,7 +6837,7 @@ class ConsignmentType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param \horstoeko\ubl\entities\cac\ExtraAllowanceCharge[] $extraAllowanceCharge
+     * @param  \horstoeko\ubl\entities\cac\ExtraAllowanceCharge[] $extraAllowanceCharge
      * @return self
      */
     public function setExtraAllowanceCharge(array $extraAllowanceCharge)
@@ -6860,7 +6860,7 @@ class ConsignmentType
      *  Shipment Stage
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\MainCarriageShipmentStage $mainCarriageShipmentStage
+     * @param  \horstoeko\ubl\entities\cac\MainCarriageShipmentStage $mainCarriageShipmentStage
      */
     public function addToMainCarriageShipmentStage(\horstoeko\ubl\entities\cac\MainCarriageShipmentStage $mainCarriageShipmentStage)
     {
@@ -6881,7 +6881,7 @@ class ConsignmentType
      *  Shipment Stage
      *  Shipment Stage
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetMainCarriageShipmentStage($index)
@@ -6902,7 +6902,7 @@ class ConsignmentType
      *  Shipment Stage
      *  Shipment Stage
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetMainCarriageShipmentStage($index)
@@ -6943,7 +6943,7 @@ class ConsignmentType
      *  Shipment Stage
      *  Shipment Stage
      *
-     * @param \horstoeko\ubl\entities\cac\MainCarriageShipmentStage[] $mainCarriageShipmentStage
+     * @param  \horstoeko\ubl\entities\cac\MainCarriageShipmentStage[] $mainCarriageShipmentStage
      * @return self
      */
     public function setMainCarriageShipmentStage(array $mainCarriageShipmentStage)
@@ -6966,7 +6966,7 @@ class ConsignmentType
      *  Shipment Stage
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\PreCarriageShipmentStage $preCarriageShipmentStage
+     * @param  \horstoeko\ubl\entities\cac\PreCarriageShipmentStage $preCarriageShipmentStage
      */
     public function addToPreCarriageShipmentStage(\horstoeko\ubl\entities\cac\PreCarriageShipmentStage $preCarriageShipmentStage)
     {
@@ -6987,7 +6987,7 @@ class ConsignmentType
      *  Shipment Stage
      *  Shipment Stage
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPreCarriageShipmentStage($index)
@@ -7008,7 +7008,7 @@ class ConsignmentType
      *  Shipment Stage
      *  Shipment Stage
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPreCarriageShipmentStage($index)
@@ -7049,7 +7049,7 @@ class ConsignmentType
      *  Shipment Stage
      *  Shipment Stage
      *
-     * @param \horstoeko\ubl\entities\cac\PreCarriageShipmentStage[] $preCarriageShipmentStage
+     * @param  \horstoeko\ubl\entities\cac\PreCarriageShipmentStage[] $preCarriageShipmentStage
      * @return self
      */
     public function setPreCarriageShipmentStage(array $preCarriageShipmentStage)
@@ -7072,7 +7072,7 @@ class ConsignmentType
      *  Shipment Stage
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\OnCarriageShipmentStage $onCarriageShipmentStage
+     * @param  \horstoeko\ubl\entities\cac\OnCarriageShipmentStage $onCarriageShipmentStage
      */
     public function addToOnCarriageShipmentStage(\horstoeko\ubl\entities\cac\OnCarriageShipmentStage $onCarriageShipmentStage)
     {
@@ -7093,7 +7093,7 @@ class ConsignmentType
      *  Shipment Stage
      *  Shipment Stage
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetOnCarriageShipmentStage($index)
@@ -7114,7 +7114,7 @@ class ConsignmentType
      *  Shipment Stage
      *  Shipment Stage
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetOnCarriageShipmentStage($index)
@@ -7155,7 +7155,7 @@ class ConsignmentType
      *  Shipment Stage
      *  Shipment Stage
      *
-     * @param \horstoeko\ubl\entities\cac\OnCarriageShipmentStage[] $onCarriageShipmentStage
+     * @param  \horstoeko\ubl\entities\cac\OnCarriageShipmentStage[] $onCarriageShipmentStage
      * @return self
      */
     public function setOnCarriageShipmentStage(array $onCarriageShipmentStage)
@@ -7177,7 +7177,7 @@ class ConsignmentType
      *  Transport Handling Unit
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\TransportHandlingUnit $transportHandlingUnit
+     * @param  \horstoeko\ubl\entities\cac\TransportHandlingUnit $transportHandlingUnit
      */
     public function addToTransportHandlingUnit(\horstoeko\ubl\entities\cac\TransportHandlingUnit $transportHandlingUnit)
     {
@@ -7197,7 +7197,7 @@ class ConsignmentType
      *  Transport Handling Unit
      *  Transport Handling Unit
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTransportHandlingUnit($index)
@@ -7217,7 +7217,7 @@ class ConsignmentType
      *  Transport Handling Unit
      *  Transport Handling Unit
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTransportHandlingUnit($index)
@@ -7256,7 +7256,7 @@ class ConsignmentType
      *  Transport Handling Unit
      *  Transport Handling Unit
      *
-     * @param \horstoeko\ubl\entities\cac\TransportHandlingUnit[] $transportHandlingUnit
+     * @param  \horstoeko\ubl\entities\cac\TransportHandlingUnit[] $transportHandlingUnit
      * @return self
      */
     public function setTransportHandlingUnit(array $transportHandlingUnit)
@@ -7298,7 +7298,7 @@ class ConsignmentType
      *  Location
      *  Location
      *
-     * @param \horstoeko\ubl\entities\cac\FirstArrivalPortLocation $firstArrivalPortLocation
+     * @param  \horstoeko\ubl\entities\cac\FirstArrivalPortLocation $firstArrivalPortLocation
      * @return self
      */
     public function setFirstArrivalPortLocation(\horstoeko\ubl\entities\cac\FirstArrivalPortLocation $firstArrivalPortLocation)
@@ -7340,7 +7340,7 @@ class ConsignmentType
      *  Location
      *  Location
      *
-     * @param \horstoeko\ubl\entities\cac\LastExitPortLocation $lastExitPortLocation
+     * @param  \horstoeko\ubl\entities\cac\LastExitPortLocation $lastExitPortLocation
      * @return self
      */
     public function setLastExitPortLocation(\horstoeko\ubl\entities\cac\LastExitPortLocation $lastExitPortLocation)

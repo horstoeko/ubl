@@ -133,7 +133,7 @@ class ResponseType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ReferenceID $referenceID
+     * @param  \horstoeko\ubl\entities\cbc\ReferenceID $referenceID
      * @return self
      */
     public function setReferenceID(\horstoeko\ubl\entities\cbc\ReferenceID $referenceID)
@@ -173,7 +173,7 @@ class ResponseType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ResponseCode $responseCode
+     * @param  \horstoeko\ubl\entities\cbc\ResponseCode $responseCode
      * @return self
      */
     public function setResponseCode(\horstoeko\ubl\entities\cbc\ResponseCode $responseCode)
@@ -195,7 +195,7 @@ class ResponseType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -215,7 +215,7 @@ class ResponseType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -235,7 +235,7 @@ class ResponseType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -274,7 +274,7 @@ class ResponseType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -314,7 +314,7 @@ class ResponseType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $effectiveDate
+     * @param  \DateTime $effectiveDate
      * @return self
      */
     public function setEffectiveDate(\DateTime $effectiveDate)
@@ -354,7 +354,7 @@ class ResponseType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $effectiveTime
+     * @param  \DateTime $effectiveTime
      * @return self
      */
     public function setEffectiveTime(\DateTime $effectiveTime)
@@ -376,7 +376,7 @@ class ResponseType
      *  Status
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Status $status
+     * @param  \horstoeko\ubl\entities\cac\Status $status
      */
     public function addToStatus(\horstoeko\ubl\entities\cac\Status $status)
     {
@@ -396,7 +396,7 @@ class ResponseType
      *  Status
      *  Status
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetStatus($index)
@@ -416,7 +416,7 @@ class ResponseType
      *  Status
      *  Status
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetStatus($index)
@@ -455,7 +455,7 @@ class ResponseType
      *  Status
      *  Status
      *
-     * @param \horstoeko\ubl\entities\cac\Status[] $status
+     * @param  \horstoeko\ubl\entities\cac\Status[] $status
      * @return self
      */
     public function setStatus(array $status)

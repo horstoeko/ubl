@@ -118,7 +118,7 @@ class FinancialGuaranteeType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\GuaranteeTypeCode $guaranteeTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\GuaranteeTypeCode $guaranteeTypeCode
      * @return self
      */
     public function setGuaranteeTypeCode(\horstoeko\ubl\entities\cbc\GuaranteeTypeCode $guaranteeTypeCode)
@@ -140,7 +140,7 @@ class FinancialGuaranteeType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -160,7 +160,7 @@ class FinancialGuaranteeType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -180,7 +180,7 @@ class FinancialGuaranteeType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -219,7 +219,7 @@ class FinancialGuaranteeType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -259,7 +259,7 @@ class FinancialGuaranteeType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LiabilityAmount $liabilityAmount
+     * @param  \horstoeko\ubl\entities\cbc\LiabilityAmount $liabilityAmount
      * @return self
      */
     public function setLiabilityAmount(\horstoeko\ubl\entities\cbc\LiabilityAmount $liabilityAmount)
@@ -299,7 +299,7 @@ class FinancialGuaranteeType
      *  Rate
      *  Rate. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AmountRate $amountRate
+     * @param  \horstoeko\ubl\entities\cbc\AmountRate $amountRate
      * @return self
      */
     public function setAmountRate(\horstoeko\ubl\entities\cbc\AmountRate $amountRate)
@@ -341,7 +341,7 @@ class FinancialGuaranteeType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\ConstitutionPeriod $constitutionPeriod
+     * @param  \horstoeko\ubl\entities\cac\ConstitutionPeriod $constitutionPeriod
      * @return self
      */
     public function setConstitutionPeriod(\horstoeko\ubl\entities\cac\ConstitutionPeriod $constitutionPeriod)

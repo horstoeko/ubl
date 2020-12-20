@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing SignedSignaturePropertiesType
  *
- *
  * XSD Type: SignedSignaturePropertiesType
  */
 class SignedSignaturePropertiesType
@@ -54,7 +53,7 @@ class SignedSignaturePropertiesType
     /**
      * Sets a new id
      *
-     * @param string $id
+     * @param  string $id
      * @return self
      */
     public function setId($id)
@@ -76,7 +75,7 @@ class SignedSignaturePropertiesType
     /**
      * Sets a new signingTime
      *
-     * @param \DateTime $signingTime
+     * @param  \DateTime $signingTime
      * @return self
      */
     public function setSigningTime(\DateTime $signingTime)
@@ -89,7 +88,7 @@ class SignedSignaturePropertiesType
      * Adds as cert
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\CertIDType $cert
+     * @param  \horstoeko\ubl\entities\xades\CertIDType $cert
      */
     public function addToSigningCertificate(\horstoeko\ubl\entities\xades\CertIDType $cert)
     {
@@ -100,7 +99,7 @@ class SignedSignaturePropertiesType
     /**
      * isset signingCertificate
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSigningCertificate($index)
@@ -111,7 +110,7 @@ class SignedSignaturePropertiesType
     /**
      * unset signingCertificate
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSigningCertificate($index)
@@ -132,7 +131,7 @@ class SignedSignaturePropertiesType
     /**
      * Sets a new signingCertificate
      *
-     * @param \horstoeko\ubl\entities\xades\CertIDType[] $signingCertificate
+     * @param  \horstoeko\ubl\entities\xades\CertIDType[] $signingCertificate
      * @return self
      */
     public function setSigningCertificate(array $signingCertificate)
@@ -154,7 +153,7 @@ class SignedSignaturePropertiesType
     /**
      * Sets a new signaturePolicyIdentifier
      *
-     * @param \horstoeko\ubl\entities\xades\SignaturePolicyIdentifierType $signaturePolicyIdentifier
+     * @param  \horstoeko\ubl\entities\xades\SignaturePolicyIdentifierType $signaturePolicyIdentifier
      * @return self
      */
     public function setSignaturePolicyIdentifier(\horstoeko\ubl\entities\xades\SignaturePolicyIdentifierType $signaturePolicyIdentifier)
@@ -176,7 +175,7 @@ class SignedSignaturePropertiesType
     /**
      * Sets a new signatureProductionPlace
      *
-     * @param \horstoeko\ubl\entities\xades\SignatureProductionPlaceType $signatureProductionPlace
+     * @param  \horstoeko\ubl\entities\xades\SignatureProductionPlaceType $signatureProductionPlace
      * @return self
      */
     public function setSignatureProductionPlace(\horstoeko\ubl\entities\xades\SignatureProductionPlaceType $signatureProductionPlace)
@@ -198,7 +197,7 @@ class SignedSignaturePropertiesType
     /**
      * Sets a new signerRole
      *
-     * @param \horstoeko\ubl\entities\xades\SignerRoleType $signerRole
+     * @param  \horstoeko\ubl\entities\xades\SignerRoleType $signerRole
      * @return self
      */
     public function setSignerRole(\horstoeko\ubl\entities\xades\SignerRoleType $signerRole)

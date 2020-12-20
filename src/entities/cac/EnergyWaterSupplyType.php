@@ -92,7 +92,7 @@ class EnergyWaterSupplyType
      *  Consumption Report
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ConsumptionReport $consumptionReport
+     * @param  \horstoeko\ubl\entities\cac\ConsumptionReport $consumptionReport
      */
     public function addToConsumptionReport(\horstoeko\ubl\entities\cac\ConsumptionReport $consumptionReport)
     {
@@ -112,7 +112,7 @@ class EnergyWaterSupplyType
      *  Consumption Report
      *  Consumption Report
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetConsumptionReport($index)
@@ -132,7 +132,7 @@ class EnergyWaterSupplyType
      *  Consumption Report
      *  Consumption Report
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetConsumptionReport($index)
@@ -171,7 +171,7 @@ class EnergyWaterSupplyType
      *  Consumption Report
      *  Consumption Report
      *
-     * @param \horstoeko\ubl\entities\cac\ConsumptionReport[] $consumptionReport
+     * @param  \horstoeko\ubl\entities\cac\ConsumptionReport[] $consumptionReport
      * @return self
      */
     public function setConsumptionReport(array $consumptionReport)
@@ -193,7 +193,7 @@ class EnergyWaterSupplyType
      *  Energy Tax Report
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\EnergyTaxReport $energyTaxReport
+     * @param  \horstoeko\ubl\entities\cac\EnergyTaxReport $energyTaxReport
      */
     public function addToEnergyTaxReport(\horstoeko\ubl\entities\cac\EnergyTaxReport $energyTaxReport)
     {
@@ -213,7 +213,7 @@ class EnergyWaterSupplyType
      *  Energy Tax Report
      *  Energy Tax Report
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetEnergyTaxReport($index)
@@ -233,7 +233,7 @@ class EnergyWaterSupplyType
      *  Energy Tax Report
      *  Energy Tax Report
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetEnergyTaxReport($index)
@@ -272,7 +272,7 @@ class EnergyWaterSupplyType
      *  Energy Tax Report
      *  Energy Tax Report
      *
-     * @param \horstoeko\ubl\entities\cac\EnergyTaxReport[] $energyTaxReport
+     * @param  \horstoeko\ubl\entities\cac\EnergyTaxReport[] $energyTaxReport
      * @return self
      */
     public function setEnergyTaxReport(array $energyTaxReport)
@@ -294,7 +294,7 @@ class EnergyWaterSupplyType
      *  Consumption Average
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ConsumptionAverage $consumptionAverage
+     * @param  \horstoeko\ubl\entities\cac\ConsumptionAverage $consumptionAverage
      */
     public function addToConsumptionAverage(\horstoeko\ubl\entities\cac\ConsumptionAverage $consumptionAverage)
     {
@@ -314,7 +314,7 @@ class EnergyWaterSupplyType
      *  Consumption Average
      *  Consumption Average
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetConsumptionAverage($index)
@@ -334,7 +334,7 @@ class EnergyWaterSupplyType
      *  Consumption Average
      *  Consumption Average
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetConsumptionAverage($index)
@@ -373,7 +373,7 @@ class EnergyWaterSupplyType
      *  Consumption Average
      *  Consumption Average
      *
-     * @param \horstoeko\ubl\entities\cac\ConsumptionAverage[] $consumptionAverage
+     * @param  \horstoeko\ubl\entities\cac\ConsumptionAverage[] $consumptionAverage
      * @return self
      */
     public function setConsumptionAverage(array $consumptionAverage)
@@ -396,7 +396,7 @@ class EnergyWaterSupplyType
      *  Consumption Correction
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\EnergyWaterConsumptionCorrection $energyWaterConsumptionCorrection
+     * @param  \horstoeko\ubl\entities\cac\EnergyWaterConsumptionCorrection $energyWaterConsumptionCorrection
      */
     public function addToEnergyWaterConsumptionCorrection(\horstoeko\ubl\entities\cac\EnergyWaterConsumptionCorrection $energyWaterConsumptionCorrection)
     {
@@ -417,7 +417,7 @@ class EnergyWaterSupplyType
      *  Consumption Correction
      *  Consumption Correction
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetEnergyWaterConsumptionCorrection($index)
@@ -438,7 +438,7 @@ class EnergyWaterSupplyType
      *  Consumption Correction
      *  Consumption Correction
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetEnergyWaterConsumptionCorrection($index)
@@ -479,7 +479,7 @@ class EnergyWaterSupplyType
      *  Consumption Correction
      *  Consumption Correction
      *
-     * @param \horstoeko\ubl\entities\cac\EnergyWaterConsumptionCorrection[] $energyWaterConsumptionCorrection
+     * @param  \horstoeko\ubl\entities\cac\EnergyWaterConsumptionCorrection[] $energyWaterConsumptionCorrection
      * @return self
      */
     public function setEnergyWaterConsumptionCorrection(array $energyWaterConsumptionCorrection)

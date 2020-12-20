@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\ds;
 /**
  * Class representing DigestMethodType
  *
- *
  * XSD Type: DigestMethodType
  */
 class DigestMethodType
@@ -29,7 +28,7 @@ class DigestMethodType
     /**
      * Sets a new algorithm
      *
-     * @param string $algorithm
+     * @param  string $algorithm
      * @return self
      */
     public function setAlgorithm($algorithm)

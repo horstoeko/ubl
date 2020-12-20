@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing DataObjectFormatType
  *
- *
  * XSD Type: DataObjectFormatType
  */
 class DataObjectFormatType
@@ -49,7 +48,7 @@ class DataObjectFormatType
     /**
      * Sets a new objectReference
      *
-     * @param string $objectReference
+     * @param  string $objectReference
      * @return self
      */
     public function setObjectReference($objectReference)
@@ -71,7 +70,7 @@ class DataObjectFormatType
     /**
      * Sets a new description
      *
-     * @param string $description
+     * @param  string $description
      * @return self
      */
     public function setDescription($description)
@@ -93,7 +92,7 @@ class DataObjectFormatType
     /**
      * Sets a new objectIdentifier
      *
-     * @param \horstoeko\ubl\entities\xades\ObjectIdentifierType $objectIdentifier
+     * @param  \horstoeko\ubl\entities\xades\ObjectIdentifierType $objectIdentifier
      * @return self
      */
     public function setObjectIdentifier(\horstoeko\ubl\entities\xades\ObjectIdentifierType $objectIdentifier)
@@ -115,7 +114,7 @@ class DataObjectFormatType
     /**
      * Sets a new mimeType
      *
-     * @param string $mimeType
+     * @param  string $mimeType
      * @return self
      */
     public function setMimeType($mimeType)
@@ -137,7 +136,7 @@ class DataObjectFormatType
     /**
      * Sets a new encoding
      *
-     * @param string $encoding
+     * @param  string $encoding
      * @return self
      */
     public function setEncoding($encoding)

@@ -176,7 +176,7 @@ class MonetaryTotalType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LineExtensionAmount $lineExtensionAmount
+     * @param  \horstoeko\ubl\entities\cbc\LineExtensionAmount $lineExtensionAmount
      * @return self
      */
     public function setLineExtensionAmount(\horstoeko\ubl\entities\cbc\LineExtensionAmount $lineExtensionAmount)
@@ -216,7 +216,7 @@ class MonetaryTotalType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TaxExclusiveAmount $taxExclusiveAmount
+     * @param  \horstoeko\ubl\entities\cbc\TaxExclusiveAmount $taxExclusiveAmount
      * @return self
      */
     public function setTaxExclusiveAmount(\horstoeko\ubl\entities\cbc\TaxExclusiveAmount $taxExclusiveAmount)
@@ -256,7 +256,7 @@ class MonetaryTotalType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TaxInclusiveAmount $taxInclusiveAmount
+     * @param  \horstoeko\ubl\entities\cbc\TaxInclusiveAmount $taxInclusiveAmount
      * @return self
      */
     public function setTaxInclusiveAmount(\horstoeko\ubl\entities\cbc\TaxInclusiveAmount $taxInclusiveAmount)
@@ -298,7 +298,7 @@ class MonetaryTotalType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AllowanceTotalAmount $allowanceTotalAmount
+     * @param  \horstoeko\ubl\entities\cbc\AllowanceTotalAmount $allowanceTotalAmount
      * @return self
      */
     public function setAllowanceTotalAmount(\horstoeko\ubl\entities\cbc\AllowanceTotalAmount $allowanceTotalAmount)
@@ -340,7 +340,7 @@ class MonetaryTotalType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ChargeTotalAmount $chargeTotalAmount
+     * @param  \horstoeko\ubl\entities\cbc\ChargeTotalAmount $chargeTotalAmount
      * @return self
      */
     public function setChargeTotalAmount(\horstoeko\ubl\entities\cbc\ChargeTotalAmount $chargeTotalAmount)
@@ -380,7 +380,7 @@ class MonetaryTotalType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PrepaidAmount $prepaidAmount
+     * @param  \horstoeko\ubl\entities\cbc\PrepaidAmount $prepaidAmount
      * @return self
      */
     public function setPrepaidAmount(\horstoeko\ubl\entities\cbc\PrepaidAmount $prepaidAmount)
@@ -422,7 +422,7 @@ class MonetaryTotalType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PayableRoundingAmount $payableRoundingAmount
+     * @param  \horstoeko\ubl\entities\cbc\PayableRoundingAmount $payableRoundingAmount
      * @return self
      */
     public function setPayableRoundingAmount(\horstoeko\ubl\entities\cbc\PayableRoundingAmount $payableRoundingAmount)
@@ -464,7 +464,7 @@ class MonetaryTotalType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PayableAmount $payableAmount
+     * @param  \horstoeko\ubl\entities\cbc\PayableAmount $payableAmount
      * @return self
      */
     public function setPayableAmount(\horstoeko\ubl\entities\cbc\PayableAmount $payableAmount)
@@ -506,7 +506,7 @@ class MonetaryTotalType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PayableAlternativeAmount $payableAlternativeAmount
+     * @param  \horstoeko\ubl\entities\cbc\PayableAlternativeAmount $payableAlternativeAmount
      * @return self
      */
     public function setPayableAlternativeAmount(\horstoeko\ubl\entities\cbc\PayableAlternativeAmount $payableAlternativeAmount)

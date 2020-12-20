@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing FloorType
  *
- *
  * XSD Type: FloorType
  */
 class FloorType extends TextType

@@ -50,7 +50,7 @@ class DateTimeType
     /**
      * Gets or sets the inner value
      *
-     * @param string $value
+     * @param  string $value
      * @return string
      */
     public function value()
@@ -102,7 +102,7 @@ class DateTimeType
      *  Text
      *  string
      *
-     * @param string $format
+     * @param  string $format
      * @return self
      */
     public function setFormat($format)

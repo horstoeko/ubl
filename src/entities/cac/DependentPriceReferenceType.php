@@ -89,7 +89,7 @@ class DependentPriceReferenceType
      *  Percent
      *  Percent. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Percent $percent
+     * @param  \horstoeko\ubl\entities\cbc\Percent $percent
      * @return self
      */
     public function setPercent(\horstoeko\ubl\entities\cbc\Percent $percent)
@@ -131,7 +131,7 @@ class DependentPriceReferenceType
      *  Address
      *  Address
      *
-     * @param \horstoeko\ubl\entities\cac\LocationAddress $locationAddress
+     * @param  \horstoeko\ubl\entities\cac\LocationAddress $locationAddress
      * @return self
      */
     public function setLocationAddress(\horstoeko\ubl\entities\cac\LocationAddress $locationAddress)
@@ -173,7 +173,7 @@ class DependentPriceReferenceType
      *  Line Reference
      *  Line Reference
      *
-     * @param \horstoeko\ubl\entities\cac\DependentLineReference $dependentLineReference
+     * @param  \horstoeko\ubl\entities\cac\DependentLineReference $dependentLineReference
      * @return self
      */
     public function setDependentLineReference(\horstoeko\ubl\entities\cac\DependentLineReference $dependentLineReference)

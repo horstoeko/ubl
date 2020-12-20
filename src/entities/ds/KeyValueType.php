@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\ds;
 /**
  * Class representing KeyValueType
  *
- *
  * XSD Type: KeyValueType
  */
 class KeyValueType
@@ -34,7 +33,7 @@ class KeyValueType
     /**
      * Sets a new dSAKeyValue
      *
-     * @param \horstoeko\ubl\entities\ds\DSAKeyValue $dSAKeyValue
+     * @param  \horstoeko\ubl\entities\ds\DSAKeyValue $dSAKeyValue
      * @return self
      */
     public function setDSAKeyValue(\horstoeko\ubl\entities\ds\DSAKeyValue $dSAKeyValue)
@@ -56,7 +55,7 @@ class KeyValueType
     /**
      * Sets a new rSAKeyValue
      *
-     * @param \horstoeko\ubl\entities\ds\RSAKeyValue $rSAKeyValue
+     * @param  \horstoeko\ubl\entities\ds\RSAKeyValue $rSAKeyValue
      * @return self
      */
     public function setRSAKeyValue(\horstoeko\ubl\entities\ds\RSAKeyValue $rSAKeyValue)

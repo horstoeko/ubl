@@ -216,7 +216,7 @@ class AwardingTermsType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\WeightingAlgorithmCode $weightingAlgorithmCode
+     * @param  \horstoeko\ubl\entities\cbc\WeightingAlgorithmCode $weightingAlgorithmCode
      * @return self
      */
     public function setWeightingAlgorithmCode(\horstoeko\ubl\entities\cbc\WeightingAlgorithmCode $weightingAlgorithmCode)
@@ -238,7 +238,7 @@ class AwardingTermsType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -258,7 +258,7 @@ class AwardingTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -278,7 +278,7 @@ class AwardingTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -317,7 +317,7 @@ class AwardingTermsType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -340,7 +340,7 @@ class AwardingTermsType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\TechnicalCommitteeDescription $technicalCommitteeDescription
+     * @param  \horstoeko\ubl\entities\cbc\TechnicalCommitteeDescription $technicalCommitteeDescription
      */
     public function addToTechnicalCommitteeDescription(\horstoeko\ubl\entities\cbc\TechnicalCommitteeDescription $technicalCommitteeDescription)
     {
@@ -361,7 +361,7 @@ class AwardingTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTechnicalCommitteeDescription($index)
@@ -382,7 +382,7 @@ class AwardingTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTechnicalCommitteeDescription($index)
@@ -423,7 +423,7 @@ class AwardingTermsType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TechnicalCommitteeDescription[] $technicalCommitteeDescription
+     * @param  \horstoeko\ubl\entities\cbc\TechnicalCommitteeDescription[] $technicalCommitteeDescription
      * @return self
      */
     public function setTechnicalCommitteeDescription(array $technicalCommitteeDescription)
@@ -446,7 +446,7 @@ class AwardingTermsType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\LowTendersDescription $lowTendersDescription
+     * @param  \horstoeko\ubl\entities\cbc\LowTendersDescription $lowTendersDescription
      */
     public function addToLowTendersDescription(\horstoeko\ubl\entities\cbc\LowTendersDescription $lowTendersDescription)
     {
@@ -467,7 +467,7 @@ class AwardingTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetLowTendersDescription($index)
@@ -488,7 +488,7 @@ class AwardingTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetLowTendersDescription($index)
@@ -529,7 +529,7 @@ class AwardingTermsType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LowTendersDescription[] $lowTendersDescription
+     * @param  \horstoeko\ubl\entities\cbc\LowTendersDescription[] $lowTendersDescription
      * @return self
      */
     public function setLowTendersDescription(array $lowTendersDescription)
@@ -569,7 +569,7 @@ class AwardingTermsType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $prizeIndicator
+     * @param  bool $prizeIndicator
      * @return self
      */
     public function setPrizeIndicator($prizeIndicator)
@@ -591,7 +591,7 @@ class AwardingTermsType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\PrizeDescription $prizeDescription
+     * @param  \horstoeko\ubl\entities\cbc\PrizeDescription $prizeDescription
      */
     public function addToPrizeDescription(\horstoeko\ubl\entities\cbc\PrizeDescription $prizeDescription)
     {
@@ -611,7 +611,7 @@ class AwardingTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPrizeDescription($index)
@@ -631,7 +631,7 @@ class AwardingTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPrizeDescription($index)
@@ -670,7 +670,7 @@ class AwardingTermsType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PrizeDescription[] $prizeDescription
+     * @param  \horstoeko\ubl\entities\cbc\PrizeDescription[] $prizeDescription
      * @return self
      */
     public function setPrizeDescription(array $prizeDescription)
@@ -692,7 +692,7 @@ class AwardingTermsType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\PaymentDescription $paymentDescription
+     * @param  \horstoeko\ubl\entities\cbc\PaymentDescription $paymentDescription
      */
     public function addToPaymentDescription(\horstoeko\ubl\entities\cbc\PaymentDescription $paymentDescription)
     {
@@ -712,7 +712,7 @@ class AwardingTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPaymentDescription($index)
@@ -732,7 +732,7 @@ class AwardingTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPaymentDescription($index)
@@ -771,7 +771,7 @@ class AwardingTermsType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PaymentDescription[] $paymentDescription
+     * @param  \horstoeko\ubl\entities\cbc\PaymentDescription[] $paymentDescription
      * @return self
      */
     public function setPaymentDescription(array $paymentDescription)
@@ -811,7 +811,7 @@ class AwardingTermsType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $followupContractIndicator
+     * @param  bool $followupContractIndicator
      * @return self
      */
     public function setFollowupContractIndicator($followupContractIndicator)
@@ -851,7 +851,7 @@ class AwardingTermsType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $bindingOnBuyerIndicator
+     * @param  bool $bindingOnBuyerIndicator
      * @return self
      */
     public function setBindingOnBuyerIndicator($bindingOnBuyerIndicator)
@@ -873,7 +873,7 @@ class AwardingTermsType
      *  Awarding Criterion
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\AwardingCriterion $awardingCriterion
+     * @param  \horstoeko\ubl\entities\cac\AwardingCriterion $awardingCriterion
      */
     public function addToAwardingCriterion(\horstoeko\ubl\entities\cac\AwardingCriterion $awardingCriterion)
     {
@@ -893,7 +893,7 @@ class AwardingTermsType
      *  Awarding Criterion
      *  Awarding Criterion
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAwardingCriterion($index)
@@ -913,7 +913,7 @@ class AwardingTermsType
      *  Awarding Criterion
      *  Awarding Criterion
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAwardingCriterion($index)
@@ -952,7 +952,7 @@ class AwardingTermsType
      *  Awarding Criterion
      *  Awarding Criterion
      *
-     * @param \horstoeko\ubl\entities\cac\AwardingCriterion[] $awardingCriterion
+     * @param  \horstoeko\ubl\entities\cac\AwardingCriterion[] $awardingCriterion
      * @return self
      */
     public function setAwardingCriterion(array $awardingCriterion)
@@ -975,7 +975,7 @@ class AwardingTermsType
      *  Person
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\TechnicalCommitteePerson $technicalCommitteePerson
+     * @param  \horstoeko\ubl\entities\cac\TechnicalCommitteePerson $technicalCommitteePerson
      */
     public function addToTechnicalCommitteePerson(\horstoeko\ubl\entities\cac\TechnicalCommitteePerson $technicalCommitteePerson)
     {
@@ -996,7 +996,7 @@ class AwardingTermsType
      *  Person
      *  Person
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTechnicalCommitteePerson($index)
@@ -1017,7 +1017,7 @@ class AwardingTermsType
      *  Person
      *  Person
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTechnicalCommitteePerson($index)
@@ -1058,7 +1058,7 @@ class AwardingTermsType
      *  Person
      *  Person
      *
-     * @param \horstoeko\ubl\entities\cac\TechnicalCommitteePerson[] $technicalCommitteePerson
+     * @param  \horstoeko\ubl\entities\cac\TechnicalCommitteePerson[] $technicalCommitteePerson
      * @return self
      */
     public function setTechnicalCommitteePerson(array $technicalCommitteePerson)

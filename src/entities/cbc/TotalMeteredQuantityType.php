@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\QuantityType;
 /**
  * Class representing TotalMeteredQuantityType
  *
- *
  * XSD Type: TotalMeteredQuantityType
  */
 class TotalMeteredQuantityType extends QuantityType

@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing ResolutionDateType
  *
- *
  * XSD Type: ResolutionDateType
  */
 class ResolutionDateType
@@ -29,7 +28,7 @@ class ResolutionDateType
     /**
      * Gets or sets the inner value
      *
-     * @param \DateTime $value
+     * @param  \DateTime $value
      * @return \DateTime
      */
     public function value()

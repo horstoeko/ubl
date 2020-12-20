@@ -109,7 +109,7 @@ class CommodityClassificationType
      *  Code. Type
      *  wooden products
      *
-     * @param \horstoeko\ubl\entities\cbc\NatureCode $natureCode
+     * @param  \horstoeko\ubl\entities\cbc\NatureCode $natureCode
      * @return self
      */
     public function setNatureCode(\horstoeko\ubl\entities\cbc\NatureCode $natureCode)
@@ -151,7 +151,7 @@ class CommodityClassificationType
      *  Code. Type
      *  Refrigerated
      *
-     * @param \horstoeko\ubl\entities\cbc\CargoTypeCode $cargoTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\CargoTypeCode $cargoTypeCode
      * @return self
      */
     public function setCargoTypeCode(\horstoeko\ubl\entities\cbc\CargoTypeCode $cargoTypeCode)
@@ -195,7 +195,7 @@ class CommodityClassificationType
      *  Harmonized Code
      *  1102222883
      *
-     * @param \horstoeko\ubl\entities\cbc\CommodityCode $commodityCode
+     * @param  \horstoeko\ubl\entities\cbc\CommodityCode $commodityCode
      * @return self
      */
     public function setCommodityCode(\horstoeko\ubl\entities\cbc\CommodityCode $commodityCode)
@@ -239,7 +239,7 @@ class CommodityClassificationType
      *  UN/SPSC Code
      *  3440234
      *
-     * @param \horstoeko\ubl\entities\cbc\ItemClassificationCode $itemClassificationCode
+     * @param  \horstoeko\ubl\entities\cbc\ItemClassificationCode $itemClassificationCode
      * @return self
      */
     public function setItemClassificationCode(\horstoeko\ubl\entities\cbc\ItemClassificationCode $itemClassificationCode)

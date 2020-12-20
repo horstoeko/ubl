@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing DistrictType
  *
- *
  * XSD Type: DistrictType
  */
 class DistrictType extends TextType

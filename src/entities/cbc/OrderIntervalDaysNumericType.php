@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\NumericType;
 /**
  * Class representing OrderIntervalDaysNumericType
  *
- *
  * XSD Type: OrderIntervalDaysNumericType
  */
 class OrderIntervalDaysNumericType extends NumericType

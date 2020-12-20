@@ -714,7 +714,7 @@ class TenderingTermsType
      *  Code. Type
      *  Price, Multiple criteria
      *
-     * @param \horstoeko\ubl\entities\cbc\AwardingMethodTypeCode $awardingMethodTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\AwardingMethodTypeCode $awardingMethodTypeCode
      * @return self
      */
     public function setAwardingMethodTypeCode(\horstoeko\ubl\entities\cbc\AwardingMethodTypeCode $awardingMethodTypeCode)
@@ -756,7 +756,7 @@ class TenderingTermsType
      *  Code. Type
      *  Unit prices, global price
      *
-     * @param \horstoeko\ubl\entities\cbc\PriceEvaluationCode $priceEvaluationCode
+     * @param  \horstoeko\ubl\entities\cbc\PriceEvaluationCode $priceEvaluationCode
      * @return self
      */
     public function setPriceEvaluationCode(\horstoeko\ubl\entities\cbc\PriceEvaluationCode $priceEvaluationCode)
@@ -798,7 +798,7 @@ class TenderingTermsType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MaximumVariantQuantity $maximumVariantQuantity
+     * @param  \horstoeko\ubl\entities\cbc\MaximumVariantQuantity $maximumVariantQuantity
      * @return self
      */
     public function setMaximumVariantQuantity(\horstoeko\ubl\entities\cbc\MaximumVariantQuantity $maximumVariantQuantity)
@@ -840,7 +840,7 @@ class TenderingTermsType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $variantConstraintIndicator
+     * @param  bool $variantConstraintIndicator
      * @return self
      */
     public function setVariantConstraintIndicator($variantConstraintIndicator)
@@ -863,7 +863,7 @@ class TenderingTermsType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\AcceptedVariantsDescription $acceptedVariantsDescription
+     * @param  \horstoeko\ubl\entities\cbc\AcceptedVariantsDescription $acceptedVariantsDescription
      */
     public function addToAcceptedVariantsDescription(\horstoeko\ubl\entities\cbc\AcceptedVariantsDescription $acceptedVariantsDescription)
     {
@@ -884,7 +884,7 @@ class TenderingTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAcceptedVariantsDescription($index)
@@ -905,7 +905,7 @@ class TenderingTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAcceptedVariantsDescription($index)
@@ -946,7 +946,7 @@ class TenderingTermsType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AcceptedVariantsDescription[] $acceptedVariantsDescription
+     * @param  \horstoeko\ubl\entities\cbc\AcceptedVariantsDescription[] $acceptedVariantsDescription
      * @return self
      */
     public function setAcceptedVariantsDescription(array $acceptedVariantsDescription)
@@ -969,7 +969,7 @@ class TenderingTermsType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\PriceRevisionFormulaDescription $priceRevisionFormulaDescription
+     * @param  \horstoeko\ubl\entities\cbc\PriceRevisionFormulaDescription $priceRevisionFormulaDescription
      */
     public function addToPriceRevisionFormulaDescription(\horstoeko\ubl\entities\cbc\PriceRevisionFormulaDescription $priceRevisionFormulaDescription)
     {
@@ -990,7 +990,7 @@ class TenderingTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPriceRevisionFormulaDescription($index)
@@ -1011,7 +1011,7 @@ class TenderingTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPriceRevisionFormulaDescription($index)
@@ -1052,7 +1052,7 @@ class TenderingTermsType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PriceRevisionFormulaDescription[] $priceRevisionFormulaDescription
+     * @param  \horstoeko\ubl\entities\cbc\PriceRevisionFormulaDescription[] $priceRevisionFormulaDescription
      * @return self
      */
     public function setPriceRevisionFormulaDescription(array $priceRevisionFormulaDescription)
@@ -1094,7 +1094,7 @@ class TenderingTermsType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\FundingProgramCode $fundingProgramCode
+     * @param  \horstoeko\ubl\entities\cbc\FundingProgramCode $fundingProgramCode
      * @return self
      */
     public function setFundingProgramCode(\horstoeko\ubl\entities\cbc\FundingProgramCode $fundingProgramCode)
@@ -1117,7 +1117,7 @@ class TenderingTermsType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\FundingProgram $fundingProgram
+     * @param  \horstoeko\ubl\entities\cbc\FundingProgram $fundingProgram
      */
     public function addToFundingProgram(\horstoeko\ubl\entities\cbc\FundingProgram $fundingProgram)
     {
@@ -1138,7 +1138,7 @@ class TenderingTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetFundingProgram($index)
@@ -1159,7 +1159,7 @@ class TenderingTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetFundingProgram($index)
@@ -1200,7 +1200,7 @@ class TenderingTermsType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\FundingProgram[] $fundingProgram
+     * @param  \horstoeko\ubl\entities\cbc\FundingProgram[] $fundingProgram
      * @return self
      */
     public function setFundingProgram(array $fundingProgram)
@@ -1242,7 +1242,7 @@ class TenderingTermsType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MaximumAdvertisementAmount $maximumAdvertisementAmount
+     * @param  \horstoeko\ubl\entities\cbc\MaximumAdvertisementAmount $maximumAdvertisementAmount
      * @return self
      */
     public function setMaximumAdvertisementAmount(\horstoeko\ubl\entities\cbc\MaximumAdvertisementAmount $maximumAdvertisementAmount)
@@ -1264,7 +1264,7 @@ class TenderingTermsType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param  \horstoeko\ubl\entities\cbc\Note $note
      */
     public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
     {
@@ -1284,7 +1284,7 @@ class TenderingTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNote($index)
@@ -1304,7 +1304,7 @@ class TenderingTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNote($index)
@@ -1343,7 +1343,7 @@ class TenderingTermsType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note[] $note
+     * @param  \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
     public function setNote(array $note)
@@ -1383,7 +1383,7 @@ class TenderingTermsType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PaymentFrequencyCode $paymentFrequencyCode
+     * @param  \horstoeko\ubl\entities\cbc\PaymentFrequencyCode $paymentFrequencyCode
      * @return self
      */
     public function setPaymentFrequencyCode(\horstoeko\ubl\entities\cbc\PaymentFrequencyCode $paymentFrequencyCode)
@@ -1427,7 +1427,7 @@ class TenderingTermsType
      *  Identifier. Type
      *  Web site
      *
-     * @param \horstoeko\ubl\entities\cbc\EconomicOperatorRegistryURI $economicOperatorRegistryURI
+     * @param  \horstoeko\ubl\entities\cbc\EconomicOperatorRegistryURI $economicOperatorRegistryURI
      * @return self
      */
     public function setEconomicOperatorRegistryURI(\horstoeko\ubl\entities\cbc\EconomicOperatorRegistryURI $economicOperatorRegistryURI)
@@ -1467,7 +1467,7 @@ class TenderingTermsType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $requiredCurriculaIndicator
+     * @param  bool $requiredCurriculaIndicator
      * @return self
      */
     public function setRequiredCurriculaIndicator($requiredCurriculaIndicator)
@@ -1509,7 +1509,7 @@ class TenderingTermsType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $otherConditionsIndicator
+     * @param  bool $otherConditionsIndicator
      * @return self
      */
     public function setOtherConditionsIndicator($otherConditionsIndicator)
@@ -1532,7 +1532,7 @@ class TenderingTermsType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\AdditionalConditions $additionalConditions
+     * @param  \horstoeko\ubl\entities\cbc\AdditionalConditions $additionalConditions
      */
     public function addToAdditionalConditions(\horstoeko\ubl\entities\cbc\AdditionalConditions $additionalConditions)
     {
@@ -1553,7 +1553,7 @@ class TenderingTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAdditionalConditions($index)
@@ -1574,7 +1574,7 @@ class TenderingTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAdditionalConditions($index)
@@ -1615,7 +1615,7 @@ class TenderingTermsType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AdditionalConditions[] $additionalConditions
+     * @param  \horstoeko\ubl\entities\cbc\AdditionalConditions[] $additionalConditions
      * @return self
      */
     public function setAdditionalConditions(array $additionalConditions)
@@ -1657,7 +1657,7 @@ class TenderingTermsType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $latestSecurityClearanceDate
+     * @param  \DateTime $latestSecurityClearanceDate
      * @return self
      */
     public function setLatestSecurityClearanceDate(\DateTime $latestSecurityClearanceDate)
@@ -1697,7 +1697,7 @@ class TenderingTermsType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\DocumentationFeeAmount $documentationFeeAmount
+     * @param  \horstoeko\ubl\entities\cbc\DocumentationFeeAmount $documentationFeeAmount
      * @return self
      */
     public function setDocumentationFeeAmount(\horstoeko\ubl\entities\cbc\DocumentationFeeAmount $documentationFeeAmount)
@@ -1720,7 +1720,7 @@ class TenderingTermsType
      *  Clause
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\PenaltyClause $penaltyClause
+     * @param  \horstoeko\ubl\entities\cac\PenaltyClause $penaltyClause
      */
     public function addToPenaltyClause(\horstoeko\ubl\entities\cac\PenaltyClause $penaltyClause)
     {
@@ -1741,7 +1741,7 @@ class TenderingTermsType
      *  Clause
      *  Clause
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPenaltyClause($index)
@@ -1762,7 +1762,7 @@ class TenderingTermsType
      *  Clause
      *  Clause
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPenaltyClause($index)
@@ -1803,7 +1803,7 @@ class TenderingTermsType
      *  Clause
      *  Clause
      *
-     * @param \horstoeko\ubl\entities\cac\PenaltyClause[] $penaltyClause
+     * @param  \horstoeko\ubl\entities\cac\PenaltyClause[] $penaltyClause
      * @return self
      */
     public function setPenaltyClause(array $penaltyClause)
@@ -1826,7 +1826,7 @@ class TenderingTermsType
      *  Financial Guarantee
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\RequiredFinancialGuarantee $requiredFinancialGuarantee
+     * @param  \horstoeko\ubl\entities\cac\RequiredFinancialGuarantee $requiredFinancialGuarantee
      */
     public function addToRequiredFinancialGuarantee(\horstoeko\ubl\entities\cac\RequiredFinancialGuarantee $requiredFinancialGuarantee)
     {
@@ -1847,7 +1847,7 @@ class TenderingTermsType
      *  Financial Guarantee
      *  Financial Guarantee
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetRequiredFinancialGuarantee($index)
@@ -1868,7 +1868,7 @@ class TenderingTermsType
      *  Financial Guarantee
      *  Financial Guarantee
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetRequiredFinancialGuarantee($index)
@@ -1909,7 +1909,7 @@ class TenderingTermsType
      *  Financial Guarantee
      *  Financial Guarantee
      *
-     * @param \horstoeko\ubl\entities\cac\RequiredFinancialGuarantee[] $requiredFinancialGuarantee
+     * @param  \horstoeko\ubl\entities\cac\RequiredFinancialGuarantee[] $requiredFinancialGuarantee
      * @return self
      */
     public function setRequiredFinancialGuarantee(array $requiredFinancialGuarantee)
@@ -1951,7 +1951,7 @@ class TenderingTermsType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\ProcurementLegislationDocumentReference $procurementLegislationDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\ProcurementLegislationDocumentReference $procurementLegislationDocumentReference
      * @return self
      */
     public function setProcurementLegislationDocumentReference(\horstoeko\ubl\entities\cac\ProcurementLegislationDocumentReference $procurementLegislationDocumentReference)
@@ -1993,7 +1993,7 @@ class TenderingTermsType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\FiscalLegislationDocumentReference $fiscalLegislationDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\FiscalLegislationDocumentReference $fiscalLegislationDocumentReference
      * @return self
      */
     public function setFiscalLegislationDocumentReference(\horstoeko\ubl\entities\cac\FiscalLegislationDocumentReference $fiscalLegislationDocumentReference)
@@ -2035,7 +2035,7 @@ class TenderingTermsType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\EnvironmentalLegislationDocumentReference $environmentalLegislationDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\EnvironmentalLegislationDocumentReference $environmentalLegislationDocumentReference
      * @return self
      */
     public function setEnvironmentalLegislationDocumentReference(\horstoeko\ubl\entities\cac\EnvironmentalLegislationDocumentReference $environmentalLegislationDocumentReference)
@@ -2077,7 +2077,7 @@ class TenderingTermsType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\EmploymentLegislationDocumentReference $employmentLegislationDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\EmploymentLegislationDocumentReference $employmentLegislationDocumentReference
      * @return self
      */
     public function setEmploymentLegislationDocumentReference(\horstoeko\ubl\entities\cac\EmploymentLegislationDocumentReference $employmentLegislationDocumentReference)
@@ -2100,7 +2100,7 @@ class TenderingTermsType
      *  Document Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ContractualDocumentReference $contractualDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\ContractualDocumentReference $contractualDocumentReference
      */
     public function addToContractualDocumentReference(\horstoeko\ubl\entities\cac\ContractualDocumentReference $contractualDocumentReference)
     {
@@ -2121,7 +2121,7 @@ class TenderingTermsType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetContractualDocumentReference($index)
@@ -2142,7 +2142,7 @@ class TenderingTermsType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetContractualDocumentReference($index)
@@ -2183,7 +2183,7 @@ class TenderingTermsType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\ContractualDocumentReference[] $contractualDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\ContractualDocumentReference[] $contractualDocumentReference
      * @return self
      */
     public function setContractualDocumentReference(array $contractualDocumentReference)
@@ -2225,7 +2225,7 @@ class TenderingTermsType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\CallForTendersDocumentReference $callForTendersDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\CallForTendersDocumentReference $callForTendersDocumentReference
      * @return self
      */
     public function setCallForTendersDocumentReference(\horstoeko\ubl\entities\cac\CallForTendersDocumentReference $callForTendersDocumentReference)
@@ -2267,7 +2267,7 @@ class TenderingTermsType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\WarrantyValidityPeriod $warrantyValidityPeriod
+     * @param  \horstoeko\ubl\entities\cac\WarrantyValidityPeriod $warrantyValidityPeriod
      * @return self
      */
     public function setWarrantyValidityPeriod(\horstoeko\ubl\entities\cac\WarrantyValidityPeriod $warrantyValidityPeriod)
@@ -2289,7 +2289,7 @@ class TenderingTermsType
      *  Payment Terms
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\PaymentTerms $paymentTerms
+     * @param  \horstoeko\ubl\entities\cac\PaymentTerms $paymentTerms
      */
     public function addToPaymentTerms(\horstoeko\ubl\entities\cac\PaymentTerms $paymentTerms)
     {
@@ -2309,7 +2309,7 @@ class TenderingTermsType
      *  Payment Terms
      *  Payment Terms
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPaymentTerms($index)
@@ -2329,7 +2329,7 @@ class TenderingTermsType
      *  Payment Terms
      *  Payment Terms
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPaymentTerms($index)
@@ -2368,7 +2368,7 @@ class TenderingTermsType
      *  Payment Terms
      *  Payment Terms
      *
-     * @param \horstoeko\ubl\entities\cac\PaymentTerms[] $paymentTerms
+     * @param  \horstoeko\ubl\entities\cac\PaymentTerms[] $paymentTerms
      * @return self
      */
     public function setPaymentTerms(array $paymentTerms)
@@ -2390,7 +2390,7 @@ class TenderingTermsType
      *  Tenderer Qualification Request
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\TendererQualificationRequest $tendererQualificationRequest
+     * @param  \horstoeko\ubl\entities\cac\TendererQualificationRequest $tendererQualificationRequest
      */
     public function addToTendererQualificationRequest(\horstoeko\ubl\entities\cac\TendererQualificationRequest $tendererQualificationRequest)
     {
@@ -2410,7 +2410,7 @@ class TenderingTermsType
      *  Tenderer Qualification Request
      *  Tenderer Qualification Request
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTendererQualificationRequest($index)
@@ -2430,7 +2430,7 @@ class TenderingTermsType
      *  Tenderer Qualification Request
      *  Tenderer Qualification Request
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTendererQualificationRequest($index)
@@ -2469,7 +2469,7 @@ class TenderingTermsType
      *  Tenderer Qualification Request
      *  Tenderer Qualification Request
      *
-     * @param \horstoeko\ubl\entities\cac\TendererQualificationRequest[] $tendererQualificationRequest
+     * @param  \horstoeko\ubl\entities\cac\TendererQualificationRequest[] $tendererQualificationRequest
      * @return self
      */
     public function setTendererQualificationRequest(array $tendererQualificationRequest)
@@ -2492,7 +2492,7 @@ class TenderingTermsType
      *  Subcontract Terms
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\AllowedSubcontractTerms $allowedSubcontractTerms
+     * @param  \horstoeko\ubl\entities\cac\AllowedSubcontractTerms $allowedSubcontractTerms
      */
     public function addToAllowedSubcontractTerms(\horstoeko\ubl\entities\cac\AllowedSubcontractTerms $allowedSubcontractTerms)
     {
@@ -2513,7 +2513,7 @@ class TenderingTermsType
      *  Subcontract Terms
      *  Subcontract Terms
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAllowedSubcontractTerms($index)
@@ -2534,7 +2534,7 @@ class TenderingTermsType
      *  Subcontract Terms
      *  Subcontract Terms
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAllowedSubcontractTerms($index)
@@ -2575,7 +2575,7 @@ class TenderingTermsType
      *  Subcontract Terms
      *  Subcontract Terms
      *
-     * @param \horstoeko\ubl\entities\cac\AllowedSubcontractTerms[] $allowedSubcontractTerms
+     * @param  \horstoeko\ubl\entities\cac\AllowedSubcontractTerms[] $allowedSubcontractTerms
      * @return self
      */
     public function setAllowedSubcontractTerms(array $allowedSubcontractTerms)
@@ -2598,7 +2598,7 @@ class TenderingTermsType
      *  Curricula required, Experience required, ....
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\TenderPreparation $tenderPreparation
+     * @param  \horstoeko\ubl\entities\cac\TenderPreparation $tenderPreparation
      */
     public function addToTenderPreparation(\horstoeko\ubl\entities\cac\TenderPreparation $tenderPreparation)
     {
@@ -2619,7 +2619,7 @@ class TenderingTermsType
      *  Tender Preparation
      *  Curricula required, Experience required, ....
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTenderPreparation($index)
@@ -2640,7 +2640,7 @@ class TenderingTermsType
      *  Tender Preparation
      *  Curricula required, Experience required, ....
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTenderPreparation($index)
@@ -2681,7 +2681,7 @@ class TenderingTermsType
      *  Tender Preparation
      *  Curricula required, Experience required, ....
      *
-     * @param \horstoeko\ubl\entities\cac\TenderPreparation[] $tenderPreparation
+     * @param  \horstoeko\ubl\entities\cac\TenderPreparation[] $tenderPreparation
      * @return self
      */
     public function setTenderPreparation(array $tenderPreparation)
@@ -2703,7 +2703,7 @@ class TenderingTermsType
      *  Contract Execution Requirement
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ContractExecutionRequirement $contractExecutionRequirement
+     * @param  \horstoeko\ubl\entities\cac\ContractExecutionRequirement $contractExecutionRequirement
      */
     public function addToContractExecutionRequirement(\horstoeko\ubl\entities\cac\ContractExecutionRequirement $contractExecutionRequirement)
     {
@@ -2723,7 +2723,7 @@ class TenderingTermsType
      *  Contract Execution Requirement
      *  Contract Execution Requirement
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetContractExecutionRequirement($index)
@@ -2743,7 +2743,7 @@ class TenderingTermsType
      *  Contract Execution Requirement
      *  Contract Execution Requirement
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetContractExecutionRequirement($index)
@@ -2782,7 +2782,7 @@ class TenderingTermsType
      *  Contract Execution Requirement
      *  Contract Execution Requirement
      *
-     * @param \horstoeko\ubl\entities\cac\ContractExecutionRequirement[] $contractExecutionRequirement
+     * @param  \horstoeko\ubl\entities\cac\ContractExecutionRequirement[] $contractExecutionRequirement
      * @return self
      */
     public function setContractExecutionRequirement(array $contractExecutionRequirement)
@@ -2822,7 +2822,7 @@ class TenderingTermsType
      *  Awarding Terms
      *  Awarding Terms
      *
-     * @param \horstoeko\ubl\entities\cac\AwardingTerms $awardingTerms
+     * @param  \horstoeko\ubl\entities\cac\AwardingTerms $awardingTerms
      * @return self
      */
     public function setAwardingTerms(\horstoeko\ubl\entities\cac\AwardingTerms $awardingTerms)
@@ -2864,7 +2864,7 @@ class TenderingTermsType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\AdditionalInformationParty $additionalInformationParty
+     * @param  \horstoeko\ubl\entities\cac\AdditionalInformationParty $additionalInformationParty
      * @return self
      */
     public function setAdditionalInformationParty(\horstoeko\ubl\entities\cac\AdditionalInformationParty $additionalInformationParty)
@@ -2906,7 +2906,7 @@ class TenderingTermsType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\DocumentProviderParty $documentProviderParty
+     * @param  \horstoeko\ubl\entities\cac\DocumentProviderParty $documentProviderParty
      * @return self
      */
     public function setDocumentProviderParty(\horstoeko\ubl\entities\cac\DocumentProviderParty $documentProviderParty)
@@ -2948,7 +2948,7 @@ class TenderingTermsType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\TenderRecipientParty $tenderRecipientParty
+     * @param  \horstoeko\ubl\entities\cac\TenderRecipientParty $tenderRecipientParty
      * @return self
      */
     public function setTenderRecipientParty(\horstoeko\ubl\entities\cac\TenderRecipientParty $tenderRecipientParty)
@@ -2990,7 +2990,7 @@ class TenderingTermsType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\ContractResponsibleParty $contractResponsibleParty
+     * @param  \horstoeko\ubl\entities\cac\ContractResponsibleParty $contractResponsibleParty
      * @return self
      */
     public function setContractResponsibleParty(\horstoeko\ubl\entities\cac\ContractResponsibleParty $contractResponsibleParty)
@@ -3013,7 +3013,7 @@ class TenderingTermsType
      *  Party
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\TenderEvaluationParty $tenderEvaluationParty
+     * @param  \horstoeko\ubl\entities\cac\TenderEvaluationParty $tenderEvaluationParty
      */
     public function addToTenderEvaluationParty(\horstoeko\ubl\entities\cac\TenderEvaluationParty $tenderEvaluationParty)
     {
@@ -3034,7 +3034,7 @@ class TenderingTermsType
      *  Party
      *  Party
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTenderEvaluationParty($index)
@@ -3055,7 +3055,7 @@ class TenderingTermsType
      *  Party
      *  Party
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTenderEvaluationParty($index)
@@ -3096,7 +3096,7 @@ class TenderingTermsType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\TenderEvaluationParty[] $tenderEvaluationParty
+     * @param  \horstoeko\ubl\entities\cac\TenderEvaluationParty[] $tenderEvaluationParty
      * @return self
      */
     public function setTenderEvaluationParty(array $tenderEvaluationParty)
@@ -3138,7 +3138,7 @@ class TenderingTermsType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\TenderValidityPeriod $tenderValidityPeriod
+     * @param  \horstoeko\ubl\entities\cac\TenderValidityPeriod $tenderValidityPeriod
      * @return self
      */
     public function setTenderValidityPeriod(\horstoeko\ubl\entities\cac\TenderValidityPeriod $tenderValidityPeriod)
@@ -3180,7 +3180,7 @@ class TenderingTermsType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\ContractAcceptancePeriod $contractAcceptancePeriod
+     * @param  \horstoeko\ubl\entities\cac\ContractAcceptancePeriod $contractAcceptancePeriod
      * @return self
      */
     public function setContractAcceptancePeriod(\horstoeko\ubl\entities\cac\ContractAcceptancePeriod $contractAcceptancePeriod)
@@ -3220,7 +3220,7 @@ class TenderingTermsType
      *  Appeal Terms
      *  Appeal Terms
      *
-     * @param \horstoeko\ubl\entities\cac\AppealTerms $appealTerms
+     * @param  \horstoeko\ubl\entities\cac\AppealTerms $appealTerms
      * @return self
      */
     public function setAppealTerms(\horstoeko\ubl\entities\cac\AppealTerms $appealTerms)
@@ -3242,7 +3242,7 @@ class TenderingTermsType
      *  Language
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Language $language
+     * @param  \horstoeko\ubl\entities\cac\Language $language
      */
     public function addToLanguage(\horstoeko\ubl\entities\cac\Language $language)
     {
@@ -3262,7 +3262,7 @@ class TenderingTermsType
      *  Language
      *  Language
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetLanguage($index)
@@ -3282,7 +3282,7 @@ class TenderingTermsType
      *  Language
      *  Language
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetLanguage($index)
@@ -3321,7 +3321,7 @@ class TenderingTermsType
      *  Language
      *  Language
      *
-     * @param \horstoeko\ubl\entities\cac\Language[] $language
+     * @param  \horstoeko\ubl\entities\cac\Language[] $language
      * @return self
      */
     public function setLanguage(array $language)
@@ -3343,7 +3343,7 @@ class TenderingTermsType
      *  Budget Account Line
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\BudgetAccountLine $budgetAccountLine
+     * @param  \horstoeko\ubl\entities\cac\BudgetAccountLine $budgetAccountLine
      */
     public function addToBudgetAccountLine(\horstoeko\ubl\entities\cac\BudgetAccountLine $budgetAccountLine)
     {
@@ -3363,7 +3363,7 @@ class TenderingTermsType
      *  Budget Account Line
      *  Budget Account Line
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetBudgetAccountLine($index)
@@ -3383,7 +3383,7 @@ class TenderingTermsType
      *  Budget Account Line
      *  Budget Account Line
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetBudgetAccountLine($index)
@@ -3422,7 +3422,7 @@ class TenderingTermsType
      *  Budget Account Line
      *  Budget Account Line
      *
-     * @param \horstoeko\ubl\entities\cac\BudgetAccountLine[] $budgetAccountLine
+     * @param  \horstoeko\ubl\entities\cac\BudgetAccountLine[] $budgetAccountLine
      * @return self
      */
     public function setBudgetAccountLine(array $budgetAccountLine)
@@ -3464,7 +3464,7 @@ class TenderingTermsType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\ReplacedNoticeDocumentReference $replacedNoticeDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\ReplacedNoticeDocumentReference $replacedNoticeDocumentReference
      * @return self
      */
     public function setReplacedNoticeDocumentReference(\horstoeko\ubl\entities\cac\ReplacedNoticeDocumentReference $replacedNoticeDocumentReference)

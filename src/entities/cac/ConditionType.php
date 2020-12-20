@@ -119,7 +119,7 @@ class ConditionType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AttributeID $attributeID
+     * @param  \horstoeko\ubl\entities\cbc\AttributeID $attributeID
      * @return self
      */
     public function setAttributeID(\horstoeko\ubl\entities\cbc\AttributeID $attributeID)
@@ -159,7 +159,7 @@ class ConditionType
      *  Measure
      *  Measure. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Measure $measure
+     * @param  \horstoeko\ubl\entities\cbc\Measure $measure
      * @return self
      */
     public function setMeasure(\horstoeko\ubl\entities\cbc\Measure $measure)
@@ -181,7 +181,7 @@ class ConditionType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -201,7 +201,7 @@ class ConditionType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -221,7 +221,7 @@ class ConditionType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -260,7 +260,7 @@ class ConditionType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -302,7 +302,7 @@ class ConditionType
      *  Measure
      *  Measure. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MinimumMeasure $minimumMeasure
+     * @param  \horstoeko\ubl\entities\cbc\MinimumMeasure $minimumMeasure
      * @return self
      */
     public function setMinimumMeasure(\horstoeko\ubl\entities\cbc\MinimumMeasure $minimumMeasure)
@@ -344,7 +344,7 @@ class ConditionType
      *  Measure
      *  Measure. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MaximumMeasure $maximumMeasure
+     * @param  \horstoeko\ubl\entities\cbc\MaximumMeasure $maximumMeasure
      * @return self
      */
     public function setMaximumMeasure(\horstoeko\ubl\entities\cbc\MaximumMeasure $maximumMeasure)

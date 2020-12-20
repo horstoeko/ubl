@@ -96,7 +96,7 @@ class StowageType
      *  Identifier. Type
      *  Cell Location, coded
      *
-     * @param \horstoeko\ubl\entities\cbc\LocationID $locationID
+     * @param  \horstoeko\ubl\entities\cbc\LocationID $locationID
      * @return self
      */
     public function setLocationID(\horstoeko\ubl\entities\cbc\LocationID $locationID)
@@ -119,7 +119,7 @@ class StowageType
      *  Cell Location
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Location $location
+     * @param  \horstoeko\ubl\entities\cbc\Location $location
      */
     public function addToLocation(\horstoeko\ubl\entities\cbc\Location $location)
     {
@@ -140,7 +140,7 @@ class StowageType
      *  Text. Type
      *  Cell Location
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetLocation($index)
@@ -161,7 +161,7 @@ class StowageType
      *  Text. Type
      *  Cell Location
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetLocation($index)
@@ -202,7 +202,7 @@ class StowageType
      *  Text. Type
      *  Cell Location
      *
-     * @param \horstoeko\ubl\entities\cbc\Location[] $location
+     * @param  \horstoeko\ubl\entities\cbc\Location[] $location
      * @return self
      */
     public function setLocation(array $location)
@@ -225,7 +225,7 @@ class StowageType
      *  Dimension
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\MeasurementDimension $measurementDimension
+     * @param  \horstoeko\ubl\entities\cac\MeasurementDimension $measurementDimension
      */
     public function addToMeasurementDimension(\horstoeko\ubl\entities\cac\MeasurementDimension $measurementDimension)
     {
@@ -246,7 +246,7 @@ class StowageType
      *  Dimension
      *  Dimension
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetMeasurementDimension($index)
@@ -267,7 +267,7 @@ class StowageType
      *  Dimension
      *  Dimension
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetMeasurementDimension($index)
@@ -308,7 +308,7 @@ class StowageType
      *  Dimension
      *  Dimension
      *
-     * @param \horstoeko\ubl\entities\cac\MeasurementDimension[] $measurementDimension
+     * @param  \horstoeko\ubl\entities\cac\MeasurementDimension[] $measurementDimension
      * @return self
      */
     public function setMeasurementDimension(array $measurementDimension)

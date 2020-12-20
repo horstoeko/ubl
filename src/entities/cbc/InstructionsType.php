@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing InstructionsType
  *
- *
  * XSD Type: InstructionsType
  */
 class InstructionsType extends TextType

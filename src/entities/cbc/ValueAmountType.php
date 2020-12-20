@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\AmountType;
 /**
  * Class representing ValueAmountType
  *
- *
  * XSD Type: ValueAmountType
  */
 class ValueAmountType extends AmountType

@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\MeasureType;
 /**
  * Class representing TareWeightMeasureType
  *
- *
  * XSD Type: TareWeightMeasureType
  */
 class TareWeightMeasureType extends MeasureType

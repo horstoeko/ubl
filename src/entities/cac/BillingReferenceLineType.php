@@ -89,7 +89,7 @@ class BillingReferenceLineType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -129,7 +129,7 @@ class BillingReferenceLineType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Amount $amount
+     * @param  \horstoeko\ubl\entities\cbc\Amount $amount
      * @return self
      */
     public function setAmount(\horstoeko\ubl\entities\cbc\Amount $amount)
@@ -151,7 +151,7 @@ class BillingReferenceLineType
      *  Allowance Charge
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge
+     * @param  \horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge
      */
     public function addToAllowanceCharge(\horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge)
     {
@@ -171,7 +171,7 @@ class BillingReferenceLineType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAllowanceCharge($index)
@@ -191,7 +191,7 @@ class BillingReferenceLineType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAllowanceCharge($index)
@@ -230,7 +230,7 @@ class BillingReferenceLineType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param \horstoeko\ubl\entities\cac\AllowanceCharge[] $allowanceCharge
+     * @param  \horstoeko\ubl\entities\cac\AllowanceCharge[] $allowanceCharge
      * @return self
      */
     public function setAllowanceCharge(array $allowanceCharge)

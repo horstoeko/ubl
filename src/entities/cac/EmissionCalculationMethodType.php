@@ -103,7 +103,7 @@ class EmissionCalculationMethodType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CalculationMethodCode $calculationMethodCode
+     * @param  \horstoeko\ubl\entities\cbc\CalculationMethodCode $calculationMethodCode
      * @return self
      */
     public function setCalculationMethodCode(\horstoeko\ubl\entities\cbc\CalculationMethodCode $calculationMethodCode)
@@ -143,7 +143,7 @@ class EmissionCalculationMethodType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\FullnessIndicationCode $fullnessIndicationCode
+     * @param  \horstoeko\ubl\entities\cbc\FullnessIndicationCode $fullnessIndicationCode
      * @return self
      */
     public function setFullnessIndicationCode(\horstoeko\ubl\entities\cbc\FullnessIndicationCode $fullnessIndicationCode)
@@ -185,7 +185,7 @@ class EmissionCalculationMethodType
      *  Location
      *  Location
      *
-     * @param \horstoeko\ubl\entities\cac\MeasurementFromLocation $measurementFromLocation
+     * @param  \horstoeko\ubl\entities\cac\MeasurementFromLocation $measurementFromLocation
      * @return self
      */
     public function setMeasurementFromLocation(\horstoeko\ubl\entities\cac\MeasurementFromLocation $measurementFromLocation)
@@ -227,7 +227,7 @@ class EmissionCalculationMethodType
      *  Location
      *  Location
      *
-     * @param \horstoeko\ubl\entities\cac\MeasurementToLocation $measurementToLocation
+     * @param  \horstoeko\ubl\entities\cac\MeasurementToLocation $measurementToLocation
      * @return self
      */
     public function setMeasurementToLocation(\horstoeko\ubl\entities\cac\MeasurementToLocation $measurementToLocation)

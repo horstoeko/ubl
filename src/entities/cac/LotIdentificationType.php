@@ -90,7 +90,7 @@ class LotIdentificationType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LotNumberID $lotNumberID
+     * @param  \horstoeko\ubl\entities\cbc\LotNumberID $lotNumberID
      * @return self
      */
     public function setLotNumberID(\horstoeko\ubl\entities\cbc\LotNumberID $lotNumberID)
@@ -130,7 +130,7 @@ class LotIdentificationType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $expiryDate
+     * @param  \DateTime $expiryDate
      * @return self
      */
     public function setExpiryDate(\DateTime $expiryDate)
@@ -153,7 +153,7 @@ class LotIdentificationType
      *  Item Property
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\AdditionalItemProperty $additionalItemProperty
+     * @param  \horstoeko\ubl\entities\cac\AdditionalItemProperty $additionalItemProperty
      */
     public function addToAdditionalItemProperty(\horstoeko\ubl\entities\cac\AdditionalItemProperty $additionalItemProperty)
     {
@@ -174,7 +174,7 @@ class LotIdentificationType
      *  Item Property
      *  Item Property
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAdditionalItemProperty($index)
@@ -195,7 +195,7 @@ class LotIdentificationType
      *  Item Property
      *  Item Property
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAdditionalItemProperty($index)
@@ -236,7 +236,7 @@ class LotIdentificationType
      *  Item Property
      *  Item Property
      *
-     * @param \horstoeko\ubl\entities\cac\AdditionalItemProperty[] $additionalItemProperty
+     * @param  \horstoeko\ubl\entities\cac\AdditionalItemProperty[] $additionalItemProperty
      * @return self
      */
     public function setAdditionalItemProperty(array $additionalItemProperty)

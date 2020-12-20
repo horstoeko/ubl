@@ -235,7 +235,7 @@ class ItemLocationQuantityType
      *  Measure. Type
      *  2 days , 24 hours
      *
-     * @param \horstoeko\ubl\entities\cbc\LeadTimeMeasure $leadTimeMeasure
+     * @param  \horstoeko\ubl\entities\cbc\LeadTimeMeasure $leadTimeMeasure
      * @return self
      */
     public function setLeadTimeMeasure(\horstoeko\ubl\entities\cbc\LeadTimeMeasure $leadTimeMeasure)
@@ -279,7 +279,7 @@ class ItemLocationQuantityType
      *  Quantity. Type
      *  10 boxes , 1 carton , 1000 sheets
      *
-     * @param \horstoeko\ubl\entities\cbc\MinimumQuantity $minimumQuantity
+     * @param  \horstoeko\ubl\entities\cbc\MinimumQuantity $minimumQuantity
      * @return self
      */
     public function setMinimumQuantity(\horstoeko\ubl\entities\cbc\MinimumQuantity $minimumQuantity)
@@ -323,7 +323,7 @@ class ItemLocationQuantityType
      *  Quantity. Type
      *  10 boxes , 1 carton , 1000 sheets
      *
-     * @param \horstoeko\ubl\entities\cbc\MaximumQuantity $maximumQuantity
+     * @param  \horstoeko\ubl\entities\cbc\MaximumQuantity $maximumQuantity
      * @return self
      */
     public function setMaximumQuantity(\horstoeko\ubl\entities\cbc\MaximumQuantity $maximumQuantity)
@@ -367,7 +367,7 @@ class ItemLocationQuantityType
      *  Indicator. Type
      *  Default is negative
      *
-     * @param bool $hazardousRiskIndicator
+     * @param  bool $hazardousRiskIndicator
      * @return self
      */
     public function setHazardousRiskIndicator($hazardousRiskIndicator)
@@ -390,7 +390,7 @@ class ItemLocationQuantityType
      *  not for export
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\TradingRestrictions $tradingRestrictions
+     * @param  \horstoeko\ubl\entities\cbc\TradingRestrictions $tradingRestrictions
      */
     public function addToTradingRestrictions(\horstoeko\ubl\entities\cbc\TradingRestrictions $tradingRestrictions)
     {
@@ -411,7 +411,7 @@ class ItemLocationQuantityType
      *  Text. Type
      *  not for export
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTradingRestrictions($index)
@@ -432,7 +432,7 @@ class ItemLocationQuantityType
      *  Text. Type
      *  not for export
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTradingRestrictions($index)
@@ -473,7 +473,7 @@ class ItemLocationQuantityType
      *  Text. Type
      *  not for export
      *
-     * @param \horstoeko\ubl\entities\cbc\TradingRestrictions[] $tradingRestrictions
+     * @param  \horstoeko\ubl\entities\cbc\TradingRestrictions[] $tradingRestrictions
      * @return self
      */
     public function setTradingRestrictions(array $tradingRestrictions)
@@ -496,7 +496,7 @@ class ItemLocationQuantityType
      *  Address
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ApplicableTerritoryAddress $applicableTerritoryAddress
+     * @param  \horstoeko\ubl\entities\cac\ApplicableTerritoryAddress $applicableTerritoryAddress
      */
     public function addToApplicableTerritoryAddress(\horstoeko\ubl\entities\cac\ApplicableTerritoryAddress $applicableTerritoryAddress)
     {
@@ -517,7 +517,7 @@ class ItemLocationQuantityType
      *  Address
      *  Address
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetApplicableTerritoryAddress($index)
@@ -538,7 +538,7 @@ class ItemLocationQuantityType
      *  Address
      *  Address
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetApplicableTerritoryAddress($index)
@@ -579,7 +579,7 @@ class ItemLocationQuantityType
      *  Address
      *  Address
      *
-     * @param \horstoeko\ubl\entities\cac\ApplicableTerritoryAddress[] $applicableTerritoryAddress
+     * @param  \horstoeko\ubl\entities\cac\ApplicableTerritoryAddress[] $applicableTerritoryAddress
      * @return self
      */
     public function setApplicableTerritoryAddress(array $applicableTerritoryAddress)
@@ -619,7 +619,7 @@ class ItemLocationQuantityType
      *  Price
      *  Price
      *
-     * @param \horstoeko\ubl\entities\cac\Price $price
+     * @param  \horstoeko\ubl\entities\cac\Price $price
      * @return self
      */
     public function setPrice(\horstoeko\ubl\entities\cac\Price $price)
@@ -641,7 +641,7 @@ class ItemLocationQuantityType
      *  Delivery Unit
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\DeliveryUnit $deliveryUnit
+     * @param  \horstoeko\ubl\entities\cac\DeliveryUnit $deliveryUnit
      */
     public function addToDeliveryUnit(\horstoeko\ubl\entities\cac\DeliveryUnit $deliveryUnit)
     {
@@ -661,7 +661,7 @@ class ItemLocationQuantityType
      *  Delivery Unit
      *  Delivery Unit
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDeliveryUnit($index)
@@ -681,7 +681,7 @@ class ItemLocationQuantityType
      *  Delivery Unit
      *  Delivery Unit
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDeliveryUnit($index)
@@ -720,7 +720,7 @@ class ItemLocationQuantityType
      *  Delivery Unit
      *  Delivery Unit
      *
-     * @param \horstoeko\ubl\entities\cac\DeliveryUnit[] $deliveryUnit
+     * @param  \horstoeko\ubl\entities\cac\DeliveryUnit[] $deliveryUnit
      * @return self
      */
     public function setDeliveryUnit(array $deliveryUnit)
@@ -743,7 +743,7 @@ class ItemLocationQuantityType
      *  Tax Category
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ApplicableTaxCategory $applicableTaxCategory
+     * @param  \horstoeko\ubl\entities\cac\ApplicableTaxCategory $applicableTaxCategory
      */
     public function addToApplicableTaxCategory(\horstoeko\ubl\entities\cac\ApplicableTaxCategory $applicableTaxCategory)
     {
@@ -764,7 +764,7 @@ class ItemLocationQuantityType
      *  Tax Category
      *  Tax Category
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetApplicableTaxCategory($index)
@@ -785,7 +785,7 @@ class ItemLocationQuantityType
      *  Tax Category
      *  Tax Category
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetApplicableTaxCategory($index)
@@ -826,7 +826,7 @@ class ItemLocationQuantityType
      *  Tax Category
      *  Tax Category
      *
-     * @param \horstoeko\ubl\entities\cac\ApplicableTaxCategory[] $applicableTaxCategory
+     * @param  \horstoeko\ubl\entities\cac\ApplicableTaxCategory[] $applicableTaxCategory
      * @return self
      */
     public function setApplicableTaxCategory(array $applicableTaxCategory)
@@ -866,7 +866,7 @@ class ItemLocationQuantityType
      *  Package
      *  Package
      *
-     * @param \horstoeko\ubl\entities\cac\Package $package
+     * @param  \horstoeko\ubl\entities\cac\Package $package
      * @return self
      */
     public function setPackage(\horstoeko\ubl\entities\cac\Package $package)
@@ -888,7 +888,7 @@ class ItemLocationQuantityType
      *  Allowance Charge
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge
+     * @param  \horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge
      */
     public function addToAllowanceCharge(\horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge)
     {
@@ -908,7 +908,7 @@ class ItemLocationQuantityType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAllowanceCharge($index)
@@ -928,7 +928,7 @@ class ItemLocationQuantityType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAllowanceCharge($index)
@@ -967,7 +967,7 @@ class ItemLocationQuantityType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param \horstoeko\ubl\entities\cac\AllowanceCharge[] $allowanceCharge
+     * @param  \horstoeko\ubl\entities\cac\AllowanceCharge[] $allowanceCharge
      * @return self
      */
     public function setAllowanceCharge(array $allowanceCharge)
@@ -1007,7 +1007,7 @@ class ItemLocationQuantityType
      *  Dependent Price Reference
      *  Dependent Price Reference
      *
-     * @param \horstoeko\ubl\entities\cac\DependentPriceReference $dependentPriceReference
+     * @param  \horstoeko\ubl\entities\cac\DependentPriceReference $dependentPriceReference
      * @return self
      */
     public function setDependentPriceReference(\horstoeko\ubl\entities\cac\DependentPriceReference $dependentPriceReference)

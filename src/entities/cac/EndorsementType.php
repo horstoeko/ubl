@@ -120,7 +120,7 @@ class EndorsementType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\DocumentID $documentID
+     * @param  \horstoeko\ubl\entities\cbc\DocumentID $documentID
      * @return self
      */
     public function setDocumentID(\horstoeko\ubl\entities\cbc\DocumentID $documentID)
@@ -162,7 +162,7 @@ class EndorsementType
      *  Text. Type
      *  Authentication Code
      *
-     * @param \horstoeko\ubl\entities\cbc\ApprovalStatus $approvalStatus
+     * @param  \horstoeko\ubl\entities\cbc\ApprovalStatus $approvalStatus
      * @return self
      */
     public function setApprovalStatus(\horstoeko\ubl\entities\cbc\ApprovalStatus $approvalStatus)
@@ -184,7 +184,7 @@ class EndorsementType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Remarks $remarks
+     * @param  \horstoeko\ubl\entities\cbc\Remarks $remarks
      */
     public function addToRemarks(\horstoeko\ubl\entities\cbc\Remarks $remarks)
     {
@@ -204,7 +204,7 @@ class EndorsementType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetRemarks($index)
@@ -224,7 +224,7 @@ class EndorsementType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetRemarks($index)
@@ -263,7 +263,7 @@ class EndorsementType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Remarks[] $remarks
+     * @param  \horstoeko\ubl\entities\cbc\Remarks[] $remarks
      * @return self
      */
     public function setRemarks(array $remarks)
@@ -303,7 +303,7 @@ class EndorsementType
      *  Endorser Party
      *  Endorser Party
      *
-     * @param \horstoeko\ubl\entities\cac\EndorserParty $endorserParty
+     * @param  \horstoeko\ubl\entities\cac\EndorserParty $endorserParty
      * @return self
      */
     public function setEndorserParty(\horstoeko\ubl\entities\cac\EndorserParty $endorserParty)
@@ -325,7 +325,7 @@ class EndorsementType
      *  Signature
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Signature $signature
+     * @param  \horstoeko\ubl\entities\cac\Signature $signature
      */
     public function addToSignature(\horstoeko\ubl\entities\cac\Signature $signature)
     {
@@ -345,7 +345,7 @@ class EndorsementType
      *  Signature
      *  Signature
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSignature($index)
@@ -365,7 +365,7 @@ class EndorsementType
      *  Signature
      *  Signature
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSignature($index)
@@ -404,7 +404,7 @@ class EndorsementType
      *  Signature
      *  Signature
      *
-     * @param \horstoeko\ubl\entities\cac\Signature[] $signature
+     * @param  \horstoeko\ubl\entities\cac\Signature[] $signature
      * @return self
      */
     public function setSignature(array $signature)

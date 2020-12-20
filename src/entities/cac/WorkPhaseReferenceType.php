@@ -148,7 +148,7 @@ class WorkPhaseReferenceType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -188,7 +188,7 @@ class WorkPhaseReferenceType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\WorkPhaseCode $workPhaseCode
+     * @param  \horstoeko\ubl\entities\cbc\WorkPhaseCode $workPhaseCode
      * @return self
      */
     public function setWorkPhaseCode(\horstoeko\ubl\entities\cbc\WorkPhaseCode $workPhaseCode)
@@ -210,7 +210,7 @@ class WorkPhaseReferenceType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\WorkPhase $workPhase
+     * @param  \horstoeko\ubl\entities\cbc\WorkPhase $workPhase
      */
     public function addToWorkPhase(\horstoeko\ubl\entities\cbc\WorkPhase $workPhase)
     {
@@ -230,7 +230,7 @@ class WorkPhaseReferenceType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetWorkPhase($index)
@@ -250,7 +250,7 @@ class WorkPhaseReferenceType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetWorkPhase($index)
@@ -289,7 +289,7 @@ class WorkPhaseReferenceType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\WorkPhase[] $workPhase
+     * @param  \horstoeko\ubl\entities\cbc\WorkPhase[] $workPhase
      * @return self
      */
     public function setWorkPhase(array $workPhase)
@@ -329,7 +329,7 @@ class WorkPhaseReferenceType
      *  Percent
      *  Percent. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ProgressPercent $progressPercent
+     * @param  \horstoeko\ubl\entities\cbc\ProgressPercent $progressPercent
      * @return self
      */
     public function setProgressPercent(\horstoeko\ubl\entities\cbc\ProgressPercent $progressPercent)
@@ -369,7 +369,7 @@ class WorkPhaseReferenceType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $startDate
+     * @param  \DateTime $startDate
      * @return self
      */
     public function setStartDate(\DateTime $startDate)
@@ -409,7 +409,7 @@ class WorkPhaseReferenceType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $endDate
+     * @param  \DateTime $endDate
      * @return self
      */
     public function setEndDate(\DateTime $endDate)
@@ -432,7 +432,7 @@ class WorkPhaseReferenceType
      *  Document Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\WorkOrderDocumentReference $workOrderDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\WorkOrderDocumentReference $workOrderDocumentReference
      */
     public function addToWorkOrderDocumentReference(\horstoeko\ubl\entities\cac\WorkOrderDocumentReference $workOrderDocumentReference)
     {
@@ -453,7 +453,7 @@ class WorkPhaseReferenceType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetWorkOrderDocumentReference($index)
@@ -474,7 +474,7 @@ class WorkPhaseReferenceType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetWorkOrderDocumentReference($index)
@@ -515,7 +515,7 @@ class WorkPhaseReferenceType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\WorkOrderDocumentReference[] $workOrderDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\WorkOrderDocumentReference[] $workOrderDocumentReference
      * @return self
      */
     public function setWorkOrderDocumentReference(array $workOrderDocumentReference)

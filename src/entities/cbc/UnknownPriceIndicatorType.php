@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing UnknownPriceIndicatorType
  *
- *
  * XSD Type: UnknownPriceIndicatorType
  */
 class UnknownPriceIndicatorType
@@ -29,7 +28,7 @@ class UnknownPriceIndicatorType
     /**
      * Gets or sets the inner value
      *
-     * @param bool $value
+     * @param  bool $value
      * @return bool
      */
     public function value()

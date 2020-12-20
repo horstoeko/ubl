@@ -136,7 +136,7 @@ class TransportationSegmentType
      *  Numeric. Type
      *  1, 2, 3, 4, etc.
      *
-     * @param \horstoeko\ubl\entities\cbc\SequenceNumeric $sequenceNumeric
+     * @param  \horstoeko\ubl\entities\cbc\SequenceNumeric $sequenceNumeric
      * @return self
      */
     public function setSequenceNumeric(\horstoeko\ubl\entities\cbc\SequenceNumeric $sequenceNumeric)
@@ -176,7 +176,7 @@ class TransportationSegmentType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TransportExecutionPlanReferenceID $transportExecutionPlanReferenceID
+     * @param  \horstoeko\ubl\entities\cbc\TransportExecutionPlanReferenceID $transportExecutionPlanReferenceID
      * @return self
      */
     public function setTransportExecutionPlanReferenceID(\horstoeko\ubl\entities\cbc\TransportExecutionPlanReferenceID $transportExecutionPlanReferenceID)
@@ -216,7 +216,7 @@ class TransportationSegmentType
      *  Transportation Service
      *  Transportation Service
      *
-     * @param \horstoeko\ubl\entities\cac\TransportationService $transportationService
+     * @param  \horstoeko\ubl\entities\cac\TransportationService $transportationService
      * @return self
      */
     public function setTransportationService(\horstoeko\ubl\entities\cac\TransportationService $transportationService)
@@ -258,7 +258,7 @@ class TransportationSegmentType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\TransportServiceProviderParty $transportServiceProviderParty
+     * @param  \horstoeko\ubl\entities\cac\TransportServiceProviderParty $transportServiceProviderParty
      * @return self
      */
     public function setTransportServiceProviderParty(\horstoeko\ubl\entities\cac\TransportServiceProviderParty $transportServiceProviderParty)
@@ -300,7 +300,7 @@ class TransportationSegmentType
      *  Consignment
      *  Consignment
      *
-     * @param \horstoeko\ubl\entities\cac\ReferencedConsignment $referencedConsignment
+     * @param  \horstoeko\ubl\entities\cac\ReferencedConsignment $referencedConsignment
      * @return self
      */
     public function setReferencedConsignment(\horstoeko\ubl\entities\cac\ReferencedConsignment $referencedConsignment)
@@ -322,7 +322,7 @@ class TransportationSegmentType
      *  Shipment Stage
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ShipmentStage $shipmentStage
+     * @param  \horstoeko\ubl\entities\cac\ShipmentStage $shipmentStage
      */
     public function addToShipmentStage(\horstoeko\ubl\entities\cac\ShipmentStage $shipmentStage)
     {
@@ -342,7 +342,7 @@ class TransportationSegmentType
      *  Shipment Stage
      *  Shipment Stage
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetShipmentStage($index)
@@ -362,7 +362,7 @@ class TransportationSegmentType
      *  Shipment Stage
      *  Shipment Stage
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetShipmentStage($index)
@@ -401,7 +401,7 @@ class TransportationSegmentType
      *  Shipment Stage
      *  Shipment Stage
      *
-     * @param \horstoeko\ubl\entities\cac\ShipmentStage[] $shipmentStage
+     * @param  \horstoeko\ubl\entities\cac\ShipmentStage[] $shipmentStage
      * @return self
      */
     public function setShipmentStage(array $shipmentStage)

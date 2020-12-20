@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing DocumentationReferencesType
  *
- *
  * XSD Type: DocumentationReferencesType
  */
 class DocumentationReferencesType
@@ -22,7 +21,7 @@ class DocumentationReferencesType
      * Adds as documentationReference
      *
      * @return self
-     * @param string $documentationReference
+     * @param  string $documentationReference
      */
     public function addToDocumentationReference($documentationReference)
     {
@@ -33,7 +32,7 @@ class DocumentationReferencesType
     /**
      * isset documentationReference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDocumentationReference($index)
@@ -44,7 +43,7 @@ class DocumentationReferencesType
     /**
      * unset documentationReference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDocumentationReference($index)
@@ -65,7 +64,7 @@ class DocumentationReferencesType
     /**
      * Sets a new documentationReference
      *
-     * @param string[] $documentationReference
+     * @param  string[] $documentationReference
      * @return self
      */
     public function setDocumentationReference(array $documentationReference)

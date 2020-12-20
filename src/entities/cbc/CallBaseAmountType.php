@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\AmountType;
 /**
  * Class representing CallBaseAmountType
  *
- *
  * XSD Type: CallBaseAmountType
  */
 class CallBaseAmountType extends AmountType

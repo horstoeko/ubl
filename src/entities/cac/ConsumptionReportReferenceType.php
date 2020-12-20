@@ -125,7 +125,7 @@ class ConsumptionReportReferenceType
      *  Identifier. Type
      *  n/a
      *
-     * @param \horstoeko\ubl\entities\cbc\ConsumptionReportID $consumptionReportID
+     * @param  \horstoeko\ubl\entities\cbc\ConsumptionReportID $consumptionReportID
      * @return self
      */
     public function setConsumptionReportID(\horstoeko\ubl\entities\cbc\ConsumptionReportID $consumptionReportID)
@@ -167,7 +167,7 @@ class ConsumptionReportReferenceType
      *  Text. Type
      *  Consumption
      *
-     * @param \horstoeko\ubl\entities\cbc\ConsumptionType $consumptionType
+     * @param  \horstoeko\ubl\entities\cbc\ConsumptionType $consumptionType
      * @return self
      */
     public function setConsumptionType(\horstoeko\ubl\entities\cbc\ConsumptionType $consumptionType)
@@ -209,7 +209,7 @@ class ConsumptionReportReferenceType
      *  Code. Type
      *  Consumption
      *
-     * @param \horstoeko\ubl\entities\cbc\ConsumptionTypeCode $consumptionTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\ConsumptionTypeCode $consumptionTypeCode
      * @return self
      */
     public function setConsumptionTypeCode(\horstoeko\ubl\entities\cbc\ConsumptionTypeCode $consumptionTypeCode)
@@ -253,7 +253,7 @@ class ConsumptionReportReferenceType
      *  Quantity. Type
      *  20479.00
      *
-     * @param \horstoeko\ubl\entities\cbc\TotalConsumedQuantity $totalConsumedQuantity
+     * @param  \horstoeko\ubl\entities\cbc\TotalConsumedQuantity $totalConsumedQuantity
      * @return self
      */
     public function setTotalConsumedQuantity(\horstoeko\ubl\entities\cbc\TotalConsumedQuantity $totalConsumedQuantity)
@@ -293,7 +293,7 @@ class ConsumptionReportReferenceType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\Period $period
+     * @param  \horstoeko\ubl\entities\cac\Period $period
      * @return self
      */
     public function setPeriod(\horstoeko\ubl\entities\cac\Period $period)

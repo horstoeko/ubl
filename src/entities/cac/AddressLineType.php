@@ -62,7 +62,7 @@ class AddressLineType
      *  Text. Type
      *  123 Standard Chartered Tower
      *
-     * @param \horstoeko\ubl\entities\cbc\Line $line
+     * @param  \horstoeko\ubl\entities\cbc\Line $line
      * @return self
      */
     public function setLine(\horstoeko\ubl\entities\cbc\Line $line)

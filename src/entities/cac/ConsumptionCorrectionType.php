@@ -230,7 +230,7 @@ class ConsumptionCorrectionType
      *  Text. Type
      *  Heating Correction
      *
-     * @param \horstoeko\ubl\entities\cbc\CorrectionType $correctionType
+     * @param  \horstoeko\ubl\entities\cbc\CorrectionType $correctionType
      * @return self
      */
     public function setCorrectionType(\horstoeko\ubl\entities\cbc\CorrectionType $correctionType)
@@ -272,7 +272,7 @@ class ConsumptionCorrectionType
      *  Code. Type
      *  HeatingCorrection
      *
-     * @param \horstoeko\ubl\entities\cbc\CorrectionTypeCode $correctionTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\CorrectionTypeCode $correctionTypeCode
      * @return self
      */
     public function setCorrectionTypeCode(\horstoeko\ubl\entities\cbc\CorrectionTypeCode $correctionTypeCode)
@@ -314,7 +314,7 @@ class ConsumptionCorrectionType
      *  Text. Type
      *  530071575
      *
-     * @param \horstoeko\ubl\entities\cbc\MeterNumber $meterNumber
+     * @param  \horstoeko\ubl\entities\cbc\MeterNumber $meterNumber
      * @return self
      */
     public function setMeterNumber(\horstoeko\ubl\entities\cbc\MeterNumber $meterNumber)
@@ -354,7 +354,7 @@ class ConsumptionCorrectionType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\GasPressureQuantity $gasPressureQuantity
+     * @param  \horstoeko\ubl\entities\cbc\GasPressureQuantity $gasPressureQuantity
      * @return self
      */
     public function setGasPressureQuantity(\horstoeko\ubl\entities\cbc\GasPressureQuantity $gasPressureQuantity)
@@ -398,7 +398,7 @@ class ConsumptionCorrectionType
      *  Quantity. Type
      *  -36.69
      *
-     * @param \horstoeko\ubl\entities\cbc\ActualTemperatureReductionQuantity $actualTemperatureReductionQuantity
+     * @param  \horstoeko\ubl\entities\cbc\ActualTemperatureReductionQuantity $actualTemperatureReductionQuantity
      * @return self
      */
     public function setActualTemperatureReductionQuantity(\horstoeko\ubl\entities\cbc\ActualTemperatureReductionQuantity $actualTemperatureReductionQuantity)
@@ -442,7 +442,7 @@ class ConsumptionCorrectionType
      *  Quantity. Type
      *  -37.00
      *
-     * @param \horstoeko\ubl\entities\cbc\NormalTemperatureReductionQuantity $normalTemperatureReductionQuantity
+     * @param  \horstoeko\ubl\entities\cbc\NormalTemperatureReductionQuantity $normalTemperatureReductionQuantity
      * @return self
      */
     public function setNormalTemperatureReductionQuantity(\horstoeko\ubl\entities\cbc\NormalTemperatureReductionQuantity $normalTemperatureReductionQuantity)
@@ -486,7 +486,7 @@ class ConsumptionCorrectionType
      *  Quantity. Type
      *  0.31
      *
-     * @param \horstoeko\ubl\entities\cbc\DifferenceTemperatureReductionQuantity $differenceTemperatureReductionQuantity
+     * @param  \horstoeko\ubl\entities\cbc\DifferenceTemperatureReductionQuantity $differenceTemperatureReductionQuantity
      * @return self
      */
     public function setDifferenceTemperatureReductionQuantity(\horstoeko\ubl\entities\cbc\DifferenceTemperatureReductionQuantity $differenceTemperatureReductionQuantity)
@@ -508,7 +508,7 @@ class ConsumptionCorrectionType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -528,7 +528,7 @@ class ConsumptionCorrectionType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -548,7 +548,7 @@ class ConsumptionCorrectionType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -587,7 +587,7 @@ class ConsumptionCorrectionType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -629,7 +629,7 @@ class ConsumptionCorrectionType
      *  Amount. Type
      *  0.0000
      *
-     * @param \horstoeko\ubl\entities\cbc\CorrectionUnitAmount $correctionUnitAmount
+     * @param  \horstoeko\ubl\entities\cbc\CorrectionUnitAmount $correctionUnitAmount
      * @return self
      */
     public function setCorrectionUnitAmount(\horstoeko\ubl\entities\cbc\CorrectionUnitAmount $correctionUnitAmount)
@@ -671,7 +671,7 @@ class ConsumptionCorrectionType
      *  Quantity. Type
      *  563.6240
      *
-     * @param \horstoeko\ubl\entities\cbc\ConsumptionEnergyQuantity $consumptionEnergyQuantity
+     * @param  \horstoeko\ubl\entities\cbc\ConsumptionEnergyQuantity $consumptionEnergyQuantity
      * @return self
      */
     public function setConsumptionEnergyQuantity(\horstoeko\ubl\entities\cbc\ConsumptionEnergyQuantity $consumptionEnergyQuantity)
@@ -713,7 +713,7 @@ class ConsumptionCorrectionType
      *  Quantity. Type
      *  13212.14
      *
-     * @param \horstoeko\ubl\entities\cbc\ConsumptionWaterQuantity $consumptionWaterQuantity
+     * @param  \horstoeko\ubl\entities\cbc\ConsumptionWaterQuantity $consumptionWaterQuantity
      * @return self
      */
     public function setConsumptionWaterQuantity(\horstoeko\ubl\entities\cbc\ConsumptionWaterQuantity $consumptionWaterQuantity)
@@ -755,7 +755,7 @@ class ConsumptionCorrectionType
      *  Amount. Type
      *  0.00
      *
-     * @param \horstoeko\ubl\entities\cbc\CorrectionAmount $correctionAmount
+     * @param  \horstoeko\ubl\entities\cbc\CorrectionAmount $correctionAmount
      * @return self
      */
     public function setCorrectionAmount(\horstoeko\ubl\entities\cbc\CorrectionAmount $correctionAmount)

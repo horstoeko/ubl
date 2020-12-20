@@ -285,7 +285,7 @@ class TenderResultType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TenderResultCode $tenderResultCode
+     * @param  \horstoeko\ubl\entities\cbc\TenderResultCode $tenderResultCode
      * @return self
      */
     public function setTenderResultCode(\horstoeko\ubl\entities\cbc\TenderResultCode $tenderResultCode)
@@ -307,7 +307,7 @@ class TenderResultType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -327,7 +327,7 @@ class TenderResultType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -347,7 +347,7 @@ class TenderResultType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -386,7 +386,7 @@ class TenderResultType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -426,7 +426,7 @@ class TenderResultType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AdvertisementAmount $advertisementAmount
+     * @param  \horstoeko\ubl\entities\cbc\AdvertisementAmount $advertisementAmount
      * @return self
      */
     public function setAdvertisementAmount(\horstoeko\ubl\entities\cbc\AdvertisementAmount $advertisementAmount)
@@ -466,7 +466,7 @@ class TenderResultType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $awardDate
+     * @param  \DateTime $awardDate
      * @return self
      */
     public function setAwardDate(\DateTime $awardDate)
@@ -506,7 +506,7 @@ class TenderResultType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $awardTime
+     * @param  \DateTime $awardTime
      * @return self
      */
     public function setAwardTime(\DateTime $awardTime)
@@ -548,7 +548,7 @@ class TenderResultType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ReceivedTenderQuantity $receivedTenderQuantity
+     * @param  \horstoeko\ubl\entities\cbc\ReceivedTenderQuantity $receivedTenderQuantity
      * @return self
      */
     public function setReceivedTenderQuantity(\horstoeko\ubl\entities\cbc\ReceivedTenderQuantity $receivedTenderQuantity)
@@ -590,7 +590,7 @@ class TenderResultType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LowerTenderAmount $lowerTenderAmount
+     * @param  \horstoeko\ubl\entities\cbc\LowerTenderAmount $lowerTenderAmount
      * @return self
      */
     public function setLowerTenderAmount(\horstoeko\ubl\entities\cbc\LowerTenderAmount $lowerTenderAmount)
@@ -632,7 +632,7 @@ class TenderResultType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\HigherTenderAmount $higherTenderAmount
+     * @param  \horstoeko\ubl\entities\cbc\HigherTenderAmount $higherTenderAmount
      * @return self
      */
     public function setHigherTenderAmount(\horstoeko\ubl\entities\cbc\HigherTenderAmount $higherTenderAmount)
@@ -672,7 +672,7 @@ class TenderResultType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $startDate
+     * @param  \DateTime $startDate
      * @return self
      */
     public function setStartDate(\DateTime $startDate)
@@ -714,7 +714,7 @@ class TenderResultType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ReceivedElectronicTenderQuantity $receivedElectronicTenderQuantity
+     * @param  \horstoeko\ubl\entities\cbc\ReceivedElectronicTenderQuantity $receivedElectronicTenderQuantity
      * @return self
      */
     public function setReceivedElectronicTenderQuantity(\horstoeko\ubl\entities\cbc\ReceivedElectronicTenderQuantity $receivedElectronicTenderQuantity)
@@ -756,7 +756,7 @@ class TenderResultType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ReceivedForeignTenderQuantity $receivedForeignTenderQuantity
+     * @param  \horstoeko\ubl\entities\cbc\ReceivedForeignTenderQuantity $receivedForeignTenderQuantity
      * @return self
      */
     public function setReceivedForeignTenderQuantity(\horstoeko\ubl\entities\cbc\ReceivedForeignTenderQuantity $receivedForeignTenderQuantity)
@@ -796,7 +796,7 @@ class TenderResultType
      *  Contract
      *  Contract
      *
-     * @param \horstoeko\ubl\entities\cac\Contract $contract
+     * @param  \horstoeko\ubl\entities\cac\Contract $contract
      * @return self
      */
     public function setContract(\horstoeko\ubl\entities\cac\Contract $contract)
@@ -838,7 +838,7 @@ class TenderResultType
      *  Tendered Project
      *  Tendered Project
      *
-     * @param \horstoeko\ubl\entities\cac\AwardedTenderedProject $awardedTenderedProject
+     * @param  \horstoeko\ubl\entities\cac\AwardedTenderedProject $awardedTenderedProject
      * @return self
      */
     public function setAwardedTenderedProject(\horstoeko\ubl\entities\cac\AwardedTenderedProject $awardedTenderedProject)
@@ -880,7 +880,7 @@ class TenderResultType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\ContractFormalizationPeriod $contractFormalizationPeriod
+     * @param  \horstoeko\ubl\entities\cac\ContractFormalizationPeriod $contractFormalizationPeriod
      * @return self
      */
     public function setContractFormalizationPeriod(\horstoeko\ubl\entities\cac\ContractFormalizationPeriod $contractFormalizationPeriod)
@@ -902,7 +902,7 @@ class TenderResultType
      *  Subcontract Terms
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\SubcontractTerms $subcontractTerms
+     * @param  \horstoeko\ubl\entities\cac\SubcontractTerms $subcontractTerms
      */
     public function addToSubcontractTerms(\horstoeko\ubl\entities\cac\SubcontractTerms $subcontractTerms)
     {
@@ -922,7 +922,7 @@ class TenderResultType
      *  Subcontract Terms
      *  Subcontract Terms
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSubcontractTerms($index)
@@ -942,7 +942,7 @@ class TenderResultType
      *  Subcontract Terms
      *  Subcontract Terms
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSubcontractTerms($index)
@@ -981,7 +981,7 @@ class TenderResultType
      *  Subcontract Terms
      *  Subcontract Terms
      *
-     * @param \horstoeko\ubl\entities\cac\SubcontractTerms[] $subcontractTerms
+     * @param  \horstoeko\ubl\entities\cac\SubcontractTerms[] $subcontractTerms
      * @return self
      */
     public function setSubcontractTerms(array $subcontractTerms)
@@ -1003,7 +1003,7 @@ class TenderResultType
      *  Winning Party
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\WinningParty $winningParty
+     * @param  \horstoeko\ubl\entities\cac\WinningParty $winningParty
      */
     public function addToWinningParty(\horstoeko\ubl\entities\cac\WinningParty $winningParty)
     {
@@ -1023,7 +1023,7 @@ class TenderResultType
      *  Winning Party
      *  Winning Party
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetWinningParty($index)
@@ -1043,7 +1043,7 @@ class TenderResultType
      *  Winning Party
      *  Winning Party
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetWinningParty($index)
@@ -1082,7 +1082,7 @@ class TenderResultType
      *  Winning Party
      *  Winning Party
      *
-     * @param \horstoeko\ubl\entities\cac\WinningParty[] $winningParty
+     * @param  \horstoeko\ubl\entities\cac\WinningParty[] $winningParty
      * @return self
      */
     public function setWinningParty(array $winningParty)

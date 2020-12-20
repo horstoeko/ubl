@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\IdentifierType;
 /**
  * Class representing TrackingIDType
  *
- *
  * XSD Type: TrackingIDType
  */
 class TrackingIDType extends IdentifierType

@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\IdentifierType;
 /**
  * Class representing ExtensionVersionIDType
  *
- *
  * XSD Type: ExtensionVersionIDType
  */
 class ExtensionVersionIDType extends IdentifierType

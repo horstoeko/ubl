@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing AuctionConstraintIndicatorType
  *
- *
  * XSD Type: AuctionConstraintIndicatorType
  */
 class AuctionConstraintIndicatorType
@@ -29,7 +28,7 @@ class AuctionConstraintIndicatorType
     /**
      * Gets or sets the inner value
      *
-     * @param bool $value
+     * @param  bool $value
      * @return bool
      */
     public function value()

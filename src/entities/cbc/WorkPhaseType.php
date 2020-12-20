@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing WorkPhaseType
  *
- *
  * XSD Type: WorkPhaseType
  */
 class WorkPhaseType extends TextType

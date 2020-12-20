@@ -148,7 +148,7 @@ class SubcontractTermsType
      *  Rate
      *  Rate. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Rate $rate
+     * @param  \horstoeko\ubl\entities\cbc\Rate $rate
      * @return self
      */
     public function setRate(\horstoeko\ubl\entities\cbc\Rate $rate)
@@ -190,7 +190,7 @@ class SubcontractTermsType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $unknownPriceIndicator
+     * @param  bool $unknownPriceIndicator
      * @return self
      */
     public function setUnknownPriceIndicator($unknownPriceIndicator)
@@ -212,7 +212,7 @@ class SubcontractTermsType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -232,7 +232,7 @@ class SubcontractTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -252,7 +252,7 @@ class SubcontractTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -291,7 +291,7 @@ class SubcontractTermsType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -331,7 +331,7 @@ class SubcontractTermsType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Amount $amount
+     * @param  \horstoeko\ubl\entities\cbc\Amount $amount
      * @return self
      */
     public function setAmount(\horstoeko\ubl\entities\cbc\Amount $amount)
@@ -371,7 +371,7 @@ class SubcontractTermsType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SubcontractingConditionsCode $subcontractingConditionsCode
+     * @param  \horstoeko\ubl\entities\cbc\SubcontractingConditionsCode $subcontractingConditionsCode
      * @return self
      */
     public function setSubcontractingConditionsCode(\horstoeko\ubl\entities\cbc\SubcontractingConditionsCode $subcontractingConditionsCode)
@@ -413,7 +413,7 @@ class SubcontractTermsType
      *  Percent
      *  Percent. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MaximumPercent $maximumPercent
+     * @param  \horstoeko\ubl\entities\cbc\MaximumPercent $maximumPercent
      * @return self
      */
     public function setMaximumPercent(\horstoeko\ubl\entities\cbc\MaximumPercent $maximumPercent)
@@ -455,7 +455,7 @@ class SubcontractTermsType
      *  Percent
      *  Percent. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MinimumPercent $minimumPercent
+     * @param  \horstoeko\ubl\entities\cbc\MinimumPercent $minimumPercent
      * @return self
      */
     public function setMinimumPercent(\horstoeko\ubl\entities\cbc\MinimumPercent $minimumPercent)

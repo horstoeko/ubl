@@ -463,7 +463,7 @@ class AddressType
      *  Identifier. Type
      *  DetailsKey
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -503,7 +503,7 @@ class AddressType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AddressTypeCode $addressTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\AddressTypeCode $addressTypeCode
      * @return self
      */
     public function setAddressTypeCode(\horstoeko\ubl\entities\cbc\AddressTypeCode $addressTypeCode)
@@ -543,7 +543,7 @@ class AddressType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AddressFormatCode $addressFormatCode
+     * @param  \horstoeko\ubl\entities\cbc\AddressFormatCode $addressFormatCode
      * @return self
      */
     public function setAddressFormatCode(\horstoeko\ubl\entities\cbc\AddressFormatCode $addressFormatCode)
@@ -587,7 +587,7 @@ class AddressType
      *  PostBox, PO Box
      *  123
      *
-     * @param \horstoeko\ubl\entities\cbc\Postbox $postbox
+     * @param  \horstoeko\ubl\entities\cbc\Postbox $postbox
      * @return self
      */
     public function setPostbox(\horstoeko\ubl\entities\cbc\Postbox $postbox)
@@ -631,7 +631,7 @@ class AddressType
      *  SubPremiseNumber
      *  30
      *
-     * @param \horstoeko\ubl\entities\cbc\Floor $floor
+     * @param  \horstoeko\ubl\entities\cbc\Floor $floor
      * @return self
      */
     public function setFloor(\horstoeko\ubl\entities\cbc\Floor $floor)
@@ -675,7 +675,7 @@ class AddressType
      *  SubPremiseNumber
      *  Reception
      *
-     * @param \horstoeko\ubl\entities\cbc\Room $room
+     * @param  \horstoeko\ubl\entities\cbc\Room $room
      * @return self
      */
     public function setRoom(\horstoeko\ubl\entities\cbc\Room $room)
@@ -719,7 +719,7 @@ class AddressType
      *  Thoroughfare
      *  Kwun Tong Road
      *
-     * @param \horstoeko\ubl\entities\cbc\StreetName $streetName
+     * @param  \horstoeko\ubl\entities\cbc\StreetName $streetName
      * @return self
      */
     public function setStreetName(\horstoeko\ubl\entities\cbc\StreetName $streetName)
@@ -765,7 +765,7 @@ class AddressType
      *  Thoroughfare
      *  Cnr Aberdeen Road
      *
-     * @param \horstoeko\ubl\entities\cbc\AdditionalStreetName $additionalStreetName
+     * @param  \horstoeko\ubl\entities\cbc\AdditionalStreetName $additionalStreetName
      * @return self
      */
     public function setAdditionalStreetName(\horstoeko\ubl\entities\cbc\AdditionalStreetName $additionalStreetName)
@@ -807,7 +807,7 @@ class AddressType
      *  Name. Type
      *  Seabird
      *
-     * @param \horstoeko\ubl\entities\cbc\BlockName $blockName
+     * @param  \horstoeko\ubl\entities\cbc\BlockName $blockName
      * @return self
      */
     public function setBlockName(\horstoeko\ubl\entities\cbc\BlockName $blockName)
@@ -851,7 +851,7 @@ class AddressType
      *  BuildingName
      *  Plot 421
      *
-     * @param \horstoeko\ubl\entities\cbc\BuildingName $buildingName
+     * @param  \horstoeko\ubl\entities\cbc\BuildingName $buildingName
      * @return self
      */
     public function setBuildingName(\horstoeko\ubl\entities\cbc\BuildingName $buildingName)
@@ -895,7 +895,7 @@ class AddressType
      *  PremiseNumber
      *  388
      *
-     * @param \horstoeko\ubl\entities\cbc\BuildingNumber $buildingNumber
+     * @param  \horstoeko\ubl\entities\cbc\BuildingNumber $buildingNumber
      * @return self
      */
     public function setBuildingNumber(\horstoeko\ubl\entities\cbc\BuildingNumber $buildingNumber)
@@ -939,7 +939,7 @@ class AddressType
      *  Text. Type
      *  MailStop
      *
-     * @param \horstoeko\ubl\entities\cbc\InhouseMail $inhouseMail
+     * @param  \horstoeko\ubl\entities\cbc\InhouseMail $inhouseMail
      * @return self
      */
     public function setInhouseMail(\horstoeko\ubl\entities\cbc\InhouseMail $inhouseMail)
@@ -983,7 +983,7 @@ class AddressType
      *  Department
      *  Accounts Payable
      *
-     * @param \horstoeko\ubl\entities\cbc\Department $department
+     * @param  \horstoeko\ubl\entities\cbc\Department $department
      * @return self
      */
     public function setDepartment(\horstoeko\ubl\entities\cbc\Department $department)
@@ -1023,7 +1023,7 @@ class AddressType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MarkAttention $markAttention
+     * @param  \horstoeko\ubl\entities\cbc\MarkAttention $markAttention
      * @return self
      */
     public function setMarkAttention(\horstoeko\ubl\entities\cbc\MarkAttention $markAttention)
@@ -1063,7 +1063,7 @@ class AddressType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MarkCare $markCare
+     * @param  \horstoeko\ubl\entities\cbc\MarkCare $markCare
      * @return self
      */
     public function setMarkCare(\horstoeko\ubl\entities\cbc\MarkCare $markCare)
@@ -1103,7 +1103,7 @@ class AddressType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PlotIdentification $plotIdentification
+     * @param  \horstoeko\ubl\entities\cbc\PlotIdentification $plotIdentification
      * @return self
      */
     public function setPlotIdentification(\horstoeko\ubl\entities\cbc\PlotIdentification $plotIdentification)
@@ -1143,7 +1143,7 @@ class AddressType
      *  Name
      *  Name. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CitySubdivisionName $citySubdivisionName
+     * @param  \horstoeko\ubl\entities\cbc\CitySubdivisionName $citySubdivisionName
      * @return self
      */
     public function setCitySubdivisionName(\horstoeko\ubl\entities\cbc\CitySubdivisionName $citySubdivisionName)
@@ -1187,7 +1187,7 @@ class AddressType
      *  LocalityName
      *  Hong Kong
      *
-     * @param \horstoeko\ubl\entities\cbc\CityName $cityName
+     * @param  \horstoeko\ubl\entities\cbc\CityName $cityName
      * @return self
      */
     public function setCityName(\horstoeko\ubl\entities\cbc\CityName $cityName)
@@ -1233,7 +1233,7 @@ class AddressType
      *  PostalCodeNumber
      *  SW11 4EW 2500 GG
      *
-     * @param \horstoeko\ubl\entities\cbc\PostalZone $postalZone
+     * @param  \horstoeko\ubl\entities\cbc\PostalZone $postalZone
      * @return self
      */
     public function setPostalZone(\horstoeko\ubl\entities\cbc\PostalZone $postalZone)
@@ -1277,7 +1277,7 @@ class AddressType
      *  AdministrativeArea, State, Country, Shire, Canton
      *  Florida , Tamilnadu
      *
-     * @param \horstoeko\ubl\entities\cbc\CountrySubentity $countrySubentity
+     * @param  \horstoeko\ubl\entities\cbc\CountrySubentity $countrySubentity
      * @return self
      */
     public function setCountrySubentity(\horstoeko\ubl\entities\cbc\CountrySubentity $countrySubentity)
@@ -1319,7 +1319,7 @@ class AddressType
      *  Code. Type
      *  AdministrativeAreaCode, State Code
      *
-     * @param \horstoeko\ubl\entities\cbc\CountrySubentityCode $countrySubentityCode
+     * @param  \horstoeko\ubl\entities\cbc\CountrySubentityCode $countrySubentityCode
      * @return self
      */
     public function setCountrySubentityCode(\horstoeko\ubl\entities\cbc\CountrySubentityCode $countrySubentityCode)
@@ -1363,7 +1363,7 @@ class AddressType
      *  LocalityName, Economic Zone
      *  European Union
      *
-     * @param \horstoeko\ubl\entities\cbc\Region $region
+     * @param  \horstoeko\ubl\entities\cbc\Region $region
      * @return self
      */
     public function setRegion(\horstoeko\ubl\entities\cbc\Region $region)
@@ -1407,7 +1407,7 @@ class AddressType
      *  LocalityName, Area
      *  East Coast
      *
-     * @param \horstoeko\ubl\entities\cbc\District $district
+     * @param  \horstoeko\ubl\entities\cbc\District $district
      * @return self
      */
     public function setDistrict(\horstoeko\ubl\entities\cbc\District $district)
@@ -1449,7 +1449,7 @@ class AddressType
      *  Text. Type
      *  +8:00 -3:00
      *
-     * @param \horstoeko\ubl\entities\cbc\TimezoneOffset $timezoneOffset
+     * @param  \horstoeko\ubl\entities\cbc\TimezoneOffset $timezoneOffset
      * @return self
      */
     public function setTimezoneOffset(\horstoeko\ubl\entities\cbc\TimezoneOffset $timezoneOffset)
@@ -1471,7 +1471,7 @@ class AddressType
      *  Address Line
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\AddressLine $addressLine
+     * @param  \horstoeko\ubl\entities\cac\AddressLine $addressLine
      */
     public function addToAddressLine(\horstoeko\ubl\entities\cac\AddressLine $addressLine)
     {
@@ -1491,7 +1491,7 @@ class AddressType
      *  Address Line
      *  Address Line
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAddressLine($index)
@@ -1511,7 +1511,7 @@ class AddressType
      *  Address Line
      *  Address Line
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAddressLine($index)
@@ -1550,7 +1550,7 @@ class AddressType
      *  Address Line
      *  Address Line
      *
-     * @param \horstoeko\ubl\entities\cac\AddressLine[] $addressLine
+     * @param  \horstoeko\ubl\entities\cac\AddressLine[] $addressLine
      * @return self
      */
     public function setAddressLine(array $addressLine)
@@ -1590,7 +1590,7 @@ class AddressType
      *  Country
      *  Country
      *
-     * @param \horstoeko\ubl\entities\cac\Country $country
+     * @param  \horstoeko\ubl\entities\cac\Country $country
      * @return self
      */
     public function setCountry(\horstoeko\ubl\entities\cac\Country $country)
@@ -1612,7 +1612,7 @@ class AddressType
      *  Location Coordinate
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\LocationCoordinate $locationCoordinate
+     * @param  \horstoeko\ubl\entities\cac\LocationCoordinate $locationCoordinate
      */
     public function addToLocationCoordinate(\horstoeko\ubl\entities\cac\LocationCoordinate $locationCoordinate)
     {
@@ -1632,7 +1632,7 @@ class AddressType
      *  Location Coordinate
      *  Location Coordinate
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetLocationCoordinate($index)
@@ -1652,7 +1652,7 @@ class AddressType
      *  Location Coordinate
      *  Location Coordinate
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetLocationCoordinate($index)
@@ -1691,7 +1691,7 @@ class AddressType
      *  Location Coordinate
      *  Location Coordinate
      *
-     * @param \horstoeko\ubl\entities\cac\LocationCoordinate[] $locationCoordinate
+     * @param  \horstoeko\ubl\entities\cac\LocationCoordinate[] $locationCoordinate
      * @return self
      */
     public function setLocationCoordinate(array $locationCoordinate)

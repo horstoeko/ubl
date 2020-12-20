@@ -152,7 +152,7 @@ class ConsumptionHistoryType
      *  Text. Type
      *  61722x
      *
-     * @param \horstoeko\ubl\entities\cbc\MeterNumber $meterNumber
+     * @param  \horstoeko\ubl\entities\cbc\MeterNumber $meterNumber
      * @return self
      */
     public function setMeterNumber(\horstoeko\ubl\entities\cbc\MeterNumber $meterNumber)
@@ -194,7 +194,7 @@ class ConsumptionHistoryType
      *  Quantity. Type
      *  7621.00
      *
-     * @param \horstoeko\ubl\entities\cbc\Quantity $quantity
+     * @param  \horstoeko\ubl\entities\cbc\Quantity $quantity
      * @return self
      */
     public function setQuantity(\horstoeko\ubl\entities\cbc\Quantity $quantity)
@@ -234,7 +234,7 @@ class ConsumptionHistoryType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Amount $amount
+     * @param  \horstoeko\ubl\entities\cbc\Amount $amount
      * @return self
      */
     public function setAmount(\horstoeko\ubl\entities\cbc\Amount $amount)
@@ -276,7 +276,7 @@ class ConsumptionHistoryType
      *  Code. Type
      *  B
      *
-     * @param \horstoeko\ubl\entities\cbc\ConsumptionLevelCode $consumptionLevelCode
+     * @param  \horstoeko\ubl\entities\cbc\ConsumptionLevelCode $consumptionLevelCode
      * @return self
      */
     public function setConsumptionLevelCode(\horstoeko\ubl\entities\cbc\ConsumptionLevelCode $consumptionLevelCode)
@@ -318,7 +318,7 @@ class ConsumptionHistoryType
      *  Text. Type
      *  Average
      *
-     * @param \horstoeko\ubl\entities\cbc\ConsumptionLevel $consumptionLevel
+     * @param  \horstoeko\ubl\entities\cbc\ConsumptionLevel $consumptionLevel
      * @return self
      */
     public function setConsumptionLevel(\horstoeko\ubl\entities\cbc\ConsumptionLevel $consumptionLevel)
@@ -341,7 +341,7 @@ class ConsumptionHistoryType
      *  2004/2005
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -362,7 +362,7 @@ class ConsumptionHistoryType
      *  Text. Type
      *  2004/2005
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -383,7 +383,7 @@ class ConsumptionHistoryType
      *  Text. Type
      *  2004/2005
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -424,7 +424,7 @@ class ConsumptionHistoryType
      *  Text. Type
      *  2004/2005
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -464,7 +464,7 @@ class ConsumptionHistoryType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\Period $period
+     * @param  \horstoeko\ubl\entities\cac\Period $period
      * @return self
      */
     public function setPeriod(\horstoeko\ubl\entities\cac\Period $period)

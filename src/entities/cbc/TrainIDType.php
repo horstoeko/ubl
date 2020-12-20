@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\IdentifierType;
 /**
  * Class representing TrainIDType
  *
- *
  * XSD Type: TrainIDType
  */
 class TrainIDType extends IdentifierType

@@ -169,7 +169,7 @@ class MaritimeTransportType
      *  Lloyds Number, Registration Number (WCO ID 167)
      *  International Maritime Organisation number of a vessel
      *
-     * @param \horstoeko\ubl\entities\cbc\VesselID $vesselID
+     * @param  \horstoeko\ubl\entities\cbc\VesselID $vesselID
      * @return self
      */
     public function setVesselID(\horstoeko\ubl\entities\cbc\VesselID $vesselID)
@@ -211,7 +211,7 @@ class MaritimeTransportType
      *  Name. Type
      *  Ships Name
      *
-     * @param \horstoeko\ubl\entities\cbc\VesselName $vesselName
+     * @param  \horstoeko\ubl\entities\cbc\VesselName $vesselName
      * @return self
      */
     public function setVesselName(\horstoeko\ubl\entities\cbc\VesselName $vesselName)
@@ -253,7 +253,7 @@ class MaritimeTransportType
      *  Identifier. Type
      *  NES
      *
-     * @param \horstoeko\ubl\entities\cbc\RadioCallSignID $radioCallSignID
+     * @param  \horstoeko\ubl\entities\cbc\RadioCallSignID $radioCallSignID
      * @return self
      */
     public function setRadioCallSignID(\horstoeko\ubl\entities\cbc\RadioCallSignID $radioCallSignID)
@@ -275,7 +275,7 @@ class MaritimeTransportType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\ShipsRequirements $shipsRequirements
+     * @param  \horstoeko\ubl\entities\cbc\ShipsRequirements $shipsRequirements
      */
     public function addToShipsRequirements(\horstoeko\ubl\entities\cbc\ShipsRequirements $shipsRequirements)
     {
@@ -295,7 +295,7 @@ class MaritimeTransportType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetShipsRequirements($index)
@@ -315,7 +315,7 @@ class MaritimeTransportType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetShipsRequirements($index)
@@ -354,7 +354,7 @@ class MaritimeTransportType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ShipsRequirements[] $shipsRequirements
+     * @param  \horstoeko\ubl\entities\cbc\ShipsRequirements[] $shipsRequirements
      * @return self
      */
     public function setShipsRequirements(array $shipsRequirements)
@@ -394,7 +394,7 @@ class MaritimeTransportType
      *  Measure
      *  Measure. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\GrossTonnageMeasure $grossTonnageMeasure
+     * @param  \horstoeko\ubl\entities\cbc\GrossTonnageMeasure $grossTonnageMeasure
      * @return self
      */
     public function setGrossTonnageMeasure(\horstoeko\ubl\entities\cbc\GrossTonnageMeasure $grossTonnageMeasure)
@@ -434,7 +434,7 @@ class MaritimeTransportType
      *  Measure
      *  Measure. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\NetTonnageMeasure $netTonnageMeasure
+     * @param  \horstoeko\ubl\entities\cbc\NetTonnageMeasure $netTonnageMeasure
      * @return self
      */
     public function setNetTonnageMeasure(\horstoeko\ubl\entities\cbc\NetTonnageMeasure $netTonnageMeasure)
@@ -476,7 +476,7 @@ class MaritimeTransportType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\RegistryCertificateDocumentReference $registryCertificateDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\RegistryCertificateDocumentReference $registryCertificateDocumentReference
      * @return self
      */
     public function setRegistryCertificateDocumentReference(\horstoeko\ubl\entities\cac\RegistryCertificateDocumentReference $registryCertificateDocumentReference)
@@ -518,7 +518,7 @@ class MaritimeTransportType
      *  Location
      *  Location
      *
-     * @param \horstoeko\ubl\entities\cac\RegistryPortLocation $registryPortLocation
+     * @param  \horstoeko\ubl\entities\cac\RegistryPortLocation $registryPortLocation
      * @return self
      */
     public function setRegistryPortLocation(\horstoeko\ubl\entities\cac\RegistryPortLocation $registryPortLocation)

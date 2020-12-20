@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\IdentifierType;
 /**
  * Class representing ExtensionURIType
  *
- *
  * XSD Type: ExtensionURIType
  */
 class ExtensionURIType extends IdentifierType

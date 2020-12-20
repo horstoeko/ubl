@@ -190,7 +190,7 @@ class SignatureType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -212,7 +212,7 @@ class SignatureType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param  \horstoeko\ubl\entities\cbc\Note $note
      */
     public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
     {
@@ -232,7 +232,7 @@ class SignatureType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNote($index)
@@ -252,7 +252,7 @@ class SignatureType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNote($index)
@@ -291,7 +291,7 @@ class SignatureType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note[] $note
+     * @param  \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
     public function setNote(array $note)
@@ -331,7 +331,7 @@ class SignatureType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $validationDate
+     * @param  \DateTime $validationDate
      * @return self
      */
     public function setValidationDate(\DateTime $validationDate)
@@ -371,7 +371,7 @@ class SignatureType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $validationTime
+     * @param  \DateTime $validationTime
      * @return self
      */
     public function setValidationTime(\DateTime $validationTime)
@@ -411,7 +411,7 @@ class SignatureType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ValidatorID $validatorID
+     * @param  \horstoeko\ubl\entities\cbc\ValidatorID $validatorID
      * @return self
      */
     public function setValidatorID(\horstoeko\ubl\entities\cbc\ValidatorID $validatorID)
@@ -451,7 +451,7 @@ class SignatureType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CanonicalizationMethod $canonicalizationMethod
+     * @param  \horstoeko\ubl\entities\cbc\CanonicalizationMethod $canonicalizationMethod
      * @return self
      */
     public function setCanonicalizationMethod(\horstoeko\ubl\entities\cbc\CanonicalizationMethod $canonicalizationMethod)
@@ -491,7 +491,7 @@ class SignatureType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SignatureMethod $signatureMethod
+     * @param  \horstoeko\ubl\entities\cbc\SignatureMethod $signatureMethod
      * @return self
      */
     public function setSignatureMethod(\horstoeko\ubl\entities\cbc\SignatureMethod $signatureMethod)
@@ -533,7 +533,7 @@ class SignatureType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\SignatoryParty $signatoryParty
+     * @param  \horstoeko\ubl\entities\cac\SignatoryParty $signatoryParty
      * @return self
      */
     public function setSignatoryParty(\horstoeko\ubl\entities\cac\SignatoryParty $signatoryParty)
@@ -575,7 +575,7 @@ class SignatureType
      *  Attachment
      *  Attachment
      *
-     * @param \horstoeko\ubl\entities\cac\DigitalSignatureAttachment $digitalSignatureAttachment
+     * @param  \horstoeko\ubl\entities\cac\DigitalSignatureAttachment $digitalSignatureAttachment
      * @return self
      */
     public function setDigitalSignatureAttachment(\horstoeko\ubl\entities\cac\DigitalSignatureAttachment $digitalSignatureAttachment)
@@ -617,7 +617,7 @@ class SignatureType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\OriginalDocumentReference $originalDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\OriginalDocumentReference $originalDocumentReference
      * @return self
      */
     public function setOriginalDocumentReference(\horstoeko\ubl\entities\cac\OriginalDocumentReference $originalDocumentReference)

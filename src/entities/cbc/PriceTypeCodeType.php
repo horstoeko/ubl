@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\CodeType;
 /**
  * Class representing PriceTypeCodeType
  *
- *
  * XSD Type: PriceTypeCodeType
  */
 class PriceTypeCodeType extends CodeType

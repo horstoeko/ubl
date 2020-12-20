@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing GuaranteedDespatchDateType
  *
- *
  * XSD Type: GuaranteedDespatchDateType
  */
 class GuaranteedDespatchDateType
@@ -29,7 +28,7 @@ class GuaranteedDespatchDateType
     /**
      * Gets or sets the inner value
      *
-     * @param \DateTime $value
+     * @param  \DateTime $value
      * @return \DateTime
      */
     public function value()

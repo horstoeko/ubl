@@ -184,7 +184,7 @@ class ConsumptionPointType
      *  Identifier. Type
      *  7411013716x
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -207,7 +207,7 @@ class ConsumptionPointType
      *  Additional informations concerning the consumption point
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -228,7 +228,7 @@ class ConsumptionPointType
      *  Text. Type
      *  Additional informations concerning the consumption point
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -249,7 +249,7 @@ class ConsumptionPointType
      *  Text. Type
      *  Additional informations concerning the consumption point
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -290,7 +290,7 @@ class ConsumptionPointType
      *  Text. Type
      *  Additional informations concerning the consumption point
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -332,7 +332,7 @@ class ConsumptionPointType
      *  Identifier. Type
      *  98143211
      *
-     * @param \horstoeko\ubl\entities\cbc\SubscriberID $subscriberID
+     * @param  \horstoeko\ubl\entities\cbc\SubscriberID $subscriberID
      * @return self
      */
     public function setSubscriberID(\horstoeko\ubl\entities\cbc\SubscriberID $subscriberID)
@@ -372,7 +372,7 @@ class ConsumptionPointType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SubscriberType $subscriberType
+     * @param  \horstoeko\ubl\entities\cbc\SubscriberType $subscriberType
      * @return self
      */
     public function setSubscriberType(\horstoeko\ubl\entities\cbc\SubscriberType $subscriberType)
@@ -414,7 +414,7 @@ class ConsumptionPointType
      *  Code. Type
      *  APL
      *
-     * @param \horstoeko\ubl\entities\cbc\SubscriberTypeCode $subscriberTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\SubscriberTypeCode $subscriberTypeCode
      * @return self
      */
     public function setSubscriberTypeCode(\horstoeko\ubl\entities\cbc\SubscriberTypeCode $subscriberTypeCode)
@@ -458,7 +458,7 @@ class ConsumptionPointType
      *  Quantity. Type
      *  5761.00
      *
-     * @param \horstoeko\ubl\entities\cbc\TotalDeliveredQuantity $totalDeliveredQuantity
+     * @param  \horstoeko\ubl\entities\cbc\TotalDeliveredQuantity $totalDeliveredQuantity
      * @return self
      */
     public function setTotalDeliveredQuantity(\horstoeko\ubl\entities\cbc\TotalDeliveredQuantity $totalDeliveredQuantity)
@@ -498,7 +498,7 @@ class ConsumptionPointType
      *  Address
      *  Address
      *
-     * @param \horstoeko\ubl\entities\cac\Address $address
+     * @param  \horstoeko\ubl\entities\cac\Address $address
      * @return self
      */
     public function setAddress(\horstoeko\ubl\entities\cac\Address $address)
@@ -538,7 +538,7 @@ class ConsumptionPointType
      *  Web Site Access
      *  Web Site Access
      *
-     * @param \horstoeko\ubl\entities\cac\WebSiteAccess $webSiteAccess
+     * @param  \horstoeko\ubl\entities\cac\WebSiteAccess $webSiteAccess
      * @return self
      */
     public function setWebSiteAccess(\horstoeko\ubl\entities\cac\WebSiteAccess $webSiteAccess)
@@ -561,7 +561,7 @@ class ConsumptionPointType
      *  Meter
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\UtilityMeter $utilityMeter
+     * @param  \horstoeko\ubl\entities\cac\UtilityMeter $utilityMeter
      */
     public function addToUtilityMeter(\horstoeko\ubl\entities\cac\UtilityMeter $utilityMeter)
     {
@@ -582,7 +582,7 @@ class ConsumptionPointType
      *  Meter
      *  Meter
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetUtilityMeter($index)
@@ -603,7 +603,7 @@ class ConsumptionPointType
      *  Meter
      *  Meter
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetUtilityMeter($index)
@@ -644,7 +644,7 @@ class ConsumptionPointType
      *  Meter
      *  Meter
      *
-     * @param \horstoeko\ubl\entities\cac\UtilityMeter[] $utilityMeter
+     * @param  \horstoeko\ubl\entities\cac\UtilityMeter[] $utilityMeter
      * @return self
      */
     public function setUtilityMeter(array $utilityMeter)

@@ -271,7 +271,7 @@ class AllowanceChargeType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -313,7 +313,7 @@ class AllowanceChargeType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $chargeIndicator
+     * @param  bool $chargeIndicator
      * @return self
      */
     public function setChargeIndicator($chargeIndicator)
@@ -355,7 +355,7 @@ class AllowanceChargeType
      *  Allowance Charge Reason
      *  Allowance Charge Reason_ Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AllowanceChargeReasonCode $allowanceChargeReasonCode
+     * @param  \horstoeko\ubl\entities\cbc\AllowanceChargeReasonCode $allowanceChargeReasonCode
      * @return self
      */
     public function setAllowanceChargeReasonCode(\horstoeko\ubl\entities\cbc\AllowanceChargeReasonCode $allowanceChargeReasonCode)
@@ -378,7 +378,7 @@ class AllowanceChargeType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\AllowanceChargeReason $allowanceChargeReason
+     * @param  \horstoeko\ubl\entities\cbc\AllowanceChargeReason $allowanceChargeReason
      */
     public function addToAllowanceChargeReason(\horstoeko\ubl\entities\cbc\AllowanceChargeReason $allowanceChargeReason)
     {
@@ -399,7 +399,7 @@ class AllowanceChargeType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAllowanceChargeReason($index)
@@ -420,7 +420,7 @@ class AllowanceChargeType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAllowanceChargeReason($index)
@@ -461,7 +461,7 @@ class AllowanceChargeType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AllowanceChargeReason[] $allowanceChargeReason
+     * @param  \horstoeko\ubl\entities\cbc\AllowanceChargeReason[] $allowanceChargeReason
      * @return self
      */
     public function setAllowanceChargeReason(array $allowanceChargeReason)
@@ -505,7 +505,7 @@ class AllowanceChargeType
      *  Numeric. Type
      *  0.20
      *
-     * @param \horstoeko\ubl\entities\cbc\MultiplierFactorNumeric $multiplierFactorNumeric
+     * @param  \horstoeko\ubl\entities\cbc\MultiplierFactorNumeric $multiplierFactorNumeric
      * @return self
      */
     public function setMultiplierFactorNumeric(\horstoeko\ubl\entities\cbc\MultiplierFactorNumeric $multiplierFactorNumeric)
@@ -547,7 +547,7 @@ class AllowanceChargeType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $prepaidIndicator
+     * @param  bool $prepaidIndicator
      * @return self
      */
     public function setPrepaidIndicator($prepaidIndicator)
@@ -589,7 +589,7 @@ class AllowanceChargeType
      *  Numeric. Type
      *  1, 2, 3, 4, etc.
      *
-     * @param \horstoeko\ubl\entities\cbc\SequenceNumeric $sequenceNumeric
+     * @param  \horstoeko\ubl\entities\cbc\SequenceNumeric $sequenceNumeric
      * @return self
      */
     public function setSequenceNumeric(\horstoeko\ubl\entities\cbc\SequenceNumeric $sequenceNumeric)
@@ -631,7 +631,7 @@ class AllowanceChargeType
      *  Amount. Type
      *  35,23
      *
-     * @param \horstoeko\ubl\entities\cbc\Amount $amount
+     * @param  \horstoeko\ubl\entities\cbc\Amount $amount
      * @return self
      */
     public function setAmount(\horstoeko\ubl\entities\cbc\Amount $amount)
@@ -673,7 +673,7 @@ class AllowanceChargeType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\BaseAmount $baseAmount
+     * @param  \horstoeko\ubl\entities\cbc\BaseAmount $baseAmount
      * @return self
      */
     public function setBaseAmount(\horstoeko\ubl\entities\cbc\BaseAmount $baseAmount)
@@ -713,7 +713,7 @@ class AllowanceChargeType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AccountingCostCode $accountingCostCode
+     * @param  \horstoeko\ubl\entities\cbc\AccountingCostCode $accountingCostCode
      * @return self
      */
     public function setAccountingCostCode(\horstoeko\ubl\entities\cbc\AccountingCostCode $accountingCostCode)
@@ -753,7 +753,7 @@ class AllowanceChargeType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AccountingCost $accountingCost
+     * @param  \horstoeko\ubl\entities\cbc\AccountingCost $accountingCost
      * @return self
      */
     public function setAccountingCost(\horstoeko\ubl\entities\cbc\AccountingCost $accountingCost)
@@ -795,7 +795,7 @@ class AllowanceChargeType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PerUnitAmount $perUnitAmount
+     * @param  \horstoeko\ubl\entities\cbc\PerUnitAmount $perUnitAmount
      * @return self
      */
     public function setPerUnitAmount(\horstoeko\ubl\entities\cbc\PerUnitAmount $perUnitAmount)
@@ -817,7 +817,7 @@ class AllowanceChargeType
      *  Tax Category
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\TaxCategory $taxCategory
+     * @param  \horstoeko\ubl\entities\cac\TaxCategory $taxCategory
      */
     public function addToTaxCategory(\horstoeko\ubl\entities\cac\TaxCategory $taxCategory)
     {
@@ -837,7 +837,7 @@ class AllowanceChargeType
      *  Tax Category
      *  Tax Category
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTaxCategory($index)
@@ -857,7 +857,7 @@ class AllowanceChargeType
      *  Tax Category
      *  Tax Category
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTaxCategory($index)
@@ -896,7 +896,7 @@ class AllowanceChargeType
      *  Tax Category
      *  Tax Category
      *
-     * @param \horstoeko\ubl\entities\cac\TaxCategory[] $taxCategory
+     * @param  \horstoeko\ubl\entities\cac\TaxCategory[] $taxCategory
      * @return self
      */
     public function setTaxCategory(array $taxCategory)
@@ -936,7 +936,7 @@ class AllowanceChargeType
      *  Tax Total
      *  Tax Total
      *
-     * @param \horstoeko\ubl\entities\cac\TaxTotal $taxTotal
+     * @param  \horstoeko\ubl\entities\cac\TaxTotal $taxTotal
      * @return self
      */
     public function setTaxTotal(\horstoeko\ubl\entities\cac\TaxTotal $taxTotal)
@@ -958,7 +958,7 @@ class AllowanceChargeType
      *  Payment Means
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\PaymentMeans $paymentMeans
+     * @param  \horstoeko\ubl\entities\cac\PaymentMeans $paymentMeans
      */
     public function addToPaymentMeans(\horstoeko\ubl\entities\cac\PaymentMeans $paymentMeans)
     {
@@ -978,7 +978,7 @@ class AllowanceChargeType
      *  Payment Means
      *  Payment Means
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPaymentMeans($index)
@@ -998,7 +998,7 @@ class AllowanceChargeType
      *  Payment Means
      *  Payment Means
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPaymentMeans($index)
@@ -1037,7 +1037,7 @@ class AllowanceChargeType
      *  Payment Means
      *  Payment Means
      *
-     * @param \horstoeko\ubl\entities\cac\PaymentMeans[] $paymentMeans
+     * @param  \horstoeko\ubl\entities\cac\PaymentMeans[] $paymentMeans
      * @return self
      */
     public function setPaymentMeans(array $paymentMeans)

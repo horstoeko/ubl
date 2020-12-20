@@ -164,7 +164,7 @@ class ActivityDataLineType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -204,7 +204,7 @@ class ActivityDataLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SupplyChainActivityTypeCode $supplyChainActivityTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\SupplyChainActivityTypeCode $supplyChainActivityTypeCode
      * @return self
      */
     public function setSupplyChainActivityTypeCode(\horstoeko\ubl\entities\cbc\SupplyChainActivityTypeCode $supplyChainActivityTypeCode)
@@ -246,7 +246,7 @@ class ActivityDataLineType
      *  Customer Party
      *  Customer Party
      *
-     * @param \horstoeko\ubl\entities\cac\BuyerCustomerParty $buyerCustomerParty
+     * @param  \horstoeko\ubl\entities\cac\BuyerCustomerParty $buyerCustomerParty
      * @return self
      */
     public function setBuyerCustomerParty(\horstoeko\ubl\entities\cac\BuyerCustomerParty $buyerCustomerParty)
@@ -288,7 +288,7 @@ class ActivityDataLineType
      *  Supplier Party
      *  Supplier Party
      *
-     * @param \horstoeko\ubl\entities\cac\SellerSupplierParty $sellerSupplierParty
+     * @param  \horstoeko\ubl\entities\cac\SellerSupplierParty $sellerSupplierParty
      * @return self
      */
     public function setSellerSupplierParty(\horstoeko\ubl\entities\cac\SellerSupplierParty $sellerSupplierParty)
@@ -330,7 +330,7 @@ class ActivityDataLineType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\ActivityPeriod $activityPeriod
+     * @param  \horstoeko\ubl\entities\cac\ActivityPeriod $activityPeriod
      * @return self
      */
     public function setActivityPeriod(\horstoeko\ubl\entities\cac\ActivityPeriod $activityPeriod)
@@ -372,7 +372,7 @@ class ActivityDataLineType
      *  Location
      *  Location
      *
-     * @param \horstoeko\ubl\entities\cac\ActivityOriginLocation $activityOriginLocation
+     * @param  \horstoeko\ubl\entities\cac\ActivityOriginLocation $activityOriginLocation
      * @return self
      */
     public function setActivityOriginLocation(\horstoeko\ubl\entities\cac\ActivityOriginLocation $activityOriginLocation)
@@ -414,7 +414,7 @@ class ActivityDataLineType
      *  Location
      *  Location
      *
-     * @param \horstoeko\ubl\entities\cac\ActivityFinalLocation $activityFinalLocation
+     * @param  \horstoeko\ubl\entities\cac\ActivityFinalLocation $activityFinalLocation
      * @return self
      */
     public function setActivityFinalLocation(\horstoeko\ubl\entities\cac\ActivityFinalLocation $activityFinalLocation)
@@ -436,7 +436,7 @@ class ActivityDataLineType
      *  Sales Item
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\SalesItem $salesItem
+     * @param  \horstoeko\ubl\entities\cac\SalesItem $salesItem
      */
     public function addToSalesItem(\horstoeko\ubl\entities\cac\SalesItem $salesItem)
     {
@@ -456,7 +456,7 @@ class ActivityDataLineType
      *  Sales Item
      *  Sales Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSalesItem($index)
@@ -476,7 +476,7 @@ class ActivityDataLineType
      *  Sales Item
      *  Sales Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSalesItem($index)
@@ -515,7 +515,7 @@ class ActivityDataLineType
      *  Sales Item
      *  Sales Item
      *
-     * @param \horstoeko\ubl\entities\cac\SalesItem[] $salesItem
+     * @param  \horstoeko\ubl\entities\cac\SalesItem[] $salesItem
      * @return self
      */
     public function setSalesItem(array $salesItem)

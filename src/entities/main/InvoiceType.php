@@ -845,7 +845,7 @@ class InvoiceType
      * A container for all extensions present in the document.
      *
      * @return self
-     * @param \horstoeko\ubl\entities\ext\UBLExtension $uBLExtension
+     * @param  \horstoeko\ubl\entities\ext\UBLExtension $uBLExtension
      */
     public function addToUBLExtensions(\horstoeko\ubl\entities\ext\UBLExtension $uBLExtension)
     {
@@ -858,7 +858,7 @@ class InvoiceType
      *
      * A container for all extensions present in the document.
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetUBLExtensions($index)
@@ -871,7 +871,7 @@ class InvoiceType
      *
      * A container for all extensions present in the document.
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetUBLExtensions($index)
@@ -896,7 +896,7 @@ class InvoiceType
      *
      * A container for all extensions present in the document.
      *
-     * @param \horstoeko\ubl\entities\ext\UBLExtension[] $uBLExtensions
+     * @param  \horstoeko\ubl\entities\ext\UBLExtension[] $uBLExtensions
      * @return self
      */
     public function setUBLExtensions(array $uBLExtensions)
@@ -938,7 +938,7 @@ class InvoiceType
      *  Identifier. Type
      *  2.0.5
      *
-     * @param \horstoeko\ubl\entities\cbc\UBLVersionID $uBLVersionID
+     * @param  \horstoeko\ubl\entities\cbc\UBLVersionID $uBLVersionID
      * @return self
      */
     public function setUBLVersionID(\horstoeko\ubl\entities\cbc\UBLVersionID $uBLVersionID)
@@ -980,7 +980,7 @@ class InvoiceType
      *  Identifier. Type
      *  NES
      *
-     * @param \horstoeko\ubl\entities\cbc\CustomizationID $customizationID
+     * @param  \horstoeko\ubl\entities\cbc\CustomizationID $customizationID
      * @return self
      */
     public function setCustomizationID(\horstoeko\ubl\entities\cbc\CustomizationID $customizationID)
@@ -1022,7 +1022,7 @@ class InvoiceType
      *  Identifier. Type
      *  BasicProcurementProcess
      *
-     * @param \horstoeko\ubl\entities\cbc\ProfileID $profileID
+     * @param  \horstoeko\ubl\entities\cbc\ProfileID $profileID
      * @return self
      */
     public function setProfileID(\horstoeko\ubl\entities\cbc\ProfileID $profileID)
@@ -1064,7 +1064,7 @@ class InvoiceType
      *  Identifier. Type
      *  BPP-1001
      *
-     * @param \horstoeko\ubl\entities\cbc\ProfileExecutionID $profileExecutionID
+     * @param  \horstoeko\ubl\entities\cbc\ProfileExecutionID $profileExecutionID
      * @return self
      */
     public function setProfileExecutionID(\horstoeko\ubl\entities\cbc\ProfileExecutionID $profileExecutionID)
@@ -1106,7 +1106,7 @@ class InvoiceType
      *  Identifier. Type
      *  Invoice Number
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -1148,7 +1148,7 @@ class InvoiceType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $copyIndicator
+     * @param  bool $copyIndicator
      * @return self
      */
     public function setCopyIndicator($copyIndicator)
@@ -1188,7 +1188,7 @@ class InvoiceType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\UUID $uUID
+     * @param  \horstoeko\ubl\entities\cbc\UUID $uUID
      * @return self
      */
     public function setUUID(\horstoeko\ubl\entities\cbc\UUID $uUID)
@@ -1230,7 +1230,7 @@ class InvoiceType
      *  Date. Type
      *  Invoice Date
      *
-     * @param \DateTime $issueDate
+     * @param  \DateTime $issueDate
      * @return self
      */
     public function setIssueDate(\DateTime $issueDate)
@@ -1270,7 +1270,7 @@ class InvoiceType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $issueTime
+     * @param  \DateTime $issueTime
      * @return self
      */
     public function setIssueTime(\DateTime $issueTime)
@@ -1310,7 +1310,7 @@ class InvoiceType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $dueDate
+     * @param  \DateTime $dueDate
      * @return self
      */
     public function setDueDate(\DateTime $dueDate)
@@ -1350,7 +1350,7 @@ class InvoiceType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\InvoiceTypeCode $invoiceTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\InvoiceTypeCode $invoiceTypeCode
      * @return self
      */
     public function setInvoiceTypeCode(\horstoeko\ubl\entities\cbc\InvoiceTypeCode $invoiceTypeCode)
@@ -1372,7 +1372,7 @@ class InvoiceType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param  \horstoeko\ubl\entities\cbc\Note $note
      */
     public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
     {
@@ -1392,7 +1392,7 @@ class InvoiceType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNote($index)
@@ -1412,7 +1412,7 @@ class InvoiceType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNote($index)
@@ -1451,7 +1451,7 @@ class InvoiceType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note[] $note
+     * @param  \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
     public function setNote(array $note)
@@ -1491,7 +1491,7 @@ class InvoiceType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $taxPointDate
+     * @param  \DateTime $taxPointDate
      * @return self
      */
     public function setTaxPointDate(\DateTime $taxPointDate)
@@ -1535,7 +1535,7 @@ class InvoiceType
      *  Currency
      *  Currency_ Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\DocumentCurrencyCode $documentCurrencyCode
+     * @param  \horstoeko\ubl\entities\cbc\DocumentCurrencyCode $documentCurrencyCode
      * @return self
      */
     public function setDocumentCurrencyCode(\horstoeko\ubl\entities\cbc\DocumentCurrencyCode $documentCurrencyCode)
@@ -1579,7 +1579,7 @@ class InvoiceType
      *  Currency
      *  Currency_ Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TaxCurrencyCode $taxCurrencyCode
+     * @param  \horstoeko\ubl\entities\cbc\TaxCurrencyCode $taxCurrencyCode
      * @return self
      */
     public function setTaxCurrencyCode(\horstoeko\ubl\entities\cbc\TaxCurrencyCode $taxCurrencyCode)
@@ -1623,7 +1623,7 @@ class InvoiceType
      *  Currency
      *  Currency_ Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PricingCurrencyCode $pricingCurrencyCode
+     * @param  \horstoeko\ubl\entities\cbc\PricingCurrencyCode $pricingCurrencyCode
      * @return self
      */
     public function setPricingCurrencyCode(\horstoeko\ubl\entities\cbc\PricingCurrencyCode $pricingCurrencyCode)
@@ -1667,7 +1667,7 @@ class InvoiceType
      *  Currency
      *  Currency_ Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PaymentCurrencyCode $paymentCurrencyCode
+     * @param  \horstoeko\ubl\entities\cbc\PaymentCurrencyCode $paymentCurrencyCode
      * @return self
      */
     public function setPaymentCurrencyCode(\horstoeko\ubl\entities\cbc\PaymentCurrencyCode $paymentCurrencyCode)
@@ -1711,7 +1711,7 @@ class InvoiceType
      *  Currency
      *  Currency_ Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PaymentAlternativeCurrencyCode $paymentAlternativeCurrencyCode
+     * @param  \horstoeko\ubl\entities\cbc\PaymentAlternativeCurrencyCode $paymentAlternativeCurrencyCode
      * @return self
      */
     public function setPaymentAlternativeCurrencyCode(\horstoeko\ubl\entities\cbc\PaymentAlternativeCurrencyCode $paymentAlternativeCurrencyCode)
@@ -1751,7 +1751,7 @@ class InvoiceType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AccountingCostCode $accountingCostCode
+     * @param  \horstoeko\ubl\entities\cbc\AccountingCostCode $accountingCostCode
      * @return self
      */
     public function setAccountingCostCode(\horstoeko\ubl\entities\cbc\AccountingCostCode $accountingCostCode)
@@ -1791,7 +1791,7 @@ class InvoiceType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AccountingCost $accountingCost
+     * @param  \horstoeko\ubl\entities\cbc\AccountingCost $accountingCost
      * @return self
      */
     public function setAccountingCost(\horstoeko\ubl\entities\cbc\AccountingCost $accountingCost)
@@ -1831,7 +1831,7 @@ class InvoiceType
      *  Numeric
      *  Numeric. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LineCountNumeric $lineCountNumeric
+     * @param  \horstoeko\ubl\entities\cbc\LineCountNumeric $lineCountNumeric
      * @return self
      */
     public function setLineCountNumeric(\horstoeko\ubl\entities\cbc\LineCountNumeric $lineCountNumeric)
@@ -1873,7 +1873,7 @@ class InvoiceType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\BuyerReference $buyerReference
+     * @param  \horstoeko\ubl\entities\cbc\BuyerReference $buyerReference
      * @return self
      */
     public function setBuyerReference(\horstoeko\ubl\entities\cbc\BuyerReference $buyerReference)
@@ -1896,7 +1896,7 @@ class InvoiceType
      *  Period
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\InvoicePeriod $invoicePeriod
+     * @param  \horstoeko\ubl\entities\cac\InvoicePeriod $invoicePeriod
      */
     public function addToInvoicePeriod(\horstoeko\ubl\entities\cac\InvoicePeriod $invoicePeriod)
     {
@@ -1917,7 +1917,7 @@ class InvoiceType
      *  Period
      *  Period
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetInvoicePeriod($index)
@@ -1938,7 +1938,7 @@ class InvoiceType
      *  Period
      *  Period
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetInvoicePeriod($index)
@@ -1979,7 +1979,7 @@ class InvoiceType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\InvoicePeriod[] $invoicePeriod
+     * @param  \horstoeko\ubl\entities\cac\InvoicePeriod[] $invoicePeriod
      * @return self
      */
     public function setInvoicePeriod(array $invoicePeriod)
@@ -2019,7 +2019,7 @@ class InvoiceType
      *  Order Reference
      *  Order Reference
      *
-     * @param \horstoeko\ubl\entities\cac\OrderReference $orderReference
+     * @param  \horstoeko\ubl\entities\cac\OrderReference $orderReference
      * @return self
      */
     public function setOrderReference(\horstoeko\ubl\entities\cac\OrderReference $orderReference)
@@ -2041,7 +2041,7 @@ class InvoiceType
      *  Billing Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\BillingReference $billingReference
+     * @param  \horstoeko\ubl\entities\cac\BillingReference $billingReference
      */
     public function addToBillingReference(\horstoeko\ubl\entities\cac\BillingReference $billingReference)
     {
@@ -2061,7 +2061,7 @@ class InvoiceType
      *  Billing Reference
      *  Billing Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetBillingReference($index)
@@ -2081,7 +2081,7 @@ class InvoiceType
      *  Billing Reference
      *  Billing Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetBillingReference($index)
@@ -2120,7 +2120,7 @@ class InvoiceType
      *  Billing Reference
      *  Billing Reference
      *
-     * @param \horstoeko\ubl\entities\cac\BillingReference[] $billingReference
+     * @param  \horstoeko\ubl\entities\cac\BillingReference[] $billingReference
      * @return self
      */
     public function setBillingReference(array $billingReference)
@@ -2143,7 +2143,7 @@ class InvoiceType
      *  Document Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\DespatchDocumentReference $despatchDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\DespatchDocumentReference $despatchDocumentReference
      */
     public function addToDespatchDocumentReference(\horstoeko\ubl\entities\cac\DespatchDocumentReference $despatchDocumentReference)
     {
@@ -2164,7 +2164,7 @@ class InvoiceType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDespatchDocumentReference($index)
@@ -2185,7 +2185,7 @@ class InvoiceType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDespatchDocumentReference($index)
@@ -2226,7 +2226,7 @@ class InvoiceType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\DespatchDocumentReference[] $despatchDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\DespatchDocumentReference[] $despatchDocumentReference
      * @return self
      */
     public function setDespatchDocumentReference(array $despatchDocumentReference)
@@ -2249,7 +2249,7 @@ class InvoiceType
      *  Document Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ReceiptDocumentReference $receiptDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\ReceiptDocumentReference $receiptDocumentReference
      */
     public function addToReceiptDocumentReference(\horstoeko\ubl\entities\cac\ReceiptDocumentReference $receiptDocumentReference)
     {
@@ -2270,7 +2270,7 @@ class InvoiceType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetReceiptDocumentReference($index)
@@ -2291,7 +2291,7 @@ class InvoiceType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetReceiptDocumentReference($index)
@@ -2332,7 +2332,7 @@ class InvoiceType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\ReceiptDocumentReference[] $receiptDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\ReceiptDocumentReference[] $receiptDocumentReference
      * @return self
      */
     public function setReceiptDocumentReference(array $receiptDocumentReference)
@@ -2355,7 +2355,7 @@ class InvoiceType
      *  Document Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\StatementDocumentReference $statementDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\StatementDocumentReference $statementDocumentReference
      */
     public function addToStatementDocumentReference(\horstoeko\ubl\entities\cac\StatementDocumentReference $statementDocumentReference)
     {
@@ -2376,7 +2376,7 @@ class InvoiceType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetStatementDocumentReference($index)
@@ -2397,7 +2397,7 @@ class InvoiceType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetStatementDocumentReference($index)
@@ -2438,7 +2438,7 @@ class InvoiceType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\StatementDocumentReference[] $statementDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\StatementDocumentReference[] $statementDocumentReference
      * @return self
      */
     public function setStatementDocumentReference(array $statementDocumentReference)
@@ -2461,7 +2461,7 @@ class InvoiceType
      *  Document Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\OriginatorDocumentReference $originatorDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\OriginatorDocumentReference $originatorDocumentReference
      */
     public function addToOriginatorDocumentReference(\horstoeko\ubl\entities\cac\OriginatorDocumentReference $originatorDocumentReference)
     {
@@ -2482,7 +2482,7 @@ class InvoiceType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetOriginatorDocumentReference($index)
@@ -2503,7 +2503,7 @@ class InvoiceType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetOriginatorDocumentReference($index)
@@ -2544,7 +2544,7 @@ class InvoiceType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\OriginatorDocumentReference[] $originatorDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\OriginatorDocumentReference[] $originatorDocumentReference
      * @return self
      */
     public function setOriginatorDocumentReference(array $originatorDocumentReference)
@@ -2567,7 +2567,7 @@ class InvoiceType
      *  Document Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ContractDocumentReference $contractDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\ContractDocumentReference $contractDocumentReference
      */
     public function addToContractDocumentReference(\horstoeko\ubl\entities\cac\ContractDocumentReference $contractDocumentReference)
     {
@@ -2588,7 +2588,7 @@ class InvoiceType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetContractDocumentReference($index)
@@ -2609,7 +2609,7 @@ class InvoiceType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetContractDocumentReference($index)
@@ -2650,7 +2650,7 @@ class InvoiceType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\ContractDocumentReference[] $contractDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\ContractDocumentReference[] $contractDocumentReference
      * @return self
      */
     public function setContractDocumentReference(array $contractDocumentReference)
@@ -2673,7 +2673,7 @@ class InvoiceType
      *  Document Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\AdditionalDocumentReference $additionalDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\AdditionalDocumentReference $additionalDocumentReference
      */
     public function addToAdditionalDocumentReference(\horstoeko\ubl\entities\cac\AdditionalDocumentReference $additionalDocumentReference)
     {
@@ -2694,7 +2694,7 @@ class InvoiceType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAdditionalDocumentReference($index)
@@ -2715,7 +2715,7 @@ class InvoiceType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAdditionalDocumentReference($index)
@@ -2756,7 +2756,7 @@ class InvoiceType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\AdditionalDocumentReference[] $additionalDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\AdditionalDocumentReference[] $additionalDocumentReference
      * @return self
      */
     public function setAdditionalDocumentReference(array $additionalDocumentReference)
@@ -2778,7 +2778,7 @@ class InvoiceType
      *  Project Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ProjectReference $projectReference
+     * @param  \horstoeko\ubl\entities\cac\ProjectReference $projectReference
      */
     public function addToProjectReference(\horstoeko\ubl\entities\cac\ProjectReference $projectReference)
     {
@@ -2798,7 +2798,7 @@ class InvoiceType
      *  Project Reference
      *  Project Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetProjectReference($index)
@@ -2818,7 +2818,7 @@ class InvoiceType
      *  Project Reference
      *  Project Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetProjectReference($index)
@@ -2857,7 +2857,7 @@ class InvoiceType
      *  Project Reference
      *  Project Reference
      *
-     * @param \horstoeko\ubl\entities\cac\ProjectReference[] $projectReference
+     * @param  \horstoeko\ubl\entities\cac\ProjectReference[] $projectReference
      * @return self
      */
     public function setProjectReference(array $projectReference)
@@ -2879,7 +2879,7 @@ class InvoiceType
      *  Signature
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Signature $signature
+     * @param  \horstoeko\ubl\entities\cac\Signature $signature
      */
     public function addToSignature(\horstoeko\ubl\entities\cac\Signature $signature)
     {
@@ -2899,7 +2899,7 @@ class InvoiceType
      *  Signature
      *  Signature
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSignature($index)
@@ -2919,7 +2919,7 @@ class InvoiceType
      *  Signature
      *  Signature
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSignature($index)
@@ -2958,7 +2958,7 @@ class InvoiceType
      *  Signature
      *  Signature
      *
-     * @param \horstoeko\ubl\entities\cac\Signature[] $signature
+     * @param  \horstoeko\ubl\entities\cac\Signature[] $signature
      * @return self
      */
     public function setSignature(array $signature)
@@ -3000,7 +3000,7 @@ class InvoiceType
      *  Supplier Party
      *  Supplier Party
      *
-     * @param \horstoeko\ubl\entities\cac\AccountingSupplierParty $accountingSupplierParty
+     * @param  \horstoeko\ubl\entities\cac\AccountingSupplierParty $accountingSupplierParty
      * @return self
      */
     public function setAccountingSupplierParty(\horstoeko\ubl\entities\cac\AccountingSupplierParty $accountingSupplierParty)
@@ -3042,7 +3042,7 @@ class InvoiceType
      *  Customer Party
      *  Customer Party
      *
-     * @param \horstoeko\ubl\entities\cac\AccountingCustomerParty $accountingCustomerParty
+     * @param  \horstoeko\ubl\entities\cac\AccountingCustomerParty $accountingCustomerParty
      * @return self
      */
     public function setAccountingCustomerParty(\horstoeko\ubl\entities\cac\AccountingCustomerParty $accountingCustomerParty)
@@ -3084,7 +3084,7 @@ class InvoiceType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\PayeeParty $payeeParty
+     * @param  \horstoeko\ubl\entities\cac\PayeeParty $payeeParty
      * @return self
      */
     public function setPayeeParty(\horstoeko\ubl\entities\cac\PayeeParty $payeeParty)
@@ -3126,7 +3126,7 @@ class InvoiceType
      *  Customer Party
      *  Customer Party
      *
-     * @param \horstoeko\ubl\entities\cac\BuyerCustomerParty $buyerCustomerParty
+     * @param  \horstoeko\ubl\entities\cac\BuyerCustomerParty $buyerCustomerParty
      * @return self
      */
     public function setBuyerCustomerParty(\horstoeko\ubl\entities\cac\BuyerCustomerParty $buyerCustomerParty)
@@ -3168,7 +3168,7 @@ class InvoiceType
      *  Supplier Party
      *  Supplier Party
      *
-     * @param \horstoeko\ubl\entities\cac\SellerSupplierParty $sellerSupplierParty
+     * @param  \horstoeko\ubl\entities\cac\SellerSupplierParty $sellerSupplierParty
      * @return self
      */
     public function setSellerSupplierParty(\horstoeko\ubl\entities\cac\SellerSupplierParty $sellerSupplierParty)
@@ -3210,7 +3210,7 @@ class InvoiceType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\TaxRepresentativeParty $taxRepresentativeParty
+     * @param  \horstoeko\ubl\entities\cac\TaxRepresentativeParty $taxRepresentativeParty
      * @return self
      */
     public function setTaxRepresentativeParty(\horstoeko\ubl\entities\cac\TaxRepresentativeParty $taxRepresentativeParty)
@@ -3232,7 +3232,7 @@ class InvoiceType
      *  Delivery
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Delivery $delivery
+     * @param  \horstoeko\ubl\entities\cac\Delivery $delivery
      */
     public function addToDelivery(\horstoeko\ubl\entities\cac\Delivery $delivery)
     {
@@ -3252,7 +3252,7 @@ class InvoiceType
      *  Delivery
      *  Delivery
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDelivery($index)
@@ -3272,7 +3272,7 @@ class InvoiceType
      *  Delivery
      *  Delivery
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDelivery($index)
@@ -3311,7 +3311,7 @@ class InvoiceType
      *  Delivery
      *  Delivery
      *
-     * @param \horstoeko\ubl\entities\cac\Delivery[] $delivery
+     * @param  \horstoeko\ubl\entities\cac\Delivery[] $delivery
      * @return self
      */
     public function setDelivery(array $delivery)
@@ -3351,7 +3351,7 @@ class InvoiceType
      *  Delivery Terms
      *  Delivery Terms
      *
-     * @param \horstoeko\ubl\entities\cac\DeliveryTerms $deliveryTerms
+     * @param  \horstoeko\ubl\entities\cac\DeliveryTerms $deliveryTerms
      * @return self
      */
     public function setDeliveryTerms(\horstoeko\ubl\entities\cac\DeliveryTerms $deliveryTerms)
@@ -3373,7 +3373,7 @@ class InvoiceType
      *  Payment Means
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\PaymentMeans $paymentMeans
+     * @param  \horstoeko\ubl\entities\cac\PaymentMeans $paymentMeans
      */
     public function addToPaymentMeans(\horstoeko\ubl\entities\cac\PaymentMeans $paymentMeans)
     {
@@ -3393,7 +3393,7 @@ class InvoiceType
      *  Payment Means
      *  Payment Means
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPaymentMeans($index)
@@ -3413,7 +3413,7 @@ class InvoiceType
      *  Payment Means
      *  Payment Means
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPaymentMeans($index)
@@ -3452,7 +3452,7 @@ class InvoiceType
      *  Payment Means
      *  Payment Means
      *
-     * @param \horstoeko\ubl\entities\cac\PaymentMeans[] $paymentMeans
+     * @param  \horstoeko\ubl\entities\cac\PaymentMeans[] $paymentMeans
      * @return self
      */
     public function setPaymentMeans(array $paymentMeans)
@@ -3474,7 +3474,7 @@ class InvoiceType
      *  Payment Terms
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\PaymentTerms $paymentTerms
+     * @param  \horstoeko\ubl\entities\cac\PaymentTerms $paymentTerms
      */
     public function addToPaymentTerms(\horstoeko\ubl\entities\cac\PaymentTerms $paymentTerms)
     {
@@ -3494,7 +3494,7 @@ class InvoiceType
      *  Payment Terms
      *  Payment Terms
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPaymentTerms($index)
@@ -3514,7 +3514,7 @@ class InvoiceType
      *  Payment Terms
      *  Payment Terms
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPaymentTerms($index)
@@ -3553,7 +3553,7 @@ class InvoiceType
      *  Payment Terms
      *  Payment Terms
      *
-     * @param \horstoeko\ubl\entities\cac\PaymentTerms[] $paymentTerms
+     * @param  \horstoeko\ubl\entities\cac\PaymentTerms[] $paymentTerms
      * @return self
      */
     public function setPaymentTerms(array $paymentTerms)
@@ -3576,7 +3576,7 @@ class InvoiceType
      *  Payment
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\PrepaidPayment $prepaidPayment
+     * @param  \horstoeko\ubl\entities\cac\PrepaidPayment $prepaidPayment
      */
     public function addToPrepaidPayment(\horstoeko\ubl\entities\cac\PrepaidPayment $prepaidPayment)
     {
@@ -3597,7 +3597,7 @@ class InvoiceType
      *  Payment
      *  Payment
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPrepaidPayment($index)
@@ -3618,7 +3618,7 @@ class InvoiceType
      *  Payment
      *  Payment
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPrepaidPayment($index)
@@ -3659,7 +3659,7 @@ class InvoiceType
      *  Payment
      *  Payment
      *
-     * @param \horstoeko\ubl\entities\cac\PrepaidPayment[] $prepaidPayment
+     * @param  \horstoeko\ubl\entities\cac\PrepaidPayment[] $prepaidPayment
      * @return self
      */
     public function setPrepaidPayment(array $prepaidPayment)
@@ -3681,7 +3681,7 @@ class InvoiceType
      *  Allowance Charge
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge
+     * @param  \horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge
      */
     public function addToAllowanceCharge(\horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge)
     {
@@ -3701,7 +3701,7 @@ class InvoiceType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAllowanceCharge($index)
@@ -3721,7 +3721,7 @@ class InvoiceType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAllowanceCharge($index)
@@ -3760,7 +3760,7 @@ class InvoiceType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param \horstoeko\ubl\entities\cac\AllowanceCharge[] $allowanceCharge
+     * @param  \horstoeko\ubl\entities\cac\AllowanceCharge[] $allowanceCharge
      * @return self
      */
     public function setAllowanceCharge(array $allowanceCharge)
@@ -3802,7 +3802,7 @@ class InvoiceType
      *  Exchange Rate
      *  Exchange Rate
      *
-     * @param \horstoeko\ubl\entities\cac\TaxExchangeRate $taxExchangeRate
+     * @param  \horstoeko\ubl\entities\cac\TaxExchangeRate $taxExchangeRate
      * @return self
      */
     public function setTaxExchangeRate(\horstoeko\ubl\entities\cac\TaxExchangeRate $taxExchangeRate)
@@ -3844,7 +3844,7 @@ class InvoiceType
      *  Exchange Rate
      *  Exchange Rate
      *
-     * @param \horstoeko\ubl\entities\cac\PricingExchangeRate $pricingExchangeRate
+     * @param  \horstoeko\ubl\entities\cac\PricingExchangeRate $pricingExchangeRate
      * @return self
      */
     public function setPricingExchangeRate(\horstoeko\ubl\entities\cac\PricingExchangeRate $pricingExchangeRate)
@@ -3886,7 +3886,7 @@ class InvoiceType
      *  Exchange Rate
      *  Exchange Rate
      *
-     * @param \horstoeko\ubl\entities\cac\PaymentExchangeRate $paymentExchangeRate
+     * @param  \horstoeko\ubl\entities\cac\PaymentExchangeRate $paymentExchangeRate
      * @return self
      */
     public function setPaymentExchangeRate(\horstoeko\ubl\entities\cac\PaymentExchangeRate $paymentExchangeRate)
@@ -3928,7 +3928,7 @@ class InvoiceType
      *  Exchange Rate
      *  Exchange Rate
      *
-     * @param \horstoeko\ubl\entities\cac\PaymentAlternativeExchangeRate $paymentAlternativeExchangeRate
+     * @param  \horstoeko\ubl\entities\cac\PaymentAlternativeExchangeRate $paymentAlternativeExchangeRate
      * @return self
      */
     public function setPaymentAlternativeExchangeRate(\horstoeko\ubl\entities\cac\PaymentAlternativeExchangeRate $paymentAlternativeExchangeRate)
@@ -3950,7 +3950,7 @@ class InvoiceType
      *  Tax Total
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\TaxTotal $taxTotal
+     * @param  \horstoeko\ubl\entities\cac\TaxTotal $taxTotal
      */
     public function addToTaxTotal(\horstoeko\ubl\entities\cac\TaxTotal $taxTotal)
     {
@@ -3970,7 +3970,7 @@ class InvoiceType
      *  Tax Total
      *  Tax Total
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTaxTotal($index)
@@ -3990,7 +3990,7 @@ class InvoiceType
      *  Tax Total
      *  Tax Total
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTaxTotal($index)
@@ -4029,7 +4029,7 @@ class InvoiceType
      *  Tax Total
      *  Tax Total
      *
-     * @param \horstoeko\ubl\entities\cac\TaxTotal[] $taxTotal
+     * @param  \horstoeko\ubl\entities\cac\TaxTotal[] $taxTotal
      * @return self
      */
     public function setTaxTotal(array $taxTotal)
@@ -4052,7 +4052,7 @@ class InvoiceType
      *  Tax Total
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\WithholdingTaxTotal $withholdingTaxTotal
+     * @param  \horstoeko\ubl\entities\cac\WithholdingTaxTotal $withholdingTaxTotal
      */
     public function addToWithholdingTaxTotal(\horstoeko\ubl\entities\cac\WithholdingTaxTotal $withholdingTaxTotal)
     {
@@ -4073,7 +4073,7 @@ class InvoiceType
      *  Tax Total
      *  Tax Total
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetWithholdingTaxTotal($index)
@@ -4094,7 +4094,7 @@ class InvoiceType
      *  Tax Total
      *  Tax Total
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetWithholdingTaxTotal($index)
@@ -4135,7 +4135,7 @@ class InvoiceType
      *  Tax Total
      *  Tax Total
      *
-     * @param \horstoeko\ubl\entities\cac\WithholdingTaxTotal[] $withholdingTaxTotal
+     * @param  \horstoeko\ubl\entities\cac\WithholdingTaxTotal[] $withholdingTaxTotal
      * @return self
      */
     public function setWithholdingTaxTotal(array $withholdingTaxTotal)
@@ -4177,7 +4177,7 @@ class InvoiceType
      *  Monetary Total
      *  Monetary Total
      *
-     * @param \horstoeko\ubl\entities\cac\LegalMonetaryTotal $legalMonetaryTotal
+     * @param  \horstoeko\ubl\entities\cac\LegalMonetaryTotal $legalMonetaryTotal
      * @return self
      */
     public function setLegalMonetaryTotal(\horstoeko\ubl\entities\cac\LegalMonetaryTotal $legalMonetaryTotal)
@@ -4199,7 +4199,7 @@ class InvoiceType
      *  Invoice Line
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\InvoiceLine $invoiceLine
+     * @param  \horstoeko\ubl\entities\cac\InvoiceLine $invoiceLine
      */
     public function addToInvoiceLine(\horstoeko\ubl\entities\cac\InvoiceLine $invoiceLine)
     {
@@ -4219,7 +4219,7 @@ class InvoiceType
      *  Invoice Line
      *  Invoice Line
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetInvoiceLine($index)
@@ -4239,7 +4239,7 @@ class InvoiceType
      *  Invoice Line
      *  Invoice Line
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetInvoiceLine($index)
@@ -4278,7 +4278,7 @@ class InvoiceType
      *  Invoice Line
      *  Invoice Line
      *
-     * @param \horstoeko\ubl\entities\cac\InvoiceLine[] $invoiceLine
+     * @param  \horstoeko\ubl\entities\cac\InvoiceLine[] $invoiceLine
      * @return self
      */
     public function setInvoiceLine(array $invoiceLine)

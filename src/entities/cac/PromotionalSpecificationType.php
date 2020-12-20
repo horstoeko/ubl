@@ -91,7 +91,7 @@ class PromotionalSpecificationType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SpecificationID $specificationID
+     * @param  \horstoeko\ubl\entities\cbc\SpecificationID $specificationID
      * @return self
      */
     public function setSpecificationID(\horstoeko\ubl\entities\cbc\SpecificationID $specificationID)
@@ -113,7 +113,7 @@ class PromotionalSpecificationType
      *  Promotional Event Line Item
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\PromotionalEventLineItem $promotionalEventLineItem
+     * @param  \horstoeko\ubl\entities\cac\PromotionalEventLineItem $promotionalEventLineItem
      */
     public function addToPromotionalEventLineItem(\horstoeko\ubl\entities\cac\PromotionalEventLineItem $promotionalEventLineItem)
     {
@@ -133,7 +133,7 @@ class PromotionalSpecificationType
      *  Promotional Event Line Item
      *  Promotional Event Line Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPromotionalEventLineItem($index)
@@ -153,7 +153,7 @@ class PromotionalSpecificationType
      *  Promotional Event Line Item
      *  Promotional Event Line Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPromotionalEventLineItem($index)
@@ -192,7 +192,7 @@ class PromotionalSpecificationType
      *  Promotional Event Line Item
      *  Promotional Event Line Item
      *
-     * @param \horstoeko\ubl\entities\cac\PromotionalEventLineItem[] $promotionalEventLineItem
+     * @param  \horstoeko\ubl\entities\cac\PromotionalEventLineItem[] $promotionalEventLineItem
      * @return self
      */
     public function setPromotionalEventLineItem(array $promotionalEventLineItem)
@@ -214,7 +214,7 @@ class PromotionalSpecificationType
      *  Event Tactic
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\EventTactic $eventTactic
+     * @param  \horstoeko\ubl\entities\cac\EventTactic $eventTactic
      */
     public function addToEventTactic(\horstoeko\ubl\entities\cac\EventTactic $eventTactic)
     {
@@ -234,7 +234,7 @@ class PromotionalSpecificationType
      *  Event Tactic
      *  Event Tactic
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetEventTactic($index)
@@ -254,7 +254,7 @@ class PromotionalSpecificationType
      *  Event Tactic
      *  Event Tactic
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetEventTactic($index)
@@ -293,7 +293,7 @@ class PromotionalSpecificationType
      *  Event Tactic
      *  Event Tactic
      *
-     * @param \horstoeko\ubl\entities\cac\EventTactic[] $eventTactic
+     * @param  \horstoeko\ubl\entities\cac\EventTactic[] $eventTactic
      * @return self
      */
     public function setEventTactic(array $eventTactic)

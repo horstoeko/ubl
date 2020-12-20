@@ -396,7 +396,7 @@ class TenderingProcessType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -438,7 +438,7 @@ class TenderingProcessType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\OriginalContractingSystemID $originalContractingSystemID
+     * @param  \horstoeko\ubl\entities\cbc\OriginalContractingSystemID $originalContractingSystemID
      * @return self
      */
     public function setOriginalContractingSystemID(\horstoeko\ubl\entities\cbc\OriginalContractingSystemID $originalContractingSystemID)
@@ -460,7 +460,7 @@ class TenderingProcessType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -480,7 +480,7 @@ class TenderingProcessType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -500,7 +500,7 @@ class TenderingProcessType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -539,7 +539,7 @@ class TenderingProcessType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -562,7 +562,7 @@ class TenderingProcessType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\NegotiationDescription $negotiationDescription
+     * @param  \horstoeko\ubl\entities\cbc\NegotiationDescription $negotiationDescription
      */
     public function addToNegotiationDescription(\horstoeko\ubl\entities\cbc\NegotiationDescription $negotiationDescription)
     {
@@ -583,7 +583,7 @@ class TenderingProcessType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNegotiationDescription($index)
@@ -604,7 +604,7 @@ class TenderingProcessType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNegotiationDescription($index)
@@ -645,7 +645,7 @@ class TenderingProcessType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\NegotiationDescription[] $negotiationDescription
+     * @param  \horstoeko\ubl\entities\cbc\NegotiationDescription[] $negotiationDescription
      * @return self
      */
     public function setNegotiationDescription(array $negotiationDescription)
@@ -687,7 +687,7 @@ class TenderingProcessType
      *  Code. Type
      *  Open, Restricted, Negotiated
      *
-     * @param \horstoeko\ubl\entities\cbc\ProcedureCode $procedureCode
+     * @param  \horstoeko\ubl\entities\cbc\ProcedureCode $procedureCode
      * @return self
      */
     public function setProcedureCode(\horstoeko\ubl\entities\cbc\ProcedureCode $procedureCode)
@@ -729,7 +729,7 @@ class TenderingProcessType
      *  Code. Type
      *  Urgent, Normal, Emergency
      *
-     * @param \horstoeko\ubl\entities\cbc\UrgencyCode $urgencyCode
+     * @param  \horstoeko\ubl\entities\cbc\UrgencyCode $urgencyCode
      * @return self
      */
     public function setUrgencyCode(\horstoeko\ubl\entities\cbc\UrgencyCode $urgencyCode)
@@ -771,7 +771,7 @@ class TenderingProcessType
      *  Code. Type
      *  Normal, Anticipated
      *
-     * @param \horstoeko\ubl\entities\cbc\ExpenseCode $expenseCode
+     * @param  \horstoeko\ubl\entities\cbc\ExpenseCode $expenseCode
      * @return self
      */
     public function setExpenseCode(\horstoeko\ubl\entities\cbc\ExpenseCode $expenseCode)
@@ -813,7 +813,7 @@ class TenderingProcessType
      *  Code. Type
      *  One Lot, Multiple Lots, All Lots
      *
-     * @param \horstoeko\ubl\entities\cbc\PartPresentationCode $partPresentationCode
+     * @param  \horstoeko\ubl\entities\cbc\PartPresentationCode $partPresentationCode
      * @return self
      */
     public function setPartPresentationCode(\horstoeko\ubl\entities\cbc\PartPresentationCode $partPresentationCode)
@@ -855,7 +855,7 @@ class TenderingProcessType
      *  Code. Type
      *  Framework Agreement, Dynamic Purchasing System
      *
-     * @param \horstoeko\ubl\entities\cbc\ContractingSystemCode $contractingSystemCode
+     * @param  \horstoeko\ubl\entities\cbc\ContractingSystemCode $contractingSystemCode
      * @return self
      */
     public function setContractingSystemCode(\horstoeko\ubl\entities\cbc\ContractingSystemCode $contractingSystemCode)
@@ -897,7 +897,7 @@ class TenderingProcessType
      *  Code. Type
      *  Manual, Electronically, etc.
      *
-     * @param \horstoeko\ubl\entities\cbc\SubmissionMethodCode $submissionMethodCode
+     * @param  \horstoeko\ubl\entities\cbc\SubmissionMethodCode $submissionMethodCode
      * @return self
      */
     public function setSubmissionMethodCode(\horstoeko\ubl\entities\cbc\SubmissionMethodCode $submissionMethodCode)
@@ -939,7 +939,7 @@ class TenderingProcessType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $candidateReductionConstraintIndicator
+     * @param  bool $candidateReductionConstraintIndicator
      * @return self
      */
     public function setCandidateReductionConstraintIndicator($candidateReductionConstraintIndicator)
@@ -981,7 +981,7 @@ class TenderingProcessType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $governmentAgreementConstraintIndicator
+     * @param  bool $governmentAgreementConstraintIndicator
      * @return self
      */
     public function setGovernmentAgreementConstraintIndicator($governmentAgreementConstraintIndicator)
@@ -1023,7 +1023,7 @@ class TenderingProcessType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\DocumentAvailabilityPeriod $documentAvailabilityPeriod
+     * @param  \horstoeko\ubl\entities\cac\DocumentAvailabilityPeriod $documentAvailabilityPeriod
      * @return self
      */
     public function setDocumentAvailabilityPeriod(\horstoeko\ubl\entities\cac\DocumentAvailabilityPeriod $documentAvailabilityPeriod)
@@ -1065,7 +1065,7 @@ class TenderingProcessType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\TenderSubmissionDeadlinePeriod $tenderSubmissionDeadlinePeriod
+     * @param  \horstoeko\ubl\entities\cac\TenderSubmissionDeadlinePeriod $tenderSubmissionDeadlinePeriod
      * @return self
      */
     public function setTenderSubmissionDeadlinePeriod(\horstoeko\ubl\entities\cac\TenderSubmissionDeadlinePeriod $tenderSubmissionDeadlinePeriod)
@@ -1107,7 +1107,7 @@ class TenderingProcessType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\InvitationSubmissionPeriod $invitationSubmissionPeriod
+     * @param  \horstoeko\ubl\entities\cac\InvitationSubmissionPeriod $invitationSubmissionPeriod
      * @return self
      */
     public function setInvitationSubmissionPeriod(\horstoeko\ubl\entities\cac\InvitationSubmissionPeriod $invitationSubmissionPeriod)
@@ -1149,7 +1149,7 @@ class TenderingProcessType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\ParticipationRequestReceptionPeriod $participationRequestReceptionPeriod
+     * @param  \horstoeko\ubl\entities\cac\ParticipationRequestReceptionPeriod $participationRequestReceptionPeriod
      * @return self
      */
     public function setParticipationRequestReceptionPeriod(\horstoeko\ubl\entities\cac\ParticipationRequestReceptionPeriod $participationRequestReceptionPeriod)
@@ -1172,7 +1172,7 @@ class TenderingProcessType
      *  Document Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\NoticeDocumentReference $noticeDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\NoticeDocumentReference $noticeDocumentReference
      */
     public function addToNoticeDocumentReference(\horstoeko\ubl\entities\cac\NoticeDocumentReference $noticeDocumentReference)
     {
@@ -1193,7 +1193,7 @@ class TenderingProcessType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNoticeDocumentReference($index)
@@ -1214,7 +1214,7 @@ class TenderingProcessType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNoticeDocumentReference($index)
@@ -1255,7 +1255,7 @@ class TenderingProcessType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\NoticeDocumentReference[] $noticeDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\NoticeDocumentReference[] $noticeDocumentReference
      * @return self
      */
     public function setNoticeDocumentReference(array $noticeDocumentReference)
@@ -1278,7 +1278,7 @@ class TenderingProcessType
      *  Document Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\AdditionalDocumentReference $additionalDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\AdditionalDocumentReference $additionalDocumentReference
      */
     public function addToAdditionalDocumentReference(\horstoeko\ubl\entities\cac\AdditionalDocumentReference $additionalDocumentReference)
     {
@@ -1299,7 +1299,7 @@ class TenderingProcessType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAdditionalDocumentReference($index)
@@ -1320,7 +1320,7 @@ class TenderingProcessType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAdditionalDocumentReference($index)
@@ -1361,7 +1361,7 @@ class TenderingProcessType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\AdditionalDocumentReference[] $additionalDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\AdditionalDocumentReference[] $additionalDocumentReference
      * @return self
      */
     public function setAdditionalDocumentReference(array $additionalDocumentReference)
@@ -1383,7 +1383,7 @@ class TenderingProcessType
      *  Process Justification
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ProcessJustification $processJustification
+     * @param  \horstoeko\ubl\entities\cac\ProcessJustification $processJustification
      */
     public function addToProcessJustification(\horstoeko\ubl\entities\cac\ProcessJustification $processJustification)
     {
@@ -1403,7 +1403,7 @@ class TenderingProcessType
      *  Process Justification
      *  Process Justification
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetProcessJustification($index)
@@ -1423,7 +1423,7 @@ class TenderingProcessType
      *  Process Justification
      *  Process Justification
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetProcessJustification($index)
@@ -1462,7 +1462,7 @@ class TenderingProcessType
      *  Process Justification
      *  Process Justification
      *
-     * @param \horstoeko\ubl\entities\cac\ProcessJustification[] $processJustification
+     * @param  \horstoeko\ubl\entities\cac\ProcessJustification[] $processJustification
      * @return self
      */
     public function setProcessJustification(array $processJustification)
@@ -1502,7 +1502,7 @@ class TenderingProcessType
      *  Economic Operator Short List
      *  Economic Operator Short List
      *
-     * @param \horstoeko\ubl\entities\cac\EconomicOperatorShortList $economicOperatorShortList
+     * @param  \horstoeko\ubl\entities\cac\EconomicOperatorShortList $economicOperatorShortList
      * @return self
      */
     public function setEconomicOperatorShortList(\horstoeko\ubl\entities\cac\EconomicOperatorShortList $economicOperatorShortList)
@@ -1525,7 +1525,7 @@ class TenderingProcessType
      *  Event
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\OpenTenderEvent $openTenderEvent
+     * @param  \horstoeko\ubl\entities\cac\OpenTenderEvent $openTenderEvent
      */
     public function addToOpenTenderEvent(\horstoeko\ubl\entities\cac\OpenTenderEvent $openTenderEvent)
     {
@@ -1546,7 +1546,7 @@ class TenderingProcessType
      *  Event
      *  Event
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetOpenTenderEvent($index)
@@ -1567,7 +1567,7 @@ class TenderingProcessType
      *  Event
      *  Event
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetOpenTenderEvent($index)
@@ -1608,7 +1608,7 @@ class TenderingProcessType
      *  Event
      *  Event
      *
-     * @param \horstoeko\ubl\entities\cac\OpenTenderEvent[] $openTenderEvent
+     * @param  \horstoeko\ubl\entities\cac\OpenTenderEvent[] $openTenderEvent
      * @return self
      */
     public function setOpenTenderEvent(array $openTenderEvent)
@@ -1648,7 +1648,7 @@ class TenderingProcessType
      *  Auction Terms
      *  Auction Terms
      *
-     * @param \horstoeko\ubl\entities\cac\AuctionTerms $auctionTerms
+     * @param  \horstoeko\ubl\entities\cac\AuctionTerms $auctionTerms
      * @return self
      */
     public function setAuctionTerms(\horstoeko\ubl\entities\cac\AuctionTerms $auctionTerms)
@@ -1688,7 +1688,7 @@ class TenderingProcessType
      *  Framework Agreement
      *  Framework Agreement
      *
-     * @param \horstoeko\ubl\entities\cac\FrameworkAgreement $frameworkAgreement
+     * @param  \horstoeko\ubl\entities\cac\FrameworkAgreement $frameworkAgreement
      * @return self
      */
     public function setFrameworkAgreement(\horstoeko\ubl\entities\cac\FrameworkAgreement $frameworkAgreement)

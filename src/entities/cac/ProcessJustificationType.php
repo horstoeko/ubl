@@ -110,7 +110,7 @@ class ProcessJustificationType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PreviousCancellationReasonCode $previousCancellationReasonCode
+     * @param  \horstoeko\ubl\entities\cbc\PreviousCancellationReasonCode $previousCancellationReasonCode
      * @return self
      */
     public function setPreviousCancellationReasonCode(\horstoeko\ubl\entities\cbc\PreviousCancellationReasonCode $previousCancellationReasonCode)
@@ -152,7 +152,7 @@ class ProcessJustificationType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ProcessReasonCode $processReasonCode
+     * @param  \horstoeko\ubl\entities\cbc\ProcessReasonCode $processReasonCode
      * @return self
      */
     public function setProcessReasonCode(\horstoeko\ubl\entities\cbc\ProcessReasonCode $processReasonCode)
@@ -175,7 +175,7 @@ class ProcessJustificationType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\ProcessReason $processReason
+     * @param  \horstoeko\ubl\entities\cbc\ProcessReason $processReason
      */
     public function addToProcessReason(\horstoeko\ubl\entities\cbc\ProcessReason $processReason)
     {
@@ -196,7 +196,7 @@ class ProcessJustificationType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetProcessReason($index)
@@ -217,7 +217,7 @@ class ProcessJustificationType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetProcessReason($index)
@@ -258,7 +258,7 @@ class ProcessJustificationType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ProcessReason[] $processReason
+     * @param  \horstoeko\ubl\entities\cbc\ProcessReason[] $processReason
      * @return self
      */
     public function setProcessReason(array $processReason)
@@ -280,7 +280,7 @@ class ProcessJustificationType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -300,7 +300,7 @@ class ProcessJustificationType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -320,7 +320,7 @@ class ProcessJustificationType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -359,7 +359,7 @@ class ProcessJustificationType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)

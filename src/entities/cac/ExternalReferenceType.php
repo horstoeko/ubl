@@ -202,7 +202,7 @@ class ExternalReferenceType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\URI $uRI
+     * @param  \horstoeko\ubl\entities\cbc\URI $uRI
      * @return self
      */
     public function setURI(\horstoeko\ubl\entities\cbc\URI $uRI)
@@ -242,7 +242,7 @@ class ExternalReferenceType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\DocumentHash $documentHash
+     * @param  \horstoeko\ubl\entities\cbc\DocumentHash $documentHash
      * @return self
      */
     public function setDocumentHash(\horstoeko\ubl\entities\cbc\DocumentHash $documentHash)
@@ -282,7 +282,7 @@ class ExternalReferenceType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\HashAlgorithmMethod $hashAlgorithmMethod
+     * @param  \horstoeko\ubl\entities\cbc\HashAlgorithmMethod $hashAlgorithmMethod
      * @return self
      */
     public function setHashAlgorithmMethod(\horstoeko\ubl\entities\cbc\HashAlgorithmMethod $hashAlgorithmMethod)
@@ -322,7 +322,7 @@ class ExternalReferenceType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $expiryDate
+     * @param  \DateTime $expiryDate
      * @return self
      */
     public function setExpiryDate(\DateTime $expiryDate)
@@ -362,7 +362,7 @@ class ExternalReferenceType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $expiryTime
+     * @param  \DateTime $expiryTime
      * @return self
      */
     public function setExpiryTime(\DateTime $expiryTime)
@@ -402,7 +402,7 @@ class ExternalReferenceType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MimeCode $mimeCode
+     * @param  \horstoeko\ubl\entities\cbc\MimeCode $mimeCode
      * @return self
      */
     public function setMimeCode(\horstoeko\ubl\entities\cbc\MimeCode $mimeCode)
@@ -442,7 +442,7 @@ class ExternalReferenceType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\FormatCode $formatCode
+     * @param  \horstoeko\ubl\entities\cbc\FormatCode $formatCode
      * @return self
      */
     public function setFormatCode(\horstoeko\ubl\entities\cbc\FormatCode $formatCode)
@@ -482,7 +482,7 @@ class ExternalReferenceType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\EncodingCode $encodingCode
+     * @param  \horstoeko\ubl\entities\cbc\EncodingCode $encodingCode
      * @return self
      */
     public function setEncodingCode(\horstoeko\ubl\entities\cbc\EncodingCode $encodingCode)
@@ -522,7 +522,7 @@ class ExternalReferenceType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CharacterSetCode $characterSetCode
+     * @param  \horstoeko\ubl\entities\cbc\CharacterSetCode $characterSetCode
      * @return self
      */
     public function setCharacterSetCode(\horstoeko\ubl\entities\cbc\CharacterSetCode $characterSetCode)
@@ -562,7 +562,7 @@ class ExternalReferenceType
      *  Name
      *  Name. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\FileName $fileName
+     * @param  \horstoeko\ubl\entities\cbc\FileName $fileName
      * @return self
      */
     public function setFileName(\horstoeko\ubl\entities\cbc\FileName $fileName)
@@ -585,7 +585,7 @@ class ExternalReferenceType
      *  computer accessories for laptops
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -606,7 +606,7 @@ class ExternalReferenceType
      *  Text. Type
      *  computer accessories for laptops
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -627,7 +627,7 @@ class ExternalReferenceType
      *  Text. Type
      *  computer accessories for laptops
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -668,7 +668,7 @@ class ExternalReferenceType
      *  Text. Type
      *  computer accessories for laptops
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)

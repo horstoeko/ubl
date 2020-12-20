@@ -106,7 +106,7 @@ class TendererRequirementType
      *  Name. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Name $name
+     * @param  \horstoeko\ubl\entities\cbc\Name $name
      */
     public function addToName(\horstoeko\ubl\entities\cbc\Name $name)
     {
@@ -126,7 +126,7 @@ class TendererRequirementType
      *  Name
      *  Name. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetName($index)
@@ -146,7 +146,7 @@ class TendererRequirementType
      *  Name
      *  Name. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetName($index)
@@ -185,7 +185,7 @@ class TendererRequirementType
      *  Name
      *  Name. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Name[] $name
+     * @param  \horstoeko\ubl\entities\cbc\Name[] $name
      * @return self
      */
     public function setName(array $name)
@@ -227,7 +227,7 @@ class TendererRequirementType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TendererRequirementTypeCode $tendererRequirementTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\TendererRequirementTypeCode $tendererRequirementTypeCode
      * @return self
      */
     public function setTendererRequirementTypeCode(\horstoeko\ubl\entities\cbc\TendererRequirementTypeCode $tendererRequirementTypeCode)
@@ -249,7 +249,7 @@ class TendererRequirementType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -269,7 +269,7 @@ class TendererRequirementType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -289,7 +289,7 @@ class TendererRequirementType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -328,7 +328,7 @@ class TendererRequirementType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -370,7 +370,7 @@ class TendererRequirementType
      *  Text. Type
      *  Art. 45 2 b
      *
-     * @param \horstoeko\ubl\entities\cbc\LegalReference $legalReference
+     * @param  \horstoeko\ubl\entities\cbc\LegalReference $legalReference
      * @return self
      */
     public function setLegalReference(\horstoeko\ubl\entities\cbc\LegalReference $legalReference)
@@ -393,7 +393,7 @@ class TendererRequirementType
      *  Evidence
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\SuggestedEvidence $suggestedEvidence
+     * @param  \horstoeko\ubl\entities\cac\SuggestedEvidence $suggestedEvidence
      */
     public function addToSuggestedEvidence(\horstoeko\ubl\entities\cac\SuggestedEvidence $suggestedEvidence)
     {
@@ -414,7 +414,7 @@ class TendererRequirementType
      *  Evidence
      *  Evidence
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSuggestedEvidence($index)
@@ -435,7 +435,7 @@ class TendererRequirementType
      *  Evidence
      *  Evidence
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSuggestedEvidence($index)
@@ -476,7 +476,7 @@ class TendererRequirementType
      *  Evidence
      *  Evidence
      *
-     * @param \horstoeko\ubl\entities\cac\SuggestedEvidence[] $suggestedEvidence
+     * @param  \horstoeko\ubl\entities\cac\SuggestedEvidence[] $suggestedEvidence
      * @return self
      */
     public function setSuggestedEvidence(array $suggestedEvidence)

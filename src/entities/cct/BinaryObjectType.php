@@ -119,7 +119,7 @@ class BinaryObjectType
     /**
      * Gets or sets the inner value
      *
-     * @param string $value
+     * @param  string $value
      * @return string
      */
     public function value()
@@ -171,7 +171,7 @@ class BinaryObjectType
      *  Text
      *  string
      *
-     * @param string $format
+     * @param  string $format
      * @return self
      */
     public function setFormat($format)
@@ -211,7 +211,7 @@ class BinaryObjectType
      *  Code
      *  string
      *
-     * @param string $mimeCode
+     * @param  string $mimeCode
      * @return self
      */
     public function setMimeCode($mimeCode)
@@ -251,7 +251,7 @@ class BinaryObjectType
      *  Code
      *  string
      *
-     * @param string $encodingCode
+     * @param  string $encodingCode
      * @return self
      */
     public function setEncodingCode($encodingCode)
@@ -291,7 +291,7 @@ class BinaryObjectType
      *  Code
      *  string
      *
-     * @param string $characterSetCode
+     * @param  string $characterSetCode
      * @return self
      */
     public function setCharacterSetCode($characterSetCode)
@@ -331,7 +331,7 @@ class BinaryObjectType
      *  Identifier
      *  string
      *
-     * @param string $uri
+     * @param  string $uri
      * @return self
      */
     public function setUri($uri)
@@ -371,7 +371,7 @@ class BinaryObjectType
      *  Text
      *  string
      *
-     * @param string $filename
+     * @param  string $filename
      * @return self
      */
     public function setFilename($filename)

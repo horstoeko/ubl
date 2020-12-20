@@ -255,7 +255,7 @@ class ContractType
      *  Identifier. Type
      *  CC23
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -295,7 +295,7 @@ class ContractType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $issueDate
+     * @param  \DateTime $issueDate
      * @return self
      */
     public function setIssueDate(\DateTime $issueDate)
@@ -335,7 +335,7 @@ class ContractType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $issueTime
+     * @param  \DateTime $issueTime
      * @return self
      */
     public function setIssueTime(\DateTime $issueTime)
@@ -375,7 +375,7 @@ class ContractType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $nominationDate
+     * @param  \DateTime $nominationDate
      * @return self
      */
     public function setNominationDate(\DateTime $nominationDate)
@@ -415,7 +415,7 @@ class ContractType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $nominationTime
+     * @param  \DateTime $nominationTime
      * @return self
      */
     public function setNominationTime(\DateTime $nominationTime)
@@ -455,7 +455,7 @@ class ContractType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ContractTypeCode $contractTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\ContractTypeCode $contractTypeCode
      * @return self
      */
     public function setContractTypeCode(\horstoeko\ubl\entities\cbc\ContractTypeCode $contractTypeCode)
@@ -495,7 +495,7 @@ class ContractType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ContractType $contractType
+     * @param  \horstoeko\ubl\entities\cbc\ContractType $contractType
      * @return self
      */
     public function setContractType(\horstoeko\ubl\entities\cbc\ContractType $contractType)
@@ -518,7 +518,7 @@ class ContractType
      *  Remarks
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param  \horstoeko\ubl\entities\cbc\Note $note
      */
     public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
     {
@@ -539,7 +539,7 @@ class ContractType
      *  Text. Type
      *  Remarks
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNote($index)
@@ -560,7 +560,7 @@ class ContractType
      *  Text. Type
      *  Remarks
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNote($index)
@@ -601,7 +601,7 @@ class ContractType
      *  Text. Type
      *  Remarks
      *
-     * @param \horstoeko\ubl\entities\cbc\Note[] $note
+     * @param  \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
     public function setNote(array $note)
@@ -641,7 +641,7 @@ class ContractType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\VersionID $versionID
+     * @param  \horstoeko\ubl\entities\cbc\VersionID $versionID
      * @return self
      */
     public function setVersionID(\horstoeko\ubl\entities\cbc\VersionID $versionID)
@@ -663,7 +663,7 @@ class ContractType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -683,7 +683,7 @@ class ContractType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -703,7 +703,7 @@ class ContractType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -742,7 +742,7 @@ class ContractType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -784,7 +784,7 @@ class ContractType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\ValidityPeriod $validityPeriod
+     * @param  \horstoeko\ubl\entities\cac\ValidityPeriod $validityPeriod
      * @return self
      */
     public function setValidityPeriod(\horstoeko\ubl\entities\cac\ValidityPeriod $validityPeriod)
@@ -807,7 +807,7 @@ class ContractType
      *  Document Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ContractDocumentReference $contractDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\ContractDocumentReference $contractDocumentReference
      */
     public function addToContractDocumentReference(\horstoeko\ubl\entities\cac\ContractDocumentReference $contractDocumentReference)
     {
@@ -828,7 +828,7 @@ class ContractType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetContractDocumentReference($index)
@@ -849,7 +849,7 @@ class ContractType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetContractDocumentReference($index)
@@ -890,7 +890,7 @@ class ContractType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\ContractDocumentReference[] $contractDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\ContractDocumentReference[] $contractDocumentReference
      * @return self
      */
     public function setContractDocumentReference(array $contractDocumentReference)
@@ -932,7 +932,7 @@ class ContractType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\NominationPeriod $nominationPeriod
+     * @param  \horstoeko\ubl\entities\cac\NominationPeriod $nominationPeriod
      * @return self
      */
     public function setNominationPeriod(\horstoeko\ubl\entities\cac\NominationPeriod $nominationPeriod)
@@ -974,7 +974,7 @@ class ContractType
      *  Delivery
      *  Delivery
      *
-     * @param \horstoeko\ubl\entities\cac\ContractualDelivery $contractualDelivery
+     * @param  \horstoeko\ubl\entities\cac\ContractualDelivery $contractualDelivery
      * @return self
      */
     public function setContractualDelivery(\horstoeko\ubl\entities\cac\ContractualDelivery $contractualDelivery)

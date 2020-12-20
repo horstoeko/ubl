@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing RegistrationExpirationDateType
  *
- *
  * XSD Type: RegistrationExpirationDateType
  */
 class RegistrationExpirationDateType
@@ -29,7 +28,7 @@ class RegistrationExpirationDateType
     /**
      * Gets or sets the inner value
      *
-     * @param \DateTime $value
+     * @param  \DateTime $value
      * @return \DateTime
      */
     public function value()

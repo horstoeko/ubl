@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\ds;
 /**
  * Class representing TransformsType
  *
- *
  * XSD Type: TransformsType
  */
 class TransformsType
@@ -22,7 +21,7 @@ class TransformsType
      * Adds as transform
      *
      * @return self
-     * @param \horstoeko\ubl\entities\ds\Transform $transform
+     * @param  \horstoeko\ubl\entities\ds\Transform $transform
      */
     public function addToTransform(\horstoeko\ubl\entities\ds\Transform $transform)
     {
@@ -33,7 +32,7 @@ class TransformsType
     /**
      * isset transform
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTransform($index)
@@ -44,7 +43,7 @@ class TransformsType
     /**
      * unset transform
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTransform($index)
@@ -65,7 +64,7 @@ class TransformsType
     /**
      * Sets a new transform
      *
-     * @param \horstoeko\ubl\entities\ds\Transform[] $transform
+     * @param  \horstoeko\ubl\entities\ds\Transform[] $transform
      * @return self
      */
     public function setTransform(array $transform)

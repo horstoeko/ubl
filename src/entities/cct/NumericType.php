@@ -49,7 +49,7 @@ class NumericType
     /**
      * Gets or sets the inner value
      *
-     * @param float $value
+     * @param  float $value
      * @return float
      */
     public function value()
@@ -101,7 +101,7 @@ class NumericType
      *  Text
      *  string
      *
-     * @param string $format
+     * @param  string $format
      * @return self
      */
     public function setFormat($format)

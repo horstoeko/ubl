@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing ReturnableMaterialIndicatorType
  *
- *
  * XSD Type: ReturnableMaterialIndicatorType
  */
 class ReturnableMaterialIndicatorType
@@ -29,7 +28,7 @@ class ReturnableMaterialIndicatorType
     /**
      * Gets or sets the inner value
      *
-     * @param bool $value
+     * @param  bool $value
      * @return bool
      */
     public function value()

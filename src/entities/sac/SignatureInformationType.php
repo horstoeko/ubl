@@ -80,7 +80,7 @@ class SignatureInformationType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -120,7 +120,7 @@ class SignatureInformationType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\sbc\ReferencedSignatureID $referencedSignatureID
+     * @param  \horstoeko\ubl\entities\sbc\ReferencedSignatureID $referencedSignatureID
      * @return self
      */
     public function setReferencedSignatureID(\horstoeko\ubl\entities\sbc\ReferencedSignatureID $referencedSignatureID)
@@ -146,7 +146,7 @@ class SignatureInformationType
      *
      * This is a single digital signature as defined by the W3C specification.
      *
-     * @param \horstoeko\ubl\entities\ds\Signature $signature
+     * @param  \horstoeko\ubl\entities\ds\Signature $signature
      * @return self
      */
     public function setSignature(\horstoeko\ubl\entities\ds\Signature $signature)

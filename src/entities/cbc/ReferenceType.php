@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing ReferenceType
  *
- *
  * XSD Type: ReferenceType
  */
 class ReferenceType extends TextType

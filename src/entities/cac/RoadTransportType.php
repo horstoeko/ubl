@@ -62,7 +62,7 @@ class RoadTransportType
      *  Identifier. Type
      *  Vehicle registration number (WCO ID 167)
      *
-     * @param \horstoeko\ubl\entities\cbc\LicensePlateID $licensePlateID
+     * @param  \horstoeko\ubl\entities\cbc\LicensePlateID $licensePlateID
      * @return self
      */
     public function setLicensePlateID(\horstoeko\ubl\entities\cbc\LicensePlateID $licensePlateID)

@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\RateType;
 /**
  * Class representing AmountRateType
  *
- *
  * XSD Type: AmountRateType
  */
 class AmountRateType extends RateType

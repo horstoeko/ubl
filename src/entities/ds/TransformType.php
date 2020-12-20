@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\ds;
 /**
  * Class representing TransformType
  *
- *
  * XSD Type: TransformType
  */
 class TransformType
@@ -36,7 +35,7 @@ class TransformType
     /**
      * Sets a new algorithm
      *
-     * @param string $algorithm
+     * @param  string $algorithm
      * @return self
      */
     public function setAlgorithm($algorithm)
@@ -49,7 +48,7 @@ class TransformType
      * Adds as xPath
      *
      * @return self
-     * @param string $xPath
+     * @param  string $xPath
      */
     public function addToXPath($xPath)
     {
@@ -60,7 +59,7 @@ class TransformType
     /**
      * isset xPath
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetXPath($index)
@@ -71,7 +70,7 @@ class TransformType
     /**
      * unset xPath
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetXPath($index)
@@ -92,7 +91,7 @@ class TransformType
     /**
      * Sets a new xPath
      *
-     * @param string[] $xPath
+     * @param  string[] $xPath
      * @return self
      */
     public function setXPath(array $xPath)

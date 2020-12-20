@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\QuantityType;
 /**
  * Class representing EstimatedConsumedQuantityType
  *
- *
  * XSD Type: EstimatedConsumedQuantityType
  */
 class EstimatedConsumedQuantityType extends QuantityType

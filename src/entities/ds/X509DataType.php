@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\ds;
 /**
  * Class representing X509DataType
  *
- *
  * XSD Type: X509DataType
  */
 class X509DataType
@@ -50,7 +49,7 @@ class X509DataType
      * Adds as x509IssuerSerial
      *
      * @return self
-     * @param \horstoeko\ubl\entities\ds\X509IssuerSerialType $x509IssuerSerial
+     * @param  \horstoeko\ubl\entities\ds\X509IssuerSerialType $x509IssuerSerial
      */
     public function addToX509IssuerSerial(\horstoeko\ubl\entities\ds\X509IssuerSerialType $x509IssuerSerial)
     {
@@ -61,7 +60,7 @@ class X509DataType
     /**
      * isset x509IssuerSerial
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetX509IssuerSerial($index)
@@ -72,7 +71,7 @@ class X509DataType
     /**
      * unset x509IssuerSerial
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetX509IssuerSerial($index)
@@ -93,7 +92,7 @@ class X509DataType
     /**
      * Sets a new x509IssuerSerial
      *
-     * @param \horstoeko\ubl\entities\ds\X509IssuerSerialType[] $x509IssuerSerial
+     * @param  \horstoeko\ubl\entities\ds\X509IssuerSerialType[] $x509IssuerSerial
      * @return self
      */
     public function setX509IssuerSerial(array $x509IssuerSerial)
@@ -106,7 +105,7 @@ class X509DataType
      * Adds as x509SKI
      *
      * @return self
-     * @param string $x509SKI
+     * @param  string $x509SKI
      */
     public function addToX509SKI($x509SKI)
     {
@@ -117,7 +116,7 @@ class X509DataType
     /**
      * isset x509SKI
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetX509SKI($index)
@@ -128,7 +127,7 @@ class X509DataType
     /**
      * unset x509SKI
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetX509SKI($index)
@@ -149,7 +148,7 @@ class X509DataType
     /**
      * Sets a new x509SKI
      *
-     * @param string[] $x509SKI
+     * @param  string[] $x509SKI
      * @return self
      */
     public function setX509SKI(array $x509SKI)
@@ -162,7 +161,7 @@ class X509DataType
      * Adds as x509SubjectName
      *
      * @return self
-     * @param string $x509SubjectName
+     * @param  string $x509SubjectName
      */
     public function addToX509SubjectName($x509SubjectName)
     {
@@ -173,7 +172,7 @@ class X509DataType
     /**
      * isset x509SubjectName
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetX509SubjectName($index)
@@ -184,7 +183,7 @@ class X509DataType
     /**
      * unset x509SubjectName
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetX509SubjectName($index)
@@ -205,7 +204,7 @@ class X509DataType
     /**
      * Sets a new x509SubjectName
      *
-     * @param string[] $x509SubjectName
+     * @param  string[] $x509SubjectName
      * @return self
      */
     public function setX509SubjectName(array $x509SubjectName)
@@ -218,7 +217,7 @@ class X509DataType
      * Adds as x509Certificate
      *
      * @return self
-     * @param string $x509Certificate
+     * @param  string $x509Certificate
      */
     public function addToX509Certificate($x509Certificate)
     {
@@ -229,7 +228,7 @@ class X509DataType
     /**
      * isset x509Certificate
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetX509Certificate($index)
@@ -240,7 +239,7 @@ class X509DataType
     /**
      * unset x509Certificate
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetX509Certificate($index)
@@ -261,7 +260,7 @@ class X509DataType
     /**
      * Sets a new x509Certificate
      *
-     * @param string[] $x509Certificate
+     * @param  string[] $x509Certificate
      * @return self
      */
     public function setX509Certificate(array $x509Certificate)
@@ -274,7 +273,7 @@ class X509DataType
      * Adds as x509CRL
      *
      * @return self
-     * @param string $x509CRL
+     * @param  string $x509CRL
      */
     public function addToX509CRL($x509CRL)
     {
@@ -285,7 +284,7 @@ class X509DataType
     /**
      * isset x509CRL
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetX509CRL($index)
@@ -296,7 +295,7 @@ class X509DataType
     /**
      * unset x509CRL
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetX509CRL($index)
@@ -317,7 +316,7 @@ class X509DataType
     /**
      * Sets a new x509CRL
      *
-     * @param string[] $x509CRL
+     * @param  string[] $x509CRL
      * @return self
      */
     public function setX509CRL(array $x509CRL)

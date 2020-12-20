@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing ResponseTimeType
  *
- *
  * XSD Type: ResponseTimeType
  */
 class ResponseTimeType
@@ -29,7 +28,7 @@ class ResponseTimeType
     /**
      * Gets or sets the inner value
      *
-     * @param \DateTime $value
+     * @param  \DateTime $value
      * @return \DateTime
      */
     public function value()

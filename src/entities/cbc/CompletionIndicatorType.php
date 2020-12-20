@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing CompletionIndicatorType
  *
- *
  * XSD Type: CompletionIndicatorType
  */
 class CompletionIndicatorType
@@ -29,7 +28,7 @@ class CompletionIndicatorType
     /**
      * Gets or sets the inner value
      *
-     * @param bool $value
+     * @param  bool $value
      * @return bool
      */
     public function value()

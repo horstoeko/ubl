@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\MeasureType;
 /**
  * Class representing LeadTimeMeasureType
  *
- *
  * XSD Type: LeadTimeMeasureType
  */
 class LeadTimeMeasureType extends MeasureType

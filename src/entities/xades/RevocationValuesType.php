@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing RevocationValuesType
  *
- *
  * XSD Type: RevocationValuesType
  */
 class RevocationValuesType
@@ -44,7 +43,7 @@ class RevocationValuesType
     /**
      * Sets a new id
      *
-     * @param string $id
+     * @param  string $id
      * @return self
      */
     public function setId($id)
@@ -57,7 +56,7 @@ class RevocationValuesType
      * Adds as encapsulatedCRLValue
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\EncapsulatedPKIDataType $encapsulatedCRLValue
+     * @param  \horstoeko\ubl\entities\xades\EncapsulatedPKIDataType $encapsulatedCRLValue
      */
     public function addToCRLValues(\horstoeko\ubl\entities\xades\EncapsulatedPKIDataType $encapsulatedCRLValue)
     {
@@ -68,7 +67,7 @@ class RevocationValuesType
     /**
      * isset cRLValues
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetCRLValues($index)
@@ -79,7 +78,7 @@ class RevocationValuesType
     /**
      * unset cRLValues
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetCRLValues($index)
@@ -100,7 +99,7 @@ class RevocationValuesType
     /**
      * Sets a new cRLValues
      *
-     * @param \horstoeko\ubl\entities\xades\EncapsulatedPKIDataType[] $cRLValues
+     * @param  \horstoeko\ubl\entities\xades\EncapsulatedPKIDataType[] $cRLValues
      * @return self
      */
     public function setCRLValues(array $cRLValues)
@@ -113,7 +112,7 @@ class RevocationValuesType
      * Adds as encapsulatedOCSPValue
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\EncapsulatedPKIDataType $encapsulatedOCSPValue
+     * @param  \horstoeko\ubl\entities\xades\EncapsulatedPKIDataType $encapsulatedOCSPValue
      */
     public function addToOCSPValues(\horstoeko\ubl\entities\xades\EncapsulatedPKIDataType $encapsulatedOCSPValue)
     {
@@ -124,7 +123,7 @@ class RevocationValuesType
     /**
      * isset oCSPValues
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetOCSPValues($index)
@@ -135,7 +134,7 @@ class RevocationValuesType
     /**
      * unset oCSPValues
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetOCSPValues($index)
@@ -156,7 +155,7 @@ class RevocationValuesType
     /**
      * Sets a new oCSPValues
      *
-     * @param \horstoeko\ubl\entities\xades\EncapsulatedPKIDataType[] $oCSPValues
+     * @param  \horstoeko\ubl\entities\xades\EncapsulatedPKIDataType[] $oCSPValues
      * @return self
      */
     public function setOCSPValues(array $oCSPValues)
@@ -169,7 +168,7 @@ class RevocationValuesType
      * Adds as otherValue
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\AnyType $otherValue
+     * @param  \horstoeko\ubl\entities\xades\AnyType $otherValue
      */
     public function addToOtherValues(\horstoeko\ubl\entities\xades\AnyType $otherValue)
     {
@@ -180,7 +179,7 @@ class RevocationValuesType
     /**
      * isset otherValues
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetOtherValues($index)
@@ -191,7 +190,7 @@ class RevocationValuesType
     /**
      * unset otherValues
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetOtherValues($index)
@@ -212,7 +211,7 @@ class RevocationValuesType
     /**
      * Sets a new otherValues
      *
-     * @param \horstoeko\ubl\entities\xades\AnyType[] $otherValues
+     * @param  \horstoeko\ubl\entities\xades\AnyType[] $otherValues
      * @return self
      */
     public function setOtherValues(array $otherValues)

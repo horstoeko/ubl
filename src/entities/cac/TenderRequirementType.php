@@ -90,7 +90,7 @@ class TenderRequirementType
      *  Name
      *  Name. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Name $name
+     * @param  \horstoeko\ubl\entities\cbc\Name $name
      * @return self
      */
     public function setName(\horstoeko\ubl\entities\cbc\Name $name)
@@ -112,7 +112,7 @@ class TenderRequirementType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -132,7 +132,7 @@ class TenderRequirementType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -152,7 +152,7 @@ class TenderRequirementType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -191,7 +191,7 @@ class TenderRequirementType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -233,7 +233,7 @@ class TenderRequirementType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\TemplateDocumentReference $templateDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\TemplateDocumentReference $templateDocumentReference
      * @return self
      */
     public function setTemplateDocumentReference(\horstoeko\ubl\entities\cac\TemplateDocumentReference $templateDocumentReference)

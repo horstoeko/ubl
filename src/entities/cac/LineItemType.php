@@ -523,7 +523,7 @@ class LineItemType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -565,7 +565,7 @@ class LineItemType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SalesOrderID $salesOrderID
+     * @param  \horstoeko\ubl\entities\cbc\SalesOrderID $salesOrderID
      * @return self
      */
     public function setSalesOrderID(\horstoeko\ubl\entities\cbc\SalesOrderID $salesOrderID)
@@ -605,7 +605,7 @@ class LineItemType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\UUID $uUID
+     * @param  \horstoeko\ubl\entities\cbc\UUID $uUID
      * @return self
      */
     public function setUUID(\horstoeko\ubl\entities\cbc\UUID $uUID)
@@ -627,7 +627,7 @@ class LineItemType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param  \horstoeko\ubl\entities\cbc\Note $note
      */
     public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
     {
@@ -647,7 +647,7 @@ class LineItemType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNote($index)
@@ -667,7 +667,7 @@ class LineItemType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNote($index)
@@ -706,7 +706,7 @@ class LineItemType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note[] $note
+     * @param  \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
     public function setNote(array $note)
@@ -748,7 +748,7 @@ class LineItemType
      *  Line Status
      *  Line Status_ Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LineStatusCode $lineStatusCode
+     * @param  \horstoeko\ubl\entities\cbc\LineStatusCode $lineStatusCode
      * @return self
      */
     public function setLineStatusCode(\horstoeko\ubl\entities\cbc\LineStatusCode $lineStatusCode)
@@ -788,7 +788,7 @@ class LineItemType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Quantity $quantity
+     * @param  \horstoeko\ubl\entities\cbc\Quantity $quantity
      * @return self
      */
     public function setQuantity(\horstoeko\ubl\entities\cbc\Quantity $quantity)
@@ -828,7 +828,7 @@ class LineItemType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LineExtensionAmount $lineExtensionAmount
+     * @param  \horstoeko\ubl\entities\cbc\LineExtensionAmount $lineExtensionAmount
      * @return self
      */
     public function setLineExtensionAmount(\horstoeko\ubl\entities\cbc\LineExtensionAmount $lineExtensionAmount)
@@ -870,7 +870,7 @@ class LineItemType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TotalTaxAmount $totalTaxAmount
+     * @param  \horstoeko\ubl\entities\cbc\TotalTaxAmount $totalTaxAmount
      * @return self
      */
     public function setTotalTaxAmount(\horstoeko\ubl\entities\cbc\TotalTaxAmount $totalTaxAmount)
@@ -912,7 +912,7 @@ class LineItemType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MinimumQuantity $minimumQuantity
+     * @param  \horstoeko\ubl\entities\cbc\MinimumQuantity $minimumQuantity
      * @return self
      */
     public function setMinimumQuantity(\horstoeko\ubl\entities\cbc\MinimumQuantity $minimumQuantity)
@@ -954,7 +954,7 @@ class LineItemType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MaximumQuantity $maximumQuantity
+     * @param  \horstoeko\ubl\entities\cbc\MaximumQuantity $maximumQuantity
      * @return self
      */
     public function setMaximumQuantity(\horstoeko\ubl\entities\cbc\MaximumQuantity $maximumQuantity)
@@ -996,7 +996,7 @@ class LineItemType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MinimumBackorderQuantity $minimumBackorderQuantity
+     * @param  \horstoeko\ubl\entities\cbc\MinimumBackorderQuantity $minimumBackorderQuantity
      * @return self
      */
     public function setMinimumBackorderQuantity(\horstoeko\ubl\entities\cbc\MinimumBackorderQuantity $minimumBackorderQuantity)
@@ -1038,7 +1038,7 @@ class LineItemType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MaximumBackorderQuantity $maximumBackorderQuantity
+     * @param  \horstoeko\ubl\entities\cbc\MaximumBackorderQuantity $maximumBackorderQuantity
      * @return self
      */
     public function setMaximumBackorderQuantity(\horstoeko\ubl\entities\cbc\MaximumBackorderQuantity $maximumBackorderQuantity)
@@ -1078,7 +1078,7 @@ class LineItemType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\InspectionMethodCode $inspectionMethodCode
+     * @param  \horstoeko\ubl\entities\cbc\InspectionMethodCode $inspectionMethodCode
      * @return self
      */
     public function setInspectionMethodCode(\horstoeko\ubl\entities\cbc\InspectionMethodCode $inspectionMethodCode)
@@ -1118,7 +1118,7 @@ class LineItemType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $partialDeliveryIndicator
+     * @param  bool $partialDeliveryIndicator
      * @return self
      */
     public function setPartialDeliveryIndicator($partialDeliveryIndicator)
@@ -1158,7 +1158,7 @@ class LineItemType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $backOrderAllowedIndicator
+     * @param  bool $backOrderAllowedIndicator
      * @return self
      */
     public function setBackOrderAllowedIndicator($backOrderAllowedIndicator)
@@ -1198,7 +1198,7 @@ class LineItemType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AccountingCostCode $accountingCostCode
+     * @param  \horstoeko\ubl\entities\cbc\AccountingCostCode $accountingCostCode
      * @return self
      */
     public function setAccountingCostCode(\horstoeko\ubl\entities\cbc\AccountingCostCode $accountingCostCode)
@@ -1238,7 +1238,7 @@ class LineItemType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AccountingCost $accountingCost
+     * @param  \horstoeko\ubl\entities\cbc\AccountingCost $accountingCost
      * @return self
      */
     public function setAccountingCost(\horstoeko\ubl\entities\cbc\AccountingCost $accountingCost)
@@ -1262,7 +1262,7 @@ class LineItemType
      *  Unless specified otherwise and in addition to any rights the Customer may have under statute, Dell warrants to the Customer that Dell branded Products (excluding third party products and software), will be free from defects in materials and workmanship affecting normal use for a period of one year from invoice date ( Standard Warranty ).
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\WarrantyInformation $warrantyInformation
+     * @param  \horstoeko\ubl\entities\cbc\WarrantyInformation $warrantyInformation
      */
     public function addToWarrantyInformation(\horstoeko\ubl\entities\cbc\WarrantyInformation $warrantyInformation)
     {
@@ -1284,7 +1284,7 @@ class LineItemType
      *  Text. Type
      *  Unless specified otherwise and in addition to any rights the Customer may have under statute, Dell warrants to the Customer that Dell branded Products (excluding third party products and software), will be free from defects in materials and workmanship affecting normal use for a period of one year from invoice date ( Standard Warranty ).
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetWarrantyInformation($index)
@@ -1306,7 +1306,7 @@ class LineItemType
      *  Text. Type
      *  Unless specified otherwise and in addition to any rights the Customer may have under statute, Dell warrants to the Customer that Dell branded Products (excluding third party products and software), will be free from defects in materials and workmanship affecting normal use for a period of one year from invoice date ( Standard Warranty ).
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetWarrantyInformation($index)
@@ -1349,7 +1349,7 @@ class LineItemType
      *  Text. Type
      *  Unless specified otherwise and in addition to any rights the Customer may have under statute, Dell warrants to the Customer that Dell branded Products (excluding third party products and software), will be free from defects in materials and workmanship affecting normal use for a period of one year from invoice date ( Standard Warranty ).
      *
-     * @param \horstoeko\ubl\entities\cbc\WarrantyInformation[] $warrantyInformation
+     * @param  \horstoeko\ubl\entities\cbc\WarrantyInformation[] $warrantyInformation
      * @return self
      */
     public function setWarrantyInformation(array $warrantyInformation)
@@ -1371,7 +1371,7 @@ class LineItemType
      *  Delivery
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Delivery $delivery
+     * @param  \horstoeko\ubl\entities\cac\Delivery $delivery
      */
     public function addToDelivery(\horstoeko\ubl\entities\cac\Delivery $delivery)
     {
@@ -1391,7 +1391,7 @@ class LineItemType
      *  Delivery
      *  Delivery
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDelivery($index)
@@ -1411,7 +1411,7 @@ class LineItemType
      *  Delivery
      *  Delivery
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDelivery($index)
@@ -1450,7 +1450,7 @@ class LineItemType
      *  Delivery
      *  Delivery
      *
-     * @param \horstoeko\ubl\entities\cac\Delivery[] $delivery
+     * @param  \horstoeko\ubl\entities\cac\Delivery[] $delivery
      * @return self
      */
     public function setDelivery(array $delivery)
@@ -1490,7 +1490,7 @@ class LineItemType
      *  Delivery Terms
      *  Delivery Terms
      *
-     * @param \horstoeko\ubl\entities\cac\DeliveryTerms $deliveryTerms
+     * @param  \horstoeko\ubl\entities\cac\DeliveryTerms $deliveryTerms
      * @return self
      */
     public function setDeliveryTerms(\horstoeko\ubl\entities\cac\DeliveryTerms $deliveryTerms)
@@ -1532,7 +1532,7 @@ class LineItemType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\OriginatorParty $originatorParty
+     * @param  \horstoeko\ubl\entities\cac\OriginatorParty $originatorParty
      * @return self
      */
     public function setOriginatorParty(\horstoeko\ubl\entities\cac\OriginatorParty $originatorParty)
@@ -1554,7 +1554,7 @@ class LineItemType
      *  Ordered Shipment
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\OrderedShipment $orderedShipment
+     * @param  \horstoeko\ubl\entities\cac\OrderedShipment $orderedShipment
      */
     public function addToOrderedShipment(\horstoeko\ubl\entities\cac\OrderedShipment $orderedShipment)
     {
@@ -1574,7 +1574,7 @@ class LineItemType
      *  Ordered Shipment
      *  Ordered Shipment
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetOrderedShipment($index)
@@ -1594,7 +1594,7 @@ class LineItemType
      *  Ordered Shipment
      *  Ordered Shipment
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetOrderedShipment($index)
@@ -1633,7 +1633,7 @@ class LineItemType
      *  Ordered Shipment
      *  Ordered Shipment
      *
-     * @param \horstoeko\ubl\entities\cac\OrderedShipment[] $orderedShipment
+     * @param  \horstoeko\ubl\entities\cac\OrderedShipment[] $orderedShipment
      * @return self
      */
     public function setOrderedShipment(array $orderedShipment)
@@ -1673,7 +1673,7 @@ class LineItemType
      *  Pricing Reference
      *  Pricing Reference
      *
-     * @param \horstoeko\ubl\entities\cac\PricingReference $pricingReference
+     * @param  \horstoeko\ubl\entities\cac\PricingReference $pricingReference
      * @return self
      */
     public function setPricingReference(\horstoeko\ubl\entities\cac\PricingReference $pricingReference)
@@ -1695,7 +1695,7 @@ class LineItemType
      *  Allowance Charge
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge
+     * @param  \horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge
      */
     public function addToAllowanceCharge(\horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge)
     {
@@ -1715,7 +1715,7 @@ class LineItemType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAllowanceCharge($index)
@@ -1735,7 +1735,7 @@ class LineItemType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAllowanceCharge($index)
@@ -1774,7 +1774,7 @@ class LineItemType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param \horstoeko\ubl\entities\cac\AllowanceCharge[] $allowanceCharge
+     * @param  \horstoeko\ubl\entities\cac\AllowanceCharge[] $allowanceCharge
      * @return self
      */
     public function setAllowanceCharge(array $allowanceCharge)
@@ -1814,7 +1814,7 @@ class LineItemType
      *  Price
      *  Price
      *
-     * @param \horstoeko\ubl\entities\cac\Price $price
+     * @param  \horstoeko\ubl\entities\cac\Price $price
      * @return self
      */
     public function setPrice(\horstoeko\ubl\entities\cac\Price $price)
@@ -1854,7 +1854,7 @@ class LineItemType
      *  Item
      *  Item
      *
-     * @param \horstoeko\ubl\entities\cac\Item $item
+     * @param  \horstoeko\ubl\entities\cac\Item $item
      * @return self
      */
     public function setItem(\horstoeko\ubl\entities\cac\Item $item)
@@ -1877,7 +1877,7 @@ class LineItemType
      *  Line Item
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\SubLineItem $subLineItem
+     * @param  \horstoeko\ubl\entities\cac\SubLineItem $subLineItem
      */
     public function addToSubLineItem(\horstoeko\ubl\entities\cac\SubLineItem $subLineItem)
     {
@@ -1898,7 +1898,7 @@ class LineItemType
      *  Line Item
      *  Line Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSubLineItem($index)
@@ -1919,7 +1919,7 @@ class LineItemType
      *  Line Item
      *  Line Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSubLineItem($index)
@@ -1960,7 +1960,7 @@ class LineItemType
      *  Line Item
      *  Line Item
      *
-     * @param \horstoeko\ubl\entities\cac\SubLineItem[] $subLineItem
+     * @param  \horstoeko\ubl\entities\cac\SubLineItem[] $subLineItem
      * @return self
      */
     public function setSubLineItem(array $subLineItem)
@@ -2002,7 +2002,7 @@ class LineItemType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\WarrantyValidityPeriod $warrantyValidityPeriod
+     * @param  \horstoeko\ubl\entities\cac\WarrantyValidityPeriod $warrantyValidityPeriod
      * @return self
      */
     public function setWarrantyValidityPeriod(\horstoeko\ubl\entities\cac\WarrantyValidityPeriod $warrantyValidityPeriod)
@@ -2044,7 +2044,7 @@ class LineItemType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\WarrantyParty $warrantyParty
+     * @param  \horstoeko\ubl\entities\cac\WarrantyParty $warrantyParty
      * @return self
      */
     public function setWarrantyParty(\horstoeko\ubl\entities\cac\WarrantyParty $warrantyParty)
@@ -2066,7 +2066,7 @@ class LineItemType
      *  Tax Total
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\TaxTotal $taxTotal
+     * @param  \horstoeko\ubl\entities\cac\TaxTotal $taxTotal
      */
     public function addToTaxTotal(\horstoeko\ubl\entities\cac\TaxTotal $taxTotal)
     {
@@ -2086,7 +2086,7 @@ class LineItemType
      *  Tax Total
      *  Tax Total
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTaxTotal($index)
@@ -2106,7 +2106,7 @@ class LineItemType
      *  Tax Total
      *  Tax Total
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTaxTotal($index)
@@ -2145,7 +2145,7 @@ class LineItemType
      *  Tax Total
      *  Tax Total
      *
-     * @param \horstoeko\ubl\entities\cac\TaxTotal[] $taxTotal
+     * @param  \horstoeko\ubl\entities\cac\TaxTotal[] $taxTotal
      * @return self
      */
     public function setTaxTotal(array $taxTotal)
@@ -2187,7 +2187,7 @@ class LineItemType
      *  Price Extension
      *  Price Extension
      *
-     * @param \horstoeko\ubl\entities\cac\ItemPriceExtension $itemPriceExtension
+     * @param  \horstoeko\ubl\entities\cac\ItemPriceExtension $itemPriceExtension
      * @return self
      */
     public function setItemPriceExtension(\horstoeko\ubl\entities\cac\ItemPriceExtension $itemPriceExtension)
@@ -2209,7 +2209,7 @@ class LineItemType
      *  Line Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\LineReference $lineReference
+     * @param  \horstoeko\ubl\entities\cac\LineReference $lineReference
      */
     public function addToLineReference(\horstoeko\ubl\entities\cac\LineReference $lineReference)
     {
@@ -2229,7 +2229,7 @@ class LineItemType
      *  Line Reference
      *  Line Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetLineReference($index)
@@ -2249,7 +2249,7 @@ class LineItemType
      *  Line Reference
      *  Line Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetLineReference($index)
@@ -2288,7 +2288,7 @@ class LineItemType
      *  Line Reference
      *  Line Reference
      *
-     * @param \horstoeko\ubl\entities\cac\LineReference[] $lineReference
+     * @param  \horstoeko\ubl\entities\cac\LineReference[] $lineReference
      * @return self
      */
     public function setLineReference(array $lineReference)

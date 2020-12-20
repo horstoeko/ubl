@@ -73,7 +73,7 @@ class PromotionalEventLineItemType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Amount $amount
+     * @param  \horstoeko\ubl\entities\cbc\Amount $amount
      * @return self
      */
     public function setAmount(\horstoeko\ubl\entities\cbc\Amount $amount)
@@ -113,7 +113,7 @@ class PromotionalEventLineItemType
      *  Event Line Item
      *  Event Line Item
      *
-     * @param \horstoeko\ubl\entities\cac\EventLineItem $eventLineItem
+     * @param  \horstoeko\ubl\entities\cac\EventLineItem $eventLineItem
      * @return self
      */
     public function setEventLineItem(\horstoeko\ubl\entities\cac\EventLineItem $eventLineItem)

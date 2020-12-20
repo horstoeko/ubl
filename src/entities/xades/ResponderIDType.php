@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing ResponderIDType
  *
- *
  * XSD Type: ResponderIDType
  */
 class ResponderIDType
@@ -34,7 +33,7 @@ class ResponderIDType
     /**
      * Sets a new byName
      *
-     * @param string $byName
+     * @param  string $byName
      * @return self
      */
     public function setByName($byName)
@@ -56,7 +55,7 @@ class ResponderIDType
     /**
      * Sets a new byKey
      *
-     * @param string $byKey
+     * @param  string $byKey
      * @return self
      */
     public function setByKey($byKey)

@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing ValidationTimeType
  *
- *
  * XSD Type: ValidationTimeType
  */
 class ValidationTimeType
@@ -29,7 +28,7 @@ class ValidationTimeType
     /**
      * Gets or sets the inner value
      *
-     * @param \DateTime $value
+     * @param  \DateTime $value
      * @return \DateTime
      */
     public function value()

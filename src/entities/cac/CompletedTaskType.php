@@ -151,7 +151,7 @@ class CompletedTaskType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AnnualAverageAmount $annualAverageAmount
+     * @param  \horstoeko\ubl\entities\cbc\AnnualAverageAmount $annualAverageAmount
      * @return self
      */
     public function setAnnualAverageAmount(\horstoeko\ubl\entities\cbc\AnnualAverageAmount $annualAverageAmount)
@@ -191,7 +191,7 @@ class CompletedTaskType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TotalTaskAmount $totalTaskAmount
+     * @param  \horstoeko\ubl\entities\cbc\TotalTaskAmount $totalTaskAmount
      * @return self
      */
     public function setTotalTaskAmount(\horstoeko\ubl\entities\cbc\TotalTaskAmount $totalTaskAmount)
@@ -231,7 +231,7 @@ class CompletedTaskType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PartyCapacityAmount $partyCapacityAmount
+     * @param  \horstoeko\ubl\entities\cbc\PartyCapacityAmount $partyCapacityAmount
      * @return self
      */
     public function setPartyCapacityAmount(\horstoeko\ubl\entities\cbc\PartyCapacityAmount $partyCapacityAmount)
@@ -253,7 +253,7 @@ class CompletedTaskType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -273,7 +273,7 @@ class CompletedTaskType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -293,7 +293,7 @@ class CompletedTaskType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -332,7 +332,7 @@ class CompletedTaskType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -354,7 +354,7 @@ class CompletedTaskType
      *  Evidence Supplied
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\EvidenceSupplied $evidenceSupplied
+     * @param  \horstoeko\ubl\entities\cac\EvidenceSupplied $evidenceSupplied
      */
     public function addToEvidenceSupplied(\horstoeko\ubl\entities\cac\EvidenceSupplied $evidenceSupplied)
     {
@@ -374,7 +374,7 @@ class CompletedTaskType
      *  Evidence Supplied
      *  Evidence Supplied
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetEvidenceSupplied($index)
@@ -394,7 +394,7 @@ class CompletedTaskType
      *  Evidence Supplied
      *  Evidence Supplied
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetEvidenceSupplied($index)
@@ -433,7 +433,7 @@ class CompletedTaskType
      *  Evidence Supplied
      *  Evidence Supplied
      *
-     * @param \horstoeko\ubl\entities\cac\EvidenceSupplied[] $evidenceSupplied
+     * @param  \horstoeko\ubl\entities\cac\EvidenceSupplied[] $evidenceSupplied
      * @return self
      */
     public function setEvidenceSupplied(array $evidenceSupplied)
@@ -473,7 +473,7 @@ class CompletedTaskType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\Period $period
+     * @param  \horstoeko\ubl\entities\cac\Period $period
      * @return self
      */
     public function setPeriod(\horstoeko\ubl\entities\cac\Period $period)
@@ -515,7 +515,7 @@ class CompletedTaskType
      *  Customer Party
      *  Customer Party
      *
-     * @param \horstoeko\ubl\entities\cac\RecipientCustomerParty $recipientCustomerParty
+     * @param  \horstoeko\ubl\entities\cac\RecipientCustomerParty $recipientCustomerParty
      * @return self
      */
     public function setRecipientCustomerParty(\horstoeko\ubl\entities\cac\RecipientCustomerParty $recipientCustomerParty)

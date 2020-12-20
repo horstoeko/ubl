@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\ds;
 /**
  * Class representing SignatureValueType
  *
- *
  * XSD Type: SignatureValueType
  */
 class SignatureValueType
@@ -34,7 +33,7 @@ class SignatureValueType
     /**
      * Gets or sets the inner value
      *
-     * @param string $value
+     * @param  string $value
      * @return string
      */
     public function value()
@@ -68,7 +67,7 @@ class SignatureValueType
     /**
      * Sets a new id
      *
-     * @param string $id
+     * @param  string $id
      * @return self
      */
     public function setId($id)

@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing TelecommunicationsServiceCategoryType
  *
- *
  * XSD Type: TelecommunicationsServiceCategoryType
  */
 class TelecommunicationsServiceCategoryType extends TextType

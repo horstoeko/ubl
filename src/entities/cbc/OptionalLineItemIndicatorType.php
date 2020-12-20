@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing OptionalLineItemIndicatorType
  *
- *
  * XSD Type: OptionalLineItemIndicatorType
  */
 class OptionalLineItemIndicatorType
@@ -29,7 +28,7 @@ class OptionalLineItemIndicatorType
     /**
      * Gets or sets the inner value
      *
-     * @param bool $value
+     * @param  bool $value
      * @return bool
      */
     public function value()

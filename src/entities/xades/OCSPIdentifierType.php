@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing OCSPIdentifierType
  *
- *
  * XSD Type: OCSPIdentifierType
  */
 class OCSPIdentifierType
@@ -39,7 +38,7 @@ class OCSPIdentifierType
     /**
      * Sets a new uRI
      *
-     * @param string $uRI
+     * @param  string $uRI
      * @return self
      */
     public function setURI($uRI)
@@ -61,7 +60,7 @@ class OCSPIdentifierType
     /**
      * Sets a new responderID
      *
-     * @param \horstoeko\ubl\entities\xades\ResponderIDType $responderID
+     * @param  \horstoeko\ubl\entities\xades\ResponderIDType $responderID
      * @return self
      */
     public function setResponderID(\horstoeko\ubl\entities\xades\ResponderIDType $responderID)
@@ -83,7 +82,7 @@ class OCSPIdentifierType
     /**
      * Sets a new producedAt
      *
-     * @param \DateTime $producedAt
+     * @param  \DateTime $producedAt
      * @return self
      */
     public function setProducedAt(\DateTime $producedAt)

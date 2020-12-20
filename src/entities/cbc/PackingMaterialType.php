@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing PackingMaterialType
  *
- *
  * XSD Type: PackingMaterialType
  */
 class PackingMaterialType extends TextType

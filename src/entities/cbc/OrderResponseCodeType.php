@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\CodeType;
 /**
  * Class representing OrderResponseCodeType
  *
- *
  * XSD Type: OrderResponseCodeType
  */
 class OrderResponseCodeType extends CodeType

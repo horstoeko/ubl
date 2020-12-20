@@ -218,7 +218,7 @@ class TendererQualificationRequestType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CompanyLegalFormCode $companyLegalFormCode
+     * @param  \horstoeko\ubl\entities\cbc\CompanyLegalFormCode $companyLegalFormCode
      * @return self
      */
     public function setCompanyLegalFormCode(\horstoeko\ubl\entities\cbc\CompanyLegalFormCode $companyLegalFormCode)
@@ -258,7 +258,7 @@ class TendererQualificationRequestType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CompanyLegalForm $companyLegalForm
+     * @param  \horstoeko\ubl\entities\cbc\CompanyLegalForm $companyLegalForm
      * @return self
      */
     public function setCompanyLegalForm(\horstoeko\ubl\entities\cbc\CompanyLegalForm $companyLegalForm)
@@ -280,7 +280,7 @@ class TendererQualificationRequestType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\PersonalSituation $personalSituation
+     * @param  \horstoeko\ubl\entities\cbc\PersonalSituation $personalSituation
      */
     public function addToPersonalSituation(\horstoeko\ubl\entities\cbc\PersonalSituation $personalSituation)
     {
@@ -300,7 +300,7 @@ class TendererQualificationRequestType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPersonalSituation($index)
@@ -320,7 +320,7 @@ class TendererQualificationRequestType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPersonalSituation($index)
@@ -359,7 +359,7 @@ class TendererQualificationRequestType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PersonalSituation[] $personalSituation
+     * @param  \horstoeko\ubl\entities\cbc\PersonalSituation[] $personalSituation
      * @return self
      */
     public function setPersonalSituation(array $personalSituation)
@@ -399,7 +399,7 @@ class TendererQualificationRequestType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\OperatingYearsQuantity $operatingYearsQuantity
+     * @param  \horstoeko\ubl\entities\cbc\OperatingYearsQuantity $operatingYearsQuantity
      * @return self
      */
     public function setOperatingYearsQuantity(\horstoeko\ubl\entities\cbc\OperatingYearsQuantity $operatingYearsQuantity)
@@ -439,7 +439,7 @@ class TendererQualificationRequestType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\EmployeeQuantity $employeeQuantity
+     * @param  \horstoeko\ubl\entities\cbc\EmployeeQuantity $employeeQuantity
      * @return self
      */
     public function setEmployeeQuantity(\horstoeko\ubl\entities\cbc\EmployeeQuantity $employeeQuantity)
@@ -461,7 +461,7 @@ class TendererQualificationRequestType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -481,7 +481,7 @@ class TendererQualificationRequestType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -501,7 +501,7 @@ class TendererQualificationRequestType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -540,7 +540,7 @@ class TendererQualificationRequestType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -563,7 +563,7 @@ class TendererQualificationRequestType
      *  Classification Scheme
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\RequiredBusinessClassificationScheme $requiredBusinessClassificationScheme
+     * @param  \horstoeko\ubl\entities\cac\RequiredBusinessClassificationScheme $requiredBusinessClassificationScheme
      */
     public function addToRequiredBusinessClassificationScheme(\horstoeko\ubl\entities\cac\RequiredBusinessClassificationScheme $requiredBusinessClassificationScheme)
     {
@@ -584,7 +584,7 @@ class TendererQualificationRequestType
      *  Classification Scheme
      *  Classification Scheme
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetRequiredBusinessClassificationScheme($index)
@@ -605,7 +605,7 @@ class TendererQualificationRequestType
      *  Classification Scheme
      *  Classification Scheme
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetRequiredBusinessClassificationScheme($index)
@@ -646,7 +646,7 @@ class TendererQualificationRequestType
      *  Classification Scheme
      *  Classification Scheme
      *
-     * @param \horstoeko\ubl\entities\cac\RequiredBusinessClassificationScheme[] $requiredBusinessClassificationScheme
+     * @param  \horstoeko\ubl\entities\cac\RequiredBusinessClassificationScheme[] $requiredBusinessClassificationScheme
      * @return self
      */
     public function setRequiredBusinessClassificationScheme(array $requiredBusinessClassificationScheme)
@@ -669,7 +669,7 @@ class TendererQualificationRequestType
      *  Evaluation Criterion
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\TechnicalEvaluationCriterion $technicalEvaluationCriterion
+     * @param  \horstoeko\ubl\entities\cac\TechnicalEvaluationCriterion $technicalEvaluationCriterion
      */
     public function addToTechnicalEvaluationCriterion(\horstoeko\ubl\entities\cac\TechnicalEvaluationCriterion $technicalEvaluationCriterion)
     {
@@ -690,7 +690,7 @@ class TendererQualificationRequestType
      *  Evaluation Criterion
      *  Evaluation Criterion
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTechnicalEvaluationCriterion($index)
@@ -711,7 +711,7 @@ class TendererQualificationRequestType
      *  Evaluation Criterion
      *  Evaluation Criterion
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTechnicalEvaluationCriterion($index)
@@ -752,7 +752,7 @@ class TendererQualificationRequestType
      *  Evaluation Criterion
      *  Evaluation Criterion
      *
-     * @param \horstoeko\ubl\entities\cac\TechnicalEvaluationCriterion[] $technicalEvaluationCriterion
+     * @param  \horstoeko\ubl\entities\cac\TechnicalEvaluationCriterion[] $technicalEvaluationCriterion
      * @return self
      */
     public function setTechnicalEvaluationCriterion(array $technicalEvaluationCriterion)
@@ -775,7 +775,7 @@ class TendererQualificationRequestType
      *  Evaluation Criterion
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\FinancialEvaluationCriterion $financialEvaluationCriterion
+     * @param  \horstoeko\ubl\entities\cac\FinancialEvaluationCriterion $financialEvaluationCriterion
      */
     public function addToFinancialEvaluationCriterion(\horstoeko\ubl\entities\cac\FinancialEvaluationCriterion $financialEvaluationCriterion)
     {
@@ -796,7 +796,7 @@ class TendererQualificationRequestType
      *  Evaluation Criterion
      *  Evaluation Criterion
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetFinancialEvaluationCriterion($index)
@@ -817,7 +817,7 @@ class TendererQualificationRequestType
      *  Evaluation Criterion
      *  Evaluation Criterion
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetFinancialEvaluationCriterion($index)
@@ -858,7 +858,7 @@ class TendererQualificationRequestType
      *  Evaluation Criterion
      *  Evaluation Criterion
      *
-     * @param \horstoeko\ubl\entities\cac\FinancialEvaluationCriterion[] $financialEvaluationCriterion
+     * @param  \horstoeko\ubl\entities\cac\FinancialEvaluationCriterion[] $financialEvaluationCriterion
      * @return self
      */
     public function setFinancialEvaluationCriterion(array $financialEvaluationCriterion)
@@ -882,7 +882,7 @@ class TendererQualificationRequestType
      *  Preregistration in a Business Registry
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\SpecificTendererRequirement $specificTendererRequirement
+     * @param  \horstoeko\ubl\entities\cac\SpecificTendererRequirement $specificTendererRequirement
      */
     public function addToSpecificTendererRequirement(\horstoeko\ubl\entities\cac\SpecificTendererRequirement $specificTendererRequirement)
     {
@@ -904,7 +904,7 @@ class TendererQualificationRequestType
      *  Tenderer Requirement
      *  Preregistration in a Business Registry
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSpecificTendererRequirement($index)
@@ -926,7 +926,7 @@ class TendererQualificationRequestType
      *  Tenderer Requirement
      *  Preregistration in a Business Registry
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSpecificTendererRequirement($index)
@@ -969,7 +969,7 @@ class TendererQualificationRequestType
      *  Tenderer Requirement
      *  Preregistration in a Business Registry
      *
-     * @param \horstoeko\ubl\entities\cac\SpecificTendererRequirement[] $specificTendererRequirement
+     * @param  \horstoeko\ubl\entities\cac\SpecificTendererRequirement[] $specificTendererRequirement
      * @return self
      */
     public function setSpecificTendererRequirement(array $specificTendererRequirement)
@@ -991,7 +991,7 @@ class TendererQualificationRequestType
      *  Economic Operator Role
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\EconomicOperatorRole $economicOperatorRole
+     * @param  \horstoeko\ubl\entities\cac\EconomicOperatorRole $economicOperatorRole
      */
     public function addToEconomicOperatorRole(\horstoeko\ubl\entities\cac\EconomicOperatorRole $economicOperatorRole)
     {
@@ -1011,7 +1011,7 @@ class TendererQualificationRequestType
      *  Economic Operator Role
      *  Economic Operator Role
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetEconomicOperatorRole($index)
@@ -1031,7 +1031,7 @@ class TendererQualificationRequestType
      *  Economic Operator Role
      *  Economic Operator Role
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetEconomicOperatorRole($index)
@@ -1070,7 +1070,7 @@ class TendererQualificationRequestType
      *  Economic Operator Role
      *  Economic Operator Role
      *
-     * @param \horstoeko\ubl\entities\cac\EconomicOperatorRole[] $economicOperatorRole
+     * @param  \horstoeko\ubl\entities\cac\EconomicOperatorRole[] $economicOperatorRole
      * @return self
      */
     public function setEconomicOperatorRole(array $economicOperatorRole)

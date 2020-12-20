@@ -111,7 +111,7 @@ class ContractingPartyType
      *  Identifier. Type
      *  Buyer Profile
      *
-     * @param \horstoeko\ubl\entities\cbc\BuyerProfileURI $buyerProfileURI
+     * @param  \horstoeko\ubl\entities\cbc\BuyerProfileURI $buyerProfileURI
      * @return self
      */
     public function setBuyerProfileURI(\horstoeko\ubl\entities\cbc\BuyerProfileURI $buyerProfileURI)
@@ -133,7 +133,7 @@ class ContractingPartyType
      *  Contracting Party Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ContractingPartyType $contractingPartyType
+     * @param  \horstoeko\ubl\entities\cac\ContractingPartyType $contractingPartyType
      */
     public function addToContractingPartyType(\horstoeko\ubl\entities\cac\ContractingPartyType $contractingPartyType)
     {
@@ -153,7 +153,7 @@ class ContractingPartyType
      *  Contracting Party Type
      *  Contracting Party Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetContractingPartyType($index)
@@ -173,7 +173,7 @@ class ContractingPartyType
      *  Contracting Party Type
      *  Contracting Party Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetContractingPartyType($index)
@@ -212,7 +212,7 @@ class ContractingPartyType
      *  Contracting Party Type
      *  Contracting Party Type
      *
-     * @param \horstoeko\ubl\entities\cac\ContractingPartyType[] $contractingPartyType
+     * @param  \horstoeko\ubl\entities\cac\ContractingPartyType[] $contractingPartyType
      * @return self
      */
     public function setContractingPartyType(array $contractingPartyType)
@@ -234,7 +234,7 @@ class ContractingPartyType
      *  Contracting Activity
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ContractingActivity $contractingActivity
+     * @param  \horstoeko\ubl\entities\cac\ContractingActivity $contractingActivity
      */
     public function addToContractingActivity(\horstoeko\ubl\entities\cac\ContractingActivity $contractingActivity)
     {
@@ -254,7 +254,7 @@ class ContractingPartyType
      *  Contracting Activity
      *  Contracting Activity
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetContractingActivity($index)
@@ -274,7 +274,7 @@ class ContractingPartyType
      *  Contracting Activity
      *  Contracting Activity
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetContractingActivity($index)
@@ -313,7 +313,7 @@ class ContractingPartyType
      *  Contracting Activity
      *  Contracting Activity
      *
-     * @param \horstoeko\ubl\entities\cac\ContractingActivity[] $contractingActivity
+     * @param  \horstoeko\ubl\entities\cac\ContractingActivity[] $contractingActivity
      * @return self
      */
     public function setContractingActivity(array $contractingActivity)
@@ -353,7 +353,7 @@ class ContractingPartyType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\Party $party
+     * @param  \horstoeko\ubl\entities\cac\Party $party
      * @return self
      */
     public function setParty(\horstoeko\ubl\entities\cac\Party $party)

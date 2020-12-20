@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing OtherCertStatusValuesType
  *
- *
  * XSD Type: OtherCertStatusValuesType
  */
 class OtherCertStatusValuesType
@@ -22,7 +21,7 @@ class OtherCertStatusValuesType
      * Adds as otherValue
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\AnyType $otherValue
+     * @param  \horstoeko\ubl\entities\xades\AnyType $otherValue
      */
     public function addToOtherValue(\horstoeko\ubl\entities\xades\AnyType $otherValue)
     {
@@ -33,7 +32,7 @@ class OtherCertStatusValuesType
     /**
      * isset otherValue
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetOtherValue($index)
@@ -44,7 +43,7 @@ class OtherCertStatusValuesType
     /**
      * unset otherValue
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetOtherValue($index)
@@ -65,7 +64,7 @@ class OtherCertStatusValuesType
     /**
      * Sets a new otherValue
      *
-     * @param \horstoeko\ubl\entities\xades\AnyType[] $otherValue
+     * @param  \horstoeko\ubl\entities\xades\AnyType[] $otherValue
      * @return self
      */
     public function setOtherValue(array $otherValue)

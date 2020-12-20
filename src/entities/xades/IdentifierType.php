@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing IdentifierType
  *
- *
  * XSD Type: IdentifierType
  */
 class IdentifierType
@@ -34,7 +33,7 @@ class IdentifierType
     /**
      * Gets or sets the inner value
      *
-     * @param string $value
+     * @param  string $value
      * @return string
      */
     public function value()
@@ -68,7 +67,7 @@ class IdentifierType
     /**
      * Sets a new qualifier
      *
-     * @param string $qualifier
+     * @param  string $qualifier
      * @return self
      */
     public function setQualifier($qualifier)

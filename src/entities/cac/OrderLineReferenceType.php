@@ -117,7 +117,7 @@ class OrderLineReferenceType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LineID $lineID
+     * @param  \horstoeko\ubl\entities\cbc\LineID $lineID
      * @return self
      */
     public function setLineID(\horstoeko\ubl\entities\cbc\LineID $lineID)
@@ -159,7 +159,7 @@ class OrderLineReferenceType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SalesOrderLineID $salesOrderLineID
+     * @param  \horstoeko\ubl\entities\cbc\SalesOrderLineID $salesOrderLineID
      * @return self
      */
     public function setSalesOrderLineID(\horstoeko\ubl\entities\cbc\SalesOrderLineID $salesOrderLineID)
@@ -199,7 +199,7 @@ class OrderLineReferenceType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\UUID $uUID
+     * @param  \horstoeko\ubl\entities\cbc\UUID $uUID
      * @return self
      */
     public function setUUID(\horstoeko\ubl\entities\cbc\UUID $uUID)
@@ -241,7 +241,7 @@ class OrderLineReferenceType
      *  Line Status
      *  Line Status_ Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LineStatusCode $lineStatusCode
+     * @param  \horstoeko\ubl\entities\cbc\LineStatusCode $lineStatusCode
      * @return self
      */
     public function setLineStatusCode(\horstoeko\ubl\entities\cbc\LineStatusCode $lineStatusCode)
@@ -281,7 +281,7 @@ class OrderLineReferenceType
      *  Order Reference
      *  Order Reference
      *
-     * @param \horstoeko\ubl\entities\cac\OrderReference $orderReference
+     * @param  \horstoeko\ubl\entities\cac\OrderReference $orderReference
      * @return self
      */
     public function setOrderReference(\horstoeko\ubl\entities\cac\OrderReference $orderReference)

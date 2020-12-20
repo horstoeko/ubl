@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\IdentifierType;
 /**
  * Class representing RegistrationNationalityIDType
  *
- *
  * XSD Type: RegistrationNationalityIDType
  */
 class RegistrationNationalityIDType extends IdentifierType

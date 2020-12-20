@@ -116,7 +116,7 @@ class ClassificationCategoryType
      *  Code List Name
      *  UNSPSC Class , UNSPSC Segment , UNSPSC Family
      *
-     * @param \horstoeko\ubl\entities\cbc\Name $name
+     * @param  \horstoeko\ubl\entities\cbc\Name $name
      * @return self
      */
     public function setName(\horstoeko\ubl\entities\cbc\Name $name)
@@ -160,7 +160,7 @@ class ClassificationCategoryType
      *  Code Value
      *  3420001, 3273666, HSJJD-213
      *
-     * @param \horstoeko\ubl\entities\cbc\CodeValue $codeValue
+     * @param  \horstoeko\ubl\entities\cbc\CodeValue $codeValue
      * @return self
      */
     public function setCodeValue(\horstoeko\ubl\entities\cbc\CodeValue $codeValue)
@@ -184,7 +184,7 @@ class ClassificationCategoryType
      *  Electrical Goods , Wooden Toys
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -206,7 +206,7 @@ class ClassificationCategoryType
      *  Code Name
      *  Electrical Goods , Wooden Toys
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -228,7 +228,7 @@ class ClassificationCategoryType
      *  Code Name
      *  Electrical Goods , Wooden Toys
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -271,7 +271,7 @@ class ClassificationCategoryType
      *  Code Name
      *  Electrical Goods , Wooden Toys
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -294,7 +294,7 @@ class ClassificationCategoryType
      *  Classification Category
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\CategorizesClassificationCategory $categorizesClassificationCategory
+     * @param  \horstoeko\ubl\entities\cac\CategorizesClassificationCategory $categorizesClassificationCategory
      */
     public function addToCategorizesClassificationCategory(\horstoeko\ubl\entities\cac\CategorizesClassificationCategory $categorizesClassificationCategory)
     {
@@ -315,7 +315,7 @@ class ClassificationCategoryType
      *  Classification Category
      *  Classification Category
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetCategorizesClassificationCategory($index)
@@ -336,7 +336,7 @@ class ClassificationCategoryType
      *  Classification Category
      *  Classification Category
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetCategorizesClassificationCategory($index)
@@ -377,7 +377,7 @@ class ClassificationCategoryType
      *  Classification Category
      *  Classification Category
      *
-     * @param \horstoeko\ubl\entities\cac\CategorizesClassificationCategory[] $categorizesClassificationCategory
+     * @param  \horstoeko\ubl\entities\cac\CategorizesClassificationCategory[] $categorizesClassificationCategory
      * @return self
      */
     public function setCategorizesClassificationCategory(array $categorizesClassificationCategory)

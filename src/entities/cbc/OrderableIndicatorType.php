@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing OrderableIndicatorType
  *
- *
  * XSD Type: OrderableIndicatorType
  */
 class OrderableIndicatorType
@@ -29,7 +28,7 @@ class OrderableIndicatorType
     /**
      * Gets or sets the inner value
      *
-     * @param bool $value
+     * @param  bool $value
      * @return bool
      */
     public function value()

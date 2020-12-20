@@ -260,7 +260,7 @@ class DespatchLineType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -300,7 +300,7 @@ class DespatchLineType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\UUID $uUID
+     * @param  \horstoeko\ubl\entities\cbc\UUID $uUID
      * @return self
      */
     public function setUUID(\horstoeko\ubl\entities\cbc\UUID $uUID)
@@ -322,7 +322,7 @@ class DespatchLineType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param  \horstoeko\ubl\entities\cbc\Note $note
      */
     public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
     {
@@ -342,7 +342,7 @@ class DespatchLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNote($index)
@@ -362,7 +362,7 @@ class DespatchLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNote($index)
@@ -401,7 +401,7 @@ class DespatchLineType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note[] $note
+     * @param  \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
     public function setNote(array $note)
@@ -443,7 +443,7 @@ class DespatchLineType
      *  Line Status
      *  Line Status_ Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LineStatusCode $lineStatusCode
+     * @param  \horstoeko\ubl\entities\cbc\LineStatusCode $lineStatusCode
      * @return self
      */
     public function setLineStatusCode(\horstoeko\ubl\entities\cbc\LineStatusCode $lineStatusCode)
@@ -485,7 +485,7 @@ class DespatchLineType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\DeliveredQuantity $deliveredQuantity
+     * @param  \horstoeko\ubl\entities\cbc\DeliveredQuantity $deliveredQuantity
      * @return self
      */
     public function setDeliveredQuantity(\horstoeko\ubl\entities\cbc\DeliveredQuantity $deliveredQuantity)
@@ -527,7 +527,7 @@ class DespatchLineType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\BackorderQuantity $backorderQuantity
+     * @param  \horstoeko\ubl\entities\cbc\BackorderQuantity $backorderQuantity
      * @return self
      */
     public function setBackorderQuantity(\horstoeko\ubl\entities\cbc\BackorderQuantity $backorderQuantity)
@@ -550,7 +550,7 @@ class DespatchLineType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\BackorderReason $backorderReason
+     * @param  \horstoeko\ubl\entities\cbc\BackorderReason $backorderReason
      */
     public function addToBackorderReason(\horstoeko\ubl\entities\cbc\BackorderReason $backorderReason)
     {
@@ -571,7 +571,7 @@ class DespatchLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetBackorderReason($index)
@@ -592,7 +592,7 @@ class DespatchLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetBackorderReason($index)
@@ -633,7 +633,7 @@ class DespatchLineType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\BackorderReason[] $backorderReason
+     * @param  \horstoeko\ubl\entities\cbc\BackorderReason[] $backorderReason
      * @return self
      */
     public function setBackorderReason(array $backorderReason)
@@ -675,7 +675,7 @@ class DespatchLineType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\OutstandingQuantity $outstandingQuantity
+     * @param  \horstoeko\ubl\entities\cbc\OutstandingQuantity $outstandingQuantity
      * @return self
      */
     public function setOutstandingQuantity(\horstoeko\ubl\entities\cbc\OutstandingQuantity $outstandingQuantity)
@@ -698,7 +698,7 @@ class DespatchLineType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\OutstandingReason $outstandingReason
+     * @param  \horstoeko\ubl\entities\cbc\OutstandingReason $outstandingReason
      */
     public function addToOutstandingReason(\horstoeko\ubl\entities\cbc\OutstandingReason $outstandingReason)
     {
@@ -719,7 +719,7 @@ class DespatchLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetOutstandingReason($index)
@@ -740,7 +740,7 @@ class DespatchLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetOutstandingReason($index)
@@ -781,7 +781,7 @@ class DespatchLineType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\OutstandingReason[] $outstandingReason
+     * @param  \horstoeko\ubl\entities\cbc\OutstandingReason[] $outstandingReason
      * @return self
      */
     public function setOutstandingReason(array $outstandingReason)
@@ -823,7 +823,7 @@ class DespatchLineType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\OversupplyQuantity $oversupplyQuantity
+     * @param  \horstoeko\ubl\entities\cbc\OversupplyQuantity $oversupplyQuantity
      * @return self
      */
     public function setOversupplyQuantity(\horstoeko\ubl\entities\cbc\OversupplyQuantity $oversupplyQuantity)
@@ -845,7 +845,7 @@ class DespatchLineType
      *  Order Line Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\OrderLineReference $orderLineReference
+     * @param  \horstoeko\ubl\entities\cac\OrderLineReference $orderLineReference
      */
     public function addToOrderLineReference(\horstoeko\ubl\entities\cac\OrderLineReference $orderLineReference)
     {
@@ -865,7 +865,7 @@ class DespatchLineType
      *  Order Line Reference
      *  Order Line Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetOrderLineReference($index)
@@ -885,7 +885,7 @@ class DespatchLineType
      *  Order Line Reference
      *  Order Line Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetOrderLineReference($index)
@@ -924,7 +924,7 @@ class DespatchLineType
      *  Order Line Reference
      *  Order Line Reference
      *
-     * @param \horstoeko\ubl\entities\cac\OrderLineReference[] $orderLineReference
+     * @param  \horstoeko\ubl\entities\cac\OrderLineReference[] $orderLineReference
      * @return self
      */
     public function setOrderLineReference(array $orderLineReference)
@@ -946,7 +946,7 @@ class DespatchLineType
      *  Document Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\DocumentReference $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference $documentReference
      */
     public function addToDocumentReference(\horstoeko\ubl\entities\cac\DocumentReference $documentReference)
     {
@@ -966,7 +966,7 @@ class DespatchLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDocumentReference($index)
@@ -986,7 +986,7 @@ class DespatchLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDocumentReference($index)
@@ -1025,7 +1025,7 @@ class DespatchLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\DocumentReference[] $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference[] $documentReference
      * @return self
      */
     public function setDocumentReference(array $documentReference)
@@ -1065,7 +1065,7 @@ class DespatchLineType
      *  Item
      *  Item
      *
-     * @param \horstoeko\ubl\entities\cac\Item $item
+     * @param  \horstoeko\ubl\entities\cac\Item $item
      * @return self
      */
     public function setItem(\horstoeko\ubl\entities\cac\Item $item)
@@ -1087,7 +1087,7 @@ class DespatchLineType
      *  Shipment
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Shipment $shipment
+     * @param  \horstoeko\ubl\entities\cac\Shipment $shipment
      */
     public function addToShipment(\horstoeko\ubl\entities\cac\Shipment $shipment)
     {
@@ -1107,7 +1107,7 @@ class DespatchLineType
      *  Shipment
      *  Shipment
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetShipment($index)
@@ -1127,7 +1127,7 @@ class DespatchLineType
      *  Shipment
      *  Shipment
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetShipment($index)
@@ -1166,7 +1166,7 @@ class DespatchLineType
      *  Shipment
      *  Shipment
      *
-     * @param \horstoeko\ubl\entities\cac\Shipment[] $shipment
+     * @param  \horstoeko\ubl\entities\cac\Shipment[] $shipment
      * @return self
      */
     public function setShipment(array $shipment)

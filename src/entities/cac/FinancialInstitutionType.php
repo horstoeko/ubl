@@ -87,7 +87,7 @@ class FinancialInstitutionType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -127,7 +127,7 @@ class FinancialInstitutionType
      *  Name
      *  Name. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Name $name
+     * @param  \horstoeko\ubl\entities\cbc\Name $name
      * @return self
      */
     public function setName(\horstoeko\ubl\entities\cbc\Name $name)
@@ -167,7 +167,7 @@ class FinancialInstitutionType
      *  Address
      *  Address
      *
-     * @param \horstoeko\ubl\entities\cac\Address $address
+     * @param  \horstoeko\ubl\entities\cac\Address $address
      * @return self
      */
     public function setAddress(\horstoeko\ubl\entities\cac\Address $address)

@@ -204,7 +204,7 @@ class PriceType
      *  unit price
      *  23.45
      *
-     * @param \horstoeko\ubl\entities\cbc\PriceAmount $priceAmount
+     * @param  \horstoeko\ubl\entities\cbc\PriceAmount $priceAmount
      * @return self
      */
     public function setPriceAmount(\horstoeko\ubl\entities\cbc\PriceAmount $priceAmount)
@@ -246,7 +246,7 @@ class PriceType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\BaseQuantity $baseQuantity
+     * @param  \horstoeko\ubl\entities\cbc\BaseQuantity $baseQuantity
      * @return self
      */
     public function setBaseQuantity(\horstoeko\ubl\entities\cbc\BaseQuantity $baseQuantity)
@@ -270,7 +270,7 @@ class PriceType
      *  Clearance of old stock , New contract applies
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\PriceChangeReason $priceChangeReason
+     * @param  \horstoeko\ubl\entities\cbc\PriceChangeReason $priceChangeReason
      */
     public function addToPriceChangeReason(\horstoeko\ubl\entities\cbc\PriceChangeReason $priceChangeReason)
     {
@@ -292,7 +292,7 @@ class PriceType
      *  Text. Type
      *  Clearance of old stock , New contract applies
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPriceChangeReason($index)
@@ -314,7 +314,7 @@ class PriceType
      *  Text. Type
      *  Clearance of old stock , New contract applies
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPriceChangeReason($index)
@@ -357,7 +357,7 @@ class PriceType
      *  Text. Type
      *  Clearance of old stock , New contract applies
      *
-     * @param \horstoeko\ubl\entities\cbc\PriceChangeReason[] $priceChangeReason
+     * @param  \horstoeko\ubl\entities\cbc\PriceChangeReason[] $priceChangeReason
      * @return self
      */
     public function setPriceChangeReason(array $priceChangeReason)
@@ -397,7 +397,7 @@ class PriceType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PriceTypeCode $priceTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\PriceTypeCode $priceTypeCode
      * @return self
      */
     public function setPriceTypeCode(\horstoeko\ubl\entities\cbc\PriceTypeCode $priceTypeCode)
@@ -439,7 +439,7 @@ class PriceType
      *  Text. Type
      *  retail, wholesale, discount, contract
      *
-     * @param \horstoeko\ubl\entities\cbc\PriceType $priceType
+     * @param  \horstoeko\ubl\entities\cbc\PriceType $priceType
      * @return self
      */
     public function setPriceType(\horstoeko\ubl\entities\cbc\PriceType $priceType)
@@ -481,7 +481,7 @@ class PriceType
      *  Rate. Type
      *  Nails are priced by weight but ordered by quantity. So this would say how many nails per kilo
      *
-     * @param \horstoeko\ubl\entities\cbc\OrderableUnitFactorRate $orderableUnitFactorRate
+     * @param  \horstoeko\ubl\entities\cbc\OrderableUnitFactorRate $orderableUnitFactorRate
      * @return self
      */
     public function setOrderableUnitFactorRate(\horstoeko\ubl\entities\cbc\OrderableUnitFactorRate $orderableUnitFactorRate)
@@ -504,7 +504,7 @@ class PriceType
      *  Period
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ValidityPeriod $validityPeriod
+     * @param  \horstoeko\ubl\entities\cac\ValidityPeriod $validityPeriod
      */
     public function addToValidityPeriod(\horstoeko\ubl\entities\cac\ValidityPeriod $validityPeriod)
     {
@@ -525,7 +525,7 @@ class PriceType
      *  Period
      *  Period
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetValidityPeriod($index)
@@ -546,7 +546,7 @@ class PriceType
      *  Period
      *  Period
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetValidityPeriod($index)
@@ -587,7 +587,7 @@ class PriceType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\ValidityPeriod[] $validityPeriod
+     * @param  \horstoeko\ubl\entities\cac\ValidityPeriod[] $validityPeriod
      * @return self
      */
     public function setValidityPeriod(array $validityPeriod)
@@ -627,7 +627,7 @@ class PriceType
      *  Price List
      *  Price List
      *
-     * @param \horstoeko\ubl\entities\cac\PriceList $priceList
+     * @param  \horstoeko\ubl\entities\cac\PriceList $priceList
      * @return self
      */
     public function setPriceList(\horstoeko\ubl\entities\cac\PriceList $priceList)
@@ -649,7 +649,7 @@ class PriceType
      *  Allowance Charge
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge
+     * @param  \horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge
      */
     public function addToAllowanceCharge(\horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge)
     {
@@ -669,7 +669,7 @@ class PriceType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAllowanceCharge($index)
@@ -689,7 +689,7 @@ class PriceType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAllowanceCharge($index)
@@ -728,7 +728,7 @@ class PriceType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param \horstoeko\ubl\entities\cac\AllowanceCharge[] $allowanceCharge
+     * @param  \horstoeko\ubl\entities\cac\AllowanceCharge[] $allowanceCharge
      * @return self
      */
     public function setAllowanceCharge(array $allowanceCharge)
@@ -770,7 +770,7 @@ class PriceType
      *  Exchange Rate
      *  Exchange Rate
      *
-     * @param \horstoeko\ubl\entities\cac\PricingExchangeRate $pricingExchangeRate
+     * @param  \horstoeko\ubl\entities\cac\PricingExchangeRate $pricingExchangeRate
      * @return self
      */
     public function setPricingExchangeRate(\horstoeko\ubl\entities\cac\PricingExchangeRate $pricingExchangeRate)

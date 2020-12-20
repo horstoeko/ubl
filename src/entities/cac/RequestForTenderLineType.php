@@ -289,7 +289,7 @@ class RequestForTenderLineType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -329,7 +329,7 @@ class RequestForTenderLineType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\UUID $uUID
+     * @param  \horstoeko\ubl\entities\cbc\UUID $uUID
      * @return self
      */
     public function setUUID(\horstoeko\ubl\entities\cbc\UUID $uUID)
@@ -351,7 +351,7 @@ class RequestForTenderLineType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param  \horstoeko\ubl\entities\cbc\Note $note
      */
     public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
     {
@@ -371,7 +371,7 @@ class RequestForTenderLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNote($index)
@@ -391,7 +391,7 @@ class RequestForTenderLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNote($index)
@@ -430,7 +430,7 @@ class RequestForTenderLineType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note[] $note
+     * @param  \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
     public function setNote(array $note)
@@ -470,7 +470,7 @@ class RequestForTenderLineType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Quantity $quantity
+     * @param  \horstoeko\ubl\entities\cbc\Quantity $quantity
      * @return self
      */
     public function setQuantity(\horstoeko\ubl\entities\cbc\Quantity $quantity)
@@ -512,7 +512,7 @@ class RequestForTenderLineType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MinimumQuantity $minimumQuantity
+     * @param  \horstoeko\ubl\entities\cbc\MinimumQuantity $minimumQuantity
      * @return self
      */
     public function setMinimumQuantity(\horstoeko\ubl\entities\cbc\MinimumQuantity $minimumQuantity)
@@ -554,7 +554,7 @@ class RequestForTenderLineType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MaximumQuantity $maximumQuantity
+     * @param  \horstoeko\ubl\entities\cbc\MaximumQuantity $maximumQuantity
      * @return self
      */
     public function setMaximumQuantity(\horstoeko\ubl\entities\cbc\MaximumQuantity $maximumQuantity)
@@ -596,7 +596,7 @@ class RequestForTenderLineType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $taxIncludedIndicator
+     * @param  bool $taxIncludedIndicator
      * @return self
      */
     public function setTaxIncludedIndicator($taxIncludedIndicator)
@@ -638,7 +638,7 @@ class RequestForTenderLineType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MinimumAmount $minimumAmount
+     * @param  \horstoeko\ubl\entities\cbc\MinimumAmount $minimumAmount
      * @return self
      */
     public function setMinimumAmount(\horstoeko\ubl\entities\cbc\MinimumAmount $minimumAmount)
@@ -680,7 +680,7 @@ class RequestForTenderLineType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MaximumAmount $maximumAmount
+     * @param  \horstoeko\ubl\entities\cbc\MaximumAmount $maximumAmount
      * @return self
      */
     public function setMaximumAmount(\horstoeko\ubl\entities\cbc\MaximumAmount $maximumAmount)
@@ -722,7 +722,7 @@ class RequestForTenderLineType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\EstimatedAmount $estimatedAmount
+     * @param  \horstoeko\ubl\entities\cbc\EstimatedAmount $estimatedAmount
      * @return self
      */
     public function setEstimatedAmount(\horstoeko\ubl\entities\cbc\EstimatedAmount $estimatedAmount)
@@ -744,7 +744,7 @@ class RequestForTenderLineType
      *  Document Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\DocumentReference $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference $documentReference
      */
     public function addToDocumentReference(\horstoeko\ubl\entities\cac\DocumentReference $documentReference)
     {
@@ -764,7 +764,7 @@ class RequestForTenderLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDocumentReference($index)
@@ -784,7 +784,7 @@ class RequestForTenderLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDocumentReference($index)
@@ -823,7 +823,7 @@ class RequestForTenderLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\DocumentReference[] $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference[] $documentReference
      * @return self
      */
     public function setDocumentReference(array $documentReference)
@@ -846,7 +846,7 @@ class RequestForTenderLineType
      *  Period
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\DeliveryPeriod $deliveryPeriod
+     * @param  \horstoeko\ubl\entities\cac\DeliveryPeriod $deliveryPeriod
      */
     public function addToDeliveryPeriod(\horstoeko\ubl\entities\cac\DeliveryPeriod $deliveryPeriod)
     {
@@ -867,7 +867,7 @@ class RequestForTenderLineType
      *  Period
      *  Period
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDeliveryPeriod($index)
@@ -888,7 +888,7 @@ class RequestForTenderLineType
      *  Period
      *  Period
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDeliveryPeriod($index)
@@ -929,7 +929,7 @@ class RequestForTenderLineType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\DeliveryPeriod[] $deliveryPeriod
+     * @param  \horstoeko\ubl\entities\cac\DeliveryPeriod[] $deliveryPeriod
      * @return self
      */
     public function setDeliveryPeriod(array $deliveryPeriod)
@@ -952,7 +952,7 @@ class RequestForTenderLineType
      *  Item Location Quantity
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\RequiredItemLocationQuantity $requiredItemLocationQuantity
+     * @param  \horstoeko\ubl\entities\cac\RequiredItemLocationQuantity $requiredItemLocationQuantity
      */
     public function addToRequiredItemLocationQuantity(\horstoeko\ubl\entities\cac\RequiredItemLocationQuantity $requiredItemLocationQuantity)
     {
@@ -973,7 +973,7 @@ class RequestForTenderLineType
      *  Item Location Quantity
      *  Item Location Quantity
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetRequiredItemLocationQuantity($index)
@@ -994,7 +994,7 @@ class RequestForTenderLineType
      *  Item Location Quantity
      *  Item Location Quantity
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetRequiredItemLocationQuantity($index)
@@ -1035,7 +1035,7 @@ class RequestForTenderLineType
      *  Item Location Quantity
      *  Item Location Quantity
      *
-     * @param \horstoeko\ubl\entities\cac\RequiredItemLocationQuantity[] $requiredItemLocationQuantity
+     * @param  \horstoeko\ubl\entities\cac\RequiredItemLocationQuantity[] $requiredItemLocationQuantity
      * @return self
      */
     public function setRequiredItemLocationQuantity(array $requiredItemLocationQuantity)
@@ -1077,7 +1077,7 @@ class RequestForTenderLineType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\WarrantyValidityPeriod $warrantyValidityPeriod
+     * @param  \horstoeko\ubl\entities\cac\WarrantyValidityPeriod $warrantyValidityPeriod
      * @return self
      */
     public function setWarrantyValidityPeriod(\horstoeko\ubl\entities\cac\WarrantyValidityPeriod $warrantyValidityPeriod)
@@ -1117,7 +1117,7 @@ class RequestForTenderLineType
      *  Item
      *  Item
      *
-     * @param \horstoeko\ubl\entities\cac\Item $item
+     * @param  \horstoeko\ubl\entities\cac\Item $item
      * @return self
      */
     public function setItem(\horstoeko\ubl\entities\cac\Item $item)
@@ -1140,7 +1140,7 @@ class RequestForTenderLineType
      *  Request For Tender Line
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\SubRequestForTenderLine $subRequestForTenderLine
+     * @param  \horstoeko\ubl\entities\cac\SubRequestForTenderLine $subRequestForTenderLine
      */
     public function addToSubRequestForTenderLine(\horstoeko\ubl\entities\cac\SubRequestForTenderLine $subRequestForTenderLine)
     {
@@ -1161,7 +1161,7 @@ class RequestForTenderLineType
      *  Request For Tender Line
      *  Request For Tender Line
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSubRequestForTenderLine($index)
@@ -1182,7 +1182,7 @@ class RequestForTenderLineType
      *  Request For Tender Line
      *  Request For Tender Line
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSubRequestForTenderLine($index)
@@ -1223,7 +1223,7 @@ class RequestForTenderLineType
      *  Request For Tender Line
      *  Request For Tender Line
      *
-     * @param \horstoeko\ubl\entities\cac\SubRequestForTenderLine[] $subRequestForTenderLine
+     * @param  \horstoeko\ubl\entities\cac\SubRequestForTenderLine[] $subRequestForTenderLine
      * @return self
      */
     public function setSubRequestForTenderLine(array $subRequestForTenderLine)

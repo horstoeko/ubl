@@ -180,7 +180,7 @@ class PickupType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -222,7 +222,7 @@ class PickupType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $actualPickupDate
+     * @param  \DateTime $actualPickupDate
      * @return self
      */
     public function setActualPickupDate(\DateTime $actualPickupDate)
@@ -264,7 +264,7 @@ class PickupType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $actualPickupTime
+     * @param  \DateTime $actualPickupTime
      * @return self
      */
     public function setActualPickupTime(\DateTime $actualPickupTime)
@@ -306,7 +306,7 @@ class PickupType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $earliestPickupDate
+     * @param  \DateTime $earliestPickupDate
      * @return self
      */
     public function setEarliestPickupDate(\DateTime $earliestPickupDate)
@@ -348,7 +348,7 @@ class PickupType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $earliestPickupTime
+     * @param  \DateTime $earliestPickupTime
      * @return self
      */
     public function setEarliestPickupTime(\DateTime $earliestPickupTime)
@@ -390,7 +390,7 @@ class PickupType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $latestPickupDate
+     * @param  \DateTime $latestPickupDate
      * @return self
      */
     public function setLatestPickupDate(\DateTime $latestPickupDate)
@@ -432,7 +432,7 @@ class PickupType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $latestPickupTime
+     * @param  \DateTime $latestPickupTime
      * @return self
      */
     public function setLatestPickupTime(\DateTime $latestPickupTime)
@@ -474,7 +474,7 @@ class PickupType
      *  Location
      *  Location
      *
-     * @param \horstoeko\ubl\entities\cac\PickupLocation $pickupLocation
+     * @param  \horstoeko\ubl\entities\cac\PickupLocation $pickupLocation
      * @return self
      */
     public function setPickupLocation(\horstoeko\ubl\entities\cac\PickupLocation $pickupLocation)
@@ -516,7 +516,7 @@ class PickupType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\PickupParty $pickupParty
+     * @param  \horstoeko\ubl\entities\cac\PickupParty $pickupParty
      * @return self
      */
     public function setPickupParty(\horstoeko\ubl\entities\cac\PickupParty $pickupParty)

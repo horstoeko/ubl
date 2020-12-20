@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing FirstShipmentAvailibilityDateType
  *
- *
  * XSD Type: FirstShipmentAvailibilityDateType
  */
 class FirstShipmentAvailibilityDateType
@@ -29,7 +28,7 @@ class FirstShipmentAvailibilityDateType
     /**
      * Gets or sets the inner value
      *
-     * @param \DateTime $value
+     * @param  \DateTime $value
      * @return \DateTime
      */
     public function value()

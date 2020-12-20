@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing CompleteRevocationRefsType
  *
- *
  * XSD Type: CompleteRevocationRefsType
  */
 class CompleteRevocationRefsType
@@ -44,7 +43,7 @@ class CompleteRevocationRefsType
     /**
      * Sets a new id
      *
-     * @param string $id
+     * @param  string $id
      * @return self
      */
     public function setId($id)
@@ -57,7 +56,7 @@ class CompleteRevocationRefsType
      * Adds as cRLRef
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\CRLRefType $cRLRef
+     * @param  \horstoeko\ubl\entities\xades\CRLRefType $cRLRef
      */
     public function addToCRLRefs(\horstoeko\ubl\entities\xades\CRLRefType $cRLRef)
     {
@@ -68,7 +67,7 @@ class CompleteRevocationRefsType
     /**
      * isset cRLRefs
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetCRLRefs($index)
@@ -79,7 +78,7 @@ class CompleteRevocationRefsType
     /**
      * unset cRLRefs
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetCRLRefs($index)
@@ -100,7 +99,7 @@ class CompleteRevocationRefsType
     /**
      * Sets a new cRLRefs
      *
-     * @param \horstoeko\ubl\entities\xades\CRLRefType[] $cRLRefs
+     * @param  \horstoeko\ubl\entities\xades\CRLRefType[] $cRLRefs
      * @return self
      */
     public function setCRLRefs(array $cRLRefs)
@@ -113,7 +112,7 @@ class CompleteRevocationRefsType
      * Adds as oCSPRef
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\OCSPRefType $oCSPRef
+     * @param  \horstoeko\ubl\entities\xades\OCSPRefType $oCSPRef
      */
     public function addToOCSPRefs(\horstoeko\ubl\entities\xades\OCSPRefType $oCSPRef)
     {
@@ -124,7 +123,7 @@ class CompleteRevocationRefsType
     /**
      * isset oCSPRefs
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetOCSPRefs($index)
@@ -135,7 +134,7 @@ class CompleteRevocationRefsType
     /**
      * unset oCSPRefs
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetOCSPRefs($index)
@@ -156,7 +155,7 @@ class CompleteRevocationRefsType
     /**
      * Sets a new oCSPRefs
      *
-     * @param \horstoeko\ubl\entities\xades\OCSPRefType[] $oCSPRefs
+     * @param  \horstoeko\ubl\entities\xades\OCSPRefType[] $oCSPRefs
      * @return self
      */
     public function setOCSPRefs(array $oCSPRefs)
@@ -169,7 +168,7 @@ class CompleteRevocationRefsType
      * Adds as otherRef
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\AnyType $otherRef
+     * @param  \horstoeko\ubl\entities\xades\AnyType $otherRef
      */
     public function addToOtherRefs(\horstoeko\ubl\entities\xades\AnyType $otherRef)
     {
@@ -180,7 +179,7 @@ class CompleteRevocationRefsType
     /**
      * isset otherRefs
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetOtherRefs($index)
@@ -191,7 +190,7 @@ class CompleteRevocationRefsType
     /**
      * unset otherRefs
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetOtherRefs($index)
@@ -212,7 +211,7 @@ class CompleteRevocationRefsType
     /**
      * Sets a new otherRefs
      *
-     * @param \horstoeko\ubl\entities\xades\AnyType[] $otherRefs
+     * @param  \horstoeko\ubl\entities\xades\AnyType[] $otherRefs
      * @return self
      */
     public function setOtherRefs(array $otherRefs)

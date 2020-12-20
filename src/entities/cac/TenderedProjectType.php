@@ -212,7 +212,7 @@ class TenderedProjectType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\VariantID $variantID
+     * @param  \horstoeko\ubl\entities\cbc\VariantID $variantID
      * @return self
      */
     public function setVariantID(\horstoeko\ubl\entities\cbc\VariantID $variantID)
@@ -252,7 +252,7 @@ class TenderedProjectType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\FeeAmount $feeAmount
+     * @param  \horstoeko\ubl\entities\cbc\FeeAmount $feeAmount
      * @return self
      */
     public function setFeeAmount(\horstoeko\ubl\entities\cbc\FeeAmount $feeAmount)
@@ -275,7 +275,7 @@ class TenderedProjectType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\FeeDescription $feeDescription
+     * @param  \horstoeko\ubl\entities\cbc\FeeDescription $feeDescription
      */
     public function addToFeeDescription(\horstoeko\ubl\entities\cbc\FeeDescription $feeDescription)
     {
@@ -296,7 +296,7 @@ class TenderedProjectType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetFeeDescription($index)
@@ -317,7 +317,7 @@ class TenderedProjectType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetFeeDescription($index)
@@ -358,7 +358,7 @@ class TenderedProjectType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\FeeDescription[] $feeDescription
+     * @param  \horstoeko\ubl\entities\cbc\FeeDescription[] $feeDescription
      * @return self
      */
     public function setFeeDescription(array $feeDescription)
@@ -398,7 +398,7 @@ class TenderedProjectType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TenderEnvelopeID $tenderEnvelopeID
+     * @param  \horstoeko\ubl\entities\cbc\TenderEnvelopeID $tenderEnvelopeID
      * @return self
      */
     public function setTenderEnvelopeID(\horstoeko\ubl\entities\cbc\TenderEnvelopeID $tenderEnvelopeID)
@@ -438,7 +438,7 @@ class TenderedProjectType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TenderEnvelopeTypeCode $tenderEnvelopeTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\TenderEnvelopeTypeCode $tenderEnvelopeTypeCode
      * @return self
      */
     public function setTenderEnvelopeTypeCode(\horstoeko\ubl\entities\cbc\TenderEnvelopeTypeCode $tenderEnvelopeTypeCode)
@@ -478,7 +478,7 @@ class TenderedProjectType
      *  Procurement Project Lot
      *  Procurement Project Lot
      *
-     * @param \horstoeko\ubl\entities\cac\ProcurementProjectLot $procurementProjectLot
+     * @param  \horstoeko\ubl\entities\cac\ProcurementProjectLot $procurementProjectLot
      * @return self
      */
     public function setProcurementProjectLot(\horstoeko\ubl\entities\cac\ProcurementProjectLot $procurementProjectLot)
@@ -501,7 +501,7 @@ class TenderedProjectType
      *  Document Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\EvidenceDocumentReference $evidenceDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\EvidenceDocumentReference $evidenceDocumentReference
      */
     public function addToEvidenceDocumentReference(\horstoeko\ubl\entities\cac\EvidenceDocumentReference $evidenceDocumentReference)
     {
@@ -522,7 +522,7 @@ class TenderedProjectType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetEvidenceDocumentReference($index)
@@ -543,7 +543,7 @@ class TenderedProjectType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetEvidenceDocumentReference($index)
@@ -584,7 +584,7 @@ class TenderedProjectType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\EvidenceDocumentReference[] $evidenceDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\EvidenceDocumentReference[] $evidenceDocumentReference
      * @return self
      */
     public function setEvidenceDocumentReference(array $evidenceDocumentReference)
@@ -606,7 +606,7 @@ class TenderedProjectType
      *  Tax Total
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\TaxTotal $taxTotal
+     * @param  \horstoeko\ubl\entities\cac\TaxTotal $taxTotal
      */
     public function addToTaxTotal(\horstoeko\ubl\entities\cac\TaxTotal $taxTotal)
     {
@@ -626,7 +626,7 @@ class TenderedProjectType
      *  Tax Total
      *  Tax Total
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTaxTotal($index)
@@ -646,7 +646,7 @@ class TenderedProjectType
      *  Tax Total
      *  Tax Total
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTaxTotal($index)
@@ -685,7 +685,7 @@ class TenderedProjectType
      *  Tax Total
      *  Tax Total
      *
-     * @param \horstoeko\ubl\entities\cac\TaxTotal[] $taxTotal
+     * @param  \horstoeko\ubl\entities\cac\TaxTotal[] $taxTotal
      * @return self
      */
     public function setTaxTotal(array $taxTotal)
@@ -727,7 +727,7 @@ class TenderedProjectType
      *  Monetary Total
      *  Monetary Total
      *
-     * @param \horstoeko\ubl\entities\cac\LegalMonetaryTotal $legalMonetaryTotal
+     * @param  \horstoeko\ubl\entities\cac\LegalMonetaryTotal $legalMonetaryTotal
      * @return self
      */
     public function setLegalMonetaryTotal(\horstoeko\ubl\entities\cac\LegalMonetaryTotal $legalMonetaryTotal)
@@ -749,7 +749,7 @@ class TenderedProjectType
      *  Tender Line
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\TenderLine $tenderLine
+     * @param  \horstoeko\ubl\entities\cac\TenderLine $tenderLine
      */
     public function addToTenderLine(\horstoeko\ubl\entities\cac\TenderLine $tenderLine)
     {
@@ -769,7 +769,7 @@ class TenderedProjectType
      *  Tender Line
      *  Tender Line
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTenderLine($index)
@@ -789,7 +789,7 @@ class TenderedProjectType
      *  Tender Line
      *  Tender Line
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTenderLine($index)
@@ -828,7 +828,7 @@ class TenderedProjectType
      *  Tender Line
      *  Tender Line
      *
-     * @param \horstoeko\ubl\entities\cac\TenderLine[] $tenderLine
+     * @param  \horstoeko\ubl\entities\cac\TenderLine[] $tenderLine
      * @return self
      */
     public function setTenderLine(array $tenderLine)
@@ -850,7 +850,7 @@ class TenderedProjectType
      *  Awarding Criterion Response
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\AwardingCriterionResponse $awardingCriterionResponse
+     * @param  \horstoeko\ubl\entities\cac\AwardingCriterionResponse $awardingCriterionResponse
      */
     public function addToAwardingCriterionResponse(\horstoeko\ubl\entities\cac\AwardingCriterionResponse $awardingCriterionResponse)
     {
@@ -870,7 +870,7 @@ class TenderedProjectType
      *  Awarding Criterion Response
      *  Awarding Criterion Response
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAwardingCriterionResponse($index)
@@ -890,7 +890,7 @@ class TenderedProjectType
      *  Awarding Criterion Response
      *  Awarding Criterion Response
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAwardingCriterionResponse($index)
@@ -929,7 +929,7 @@ class TenderedProjectType
      *  Awarding Criterion Response
      *  Awarding Criterion Response
      *
-     * @param \horstoeko\ubl\entities\cac\AwardingCriterionResponse[] $awardingCriterionResponse
+     * @param  \horstoeko\ubl\entities\cac\AwardingCriterionResponse[] $awardingCriterionResponse
      * @return self
      */
     public function setAwardingCriterionResponse(array $awardingCriterionResponse)

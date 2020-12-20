@@ -140,7 +140,7 @@ class ItemIdentificationType
      *  Identifier. Type
      *  CUST001 3333-44-123
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -182,7 +182,7 @@ class ItemIdentificationType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ExtendedID $extendedID
+     * @param  \horstoeko\ubl\entities\cbc\ExtendedID $extendedID
      * @return self
      */
     public function setExtendedID(\horstoeko\ubl\entities\cbc\ExtendedID $extendedID)
@@ -224,7 +224,7 @@ class ItemIdentificationType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\BarcodeSymbologyID $barcodeSymbologyID
+     * @param  \horstoeko\ubl\entities\cbc\BarcodeSymbologyID $barcodeSymbologyID
      * @return self
      */
     public function setBarcodeSymbologyID(\horstoeko\ubl\entities\cbc\BarcodeSymbologyID $barcodeSymbologyID)
@@ -246,7 +246,7 @@ class ItemIdentificationType
      *  Physical Attribute
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\PhysicalAttribute $physicalAttribute
+     * @param  \horstoeko\ubl\entities\cac\PhysicalAttribute $physicalAttribute
      */
     public function addToPhysicalAttribute(\horstoeko\ubl\entities\cac\PhysicalAttribute $physicalAttribute)
     {
@@ -266,7 +266,7 @@ class ItemIdentificationType
      *  Physical Attribute
      *  Physical Attribute
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPhysicalAttribute($index)
@@ -286,7 +286,7 @@ class ItemIdentificationType
      *  Physical Attribute
      *  Physical Attribute
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPhysicalAttribute($index)
@@ -325,7 +325,7 @@ class ItemIdentificationType
      *  Physical Attribute
      *  Physical Attribute
      *
-     * @param \horstoeko\ubl\entities\cac\PhysicalAttribute[] $physicalAttribute
+     * @param  \horstoeko\ubl\entities\cac\PhysicalAttribute[] $physicalAttribute
      * @return self
      */
     public function setPhysicalAttribute(array $physicalAttribute)
@@ -348,7 +348,7 @@ class ItemIdentificationType
      *  Dimension
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\MeasurementDimension $measurementDimension
+     * @param  \horstoeko\ubl\entities\cac\MeasurementDimension $measurementDimension
      */
     public function addToMeasurementDimension(\horstoeko\ubl\entities\cac\MeasurementDimension $measurementDimension)
     {
@@ -369,7 +369,7 @@ class ItemIdentificationType
      *  Dimension
      *  Dimension
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetMeasurementDimension($index)
@@ -390,7 +390,7 @@ class ItemIdentificationType
      *  Dimension
      *  Dimension
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetMeasurementDimension($index)
@@ -431,7 +431,7 @@ class ItemIdentificationType
      *  Dimension
      *  Dimension
      *
-     * @param \horstoeko\ubl\entities\cac\MeasurementDimension[] $measurementDimension
+     * @param  \horstoeko\ubl\entities\cac\MeasurementDimension[] $measurementDimension
      * @return self
      */
     public function setMeasurementDimension(array $measurementDimension)
@@ -473,7 +473,7 @@ class ItemIdentificationType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\IssuerParty $issuerParty
+     * @param  \horstoeko\ubl\entities\cac\IssuerParty $issuerParty
      * @return self
      */
     public function setIssuerParty(\horstoeko\ubl\entities\cac\IssuerParty $issuerParty)

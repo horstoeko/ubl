@@ -105,7 +105,7 @@ class EnvironmentalEmissionType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\EnvironmentalEmissionTypeCode $environmentalEmissionTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\EnvironmentalEmissionTypeCode $environmentalEmissionTypeCode
      * @return self
      */
     public function setEnvironmentalEmissionTypeCode(\horstoeko\ubl\entities\cbc\EnvironmentalEmissionTypeCode $environmentalEmissionTypeCode)
@@ -145,7 +145,7 @@ class EnvironmentalEmissionType
      *  Measure
      *  Measure. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ValueMeasure $valueMeasure
+     * @param  \horstoeko\ubl\entities\cbc\ValueMeasure $valueMeasure
      * @return self
      */
     public function setValueMeasure(\horstoeko\ubl\entities\cbc\ValueMeasure $valueMeasure)
@@ -167,7 +167,7 @@ class EnvironmentalEmissionType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -187,7 +187,7 @@ class EnvironmentalEmissionType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -207,7 +207,7 @@ class EnvironmentalEmissionType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -246,7 +246,7 @@ class EnvironmentalEmissionType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -268,7 +268,7 @@ class EnvironmentalEmissionType
      *  Emission Calculation Method
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\EmissionCalculationMethod $emissionCalculationMethod
+     * @param  \horstoeko\ubl\entities\cac\EmissionCalculationMethod $emissionCalculationMethod
      */
     public function addToEmissionCalculationMethod(\horstoeko\ubl\entities\cac\EmissionCalculationMethod $emissionCalculationMethod)
     {
@@ -288,7 +288,7 @@ class EnvironmentalEmissionType
      *  Emission Calculation Method
      *  Emission Calculation Method
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetEmissionCalculationMethod($index)
@@ -308,7 +308,7 @@ class EnvironmentalEmissionType
      *  Emission Calculation Method
      *  Emission Calculation Method
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetEmissionCalculationMethod($index)
@@ -347,7 +347,7 @@ class EnvironmentalEmissionType
      *  Emission Calculation Method
      *  Emission Calculation Method
      *
-     * @param \horstoeko\ubl\entities\cac\EmissionCalculationMethod[] $emissionCalculationMethod
+     * @param  \horstoeko\ubl\entities\cac\EmissionCalculationMethod[] $emissionCalculationMethod
      * @return self
      */
     public function setEmissionCalculationMethod(array $emissionCalculationMethod)

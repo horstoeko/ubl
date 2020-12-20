@@ -293,7 +293,7 @@ class PersonType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -335,7 +335,7 @@ class PersonType
      *  Name
      *  Name. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\FirstName $firstName
+     * @param  \horstoeko\ubl\entities\cbc\FirstName $firstName
      * @return self
      */
     public function setFirstName(\horstoeko\ubl\entities\cbc\FirstName $firstName)
@@ -377,7 +377,7 @@ class PersonType
      *  Name
      *  Name. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\FamilyName $familyName
+     * @param  \horstoeko\ubl\entities\cbc\FamilyName $familyName
      * @return self
      */
     public function setFamilyName(\horstoeko\ubl\entities\cbc\FamilyName $familyName)
@@ -417,7 +417,7 @@ class PersonType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Title $title
+     * @param  \horstoeko\ubl\entities\cbc\Title $title
      * @return self
      */
     public function setTitle(\horstoeko\ubl\entities\cbc\Title $title)
@@ -459,7 +459,7 @@ class PersonType
      *  Name
      *  Name. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MiddleName $middleName
+     * @param  \horstoeko\ubl\entities\cbc\MiddleName $middleName
      * @return self
      */
     public function setMiddleName(\horstoeko\ubl\entities\cbc\MiddleName $middleName)
@@ -503,7 +503,7 @@ class PersonType
      *  Name. Type
      *  Delivery Dock
      *
-     * @param \horstoeko\ubl\entities\cbc\OtherName $otherName
+     * @param  \horstoeko\ubl\entities\cbc\OtherName $otherName
      * @return self
      */
     public function setOtherName(\horstoeko\ubl\entities\cbc\OtherName $otherName)
@@ -543,7 +543,7 @@ class PersonType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\NameSuffix $nameSuffix
+     * @param  \horstoeko\ubl\entities\cbc\NameSuffix $nameSuffix
      * @return self
      */
     public function setNameSuffix(\horstoeko\ubl\entities\cbc\NameSuffix $nameSuffix)
@@ -583,7 +583,7 @@ class PersonType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\JobTitle $jobTitle
+     * @param  \horstoeko\ubl\entities\cbc\JobTitle $jobTitle
      * @return self
      */
     public function setJobTitle(\horstoeko\ubl\entities\cbc\JobTitle $jobTitle)
@@ -623,7 +623,7 @@ class PersonType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\NationalityID $nationalityID
+     * @param  \horstoeko\ubl\entities\cbc\NationalityID $nationalityID
      * @return self
      */
     public function setNationalityID(\horstoeko\ubl\entities\cbc\NationalityID $nationalityID)
@@ -663,7 +663,7 @@ class PersonType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\GenderCode $genderCode
+     * @param  \horstoeko\ubl\entities\cbc\GenderCode $genderCode
      * @return self
      */
     public function setGenderCode(\horstoeko\ubl\entities\cbc\GenderCode $genderCode)
@@ -703,7 +703,7 @@ class PersonType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $birthDate
+     * @param  \DateTime $birthDate
      * @return self
      */
     public function setBirthDate(\DateTime $birthDate)
@@ -743,7 +743,7 @@ class PersonType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\BirthplaceName $birthplaceName
+     * @param  \horstoeko\ubl\entities\cbc\BirthplaceName $birthplaceName
      * @return self
      */
     public function setBirthplaceName(\horstoeko\ubl\entities\cbc\BirthplaceName $birthplaceName)
@@ -785,7 +785,7 @@ class PersonType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\OrganizationDepartment $organizationDepartment
+     * @param  \horstoeko\ubl\entities\cbc\OrganizationDepartment $organizationDepartment
      * @return self
      */
     public function setOrganizationDepartment(\horstoeko\ubl\entities\cbc\OrganizationDepartment $organizationDepartment)
@@ -825,7 +825,7 @@ class PersonType
      *  Contact
      *  Contact
      *
-     * @param \horstoeko\ubl\entities\cac\Contact $contact
+     * @param  \horstoeko\ubl\entities\cac\Contact $contact
      * @return self
      */
     public function setContact(\horstoeko\ubl\entities\cac\Contact $contact)
@@ -865,7 +865,7 @@ class PersonType
      *  Financial Account
      *  Financial Account
      *
-     * @param \horstoeko\ubl\entities\cac\FinancialAccount $financialAccount
+     * @param  \horstoeko\ubl\entities\cac\FinancialAccount $financialAccount
      * @return self
      */
     public function setFinancialAccount(\horstoeko\ubl\entities\cac\FinancialAccount $financialAccount)
@@ -888,7 +888,7 @@ class PersonType
      *  Document Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\IdentityDocumentReference $identityDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\IdentityDocumentReference $identityDocumentReference
      */
     public function addToIdentityDocumentReference(\horstoeko\ubl\entities\cac\IdentityDocumentReference $identityDocumentReference)
     {
@@ -909,7 +909,7 @@ class PersonType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetIdentityDocumentReference($index)
@@ -930,7 +930,7 @@ class PersonType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetIdentityDocumentReference($index)
@@ -971,7 +971,7 @@ class PersonType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\IdentityDocumentReference[] $identityDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\IdentityDocumentReference[] $identityDocumentReference
      * @return self
      */
     public function setIdentityDocumentReference(array $identityDocumentReference)
@@ -1013,7 +1013,7 @@ class PersonType
      *  Address
      *  Address
      *
-     * @param \horstoeko\ubl\entities\cac\ResidenceAddress $residenceAddress
+     * @param  \horstoeko\ubl\entities\cac\ResidenceAddress $residenceAddress
      * @return self
      */
     public function setResidenceAddress(\horstoeko\ubl\entities\cac\ResidenceAddress $residenceAddress)

@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\CodeType;
 /**
  * Class representing AccountingCostCodeType
  *
- *
  * XSD Type: AccountingCostCodeType
  */
 class AccountingCostCodeType extends CodeType

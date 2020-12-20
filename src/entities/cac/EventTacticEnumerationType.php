@@ -101,7 +101,7 @@ class EventTacticEnumerationType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ConsumerIncentiveTacticTypeCode $consumerIncentiveTacticTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\ConsumerIncentiveTacticTypeCode $consumerIncentiveTacticTypeCode
      * @return self
      */
     public function setConsumerIncentiveTacticTypeCode(\horstoeko\ubl\entities\cbc\ConsumerIncentiveTacticTypeCode $consumerIncentiveTacticTypeCode)
@@ -141,7 +141,7 @@ class EventTacticEnumerationType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\DisplayTacticTypeCode $displayTacticTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\DisplayTacticTypeCode $displayTacticTypeCode
      * @return self
      */
     public function setDisplayTacticTypeCode(\horstoeko\ubl\entities\cbc\DisplayTacticTypeCode $displayTacticTypeCode)
@@ -181,7 +181,7 @@ class EventTacticEnumerationType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\FeatureTacticTypeCode $featureTacticTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\FeatureTacticTypeCode $featureTacticTypeCode
      * @return self
      */
     public function setFeatureTacticTypeCode(\horstoeko\ubl\entities\cbc\FeatureTacticTypeCode $featureTacticTypeCode)
@@ -221,7 +221,7 @@ class EventTacticEnumerationType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TradeItemPackingLabelingTypeCode $tradeItemPackingLabelingTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\TradeItemPackingLabelingTypeCode $tradeItemPackingLabelingTypeCode
      * @return self
      */
     public function setTradeItemPackingLabelingTypeCode(\horstoeko\ubl\entities\cbc\TradeItemPackingLabelingTypeCode $tradeItemPackingLabelingTypeCode)

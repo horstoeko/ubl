@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\CodeType;
 /**
  * Class representing CorrectionTypeCodeType
  *
- *
  * XSD Type: CorrectionTypeCodeType
  */
 class CorrectionTypeCodeType extends CodeType

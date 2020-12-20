@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\CodeType;
 /**
  * Class representing ActionCodeType
  *
- *
  * XSD Type: ActionCodeType
  */
 class ActionCodeType extends CodeType

@@ -76,7 +76,7 @@ class AttachmentType
      *  Binary Object
      *  Binary Object. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\EmbeddedDocumentBinaryObject $embeddedDocumentBinaryObject
+     * @param  \horstoeko\ubl\entities\cbc\EmbeddedDocumentBinaryObject $embeddedDocumentBinaryObject
      * @return self
      */
     public function setEmbeddedDocumentBinaryObject(\horstoeko\ubl\entities\cbc\EmbeddedDocumentBinaryObject $embeddedDocumentBinaryObject)
@@ -116,7 +116,7 @@ class AttachmentType
      *  External Reference
      *  External Reference
      *
-     * @param \horstoeko\ubl\entities\cac\ExternalReference $externalReference
+     * @param  \horstoeko\ubl\entities\cac\ExternalReference $externalReference
      * @return self
      */
     public function setExternalReference(\horstoeko\ubl\entities\cac\ExternalReference $externalReference)

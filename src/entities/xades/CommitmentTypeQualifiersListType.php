@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing CommitmentTypeQualifiersListType
  *
- *
  * XSD Type: CommitmentTypeQualifiersListType
  */
 class CommitmentTypeQualifiersListType
@@ -22,7 +21,7 @@ class CommitmentTypeQualifiersListType
      * Adds as commitmentTypeQualifier
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\AnyType $commitmentTypeQualifier
+     * @param  \horstoeko\ubl\entities\xades\AnyType $commitmentTypeQualifier
      */
     public function addToCommitmentTypeQualifier(\horstoeko\ubl\entities\xades\AnyType $commitmentTypeQualifier)
     {
@@ -33,7 +32,7 @@ class CommitmentTypeQualifiersListType
     /**
      * isset commitmentTypeQualifier
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetCommitmentTypeQualifier($index)
@@ -44,7 +43,7 @@ class CommitmentTypeQualifiersListType
     /**
      * unset commitmentTypeQualifier
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetCommitmentTypeQualifier($index)
@@ -65,7 +64,7 @@ class CommitmentTypeQualifiersListType
     /**
      * Sets a new commitmentTypeQualifier
      *
-     * @param \horstoeko\ubl\entities\xades\AnyType[] $commitmentTypeQualifier
+     * @param  \horstoeko\ubl\entities\xades\AnyType[] $commitmentTypeQualifier
      * @return self
      */
     public function setCommitmentTypeQualifier(array $commitmentTypeQualifier)

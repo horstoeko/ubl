@@ -106,7 +106,7 @@ class DutyType
      *  Amount. Type
      *  88.23
      *
-     * @param \horstoeko\ubl\entities\cbc\Amount $amount
+     * @param  \horstoeko\ubl\entities\cbc\Amount $amount
      * @return self
      */
     public function setAmount(\horstoeko\ubl\entities\cbc\Amount $amount)
@@ -148,7 +148,7 @@ class DutyType
      *  Text. Type
      *  ConnectionFee
      *
-     * @param \horstoeko\ubl\entities\cbc\Duty $duty
+     * @param  \horstoeko\ubl\entities\cbc\Duty $duty
      * @return self
      */
     public function setDuty(\horstoeko\ubl\entities\cbc\Duty $duty)
@@ -190,7 +190,7 @@ class DutyType
      *  Code. Type
      *  ConnectionFee
      *
-     * @param \horstoeko\ubl\entities\cbc\DutyCode $dutyCode
+     * @param  \horstoeko\ubl\entities\cbc\DutyCode $dutyCode
      * @return self
      */
     public function setDutyCode(\horstoeko\ubl\entities\cbc\DutyCode $dutyCode)
@@ -230,7 +230,7 @@ class DutyType
      *  Tax Category
      *  Tax Category
      *
-     * @param \horstoeko\ubl\entities\cac\TaxCategory $taxCategory
+     * @param  \horstoeko\ubl\entities\cac\TaxCategory $taxCategory
      * @return self
      */
     public function setTaxCategory(\horstoeko\ubl\entities\cac\TaxCategory $taxCategory)

@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\NameType;
 /**
  * Class representing CategoryNameType
  *
- *
  * XSD Type: CategoryNameType
  */
 class CategoryNameType extends NameType

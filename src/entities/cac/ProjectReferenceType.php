@@ -103,7 +103,7 @@ class ProjectReferenceType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -143,7 +143,7 @@ class ProjectReferenceType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\UUID $uUID
+     * @param  \horstoeko\ubl\entities\cbc\UUID $uUID
      * @return self
      */
     public function setUUID(\horstoeko\ubl\entities\cbc\UUID $uUID)
@@ -183,7 +183,7 @@ class ProjectReferenceType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $issueDate
+     * @param  \DateTime $issueDate
      * @return self
      */
     public function setIssueDate(\DateTime $issueDate)
@@ -205,7 +205,7 @@ class ProjectReferenceType
      *  Work Phase Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\WorkPhaseReference $workPhaseReference
+     * @param  \horstoeko\ubl\entities\cac\WorkPhaseReference $workPhaseReference
      */
     public function addToWorkPhaseReference(\horstoeko\ubl\entities\cac\WorkPhaseReference $workPhaseReference)
     {
@@ -225,7 +225,7 @@ class ProjectReferenceType
      *  Work Phase Reference
      *  Work Phase Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetWorkPhaseReference($index)
@@ -245,7 +245,7 @@ class ProjectReferenceType
      *  Work Phase Reference
      *  Work Phase Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetWorkPhaseReference($index)
@@ -284,7 +284,7 @@ class ProjectReferenceType
      *  Work Phase Reference
      *  Work Phase Reference
      *
-     * @param \horstoeko\ubl\entities\cac\WorkPhaseReference[] $workPhaseReference
+     * @param  \horstoeko\ubl\entities\cac\WorkPhaseReference[] $workPhaseReference
      * @return self
      */
     public function setWorkPhaseReference(array $workPhaseReference)

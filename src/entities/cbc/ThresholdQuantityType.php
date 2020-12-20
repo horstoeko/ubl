@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\QuantityType;
 /**
  * Class representing ThresholdQuantityType
  *
- *
  * XSD Type: ThresholdQuantityType
  */
 class ThresholdQuantityType extends QuantityType

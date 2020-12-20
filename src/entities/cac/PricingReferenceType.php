@@ -79,7 +79,7 @@ class PricingReferenceType
      *  Item Location Quantity
      *  Item Location Quantity
      *
-     * @param \horstoeko\ubl\entities\cac\OriginalItemLocationQuantity $originalItemLocationQuantity
+     * @param  \horstoeko\ubl\entities\cac\OriginalItemLocationQuantity $originalItemLocationQuantity
      * @return self
      */
     public function setOriginalItemLocationQuantity(\horstoeko\ubl\entities\cac\OriginalItemLocationQuantity $originalItemLocationQuantity)
@@ -102,7 +102,7 @@ class PricingReferenceType
      *  Price
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\AlternativeConditionPrice $alternativeConditionPrice
+     * @param  \horstoeko\ubl\entities\cac\AlternativeConditionPrice $alternativeConditionPrice
      */
     public function addToAlternativeConditionPrice(\horstoeko\ubl\entities\cac\AlternativeConditionPrice $alternativeConditionPrice)
     {
@@ -123,7 +123,7 @@ class PricingReferenceType
      *  Price
      *  Price
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAlternativeConditionPrice($index)
@@ -144,7 +144,7 @@ class PricingReferenceType
      *  Price
      *  Price
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAlternativeConditionPrice($index)
@@ -185,7 +185,7 @@ class PricingReferenceType
      *  Price
      *  Price
      *
-     * @param \horstoeko\ubl\entities\cac\AlternativeConditionPrice[] $alternativeConditionPrice
+     * @param  \horstoeko\ubl\entities\cac\AlternativeConditionPrice[] $alternativeConditionPrice
      * @return self
      */
     public function setAlternativeConditionPrice(array $alternativeConditionPrice)

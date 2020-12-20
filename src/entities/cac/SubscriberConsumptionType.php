@@ -181,7 +181,7 @@ class SubscriberConsumptionType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ConsumptionID $consumptionID
+     * @param  \horstoeko\ubl\entities\cbc\ConsumptionID $consumptionID
      * @return self
      */
     public function setConsumptionID(\horstoeko\ubl\entities\cbc\ConsumptionID $consumptionID)
@@ -221,7 +221,7 @@ class SubscriberConsumptionType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SpecificationTypeCode $specificationTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\SpecificationTypeCode $specificationTypeCode
      * @return self
      */
     public function setSpecificationTypeCode(\horstoeko\ubl\entities\cbc\SpecificationTypeCode $specificationTypeCode)
@@ -244,7 +244,7 @@ class SubscriberConsumptionType
      *  This is how we have calculating your yearly statement
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param  \horstoeko\ubl\entities\cbc\Note $note
      */
     public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
     {
@@ -265,7 +265,7 @@ class SubscriberConsumptionType
      *  Text. Type
      *  This is how we have calculating your yearly statement
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNote($index)
@@ -286,7 +286,7 @@ class SubscriberConsumptionType
      *  Text. Type
      *  This is how we have calculating your yearly statement
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNote($index)
@@ -327,7 +327,7 @@ class SubscriberConsumptionType
      *  Text. Type
      *  This is how we have calculating your yearly statement
      *
-     * @param \horstoeko\ubl\entities\cbc\Note[] $note
+     * @param  \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
     public function setNote(array $note)
@@ -369,7 +369,7 @@ class SubscriberConsumptionType
      *  Quantity. Type
      *  2000.0
      *
-     * @param \horstoeko\ubl\entities\cbc\TotalMeteredQuantity $totalMeteredQuantity
+     * @param  \horstoeko\ubl\entities\cbc\TotalMeteredQuantity $totalMeteredQuantity
      * @return self
      */
     public function setTotalMeteredQuantity(\horstoeko\ubl\entities\cbc\TotalMeteredQuantity $totalMeteredQuantity)
@@ -411,7 +411,7 @@ class SubscriberConsumptionType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\SubscriberParty $subscriberParty
+     * @param  \horstoeko\ubl\entities\cac\SubscriberParty $subscriberParty
      * @return self
      */
     public function setSubscriberParty(\horstoeko\ubl\entities\cac\SubscriberParty $subscriberParty)
@@ -453,7 +453,7 @@ class SubscriberConsumptionType
      *  Consumption Point
      *  Consumption Point
      *
-     * @param \horstoeko\ubl\entities\cac\UtilityConsumptionPoint $utilityConsumptionPoint
+     * @param  \horstoeko\ubl\entities\cac\UtilityConsumptionPoint $utilityConsumptionPoint
      * @return self
      */
     public function setUtilityConsumptionPoint(\horstoeko\ubl\entities\cac\UtilityConsumptionPoint $utilityConsumptionPoint)
@@ -475,7 +475,7 @@ class SubscriberConsumptionType
      *  On Account Payment
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\OnAccountPayment $onAccountPayment
+     * @param  \horstoeko\ubl\entities\cac\OnAccountPayment $onAccountPayment
      */
     public function addToOnAccountPayment(\horstoeko\ubl\entities\cac\OnAccountPayment $onAccountPayment)
     {
@@ -495,7 +495,7 @@ class SubscriberConsumptionType
      *  On Account Payment
      *  On Account Payment
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetOnAccountPayment($index)
@@ -515,7 +515,7 @@ class SubscriberConsumptionType
      *  On Account Payment
      *  On Account Payment
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetOnAccountPayment($index)
@@ -554,7 +554,7 @@ class SubscriberConsumptionType
      *  On Account Payment
      *  On Account Payment
      *
-     * @param \horstoeko\ubl\entities\cac\OnAccountPayment[] $onAccountPayment
+     * @param  \horstoeko\ubl\entities\cac\OnAccountPayment[] $onAccountPayment
      * @return self
      */
     public function setOnAccountPayment(array $onAccountPayment)
@@ -594,7 +594,7 @@ class SubscriberConsumptionType
      *  Consumption
      *  Consumption
      *
-     * @param \horstoeko\ubl\entities\cac\Consumption $consumption
+     * @param  \horstoeko\ubl\entities\cac\Consumption $consumption
      * @return self
      */
     public function setConsumption(\horstoeko\ubl\entities\cac\Consumption $consumption)
@@ -616,7 +616,7 @@ class SubscriberConsumptionType
      *  Supplier Consumption
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\SupplierConsumption $supplierConsumption
+     * @param  \horstoeko\ubl\entities\cac\SupplierConsumption $supplierConsumption
      */
     public function addToSupplierConsumption(\horstoeko\ubl\entities\cac\SupplierConsumption $supplierConsumption)
     {
@@ -636,7 +636,7 @@ class SubscriberConsumptionType
      *  Supplier Consumption
      *  Supplier Consumption
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSupplierConsumption($index)
@@ -656,7 +656,7 @@ class SubscriberConsumptionType
      *  Supplier Consumption
      *  Supplier Consumption
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSupplierConsumption($index)
@@ -695,7 +695,7 @@ class SubscriberConsumptionType
      *  Supplier Consumption
      *  Supplier Consumption
      *
-     * @param \horstoeko\ubl\entities\cac\SupplierConsumption[] $supplierConsumption
+     * @param  \horstoeko\ubl\entities\cac\SupplierConsumption[] $supplierConsumption
      * @return self
      */
     public function setSupplierConsumption(array $supplierConsumption)

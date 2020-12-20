@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\AmountType;
 /**
  * Class representing TransactionCurrencyTaxAmountType
  *
- *
  * XSD Type: TransactionCurrencyTaxAmountType
  */
 class TransactionCurrencyTaxAmountType extends AmountType

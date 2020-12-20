@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing MinimumImprovementBidType
  *
- *
  * XSD Type: MinimumImprovementBidType
  */
 class MinimumImprovementBidType extends TextType

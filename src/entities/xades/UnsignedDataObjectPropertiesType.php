@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing UnsignedDataObjectPropertiesType
  *
- *
  * XSD Type: UnsignedDataObjectPropertiesType
  */
 class UnsignedDataObjectPropertiesType
@@ -36,7 +35,7 @@ class UnsignedDataObjectPropertiesType
     /**
      * Sets a new id
      *
-     * @param string $id
+     * @param  string $id
      * @return self
      */
     public function setId($id)
@@ -49,7 +48,7 @@ class UnsignedDataObjectPropertiesType
      * Adds as unsignedDataObjectProperty
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\AnyType $unsignedDataObjectProperty
+     * @param  \horstoeko\ubl\entities\xades\AnyType $unsignedDataObjectProperty
      */
     public function addToUnsignedDataObjectProperty(\horstoeko\ubl\entities\xades\AnyType $unsignedDataObjectProperty)
     {
@@ -60,7 +59,7 @@ class UnsignedDataObjectPropertiesType
     /**
      * isset unsignedDataObjectProperty
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetUnsignedDataObjectProperty($index)
@@ -71,7 +70,7 @@ class UnsignedDataObjectPropertiesType
     /**
      * unset unsignedDataObjectProperty
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetUnsignedDataObjectProperty($index)
@@ -92,7 +91,7 @@ class UnsignedDataObjectPropertiesType
     /**
      * Sets a new unsignedDataObjectProperty
      *
-     * @param \horstoeko\ubl\entities\xades\AnyType[] $unsignedDataObjectProperty
+     * @param  \horstoeko\ubl\entities\xades\AnyType[] $unsignedDataObjectProperty
      * @return self
      */
     public function setUnsignedDataObjectProperty(array $unsignedDataObjectProperty)

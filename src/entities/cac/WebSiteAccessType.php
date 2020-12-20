@@ -89,7 +89,7 @@ class WebSiteAccessType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\URI $uRI
+     * @param  \horstoeko\ubl\entities\cbc\URI $uRI
      * @return self
      */
     public function setURI(\horstoeko\ubl\entities\cbc\URI $uRI)
@@ -131,7 +131,7 @@ class WebSiteAccessType
      *  Text. Type
      *  confidence
      *
-     * @param \horstoeko\ubl\entities\cbc\Password $password
+     * @param  \horstoeko\ubl\entities\cbc\Password $password
      * @return self
      */
     public function setPassword(\horstoeko\ubl\entities\cbc\Password $password)
@@ -173,7 +173,7 @@ class WebSiteAccessType
      *  Text. Type
      *  Utsuser
      *
-     * @param \horstoeko\ubl\entities\cbc\Login $login
+     * @param  \horstoeko\ubl\entities\cbc\Login $login
      * @return self
      */
     public function setLogin(\horstoeko\ubl\entities\cbc\Login $login)

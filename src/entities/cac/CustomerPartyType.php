@@ -153,7 +153,7 @@ class CustomerPartyType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CustomerAssignedAccountID $customerAssignedAccountID
+     * @param  \horstoeko\ubl\entities\cbc\CustomerAssignedAccountID $customerAssignedAccountID
      * @return self
      */
     public function setCustomerAssignedAccountID(\horstoeko\ubl\entities\cbc\CustomerAssignedAccountID $customerAssignedAccountID)
@@ -195,7 +195,7 @@ class CustomerPartyType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SupplierAssignedAccountID $supplierAssignedAccountID
+     * @param  \horstoeko\ubl\entities\cbc\SupplierAssignedAccountID $supplierAssignedAccountID
      * @return self
      */
     public function setSupplierAssignedAccountID(\horstoeko\ubl\entities\cbc\SupplierAssignedAccountID $supplierAssignedAccountID)
@@ -218,7 +218,7 @@ class CustomerPartyType
      *  Identifier. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\AdditionalAccountID $additionalAccountID
+     * @param  \horstoeko\ubl\entities\cbc\AdditionalAccountID $additionalAccountID
      */
     public function addToAdditionalAccountID(\horstoeko\ubl\entities\cbc\AdditionalAccountID $additionalAccountID)
     {
@@ -239,7 +239,7 @@ class CustomerPartyType
      *  Identifier
      *  Identifier. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAdditionalAccountID($index)
@@ -260,7 +260,7 @@ class CustomerPartyType
      *  Identifier
      *  Identifier. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAdditionalAccountID($index)
@@ -301,7 +301,7 @@ class CustomerPartyType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AdditionalAccountID[] $additionalAccountID
+     * @param  \horstoeko\ubl\entities\cbc\AdditionalAccountID[] $additionalAccountID
      * @return self
      */
     public function setAdditionalAccountID(array $additionalAccountID)
@@ -341,7 +341,7 @@ class CustomerPartyType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\Party $party
+     * @param  \horstoeko\ubl\entities\cac\Party $party
      * @return self
      */
     public function setParty(\horstoeko\ubl\entities\cac\Party $party)
@@ -383,7 +383,7 @@ class CustomerPartyType
      *  Contact
      *  Contact
      *
-     * @param \horstoeko\ubl\entities\cac\DeliveryContact $deliveryContact
+     * @param  \horstoeko\ubl\entities\cac\DeliveryContact $deliveryContact
      * @return self
      */
     public function setDeliveryContact(\horstoeko\ubl\entities\cac\DeliveryContact $deliveryContact)
@@ -425,7 +425,7 @@ class CustomerPartyType
      *  Contact
      *  Contact
      *
-     * @param \horstoeko\ubl\entities\cac\AccountingContact $accountingContact
+     * @param  \horstoeko\ubl\entities\cac\AccountingContact $accountingContact
      * @return self
      */
     public function setAccountingContact(\horstoeko\ubl\entities\cac\AccountingContact $accountingContact)
@@ -467,7 +467,7 @@ class CustomerPartyType
      *  Contact
      *  Contact
      *
-     * @param \horstoeko\ubl\entities\cac\BuyerContact $buyerContact
+     * @param  \horstoeko\ubl\entities\cac\BuyerContact $buyerContact
      * @return self
      */
     public function setBuyerContact(\horstoeko\ubl\entities\cac\BuyerContact $buyerContact)

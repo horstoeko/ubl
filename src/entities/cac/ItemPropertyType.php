@@ -239,7 +239,7 @@ class ItemPropertyType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -281,7 +281,7 @@ class ItemPropertyType
      *  Name. Type
      *  Energy Rating , Collar Size , Fat Content
      *
-     * @param \horstoeko\ubl\entities\cbc\Name $name
+     * @param  \horstoeko\ubl\entities\cbc\Name $name
      * @return self
      */
     public function setName(\horstoeko\ubl\entities\cbc\Name $name)
@@ -321,7 +321,7 @@ class ItemPropertyType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\NameCode $nameCode
+     * @param  \horstoeko\ubl\entities\cbc\NameCode $nameCode
      * @return self
      */
     public function setNameCode(\horstoeko\ubl\entities\cbc\NameCode $nameCode)
@@ -363,7 +363,7 @@ class ItemPropertyType
      *  Text. Type
      *  100 watts , 15 European , 20% +/- 5%
      *
-     * @param \horstoeko\ubl\entities\cbc\TestMethod $testMethod
+     * @param  \horstoeko\ubl\entities\cbc\TestMethod $testMethod
      * @return self
      */
     public function setTestMethod(\horstoeko\ubl\entities\cbc\TestMethod $testMethod)
@@ -405,7 +405,7 @@ class ItemPropertyType
      *  Text. Type
      *  100 watts , 15 European , 20% +/- 5%
      *
-     * @param \horstoeko\ubl\entities\cbc\Value $value
+     * @param  \horstoeko\ubl\entities\cbc\Value $value
      * @return self
      */
     public function setValue(\horstoeko\ubl\entities\cbc\Value $value)
@@ -447,7 +447,7 @@ class ItemPropertyType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ValueQuantity $valueQuantity
+     * @param  \horstoeko\ubl\entities\cbc\ValueQuantity $valueQuantity
      * @return self
      */
     public function setValueQuantity(\horstoeko\ubl\entities\cbc\ValueQuantity $valueQuantity)
@@ -469,7 +469,7 @@ class ItemPropertyType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\ValueQualifier $valueQualifier
+     * @param  \horstoeko\ubl\entities\cbc\ValueQualifier $valueQualifier
      */
     public function addToValueQualifier(\horstoeko\ubl\entities\cbc\ValueQualifier $valueQualifier)
     {
@@ -489,7 +489,7 @@ class ItemPropertyType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetValueQualifier($index)
@@ -509,7 +509,7 @@ class ItemPropertyType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetValueQualifier($index)
@@ -548,7 +548,7 @@ class ItemPropertyType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ValueQualifier[] $valueQualifier
+     * @param  \horstoeko\ubl\entities\cbc\ValueQualifier[] $valueQualifier
      * @return self
      */
     public function setValueQualifier(array $valueQualifier)
@@ -588,7 +588,7 @@ class ItemPropertyType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ImportanceCode $importanceCode
+     * @param  \horstoeko\ubl\entities\cbc\ImportanceCode $importanceCode
      * @return self
      */
     public function setImportanceCode(\horstoeko\ubl\entities\cbc\ImportanceCode $importanceCode)
@@ -610,7 +610,7 @@ class ItemPropertyType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\ListValue $listValue
+     * @param  \horstoeko\ubl\entities\cbc\ListValue $listValue
      */
     public function addToListValue(\horstoeko\ubl\entities\cbc\ListValue $listValue)
     {
@@ -630,7 +630,7 @@ class ItemPropertyType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetListValue($index)
@@ -650,7 +650,7 @@ class ItemPropertyType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetListValue($index)
@@ -689,7 +689,7 @@ class ItemPropertyType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ListValue[] $listValue
+     * @param  \horstoeko\ubl\entities\cbc\ListValue[] $listValue
      * @return self
      */
     public function setListValue(array $listValue)
@@ -731,7 +731,7 @@ class ItemPropertyType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\UsabilityPeriod $usabilityPeriod
+     * @param  \horstoeko\ubl\entities\cac\UsabilityPeriod $usabilityPeriod
      * @return self
      */
     public function setUsabilityPeriod(\horstoeko\ubl\entities\cac\UsabilityPeriod $usabilityPeriod)
@@ -753,7 +753,7 @@ class ItemPropertyType
      *  Item Property Group
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ItemPropertyGroup $itemPropertyGroup
+     * @param  \horstoeko\ubl\entities\cac\ItemPropertyGroup $itemPropertyGroup
      */
     public function addToItemPropertyGroup(\horstoeko\ubl\entities\cac\ItemPropertyGroup $itemPropertyGroup)
     {
@@ -773,7 +773,7 @@ class ItemPropertyType
      *  Item Property Group
      *  Item Property Group
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetItemPropertyGroup($index)
@@ -793,7 +793,7 @@ class ItemPropertyType
      *  Item Property Group
      *  Item Property Group
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetItemPropertyGroup($index)
@@ -832,7 +832,7 @@ class ItemPropertyType
      *  Item Property Group
      *  Item Property Group
      *
-     * @param \horstoeko\ubl\entities\cac\ItemPropertyGroup[] $itemPropertyGroup
+     * @param  \horstoeko\ubl\entities\cac\ItemPropertyGroup[] $itemPropertyGroup
      * @return self
      */
     public function setItemPropertyGroup(array $itemPropertyGroup)
@@ -874,7 +874,7 @@ class ItemPropertyType
      *  Dimension
      *  Dimension
      *
-     * @param \horstoeko\ubl\entities\cac\RangeDimension $rangeDimension
+     * @param  \horstoeko\ubl\entities\cac\RangeDimension $rangeDimension
      * @return self
      */
     public function setRangeDimension(\horstoeko\ubl\entities\cac\RangeDimension $rangeDimension)
@@ -914,7 +914,7 @@ class ItemPropertyType
      *  Item Property Range
      *  Item Property Range
      *
-     * @param \horstoeko\ubl\entities\cac\ItemPropertyRange $itemPropertyRange
+     * @param  \horstoeko\ubl\entities\cac\ItemPropertyRange $itemPropertyRange
      * @return self
      */
     public function setItemPropertyRange(\horstoeko\ubl\entities\cac\ItemPropertyRange $itemPropertyRange)

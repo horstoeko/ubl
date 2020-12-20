@@ -222,7 +222,7 @@ class ExceptionCriteriaLineType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -244,7 +244,7 @@ class ExceptionCriteriaLineType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param  \horstoeko\ubl\entities\cbc\Note $note
      */
     public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
     {
@@ -264,7 +264,7 @@ class ExceptionCriteriaLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNote($index)
@@ -284,7 +284,7 @@ class ExceptionCriteriaLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNote($index)
@@ -323,7 +323,7 @@ class ExceptionCriteriaLineType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note[] $note
+     * @param  \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
     public function setNote(array $note)
@@ -363,7 +363,7 @@ class ExceptionCriteriaLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ThresholdValueComparisonCode $thresholdValueComparisonCode
+     * @param  \horstoeko\ubl\entities\cbc\ThresholdValueComparisonCode $thresholdValueComparisonCode
      * @return self
      */
     public function setThresholdValueComparisonCode(\horstoeko\ubl\entities\cbc\ThresholdValueComparisonCode $thresholdValueComparisonCode)
@@ -405,7 +405,7 @@ class ExceptionCriteriaLineType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ThresholdQuantity $thresholdQuantity
+     * @param  \horstoeko\ubl\entities\cbc\ThresholdQuantity $thresholdQuantity
      * @return self
      */
     public function setThresholdQuantity(\horstoeko\ubl\entities\cbc\ThresholdQuantity $thresholdQuantity)
@@ -445,7 +445,7 @@ class ExceptionCriteriaLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ExceptionStatusCode $exceptionStatusCode
+     * @param  \horstoeko\ubl\entities\cbc\ExceptionStatusCode $exceptionStatusCode
      * @return self
      */
     public function setExceptionStatusCode(\horstoeko\ubl\entities\cbc\ExceptionStatusCode $exceptionStatusCode)
@@ -487,7 +487,7 @@ class ExceptionCriteriaLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CollaborationPriorityCode $collaborationPriorityCode
+     * @param  \horstoeko\ubl\entities\cbc\CollaborationPriorityCode $collaborationPriorityCode
      * @return self
      */
     public function setCollaborationPriorityCode(\horstoeko\ubl\entities\cbc\CollaborationPriorityCode $collaborationPriorityCode)
@@ -529,7 +529,7 @@ class ExceptionCriteriaLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ExceptionResolutionCode $exceptionResolutionCode
+     * @param  \horstoeko\ubl\entities\cbc\ExceptionResolutionCode $exceptionResolutionCode
      * @return self
      */
     public function setExceptionResolutionCode(\horstoeko\ubl\entities\cbc\ExceptionResolutionCode $exceptionResolutionCode)
@@ -569,7 +569,7 @@ class ExceptionCriteriaLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SupplyChainActivityTypeCode $supplyChainActivityTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\SupplyChainActivityTypeCode $supplyChainActivityTypeCode
      * @return self
      */
     public function setSupplyChainActivityTypeCode(\horstoeko\ubl\entities\cbc\SupplyChainActivityTypeCode $supplyChainActivityTypeCode)
@@ -609,7 +609,7 @@ class ExceptionCriteriaLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PerformanceMetricTypeCode $performanceMetricTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\PerformanceMetricTypeCode $performanceMetricTypeCode
      * @return self
      */
     public function setPerformanceMetricTypeCode(\horstoeko\ubl\entities\cbc\PerformanceMetricTypeCode $performanceMetricTypeCode)
@@ -651,7 +651,7 @@ class ExceptionCriteriaLineType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\EffectivePeriod $effectivePeriod
+     * @param  \horstoeko\ubl\entities\cac\EffectivePeriod $effectivePeriod
      * @return self
      */
     public function setEffectivePeriod(\horstoeko\ubl\entities\cac\EffectivePeriod $effectivePeriod)
@@ -674,7 +674,7 @@ class ExceptionCriteriaLineType
      *  Item
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\SupplyItem $supplyItem
+     * @param  \horstoeko\ubl\entities\cac\SupplyItem $supplyItem
      */
     public function addToSupplyItem(\horstoeko\ubl\entities\cac\SupplyItem $supplyItem)
     {
@@ -695,7 +695,7 @@ class ExceptionCriteriaLineType
      *  Item
      *  Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSupplyItem($index)
@@ -716,7 +716,7 @@ class ExceptionCriteriaLineType
      *  Item
      *  Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSupplyItem($index)
@@ -757,7 +757,7 @@ class ExceptionCriteriaLineType
      *  Item
      *  Item
      *
-     * @param \horstoeko\ubl\entities\cac\SupplyItem[] $supplyItem
+     * @param  \horstoeko\ubl\entities\cac\SupplyItem[] $supplyItem
      * @return self
      */
     public function setSupplyItem(array $supplyItem)
@@ -797,7 +797,7 @@ class ExceptionCriteriaLineType
      *  Forecast Exception Criterion Line
      *  Forecast Exception Criterion Line
      *
-     * @param \horstoeko\ubl\entities\cac\ForecastExceptionCriterionLine $forecastExceptionCriterionLine
+     * @param  \horstoeko\ubl\entities\cac\ForecastExceptionCriterionLine $forecastExceptionCriterionLine
      * @return self
      */
     public function setForecastExceptionCriterionLine(\horstoeko\ubl\entities\cac\ForecastExceptionCriterionLine $forecastExceptionCriterionLine)

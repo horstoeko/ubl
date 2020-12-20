@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\ds;
 /**
  * Class representing ManifestType
  *
- *
  * XSD Type: ManifestType
  */
 class ManifestType
@@ -36,7 +35,7 @@ class ManifestType
     /**
      * Sets a new id
      *
-     * @param string $id
+     * @param  string $id
      * @return self
      */
     public function setId($id)
@@ -49,7 +48,7 @@ class ManifestType
      * Adds as reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\ds\Reference $reference
+     * @param  \horstoeko\ubl\entities\ds\Reference $reference
      */
     public function addToReference(\horstoeko\ubl\entities\ds\Reference $reference)
     {
@@ -60,7 +59,7 @@ class ManifestType
     /**
      * isset reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetReference($index)
@@ -71,7 +70,7 @@ class ManifestType
     /**
      * unset reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetReference($index)
@@ -92,7 +91,7 @@ class ManifestType
     /**
      * Sets a new reference
      *
-     * @param \horstoeko\ubl\entities\ds\Reference[] $reference
+     * @param  \horstoeko\ubl\entities\ds\Reference[] $reference
      * @return self
      */
     public function setReference(array $reference)

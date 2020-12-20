@@ -89,7 +89,7 @@ class RegulationType
      *  Name
      *  Name. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Name $name
+     * @param  \horstoeko\ubl\entities\cbc\Name $name
      * @return self
      */
     public function setName(\horstoeko\ubl\entities\cbc\Name $name)
@@ -131,7 +131,7 @@ class RegulationType
      *  Text. Type
      *  Art. 45 2 b
      *
-     * @param \horstoeko\ubl\entities\cbc\LegalReference $legalReference
+     * @param  \horstoeko\ubl\entities\cbc\LegalReference $legalReference
      * @return self
      */
     public function setLegalReference(\horstoeko\ubl\entities\cbc\LegalReference $legalReference)
@@ -171,7 +171,7 @@ class RegulationType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\OntologyURI $ontologyURI
+     * @param  \horstoeko\ubl\entities\cbc\OntologyURI $ontologyURI
      * @return self
      */
     public function setOntologyURI(\horstoeko\ubl\entities\cbc\OntologyURI $ontologyURI)

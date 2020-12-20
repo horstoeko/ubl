@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\IdentifierType;
 /**
  * Class representing LocationIDType
  *
- *
  * XSD Type: LocationIDType
  */
 class LocationIDType extends IdentifierType

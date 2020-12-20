@@ -102,7 +102,7 @@ class EndorserPartyType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\RoleCode $roleCode
+     * @param  \horstoeko\ubl\entities\cbc\RoleCode $roleCode
      * @return self
      */
     public function setRoleCode(\horstoeko\ubl\entities\cbc\RoleCode $roleCode)
@@ -142,7 +142,7 @@ class EndorserPartyType
      *  Numeric
      *  Numeric. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SequenceNumeric $sequenceNumeric
+     * @param  \horstoeko\ubl\entities\cbc\SequenceNumeric $sequenceNumeric
      * @return self
      */
     public function setSequenceNumeric(\horstoeko\ubl\entities\cbc\SequenceNumeric $sequenceNumeric)
@@ -182,7 +182,7 @@ class EndorserPartyType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\Party $party
+     * @param  \horstoeko\ubl\entities\cac\Party $party
      * @return self
      */
     public function setParty(\horstoeko\ubl\entities\cac\Party $party)
@@ -224,7 +224,7 @@ class EndorserPartyType
      *  Contact
      *  Contact
      *
-     * @param \horstoeko\ubl\entities\cac\SignatoryContact $signatoryContact
+     * @param  \horstoeko\ubl\entities\cac\SignatoryContact $signatoryContact
      * @return self
      */
     public function setSignatoryContact(\horstoeko\ubl\entities\cac\SignatoryContact $signatoryContact)

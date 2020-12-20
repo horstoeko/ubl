@@ -118,7 +118,7 @@ class PromotionalEventType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PromotionalEventTypeCode $promotionalEventTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\PromotionalEventTypeCode $promotionalEventTypeCode
      * @return self
      */
     public function setPromotionalEventTypeCode(\horstoeko\ubl\entities\cbc\PromotionalEventTypeCode $promotionalEventTypeCode)
@@ -158,7 +158,7 @@ class PromotionalEventType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $submissionDate
+     * @param  \DateTime $submissionDate
      * @return self
      */
     public function setSubmissionDate(\DateTime $submissionDate)
@@ -198,7 +198,7 @@ class PromotionalEventType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $firstShipmentAvailibilityDate
+     * @param  \DateTime $firstShipmentAvailibilityDate
      * @return self
      */
     public function setFirstShipmentAvailibilityDate(\DateTime $firstShipmentAvailibilityDate)
@@ -240,7 +240,7 @@ class PromotionalEventType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $latestProposalAcceptanceDate
+     * @param  \DateTime $latestProposalAcceptanceDate
      * @return self
      */
     public function setLatestProposalAcceptanceDate(\DateTime $latestProposalAcceptanceDate)
@@ -262,7 +262,7 @@ class PromotionalEventType
      *  Promotional Specification
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\PromotionalSpecification $promotionalSpecification
+     * @param  \horstoeko\ubl\entities\cac\PromotionalSpecification $promotionalSpecification
      */
     public function addToPromotionalSpecification(\horstoeko\ubl\entities\cac\PromotionalSpecification $promotionalSpecification)
     {
@@ -282,7 +282,7 @@ class PromotionalEventType
      *  Promotional Specification
      *  Promotional Specification
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPromotionalSpecification($index)
@@ -302,7 +302,7 @@ class PromotionalEventType
      *  Promotional Specification
      *  Promotional Specification
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPromotionalSpecification($index)
@@ -341,7 +341,7 @@ class PromotionalEventType
      *  Promotional Specification
      *  Promotional Specification
      *
-     * @param \horstoeko\ubl\entities\cac\PromotionalSpecification[] $promotionalSpecification
+     * @param  \horstoeko\ubl\entities\cac\PromotionalSpecification[] $promotionalSpecification
      * @return self
      */
     public function setPromotionalSpecification(array $promotionalSpecification)

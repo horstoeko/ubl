@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\CodeType;
 /**
  * Class representing TransportEventTypeCodeType
  *
- *
  * XSD Type: TransportEventTypeCodeType
  */
 class TransportEventTypeCodeType extends CodeType

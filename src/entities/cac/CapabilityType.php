@@ -135,7 +135,7 @@ class CapabilityType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CapabilityTypeCode $capabilityTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\CapabilityTypeCode $capabilityTypeCode
      * @return self
      */
     public function setCapabilityTypeCode(\horstoeko\ubl\entities\cbc\CapabilityTypeCode $capabilityTypeCode)
@@ -157,7 +157,7 @@ class CapabilityType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -177,7 +177,7 @@ class CapabilityType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -197,7 +197,7 @@ class CapabilityType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -236,7 +236,7 @@ class CapabilityType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -276,7 +276,7 @@ class CapabilityType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ValueAmount $valueAmount
+     * @param  \horstoeko\ubl\entities\cbc\ValueAmount $valueAmount
      * @return self
      */
     public function setValueAmount(\horstoeko\ubl\entities\cbc\ValueAmount $valueAmount)
@@ -318,7 +318,7 @@ class CapabilityType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ValueQuantity $valueQuantity
+     * @param  \horstoeko\ubl\entities\cbc\ValueQuantity $valueQuantity
      * @return self
      */
     public function setValueQuantity(\horstoeko\ubl\entities\cbc\ValueQuantity $valueQuantity)
@@ -340,7 +340,7 @@ class CapabilityType
      *  Evidence Supplied
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\EvidenceSupplied $evidenceSupplied
+     * @param  \horstoeko\ubl\entities\cac\EvidenceSupplied $evidenceSupplied
      */
     public function addToEvidenceSupplied(\horstoeko\ubl\entities\cac\EvidenceSupplied $evidenceSupplied)
     {
@@ -360,7 +360,7 @@ class CapabilityType
      *  Evidence Supplied
      *  Evidence Supplied
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetEvidenceSupplied($index)
@@ -380,7 +380,7 @@ class CapabilityType
      *  Evidence Supplied
      *  Evidence Supplied
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetEvidenceSupplied($index)
@@ -419,7 +419,7 @@ class CapabilityType
      *  Evidence Supplied
      *  Evidence Supplied
      *
-     * @param \horstoeko\ubl\entities\cac\EvidenceSupplied[] $evidenceSupplied
+     * @param  \horstoeko\ubl\entities\cac\EvidenceSupplied[] $evidenceSupplied
      * @return self
      */
     public function setEvidenceSupplied(array $evidenceSupplied)
@@ -461,7 +461,7 @@ class CapabilityType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\ValidityPeriod $validityPeriod
+     * @param  \horstoeko\ubl\entities\cac\ValidityPeriod $validityPeriod
      * @return self
      */
     public function setValidityPeriod(\horstoeko\ubl\entities\cac\ValidityPeriod $validityPeriod)

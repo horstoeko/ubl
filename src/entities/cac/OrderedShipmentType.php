@@ -75,7 +75,7 @@ class OrderedShipmentType
      *  Shipment
      *  Shipment
      *
-     * @param \horstoeko\ubl\entities\cac\Shipment $shipment
+     * @param  \horstoeko\ubl\entities\cac\Shipment $shipment
      * @return self
      */
     public function setShipment(\horstoeko\ubl\entities\cac\Shipment $shipment)
@@ -97,7 +97,7 @@ class OrderedShipmentType
      *  Package
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Package $package
+     * @param  \horstoeko\ubl\entities\cac\Package $package
      */
     public function addToPackage(\horstoeko\ubl\entities\cac\Package $package)
     {
@@ -117,7 +117,7 @@ class OrderedShipmentType
      *  Package
      *  Package
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPackage($index)
@@ -137,7 +137,7 @@ class OrderedShipmentType
      *  Package
      *  Package
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPackage($index)
@@ -176,7 +176,7 @@ class OrderedShipmentType
      *  Package
      *  Package
      *
-     * @param \horstoeko\ubl\entities\cac\Package[] $package
+     * @param  \horstoeko\ubl\entities\cac\Package[] $package
      * @return self
      */
     public function setPackage(array $package)

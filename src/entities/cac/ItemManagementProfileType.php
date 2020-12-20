@@ -191,7 +191,7 @@ class ItemManagementProfileType
      *  Numeric
      *  Numeric. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\FrozenPeriodDaysNumeric $frozenPeriodDaysNumeric
+     * @param  \horstoeko\ubl\entities\cbc\FrozenPeriodDaysNumeric $frozenPeriodDaysNumeric
      * @return self
      */
     public function setFrozenPeriodDaysNumeric(\horstoeko\ubl\entities\cbc\FrozenPeriodDaysNumeric $frozenPeriodDaysNumeric)
@@ -233,7 +233,7 @@ class ItemManagementProfileType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MinimumInventoryQuantity $minimumInventoryQuantity
+     * @param  \horstoeko\ubl\entities\cbc\MinimumInventoryQuantity $minimumInventoryQuantity
      * @return self
      */
     public function setMinimumInventoryQuantity(\horstoeko\ubl\entities\cbc\MinimumInventoryQuantity $minimumInventoryQuantity)
@@ -275,7 +275,7 @@ class ItemManagementProfileType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MultipleOrderQuantity $multipleOrderQuantity
+     * @param  \horstoeko\ubl\entities\cbc\MultipleOrderQuantity $multipleOrderQuantity
      * @return self
      */
     public function setMultipleOrderQuantity(\horstoeko\ubl\entities\cbc\MultipleOrderQuantity $multipleOrderQuantity)
@@ -315,7 +315,7 @@ class ItemManagementProfileType
      *  Numeric
      *  Numeric. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\OrderIntervalDaysNumeric $orderIntervalDaysNumeric
+     * @param  \horstoeko\ubl\entities\cbc\OrderIntervalDaysNumeric $orderIntervalDaysNumeric
      * @return self
      */
     public function setOrderIntervalDaysNumeric(\horstoeko\ubl\entities\cbc\OrderIntervalDaysNumeric $orderIntervalDaysNumeric)
@@ -337,7 +337,7 @@ class ItemManagementProfileType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\ReplenishmentOwnerDescription $replenishmentOwnerDescription
+     * @param  \horstoeko\ubl\entities\cbc\ReplenishmentOwnerDescription $replenishmentOwnerDescription
      */
     public function addToReplenishmentOwnerDescription(\horstoeko\ubl\entities\cbc\ReplenishmentOwnerDescription $replenishmentOwnerDescription)
     {
@@ -357,7 +357,7 @@ class ItemManagementProfileType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetReplenishmentOwnerDescription($index)
@@ -377,7 +377,7 @@ class ItemManagementProfileType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetReplenishmentOwnerDescription($index)
@@ -416,7 +416,7 @@ class ItemManagementProfileType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ReplenishmentOwnerDescription[] $replenishmentOwnerDescription
+     * @param  \horstoeko\ubl\entities\cbc\ReplenishmentOwnerDescription[] $replenishmentOwnerDescription
      * @return self
      */
     public function setReplenishmentOwnerDescription(array $replenishmentOwnerDescription)
@@ -456,7 +456,7 @@ class ItemManagementProfileType
      *  Percent
      *  Percent. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TargetServicePercent $targetServicePercent
+     * @param  \horstoeko\ubl\entities\cbc\TargetServicePercent $targetServicePercent
      * @return self
      */
     public function setTargetServicePercent(\horstoeko\ubl\entities\cbc\TargetServicePercent $targetServicePercent)
@@ -498,7 +498,7 @@ class ItemManagementProfileType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TargetInventoryQuantity $targetInventoryQuantity
+     * @param  \horstoeko\ubl\entities\cbc\TargetInventoryQuantity $targetInventoryQuantity
      * @return self
      */
     public function setTargetInventoryQuantity(\horstoeko\ubl\entities\cbc\TargetInventoryQuantity $targetInventoryQuantity)
@@ -540,7 +540,7 @@ class ItemManagementProfileType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\EffectivePeriod $effectivePeriod
+     * @param  \horstoeko\ubl\entities\cac\EffectivePeriod $effectivePeriod
      * @return self
      */
     public function setEffectivePeriod(\horstoeko\ubl\entities\cac\EffectivePeriod $effectivePeriod)
@@ -580,7 +580,7 @@ class ItemManagementProfileType
      *  Item
      *  Item
      *
-     * @param \horstoeko\ubl\entities\cac\Item $item
+     * @param  \horstoeko\ubl\entities\cac\Item $item
      * @return self
      */
     public function setItem(\horstoeko\ubl\entities\cac\Item $item)
@@ -620,7 +620,7 @@ class ItemManagementProfileType
      *  Item Location Quantity
      *  Item Location Quantity
      *
-     * @param \horstoeko\ubl\entities\cac\ItemLocationQuantity $itemLocationQuantity
+     * @param  \horstoeko\ubl\entities\cac\ItemLocationQuantity $itemLocationQuantity
      * @return self
      */
     public function setItemLocationQuantity(\horstoeko\ubl\entities\cac\ItemLocationQuantity $itemLocationQuantity)

@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing HeatingTypeType
  *
- *
  * XSD Type: HeatingTypeType
  */
 class HeatingTypeType extends TextType

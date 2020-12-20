@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing JustificationDescriptionType
  *
- *
  * XSD Type: JustificationDescriptionType
  */
 class JustificationDescriptionType extends TextType

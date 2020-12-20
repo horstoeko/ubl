@@ -162,7 +162,7 @@ class RequestForQuotationLineType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -202,7 +202,7 @@ class RequestForQuotationLineType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\UUID $uUID
+     * @param  \horstoeko\ubl\entities\cbc\UUID $uUID
      * @return self
      */
     public function setUUID(\horstoeko\ubl\entities\cbc\UUID $uUID)
@@ -224,7 +224,7 @@ class RequestForQuotationLineType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param  \horstoeko\ubl\entities\cbc\Note $note
      */
     public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
     {
@@ -244,7 +244,7 @@ class RequestForQuotationLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNote($index)
@@ -264,7 +264,7 @@ class RequestForQuotationLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNote($index)
@@ -303,7 +303,7 @@ class RequestForQuotationLineType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note[] $note
+     * @param  \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
     public function setNote(array $note)
@@ -345,7 +345,7 @@ class RequestForQuotationLineType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $optionalLineItemIndicator
+     * @param  bool $optionalLineItemIndicator
      * @return self
      */
     public function setOptionalLineItemIndicator($optionalLineItemIndicator)
@@ -385,7 +385,7 @@ class RequestForQuotationLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PrivacyCode $privacyCode
+     * @param  \horstoeko\ubl\entities\cbc\PrivacyCode $privacyCode
      * @return self
      */
     public function setPrivacyCode(\horstoeko\ubl\entities\cbc\PrivacyCode $privacyCode)
@@ -425,7 +425,7 @@ class RequestForQuotationLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SecurityClassificationCode $securityClassificationCode
+     * @param  \horstoeko\ubl\entities\cbc\SecurityClassificationCode $securityClassificationCode
      * @return self
      */
     public function setSecurityClassificationCode(\horstoeko\ubl\entities\cbc\SecurityClassificationCode $securityClassificationCode)
@@ -447,7 +447,7 @@ class RequestForQuotationLineType
      *  Document Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\DocumentReference $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference $documentReference
      */
     public function addToDocumentReference(\horstoeko\ubl\entities\cac\DocumentReference $documentReference)
     {
@@ -467,7 +467,7 @@ class RequestForQuotationLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDocumentReference($index)
@@ -487,7 +487,7 @@ class RequestForQuotationLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDocumentReference($index)
@@ -526,7 +526,7 @@ class RequestForQuotationLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\DocumentReference[] $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference[] $documentReference
      * @return self
      */
     public function setDocumentReference(array $documentReference)
@@ -566,7 +566,7 @@ class RequestForQuotationLineType
      *  Line Item
      *  Line Item
      *
-     * @param \horstoeko\ubl\entities\cac\LineItem $lineItem
+     * @param  \horstoeko\ubl\entities\cac\LineItem $lineItem
      * @return self
      */
     public function setLineItem(\horstoeko\ubl\entities\cac\LineItem $lineItem)

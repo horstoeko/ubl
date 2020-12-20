@@ -62,7 +62,7 @@ class CreditAccountType
      *  Identifier. Type
      *  Customer Code 29
      *
-     * @param \horstoeko\ubl\entities\cbc\AccountID $accountID
+     * @param  \horstoeko\ubl\entities\cbc\AccountID $accountID
      * @return self
      */
     public function setAccountID(\horstoeko\ubl\entities\cbc\AccountID $accountID)

@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing RevisionTimeType
  *
- *
  * XSD Type: RevisionTimeType
  */
 class RevisionTimeType
@@ -29,7 +28,7 @@ class RevisionTimeType
     /**
      * Gets or sets the inner value
      *
-     * @param \DateTime $value
+     * @param  \DateTime $value
      * @return \DateTime
      */
     public function value()

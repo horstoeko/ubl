@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\MeasureType;
 /**
  * Class representing NetVolumeMeasureType
  *
- *
  * XSD Type: NetVolumeMeasureType
  */
 class NetVolumeMeasureType extends MeasureType

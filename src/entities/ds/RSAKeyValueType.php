@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\ds;
 /**
  * Class representing RSAKeyValueType
  *
- *
  * XSD Type: RSAKeyValueType
  */
 class RSAKeyValueType
@@ -34,7 +33,7 @@ class RSAKeyValueType
     /**
      * Sets a new modulus
      *
-     * @param string $modulus
+     * @param  string $modulus
      * @return self
      */
     public function setModulus($modulus)
@@ -56,7 +55,7 @@ class RSAKeyValueType
     /**
      * Sets a new exponent
      *
-     * @param string $exponent
+     * @param  string $exponent
      * @return self
      */
     public function setExponent($exponent)

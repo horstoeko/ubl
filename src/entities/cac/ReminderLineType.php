@@ -252,7 +252,7 @@ class ReminderLineType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -274,7 +274,7 @@ class ReminderLineType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param  \horstoeko\ubl\entities\cbc\Note $note
      */
     public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
     {
@@ -294,7 +294,7 @@ class ReminderLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNote($index)
@@ -314,7 +314,7 @@ class ReminderLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNote($index)
@@ -353,7 +353,7 @@ class ReminderLineType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note[] $note
+     * @param  \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
     public function setNote(array $note)
@@ -393,7 +393,7 @@ class ReminderLineType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\UUID $uUID
+     * @param  \horstoeko\ubl\entities\cbc\UUID $uUID
      * @return self
      */
     public function setUUID(\horstoeko\ubl\entities\cbc\UUID $uUID)
@@ -435,7 +435,7 @@ class ReminderLineType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $balanceBroughtForwardIndicator
+     * @param  bool $balanceBroughtForwardIndicator
      * @return self
      */
     public function setBalanceBroughtForwardIndicator($balanceBroughtForwardIndicator)
@@ -477,7 +477,7 @@ class ReminderLineType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\DebitLineAmount $debitLineAmount
+     * @param  \horstoeko\ubl\entities\cbc\DebitLineAmount $debitLineAmount
      * @return self
      */
     public function setDebitLineAmount(\horstoeko\ubl\entities\cbc\DebitLineAmount $debitLineAmount)
@@ -519,7 +519,7 @@ class ReminderLineType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CreditLineAmount $creditLineAmount
+     * @param  \horstoeko\ubl\entities\cbc\CreditLineAmount $creditLineAmount
      * @return self
      */
     public function setCreditLineAmount(\horstoeko\ubl\entities\cbc\CreditLineAmount $creditLineAmount)
@@ -559,7 +559,7 @@ class ReminderLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AccountingCostCode $accountingCostCode
+     * @param  \horstoeko\ubl\entities\cbc\AccountingCostCode $accountingCostCode
      * @return self
      */
     public function setAccountingCostCode(\horstoeko\ubl\entities\cbc\AccountingCostCode $accountingCostCode)
@@ -599,7 +599,7 @@ class ReminderLineType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AccountingCost $accountingCost
+     * @param  \horstoeko\ubl\entities\cbc\AccountingCost $accountingCost
      * @return self
      */
     public function setAccountingCost(\horstoeko\ubl\entities\cbc\AccountingCost $accountingCost)
@@ -641,7 +641,7 @@ class ReminderLineType
      *  Percent
      *  Percent. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PenaltySurchargePercent $penaltySurchargePercent
+     * @param  \horstoeko\ubl\entities\cbc\PenaltySurchargePercent $penaltySurchargePercent
      * @return self
      */
     public function setPenaltySurchargePercent(\horstoeko\ubl\entities\cbc\PenaltySurchargePercent $penaltySurchargePercent)
@@ -681,7 +681,7 @@ class ReminderLineType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Amount $amount
+     * @param  \horstoeko\ubl\entities\cbc\Amount $amount
      * @return self
      */
     public function setAmount(\horstoeko\ubl\entities\cbc\Amount $amount)
@@ -721,7 +721,7 @@ class ReminderLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PaymentPurposeCode $paymentPurposeCode
+     * @param  \horstoeko\ubl\entities\cbc\PaymentPurposeCode $paymentPurposeCode
      * @return self
      */
     public function setPaymentPurposeCode(\horstoeko\ubl\entities\cbc\PaymentPurposeCode $paymentPurposeCode)
@@ -744,7 +744,7 @@ class ReminderLineType
      *  Period
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ReminderPeriod $reminderPeriod
+     * @param  \horstoeko\ubl\entities\cac\ReminderPeriod $reminderPeriod
      */
     public function addToReminderPeriod(\horstoeko\ubl\entities\cac\ReminderPeriod $reminderPeriod)
     {
@@ -765,7 +765,7 @@ class ReminderLineType
      *  Period
      *  Period
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetReminderPeriod($index)
@@ -786,7 +786,7 @@ class ReminderLineType
      *  Period
      *  Period
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetReminderPeriod($index)
@@ -827,7 +827,7 @@ class ReminderLineType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\ReminderPeriod[] $reminderPeriod
+     * @param  \horstoeko\ubl\entities\cac\ReminderPeriod[] $reminderPeriod
      * @return self
      */
     public function setReminderPeriod(array $reminderPeriod)
@@ -849,7 +849,7 @@ class ReminderLineType
      *  Billing Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\BillingReference $billingReference
+     * @param  \horstoeko\ubl\entities\cac\BillingReference $billingReference
      */
     public function addToBillingReference(\horstoeko\ubl\entities\cac\BillingReference $billingReference)
     {
@@ -869,7 +869,7 @@ class ReminderLineType
      *  Billing Reference
      *  Billing Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetBillingReference($index)
@@ -889,7 +889,7 @@ class ReminderLineType
      *  Billing Reference
      *  Billing Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetBillingReference($index)
@@ -928,7 +928,7 @@ class ReminderLineType
      *  Billing Reference
      *  Billing Reference
      *
-     * @param \horstoeko\ubl\entities\cac\BillingReference[] $billingReference
+     * @param  \horstoeko\ubl\entities\cac\BillingReference[] $billingReference
      * @return self
      */
     public function setBillingReference(array $billingReference)
@@ -968,7 +968,7 @@ class ReminderLineType
      *  Exchange Rate
      *  Exchange Rate
      *
-     * @param \horstoeko\ubl\entities\cac\ExchangeRate $exchangeRate
+     * @param  \horstoeko\ubl\entities\cac\ExchangeRate $exchangeRate
      * @return self
      */
     public function setExchangeRate(\horstoeko\ubl\entities\cac\ExchangeRate $exchangeRate)

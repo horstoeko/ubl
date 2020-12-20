@@ -253,7 +253,7 @@ class MeterReadingType
      *  Identifier. Type
      *  7411013716x
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -295,7 +295,7 @@ class MeterReadingType
      *  Text. Type
      *  Electricity
      *
-     * @param \horstoeko\ubl\entities\cbc\MeterReadingType $meterReadingType
+     * @param  \horstoeko\ubl\entities\cbc\MeterReadingType $meterReadingType
      * @return self
      */
     public function setMeterReadingType(\horstoeko\ubl\entities\cbc\MeterReadingType $meterReadingType)
@@ -337,7 +337,7 @@ class MeterReadingType
      *  Code. Type
      *  Electricity
      *
-     * @param \horstoeko\ubl\entities\cbc\MeterReadingTypeCode $meterReadingTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\MeterReadingTypeCode $meterReadingTypeCode
      * @return self
      */
     public function setMeterReadingTypeCode(\horstoeko\ubl\entities\cbc\MeterReadingTypeCode $meterReadingTypeCode)
@@ -381,7 +381,7 @@ class MeterReadingType
      *  Date. Type
      *  2006-09-01
      *
-     * @param \DateTime $previousMeterReadingDate
+     * @param  \DateTime $previousMeterReadingDate
      * @return self
      */
     public function setPreviousMeterReadingDate(\DateTime $previousMeterReadingDate)
@@ -425,7 +425,7 @@ class MeterReadingType
      *  Quantity. Type
      *  122604.00
      *
-     * @param \horstoeko\ubl\entities\cbc\PreviousMeterQuantity $previousMeterQuantity
+     * @param  \horstoeko\ubl\entities\cbc\PreviousMeterQuantity $previousMeterQuantity
      * @return self
      */
     public function setPreviousMeterQuantity(\horstoeko\ubl\entities\cbc\PreviousMeterQuantity $previousMeterQuantity)
@@ -469,7 +469,7 @@ class MeterReadingType
      *  Date. Type
      *  2006-09-01
      *
-     * @param \DateTime $latestMeterReadingDate
+     * @param  \DateTime $latestMeterReadingDate
      * @return self
      */
     public function setLatestMeterReadingDate(\DateTime $latestMeterReadingDate)
@@ -513,7 +513,7 @@ class MeterReadingType
      *  Quantity. Type
      *  128365.00
      *
-     * @param \horstoeko\ubl\entities\cbc\LatestMeterQuantity $latestMeterQuantity
+     * @param  \horstoeko\ubl\entities\cbc\LatestMeterQuantity $latestMeterQuantity
      * @return self
      */
     public function setLatestMeterQuantity(\horstoeko\ubl\entities\cbc\LatestMeterQuantity $latestMeterQuantity)
@@ -557,7 +557,7 @@ class MeterReadingType
      *  Text. Type
      *  Manuel
      *
-     * @param \horstoeko\ubl\entities\cbc\PreviousMeterReadingMethod $previousMeterReadingMethod
+     * @param  \horstoeko\ubl\entities\cbc\PreviousMeterReadingMethod $previousMeterReadingMethod
      * @return self
      */
     public function setPreviousMeterReadingMethod(\horstoeko\ubl\entities\cbc\PreviousMeterReadingMethod $previousMeterReadingMethod)
@@ -601,7 +601,7 @@ class MeterReadingType
      *  Code. Type
      *  Estimated
      *
-     * @param \horstoeko\ubl\entities\cbc\PreviousMeterReadingMethodCode $previousMeterReadingMethodCode
+     * @param  \horstoeko\ubl\entities\cbc\PreviousMeterReadingMethodCode $previousMeterReadingMethodCode
      * @return self
      */
     public function setPreviousMeterReadingMethodCode(\horstoeko\ubl\entities\cbc\PreviousMeterReadingMethodCode $previousMeterReadingMethodCode)
@@ -645,7 +645,7 @@ class MeterReadingType
      *  Text. Type
      *  Manuel
      *
-     * @param \horstoeko\ubl\entities\cbc\LatestMeterReadingMethod $latestMeterReadingMethod
+     * @param  \horstoeko\ubl\entities\cbc\LatestMeterReadingMethod $latestMeterReadingMethod
      * @return self
      */
     public function setLatestMeterReadingMethod(\horstoeko\ubl\entities\cbc\LatestMeterReadingMethod $latestMeterReadingMethod)
@@ -689,7 +689,7 @@ class MeterReadingType
      *  Code. Type
      *  Estimated
      *
-     * @param \horstoeko\ubl\entities\cbc\LatestMeterReadingMethodCode $latestMeterReadingMethodCode
+     * @param  \horstoeko\ubl\entities\cbc\LatestMeterReadingMethodCode $latestMeterReadingMethodCode
      * @return self
      */
     public function setLatestMeterReadingMethodCode(\horstoeko\ubl\entities\cbc\LatestMeterReadingMethodCode $latestMeterReadingMethodCode)
@@ -713,7 +713,7 @@ class MeterReadingType
      *  The last stated meterstand is estimated
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\MeterReadingComments $meterReadingComments
+     * @param  \horstoeko\ubl\entities\cbc\MeterReadingComments $meterReadingComments
      */
     public function addToMeterReadingComments(\horstoeko\ubl\entities\cbc\MeterReadingComments $meterReadingComments)
     {
@@ -735,7 +735,7 @@ class MeterReadingType
      *  Text. Type
      *  The last stated meterstand is estimated
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetMeterReadingComments($index)
@@ -757,7 +757,7 @@ class MeterReadingType
      *  Text. Type
      *  The last stated meterstand is estimated
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetMeterReadingComments($index)
@@ -800,7 +800,7 @@ class MeterReadingType
      *  Text. Type
      *  The last stated meterstand is estimated
      *
-     * @param \horstoeko\ubl\entities\cbc\MeterReadingComments[] $meterReadingComments
+     * @param  \horstoeko\ubl\entities\cbc\MeterReadingComments[] $meterReadingComments
      * @return self
      */
     public function setMeterReadingComments(array $meterReadingComments)
@@ -842,7 +842,7 @@ class MeterReadingType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\DeliveredQuantity $deliveredQuantity
+     * @param  \horstoeko\ubl\entities\cbc\DeliveredQuantity $deliveredQuantity
      * @return self
      */
     public function setDeliveredQuantity(\horstoeko\ubl\entities\cbc\DeliveredQuantity $deliveredQuantity)

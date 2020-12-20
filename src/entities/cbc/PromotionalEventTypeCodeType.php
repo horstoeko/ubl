@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\CodeType;
 /**
  * Class representing PromotionalEventTypeCodeType
  *
- *
  * XSD Type: PromotionalEventTypeCodeType
  */
 class PromotionalEventTypeCodeType extends CodeType

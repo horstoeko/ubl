@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing MonetaryScopeType
  *
- *
  * XSD Type: MonetaryScopeType
  */
 class MonetaryScopeType extends TextType

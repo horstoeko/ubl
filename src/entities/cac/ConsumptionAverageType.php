@@ -82,7 +82,7 @@ class ConsumptionAverageType
      *  Amount. Type
      *  1.65
      *
-     * @param \horstoeko\ubl\entities\cbc\AverageAmount $averageAmount
+     * @param  \horstoeko\ubl\entities\cbc\AverageAmount $averageAmount
      * @return self
      */
     public function setAverageAmount(\horstoeko\ubl\entities\cbc\AverageAmount $averageAmount)
@@ -105,7 +105,7 @@ class ConsumptionAverageType
      *  Average price incl. value added tax per kilowatt-hour in the billing period.
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -126,7 +126,7 @@ class ConsumptionAverageType
      *  Text. Type
      *  Average price incl. value added tax per kilowatt-hour in the billing period.
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -147,7 +147,7 @@ class ConsumptionAverageType
      *  Text. Type
      *  Average price incl. value added tax per kilowatt-hour in the billing period.
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -188,7 +188,7 @@ class ConsumptionAverageType
      *  Text. Type
      *  Average price incl. value added tax per kilowatt-hour in the billing period.
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)

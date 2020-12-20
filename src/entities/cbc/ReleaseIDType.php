@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\IdentifierType;
 /**
  * Class representing ReleaseIDType
  *
- *
  * XSD Type: ReleaseIDType
  */
 class ReleaseIDType extends IdentifierType

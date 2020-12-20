@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing OCSPValuesType
  *
- *
  * XSD Type: OCSPValuesType
  */
 class OCSPValuesType
@@ -22,7 +21,7 @@ class OCSPValuesType
      * Adds as encapsulatedOCSPValue
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\EncapsulatedPKIDataType $encapsulatedOCSPValue
+     * @param  \horstoeko\ubl\entities\xades\EncapsulatedPKIDataType $encapsulatedOCSPValue
      */
     public function addToEncapsulatedOCSPValue(\horstoeko\ubl\entities\xades\EncapsulatedPKIDataType $encapsulatedOCSPValue)
     {
@@ -33,7 +32,7 @@ class OCSPValuesType
     /**
      * isset encapsulatedOCSPValue
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetEncapsulatedOCSPValue($index)
@@ -44,7 +43,7 @@ class OCSPValuesType
     /**
      * unset encapsulatedOCSPValue
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetEncapsulatedOCSPValue($index)
@@ -65,7 +64,7 @@ class OCSPValuesType
     /**
      * Sets a new encapsulatedOCSPValue
      *
-     * @param \horstoeko\ubl\entities\xades\EncapsulatedPKIDataType[] $encapsulatedOCSPValue
+     * @param  \horstoeko\ubl\entities\xades\EncapsulatedPKIDataType[] $encapsulatedOCSPValue
      * @return self
      */
     public function setEncapsulatedOCSPValue(array $encapsulatedOCSPValue)

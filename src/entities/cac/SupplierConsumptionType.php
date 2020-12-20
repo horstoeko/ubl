@@ -119,7 +119,7 @@ class SupplierConsumptionType
      *  This is what you pay for electricity to DONG Energy North Utility
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -140,7 +140,7 @@ class SupplierConsumptionType
      *  Text. Type
      *  This is what you pay for electricity to DONG Energy North Utility
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -161,7 +161,7 @@ class SupplierConsumptionType
      *  Text. Type
      *  This is what you pay for electricity to DONG Energy North Utility
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -202,7 +202,7 @@ class SupplierConsumptionType
      *  Text. Type
      *  This is what you pay for electricity to DONG Energy North Utility
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -244,7 +244,7 @@ class SupplierConsumptionType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\UtilitySupplierParty $utilitySupplierParty
+     * @param  \horstoeko\ubl\entities\cac\UtilitySupplierParty $utilitySupplierParty
      * @return self
      */
     public function setUtilitySupplierParty(\horstoeko\ubl\entities\cac\UtilitySupplierParty $utilitySupplierParty)
@@ -286,7 +286,7 @@ class SupplierConsumptionType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\UtilityCustomerParty $utilityCustomerParty
+     * @param  \horstoeko\ubl\entities\cac\UtilityCustomerParty $utilityCustomerParty
      * @return self
      */
     public function setUtilityCustomerParty(\horstoeko\ubl\entities\cac\UtilityCustomerParty $utilityCustomerParty)
@@ -326,7 +326,7 @@ class SupplierConsumptionType
      *  Consumption
      *  Consumption
      *
-     * @param \horstoeko\ubl\entities\cac\Consumption $consumption
+     * @param  \horstoeko\ubl\entities\cac\Consumption $consumption
      * @return self
      */
     public function setConsumption(\horstoeko\ubl\entities\cac\Consumption $consumption)
@@ -366,7 +366,7 @@ class SupplierConsumptionType
      *  Contract
      *  Contract
      *
-     * @param \horstoeko\ubl\entities\cac\Contract $contract
+     * @param  \horstoeko\ubl\entities\cac\Contract $contract
      * @return self
      */
     public function setContract(\horstoeko\ubl\entities\cac\Contract $contract)
@@ -388,7 +388,7 @@ class SupplierConsumptionType
      *  Consumption Line
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ConsumptionLine $consumptionLine
+     * @param  \horstoeko\ubl\entities\cac\ConsumptionLine $consumptionLine
      */
     public function addToConsumptionLine(\horstoeko\ubl\entities\cac\ConsumptionLine $consumptionLine)
     {
@@ -408,7 +408,7 @@ class SupplierConsumptionType
      *  Consumption Line
      *  Consumption Line
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetConsumptionLine($index)
@@ -428,7 +428,7 @@ class SupplierConsumptionType
      *  Consumption Line
      *  Consumption Line
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetConsumptionLine($index)
@@ -467,7 +467,7 @@ class SupplierConsumptionType
      *  Consumption Line
      *  Consumption Line
      *
-     * @param \horstoeko\ubl\entities\cac\ConsumptionLine[] $consumptionLine
+     * @param  \horstoeko\ubl\entities\cac\ConsumptionLine[] $consumptionLine
      * @return self
      */
     public function setConsumptionLine(array $consumptionLine)

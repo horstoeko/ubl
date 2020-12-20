@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing IncludeType
  *
- *
  * XSD Type: IncludeType
  */
 class IncludeType
@@ -34,7 +33,7 @@ class IncludeType
     /**
      * Sets a new uRI
      *
-     * @param string $uRI
+     * @param  string $uRI
      * @return self
      */
     public function setURI($uRI)
@@ -56,7 +55,7 @@ class IncludeType
     /**
      * Sets a new referencedData
      *
-     * @param bool $referencedData
+     * @param  bool $referencedData
      * @return self
      */
     public function setReferencedData($referencedData)

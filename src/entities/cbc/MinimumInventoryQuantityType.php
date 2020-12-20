@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\QuantityType;
 /**
  * Class representing MinimumInventoryQuantityType
  *
- *
  * XSD Type: MinimumInventoryQuantityType
  */
 class MinimumInventoryQuantityType extends QuantityType

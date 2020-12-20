@@ -254,7 +254,7 @@ class QualifyingPartyType
      *  Percent
      *  Percent. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ParticipationPercent $participationPercent
+     * @param  \horstoeko\ubl\entities\cbc\ParticipationPercent $participationPercent
      * @return self
      */
     public function setParticipationPercent(\horstoeko\ubl\entities\cbc\ParticipationPercent $participationPercent)
@@ -276,7 +276,7 @@ class QualifyingPartyType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\PersonalSituation $personalSituation
+     * @param  \horstoeko\ubl\entities\cbc\PersonalSituation $personalSituation
      */
     public function addToPersonalSituation(\horstoeko\ubl\entities\cbc\PersonalSituation $personalSituation)
     {
@@ -296,7 +296,7 @@ class QualifyingPartyType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPersonalSituation($index)
@@ -316,7 +316,7 @@ class QualifyingPartyType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPersonalSituation($index)
@@ -355,7 +355,7 @@ class QualifyingPartyType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PersonalSituation[] $personalSituation
+     * @param  \horstoeko\ubl\entities\cbc\PersonalSituation[] $personalSituation
      * @return self
      */
     public function setPersonalSituation(array $personalSituation)
@@ -395,7 +395,7 @@ class QualifyingPartyType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\OperatingYearsQuantity $operatingYearsQuantity
+     * @param  \horstoeko\ubl\entities\cbc\OperatingYearsQuantity $operatingYearsQuantity
      * @return self
      */
     public function setOperatingYearsQuantity(\horstoeko\ubl\entities\cbc\OperatingYearsQuantity $operatingYearsQuantity)
@@ -435,7 +435,7 @@ class QualifyingPartyType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\EmployeeQuantity $employeeQuantity
+     * @param  \horstoeko\ubl\entities\cbc\EmployeeQuantity $employeeQuantity
      * @return self
      */
     public function setEmployeeQuantity(\horstoeko\ubl\entities\cbc\EmployeeQuantity $employeeQuantity)
@@ -475,7 +475,7 @@ class QualifyingPartyType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\BusinessClassificationEvidenceID $businessClassificationEvidenceID
+     * @param  \horstoeko\ubl\entities\cbc\BusinessClassificationEvidenceID $businessClassificationEvidenceID
      * @return self
      */
     public function setBusinessClassificationEvidenceID(\horstoeko\ubl\entities\cbc\BusinessClassificationEvidenceID $businessClassificationEvidenceID)
@@ -515,7 +515,7 @@ class QualifyingPartyType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\BusinessIdentityEvidenceID $businessIdentityEvidenceID
+     * @param  \horstoeko\ubl\entities\cbc\BusinessIdentityEvidenceID $businessIdentityEvidenceID
      * @return self
      */
     public function setBusinessIdentityEvidenceID(\horstoeko\ubl\entities\cbc\BusinessIdentityEvidenceID $businessIdentityEvidenceID)
@@ -555,7 +555,7 @@ class QualifyingPartyType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TendererRoleCode $tendererRoleCode
+     * @param  \horstoeko\ubl\entities\cbc\TendererRoleCode $tendererRoleCode
      * @return self
      */
     public function setTendererRoleCode(\horstoeko\ubl\entities\cbc\TendererRoleCode $tendererRoleCode)
@@ -597,7 +597,7 @@ class QualifyingPartyType
      *  Classification Scheme
      *  Classification Scheme
      *
-     * @param \horstoeko\ubl\entities\cac\BusinessClassificationScheme $businessClassificationScheme
+     * @param  \horstoeko\ubl\entities\cac\BusinessClassificationScheme $businessClassificationScheme
      * @return self
      */
     public function setBusinessClassificationScheme(\horstoeko\ubl\entities\cac\BusinessClassificationScheme $businessClassificationScheme)
@@ -620,7 +620,7 @@ class QualifyingPartyType
      *  Capability
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\TechnicalCapability $technicalCapability
+     * @param  \horstoeko\ubl\entities\cac\TechnicalCapability $technicalCapability
      */
     public function addToTechnicalCapability(\horstoeko\ubl\entities\cac\TechnicalCapability $technicalCapability)
     {
@@ -641,7 +641,7 @@ class QualifyingPartyType
      *  Capability
      *  Capability
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTechnicalCapability($index)
@@ -662,7 +662,7 @@ class QualifyingPartyType
      *  Capability
      *  Capability
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTechnicalCapability($index)
@@ -703,7 +703,7 @@ class QualifyingPartyType
      *  Capability
      *  Capability
      *
-     * @param \horstoeko\ubl\entities\cac\TechnicalCapability[] $technicalCapability
+     * @param  \horstoeko\ubl\entities\cac\TechnicalCapability[] $technicalCapability
      * @return self
      */
     public function setTechnicalCapability(array $technicalCapability)
@@ -726,7 +726,7 @@ class QualifyingPartyType
      *  Capability
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\FinancialCapability $financialCapability
+     * @param  \horstoeko\ubl\entities\cac\FinancialCapability $financialCapability
      */
     public function addToFinancialCapability(\horstoeko\ubl\entities\cac\FinancialCapability $financialCapability)
     {
@@ -747,7 +747,7 @@ class QualifyingPartyType
      *  Capability
      *  Capability
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetFinancialCapability($index)
@@ -768,7 +768,7 @@ class QualifyingPartyType
      *  Capability
      *  Capability
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetFinancialCapability($index)
@@ -809,7 +809,7 @@ class QualifyingPartyType
      *  Capability
      *  Capability
      *
-     * @param \horstoeko\ubl\entities\cac\FinancialCapability[] $financialCapability
+     * @param  \horstoeko\ubl\entities\cac\FinancialCapability[] $financialCapability
      * @return self
      */
     public function setFinancialCapability(array $financialCapability)
@@ -831,7 +831,7 @@ class QualifyingPartyType
      *  Completed Task
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\CompletedTask $completedTask
+     * @param  \horstoeko\ubl\entities\cac\CompletedTask $completedTask
      */
     public function addToCompletedTask(\horstoeko\ubl\entities\cac\CompletedTask $completedTask)
     {
@@ -851,7 +851,7 @@ class QualifyingPartyType
      *  Completed Task
      *  Completed Task
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetCompletedTask($index)
@@ -871,7 +871,7 @@ class QualifyingPartyType
      *  Completed Task
      *  Completed Task
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetCompletedTask($index)
@@ -910,7 +910,7 @@ class QualifyingPartyType
      *  Completed Task
      *  Completed Task
      *
-     * @param \horstoeko\ubl\entities\cac\CompletedTask[] $completedTask
+     * @param  \horstoeko\ubl\entities\cac\CompletedTask[] $completedTask
      * @return self
      */
     public function setCompletedTask(array $completedTask)
@@ -932,7 +932,7 @@ class QualifyingPartyType
      *  Declaration
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Declaration $declaration
+     * @param  \horstoeko\ubl\entities\cac\Declaration $declaration
      */
     public function addToDeclaration(\horstoeko\ubl\entities\cac\Declaration $declaration)
     {
@@ -952,7 +952,7 @@ class QualifyingPartyType
      *  Declaration
      *  Declaration
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDeclaration($index)
@@ -972,7 +972,7 @@ class QualifyingPartyType
      *  Declaration
      *  Declaration
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDeclaration($index)
@@ -1011,7 +1011,7 @@ class QualifyingPartyType
      *  Declaration
      *  Declaration
      *
-     * @param \horstoeko\ubl\entities\cac\Declaration[] $declaration
+     * @param  \horstoeko\ubl\entities\cac\Declaration[] $declaration
      * @return self
      */
     public function setDeclaration(array $declaration)
@@ -1051,7 +1051,7 @@ class QualifyingPartyType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\Party $party
+     * @param  \horstoeko\ubl\entities\cac\Party $party
      * @return self
      */
     public function setParty(\horstoeko\ubl\entities\cac\Party $party)
@@ -1091,7 +1091,7 @@ class QualifyingPartyType
      *  Economic Operator Role
      *  Economic Operator Role
      *
-     * @param \horstoeko\ubl\entities\cac\EconomicOperatorRole $economicOperatorRole
+     * @param  \horstoeko\ubl\entities\cac\EconomicOperatorRole $economicOperatorRole
      * @return self
      */
     public function setEconomicOperatorRole(\horstoeko\ubl\entities\cac\EconomicOperatorRole $economicOperatorRole)

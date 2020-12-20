@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\IdentifierType;
 /**
  * Class representing BusinessClassificationEvidenceIDType
  *
- *
  * XSD Type: BusinessClassificationEvidenceIDType
  */
 class BusinessClassificationEvidenceIDType extends IdentifierType

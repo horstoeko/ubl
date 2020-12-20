@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing CommitmentTypeIndicationType
  *
- *
  * XSD Type: CommitmentTypeIndicationType
  */
 class CommitmentTypeIndicationType
@@ -46,7 +45,7 @@ class CommitmentTypeIndicationType
     /**
      * Sets a new commitmentTypeId
      *
-     * @param \horstoeko\ubl\entities\xades\ObjectIdentifierType $commitmentTypeId
+     * @param  \horstoeko\ubl\entities\xades\ObjectIdentifierType $commitmentTypeId
      * @return self
      */
     public function setCommitmentTypeId(\horstoeko\ubl\entities\xades\ObjectIdentifierType $commitmentTypeId)
@@ -59,7 +58,7 @@ class CommitmentTypeIndicationType
      * Adds as objectReference
      *
      * @return self
-     * @param string $objectReference
+     * @param  string $objectReference
      */
     public function addToObjectReference($objectReference)
     {
@@ -70,7 +69,7 @@ class CommitmentTypeIndicationType
     /**
      * isset objectReference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetObjectReference($index)
@@ -81,7 +80,7 @@ class CommitmentTypeIndicationType
     /**
      * unset objectReference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetObjectReference($index)
@@ -102,7 +101,7 @@ class CommitmentTypeIndicationType
     /**
      * Sets a new objectReference
      *
-     * @param string[] $objectReference
+     * @param  string[] $objectReference
      * @return self
      */
     public function setObjectReference(array $objectReference)
@@ -124,7 +123,7 @@ class CommitmentTypeIndicationType
     /**
      * Sets a new allSignedDataObjects
      *
-     * @param string $allSignedDataObjects
+     * @param  string $allSignedDataObjects
      * @return self
      */
     public function setAllSignedDataObjects($allSignedDataObjects)
@@ -137,7 +136,7 @@ class CommitmentTypeIndicationType
      * Adds as commitmentTypeQualifier
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\AnyType $commitmentTypeQualifier
+     * @param  \horstoeko\ubl\entities\xades\AnyType $commitmentTypeQualifier
      */
     public function addToCommitmentTypeQualifiers(\horstoeko\ubl\entities\xades\AnyType $commitmentTypeQualifier)
     {
@@ -148,7 +147,7 @@ class CommitmentTypeIndicationType
     /**
      * isset commitmentTypeQualifiers
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetCommitmentTypeQualifiers($index)
@@ -159,7 +158,7 @@ class CommitmentTypeIndicationType
     /**
      * unset commitmentTypeQualifiers
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetCommitmentTypeQualifiers($index)
@@ -180,7 +179,7 @@ class CommitmentTypeIndicationType
     /**
      * Sets a new commitmentTypeQualifiers
      *
-     * @param \horstoeko\ubl\entities\xades\AnyType[] $commitmentTypeQualifiers
+     * @param  \horstoeko\ubl\entities\xades\AnyType[] $commitmentTypeQualifiers
      * @return self
      */
     public function setCommitmentTypeQualifiers(array $commitmentTypeQualifiers)

@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\IdentifierType;
 /**
  * Class representing IssueNumberIDType
  *
- *
  * XSD Type: IssueNumberIDType
  */
 class IssueNumberIDType extends IdentifierType

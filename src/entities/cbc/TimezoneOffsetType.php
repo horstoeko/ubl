@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing TimezoneOffsetType
  *
- *
  * XSD Type: TimezoneOffsetType
  */
 class TimezoneOffsetType extends TextType

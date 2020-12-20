@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\ds;
 /**
  * Class representing X509IssuerSerialType
  *
- *
  * XSD Type: X509IssuerSerialType
  */
 class X509IssuerSerialType
@@ -34,7 +33,7 @@ class X509IssuerSerialType
     /**
      * Sets a new x509IssuerName
      *
-     * @param string $x509IssuerName
+     * @param  string $x509IssuerName
      * @return self
      */
     public function setX509IssuerName($x509IssuerName)
@@ -56,7 +55,7 @@ class X509IssuerSerialType
     /**
      * Sets a new x509SerialNumber
      *
-     * @param int $x509SerialNumber
+     * @param  int $x509SerialNumber
      * @return self
      */
     public function setX509SerialNumber($x509SerialNumber)

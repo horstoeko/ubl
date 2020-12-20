@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\ds;
 /**
  * Class representing KeyInfoType
  *
- *
  * XSD Type: KeyInfoType
  */
 class KeyInfoType
@@ -76,7 +75,7 @@ class KeyInfoType
     /**
      * Sets a new id
      *
-     * @param string $id
+     * @param  string $id
      * @return self
      */
     public function setId($id)
@@ -89,7 +88,7 @@ class KeyInfoType
      * Adds as keyName
      *
      * @return self
-     * @param string $keyName
+     * @param  string $keyName
      */
     public function addToKeyName($keyName)
     {
@@ -100,7 +99,7 @@ class KeyInfoType
     /**
      * isset keyName
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetKeyName($index)
@@ -111,7 +110,7 @@ class KeyInfoType
     /**
      * unset keyName
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetKeyName($index)
@@ -132,7 +131,7 @@ class KeyInfoType
     /**
      * Sets a new keyName
      *
-     * @param string[] $keyName
+     * @param  string[] $keyName
      * @return self
      */
     public function setKeyName(array $keyName)
@@ -145,7 +144,7 @@ class KeyInfoType
      * Adds as keyValue
      *
      * @return self
-     * @param \horstoeko\ubl\entities\ds\KeyValue $keyValue
+     * @param  \horstoeko\ubl\entities\ds\KeyValue $keyValue
      */
     public function addToKeyValue(\horstoeko\ubl\entities\ds\KeyValue $keyValue)
     {
@@ -156,7 +155,7 @@ class KeyInfoType
     /**
      * isset keyValue
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetKeyValue($index)
@@ -167,7 +166,7 @@ class KeyInfoType
     /**
      * unset keyValue
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetKeyValue($index)
@@ -188,7 +187,7 @@ class KeyInfoType
     /**
      * Sets a new keyValue
      *
-     * @param \horstoeko\ubl\entities\ds\KeyValue[] $keyValue
+     * @param  \horstoeko\ubl\entities\ds\KeyValue[] $keyValue
      * @return self
      */
     public function setKeyValue(array $keyValue)
@@ -201,7 +200,7 @@ class KeyInfoType
      * Adds as retrievalMethod
      *
      * @return self
-     * @param \horstoeko\ubl\entities\ds\RetrievalMethod $retrievalMethod
+     * @param  \horstoeko\ubl\entities\ds\RetrievalMethod $retrievalMethod
      */
     public function addToRetrievalMethod(\horstoeko\ubl\entities\ds\RetrievalMethod $retrievalMethod)
     {
@@ -212,7 +211,7 @@ class KeyInfoType
     /**
      * isset retrievalMethod
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetRetrievalMethod($index)
@@ -223,7 +222,7 @@ class KeyInfoType
     /**
      * unset retrievalMethod
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetRetrievalMethod($index)
@@ -244,7 +243,7 @@ class KeyInfoType
     /**
      * Sets a new retrievalMethod
      *
-     * @param \horstoeko\ubl\entities\ds\RetrievalMethod[] $retrievalMethod
+     * @param  \horstoeko\ubl\entities\ds\RetrievalMethod[] $retrievalMethod
      * @return self
      */
     public function setRetrievalMethod(array $retrievalMethod)
@@ -257,7 +256,7 @@ class KeyInfoType
      * Adds as x509Data
      *
      * @return self
-     * @param \horstoeko\ubl\entities\ds\X509Data $x509Data
+     * @param  \horstoeko\ubl\entities\ds\X509Data $x509Data
      */
     public function addToX509Data(\horstoeko\ubl\entities\ds\X509Data $x509Data)
     {
@@ -268,7 +267,7 @@ class KeyInfoType
     /**
      * isset x509Data
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetX509Data($index)
@@ -279,7 +278,7 @@ class KeyInfoType
     /**
      * unset x509Data
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetX509Data($index)
@@ -300,7 +299,7 @@ class KeyInfoType
     /**
      * Sets a new x509Data
      *
-     * @param \horstoeko\ubl\entities\ds\X509Data[] $x509Data
+     * @param  \horstoeko\ubl\entities\ds\X509Data[] $x509Data
      * @return self
      */
     public function setX509Data(array $x509Data)
@@ -313,7 +312,7 @@ class KeyInfoType
      * Adds as pGPData
      *
      * @return self
-     * @param \horstoeko\ubl\entities\ds\PGPData $pGPData
+     * @param  \horstoeko\ubl\entities\ds\PGPData $pGPData
      */
     public function addToPGPData(\horstoeko\ubl\entities\ds\PGPData $pGPData)
     {
@@ -324,7 +323,7 @@ class KeyInfoType
     /**
      * isset pGPData
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPGPData($index)
@@ -335,7 +334,7 @@ class KeyInfoType
     /**
      * unset pGPData
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPGPData($index)
@@ -356,7 +355,7 @@ class KeyInfoType
     /**
      * Sets a new pGPData
      *
-     * @param \horstoeko\ubl\entities\ds\PGPData[] $pGPData
+     * @param  \horstoeko\ubl\entities\ds\PGPData[] $pGPData
      * @return self
      */
     public function setPGPData(array $pGPData)
@@ -369,7 +368,7 @@ class KeyInfoType
      * Adds as sPKISexp
      *
      * @return self
-     * @param string $sPKISexp
+     * @param  string $sPKISexp
      */
     public function addToSPKIData($sPKISexp)
     {
@@ -380,7 +379,7 @@ class KeyInfoType
     /**
      * isset sPKIData
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSPKIData($index)
@@ -391,7 +390,7 @@ class KeyInfoType
     /**
      * unset sPKIData
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSPKIData($index)
@@ -412,7 +411,7 @@ class KeyInfoType
     /**
      * Sets a new sPKIData
      *
-     * @param string[] $sPKIData
+     * @param  string[] $sPKIData
      * @return self
      */
     public function setSPKIData(array $sPKIData)
@@ -425,7 +424,7 @@ class KeyInfoType
      * Adds as mgmtData
      *
      * @return self
-     * @param string $mgmtData
+     * @param  string $mgmtData
      */
     public function addToMgmtData($mgmtData)
     {
@@ -436,7 +435,7 @@ class KeyInfoType
     /**
      * isset mgmtData
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetMgmtData($index)
@@ -447,7 +446,7 @@ class KeyInfoType
     /**
      * unset mgmtData
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetMgmtData($index)
@@ -468,7 +467,7 @@ class KeyInfoType
     /**
      * Sets a new mgmtData
      *
-     * @param string[] $mgmtData
+     * @param  string[] $mgmtData
      * @return self
      */
     public function setMgmtData(array $mgmtData)

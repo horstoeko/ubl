@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\IdentifierType;
 /**
  * Class representing BuyerEventIDType
  *
- *
  * XSD Type: BuyerEventIDType
  */
 class BuyerEventIDType extends IdentifierType

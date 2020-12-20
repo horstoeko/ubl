@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\ds;
 /**
  * Class representing SPKIDataType
  *
- *
  * XSD Type: SPKIDataType
  */
 class SPKIDataType
@@ -22,7 +21,7 @@ class SPKIDataType
      * Adds as sPKISexp
      *
      * @return self
-     * @param string $sPKISexp
+     * @param  string $sPKISexp
      */
     public function addToSPKISexp($sPKISexp)
     {
@@ -33,7 +32,7 @@ class SPKIDataType
     /**
      * isset sPKISexp
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSPKISexp($index)
@@ -44,7 +43,7 @@ class SPKIDataType
     /**
      * unset sPKISexp
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSPKISexp($index)
@@ -65,7 +64,7 @@ class SPKIDataType
     /**
      * Sets a new sPKISexp
      *
-     * @param string[] $sPKISexp
+     * @param  string[] $sPKISexp
      * @return self
      */
     public function setSPKISexp(array $sPKISexp)

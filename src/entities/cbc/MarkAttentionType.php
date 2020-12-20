@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing MarkAttentionType
  *
- *
  * XSD Type: MarkAttentionType
  */
 class MarkAttentionType extends TextType

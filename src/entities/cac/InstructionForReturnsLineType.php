@@ -118,7 +118,7 @@ class InstructionForReturnsLineType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -140,7 +140,7 @@ class InstructionForReturnsLineType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param  \horstoeko\ubl\entities\cbc\Note $note
      */
     public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
     {
@@ -160,7 +160,7 @@ class InstructionForReturnsLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNote($index)
@@ -180,7 +180,7 @@ class InstructionForReturnsLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNote($index)
@@ -219,7 +219,7 @@ class InstructionForReturnsLineType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note[] $note
+     * @param  \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
     public function setNote(array $note)
@@ -259,7 +259,7 @@ class InstructionForReturnsLineType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Quantity $quantity
+     * @param  \horstoeko\ubl\entities\cbc\Quantity $quantity
      * @return self
      */
     public function setQuantity(\horstoeko\ubl\entities\cbc\Quantity $quantity)
@@ -301,7 +301,7 @@ class InstructionForReturnsLineType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\ManufacturerParty $manufacturerParty
+     * @param  \horstoeko\ubl\entities\cac\ManufacturerParty $manufacturerParty
      * @return self
      */
     public function setManufacturerParty(\horstoeko\ubl\entities\cac\ManufacturerParty $manufacturerParty)
@@ -341,7 +341,7 @@ class InstructionForReturnsLineType
      *  Item
      *  Item
      *
-     * @param \horstoeko\ubl\entities\cac\Item $item
+     * @param  \horstoeko\ubl\entities\cac\Item $item
      * @return self
      */
     public function setItem(\horstoeko\ubl\entities\cac\Item $item)

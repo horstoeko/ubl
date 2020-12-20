@@ -504,7 +504,7 @@ class ItemType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -524,7 +524,7 @@ class ItemType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -544,7 +544,7 @@ class ItemType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -583,7 +583,7 @@ class ItemType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -623,7 +623,7 @@ class ItemType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PackQuantity $packQuantity
+     * @param  \horstoeko\ubl\entities\cbc\PackQuantity $packQuantity
      * @return self
      */
     public function setPackQuantity(\horstoeko\ubl\entities\cbc\PackQuantity $packQuantity)
@@ -663,7 +663,7 @@ class ItemType
      *  Numeric
      *  Numeric. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PackSizeNumeric $packSizeNumeric
+     * @param  \horstoeko\ubl\entities\cbc\PackSizeNumeric $packSizeNumeric
      * @return self
      */
     public function setPackSizeNumeric(\horstoeko\ubl\entities\cbc\PackSizeNumeric $packSizeNumeric)
@@ -705,7 +705,7 @@ class ItemType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $catalogueIndicator
+     * @param  bool $catalogueIndicator
      * @return self
      */
     public function setCatalogueIndicator($catalogueIndicator)
@@ -745,7 +745,7 @@ class ItemType
      *  Name
      *  Name. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Name $name
+     * @param  \horstoeko\ubl\entities\cbc\Name $name
      * @return self
      */
     public function setName(\horstoeko\ubl\entities\cbc\Name $name)
@@ -789,7 +789,7 @@ class ItemType
      *  Indicator. Type
      *  Default is negative
      *
-     * @param bool $hazardousRiskIndicator
+     * @param  bool $hazardousRiskIndicator
      * @return self
      */
     public function setHazardousRiskIndicator($hazardousRiskIndicator)
@@ -812,7 +812,7 @@ class ItemType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\AdditionalInformation $additionalInformation
+     * @param  \horstoeko\ubl\entities\cbc\AdditionalInformation $additionalInformation
      */
     public function addToAdditionalInformation(\horstoeko\ubl\entities\cbc\AdditionalInformation $additionalInformation)
     {
@@ -833,7 +833,7 @@ class ItemType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAdditionalInformation($index)
@@ -854,7 +854,7 @@ class ItemType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAdditionalInformation($index)
@@ -895,7 +895,7 @@ class ItemType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AdditionalInformation[] $additionalInformation
+     * @param  \horstoeko\ubl\entities\cbc\AdditionalInformation[] $additionalInformation
      * @return self
      */
     public function setAdditionalInformation(array $additionalInformation)
@@ -917,7 +917,7 @@ class ItemType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Keyword $keyword
+     * @param  \horstoeko\ubl\entities\cbc\Keyword $keyword
      */
     public function addToKeyword(\horstoeko\ubl\entities\cbc\Keyword $keyword)
     {
@@ -937,7 +937,7 @@ class ItemType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetKeyword($index)
@@ -957,7 +957,7 @@ class ItemType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetKeyword($index)
@@ -996,7 +996,7 @@ class ItemType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Keyword[] $keyword
+     * @param  \horstoeko\ubl\entities\cbc\Keyword[] $keyword
      * @return self
      */
     public function setKeyword(array $keyword)
@@ -1019,7 +1019,7 @@ class ItemType
      *  Coca-Cola
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\BrandName $brandName
+     * @param  \horstoeko\ubl\entities\cbc\BrandName $brandName
      */
     public function addToBrandName(\horstoeko\ubl\entities\cbc\BrandName $brandName)
     {
@@ -1040,7 +1040,7 @@ class ItemType
      *  Name. Type
      *  Coca-Cola
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetBrandName($index)
@@ -1061,7 +1061,7 @@ class ItemType
      *  Name. Type
      *  Coca-Cola
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetBrandName($index)
@@ -1102,7 +1102,7 @@ class ItemType
      *  Name. Type
      *  Coca-Cola
      *
-     * @param \horstoeko\ubl\entities\cbc\BrandName[] $brandName
+     * @param  \horstoeko\ubl\entities\cbc\BrandName[] $brandName
      * @return self
      */
     public function setBrandName(array $brandName)
@@ -1125,7 +1125,7 @@ class ItemType
      *  VW Beetle
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\ModelName $modelName
+     * @param  \horstoeko\ubl\entities\cbc\ModelName $modelName
      */
     public function addToModelName(\horstoeko\ubl\entities\cbc\ModelName $modelName)
     {
@@ -1146,7 +1146,7 @@ class ItemType
      *  Name. Type
      *  VW Beetle
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetModelName($index)
@@ -1167,7 +1167,7 @@ class ItemType
      *  Name. Type
      *  VW Beetle
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetModelName($index)
@@ -1208,7 +1208,7 @@ class ItemType
      *  Name. Type
      *  VW Beetle
      *
-     * @param \horstoeko\ubl\entities\cbc\ModelName[] $modelName
+     * @param  \horstoeko\ubl\entities\cbc\ModelName[] $modelName
      * @return self
      */
     public function setModelName(array $modelName)
@@ -1250,7 +1250,7 @@ class ItemType
      *  Item Identification
      *  Item Identification
      *
-     * @param \horstoeko\ubl\entities\cac\BuyersItemIdentification $buyersItemIdentification
+     * @param  \horstoeko\ubl\entities\cac\BuyersItemIdentification $buyersItemIdentification
      * @return self
      */
     public function setBuyersItemIdentification(\horstoeko\ubl\entities\cac\BuyersItemIdentification $buyersItemIdentification)
@@ -1292,7 +1292,7 @@ class ItemType
      *  Item Identification
      *  Item Identification
      *
-     * @param \horstoeko\ubl\entities\cac\SellersItemIdentification $sellersItemIdentification
+     * @param  \horstoeko\ubl\entities\cac\SellersItemIdentification $sellersItemIdentification
      * @return self
      */
     public function setSellersItemIdentification(\horstoeko\ubl\entities\cac\SellersItemIdentification $sellersItemIdentification)
@@ -1315,7 +1315,7 @@ class ItemType
      *  Item Identification
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ManufacturersItemIdentification $manufacturersItemIdentification
+     * @param  \horstoeko\ubl\entities\cac\ManufacturersItemIdentification $manufacturersItemIdentification
      */
     public function addToManufacturersItemIdentification(\horstoeko\ubl\entities\cac\ManufacturersItemIdentification $manufacturersItemIdentification)
     {
@@ -1336,7 +1336,7 @@ class ItemType
      *  Item Identification
      *  Item Identification
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetManufacturersItemIdentification($index)
@@ -1357,7 +1357,7 @@ class ItemType
      *  Item Identification
      *  Item Identification
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetManufacturersItemIdentification($index)
@@ -1398,7 +1398,7 @@ class ItemType
      *  Item Identification
      *  Item Identification
      *
-     * @param \horstoeko\ubl\entities\cac\ManufacturersItemIdentification[] $manufacturersItemIdentification
+     * @param  \horstoeko\ubl\entities\cac\ManufacturersItemIdentification[] $manufacturersItemIdentification
      * @return self
      */
     public function setManufacturersItemIdentification(array $manufacturersItemIdentification)
@@ -1440,7 +1440,7 @@ class ItemType
      *  Item Identification
      *  Item Identification
      *
-     * @param \horstoeko\ubl\entities\cac\StandardItemIdentification $standardItemIdentification
+     * @param  \horstoeko\ubl\entities\cac\StandardItemIdentification $standardItemIdentification
      * @return self
      */
     public function setStandardItemIdentification(\horstoeko\ubl\entities\cac\StandardItemIdentification $standardItemIdentification)
@@ -1482,7 +1482,7 @@ class ItemType
      *  Item Identification
      *  Item Identification
      *
-     * @param \horstoeko\ubl\entities\cac\CatalogueItemIdentification $catalogueItemIdentification
+     * @param  \horstoeko\ubl\entities\cac\CatalogueItemIdentification $catalogueItemIdentification
      * @return self
      */
     public function setCatalogueItemIdentification(\horstoeko\ubl\entities\cac\CatalogueItemIdentification $catalogueItemIdentification)
@@ -1505,7 +1505,7 @@ class ItemType
      *  Item Identification
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\AdditionalItemIdentification $additionalItemIdentification
+     * @param  \horstoeko\ubl\entities\cac\AdditionalItemIdentification $additionalItemIdentification
      */
     public function addToAdditionalItemIdentification(\horstoeko\ubl\entities\cac\AdditionalItemIdentification $additionalItemIdentification)
     {
@@ -1526,7 +1526,7 @@ class ItemType
      *  Item Identification
      *  Item Identification
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAdditionalItemIdentification($index)
@@ -1547,7 +1547,7 @@ class ItemType
      *  Item Identification
      *  Item Identification
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAdditionalItemIdentification($index)
@@ -1588,7 +1588,7 @@ class ItemType
      *  Item Identification
      *  Item Identification
      *
-     * @param \horstoeko\ubl\entities\cac\AdditionalItemIdentification[] $additionalItemIdentification
+     * @param  \horstoeko\ubl\entities\cac\AdditionalItemIdentification[] $additionalItemIdentification
      * @return self
      */
     public function setAdditionalItemIdentification(array $additionalItemIdentification)
@@ -1630,7 +1630,7 @@ class ItemType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\CatalogueDocumentReference $catalogueDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\CatalogueDocumentReference $catalogueDocumentReference
      * @return self
      */
     public function setCatalogueDocumentReference(\horstoeko\ubl\entities\cac\CatalogueDocumentReference $catalogueDocumentReference)
@@ -1653,7 +1653,7 @@ class ItemType
      *  Document Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ItemSpecificationDocumentReference $itemSpecificationDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\ItemSpecificationDocumentReference $itemSpecificationDocumentReference
      */
     public function addToItemSpecificationDocumentReference(\horstoeko\ubl\entities\cac\ItemSpecificationDocumentReference $itemSpecificationDocumentReference)
     {
@@ -1674,7 +1674,7 @@ class ItemType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetItemSpecificationDocumentReference($index)
@@ -1695,7 +1695,7 @@ class ItemType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetItemSpecificationDocumentReference($index)
@@ -1736,7 +1736,7 @@ class ItemType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\ItemSpecificationDocumentReference[] $itemSpecificationDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\ItemSpecificationDocumentReference[] $itemSpecificationDocumentReference
      * @return self
      */
     public function setItemSpecificationDocumentReference(array $itemSpecificationDocumentReference)
@@ -1778,7 +1778,7 @@ class ItemType
      *  Country
      *  Country
      *
-     * @param \horstoeko\ubl\entities\cac\OriginCountry $originCountry
+     * @param  \horstoeko\ubl\entities\cac\OriginCountry $originCountry
      * @return self
      */
     public function setOriginCountry(\horstoeko\ubl\entities\cac\OriginCountry $originCountry)
@@ -1800,7 +1800,7 @@ class ItemType
      *  Commodity Classification
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\CommodityClassification $commodityClassification
+     * @param  \horstoeko\ubl\entities\cac\CommodityClassification $commodityClassification
      */
     public function addToCommodityClassification(\horstoeko\ubl\entities\cac\CommodityClassification $commodityClassification)
     {
@@ -1820,7 +1820,7 @@ class ItemType
      *  Commodity Classification
      *  Commodity Classification
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetCommodityClassification($index)
@@ -1840,7 +1840,7 @@ class ItemType
      *  Commodity Classification
      *  Commodity Classification
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetCommodityClassification($index)
@@ -1879,7 +1879,7 @@ class ItemType
      *  Commodity Classification
      *  Commodity Classification
      *
-     * @param \horstoeko\ubl\entities\cac\CommodityClassification[] $commodityClassification
+     * @param  \horstoeko\ubl\entities\cac\CommodityClassification[] $commodityClassification
      * @return self
      */
     public function setCommodityClassification(array $commodityClassification)
@@ -1901,7 +1901,7 @@ class ItemType
      *  Transaction Conditions
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\TransactionConditions $transactionConditions
+     * @param  \horstoeko\ubl\entities\cac\TransactionConditions $transactionConditions
      */
     public function addToTransactionConditions(\horstoeko\ubl\entities\cac\TransactionConditions $transactionConditions)
     {
@@ -1921,7 +1921,7 @@ class ItemType
      *  Transaction Conditions
      *  Transaction Conditions
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTransactionConditions($index)
@@ -1941,7 +1941,7 @@ class ItemType
      *  Transaction Conditions
      *  Transaction Conditions
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTransactionConditions($index)
@@ -1980,7 +1980,7 @@ class ItemType
      *  Transaction Conditions
      *  Transaction Conditions
      *
-     * @param \horstoeko\ubl\entities\cac\TransactionConditions[] $transactionConditions
+     * @param  \horstoeko\ubl\entities\cac\TransactionConditions[] $transactionConditions
      * @return self
      */
     public function setTransactionConditions(array $transactionConditions)
@@ -2002,7 +2002,7 @@ class ItemType
      *  Hazardous Item
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\HazardousItem $hazardousItem
+     * @param  \horstoeko\ubl\entities\cac\HazardousItem $hazardousItem
      */
     public function addToHazardousItem(\horstoeko\ubl\entities\cac\HazardousItem $hazardousItem)
     {
@@ -2022,7 +2022,7 @@ class ItemType
      *  Hazardous Item
      *  Hazardous Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetHazardousItem($index)
@@ -2042,7 +2042,7 @@ class ItemType
      *  Hazardous Item
      *  Hazardous Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetHazardousItem($index)
@@ -2081,7 +2081,7 @@ class ItemType
      *  Hazardous Item
      *  Hazardous Item
      *
-     * @param \horstoeko\ubl\entities\cac\HazardousItem[] $hazardousItem
+     * @param  \horstoeko\ubl\entities\cac\HazardousItem[] $hazardousItem
      * @return self
      */
     public function setHazardousItem(array $hazardousItem)
@@ -2104,7 +2104,7 @@ class ItemType
      *  Tax Category
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ClassifiedTaxCategory $classifiedTaxCategory
+     * @param  \horstoeko\ubl\entities\cac\ClassifiedTaxCategory $classifiedTaxCategory
      */
     public function addToClassifiedTaxCategory(\horstoeko\ubl\entities\cac\ClassifiedTaxCategory $classifiedTaxCategory)
     {
@@ -2125,7 +2125,7 @@ class ItemType
      *  Tax Category
      *  Tax Category
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetClassifiedTaxCategory($index)
@@ -2146,7 +2146,7 @@ class ItemType
      *  Tax Category
      *  Tax Category
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetClassifiedTaxCategory($index)
@@ -2187,7 +2187,7 @@ class ItemType
      *  Tax Category
      *  Tax Category
      *
-     * @param \horstoeko\ubl\entities\cac\ClassifiedTaxCategory[] $classifiedTaxCategory
+     * @param  \horstoeko\ubl\entities\cac\ClassifiedTaxCategory[] $classifiedTaxCategory
      * @return self
      */
     public function setClassifiedTaxCategory(array $classifiedTaxCategory)
@@ -2210,7 +2210,7 @@ class ItemType
      *  Item Property
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\AdditionalItemProperty $additionalItemProperty
+     * @param  \horstoeko\ubl\entities\cac\AdditionalItemProperty $additionalItemProperty
      */
     public function addToAdditionalItemProperty(\horstoeko\ubl\entities\cac\AdditionalItemProperty $additionalItemProperty)
     {
@@ -2231,7 +2231,7 @@ class ItemType
      *  Item Property
      *  Item Property
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAdditionalItemProperty($index)
@@ -2252,7 +2252,7 @@ class ItemType
      *  Item Property
      *  Item Property
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAdditionalItemProperty($index)
@@ -2293,7 +2293,7 @@ class ItemType
      *  Item Property
      *  Item Property
      *
-     * @param \horstoeko\ubl\entities\cac\AdditionalItemProperty[] $additionalItemProperty
+     * @param  \horstoeko\ubl\entities\cac\AdditionalItemProperty[] $additionalItemProperty
      * @return self
      */
     public function setAdditionalItemProperty(array $additionalItemProperty)
@@ -2316,7 +2316,7 @@ class ItemType
      *  Party
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ManufacturerParty $manufacturerParty
+     * @param  \horstoeko\ubl\entities\cac\ManufacturerParty $manufacturerParty
      */
     public function addToManufacturerParty(\horstoeko\ubl\entities\cac\ManufacturerParty $manufacturerParty)
     {
@@ -2337,7 +2337,7 @@ class ItemType
      *  Party
      *  Party
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetManufacturerParty($index)
@@ -2358,7 +2358,7 @@ class ItemType
      *  Party
      *  Party
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetManufacturerParty($index)
@@ -2399,7 +2399,7 @@ class ItemType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\ManufacturerParty[] $manufacturerParty
+     * @param  \horstoeko\ubl\entities\cac\ManufacturerParty[] $manufacturerParty
      * @return self
      */
     public function setManufacturerParty(array $manufacturerParty)
@@ -2441,7 +2441,7 @@ class ItemType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\InformationContentProviderParty $informationContentProviderParty
+     * @param  \horstoeko\ubl\entities\cac\InformationContentProviderParty $informationContentProviderParty
      * @return self
      */
     public function setInformationContentProviderParty(\horstoeko\ubl\entities\cac\InformationContentProviderParty $informationContentProviderParty)
@@ -2464,7 +2464,7 @@ class ItemType
      *  Address
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\OriginAddress $originAddress
+     * @param  \horstoeko\ubl\entities\cac\OriginAddress $originAddress
      */
     public function addToOriginAddress(\horstoeko\ubl\entities\cac\OriginAddress $originAddress)
     {
@@ -2485,7 +2485,7 @@ class ItemType
      *  Address
      *  Address
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetOriginAddress($index)
@@ -2506,7 +2506,7 @@ class ItemType
      *  Address
      *  Address
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetOriginAddress($index)
@@ -2547,7 +2547,7 @@ class ItemType
      *  Address
      *  Address
      *
-     * @param \horstoeko\ubl\entities\cac\OriginAddress[] $originAddress
+     * @param  \horstoeko\ubl\entities\cac\OriginAddress[] $originAddress
      * @return self
      */
     public function setOriginAddress(array $originAddress)
@@ -2569,7 +2569,7 @@ class ItemType
      *  Item Instance
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ItemInstance $itemInstance
+     * @param  \horstoeko\ubl\entities\cac\ItemInstance $itemInstance
      */
     public function addToItemInstance(\horstoeko\ubl\entities\cac\ItemInstance $itemInstance)
     {
@@ -2589,7 +2589,7 @@ class ItemType
      *  Item Instance
      *  Item Instance
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetItemInstance($index)
@@ -2609,7 +2609,7 @@ class ItemType
      *  Item Instance
      *  Item Instance
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetItemInstance($index)
@@ -2648,7 +2648,7 @@ class ItemType
      *  Item Instance
      *  Item Instance
      *
-     * @param \horstoeko\ubl\entities\cac\ItemInstance[] $itemInstance
+     * @param  \horstoeko\ubl\entities\cac\ItemInstance[] $itemInstance
      * @return self
      */
     public function setItemInstance(array $itemInstance)
@@ -2670,7 +2670,7 @@ class ItemType
      *  Certificate
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Certificate $certificate
+     * @param  \horstoeko\ubl\entities\cac\Certificate $certificate
      */
     public function addToCertificate(\horstoeko\ubl\entities\cac\Certificate $certificate)
     {
@@ -2690,7 +2690,7 @@ class ItemType
      *  Certificate
      *  Certificate
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetCertificate($index)
@@ -2710,7 +2710,7 @@ class ItemType
      *  Certificate
      *  Certificate
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetCertificate($index)
@@ -2749,7 +2749,7 @@ class ItemType
      *  Certificate
      *  Certificate
      *
-     * @param \horstoeko\ubl\entities\cac\Certificate[] $certificate
+     * @param  \horstoeko\ubl\entities\cac\Certificate[] $certificate
      * @return self
      */
     public function setCertificate(array $certificate)
@@ -2771,7 +2771,7 @@ class ItemType
      *  Dimension
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Dimension $dimension
+     * @param  \horstoeko\ubl\entities\cac\Dimension $dimension
      */
     public function addToDimension(\horstoeko\ubl\entities\cac\Dimension $dimension)
     {
@@ -2791,7 +2791,7 @@ class ItemType
      *  Dimension
      *  Dimension
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDimension($index)
@@ -2811,7 +2811,7 @@ class ItemType
      *  Dimension
      *  Dimension
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDimension($index)
@@ -2850,7 +2850,7 @@ class ItemType
      *  Dimension
      *  Dimension
      *
-     * @param \horstoeko\ubl\entities\cac\Dimension[] $dimension
+     * @param  \horstoeko\ubl\entities\cac\Dimension[] $dimension
      * @return self
      */
     public function setDimension(array $dimension)

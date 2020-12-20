@@ -75,7 +75,7 @@ class ClauseType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -97,7 +97,7 @@ class ClauseType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Content $content
+     * @param  \horstoeko\ubl\entities\cbc\Content $content
      */
     public function addToContent(\horstoeko\ubl\entities\cbc\Content $content)
     {
@@ -117,7 +117,7 @@ class ClauseType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetContent($index)
@@ -137,7 +137,7 @@ class ClauseType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetContent($index)
@@ -176,7 +176,7 @@ class ClauseType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Content[] $content
+     * @param  \horstoeko\ubl\entities\cbc\Content[] $content
      * @return self
      */
     public function setContent(array $content)

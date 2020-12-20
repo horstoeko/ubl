@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing GovernmentAgreementConstraintIndicatorType
  *
- *
  * XSD Type: GovernmentAgreementConstraintIndicatorType
  */
 class GovernmentAgreementConstraintIndicatorType
@@ -29,7 +28,7 @@ class GovernmentAgreementConstraintIndicatorType
     /**
      * Gets or sets the inner value
      *
-     * @param bool $value
+     * @param  bool $value
      * @return bool
      */
     public function value()

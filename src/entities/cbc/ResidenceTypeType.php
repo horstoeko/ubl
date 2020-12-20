@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing ResidenceTypeType
  *
- *
  * XSD Type: ResidenceTypeType
  */
 class ResidenceTypeType extends TextType

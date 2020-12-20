@@ -142,7 +142,7 @@ class FrameworkAgreementType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ExpectedOperatorQuantity $expectedOperatorQuantity
+     * @param  \horstoeko\ubl\entities\cbc\ExpectedOperatorQuantity $expectedOperatorQuantity
      * @return self
      */
     public function setExpectedOperatorQuantity(\horstoeko\ubl\entities\cbc\ExpectedOperatorQuantity $expectedOperatorQuantity)
@@ -184,7 +184,7 @@ class FrameworkAgreementType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MaximumOperatorQuantity $maximumOperatorQuantity
+     * @param  \horstoeko\ubl\entities\cbc\MaximumOperatorQuantity $maximumOperatorQuantity
      * @return self
      */
     public function setMaximumOperatorQuantity(\horstoeko\ubl\entities\cbc\MaximumOperatorQuantity $maximumOperatorQuantity)
@@ -206,7 +206,7 @@ class FrameworkAgreementType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Justification $justification
+     * @param  \horstoeko\ubl\entities\cbc\Justification $justification
      */
     public function addToJustification(\horstoeko\ubl\entities\cbc\Justification $justification)
     {
@@ -226,7 +226,7 @@ class FrameworkAgreementType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetJustification($index)
@@ -246,7 +246,7 @@ class FrameworkAgreementType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetJustification($index)
@@ -285,7 +285,7 @@ class FrameworkAgreementType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Justification[] $justification
+     * @param  \horstoeko\ubl\entities\cbc\Justification[] $justification
      * @return self
      */
     public function setJustification(array $justification)
@@ -307,7 +307,7 @@ class FrameworkAgreementType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Frequency $frequency
+     * @param  \horstoeko\ubl\entities\cbc\Frequency $frequency
      */
     public function addToFrequency(\horstoeko\ubl\entities\cbc\Frequency $frequency)
     {
@@ -327,7 +327,7 @@ class FrameworkAgreementType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetFrequency($index)
@@ -347,7 +347,7 @@ class FrameworkAgreementType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetFrequency($index)
@@ -386,7 +386,7 @@ class FrameworkAgreementType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Frequency[] $frequency
+     * @param  \horstoeko\ubl\entities\cbc\Frequency[] $frequency
      * @return self
      */
     public function setFrequency(array $frequency)
@@ -428,7 +428,7 @@ class FrameworkAgreementType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\DurationPeriod $durationPeriod
+     * @param  \horstoeko\ubl\entities\cac\DurationPeriod $durationPeriod
      * @return self
      */
     public function setDurationPeriod(\horstoeko\ubl\entities\cac\DurationPeriod $durationPeriod)
@@ -452,7 +452,7 @@ class FrameworkAgreementType
      *  Curricula required
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\SubsequentProcessTenderRequirement $subsequentProcessTenderRequirement
+     * @param  \horstoeko\ubl\entities\cac\SubsequentProcessTenderRequirement $subsequentProcessTenderRequirement
      */
     public function addToSubsequentProcessTenderRequirement(\horstoeko\ubl\entities\cac\SubsequentProcessTenderRequirement $subsequentProcessTenderRequirement)
     {
@@ -474,7 +474,7 @@ class FrameworkAgreementType
      *  Tender Requirement
      *  Curricula required
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSubsequentProcessTenderRequirement($index)
@@ -496,7 +496,7 @@ class FrameworkAgreementType
      *  Tender Requirement
      *  Curricula required
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSubsequentProcessTenderRequirement($index)
@@ -539,7 +539,7 @@ class FrameworkAgreementType
      *  Tender Requirement
      *  Curricula required
      *
-     * @param \horstoeko\ubl\entities\cac\SubsequentProcessTenderRequirement[] $subsequentProcessTenderRequirement
+     * @param  \horstoeko\ubl\entities\cac\SubsequentProcessTenderRequirement[] $subsequentProcessTenderRequirement
      * @return self
      */
     public function setSubsequentProcessTenderRequirement(array $subsequentProcessTenderRequirement)

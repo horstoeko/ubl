@@ -242,7 +242,7 @@ class AwardingCriterionType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -282,7 +282,7 @@ class AwardingCriterionType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AwardingCriterionTypeCode $awardingCriterionTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\AwardingCriterionTypeCode $awardingCriterionTypeCode
      * @return self
      */
     public function setAwardingCriterionTypeCode(\horstoeko\ubl\entities\cbc\AwardingCriterionTypeCode $awardingCriterionTypeCode)
@@ -304,7 +304,7 @@ class AwardingCriterionType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -324,7 +324,7 @@ class AwardingCriterionType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -344,7 +344,7 @@ class AwardingCriterionType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -383,7 +383,7 @@ class AwardingCriterionType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -423,7 +423,7 @@ class AwardingCriterionType
      *  Numeric
      *  Numeric. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\WeightNumeric $weightNumeric
+     * @param  \horstoeko\ubl\entities\cbc\WeightNumeric $weightNumeric
      * @return self
      */
     public function setWeightNumeric(\horstoeko\ubl\entities\cbc\WeightNumeric $weightNumeric)
@@ -445,7 +445,7 @@ class AwardingCriterionType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Weight $weight
+     * @param  \horstoeko\ubl\entities\cbc\Weight $weight
      */
     public function addToWeight(\horstoeko\ubl\entities\cbc\Weight $weight)
     {
@@ -465,7 +465,7 @@ class AwardingCriterionType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetWeight($index)
@@ -485,7 +485,7 @@ class AwardingCriterionType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetWeight($index)
@@ -524,7 +524,7 @@ class AwardingCriterionType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Weight[] $weight
+     * @param  \horstoeko\ubl\entities\cbc\Weight[] $weight
      * @return self
      */
     public function setWeight(array $weight)
@@ -546,7 +546,7 @@ class AwardingCriterionType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\CalculationExpression $calculationExpression
+     * @param  \horstoeko\ubl\entities\cbc\CalculationExpression $calculationExpression
      */
     public function addToCalculationExpression(\horstoeko\ubl\entities\cbc\CalculationExpression $calculationExpression)
     {
@@ -566,7 +566,7 @@ class AwardingCriterionType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetCalculationExpression($index)
@@ -586,7 +586,7 @@ class AwardingCriterionType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetCalculationExpression($index)
@@ -625,7 +625,7 @@ class AwardingCriterionType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CalculationExpression[] $calculationExpression
+     * @param  \horstoeko\ubl\entities\cbc\CalculationExpression[] $calculationExpression
      * @return self
      */
     public function setCalculationExpression(array $calculationExpression)
@@ -665,7 +665,7 @@ class AwardingCriterionType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CalculationExpressionCode $calculationExpressionCode
+     * @param  \horstoeko\ubl\entities\cbc\CalculationExpressionCode $calculationExpressionCode
      * @return self
      */
     public function setCalculationExpressionCode(\horstoeko\ubl\entities\cbc\CalculationExpressionCode $calculationExpressionCode)
@@ -707,7 +707,7 @@ class AwardingCriterionType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MinimumQuantity $minimumQuantity
+     * @param  \horstoeko\ubl\entities\cbc\MinimumQuantity $minimumQuantity
      * @return self
      */
     public function setMinimumQuantity(\horstoeko\ubl\entities\cbc\MinimumQuantity $minimumQuantity)
@@ -749,7 +749,7 @@ class AwardingCriterionType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MaximumQuantity $maximumQuantity
+     * @param  \horstoeko\ubl\entities\cbc\MaximumQuantity $maximumQuantity
      * @return self
      */
     public function setMaximumQuantity(\horstoeko\ubl\entities\cbc\MaximumQuantity $maximumQuantity)
@@ -791,7 +791,7 @@ class AwardingCriterionType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MinimumAmount $minimumAmount
+     * @param  \horstoeko\ubl\entities\cbc\MinimumAmount $minimumAmount
      * @return self
      */
     public function setMinimumAmount(\horstoeko\ubl\entities\cbc\MinimumAmount $minimumAmount)
@@ -833,7 +833,7 @@ class AwardingCriterionType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MaximumAmount $maximumAmount
+     * @param  \horstoeko\ubl\entities\cbc\MaximumAmount $maximumAmount
      * @return self
      */
     public function setMaximumAmount(\horstoeko\ubl\entities\cbc\MaximumAmount $maximumAmount)
@@ -855,7 +855,7 @@ class AwardingCriterionType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\MinimumImprovementBid $minimumImprovementBid
+     * @param  \horstoeko\ubl\entities\cbc\MinimumImprovementBid $minimumImprovementBid
      */
     public function addToMinimumImprovementBid(\horstoeko\ubl\entities\cbc\MinimumImprovementBid $minimumImprovementBid)
     {
@@ -875,7 +875,7 @@ class AwardingCriterionType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetMinimumImprovementBid($index)
@@ -895,7 +895,7 @@ class AwardingCriterionType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetMinimumImprovementBid($index)
@@ -934,7 +934,7 @@ class AwardingCriterionType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MinimumImprovementBid[] $minimumImprovementBid
+     * @param  \horstoeko\ubl\entities\cbc\MinimumImprovementBid[] $minimumImprovementBid
      * @return self
      */
     public function setMinimumImprovementBid(array $minimumImprovementBid)
@@ -957,7 +957,7 @@ class AwardingCriterionType
      *  Awarding Criterion
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\SubordinateAwardingCriterion $subordinateAwardingCriterion
+     * @param  \horstoeko\ubl\entities\cac\SubordinateAwardingCriterion $subordinateAwardingCriterion
      */
     public function addToSubordinateAwardingCriterion(\horstoeko\ubl\entities\cac\SubordinateAwardingCriterion $subordinateAwardingCriterion)
     {
@@ -978,7 +978,7 @@ class AwardingCriterionType
      *  Awarding Criterion
      *  Awarding Criterion
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSubordinateAwardingCriterion($index)
@@ -999,7 +999,7 @@ class AwardingCriterionType
      *  Awarding Criterion
      *  Awarding Criterion
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSubordinateAwardingCriterion($index)
@@ -1040,7 +1040,7 @@ class AwardingCriterionType
      *  Awarding Criterion
      *  Awarding Criterion
      *
-     * @param \horstoeko\ubl\entities\cac\SubordinateAwardingCriterion[] $subordinateAwardingCriterion
+     * @param  \horstoeko\ubl\entities\cac\SubordinateAwardingCriterion[] $subordinateAwardingCriterion
      * @return self
      */
     public function setSubordinateAwardingCriterion(array $subordinateAwardingCriterion)

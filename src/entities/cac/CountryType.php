@@ -77,7 +77,7 @@ class CountryType
      *  Country Identification
      *  Country Identification_ Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\IdentificationCode $identificationCode
+     * @param  \horstoeko\ubl\entities\cbc\IdentificationCode $identificationCode
      * @return self
      */
     public function setIdentificationCode(\horstoeko\ubl\entities\cbc\IdentificationCode $identificationCode)
@@ -119,7 +119,7 @@ class CountryType
      *  Name. Type
      *  SOUTH AFRICA
      *
-     * @param \horstoeko\ubl\entities\cbc\Name $name
+     * @param  \horstoeko\ubl\entities\cbc\Name $name
      * @return self
      */
     public function setName(\horstoeko\ubl\entities\cbc\Name $name)

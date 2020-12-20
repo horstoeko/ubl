@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing ValidityStartDateType
  *
- *
  * XSD Type: ValidityStartDateType
  */
 class ValidityStartDateType
@@ -29,7 +28,7 @@ class ValidityStartDateType
     /**
      * Gets or sets the inner value
      *
-     * @param \DateTime $value
+     * @param  \DateTime $value
      * @return \DateTime
      */
     public function value()

@@ -160,7 +160,7 @@ class ForecastExceptionType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ForecastPurposeCode $forecastPurposeCode
+     * @param  \horstoeko\ubl\entities\cbc\ForecastPurposeCode $forecastPurposeCode
      * @return self
      */
     public function setForecastPurposeCode(\horstoeko\ubl\entities\cbc\ForecastPurposeCode $forecastPurposeCode)
@@ -200,7 +200,7 @@ class ForecastExceptionType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ForecastTypeCode $forecastTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\ForecastTypeCode $forecastTypeCode
      * @return self
      */
     public function setForecastTypeCode(\horstoeko\ubl\entities\cbc\ForecastTypeCode $forecastTypeCode)
@@ -240,7 +240,7 @@ class ForecastExceptionType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $issueDate
+     * @param  \DateTime $issueDate
      * @return self
      */
     public function setIssueDate(\DateTime $issueDate)
@@ -280,7 +280,7 @@ class ForecastExceptionType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $issueTime
+     * @param  \DateTime $issueTime
      * @return self
      */
     public function setIssueTime(\DateTime $issueTime)
@@ -320,7 +320,7 @@ class ForecastExceptionType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\DataSourceCode $dataSourceCode
+     * @param  \horstoeko\ubl\entities\cbc\DataSourceCode $dataSourceCode
      * @return self
      */
     public function setDataSourceCode(\horstoeko\ubl\entities\cbc\DataSourceCode $dataSourceCode)
@@ -360,7 +360,7 @@ class ForecastExceptionType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ComparisonDataCode $comparisonDataCode
+     * @param  \horstoeko\ubl\entities\cbc\ComparisonDataCode $comparisonDataCode
      * @return self
      */
     public function setComparisonDataCode(\horstoeko\ubl\entities\cbc\ComparisonDataCode $comparisonDataCode)
@@ -400,7 +400,7 @@ class ForecastExceptionType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $comparisonForecastIssueTime
+     * @param  \DateTime $comparisonForecastIssueTime
      * @return self
      */
     public function setComparisonForecastIssueTime(\DateTime $comparisonForecastIssueTime)
@@ -440,7 +440,7 @@ class ForecastExceptionType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $comparisonForecastIssueDate
+     * @param  \DateTime $comparisonForecastIssueDate
      * @return self
      */
     public function setComparisonForecastIssueDate(\DateTime $comparisonForecastIssueDate)

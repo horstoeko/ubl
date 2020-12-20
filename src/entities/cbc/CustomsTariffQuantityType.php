@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\QuantityType;
 /**
  * Class representing CustomsTariffQuantityType
  *
- *
  * XSD Type: CustomsTariffQuantityType
  */
 class CustomsTariffQuantityType extends QuantityType

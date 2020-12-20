@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\MeasureType;
 /**
  * Class representing AltitudeMeasureType
  *
- *
  * XSD Type: AltitudeMeasureType
  */
 class AltitudeMeasureType extends MeasureType

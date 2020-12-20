@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing SigPolicyQualifiersListType
  *
- *
  * XSD Type: SigPolicyQualifiersListType
  */
 class SigPolicyQualifiersListType
@@ -22,7 +21,7 @@ class SigPolicyQualifiersListType
      * Adds as sigPolicyQualifier
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\AnyType $sigPolicyQualifier
+     * @param  \horstoeko\ubl\entities\xades\AnyType $sigPolicyQualifier
      */
     public function addToSigPolicyQualifier(\horstoeko\ubl\entities\xades\AnyType $sigPolicyQualifier)
     {
@@ -33,7 +32,7 @@ class SigPolicyQualifiersListType
     /**
      * isset sigPolicyQualifier
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSigPolicyQualifier($index)
@@ -44,7 +43,7 @@ class SigPolicyQualifiersListType
     /**
      * unset sigPolicyQualifier
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSigPolicyQualifier($index)
@@ -65,7 +64,7 @@ class SigPolicyQualifiersListType
     /**
      * Sets a new sigPolicyQualifier
      *
-     * @param \horstoeko\ubl\entities\xades\AnyType[] $sigPolicyQualifier
+     * @param  \horstoeko\ubl\entities\xades\AnyType[] $sigPolicyQualifier
      * @return self
      */
     public function setSigPolicyQualifier(array $sigPolicyQualifier)

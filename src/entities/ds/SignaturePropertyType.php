@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\ds;
 /**
  * Class representing SignaturePropertyType
  *
- *
  * XSD Type: SignaturePropertyType
  */
 class SignaturePropertyType
@@ -34,7 +33,7 @@ class SignaturePropertyType
     /**
      * Sets a new target
      *
-     * @param string $target
+     * @param  string $target
      * @return self
      */
     public function setTarget($target)
@@ -56,7 +55,7 @@ class SignaturePropertyType
     /**
      * Sets a new id
      *
-     * @param string $id
+     * @param  string $id
      * @return self
      */
     public function setId($id)

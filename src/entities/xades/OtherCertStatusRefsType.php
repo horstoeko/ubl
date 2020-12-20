@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing OtherCertStatusRefsType
  *
- *
  * XSD Type: OtherCertStatusRefsType
  */
 class OtherCertStatusRefsType
@@ -22,7 +21,7 @@ class OtherCertStatusRefsType
      * Adds as otherRef
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\AnyType $otherRef
+     * @param  \horstoeko\ubl\entities\xades\AnyType $otherRef
      */
     public function addToOtherRef(\horstoeko\ubl\entities\xades\AnyType $otherRef)
     {
@@ -33,7 +32,7 @@ class OtherCertStatusRefsType
     /**
      * isset otherRef
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetOtherRef($index)
@@ -44,7 +43,7 @@ class OtherCertStatusRefsType
     /**
      * unset otherRef
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetOtherRef($index)
@@ -65,7 +64,7 @@ class OtherCertStatusRefsType
     /**
      * Sets a new otherRef
      *
-     * @param \horstoeko\ubl\entities\xades\AnyType[] $otherRef
+     * @param  \horstoeko\ubl\entities\xades\AnyType[] $otherRef
      * @return self
      */
     public function setOtherRef(array $otherRef)

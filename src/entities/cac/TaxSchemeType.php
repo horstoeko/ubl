@@ -124,7 +124,7 @@ class TaxSchemeType
      *  Identifier. Type
      *  http://www.unece.org/uncefact/codelist/standard/EDIFICASEU_TaxExemptionReason_D09B.xsd
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -166,7 +166,7 @@ class TaxSchemeType
      *  Name. Type
      *  Value Added Tax , Wholesale Tax , Sales Tax , State Tax
      *
-     * @param \horstoeko\ubl\entities\cbc\Name $name
+     * @param  \horstoeko\ubl\entities\cbc\Name $name
      * @return self
      */
     public function setName(\horstoeko\ubl\entities\cbc\Name $name)
@@ -208,7 +208,7 @@ class TaxSchemeType
      *  Code. Type
      *  Consumption , Sales
      *
-     * @param \horstoeko\ubl\entities\cbc\TaxTypeCode $taxTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\TaxTypeCode $taxTypeCode
      * @return self
      */
     public function setTaxTypeCode(\horstoeko\ubl\entities\cbc\TaxTypeCode $taxTypeCode)
@@ -250,7 +250,7 @@ class TaxSchemeType
      *  Currency
      *  Currency_ Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CurrencyCode $currencyCode
+     * @param  \horstoeko\ubl\entities\cbc\CurrencyCode $currencyCode
      * @return self
      */
     public function setCurrencyCode(\horstoeko\ubl\entities\cbc\CurrencyCode $currencyCode)
@@ -273,7 +273,7 @@ class TaxSchemeType
      *  Address
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\JurisdictionRegionAddress $jurisdictionRegionAddress
+     * @param  \horstoeko\ubl\entities\cac\JurisdictionRegionAddress $jurisdictionRegionAddress
      */
     public function addToJurisdictionRegionAddress(\horstoeko\ubl\entities\cac\JurisdictionRegionAddress $jurisdictionRegionAddress)
     {
@@ -294,7 +294,7 @@ class TaxSchemeType
      *  Address
      *  Address
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetJurisdictionRegionAddress($index)
@@ -315,7 +315,7 @@ class TaxSchemeType
      *  Address
      *  Address
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetJurisdictionRegionAddress($index)
@@ -356,7 +356,7 @@ class TaxSchemeType
      *  Address
      *  Address
      *
-     * @param \horstoeko\ubl\entities\cac\JurisdictionRegionAddress[] $jurisdictionRegionAddress
+     * @param  \horstoeko\ubl\entities\cac\JurisdictionRegionAddress[] $jurisdictionRegionAddress
      * @return self
      */
     public function setJurisdictionRegionAddress(array $jurisdictionRegionAddress)

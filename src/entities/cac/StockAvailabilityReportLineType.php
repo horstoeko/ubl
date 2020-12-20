@@ -145,7 +145,7 @@ class StockAvailabilityReportLineType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -167,7 +167,7 @@ class StockAvailabilityReportLineType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param  \horstoeko\ubl\entities\cbc\Note $note
      */
     public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
     {
@@ -187,7 +187,7 @@ class StockAvailabilityReportLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNote($index)
@@ -207,7 +207,7 @@ class StockAvailabilityReportLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNote($index)
@@ -246,7 +246,7 @@ class StockAvailabilityReportLineType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note[] $note
+     * @param  \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
     public function setNote(array $note)
@@ -286,7 +286,7 @@ class StockAvailabilityReportLineType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Quantity $quantity
+     * @param  \horstoeko\ubl\entities\cbc\Quantity $quantity
      * @return self
      */
     public function setQuantity(\horstoeko\ubl\entities\cbc\Quantity $quantity)
@@ -326,7 +326,7 @@ class StockAvailabilityReportLineType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ValueAmount $valueAmount
+     * @param  \horstoeko\ubl\entities\cbc\ValueAmount $valueAmount
      * @return self
      */
     public function setValueAmount(\horstoeko\ubl\entities\cbc\ValueAmount $valueAmount)
@@ -366,7 +366,7 @@ class StockAvailabilityReportLineType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $availabilityDate
+     * @param  \DateTime $availabilityDate
      * @return self
      */
     public function setAvailabilityDate(\DateTime $availabilityDate)
@@ -406,7 +406,7 @@ class StockAvailabilityReportLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AvailabilityStatusCode $availabilityStatusCode
+     * @param  \horstoeko\ubl\entities\cbc\AvailabilityStatusCode $availabilityStatusCode
      * @return self
      */
     public function setAvailabilityStatusCode(\horstoeko\ubl\entities\cbc\AvailabilityStatusCode $availabilityStatusCode)
@@ -446,7 +446,7 @@ class StockAvailabilityReportLineType
      *  Item
      *  Item
      *
-     * @param \horstoeko\ubl\entities\cac\Item $item
+     * @param  \horstoeko\ubl\entities\cac\Item $item
      * @return self
      */
     public function setItem(\horstoeko\ubl\entities\cac\Item $item)

@@ -138,7 +138,7 @@ class NotificationRequirementType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\NotificationTypeCode $notificationTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\NotificationTypeCode $notificationTypeCode
      * @return self
      */
     public function setNotificationTypeCode(\horstoeko\ubl\entities\cbc\NotificationTypeCode $notificationTypeCode)
@@ -178,7 +178,7 @@ class NotificationRequirementType
      *  Measure
      *  Measure. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PostEventNotificationDurationMeasure $postEventNotificationDurationMeasure
+     * @param  \horstoeko\ubl\entities\cbc\PostEventNotificationDurationMeasure $postEventNotificationDurationMeasure
      * @return self
      */
     public function setPostEventNotificationDurationMeasure(\horstoeko\ubl\entities\cbc\PostEventNotificationDurationMeasure $postEventNotificationDurationMeasure)
@@ -218,7 +218,7 @@ class NotificationRequirementType
      *  Measure
      *  Measure. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PreEventNotificationDurationMeasure $preEventNotificationDurationMeasure
+     * @param  \horstoeko\ubl\entities\cbc\PreEventNotificationDurationMeasure $preEventNotificationDurationMeasure
      * @return self
      */
     public function setPreEventNotificationDurationMeasure(\horstoeko\ubl\entities\cbc\PreEventNotificationDurationMeasure $preEventNotificationDurationMeasure)
@@ -241,7 +241,7 @@ class NotificationRequirementType
      *  Party
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\NotifyParty $notifyParty
+     * @param  \horstoeko\ubl\entities\cac\NotifyParty $notifyParty
      */
     public function addToNotifyParty(\horstoeko\ubl\entities\cac\NotifyParty $notifyParty)
     {
@@ -262,7 +262,7 @@ class NotificationRequirementType
      *  Party
      *  Party
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNotifyParty($index)
@@ -283,7 +283,7 @@ class NotificationRequirementType
      *  Party
      *  Party
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNotifyParty($index)
@@ -324,7 +324,7 @@ class NotificationRequirementType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\NotifyParty[] $notifyParty
+     * @param  \horstoeko\ubl\entities\cac\NotifyParty[] $notifyParty
      * @return self
      */
     public function setNotifyParty(array $notifyParty)
@@ -347,7 +347,7 @@ class NotificationRequirementType
      *  Period
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\NotificationPeriod $notificationPeriod
+     * @param  \horstoeko\ubl\entities\cac\NotificationPeriod $notificationPeriod
      */
     public function addToNotificationPeriod(\horstoeko\ubl\entities\cac\NotificationPeriod $notificationPeriod)
     {
@@ -368,7 +368,7 @@ class NotificationRequirementType
      *  Period
      *  Period
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNotificationPeriod($index)
@@ -389,7 +389,7 @@ class NotificationRequirementType
      *  Period
      *  Period
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNotificationPeriod($index)
@@ -430,7 +430,7 @@ class NotificationRequirementType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\NotificationPeriod[] $notificationPeriod
+     * @param  \horstoeko\ubl\entities\cac\NotificationPeriod[] $notificationPeriod
      * @return self
      */
     public function setNotificationPeriod(array $notificationPeriod)
@@ -453,7 +453,7 @@ class NotificationRequirementType
      *  Location
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\NotificationLocation $notificationLocation
+     * @param  \horstoeko\ubl\entities\cac\NotificationLocation $notificationLocation
      */
     public function addToNotificationLocation(\horstoeko\ubl\entities\cac\NotificationLocation $notificationLocation)
     {
@@ -474,7 +474,7 @@ class NotificationRequirementType
      *  Location
      *  Location
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNotificationLocation($index)
@@ -495,7 +495,7 @@ class NotificationRequirementType
      *  Location
      *  Location
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNotificationLocation($index)
@@ -536,7 +536,7 @@ class NotificationRequirementType
      *  Location
      *  Location
      *
-     * @param \horstoeko\ubl\entities\cac\NotificationLocation[] $notificationLocation
+     * @param  \horstoeko\ubl\entities\cac\NotificationLocation[] $notificationLocation
      * @return self
      */
     public function setNotificationLocation(array $notificationLocation)

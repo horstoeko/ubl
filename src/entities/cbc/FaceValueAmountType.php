@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\AmountType;
 /**
  * Class representing FaceValueAmountType
  *
- *
  * XSD Type: FaceValueAmountType
  */
 class FaceValueAmountType extends AmountType

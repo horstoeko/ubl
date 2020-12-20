@@ -150,7 +150,7 @@ class CertificateType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -190,7 +190,7 @@ class CertificateType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CertificateTypeCode $certificateTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\CertificateTypeCode $certificateTypeCode
      * @return self
      */
     public function setCertificateTypeCode(\horstoeko\ubl\entities\cbc\CertificateTypeCode $certificateTypeCode)
@@ -230,7 +230,7 @@ class CertificateType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CertificateType $certificateType
+     * @param  \horstoeko\ubl\entities\cbc\CertificateType $certificateType
      * @return self
      */
     public function setCertificateType(\horstoeko\ubl\entities\cbc\CertificateType $certificateType)
@@ -252,7 +252,7 @@ class CertificateType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Remarks $remarks
+     * @param  \horstoeko\ubl\entities\cbc\Remarks $remarks
      */
     public function addToRemarks(\horstoeko\ubl\entities\cbc\Remarks $remarks)
     {
@@ -272,7 +272,7 @@ class CertificateType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetRemarks($index)
@@ -292,7 +292,7 @@ class CertificateType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetRemarks($index)
@@ -331,7 +331,7 @@ class CertificateType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Remarks[] $remarks
+     * @param  \horstoeko\ubl\entities\cbc\Remarks[] $remarks
      * @return self
      */
     public function setRemarks(array $remarks)
@@ -373,7 +373,7 @@ class CertificateType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\IssuerParty $issuerParty
+     * @param  \horstoeko\ubl\entities\cac\IssuerParty $issuerParty
      * @return self
      */
     public function setIssuerParty(\horstoeko\ubl\entities\cac\IssuerParty $issuerParty)
@@ -395,7 +395,7 @@ class CertificateType
      *  Document Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\DocumentReference $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference $documentReference
      */
     public function addToDocumentReference(\horstoeko\ubl\entities\cac\DocumentReference $documentReference)
     {
@@ -415,7 +415,7 @@ class CertificateType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDocumentReference($index)
@@ -435,7 +435,7 @@ class CertificateType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDocumentReference($index)
@@ -474,7 +474,7 @@ class CertificateType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\DocumentReference[] $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference[] $documentReference
      * @return self
      */
     public function setDocumentReference(array $documentReference)
@@ -496,7 +496,7 @@ class CertificateType
      *  Signature
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Signature $signature
+     * @param  \horstoeko\ubl\entities\cac\Signature $signature
      */
     public function addToSignature(\horstoeko\ubl\entities\cac\Signature $signature)
     {
@@ -516,7 +516,7 @@ class CertificateType
      *  Signature
      *  Signature
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSignature($index)
@@ -536,7 +536,7 @@ class CertificateType
      *  Signature
      *  Signature
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSignature($index)
@@ -575,7 +575,7 @@ class CertificateType
      *  Signature
      *  Signature
      *
-     * @param \horstoeko\ubl\entities\cac\Signature[] $signature
+     * @param  \horstoeko\ubl\entities\cac\Signature[] $signature
      * @return self
      */
     public function setSignature(array $signature)

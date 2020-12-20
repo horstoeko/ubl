@@ -233,7 +233,7 @@ class LocationType
      *  Identifier. Type
      *  5790002221134
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -255,7 +255,7 @@ class LocationType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -275,7 +275,7 @@ class LocationType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -295,7 +295,7 @@ class LocationType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -334,7 +334,7 @@ class LocationType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -356,7 +356,7 @@ class LocationType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Conditions $conditions
+     * @param  \horstoeko\ubl\entities\cbc\Conditions $conditions
      */
     public function addToConditions(\horstoeko\ubl\entities\cbc\Conditions $conditions)
     {
@@ -376,7 +376,7 @@ class LocationType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetConditions($index)
@@ -396,7 +396,7 @@ class LocationType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetConditions($index)
@@ -435,7 +435,7 @@ class LocationType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Conditions[] $conditions
+     * @param  \horstoeko\ubl\entities\cbc\Conditions[] $conditions
      * @return self
      */
     public function setConditions(array $conditions)
@@ -479,7 +479,7 @@ class LocationType
      *  AdministrativeArea, State, Country, Shire, Canton
      *  Florida , Tamilnadu
      *
-     * @param \horstoeko\ubl\entities\cbc\CountrySubentity $countrySubentity
+     * @param  \horstoeko\ubl\entities\cbc\CountrySubentity $countrySubentity
      * @return self
      */
     public function setCountrySubentity(\horstoeko\ubl\entities\cbc\CountrySubentity $countrySubentity)
@@ -521,7 +521,7 @@ class LocationType
      *  Code. Type
      *  AdministrativeAreaCode, State Code
      *
-     * @param \horstoeko\ubl\entities\cbc\CountrySubentityCode $countrySubentityCode
+     * @param  \horstoeko\ubl\entities\cbc\CountrySubentityCode $countrySubentityCode
      * @return self
      */
     public function setCountrySubentityCode(\horstoeko\ubl\entities\cbc\CountrySubentityCode $countrySubentityCode)
@@ -561,7 +561,7 @@ class LocationType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LocationTypeCode $locationTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\LocationTypeCode $locationTypeCode
      * @return self
      */
     public function setLocationTypeCode(\horstoeko\ubl\entities\cbc\LocationTypeCode $locationTypeCode)
@@ -603,7 +603,7 @@ class LocationType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\InformationURI $informationURI
+     * @param  \horstoeko\ubl\entities\cbc\InformationURI $informationURI
      * @return self
      */
     public function setInformationURI(\horstoeko\ubl\entities\cbc\InformationURI $informationURI)
@@ -645,7 +645,7 @@ class LocationType
      *  Name. Type
      *  winter 2005 collection
      *
-     * @param \horstoeko\ubl\entities\cbc\Name $name
+     * @param  \horstoeko\ubl\entities\cbc\Name $name
      * @return self
      */
     public function setName(\horstoeko\ubl\entities\cbc\Name $name)
@@ -668,7 +668,7 @@ class LocationType
      *  Period
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ValidityPeriod $validityPeriod
+     * @param  \horstoeko\ubl\entities\cac\ValidityPeriod $validityPeriod
      */
     public function addToValidityPeriod(\horstoeko\ubl\entities\cac\ValidityPeriod $validityPeriod)
     {
@@ -689,7 +689,7 @@ class LocationType
      *  Period
      *  Period
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetValidityPeriod($index)
@@ -710,7 +710,7 @@ class LocationType
      *  Period
      *  Period
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetValidityPeriod($index)
@@ -751,7 +751,7 @@ class LocationType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\ValidityPeriod[] $validityPeriod
+     * @param  \horstoeko\ubl\entities\cac\ValidityPeriod[] $validityPeriod
      * @return self
      */
     public function setValidityPeriod(array $validityPeriod)
@@ -791,7 +791,7 @@ class LocationType
      *  Address
      *  Address
      *
-     * @param \horstoeko\ubl\entities\cac\Address $address
+     * @param  \horstoeko\ubl\entities\cac\Address $address
      * @return self
      */
     public function setAddress(\horstoeko\ubl\entities\cac\Address $address)
@@ -814,7 +814,7 @@ class LocationType
      *  Location
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\SubsidiaryLocation $subsidiaryLocation
+     * @param  \horstoeko\ubl\entities\cac\SubsidiaryLocation $subsidiaryLocation
      */
     public function addToSubsidiaryLocation(\horstoeko\ubl\entities\cac\SubsidiaryLocation $subsidiaryLocation)
     {
@@ -835,7 +835,7 @@ class LocationType
      *  Location
      *  Location
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSubsidiaryLocation($index)
@@ -856,7 +856,7 @@ class LocationType
      *  Location
      *  Location
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSubsidiaryLocation($index)
@@ -897,7 +897,7 @@ class LocationType
      *  Location
      *  Location
      *
-     * @param \horstoeko\ubl\entities\cac\SubsidiaryLocation[] $subsidiaryLocation
+     * @param  \horstoeko\ubl\entities\cac\SubsidiaryLocation[] $subsidiaryLocation
      * @return self
      */
     public function setSubsidiaryLocation(array $subsidiaryLocation)
@@ -919,7 +919,7 @@ class LocationType
      *  Location Coordinate
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\LocationCoordinate $locationCoordinate
+     * @param  \horstoeko\ubl\entities\cac\LocationCoordinate $locationCoordinate
      */
     public function addToLocationCoordinate(\horstoeko\ubl\entities\cac\LocationCoordinate $locationCoordinate)
     {
@@ -939,7 +939,7 @@ class LocationType
      *  Location Coordinate
      *  Location Coordinate
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetLocationCoordinate($index)
@@ -959,7 +959,7 @@ class LocationType
      *  Location Coordinate
      *  Location Coordinate
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetLocationCoordinate($index)
@@ -998,7 +998,7 @@ class LocationType
      *  Location Coordinate
      *  Location Coordinate
      *
-     * @param \horstoeko\ubl\entities\cac\LocationCoordinate[] $locationCoordinate
+     * @param  \horstoeko\ubl\entities\cac\LocationCoordinate[] $locationCoordinate
      * @return self
      */
     public function setLocationCoordinate(array $locationCoordinate)

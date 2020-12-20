@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing DocumentHashType
  *
- *
  * XSD Type: DocumentHashType
  */
 class DocumentHashType extends TextType

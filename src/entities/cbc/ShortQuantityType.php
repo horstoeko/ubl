@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\QuantityType;
 /**
  * Class representing ShortQuantityType
  *
- *
  * XSD Type: ShortQuantityType
  */
 class ShortQuantityType extends QuantityType

@@ -330,7 +330,7 @@ class DespatchType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -372,7 +372,7 @@ class DespatchType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $requestedDespatchDate
+     * @param  \DateTime $requestedDespatchDate
      * @return self
      */
     public function setRequestedDespatchDate(\DateTime $requestedDespatchDate)
@@ -414,7 +414,7 @@ class DespatchType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $requestedDespatchTime
+     * @param  \DateTime $requestedDespatchTime
      * @return self
      */
     public function setRequestedDespatchTime(\DateTime $requestedDespatchTime)
@@ -456,7 +456,7 @@ class DespatchType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $estimatedDespatchDate
+     * @param  \DateTime $estimatedDespatchDate
      * @return self
      */
     public function setEstimatedDespatchDate(\DateTime $estimatedDespatchDate)
@@ -498,7 +498,7 @@ class DespatchType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $estimatedDespatchTime
+     * @param  \DateTime $estimatedDespatchTime
      * @return self
      */
     public function setEstimatedDespatchTime(\DateTime $estimatedDespatchTime)
@@ -540,7 +540,7 @@ class DespatchType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $actualDespatchDate
+     * @param  \DateTime $actualDespatchDate
      * @return self
      */
     public function setActualDespatchDate(\DateTime $actualDespatchDate)
@@ -582,7 +582,7 @@ class DespatchType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $actualDespatchTime
+     * @param  \DateTime $actualDespatchTime
      * @return self
      */
     public function setActualDespatchTime(\DateTime $actualDespatchTime)
@@ -624,7 +624,7 @@ class DespatchType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $guaranteedDespatchDate
+     * @param  \DateTime $guaranteedDespatchDate
      * @return self
      */
     public function setGuaranteedDespatchDate(\DateTime $guaranteedDespatchDate)
@@ -666,7 +666,7 @@ class DespatchType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $guaranteedDespatchTime
+     * @param  \DateTime $guaranteedDespatchTime
      * @return self
      */
     public function setGuaranteedDespatchTime(\DateTime $guaranteedDespatchTime)
@@ -706,7 +706,7 @@ class DespatchType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ReleaseID $releaseID
+     * @param  \horstoeko\ubl\entities\cbc\ReleaseID $releaseID
      * @return self
      */
     public function setReleaseID(\horstoeko\ubl\entities\cbc\ReleaseID $releaseID)
@@ -728,7 +728,7 @@ class DespatchType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Instructions $instructions
+     * @param  \horstoeko\ubl\entities\cbc\Instructions $instructions
      */
     public function addToInstructions(\horstoeko\ubl\entities\cbc\Instructions $instructions)
     {
@@ -748,7 +748,7 @@ class DespatchType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetInstructions($index)
@@ -768,7 +768,7 @@ class DespatchType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetInstructions($index)
@@ -807,7 +807,7 @@ class DespatchType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Instructions[] $instructions
+     * @param  \horstoeko\ubl\entities\cbc\Instructions[] $instructions
      * @return self
      */
     public function setInstructions(array $instructions)
@@ -849,7 +849,7 @@ class DespatchType
      *  Address
      *  Address
      *
-     * @param \horstoeko\ubl\entities\cac\DespatchAddress $despatchAddress
+     * @param  \horstoeko\ubl\entities\cac\DespatchAddress $despatchAddress
      * @return self
      */
     public function setDespatchAddress(\horstoeko\ubl\entities\cac\DespatchAddress $despatchAddress)
@@ -891,7 +891,7 @@ class DespatchType
      *  Location
      *  Location
      *
-     * @param \horstoeko\ubl\entities\cac\DespatchLocation $despatchLocation
+     * @param  \horstoeko\ubl\entities\cac\DespatchLocation $despatchLocation
      * @return self
      */
     public function setDespatchLocation(\horstoeko\ubl\entities\cac\DespatchLocation $despatchLocation)
@@ -933,7 +933,7 @@ class DespatchType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\DespatchParty $despatchParty
+     * @param  \horstoeko\ubl\entities\cac\DespatchParty $despatchParty
      * @return self
      */
     public function setDespatchParty(\horstoeko\ubl\entities\cac\DespatchParty $despatchParty)
@@ -975,7 +975,7 @@ class DespatchType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\CarrierParty $carrierParty
+     * @param  \horstoeko\ubl\entities\cac\CarrierParty $carrierParty
      * @return self
      */
     public function setCarrierParty(\horstoeko\ubl\entities\cac\CarrierParty $carrierParty)
@@ -998,7 +998,7 @@ class DespatchType
      *  Party
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\NotifyParty $notifyParty
+     * @param  \horstoeko\ubl\entities\cac\NotifyParty $notifyParty
      */
     public function addToNotifyParty(\horstoeko\ubl\entities\cac\NotifyParty $notifyParty)
     {
@@ -1019,7 +1019,7 @@ class DespatchType
      *  Party
      *  Party
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNotifyParty($index)
@@ -1040,7 +1040,7 @@ class DespatchType
      *  Party
      *  Party
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNotifyParty($index)
@@ -1081,7 +1081,7 @@ class DespatchType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\NotifyParty[] $notifyParty
+     * @param  \horstoeko\ubl\entities\cac\NotifyParty[] $notifyParty
      * @return self
      */
     public function setNotifyParty(array $notifyParty)
@@ -1121,7 +1121,7 @@ class DespatchType
      *  Contact
      *  Contact
      *
-     * @param \horstoeko\ubl\entities\cac\Contact $contact
+     * @param  \horstoeko\ubl\entities\cac\Contact $contact
      * @return self
      */
     public function setContact(\horstoeko\ubl\entities\cac\Contact $contact)
@@ -1163,7 +1163,7 @@ class DespatchType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\EstimatedDespatchPeriod $estimatedDespatchPeriod
+     * @param  \horstoeko\ubl\entities\cac\EstimatedDespatchPeriod $estimatedDespatchPeriod
      * @return self
      */
     public function setEstimatedDespatchPeriod(\horstoeko\ubl\entities\cac\EstimatedDespatchPeriod $estimatedDespatchPeriod)
@@ -1205,7 +1205,7 @@ class DespatchType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\RequestedDespatchPeriod $requestedDespatchPeriod
+     * @param  \horstoeko\ubl\entities\cac\RequestedDespatchPeriod $requestedDespatchPeriod
      * @return self
      */
     public function setRequestedDespatchPeriod(\horstoeko\ubl\entities\cac\RequestedDespatchPeriod $requestedDespatchPeriod)

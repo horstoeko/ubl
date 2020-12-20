@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\CodeType;
 /**
  * Class representing IndustryClassificationCodeType
  *
- *
  * XSD Type: IndustryClassificationCodeType
  */
 class IndustryClassificationCodeType extends CodeType

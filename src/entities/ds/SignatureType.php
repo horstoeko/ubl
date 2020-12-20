@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\ds;
 /**
  * Class representing SignatureType
  *
- *
  * XSD Type: SignatureType
  */
 class SignatureType
@@ -51,7 +50,7 @@ class SignatureType
     /**
      * Sets a new id
      *
-     * @param string $id
+     * @param  string $id
      * @return self
      */
     public function setId($id)
@@ -73,7 +72,7 @@ class SignatureType
     /**
      * Sets a new signedInfo
      *
-     * @param \horstoeko\ubl\entities\ds\SignedInfo $signedInfo
+     * @param  \horstoeko\ubl\entities\ds\SignedInfo $signedInfo
      * @return self
      */
     public function setSignedInfo(\horstoeko\ubl\entities\ds\SignedInfo $signedInfo)
@@ -95,7 +94,7 @@ class SignatureType
     /**
      * Sets a new signatureValue
      *
-     * @param \horstoeko\ubl\entities\ds\SignatureValue $signatureValue
+     * @param  \horstoeko\ubl\entities\ds\SignatureValue $signatureValue
      * @return self
      */
     public function setSignatureValue(\horstoeko\ubl\entities\ds\SignatureValue $signatureValue)
@@ -117,7 +116,7 @@ class SignatureType
     /**
      * Sets a new keyInfo
      *
-     * @param \horstoeko\ubl\entities\ds\KeyInfo $keyInfo
+     * @param  \horstoeko\ubl\entities\ds\KeyInfo $keyInfo
      * @return self
      */
     public function setKeyInfo(\horstoeko\ubl\entities\ds\KeyInfo $keyInfo)
@@ -130,7 +129,7 @@ class SignatureType
      * Adds as object
      *
      * @return self
-     * @param \horstoeko\ubl\entities\ds\ObjectXsd $object
+     * @param  \horstoeko\ubl\entities\ds\ObjectXsd $object
      */
     public function addToObject(\horstoeko\ubl\entities\ds\ObjectXsd $object)
     {
@@ -141,7 +140,7 @@ class SignatureType
     /**
      * isset object
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetObject($index)
@@ -152,7 +151,7 @@ class SignatureType
     /**
      * unset object
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetObject($index)
@@ -173,7 +172,7 @@ class SignatureType
     /**
      * Sets a new object
      *
-     * @param \horstoeko\ubl\entities\ds\ObjectXsd[] $object
+     * @param  \horstoeko\ubl\entities\ds\ObjectXsd[] $object
      * @return self
      */
     public function setObject(array $object)

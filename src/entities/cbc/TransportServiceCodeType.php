@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\CodeType;
 /**
  * Class representing TransportServiceCodeType
  *
- *
  * XSD Type: TransportServiceCodeType
  */
 class TransportServiceCodeType extends CodeType

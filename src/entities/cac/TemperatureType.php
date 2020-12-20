@@ -90,7 +90,7 @@ class TemperatureType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AttributeID $attributeID
+     * @param  \horstoeko\ubl\entities\cbc\AttributeID $attributeID
      * @return self
      */
     public function setAttributeID(\horstoeko\ubl\entities\cbc\AttributeID $attributeID)
@@ -130,7 +130,7 @@ class TemperatureType
      *  Measure
      *  Measure. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Measure $measure
+     * @param  \horstoeko\ubl\entities\cbc\Measure $measure
      * @return self
      */
     public function setMeasure(\horstoeko\ubl\entities\cbc\Measure $measure)
@@ -153,7 +153,7 @@ class TemperatureType
      *  at sea level
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -174,7 +174,7 @@ class TemperatureType
      *  Text. Type
      *  at sea level
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -195,7 +195,7 @@ class TemperatureType
      *  Text. Type
      *  at sea level
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -236,7 +236,7 @@ class TemperatureType
      *  Text. Type
      *  at sea level
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)

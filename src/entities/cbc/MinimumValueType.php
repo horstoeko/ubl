@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing MinimumValueType
  *
- *
  * XSD Type: MinimumValueType
  */
 class MinimumValueType extends TextType

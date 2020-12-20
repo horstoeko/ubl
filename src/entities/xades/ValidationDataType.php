@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing ValidationDataType
  *
- *
  * XSD Type: ValidationDataType
  */
 class ValidationDataType
@@ -44,7 +43,7 @@ class ValidationDataType
     /**
      * Sets a new id
      *
-     * @param string $id
+     * @param  string $id
      * @return self
      */
     public function setId($id)
@@ -66,7 +65,7 @@ class ValidationDataType
     /**
      * Sets a new uR
      *
-     * @param string $uR
+     * @param  string $uR
      * @return self
      */
     public function setUR($uR)
@@ -88,7 +87,7 @@ class ValidationDataType
     /**
      * Sets a new certificateValues
      *
-     * @param \horstoeko\ubl\entities\xades\CertificateValues $certificateValues
+     * @param  \horstoeko\ubl\entities\xades\CertificateValues $certificateValues
      * @return self
      */
     public function setCertificateValues(\horstoeko\ubl\entities\xades\CertificateValues $certificateValues)
@@ -110,7 +109,7 @@ class ValidationDataType
     /**
      * Sets a new revocationValues
      *
-     * @param \horstoeko\ubl\entities\xades\RevocationValues $revocationValues
+     * @param  \horstoeko\ubl\entities\xades\RevocationValues $revocationValues
      * @return self
      */
     public function setRevocationValues(\horstoeko\ubl\entities\xades\RevocationValues $revocationValues)

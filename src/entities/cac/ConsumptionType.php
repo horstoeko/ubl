@@ -152,7 +152,7 @@ class ConsumptionType
      *  Code. Type
      *  Electricity
      *
-     * @param \horstoeko\ubl\entities\cbc\UtilityStatementTypeCode $utilityStatementTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\UtilityStatementTypeCode $utilityStatementTypeCode
      * @return self
      */
     public function setUtilityStatementTypeCode(\horstoeko\ubl\entities\cbc\UtilityStatementTypeCode $utilityStatementTypeCode)
@@ -194,7 +194,7 @@ class ConsumptionType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\MainPeriod $mainPeriod
+     * @param  \horstoeko\ubl\entities\cac\MainPeriod $mainPeriod
      * @return self
      */
     public function setMainPeriod(\horstoeko\ubl\entities\cac\MainPeriod $mainPeriod)
@@ -216,7 +216,7 @@ class ConsumptionType
      *  Allowance Charge
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge
+     * @param  \horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge
      */
     public function addToAllowanceCharge(\horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge)
     {
@@ -236,7 +236,7 @@ class ConsumptionType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAllowanceCharge($index)
@@ -256,7 +256,7 @@ class ConsumptionType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAllowanceCharge($index)
@@ -295,7 +295,7 @@ class ConsumptionType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param \horstoeko\ubl\entities\cac\AllowanceCharge[] $allowanceCharge
+     * @param  \horstoeko\ubl\entities\cac\AllowanceCharge[] $allowanceCharge
      * @return self
      */
     public function setAllowanceCharge(array $allowanceCharge)
@@ -317,7 +317,7 @@ class ConsumptionType
      *  Tax Total
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\TaxTotal $taxTotal
+     * @param  \horstoeko\ubl\entities\cac\TaxTotal $taxTotal
      */
     public function addToTaxTotal(\horstoeko\ubl\entities\cac\TaxTotal $taxTotal)
     {
@@ -337,7 +337,7 @@ class ConsumptionType
      *  Tax Total
      *  Tax Total
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTaxTotal($index)
@@ -357,7 +357,7 @@ class ConsumptionType
      *  Tax Total
      *  Tax Total
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTaxTotal($index)
@@ -396,7 +396,7 @@ class ConsumptionType
      *  Tax Total
      *  Tax Total
      *
-     * @param \horstoeko\ubl\entities\cac\TaxTotal[] $taxTotal
+     * @param  \horstoeko\ubl\entities\cac\TaxTotal[] $taxTotal
      * @return self
      */
     public function setTaxTotal(array $taxTotal)
@@ -436,7 +436,7 @@ class ConsumptionType
      *  Energy Water Supply
      *  Energy Water Supply
      *
-     * @param \horstoeko\ubl\entities\cac\EnergyWaterSupply $energyWaterSupply
+     * @param  \horstoeko\ubl\entities\cac\EnergyWaterSupply $energyWaterSupply
      * @return self
      */
     public function setEnergyWaterSupply(\horstoeko\ubl\entities\cac\EnergyWaterSupply $energyWaterSupply)
@@ -476,7 +476,7 @@ class ConsumptionType
      *  Telecommunications Supply
      *  Telecommunications Supply
      *
-     * @param \horstoeko\ubl\entities\cac\TelecommunicationsSupply $telecommunicationsSupply
+     * @param  \horstoeko\ubl\entities\cac\TelecommunicationsSupply $telecommunicationsSupply
      * @return self
      */
     public function setTelecommunicationsSupply(\horstoeko\ubl\entities\cac\TelecommunicationsSupply $telecommunicationsSupply)
@@ -518,7 +518,7 @@ class ConsumptionType
      *  Monetary Total
      *  Monetary Total
      *
-     * @param \horstoeko\ubl\entities\cac\LegalMonetaryTotal $legalMonetaryTotal
+     * @param  \horstoeko\ubl\entities\cac\LegalMonetaryTotal $legalMonetaryTotal
      * @return self
      */
     public function setLegalMonetaryTotal(\horstoeko\ubl\entities\cac\LegalMonetaryTotal $legalMonetaryTotal)

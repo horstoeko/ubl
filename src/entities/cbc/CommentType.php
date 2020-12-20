@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing CommentType
  *
- *
  * XSD Type: CommentType
  */
 class CommentType extends TextType

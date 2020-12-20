@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\BinaryObjectType;
 /**
  * Class representing EmbeddedDocumentBinaryObjectType
  *
- *
  * XSD Type: EmbeddedDocumentBinaryObjectType
  */
 class EmbeddedDocumentBinaryObjectType extends BinaryObjectType

@@ -107,7 +107,7 @@ class EnergyTaxReportType
      *  Amount. Type
      *  3087.90
      *
-     * @param \horstoeko\ubl\entities\cbc\TaxEnergyAmount $taxEnergyAmount
+     * @param  \horstoeko\ubl\entities\cbc\TaxEnergyAmount $taxEnergyAmount
      * @return self
      */
     public function setTaxEnergyAmount(\horstoeko\ubl\entities\cbc\TaxEnergyAmount $taxEnergyAmount)
@@ -151,7 +151,7 @@ class EnergyTaxReportType
      *  Amount. Type
      *  2855.40
      *
-     * @param \horstoeko\ubl\entities\cbc\TaxEnergyOnAccountAmount $taxEnergyOnAccountAmount
+     * @param  \horstoeko\ubl\entities\cbc\TaxEnergyOnAccountAmount $taxEnergyOnAccountAmount
      * @return self
      */
     public function setTaxEnergyOnAccountAmount(\horstoeko\ubl\entities\cbc\TaxEnergyOnAccountAmount $taxEnergyOnAccountAmount)
@@ -193,7 +193,7 @@ class EnergyTaxReportType
      *  Amount. Type
      *  232.49
      *
-     * @param \horstoeko\ubl\entities\cbc\TaxEnergyBalanceAmount $taxEnergyBalanceAmount
+     * @param  \horstoeko\ubl\entities\cbc\TaxEnergyBalanceAmount $taxEnergyBalanceAmount
      * @return self
      */
     public function setTaxEnergyBalanceAmount(\horstoeko\ubl\entities\cbc\TaxEnergyBalanceAmount $taxEnergyBalanceAmount)
@@ -233,7 +233,7 @@ class EnergyTaxReportType
      *  Tax Scheme
      *  Tax Scheme
      *
-     * @param \horstoeko\ubl\entities\cac\TaxScheme $taxScheme
+     * @param  \horstoeko\ubl\entities\cac\TaxScheme $taxScheme
      * @return self
      */
     public function setTaxScheme(\horstoeko\ubl\entities\cac\TaxScheme $taxScheme)

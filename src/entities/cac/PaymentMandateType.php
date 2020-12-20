@@ -192,7 +192,7 @@ class PaymentMandateType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -232,7 +232,7 @@ class PaymentMandateType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MandateTypeCode $mandateTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\MandateTypeCode $mandateTypeCode
      * @return self
      */
     public function setMandateTypeCode(\horstoeko\ubl\entities\cbc\MandateTypeCode $mandateTypeCode)
@@ -272,7 +272,7 @@ class PaymentMandateType
      *  Numeric
      *  Numeric. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MaximumPaymentInstructionsNumeric $maximumPaymentInstructionsNumeric
+     * @param  \horstoeko\ubl\entities\cbc\MaximumPaymentInstructionsNumeric $maximumPaymentInstructionsNumeric
      * @return self
      */
     public function setMaximumPaymentInstructionsNumeric(\horstoeko\ubl\entities\cbc\MaximumPaymentInstructionsNumeric $maximumPaymentInstructionsNumeric)
@@ -314,7 +314,7 @@ class PaymentMandateType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MaximumPaidAmount $maximumPaidAmount
+     * @param  \horstoeko\ubl\entities\cbc\MaximumPaidAmount $maximumPaidAmount
      * @return self
      */
     public function setMaximumPaidAmount(\horstoeko\ubl\entities\cbc\MaximumPaidAmount $maximumPaidAmount)
@@ -354,7 +354,7 @@ class PaymentMandateType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SignatureID $signatureID
+     * @param  \horstoeko\ubl\entities\cbc\SignatureID $signatureID
      * @return self
      */
     public function setSignatureID(\horstoeko\ubl\entities\cbc\SignatureID $signatureID)
@@ -396,7 +396,7 @@ class PaymentMandateType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\PayerParty $payerParty
+     * @param  \horstoeko\ubl\entities\cac\PayerParty $payerParty
      * @return self
      */
     public function setPayerParty(\horstoeko\ubl\entities\cac\PayerParty $payerParty)
@@ -438,7 +438,7 @@ class PaymentMandateType
      *  Financial Account
      *  Financial Account
      *
-     * @param \horstoeko\ubl\entities\cac\PayerFinancialAccount $payerFinancialAccount
+     * @param  \horstoeko\ubl\entities\cac\PayerFinancialAccount $payerFinancialAccount
      * @return self
      */
     public function setPayerFinancialAccount(\horstoeko\ubl\entities\cac\PayerFinancialAccount $payerFinancialAccount)
@@ -480,7 +480,7 @@ class PaymentMandateType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\ValidityPeriod $validityPeriod
+     * @param  \horstoeko\ubl\entities\cac\ValidityPeriod $validityPeriod
      * @return self
      */
     public function setValidityPeriod(\horstoeko\ubl\entities\cac\ValidityPeriod $validityPeriod)
@@ -522,7 +522,7 @@ class PaymentMandateType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\PaymentReversalPeriod $paymentReversalPeriod
+     * @param  \horstoeko\ubl\entities\cac\PaymentReversalPeriod $paymentReversalPeriod
      * @return self
      */
     public function setPaymentReversalPeriod(\horstoeko\ubl\entities\cac\PaymentReversalPeriod $paymentReversalPeriod)
@@ -544,7 +544,7 @@ class PaymentMandateType
      *  Clause
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Clause $clause
+     * @param  \horstoeko\ubl\entities\cac\Clause $clause
      */
     public function addToClause(\horstoeko\ubl\entities\cac\Clause $clause)
     {
@@ -564,7 +564,7 @@ class PaymentMandateType
      *  Clause
      *  Clause
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetClause($index)
@@ -584,7 +584,7 @@ class PaymentMandateType
      *  Clause
      *  Clause
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetClause($index)
@@ -623,7 +623,7 @@ class PaymentMandateType
      *  Clause
      *  Clause
      *
-     * @param \horstoeko\ubl\entities\cac\Clause[] $clause
+     * @param  \horstoeko\ubl\entities\cac\Clause[] $clause
      * @return self
      */
     public function setClause(array $clause)

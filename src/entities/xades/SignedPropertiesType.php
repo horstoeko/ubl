@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing SignedPropertiesType
  *
- *
  * XSD Type: SignedPropertiesType
  */
 class SignedPropertiesType
@@ -39,7 +38,7 @@ class SignedPropertiesType
     /**
      * Sets a new id
      *
-     * @param string $id
+     * @param  string $id
      * @return self
      */
     public function setId($id)
@@ -61,7 +60,7 @@ class SignedPropertiesType
     /**
      * Sets a new signedSignatureProperties
      *
-     * @param \horstoeko\ubl\entities\xades\SignedSignaturePropertiesType $signedSignatureProperties
+     * @param  \horstoeko\ubl\entities\xades\SignedSignaturePropertiesType $signedSignatureProperties
      * @return self
      */
     public function setSignedSignatureProperties(\horstoeko\ubl\entities\xades\SignedSignaturePropertiesType $signedSignatureProperties)
@@ -83,7 +82,7 @@ class SignedPropertiesType
     /**
      * Sets a new signedDataObjectProperties
      *
-     * @param \horstoeko\ubl\entities\xades\SignedDataObjectPropertiesType $signedDataObjectProperties
+     * @param  \horstoeko\ubl\entities\xades\SignedDataObjectPropertiesType $signedDataObjectProperties
      * @return self
      */
     public function setSignedDataObjectProperties(\horstoeko\ubl\entities\xades\SignedDataObjectPropertiesType $signedDataObjectProperties)

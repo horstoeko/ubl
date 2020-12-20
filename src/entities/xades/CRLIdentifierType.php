@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing CRLIdentifierType
  *
- *
  * XSD Type: CRLIdentifierType
  */
 class CRLIdentifierType
@@ -44,7 +43,7 @@ class CRLIdentifierType
     /**
      * Sets a new uRI
      *
-     * @param string $uRI
+     * @param  string $uRI
      * @return self
      */
     public function setURI($uRI)
@@ -66,7 +65,7 @@ class CRLIdentifierType
     /**
      * Sets a new issuer
      *
-     * @param string $issuer
+     * @param  string $issuer
      * @return self
      */
     public function setIssuer($issuer)
@@ -88,7 +87,7 @@ class CRLIdentifierType
     /**
      * Sets a new issueTime
      *
-     * @param \DateTime $issueTime
+     * @param  \DateTime $issueTime
      * @return self
      */
     public function setIssueTime(\DateTime $issueTime)
@@ -110,7 +109,7 @@ class CRLIdentifierType
     /**
      * Sets a new number
      *
-     * @param int $number
+     * @param  int $number
      * @return self
      */
     public function setNumber($number)

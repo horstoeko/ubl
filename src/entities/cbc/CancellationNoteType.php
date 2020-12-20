@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing CancellationNoteType
  *
- *
  * XSD Type: CancellationNoteType
  */
 class CancellationNoteType extends TextType

@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing EarliestPickupTimeType
  *
- *
  * XSD Type: EarliestPickupTimeType
  */
 class EarliestPickupTimeType
@@ -29,7 +28,7 @@ class EarliestPickupTimeType
     /**
      * Gets or sets the inner value
      *
-     * @param \DateTime $value
+     * @param  \DateTime $value
      * @return \DateTime
      */
     public function value()

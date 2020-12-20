@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\CodeType;
 /**
  * Class representing LatitudeDirectionCodeType
  *
- *
  * XSD Type: LatitudeDirectionCodeType
  */
 class LatitudeDirectionCodeType extends CodeType

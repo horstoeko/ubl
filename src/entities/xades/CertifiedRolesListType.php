@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing CertifiedRolesListType
  *
- *
  * XSD Type: CertifiedRolesListType
  */
 class CertifiedRolesListType
@@ -22,7 +21,7 @@ class CertifiedRolesListType
      * Adds as certifiedRole
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\EncapsulatedPKIDataType $certifiedRole
+     * @param  \horstoeko\ubl\entities\xades\EncapsulatedPKIDataType $certifiedRole
      */
     public function addToCertifiedRole(\horstoeko\ubl\entities\xades\EncapsulatedPKIDataType $certifiedRole)
     {
@@ -33,7 +32,7 @@ class CertifiedRolesListType
     /**
      * isset certifiedRole
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetCertifiedRole($index)
@@ -44,7 +43,7 @@ class CertifiedRolesListType
     /**
      * unset certifiedRole
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetCertifiedRole($index)
@@ -65,7 +64,7 @@ class CertifiedRolesListType
     /**
      * Sets a new certifiedRole
      *
-     * @param \horstoeko\ubl\entities\xades\EncapsulatedPKIDataType[] $certifiedRole
+     * @param  \horstoeko\ubl\entities\xades\EncapsulatedPKIDataType[] $certifiedRole
      * @return self
      */
     public function setCertifiedRole(array $certifiedRole)

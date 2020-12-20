@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\MeasureType;
 /**
  * Class representing ComparedValueMeasureType
  *
- *
  * XSD Type: ComparedValueMeasureType
  */
 class ComparedValueMeasureType extends MeasureType

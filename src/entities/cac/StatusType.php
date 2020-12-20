@@ -223,7 +223,7 @@ class StatusType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ConditionCode $conditionCode
+     * @param  \horstoeko\ubl\entities\cbc\ConditionCode $conditionCode
      * @return self
      */
     public function setConditionCode(\horstoeko\ubl\entities\cbc\ConditionCode $conditionCode)
@@ -263,7 +263,7 @@ class StatusType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $referenceDate
+     * @param  \DateTime $referenceDate
      * @return self
      */
     public function setReferenceDate(\DateTime $referenceDate)
@@ -303,7 +303,7 @@ class StatusType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $referenceTime
+     * @param  \DateTime $referenceTime
      * @return self
      */
     public function setReferenceTime(\DateTime $referenceTime)
@@ -325,7 +325,7 @@ class StatusType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -345,7 +345,7 @@ class StatusType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -365,7 +365,7 @@ class StatusType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -404,7 +404,7 @@ class StatusType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -444,7 +444,7 @@ class StatusType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\StatusReasonCode $statusReasonCode
+     * @param  \horstoeko\ubl\entities\cbc\StatusReasonCode $statusReasonCode
      * @return self
      */
     public function setStatusReasonCode(\horstoeko\ubl\entities\cbc\StatusReasonCode $statusReasonCode)
@@ -467,7 +467,7 @@ class StatusType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\StatusReason $statusReason
+     * @param  \horstoeko\ubl\entities\cbc\StatusReason $statusReason
      */
     public function addToStatusReason(\horstoeko\ubl\entities\cbc\StatusReason $statusReason)
     {
@@ -488,7 +488,7 @@ class StatusType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetStatusReason($index)
@@ -509,7 +509,7 @@ class StatusType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetStatusReason($index)
@@ -550,7 +550,7 @@ class StatusType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\StatusReason[] $statusReason
+     * @param  \horstoeko\ubl\entities\cbc\StatusReason[] $statusReason
      * @return self
      */
     public function setStatusReason(array $statusReason)
@@ -590,7 +590,7 @@ class StatusType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SequenceID $sequenceID
+     * @param  \horstoeko\ubl\entities\cbc\SequenceID $sequenceID
      * @return self
      */
     public function setSequenceID(\horstoeko\ubl\entities\cbc\SequenceID $sequenceID)
@@ -612,7 +612,7 @@ class StatusType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Text $text
+     * @param  \horstoeko\ubl\entities\cbc\Text $text
      */
     public function addToText(\horstoeko\ubl\entities\cbc\Text $text)
     {
@@ -632,7 +632,7 @@ class StatusType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetText($index)
@@ -652,7 +652,7 @@ class StatusType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetText($index)
@@ -691,7 +691,7 @@ class StatusType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Text[] $text
+     * @param  \horstoeko\ubl\entities\cbc\Text[] $text
      * @return self
      */
     public function setText(array $text)
@@ -733,7 +733,7 @@ class StatusType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $indicationIndicator
+     * @param  bool $indicationIndicator
      * @return self
      */
     public function setIndicationIndicator($indicationIndicator)
@@ -773,7 +773,7 @@ class StatusType
      *  Percent
      *  Percent. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Percent $percent
+     * @param  \horstoeko\ubl\entities\cbc\Percent $percent
      * @return self
      */
     public function setPercent(\horstoeko\ubl\entities\cbc\Percent $percent)
@@ -813,7 +813,7 @@ class StatusType
      *  Percent
      *  Percent. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ReliabilityPercent $reliabilityPercent
+     * @param  \horstoeko\ubl\entities\cbc\ReliabilityPercent $reliabilityPercent
      * @return self
      */
     public function setReliabilityPercent(\horstoeko\ubl\entities\cbc\ReliabilityPercent $reliabilityPercent)
@@ -835,7 +835,7 @@ class StatusType
      *  Condition
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Condition $condition
+     * @param  \horstoeko\ubl\entities\cac\Condition $condition
      */
     public function addToCondition(\horstoeko\ubl\entities\cac\Condition $condition)
     {
@@ -855,7 +855,7 @@ class StatusType
      *  Condition
      *  Condition
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetCondition($index)
@@ -875,7 +875,7 @@ class StatusType
      *  Condition
      *  Condition
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetCondition($index)
@@ -914,7 +914,7 @@ class StatusType
      *  Condition
      *  Condition
      *
-     * @param \horstoeko\ubl\entities\cac\Condition[] $condition
+     * @param  \horstoeko\ubl\entities\cac\Condition[] $condition
      * @return self
      */
     public function setCondition(array $condition)

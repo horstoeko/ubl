@@ -118,7 +118,7 @@ class ServiceProviderPartyType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -158,7 +158,7 @@ class ServiceProviderPartyType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ServiceTypeCode $serviceTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\ServiceTypeCode $serviceTypeCode
      * @return self
      */
     public function setServiceTypeCode(\horstoeko\ubl\entities\cbc\ServiceTypeCode $serviceTypeCode)
@@ -180,7 +180,7 @@ class ServiceProviderPartyType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\ServiceType $serviceType
+     * @param  \horstoeko\ubl\entities\cbc\ServiceType $serviceType
      */
     public function addToServiceType(\horstoeko\ubl\entities\cbc\ServiceType $serviceType)
     {
@@ -200,7 +200,7 @@ class ServiceProviderPartyType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetServiceType($index)
@@ -220,7 +220,7 @@ class ServiceProviderPartyType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetServiceType($index)
@@ -259,7 +259,7 @@ class ServiceProviderPartyType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ServiceType[] $serviceType
+     * @param  \horstoeko\ubl\entities\cbc\ServiceType[] $serviceType
      * @return self
      */
     public function setServiceType(array $serviceType)
@@ -299,7 +299,7 @@ class ServiceProviderPartyType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\Party $party
+     * @param  \horstoeko\ubl\entities\cac\Party $party
      * @return self
      */
     public function setParty(\horstoeko\ubl\entities\cac\Party $party)
@@ -341,7 +341,7 @@ class ServiceProviderPartyType
      *  Contact
      *  Contact
      *
-     * @param \horstoeko\ubl\entities\cac\SellerContact $sellerContact
+     * @param  \horstoeko\ubl\entities\cac\SellerContact $sellerContact
      * @return self
      */
     public function setSellerContact(\horstoeko\ubl\entities\cac\SellerContact $sellerContact)

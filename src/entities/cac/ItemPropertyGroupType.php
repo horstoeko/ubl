@@ -91,7 +91,7 @@ class ItemPropertyGroupType
      *  Identifier. Type
      *  233-004
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -133,7 +133,7 @@ class ItemPropertyGroupType
      *  Name. Type
      *  Electrical Specifications , Dietary Content
      *
-     * @param \horstoeko\ubl\entities\cbc\Name $name
+     * @param  \horstoeko\ubl\entities\cbc\Name $name
      * @return self
      */
     public function setName(\horstoeko\ubl\entities\cbc\Name $name)
@@ -173,7 +173,7 @@ class ItemPropertyGroupType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ImportanceCode $importanceCode
+     * @param  \horstoeko\ubl\entities\cbc\ImportanceCode $importanceCode
      * @return self
      */
     public function setImportanceCode(\horstoeko\ubl\entities\cbc\ImportanceCode $importanceCode)

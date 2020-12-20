@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing ObjectIdentifierType
  *
- *
  * XSD Type: ObjectIdentifierType
  */
 class ObjectIdentifierType
@@ -39,7 +38,7 @@ class ObjectIdentifierType
     /**
      * Sets a new identifier
      *
-     * @param \horstoeko\ubl\entities\xades\IdentifierType $identifier
+     * @param  \horstoeko\ubl\entities\xades\IdentifierType $identifier
      * @return self
      */
     public function setIdentifier(\horstoeko\ubl\entities\xades\IdentifierType $identifier)
@@ -61,7 +60,7 @@ class ObjectIdentifierType
     /**
      * Sets a new description
      *
-     * @param string $description
+     * @param  string $description
      * @return self
      */
     public function setDescription($description)
@@ -74,7 +73,7 @@ class ObjectIdentifierType
      * Adds as documentationReference
      *
      * @return self
-     * @param string $documentationReference
+     * @param  string $documentationReference
      */
     public function addToDocumentationReferences($documentationReference)
     {
@@ -85,7 +84,7 @@ class ObjectIdentifierType
     /**
      * isset documentationReferences
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDocumentationReferences($index)
@@ -96,7 +95,7 @@ class ObjectIdentifierType
     /**
      * unset documentationReferences
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDocumentationReferences($index)
@@ -117,7 +116,7 @@ class ObjectIdentifierType
     /**
      * Sets a new documentationReferences
      *
-     * @param string[] $documentationReferences
+     * @param  string[] $documentationReferences
      * @return self
      */
     public function setDocumentationReferences(array $documentationReferences)

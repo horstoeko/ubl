@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\AmountType;
 /**
  * Class representing DeclaredForCarriageValueAmountType
  *
- *
  * XSD Type: DeclaredForCarriageValueAmountType
  */
 class DeclaredForCarriageValueAmountType extends AmountType

@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing OneTimeChargeTypeType
  *
- *
  * XSD Type: OneTimeChargeTypeType
  */
 class OneTimeChargeTypeType extends TextType

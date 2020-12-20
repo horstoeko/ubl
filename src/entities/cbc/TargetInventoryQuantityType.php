@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\QuantityType;
 /**
  * Class representing TargetInventoryQuantityType
  *
- *
  * XSD Type: TargetInventoryQuantityType
  */
 class TargetInventoryQuantityType extends QuantityType

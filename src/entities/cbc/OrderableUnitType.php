@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing OrderableUnitType
  *
- *
  * XSD Type: OrderableUnitType
  */
 class OrderableUnitType extends TextType

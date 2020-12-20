@@ -120,7 +120,7 @@ class TaxTotalType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TaxAmount $taxAmount
+     * @param  \horstoeko\ubl\entities\cbc\TaxAmount $taxAmount
      * @return self
      */
     public function setTaxAmount(\horstoeko\ubl\entities\cbc\TaxAmount $taxAmount)
@@ -160,7 +160,7 @@ class TaxTotalType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\RoundingAmount $roundingAmount
+     * @param  \horstoeko\ubl\entities\cbc\RoundingAmount $roundingAmount
      * @return self
      */
     public function setRoundingAmount(\horstoeko\ubl\entities\cbc\RoundingAmount $roundingAmount)
@@ -204,7 +204,7 @@ class TaxTotalType
      *  Indicator. Type
      *  default is negative
      *
-     * @param bool $taxEvidenceIndicator
+     * @param  bool $taxEvidenceIndicator
      * @return self
      */
     public function setTaxEvidenceIndicator($taxEvidenceIndicator)
@@ -246,7 +246,7 @@ class TaxTotalType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $taxIncludedIndicator
+     * @param  bool $taxIncludedIndicator
      * @return self
      */
     public function setTaxIncludedIndicator($taxIncludedIndicator)
@@ -268,7 +268,7 @@ class TaxTotalType
      *  Tax Subtotal
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\TaxSubtotal $taxSubtotal
+     * @param  \horstoeko\ubl\entities\cac\TaxSubtotal $taxSubtotal
      */
     public function addToTaxSubtotal(\horstoeko\ubl\entities\cac\TaxSubtotal $taxSubtotal)
     {
@@ -288,7 +288,7 @@ class TaxTotalType
      *  Tax Subtotal
      *  Tax Subtotal
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTaxSubtotal($index)
@@ -308,7 +308,7 @@ class TaxTotalType
      *  Tax Subtotal
      *  Tax Subtotal
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTaxSubtotal($index)
@@ -347,7 +347,7 @@ class TaxTotalType
      *  Tax Subtotal
      *  Tax Subtotal
      *
-     * @param \horstoeko\ubl\entities\cac\TaxSubtotal[] $taxSubtotal
+     * @param  \horstoeko\ubl\entities\cac\TaxSubtotal[] $taxSubtotal
      * @return self
      */
     public function setTaxSubtotal(array $taxSubtotal)

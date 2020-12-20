@@ -49,7 +49,7 @@ class IndicatorType
     /**
      * Gets or sets the inner value
      *
-     * @param string $value
+     * @param  string $value
      * @return string
      */
     public function value()
@@ -101,7 +101,7 @@ class IndicatorType
      *  Text
      *  string
      *
-     * @param string $format
+     * @param  string $format
      * @return self
      */
     public function setFormat($format)

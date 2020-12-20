@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\NameType;
 /**
  * Class representing CityNameType
  *
- *
  * XSD Type: CityNameType
  */
 class CityNameType extends NameType

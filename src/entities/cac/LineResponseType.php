@@ -75,7 +75,7 @@ class LineResponseType
      *  Line Reference
      *  Line Reference
      *
-     * @param \horstoeko\ubl\entities\cac\LineReference $lineReference
+     * @param  \horstoeko\ubl\entities\cac\LineReference $lineReference
      * @return self
      */
     public function setLineReference(\horstoeko\ubl\entities\cac\LineReference $lineReference)
@@ -97,7 +97,7 @@ class LineResponseType
      *  Response
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Response $response
+     * @param  \horstoeko\ubl\entities\cac\Response $response
      */
     public function addToResponse(\horstoeko\ubl\entities\cac\Response $response)
     {
@@ -117,7 +117,7 @@ class LineResponseType
      *  Response
      *  Response
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetResponse($index)
@@ -137,7 +137,7 @@ class LineResponseType
      *  Response
      *  Response
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetResponse($index)
@@ -176,7 +176,7 @@ class LineResponseType
      *  Response
      *  Response
      *
-     * @param \horstoeko\ubl\entities\cac\Response[] $response
+     * @param  \horstoeko\ubl\entities\cac\Response[] $response
      * @return self
      */
     public function setResponse(array $response)

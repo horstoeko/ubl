@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\IdentifierType;
 /**
  * Class representing PerformingCarrierAssignedIDType
  *
- *
  * XSD Type: PerformingCarrierAssignedIDType
  */
 class PerformingCarrierAssignedIDType extends IdentifierType

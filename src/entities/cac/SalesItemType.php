@@ -123,7 +123,7 @@ class SalesItemType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Quantity $quantity
+     * @param  \horstoeko\ubl\entities\cbc\Quantity $quantity
      * @return self
      */
     public function setQuantity(\horstoeko\ubl\entities\cbc\Quantity $quantity)
@@ -145,7 +145,7 @@ class SalesItemType
      *  Activity Property
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ActivityProperty $activityProperty
+     * @param  \horstoeko\ubl\entities\cac\ActivityProperty $activityProperty
      */
     public function addToActivityProperty(\horstoeko\ubl\entities\cac\ActivityProperty $activityProperty)
     {
@@ -165,7 +165,7 @@ class SalesItemType
      *  Activity Property
      *  Activity Property
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetActivityProperty($index)
@@ -185,7 +185,7 @@ class SalesItemType
      *  Activity Property
      *  Activity Property
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetActivityProperty($index)
@@ -224,7 +224,7 @@ class SalesItemType
      *  Activity Property
      *  Activity Property
      *
-     * @param \horstoeko\ubl\entities\cac\ActivityProperty[] $activityProperty
+     * @param  \horstoeko\ubl\entities\cac\ActivityProperty[] $activityProperty
      * @return self
      */
     public function setActivityProperty(array $activityProperty)
@@ -247,7 +247,7 @@ class SalesItemType
      *  Price
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\TaxExclusivePrice $taxExclusivePrice
+     * @param  \horstoeko\ubl\entities\cac\TaxExclusivePrice $taxExclusivePrice
      */
     public function addToTaxExclusivePrice(\horstoeko\ubl\entities\cac\TaxExclusivePrice $taxExclusivePrice)
     {
@@ -268,7 +268,7 @@ class SalesItemType
      *  Price
      *  Price
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTaxExclusivePrice($index)
@@ -289,7 +289,7 @@ class SalesItemType
      *  Price
      *  Price
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTaxExclusivePrice($index)
@@ -330,7 +330,7 @@ class SalesItemType
      *  Price
      *  Price
      *
-     * @param \horstoeko\ubl\entities\cac\TaxExclusivePrice[] $taxExclusivePrice
+     * @param  \horstoeko\ubl\entities\cac\TaxExclusivePrice[] $taxExclusivePrice
      * @return self
      */
     public function setTaxExclusivePrice(array $taxExclusivePrice)
@@ -353,7 +353,7 @@ class SalesItemType
      *  Price
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\TaxInclusivePrice $taxInclusivePrice
+     * @param  \horstoeko\ubl\entities\cac\TaxInclusivePrice $taxInclusivePrice
      */
     public function addToTaxInclusivePrice(\horstoeko\ubl\entities\cac\TaxInclusivePrice $taxInclusivePrice)
     {
@@ -374,7 +374,7 @@ class SalesItemType
      *  Price
      *  Price
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTaxInclusivePrice($index)
@@ -395,7 +395,7 @@ class SalesItemType
      *  Price
      *  Price
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTaxInclusivePrice($index)
@@ -436,7 +436,7 @@ class SalesItemType
      *  Price
      *  Price
      *
-     * @param \horstoeko\ubl\entities\cac\TaxInclusivePrice[] $taxInclusivePrice
+     * @param  \horstoeko\ubl\entities\cac\TaxInclusivePrice[] $taxInclusivePrice
      * @return self
      */
     public function setTaxInclusivePrice(array $taxInclusivePrice)
@@ -476,7 +476,7 @@ class SalesItemType
      *  Item
      *  Item
      *
-     * @param \horstoeko\ubl\entities\cac\Item $item
+     * @param  \horstoeko\ubl\entities\cac\Item $item
      * @return self
      */
     public function setItem(\horstoeko\ubl\entities\cac\Item $item)

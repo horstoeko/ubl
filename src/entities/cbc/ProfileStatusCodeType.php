@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\CodeType;
 /**
  * Class representing ProfileStatusCodeType
  *
- *
  * XSD Type: ProfileStatusCodeType
  */
 class ProfileStatusCodeType extends CodeType

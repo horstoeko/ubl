@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\AmountType;
 /**
  * Class representing EstimatedOverallContractAmountType
  *
- *
  * XSD Type: EstimatedOverallContractAmountType
  */
 class EstimatedOverallContractAmountType extends AmountType

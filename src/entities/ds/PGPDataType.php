@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\ds;
 /**
  * Class representing PGPDataType
  *
- *
  * XSD Type: PGPDataType
  */
 class PGPDataType
@@ -34,7 +33,7 @@ class PGPDataType
     /**
      * Sets a new pGPKeyID
      *
-     * @param string $pGPKeyID
+     * @param  string $pGPKeyID
      * @return self
      */
     public function setPGPKeyID($pGPKeyID)
@@ -56,7 +55,7 @@ class PGPDataType
     /**
      * Sets a new pGPKeyPacket
      *
-     * @param string $pGPKeyPacket
+     * @param  string $pGPKeyPacket
      * @return self
      */
     public function setPGPKeyPacket($pGPKeyPacket)

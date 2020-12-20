@@ -77,7 +77,7 @@ class TendererPartyQualificationType
      *  Procurement Project Lot
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\InterestedProcurementProjectLot $interestedProcurementProjectLot
+     * @param  \horstoeko\ubl\entities\cac\InterestedProcurementProjectLot $interestedProcurementProjectLot
      */
     public function addToInterestedProcurementProjectLot(\horstoeko\ubl\entities\cac\InterestedProcurementProjectLot $interestedProcurementProjectLot)
     {
@@ -98,7 +98,7 @@ class TendererPartyQualificationType
      *  Procurement Project Lot
      *  Procurement Project Lot
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetInterestedProcurementProjectLot($index)
@@ -119,7 +119,7 @@ class TendererPartyQualificationType
      *  Procurement Project Lot
      *  Procurement Project Lot
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetInterestedProcurementProjectLot($index)
@@ -160,7 +160,7 @@ class TendererPartyQualificationType
      *  Procurement Project Lot
      *  Procurement Project Lot
      *
-     * @param \horstoeko\ubl\entities\cac\InterestedProcurementProjectLot[] $interestedProcurementProjectLot
+     * @param  \horstoeko\ubl\entities\cac\InterestedProcurementProjectLot[] $interestedProcurementProjectLot
      * @return self
      */
     public function setInterestedProcurementProjectLot(array $interestedProcurementProjectLot)
@@ -202,7 +202,7 @@ class TendererPartyQualificationType
      *  Qualifying Party
      *  Qualifying Party
      *
-     * @param \horstoeko\ubl\entities\cac\MainQualifyingParty $mainQualifyingParty
+     * @param  \horstoeko\ubl\entities\cac\MainQualifyingParty $mainQualifyingParty
      * @return self
      */
     public function setMainQualifyingParty(\horstoeko\ubl\entities\cac\MainQualifyingParty $mainQualifyingParty)
@@ -225,7 +225,7 @@ class TendererPartyQualificationType
      *  Qualifying Party
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\AdditionalQualifyingParty $additionalQualifyingParty
+     * @param  \horstoeko\ubl\entities\cac\AdditionalQualifyingParty $additionalQualifyingParty
      */
     public function addToAdditionalQualifyingParty(\horstoeko\ubl\entities\cac\AdditionalQualifyingParty $additionalQualifyingParty)
     {
@@ -246,7 +246,7 @@ class TendererPartyQualificationType
      *  Qualifying Party
      *  Qualifying Party
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAdditionalQualifyingParty($index)
@@ -267,7 +267,7 @@ class TendererPartyQualificationType
      *  Qualifying Party
      *  Qualifying Party
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAdditionalQualifyingParty($index)
@@ -308,7 +308,7 @@ class TendererPartyQualificationType
      *  Qualifying Party
      *  Qualifying Party
      *
-     * @param \horstoeko\ubl\entities\cac\AdditionalQualifyingParty[] $additionalQualifyingParty
+     * @param  \horstoeko\ubl\entities\cac\AdditionalQualifyingParty[] $additionalQualifyingParty
      * @return self
      */
     public function setAdditionalQualifyingParty(array $additionalQualifyingParty)

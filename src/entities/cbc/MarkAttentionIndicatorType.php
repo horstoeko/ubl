@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing MarkAttentionIndicatorType
  *
- *
  * XSD Type: MarkAttentionIndicatorType
  */
 class MarkAttentionIndicatorType
@@ -29,7 +28,7 @@ class MarkAttentionIndicatorType
     /**
      * Gets or sets the inner value
      *
-     * @param bool $value
+     * @param  bool $value
      * @return bool
      */
     public function value()

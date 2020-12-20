@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing SignedDataObjectPropertiesType
  *
- *
  * XSD Type: SignedDataObjectPropertiesType
  */
 class SignedDataObjectPropertiesType
@@ -57,7 +56,7 @@ class SignedDataObjectPropertiesType
     /**
      * Sets a new id
      *
-     * @param string $id
+     * @param  string $id
      * @return self
      */
     public function setId($id)
@@ -70,7 +69,7 @@ class SignedDataObjectPropertiesType
      * Adds as dataObjectFormat
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\DataObjectFormatType $dataObjectFormat
+     * @param  \horstoeko\ubl\entities\xades\DataObjectFormatType $dataObjectFormat
      */
     public function addToDataObjectFormat(\horstoeko\ubl\entities\xades\DataObjectFormatType $dataObjectFormat)
     {
@@ -81,7 +80,7 @@ class SignedDataObjectPropertiesType
     /**
      * isset dataObjectFormat
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDataObjectFormat($index)
@@ -92,7 +91,7 @@ class SignedDataObjectPropertiesType
     /**
      * unset dataObjectFormat
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDataObjectFormat($index)
@@ -113,7 +112,7 @@ class SignedDataObjectPropertiesType
     /**
      * Sets a new dataObjectFormat
      *
-     * @param \horstoeko\ubl\entities\xades\DataObjectFormatType[] $dataObjectFormat
+     * @param  \horstoeko\ubl\entities\xades\DataObjectFormatType[] $dataObjectFormat
      * @return self
      */
     public function setDataObjectFormat(array $dataObjectFormat)
@@ -126,7 +125,7 @@ class SignedDataObjectPropertiesType
      * Adds as commitmentTypeIndication
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\CommitmentTypeIndicationType $commitmentTypeIndication
+     * @param  \horstoeko\ubl\entities\xades\CommitmentTypeIndicationType $commitmentTypeIndication
      */
     public function addToCommitmentTypeIndication(\horstoeko\ubl\entities\xades\CommitmentTypeIndicationType $commitmentTypeIndication)
     {
@@ -137,7 +136,7 @@ class SignedDataObjectPropertiesType
     /**
      * isset commitmentTypeIndication
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetCommitmentTypeIndication($index)
@@ -148,7 +147,7 @@ class SignedDataObjectPropertiesType
     /**
      * unset commitmentTypeIndication
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetCommitmentTypeIndication($index)
@@ -169,7 +168,7 @@ class SignedDataObjectPropertiesType
     /**
      * Sets a new commitmentTypeIndication
      *
-     * @param \horstoeko\ubl\entities\xades\CommitmentTypeIndicationType[] $commitmentTypeIndication
+     * @param  \horstoeko\ubl\entities\xades\CommitmentTypeIndicationType[] $commitmentTypeIndication
      * @return self
      */
     public function setCommitmentTypeIndication(array $commitmentTypeIndication)
@@ -182,7 +181,7 @@ class SignedDataObjectPropertiesType
      * Adds as allDataObjectsTimeStamp
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\XAdESTimeStampType $allDataObjectsTimeStamp
+     * @param  \horstoeko\ubl\entities\xades\XAdESTimeStampType $allDataObjectsTimeStamp
      */
     public function addToAllDataObjectsTimeStamp(\horstoeko\ubl\entities\xades\XAdESTimeStampType $allDataObjectsTimeStamp)
     {
@@ -193,7 +192,7 @@ class SignedDataObjectPropertiesType
     /**
      * isset allDataObjectsTimeStamp
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAllDataObjectsTimeStamp($index)
@@ -204,7 +203,7 @@ class SignedDataObjectPropertiesType
     /**
      * unset allDataObjectsTimeStamp
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAllDataObjectsTimeStamp($index)
@@ -225,7 +224,7 @@ class SignedDataObjectPropertiesType
     /**
      * Sets a new allDataObjectsTimeStamp
      *
-     * @param \horstoeko\ubl\entities\xades\XAdESTimeStampType[] $allDataObjectsTimeStamp
+     * @param  \horstoeko\ubl\entities\xades\XAdESTimeStampType[] $allDataObjectsTimeStamp
      * @return self
      */
     public function setAllDataObjectsTimeStamp(array $allDataObjectsTimeStamp)
@@ -238,7 +237,7 @@ class SignedDataObjectPropertiesType
      * Adds as individualDataObjectsTimeStamp
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\XAdESTimeStampType $individualDataObjectsTimeStamp
+     * @param  \horstoeko\ubl\entities\xades\XAdESTimeStampType $individualDataObjectsTimeStamp
      */
     public function addToIndividualDataObjectsTimeStamp(\horstoeko\ubl\entities\xades\XAdESTimeStampType $individualDataObjectsTimeStamp)
     {
@@ -249,7 +248,7 @@ class SignedDataObjectPropertiesType
     /**
      * isset individualDataObjectsTimeStamp
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetIndividualDataObjectsTimeStamp($index)
@@ -260,7 +259,7 @@ class SignedDataObjectPropertiesType
     /**
      * unset individualDataObjectsTimeStamp
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetIndividualDataObjectsTimeStamp($index)
@@ -281,7 +280,7 @@ class SignedDataObjectPropertiesType
     /**
      * Sets a new individualDataObjectsTimeStamp
      *
-     * @param \horstoeko\ubl\entities\xades\XAdESTimeStampType[] $individualDataObjectsTimeStamp
+     * @param  \horstoeko\ubl\entities\xades\XAdESTimeStampType[] $individualDataObjectsTimeStamp
      * @return self
      */
     public function setIndividualDataObjectsTimeStamp(array $individualDataObjectsTimeStamp)

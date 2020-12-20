@@ -153,7 +153,7 @@ class ContactType
      *  Identifier. Type
      *  Receivals Clerk
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -195,7 +195,7 @@ class ContactType
      *  Name. Type
      *  Delivery Dock
      *
-     * @param \horstoeko\ubl\entities\cbc\Name $name
+     * @param  \horstoeko\ubl\entities\cbc\Name $name
      * @return self
      */
     public function setName(\horstoeko\ubl\entities\cbc\Name $name)
@@ -235,7 +235,7 @@ class ContactType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Telephone $telephone
+     * @param  \horstoeko\ubl\entities\cbc\Telephone $telephone
      * @return self
      */
     public function setTelephone(\horstoeko\ubl\entities\cbc\Telephone $telephone)
@@ -275,7 +275,7 @@ class ContactType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Telefax $telefax
+     * @param  \horstoeko\ubl\entities\cbc\Telefax $telefax
      * @return self
      */
     public function setTelefax(\horstoeko\ubl\entities\cbc\Telefax $telefax)
@@ -317,7 +317,7 @@ class ContactType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ElectronicMail $electronicMail
+     * @param  \horstoeko\ubl\entities\cbc\ElectronicMail $electronicMail
      * @return self
      */
     public function setElectronicMail(\horstoeko\ubl\entities\cbc\ElectronicMail $electronicMail)
@@ -339,7 +339,7 @@ class ContactType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param  \horstoeko\ubl\entities\cbc\Note $note
      */
     public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
     {
@@ -359,7 +359,7 @@ class ContactType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNote($index)
@@ -379,7 +379,7 @@ class ContactType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNote($index)
@@ -418,7 +418,7 @@ class ContactType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note[] $note
+     * @param  \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
     public function setNote(array $note)
@@ -441,7 +441,7 @@ class ContactType
      *  Communication
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\OtherCommunication $otherCommunication
+     * @param  \horstoeko\ubl\entities\cac\OtherCommunication $otherCommunication
      */
     public function addToOtherCommunication(\horstoeko\ubl\entities\cac\OtherCommunication $otherCommunication)
     {
@@ -462,7 +462,7 @@ class ContactType
      *  Communication
      *  Communication
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetOtherCommunication($index)
@@ -483,7 +483,7 @@ class ContactType
      *  Communication
      *  Communication
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetOtherCommunication($index)
@@ -524,7 +524,7 @@ class ContactType
      *  Communication
      *  Communication
      *
-     * @param \horstoeko\ubl\entities\cac\OtherCommunication[] $otherCommunication
+     * @param  \horstoeko\ubl\entities\cac\OtherCommunication[] $otherCommunication
      * @return self
      */
     public function setOtherCommunication(array $otherCommunication)

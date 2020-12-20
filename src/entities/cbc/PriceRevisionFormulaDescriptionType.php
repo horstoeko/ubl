@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing PriceRevisionFormulaDescriptionType
  *
- *
  * XSD Type: PriceRevisionFormulaDescriptionType
  */
 class PriceRevisionFormulaDescriptionType extends TextType

@@ -133,7 +133,7 @@ class QualificationResolutionType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AdmissionCode $admissionCode
+     * @param  \horstoeko\ubl\entities\cbc\AdmissionCode $admissionCode
      * @return self
      */
     public function setAdmissionCode(\horstoeko\ubl\entities\cbc\AdmissionCode $admissionCode)
@@ -155,7 +155,7 @@ class QualificationResolutionType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\ExclusionReason $exclusionReason
+     * @param  \horstoeko\ubl\entities\cbc\ExclusionReason $exclusionReason
      */
     public function addToExclusionReason(\horstoeko\ubl\entities\cbc\ExclusionReason $exclusionReason)
     {
@@ -175,7 +175,7 @@ class QualificationResolutionType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetExclusionReason($index)
@@ -195,7 +195,7 @@ class QualificationResolutionType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetExclusionReason($index)
@@ -234,7 +234,7 @@ class QualificationResolutionType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ExclusionReason[] $exclusionReason
+     * @param  \horstoeko\ubl\entities\cbc\ExclusionReason[] $exclusionReason
      * @return self
      */
     public function setExclusionReason(array $exclusionReason)
@@ -256,7 +256,7 @@ class QualificationResolutionType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Resolution $resolution
+     * @param  \horstoeko\ubl\entities\cbc\Resolution $resolution
      */
     public function addToResolution(\horstoeko\ubl\entities\cbc\Resolution $resolution)
     {
@@ -276,7 +276,7 @@ class QualificationResolutionType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetResolution($index)
@@ -296,7 +296,7 @@ class QualificationResolutionType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetResolution($index)
@@ -335,7 +335,7 @@ class QualificationResolutionType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Resolution[] $resolution
+     * @param  \horstoeko\ubl\entities\cbc\Resolution[] $resolution
      * @return self
      */
     public function setResolution(array $resolution)
@@ -375,7 +375,7 @@ class QualificationResolutionType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $resolutionDate
+     * @param  \DateTime $resolutionDate
      * @return self
      */
     public function setResolutionDate(\DateTime $resolutionDate)
@@ -415,7 +415,7 @@ class QualificationResolutionType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $resolutionTime
+     * @param  \DateTime $resolutionTime
      * @return self
      */
     public function setResolutionTime(\DateTime $resolutionTime)
@@ -455,7 +455,7 @@ class QualificationResolutionType
      *  Procurement Project Lot
      *  Procurement Project Lot
      *
-     * @param \horstoeko\ubl\entities\cac\ProcurementProjectLot $procurementProjectLot
+     * @param  \horstoeko\ubl\entities\cac\ProcurementProjectLot $procurementProjectLot
      * @return self
      */
     public function setProcurementProjectLot(\horstoeko\ubl\entities\cac\ProcurementProjectLot $procurementProjectLot)

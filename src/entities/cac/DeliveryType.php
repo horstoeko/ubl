@@ -402,7 +402,7 @@ class DeliveryType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -442,7 +442,7 @@ class DeliveryType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Quantity $quantity
+     * @param  \horstoeko\ubl\entities\cbc\Quantity $quantity
      * @return self
      */
     public function setQuantity(\horstoeko\ubl\entities\cbc\Quantity $quantity)
@@ -484,7 +484,7 @@ class DeliveryType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MinimumQuantity $minimumQuantity
+     * @param  \horstoeko\ubl\entities\cbc\MinimumQuantity $minimumQuantity
      * @return self
      */
     public function setMinimumQuantity(\horstoeko\ubl\entities\cbc\MinimumQuantity $minimumQuantity)
@@ -526,7 +526,7 @@ class DeliveryType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MaximumQuantity $maximumQuantity
+     * @param  \horstoeko\ubl\entities\cbc\MaximumQuantity $maximumQuantity
      * @return self
      */
     public function setMaximumQuantity(\horstoeko\ubl\entities\cbc\MaximumQuantity $maximumQuantity)
@@ -568,7 +568,7 @@ class DeliveryType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $actualDeliveryDate
+     * @param  \DateTime $actualDeliveryDate
      * @return self
      */
     public function setActualDeliveryDate(\DateTime $actualDeliveryDate)
@@ -610,7 +610,7 @@ class DeliveryType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $actualDeliveryTime
+     * @param  \DateTime $actualDeliveryTime
      * @return self
      */
     public function setActualDeliveryTime(\DateTime $actualDeliveryTime)
@@ -652,7 +652,7 @@ class DeliveryType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $latestDeliveryDate
+     * @param  \DateTime $latestDeliveryDate
      * @return self
      */
     public function setLatestDeliveryDate(\DateTime $latestDeliveryDate)
@@ -694,7 +694,7 @@ class DeliveryType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $latestDeliveryTime
+     * @param  \DateTime $latestDeliveryTime
      * @return self
      */
     public function setLatestDeliveryTime(\DateTime $latestDeliveryTime)
@@ -734,7 +734,7 @@ class DeliveryType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ReleaseID $releaseID
+     * @param  \horstoeko\ubl\entities\cbc\ReleaseID $releaseID
      * @return self
      */
     public function setReleaseID(\horstoeko\ubl\entities\cbc\ReleaseID $releaseID)
@@ -774,7 +774,7 @@ class DeliveryType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TrackingID $trackingID
+     * @param  \horstoeko\ubl\entities\cbc\TrackingID $trackingID
      * @return self
      */
     public function setTrackingID(\horstoeko\ubl\entities\cbc\TrackingID $trackingID)
@@ -816,7 +816,7 @@ class DeliveryType
      *  Address
      *  Address
      *
-     * @param \horstoeko\ubl\entities\cac\DeliveryAddress $deliveryAddress
+     * @param  \horstoeko\ubl\entities\cac\DeliveryAddress $deliveryAddress
      * @return self
      */
     public function setDeliveryAddress(\horstoeko\ubl\entities\cac\DeliveryAddress $deliveryAddress)
@@ -858,7 +858,7 @@ class DeliveryType
      *  Location
      *  Location
      *
-     * @param \horstoeko\ubl\entities\cac\DeliveryLocation $deliveryLocation
+     * @param  \horstoeko\ubl\entities\cac\DeliveryLocation $deliveryLocation
      * @return self
      */
     public function setDeliveryLocation(\horstoeko\ubl\entities\cac\DeliveryLocation $deliveryLocation)
@@ -900,7 +900,7 @@ class DeliveryType
      *  Location
      *  Location
      *
-     * @param \horstoeko\ubl\entities\cac\AlternativeDeliveryLocation $alternativeDeliveryLocation
+     * @param  \horstoeko\ubl\entities\cac\AlternativeDeliveryLocation $alternativeDeliveryLocation
      * @return self
      */
     public function setAlternativeDeliveryLocation(\horstoeko\ubl\entities\cac\AlternativeDeliveryLocation $alternativeDeliveryLocation)
@@ -942,7 +942,7 @@ class DeliveryType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\RequestedDeliveryPeriod $requestedDeliveryPeriod
+     * @param  \horstoeko\ubl\entities\cac\RequestedDeliveryPeriod $requestedDeliveryPeriod
      * @return self
      */
     public function setRequestedDeliveryPeriod(\horstoeko\ubl\entities\cac\RequestedDeliveryPeriod $requestedDeliveryPeriod)
@@ -984,7 +984,7 @@ class DeliveryType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\PromisedDeliveryPeriod $promisedDeliveryPeriod
+     * @param  \horstoeko\ubl\entities\cac\PromisedDeliveryPeriod $promisedDeliveryPeriod
      * @return self
      */
     public function setPromisedDeliveryPeriod(\horstoeko\ubl\entities\cac\PromisedDeliveryPeriod $promisedDeliveryPeriod)
@@ -1026,7 +1026,7 @@ class DeliveryType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\EstimatedDeliveryPeriod $estimatedDeliveryPeriod
+     * @param  \horstoeko\ubl\entities\cac\EstimatedDeliveryPeriod $estimatedDeliveryPeriod
      * @return self
      */
     public function setEstimatedDeliveryPeriod(\horstoeko\ubl\entities\cac\EstimatedDeliveryPeriod $estimatedDeliveryPeriod)
@@ -1068,7 +1068,7 @@ class DeliveryType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\CarrierParty $carrierParty
+     * @param  \horstoeko\ubl\entities\cac\CarrierParty $carrierParty
      * @return self
      */
     public function setCarrierParty(\horstoeko\ubl\entities\cac\CarrierParty $carrierParty)
@@ -1110,7 +1110,7 @@ class DeliveryType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\DeliveryParty $deliveryParty
+     * @param  \horstoeko\ubl\entities\cac\DeliveryParty $deliveryParty
      * @return self
      */
     public function setDeliveryParty(\horstoeko\ubl\entities\cac\DeliveryParty $deliveryParty)
@@ -1133,7 +1133,7 @@ class DeliveryType
      *  Party
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\NotifyParty $notifyParty
+     * @param  \horstoeko\ubl\entities\cac\NotifyParty $notifyParty
      */
     public function addToNotifyParty(\horstoeko\ubl\entities\cac\NotifyParty $notifyParty)
     {
@@ -1154,7 +1154,7 @@ class DeliveryType
      *  Party
      *  Party
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNotifyParty($index)
@@ -1175,7 +1175,7 @@ class DeliveryType
      *  Party
      *  Party
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNotifyParty($index)
@@ -1216,7 +1216,7 @@ class DeliveryType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\NotifyParty[] $notifyParty
+     * @param  \horstoeko\ubl\entities\cac\NotifyParty[] $notifyParty
      * @return self
      */
     public function setNotifyParty(array $notifyParty)
@@ -1256,7 +1256,7 @@ class DeliveryType
      *  Despatch
      *  Despatch
      *
-     * @param \horstoeko\ubl\entities\cac\Despatch $despatch
+     * @param  \horstoeko\ubl\entities\cac\Despatch $despatch
      * @return self
      */
     public function setDespatch(\horstoeko\ubl\entities\cac\Despatch $despatch)
@@ -1278,7 +1278,7 @@ class DeliveryType
      *  Delivery Terms
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\DeliveryTerms $deliveryTerms
+     * @param  \horstoeko\ubl\entities\cac\DeliveryTerms $deliveryTerms
      */
     public function addToDeliveryTerms(\horstoeko\ubl\entities\cac\DeliveryTerms $deliveryTerms)
     {
@@ -1298,7 +1298,7 @@ class DeliveryType
      *  Delivery Terms
      *  Delivery Terms
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDeliveryTerms($index)
@@ -1318,7 +1318,7 @@ class DeliveryType
      *  Delivery Terms
      *  Delivery Terms
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDeliveryTerms($index)
@@ -1357,7 +1357,7 @@ class DeliveryType
      *  Delivery Terms
      *  Delivery Terms
      *
-     * @param \horstoeko\ubl\entities\cac\DeliveryTerms[] $deliveryTerms
+     * @param  \horstoeko\ubl\entities\cac\DeliveryTerms[] $deliveryTerms
      * @return self
      */
     public function setDeliveryTerms(array $deliveryTerms)
@@ -1399,7 +1399,7 @@ class DeliveryType
      *  Delivery Unit
      *  Delivery Unit
      *
-     * @param \horstoeko\ubl\entities\cac\MinimumDeliveryUnit $minimumDeliveryUnit
+     * @param  \horstoeko\ubl\entities\cac\MinimumDeliveryUnit $minimumDeliveryUnit
      * @return self
      */
     public function setMinimumDeliveryUnit(\horstoeko\ubl\entities\cac\MinimumDeliveryUnit $minimumDeliveryUnit)
@@ -1441,7 +1441,7 @@ class DeliveryType
      *  Delivery Unit
      *  Delivery Unit
      *
-     * @param \horstoeko\ubl\entities\cac\MaximumDeliveryUnit $maximumDeliveryUnit
+     * @param  \horstoeko\ubl\entities\cac\MaximumDeliveryUnit $maximumDeliveryUnit
      * @return self
      */
     public function setMaximumDeliveryUnit(\horstoeko\ubl\entities\cac\MaximumDeliveryUnit $maximumDeliveryUnit)
@@ -1481,7 +1481,7 @@ class DeliveryType
      *  Shipment
      *  Shipment
      *
-     * @param \horstoeko\ubl\entities\cac\Shipment $shipment
+     * @param  \horstoeko\ubl\entities\cac\Shipment $shipment
      * @return self
      */
     public function setShipment(\horstoeko\ubl\entities\cac\Shipment $shipment)

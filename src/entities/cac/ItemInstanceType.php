@@ -165,7 +165,7 @@ class ItemInstanceType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ProductTraceID $productTraceID
+     * @param  \horstoeko\ubl\entities\cbc\ProductTraceID $productTraceID
      * @return self
      */
     public function setProductTraceID(\horstoeko\ubl\entities\cbc\ProductTraceID $productTraceID)
@@ -205,7 +205,7 @@ class ItemInstanceType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $manufactureDate
+     * @param  \DateTime $manufactureDate
      * @return self
      */
     public function setManufactureDate(\DateTime $manufactureDate)
@@ -245,7 +245,7 @@ class ItemInstanceType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $manufactureTime
+     * @param  \DateTime $manufactureTime
      * @return self
      */
     public function setManufactureTime(\DateTime $manufactureTime)
@@ -285,7 +285,7 @@ class ItemInstanceType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $bestBeforeDate
+     * @param  \DateTime $bestBeforeDate
      * @return self
      */
     public function setBestBeforeDate(\DateTime $bestBeforeDate)
@@ -327,7 +327,7 @@ class ItemInstanceType
      *  Identifier. Type
      *  car registration or licensing number
      *
-     * @param \horstoeko\ubl\entities\cbc\RegistrationID $registrationID
+     * @param  \horstoeko\ubl\entities\cbc\RegistrationID $registrationID
      * @return self
      */
     public function setRegistrationID(\horstoeko\ubl\entities\cbc\RegistrationID $registrationID)
@@ -369,7 +369,7 @@ class ItemInstanceType
      *  Identifier. Type
      *  chassis number of a car
      *
-     * @param \horstoeko\ubl\entities\cbc\SerialID $serialID
+     * @param  \horstoeko\ubl\entities\cbc\SerialID $serialID
      * @return self
      */
     public function setSerialID(\horstoeko\ubl\entities\cbc\SerialID $serialID)
@@ -392,7 +392,7 @@ class ItemInstanceType
      *  Item Property
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\AdditionalItemProperty $additionalItemProperty
+     * @param  \horstoeko\ubl\entities\cac\AdditionalItemProperty $additionalItemProperty
      */
     public function addToAdditionalItemProperty(\horstoeko\ubl\entities\cac\AdditionalItemProperty $additionalItemProperty)
     {
@@ -413,7 +413,7 @@ class ItemInstanceType
      *  Item Property
      *  Item Property
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAdditionalItemProperty($index)
@@ -434,7 +434,7 @@ class ItemInstanceType
      *  Item Property
      *  Item Property
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAdditionalItemProperty($index)
@@ -475,7 +475,7 @@ class ItemInstanceType
      *  Item Property
      *  Item Property
      *
-     * @param \horstoeko\ubl\entities\cac\AdditionalItemProperty[] $additionalItemProperty
+     * @param  \horstoeko\ubl\entities\cac\AdditionalItemProperty[] $additionalItemProperty
      * @return self
      */
     public function setAdditionalItemProperty(array $additionalItemProperty)
@@ -515,7 +515,7 @@ class ItemInstanceType
      *  Lot Identification
      *  Lot Identification
      *
-     * @param \horstoeko\ubl\entities\cac\LotIdentification $lotIdentification
+     * @param  \horstoeko\ubl\entities\cac\LotIdentification $lotIdentification
      * @return self
      */
     public function setLotIdentification(\horstoeko\ubl\entities\cac\LotIdentification $lotIdentification)

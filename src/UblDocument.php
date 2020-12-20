@@ -30,14 +30,14 @@ abstract class UblDocument
     /**
      * @internal
      * Serializer builder
-     * @var SerializerBuilder
+     * @var      SerializerBuilder
      */
     protected $serializerBuilder;
 
     /**
      * @internal
      * Serializer
-     * @var SerializerInterface
+     * @var      SerializerInterface
      */
     protected $serializer;
 
@@ -83,11 +83,13 @@ abstract class UblDocument
         $this->serializerBuilder->addMetadataDir(dirname(__FILE__) . '/../src/yaml/udt', 'horstoeko\ubl\entities\udt');
         $this->serializerBuilder->addMetadataDir(dirname(__FILE__) . '/../src/yaml/xades', 'horstoeko\ubl\entities\xades');
         $this->serializerBuilder->addDefaultListeners();
-        $this->serializerBuilder->configureHandlers(function (HandlerRegistryInterface $handler) use ($serializerBuilder) {
-            $serializerBuilder->addDefaultHandlers();
-            $handler->registerSubscribingHandler(new BaseTypesHandler());
-            $handler->registerSubscribingHandler(new XmlSchemaDateHandler());
-        });
+        $this->serializerBuilder->configureHandlers(
+            function (HandlerRegistryInterface $handler) use ($serializerBuilder) {
+                $serializerBuilder->addDefaultHandlers();
+                $handler->registerSubscribingHandler(new BaseTypesHandler());
+                $handler->registerSubscribingHandler(new XmlSchemaDateHandler());
+            }
+        );
 
         $this->serializer = $this->serializerBuilder->build();
 

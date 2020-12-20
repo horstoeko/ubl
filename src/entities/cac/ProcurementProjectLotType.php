@@ -87,7 +87,7 @@ class ProcurementProjectLotType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -127,7 +127,7 @@ class ProcurementProjectLotType
      *  Tendering Terms
      *  Tendering Terms
      *
-     * @param \horstoeko\ubl\entities\cac\TenderingTerms $tenderingTerms
+     * @param  \horstoeko\ubl\entities\cac\TenderingTerms $tenderingTerms
      * @return self
      */
     public function setTenderingTerms(\horstoeko\ubl\entities\cac\TenderingTerms $tenderingTerms)
@@ -167,7 +167,7 @@ class ProcurementProjectLotType
      *  Procurement Project
      *  Procurement Project
      *
-     * @param \horstoeko\ubl\entities\cac\ProcurementProject $procurementProject
+     * @param  \horstoeko\ubl\entities\cac\ProcurementProject $procurementProject
      * @return self
      */
     public function setProcurementProject(\horstoeko\ubl\entities\cac\ProcurementProject $procurementProject)

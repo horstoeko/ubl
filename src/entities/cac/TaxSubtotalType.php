@@ -190,7 +190,7 @@ class TaxSubtotalType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TaxableAmount $taxableAmount
+     * @param  \horstoeko\ubl\entities\cbc\TaxableAmount $taxableAmount
      * @return self
      */
     public function setTaxableAmount(\horstoeko\ubl\entities\cbc\TaxableAmount $taxableAmount)
@@ -230,7 +230,7 @@ class TaxSubtotalType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TaxAmount $taxAmount
+     * @param  \horstoeko\ubl\entities\cbc\TaxAmount $taxAmount
      * @return self
      */
     public function setTaxAmount(\horstoeko\ubl\entities\cbc\TaxAmount $taxAmount)
@@ -270,7 +270,7 @@ class TaxSubtotalType
      *  Numeric
      *  Numeric. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CalculationSequenceNumeric $calculationSequenceNumeric
+     * @param  \horstoeko\ubl\entities\cbc\CalculationSequenceNumeric $calculationSequenceNumeric
      * @return self
      */
     public function setCalculationSequenceNumeric(\horstoeko\ubl\entities\cbc\CalculationSequenceNumeric $calculationSequenceNumeric)
@@ -312,7 +312,7 @@ class TaxSubtotalType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TransactionCurrencyTaxAmount $transactionCurrencyTaxAmount
+     * @param  \horstoeko\ubl\entities\cbc\TransactionCurrencyTaxAmount $transactionCurrencyTaxAmount
      * @return self
      */
     public function setTransactionCurrencyTaxAmount(\horstoeko\ubl\entities\cbc\TransactionCurrencyTaxAmount $transactionCurrencyTaxAmount)
@@ -352,7 +352,7 @@ class TaxSubtotalType
      *  Percent
      *  Percent. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Percent $percent
+     * @param  \horstoeko\ubl\entities\cbc\Percent $percent
      * @return self
      */
     public function setPercent(\horstoeko\ubl\entities\cbc\Percent $percent)
@@ -392,7 +392,7 @@ class TaxSubtotalType
      *  Measure
      *  Measure. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\BaseUnitMeasure $baseUnitMeasure
+     * @param  \horstoeko\ubl\entities\cbc\BaseUnitMeasure $baseUnitMeasure
      * @return self
      */
     public function setBaseUnitMeasure(\horstoeko\ubl\entities\cbc\BaseUnitMeasure $baseUnitMeasure)
@@ -434,7 +434,7 @@ class TaxSubtotalType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PerUnitAmount $perUnitAmount
+     * @param  \horstoeko\ubl\entities\cbc\PerUnitAmount $perUnitAmount
      * @return self
      */
     public function setPerUnitAmount(\horstoeko\ubl\entities\cbc\PerUnitAmount $perUnitAmount)
@@ -474,7 +474,7 @@ class TaxSubtotalType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TierRange $tierRange
+     * @param  \horstoeko\ubl\entities\cbc\TierRange $tierRange
      * @return self
      */
     public function setTierRange(\horstoeko\ubl\entities\cbc\TierRange $tierRange)
@@ -514,7 +514,7 @@ class TaxSubtotalType
      *  Percent
      *  Percent. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TierRatePercent $tierRatePercent
+     * @param  \horstoeko\ubl\entities\cbc\TierRatePercent $tierRatePercent
      * @return self
      */
     public function setTierRatePercent(\horstoeko\ubl\entities\cbc\TierRatePercent $tierRatePercent)
@@ -554,7 +554,7 @@ class TaxSubtotalType
      *  Tax Category
      *  Tax Category
      *
-     * @param \horstoeko\ubl\entities\cac\TaxCategory $taxCategory
+     * @param  \horstoeko\ubl\entities\cac\TaxCategory $taxCategory
      * @return self
      */
     public function setTaxCategory(\horstoeko\ubl\entities\cac\TaxCategory $taxCategory)

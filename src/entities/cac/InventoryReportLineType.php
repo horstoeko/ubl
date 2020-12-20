@@ -161,7 +161,7 @@ class InventoryReportLineType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -183,7 +183,7 @@ class InventoryReportLineType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param  \horstoeko\ubl\entities\cbc\Note $note
      */
     public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
     {
@@ -203,7 +203,7 @@ class InventoryReportLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNote($index)
@@ -223,7 +223,7 @@ class InventoryReportLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNote($index)
@@ -262,7 +262,7 @@ class InventoryReportLineType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note[] $note
+     * @param  \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
     public function setNote(array $note)
@@ -302,7 +302,7 @@ class InventoryReportLineType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Quantity $quantity
+     * @param  \horstoeko\ubl\entities\cbc\Quantity $quantity
      * @return self
      */
     public function setQuantity(\horstoeko\ubl\entities\cbc\Quantity $quantity)
@@ -344,7 +344,7 @@ class InventoryReportLineType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\InventoryValueAmount $inventoryValueAmount
+     * @param  \horstoeko\ubl\entities\cbc\InventoryValueAmount $inventoryValueAmount
      * @return self
      */
     public function setInventoryValueAmount(\horstoeko\ubl\entities\cbc\InventoryValueAmount $inventoryValueAmount)
@@ -384,7 +384,7 @@ class InventoryReportLineType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $availabilityDate
+     * @param  \DateTime $availabilityDate
      * @return self
      */
     public function setAvailabilityDate(\DateTime $availabilityDate)
@@ -424,7 +424,7 @@ class InventoryReportLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AvailabilityStatusCode $availabilityStatusCode
+     * @param  \horstoeko\ubl\entities\cbc\AvailabilityStatusCode $availabilityStatusCode
      * @return self
      */
     public function setAvailabilityStatusCode(\horstoeko\ubl\entities\cbc\AvailabilityStatusCode $availabilityStatusCode)
@@ -464,7 +464,7 @@ class InventoryReportLineType
      *  Item
      *  Item
      *
-     * @param \horstoeko\ubl\entities\cac\Item $item
+     * @param  \horstoeko\ubl\entities\cac\Item $item
      * @return self
      */
     public function setItem(\horstoeko\ubl\entities\cac\Item $item)
@@ -506,7 +506,7 @@ class InventoryReportLineType
      *  Location
      *  Location
      *
-     * @param \horstoeko\ubl\entities\cac\InventoryLocation $inventoryLocation
+     * @param  \horstoeko\ubl\entities\cac\InventoryLocation $inventoryLocation
      * @return self
      */
     public function setInventoryLocation(\horstoeko\ubl\entities\cac\InventoryLocation $inventoryLocation)

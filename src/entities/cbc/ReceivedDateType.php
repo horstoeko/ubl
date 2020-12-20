@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing ReceivedDateType
  *
- *
  * XSD Type: ReceivedDateType
  */
 class ReceivedDateType
@@ -29,7 +28,7 @@ class ReceivedDateType
     /**
      * Gets or sets the inner value
      *
-     * @param \DateTime $value
+     * @param  \DateTime $value
      * @return \DateTime
      */
     public function value()

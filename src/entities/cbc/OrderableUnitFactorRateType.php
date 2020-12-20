@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\RateType;
 /**
  * Class representing OrderableUnitFactorRateType
  *
- *
  * XSD Type: OrderableUnitFactorRateType
  */
 class OrderableUnitFactorRateType extends RateType

@@ -475,7 +475,7 @@ class CreditNoteLineType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -515,7 +515,7 @@ class CreditNoteLineType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\UUID $uUID
+     * @param  \horstoeko\ubl\entities\cbc\UUID $uUID
      * @return self
      */
     public function setUUID(\horstoeko\ubl\entities\cbc\UUID $uUID)
@@ -537,7 +537,7 @@ class CreditNoteLineType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param  \horstoeko\ubl\entities\cbc\Note $note
      */
     public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
     {
@@ -557,7 +557,7 @@ class CreditNoteLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNote($index)
@@ -577,7 +577,7 @@ class CreditNoteLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNote($index)
@@ -616,7 +616,7 @@ class CreditNoteLineType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note[] $note
+     * @param  \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
     public function setNote(array $note)
@@ -658,7 +658,7 @@ class CreditNoteLineType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CreditedQuantity $creditedQuantity
+     * @param  \horstoeko\ubl\entities\cbc\CreditedQuantity $creditedQuantity
      * @return self
      */
     public function setCreditedQuantity(\horstoeko\ubl\entities\cbc\CreditedQuantity $creditedQuantity)
@@ -698,7 +698,7 @@ class CreditNoteLineType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LineExtensionAmount $lineExtensionAmount
+     * @param  \horstoeko\ubl\entities\cbc\LineExtensionAmount $lineExtensionAmount
      * @return self
      */
     public function setLineExtensionAmount(\horstoeko\ubl\entities\cbc\LineExtensionAmount $lineExtensionAmount)
@@ -738,7 +738,7 @@ class CreditNoteLineType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $taxPointDate
+     * @param  \DateTime $taxPointDate
      * @return self
      */
     public function setTaxPointDate(\DateTime $taxPointDate)
@@ -778,7 +778,7 @@ class CreditNoteLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AccountingCostCode $accountingCostCode
+     * @param  \horstoeko\ubl\entities\cbc\AccountingCostCode $accountingCostCode
      * @return self
      */
     public function setAccountingCostCode(\horstoeko\ubl\entities\cbc\AccountingCostCode $accountingCostCode)
@@ -818,7 +818,7 @@ class CreditNoteLineType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AccountingCost $accountingCost
+     * @param  \horstoeko\ubl\entities\cbc\AccountingCost $accountingCost
      * @return self
      */
     public function setAccountingCost(\horstoeko\ubl\entities\cbc\AccountingCost $accountingCost)
@@ -858,7 +858,7 @@ class CreditNoteLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PaymentPurposeCode $paymentPurposeCode
+     * @param  \horstoeko\ubl\entities\cbc\PaymentPurposeCode $paymentPurposeCode
      * @return self
      */
     public function setPaymentPurposeCode(\horstoeko\ubl\entities\cbc\PaymentPurposeCode $paymentPurposeCode)
@@ -900,7 +900,7 @@ class CreditNoteLineType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $freeOfChargeIndicator
+     * @param  bool $freeOfChargeIndicator
      * @return self
      */
     public function setFreeOfChargeIndicator($freeOfChargeIndicator)
@@ -923,7 +923,7 @@ class CreditNoteLineType
      *  Period
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\InvoicePeriod $invoicePeriod
+     * @param  \horstoeko\ubl\entities\cac\InvoicePeriod $invoicePeriod
      */
     public function addToInvoicePeriod(\horstoeko\ubl\entities\cac\InvoicePeriod $invoicePeriod)
     {
@@ -944,7 +944,7 @@ class CreditNoteLineType
      *  Period
      *  Period
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetInvoicePeriod($index)
@@ -965,7 +965,7 @@ class CreditNoteLineType
      *  Period
      *  Period
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetInvoicePeriod($index)
@@ -1006,7 +1006,7 @@ class CreditNoteLineType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\InvoicePeriod[] $invoicePeriod
+     * @param  \horstoeko\ubl\entities\cac\InvoicePeriod[] $invoicePeriod
      * @return self
      */
     public function setInvoicePeriod(array $invoicePeriod)
@@ -1028,7 +1028,7 @@ class CreditNoteLineType
      *  Order Line Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\OrderLineReference $orderLineReference
+     * @param  \horstoeko\ubl\entities\cac\OrderLineReference $orderLineReference
      */
     public function addToOrderLineReference(\horstoeko\ubl\entities\cac\OrderLineReference $orderLineReference)
     {
@@ -1048,7 +1048,7 @@ class CreditNoteLineType
      *  Order Line Reference
      *  Order Line Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetOrderLineReference($index)
@@ -1068,7 +1068,7 @@ class CreditNoteLineType
      *  Order Line Reference
      *  Order Line Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetOrderLineReference($index)
@@ -1107,7 +1107,7 @@ class CreditNoteLineType
      *  Order Line Reference
      *  Order Line Reference
      *
-     * @param \horstoeko\ubl\entities\cac\OrderLineReference[] $orderLineReference
+     * @param  \horstoeko\ubl\entities\cac\OrderLineReference[] $orderLineReference
      * @return self
      */
     public function setOrderLineReference(array $orderLineReference)
@@ -1130,7 +1130,7 @@ class CreditNoteLineType
      *  Response
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\DiscrepancyResponse $discrepancyResponse
+     * @param  \horstoeko\ubl\entities\cac\DiscrepancyResponse $discrepancyResponse
      */
     public function addToDiscrepancyResponse(\horstoeko\ubl\entities\cac\DiscrepancyResponse $discrepancyResponse)
     {
@@ -1151,7 +1151,7 @@ class CreditNoteLineType
      *  Response
      *  Response
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDiscrepancyResponse($index)
@@ -1172,7 +1172,7 @@ class CreditNoteLineType
      *  Response
      *  Response
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDiscrepancyResponse($index)
@@ -1213,7 +1213,7 @@ class CreditNoteLineType
      *  Response
      *  Response
      *
-     * @param \horstoeko\ubl\entities\cac\DiscrepancyResponse[] $discrepancyResponse
+     * @param  \horstoeko\ubl\entities\cac\DiscrepancyResponse[] $discrepancyResponse
      * @return self
      */
     public function setDiscrepancyResponse(array $discrepancyResponse)
@@ -1236,7 +1236,7 @@ class CreditNoteLineType
      *  Line Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\DespatchLineReference $despatchLineReference
+     * @param  \horstoeko\ubl\entities\cac\DespatchLineReference $despatchLineReference
      */
     public function addToDespatchLineReference(\horstoeko\ubl\entities\cac\DespatchLineReference $despatchLineReference)
     {
@@ -1257,7 +1257,7 @@ class CreditNoteLineType
      *  Line Reference
      *  Line Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDespatchLineReference($index)
@@ -1278,7 +1278,7 @@ class CreditNoteLineType
      *  Line Reference
      *  Line Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDespatchLineReference($index)
@@ -1319,7 +1319,7 @@ class CreditNoteLineType
      *  Line Reference
      *  Line Reference
      *
-     * @param \horstoeko\ubl\entities\cac\DespatchLineReference[] $despatchLineReference
+     * @param  \horstoeko\ubl\entities\cac\DespatchLineReference[] $despatchLineReference
      * @return self
      */
     public function setDespatchLineReference(array $despatchLineReference)
@@ -1342,7 +1342,7 @@ class CreditNoteLineType
      *  Line Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ReceiptLineReference $receiptLineReference
+     * @param  \horstoeko\ubl\entities\cac\ReceiptLineReference $receiptLineReference
      */
     public function addToReceiptLineReference(\horstoeko\ubl\entities\cac\ReceiptLineReference $receiptLineReference)
     {
@@ -1363,7 +1363,7 @@ class CreditNoteLineType
      *  Line Reference
      *  Line Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetReceiptLineReference($index)
@@ -1384,7 +1384,7 @@ class CreditNoteLineType
      *  Line Reference
      *  Line Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetReceiptLineReference($index)
@@ -1425,7 +1425,7 @@ class CreditNoteLineType
      *  Line Reference
      *  Line Reference
      *
-     * @param \horstoeko\ubl\entities\cac\ReceiptLineReference[] $receiptLineReference
+     * @param  \horstoeko\ubl\entities\cac\ReceiptLineReference[] $receiptLineReference
      * @return self
      */
     public function setReceiptLineReference(array $receiptLineReference)
@@ -1447,7 +1447,7 @@ class CreditNoteLineType
      *  Billing Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\BillingReference $billingReference
+     * @param  \horstoeko\ubl\entities\cac\BillingReference $billingReference
      */
     public function addToBillingReference(\horstoeko\ubl\entities\cac\BillingReference $billingReference)
     {
@@ -1467,7 +1467,7 @@ class CreditNoteLineType
      *  Billing Reference
      *  Billing Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetBillingReference($index)
@@ -1487,7 +1487,7 @@ class CreditNoteLineType
      *  Billing Reference
      *  Billing Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetBillingReference($index)
@@ -1526,7 +1526,7 @@ class CreditNoteLineType
      *  Billing Reference
      *  Billing Reference
      *
-     * @param \horstoeko\ubl\entities\cac\BillingReference[] $billingReference
+     * @param  \horstoeko\ubl\entities\cac\BillingReference[] $billingReference
      * @return self
      */
     public function setBillingReference(array $billingReference)
@@ -1548,7 +1548,7 @@ class CreditNoteLineType
      *  Document Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\DocumentReference $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference $documentReference
      */
     public function addToDocumentReference(\horstoeko\ubl\entities\cac\DocumentReference $documentReference)
     {
@@ -1568,7 +1568,7 @@ class CreditNoteLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDocumentReference($index)
@@ -1588,7 +1588,7 @@ class CreditNoteLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDocumentReference($index)
@@ -1627,7 +1627,7 @@ class CreditNoteLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\DocumentReference[] $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference[] $documentReference
      * @return self
      */
     public function setDocumentReference(array $documentReference)
@@ -1667,7 +1667,7 @@ class CreditNoteLineType
      *  Pricing Reference
      *  Pricing Reference
      *
-     * @param \horstoeko\ubl\entities\cac\PricingReference $pricingReference
+     * @param  \horstoeko\ubl\entities\cac\PricingReference $pricingReference
      * @return self
      */
     public function setPricingReference(\horstoeko\ubl\entities\cac\PricingReference $pricingReference)
@@ -1709,7 +1709,7 @@ class CreditNoteLineType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\OriginatorParty $originatorParty
+     * @param  \horstoeko\ubl\entities\cac\OriginatorParty $originatorParty
      * @return self
      */
     public function setOriginatorParty(\horstoeko\ubl\entities\cac\OriginatorParty $originatorParty)
@@ -1731,7 +1731,7 @@ class CreditNoteLineType
      *  Delivery
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Delivery $delivery
+     * @param  \horstoeko\ubl\entities\cac\Delivery $delivery
      */
     public function addToDelivery(\horstoeko\ubl\entities\cac\Delivery $delivery)
     {
@@ -1751,7 +1751,7 @@ class CreditNoteLineType
      *  Delivery
      *  Delivery
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDelivery($index)
@@ -1771,7 +1771,7 @@ class CreditNoteLineType
      *  Delivery
      *  Delivery
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDelivery($index)
@@ -1810,7 +1810,7 @@ class CreditNoteLineType
      *  Delivery
      *  Delivery
      *
-     * @param \horstoeko\ubl\entities\cac\Delivery[] $delivery
+     * @param  \horstoeko\ubl\entities\cac\Delivery[] $delivery
      * @return self
      */
     public function setDelivery(array $delivery)
@@ -1832,7 +1832,7 @@ class CreditNoteLineType
      *  Payment Terms
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\PaymentTerms $paymentTerms
+     * @param  \horstoeko\ubl\entities\cac\PaymentTerms $paymentTerms
      */
     public function addToPaymentTerms(\horstoeko\ubl\entities\cac\PaymentTerms $paymentTerms)
     {
@@ -1852,7 +1852,7 @@ class CreditNoteLineType
      *  Payment Terms
      *  Payment Terms
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPaymentTerms($index)
@@ -1872,7 +1872,7 @@ class CreditNoteLineType
      *  Payment Terms
      *  Payment Terms
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPaymentTerms($index)
@@ -1911,7 +1911,7 @@ class CreditNoteLineType
      *  Payment Terms
      *  Payment Terms
      *
-     * @param \horstoeko\ubl\entities\cac\PaymentTerms[] $paymentTerms
+     * @param  \horstoeko\ubl\entities\cac\PaymentTerms[] $paymentTerms
      * @return self
      */
     public function setPaymentTerms(array $paymentTerms)
@@ -1933,7 +1933,7 @@ class CreditNoteLineType
      *  Tax Total
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\TaxTotal $taxTotal
+     * @param  \horstoeko\ubl\entities\cac\TaxTotal $taxTotal
      */
     public function addToTaxTotal(\horstoeko\ubl\entities\cac\TaxTotal $taxTotal)
     {
@@ -1953,7 +1953,7 @@ class CreditNoteLineType
      *  Tax Total
      *  Tax Total
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTaxTotal($index)
@@ -1973,7 +1973,7 @@ class CreditNoteLineType
      *  Tax Total
      *  Tax Total
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTaxTotal($index)
@@ -2012,7 +2012,7 @@ class CreditNoteLineType
      *  Tax Total
      *  Tax Total
      *
-     * @param \horstoeko\ubl\entities\cac\TaxTotal[] $taxTotal
+     * @param  \horstoeko\ubl\entities\cac\TaxTotal[] $taxTotal
      * @return self
      */
     public function setTaxTotal(array $taxTotal)
@@ -2034,7 +2034,7 @@ class CreditNoteLineType
      *  Allowance Charge
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge
+     * @param  \horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge
      */
     public function addToAllowanceCharge(\horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge)
     {
@@ -2054,7 +2054,7 @@ class CreditNoteLineType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAllowanceCharge($index)
@@ -2074,7 +2074,7 @@ class CreditNoteLineType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAllowanceCharge($index)
@@ -2113,7 +2113,7 @@ class CreditNoteLineType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param \horstoeko\ubl\entities\cac\AllowanceCharge[] $allowanceCharge
+     * @param  \horstoeko\ubl\entities\cac\AllowanceCharge[] $allowanceCharge
      * @return self
      */
     public function setAllowanceCharge(array $allowanceCharge)
@@ -2153,7 +2153,7 @@ class CreditNoteLineType
      *  Item
      *  Item
      *
-     * @param \horstoeko\ubl\entities\cac\Item $item
+     * @param  \horstoeko\ubl\entities\cac\Item $item
      * @return self
      */
     public function setItem(\horstoeko\ubl\entities\cac\Item $item)
@@ -2195,7 +2195,7 @@ class CreditNoteLineType
      *  Price
      *  Unit Price, Base Price
      *
-     * @param \horstoeko\ubl\entities\cac\Price $price
+     * @param  \horstoeko\ubl\entities\cac\Price $price
      * @return self
      */
     public function setPrice(\horstoeko\ubl\entities\cac\Price $price)
@@ -2217,7 +2217,7 @@ class CreditNoteLineType
      *  Delivery Terms
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\DeliveryTerms $deliveryTerms
+     * @param  \horstoeko\ubl\entities\cac\DeliveryTerms $deliveryTerms
      */
     public function addToDeliveryTerms(\horstoeko\ubl\entities\cac\DeliveryTerms $deliveryTerms)
     {
@@ -2237,7 +2237,7 @@ class CreditNoteLineType
      *  Delivery Terms
      *  Delivery Terms
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDeliveryTerms($index)
@@ -2257,7 +2257,7 @@ class CreditNoteLineType
      *  Delivery Terms
      *  Delivery Terms
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDeliveryTerms($index)
@@ -2296,7 +2296,7 @@ class CreditNoteLineType
      *  Delivery Terms
      *  Delivery Terms
      *
-     * @param \horstoeko\ubl\entities\cac\DeliveryTerms[] $deliveryTerms
+     * @param  \horstoeko\ubl\entities\cac\DeliveryTerms[] $deliveryTerms
      * @return self
      */
     public function setDeliveryTerms(array $deliveryTerms)
@@ -2319,7 +2319,7 @@ class CreditNoteLineType
      *  Credit Note Line
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\SubCreditNoteLine $subCreditNoteLine
+     * @param  \horstoeko\ubl\entities\cac\SubCreditNoteLine $subCreditNoteLine
      */
     public function addToSubCreditNoteLine(\horstoeko\ubl\entities\cac\SubCreditNoteLine $subCreditNoteLine)
     {
@@ -2340,7 +2340,7 @@ class CreditNoteLineType
      *  Credit Note Line
      *  Credit Note Line
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSubCreditNoteLine($index)
@@ -2361,7 +2361,7 @@ class CreditNoteLineType
      *  Credit Note Line
      *  Credit Note Line
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSubCreditNoteLine($index)
@@ -2402,7 +2402,7 @@ class CreditNoteLineType
      *  Credit Note Line
      *  Credit Note Line
      *
-     * @param \horstoeko\ubl\entities\cac\SubCreditNoteLine[] $subCreditNoteLine
+     * @param  \horstoeko\ubl\entities\cac\SubCreditNoteLine[] $subCreditNoteLine
      * @return self
      */
     public function setSubCreditNoteLine(array $subCreditNoteLine)
@@ -2444,7 +2444,7 @@ class CreditNoteLineType
      *  Price Extension
      *  Price Extension
      *
-     * @param \horstoeko\ubl\entities\cac\ItemPriceExtension $itemPriceExtension
+     * @param  \horstoeko\ubl\entities\cac\ItemPriceExtension $itemPriceExtension
      * @return self
      */
     public function setItemPriceExtension(\horstoeko\ubl\entities\cac\ItemPriceExtension $itemPriceExtension)

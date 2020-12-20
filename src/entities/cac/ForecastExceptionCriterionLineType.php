@@ -118,7 +118,7 @@ class ForecastExceptionCriterionLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ForecastPurposeCode $forecastPurposeCode
+     * @param  \horstoeko\ubl\entities\cbc\ForecastPurposeCode $forecastPurposeCode
      * @return self
      */
     public function setForecastPurposeCode(\horstoeko\ubl\entities\cbc\ForecastPurposeCode $forecastPurposeCode)
@@ -158,7 +158,7 @@ class ForecastExceptionCriterionLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ForecastTypeCode $forecastTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\ForecastTypeCode $forecastTypeCode
      * @return self
      */
     public function setForecastTypeCode(\horstoeko\ubl\entities\cbc\ForecastTypeCode $forecastTypeCode)
@@ -198,7 +198,7 @@ class ForecastExceptionCriterionLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ComparisonDataSourceCode $comparisonDataSourceCode
+     * @param  \horstoeko\ubl\entities\cbc\ComparisonDataSourceCode $comparisonDataSourceCode
      * @return self
      */
     public function setComparisonDataSourceCode(\horstoeko\ubl\entities\cbc\ComparisonDataSourceCode $comparisonDataSourceCode)
@@ -238,7 +238,7 @@ class ForecastExceptionCriterionLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\DataSourceCode $dataSourceCode
+     * @param  \horstoeko\ubl\entities\cbc\DataSourceCode $dataSourceCode
      * @return self
      */
     public function setDataSourceCode(\horstoeko\ubl\entities\cbc\DataSourceCode $dataSourceCode)
@@ -278,7 +278,7 @@ class ForecastExceptionCriterionLineType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TimeDeltaDaysQuantity $timeDeltaDaysQuantity
+     * @param  \horstoeko\ubl\entities\cbc\TimeDeltaDaysQuantity $timeDeltaDaysQuantity
      * @return self
      */
     public function setTimeDeltaDaysQuantity(\horstoeko\ubl\entities\cbc\TimeDeltaDaysQuantity $timeDeltaDaysQuantity)

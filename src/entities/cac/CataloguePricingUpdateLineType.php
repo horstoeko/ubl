@@ -109,7 +109,7 @@ class CataloguePricingUpdateLineType
      *  Identifier. Type
      *  1
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -151,7 +151,7 @@ class CataloguePricingUpdateLineType
      *  Customer Party
      *  Customer Party
      *
-     * @param \horstoeko\ubl\entities\cac\ContractorCustomerParty $contractorCustomerParty
+     * @param  \horstoeko\ubl\entities\cac\ContractorCustomerParty $contractorCustomerParty
      * @return self
      */
     public function setContractorCustomerParty(\horstoeko\ubl\entities\cac\ContractorCustomerParty $contractorCustomerParty)
@@ -193,7 +193,7 @@ class CataloguePricingUpdateLineType
      *  Supplier Party
      *  Supplier Party
      *
-     * @param \horstoeko\ubl\entities\cac\SellerSupplierParty $sellerSupplierParty
+     * @param  \horstoeko\ubl\entities\cac\SellerSupplierParty $sellerSupplierParty
      * @return self
      */
     public function setSellerSupplierParty(\horstoeko\ubl\entities\cac\SellerSupplierParty $sellerSupplierParty)
@@ -216,7 +216,7 @@ class CataloguePricingUpdateLineType
      *  Item Location Quantity
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\RequiredItemLocationQuantity $requiredItemLocationQuantity
+     * @param  \horstoeko\ubl\entities\cac\RequiredItemLocationQuantity $requiredItemLocationQuantity
      */
     public function addToRequiredItemLocationQuantity(\horstoeko\ubl\entities\cac\RequiredItemLocationQuantity $requiredItemLocationQuantity)
     {
@@ -237,7 +237,7 @@ class CataloguePricingUpdateLineType
      *  Item Location Quantity
      *  Item Location Quantity
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetRequiredItemLocationQuantity($index)
@@ -258,7 +258,7 @@ class CataloguePricingUpdateLineType
      *  Item Location Quantity
      *  Item Location Quantity
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetRequiredItemLocationQuantity($index)
@@ -299,7 +299,7 @@ class CataloguePricingUpdateLineType
      *  Item Location Quantity
      *  Item Location Quantity
      *
-     * @param \horstoeko\ubl\entities\cac\RequiredItemLocationQuantity[] $requiredItemLocationQuantity
+     * @param  \horstoeko\ubl\entities\cac\RequiredItemLocationQuantity[] $requiredItemLocationQuantity
      * @return self
      */
     public function setRequiredItemLocationQuantity(array $requiredItemLocationQuantity)

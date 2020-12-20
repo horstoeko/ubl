@@ -289,7 +289,7 @@ class CertificateOfOriginApplicationType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ReferenceID $referenceID
+     * @param  \horstoeko\ubl\entities\cbc\ReferenceID $referenceID
      * @return self
      */
     public function setReferenceID(\horstoeko\ubl\entities\cbc\ReferenceID $referenceID)
@@ -329,7 +329,7 @@ class CertificateOfOriginApplicationType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CertificateType $certificateType
+     * @param  \horstoeko\ubl\entities\cbc\CertificateType $certificateType
      * @return self
      */
     public function setCertificateType(\horstoeko\ubl\entities\cbc\CertificateType $certificateType)
@@ -369,7 +369,7 @@ class CertificateOfOriginApplicationType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ApplicationStatusCode $applicationStatusCode
+     * @param  \horstoeko\ubl\entities\cbc\ApplicationStatusCode $applicationStatusCode
      * @return self
      */
     public function setApplicationStatusCode(\horstoeko\ubl\entities\cbc\ApplicationStatusCode $applicationStatusCode)
@@ -411,7 +411,7 @@ class CertificateOfOriginApplicationType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\OriginalJobID $originalJobID
+     * @param  \horstoeko\ubl\entities\cbc\OriginalJobID $originalJobID
      * @return self
      */
     public function setOriginalJobID(\horstoeko\ubl\entities\cbc\OriginalJobID $originalJobID)
@@ -453,7 +453,7 @@ class CertificateOfOriginApplicationType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PreviousJobID $previousJobID
+     * @param  \horstoeko\ubl\entities\cbc\PreviousJobID $previousJobID
      * @return self
      */
     public function setPreviousJobID(\horstoeko\ubl\entities\cbc\PreviousJobID $previousJobID)
@@ -475,7 +475,7 @@ class CertificateOfOriginApplicationType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Remarks $remarks
+     * @param  \horstoeko\ubl\entities\cbc\Remarks $remarks
      */
     public function addToRemarks(\horstoeko\ubl\entities\cbc\Remarks $remarks)
     {
@@ -495,7 +495,7 @@ class CertificateOfOriginApplicationType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetRemarks($index)
@@ -515,7 +515,7 @@ class CertificateOfOriginApplicationType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetRemarks($index)
@@ -554,7 +554,7 @@ class CertificateOfOriginApplicationType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Remarks[] $remarks
+     * @param  \horstoeko\ubl\entities\cbc\Remarks[] $remarks
      * @return self
      */
     public function setRemarks(array $remarks)
@@ -594,7 +594,7 @@ class CertificateOfOriginApplicationType
      *  Shipment
      *  Shipment
      *
-     * @param \horstoeko\ubl\entities\cac\Shipment $shipment
+     * @param  \horstoeko\ubl\entities\cac\Shipment $shipment
      * @return self
      */
     public function setShipment(\horstoeko\ubl\entities\cac\Shipment $shipment)
@@ -616,7 +616,7 @@ class CertificateOfOriginApplicationType
      *  Endorser Party
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\EndorserParty $endorserParty
+     * @param  \horstoeko\ubl\entities\cac\EndorserParty $endorserParty
      */
     public function addToEndorserParty(\horstoeko\ubl\entities\cac\EndorserParty $endorserParty)
     {
@@ -636,7 +636,7 @@ class CertificateOfOriginApplicationType
      *  Endorser Party
      *  Endorser Party
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetEndorserParty($index)
@@ -656,7 +656,7 @@ class CertificateOfOriginApplicationType
      *  Endorser Party
      *  Endorser Party
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetEndorserParty($index)
@@ -695,7 +695,7 @@ class CertificateOfOriginApplicationType
      *  Endorser Party
      *  Endorser Party
      *
-     * @param \horstoeko\ubl\entities\cac\EndorserParty[] $endorserParty
+     * @param  \horstoeko\ubl\entities\cac\EndorserParty[] $endorserParty
      * @return self
      */
     public function setEndorserParty(array $endorserParty)
@@ -737,7 +737,7 @@ class CertificateOfOriginApplicationType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\PreparationParty $preparationParty
+     * @param  \horstoeko\ubl\entities\cac\PreparationParty $preparationParty
      * @return self
      */
     public function setPreparationParty(\horstoeko\ubl\entities\cac\PreparationParty $preparationParty)
@@ -779,7 +779,7 @@ class CertificateOfOriginApplicationType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\IssuerParty $issuerParty
+     * @param  \horstoeko\ubl\entities\cac\IssuerParty $issuerParty
      * @return self
      */
     public function setIssuerParty(\horstoeko\ubl\entities\cac\IssuerParty $issuerParty)
@@ -823,7 +823,7 @@ class CertificateOfOriginApplicationType
      *  Party
      *  Exporter (WCO ID 41 and 42)
      *
-     * @param \horstoeko\ubl\entities\cac\ExporterParty $exporterParty
+     * @param  \horstoeko\ubl\entities\cac\ExporterParty $exporterParty
      * @return self
      */
     public function setExporterParty(\horstoeko\ubl\entities\cac\ExporterParty $exporterParty)
@@ -867,7 +867,7 @@ class CertificateOfOriginApplicationType
      *  Party
      *  Importer (WCO ID 39 and 40)
      *
-     * @param \horstoeko\ubl\entities\cac\ImporterParty $importerParty
+     * @param  \horstoeko\ubl\entities\cac\ImporterParty $importerParty
      * @return self
      */
     public function setImporterParty(\horstoeko\ubl\entities\cac\ImporterParty $importerParty)
@@ -909,7 +909,7 @@ class CertificateOfOriginApplicationType
      *  Country
      *  Country
      *
-     * @param \horstoeko\ubl\entities\cac\IssuingCountry $issuingCountry
+     * @param  \horstoeko\ubl\entities\cac\IssuingCountry $issuingCountry
      * @return self
      */
     public function setIssuingCountry(\horstoeko\ubl\entities\cac\IssuingCountry $issuingCountry)
@@ -931,7 +931,7 @@ class CertificateOfOriginApplicationType
      *  Document Distribution
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\DocumentDistribution $documentDistribution
+     * @param  \horstoeko\ubl\entities\cac\DocumentDistribution $documentDistribution
      */
     public function addToDocumentDistribution(\horstoeko\ubl\entities\cac\DocumentDistribution $documentDistribution)
     {
@@ -951,7 +951,7 @@ class CertificateOfOriginApplicationType
      *  Document Distribution
      *  Document Distribution
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDocumentDistribution($index)
@@ -971,7 +971,7 @@ class CertificateOfOriginApplicationType
      *  Document Distribution
      *  Document Distribution
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDocumentDistribution($index)
@@ -1010,7 +1010,7 @@ class CertificateOfOriginApplicationType
      *  Document Distribution
      *  Document Distribution
      *
-     * @param \horstoeko\ubl\entities\cac\DocumentDistribution[] $documentDistribution
+     * @param  \horstoeko\ubl\entities\cac\DocumentDistribution[] $documentDistribution
      * @return self
      */
     public function setDocumentDistribution(array $documentDistribution)
@@ -1033,7 +1033,7 @@ class CertificateOfOriginApplicationType
      *  Document Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\SupportingDocumentReference $supportingDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\SupportingDocumentReference $supportingDocumentReference
      */
     public function addToSupportingDocumentReference(\horstoeko\ubl\entities\cac\SupportingDocumentReference $supportingDocumentReference)
     {
@@ -1054,7 +1054,7 @@ class CertificateOfOriginApplicationType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSupportingDocumentReference($index)
@@ -1075,7 +1075,7 @@ class CertificateOfOriginApplicationType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSupportingDocumentReference($index)
@@ -1116,7 +1116,7 @@ class CertificateOfOriginApplicationType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\SupportingDocumentReference[] $supportingDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\SupportingDocumentReference[] $supportingDocumentReference
      * @return self
      */
     public function setSupportingDocumentReference(array $supportingDocumentReference)
@@ -1138,7 +1138,7 @@ class CertificateOfOriginApplicationType
      *  Signature
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Signature $signature
+     * @param  \horstoeko\ubl\entities\cac\Signature $signature
      */
     public function addToSignature(\horstoeko\ubl\entities\cac\Signature $signature)
     {
@@ -1158,7 +1158,7 @@ class CertificateOfOriginApplicationType
      *  Signature
      *  Signature
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSignature($index)
@@ -1178,7 +1178,7 @@ class CertificateOfOriginApplicationType
      *  Signature
      *  Signature
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSignature($index)
@@ -1217,7 +1217,7 @@ class CertificateOfOriginApplicationType
      *  Signature
      *  Signature
      *
-     * @param \horstoeko\ubl\entities\cac\Signature[] $signature
+     * @param  \horstoeko\ubl\entities\cac\Signature[] $signature
      * @return self
      */
     public function setSignature(array $signature)

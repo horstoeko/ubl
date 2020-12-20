@@ -150,7 +150,7 @@ class HazardousGoodsTransitType
      *  Code. Type
      *  TREM card
      *
-     * @param \horstoeko\ubl\entities\cbc\TransportEmergencyCardCode $transportEmergencyCardCode
+     * @param  \horstoeko\ubl\entities\cbc\TransportEmergencyCardCode $transportEmergencyCardCode
      * @return self
      */
     public function setTransportEmergencyCardCode(\horstoeko\ubl\entities\cbc\TransportEmergencyCardCode $transportEmergencyCardCode)
@@ -192,7 +192,7 @@ class HazardousGoodsTransitType
      *  Code. Type
      *  Packing Group
      *
-     * @param \horstoeko\ubl\entities\cbc\PackingCriteriaCode $packingCriteriaCode
+     * @param  \horstoeko\ubl\entities\cbc\PackingCriteriaCode $packingCriteriaCode
      * @return self
      */
     public function setPackingCriteriaCode(\horstoeko\ubl\entities\cbc\PackingCriteriaCode $packingCriteriaCode)
@@ -232,7 +232,7 @@ class HazardousGoodsTransitType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\HazardousRegulationCode $hazardousRegulationCode
+     * @param  \horstoeko\ubl\entities\cbc\HazardousRegulationCode $hazardousRegulationCode
      * @return self
      */
     public function setHazardousRegulationCode(\horstoeko\ubl\entities\cbc\HazardousRegulationCode $hazardousRegulationCode)
@@ -272,7 +272,7 @@ class HazardousGoodsTransitType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\InhalationToxicityZoneCode $inhalationToxicityZoneCode
+     * @param  \horstoeko\ubl\entities\cbc\InhalationToxicityZoneCode $inhalationToxicityZoneCode
      * @return self
      */
     public function setInhalationToxicityZoneCode(\horstoeko\ubl\entities\cbc\InhalationToxicityZoneCode $inhalationToxicityZoneCode)
@@ -314,7 +314,7 @@ class HazardousGoodsTransitType
      *  Code. Type
      *  Permission for Transport
      *
-     * @param \horstoeko\ubl\entities\cbc\TransportAuthorizationCode $transportAuthorizationCode
+     * @param  \horstoeko\ubl\entities\cbc\TransportAuthorizationCode $transportAuthorizationCode
      * @return self
      */
     public function setTransportAuthorizationCode(\horstoeko\ubl\entities\cbc\TransportAuthorizationCode $transportAuthorizationCode)
@@ -356,7 +356,7 @@ class HazardousGoodsTransitType
      *  Temperature
      *  Temperature
      *
-     * @param \horstoeko\ubl\entities\cac\MaximumTemperature $maximumTemperature
+     * @param  \horstoeko\ubl\entities\cac\MaximumTemperature $maximumTemperature
      * @return self
      */
     public function setMaximumTemperature(\horstoeko\ubl\entities\cac\MaximumTemperature $maximumTemperature)
@@ -398,7 +398,7 @@ class HazardousGoodsTransitType
      *  Temperature
      *  Temperature
      *
-     * @param \horstoeko\ubl\entities\cac\MinimumTemperature $minimumTemperature
+     * @param  \horstoeko\ubl\entities\cac\MinimumTemperature $minimumTemperature
      * @return self
      */
     public function setMinimumTemperature(\horstoeko\ubl\entities\cac\MinimumTemperature $minimumTemperature)

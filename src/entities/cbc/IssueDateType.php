@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing IssueDateType
  *
- *
  * XSD Type: IssueDateType
  */
 class IssueDateType
@@ -29,7 +28,7 @@ class IssueDateType
     /**
      * Gets or sets the inner value
      *
-     * @param \DateTime $value
+     * @param  \DateTime $value
      * @return \DateTime
      */
     public function value()

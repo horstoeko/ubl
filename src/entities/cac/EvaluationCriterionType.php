@@ -167,7 +167,7 @@ class EvaluationCriterionType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\EvaluationCriterionTypeCode $evaluationCriterionTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\EvaluationCriterionTypeCode $evaluationCriterionTypeCode
      * @return self
      */
     public function setEvaluationCriterionTypeCode(\horstoeko\ubl\entities\cbc\EvaluationCriterionTypeCode $evaluationCriterionTypeCode)
@@ -189,7 +189,7 @@ class EvaluationCriterionType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -209,7 +209,7 @@ class EvaluationCriterionType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -229,7 +229,7 @@ class EvaluationCriterionType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -268,7 +268,7 @@ class EvaluationCriterionType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -310,7 +310,7 @@ class EvaluationCriterionType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ThresholdAmount $thresholdAmount
+     * @param  \horstoeko\ubl\entities\cbc\ThresholdAmount $thresholdAmount
      * @return self
      */
     public function setThresholdAmount(\horstoeko\ubl\entities\cbc\ThresholdAmount $thresholdAmount)
@@ -352,7 +352,7 @@ class EvaluationCriterionType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ThresholdQuantity $thresholdQuantity
+     * @param  \horstoeko\ubl\entities\cbc\ThresholdQuantity $thresholdQuantity
      * @return self
      */
     public function setThresholdQuantity(\horstoeko\ubl\entities\cbc\ThresholdQuantity $thresholdQuantity)
@@ -392,7 +392,7 @@ class EvaluationCriterionType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ExpressionCode $expressionCode
+     * @param  \horstoeko\ubl\entities\cbc\ExpressionCode $expressionCode
      * @return self
      */
     public function setExpressionCode(\horstoeko\ubl\entities\cbc\ExpressionCode $expressionCode)
@@ -414,7 +414,7 @@ class EvaluationCriterionType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Expression $expression
+     * @param  \horstoeko\ubl\entities\cbc\Expression $expression
      */
     public function addToExpression(\horstoeko\ubl\entities\cbc\Expression $expression)
     {
@@ -434,7 +434,7 @@ class EvaluationCriterionType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetExpression($index)
@@ -454,7 +454,7 @@ class EvaluationCriterionType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetExpression($index)
@@ -493,7 +493,7 @@ class EvaluationCriterionType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Expression[] $expression
+     * @param  \horstoeko\ubl\entities\cbc\Expression[] $expression
      * @return self
      */
     public function setExpression(array $expression)
@@ -535,7 +535,7 @@ class EvaluationCriterionType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\DurationPeriod $durationPeriod
+     * @param  \horstoeko\ubl\entities\cac\DurationPeriod $durationPeriod
      * @return self
      */
     public function setDurationPeriod(\horstoeko\ubl\entities\cac\DurationPeriod $durationPeriod)
@@ -558,7 +558,7 @@ class EvaluationCriterionType
      *  Evidence
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\SuggestedEvidence $suggestedEvidence
+     * @param  \horstoeko\ubl\entities\cac\SuggestedEvidence $suggestedEvidence
      */
     public function addToSuggestedEvidence(\horstoeko\ubl\entities\cac\SuggestedEvidence $suggestedEvidence)
     {
@@ -579,7 +579,7 @@ class EvaluationCriterionType
      *  Evidence
      *  Evidence
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSuggestedEvidence($index)
@@ -600,7 +600,7 @@ class EvaluationCriterionType
      *  Evidence
      *  Evidence
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSuggestedEvidence($index)
@@ -641,7 +641,7 @@ class EvaluationCriterionType
      *  Evidence
      *  Evidence
      *
-     * @param \horstoeko\ubl\entities\cac\SuggestedEvidence[] $suggestedEvidence
+     * @param  \horstoeko\ubl\entities\cac\SuggestedEvidence[] $suggestedEvidence
      * @return self
      */
     public function setSuggestedEvidence(array $suggestedEvidence)

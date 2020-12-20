@@ -163,7 +163,7 @@ class LocationCoordinateType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CoordinateSystemCode $coordinateSystemCode
+     * @param  \horstoeko\ubl\entities\cbc\CoordinateSystemCode $coordinateSystemCode
      * @return self
      */
     public function setCoordinateSystemCode(\horstoeko\ubl\entities\cbc\CoordinateSystemCode $coordinateSystemCode)
@@ -205,7 +205,7 @@ class LocationCoordinateType
      *  Measure
      *  Measure. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LatitudeDegreesMeasure $latitudeDegreesMeasure
+     * @param  \horstoeko\ubl\entities\cbc\LatitudeDegreesMeasure $latitudeDegreesMeasure
      * @return self
      */
     public function setLatitudeDegreesMeasure(\horstoeko\ubl\entities\cbc\LatitudeDegreesMeasure $latitudeDegreesMeasure)
@@ -247,7 +247,7 @@ class LocationCoordinateType
      *  Measure
      *  Measure. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LatitudeMinutesMeasure $latitudeMinutesMeasure
+     * @param  \horstoeko\ubl\entities\cbc\LatitudeMinutesMeasure $latitudeMinutesMeasure
      * @return self
      */
     public function setLatitudeMinutesMeasure(\horstoeko\ubl\entities\cbc\LatitudeMinutesMeasure $latitudeMinutesMeasure)
@@ -289,7 +289,7 @@ class LocationCoordinateType
      *  Latitude Direction
      *  Latitude Direction_ Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LatitudeDirectionCode $latitudeDirectionCode
+     * @param  \horstoeko\ubl\entities\cbc\LatitudeDirectionCode $latitudeDirectionCode
      * @return self
      */
     public function setLatitudeDirectionCode(\horstoeko\ubl\entities\cbc\LatitudeDirectionCode $latitudeDirectionCode)
@@ -331,7 +331,7 @@ class LocationCoordinateType
      *  Measure
      *  Measure. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LongitudeDegreesMeasure $longitudeDegreesMeasure
+     * @param  \horstoeko\ubl\entities\cbc\LongitudeDegreesMeasure $longitudeDegreesMeasure
      * @return self
      */
     public function setLongitudeDegreesMeasure(\horstoeko\ubl\entities\cbc\LongitudeDegreesMeasure $longitudeDegreesMeasure)
@@ -373,7 +373,7 @@ class LocationCoordinateType
      *  Measure
      *  Measure. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LongitudeMinutesMeasure $longitudeMinutesMeasure
+     * @param  \horstoeko\ubl\entities\cbc\LongitudeMinutesMeasure $longitudeMinutesMeasure
      * @return self
      */
     public function setLongitudeMinutesMeasure(\horstoeko\ubl\entities\cbc\LongitudeMinutesMeasure $longitudeMinutesMeasure)
@@ -415,7 +415,7 @@ class LocationCoordinateType
      *  Longitude Direction
      *  Longitude Direction_ Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LongitudeDirectionCode $longitudeDirectionCode
+     * @param  \horstoeko\ubl\entities\cbc\LongitudeDirectionCode $longitudeDirectionCode
      * @return self
      */
     public function setLongitudeDirectionCode(\horstoeko\ubl\entities\cbc\LongitudeDirectionCode $longitudeDirectionCode)
@@ -455,7 +455,7 @@ class LocationCoordinateType
      *  Measure
      *  Measure. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AltitudeMeasure $altitudeMeasure
+     * @param  \horstoeko\ubl\entities\cbc\AltitudeMeasure $altitudeMeasure
      * @return self
      */
     public function setAltitudeMeasure(\horstoeko\ubl\entities\cbc\AltitudeMeasure $altitudeMeasure)

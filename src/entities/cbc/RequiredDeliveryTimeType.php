@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing RequiredDeliveryTimeType
  *
- *
  * XSD Type: RequiredDeliveryTimeType
  */
 class RequiredDeliveryTimeType
@@ -29,7 +28,7 @@ class RequiredDeliveryTimeType
     /**
      * Gets or sets the inner value
      *
-     * @param \DateTime $value
+     * @param  \DateTime $value
      * @return \DateTime
      */
     public function value()

@@ -134,7 +134,7 @@ class IdentifierType
     /**
      * Gets or sets the inner value
      *
-     * @param string $value
+     * @param  string $value
      * @return string
      */
     public function value()
@@ -186,7 +186,7 @@ class IdentifierType
      *  Identifier
      *  string
      *
-     * @param string $schemeID
+     * @param  string $schemeID
      * @return self
      */
     public function setSchemeID($schemeID)
@@ -226,7 +226,7 @@ class IdentifierType
      *  Text
      *  string
      *
-     * @param string $schemeName
+     * @param  string $schemeName
      * @return self
      */
     public function setSchemeName($schemeName)
@@ -268,7 +268,7 @@ class IdentifierType
      *  string
      *  Defaults to the UN/EDIFACT data element 3055 code list.
      *
-     * @param string $schemeAgencyID
+     * @param  string $schemeAgencyID
      * @return self
      */
     public function setSchemeAgencyID($schemeAgencyID)
@@ -308,7 +308,7 @@ class IdentifierType
      *  Text
      *  string
      *
-     * @param string $schemeAgencyName
+     * @param  string $schemeAgencyName
      * @return self
      */
     public function setSchemeAgencyName($schemeAgencyName)
@@ -348,7 +348,7 @@ class IdentifierType
      *  Identifier
      *  string
      *
-     * @param string $schemeVersionID
+     * @param  string $schemeVersionID
      * @return self
      */
     public function setSchemeVersionID($schemeVersionID)
@@ -388,7 +388,7 @@ class IdentifierType
      *  Identifier
      *  string
      *
-     * @param string $schemeDataURI
+     * @param  string $schemeDataURI
      * @return self
      */
     public function setSchemeDataURI($schemeDataURI)
@@ -428,7 +428,7 @@ class IdentifierType
      *  Identifier
      *  string
      *
-     * @param string $schemeURI
+     * @param  string $schemeURI
      * @return self
      */
     public function setSchemeURI($schemeURI)

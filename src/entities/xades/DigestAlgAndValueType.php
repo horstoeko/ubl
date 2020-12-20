@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing DigestAlgAndValueType
  *
- *
  * XSD Type: DigestAlgAndValueType
  */
 class DigestAlgAndValueType
@@ -34,7 +33,7 @@ class DigestAlgAndValueType
     /**
      * Sets a new digestMethod
      *
-     * @param \horstoeko\ubl\entities\ds\DigestMethod $digestMethod
+     * @param  \horstoeko\ubl\entities\ds\DigestMethod $digestMethod
      * @return self
      */
     public function setDigestMethod(\horstoeko\ubl\entities\ds\DigestMethod $digestMethod)
@@ -56,7 +55,7 @@ class DigestAlgAndValueType
     /**
      * Sets a new digestValue
      *
-     * @param string $digestValue
+     * @param  string $digestValue
      * @return self
      */
     public function setDigestValue($digestValue)

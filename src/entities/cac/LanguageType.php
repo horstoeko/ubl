@@ -87,7 +87,7 @@ class LanguageType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -127,7 +127,7 @@ class LanguageType
      *  Name
      *  Name. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Name $name
+     * @param  \horstoeko\ubl\entities\cbc\Name $name
      * @return self
      */
     public function setName(\horstoeko\ubl\entities\cbc\Name $name)
@@ -167,7 +167,7 @@ class LanguageType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LocaleCode $localeCode
+     * @param  \horstoeko\ubl\entities\cbc\LocaleCode $localeCode
      * @return self
      */
     public function setLocaleCode(\horstoeko\ubl\entities\cbc\LocaleCode $localeCode)

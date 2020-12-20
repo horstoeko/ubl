@@ -59,7 +59,7 @@ class AirTransportType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AircraftID $aircraftID
+     * @param  \horstoeko\ubl\entities\cbc\AircraftID $aircraftID
      * @return self
      */
     public function setAircraftID(\horstoeko\ubl\entities\cbc\AircraftID $aircraftID)

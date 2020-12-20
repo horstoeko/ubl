@@ -155,7 +155,7 @@ class PartyTaxSchemeType
      *  Name. Type
      *  Microsoft Corporation
      *
-     * @param \horstoeko\ubl\entities\cbc\RegistrationName $registrationName
+     * @param  \horstoeko\ubl\entities\cbc\RegistrationName $registrationName
      * @return self
      */
     public function setRegistrationName(\horstoeko\ubl\entities\cbc\RegistrationName $registrationName)
@@ -199,7 +199,7 @@ class PartyTaxSchemeType
      *  VAT Number
      *  3556625
      *
-     * @param \horstoeko\ubl\entities\cbc\CompanyID $companyID
+     * @param  \horstoeko\ubl\entities\cbc\CompanyID $companyID
      * @return self
      */
     public function setCompanyID(\horstoeko\ubl\entities\cbc\CompanyID $companyID)
@@ -239,7 +239,7 @@ class PartyTaxSchemeType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TaxLevelCode $taxLevelCode
+     * @param  \horstoeko\ubl\entities\cbc\TaxLevelCode $taxLevelCode
      * @return self
      */
     public function setTaxLevelCode(\horstoeko\ubl\entities\cbc\TaxLevelCode $taxLevelCode)
@@ -279,7 +279,7 @@ class PartyTaxSchemeType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ExemptionReasonCode $exemptionReasonCode
+     * @param  \horstoeko\ubl\entities\cbc\ExemptionReasonCode $exemptionReasonCode
      * @return self
      */
     public function setExemptionReasonCode(\horstoeko\ubl\entities\cbc\ExemptionReasonCode $exemptionReasonCode)
@@ -302,7 +302,7 @@ class PartyTaxSchemeType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\ExemptionReason $exemptionReason
+     * @param  \horstoeko\ubl\entities\cbc\ExemptionReason $exemptionReason
      */
     public function addToExemptionReason(\horstoeko\ubl\entities\cbc\ExemptionReason $exemptionReason)
     {
@@ -323,7 +323,7 @@ class PartyTaxSchemeType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetExemptionReason($index)
@@ -344,7 +344,7 @@ class PartyTaxSchemeType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetExemptionReason($index)
@@ -385,7 +385,7 @@ class PartyTaxSchemeType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ExemptionReason[] $exemptionReason
+     * @param  \horstoeko\ubl\entities\cbc\ExemptionReason[] $exemptionReason
      * @return self
      */
     public function setExemptionReason(array $exemptionReason)
@@ -427,7 +427,7 @@ class PartyTaxSchemeType
      *  Address
      *  Address
      *
-     * @param \horstoeko\ubl\entities\cac\RegistrationAddress $registrationAddress
+     * @param  \horstoeko\ubl\entities\cac\RegistrationAddress $registrationAddress
      * @return self
      */
     public function setRegistrationAddress(\horstoeko\ubl\entities\cac\RegistrationAddress $registrationAddress)
@@ -467,7 +467,7 @@ class PartyTaxSchemeType
      *  Tax Scheme
      *  Tax Scheme
      *
-     * @param \horstoeko\ubl\entities\cac\TaxScheme $taxScheme
+     * @param  \horstoeko\ubl\entities\cac\TaxScheme $taxScheme
      * @return self
      */
     public function setTaxScheme(\horstoeko\ubl\entities\cac\TaxScheme $taxScheme)

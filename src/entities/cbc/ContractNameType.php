@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing ContractNameType
  *
- *
  * XSD Type: ContractNameType
  */
 class ContractNameType extends TextType

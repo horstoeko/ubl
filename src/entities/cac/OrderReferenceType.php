@@ -177,7 +177,7 @@ class OrderReferenceType
      *  Identifier. Type
      *  PO-001 3333-44-123
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -219,7 +219,7 @@ class OrderReferenceType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SalesOrderID $salesOrderID
+     * @param  \horstoeko\ubl\entities\cbc\SalesOrderID $salesOrderID
      * @return self
      */
     public function setSalesOrderID(\horstoeko\ubl\entities\cbc\SalesOrderID $salesOrderID)
@@ -261,7 +261,7 @@ class OrderReferenceType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $copyIndicator
+     * @param  bool $copyIndicator
      * @return self
      */
     public function setCopyIndicator($copyIndicator)
@@ -301,7 +301,7 @@ class OrderReferenceType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\UUID $uUID
+     * @param  \horstoeko\ubl\entities\cbc\UUID $uUID
      * @return self
      */
     public function setUUID(\horstoeko\ubl\entities\cbc\UUID $uUID)
@@ -341,7 +341,7 @@ class OrderReferenceType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $issueDate
+     * @param  \DateTime $issueDate
      * @return self
      */
     public function setIssueDate(\DateTime $issueDate)
@@ -381,7 +381,7 @@ class OrderReferenceType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $issueTime
+     * @param  \DateTime $issueTime
      * @return self
      */
     public function setIssueTime(\DateTime $issueTime)
@@ -423,7 +423,7 @@ class OrderReferenceType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CustomerReference $customerReference
+     * @param  \horstoeko\ubl\entities\cbc\CustomerReference $customerReference
      * @return self
      */
     public function setCustomerReference(\horstoeko\ubl\entities\cbc\CustomerReference $customerReference)
@@ -463,7 +463,7 @@ class OrderReferenceType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\OrderTypeCode $orderTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\OrderTypeCode $orderTypeCode
      * @return self
      */
     public function setOrderTypeCode(\horstoeko\ubl\entities\cbc\OrderTypeCode $orderTypeCode)
@@ -503,7 +503,7 @@ class OrderReferenceType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\DocumentReference $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference $documentReference
      * @return self
      */
     public function setDocumentReference(\horstoeko\ubl\entities\cac\DocumentReference $documentReference)

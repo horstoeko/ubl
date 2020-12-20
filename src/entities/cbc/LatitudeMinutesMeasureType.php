@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\MeasureType;
 /**
  * Class representing LatitudeMinutesMeasureType
  *
- *
  * XSD Type: LatitudeMinutesMeasureType
  */
 class LatitudeMinutesMeasureType extends MeasureType

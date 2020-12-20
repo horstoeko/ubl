@@ -149,7 +149,7 @@ class EvidenceType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -189,7 +189,7 @@ class EvidenceType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\EvidenceTypeCode $evidenceTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\EvidenceTypeCode $evidenceTypeCode
      * @return self
      */
     public function setEvidenceTypeCode(\horstoeko\ubl\entities\cbc\EvidenceTypeCode $evidenceTypeCode)
@@ -211,7 +211,7 @@ class EvidenceType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -231,7 +231,7 @@ class EvidenceType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -251,7 +251,7 @@ class EvidenceType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -290,7 +290,7 @@ class EvidenceType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -313,7 +313,7 @@ class EvidenceType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\CandidateStatement $candidateStatement
+     * @param  \horstoeko\ubl\entities\cbc\CandidateStatement $candidateStatement
      */
     public function addToCandidateStatement(\horstoeko\ubl\entities\cbc\CandidateStatement $candidateStatement)
     {
@@ -334,7 +334,7 @@ class EvidenceType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetCandidateStatement($index)
@@ -355,7 +355,7 @@ class EvidenceType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetCandidateStatement($index)
@@ -396,7 +396,7 @@ class EvidenceType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CandidateStatement[] $candidateStatement
+     * @param  \horstoeko\ubl\entities\cbc\CandidateStatement[] $candidateStatement
      * @return self
      */
     public function setCandidateStatement(array $candidateStatement)
@@ -438,7 +438,7 @@ class EvidenceType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\EvidenceIssuingParty $evidenceIssuingParty
+     * @param  \horstoeko\ubl\entities\cac\EvidenceIssuingParty $evidenceIssuingParty
      * @return self
      */
     public function setEvidenceIssuingParty(\horstoeko\ubl\entities\cac\EvidenceIssuingParty $evidenceIssuingParty)
@@ -478,7 +478,7 @@ class EvidenceType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\DocumentReference $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference $documentReference
      * @return self
      */
     public function setDocumentReference(\horstoeko\ubl\entities\cac\DocumentReference $documentReference)
@@ -518,7 +518,7 @@ class EvidenceType
      *  Language
      *  Language
      *
-     * @param \horstoeko\ubl\entities\cac\Language $language
+     * @param  \horstoeko\ubl\entities\cac\Language $language
      * @return self
      */
     public function setLanguage(\horstoeko\ubl\entities\cac\Language $language)

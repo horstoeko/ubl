@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\IdentifierType;
 /**
  * Class representing BrokerAssignedIDType
  *
- *
  * XSD Type: BrokerAssignedIDType
  */
 class BrokerAssignedIDType extends IdentifierType

@@ -144,7 +144,7 @@ class ImmobilizedSecurityType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ImmobilizationCertificateID $immobilizationCertificateID
+     * @param  \horstoeko\ubl\entities\cbc\ImmobilizationCertificateID $immobilizationCertificateID
      * @return self
      */
     public function setImmobilizationCertificateID(\horstoeko\ubl\entities\cbc\ImmobilizationCertificateID $immobilizationCertificateID)
@@ -184,7 +184,7 @@ class ImmobilizedSecurityType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SecurityID $securityID
+     * @param  \horstoeko\ubl\entities\cbc\SecurityID $securityID
      * @return self
      */
     public function setSecurityID(\horstoeko\ubl\entities\cbc\SecurityID $securityID)
@@ -224,7 +224,7 @@ class ImmobilizedSecurityType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $issueDate
+     * @param  \DateTime $issueDate
      * @return self
      */
     public function setIssueDate(\DateTime $issueDate)
@@ -264,7 +264,7 @@ class ImmobilizedSecurityType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\FaceValueAmount $faceValueAmount
+     * @param  \horstoeko\ubl\entities\cbc\FaceValueAmount $faceValueAmount
      * @return self
      */
     public function setFaceValueAmount(\horstoeko\ubl\entities\cbc\FaceValueAmount $faceValueAmount)
@@ -304,7 +304,7 @@ class ImmobilizedSecurityType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MarketValueAmount $marketValueAmount
+     * @param  \horstoeko\ubl\entities\cbc\MarketValueAmount $marketValueAmount
      * @return self
      */
     public function setMarketValueAmount(\horstoeko\ubl\entities\cbc\MarketValueAmount $marketValueAmount)
@@ -344,7 +344,7 @@ class ImmobilizedSecurityType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SharesNumberQuantity $sharesNumberQuantity
+     * @param  \horstoeko\ubl\entities\cbc\SharesNumberQuantity $sharesNumberQuantity
      * @return self
      */
     public function setSharesNumberQuantity(\horstoeko\ubl\entities\cbc\SharesNumberQuantity $sharesNumberQuantity)
@@ -386,7 +386,7 @@ class ImmobilizedSecurityType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\IssuerParty $issuerParty
+     * @param  \horstoeko\ubl\entities\cac\IssuerParty $issuerParty
      * @return self
      */
     public function setIssuerParty(\horstoeko\ubl\entities\cac\IssuerParty $issuerParty)

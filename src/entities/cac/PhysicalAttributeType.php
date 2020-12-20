@@ -107,7 +107,7 @@ class PhysicalAttributeType
      *  Identifier. Type
      *  colour style
      *
-     * @param \horstoeko\ubl\entities\cbc\AttributeID $attributeID
+     * @param  \horstoeko\ubl\entities\cbc\AttributeID $attributeID
      * @return self
      */
     public function setAttributeID(\horstoeko\ubl\entities\cbc\AttributeID $attributeID)
@@ -147,7 +147,7 @@ class PhysicalAttributeType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PositionCode $positionCode
+     * @param  \horstoeko\ubl\entities\cbc\PositionCode $positionCode
      * @return self
      */
     public function setPositionCode(\horstoeko\ubl\entities\cbc\PositionCode $positionCode)
@@ -189,7 +189,7 @@ class PhysicalAttributeType
      *  Code. Type
      *  XXL , Small
      *
-     * @param \horstoeko\ubl\entities\cbc\DescriptionCode $descriptionCode
+     * @param  \horstoeko\ubl\entities\cbc\DescriptionCode $descriptionCode
      * @return self
      */
     public function setDescriptionCode(\horstoeko\ubl\entities\cbc\DescriptionCode $descriptionCode)
@@ -211,7 +211,7 @@ class PhysicalAttributeType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -231,7 +231,7 @@ class PhysicalAttributeType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -251,7 +251,7 @@ class PhysicalAttributeType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -290,7 +290,7 @@ class PhysicalAttributeType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)

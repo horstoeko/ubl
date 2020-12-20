@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing PurposeType
  *
- *
  * XSD Type: PurposeType
  */
 class PurposeType extends TextType

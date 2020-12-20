@@ -94,7 +94,7 @@ class RelatedItemType
      *  Identifier. Type
      *  First , Second
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -136,7 +136,7 @@ class RelatedItemType
      *  Quantity. Type
      *  6 , 10mg per Kilo
      *
-     * @param \horstoeko\ubl\entities\cbc\Quantity $quantity
+     * @param  \horstoeko\ubl\entities\cbc\Quantity $quantity
      * @return self
      */
     public function setQuantity(\horstoeko\ubl\entities\cbc\Quantity $quantity)
@@ -159,7 +159,7 @@ class RelatedItemType
      *  If used in wet conditions or extreme environments
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -180,7 +180,7 @@ class RelatedItemType
      *  Text. Type
      *  If used in wet conditions or extreme environments
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -201,7 +201,7 @@ class RelatedItemType
      *  Text. Type
      *  If used in wet conditions or extreme environments
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -242,7 +242,7 @@ class RelatedItemType
      *  Text. Type
      *  If used in wet conditions or extreme environments
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)

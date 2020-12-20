@@ -324,7 +324,7 @@ class ConsumptionReportType
      *  Identifier. Type
      *  n/a
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -366,7 +366,7 @@ class ConsumptionReportType
      *  Text. Type
      *  Consumption
      *
-     * @param \horstoeko\ubl\entities\cbc\ConsumptionType $consumptionType
+     * @param  \horstoeko\ubl\entities\cbc\ConsumptionType $consumptionType
      * @return self
      */
     public function setConsumptionType(\horstoeko\ubl\entities\cbc\ConsumptionType $consumptionType)
@@ -408,7 +408,7 @@ class ConsumptionReportType
      *  Code. Type
      *  Consumption
      *
-     * @param \horstoeko\ubl\entities\cbc\ConsumptionTypeCode $consumptionTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\ConsumptionTypeCode $consumptionTypeCode
      * @return self
      */
     public function setConsumptionTypeCode(\horstoeko\ubl\entities\cbc\ConsumptionTypeCode $consumptionTypeCode)
@@ -431,7 +431,7 @@ class ConsumptionReportType
      *  This report contain the latest year consumption
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -452,7 +452,7 @@ class ConsumptionReportType
      *  Text. Type
      *  This report contain the latest year consumption
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -473,7 +473,7 @@ class ConsumptionReportType
      *  Text. Type
      *  This report contain the latest year consumption
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -514,7 +514,7 @@ class ConsumptionReportType
      *  Text. Type
      *  This report contain the latest year consumption
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -558,7 +558,7 @@ class ConsumptionReportType
      *  Quantity. Type
      *  20479.00
      *
-     * @param \horstoeko\ubl\entities\cbc\TotalConsumedQuantity $totalConsumedQuantity
+     * @param  \horstoeko\ubl\entities\cbc\TotalConsumedQuantity $totalConsumedQuantity
      * @return self
      */
     public function setTotalConsumedQuantity(\horstoeko\ubl\entities\cbc\TotalConsumedQuantity $totalConsumedQuantity)
@@ -602,7 +602,7 @@ class ConsumptionReportType
      *  Quantity. Type
      *  20000.00
      *
-     * @param \horstoeko\ubl\entities\cbc\BasicConsumedQuantity $basicConsumedQuantity
+     * @param  \horstoeko\ubl\entities\cbc\BasicConsumedQuantity $basicConsumedQuantity
      * @return self
      */
     public function setBasicConsumedQuantity(\horstoeko\ubl\entities\cbc\BasicConsumedQuantity $basicConsumedQuantity)
@@ -646,7 +646,7 @@ class ConsumptionReportType
      *  Numeric. Type
      *  4.0
      *
-     * @param \horstoeko\ubl\entities\cbc\ResidentOccupantsNumeric $residentOccupantsNumeric
+     * @param  \horstoeko\ubl\entities\cbc\ResidentOccupantsNumeric $residentOccupantsNumeric
      * @return self
      */
     public function setResidentOccupantsNumeric(\horstoeko\ubl\entities\cbc\ResidentOccupantsNumeric $residentOccupantsNumeric)
@@ -690,7 +690,7 @@ class ConsumptionReportType
      *  Code. Type
      *  B
      *
-     * @param \horstoeko\ubl\entities\cbc\ConsumersEnergyLevelCode $consumersEnergyLevelCode
+     * @param  \horstoeko\ubl\entities\cbc\ConsumersEnergyLevelCode $consumersEnergyLevelCode
      * @return self
      */
     public function setConsumersEnergyLevelCode(\horstoeko\ubl\entities\cbc\ConsumersEnergyLevelCode $consumersEnergyLevelCode)
@@ -734,7 +734,7 @@ class ConsumptionReportType
      *  Text. Type
      *  Middel
      *
-     * @param \horstoeko\ubl\entities\cbc\ConsumersEnergyLevel $consumersEnergyLevel
+     * @param  \horstoeko\ubl\entities\cbc\ConsumersEnergyLevel $consumersEnergyLevel
      * @return self
      */
     public function setConsumersEnergyLevel(\horstoeko\ubl\entities\cbc\ConsumersEnergyLevel $consumersEnergyLevel)
@@ -776,7 +776,7 @@ class ConsumptionReportType
      *  Text. Type
      *  House
      *
-     * @param \horstoeko\ubl\entities\cbc\ResidenceType $residenceType
+     * @param  \horstoeko\ubl\entities\cbc\ResidenceType $residenceType
      * @return self
      */
     public function setResidenceType(\horstoeko\ubl\entities\cbc\ResidenceType $residenceType)
@@ -818,7 +818,7 @@ class ConsumptionReportType
      *  Code. Type
      *  House
      *
-     * @param \horstoeko\ubl\entities\cbc\ResidenceTypeCode $residenceTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\ResidenceTypeCode $residenceTypeCode
      * @return self
      */
     public function setResidenceTypeCode(\horstoeko\ubl\entities\cbc\ResidenceTypeCode $residenceTypeCode)
@@ -860,7 +860,7 @@ class ConsumptionReportType
      *  Text. Type
      *  District heating
      *
-     * @param \horstoeko\ubl\entities\cbc\HeatingType $heatingType
+     * @param  \horstoeko\ubl\entities\cbc\HeatingType $heatingType
      * @return self
      */
     public function setHeatingType(\horstoeko\ubl\entities\cbc\HeatingType $heatingType)
@@ -902,7 +902,7 @@ class ConsumptionReportType
      *  Code. Type
      *  DistrictHeating
      *
-     * @param \horstoeko\ubl\entities\cbc\HeatingTypeCode $heatingTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\HeatingTypeCode $heatingTypeCode
      * @return self
      */
     public function setHeatingTypeCode(\horstoeko\ubl\entities\cbc\HeatingTypeCode $heatingTypeCode)
@@ -942,7 +942,7 @@ class ConsumptionReportType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\Period $period
+     * @param  \horstoeko\ubl\entities\cac\Period $period
      * @return self
      */
     public function setPeriod(\horstoeko\ubl\entities\cac\Period $period)
@@ -984,7 +984,7 @@ class ConsumptionReportType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\GuidanceDocumentReference $guidanceDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\GuidanceDocumentReference $guidanceDocumentReference
      * @return self
      */
     public function setGuidanceDocumentReference(\horstoeko\ubl\entities\cac\GuidanceDocumentReference $guidanceDocumentReference)
@@ -1024,7 +1024,7 @@ class ConsumptionReportType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\DocumentReference $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference $documentReference
      * @return self
      */
     public function setDocumentReference(\horstoeko\ubl\entities\cac\DocumentReference $documentReference)
@@ -1046,7 +1046,7 @@ class ConsumptionReportType
      *  Consumption Report Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ConsumptionReportReference $consumptionReportReference
+     * @param  \horstoeko\ubl\entities\cac\ConsumptionReportReference $consumptionReportReference
      */
     public function addToConsumptionReportReference(\horstoeko\ubl\entities\cac\ConsumptionReportReference $consumptionReportReference)
     {
@@ -1066,7 +1066,7 @@ class ConsumptionReportType
      *  Consumption Report Reference
      *  Consumption Report Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetConsumptionReportReference($index)
@@ -1086,7 +1086,7 @@ class ConsumptionReportType
      *  Consumption Report Reference
      *  Consumption Report Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetConsumptionReportReference($index)
@@ -1125,7 +1125,7 @@ class ConsumptionReportType
      *  Consumption Report Reference
      *  Consumption Report Reference
      *
-     * @param \horstoeko\ubl\entities\cac\ConsumptionReportReference[] $consumptionReportReference
+     * @param  \horstoeko\ubl\entities\cac\ConsumptionReportReference[] $consumptionReportReference
      * @return self
      */
     public function setConsumptionReportReference(array $consumptionReportReference)
@@ -1147,7 +1147,7 @@ class ConsumptionReportType
      *  Consumption History
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ConsumptionHistory $consumptionHistory
+     * @param  \horstoeko\ubl\entities\cac\ConsumptionHistory $consumptionHistory
      */
     public function addToConsumptionHistory(\horstoeko\ubl\entities\cac\ConsumptionHistory $consumptionHistory)
     {
@@ -1167,7 +1167,7 @@ class ConsumptionReportType
      *  Consumption History
      *  Consumption History
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetConsumptionHistory($index)
@@ -1187,7 +1187,7 @@ class ConsumptionReportType
      *  Consumption History
      *  Consumption History
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetConsumptionHistory($index)
@@ -1226,7 +1226,7 @@ class ConsumptionReportType
      *  Consumption History
      *  Consumption History
      *
-     * @param \horstoeko\ubl\entities\cac\ConsumptionHistory[] $consumptionHistory
+     * @param  \horstoeko\ubl\entities\cac\ConsumptionHistory[] $consumptionHistory
      * @return self
      */
     public function setConsumptionHistory(array $consumptionHistory)

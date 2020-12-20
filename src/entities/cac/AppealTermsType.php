@@ -103,7 +103,7 @@ class AppealTermsType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -123,7 +123,7 @@ class AppealTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -143,7 +143,7 @@ class AppealTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -182,7 +182,7 @@ class AppealTermsType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -224,7 +224,7 @@ class AppealTermsType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\PresentationPeriod $presentationPeriod
+     * @param  \horstoeko\ubl\entities\cac\PresentationPeriod $presentationPeriod
      * @return self
      */
     public function setPresentationPeriod(\horstoeko\ubl\entities\cac\PresentationPeriod $presentationPeriod)
@@ -266,7 +266,7 @@ class AppealTermsType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\AppealInformationParty $appealInformationParty
+     * @param  \horstoeko\ubl\entities\cac\AppealInformationParty $appealInformationParty
      * @return self
      */
     public function setAppealInformationParty(\horstoeko\ubl\entities\cac\AppealInformationParty $appealInformationParty)
@@ -308,7 +308,7 @@ class AppealTermsType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\AppealReceiverParty $appealReceiverParty
+     * @param  \horstoeko\ubl\entities\cac\AppealReceiverParty $appealReceiverParty
      * @return self
      */
     public function setAppealReceiverParty(\horstoeko\ubl\entities\cac\AppealReceiverParty $appealReceiverParty)
@@ -350,7 +350,7 @@ class AppealTermsType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\MediationParty $mediationParty
+     * @param  \horstoeko\ubl\entities\cac\MediationParty $mediationParty
      * @return self
      */
     public function setMediationParty(\horstoeko\ubl\entities\cac\MediationParty $mediationParty)

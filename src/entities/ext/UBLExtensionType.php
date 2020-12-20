@@ -98,7 +98,7 @@ class UBLExtensionType
      *
      * An identifier for the Extension assigned by the creator of the extension.
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -124,7 +124,7 @@ class UBLExtensionType
      *
      * A name for the Extension assigned by the creator of the extension.
      *
-     * @param \horstoeko\ubl\entities\cbc\Name $name
+     * @param  \horstoeko\ubl\entities\cbc\Name $name
      * @return self
      */
     public function setName(\horstoeko\ubl\entities\cbc\Name $name)
@@ -150,7 +150,7 @@ class UBLExtensionType
      *
      * An agency that maintains one or more Extensions.
      *
-     * @param \horstoeko\ubl\entities\ext\ExtensionAgencyID $extensionAgencyID
+     * @param  \horstoeko\ubl\entities\ext\ExtensionAgencyID $extensionAgencyID
      * @return self
      */
     public function setExtensionAgencyID(\horstoeko\ubl\entities\ext\ExtensionAgencyID $extensionAgencyID)
@@ -176,7 +176,7 @@ class UBLExtensionType
      *
      * The name of the agency that maintains the Extension.
      *
-     * @param \horstoeko\ubl\entities\ext\ExtensionAgencyName $extensionAgencyName
+     * @param  \horstoeko\ubl\entities\ext\ExtensionAgencyName $extensionAgencyName
      * @return self
      */
     public function setExtensionAgencyName(\horstoeko\ubl\entities\ext\ExtensionAgencyName $extensionAgencyName)
@@ -202,7 +202,7 @@ class UBLExtensionType
      *
      * The version of the Extension.
      *
-     * @param \horstoeko\ubl\entities\ext\ExtensionVersionID $extensionVersionID
+     * @param  \horstoeko\ubl\entities\ext\ExtensionVersionID $extensionVersionID
      * @return self
      */
     public function setExtensionVersionID(\horstoeko\ubl\entities\ext\ExtensionVersionID $extensionVersionID)
@@ -228,7 +228,7 @@ class UBLExtensionType
      *
      * A URI for the Agency that maintains the Extension.
      *
-     * @param \horstoeko\ubl\entities\ext\ExtensionAgencyURI $extensionAgencyURI
+     * @param  \horstoeko\ubl\entities\ext\ExtensionAgencyURI $extensionAgencyURI
      * @return self
      */
     public function setExtensionAgencyURI(\horstoeko\ubl\entities\ext\ExtensionAgencyURI $extensionAgencyURI)
@@ -254,7 +254,7 @@ class UBLExtensionType
      *
      * A URI for the Extension.
      *
-     * @param \horstoeko\ubl\entities\ext\ExtensionURI $extensionURI
+     * @param  \horstoeko\ubl\entities\ext\ExtensionURI $extensionURI
      * @return self
      */
     public function setExtensionURI(\horstoeko\ubl\entities\ext\ExtensionURI $extensionURI)
@@ -280,7 +280,7 @@ class UBLExtensionType
      *
      * A code for reason the Extension is being included.
      *
-     * @param \horstoeko\ubl\entities\ext\ExtensionReasonCode $extensionReasonCode
+     * @param  \horstoeko\ubl\entities\ext\ExtensionReasonCode $extensionReasonCode
      * @return self
      */
     public function setExtensionReasonCode(\horstoeko\ubl\entities\ext\ExtensionReasonCode $extensionReasonCode)
@@ -306,7 +306,7 @@ class UBLExtensionType
      *
      * A description of the reason for the Extension.
      *
-     * @param \horstoeko\ubl\entities\ext\ExtensionReason $extensionReason
+     * @param  \horstoeko\ubl\entities\ext\ExtensionReason $extensionReason
      * @return self
      */
     public function setExtensionReason(\horstoeko\ubl\entities\ext\ExtensionReason $extensionReason)
@@ -332,7 +332,7 @@ class UBLExtensionType
      *
      * The definition of the extension content.
      *
-     * @param \horstoeko\ubl\entities\ext\ExtensionContent $extensionContent
+     * @param  \horstoeko\ubl\entities\ext\ExtensionContent $extensionContent
      * @return self
      */
     public function setExtensionContent(\horstoeko\ubl\entities\ext\ExtensionContent $extensionContent)

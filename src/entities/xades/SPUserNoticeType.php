@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing SPUserNoticeType
  *
- *
  * XSD Type: SPUserNoticeType
  */
 class SPUserNoticeType
@@ -34,7 +33,7 @@ class SPUserNoticeType
     /**
      * Sets a new noticeRef
      *
-     * @param \horstoeko\ubl\entities\xades\NoticeReferenceType $noticeRef
+     * @param  \horstoeko\ubl\entities\xades\NoticeReferenceType $noticeRef
      * @return self
      */
     public function setNoticeRef(\horstoeko\ubl\entities\xades\NoticeReferenceType $noticeRef)
@@ -56,7 +55,7 @@ class SPUserNoticeType
     /**
      * Sets a new explicitText
      *
-     * @param string $explicitText
+     * @param  string $explicitText
      * @return self
      */
     public function setExplicitText($explicitText)

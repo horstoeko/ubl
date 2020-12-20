@@ -107,7 +107,7 @@ class EconomicOperatorShortListType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\LimitationDescription $limitationDescription
+     * @param  \horstoeko\ubl\entities\cbc\LimitationDescription $limitationDescription
      */
     public function addToLimitationDescription(\horstoeko\ubl\entities\cbc\LimitationDescription $limitationDescription)
     {
@@ -128,7 +128,7 @@ class EconomicOperatorShortListType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetLimitationDescription($index)
@@ -149,7 +149,7 @@ class EconomicOperatorShortListType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetLimitationDescription($index)
@@ -190,7 +190,7 @@ class EconomicOperatorShortListType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LimitationDescription[] $limitationDescription
+     * @param  \horstoeko\ubl\entities\cbc\LimitationDescription[] $limitationDescription
      * @return self
      */
     public function setLimitationDescription(array $limitationDescription)
@@ -232,7 +232,7 @@ class EconomicOperatorShortListType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ExpectedQuantity $expectedQuantity
+     * @param  \horstoeko\ubl\entities\cbc\ExpectedQuantity $expectedQuantity
      * @return self
      */
     public function setExpectedQuantity(\horstoeko\ubl\entities\cbc\ExpectedQuantity $expectedQuantity)
@@ -274,7 +274,7 @@ class EconomicOperatorShortListType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MaximumQuantity $maximumQuantity
+     * @param  \horstoeko\ubl\entities\cbc\MaximumQuantity $maximumQuantity
      * @return self
      */
     public function setMaximumQuantity(\horstoeko\ubl\entities\cbc\MaximumQuantity $maximumQuantity)
@@ -316,7 +316,7 @@ class EconomicOperatorShortListType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MinimumQuantity $minimumQuantity
+     * @param  \horstoeko\ubl\entities\cbc\MinimumQuantity $minimumQuantity
      * @return self
      */
     public function setMinimumQuantity(\horstoeko\ubl\entities\cbc\MinimumQuantity $minimumQuantity)
@@ -339,7 +339,7 @@ class EconomicOperatorShortListType
      *  Party
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\PreSelectedParty $preSelectedParty
+     * @param  \horstoeko\ubl\entities\cac\PreSelectedParty $preSelectedParty
      */
     public function addToPreSelectedParty(\horstoeko\ubl\entities\cac\PreSelectedParty $preSelectedParty)
     {
@@ -360,7 +360,7 @@ class EconomicOperatorShortListType
      *  Party
      *  Party
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPreSelectedParty($index)
@@ -381,7 +381,7 @@ class EconomicOperatorShortListType
      *  Party
      *  Party
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPreSelectedParty($index)
@@ -422,7 +422,7 @@ class EconomicOperatorShortListType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\PreSelectedParty[] $preSelectedParty
+     * @param  \horstoeko\ubl\entities\cac\PreSelectedParty[] $preSelectedParty
      * @return self
      */
     public function setPreSelectedParty(array $preSelectedParty)

@@ -120,7 +120,7 @@ class TransportEquipmentSealType
      *  Identifier. Type
      *  ACS1234
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -160,7 +160,7 @@ class TransportEquipmentSealType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SealIssuerTypeCode $sealIssuerTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\SealIssuerTypeCode $sealIssuerTypeCode
      * @return self
      */
     public function setSealIssuerTypeCode(\horstoeko\ubl\entities\cbc\SealIssuerTypeCode $sealIssuerTypeCode)
@@ -200,7 +200,7 @@ class TransportEquipmentSealType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Condition $condition
+     * @param  \horstoeko\ubl\entities\cbc\Condition $condition
      * @return self
      */
     public function setCondition(\horstoeko\ubl\entities\cbc\Condition $condition)
@@ -240,7 +240,7 @@ class TransportEquipmentSealType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SealStatusCode $sealStatusCode
+     * @param  \horstoeko\ubl\entities\cbc\SealStatusCode $sealStatusCode
      * @return self
      */
     public function setSealStatusCode(\horstoeko\ubl\entities\cbc\SealStatusCode $sealStatusCode)
@@ -282,7 +282,7 @@ class TransportEquipmentSealType
      *  Text. Type
      *  Sealing Party
      *
-     * @param \horstoeko\ubl\entities\cbc\SealingPartyType $sealingPartyType
+     * @param  \horstoeko\ubl\entities\cbc\SealingPartyType $sealingPartyType
      * @return self
      */
     public function setSealingPartyType(\horstoeko\ubl\entities\cbc\SealingPartyType $sealingPartyType)

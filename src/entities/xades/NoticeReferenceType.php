@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing NoticeReferenceType
  *
- *
  * XSD Type: NoticeReferenceType
  */
 class NoticeReferenceType
@@ -34,7 +33,7 @@ class NoticeReferenceType
     /**
      * Sets a new organization
      *
-     * @param string $organization
+     * @param  string $organization
      * @return self
      */
     public function setOrganization($organization)
@@ -47,7 +46,7 @@ class NoticeReferenceType
      * Adds as int
      *
      * @return self
-     * @param int $int
+     * @param  int $int
      */
     public function addToNoticeNumbers($int)
     {
@@ -58,7 +57,7 @@ class NoticeReferenceType
     /**
      * isset noticeNumbers
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNoticeNumbers($index)
@@ -69,7 +68,7 @@ class NoticeReferenceType
     /**
      * unset noticeNumbers
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNoticeNumbers($index)
@@ -90,7 +89,7 @@ class NoticeReferenceType
     /**
      * Sets a new noticeNumbers
      *
-     * @param int[] $noticeNumbers
+     * @param  int[] $noticeNumbers
      * @return self
      */
     public function setNoticeNumbers(array $noticeNumbers)

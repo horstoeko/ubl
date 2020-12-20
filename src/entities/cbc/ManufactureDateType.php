@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing ManufactureDateType
  *
- *
  * XSD Type: ManufactureDateType
  */
 class ManufactureDateType
@@ -29,7 +28,7 @@ class ManufactureDateType
     /**
      * Gets or sets the inner value
      *
-     * @param \DateTime $value
+     * @param  \DateTime $value
      * @return \DateTime
      */
     public function value()

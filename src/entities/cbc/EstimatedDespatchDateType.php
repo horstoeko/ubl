@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing EstimatedDespatchDateType
  *
- *
  * XSD Type: EstimatedDespatchDateType
  */
 class EstimatedDespatchDateType
@@ -29,7 +28,7 @@ class EstimatedDespatchDateType
     /**
      * Gets or sets the inner value
      *
-     * @param \DateTime $value
+     * @param  \DateTime $value
      * @return \DateTime
      */
     public function value()

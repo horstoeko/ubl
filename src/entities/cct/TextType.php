@@ -63,7 +63,7 @@ class TextType
     /**
      * Gets or sets the inner value
      *
-     * @param string $value
+     * @param  string $value
      * @return string
      */
     public function value()
@@ -115,7 +115,7 @@ class TextType
      *  Identifier
      *  string
      *
-     * @param string $languageID
+     * @param  string $languageID
      * @return self
      */
     public function setLanguageID($languageID)
@@ -155,7 +155,7 @@ class TextType
      *  Identifier
      *  string
      *
-     * @param string $languageLocaleID
+     * @param  string $languageLocaleID
      * @return self
      */
     public function setLanguageLocaleID($languageLocaleID)

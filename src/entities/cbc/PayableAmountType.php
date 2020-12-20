@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\AmountType;
 /**
  * Class representing PayableAmountType
  *
- *
  * XSD Type: PayableAmountType
  */
 class PayableAmountType extends AmountType

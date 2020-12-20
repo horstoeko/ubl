@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\QuantityType;
 /**
  * Class representing MaximumVariantQuantityType
  *
- *
  * XSD Type: MaximumVariantQuantityType
  */
 class MaximumVariantQuantityType extends QuantityType

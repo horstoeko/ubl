@@ -101,7 +101,7 @@ class EventTacticType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Comment $comment
+     * @param  \horstoeko\ubl\entities\cbc\Comment $comment
      * @return self
      */
     public function setComment(\horstoeko\ubl\entities\cbc\Comment $comment)
@@ -141,7 +141,7 @@ class EventTacticType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Quantity $quantity
+     * @param  \horstoeko\ubl\entities\cbc\Quantity $quantity
      * @return self
      */
     public function setQuantity(\horstoeko\ubl\entities\cbc\Quantity $quantity)
@@ -181,7 +181,7 @@ class EventTacticType
      *  Event Tactic Enumeration
      *  Event Tactic Enumeration
      *
-     * @param \horstoeko\ubl\entities\cac\EventTacticEnumeration $eventTacticEnumeration
+     * @param  \horstoeko\ubl\entities\cac\EventTacticEnumeration $eventTacticEnumeration
      * @return self
      */
     public function setEventTacticEnumeration(\horstoeko\ubl\entities\cac\EventTacticEnumeration $eventTacticEnumeration)
@@ -221,7 +221,7 @@ class EventTacticType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\Period $period
+     * @param  \horstoeko\ubl\entities\cac\Period $period
      * @return self
      */
     public function setPeriod(\horstoeko\ubl\entities\cac\Period $period)

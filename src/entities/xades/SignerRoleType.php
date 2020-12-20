@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing SignerRoleType
  *
- *
  * XSD Type: SignerRoleType
  */
 class SignerRoleType
@@ -25,7 +24,7 @@ class SignerRoleType
      * Adds as claimedRole
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\AnyType $claimedRole
+     * @param  \horstoeko\ubl\entities\xades\AnyType $claimedRole
      */
     public function addToClaimedRoles(\horstoeko\ubl\entities\xades\AnyType $claimedRole)
     {
@@ -36,7 +35,7 @@ class SignerRoleType
     /**
      * isset claimedRoles
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetClaimedRoles($index)
@@ -47,7 +46,7 @@ class SignerRoleType
     /**
      * unset claimedRoles
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetClaimedRoles($index)
@@ -68,7 +67,7 @@ class SignerRoleType
     /**
      * Sets a new claimedRoles
      *
-     * @param \horstoeko\ubl\entities\xades\AnyType[] $claimedRoles
+     * @param  \horstoeko\ubl\entities\xades\AnyType[] $claimedRoles
      * @return self
      */
     public function setClaimedRoles(array $claimedRoles)
@@ -81,7 +80,7 @@ class SignerRoleType
      * Adds as certifiedRole
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\EncapsulatedPKIDataType $certifiedRole
+     * @param  \horstoeko\ubl\entities\xades\EncapsulatedPKIDataType $certifiedRole
      */
     public function addToCertifiedRoles(\horstoeko\ubl\entities\xades\EncapsulatedPKIDataType $certifiedRole)
     {
@@ -92,7 +91,7 @@ class SignerRoleType
     /**
      * isset certifiedRoles
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetCertifiedRoles($index)
@@ -103,7 +102,7 @@ class SignerRoleType
     /**
      * unset certifiedRoles
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetCertifiedRoles($index)
@@ -124,7 +123,7 @@ class SignerRoleType
     /**
      * Sets a new certifiedRoles
      *
-     * @param \horstoeko\ubl\entities\xades\EncapsulatedPKIDataType[] $certifiedRoles
+     * @param  \horstoeko\ubl\entities\xades\EncapsulatedPKIDataType[] $certifiedRoles
      * @return self
      */
     public function setCertifiedRoles(array $certifiedRoles)

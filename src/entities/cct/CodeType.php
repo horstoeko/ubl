@@ -163,7 +163,7 @@ class CodeType
     /**
      * Gets or sets the inner value
      *
-     * @param string $value
+     * @param  string $value
      * @return string
      */
     public function value()
@@ -215,7 +215,7 @@ class CodeType
      *  Identifier
      *  string
      *
-     * @param string $listID
+     * @param  string $listID
      * @return self
      */
     public function setListID($listID)
@@ -257,7 +257,7 @@ class CodeType
      *  string
      *  Defaults to the UN/EDIFACT data element 3055 code list.
      *
-     * @param string $listAgencyID
+     * @param  string $listAgencyID
      * @return self
      */
     public function setListAgencyID($listAgencyID)
@@ -297,7 +297,7 @@ class CodeType
      *  Text
      *  string
      *
-     * @param string $listAgencyName
+     * @param  string $listAgencyName
      * @return self
      */
     public function setListAgencyName($listAgencyName)
@@ -337,7 +337,7 @@ class CodeType
      *  Text
      *  string
      *
-     * @param string $listName
+     * @param  string $listName
      * @return self
      */
     public function setListName($listName)
@@ -377,7 +377,7 @@ class CodeType
      *  Identifier
      *  string
      *
-     * @param string $listVersionID
+     * @param  string $listVersionID
      * @return self
      */
     public function setListVersionID($listVersionID)
@@ -417,7 +417,7 @@ class CodeType
      *  Text
      *  string
      *
-     * @param string $name
+     * @param  string $name
      * @return self
      */
     public function setName($name)
@@ -457,7 +457,7 @@ class CodeType
      *  Identifier
      *  string
      *
-     * @param string $languageID
+     * @param  string $languageID
      * @return self
      */
     public function setLanguageID($languageID)
@@ -497,7 +497,7 @@ class CodeType
      *  Identifier
      *  string
      *
-     * @param string $listURI
+     * @param  string $listURI
      * @return self
      */
     public function setListURI($listURI)
@@ -537,7 +537,7 @@ class CodeType
      *  Identifier
      *  string
      *
-     * @param string $listSchemeURI
+     * @param  string $listSchemeURI
      * @return self
      */
     public function setListSchemeURI($listSchemeURI)

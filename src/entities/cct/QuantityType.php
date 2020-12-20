@@ -92,7 +92,7 @@ class QuantityType
     /**
      * Gets or sets the inner value
      *
-     * @param float $value
+     * @param  float $value
      * @return float
      */
     public function value()
@@ -144,7 +144,7 @@ class QuantityType
      *  Code
      *  string
      *
-     * @param string $unitCode
+     * @param  string $unitCode
      * @return self
      */
     public function setUnitCode($unitCode)
@@ -184,7 +184,7 @@ class QuantityType
      *  Identifier
      *  string
      *
-     * @param string $unitCodeListID
+     * @param  string $unitCodeListID
      * @return self
      */
     public function setUnitCodeListID($unitCodeListID)
@@ -226,7 +226,7 @@ class QuantityType
      *  string
      *  Defaults to the UN/EDIFACT data element 3055 code list.
      *
-     * @param string $unitCodeListAgencyID
+     * @param  string $unitCodeListAgencyID
      * @return self
      */
     public function setUnitCodeListAgencyID($unitCodeListAgencyID)
@@ -266,7 +266,7 @@ class QuantityType
      *  Text
      *  string
      *
-     * @param string $unitCodeListAgencyName
+     * @param  string $unitCodeListAgencyName
      * @return self
      */
     public function setUnitCodeListAgencyName($unitCodeListAgencyName)

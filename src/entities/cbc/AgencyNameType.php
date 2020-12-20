@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing AgencyNameType
  *
- *
  * XSD Type: AgencyNameType
  */
 class AgencyNameType extends TextType

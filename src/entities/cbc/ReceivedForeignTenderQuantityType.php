@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\QuantityType;
 /**
  * Class representing ReceivedForeignTenderQuantityType
  *
- *
  * XSD Type: ReceivedForeignTenderQuantityType
  */
 class ReceivedForeignTenderQuantityType extends QuantityType

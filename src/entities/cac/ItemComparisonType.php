@@ -74,7 +74,7 @@ class ItemComparisonType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PriceAmount $priceAmount
+     * @param  \horstoeko\ubl\entities\cbc\PriceAmount $priceAmount
      * @return self
      */
     public function setPriceAmount(\horstoeko\ubl\entities\cbc\PriceAmount $priceAmount)
@@ -116,7 +116,7 @@ class ItemComparisonType
      *  Quantity. Type
      *  per unit
      *
-     * @param \horstoeko\ubl\entities\cbc\Quantity $quantity
+     * @param  \horstoeko\ubl\entities\cbc\Quantity $quantity
      * @return self
      */
     public function setQuantity(\horstoeko\ubl\entities\cbc\Quantity $quantity)

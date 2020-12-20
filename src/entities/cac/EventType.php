@@ -180,7 +180,7 @@ class EventType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\IdentificationID $identificationID
+     * @param  \horstoeko\ubl\entities\cbc\IdentificationID $identificationID
      * @return self
      */
     public function setIdentificationID(\horstoeko\ubl\entities\cbc\IdentificationID $identificationID)
@@ -220,7 +220,7 @@ class EventType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $occurrenceDate
+     * @param  \DateTime $occurrenceDate
      * @return self
      */
     public function setOccurrenceDate(\DateTime $occurrenceDate)
@@ -260,7 +260,7 @@ class EventType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $occurrenceTime
+     * @param  \DateTime $occurrenceTime
      * @return self
      */
     public function setOccurrenceTime(\DateTime $occurrenceTime)
@@ -300,7 +300,7 @@ class EventType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TypeCode $typeCode
+     * @param  \horstoeko\ubl\entities\cbc\TypeCode $typeCode
      * @return self
      */
     public function setTypeCode(\horstoeko\ubl\entities\cbc\TypeCode $typeCode)
@@ -322,7 +322,7 @@ class EventType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -342,7 +342,7 @@ class EventType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -362,7 +362,7 @@ class EventType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -401,7 +401,7 @@ class EventType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -443,7 +443,7 @@ class EventType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $completionIndicator
+     * @param  bool $completionIndicator
      * @return self
      */
     public function setCompletionIndicator($completionIndicator)
@@ -466,7 +466,7 @@ class EventType
      *  Status
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\CurrentStatus $currentStatus
+     * @param  \horstoeko\ubl\entities\cac\CurrentStatus $currentStatus
      */
     public function addToCurrentStatus(\horstoeko\ubl\entities\cac\CurrentStatus $currentStatus)
     {
@@ -487,7 +487,7 @@ class EventType
      *  Status
      *  Status
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetCurrentStatus($index)
@@ -508,7 +508,7 @@ class EventType
      *  Status
      *  Status
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetCurrentStatus($index)
@@ -549,7 +549,7 @@ class EventType
      *  Status
      *  Status
      *
-     * @param \horstoeko\ubl\entities\cac\CurrentStatus[] $currentStatus
+     * @param  \horstoeko\ubl\entities\cac\CurrentStatus[] $currentStatus
      * @return self
      */
     public function setCurrentStatus(array $currentStatus)
@@ -571,7 +571,7 @@ class EventType
      *  Contact
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Contact $contact
+     * @param  \horstoeko\ubl\entities\cac\Contact $contact
      */
     public function addToContact(\horstoeko\ubl\entities\cac\Contact $contact)
     {
@@ -591,7 +591,7 @@ class EventType
      *  Contact
      *  Contact
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetContact($index)
@@ -611,7 +611,7 @@ class EventType
      *  Contact
      *  Contact
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetContact($index)
@@ -650,7 +650,7 @@ class EventType
      *  Contact
      *  Contact
      *
-     * @param \horstoeko\ubl\entities\cac\Contact[] $contact
+     * @param  \horstoeko\ubl\entities\cac\Contact[] $contact
      * @return self
      */
     public function setContact(array $contact)
@@ -692,7 +692,7 @@ class EventType
      *  Location
      *  Location
      *
-     * @param \horstoeko\ubl\entities\cac\OccurenceLocation $occurenceLocation
+     * @param  \horstoeko\ubl\entities\cac\OccurenceLocation $occurenceLocation
      * @return self
      */
     public function setOccurenceLocation(\horstoeko\ubl\entities\cac\OccurenceLocation $occurenceLocation)

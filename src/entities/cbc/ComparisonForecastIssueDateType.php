@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing ComparisonForecastIssueDateType
  *
- *
  * XSD Type: ComparisonForecastIssueDateType
  */
 class ComparisonForecastIssueDateType
@@ -29,7 +28,7 @@ class ComparisonForecastIssueDateType
     /**
      * Gets or sets the inner value
      *
-     * @param \DateTime $value
+     * @param  \DateTime $value
      * @return \DateTime
      */
     public function value()

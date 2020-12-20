@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\CodeType;
 /**
  * Class representing ReferenceEventCodeType
  *
- *
  * XSD Type: ReferenceEventCodeType
  */
 class ReferenceEventCodeType extends CodeType

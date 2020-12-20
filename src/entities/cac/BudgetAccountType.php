@@ -88,7 +88,7 @@ class BudgetAccountType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -128,7 +128,7 @@ class BudgetAccountType
      *  Numeric
      *  Numeric. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\BudgetYearNumeric $budgetYearNumeric
+     * @param  \horstoeko\ubl\entities\cbc\BudgetYearNumeric $budgetYearNumeric
      * @return self
      */
     public function setBudgetYearNumeric(\horstoeko\ubl\entities\cbc\BudgetYearNumeric $budgetYearNumeric)
@@ -170,7 +170,7 @@ class BudgetAccountType
      *  Classification Scheme
      *  Classification Scheme
      *
-     * @param \horstoeko\ubl\entities\cac\RequiredClassificationScheme $requiredClassificationScheme
+     * @param  \horstoeko\ubl\entities\cac\RequiredClassificationScheme $requiredClassificationScheme
      * @return self
      */
     public function setRequiredClassificationScheme(\horstoeko\ubl\entities\cac\RequiredClassificationScheme $requiredClassificationScheme)

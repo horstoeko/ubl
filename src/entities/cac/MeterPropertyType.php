@@ -122,7 +122,7 @@ class MeterPropertyType
      *  Name. Type
      *  Energy Rating , Collar Size , Fat Content
      *
-     * @param \horstoeko\ubl\entities\cbc\Name $name
+     * @param  \horstoeko\ubl\entities\cbc\Name $name
      * @return self
      */
     public function setName(\horstoeko\ubl\entities\cbc\Name $name)
@@ -162,7 +162,7 @@ class MeterPropertyType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\NameCode $nameCode
+     * @param  \horstoeko\ubl\entities\cbc\NameCode $nameCode
      * @return self
      */
     public function setNameCode(\horstoeko\ubl\entities\cbc\NameCode $nameCode)
@@ -204,7 +204,7 @@ class MeterPropertyType
      *  Text. Type
      *  100 watts , 15 European , 20% +/- 5%
      *
-     * @param \horstoeko\ubl\entities\cbc\Value $value
+     * @param  \horstoeko\ubl\entities\cbc\Value $value
      * @return self
      */
     public function setValue(\horstoeko\ubl\entities\cbc\Value $value)
@@ -246,7 +246,7 @@ class MeterPropertyType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ValueQuantity $valueQuantity
+     * @param  \horstoeko\ubl\entities\cbc\ValueQuantity $valueQuantity
      * @return self
      */
     public function setValueQuantity(\horstoeko\ubl\entities\cbc\ValueQuantity $valueQuantity)
@@ -268,7 +268,7 @@ class MeterPropertyType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\ValueQualifier $valueQualifier
+     * @param  \horstoeko\ubl\entities\cbc\ValueQualifier $valueQualifier
      */
     public function addToValueQualifier(\horstoeko\ubl\entities\cbc\ValueQualifier $valueQualifier)
     {
@@ -288,7 +288,7 @@ class MeterPropertyType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetValueQualifier($index)
@@ -308,7 +308,7 @@ class MeterPropertyType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetValueQualifier($index)
@@ -347,7 +347,7 @@ class MeterPropertyType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ValueQualifier[] $valueQualifier
+     * @param  \horstoeko\ubl\entities\cbc\ValueQualifier[] $valueQualifier
      * @return self
      */
     public function setValueQualifier(array $valueQualifier)

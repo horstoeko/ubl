@@ -181,7 +181,7 @@ class FinancialAccountType
      *  Identifier. Type
      *  SWIFT(BIC) and IBAN are defined in ISO 9362 and ISO 13616.
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -221,7 +221,7 @@ class FinancialAccountType
      *  Name
      *  Name. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Name $name
+     * @param  \horstoeko\ubl\entities\cbc\Name $name
      * @return self
      */
     public function setName(\horstoeko\ubl\entities\cbc\Name $name)
@@ -263,7 +263,7 @@ class FinancialAccountType
      *  Name
      *  Name. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AliasName $aliasName
+     * @param  \horstoeko\ubl\entities\cbc\AliasName $aliasName
      * @return self
      */
     public function setAliasName(\horstoeko\ubl\entities\cbc\AliasName $aliasName)
@@ -303,7 +303,7 @@ class FinancialAccountType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AccountTypeCode $accountTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\AccountTypeCode $accountTypeCode
      * @return self
      */
     public function setAccountTypeCode(\horstoeko\ubl\entities\cbc\AccountTypeCode $accountTypeCode)
@@ -345,7 +345,7 @@ class FinancialAccountType
      *  Code. Type
      *  ISO20022 Clearing System Identification Code
      *
-     * @param \horstoeko\ubl\entities\cbc\AccountFormatCode $accountFormatCode
+     * @param  \horstoeko\ubl\entities\cbc\AccountFormatCode $accountFormatCode
      * @return self
      */
     public function setAccountFormatCode(\horstoeko\ubl\entities\cbc\AccountFormatCode $accountFormatCode)
@@ -387,7 +387,7 @@ class FinancialAccountType
      *  Currency
      *  Currency_ Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CurrencyCode $currencyCode
+     * @param  \horstoeko\ubl\entities\cbc\CurrencyCode $currencyCode
      * @return self
      */
     public function setCurrencyCode(\horstoeko\ubl\entities\cbc\CurrencyCode $currencyCode)
@@ -410,7 +410,7 @@ class FinancialAccountType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\PaymentNote $paymentNote
+     * @param  \horstoeko\ubl\entities\cbc\PaymentNote $paymentNote
      */
     public function addToPaymentNote(\horstoeko\ubl\entities\cbc\PaymentNote $paymentNote)
     {
@@ -431,7 +431,7 @@ class FinancialAccountType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPaymentNote($index)
@@ -452,7 +452,7 @@ class FinancialAccountType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPaymentNote($index)
@@ -493,7 +493,7 @@ class FinancialAccountType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PaymentNote[] $paymentNote
+     * @param  \horstoeko\ubl\entities\cbc\PaymentNote[] $paymentNote
      * @return self
      */
     public function setPaymentNote(array $paymentNote)
@@ -535,7 +535,7 @@ class FinancialAccountType
      *  Branch
      *  Branch
      *
-     * @param \horstoeko\ubl\entities\cac\FinancialInstitutionBranch $financialInstitutionBranch
+     * @param  \horstoeko\ubl\entities\cac\FinancialInstitutionBranch $financialInstitutionBranch
      * @return self
      */
     public function setFinancialInstitutionBranch(\horstoeko\ubl\entities\cac\FinancialInstitutionBranch $financialInstitutionBranch)
@@ -575,7 +575,7 @@ class FinancialAccountType
      *  Country
      *  Country
      *
-     * @param \horstoeko\ubl\entities\cac\Country $country
+     * @param  \horstoeko\ubl\entities\cac\Country $country
      * @return self
      */
     public function setCountry(\horstoeko\ubl\entities\cac\Country $country)

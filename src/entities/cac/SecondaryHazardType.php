@@ -121,7 +121,7 @@ class SecondaryHazardType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -163,7 +163,7 @@ class SecondaryHazardType
      *  Text. Type
      *  5.1
      *
-     * @param \horstoeko\ubl\entities\cbc\PlacardNotation $placardNotation
+     * @param  \horstoeko\ubl\entities\cbc\PlacardNotation $placardNotation
      * @return self
      */
     public function setPlacardNotation(\horstoeko\ubl\entities\cbc\PlacardNotation $placardNotation)
@@ -205,7 +205,7 @@ class SecondaryHazardType
      *  Text. Type
      *  2
      *
-     * @param \horstoeko\ubl\entities\cbc\PlacardEndorsement $placardEndorsement
+     * @param  \horstoeko\ubl\entities\cbc\PlacardEndorsement $placardEndorsement
      * @return self
      */
     public function setPlacardEndorsement(\horstoeko\ubl\entities\cbc\PlacardEndorsement $placardEndorsement)
@@ -247,7 +247,7 @@ class SecondaryHazardType
      *  Code. Type
      *  EMG code, EMS Page Number
      *
-     * @param \horstoeko\ubl\entities\cbc\EmergencyProceduresCode $emergencyProceduresCode
+     * @param  \horstoeko\ubl\entities\cbc\EmergencyProceduresCode $emergencyProceduresCode
      * @return self
      */
     public function setEmergencyProceduresCode(\horstoeko\ubl\entities\cbc\EmergencyProceduresCode $emergencyProceduresCode)
@@ -270,7 +270,7 @@ class SecondaryHazardType
      *  N.O.S. or a Waste Characteristics Code in conjunction with an EPA Waste Stream code
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Extension $extension
+     * @param  \horstoeko\ubl\entities\cbc\Extension $extension
      */
     public function addToExtension(\horstoeko\ubl\entities\cbc\Extension $extension)
     {
@@ -291,7 +291,7 @@ class SecondaryHazardType
      *  Text. Type
      *  N.O.S. or a Waste Characteristics Code in conjunction with an EPA Waste Stream code
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetExtension($index)
@@ -312,7 +312,7 @@ class SecondaryHazardType
      *  Text. Type
      *  N.O.S. or a Waste Characteristics Code in conjunction with an EPA Waste Stream code
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetExtension($index)
@@ -353,7 +353,7 @@ class SecondaryHazardType
      *  Text. Type
      *  N.O.S. or a Waste Characteristics Code in conjunction with an EPA Waste Stream code
      *
-     * @param \horstoeko\ubl\entities\cbc\Extension[] $extension
+     * @param  \horstoeko\ubl\entities\cbc\Extension[] $extension
      * @return self
      */
     public function setExtension(array $extension)

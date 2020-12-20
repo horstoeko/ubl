@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing RegionType
  *
- *
  * XSD Type: RegionType
  */
 class RegionType extends TextType

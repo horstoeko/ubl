@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing CRLRefsType
  *
- *
  * XSD Type: CRLRefsType
  */
 class CRLRefsType
@@ -22,7 +21,7 @@ class CRLRefsType
      * Adds as cRLRef
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\CRLRefType $cRLRef
+     * @param  \horstoeko\ubl\entities\xades\CRLRefType $cRLRef
      */
     public function addToCRLRef(\horstoeko\ubl\entities\xades\CRLRefType $cRLRef)
     {
@@ -33,7 +32,7 @@ class CRLRefsType
     /**
      * isset cRLRef
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetCRLRef($index)
@@ -44,7 +43,7 @@ class CRLRefsType
     /**
      * unset cRLRef
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetCRLRef($index)
@@ -65,7 +64,7 @@ class CRLRefsType
     /**
      * Sets a new cRLRef
      *
-     * @param \horstoeko\ubl\entities\xades\CRLRefType[] $cRLRef
+     * @param  \horstoeko\ubl\entities\xades\CRLRefType[] $cRLRef
      * @return self
      */
     public function setCRLRef(array $cRLRef)

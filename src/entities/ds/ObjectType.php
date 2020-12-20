@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\ds;
 /**
  * Class representing ObjectType
  *
- *
  * XSD Type: ObjectType
  */
 class ObjectType
@@ -39,7 +38,7 @@ class ObjectType
     /**
      * Sets a new id
      *
-     * @param string $id
+     * @param  string $id
      * @return self
      */
     public function setId($id)
@@ -61,7 +60,7 @@ class ObjectType
     /**
      * Sets a new mimeType
      *
-     * @param string $mimeType
+     * @param  string $mimeType
      * @return self
      */
     public function setMimeType($mimeType)
@@ -83,7 +82,7 @@ class ObjectType
     /**
      * Sets a new encoding
      *
-     * @param string $encoding
+     * @param  string $encoding
      * @return self
      */
     public function setEncoding($encoding)

@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing TimingComplaintType
  *
- *
  * XSD Type: TimingComplaintType
  */
 class TimingComplaintType extends TextType

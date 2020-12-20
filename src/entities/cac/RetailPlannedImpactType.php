@@ -102,7 +102,7 @@ class RetailPlannedImpactType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Amount $amount
+     * @param  \horstoeko\ubl\entities\cbc\Amount $amount
      * @return self
      */
     public function setAmount(\horstoeko\ubl\entities\cbc\Amount $amount)
@@ -144,7 +144,7 @@ class RetailPlannedImpactType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ForecastPurposeCode $forecastPurposeCode
+     * @param  \horstoeko\ubl\entities\cbc\ForecastPurposeCode $forecastPurposeCode
      * @return self
      */
     public function setForecastPurposeCode(\horstoeko\ubl\entities\cbc\ForecastPurposeCode $forecastPurposeCode)
@@ -184,7 +184,7 @@ class RetailPlannedImpactType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ForecastTypeCode $forecastTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\ForecastTypeCode $forecastTypeCode
      * @return self
      */
     public function setForecastTypeCode(\horstoeko\ubl\entities\cbc\ForecastTypeCode $forecastTypeCode)
@@ -224,7 +224,7 @@ class RetailPlannedImpactType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\Period $period
+     * @param  \horstoeko\ubl\entities\cac\Period $period
      * @return self
      */
     public function setPeriod(\horstoeko\ubl\entities\cac\Period $period)

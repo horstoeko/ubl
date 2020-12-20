@@ -245,7 +245,7 @@ class TransportMeansType
      *  Identifier. Type
      *  Voyage Number, Scheduled Conveyance Identifier (WCO ID 205), Flight Number
      *
-     * @param \horstoeko\ubl\entities\cbc\JourneyID $journeyID
+     * @param  \horstoeko\ubl\entities\cbc\JourneyID $journeyID
      * @return self
      */
     public function setJourneyID(\horstoeko\ubl\entities\cbc\JourneyID $journeyID)
@@ -291,7 +291,7 @@ class TransportMeansType
      *  Nationality of Means of Transport (WCO 175, 178 and 179)
      *  LIB
      *
-     * @param \horstoeko\ubl\entities\cbc\RegistrationNationalityID $registrationNationalityID
+     * @param  \horstoeko\ubl\entities\cbc\RegistrationNationalityID $registrationNationalityID
      * @return self
      */
     public function setRegistrationNationalityID(\horstoeko\ubl\entities\cbc\RegistrationNationalityID $registrationNationalityID)
@@ -316,7 +316,7 @@ class TransportMeansType
      *  Liberia
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\RegistrationNationality $registrationNationality
+     * @param  \horstoeko\ubl\entities\cbc\RegistrationNationality $registrationNationality
      */
     public function addToRegistrationNationality(\horstoeko\ubl\entities\cbc\RegistrationNationality $registrationNationality)
     {
@@ -339,7 +339,7 @@ class TransportMeansType
      *  Flag of Vessel, Nationality of Ship
      *  Liberia
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetRegistrationNationality($index)
@@ -362,7 +362,7 @@ class TransportMeansType
      *  Flag of Vessel, Nationality of Ship
      *  Liberia
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetRegistrationNationality($index)
@@ -407,7 +407,7 @@ class TransportMeansType
      *  Flag of Vessel, Nationality of Ship
      *  Liberia
      *
-     * @param \horstoeko\ubl\entities\cbc\RegistrationNationality[] $registrationNationality
+     * @param  \horstoeko\ubl\entities\cbc\RegistrationNationality[] $registrationNationality
      * @return self
      */
     public function setRegistrationNationality(array $registrationNationality)
@@ -451,7 +451,7 @@ class TransportMeansType
      *  Transit Direction
      *  North , East
      *
-     * @param \horstoeko\ubl\entities\cbc\DirectionCode $directionCode
+     * @param  \horstoeko\ubl\entities\cbc\DirectionCode $directionCode
      * @return self
      */
     public function setDirectionCode(\horstoeko\ubl\entities\cbc\DirectionCode $directionCode)
@@ -491,7 +491,7 @@ class TransportMeansType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TransportMeansTypeCode $transportMeansTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\TransportMeansTypeCode $transportMeansTypeCode
      * @return self
      */
     public function setTransportMeansTypeCode(\horstoeko\ubl\entities\cbc\TransportMeansTypeCode $transportMeansTypeCode)
@@ -531,7 +531,7 @@ class TransportMeansType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TradeServiceCode $tradeServiceCode
+     * @param  \horstoeko\ubl\entities\cbc\TradeServiceCode $tradeServiceCode
      * @return self
      */
     public function setTradeServiceCode(\horstoeko\ubl\entities\cbc\TradeServiceCode $tradeServiceCode)
@@ -571,7 +571,7 @@ class TransportMeansType
      *  Stowage
      *  Stowage
      *
-     * @param \horstoeko\ubl\entities\cac\Stowage $stowage
+     * @param  \horstoeko\ubl\entities\cac\Stowage $stowage
      * @return self
      */
     public function setStowage(\horstoeko\ubl\entities\cac\Stowage $stowage)
@@ -611,7 +611,7 @@ class TransportMeansType
      *  Air Transport
      *  Air Transport
      *
-     * @param \horstoeko\ubl\entities\cac\AirTransport $airTransport
+     * @param  \horstoeko\ubl\entities\cac\AirTransport $airTransport
      * @return self
      */
     public function setAirTransport(\horstoeko\ubl\entities\cac\AirTransport $airTransport)
@@ -651,7 +651,7 @@ class TransportMeansType
      *  Road Transport
      *  Road Transport
      *
-     * @param \horstoeko\ubl\entities\cac\RoadTransport $roadTransport
+     * @param  \horstoeko\ubl\entities\cac\RoadTransport $roadTransport
      * @return self
      */
     public function setRoadTransport(\horstoeko\ubl\entities\cac\RoadTransport $roadTransport)
@@ -691,7 +691,7 @@ class TransportMeansType
      *  Rail Transport
      *  Rail Transport
      *
-     * @param \horstoeko\ubl\entities\cac\RailTransport $railTransport
+     * @param  \horstoeko\ubl\entities\cac\RailTransport $railTransport
      * @return self
      */
     public function setRailTransport(\horstoeko\ubl\entities\cac\RailTransport $railTransport)
@@ -731,7 +731,7 @@ class TransportMeansType
      *  Maritime Transport
      *  Maritime Transport
      *
-     * @param \horstoeko\ubl\entities\cac\MaritimeTransport $maritimeTransport
+     * @param  \horstoeko\ubl\entities\cac\MaritimeTransport $maritimeTransport
      * @return self
      */
     public function setMaritimeTransport(\horstoeko\ubl\entities\cac\MaritimeTransport $maritimeTransport)
@@ -773,7 +773,7 @@ class TransportMeansType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\OwnerParty $ownerParty
+     * @param  \horstoeko\ubl\entities\cac\OwnerParty $ownerParty
      * @return self
      */
     public function setOwnerParty(\horstoeko\ubl\entities\cac\OwnerParty $ownerParty)
@@ -796,7 +796,7 @@ class TransportMeansType
      *  Dimension
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\MeasurementDimension $measurementDimension
+     * @param  \horstoeko\ubl\entities\cac\MeasurementDimension $measurementDimension
      */
     public function addToMeasurementDimension(\horstoeko\ubl\entities\cac\MeasurementDimension $measurementDimension)
     {
@@ -817,7 +817,7 @@ class TransportMeansType
      *  Dimension
      *  Dimension
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetMeasurementDimension($index)
@@ -838,7 +838,7 @@ class TransportMeansType
      *  Dimension
      *  Dimension
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetMeasurementDimension($index)
@@ -879,7 +879,7 @@ class TransportMeansType
      *  Dimension
      *  Dimension
      *
-     * @param \horstoeko\ubl\entities\cac\MeasurementDimension[] $measurementDimension
+     * @param  \horstoeko\ubl\entities\cac\MeasurementDimension[] $measurementDimension
      * @return self
      */
     public function setMeasurementDimension(array $measurementDimension)

@@ -324,7 +324,7 @@ class PaymentTermsType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -346,7 +346,7 @@ class PaymentTermsType
      *  Identifier. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\PaymentMeansID $paymentMeansID
+     * @param  \horstoeko\ubl\entities\cbc\PaymentMeansID $paymentMeansID
      */
     public function addToPaymentMeansID(\horstoeko\ubl\entities\cbc\PaymentMeansID $paymentMeansID)
     {
@@ -366,7 +366,7 @@ class PaymentTermsType
      *  Identifier
      *  Identifier. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPaymentMeansID($index)
@@ -386,7 +386,7 @@ class PaymentTermsType
      *  Identifier
      *  Identifier. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPaymentMeansID($index)
@@ -425,7 +425,7 @@ class PaymentTermsType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PaymentMeansID[] $paymentMeansID
+     * @param  \horstoeko\ubl\entities\cbc\PaymentMeansID[] $paymentMeansID
      * @return self
      */
     public function setPaymentMeansID(array $paymentMeansID)
@@ -465,7 +465,7 @@ class PaymentTermsType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PrepaidPaymentReferenceID $prepaidPaymentReferenceID
+     * @param  \horstoeko\ubl\entities\cbc\PrepaidPaymentReferenceID $prepaidPaymentReferenceID
      * @return self
      */
     public function setPrepaidPaymentReferenceID(\horstoeko\ubl\entities\cbc\PrepaidPaymentReferenceID $prepaidPaymentReferenceID)
@@ -487,7 +487,7 @@ class PaymentTermsType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param  \horstoeko\ubl\entities\cbc\Note $note
      */
     public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
     {
@@ -507,7 +507,7 @@ class PaymentTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNote($index)
@@ -527,7 +527,7 @@ class PaymentTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNote($index)
@@ -566,7 +566,7 @@ class PaymentTermsType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note[] $note
+     * @param  \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
     public function setNote(array $note)
@@ -608,7 +608,7 @@ class PaymentTermsType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ReferenceEventCode $referenceEventCode
+     * @param  \horstoeko\ubl\entities\cbc\ReferenceEventCode $referenceEventCode
      * @return self
      */
     public function setReferenceEventCode(\horstoeko\ubl\entities\cbc\ReferenceEventCode $referenceEventCode)
@@ -650,7 +650,7 @@ class PaymentTermsType
      *  Percent
      *  Percent. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SettlementDiscountPercent $settlementDiscountPercent
+     * @param  \horstoeko\ubl\entities\cbc\SettlementDiscountPercent $settlementDiscountPercent
      * @return self
      */
     public function setSettlementDiscountPercent(\horstoeko\ubl\entities\cbc\SettlementDiscountPercent $settlementDiscountPercent)
@@ -692,7 +692,7 @@ class PaymentTermsType
      *  Percent
      *  Percent. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PenaltySurchargePercent $penaltySurchargePercent
+     * @param  \horstoeko\ubl\entities\cbc\PenaltySurchargePercent $penaltySurchargePercent
      * @return self
      */
     public function setPenaltySurchargePercent(\horstoeko\ubl\entities\cbc\PenaltySurchargePercent $penaltySurchargePercent)
@@ -732,7 +732,7 @@ class PaymentTermsType
      *  Percent
      *  Percent. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PaymentPercent $paymentPercent
+     * @param  \horstoeko\ubl\entities\cbc\PaymentPercent $paymentPercent
      * @return self
      */
     public function setPaymentPercent(\horstoeko\ubl\entities\cbc\PaymentPercent $paymentPercent)
@@ -772,7 +772,7 @@ class PaymentTermsType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Amount $amount
+     * @param  \horstoeko\ubl\entities\cbc\Amount $amount
      * @return self
      */
     public function setAmount(\horstoeko\ubl\entities\cbc\Amount $amount)
@@ -814,7 +814,7 @@ class PaymentTermsType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SettlementDiscountAmount $settlementDiscountAmount
+     * @param  \horstoeko\ubl\entities\cbc\SettlementDiscountAmount $settlementDiscountAmount
      * @return self
      */
     public function setSettlementDiscountAmount(\horstoeko\ubl\entities\cbc\SettlementDiscountAmount $settlementDiscountAmount)
@@ -856,7 +856,7 @@ class PaymentTermsType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PenaltyAmount $penaltyAmount
+     * @param  \horstoeko\ubl\entities\cbc\PenaltyAmount $penaltyAmount
      * @return self
      */
     public function setPenaltyAmount(\horstoeko\ubl\entities\cbc\PenaltyAmount $penaltyAmount)
@@ -896,7 +896,7 @@ class PaymentTermsType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PaymentTermsDetailsURI $paymentTermsDetailsURI
+     * @param  \horstoeko\ubl\entities\cbc\PaymentTermsDetailsURI $paymentTermsDetailsURI
      * @return self
      */
     public function setPaymentTermsDetailsURI(\horstoeko\ubl\entities\cbc\PaymentTermsDetailsURI $paymentTermsDetailsURI)
@@ -936,7 +936,7 @@ class PaymentTermsType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $paymentDueDate
+     * @param  \DateTime $paymentDueDate
      * @return self
      */
     public function setPaymentDueDate(\DateTime $paymentDueDate)
@@ -976,7 +976,7 @@ class PaymentTermsType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $installmentDueDate
+     * @param  \DateTime $installmentDueDate
      * @return self
      */
     public function setInstallmentDueDate(\DateTime $installmentDueDate)
@@ -1018,7 +1018,7 @@ class PaymentTermsType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\InvoicingPartyReference $invoicingPartyReference
+     * @param  \horstoeko\ubl\entities\cbc\InvoicingPartyReference $invoicingPartyReference
      * @return self
      */
     public function setInvoicingPartyReference(\horstoeko\ubl\entities\cbc\InvoicingPartyReference $invoicingPartyReference)
@@ -1060,7 +1060,7 @@ class PaymentTermsType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\SettlementPeriod $settlementPeriod
+     * @param  \horstoeko\ubl\entities\cac\SettlementPeriod $settlementPeriod
      * @return self
      */
     public function setSettlementPeriod(\horstoeko\ubl\entities\cac\SettlementPeriod $settlementPeriod)
@@ -1102,7 +1102,7 @@ class PaymentTermsType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\PenaltyPeriod $penaltyPeriod
+     * @param  \horstoeko\ubl\entities\cac\PenaltyPeriod $penaltyPeriod
      * @return self
      */
     public function setPenaltyPeriod(\horstoeko\ubl\entities\cac\PenaltyPeriod $penaltyPeriod)
@@ -1142,7 +1142,7 @@ class PaymentTermsType
      *  Exchange Rate
      *  Exchange Rate
      *
-     * @param \horstoeko\ubl\entities\cac\ExchangeRate $exchangeRate
+     * @param  \horstoeko\ubl\entities\cac\ExchangeRate $exchangeRate
      * @return self
      */
     public function setExchangeRate(\horstoeko\ubl\entities\cac\ExchangeRate $exchangeRate)
@@ -1184,7 +1184,7 @@ class PaymentTermsType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\ValidityPeriod $validityPeriod
+     * @param  \horstoeko\ubl\entities\cac\ValidityPeriod $validityPeriod
      * @return self
      */
     public function setValidityPeriod(\horstoeko\ubl\entities\cac\ValidityPeriod $validityPeriod)

@@ -211,7 +211,7 @@ class ConsumptionLineType
      *  Identifier. Type
      *  1
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -255,7 +255,7 @@ class ConsumptionLineType
      *  Identifier. Type
      *  Consumption
      *
-     * @param \horstoeko\ubl\entities\cbc\ParentDocumentLineReferenceID $parentDocumentLineReferenceID
+     * @param  \horstoeko\ubl\entities\cbc\ParentDocumentLineReferenceID $parentDocumentLineReferenceID
      * @return self
      */
     public function setParentDocumentLineReferenceID(\horstoeko\ubl\entities\cbc\ParentDocumentLineReferenceID $parentDocumentLineReferenceID)
@@ -297,7 +297,7 @@ class ConsumptionLineType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\InvoicedQuantity $invoicedQuantity
+     * @param  \horstoeko\ubl\entities\cbc\InvoicedQuantity $invoicedQuantity
      * @return self
      */
     public function setInvoicedQuantity(\horstoeko\ubl\entities\cbc\InvoicedQuantity $invoicedQuantity)
@@ -337,7 +337,7 @@ class ConsumptionLineType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LineExtensionAmount $lineExtensionAmount
+     * @param  \horstoeko\ubl\entities\cbc\LineExtensionAmount $lineExtensionAmount
      * @return self
      */
     public function setLineExtensionAmount(\horstoeko\ubl\entities\cbc\LineExtensionAmount $lineExtensionAmount)
@@ -377,7 +377,7 @@ class ConsumptionLineType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\Period $period
+     * @param  \horstoeko\ubl\entities\cac\Period $period
      * @return self
      */
     public function setPeriod(\horstoeko\ubl\entities\cac\Period $period)
@@ -399,7 +399,7 @@ class ConsumptionLineType
      *  Delivery
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Delivery $delivery
+     * @param  \horstoeko\ubl\entities\cac\Delivery $delivery
      */
     public function addToDelivery(\horstoeko\ubl\entities\cac\Delivery $delivery)
     {
@@ -419,7 +419,7 @@ class ConsumptionLineType
      *  Delivery
      *  Delivery
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDelivery($index)
@@ -439,7 +439,7 @@ class ConsumptionLineType
      *  Delivery
      *  Delivery
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDelivery($index)
@@ -478,7 +478,7 @@ class ConsumptionLineType
      *  Delivery
      *  Delivery
      *
-     * @param \horstoeko\ubl\entities\cac\Delivery[] $delivery
+     * @param  \horstoeko\ubl\entities\cac\Delivery[] $delivery
      * @return self
      */
     public function setDelivery(array $delivery)
@@ -500,7 +500,7 @@ class ConsumptionLineType
      *  Allowance Charge
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge
+     * @param  \horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge
      */
     public function addToAllowanceCharge(\horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge)
     {
@@ -520,7 +520,7 @@ class ConsumptionLineType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAllowanceCharge($index)
@@ -540,7 +540,7 @@ class ConsumptionLineType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAllowanceCharge($index)
@@ -579,7 +579,7 @@ class ConsumptionLineType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param \horstoeko\ubl\entities\cac\AllowanceCharge[] $allowanceCharge
+     * @param  \horstoeko\ubl\entities\cac\AllowanceCharge[] $allowanceCharge
      * @return self
      */
     public function setAllowanceCharge(array $allowanceCharge)
@@ -601,7 +601,7 @@ class ConsumptionLineType
      *  Tax Total
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\TaxTotal $taxTotal
+     * @param  \horstoeko\ubl\entities\cac\TaxTotal $taxTotal
      */
     public function addToTaxTotal(\horstoeko\ubl\entities\cac\TaxTotal $taxTotal)
     {
@@ -621,7 +621,7 @@ class ConsumptionLineType
      *  Tax Total
      *  Tax Total
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTaxTotal($index)
@@ -641,7 +641,7 @@ class ConsumptionLineType
      *  Tax Total
      *  Tax Total
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTaxTotal($index)
@@ -680,7 +680,7 @@ class ConsumptionLineType
      *  Tax Total
      *  Tax Total
      *
-     * @param \horstoeko\ubl\entities\cac\TaxTotal[] $taxTotal
+     * @param  \horstoeko\ubl\entities\cac\TaxTotal[] $taxTotal
      * @return self
      */
     public function setTaxTotal(array $taxTotal)
@@ -720,7 +720,7 @@ class ConsumptionLineType
      *  Utility Item
      *  Utility Item
      *
-     * @param \horstoeko\ubl\entities\cac\UtilityItem $utilityItem
+     * @param  \horstoeko\ubl\entities\cac\UtilityItem $utilityItem
      * @return self
      */
     public function setUtilityItem(\horstoeko\ubl\entities\cac\UtilityItem $utilityItem)
@@ -760,7 +760,7 @@ class ConsumptionLineType
      *  Price
      *  Price
      *
-     * @param \horstoeko\ubl\entities\cac\Price $price
+     * @param  \horstoeko\ubl\entities\cac\Price $price
      * @return self
      */
     public function setPrice(\horstoeko\ubl\entities\cac\Price $price)
@@ -800,7 +800,7 @@ class ConsumptionLineType
      *  Unstructured Price
      *  Unstructured Price
      *
-     * @param \horstoeko\ubl\entities\cac\UnstructuredPrice $unstructuredPrice
+     * @param  \horstoeko\ubl\entities\cac\UnstructuredPrice $unstructuredPrice
      * @return self
      */
     public function setUnstructuredPrice(\horstoeko\ubl\entities\cac\UnstructuredPrice $unstructuredPrice)

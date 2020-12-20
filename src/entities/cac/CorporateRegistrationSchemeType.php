@@ -110,7 +110,7 @@ class CorporateRegistrationSchemeType
      *  Identifier. Type
      *  ASIC in Australia
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -152,7 +152,7 @@ class CorporateRegistrationSchemeType
      *  Name. Type
      *  Australian Securities and Investment Commission in Australia
      *
-     * @param \horstoeko\ubl\entities\cbc\Name $name
+     * @param  \horstoeko\ubl\entities\cbc\Name $name
      * @return self
      */
     public function setName(\horstoeko\ubl\entities\cbc\Name $name)
@@ -194,7 +194,7 @@ class CorporateRegistrationSchemeType
      *  Code. Type
      *  ACN
      *
-     * @param \horstoeko\ubl\entities\cbc\CorporateRegistrationTypeCode $corporateRegistrationTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\CorporateRegistrationTypeCode $corporateRegistrationTypeCode
      * @return self
      */
     public function setCorporateRegistrationTypeCode(\horstoeko\ubl\entities\cbc\CorporateRegistrationTypeCode $corporateRegistrationTypeCode)
@@ -218,7 +218,7 @@ class CorporateRegistrationSchemeType
      *  England , Wales
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\JurisdictionRegionAddress $jurisdictionRegionAddress
+     * @param  \horstoeko\ubl\entities\cac\JurisdictionRegionAddress $jurisdictionRegionAddress
      */
     public function addToJurisdictionRegionAddress(\horstoeko\ubl\entities\cac\JurisdictionRegionAddress $jurisdictionRegionAddress)
     {
@@ -240,7 +240,7 @@ class CorporateRegistrationSchemeType
      *  Address
      *  England , Wales
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetJurisdictionRegionAddress($index)
@@ -262,7 +262,7 @@ class CorporateRegistrationSchemeType
      *  Address
      *  England , Wales
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetJurisdictionRegionAddress($index)
@@ -305,7 +305,7 @@ class CorporateRegistrationSchemeType
      *  Address
      *  England , Wales
      *
-     * @param \horstoeko\ubl\entities\cac\JurisdictionRegionAddress[] $jurisdictionRegionAddress
+     * @param  \horstoeko\ubl\entities\cac\JurisdictionRegionAddress[] $jurisdictionRegionAddress
      * @return self
      */
     public function setJurisdictionRegionAddress(array $jurisdictionRegionAddress)

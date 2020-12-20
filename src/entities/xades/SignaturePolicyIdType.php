@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing SignaturePolicyIdType
  *
- *
  * XSD Type: SignaturePolicyIdType
  */
 class SignaturePolicyIdType
@@ -44,7 +43,7 @@ class SignaturePolicyIdType
     /**
      * Sets a new sigPolicyId
      *
-     * @param \horstoeko\ubl\entities\xades\ObjectIdentifierType $sigPolicyId
+     * @param  \horstoeko\ubl\entities\xades\ObjectIdentifierType $sigPolicyId
      * @return self
      */
     public function setSigPolicyId(\horstoeko\ubl\entities\xades\ObjectIdentifierType $sigPolicyId)
@@ -57,7 +56,7 @@ class SignaturePolicyIdType
      * Adds as transform
      *
      * @return self
-     * @param \horstoeko\ubl\entities\ds\Transform $transform
+     * @param  \horstoeko\ubl\entities\ds\Transform $transform
      */
     public function addToTransforms(\horstoeko\ubl\entities\ds\Transform $transform)
     {
@@ -68,7 +67,7 @@ class SignaturePolicyIdType
     /**
      * isset transforms
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTransforms($index)
@@ -79,7 +78,7 @@ class SignaturePolicyIdType
     /**
      * unset transforms
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTransforms($index)
@@ -100,7 +99,7 @@ class SignaturePolicyIdType
     /**
      * Sets a new transforms
      *
-     * @param \horstoeko\ubl\entities\ds\Transform[] $transforms
+     * @param  \horstoeko\ubl\entities\ds\Transform[] $transforms
      * @return self
      */
     public function setTransforms(array $transforms)
@@ -122,7 +121,7 @@ class SignaturePolicyIdType
     /**
      * Sets a new sigPolicyHash
      *
-     * @param \horstoeko\ubl\entities\xades\DigestAlgAndValueType $sigPolicyHash
+     * @param  \horstoeko\ubl\entities\xades\DigestAlgAndValueType $sigPolicyHash
      * @return self
      */
     public function setSigPolicyHash(\horstoeko\ubl\entities\xades\DigestAlgAndValueType $sigPolicyHash)
@@ -135,7 +134,7 @@ class SignaturePolicyIdType
      * Adds as sigPolicyQualifier
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\AnyType $sigPolicyQualifier
+     * @param  \horstoeko\ubl\entities\xades\AnyType $sigPolicyQualifier
      */
     public function addToSigPolicyQualifiers(\horstoeko\ubl\entities\xades\AnyType $sigPolicyQualifier)
     {
@@ -146,7 +145,7 @@ class SignaturePolicyIdType
     /**
      * isset sigPolicyQualifiers
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSigPolicyQualifiers($index)
@@ -157,7 +156,7 @@ class SignaturePolicyIdType
     /**
      * unset sigPolicyQualifiers
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSigPolicyQualifiers($index)
@@ -178,7 +177,7 @@ class SignaturePolicyIdType
     /**
      * Sets a new sigPolicyQualifiers
      *
-     * @param \horstoeko\ubl\entities\xades\AnyType[] $sigPolicyQualifiers
+     * @param  \horstoeko\ubl\entities\xades\AnyType[] $sigPolicyQualifiers
      * @return self
      */
     public function setSigPolicyQualifiers(array $sigPolicyQualifiers)

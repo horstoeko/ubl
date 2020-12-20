@@ -209,7 +209,7 @@ class CardAccountType
      *  Identifier. Type
      *  4558 XXXX XXXX XXXX (a real card number)
      *
-     * @param \horstoeko\ubl\entities\cbc\PrimaryAccountNumberID $primaryAccountNumberID
+     * @param  \horstoeko\ubl\entities\cbc\PrimaryAccountNumberID $primaryAccountNumberID
      * @return self
      */
     public function setPrimaryAccountNumberID(\horstoeko\ubl\entities\cbc\PrimaryAccountNumberID $primaryAccountNumberID)
@@ -251,7 +251,7 @@ class CardAccountType
      *  Identifier. Type
      *  VISA, MasterCard, American Express
      *
-     * @param \horstoeko\ubl\entities\cbc\NetworkID $networkID
+     * @param  \horstoeko\ubl\entities\cbc\NetworkID $networkID
      * @return self
      */
     public function setNetworkID(\horstoeko\ubl\entities\cbc\NetworkID $networkID)
@@ -293,7 +293,7 @@ class CardAccountType
      *  Code. Type
      *  Debit Card, Credit Card, Procurement Card
      *
-     * @param \horstoeko\ubl\entities\cbc\CardTypeCode $cardTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\CardTypeCode $cardTypeCode
      * @return self
      */
     public function setCardTypeCode(\horstoeko\ubl\entities\cbc\CardTypeCode $cardTypeCode)
@@ -333,7 +333,7 @@ class CardAccountType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $validityStartDate
+     * @param  \DateTime $validityStartDate
      * @return self
      */
     public function setValidityStartDate(\DateTime $validityStartDate)
@@ -373,7 +373,7 @@ class CardAccountType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $expiryDate
+     * @param  \DateTime $expiryDate
      * @return self
      */
     public function setExpiryDate(\DateTime $expiryDate)
@@ -413,7 +413,7 @@ class CardAccountType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\IssuerID $issuerID
+     * @param  \horstoeko\ubl\entities\cbc\IssuerID $issuerID
      * @return self
      */
     public function setIssuerID(\horstoeko\ubl\entities\cbc\IssuerID $issuerID)
@@ -453,7 +453,7 @@ class CardAccountType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\IssueNumberID $issueNumberID
+     * @param  \horstoeko\ubl\entities\cbc\IssueNumberID $issueNumberID
      * @return self
      */
     public function setIssueNumberID(\horstoeko\ubl\entities\cbc\IssueNumberID $issueNumberID)
@@ -493,7 +493,7 @@ class CardAccountType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CV2ID $cV2ID
+     * @param  \horstoeko\ubl\entities\cbc\CV2ID $cV2ID
      * @return self
      */
     public function setCV2ID(\horstoeko\ubl\entities\cbc\CV2ID $cV2ID)
@@ -535,7 +535,7 @@ class CardAccountType
      *  Chip
      *  Chip_ Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CardChipCode $cardChipCode
+     * @param  \horstoeko\ubl\entities\cbc\CardChipCode $cardChipCode
      * @return self
      */
     public function setCardChipCode(\horstoeko\ubl\entities\cbc\CardChipCode $cardChipCode)
@@ -577,7 +577,7 @@ class CardAccountType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ChipApplicationID $chipApplicationID
+     * @param  \horstoeko\ubl\entities\cbc\ChipApplicationID $chipApplicationID
      * @return self
      */
     public function setChipApplicationID(\horstoeko\ubl\entities\cbc\ChipApplicationID $chipApplicationID)
@@ -617,7 +617,7 @@ class CardAccountType
      *  Name
      *  Name. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\HolderName $holderName
+     * @param  \horstoeko\ubl\entities\cbc\HolderName $holderName
      * @return self
      */
     public function setHolderName(\horstoeko\ubl\entities\cbc\HolderName $holderName)

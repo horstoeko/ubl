@@ -168,7 +168,7 @@ class BillingReferenceType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\InvoiceDocumentReference $invoiceDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\InvoiceDocumentReference $invoiceDocumentReference
      * @return self
      */
     public function setInvoiceDocumentReference(\horstoeko\ubl\entities\cac\InvoiceDocumentReference $invoiceDocumentReference)
@@ -210,7 +210,7 @@ class BillingReferenceType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\SelfBilledInvoiceDocumentReference $selfBilledInvoiceDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\SelfBilledInvoiceDocumentReference $selfBilledInvoiceDocumentReference
      * @return self
      */
     public function setSelfBilledInvoiceDocumentReference(\horstoeko\ubl\entities\cac\SelfBilledInvoiceDocumentReference $selfBilledInvoiceDocumentReference)
@@ -252,7 +252,7 @@ class BillingReferenceType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\CreditNoteDocumentReference $creditNoteDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\CreditNoteDocumentReference $creditNoteDocumentReference
      * @return self
      */
     public function setCreditNoteDocumentReference(\horstoeko\ubl\entities\cac\CreditNoteDocumentReference $creditNoteDocumentReference)
@@ -294,7 +294,7 @@ class BillingReferenceType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\SelfBilledCreditNoteDocumentReference $selfBilledCreditNoteDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\SelfBilledCreditNoteDocumentReference $selfBilledCreditNoteDocumentReference
      * @return self
      */
     public function setSelfBilledCreditNoteDocumentReference(\horstoeko\ubl\entities\cac\SelfBilledCreditNoteDocumentReference $selfBilledCreditNoteDocumentReference)
@@ -336,7 +336,7 @@ class BillingReferenceType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\DebitNoteDocumentReference $debitNoteDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\DebitNoteDocumentReference $debitNoteDocumentReference
      * @return self
      */
     public function setDebitNoteDocumentReference(\horstoeko\ubl\entities\cac\DebitNoteDocumentReference $debitNoteDocumentReference)
@@ -378,7 +378,7 @@ class BillingReferenceType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\ReminderDocumentReference $reminderDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\ReminderDocumentReference $reminderDocumentReference
      * @return self
      */
     public function setReminderDocumentReference(\horstoeko\ubl\entities\cac\ReminderDocumentReference $reminderDocumentReference)
@@ -420,7 +420,7 @@ class BillingReferenceType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\AdditionalDocumentReference $additionalDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\AdditionalDocumentReference $additionalDocumentReference
      * @return self
      */
     public function setAdditionalDocumentReference(\horstoeko\ubl\entities\cac\AdditionalDocumentReference $additionalDocumentReference)
@@ -442,7 +442,7 @@ class BillingReferenceType
      *  Billing Reference Line
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\BillingReferenceLine $billingReferenceLine
+     * @param  \horstoeko\ubl\entities\cac\BillingReferenceLine $billingReferenceLine
      */
     public function addToBillingReferenceLine(\horstoeko\ubl\entities\cac\BillingReferenceLine $billingReferenceLine)
     {
@@ -462,7 +462,7 @@ class BillingReferenceType
      *  Billing Reference Line
      *  Billing Reference Line
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetBillingReferenceLine($index)
@@ -482,7 +482,7 @@ class BillingReferenceType
      *  Billing Reference Line
      *  Billing Reference Line
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetBillingReferenceLine($index)
@@ -521,7 +521,7 @@ class BillingReferenceType
      *  Billing Reference Line
      *  Billing Reference Line
      *
-     * @param \horstoeko\ubl\entities\cac\BillingReferenceLine[] $billingReferenceLine
+     * @param  \horstoeko\ubl\entities\cac\BillingReferenceLine[] $billingReferenceLine
      * @return self
      */
     public function setBillingReferenceLine(array $billingReferenceLine)

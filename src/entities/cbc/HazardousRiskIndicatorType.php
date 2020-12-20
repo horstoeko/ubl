@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing HazardousRiskIndicatorType
  *
- *
  * XSD Type: HazardousRiskIndicatorType
  */
 class HazardousRiskIndicatorType
@@ -29,7 +28,7 @@ class HazardousRiskIndicatorType
     /**
      * Gets or sets the inner value
      *
-     * @param bool $value
+     * @param  bool $value
      * @return bool
      */
     public function value()

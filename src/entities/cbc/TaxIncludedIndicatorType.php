@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing TaxIncludedIndicatorType
  *
- *
  * XSD Type: TaxIncludedIndicatorType
  */
 class TaxIncludedIndicatorType
@@ -29,7 +28,7 @@ class TaxIncludedIndicatorType
     /**
      * Gets or sets the inner value
      *
-     * @param bool $value
+     * @param  bool $value
      * @return bool
      */
     public function value()

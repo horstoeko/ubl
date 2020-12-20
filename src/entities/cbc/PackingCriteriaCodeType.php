@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\CodeType;
 /**
  * Class representing PackingCriteriaCodeType
  *
- *
  * XSD Type: PackingCriteriaCodeType
  */
 class PackingCriteriaCodeType extends CodeType

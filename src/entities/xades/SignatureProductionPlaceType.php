@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing SignatureProductionPlaceType
  *
- *
  * XSD Type: SignatureProductionPlaceType
  */
 class SignatureProductionPlaceType
@@ -44,7 +43,7 @@ class SignatureProductionPlaceType
     /**
      * Sets a new city
      *
-     * @param string $city
+     * @param  string $city
      * @return self
      */
     public function setCity($city)
@@ -66,7 +65,7 @@ class SignatureProductionPlaceType
     /**
      * Sets a new stateOrProvince
      *
-     * @param string $stateOrProvince
+     * @param  string $stateOrProvince
      * @return self
      */
     public function setStateOrProvince($stateOrProvince)
@@ -88,7 +87,7 @@ class SignatureProductionPlaceType
     /**
      * Sets a new postalCode
      *
-     * @param string $postalCode
+     * @param  string $postalCode
      * @return self
      */
     public function setPostalCode($postalCode)
@@ -110,7 +109,7 @@ class SignatureProductionPlaceType
     /**
      * Sets a new countryName
      *
-     * @param string $countryName
+     * @param  string $countryName
      * @return self
      */
     public function setCountryName($countryName)

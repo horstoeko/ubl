@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\ds;
 /**
  * Class representing RetrievalMethodType
  *
- *
  * XSD Type: RetrievalMethodType
  */
 class RetrievalMethodType
@@ -39,7 +38,7 @@ class RetrievalMethodType
     /**
      * Sets a new uRI
      *
-     * @param string $uRI
+     * @param  string $uRI
      * @return self
      */
     public function setURI($uRI)
@@ -61,7 +60,7 @@ class RetrievalMethodType
     /**
      * Sets a new type
      *
-     * @param string $type
+     * @param  string $type
      * @return self
      */
     public function setType($type)
@@ -74,7 +73,7 @@ class RetrievalMethodType
      * Adds as transform
      *
      * @return self
-     * @param \horstoeko\ubl\entities\ds\Transform $transform
+     * @param  \horstoeko\ubl\entities\ds\Transform $transform
      */
     public function addToTransforms(\horstoeko\ubl\entities\ds\Transform $transform)
     {
@@ -85,7 +84,7 @@ class RetrievalMethodType
     /**
      * isset transforms
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTransforms($index)
@@ -96,7 +95,7 @@ class RetrievalMethodType
     /**
      * unset transforms
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTransforms($index)
@@ -117,7 +116,7 @@ class RetrievalMethodType
     /**
      * Sets a new transforms
      *
-     * @param \horstoeko\ubl\entities\ds\Transform[] $transforms
+     * @param  \horstoeko\ubl\entities\ds\Transform[] $transforms
      * @return self
      */
     public function setTransforms(array $transforms)

@@ -87,7 +87,7 @@ class EventCommentType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Comment $comment
+     * @param  \horstoeko\ubl\entities\cbc\Comment $comment
      * @return self
      */
     public function setComment(\horstoeko\ubl\entities\cbc\Comment $comment)
@@ -127,7 +127,7 @@ class EventCommentType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $issueDate
+     * @param  \DateTime $issueDate
      * @return self
      */
     public function setIssueDate(\DateTime $issueDate)
@@ -167,7 +167,7 @@ class EventCommentType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $issueTime
+     * @param  \DateTime $issueTime
      * @return self
      */
     public function setIssueTime(\DateTime $issueTime)

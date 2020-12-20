@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing ReferenceInfoType
  *
- *
  * XSD Type: ReferenceInfoType
  */
 class ReferenceInfoType
@@ -44,7 +43,7 @@ class ReferenceInfoType
     /**
      * Sets a new id
      *
-     * @param string $id
+     * @param  string $id
      * @return self
      */
     public function setId($id)
@@ -66,7 +65,7 @@ class ReferenceInfoType
     /**
      * Sets a new uRI
      *
-     * @param string $uRI
+     * @param  string $uRI
      * @return self
      */
     public function setURI($uRI)
@@ -88,7 +87,7 @@ class ReferenceInfoType
     /**
      * Sets a new digestMethod
      *
-     * @param \horstoeko\ubl\entities\ds\DigestMethod $digestMethod
+     * @param  \horstoeko\ubl\entities\ds\DigestMethod $digestMethod
      * @return self
      */
     public function setDigestMethod(\horstoeko\ubl\entities\ds\DigestMethod $digestMethod)
@@ -110,7 +109,7 @@ class ReferenceInfoType
     /**
      * Sets a new digestValue
      *
-     * @param string $digestValue
+     * @param  string $digestValue
      * @return self
      */
     public function setDigestValue($digestValue)

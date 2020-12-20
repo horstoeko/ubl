@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing UnsignedPropertiesType
  *
- *
  * XSD Type: UnsignedPropertiesType
  */
 class UnsignedPropertiesType
@@ -39,7 +38,7 @@ class UnsignedPropertiesType
     /**
      * Sets a new id
      *
-     * @param string $id
+     * @param  string $id
      * @return self
      */
     public function setId($id)
@@ -61,7 +60,7 @@ class UnsignedPropertiesType
     /**
      * Sets a new unsignedSignatureProperties
      *
-     * @param \horstoeko\ubl\entities\xades\UnsignedSignaturePropertiesType $unsignedSignatureProperties
+     * @param  \horstoeko\ubl\entities\xades\UnsignedSignaturePropertiesType $unsignedSignatureProperties
      * @return self
      */
     public function setUnsignedSignatureProperties(\horstoeko\ubl\entities\xades\UnsignedSignaturePropertiesType $unsignedSignatureProperties)
@@ -83,7 +82,7 @@ class UnsignedPropertiesType
     /**
      * Sets a new unsignedDataObjectProperties
      *
-     * @param \horstoeko\ubl\entities\xades\UnsignedDataObjectPropertiesType $unsignedDataObjectProperties
+     * @param  \horstoeko\ubl\entities\xades\UnsignedDataObjectPropertiesType $unsignedDataObjectProperties
      * @return self
      */
     public function setUnsignedDataObjectProperties(\horstoeko\ubl\entities\xades\UnsignedDataObjectPropertiesType $unsignedDataObjectProperties)

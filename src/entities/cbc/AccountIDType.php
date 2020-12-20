@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\IdentifierType;
 /**
  * Class representing AccountIDType
  *
- *
  * XSD Type: AccountIDType
  */
 class AccountIDType extends IdentifierType

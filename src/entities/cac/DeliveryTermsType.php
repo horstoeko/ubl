@@ -152,7 +152,7 @@ class DeliveryTermsType
      *  Identifier. Type
      *  CIF, FOB, or EXW from the INCOTERMS Terms of Delivery. (2000 version preferred.)
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -175,7 +175,7 @@ class DeliveryTermsType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\SpecialTerms $specialTerms
+     * @param  \horstoeko\ubl\entities\cbc\SpecialTerms $specialTerms
      */
     public function addToSpecialTerms(\horstoeko\ubl\entities\cbc\SpecialTerms $specialTerms)
     {
@@ -196,7 +196,7 @@ class DeliveryTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSpecialTerms($index)
@@ -217,7 +217,7 @@ class DeliveryTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSpecialTerms($index)
@@ -258,7 +258,7 @@ class DeliveryTermsType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SpecialTerms[] $specialTerms
+     * @param  \horstoeko\ubl\entities\cbc\SpecialTerms[] $specialTerms
      * @return self
      */
     public function setSpecialTerms(array $specialTerms)
@@ -298,7 +298,7 @@ class DeliveryTermsType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LossRiskResponsibilityCode $lossRiskResponsibilityCode
+     * @param  \horstoeko\ubl\entities\cbc\LossRiskResponsibilityCode $lossRiskResponsibilityCode
      * @return self
      */
     public function setLossRiskResponsibilityCode(\horstoeko\ubl\entities\cbc\LossRiskResponsibilityCode $lossRiskResponsibilityCode)
@@ -320,7 +320,7 @@ class DeliveryTermsType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\LossRisk $lossRisk
+     * @param  \horstoeko\ubl\entities\cbc\LossRisk $lossRisk
      */
     public function addToLossRisk(\horstoeko\ubl\entities\cbc\LossRisk $lossRisk)
     {
@@ -340,7 +340,7 @@ class DeliveryTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetLossRisk($index)
@@ -360,7 +360,7 @@ class DeliveryTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetLossRisk($index)
@@ -399,7 +399,7 @@ class DeliveryTermsType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LossRisk[] $lossRisk
+     * @param  \horstoeko\ubl\entities\cbc\LossRisk[] $lossRisk
      * @return self
      */
     public function setLossRisk(array $lossRisk)
@@ -439,7 +439,7 @@ class DeliveryTermsType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Amount $amount
+     * @param  \horstoeko\ubl\entities\cbc\Amount $amount
      * @return self
      */
     public function setAmount(\horstoeko\ubl\entities\cbc\Amount $amount)
@@ -481,7 +481,7 @@ class DeliveryTermsType
      *  Location
      *  Location
      *
-     * @param \horstoeko\ubl\entities\cac\DeliveryLocation $deliveryLocation
+     * @param  \horstoeko\ubl\entities\cac\DeliveryLocation $deliveryLocation
      * @return self
      */
     public function setDeliveryLocation(\horstoeko\ubl\entities\cac\DeliveryLocation $deliveryLocation)
@@ -521,7 +521,7 @@ class DeliveryTermsType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param \horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge
+     * @param  \horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge
      * @return self
      */
     public function setAllowanceCharge(\horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge)

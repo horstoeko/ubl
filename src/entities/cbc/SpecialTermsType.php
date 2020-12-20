@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing SpecialTermsType
  *
- *
  * XSD Type: SpecialTermsType
  */
 class SpecialTermsType extends TextType

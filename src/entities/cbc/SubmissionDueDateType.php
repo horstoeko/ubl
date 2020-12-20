@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing SubmissionDueDateType
  *
- *
  * XSD Type: SubmissionDueDateType
  */
 class SubmissionDueDateType
@@ -29,7 +28,7 @@ class SubmissionDueDateType
     /**
      * Gets or sets the inner value
      *
-     * @param \DateTime $value
+     * @param  \DateTime $value
      * @return \DateTime
      */
     public function value()

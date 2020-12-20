@@ -102,7 +102,7 @@ class LineReferenceType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LineID $lineID
+     * @param  \horstoeko\ubl\entities\cbc\LineID $lineID
      * @return self
      */
     public function setLineID(\horstoeko\ubl\entities\cbc\LineID $lineID)
@@ -142,7 +142,7 @@ class LineReferenceType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\UUID $uUID
+     * @param  \horstoeko\ubl\entities\cbc\UUID $uUID
      * @return self
      */
     public function setUUID(\horstoeko\ubl\entities\cbc\UUID $uUID)
@@ -184,7 +184,7 @@ class LineReferenceType
      *  Line Status
      *  Line Status_ Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LineStatusCode $lineStatusCode
+     * @param  \horstoeko\ubl\entities\cbc\LineStatusCode $lineStatusCode
      * @return self
      */
     public function setLineStatusCode(\horstoeko\ubl\entities\cbc\LineStatusCode $lineStatusCode)
@@ -224,7 +224,7 @@ class LineReferenceType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\DocumentReference $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference $documentReference
      * @return self
      */
     public function setDocumentReference(\horstoeko\ubl\entities\cac\DocumentReference $documentReference)

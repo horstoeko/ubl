@@ -73,7 +73,7 @@ class ContractingPartyTypeType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PartyTypeCode $partyTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\PartyTypeCode $partyTypeCode
      * @return self
      */
     public function setPartyTypeCode(\horstoeko\ubl\entities\cbc\PartyTypeCode $partyTypeCode)
@@ -113,7 +113,7 @@ class ContractingPartyTypeType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PartyType $partyType
+     * @param  \horstoeko\ubl\entities\cbc\PartyType $partyType
      * @return self
      */
     public function setPartyType(\horstoeko\ubl\entities\cbc\PartyType $partyType)

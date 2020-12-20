@@ -76,7 +76,7 @@ class UnstructuredPriceType
      *  Amount. Type
      *  23.45
      *
-     * @param \horstoeko\ubl\entities\cbc\PriceAmount $priceAmount
+     * @param  \horstoeko\ubl\entities\cbc\PriceAmount $priceAmount
      * @return self
      */
     public function setPriceAmount(\horstoeko\ubl\entities\cbc\PriceAmount $priceAmount)
@@ -116,7 +116,7 @@ class UnstructuredPriceType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TimeAmount $timeAmount
+     * @param  \horstoeko\ubl\entities\cbc\TimeAmount $timeAmount
      * @return self
      */
     public function setTimeAmount(\horstoeko\ubl\entities\cbc\TimeAmount $timeAmount)

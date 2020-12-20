@@ -151,7 +151,7 @@ class TradeFinancingType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -193,7 +193,7 @@ class TradeFinancingType
      *  Code. Type
      *  Factoring , Invoice Financing , Pre-shipment Financing , Letter of Credit , Irrevocable Letter of Credit .
      *
-     * @param \horstoeko\ubl\entities\cbc\FinancingInstrumentCode $financingInstrumentCode
+     * @param  \horstoeko\ubl\entities\cbc\FinancingInstrumentCode $financingInstrumentCode
      * @return self
      */
     public function setFinancingInstrumentCode(\horstoeko\ubl\entities\cbc\FinancingInstrumentCode $financingInstrumentCode)
@@ -235,7 +235,7 @@ class TradeFinancingType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\ContractDocumentReference $contractDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\ContractDocumentReference $contractDocumentReference
      * @return self
      */
     public function setContractDocumentReference(\horstoeko\ubl\entities\cac\ContractDocumentReference $contractDocumentReference)
@@ -257,7 +257,7 @@ class TradeFinancingType
      *  Document Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\DocumentReference $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference $documentReference
      */
     public function addToDocumentReference(\horstoeko\ubl\entities\cac\DocumentReference $documentReference)
     {
@@ -277,7 +277,7 @@ class TradeFinancingType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDocumentReference($index)
@@ -297,7 +297,7 @@ class TradeFinancingType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDocumentReference($index)
@@ -336,7 +336,7 @@ class TradeFinancingType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\DocumentReference[] $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference[] $documentReference
      * @return self
      */
     public function setDocumentReference(array $documentReference)
@@ -378,7 +378,7 @@ class TradeFinancingType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\FinancingParty $financingParty
+     * @param  \horstoeko\ubl\entities\cac\FinancingParty $financingParty
      * @return self
      */
     public function setFinancingParty(\horstoeko\ubl\entities\cac\FinancingParty $financingParty)
@@ -420,7 +420,7 @@ class TradeFinancingType
      *  Financial Account
      *  Financial Account
      *
-     * @param \horstoeko\ubl\entities\cac\FinancingFinancialAccount $financingFinancialAccount
+     * @param  \horstoeko\ubl\entities\cac\FinancingFinancialAccount $financingFinancialAccount
      * @return self
      */
     public function setFinancingFinancialAccount(\horstoeko\ubl\entities\cac\FinancingFinancialAccount $financingFinancialAccount)
@@ -442,7 +442,7 @@ class TradeFinancingType
      *  Clause
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Clause $clause
+     * @param  \horstoeko\ubl\entities\cac\Clause $clause
      */
     public function addToClause(\horstoeko\ubl\entities\cac\Clause $clause)
     {
@@ -462,7 +462,7 @@ class TradeFinancingType
      *  Clause
      *  Clause
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetClause($index)
@@ -482,7 +482,7 @@ class TradeFinancingType
      *  Clause
      *  Clause
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetClause($index)
@@ -521,7 +521,7 @@ class TradeFinancingType
      *  Clause
      *  Clause
      *
-     * @param \horstoeko\ubl\entities\cac\Clause[] $clause
+     * @param  \horstoeko\ubl\entities\cac\Clause[] $clause
      * @return self
      */
     public function setClause(array $clause)

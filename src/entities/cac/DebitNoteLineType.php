@@ -365,7 +365,7 @@ class DebitNoteLineType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -405,7 +405,7 @@ class DebitNoteLineType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\UUID $uUID
+     * @param  \horstoeko\ubl\entities\cbc\UUID $uUID
      * @return self
      */
     public function setUUID(\horstoeko\ubl\entities\cbc\UUID $uUID)
@@ -427,7 +427,7 @@ class DebitNoteLineType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param  \horstoeko\ubl\entities\cbc\Note $note
      */
     public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
     {
@@ -447,7 +447,7 @@ class DebitNoteLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNote($index)
@@ -467,7 +467,7 @@ class DebitNoteLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNote($index)
@@ -506,7 +506,7 @@ class DebitNoteLineType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note[] $note
+     * @param  \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
     public function setNote(array $note)
@@ -548,7 +548,7 @@ class DebitNoteLineType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\DebitedQuantity $debitedQuantity
+     * @param  \horstoeko\ubl\entities\cbc\DebitedQuantity $debitedQuantity
      * @return self
      */
     public function setDebitedQuantity(\horstoeko\ubl\entities\cbc\DebitedQuantity $debitedQuantity)
@@ -588,7 +588,7 @@ class DebitNoteLineType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LineExtensionAmount $lineExtensionAmount
+     * @param  \horstoeko\ubl\entities\cbc\LineExtensionAmount $lineExtensionAmount
      * @return self
      */
     public function setLineExtensionAmount(\horstoeko\ubl\entities\cbc\LineExtensionAmount $lineExtensionAmount)
@@ -628,7 +628,7 @@ class DebitNoteLineType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $taxPointDate
+     * @param  \DateTime $taxPointDate
      * @return self
      */
     public function setTaxPointDate(\DateTime $taxPointDate)
@@ -668,7 +668,7 @@ class DebitNoteLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AccountingCostCode $accountingCostCode
+     * @param  \horstoeko\ubl\entities\cbc\AccountingCostCode $accountingCostCode
      * @return self
      */
     public function setAccountingCostCode(\horstoeko\ubl\entities\cbc\AccountingCostCode $accountingCostCode)
@@ -708,7 +708,7 @@ class DebitNoteLineType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AccountingCost $accountingCost
+     * @param  \horstoeko\ubl\entities\cbc\AccountingCost $accountingCost
      * @return self
      */
     public function setAccountingCost(\horstoeko\ubl\entities\cbc\AccountingCost $accountingCost)
@@ -748,7 +748,7 @@ class DebitNoteLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PaymentPurposeCode $paymentPurposeCode
+     * @param  \horstoeko\ubl\entities\cbc\PaymentPurposeCode $paymentPurposeCode
      * @return self
      */
     public function setPaymentPurposeCode(\horstoeko\ubl\entities\cbc\PaymentPurposeCode $paymentPurposeCode)
@@ -771,7 +771,7 @@ class DebitNoteLineType
      *  Response
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\DiscrepancyResponse $discrepancyResponse
+     * @param  \horstoeko\ubl\entities\cac\DiscrepancyResponse $discrepancyResponse
      */
     public function addToDiscrepancyResponse(\horstoeko\ubl\entities\cac\DiscrepancyResponse $discrepancyResponse)
     {
@@ -792,7 +792,7 @@ class DebitNoteLineType
      *  Response
      *  Response
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDiscrepancyResponse($index)
@@ -813,7 +813,7 @@ class DebitNoteLineType
      *  Response
      *  Response
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDiscrepancyResponse($index)
@@ -854,7 +854,7 @@ class DebitNoteLineType
      *  Response
      *  Response
      *
-     * @param \horstoeko\ubl\entities\cac\DiscrepancyResponse[] $discrepancyResponse
+     * @param  \horstoeko\ubl\entities\cac\DiscrepancyResponse[] $discrepancyResponse
      * @return self
      */
     public function setDiscrepancyResponse(array $discrepancyResponse)
@@ -877,7 +877,7 @@ class DebitNoteLineType
      *  Line Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\DespatchLineReference $despatchLineReference
+     * @param  \horstoeko\ubl\entities\cac\DespatchLineReference $despatchLineReference
      */
     public function addToDespatchLineReference(\horstoeko\ubl\entities\cac\DespatchLineReference $despatchLineReference)
     {
@@ -898,7 +898,7 @@ class DebitNoteLineType
      *  Line Reference
      *  Line Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDespatchLineReference($index)
@@ -919,7 +919,7 @@ class DebitNoteLineType
      *  Line Reference
      *  Line Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDespatchLineReference($index)
@@ -960,7 +960,7 @@ class DebitNoteLineType
      *  Line Reference
      *  Line Reference
      *
-     * @param \horstoeko\ubl\entities\cac\DespatchLineReference[] $despatchLineReference
+     * @param  \horstoeko\ubl\entities\cac\DespatchLineReference[] $despatchLineReference
      * @return self
      */
     public function setDespatchLineReference(array $despatchLineReference)
@@ -983,7 +983,7 @@ class DebitNoteLineType
      *  Line Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ReceiptLineReference $receiptLineReference
+     * @param  \horstoeko\ubl\entities\cac\ReceiptLineReference $receiptLineReference
      */
     public function addToReceiptLineReference(\horstoeko\ubl\entities\cac\ReceiptLineReference $receiptLineReference)
     {
@@ -1004,7 +1004,7 @@ class DebitNoteLineType
      *  Line Reference
      *  Line Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetReceiptLineReference($index)
@@ -1025,7 +1025,7 @@ class DebitNoteLineType
      *  Line Reference
      *  Line Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetReceiptLineReference($index)
@@ -1066,7 +1066,7 @@ class DebitNoteLineType
      *  Line Reference
      *  Line Reference
      *
-     * @param \horstoeko\ubl\entities\cac\ReceiptLineReference[] $receiptLineReference
+     * @param  \horstoeko\ubl\entities\cac\ReceiptLineReference[] $receiptLineReference
      * @return self
      */
     public function setReceiptLineReference(array $receiptLineReference)
@@ -1088,7 +1088,7 @@ class DebitNoteLineType
      *  Billing Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\BillingReference $billingReference
+     * @param  \horstoeko\ubl\entities\cac\BillingReference $billingReference
      */
     public function addToBillingReference(\horstoeko\ubl\entities\cac\BillingReference $billingReference)
     {
@@ -1108,7 +1108,7 @@ class DebitNoteLineType
      *  Billing Reference
      *  Billing Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetBillingReference($index)
@@ -1128,7 +1128,7 @@ class DebitNoteLineType
      *  Billing Reference
      *  Billing Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetBillingReference($index)
@@ -1167,7 +1167,7 @@ class DebitNoteLineType
      *  Billing Reference
      *  Billing Reference
      *
-     * @param \horstoeko\ubl\entities\cac\BillingReference[] $billingReference
+     * @param  \horstoeko\ubl\entities\cac\BillingReference[] $billingReference
      * @return self
      */
     public function setBillingReference(array $billingReference)
@@ -1189,7 +1189,7 @@ class DebitNoteLineType
      *  Document Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\DocumentReference $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference $documentReference
      */
     public function addToDocumentReference(\horstoeko\ubl\entities\cac\DocumentReference $documentReference)
     {
@@ -1209,7 +1209,7 @@ class DebitNoteLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDocumentReference($index)
@@ -1229,7 +1229,7 @@ class DebitNoteLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDocumentReference($index)
@@ -1268,7 +1268,7 @@ class DebitNoteLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\DocumentReference[] $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference[] $documentReference
      * @return self
      */
     public function setDocumentReference(array $documentReference)
@@ -1308,7 +1308,7 @@ class DebitNoteLineType
      *  Pricing Reference
      *  Pricing Reference
      *
-     * @param \horstoeko\ubl\entities\cac\PricingReference $pricingReference
+     * @param  \horstoeko\ubl\entities\cac\PricingReference $pricingReference
      * @return self
      */
     public function setPricingReference(\horstoeko\ubl\entities\cac\PricingReference $pricingReference)
@@ -1330,7 +1330,7 @@ class DebitNoteLineType
      *  Delivery
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Delivery $delivery
+     * @param  \horstoeko\ubl\entities\cac\Delivery $delivery
      */
     public function addToDelivery(\horstoeko\ubl\entities\cac\Delivery $delivery)
     {
@@ -1350,7 +1350,7 @@ class DebitNoteLineType
      *  Delivery
      *  Delivery
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDelivery($index)
@@ -1370,7 +1370,7 @@ class DebitNoteLineType
      *  Delivery
      *  Delivery
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDelivery($index)
@@ -1409,7 +1409,7 @@ class DebitNoteLineType
      *  Delivery
      *  Delivery
      *
-     * @param \horstoeko\ubl\entities\cac\Delivery[] $delivery
+     * @param  \horstoeko\ubl\entities\cac\Delivery[] $delivery
      * @return self
      */
     public function setDelivery(array $delivery)
@@ -1431,7 +1431,7 @@ class DebitNoteLineType
      *  Tax Total
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\TaxTotal $taxTotal
+     * @param  \horstoeko\ubl\entities\cac\TaxTotal $taxTotal
      */
     public function addToTaxTotal(\horstoeko\ubl\entities\cac\TaxTotal $taxTotal)
     {
@@ -1451,7 +1451,7 @@ class DebitNoteLineType
      *  Tax Total
      *  Tax Total
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTaxTotal($index)
@@ -1471,7 +1471,7 @@ class DebitNoteLineType
      *  Tax Total
      *  Tax Total
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTaxTotal($index)
@@ -1510,7 +1510,7 @@ class DebitNoteLineType
      *  Tax Total
      *  Tax Total
      *
-     * @param \horstoeko\ubl\entities\cac\TaxTotal[] $taxTotal
+     * @param  \horstoeko\ubl\entities\cac\TaxTotal[] $taxTotal
      * @return self
      */
     public function setTaxTotal(array $taxTotal)
@@ -1532,7 +1532,7 @@ class DebitNoteLineType
      *  Allowance Charge
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge
+     * @param  \horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge
      */
     public function addToAllowanceCharge(\horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge)
     {
@@ -1552,7 +1552,7 @@ class DebitNoteLineType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAllowanceCharge($index)
@@ -1572,7 +1572,7 @@ class DebitNoteLineType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAllowanceCharge($index)
@@ -1611,7 +1611,7 @@ class DebitNoteLineType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param \horstoeko\ubl\entities\cac\AllowanceCharge[] $allowanceCharge
+     * @param  \horstoeko\ubl\entities\cac\AllowanceCharge[] $allowanceCharge
      * @return self
      */
     public function setAllowanceCharge(array $allowanceCharge)
@@ -1651,7 +1651,7 @@ class DebitNoteLineType
      *  Item
      *  Item
      *
-     * @param \horstoeko\ubl\entities\cac\Item $item
+     * @param  \horstoeko\ubl\entities\cac\Item $item
      * @return self
      */
     public function setItem(\horstoeko\ubl\entities\cac\Item $item)
@@ -1693,7 +1693,7 @@ class DebitNoteLineType
      *  Price
      *  Unit Price, Base Price
      *
-     * @param \horstoeko\ubl\entities\cac\Price $price
+     * @param  \horstoeko\ubl\entities\cac\Price $price
      * @return self
      */
     public function setPrice(\horstoeko\ubl\entities\cac\Price $price)
@@ -1716,7 +1716,7 @@ class DebitNoteLineType
      *  Debit Note Line
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\SubDebitNoteLine $subDebitNoteLine
+     * @param  \horstoeko\ubl\entities\cac\SubDebitNoteLine $subDebitNoteLine
      */
     public function addToSubDebitNoteLine(\horstoeko\ubl\entities\cac\SubDebitNoteLine $subDebitNoteLine)
     {
@@ -1737,7 +1737,7 @@ class DebitNoteLineType
      *  Debit Note Line
      *  Debit Note Line
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSubDebitNoteLine($index)
@@ -1758,7 +1758,7 @@ class DebitNoteLineType
      *  Debit Note Line
      *  Debit Note Line
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSubDebitNoteLine($index)
@@ -1799,7 +1799,7 @@ class DebitNoteLineType
      *  Debit Note Line
      *  Debit Note Line
      *
-     * @param \horstoeko\ubl\entities\cac\SubDebitNoteLine[] $subDebitNoteLine
+     * @param  \horstoeko\ubl\entities\cac\SubDebitNoteLine[] $subDebitNoteLine
      * @return self
      */
     public function setSubDebitNoteLine(array $subDebitNoteLine)

@@ -131,7 +131,7 @@ class PerformanceDataLineType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -153,7 +153,7 @@ class PerformanceDataLineType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param  \horstoeko\ubl\entities\cbc\Note $note
      */
     public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
     {
@@ -173,7 +173,7 @@ class PerformanceDataLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNote($index)
@@ -193,7 +193,7 @@ class PerformanceDataLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNote($index)
@@ -232,7 +232,7 @@ class PerformanceDataLineType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note[] $note
+     * @param  \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
     public function setNote(array $note)
@@ -272,7 +272,7 @@ class PerformanceDataLineType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PerformanceValueQuantity $performanceValueQuantity
+     * @param  \horstoeko\ubl\entities\cbc\PerformanceValueQuantity $performanceValueQuantity
      * @return self
      */
     public function setPerformanceValueQuantity(\horstoeko\ubl\entities\cbc\PerformanceValueQuantity $performanceValueQuantity)
@@ -312,7 +312,7 @@ class PerformanceDataLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PerformanceMetricTypeCode $performanceMetricTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\PerformanceMetricTypeCode $performanceMetricTypeCode
      * @return self
      */
     public function setPerformanceMetricTypeCode(\horstoeko\ubl\entities\cbc\PerformanceMetricTypeCode $performanceMetricTypeCode)
@@ -352,7 +352,7 @@ class PerformanceDataLineType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\Period $period
+     * @param  \horstoeko\ubl\entities\cac\Period $period
      * @return self
      */
     public function setPeriod(\horstoeko\ubl\entities\cac\Period $period)
@@ -392,7 +392,7 @@ class PerformanceDataLineType
      *  Item
      *  Item
      *
-     * @param \horstoeko\ubl\entities\cac\Item $item
+     * @param  \horstoeko\ubl\entities\cac\Item $item
      * @return self
      */
     public function setItem(\horstoeko\ubl\entities\cac\Item $item)

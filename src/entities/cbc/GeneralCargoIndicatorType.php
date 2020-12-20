@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing GeneralCargoIndicatorType
  *
- *
  * XSD Type: GeneralCargoIndicatorType
  */
 class GeneralCargoIndicatorType
@@ -29,7 +28,7 @@ class GeneralCargoIndicatorType
     /**
      * Gets or sets the inner value
      *
-     * @param bool $value
+     * @param  bool $value
      * @return bool
      */
     public function value()

@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing InstallmentDueDateType
  *
- *
  * XSD Type: InstallmentDueDateType
  */
 class InstallmentDueDateType
@@ -29,7 +28,7 @@ class InstallmentDueDateType
     /**
      * Gets or sets the inner value
      *
-     * @param \DateTime $value
+     * @param  \DateTime $value
      * @return \DateTime
      */
     public function value()

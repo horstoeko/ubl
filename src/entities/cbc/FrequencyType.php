@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing FrequencyType
  *
- *
  * XSD Type: FrequencyType
  */
 class FrequencyType extends TextType

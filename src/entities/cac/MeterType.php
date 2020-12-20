@@ -154,7 +154,7 @@ class MeterType
      *  Text. Type
      *  61722x
      *
-     * @param \horstoeko\ubl\entities\cbc\MeterNumber $meterNumber
+     * @param  \horstoeko\ubl\entities\cbc\MeterNumber $meterNumber
      * @return self
      */
     public function setMeterNumber(\horstoeko\ubl\entities\cbc\MeterNumber $meterNumber)
@@ -194,7 +194,7 @@ class MeterType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MeterName $meterName
+     * @param  \horstoeko\ubl\entities\cbc\MeterName $meterName
      * @return self
      */
     public function setMeterName(\horstoeko\ubl\entities\cbc\MeterName $meterName)
@@ -236,7 +236,7 @@ class MeterType
      *  Text. Type
      *  1.000
      *
-     * @param \horstoeko\ubl\entities\cbc\MeterConstant $meterConstant
+     * @param  \horstoeko\ubl\entities\cbc\MeterConstant $meterConstant
      * @return self
      */
     public function setMeterConstant(\horstoeko\ubl\entities\cbc\MeterConstant $meterConstant)
@@ -278,7 +278,7 @@ class MeterType
      *  Code. Type
      *  Factor
      *
-     * @param \horstoeko\ubl\entities\cbc\MeterConstantCode $meterConstantCode
+     * @param  \horstoeko\ubl\entities\cbc\MeterConstantCode $meterConstantCode
      * @return self
      */
     public function setMeterConstantCode(\horstoeko\ubl\entities\cbc\MeterConstantCode $meterConstantCode)
@@ -322,7 +322,7 @@ class MeterType
      *  Quantity. Type
      *  5761.00
      *
-     * @param \horstoeko\ubl\entities\cbc\TotalDeliveredQuantity $totalDeliveredQuantity
+     * @param  \horstoeko\ubl\entities\cbc\TotalDeliveredQuantity $totalDeliveredQuantity
      * @return self
      */
     public function setTotalDeliveredQuantity(\horstoeko\ubl\entities\cbc\TotalDeliveredQuantity $totalDeliveredQuantity)
@@ -344,7 +344,7 @@ class MeterType
      *  Meter Reading
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\MeterReading $meterReading
+     * @param  \horstoeko\ubl\entities\cac\MeterReading $meterReading
      */
     public function addToMeterReading(\horstoeko\ubl\entities\cac\MeterReading $meterReading)
     {
@@ -364,7 +364,7 @@ class MeterType
      *  Meter Reading
      *  Meter Reading
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetMeterReading($index)
@@ -384,7 +384,7 @@ class MeterType
      *  Meter Reading
      *  Meter Reading
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetMeterReading($index)
@@ -423,7 +423,7 @@ class MeterType
      *  Meter Reading
      *  Meter Reading
      *
-     * @param \horstoeko\ubl\entities\cac\MeterReading[] $meterReading
+     * @param  \horstoeko\ubl\entities\cac\MeterReading[] $meterReading
      * @return self
      */
     public function setMeterReading(array $meterReading)
@@ -445,7 +445,7 @@ class MeterType
      *  Meter Property
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\MeterProperty $meterProperty
+     * @param  \horstoeko\ubl\entities\cac\MeterProperty $meterProperty
      */
     public function addToMeterProperty(\horstoeko\ubl\entities\cac\MeterProperty $meterProperty)
     {
@@ -465,7 +465,7 @@ class MeterType
      *  Meter Property
      *  Meter Property
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetMeterProperty($index)
@@ -485,7 +485,7 @@ class MeterType
      *  Meter Property
      *  Meter Property
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetMeterProperty($index)
@@ -524,7 +524,7 @@ class MeterType
      *  Meter Property
      *  Meter Property
      *
-     * @param \horstoeko\ubl\entities\cac\MeterProperty[] $meterProperty
+     * @param  \horstoeko\ubl\entities\cac\MeterProperty[] $meterProperty
      * @return self
      */
     public function setMeterProperty(array $meterProperty)

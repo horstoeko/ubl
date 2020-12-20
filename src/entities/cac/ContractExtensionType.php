@@ -104,7 +104,7 @@ class ContractExtensionType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\OptionsDescription $optionsDescription
+     * @param  \horstoeko\ubl\entities\cbc\OptionsDescription $optionsDescription
      */
     public function addToOptionsDescription(\horstoeko\ubl\entities\cbc\OptionsDescription $optionsDescription)
     {
@@ -124,7 +124,7 @@ class ContractExtensionType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetOptionsDescription($index)
@@ -144,7 +144,7 @@ class ContractExtensionType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetOptionsDescription($index)
@@ -183,7 +183,7 @@ class ContractExtensionType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\OptionsDescription[] $optionsDescription
+     * @param  \horstoeko\ubl\entities\cbc\OptionsDescription[] $optionsDescription
      * @return self
      */
     public function setOptionsDescription(array $optionsDescription)
@@ -225,7 +225,7 @@ class ContractExtensionType
      *  Numeric
      *  Numeric. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MinimumNumberNumeric $minimumNumberNumeric
+     * @param  \horstoeko\ubl\entities\cbc\MinimumNumberNumeric $minimumNumberNumeric
      * @return self
      */
     public function setMinimumNumberNumeric(\horstoeko\ubl\entities\cbc\MinimumNumberNumeric $minimumNumberNumeric)
@@ -267,7 +267,7 @@ class ContractExtensionType
      *  Numeric
      *  Numeric. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MaximumNumberNumeric $maximumNumberNumeric
+     * @param  \horstoeko\ubl\entities\cbc\MaximumNumberNumeric $maximumNumberNumeric
      * @return self
      */
     public function setMaximumNumberNumeric(\horstoeko\ubl\entities\cbc\MaximumNumberNumeric $maximumNumberNumeric)
@@ -309,7 +309,7 @@ class ContractExtensionType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\OptionValidityPeriod $optionValidityPeriod
+     * @param  \horstoeko\ubl\entities\cac\OptionValidityPeriod $optionValidityPeriod
      * @return self
      */
     public function setOptionValidityPeriod(\horstoeko\ubl\entities\cac\OptionValidityPeriod $optionValidityPeriod)
@@ -331,7 +331,7 @@ class ContractExtensionType
      *  Renewal
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Renewal $renewal
+     * @param  \horstoeko\ubl\entities\cac\Renewal $renewal
      */
     public function addToRenewal(\horstoeko\ubl\entities\cac\Renewal $renewal)
     {
@@ -351,7 +351,7 @@ class ContractExtensionType
      *  Renewal
      *  Renewal
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetRenewal($index)
@@ -371,7 +371,7 @@ class ContractExtensionType
      *  Renewal
      *  Renewal
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetRenewal($index)
@@ -410,7 +410,7 @@ class ContractExtensionType
      *  Renewal
      *  Renewal
      *
-     * @param \horstoeko\ubl\entities\cac\Renewal[] $renewal
+     * @param  \horstoeko\ubl\entities\cac\Renewal[] $renewal
      * @return self
      */
     public function setRenewal(array $renewal)

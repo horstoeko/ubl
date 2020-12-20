@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\ds;
 /**
  * Class representing CanonicalizationMethodType
  *
- *
  * XSD Type: CanonicalizationMethodType
  */
 class CanonicalizationMethodType
@@ -29,7 +28,7 @@ class CanonicalizationMethodType
     /**
      * Sets a new algorithm
      *
-     * @param string $algorithm
+     * @param  string $algorithm
      * @return self
      */
     public function setAlgorithm($algorithm)

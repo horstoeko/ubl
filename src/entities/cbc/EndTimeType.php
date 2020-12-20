@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing EndTimeType
  *
- *
  * XSD Type: EndTimeType
  */
 class EndTimeType
@@ -29,7 +28,7 @@ class EndTimeType
     /**
      * Gets or sets the inner value
      *
-     * @param \DateTime $value
+     * @param  \DateTime $value
      * @return \DateTime
      */
     public function value()

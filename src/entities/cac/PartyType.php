@@ -337,7 +337,7 @@ class PartyType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $markCareIndicator
+     * @param  bool $markCareIndicator
      * @return self
      */
     public function setMarkCareIndicator($markCareIndicator)
@@ -379,7 +379,7 @@ class PartyType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $markAttentionIndicator
+     * @param  bool $markAttentionIndicator
      * @return self
      */
     public function setMarkAttentionIndicator($markAttentionIndicator)
@@ -421,7 +421,7 @@ class PartyType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\WebsiteURI $websiteURI
+     * @param  \horstoeko\ubl\entities\cbc\WebsiteURI $websiteURI
      * @return self
      */
     public function setWebsiteURI(\horstoeko\ubl\entities\cbc\WebsiteURI $websiteURI)
@@ -463,7 +463,7 @@ class PartyType
      *  Identifier. Type
      *  http://www2.coca-cola.com/images/logo.gif
      *
-     * @param \horstoeko\ubl\entities\cbc\LogoReferenceID $logoReferenceID
+     * @param  \horstoeko\ubl\entities\cbc\LogoReferenceID $logoReferenceID
      * @return self
      */
     public function setLogoReferenceID(\horstoeko\ubl\entities\cbc\LogoReferenceID $logoReferenceID)
@@ -505,7 +505,7 @@ class PartyType
      *  Identifier. Type
      *  5790002221134
      *
-     * @param \horstoeko\ubl\entities\cbc\EndpointID $endpointID
+     * @param  \horstoeko\ubl\entities\cbc\EndpointID $endpointID
      * @return self
      */
     public function setEndpointID(\horstoeko\ubl\entities\cbc\EndpointID $endpointID)
@@ -547,7 +547,7 @@ class PartyType
      *  Code. Type
      *  Public authority , NAIC codes
      *
-     * @param \horstoeko\ubl\entities\cbc\IndustryClassificationCode $industryClassificationCode
+     * @param  \horstoeko\ubl\entities\cbc\IndustryClassificationCode $industryClassificationCode
      * @return self
      */
     public function setIndustryClassificationCode(\horstoeko\ubl\entities\cbc\IndustryClassificationCode $industryClassificationCode)
@@ -569,7 +569,7 @@ class PartyType
      *  Party Identification
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\PartyIdentification $partyIdentification
+     * @param  \horstoeko\ubl\entities\cac\PartyIdentification $partyIdentification
      */
     public function addToPartyIdentification(\horstoeko\ubl\entities\cac\PartyIdentification $partyIdentification)
     {
@@ -589,7 +589,7 @@ class PartyType
      *  Party Identification
      *  Party Identification
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPartyIdentification($index)
@@ -609,7 +609,7 @@ class PartyType
      *  Party Identification
      *  Party Identification
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPartyIdentification($index)
@@ -648,7 +648,7 @@ class PartyType
      *  Party Identification
      *  Party Identification
      *
-     * @param \horstoeko\ubl\entities\cac\PartyIdentification[] $partyIdentification
+     * @param  \horstoeko\ubl\entities\cac\PartyIdentification[] $partyIdentification
      * @return self
      */
     public function setPartyIdentification(array $partyIdentification)
@@ -670,7 +670,7 @@ class PartyType
      *  Party Name
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\PartyName $partyName
+     * @param  \horstoeko\ubl\entities\cac\PartyName $partyName
      */
     public function addToPartyName(\horstoeko\ubl\entities\cac\PartyName $partyName)
     {
@@ -690,7 +690,7 @@ class PartyType
      *  Party Name
      *  Party Name
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPartyName($index)
@@ -710,7 +710,7 @@ class PartyType
      *  Party Name
      *  Party Name
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPartyName($index)
@@ -749,7 +749,7 @@ class PartyType
      *  Party Name
      *  Party Name
      *
-     * @param \horstoeko\ubl\entities\cac\PartyName[] $partyName
+     * @param  \horstoeko\ubl\entities\cac\PartyName[] $partyName
      * @return self
      */
     public function setPartyName(array $partyName)
@@ -789,7 +789,7 @@ class PartyType
      *  Language
      *  Language
      *
-     * @param \horstoeko\ubl\entities\cac\Language $language
+     * @param  \horstoeko\ubl\entities\cac\Language $language
      * @return self
      */
     public function setLanguage(\horstoeko\ubl\entities\cac\Language $language)
@@ -831,7 +831,7 @@ class PartyType
      *  Address
      *  Address
      *
-     * @param \horstoeko\ubl\entities\cac\PostalAddress $postalAddress
+     * @param  \horstoeko\ubl\entities\cac\PostalAddress $postalAddress
      * @return self
      */
     public function setPostalAddress(\horstoeko\ubl\entities\cac\PostalAddress $postalAddress)
@@ -873,7 +873,7 @@ class PartyType
      *  Location
      *  Location
      *
-     * @param \horstoeko\ubl\entities\cac\PhysicalLocation $physicalLocation
+     * @param  \horstoeko\ubl\entities\cac\PhysicalLocation $physicalLocation
      * @return self
      */
     public function setPhysicalLocation(\horstoeko\ubl\entities\cac\PhysicalLocation $physicalLocation)
@@ -895,7 +895,7 @@ class PartyType
      *  Party Tax Scheme
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\PartyTaxScheme $partyTaxScheme
+     * @param  \horstoeko\ubl\entities\cac\PartyTaxScheme $partyTaxScheme
      */
     public function addToPartyTaxScheme(\horstoeko\ubl\entities\cac\PartyTaxScheme $partyTaxScheme)
     {
@@ -915,7 +915,7 @@ class PartyType
      *  Party Tax Scheme
      *  Party Tax Scheme
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPartyTaxScheme($index)
@@ -935,7 +935,7 @@ class PartyType
      *  Party Tax Scheme
      *  Party Tax Scheme
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPartyTaxScheme($index)
@@ -974,7 +974,7 @@ class PartyType
      *  Party Tax Scheme
      *  Party Tax Scheme
      *
-     * @param \horstoeko\ubl\entities\cac\PartyTaxScheme[] $partyTaxScheme
+     * @param  \horstoeko\ubl\entities\cac\PartyTaxScheme[] $partyTaxScheme
      * @return self
      */
     public function setPartyTaxScheme(array $partyTaxScheme)
@@ -996,7 +996,7 @@ class PartyType
      *  Party Legal Entity
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\PartyLegalEntity $partyLegalEntity
+     * @param  \horstoeko\ubl\entities\cac\PartyLegalEntity $partyLegalEntity
      */
     public function addToPartyLegalEntity(\horstoeko\ubl\entities\cac\PartyLegalEntity $partyLegalEntity)
     {
@@ -1016,7 +1016,7 @@ class PartyType
      *  Party Legal Entity
      *  Party Legal Entity
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPartyLegalEntity($index)
@@ -1036,7 +1036,7 @@ class PartyType
      *  Party Legal Entity
      *  Party Legal Entity
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPartyLegalEntity($index)
@@ -1075,7 +1075,7 @@ class PartyType
      *  Party Legal Entity
      *  Party Legal Entity
      *
-     * @param \horstoeko\ubl\entities\cac\PartyLegalEntity[] $partyLegalEntity
+     * @param  \horstoeko\ubl\entities\cac\PartyLegalEntity[] $partyLegalEntity
      * @return self
      */
     public function setPartyLegalEntity(array $partyLegalEntity)
@@ -1115,7 +1115,7 @@ class PartyType
      *  Contact
      *  Contact
      *
-     * @param \horstoeko\ubl\entities\cac\Contact $contact
+     * @param  \horstoeko\ubl\entities\cac\Contact $contact
      * @return self
      */
     public function setContact(\horstoeko\ubl\entities\cac\Contact $contact)
@@ -1137,7 +1137,7 @@ class PartyType
      *  Person
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Person $person
+     * @param  \horstoeko\ubl\entities\cac\Person $person
      */
     public function addToPerson(\horstoeko\ubl\entities\cac\Person $person)
     {
@@ -1157,7 +1157,7 @@ class PartyType
      *  Person
      *  Person
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPerson($index)
@@ -1177,7 +1177,7 @@ class PartyType
      *  Person
      *  Person
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPerson($index)
@@ -1216,7 +1216,7 @@ class PartyType
      *  Person
      *  Person
      *
-     * @param \horstoeko\ubl\entities\cac\Person[] $person
+     * @param  \horstoeko\ubl\entities\cac\Person[] $person
      * @return self
      */
     public function setPerson(array $person)
@@ -1260,7 +1260,7 @@ class PartyType
      *  Party
      *  Customs Broker
      *
-     * @param \horstoeko\ubl\entities\cac\AgentParty $agentParty
+     * @param  \horstoeko\ubl\entities\cac\AgentParty $agentParty
      * @return self
      */
     public function setAgentParty(\horstoeko\ubl\entities\cac\AgentParty $agentParty)
@@ -1282,7 +1282,7 @@ class PartyType
      *  Service Provider Party
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ServiceProviderParty $serviceProviderParty
+     * @param  \horstoeko\ubl\entities\cac\ServiceProviderParty $serviceProviderParty
      */
     public function addToServiceProviderParty(\horstoeko\ubl\entities\cac\ServiceProviderParty $serviceProviderParty)
     {
@@ -1302,7 +1302,7 @@ class PartyType
      *  Service Provider Party
      *  Service Provider Party
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetServiceProviderParty($index)
@@ -1322,7 +1322,7 @@ class PartyType
      *  Service Provider Party
      *  Service Provider Party
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetServiceProviderParty($index)
@@ -1361,7 +1361,7 @@ class PartyType
      *  Service Provider Party
      *  Service Provider Party
      *
-     * @param \horstoeko\ubl\entities\cac\ServiceProviderParty[] $serviceProviderParty
+     * @param  \horstoeko\ubl\entities\cac\ServiceProviderParty[] $serviceProviderParty
      * @return self
      */
     public function setServiceProviderParty(array $serviceProviderParty)
@@ -1383,7 +1383,7 @@ class PartyType
      *  Power Of Attorney
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\PowerOfAttorney $powerOfAttorney
+     * @param  \horstoeko\ubl\entities\cac\PowerOfAttorney $powerOfAttorney
      */
     public function addToPowerOfAttorney(\horstoeko\ubl\entities\cac\PowerOfAttorney $powerOfAttorney)
     {
@@ -1403,7 +1403,7 @@ class PartyType
      *  Power Of Attorney
      *  Power Of Attorney
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPowerOfAttorney($index)
@@ -1423,7 +1423,7 @@ class PartyType
      *  Power Of Attorney
      *  Power Of Attorney
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPowerOfAttorney($index)
@@ -1462,7 +1462,7 @@ class PartyType
      *  Power Of Attorney
      *  Power Of Attorney
      *
-     * @param \horstoeko\ubl\entities\cac\PowerOfAttorney[] $powerOfAttorney
+     * @param  \horstoeko\ubl\entities\cac\PowerOfAttorney[] $powerOfAttorney
      * @return self
      */
     public function setPowerOfAttorney(array $powerOfAttorney)
@@ -1502,7 +1502,7 @@ class PartyType
      *  Financial Account
      *  Financial Account
      *
-     * @param \horstoeko\ubl\entities\cac\FinancialAccount $financialAccount
+     * @param  \horstoeko\ubl\entities\cac\FinancialAccount $financialAccount
      * @return self
      */
     public function setFinancialAccount(\horstoeko\ubl\entities\cac\FinancialAccount $financialAccount)

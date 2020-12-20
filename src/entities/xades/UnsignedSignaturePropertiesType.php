@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing UnsignedSignaturePropertiesType
  *
- *
  * XSD Type: UnsignedSignaturePropertiesType
  */
 class UnsignedSignaturePropertiesType
@@ -120,7 +119,7 @@ class UnsignedSignaturePropertiesType
     /**
      * Sets a new id
      *
-     * @param string $id
+     * @param  string $id
      * @return self
      */
     public function setId($id)
@@ -133,7 +132,7 @@ class UnsignedSignaturePropertiesType
      * Adds as counterSignature
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\CounterSignatureType $counterSignature
+     * @param  \horstoeko\ubl\entities\xades\CounterSignatureType $counterSignature
      */
     public function addToCounterSignature(\horstoeko\ubl\entities\xades\CounterSignatureType $counterSignature)
     {
@@ -144,7 +143,7 @@ class UnsignedSignaturePropertiesType
     /**
      * isset counterSignature
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetCounterSignature($index)
@@ -155,7 +154,7 @@ class UnsignedSignaturePropertiesType
     /**
      * unset counterSignature
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetCounterSignature($index)
@@ -176,7 +175,7 @@ class UnsignedSignaturePropertiesType
     /**
      * Sets a new counterSignature
      *
-     * @param \horstoeko\ubl\entities\xades\CounterSignatureType[] $counterSignature
+     * @param  \horstoeko\ubl\entities\xades\CounterSignatureType[] $counterSignature
      * @return self
      */
     public function setCounterSignature(array $counterSignature)
@@ -189,7 +188,7 @@ class UnsignedSignaturePropertiesType
      * Adds as signatureTimeStamp
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\XAdESTimeStampType $signatureTimeStamp
+     * @param  \horstoeko\ubl\entities\xades\XAdESTimeStampType $signatureTimeStamp
      */
     public function addToSignatureTimeStamp(\horstoeko\ubl\entities\xades\XAdESTimeStampType $signatureTimeStamp)
     {
@@ -200,7 +199,7 @@ class UnsignedSignaturePropertiesType
     /**
      * isset signatureTimeStamp
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSignatureTimeStamp($index)
@@ -211,7 +210,7 @@ class UnsignedSignaturePropertiesType
     /**
      * unset signatureTimeStamp
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSignatureTimeStamp($index)
@@ -232,7 +231,7 @@ class UnsignedSignaturePropertiesType
     /**
      * Sets a new signatureTimeStamp
      *
-     * @param \horstoeko\ubl\entities\xades\XAdESTimeStampType[] $signatureTimeStamp
+     * @param  \horstoeko\ubl\entities\xades\XAdESTimeStampType[] $signatureTimeStamp
      * @return self
      */
     public function setSignatureTimeStamp(array $signatureTimeStamp)
@@ -245,7 +244,7 @@ class UnsignedSignaturePropertiesType
      * Adds as completeCertificateRefs
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\CompleteCertificateRefsType $completeCertificateRefs
+     * @param  \horstoeko\ubl\entities\xades\CompleteCertificateRefsType $completeCertificateRefs
      */
     public function addToCompleteCertificateRefs(\horstoeko\ubl\entities\xades\CompleteCertificateRefsType $completeCertificateRefs)
     {
@@ -256,7 +255,7 @@ class UnsignedSignaturePropertiesType
     /**
      * isset completeCertificateRefs
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetCompleteCertificateRefs($index)
@@ -267,7 +266,7 @@ class UnsignedSignaturePropertiesType
     /**
      * unset completeCertificateRefs
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetCompleteCertificateRefs($index)
@@ -288,7 +287,7 @@ class UnsignedSignaturePropertiesType
     /**
      * Sets a new completeCertificateRefs
      *
-     * @param \horstoeko\ubl\entities\xades\CompleteCertificateRefsType[] $completeCertificateRefs
+     * @param  \horstoeko\ubl\entities\xades\CompleteCertificateRefsType[] $completeCertificateRefs
      * @return self
      */
     public function setCompleteCertificateRefs(array $completeCertificateRefs)
@@ -301,7 +300,7 @@ class UnsignedSignaturePropertiesType
      * Adds as completeRevocationRefs
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\CompleteRevocationRefsType $completeRevocationRefs
+     * @param  \horstoeko\ubl\entities\xades\CompleteRevocationRefsType $completeRevocationRefs
      */
     public function addToCompleteRevocationRefs(\horstoeko\ubl\entities\xades\CompleteRevocationRefsType $completeRevocationRefs)
     {
@@ -312,7 +311,7 @@ class UnsignedSignaturePropertiesType
     /**
      * isset completeRevocationRefs
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetCompleteRevocationRefs($index)
@@ -323,7 +322,7 @@ class UnsignedSignaturePropertiesType
     /**
      * unset completeRevocationRefs
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetCompleteRevocationRefs($index)
@@ -344,7 +343,7 @@ class UnsignedSignaturePropertiesType
     /**
      * Sets a new completeRevocationRefs
      *
-     * @param \horstoeko\ubl\entities\xades\CompleteRevocationRefsType[] $completeRevocationRefs
+     * @param  \horstoeko\ubl\entities\xades\CompleteRevocationRefsType[] $completeRevocationRefs
      * @return self
      */
     public function setCompleteRevocationRefs(array $completeRevocationRefs)
@@ -357,7 +356,7 @@ class UnsignedSignaturePropertiesType
      * Adds as attributeCertificateRefs
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\CompleteCertificateRefsType $attributeCertificateRefs
+     * @param  \horstoeko\ubl\entities\xades\CompleteCertificateRefsType $attributeCertificateRefs
      */
     public function addToAttributeCertificateRefs(\horstoeko\ubl\entities\xades\CompleteCertificateRefsType $attributeCertificateRefs)
     {
@@ -368,7 +367,7 @@ class UnsignedSignaturePropertiesType
     /**
      * isset attributeCertificateRefs
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAttributeCertificateRefs($index)
@@ -379,7 +378,7 @@ class UnsignedSignaturePropertiesType
     /**
      * unset attributeCertificateRefs
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAttributeCertificateRefs($index)
@@ -400,7 +399,7 @@ class UnsignedSignaturePropertiesType
     /**
      * Sets a new attributeCertificateRefs
      *
-     * @param \horstoeko\ubl\entities\xades\CompleteCertificateRefsType[] $attributeCertificateRefs
+     * @param  \horstoeko\ubl\entities\xades\CompleteCertificateRefsType[] $attributeCertificateRefs
      * @return self
      */
     public function setAttributeCertificateRefs(array $attributeCertificateRefs)
@@ -413,7 +412,7 @@ class UnsignedSignaturePropertiesType
      * Adds as attributeRevocationRefs
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\CompleteRevocationRefsType $attributeRevocationRefs
+     * @param  \horstoeko\ubl\entities\xades\CompleteRevocationRefsType $attributeRevocationRefs
      */
     public function addToAttributeRevocationRefs(\horstoeko\ubl\entities\xades\CompleteRevocationRefsType $attributeRevocationRefs)
     {
@@ -424,7 +423,7 @@ class UnsignedSignaturePropertiesType
     /**
      * isset attributeRevocationRefs
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAttributeRevocationRefs($index)
@@ -435,7 +434,7 @@ class UnsignedSignaturePropertiesType
     /**
      * unset attributeRevocationRefs
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAttributeRevocationRefs($index)
@@ -456,7 +455,7 @@ class UnsignedSignaturePropertiesType
     /**
      * Sets a new attributeRevocationRefs
      *
-     * @param \horstoeko\ubl\entities\xades\CompleteRevocationRefsType[] $attributeRevocationRefs
+     * @param  \horstoeko\ubl\entities\xades\CompleteRevocationRefsType[] $attributeRevocationRefs
      * @return self
      */
     public function setAttributeRevocationRefs(array $attributeRevocationRefs)
@@ -469,7 +468,7 @@ class UnsignedSignaturePropertiesType
      * Adds as sigAndRefsTimeStamp
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\XAdESTimeStampType $sigAndRefsTimeStamp
+     * @param  \horstoeko\ubl\entities\xades\XAdESTimeStampType $sigAndRefsTimeStamp
      */
     public function addToSigAndRefsTimeStamp(\horstoeko\ubl\entities\xades\XAdESTimeStampType $sigAndRefsTimeStamp)
     {
@@ -480,7 +479,7 @@ class UnsignedSignaturePropertiesType
     /**
      * isset sigAndRefsTimeStamp
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSigAndRefsTimeStamp($index)
@@ -491,7 +490,7 @@ class UnsignedSignaturePropertiesType
     /**
      * unset sigAndRefsTimeStamp
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSigAndRefsTimeStamp($index)
@@ -512,7 +511,7 @@ class UnsignedSignaturePropertiesType
     /**
      * Sets a new sigAndRefsTimeStamp
      *
-     * @param \horstoeko\ubl\entities\xades\XAdESTimeStampType[] $sigAndRefsTimeStamp
+     * @param  \horstoeko\ubl\entities\xades\XAdESTimeStampType[] $sigAndRefsTimeStamp
      * @return self
      */
     public function setSigAndRefsTimeStamp(array $sigAndRefsTimeStamp)
@@ -525,7 +524,7 @@ class UnsignedSignaturePropertiesType
      * Adds as refsOnlyTimeStamp
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\XAdESTimeStampType $refsOnlyTimeStamp
+     * @param  \horstoeko\ubl\entities\xades\XAdESTimeStampType $refsOnlyTimeStamp
      */
     public function addToRefsOnlyTimeStamp(\horstoeko\ubl\entities\xades\XAdESTimeStampType $refsOnlyTimeStamp)
     {
@@ -536,7 +535,7 @@ class UnsignedSignaturePropertiesType
     /**
      * isset refsOnlyTimeStamp
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetRefsOnlyTimeStamp($index)
@@ -547,7 +546,7 @@ class UnsignedSignaturePropertiesType
     /**
      * unset refsOnlyTimeStamp
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetRefsOnlyTimeStamp($index)
@@ -568,7 +567,7 @@ class UnsignedSignaturePropertiesType
     /**
      * Sets a new refsOnlyTimeStamp
      *
-     * @param \horstoeko\ubl\entities\xades\XAdESTimeStampType[] $refsOnlyTimeStamp
+     * @param  \horstoeko\ubl\entities\xades\XAdESTimeStampType[] $refsOnlyTimeStamp
      * @return self
      */
     public function setRefsOnlyTimeStamp(array $refsOnlyTimeStamp)
@@ -581,7 +580,7 @@ class UnsignedSignaturePropertiesType
      * Adds as certificateValues
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\CertificateValuesType $certificateValues
+     * @param  \horstoeko\ubl\entities\xades\CertificateValuesType $certificateValues
      */
     public function addToCertificateValues(\horstoeko\ubl\entities\xades\CertificateValuesType $certificateValues)
     {
@@ -592,7 +591,7 @@ class UnsignedSignaturePropertiesType
     /**
      * isset certificateValues
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetCertificateValues($index)
@@ -603,7 +602,7 @@ class UnsignedSignaturePropertiesType
     /**
      * unset certificateValues
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetCertificateValues($index)
@@ -624,7 +623,7 @@ class UnsignedSignaturePropertiesType
     /**
      * Sets a new certificateValues
      *
-     * @param \horstoeko\ubl\entities\xades\CertificateValuesType[] $certificateValues
+     * @param  \horstoeko\ubl\entities\xades\CertificateValuesType[] $certificateValues
      * @return self
      */
     public function setCertificateValues(array $certificateValues)
@@ -637,7 +636,7 @@ class UnsignedSignaturePropertiesType
      * Adds as revocationValues
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\RevocationValuesType $revocationValues
+     * @param  \horstoeko\ubl\entities\xades\RevocationValuesType $revocationValues
      */
     public function addToRevocationValues(\horstoeko\ubl\entities\xades\RevocationValuesType $revocationValues)
     {
@@ -648,7 +647,7 @@ class UnsignedSignaturePropertiesType
     /**
      * isset revocationValues
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetRevocationValues($index)
@@ -659,7 +658,7 @@ class UnsignedSignaturePropertiesType
     /**
      * unset revocationValues
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetRevocationValues($index)
@@ -680,7 +679,7 @@ class UnsignedSignaturePropertiesType
     /**
      * Sets a new revocationValues
      *
-     * @param \horstoeko\ubl\entities\xades\RevocationValuesType[] $revocationValues
+     * @param  \horstoeko\ubl\entities\xades\RevocationValuesType[] $revocationValues
      * @return self
      */
     public function setRevocationValues(array $revocationValues)
@@ -693,7 +692,7 @@ class UnsignedSignaturePropertiesType
      * Adds as attrAuthoritiesCertValues
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\CertificateValuesType $attrAuthoritiesCertValues
+     * @param  \horstoeko\ubl\entities\xades\CertificateValuesType $attrAuthoritiesCertValues
      */
     public function addToAttrAuthoritiesCertValues(\horstoeko\ubl\entities\xades\CertificateValuesType $attrAuthoritiesCertValues)
     {
@@ -704,7 +703,7 @@ class UnsignedSignaturePropertiesType
     /**
      * isset attrAuthoritiesCertValues
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAttrAuthoritiesCertValues($index)
@@ -715,7 +714,7 @@ class UnsignedSignaturePropertiesType
     /**
      * unset attrAuthoritiesCertValues
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAttrAuthoritiesCertValues($index)
@@ -736,7 +735,7 @@ class UnsignedSignaturePropertiesType
     /**
      * Sets a new attrAuthoritiesCertValues
      *
-     * @param \horstoeko\ubl\entities\xades\CertificateValuesType[] $attrAuthoritiesCertValues
+     * @param  \horstoeko\ubl\entities\xades\CertificateValuesType[] $attrAuthoritiesCertValues
      * @return self
      */
     public function setAttrAuthoritiesCertValues(array $attrAuthoritiesCertValues)
@@ -749,7 +748,7 @@ class UnsignedSignaturePropertiesType
      * Adds as attributeRevocationValues
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\RevocationValuesType $attributeRevocationValues
+     * @param  \horstoeko\ubl\entities\xades\RevocationValuesType $attributeRevocationValues
      */
     public function addToAttributeRevocationValues(\horstoeko\ubl\entities\xades\RevocationValuesType $attributeRevocationValues)
     {
@@ -760,7 +759,7 @@ class UnsignedSignaturePropertiesType
     /**
      * isset attributeRevocationValues
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAttributeRevocationValues($index)
@@ -771,7 +770,7 @@ class UnsignedSignaturePropertiesType
     /**
      * unset attributeRevocationValues
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAttributeRevocationValues($index)
@@ -792,7 +791,7 @@ class UnsignedSignaturePropertiesType
     /**
      * Sets a new attributeRevocationValues
      *
-     * @param \horstoeko\ubl\entities\xades\RevocationValuesType[] $attributeRevocationValues
+     * @param  \horstoeko\ubl\entities\xades\RevocationValuesType[] $attributeRevocationValues
      * @return self
      */
     public function setAttributeRevocationValues(array $attributeRevocationValues)
@@ -805,7 +804,7 @@ class UnsignedSignaturePropertiesType
      * Adds as archiveTimeStamp
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\XAdESTimeStampType $archiveTimeStamp
+     * @param  \horstoeko\ubl\entities\xades\XAdESTimeStampType $archiveTimeStamp
      */
     public function addToArchiveTimeStamp(\horstoeko\ubl\entities\xades\XAdESTimeStampType $archiveTimeStamp)
     {
@@ -816,7 +815,7 @@ class UnsignedSignaturePropertiesType
     /**
      * isset archiveTimeStamp
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetArchiveTimeStamp($index)
@@ -827,7 +826,7 @@ class UnsignedSignaturePropertiesType
     /**
      * unset archiveTimeStamp
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetArchiveTimeStamp($index)
@@ -848,7 +847,7 @@ class UnsignedSignaturePropertiesType
     /**
      * Sets a new archiveTimeStamp
      *
-     * @param \horstoeko\ubl\entities\xades\XAdESTimeStampType[] $archiveTimeStamp
+     * @param  \horstoeko\ubl\entities\xades\XAdESTimeStampType[] $archiveTimeStamp
      * @return self
      */
     public function setArchiveTimeStamp(array $archiveTimeStamp)

@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing PrizeIndicatorType
  *
- *
  * XSD Type: PrizeIndicatorType
  */
 class PrizeIndicatorType
@@ -29,7 +28,7 @@ class PrizeIndicatorType
     /**
      * Gets or sets the inner value
      *
-     * @param bool $value
+     * @param  bool $value
      * @return bool
      */
     public function value()

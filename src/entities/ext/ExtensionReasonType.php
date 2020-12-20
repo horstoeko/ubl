@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing ExtensionReasonType
  *
- *
  * XSD Type: ExtensionReasonType
  */
 class ExtensionReasonType extends TextType

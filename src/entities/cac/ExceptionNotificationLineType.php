@@ -264,7 +264,7 @@ class ExceptionNotificationLineType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -286,7 +286,7 @@ class ExceptionNotificationLineType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param  \horstoeko\ubl\entities\cbc\Note $note
      */
     public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
     {
@@ -306,7 +306,7 @@ class ExceptionNotificationLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNote($index)
@@ -326,7 +326,7 @@ class ExceptionNotificationLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNote($index)
@@ -365,7 +365,7 @@ class ExceptionNotificationLineType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note[] $note
+     * @param  \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
     public function setNote(array $note)
@@ -387,7 +387,7 @@ class ExceptionNotificationLineType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -407,7 +407,7 @@ class ExceptionNotificationLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -427,7 +427,7 @@ class ExceptionNotificationLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -466,7 +466,7 @@ class ExceptionNotificationLineType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -506,7 +506,7 @@ class ExceptionNotificationLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ExceptionStatusCode $exceptionStatusCode
+     * @param  \horstoeko\ubl\entities\cbc\ExceptionStatusCode $exceptionStatusCode
      * @return self
      */
     public function setExceptionStatusCode(\horstoeko\ubl\entities\cbc\ExceptionStatusCode $exceptionStatusCode)
@@ -548,7 +548,7 @@ class ExceptionNotificationLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CollaborationPriorityCode $collaborationPriorityCode
+     * @param  \horstoeko\ubl\entities\cbc\CollaborationPriorityCode $collaborationPriorityCode
      * @return self
      */
     public function setCollaborationPriorityCode(\horstoeko\ubl\entities\cbc\CollaborationPriorityCode $collaborationPriorityCode)
@@ -588,7 +588,7 @@ class ExceptionNotificationLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ResolutionCode $resolutionCode
+     * @param  \horstoeko\ubl\entities\cbc\ResolutionCode $resolutionCode
      * @return self
      */
     public function setResolutionCode(\horstoeko\ubl\entities\cbc\ResolutionCode $resolutionCode)
@@ -628,7 +628,7 @@ class ExceptionNotificationLineType
      *  Measure
      *  Measure. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ComparedValueMeasure $comparedValueMeasure
+     * @param  \horstoeko\ubl\entities\cbc\ComparedValueMeasure $comparedValueMeasure
      * @return self
      */
     public function setComparedValueMeasure(\horstoeko\ubl\entities\cbc\ComparedValueMeasure $comparedValueMeasure)
@@ -668,7 +668,7 @@ class ExceptionNotificationLineType
      *  Measure
      *  Measure. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SourceValueMeasure $sourceValueMeasure
+     * @param  \horstoeko\ubl\entities\cbc\SourceValueMeasure $sourceValueMeasure
      * @return self
      */
     public function setSourceValueMeasure(\horstoeko\ubl\entities\cbc\SourceValueMeasure $sourceValueMeasure)
@@ -708,7 +708,7 @@ class ExceptionNotificationLineType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\VarianceQuantity $varianceQuantity
+     * @param  \horstoeko\ubl\entities\cbc\VarianceQuantity $varianceQuantity
      * @return self
      */
     public function setVarianceQuantity(\horstoeko\ubl\entities\cbc\VarianceQuantity $varianceQuantity)
@@ -748,7 +748,7 @@ class ExceptionNotificationLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SupplyChainActivityTypeCode $supplyChainActivityTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\SupplyChainActivityTypeCode $supplyChainActivityTypeCode
      * @return self
      */
     public function setSupplyChainActivityTypeCode(\horstoeko\ubl\entities\cbc\SupplyChainActivityTypeCode $supplyChainActivityTypeCode)
@@ -788,7 +788,7 @@ class ExceptionNotificationLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PerformanceMetricTypeCode $performanceMetricTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\PerformanceMetricTypeCode $performanceMetricTypeCode
      * @return self
      */
     public function setPerformanceMetricTypeCode(\horstoeko\ubl\entities\cbc\PerformanceMetricTypeCode $performanceMetricTypeCode)
@@ -830,7 +830,7 @@ class ExceptionNotificationLineType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\ExceptionObservationPeriod $exceptionObservationPeriod
+     * @param  \horstoeko\ubl\entities\cac\ExceptionObservationPeriod $exceptionObservationPeriod
      * @return self
      */
     public function setExceptionObservationPeriod(\horstoeko\ubl\entities\cac\ExceptionObservationPeriod $exceptionObservationPeriod)
@@ -852,7 +852,7 @@ class ExceptionNotificationLineType
      *  Document Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\DocumentReference $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference $documentReference
      */
     public function addToDocumentReference(\horstoeko\ubl\entities\cac\DocumentReference $documentReference)
     {
@@ -872,7 +872,7 @@ class ExceptionNotificationLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDocumentReference($index)
@@ -892,7 +892,7 @@ class ExceptionNotificationLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDocumentReference($index)
@@ -931,7 +931,7 @@ class ExceptionNotificationLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\DocumentReference[] $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference[] $documentReference
      * @return self
      */
     public function setDocumentReference(array $documentReference)
@@ -971,7 +971,7 @@ class ExceptionNotificationLineType
      *  Forecast Exception
      *  Forecast Exception
      *
-     * @param \horstoeko\ubl\entities\cac\ForecastException $forecastException
+     * @param  \horstoeko\ubl\entities\cac\ForecastException $forecastException
      * @return self
      */
     public function setForecastException(\horstoeko\ubl\entities\cac\ForecastException $forecastException)
@@ -1013,7 +1013,7 @@ class ExceptionNotificationLineType
      *  Item
      *  Item
      *
-     * @param \horstoeko\ubl\entities\cac\SupplyItem $supplyItem
+     * @param  \horstoeko\ubl\entities\cac\SupplyItem $supplyItem
      * @return self
      */
     public function setSupplyItem(\horstoeko\ubl\entities\cac\SupplyItem $supplyItem)

@@ -77,7 +77,7 @@ class ItemPropertyRangeType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MinimumValue $minimumValue
+     * @param  \horstoeko\ubl\entities\cbc\MinimumValue $minimumValue
      * @return self
      */
     public function setMinimumValue(\horstoeko\ubl\entities\cbc\MinimumValue $minimumValue)
@@ -119,7 +119,7 @@ class ItemPropertyRangeType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MaximumValue $maximumValue
+     * @param  \horstoeko\ubl\entities\cbc\MaximumValue $maximumValue
      * @return self
      */
     public function setMaximumValue(\horstoeko\ubl\entities\cbc\MaximumValue $maximumValue)

@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing ExclusionReasonType
  *
- *
  * XSD Type: ExclusionReasonType
  */
 class ExclusionReasonType extends TextType

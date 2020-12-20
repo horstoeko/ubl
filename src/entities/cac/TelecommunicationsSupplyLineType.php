@@ -172,7 +172,7 @@ class TelecommunicationsSupplyLineType
      *  Identifier. Type
      *  1
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -214,7 +214,7 @@ class TelecommunicationsSupplyLineType
      *  Text. Type
      *  12345678
      *
-     * @param \horstoeko\ubl\entities\cbc\PhoneNumber $phoneNumber
+     * @param  \horstoeko\ubl\entities\cbc\PhoneNumber $phoneNumber
      * @return self
      */
     public function setPhoneNumber(\horstoeko\ubl\entities\cbc\PhoneNumber $phoneNumber)
@@ -237,7 +237,7 @@ class TelecommunicationsSupplyLineType
      *  Additional informations
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -258,7 +258,7 @@ class TelecommunicationsSupplyLineType
      *  Text. Type
      *  Additional informations
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -279,7 +279,7 @@ class TelecommunicationsSupplyLineType
      *  Text. Type
      *  Additional informations
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -320,7 +320,7 @@ class TelecommunicationsSupplyLineType
      *  Text. Type
      *  Additional informations
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -360,7 +360,7 @@ class TelecommunicationsSupplyLineType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LineExtensionAmount $lineExtensionAmount
+     * @param  \horstoeko\ubl\entities\cbc\LineExtensionAmount $lineExtensionAmount
      * @return self
      */
     public function setLineExtensionAmount(\horstoeko\ubl\entities\cbc\LineExtensionAmount $lineExtensionAmount)
@@ -382,7 +382,7 @@ class TelecommunicationsSupplyLineType
      *  Exchange Rate
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ExchangeRate $exchangeRate
+     * @param  \horstoeko\ubl\entities\cac\ExchangeRate $exchangeRate
      */
     public function addToExchangeRate(\horstoeko\ubl\entities\cac\ExchangeRate $exchangeRate)
     {
@@ -402,7 +402,7 @@ class TelecommunicationsSupplyLineType
      *  Exchange Rate
      *  Exchange Rate
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetExchangeRate($index)
@@ -422,7 +422,7 @@ class TelecommunicationsSupplyLineType
      *  Exchange Rate
      *  Exchange Rate
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetExchangeRate($index)
@@ -461,7 +461,7 @@ class TelecommunicationsSupplyLineType
      *  Exchange Rate
      *  Exchange Rate
      *
-     * @param \horstoeko\ubl\entities\cac\ExchangeRate[] $exchangeRate
+     * @param  \horstoeko\ubl\entities\cac\ExchangeRate[] $exchangeRate
      * @return self
      */
     public function setExchangeRate(array $exchangeRate)
@@ -483,7 +483,7 @@ class TelecommunicationsSupplyLineType
      *  Allowance Charge
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge
+     * @param  \horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge
      */
     public function addToAllowanceCharge(\horstoeko\ubl\entities\cac\AllowanceCharge $allowanceCharge)
     {
@@ -503,7 +503,7 @@ class TelecommunicationsSupplyLineType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAllowanceCharge($index)
@@ -523,7 +523,7 @@ class TelecommunicationsSupplyLineType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAllowanceCharge($index)
@@ -562,7 +562,7 @@ class TelecommunicationsSupplyLineType
      *  Allowance Charge
      *  Allowance Charge
      *
-     * @param \horstoeko\ubl\entities\cac\AllowanceCharge[] $allowanceCharge
+     * @param  \horstoeko\ubl\entities\cac\AllowanceCharge[] $allowanceCharge
      * @return self
      */
     public function setAllowanceCharge(array $allowanceCharge)
@@ -584,7 +584,7 @@ class TelecommunicationsSupplyLineType
      *  Tax Total
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\TaxTotal $taxTotal
+     * @param  \horstoeko\ubl\entities\cac\TaxTotal $taxTotal
      */
     public function addToTaxTotal(\horstoeko\ubl\entities\cac\TaxTotal $taxTotal)
     {
@@ -604,7 +604,7 @@ class TelecommunicationsSupplyLineType
      *  Tax Total
      *  Tax Total
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTaxTotal($index)
@@ -624,7 +624,7 @@ class TelecommunicationsSupplyLineType
      *  Tax Total
      *  Tax Total
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTaxTotal($index)
@@ -663,7 +663,7 @@ class TelecommunicationsSupplyLineType
      *  Tax Total
      *  Tax Total
      *
-     * @param \horstoeko\ubl\entities\cac\TaxTotal[] $taxTotal
+     * @param  \horstoeko\ubl\entities\cac\TaxTotal[] $taxTotal
      * @return self
      */
     public function setTaxTotal(array $taxTotal)
@@ -685,7 +685,7 @@ class TelecommunicationsSupplyLineType
      *  Telecommunications Service
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\TelecommunicationsService $telecommunicationsService
+     * @param  \horstoeko\ubl\entities\cac\TelecommunicationsService $telecommunicationsService
      */
     public function addToTelecommunicationsService(\horstoeko\ubl\entities\cac\TelecommunicationsService $telecommunicationsService)
     {
@@ -705,7 +705,7 @@ class TelecommunicationsSupplyLineType
      *  Telecommunications Service
      *  Telecommunications Service
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTelecommunicationsService($index)
@@ -725,7 +725,7 @@ class TelecommunicationsSupplyLineType
      *  Telecommunications Service
      *  Telecommunications Service
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTelecommunicationsService($index)
@@ -764,7 +764,7 @@ class TelecommunicationsSupplyLineType
      *  Telecommunications Service
      *  Telecommunications Service
      *
-     * @param \horstoeko\ubl\entities\cac\TelecommunicationsService[] $telecommunicationsService
+     * @param  \horstoeko\ubl\entities\cac\TelecommunicationsService[] $telecommunicationsService
      * @return self
      */
     public function setTelecommunicationsService(array $telecommunicationsService)

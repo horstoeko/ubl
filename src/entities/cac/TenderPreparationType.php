@@ -137,7 +137,7 @@ class TenderPreparationType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TenderEnvelopeID $tenderEnvelopeID
+     * @param  \horstoeko\ubl\entities\cbc\TenderEnvelopeID $tenderEnvelopeID
      * @return self
      */
     public function setTenderEnvelopeID(\horstoeko\ubl\entities\cbc\TenderEnvelopeID $tenderEnvelopeID)
@@ -177,7 +177,7 @@ class TenderPreparationType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TenderEnvelopeTypeCode $tenderEnvelopeTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\TenderEnvelopeTypeCode $tenderEnvelopeTypeCode
      * @return self
      */
     public function setTenderEnvelopeTypeCode(\horstoeko\ubl\entities\cbc\TenderEnvelopeTypeCode $tenderEnvelopeTypeCode)
@@ -199,7 +199,7 @@ class TenderPreparationType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -219,7 +219,7 @@ class TenderPreparationType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -239,7 +239,7 @@ class TenderPreparationType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -278,7 +278,7 @@ class TenderPreparationType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -318,7 +318,7 @@ class TenderPreparationType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\OpenTenderID $openTenderID
+     * @param  \horstoeko\ubl\entities\cbc\OpenTenderID $openTenderID
      * @return self
      */
     public function setOpenTenderID(\horstoeko\ubl\entities\cbc\OpenTenderID $openTenderID)
@@ -340,7 +340,7 @@ class TenderPreparationType
      *  Procurement Project Lot
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ProcurementProjectLot $procurementProjectLot
+     * @param  \horstoeko\ubl\entities\cac\ProcurementProjectLot $procurementProjectLot
      */
     public function addToProcurementProjectLot(\horstoeko\ubl\entities\cac\ProcurementProjectLot $procurementProjectLot)
     {
@@ -360,7 +360,7 @@ class TenderPreparationType
      *  Procurement Project Lot
      *  Procurement Project Lot
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetProcurementProjectLot($index)
@@ -380,7 +380,7 @@ class TenderPreparationType
      *  Procurement Project Lot
      *  Procurement Project Lot
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetProcurementProjectLot($index)
@@ -419,7 +419,7 @@ class TenderPreparationType
      *  Procurement Project Lot
      *  Procurement Project Lot
      *
-     * @param \horstoeko\ubl\entities\cac\ProcurementProjectLot[] $procurementProjectLot
+     * @param  \horstoeko\ubl\entities\cac\ProcurementProjectLot[] $procurementProjectLot
      * @return self
      */
     public function setProcurementProjectLot(array $procurementProjectLot)
@@ -443,7 +443,7 @@ class TenderPreparationType
      *  Curricula required, Experience required, ....
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\DocumentTenderRequirement $documentTenderRequirement
+     * @param  \horstoeko\ubl\entities\cac\DocumentTenderRequirement $documentTenderRequirement
      */
     public function addToDocumentTenderRequirement(\horstoeko\ubl\entities\cac\DocumentTenderRequirement $documentTenderRequirement)
     {
@@ -465,7 +465,7 @@ class TenderPreparationType
      *  Tender Requirement
      *  Curricula required, Experience required, ....
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDocumentTenderRequirement($index)
@@ -487,7 +487,7 @@ class TenderPreparationType
      *  Tender Requirement
      *  Curricula required, Experience required, ....
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDocumentTenderRequirement($index)
@@ -530,7 +530,7 @@ class TenderPreparationType
      *  Tender Requirement
      *  Curricula required, Experience required, ....
      *
-     * @param \horstoeko\ubl\entities\cac\DocumentTenderRequirement[] $documentTenderRequirement
+     * @param  \horstoeko\ubl\entities\cac\DocumentTenderRequirement[] $documentTenderRequirement
      * @return self
      */
     public function setDocumentTenderRequirement(array $documentTenderRequirement)

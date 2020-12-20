@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\CodeType;
 /**
  * Class representing PreferenceCriterionCodeType
  *
- *
  * XSD Type: PreferenceCriterionCodeType
  */
 class PreferenceCriterionCodeType extends CodeType

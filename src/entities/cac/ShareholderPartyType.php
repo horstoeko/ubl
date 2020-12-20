@@ -73,7 +73,7 @@ class ShareholderPartyType
      *  Percent
      *  Percent. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PartecipationPercent $partecipationPercent
+     * @param  \horstoeko\ubl\entities\cbc\PartecipationPercent $partecipationPercent
      * @return self
      */
     public function setPartecipationPercent(\horstoeko\ubl\entities\cbc\PartecipationPercent $partecipationPercent)
@@ -113,7 +113,7 @@ class ShareholderPartyType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\Party $party
+     * @param  \horstoeko\ubl\entities\cac\Party $party
      * @return self
      */
     public function setParty(\horstoeko\ubl\entities\cac\Party $party)

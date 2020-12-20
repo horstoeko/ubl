@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing OCSPRefsType
  *
- *
  * XSD Type: OCSPRefsType
  */
 class OCSPRefsType
@@ -22,7 +21,7 @@ class OCSPRefsType
      * Adds as oCSPRef
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\OCSPRefType $oCSPRef
+     * @param  \horstoeko\ubl\entities\xades\OCSPRefType $oCSPRef
      */
     public function addToOCSPRef(\horstoeko\ubl\entities\xades\OCSPRefType $oCSPRef)
     {
@@ -33,7 +32,7 @@ class OCSPRefsType
     /**
      * isset oCSPRef
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetOCSPRef($index)
@@ -44,7 +43,7 @@ class OCSPRefsType
     /**
      * unset oCSPRef
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetOCSPRef($index)
@@ -65,7 +64,7 @@ class OCSPRefsType
     /**
      * Sets a new oCSPRef
      *
-     * @param \horstoeko\ubl\entities\xades\OCSPRefType[] $oCSPRef
+     * @param  \horstoeko\ubl\entities\xades\OCSPRefType[] $oCSPRef
      * @return self
      */
     public function setOCSPRef(array $oCSPRef)

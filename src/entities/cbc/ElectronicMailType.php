@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing ElectronicMailType
  *
- *
  * XSD Type: ElectronicMailType
  */
 class ElectronicMailType extends TextType

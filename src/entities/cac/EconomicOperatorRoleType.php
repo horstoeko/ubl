@@ -75,7 +75,7 @@ class EconomicOperatorRoleType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\RoleCode $roleCode
+     * @param  \horstoeko\ubl\entities\cbc\RoleCode $roleCode
      * @return self
      */
     public function setRoleCode(\horstoeko\ubl\entities\cbc\RoleCode $roleCode)
@@ -97,7 +97,7 @@ class EconomicOperatorRoleType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\RoleDescription $roleDescription
+     * @param  \horstoeko\ubl\entities\cbc\RoleDescription $roleDescription
      */
     public function addToRoleDescription(\horstoeko\ubl\entities\cbc\RoleDescription $roleDescription)
     {
@@ -117,7 +117,7 @@ class EconomicOperatorRoleType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetRoleDescription($index)
@@ -137,7 +137,7 @@ class EconomicOperatorRoleType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetRoleDescription($index)
@@ -176,7 +176,7 @@ class EconomicOperatorRoleType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\RoleDescription[] $roleDescription
+     * @param  \horstoeko\ubl\entities\cbc\RoleDescription[] $roleDescription
      * @return self
      */
     public function setRoleDescription(array $roleDescription)

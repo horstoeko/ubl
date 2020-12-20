@@ -73,7 +73,7 @@ class ActivityPropertyType
      *  Name
      *  Name. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Name $name
+     * @param  \horstoeko\ubl\entities\cbc\Name $name
      * @return self
      */
     public function setName(\horstoeko\ubl\entities\cbc\Name $name)
@@ -113,7 +113,7 @@ class ActivityPropertyType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Value $value
+     * @param  \horstoeko\ubl\entities\cbc\Value $value
      * @return self
      */
     public function setValue(\horstoeko\ubl\entities\cbc\Value $value)

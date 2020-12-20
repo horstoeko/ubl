@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing LoginType
  *
- *
  * XSD Type: LoginType
  */
 class LoginType extends TextType

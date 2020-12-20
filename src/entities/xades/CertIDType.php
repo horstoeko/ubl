@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing CertIDType
  *
- *
  * XSD Type: CertIDType
  */
 class CertIDType
@@ -39,7 +38,7 @@ class CertIDType
     /**
      * Sets a new uRI
      *
-     * @param string $uRI
+     * @param  string $uRI
      * @return self
      */
     public function setURI($uRI)
@@ -61,7 +60,7 @@ class CertIDType
     /**
      * Sets a new certDigest
      *
-     * @param \horstoeko\ubl\entities\xades\DigestAlgAndValueType $certDigest
+     * @param  \horstoeko\ubl\entities\xades\DigestAlgAndValueType $certDigest
      * @return self
      */
     public function setCertDigest(\horstoeko\ubl\entities\xades\DigestAlgAndValueType $certDigest)
@@ -83,7 +82,7 @@ class CertIDType
     /**
      * Sets a new issuerSerial
      *
-     * @param \horstoeko\ubl\entities\ds\X509IssuerSerialType $issuerSerial
+     * @param  \horstoeko\ubl\entities\ds\X509IssuerSerialType $issuerSerial
      * @return self
      */
     public function setIssuerSerial(\horstoeko\ubl\entities\ds\X509IssuerSerialType $issuerSerial)

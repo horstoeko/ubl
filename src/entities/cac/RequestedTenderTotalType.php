@@ -170,7 +170,7 @@ class RequestedTenderTotalType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\EstimatedOverallContractAmount $estimatedOverallContractAmount
+     * @param  \horstoeko\ubl\entities\cbc\EstimatedOverallContractAmount $estimatedOverallContractAmount
      * @return self
      */
     public function setEstimatedOverallContractAmount(\horstoeko\ubl\entities\cbc\EstimatedOverallContractAmount $estimatedOverallContractAmount)
@@ -212,7 +212,7 @@ class RequestedTenderTotalType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TotalAmount $totalAmount
+     * @param  \horstoeko\ubl\entities\cbc\TotalAmount $totalAmount
      * @return self
      */
     public function setTotalAmount(\horstoeko\ubl\entities\cbc\TotalAmount $totalAmount)
@@ -254,7 +254,7 @@ class RequestedTenderTotalType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $taxIncludedIndicator
+     * @param  bool $taxIncludedIndicator
      * @return self
      */
     public function setTaxIncludedIndicator($taxIncludedIndicator)
@@ -296,7 +296,7 @@ class RequestedTenderTotalType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MinimumAmount $minimumAmount
+     * @param  \horstoeko\ubl\entities\cbc\MinimumAmount $minimumAmount
      * @return self
      */
     public function setMinimumAmount(\horstoeko\ubl\entities\cbc\MinimumAmount $minimumAmount)
@@ -338,7 +338,7 @@ class RequestedTenderTotalType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MaximumAmount $maximumAmount
+     * @param  \horstoeko\ubl\entities\cbc\MaximumAmount $maximumAmount
      * @return self
      */
     public function setMaximumAmount(\horstoeko\ubl\entities\cbc\MaximumAmount $maximumAmount)
@@ -360,7 +360,7 @@ class RequestedTenderTotalType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\MonetaryScope $monetaryScope
+     * @param  \horstoeko\ubl\entities\cbc\MonetaryScope $monetaryScope
      */
     public function addToMonetaryScope(\horstoeko\ubl\entities\cbc\MonetaryScope $monetaryScope)
     {
@@ -380,7 +380,7 @@ class RequestedTenderTotalType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetMonetaryScope($index)
@@ -400,7 +400,7 @@ class RequestedTenderTotalType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetMonetaryScope($index)
@@ -439,7 +439,7 @@ class RequestedTenderTotalType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MonetaryScope[] $monetaryScope
+     * @param  \horstoeko\ubl\entities\cbc\MonetaryScope[] $monetaryScope
      * @return self
      */
     public function setMonetaryScope(array $monetaryScope)
@@ -481,7 +481,7 @@ class RequestedTenderTotalType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AverageSubsequentContractAmount $averageSubsequentContractAmount
+     * @param  \horstoeko\ubl\entities\cbc\AverageSubsequentContractAmount $averageSubsequentContractAmount
      * @return self
      */
     public function setAverageSubsequentContractAmount(\horstoeko\ubl\entities\cbc\AverageSubsequentContractAmount $averageSubsequentContractAmount)
@@ -504,7 +504,7 @@ class RequestedTenderTotalType
      *  Tax Category
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ApplicableTaxCategory $applicableTaxCategory
+     * @param  \horstoeko\ubl\entities\cac\ApplicableTaxCategory $applicableTaxCategory
      */
     public function addToApplicableTaxCategory(\horstoeko\ubl\entities\cac\ApplicableTaxCategory $applicableTaxCategory)
     {
@@ -525,7 +525,7 @@ class RequestedTenderTotalType
      *  Tax Category
      *  Tax Category
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetApplicableTaxCategory($index)
@@ -546,7 +546,7 @@ class RequestedTenderTotalType
      *  Tax Category
      *  Tax Category
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetApplicableTaxCategory($index)
@@ -587,7 +587,7 @@ class RequestedTenderTotalType
      *  Tax Category
      *  Tax Category
      *
-     * @param \horstoeko\ubl\entities\cac\ApplicableTaxCategory[] $applicableTaxCategory
+     * @param  \horstoeko\ubl\entities\cac\ApplicableTaxCategory[] $applicableTaxCategory
      * @return self
      */
     public function setApplicableTaxCategory(array $applicableTaxCategory)

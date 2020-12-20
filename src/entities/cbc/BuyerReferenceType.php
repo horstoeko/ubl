@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing BuyerReferenceType
  *
- *
  * XSD Type: BuyerReferenceType
  */
 class BuyerReferenceType extends TextType

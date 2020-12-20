@@ -179,7 +179,7 @@ class ForecastRevisionLineType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -201,7 +201,7 @@ class ForecastRevisionLineType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param  \horstoeko\ubl\entities\cbc\Note $note
      */
     public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
     {
@@ -221,7 +221,7 @@ class ForecastRevisionLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNote($index)
@@ -241,7 +241,7 @@ class ForecastRevisionLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNote($index)
@@ -280,7 +280,7 @@ class ForecastRevisionLineType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note[] $note
+     * @param  \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
     public function setNote(array $note)
@@ -302,7 +302,7 @@ class ForecastRevisionLineType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -322,7 +322,7 @@ class ForecastRevisionLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -342,7 +342,7 @@ class ForecastRevisionLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -381,7 +381,7 @@ class ForecastRevisionLineType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -423,7 +423,7 @@ class ForecastRevisionLineType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\RevisedForecastLineID $revisedForecastLineID
+     * @param  \horstoeko\ubl\entities\cbc\RevisedForecastLineID $revisedForecastLineID
      * @return self
      */
     public function setRevisedForecastLineID(\horstoeko\ubl\entities\cbc\RevisedForecastLineID $revisedForecastLineID)
@@ -465,7 +465,7 @@ class ForecastRevisionLineType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $sourceForecastIssueDate
+     * @param  \DateTime $sourceForecastIssueDate
      * @return self
      */
     public function setSourceForecastIssueDate(\DateTime $sourceForecastIssueDate)
@@ -507,7 +507,7 @@ class ForecastRevisionLineType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $sourceForecastIssueTime
+     * @param  \DateTime $sourceForecastIssueTime
      * @return self
      */
     public function setSourceForecastIssueTime(\DateTime $sourceForecastIssueTime)
@@ -547,7 +547,7 @@ class ForecastRevisionLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AdjustmentReasonCode $adjustmentReasonCode
+     * @param  \horstoeko\ubl\entities\cbc\AdjustmentReasonCode $adjustmentReasonCode
      * @return self
      */
     public function setAdjustmentReasonCode(\horstoeko\ubl\entities\cbc\AdjustmentReasonCode $adjustmentReasonCode)
@@ -589,7 +589,7 @@ class ForecastRevisionLineType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\ForecastPeriod $forecastPeriod
+     * @param  \horstoeko\ubl\entities\cac\ForecastPeriod $forecastPeriod
      * @return self
      */
     public function setForecastPeriod(\horstoeko\ubl\entities\cac\ForecastPeriod $forecastPeriod)
@@ -629,7 +629,7 @@ class ForecastRevisionLineType
      *  Sales Item
      *  Sales Item
      *
-     * @param \horstoeko\ubl\entities\cac\SalesItem $salesItem
+     * @param  \horstoeko\ubl\entities\cac\SalesItem $salesItem
      * @return self
      */
     public function setSalesItem(\horstoeko\ubl\entities\cac\SalesItem $salesItem)

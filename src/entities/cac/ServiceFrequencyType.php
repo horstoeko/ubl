@@ -62,7 +62,7 @@ class ServiceFrequencyType
      *  Week Day
      *  Week Day_ Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\WeekDayCode $weekDayCode
+     * @param  \horstoeko\ubl\entities\cbc\WeekDayCode $weekDayCode
      * @return self
      */
     public function setWeekDayCode(\horstoeko\ubl\entities\cbc\WeekDayCode $weekDayCode)

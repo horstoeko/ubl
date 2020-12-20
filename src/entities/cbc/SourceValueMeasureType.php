@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\MeasureType;
 /**
  * Class representing SourceValueMeasureType
  *
- *
  * XSD Type: SourceValueMeasureType
  */
 class SourceValueMeasureType extends MeasureType

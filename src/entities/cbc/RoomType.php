@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing RoomType
  *
- *
  * XSD Type: RoomType
  */
 class RoomType extends TextType

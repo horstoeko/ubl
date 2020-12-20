@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing CRLValuesType
  *
- *
  * XSD Type: CRLValuesType
  */
 class CRLValuesType
@@ -22,7 +21,7 @@ class CRLValuesType
      * Adds as encapsulatedCRLValue
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\EncapsulatedPKIDataType $encapsulatedCRLValue
+     * @param  \horstoeko\ubl\entities\xades\EncapsulatedPKIDataType $encapsulatedCRLValue
      */
     public function addToEncapsulatedCRLValue(\horstoeko\ubl\entities\xades\EncapsulatedPKIDataType $encapsulatedCRLValue)
     {
@@ -33,7 +32,7 @@ class CRLValuesType
     /**
      * isset encapsulatedCRLValue
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetEncapsulatedCRLValue($index)
@@ -44,7 +43,7 @@ class CRLValuesType
     /**
      * unset encapsulatedCRLValue
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetEncapsulatedCRLValue($index)
@@ -65,7 +64,7 @@ class CRLValuesType
     /**
      * Sets a new encapsulatedCRLValue
      *
-     * @param \horstoeko\ubl\entities\xades\EncapsulatedPKIDataType[] $encapsulatedCRLValue
+     * @param  \horstoeko\ubl\entities\xades\EncapsulatedPKIDataType[] $encapsulatedCRLValue
      * @return self
      */
     public function setEncapsulatedCRLValue(array $encapsulatedCRLValue)

@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing AwardingCriterionDescriptionType
  *
- *
  * XSD Type: AwardingCriterionDescriptionType
  */
 class AwardingCriterionDescriptionType extends TextType

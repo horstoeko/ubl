@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\CodeType;
 /**
  * Class representing UrgencyCodeType
  *
- *
  * XSD Type: UrgencyCodeType
  */
 class UrgencyCodeType extends CodeType

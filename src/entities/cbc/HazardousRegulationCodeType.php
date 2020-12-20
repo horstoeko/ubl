@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\CodeType;
 /**
  * Class representing HazardousRegulationCodeType
  *
- *
  * XSD Type: HazardousRegulationCodeType
  */
 class HazardousRegulationCodeType extends CodeType

@@ -253,7 +253,7 @@ class ClassificationSchemeType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -293,7 +293,7 @@ class ClassificationSchemeType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\UUID $uUID
+     * @param  \horstoeko\ubl\entities\cbc\UUID $uUID
      * @return self
      */
     public function setUUID(\horstoeko\ubl\entities\cbc\UUID $uUID)
@@ -335,7 +335,7 @@ class ClassificationSchemeType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $lastRevisionDate
+     * @param  \DateTime $lastRevisionDate
      * @return self
      */
     public function setLastRevisionDate(\DateTime $lastRevisionDate)
@@ -377,7 +377,7 @@ class ClassificationSchemeType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $lastRevisionTime
+     * @param  \DateTime $lastRevisionTime
      * @return self
      */
     public function setLastRevisionTime(\DateTime $lastRevisionTime)
@@ -399,7 +399,7 @@ class ClassificationSchemeType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param  \horstoeko\ubl\entities\cbc\Note $note
      */
     public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
     {
@@ -419,7 +419,7 @@ class ClassificationSchemeType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNote($index)
@@ -439,7 +439,7 @@ class ClassificationSchemeType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNote($index)
@@ -478,7 +478,7 @@ class ClassificationSchemeType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note[] $note
+     * @param  \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
     public function setNote(array $note)
@@ -520,7 +520,7 @@ class ClassificationSchemeType
      *  Name. Type
      *  UNSPSC
      *
-     * @param \horstoeko\ubl\entities\cbc\Name $name
+     * @param  \horstoeko\ubl\entities\cbc\Name $name
      * @return self
      */
     public function setName(\horstoeko\ubl\entities\cbc\Name $name)
@@ -543,7 +543,7 @@ class ClassificationSchemeType
      *  an open, global multi-sector standard for classification of products and services
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -564,7 +564,7 @@ class ClassificationSchemeType
      *  Text. Type
      *  an open, global multi-sector standard for classification of products and services
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -585,7 +585,7 @@ class ClassificationSchemeType
      *  Text. Type
      *  an open, global multi-sector standard for classification of products and services
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -626,7 +626,7 @@ class ClassificationSchemeType
      *  Text. Type
      *  an open, global multi-sector standard for classification of products and services
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -668,7 +668,7 @@ class ClassificationSchemeType
      *  Identifier. Type
      *  Defaults to the UN/EDIFACT data element 3055 code list.
      *
-     * @param \horstoeko\ubl\entities\cbc\AgencyID $agencyID
+     * @param  \horstoeko\ubl\entities\cbc\AgencyID $agencyID
      * @return self
      */
     public function setAgencyID(\horstoeko\ubl\entities\cbc\AgencyID $agencyID)
@@ -708,7 +708,7 @@ class ClassificationSchemeType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AgencyName $agencyName
+     * @param  \horstoeko\ubl\entities\cbc\AgencyName $agencyName
      * @return self
      */
     public function setAgencyName(\horstoeko\ubl\entities\cbc\AgencyName $agencyName)
@@ -748,7 +748,7 @@ class ClassificationSchemeType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\VersionID $versionID
+     * @param  \horstoeko\ubl\entities\cbc\VersionID $versionID
      * @return self
      */
     public function setVersionID(\horstoeko\ubl\entities\cbc\VersionID $versionID)
@@ -788,7 +788,7 @@ class ClassificationSchemeType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\URI $uRI
+     * @param  \horstoeko\ubl\entities\cbc\URI $uRI
      * @return self
      */
     public function setURI(\horstoeko\ubl\entities\cbc\URI $uRI)
@@ -830,7 +830,7 @@ class ClassificationSchemeType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SchemeURI $schemeURI
+     * @param  \horstoeko\ubl\entities\cbc\SchemeURI $schemeURI
      * @return self
      */
     public function setSchemeURI(\horstoeko\ubl\entities\cbc\SchemeURI $schemeURI)
@@ -870,7 +870,7 @@ class ClassificationSchemeType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LanguageID $languageID
+     * @param  \horstoeko\ubl\entities\cbc\LanguageID $languageID
      * @return self
      */
     public function setLanguageID(\horstoeko\ubl\entities\cbc\LanguageID $languageID)
@@ -892,7 +892,7 @@ class ClassificationSchemeType
      *  Classification Category
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ClassificationCategory $classificationCategory
+     * @param  \horstoeko\ubl\entities\cac\ClassificationCategory $classificationCategory
      */
     public function addToClassificationCategory(\horstoeko\ubl\entities\cac\ClassificationCategory $classificationCategory)
     {
@@ -912,7 +912,7 @@ class ClassificationSchemeType
      *  Classification Category
      *  Classification Category
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetClassificationCategory($index)
@@ -932,7 +932,7 @@ class ClassificationSchemeType
      *  Classification Category
      *  Classification Category
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetClassificationCategory($index)
@@ -971,7 +971,7 @@ class ClassificationSchemeType
      *  Classification Category
      *  Classification Category
      *
-     * @param \horstoeko\ubl\entities\cac\ClassificationCategory[] $classificationCategory
+     * @param  \horstoeko\ubl\entities\cac\ClassificationCategory[] $classificationCategory
      * @return self
      */
     public function setClassificationCategory(array $classificationCategory)

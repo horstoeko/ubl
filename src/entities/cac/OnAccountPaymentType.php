@@ -95,7 +95,7 @@ class OnAccountPaymentType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\EstimatedConsumedQuantity $estimatedConsumedQuantity
+     * @param  \horstoeko\ubl\entities\cbc\EstimatedConsumedQuantity $estimatedConsumedQuantity
      * @return self
      */
     public function setEstimatedConsumedQuantity(\horstoeko\ubl\entities\cbc\EstimatedConsumedQuantity $estimatedConsumedQuantity)
@@ -118,7 +118,7 @@ class OnAccountPaymentType
      *  We make a reservation for price regulations. You will receive you next yearly statement about one year from today.
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param  \horstoeko\ubl\entities\cbc\Note $note
      */
     public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
     {
@@ -139,7 +139,7 @@ class OnAccountPaymentType
      *  Text. Type
      *  We make a reservation for price regulations. You will receive you next yearly statement about one year from today.
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNote($index)
@@ -160,7 +160,7 @@ class OnAccountPaymentType
      *  Text. Type
      *  We make a reservation for price regulations. You will receive you next yearly statement about one year from today.
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNote($index)
@@ -201,7 +201,7 @@ class OnAccountPaymentType
      *  Text. Type
      *  We make a reservation for price regulations. You will receive you next yearly statement about one year from today.
      *
-     * @param \horstoeko\ubl\entities\cbc\Note[] $note
+     * @param  \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
     public function setNote(array $note)
@@ -223,7 +223,7 @@ class OnAccountPaymentType
      *  Payment Terms
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\PaymentTerms $paymentTerms
+     * @param  \horstoeko\ubl\entities\cac\PaymentTerms $paymentTerms
      */
     public function addToPaymentTerms(\horstoeko\ubl\entities\cac\PaymentTerms $paymentTerms)
     {
@@ -243,7 +243,7 @@ class OnAccountPaymentType
      *  Payment Terms
      *  Payment Terms
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPaymentTerms($index)
@@ -263,7 +263,7 @@ class OnAccountPaymentType
      *  Payment Terms
      *  Payment Terms
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPaymentTerms($index)
@@ -302,7 +302,7 @@ class OnAccountPaymentType
      *  Payment Terms
      *  Payment Terms
      *
-     * @param \horstoeko\ubl\entities\cac\PaymentTerms[] $paymentTerms
+     * @param  \horstoeko\ubl\entities\cac\PaymentTerms[] $paymentTerms
      * @return self
      */
     public function setPaymentTerms(array $paymentTerms)

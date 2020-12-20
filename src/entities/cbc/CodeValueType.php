@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing CodeValueType
  *
- *
  * XSD Type: CodeValueType
  */
 class CodeValueType extends TextType

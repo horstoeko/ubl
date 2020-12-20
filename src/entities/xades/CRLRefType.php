@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing CRLRefType
  *
- *
  * XSD Type: CRLRefType
  */
 class CRLRefType
@@ -34,7 +33,7 @@ class CRLRefType
     /**
      * Sets a new digestAlgAndValue
      *
-     * @param \horstoeko\ubl\entities\xades\DigestAlgAndValueType $digestAlgAndValue
+     * @param  \horstoeko\ubl\entities\xades\DigestAlgAndValueType $digestAlgAndValue
      * @return self
      */
     public function setDigestAlgAndValue(\horstoeko\ubl\entities\xades\DigestAlgAndValueType $digestAlgAndValue)
@@ -56,7 +55,7 @@ class CRLRefType
     /**
      * Sets a new cRLIdentifier
      *
-     * @param \horstoeko\ubl\entities\xades\CRLIdentifierType $cRLIdentifier
+     * @param  \horstoeko\ubl\entities\xades\CRLIdentifierType $cRLIdentifier
      * @return self
      */
     public function setCRLIdentifier(\horstoeko\ubl\entities\xades\CRLIdentifierType $cRLIdentifier)

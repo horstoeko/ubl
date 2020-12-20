@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\CodeType;
 /**
  * Class representing FundingProgramCodeType
  *
- *
  * XSD Type: FundingProgramCodeType
  */
 class FundingProgramCodeType extends CodeType

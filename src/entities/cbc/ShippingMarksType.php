@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing ShippingMarksType
  *
- *
  * XSD Type: ShippingMarksType
  */
 class ShippingMarksType extends TextType

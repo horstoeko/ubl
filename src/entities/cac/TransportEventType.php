@@ -224,7 +224,7 @@ class TransportEventType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\IdentificationID $identificationID
+     * @param  \horstoeko\ubl\entities\cbc\IdentificationID $identificationID
      * @return self
      */
     public function setIdentificationID(\horstoeko\ubl\entities\cbc\IdentificationID $identificationID)
@@ -264,7 +264,7 @@ class TransportEventType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $occurrenceDate
+     * @param  \DateTime $occurrenceDate
      * @return self
      */
     public function setOccurrenceDate(\DateTime $occurrenceDate)
@@ -304,7 +304,7 @@ class TransportEventType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $occurrenceTime
+     * @param  \DateTime $occurrenceTime
      * @return self
      */
     public function setOccurrenceTime(\DateTime $occurrenceTime)
@@ -344,7 +344,7 @@ class TransportEventType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TransportEventTypeCode $transportEventTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\TransportEventTypeCode $transportEventTypeCode
      * @return self
      */
     public function setTransportEventTypeCode(\horstoeko\ubl\entities\cbc\TransportEventTypeCode $transportEventTypeCode)
@@ -366,7 +366,7 @@ class TransportEventType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -386,7 +386,7 @@ class TransportEventType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -406,7 +406,7 @@ class TransportEventType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -445,7 +445,7 @@ class TransportEventType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -487,7 +487,7 @@ class TransportEventType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $completionIndicator
+     * @param  bool $completionIndicator
      * @return self
      */
     public function setCompletionIndicator($completionIndicator)
@@ -529,7 +529,7 @@ class TransportEventType
      *  Shipment
      *  Shipment
      *
-     * @param \horstoeko\ubl\entities\cac\ReportedShipment $reportedShipment
+     * @param  \horstoeko\ubl\entities\cac\ReportedShipment $reportedShipment
      * @return self
      */
     public function setReportedShipment(\horstoeko\ubl\entities\cac\ReportedShipment $reportedShipment)
@@ -552,7 +552,7 @@ class TransportEventType
      *  Status
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\CurrentStatus $currentStatus
+     * @param  \horstoeko\ubl\entities\cac\CurrentStatus $currentStatus
      */
     public function addToCurrentStatus(\horstoeko\ubl\entities\cac\CurrentStatus $currentStatus)
     {
@@ -573,7 +573,7 @@ class TransportEventType
      *  Status
      *  Status
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetCurrentStatus($index)
@@ -594,7 +594,7 @@ class TransportEventType
      *  Status
      *  Status
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetCurrentStatus($index)
@@ -635,7 +635,7 @@ class TransportEventType
      *  Status
      *  Status
      *
-     * @param \horstoeko\ubl\entities\cac\CurrentStatus[] $currentStatus
+     * @param  \horstoeko\ubl\entities\cac\CurrentStatus[] $currentStatus
      * @return self
      */
     public function setCurrentStatus(array $currentStatus)
@@ -657,7 +657,7 @@ class TransportEventType
      *  Contact
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Contact $contact
+     * @param  \horstoeko\ubl\entities\cac\Contact $contact
      */
     public function addToContact(\horstoeko\ubl\entities\cac\Contact $contact)
     {
@@ -677,7 +677,7 @@ class TransportEventType
      *  Contact
      *  Contact
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetContact($index)
@@ -697,7 +697,7 @@ class TransportEventType
      *  Contact
      *  Contact
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetContact($index)
@@ -736,7 +736,7 @@ class TransportEventType
      *  Contact
      *  Contact
      *
-     * @param \horstoeko\ubl\entities\cac\Contact[] $contact
+     * @param  \horstoeko\ubl\entities\cac\Contact[] $contact
      * @return self
      */
     public function setContact(array $contact)
@@ -776,7 +776,7 @@ class TransportEventType
      *  Location
      *  Location
      *
-     * @param \horstoeko\ubl\entities\cac\Location $location
+     * @param  \horstoeko\ubl\entities\cac\Location $location
      * @return self
      */
     public function setLocation(\horstoeko\ubl\entities\cac\Location $location)
@@ -816,7 +816,7 @@ class TransportEventType
      *  Signature
      *  Signature
      *
-     * @param \horstoeko\ubl\entities\cac\Signature $signature
+     * @param  \horstoeko\ubl\entities\cac\Signature $signature
      * @return self
      */
     public function setSignature(\horstoeko\ubl\entities\cac\Signature $signature)
@@ -838,7 +838,7 @@ class TransportEventType
      *  Period
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Period $period
+     * @param  \horstoeko\ubl\entities\cac\Period $period
      */
     public function addToPeriod(\horstoeko\ubl\entities\cac\Period $period)
     {
@@ -858,7 +858,7 @@ class TransportEventType
      *  Period
      *  Period
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPeriod($index)
@@ -878,7 +878,7 @@ class TransportEventType
      *  Period
      *  Period
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPeriod($index)
@@ -917,7 +917,7 @@ class TransportEventType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\Period[] $period
+     * @param  \horstoeko\ubl\entities\cac\Period[] $period
      * @return self
      */
     public function setPeriod(array $period)

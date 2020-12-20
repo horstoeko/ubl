@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing AnimalFoodIndicatorType
  *
- *
  * XSD Type: AnimalFoodIndicatorType
  */
 class AnimalFoodIndicatorType
@@ -29,7 +28,7 @@ class AnimalFoodIndicatorType
     /**
      * Gets or sets the inner value
      *
-     * @param bool $value
+     * @param  bool $value
      * @return bool
      */
     public function value()

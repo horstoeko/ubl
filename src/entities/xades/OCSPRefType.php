@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing OCSPRefType
  *
- *
  * XSD Type: OCSPRefType
  */
 class OCSPRefType
@@ -34,7 +33,7 @@ class OCSPRefType
     /**
      * Sets a new oCSPIdentifier
      *
-     * @param \horstoeko\ubl\entities\xades\OCSPIdentifierType $oCSPIdentifier
+     * @param  \horstoeko\ubl\entities\xades\OCSPIdentifierType $oCSPIdentifier
      * @return self
      */
     public function setOCSPIdentifier(\horstoeko\ubl\entities\xades\OCSPIdentifierType $oCSPIdentifier)
@@ -56,7 +55,7 @@ class OCSPRefType
     /**
      * Sets a new digestAlgAndValue
      *
-     * @param \horstoeko\ubl\entities\xades\DigestAlgAndValueType $digestAlgAndValue
+     * @param  \horstoeko\ubl\entities\xades\DigestAlgAndValueType $digestAlgAndValue
      * @return self
      */
     public function setDigestAlgAndValue(\horstoeko\ubl\entities\xades\DigestAlgAndValueType $digestAlgAndValue)

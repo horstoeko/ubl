@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing CertificateValuesType
  *
- *
  * XSD Type: CertificateValuesType
  */
 class CertificateValuesType
@@ -43,7 +42,7 @@ class CertificateValuesType
     /**
      * Sets a new id
      *
-     * @param string $id
+     * @param  string $id
      * @return self
      */
     public function setId($id)
@@ -56,7 +55,7 @@ class CertificateValuesType
      * Adds as encapsulatedX509Certificate
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\EncapsulatedPKIDataType $encapsulatedX509Certificate
+     * @param  \horstoeko\ubl\entities\xades\EncapsulatedPKIDataType $encapsulatedX509Certificate
      */
     public function addToEncapsulatedX509Certificate(\horstoeko\ubl\entities\xades\EncapsulatedPKIDataType $encapsulatedX509Certificate)
     {
@@ -67,7 +66,7 @@ class CertificateValuesType
     /**
      * isset encapsulatedX509Certificate
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetEncapsulatedX509Certificate($index)
@@ -78,7 +77,7 @@ class CertificateValuesType
     /**
      * unset encapsulatedX509Certificate
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetEncapsulatedX509Certificate($index)
@@ -99,7 +98,7 @@ class CertificateValuesType
     /**
      * Sets a new encapsulatedX509Certificate
      *
-     * @param \horstoeko\ubl\entities\xades\EncapsulatedPKIDataType[] $encapsulatedX509Certificate
+     * @param  \horstoeko\ubl\entities\xades\EncapsulatedPKIDataType[] $encapsulatedX509Certificate
      * @return self
      */
     public function setEncapsulatedX509Certificate(array $encapsulatedX509Certificate)
@@ -112,7 +111,7 @@ class CertificateValuesType
      * Adds as otherCertificate
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\AnyType $otherCertificate
+     * @param  \horstoeko\ubl\entities\xades\AnyType $otherCertificate
      */
     public function addToOtherCertificate(\horstoeko\ubl\entities\xades\AnyType $otherCertificate)
     {
@@ -123,7 +122,7 @@ class CertificateValuesType
     /**
      * isset otherCertificate
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetOtherCertificate($index)
@@ -134,7 +133,7 @@ class CertificateValuesType
     /**
      * unset otherCertificate
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetOtherCertificate($index)
@@ -155,7 +154,7 @@ class CertificateValuesType
     /**
      * Sets a new otherCertificate
      *
-     * @param \horstoeko\ubl\entities\xades\AnyType[] $otherCertificate
+     * @param  \horstoeko\ubl\entities\xades\AnyType[] $otherCertificate
      * @return self
      */
     public function setOtherCertificate(array $otherCertificate)

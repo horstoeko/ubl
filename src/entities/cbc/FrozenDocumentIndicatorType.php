@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing FrozenDocumentIndicatorType
  *
- *
  * XSD Type: FrozenDocumentIndicatorType
  */
 class FrozenDocumentIndicatorType
@@ -29,7 +28,7 @@ class FrozenDocumentIndicatorType
     /**
      * Gets or sets the inner value
      *
-     * @param bool $value
+     * @param  bool $value
      * @return bool
      */
     public function value()

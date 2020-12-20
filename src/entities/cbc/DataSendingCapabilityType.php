@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing DataSendingCapabilityType
  *
- *
  * XSD Type: DataSendingCapabilityType
  */
 class DataSendingCapabilityType extends TextType

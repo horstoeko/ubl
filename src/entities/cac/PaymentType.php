@@ -133,7 +133,7 @@ class PaymentType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -175,7 +175,7 @@ class PaymentType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PaidAmount $paidAmount
+     * @param  \horstoeko\ubl\entities\cbc\PaidAmount $paidAmount
      * @return self
      */
     public function setPaidAmount(\horstoeko\ubl\entities\cbc\PaidAmount $paidAmount)
@@ -217,7 +217,7 @@ class PaymentType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $receivedDate
+     * @param  \DateTime $receivedDate
      * @return self
      */
     public function setReceivedDate(\DateTime $receivedDate)
@@ -259,7 +259,7 @@ class PaymentType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $paidDate
+     * @param  \DateTime $paidDate
      * @return self
      */
     public function setPaidDate(\DateTime $paidDate)
@@ -301,7 +301,7 @@ class PaymentType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $paidTime
+     * @param  \DateTime $paidTime
      * @return self
      */
     public function setPaidTime(\DateTime $paidTime)
@@ -341,7 +341,7 @@ class PaymentType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\InstructionID $instructionID
+     * @param  \horstoeko\ubl\entities\cbc\InstructionID $instructionID
      * @return self
      */
     public function setInstructionID(\horstoeko\ubl\entities\cbc\InstructionID $instructionID)

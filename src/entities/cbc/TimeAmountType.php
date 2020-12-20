@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing TimeAmountType
  *
- *
  * XSD Type: TimeAmountType
  */
 class TimeAmountType extends TextType

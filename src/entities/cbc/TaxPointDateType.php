@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing TaxPointDateType
  *
- *
  * XSD Type: TaxPointDateType
  */
 class TaxPointDateType
@@ -29,7 +28,7 @@ class TaxPointDateType
     /**
      * Gets or sets the inner value
      *
-     * @param \DateTime $value
+     * @param  \DateTime $value
      * @return \DateTime
      */
     public function value()

@@ -321,7 +321,7 @@ class ProcurementProjectType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -343,7 +343,7 @@ class ProcurementProjectType
      *  Name. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Name $name
+     * @param  \horstoeko\ubl\entities\cbc\Name $name
      */
     public function addToName(\horstoeko\ubl\entities\cbc\Name $name)
     {
@@ -363,7 +363,7 @@ class ProcurementProjectType
      *  Name
      *  Name. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetName($index)
@@ -383,7 +383,7 @@ class ProcurementProjectType
      *  Name
      *  Name. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetName($index)
@@ -422,7 +422,7 @@ class ProcurementProjectType
      *  Name
      *  Name. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Name[] $name
+     * @param  \horstoeko\ubl\entities\cbc\Name[] $name
      * @return self
      */
     public function setName(array $name)
@@ -444,7 +444,7 @@ class ProcurementProjectType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -464,7 +464,7 @@ class ProcurementProjectType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -484,7 +484,7 @@ class ProcurementProjectType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -523,7 +523,7 @@ class ProcurementProjectType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -565,7 +565,7 @@ class ProcurementProjectType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ProcurementTypeCode $procurementTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\ProcurementTypeCode $procurementTypeCode
      * @return self
      */
     public function setProcurementTypeCode(\horstoeko\ubl\entities\cbc\ProcurementTypeCode $procurementTypeCode)
@@ -607,7 +607,7 @@ class ProcurementProjectType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ProcurementSubTypeCode $procurementSubTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\ProcurementSubTypeCode $procurementSubTypeCode
      * @return self
      */
     public function setProcurementSubTypeCode(\horstoeko\ubl\entities\cbc\ProcurementSubTypeCode $procurementSubTypeCode)
@@ -647,7 +647,7 @@ class ProcurementProjectType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\QualityControlCode $qualityControlCode
+     * @param  \horstoeko\ubl\entities\cbc\QualityControlCode $qualityControlCode
      * @return self
      */
     public function setQualityControlCode(\horstoeko\ubl\entities\cbc\QualityControlCode $qualityControlCode)
@@ -689,7 +689,7 @@ class ProcurementProjectType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\RequiredFeeAmount $requiredFeeAmount
+     * @param  \horstoeko\ubl\entities\cbc\RequiredFeeAmount $requiredFeeAmount
      * @return self
      */
     public function setRequiredFeeAmount(\horstoeko\ubl\entities\cbc\RequiredFeeAmount $requiredFeeAmount)
@@ -712,7 +712,7 @@ class ProcurementProjectType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\FeeDescription $feeDescription
+     * @param  \horstoeko\ubl\entities\cbc\FeeDescription $feeDescription
      */
     public function addToFeeDescription(\horstoeko\ubl\entities\cbc\FeeDescription $feeDescription)
     {
@@ -733,7 +733,7 @@ class ProcurementProjectType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetFeeDescription($index)
@@ -754,7 +754,7 @@ class ProcurementProjectType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetFeeDescription($index)
@@ -795,7 +795,7 @@ class ProcurementProjectType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\FeeDescription[] $feeDescription
+     * @param  \horstoeko\ubl\entities\cbc\FeeDescription[] $feeDescription
      * @return self
      */
     public function setFeeDescription(array $feeDescription)
@@ -837,7 +837,7 @@ class ProcurementProjectType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $requestedDeliveryDate
+     * @param  \DateTime $requestedDeliveryDate
      * @return self
      */
     public function setRequestedDeliveryDate(\DateTime $requestedDeliveryDate)
@@ -879,7 +879,7 @@ class ProcurementProjectType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\EstimatedOverallContractQuantity $estimatedOverallContractQuantity
+     * @param  \horstoeko\ubl\entities\cbc\EstimatedOverallContractQuantity $estimatedOverallContractQuantity
      * @return self
      */
     public function setEstimatedOverallContractQuantity(\horstoeko\ubl\entities\cbc\EstimatedOverallContractQuantity $estimatedOverallContractQuantity)
@@ -901,7 +901,7 @@ class ProcurementProjectType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param  \horstoeko\ubl\entities\cbc\Note $note
      */
     public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
     {
@@ -921,7 +921,7 @@ class ProcurementProjectType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNote($index)
@@ -941,7 +941,7 @@ class ProcurementProjectType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNote($index)
@@ -980,7 +980,7 @@ class ProcurementProjectType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note[] $note
+     * @param  \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
     public function setNote(array $note)
@@ -1020,7 +1020,7 @@ class ProcurementProjectType
      *  Requested Tender Total
      *  Requested Tender Total
      *
-     * @param \horstoeko\ubl\entities\cac\RequestedTenderTotal $requestedTenderTotal
+     * @param  \horstoeko\ubl\entities\cac\RequestedTenderTotal $requestedTenderTotal
      * @return self
      */
     public function setRequestedTenderTotal(\horstoeko\ubl\entities\cac\RequestedTenderTotal $requestedTenderTotal)
@@ -1062,7 +1062,7 @@ class ProcurementProjectType
      *  Commodity Classification
      *  Commodity Classification
      *
-     * @param \horstoeko\ubl\entities\cac\MainCommodityClassification $mainCommodityClassification
+     * @param  \horstoeko\ubl\entities\cac\MainCommodityClassification $mainCommodityClassification
      * @return self
      */
     public function setMainCommodityClassification(\horstoeko\ubl\entities\cac\MainCommodityClassification $mainCommodityClassification)
@@ -1085,7 +1085,7 @@ class ProcurementProjectType
      *  Commodity Classification
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\AdditionalCommodityClassification $additionalCommodityClassification
+     * @param  \horstoeko\ubl\entities\cac\AdditionalCommodityClassification $additionalCommodityClassification
      */
     public function addToAdditionalCommodityClassification(\horstoeko\ubl\entities\cac\AdditionalCommodityClassification $additionalCommodityClassification)
     {
@@ -1106,7 +1106,7 @@ class ProcurementProjectType
      *  Commodity Classification
      *  Commodity Classification
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAdditionalCommodityClassification($index)
@@ -1127,7 +1127,7 @@ class ProcurementProjectType
      *  Commodity Classification
      *  Commodity Classification
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAdditionalCommodityClassification($index)
@@ -1168,7 +1168,7 @@ class ProcurementProjectType
      *  Commodity Classification
      *  Commodity Classification
      *
-     * @param \horstoeko\ubl\entities\cac\AdditionalCommodityClassification[] $additionalCommodityClassification
+     * @param  \horstoeko\ubl\entities\cac\AdditionalCommodityClassification[] $additionalCommodityClassification
      * @return self
      */
     public function setAdditionalCommodityClassification(array $additionalCommodityClassification)
@@ -1191,7 +1191,7 @@ class ProcurementProjectType
      *  Location
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\RealizedLocation $realizedLocation
+     * @param  \horstoeko\ubl\entities\cac\RealizedLocation $realizedLocation
      */
     public function addToRealizedLocation(\horstoeko\ubl\entities\cac\RealizedLocation $realizedLocation)
     {
@@ -1212,7 +1212,7 @@ class ProcurementProjectType
      *  Location
      *  Location
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetRealizedLocation($index)
@@ -1233,7 +1233,7 @@ class ProcurementProjectType
      *  Location
      *  Location
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetRealizedLocation($index)
@@ -1274,7 +1274,7 @@ class ProcurementProjectType
      *  Location
      *  Location
      *
-     * @param \horstoeko\ubl\entities\cac\RealizedLocation[] $realizedLocation
+     * @param  \horstoeko\ubl\entities\cac\RealizedLocation[] $realizedLocation
      * @return self
      */
     public function setRealizedLocation(array $realizedLocation)
@@ -1316,7 +1316,7 @@ class ProcurementProjectType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\PlannedPeriod $plannedPeriod
+     * @param  \horstoeko\ubl\entities\cac\PlannedPeriod $plannedPeriod
      * @return self
      */
     public function setPlannedPeriod(\horstoeko\ubl\entities\cac\PlannedPeriod $plannedPeriod)
@@ -1356,7 +1356,7 @@ class ProcurementProjectType
      *  Contract Extension
      *  Contract Extension
      *
-     * @param \horstoeko\ubl\entities\cac\ContractExtension $contractExtension
+     * @param  \horstoeko\ubl\entities\cac\ContractExtension $contractExtension
      * @return self
      */
     public function setContractExtension(\horstoeko\ubl\entities\cac\ContractExtension $contractExtension)
@@ -1378,7 +1378,7 @@ class ProcurementProjectType
      *  Request For Tender Line
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\RequestForTenderLine $requestForTenderLine
+     * @param  \horstoeko\ubl\entities\cac\RequestForTenderLine $requestForTenderLine
      */
     public function addToRequestForTenderLine(\horstoeko\ubl\entities\cac\RequestForTenderLine $requestForTenderLine)
     {
@@ -1398,7 +1398,7 @@ class ProcurementProjectType
      *  Request For Tender Line
      *  Request For Tender Line
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetRequestForTenderLine($index)
@@ -1418,7 +1418,7 @@ class ProcurementProjectType
      *  Request For Tender Line
      *  Request For Tender Line
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetRequestForTenderLine($index)
@@ -1457,7 +1457,7 @@ class ProcurementProjectType
      *  Request For Tender Line
      *  Request For Tender Line
      *
-     * @param \horstoeko\ubl\entities\cac\RequestForTenderLine[] $requestForTenderLine
+     * @param  \horstoeko\ubl\entities\cac\RequestForTenderLine[] $requestForTenderLine
      * @return self
      */
     public function setRequestForTenderLine(array $requestForTenderLine)

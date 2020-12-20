@@ -369,7 +369,7 @@ class TenderLineType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -391,7 +391,7 @@ class TenderLineType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param  \horstoeko\ubl\entities\cbc\Note $note
      */
     public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
     {
@@ -411,7 +411,7 @@ class TenderLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNote($index)
@@ -431,7 +431,7 @@ class TenderLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNote($index)
@@ -470,7 +470,7 @@ class TenderLineType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note[] $note
+     * @param  \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
     public function setNote(array $note)
@@ -510,7 +510,7 @@ class TenderLineType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Quantity $quantity
+     * @param  \horstoeko\ubl\entities\cbc\Quantity $quantity
      * @return self
      */
     public function setQuantity(\horstoeko\ubl\entities\cbc\Quantity $quantity)
@@ -550,7 +550,7 @@ class TenderLineType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LineExtensionAmount $lineExtensionAmount
+     * @param  \horstoeko\ubl\entities\cbc\LineExtensionAmount $lineExtensionAmount
      * @return self
      */
     public function setLineExtensionAmount(\horstoeko\ubl\entities\cbc\LineExtensionAmount $lineExtensionAmount)
@@ -592,7 +592,7 @@ class TenderLineType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TotalTaxAmount $totalTaxAmount
+     * @param  \horstoeko\ubl\entities\cbc\TotalTaxAmount $totalTaxAmount
      * @return self
      */
     public function setTotalTaxAmount(\horstoeko\ubl\entities\cbc\TotalTaxAmount $totalTaxAmount)
@@ -634,7 +634,7 @@ class TenderLineType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\OrderableUnit $orderableUnit
+     * @param  \horstoeko\ubl\entities\cbc\OrderableUnit $orderableUnit
      * @return self
      */
     public function setOrderableUnit(\horstoeko\ubl\entities\cbc\OrderableUnit $orderableUnit)
@@ -676,7 +676,7 @@ class TenderLineType
      *  Quantity. Type
      *  If order unit measure identifier is each , then content unit quantity is 1 .
      *
-     * @param \horstoeko\ubl\entities\cbc\ContentUnitQuantity $contentUnitQuantity
+     * @param  \horstoeko\ubl\entities\cbc\ContentUnitQuantity $contentUnitQuantity
      * @return self
      */
     public function setContentUnitQuantity(\horstoeko\ubl\entities\cbc\ContentUnitQuantity $contentUnitQuantity)
@@ -716,7 +716,7 @@ class TenderLineType
      *  Numeric
      *  Numeric. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\OrderQuantityIncrementNumeric $orderQuantityIncrementNumeric
+     * @param  \horstoeko\ubl\entities\cbc\OrderQuantityIncrementNumeric $orderQuantityIncrementNumeric
      * @return self
      */
     public function setOrderQuantityIncrementNumeric(\horstoeko\ubl\entities\cbc\OrderQuantityIncrementNumeric $orderQuantityIncrementNumeric)
@@ -760,7 +760,7 @@ class TenderLineType
      *  Quantity. Type
      *  10 boxes
      *
-     * @param \horstoeko\ubl\entities\cbc\MinimumOrderQuantity $minimumOrderQuantity
+     * @param  \horstoeko\ubl\entities\cbc\MinimumOrderQuantity $minimumOrderQuantity
      * @return self
      */
     public function setMinimumOrderQuantity(\horstoeko\ubl\entities\cbc\MinimumOrderQuantity $minimumOrderQuantity)
@@ -804,7 +804,7 @@ class TenderLineType
      *  Quantity. Type
      *  1 tonne
      *
-     * @param \horstoeko\ubl\entities\cbc\MaximumOrderQuantity $maximumOrderQuantity
+     * @param  \horstoeko\ubl\entities\cbc\MaximumOrderQuantity $maximumOrderQuantity
      * @return self
      */
     public function setMaximumOrderQuantity(\horstoeko\ubl\entities\cbc\MaximumOrderQuantity $maximumOrderQuantity)
@@ -828,7 +828,7 @@ class TenderLineType
      *  Unless specified otherwise and in addition to any rights the Customer may have under statute, Dell warrants to the Customer that Dell branded Products (excluding third party products and software), will be free from defects in materials and workmanship affecting normal use for a period of one year from invoice date ( Standard Warranty ).
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\WarrantyInformation $warrantyInformation
+     * @param  \horstoeko\ubl\entities\cbc\WarrantyInformation $warrantyInformation
      */
     public function addToWarrantyInformation(\horstoeko\ubl\entities\cbc\WarrantyInformation $warrantyInformation)
     {
@@ -850,7 +850,7 @@ class TenderLineType
      *  Text. Type
      *  Unless specified otherwise and in addition to any rights the Customer may have under statute, Dell warrants to the Customer that Dell branded Products (excluding third party products and software), will be free from defects in materials and workmanship affecting normal use for a period of one year from invoice date ( Standard Warranty ).
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetWarrantyInformation($index)
@@ -872,7 +872,7 @@ class TenderLineType
      *  Text. Type
      *  Unless specified otherwise and in addition to any rights the Customer may have under statute, Dell warrants to the Customer that Dell branded Products (excluding third party products and software), will be free from defects in materials and workmanship affecting normal use for a period of one year from invoice date ( Standard Warranty ).
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetWarrantyInformation($index)
@@ -915,7 +915,7 @@ class TenderLineType
      *  Text. Type
      *  Unless specified otherwise and in addition to any rights the Customer may have under statute, Dell warrants to the Customer that Dell branded Products (excluding third party products and software), will be free from defects in materials and workmanship affecting normal use for a period of one year from invoice date ( Standard Warranty ).
      *
-     * @param \horstoeko\ubl\entities\cbc\WarrantyInformation[] $warrantyInformation
+     * @param  \horstoeko\ubl\entities\cbc\WarrantyInformation[] $warrantyInformation
      * @return self
      */
     public function setWarrantyInformation(array $warrantyInformation)
@@ -959,7 +959,7 @@ class TenderLineType
      *  Consumer Unit, Trading Unit
      *  level 2 , Group 4
      *
-     * @param \horstoeko\ubl\entities\cbc\PackLevelCode $packLevelCode
+     * @param  \horstoeko\ubl\entities\cbc\PackLevelCode $packLevelCode
      * @return self
      */
     public function setPackLevelCode(\horstoeko\ubl\entities\cbc\PackLevelCode $packLevelCode)
@@ -981,7 +981,7 @@ class TenderLineType
      *  Document Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\DocumentReference $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference $documentReference
      */
     public function addToDocumentReference(\horstoeko\ubl\entities\cac\DocumentReference $documentReference)
     {
@@ -1001,7 +1001,7 @@ class TenderLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDocumentReference($index)
@@ -1021,7 +1021,7 @@ class TenderLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDocumentReference($index)
@@ -1060,7 +1060,7 @@ class TenderLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\DocumentReference[] $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference[] $documentReference
      * @return self
      */
     public function setDocumentReference(array $documentReference)
@@ -1100,7 +1100,7 @@ class TenderLineType
      *  Item
      *  Item
      *
-     * @param \horstoeko\ubl\entities\cac\Item $item
+     * @param  \horstoeko\ubl\entities\cac\Item $item
      * @return self
      */
     public function setItem(\horstoeko\ubl\entities\cac\Item $item)
@@ -1123,7 +1123,7 @@ class TenderLineType
      *  Item Location Quantity
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\OfferedItemLocationQuantity $offeredItemLocationQuantity
+     * @param  \horstoeko\ubl\entities\cac\OfferedItemLocationQuantity $offeredItemLocationQuantity
      */
     public function addToOfferedItemLocationQuantity(\horstoeko\ubl\entities\cac\OfferedItemLocationQuantity $offeredItemLocationQuantity)
     {
@@ -1144,7 +1144,7 @@ class TenderLineType
      *  Item Location Quantity
      *  Item Location Quantity
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetOfferedItemLocationQuantity($index)
@@ -1165,7 +1165,7 @@ class TenderLineType
      *  Item Location Quantity
      *  Item Location Quantity
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetOfferedItemLocationQuantity($index)
@@ -1206,7 +1206,7 @@ class TenderLineType
      *  Item Location Quantity
      *  Item Location Quantity
      *
-     * @param \horstoeko\ubl\entities\cac\OfferedItemLocationQuantity[] $offeredItemLocationQuantity
+     * @param  \horstoeko\ubl\entities\cac\OfferedItemLocationQuantity[] $offeredItemLocationQuantity
      * @return self
      */
     public function setOfferedItemLocationQuantity(array $offeredItemLocationQuantity)
@@ -1229,7 +1229,7 @@ class TenderLineType
      *  Related Item
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ReplacementRelatedItem $replacementRelatedItem
+     * @param  \horstoeko\ubl\entities\cac\ReplacementRelatedItem $replacementRelatedItem
      */
     public function addToReplacementRelatedItem(\horstoeko\ubl\entities\cac\ReplacementRelatedItem $replacementRelatedItem)
     {
@@ -1250,7 +1250,7 @@ class TenderLineType
      *  Related Item
      *  Related Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetReplacementRelatedItem($index)
@@ -1271,7 +1271,7 @@ class TenderLineType
      *  Related Item
      *  Related Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetReplacementRelatedItem($index)
@@ -1312,7 +1312,7 @@ class TenderLineType
      *  Related Item
      *  Related Item
      *
-     * @param \horstoeko\ubl\entities\cac\ReplacementRelatedItem[] $replacementRelatedItem
+     * @param  \horstoeko\ubl\entities\cac\ReplacementRelatedItem[] $replacementRelatedItem
      * @return self
      */
     public function setReplacementRelatedItem(array $replacementRelatedItem)
@@ -1354,7 +1354,7 @@ class TenderLineType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\WarrantyParty $warrantyParty
+     * @param  \horstoeko\ubl\entities\cac\WarrantyParty $warrantyParty
      * @return self
      */
     public function setWarrantyParty(\horstoeko\ubl\entities\cac\WarrantyParty $warrantyParty)
@@ -1396,7 +1396,7 @@ class TenderLineType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\WarrantyValidityPeriod $warrantyValidityPeriod
+     * @param  \horstoeko\ubl\entities\cac\WarrantyValidityPeriod $warrantyValidityPeriod
      * @return self
      */
     public function setWarrantyValidityPeriod(\horstoeko\ubl\entities\cac\WarrantyValidityPeriod $warrantyValidityPeriod)
@@ -1419,7 +1419,7 @@ class TenderLineType
      *  Tender Line
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\SubTenderLine $subTenderLine
+     * @param  \horstoeko\ubl\entities\cac\SubTenderLine $subTenderLine
      */
     public function addToSubTenderLine(\horstoeko\ubl\entities\cac\SubTenderLine $subTenderLine)
     {
@@ -1440,7 +1440,7 @@ class TenderLineType
      *  Tender Line
      *  Tender Line
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSubTenderLine($index)
@@ -1461,7 +1461,7 @@ class TenderLineType
      *  Tender Line
      *  Tender Line
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSubTenderLine($index)
@@ -1502,7 +1502,7 @@ class TenderLineType
      *  Tender Line
      *  Tender Line
      *
-     * @param \horstoeko\ubl\entities\cac\SubTenderLine[] $subTenderLine
+     * @param  \horstoeko\ubl\entities\cac\SubTenderLine[] $subTenderLine
      * @return self
      */
     public function setSubTenderLine(array $subTenderLine)
@@ -1544,7 +1544,7 @@ class TenderLineType
      *  Line Reference
      *  Line Reference
      *
-     * @param \horstoeko\ubl\entities\cac\CallForTendersLineReference $callForTendersLineReference
+     * @param  \horstoeko\ubl\entities\cac\CallForTendersLineReference $callForTendersLineReference
      * @return self
      */
     public function setCallForTendersLineReference(\horstoeko\ubl\entities\cac\CallForTendersLineReference $callForTendersLineReference)
@@ -1586,7 +1586,7 @@ class TenderLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\CallForTendersDocumentReference $callForTendersDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\CallForTendersDocumentReference $callForTendersDocumentReference
      * @return self
      */
     public function setCallForTendersDocumentReference(\horstoeko\ubl\entities\cac\CallForTendersDocumentReference $callForTendersDocumentReference)

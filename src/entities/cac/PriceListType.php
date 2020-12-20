@@ -106,7 +106,7 @@ class PriceListType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -148,7 +148,7 @@ class PriceListType
      *  Code. Type
      *  new - announcement only , new and available , deleted - announcement only
      *
-     * @param \horstoeko\ubl\entities\cbc\StatusCode $statusCode
+     * @param  \horstoeko\ubl\entities\cbc\StatusCode $statusCode
      * @return self
      */
     public function setStatusCode(\horstoeko\ubl\entities\cbc\StatusCode $statusCode)
@@ -171,7 +171,7 @@ class PriceListType
      *  Period
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ValidityPeriod $validityPeriod
+     * @param  \horstoeko\ubl\entities\cac\ValidityPeriod $validityPeriod
      */
     public function addToValidityPeriod(\horstoeko\ubl\entities\cac\ValidityPeriod $validityPeriod)
     {
@@ -192,7 +192,7 @@ class PriceListType
      *  Period
      *  Period
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetValidityPeriod($index)
@@ -213,7 +213,7 @@ class PriceListType
      *  Period
      *  Period
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetValidityPeriod($index)
@@ -254,7 +254,7 @@ class PriceListType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\ValidityPeriod[] $validityPeriod
+     * @param  \horstoeko\ubl\entities\cac\ValidityPeriod[] $validityPeriod
      * @return self
      */
     public function setValidityPeriod(array $validityPeriod)
@@ -296,7 +296,7 @@ class PriceListType
      *  Price List
      *  Price List
      *
-     * @param \horstoeko\ubl\entities\cac\PreviousPriceList $previousPriceList
+     * @param  \horstoeko\ubl\entities\cac\PreviousPriceList $previousPriceList
      * @return self
      */
     public function setPreviousPriceList(\horstoeko\ubl\entities\cac\PreviousPriceList $previousPriceList)

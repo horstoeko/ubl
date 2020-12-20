@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\IdentifierType;
 /**
  * Class representing TransportationServiceDetailsURIType
  *
- *
  * XSD Type: TransportationServiceDetailsURIType
  */
 class TransportationServiceDetailsURIType extends IdentifierType

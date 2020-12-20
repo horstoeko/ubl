@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing OccurrenceDateType
  *
- *
  * XSD Type: OccurrenceDateType
  */
 class OccurrenceDateType
@@ -29,7 +28,7 @@ class OccurrenceDateType
     /**
      * Gets or sets the inner value
      *
-     * @param \DateTime $value
+     * @param  \DateTime $value
      * @return \DateTime
      */
     public function value()

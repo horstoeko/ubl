@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\ds;
 /**
  * Class representing SignedInfoType
  *
- *
  * XSD Type: SignedInfoType
  */
 class SignedInfoType
@@ -46,7 +45,7 @@ class SignedInfoType
     /**
      * Sets a new id
      *
-     * @param string $id
+     * @param  string $id
      * @return self
      */
     public function setId($id)
@@ -68,7 +67,7 @@ class SignedInfoType
     /**
      * Sets a new canonicalizationMethod
      *
-     * @param \horstoeko\ubl\entities\ds\CanonicalizationMethod $canonicalizationMethod
+     * @param  \horstoeko\ubl\entities\ds\CanonicalizationMethod $canonicalizationMethod
      * @return self
      */
     public function setCanonicalizationMethod(\horstoeko\ubl\entities\ds\CanonicalizationMethod $canonicalizationMethod)
@@ -90,7 +89,7 @@ class SignedInfoType
     /**
      * Sets a new signatureMethod
      *
-     * @param \horstoeko\ubl\entities\ds\SignatureMethod $signatureMethod
+     * @param  \horstoeko\ubl\entities\ds\SignatureMethod $signatureMethod
      * @return self
      */
     public function setSignatureMethod(\horstoeko\ubl\entities\ds\SignatureMethod $signatureMethod)
@@ -103,7 +102,7 @@ class SignedInfoType
      * Adds as reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\ds\Reference $reference
+     * @param  \horstoeko\ubl\entities\ds\Reference $reference
      */
     public function addToReference(\horstoeko\ubl\entities\ds\Reference $reference)
     {
@@ -114,7 +113,7 @@ class SignedInfoType
     /**
      * isset reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetReference($index)
@@ -125,7 +124,7 @@ class SignedInfoType
     /**
      * unset reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetReference($index)
@@ -146,7 +145,7 @@ class SignedInfoType
     /**
      * Sets a new reference
      *
-     * @param \horstoeko\ubl\entities\ds\Reference[] $reference
+     * @param  \horstoeko\ubl\entities\ds\Reference[] $reference
      * @return self
      */
     public function setReference(array $reference)

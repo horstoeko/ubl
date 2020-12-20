@@ -193,7 +193,7 @@ class TaxCategoryType
      *  Identifier. Type
      *  http://www.unece.org/uncefact/codelist/standard/UNECE_DutyorTaxorFeeCategoryCode_D09B.xsd
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -235,7 +235,7 @@ class TaxCategoryType
      *  Name. Type
      *  Luxury Goods , Wine Equalization , Exempt
      *
-     * @param \horstoeko\ubl\entities\cbc\Name $name
+     * @param  \horstoeko\ubl\entities\cbc\Name $name
      * @return self
      */
     public function setName(\horstoeko\ubl\entities\cbc\Name $name)
@@ -275,7 +275,7 @@ class TaxCategoryType
      *  Percent
      *  Percent. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Percent $percent
+     * @param  \horstoeko\ubl\entities\cbc\Percent $percent
      * @return self
      */
     public function setPercent(\horstoeko\ubl\entities\cbc\Percent $percent)
@@ -315,7 +315,7 @@ class TaxCategoryType
      *  Measure
      *  Measure. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\BaseUnitMeasure $baseUnitMeasure
+     * @param  \horstoeko\ubl\entities\cbc\BaseUnitMeasure $baseUnitMeasure
      * @return self
      */
     public function setBaseUnitMeasure(\horstoeko\ubl\entities\cbc\BaseUnitMeasure $baseUnitMeasure)
@@ -357,7 +357,7 @@ class TaxCategoryType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PerUnitAmount $perUnitAmount
+     * @param  \horstoeko\ubl\entities\cbc\PerUnitAmount $perUnitAmount
      * @return self
      */
     public function setPerUnitAmount(\horstoeko\ubl\entities\cbc\PerUnitAmount $perUnitAmount)
@@ -399,7 +399,7 @@ class TaxCategoryType
      *  Code. Type
      *  http://www.unece.org/uncefact/codelist/standard/UNECE_DutyTaxFeeTypeCode_D09B.xsd
      *
-     * @param \horstoeko\ubl\entities\cbc\TaxExemptionReasonCode $taxExemptionReasonCode
+     * @param  \horstoeko\ubl\entities\cbc\TaxExemptionReasonCode $taxExemptionReasonCode
      * @return self
      */
     public function setTaxExemptionReasonCode(\horstoeko\ubl\entities\cbc\TaxExemptionReasonCode $taxExemptionReasonCode)
@@ -421,7 +421,7 @@ class TaxCategoryType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\TaxExemptionReason $taxExemptionReason
+     * @param  \horstoeko\ubl\entities\cbc\TaxExemptionReason $taxExemptionReason
      */
     public function addToTaxExemptionReason(\horstoeko\ubl\entities\cbc\TaxExemptionReason $taxExemptionReason)
     {
@@ -441,7 +441,7 @@ class TaxCategoryType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTaxExemptionReason($index)
@@ -461,7 +461,7 @@ class TaxCategoryType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTaxExemptionReason($index)
@@ -500,7 +500,7 @@ class TaxCategoryType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TaxExemptionReason[] $taxExemptionReason
+     * @param  \horstoeko\ubl\entities\cbc\TaxExemptionReason[] $taxExemptionReason
      * @return self
      */
     public function setTaxExemptionReason(array $taxExemptionReason)
@@ -540,7 +540,7 @@ class TaxCategoryType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TierRange $tierRange
+     * @param  \horstoeko\ubl\entities\cbc\TierRange $tierRange
      * @return self
      */
     public function setTierRange(\horstoeko\ubl\entities\cbc\TierRange $tierRange)
@@ -580,7 +580,7 @@ class TaxCategoryType
      *  Percent
      *  Percent. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TierRatePercent $tierRatePercent
+     * @param  \horstoeko\ubl\entities\cbc\TierRatePercent $tierRatePercent
      * @return self
      */
     public function setTierRatePercent(\horstoeko\ubl\entities\cbc\TierRatePercent $tierRatePercent)
@@ -620,7 +620,7 @@ class TaxCategoryType
      *  Tax Scheme
      *  Tax Scheme
      *
-     * @param \horstoeko\ubl\entities\cac\TaxScheme $taxScheme
+     * @param  \horstoeko\ubl\entities\cac\TaxScheme $taxScheme
      * @return self
      */
     public function setTaxScheme(\horstoeko\ubl\entities\cac\TaxScheme $taxScheme)

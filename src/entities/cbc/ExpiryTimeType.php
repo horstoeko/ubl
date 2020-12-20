@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing ExpiryTimeType
  *
- *
  * XSD Type: ExpiryTimeType
  */
 class ExpiryTimeType
@@ -29,7 +28,7 @@ class ExpiryTimeType
     /**
      * Gets or sets the inner value
      *
-     * @param \DateTime $value
+     * @param  \DateTime $value
      * @return \DateTime
      */
     public function value()

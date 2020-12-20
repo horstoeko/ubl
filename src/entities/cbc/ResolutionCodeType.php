@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\CodeType;
 /**
  * Class representing ResolutionCodeType
  *
- *
  * XSD Type: ResolutionCodeType
  */
 class ResolutionCodeType extends CodeType

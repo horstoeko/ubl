@@ -257,7 +257,7 @@ class PartyLegalEntityType
      *  Name. Type
      *  Microsoft Corporation
      *
-     * @param \horstoeko\ubl\entities\cbc\RegistrationName $registrationName
+     * @param  \horstoeko\ubl\entities\cbc\RegistrationName $registrationName
      * @return self
      */
     public function setRegistrationName(\horstoeko\ubl\entities\cbc\RegistrationName $registrationName)
@@ -301,7 +301,7 @@ class PartyLegalEntityType
      *  Business Registration Number, Company Number
      *  3556625
      *
-     * @param \horstoeko\ubl\entities\cbc\CompanyID $companyID
+     * @param  \horstoeko\ubl\entities\cbc\CompanyID $companyID
      * @return self
      */
     public function setCompanyID(\horstoeko\ubl\entities\cbc\CompanyID $companyID)
@@ -343,7 +343,7 @@ class PartyLegalEntityType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $registrationDate
+     * @param  \DateTime $registrationDate
      * @return self
      */
     public function setRegistrationDate(\DateTime $registrationDate)
@@ -385,7 +385,7 @@ class PartyLegalEntityType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $registrationExpirationDate
+     * @param  \DateTime $registrationExpirationDate
      * @return self
      */
     public function setRegistrationExpirationDate(\DateTime $registrationExpirationDate)
@@ -427,7 +427,7 @@ class PartyLegalEntityType
      *  Code. Type
      *  Legal Status
      *
-     * @param \horstoeko\ubl\entities\cbc\CompanyLegalFormCode $companyLegalFormCode
+     * @param  \horstoeko\ubl\entities\cbc\CompanyLegalFormCode $companyLegalFormCode
      * @return self
      */
     public function setCompanyLegalFormCode(\horstoeko\ubl\entities\cbc\CompanyLegalFormCode $companyLegalFormCode)
@@ -467,7 +467,7 @@ class PartyLegalEntityType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CompanyLegalForm $companyLegalForm
+     * @param  \horstoeko\ubl\entities\cbc\CompanyLegalForm $companyLegalForm
      * @return self
      */
     public function setCompanyLegalForm(\horstoeko\ubl\entities\cbc\CompanyLegalForm $companyLegalForm)
@@ -507,7 +507,7 @@ class PartyLegalEntityType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $soleProprietorshipIndicator
+     * @param  bool $soleProprietorshipIndicator
      * @return self
      */
     public function setSoleProprietorshipIndicator($soleProprietorshipIndicator)
@@ -547,7 +547,7 @@ class PartyLegalEntityType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CompanyLiquidationStatusCode $companyLiquidationStatusCode
+     * @param  \horstoeko\ubl\entities\cbc\CompanyLiquidationStatusCode $companyLiquidationStatusCode
      * @return self
      */
     public function setCompanyLiquidationStatusCode(\horstoeko\ubl\entities\cbc\CompanyLiquidationStatusCode $companyLiquidationStatusCode)
@@ -589,7 +589,7 @@ class PartyLegalEntityType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CorporateStockAmount $corporateStockAmount
+     * @param  \horstoeko\ubl\entities\cbc\CorporateStockAmount $corporateStockAmount
      * @return self
      */
     public function setCorporateStockAmount(\horstoeko\ubl\entities\cbc\CorporateStockAmount $corporateStockAmount)
@@ -629,7 +629,7 @@ class PartyLegalEntityType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $fullyPaidSharesIndicator
+     * @param  bool $fullyPaidSharesIndicator
      * @return self
      */
     public function setFullyPaidSharesIndicator($fullyPaidSharesIndicator)
@@ -671,7 +671,7 @@ class PartyLegalEntityType
      *  Address
      *  Address
      *
-     * @param \horstoeko\ubl\entities\cac\RegistrationAddress $registrationAddress
+     * @param  \horstoeko\ubl\entities\cac\RegistrationAddress $registrationAddress
      * @return self
      */
     public function setRegistrationAddress(\horstoeko\ubl\entities\cac\RegistrationAddress $registrationAddress)
@@ -711,7 +711,7 @@ class PartyLegalEntityType
      *  Corporate Registration Scheme
      *  Corporate Registration Scheme
      *
-     * @param \horstoeko\ubl\entities\cac\CorporateRegistrationScheme $corporateRegistrationScheme
+     * @param  \horstoeko\ubl\entities\cac\CorporateRegistrationScheme $corporateRegistrationScheme
      * @return self
      */
     public function setCorporateRegistrationScheme(\horstoeko\ubl\entities\cac\CorporateRegistrationScheme $corporateRegistrationScheme)
@@ -753,7 +753,7 @@ class PartyLegalEntityType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\HeadOfficeParty $headOfficeParty
+     * @param  \horstoeko\ubl\entities\cac\HeadOfficeParty $headOfficeParty
      * @return self
      */
     public function setHeadOfficeParty(\horstoeko\ubl\entities\cac\HeadOfficeParty $headOfficeParty)
@@ -775,7 +775,7 @@ class PartyLegalEntityType
      *  Shareholder Party
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ShareholderParty $shareholderParty
+     * @param  \horstoeko\ubl\entities\cac\ShareholderParty $shareholderParty
      */
     public function addToShareholderParty(\horstoeko\ubl\entities\cac\ShareholderParty $shareholderParty)
     {
@@ -795,7 +795,7 @@ class PartyLegalEntityType
      *  Shareholder Party
      *  Shareholder Party
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetShareholderParty($index)
@@ -815,7 +815,7 @@ class PartyLegalEntityType
      *  Shareholder Party
      *  Shareholder Party
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetShareholderParty($index)
@@ -854,7 +854,7 @@ class PartyLegalEntityType
      *  Shareholder Party
      *  Shareholder Party
      *
-     * @param \horstoeko\ubl\entities\cac\ShareholderParty[] $shareholderParty
+     * @param  \horstoeko\ubl\entities\cac\ShareholderParty[] $shareholderParty
      * @return self
      */
     public function setShareholderParty(array $shareholderParty)

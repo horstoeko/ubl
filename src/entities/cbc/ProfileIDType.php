@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\IdentifierType;
 /**
  * Class representing ProfileIDType
  *
- *
  * XSD Type: ProfileIDType
  */
 class ProfileIDType extends IdentifierType

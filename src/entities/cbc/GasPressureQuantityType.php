@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\QuantityType;
 /**
  * Class representing GasPressureQuantityType
  *
- *
  * XSD Type: GasPressureQuantityType
  */
 class GasPressureQuantityType extends QuantityType

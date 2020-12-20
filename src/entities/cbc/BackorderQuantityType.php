@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\QuantityType;
 /**
  * Class representing BackorderQuantityType
  *
- *
  * XSD Type: BackorderQuantityType
  */
 class BackorderQuantityType extends QuantityType

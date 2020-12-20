@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\CodeType;
 /**
  * Class representing TransitDirectionCodeType
  *
- *
  * XSD Type: TransitDirectionCodeType
  */
 class TransitDirectionCodeType extends CodeType

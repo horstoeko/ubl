@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\MeasureType;
 /**
  * Class representing NetWeightMeasureType
  *
- *
  * XSD Type: NetWeightMeasureType
  */
 class NetWeightMeasureType extends MeasureType

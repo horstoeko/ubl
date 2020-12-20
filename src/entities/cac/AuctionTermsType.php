@@ -161,7 +161,7 @@ class AuctionTermsType
      *  Indicator
      *  Indicator. Type
      *
-     * @param bool $auctionConstraintIndicator
+     * @param  bool $auctionConstraintIndicator
      * @return self
      */
     public function setAuctionConstraintIndicator($auctionConstraintIndicator)
@@ -184,7 +184,7 @@ class AuctionTermsType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\JustificationDescription $justificationDescription
+     * @param  \horstoeko\ubl\entities\cbc\JustificationDescription $justificationDescription
      */
     public function addToJustificationDescription(\horstoeko\ubl\entities\cbc\JustificationDescription $justificationDescription)
     {
@@ -205,7 +205,7 @@ class AuctionTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetJustificationDescription($index)
@@ -226,7 +226,7 @@ class AuctionTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetJustificationDescription($index)
@@ -267,7 +267,7 @@ class AuctionTermsType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\JustificationDescription[] $justificationDescription
+     * @param  \horstoeko\ubl\entities\cbc\JustificationDescription[] $justificationDescription
      * @return self
      */
     public function setJustificationDescription(array $justificationDescription)
@@ -289,7 +289,7 @@ class AuctionTermsType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -309,7 +309,7 @@ class AuctionTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -329,7 +329,7 @@ class AuctionTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -368,7 +368,7 @@ class AuctionTermsType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -391,7 +391,7 @@ class AuctionTermsType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\ProcessDescription $processDescription
+     * @param  \horstoeko\ubl\entities\cbc\ProcessDescription $processDescription
      */
     public function addToProcessDescription(\horstoeko\ubl\entities\cbc\ProcessDescription $processDescription)
     {
@@ -412,7 +412,7 @@ class AuctionTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetProcessDescription($index)
@@ -433,7 +433,7 @@ class AuctionTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetProcessDescription($index)
@@ -474,7 +474,7 @@ class AuctionTermsType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ProcessDescription[] $processDescription
+     * @param  \horstoeko\ubl\entities\cbc\ProcessDescription[] $processDescription
      * @return self
      */
     public function setProcessDescription(array $processDescription)
@@ -497,7 +497,7 @@ class AuctionTermsType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\ConditionsDescription $conditionsDescription
+     * @param  \horstoeko\ubl\entities\cbc\ConditionsDescription $conditionsDescription
      */
     public function addToConditionsDescription(\horstoeko\ubl\entities\cbc\ConditionsDescription $conditionsDescription)
     {
@@ -518,7 +518,7 @@ class AuctionTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetConditionsDescription($index)
@@ -539,7 +539,7 @@ class AuctionTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetConditionsDescription($index)
@@ -580,7 +580,7 @@ class AuctionTermsType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ConditionsDescription[] $conditionsDescription
+     * @param  \horstoeko\ubl\entities\cbc\ConditionsDescription[] $conditionsDescription
      * @return self
      */
     public function setConditionsDescription(array $conditionsDescription)
@@ -603,7 +603,7 @@ class AuctionTermsType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\ElectronicDeviceDescription $electronicDeviceDescription
+     * @param  \horstoeko\ubl\entities\cbc\ElectronicDeviceDescription $electronicDeviceDescription
      */
     public function addToElectronicDeviceDescription(\horstoeko\ubl\entities\cbc\ElectronicDeviceDescription $electronicDeviceDescription)
     {
@@ -624,7 +624,7 @@ class AuctionTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetElectronicDeviceDescription($index)
@@ -645,7 +645,7 @@ class AuctionTermsType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetElectronicDeviceDescription($index)
@@ -686,7 +686,7 @@ class AuctionTermsType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ElectronicDeviceDescription[] $electronicDeviceDescription
+     * @param  \horstoeko\ubl\entities\cbc\ElectronicDeviceDescription[] $electronicDeviceDescription
      * @return self
      */
     public function setElectronicDeviceDescription(array $electronicDeviceDescription)
@@ -728,7 +728,7 @@ class AuctionTermsType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\AuctionURI $auctionURI
+     * @param  \horstoeko\ubl\entities\cbc\AuctionURI $auctionURI
      * @return self
      */
     public function setAuctionURI(\horstoeko\ubl\entities\cbc\AuctionURI $auctionURI)

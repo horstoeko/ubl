@@ -536,7 +536,7 @@ class CatalogueLineType
      *  Identifier. Type
      *  1
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -578,7 +578,7 @@ class CatalogueLineType
      *  Code. Type
      *  Replace , Update , Delete , Add
      *
-     * @param \horstoeko\ubl\entities\cbc\ActionCode $actionCode
+     * @param  \horstoeko\ubl\entities\cbc\ActionCode $actionCode
      * @return self
      */
     public function setActionCode(\horstoeko\ubl\entities\cbc\ActionCode $actionCode)
@@ -620,7 +620,7 @@ class CatalogueLineType
      *  Code. Type
      *  new - announcement only , new and available , deleted - announcement only
      *
-     * @param \horstoeko\ubl\entities\cbc\LifeCycleStatusCode $lifeCycleStatusCode
+     * @param  \horstoeko\ubl\entities\cbc\LifeCycleStatusCode $lifeCycleStatusCode
      * @return self
      */
     public function setLifeCycleStatusCode(\horstoeko\ubl\entities\cbc\LifeCycleStatusCode $lifeCycleStatusCode)
@@ -662,7 +662,7 @@ class CatalogueLineType
      *  Text. Type
      *  Installation , Phase One , Support and Maintenance
      *
-     * @param \horstoeko\ubl\entities\cbc\ContractSubdivision $contractSubdivision
+     * @param  \horstoeko\ubl\entities\cbc\ContractSubdivision $contractSubdivision
      * @return self
      */
     public function setContractSubdivision(\horstoeko\ubl\entities\cbc\ContractSubdivision $contractSubdivision)
@@ -684,7 +684,7 @@ class CatalogueLineType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param  \horstoeko\ubl\entities\cbc\Note $note
      */
     public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
     {
@@ -704,7 +704,7 @@ class CatalogueLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNote($index)
@@ -724,7 +724,7 @@ class CatalogueLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNote($index)
@@ -763,7 +763,7 @@ class CatalogueLineType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note[] $note
+     * @param  \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
     public function setNote(array $note)
@@ -807,7 +807,7 @@ class CatalogueLineType
      *  Indicator. Type
      *  TRUE means orderable, FALSE means not orderable
      *
-     * @param bool $orderableIndicator
+     * @param  bool $orderableIndicator
      * @return self
      */
     public function setOrderableIndicator($orderableIndicator)
@@ -849,7 +849,7 @@ class CatalogueLineType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\OrderableUnit $orderableUnit
+     * @param  \horstoeko\ubl\entities\cbc\OrderableUnit $orderableUnit
      * @return self
      */
     public function setOrderableUnit(\horstoeko\ubl\entities\cbc\OrderableUnit $orderableUnit)
@@ -891,7 +891,7 @@ class CatalogueLineType
      *  Quantity. Type
      *  If order unit measure identifier is each , then content unit quantity is 1 .
      *
-     * @param \horstoeko\ubl\entities\cbc\ContentUnitQuantity $contentUnitQuantity
+     * @param  \horstoeko\ubl\entities\cbc\ContentUnitQuantity $contentUnitQuantity
      * @return self
      */
     public function setContentUnitQuantity(\horstoeko\ubl\entities\cbc\ContentUnitQuantity $contentUnitQuantity)
@@ -931,7 +931,7 @@ class CatalogueLineType
      *  Numeric
      *  Numeric. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\OrderQuantityIncrementNumeric $orderQuantityIncrementNumeric
+     * @param  \horstoeko\ubl\entities\cbc\OrderQuantityIncrementNumeric $orderQuantityIncrementNumeric
      * @return self
      */
     public function setOrderQuantityIncrementNumeric(\horstoeko\ubl\entities\cbc\OrderQuantityIncrementNumeric $orderQuantityIncrementNumeric)
@@ -975,7 +975,7 @@ class CatalogueLineType
      *  Quantity. Type
      *  10 boxes
      *
-     * @param \horstoeko\ubl\entities\cbc\MinimumOrderQuantity $minimumOrderQuantity
+     * @param  \horstoeko\ubl\entities\cbc\MinimumOrderQuantity $minimumOrderQuantity
      * @return self
      */
     public function setMinimumOrderQuantity(\horstoeko\ubl\entities\cbc\MinimumOrderQuantity $minimumOrderQuantity)
@@ -1019,7 +1019,7 @@ class CatalogueLineType
      *  Quantity. Type
      *  1 tonne
      *
-     * @param \horstoeko\ubl\entities\cbc\MaximumOrderQuantity $maximumOrderQuantity
+     * @param  \horstoeko\ubl\entities\cbc\MaximumOrderQuantity $maximumOrderQuantity
      * @return self
      */
     public function setMaximumOrderQuantity(\horstoeko\ubl\entities\cbc\MaximumOrderQuantity $maximumOrderQuantity)
@@ -1043,7 +1043,7 @@ class CatalogueLineType
      *  Unless specified otherwise and in addition to any rights the Customer may have under statute, Dell warrants to the Customer that Dell branded Products (excluding third party products and software), will be free from defects in materials and workmanship affecting normal use for a period of one year from invoice date ( Standard Warranty ).
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\WarrantyInformation $warrantyInformation
+     * @param  \horstoeko\ubl\entities\cbc\WarrantyInformation $warrantyInformation
      */
     public function addToWarrantyInformation(\horstoeko\ubl\entities\cbc\WarrantyInformation $warrantyInformation)
     {
@@ -1065,7 +1065,7 @@ class CatalogueLineType
      *  Text. Type
      *  Unless specified otherwise and in addition to any rights the Customer may have under statute, Dell warrants to the Customer that Dell branded Products (excluding third party products and software), will be free from defects in materials and workmanship affecting normal use for a period of one year from invoice date ( Standard Warranty ).
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetWarrantyInformation($index)
@@ -1087,7 +1087,7 @@ class CatalogueLineType
      *  Text. Type
      *  Unless specified otherwise and in addition to any rights the Customer may have under statute, Dell warrants to the Customer that Dell branded Products (excluding third party products and software), will be free from defects in materials and workmanship affecting normal use for a period of one year from invoice date ( Standard Warranty ).
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetWarrantyInformation($index)
@@ -1130,7 +1130,7 @@ class CatalogueLineType
      *  Text. Type
      *  Unless specified otherwise and in addition to any rights the Customer may have under statute, Dell warrants to the Customer that Dell branded Products (excluding third party products and software), will be free from defects in materials and workmanship affecting normal use for a period of one year from invoice date ( Standard Warranty ).
      *
-     * @param \horstoeko\ubl\entities\cbc\WarrantyInformation[] $warrantyInformation
+     * @param  \horstoeko\ubl\entities\cbc\WarrantyInformation[] $warrantyInformation
      * @return self
      */
     public function setWarrantyInformation(array $warrantyInformation)
@@ -1174,7 +1174,7 @@ class CatalogueLineType
      *  Consumer Unit, Trading Unit
      *  level 2 , Group 4
      *
-     * @param \horstoeko\ubl\entities\cbc\PackLevelCode $packLevelCode
+     * @param  \horstoeko\ubl\entities\cbc\PackLevelCode $packLevelCode
      * @return self
      */
     public function setPackLevelCode(\horstoeko\ubl\entities\cbc\PackLevelCode $packLevelCode)
@@ -1216,7 +1216,7 @@ class CatalogueLineType
      *  Customer Party
      *  Customer Party
      *
-     * @param \horstoeko\ubl\entities\cac\ContractorCustomerParty $contractorCustomerParty
+     * @param  \horstoeko\ubl\entities\cac\ContractorCustomerParty $contractorCustomerParty
      * @return self
      */
     public function setContractorCustomerParty(\horstoeko\ubl\entities\cac\ContractorCustomerParty $contractorCustomerParty)
@@ -1258,7 +1258,7 @@ class CatalogueLineType
      *  Supplier Party
      *  Supplier Party
      *
-     * @param \horstoeko\ubl\entities\cac\SellerSupplierParty $sellerSupplierParty
+     * @param  \horstoeko\ubl\entities\cac\SellerSupplierParty $sellerSupplierParty
      * @return self
      */
     public function setSellerSupplierParty(\horstoeko\ubl\entities\cac\SellerSupplierParty $sellerSupplierParty)
@@ -1300,7 +1300,7 @@ class CatalogueLineType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\WarrantyParty $warrantyParty
+     * @param  \horstoeko\ubl\entities\cac\WarrantyParty $warrantyParty
      * @return self
      */
     public function setWarrantyParty(\horstoeko\ubl\entities\cac\WarrantyParty $warrantyParty)
@@ -1342,7 +1342,7 @@ class CatalogueLineType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\WarrantyValidityPeriod $warrantyValidityPeriod
+     * @param  \horstoeko\ubl\entities\cac\WarrantyValidityPeriod $warrantyValidityPeriod
      * @return self
      */
     public function setWarrantyValidityPeriod(\horstoeko\ubl\entities\cac\WarrantyValidityPeriod $warrantyValidityPeriod)
@@ -1384,7 +1384,7 @@ class CatalogueLineType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\LineValidityPeriod $lineValidityPeriod
+     * @param  \horstoeko\ubl\entities\cac\LineValidityPeriod $lineValidityPeriod
      * @return self
      */
     public function setLineValidityPeriod(\horstoeko\ubl\entities\cac\LineValidityPeriod $lineValidityPeriod)
@@ -1406,7 +1406,7 @@ class CatalogueLineType
      *  Item Comparison
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ItemComparison $itemComparison
+     * @param  \horstoeko\ubl\entities\cac\ItemComparison $itemComparison
      */
     public function addToItemComparison(\horstoeko\ubl\entities\cac\ItemComparison $itemComparison)
     {
@@ -1426,7 +1426,7 @@ class CatalogueLineType
      *  Item Comparison
      *  Item Comparison
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetItemComparison($index)
@@ -1446,7 +1446,7 @@ class CatalogueLineType
      *  Item Comparison
      *  Item Comparison
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetItemComparison($index)
@@ -1485,7 +1485,7 @@ class CatalogueLineType
      *  Item Comparison
      *  Item Comparison
      *
-     * @param \horstoeko\ubl\entities\cac\ItemComparison[] $itemComparison
+     * @param  \horstoeko\ubl\entities\cac\ItemComparison[] $itemComparison
      * @return self
      */
     public function setItemComparison(array $itemComparison)
@@ -1508,7 +1508,7 @@ class CatalogueLineType
      *  Related Item
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ComponentRelatedItem $componentRelatedItem
+     * @param  \horstoeko\ubl\entities\cac\ComponentRelatedItem $componentRelatedItem
      */
     public function addToComponentRelatedItem(\horstoeko\ubl\entities\cac\ComponentRelatedItem $componentRelatedItem)
     {
@@ -1529,7 +1529,7 @@ class CatalogueLineType
      *  Related Item
      *  Related Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetComponentRelatedItem($index)
@@ -1550,7 +1550,7 @@ class CatalogueLineType
      *  Related Item
      *  Related Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetComponentRelatedItem($index)
@@ -1591,7 +1591,7 @@ class CatalogueLineType
      *  Related Item
      *  Related Item
      *
-     * @param \horstoeko\ubl\entities\cac\ComponentRelatedItem[] $componentRelatedItem
+     * @param  \horstoeko\ubl\entities\cac\ComponentRelatedItem[] $componentRelatedItem
      * @return self
      */
     public function setComponentRelatedItem(array $componentRelatedItem)
@@ -1614,7 +1614,7 @@ class CatalogueLineType
      *  Related Item
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\AccessoryRelatedItem $accessoryRelatedItem
+     * @param  \horstoeko\ubl\entities\cac\AccessoryRelatedItem $accessoryRelatedItem
      */
     public function addToAccessoryRelatedItem(\horstoeko\ubl\entities\cac\AccessoryRelatedItem $accessoryRelatedItem)
     {
@@ -1635,7 +1635,7 @@ class CatalogueLineType
      *  Related Item
      *  Related Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAccessoryRelatedItem($index)
@@ -1656,7 +1656,7 @@ class CatalogueLineType
      *  Related Item
      *  Related Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAccessoryRelatedItem($index)
@@ -1697,7 +1697,7 @@ class CatalogueLineType
      *  Related Item
      *  Related Item
      *
-     * @param \horstoeko\ubl\entities\cac\AccessoryRelatedItem[] $accessoryRelatedItem
+     * @param  \horstoeko\ubl\entities\cac\AccessoryRelatedItem[] $accessoryRelatedItem
      * @return self
      */
     public function setAccessoryRelatedItem(array $accessoryRelatedItem)
@@ -1720,7 +1720,7 @@ class CatalogueLineType
      *  Related Item
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\RequiredRelatedItem $requiredRelatedItem
+     * @param  \horstoeko\ubl\entities\cac\RequiredRelatedItem $requiredRelatedItem
      */
     public function addToRequiredRelatedItem(\horstoeko\ubl\entities\cac\RequiredRelatedItem $requiredRelatedItem)
     {
@@ -1741,7 +1741,7 @@ class CatalogueLineType
      *  Related Item
      *  Related Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetRequiredRelatedItem($index)
@@ -1762,7 +1762,7 @@ class CatalogueLineType
      *  Related Item
      *  Related Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetRequiredRelatedItem($index)
@@ -1803,7 +1803,7 @@ class CatalogueLineType
      *  Related Item
      *  Related Item
      *
-     * @param \horstoeko\ubl\entities\cac\RequiredRelatedItem[] $requiredRelatedItem
+     * @param  \horstoeko\ubl\entities\cac\RequiredRelatedItem[] $requiredRelatedItem
      * @return self
      */
     public function setRequiredRelatedItem(array $requiredRelatedItem)
@@ -1826,7 +1826,7 @@ class CatalogueLineType
      *  Related Item
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ReplacementRelatedItem $replacementRelatedItem
+     * @param  \horstoeko\ubl\entities\cac\ReplacementRelatedItem $replacementRelatedItem
      */
     public function addToReplacementRelatedItem(\horstoeko\ubl\entities\cac\ReplacementRelatedItem $replacementRelatedItem)
     {
@@ -1847,7 +1847,7 @@ class CatalogueLineType
      *  Related Item
      *  Related Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetReplacementRelatedItem($index)
@@ -1868,7 +1868,7 @@ class CatalogueLineType
      *  Related Item
      *  Related Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetReplacementRelatedItem($index)
@@ -1909,7 +1909,7 @@ class CatalogueLineType
      *  Related Item
      *  Related Item
      *
-     * @param \horstoeko\ubl\entities\cac\ReplacementRelatedItem[] $replacementRelatedItem
+     * @param  \horstoeko\ubl\entities\cac\ReplacementRelatedItem[] $replacementRelatedItem
      * @return self
      */
     public function setReplacementRelatedItem(array $replacementRelatedItem)
@@ -1932,7 +1932,7 @@ class CatalogueLineType
      *  Related Item
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ComplementaryRelatedItem $complementaryRelatedItem
+     * @param  \horstoeko\ubl\entities\cac\ComplementaryRelatedItem $complementaryRelatedItem
      */
     public function addToComplementaryRelatedItem(\horstoeko\ubl\entities\cac\ComplementaryRelatedItem $complementaryRelatedItem)
     {
@@ -1953,7 +1953,7 @@ class CatalogueLineType
      *  Related Item
      *  Related Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetComplementaryRelatedItem($index)
@@ -1974,7 +1974,7 @@ class CatalogueLineType
      *  Related Item
      *  Related Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetComplementaryRelatedItem($index)
@@ -2015,7 +2015,7 @@ class CatalogueLineType
      *  Related Item
      *  Related Item
      *
-     * @param \horstoeko\ubl\entities\cac\ComplementaryRelatedItem[] $complementaryRelatedItem
+     * @param  \horstoeko\ubl\entities\cac\ComplementaryRelatedItem[] $complementaryRelatedItem
      * @return self
      */
     public function setComplementaryRelatedItem(array $complementaryRelatedItem)
@@ -2038,7 +2038,7 @@ class CatalogueLineType
      *  Related Item
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ReplacedRelatedItem $replacedRelatedItem
+     * @param  \horstoeko\ubl\entities\cac\ReplacedRelatedItem $replacedRelatedItem
      */
     public function addToReplacedRelatedItem(\horstoeko\ubl\entities\cac\ReplacedRelatedItem $replacedRelatedItem)
     {
@@ -2059,7 +2059,7 @@ class CatalogueLineType
      *  Related Item
      *  Related Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetReplacedRelatedItem($index)
@@ -2080,7 +2080,7 @@ class CatalogueLineType
      *  Related Item
      *  Related Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetReplacedRelatedItem($index)
@@ -2121,7 +2121,7 @@ class CatalogueLineType
      *  Related Item
      *  Related Item
      *
-     * @param \horstoeko\ubl\entities\cac\ReplacedRelatedItem[] $replacedRelatedItem
+     * @param  \horstoeko\ubl\entities\cac\ReplacedRelatedItem[] $replacedRelatedItem
      * @return self
      */
     public function setReplacedRelatedItem(array $replacedRelatedItem)
@@ -2144,7 +2144,7 @@ class CatalogueLineType
      *  Item Location Quantity
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\RequiredItemLocationQuantity $requiredItemLocationQuantity
+     * @param  \horstoeko\ubl\entities\cac\RequiredItemLocationQuantity $requiredItemLocationQuantity
      */
     public function addToRequiredItemLocationQuantity(\horstoeko\ubl\entities\cac\RequiredItemLocationQuantity $requiredItemLocationQuantity)
     {
@@ -2165,7 +2165,7 @@ class CatalogueLineType
      *  Item Location Quantity
      *  Item Location Quantity
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetRequiredItemLocationQuantity($index)
@@ -2186,7 +2186,7 @@ class CatalogueLineType
      *  Item Location Quantity
      *  Item Location Quantity
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetRequiredItemLocationQuantity($index)
@@ -2227,7 +2227,7 @@ class CatalogueLineType
      *  Item Location Quantity
      *  Item Location Quantity
      *
-     * @param \horstoeko\ubl\entities\cac\RequiredItemLocationQuantity[] $requiredItemLocationQuantity
+     * @param  \horstoeko\ubl\entities\cac\RequiredItemLocationQuantity[] $requiredItemLocationQuantity
      * @return self
      */
     public function setRequiredItemLocationQuantity(array $requiredItemLocationQuantity)
@@ -2249,7 +2249,7 @@ class CatalogueLineType
      *  Document Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\DocumentReference $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference $documentReference
      */
     public function addToDocumentReference(\horstoeko\ubl\entities\cac\DocumentReference $documentReference)
     {
@@ -2269,7 +2269,7 @@ class CatalogueLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDocumentReference($index)
@@ -2289,7 +2289,7 @@ class CatalogueLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDocumentReference($index)
@@ -2328,7 +2328,7 @@ class CatalogueLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\DocumentReference[] $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference[] $documentReference
      * @return self
      */
     public function setDocumentReference(array $documentReference)
@@ -2368,7 +2368,7 @@ class CatalogueLineType
      *  Item
      *  Item
      *
-     * @param \horstoeko\ubl\entities\cac\Item $item
+     * @param  \horstoeko\ubl\entities\cac\Item $item
      * @return self
      */
     public function setItem(\horstoeko\ubl\entities\cac\Item $item)
@@ -2391,7 +2391,7 @@ class CatalogueLineType
      *  Item Property
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\KeywordItemProperty $keywordItemProperty
+     * @param  \horstoeko\ubl\entities\cac\KeywordItemProperty $keywordItemProperty
      */
     public function addToKeywordItemProperty(\horstoeko\ubl\entities\cac\KeywordItemProperty $keywordItemProperty)
     {
@@ -2412,7 +2412,7 @@ class CatalogueLineType
      *  Item Property
      *  Item Property
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetKeywordItemProperty($index)
@@ -2433,7 +2433,7 @@ class CatalogueLineType
      *  Item Property
      *  Item Property
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetKeywordItemProperty($index)
@@ -2474,7 +2474,7 @@ class CatalogueLineType
      *  Item Property
      *  Item Property
      *
-     * @param \horstoeko\ubl\entities\cac\KeywordItemProperty[] $keywordItemProperty
+     * @param  \horstoeko\ubl\entities\cac\KeywordItemProperty[] $keywordItemProperty
      * @return self
      */
     public function setKeywordItemProperty(array $keywordItemProperty)
@@ -2516,7 +2516,7 @@ class CatalogueLineType
      *  Line Reference
      *  Line Reference
      *
-     * @param \horstoeko\ubl\entities\cac\CallForTendersLineReference $callForTendersLineReference
+     * @param  \horstoeko\ubl\entities\cac\CallForTendersLineReference $callForTendersLineReference
      * @return self
      */
     public function setCallForTendersLineReference(\horstoeko\ubl\entities\cac\CallForTendersLineReference $callForTendersLineReference)
@@ -2558,7 +2558,7 @@ class CatalogueLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\CallForTendersDocumentReference $callForTendersDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\CallForTendersDocumentReference $callForTendersDocumentReference
      * @return self
      */
     public function setCallForTendersDocumentReference(\horstoeko\ubl\entities\cac\CallForTendersDocumentReference $callForTendersDocumentReference)

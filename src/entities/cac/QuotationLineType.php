@@ -211,7 +211,7 @@ class QuotationLineType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -233,7 +233,7 @@ class QuotationLineType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param  \horstoeko\ubl\entities\cbc\Note $note
      */
     public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
     {
@@ -253,7 +253,7 @@ class QuotationLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNote($index)
@@ -273,7 +273,7 @@ class QuotationLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNote($index)
@@ -312,7 +312,7 @@ class QuotationLineType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note[] $note
+     * @param  \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
     public function setNote(array $note)
@@ -352,7 +352,7 @@ class QuotationLineType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Quantity $quantity
+     * @param  \horstoeko\ubl\entities\cbc\Quantity $quantity
      * @return self
      */
     public function setQuantity(\horstoeko\ubl\entities\cbc\Quantity $quantity)
@@ -392,7 +392,7 @@ class QuotationLineType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\LineExtensionAmount $lineExtensionAmount
+     * @param  \horstoeko\ubl\entities\cbc\LineExtensionAmount $lineExtensionAmount
      * @return self
      */
     public function setLineExtensionAmount(\horstoeko\ubl\entities\cbc\LineExtensionAmount $lineExtensionAmount)
@@ -434,7 +434,7 @@ class QuotationLineType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TotalTaxAmount $totalTaxAmount
+     * @param  \horstoeko\ubl\entities\cbc\TotalTaxAmount $totalTaxAmount
      * @return self
      */
     public function setTotalTaxAmount(\horstoeko\ubl\entities\cbc\TotalTaxAmount $totalTaxAmount)
@@ -474,7 +474,7 @@ class QuotationLineType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\RequestForQuotationLineID $requestForQuotationLineID
+     * @param  \horstoeko\ubl\entities\cbc\RequestForQuotationLineID $requestForQuotationLineID
      * @return self
      */
     public function setRequestForQuotationLineID(\horstoeko\ubl\entities\cbc\RequestForQuotationLineID $requestForQuotationLineID)
@@ -496,7 +496,7 @@ class QuotationLineType
      *  Document Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\DocumentReference $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference $documentReference
      */
     public function addToDocumentReference(\horstoeko\ubl\entities\cac\DocumentReference $documentReference)
     {
@@ -516,7 +516,7 @@ class QuotationLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDocumentReference($index)
@@ -536,7 +536,7 @@ class QuotationLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDocumentReference($index)
@@ -575,7 +575,7 @@ class QuotationLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\DocumentReference[] $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference[] $documentReference
      * @return self
      */
     public function setDocumentReference(array $documentReference)
@@ -615,7 +615,7 @@ class QuotationLineType
      *  Line Item
      *  Line Item
      *
-     * @param \horstoeko\ubl\entities\cac\LineItem $lineItem
+     * @param  \horstoeko\ubl\entities\cac\LineItem $lineItem
      * @return self
      */
     public function setLineItem(\horstoeko\ubl\entities\cac\LineItem $lineItem)
@@ -638,7 +638,7 @@ class QuotationLineType
      *  Line Item
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\SellerProposedSubstituteLineItem $sellerProposedSubstituteLineItem
+     * @param  \horstoeko\ubl\entities\cac\SellerProposedSubstituteLineItem $sellerProposedSubstituteLineItem
      */
     public function addToSellerProposedSubstituteLineItem(\horstoeko\ubl\entities\cac\SellerProposedSubstituteLineItem $sellerProposedSubstituteLineItem)
     {
@@ -659,7 +659,7 @@ class QuotationLineType
      *  Line Item
      *  Line Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSellerProposedSubstituteLineItem($index)
@@ -680,7 +680,7 @@ class QuotationLineType
      *  Line Item
      *  Line Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSellerProposedSubstituteLineItem($index)
@@ -721,7 +721,7 @@ class QuotationLineType
      *  Line Item
      *  Line Item
      *
-     * @param \horstoeko\ubl\entities\cac\SellerProposedSubstituteLineItem[] $sellerProposedSubstituteLineItem
+     * @param  \horstoeko\ubl\entities\cac\SellerProposedSubstituteLineItem[] $sellerProposedSubstituteLineItem
      * @return self
      */
     public function setSellerProposedSubstituteLineItem(array $sellerProposedSubstituteLineItem)
@@ -744,7 +744,7 @@ class QuotationLineType
      *  Line Item
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\AlternativeLineItem $alternativeLineItem
+     * @param  \horstoeko\ubl\entities\cac\AlternativeLineItem $alternativeLineItem
      */
     public function addToAlternativeLineItem(\horstoeko\ubl\entities\cac\AlternativeLineItem $alternativeLineItem)
     {
@@ -765,7 +765,7 @@ class QuotationLineType
      *  Line Item
      *  Line Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAlternativeLineItem($index)
@@ -786,7 +786,7 @@ class QuotationLineType
      *  Line Item
      *  Line Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAlternativeLineItem($index)
@@ -827,7 +827,7 @@ class QuotationLineType
      *  Line Item
      *  Line Item
      *
-     * @param \horstoeko\ubl\entities\cac\AlternativeLineItem[] $alternativeLineItem
+     * @param  \horstoeko\ubl\entities\cac\AlternativeLineItem[] $alternativeLineItem
      * @return self
      */
     public function setAlternativeLineItem(array $alternativeLineItem)
@@ -869,7 +869,7 @@ class QuotationLineType
      *  Line Reference
      *  Line Reference
      *
-     * @param \horstoeko\ubl\entities\cac\RequestLineReference $requestLineReference
+     * @param  \horstoeko\ubl\entities\cac\RequestLineReference $requestLineReference
      * @return self
      */
     public function setRequestLineReference(\horstoeko\ubl\entities\cac\RequestLineReference $requestLineReference)

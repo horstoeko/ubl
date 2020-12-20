@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing CustomsClearanceServiceInstructionsType
  *
- *
  * XSD Type: CustomsClearanceServiceInstructionsType
  */
 class CustomsClearanceServiceInstructionsType extends TextType

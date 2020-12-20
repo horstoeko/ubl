@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\QuantityType;
 /**
  * Class representing CrewQuantityType
  *
- *
  * XSD Type: CrewQuantityType
  */
 class CrewQuantityType extends QuantityType

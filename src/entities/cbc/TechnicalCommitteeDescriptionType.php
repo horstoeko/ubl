@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing TechnicalCommitteeDescriptionType
  *
- *
  * XSD Type: TechnicalCommitteeDescriptionType
  */
 class TechnicalCommitteeDescriptionType extends TextType

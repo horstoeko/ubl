@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing AwardTimeType
  *
- *
  * XSD Type: AwardTimeType
  */
 class AwardTimeType
@@ -29,7 +28,7 @@ class AwardTimeType
     /**
      * Gets or sets the inner value
      *
-     * @param \DateTime $value
+     * @param  \DateTime $value
      * @return \DateTime
      */
     public function value()

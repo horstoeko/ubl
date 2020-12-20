@@ -90,7 +90,7 @@ class BudgetAccountLineType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -132,7 +132,7 @@ class BudgetAccountLineType
      *  Amount
      *  Amount. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TotalAmount $totalAmount
+     * @param  \horstoeko\ubl\entities\cbc\TotalAmount $totalAmount
      * @return self
      */
     public function setTotalAmount(\horstoeko\ubl\entities\cbc\TotalAmount $totalAmount)
@@ -154,7 +154,7 @@ class BudgetAccountLineType
      *  Budget Account
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\BudgetAccount $budgetAccount
+     * @param  \horstoeko\ubl\entities\cac\BudgetAccount $budgetAccount
      */
     public function addToBudgetAccount(\horstoeko\ubl\entities\cac\BudgetAccount $budgetAccount)
     {
@@ -174,7 +174,7 @@ class BudgetAccountLineType
      *  Budget Account
      *  Budget Account
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetBudgetAccount($index)
@@ -194,7 +194,7 @@ class BudgetAccountLineType
      *  Budget Account
      *  Budget Account
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetBudgetAccount($index)
@@ -233,7 +233,7 @@ class BudgetAccountLineType
      *  Budget Account
      *  Budget Account
      *
-     * @param \horstoeko\ubl\entities\cac\BudgetAccount[] $budgetAccount
+     * @param  \horstoeko\ubl\entities\cac\BudgetAccount[] $budgetAccount
      * @return self
      */
     public function setBudgetAccount(array $budgetAccount)

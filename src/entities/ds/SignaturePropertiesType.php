@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\ds;
 /**
  * Class representing SignaturePropertiesType
  *
- *
  * XSD Type: SignaturePropertiesType
  */
 class SignaturePropertiesType
@@ -36,7 +35,7 @@ class SignaturePropertiesType
     /**
      * Sets a new id
      *
-     * @param string $id
+     * @param  string $id
      * @return self
      */
     public function setId($id)
@@ -49,7 +48,7 @@ class SignaturePropertiesType
      * Adds as signatureProperty
      *
      * @return self
-     * @param \horstoeko\ubl\entities\ds\SignatureProperty $signatureProperty
+     * @param  \horstoeko\ubl\entities\ds\SignatureProperty $signatureProperty
      */
     public function addToSignatureProperty(\horstoeko\ubl\entities\ds\SignatureProperty $signatureProperty)
     {
@@ -60,7 +59,7 @@ class SignaturePropertiesType
     /**
      * isset signatureProperty
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSignatureProperty($index)
@@ -71,7 +70,7 @@ class SignaturePropertiesType
     /**
      * unset signatureProperty
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSignatureProperty($index)
@@ -92,7 +91,7 @@ class SignaturePropertiesType
     /**
      * Sets a new signatureProperty
      *
-     * @param \horstoeko\ubl\entities\ds\SignatureProperty[] $signatureProperty
+     * @param  \horstoeko\ubl\entities\ds\SignatureProperty[] $signatureProperty
      * @return self
      */
     public function setSignatureProperty(array $signatureProperty)

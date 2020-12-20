@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing TierRangeType
  *
- *
  * XSD Type: TierRangeType
  */
 class TierRangeType extends TextType

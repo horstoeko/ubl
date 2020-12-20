@@ -76,7 +76,7 @@ class RailTransportType
      *  Identifier. Type
      *  Train Number (WCO ID 167)
      *
-     * @param \horstoeko\ubl\entities\cbc\TrainID $trainID
+     * @param  \horstoeko\ubl\entities\cbc\TrainID $trainID
      * @return self
      */
     public function setTrainID(\horstoeko\ubl\entities\cbc\TrainID $trainID)
@@ -116,7 +116,7 @@ class RailTransportType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\RailCarID $railCarID
+     * @param  \horstoeko\ubl\entities\cbc\RailCarID $railCarID
      * @return self
      */
     public function setRailCarID(\horstoeko\ubl\entities\cbc\RailCarID $railCarID)

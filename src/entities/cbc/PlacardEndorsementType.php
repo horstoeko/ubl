@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing PlacardEndorsementType
  *
- *
  * XSD Type: PlacardEndorsementType
  */
 class PlacardEndorsementType extends TextType

@@ -162,7 +162,7 @@ class ResultOfVerificationType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ValidatorID $validatorID
+     * @param  \horstoeko\ubl\entities\cbc\ValidatorID $validatorID
      * @return self
      */
     public function setValidatorID(\horstoeko\ubl\entities\cbc\ValidatorID $validatorID)
@@ -204,7 +204,7 @@ class ResultOfVerificationType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ValidationResultCode $validationResultCode
+     * @param  \horstoeko\ubl\entities\cbc\ValidationResultCode $validationResultCode
      * @return self
      */
     public function setValidationResultCode(\horstoeko\ubl\entities\cbc\ValidationResultCode $validationResultCode)
@@ -244,7 +244,7 @@ class ResultOfVerificationType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $validationDate
+     * @param  \DateTime $validationDate
      * @return self
      */
     public function setValidationDate(\DateTime $validationDate)
@@ -284,7 +284,7 @@ class ResultOfVerificationType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $validationTime
+     * @param  \DateTime $validationTime
      * @return self
      */
     public function setValidationTime(\DateTime $validationTime)
@@ -326,7 +326,7 @@ class ResultOfVerificationType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ValidateProcess $validateProcess
+     * @param  \horstoeko\ubl\entities\cbc\ValidateProcess $validateProcess
      * @return self
      */
     public function setValidateProcess(\horstoeko\ubl\entities\cbc\ValidateProcess $validateProcess)
@@ -368,7 +368,7 @@ class ResultOfVerificationType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ValidateTool $validateTool
+     * @param  \horstoeko\ubl\entities\cbc\ValidateTool $validateTool
      * @return self
      */
     public function setValidateTool(\horstoeko\ubl\entities\cbc\ValidateTool $validateTool)
@@ -410,7 +410,7 @@ class ResultOfVerificationType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ValidateToolVersion $validateToolVersion
+     * @param  \horstoeko\ubl\entities\cbc\ValidateToolVersion $validateToolVersion
      * @return self
      */
     public function setValidateToolVersion(\horstoeko\ubl\entities\cbc\ValidateToolVersion $validateToolVersion)
@@ -452,7 +452,7 @@ class ResultOfVerificationType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\SignatoryParty $signatoryParty
+     * @param  \horstoeko\ubl\entities\cac\SignatoryParty $signatoryParty
      * @return self
      */
     public function setSignatoryParty(\horstoeko\ubl\entities\cac\SignatoryParty $signatoryParty)

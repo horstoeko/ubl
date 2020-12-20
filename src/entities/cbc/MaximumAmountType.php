@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\AmountType;
 /**
  * Class representing MaximumAmountType
  *
- *
  * XSD Type: MaximumAmountType
  */
 class MaximumAmountType extends AmountType

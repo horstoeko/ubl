@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing ConsumersEnergyLevelType
  *
- *
  * XSD Type: ConsumersEnergyLevelType
  */
 class ConsumersEnergyLevelType extends TextType

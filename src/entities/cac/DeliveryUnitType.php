@@ -94,7 +94,7 @@ class DeliveryUnitType
      *  Quantity. Type
      *  100 units , by the dozen
      *
-     * @param \horstoeko\ubl\entities\cbc\BatchQuantity $batchQuantity
+     * @param  \horstoeko\ubl\entities\cbc\BatchQuantity $batchQuantity
      * @return self
      */
     public function setBatchQuantity(\horstoeko\ubl\entities\cbc\BatchQuantity $batchQuantity)
@@ -138,7 +138,7 @@ class DeliveryUnitType
      *  Quantity. Type
      *  packs of 10
      *
-     * @param \horstoeko\ubl\entities\cbc\ConsumerUnitQuantity $consumerUnitQuantity
+     * @param  \horstoeko\ubl\entities\cbc\ConsumerUnitQuantity $consumerUnitQuantity
      * @return self
      */
     public function setConsumerUnitQuantity(\horstoeko\ubl\entities\cbc\ConsumerUnitQuantity $consumerUnitQuantity)
@@ -182,7 +182,7 @@ class DeliveryUnitType
      *  Indicator. Type
      *  Default is negative
      *
-     * @param bool $hazardousRiskIndicator
+     * @param  bool $hazardousRiskIndicator
      * @return self
      */
     public function setHazardousRiskIndicator($hazardousRiskIndicator)

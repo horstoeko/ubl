@@ -205,7 +205,7 @@ class OrderLineType
      *  Substitution Status
      *  Substitution Status_ Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SubstitutionStatusCode $substitutionStatusCode
+     * @param  \horstoeko\ubl\entities\cbc\SubstitutionStatusCode $substitutionStatusCode
      * @return self
      */
     public function setSubstitutionStatusCode(\horstoeko\ubl\entities\cbc\SubstitutionStatusCode $substitutionStatusCode)
@@ -227,7 +227,7 @@ class OrderLineType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param  \horstoeko\ubl\entities\cbc\Note $note
      */
     public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
     {
@@ -247,7 +247,7 @@ class OrderLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNote($index)
@@ -267,7 +267,7 @@ class OrderLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNote($index)
@@ -306,7 +306,7 @@ class OrderLineType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note[] $note
+     * @param  \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
     public function setNote(array $note)
@@ -346,7 +346,7 @@ class OrderLineType
      *  Line Item
      *  Line Item
      *
-     * @param \horstoeko\ubl\entities\cac\LineItem $lineItem
+     * @param  \horstoeko\ubl\entities\cac\LineItem $lineItem
      * @return self
      */
     public function setLineItem(\horstoeko\ubl\entities\cac\LineItem $lineItem)
@@ -369,7 +369,7 @@ class OrderLineType
      *  Line Item
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\SellerProposedSubstituteLineItem $sellerProposedSubstituteLineItem
+     * @param  \horstoeko\ubl\entities\cac\SellerProposedSubstituteLineItem $sellerProposedSubstituteLineItem
      */
     public function addToSellerProposedSubstituteLineItem(\horstoeko\ubl\entities\cac\SellerProposedSubstituteLineItem $sellerProposedSubstituteLineItem)
     {
@@ -390,7 +390,7 @@ class OrderLineType
      *  Line Item
      *  Line Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSellerProposedSubstituteLineItem($index)
@@ -411,7 +411,7 @@ class OrderLineType
      *  Line Item
      *  Line Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSellerProposedSubstituteLineItem($index)
@@ -452,7 +452,7 @@ class OrderLineType
      *  Line Item
      *  Line Item
      *
-     * @param \horstoeko\ubl\entities\cac\SellerProposedSubstituteLineItem[] $sellerProposedSubstituteLineItem
+     * @param  \horstoeko\ubl\entities\cac\SellerProposedSubstituteLineItem[] $sellerProposedSubstituteLineItem
      * @return self
      */
     public function setSellerProposedSubstituteLineItem(array $sellerProposedSubstituteLineItem)
@@ -475,7 +475,7 @@ class OrderLineType
      *  Line Item
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\SellerSubstitutedLineItem $sellerSubstitutedLineItem
+     * @param  \horstoeko\ubl\entities\cac\SellerSubstitutedLineItem $sellerSubstitutedLineItem
      */
     public function addToSellerSubstitutedLineItem(\horstoeko\ubl\entities\cac\SellerSubstitutedLineItem $sellerSubstitutedLineItem)
     {
@@ -496,7 +496,7 @@ class OrderLineType
      *  Line Item
      *  Line Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSellerSubstitutedLineItem($index)
@@ -517,7 +517,7 @@ class OrderLineType
      *  Line Item
      *  Line Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSellerSubstitutedLineItem($index)
@@ -558,7 +558,7 @@ class OrderLineType
      *  Line Item
      *  Line Item
      *
-     * @param \horstoeko\ubl\entities\cac\SellerSubstitutedLineItem[] $sellerSubstitutedLineItem
+     * @param  \horstoeko\ubl\entities\cac\SellerSubstitutedLineItem[] $sellerSubstitutedLineItem
      * @return self
      */
     public function setSellerSubstitutedLineItem(array $sellerSubstitutedLineItem)
@@ -581,7 +581,7 @@ class OrderLineType
      *  Line Item
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\BuyerProposedSubstituteLineItem $buyerProposedSubstituteLineItem
+     * @param  \horstoeko\ubl\entities\cac\BuyerProposedSubstituteLineItem $buyerProposedSubstituteLineItem
      */
     public function addToBuyerProposedSubstituteLineItem(\horstoeko\ubl\entities\cac\BuyerProposedSubstituteLineItem $buyerProposedSubstituteLineItem)
     {
@@ -602,7 +602,7 @@ class OrderLineType
      *  Line Item
      *  Line Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetBuyerProposedSubstituteLineItem($index)
@@ -623,7 +623,7 @@ class OrderLineType
      *  Line Item
      *  Line Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetBuyerProposedSubstituteLineItem($index)
@@ -664,7 +664,7 @@ class OrderLineType
      *  Line Item
      *  Line Item
      *
-     * @param \horstoeko\ubl\entities\cac\BuyerProposedSubstituteLineItem[] $buyerProposedSubstituteLineItem
+     * @param  \horstoeko\ubl\entities\cac\BuyerProposedSubstituteLineItem[] $buyerProposedSubstituteLineItem
      * @return self
      */
     public function setBuyerProposedSubstituteLineItem(array $buyerProposedSubstituteLineItem)
@@ -706,7 +706,7 @@ class OrderLineType
      *  Line Reference
      *  Line Reference
      *
-     * @param \horstoeko\ubl\entities\cac\CatalogueLineReference $catalogueLineReference
+     * @param  \horstoeko\ubl\entities\cac\CatalogueLineReference $catalogueLineReference
      * @return self
      */
     public function setCatalogueLineReference(\horstoeko\ubl\entities\cac\CatalogueLineReference $catalogueLineReference)
@@ -748,7 +748,7 @@ class OrderLineType
      *  Line Reference
      *  Line Reference
      *
-     * @param \horstoeko\ubl\entities\cac\QuotationLineReference $quotationLineReference
+     * @param  \horstoeko\ubl\entities\cac\QuotationLineReference $quotationLineReference
      * @return self
      */
     public function setQuotationLineReference(\horstoeko\ubl\entities\cac\QuotationLineReference $quotationLineReference)
@@ -770,7 +770,7 @@ class OrderLineType
      *  Order Line Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\OrderLineReference $orderLineReference
+     * @param  \horstoeko\ubl\entities\cac\OrderLineReference $orderLineReference
      */
     public function addToOrderLineReference(\horstoeko\ubl\entities\cac\OrderLineReference $orderLineReference)
     {
@@ -790,7 +790,7 @@ class OrderLineType
      *  Order Line Reference
      *  Order Line Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetOrderLineReference($index)
@@ -810,7 +810,7 @@ class OrderLineType
      *  Order Line Reference
      *  Order Line Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetOrderLineReference($index)
@@ -849,7 +849,7 @@ class OrderLineType
      *  Order Line Reference
      *  Order Line Reference
      *
-     * @param \horstoeko\ubl\entities\cac\OrderLineReference[] $orderLineReference
+     * @param  \horstoeko\ubl\entities\cac\OrderLineReference[] $orderLineReference
      * @return self
      */
     public function setOrderLineReference(array $orderLineReference)
@@ -871,7 +871,7 @@ class OrderLineType
      *  Document Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\DocumentReference $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference $documentReference
      */
     public function addToDocumentReference(\horstoeko\ubl\entities\cac\DocumentReference $documentReference)
     {
@@ -891,7 +891,7 @@ class OrderLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDocumentReference($index)
@@ -911,7 +911,7 @@ class OrderLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDocumentReference($index)
@@ -950,7 +950,7 @@ class OrderLineType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\DocumentReference[] $documentReference
+     * @param  \horstoeko\ubl\entities\cac\DocumentReference[] $documentReference
      * @return self
      */
     public function setDocumentReference(array $documentReference)

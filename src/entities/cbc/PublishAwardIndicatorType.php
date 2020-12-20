@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing PublishAwardIndicatorType
  *
- *
  * XSD Type: PublishAwardIndicatorType
  */
 class PublishAwardIndicatorType
@@ -29,7 +28,7 @@ class PublishAwardIndicatorType
     /**
      * Gets or sets the inner value
      *
-     * @param bool $value
+     * @param  bool $value
      * @return bool
      */
     public function value()

@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\AmountType;
 /**
  * Class representing TaxEnergyOnAccountAmountType
  *
- *
  * XSD Type: TaxEnergyOnAccountAmountType
  */
 class TaxEnergyOnAccountAmountType extends AmountType

@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing CertIDListType
  *
- *
  * XSD Type: CertIDListType
  */
 class CertIDListType
@@ -22,7 +21,7 @@ class CertIDListType
      * Adds as cert
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\CertIDType $cert
+     * @param  \horstoeko\ubl\entities\xades\CertIDType $cert
      */
     public function addToCert(\horstoeko\ubl\entities\xades\CertIDType $cert)
     {
@@ -33,7 +32,7 @@ class CertIDListType
     /**
      * isset cert
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetCert($index)
@@ -44,7 +43,7 @@ class CertIDListType
     /**
      * unset cert
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetCert($index)
@@ -65,7 +64,7 @@ class CertIDListType
     /**
      * Sets a new cert
      *
-     * @param \horstoeko\ubl\entities\xades\CertIDType[] $cert
+     * @param  \horstoeko\ubl\entities\xades\CertIDType[] $cert
      * @return self
      */
     public function setCert(array $cert)

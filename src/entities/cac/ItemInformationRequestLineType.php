@@ -133,7 +133,7 @@ class ItemInformationRequestLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TimeFrequencyCode $timeFrequencyCode
+     * @param  \horstoeko\ubl\entities\cbc\TimeFrequencyCode $timeFrequencyCode
      * @return self
      */
     public function setTimeFrequencyCode(\horstoeko\ubl\entities\cbc\TimeFrequencyCode $timeFrequencyCode)
@@ -173,7 +173,7 @@ class ItemInformationRequestLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SupplyChainActivityTypeCode $supplyChainActivityTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\SupplyChainActivityTypeCode $supplyChainActivityTypeCode
      * @return self
      */
     public function setSupplyChainActivityTypeCode(\horstoeko\ubl\entities\cbc\SupplyChainActivityTypeCode $supplyChainActivityTypeCode)
@@ -213,7 +213,7 @@ class ItemInformationRequestLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ForecastTypeCode $forecastTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\ForecastTypeCode $forecastTypeCode
      * @return self
      */
     public function setForecastTypeCode(\horstoeko\ubl\entities\cbc\ForecastTypeCode $forecastTypeCode)
@@ -253,7 +253,7 @@ class ItemInformationRequestLineType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\PerformanceMetricTypeCode $performanceMetricTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\PerformanceMetricTypeCode $performanceMetricTypeCode
      * @return self
      */
     public function setPerformanceMetricTypeCode(\horstoeko\ubl\entities\cbc\PerformanceMetricTypeCode $performanceMetricTypeCode)
@@ -275,7 +275,7 @@ class ItemInformationRequestLineType
      *  Period
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Period $period
+     * @param  \horstoeko\ubl\entities\cac\Period $period
      */
     public function addToPeriod(\horstoeko\ubl\entities\cac\Period $period)
     {
@@ -295,7 +295,7 @@ class ItemInformationRequestLineType
      *  Period
      *  Period
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPeriod($index)
@@ -315,7 +315,7 @@ class ItemInformationRequestLineType
      *  Period
      *  Period
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPeriod($index)
@@ -354,7 +354,7 @@ class ItemInformationRequestLineType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\Period[] $period
+     * @param  \horstoeko\ubl\entities\cac\Period[] $period
      * @return self
      */
     public function setPeriod(array $period)
@@ -376,7 +376,7 @@ class ItemInformationRequestLineType
      *  Sales Item
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\SalesItem $salesItem
+     * @param  \horstoeko\ubl\entities\cac\SalesItem $salesItem
      */
     public function addToSalesItem(\horstoeko\ubl\entities\cac\SalesItem $salesItem)
     {
@@ -396,7 +396,7 @@ class ItemInformationRequestLineType
      *  Sales Item
      *  Sales Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSalesItem($index)
@@ -416,7 +416,7 @@ class ItemInformationRequestLineType
      *  Sales Item
      *  Sales Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSalesItem($index)
@@ -455,7 +455,7 @@ class ItemInformationRequestLineType
      *  Sales Item
      *  Sales Item
      *
-     * @param \horstoeko\ubl\entities\cac\SalesItem[] $salesItem
+     * @param  \horstoeko\ubl\entities\cac\SalesItem[] $salesItem
      * @return self
      */
     public function setSalesItem(array $salesItem)

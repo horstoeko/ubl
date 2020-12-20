@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing PaymentOrderReferenceType
  *
- *
  * XSD Type: PaymentOrderReferenceType
  */
 class PaymentOrderReferenceType extends TextType

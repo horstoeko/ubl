@@ -399,7 +399,7 @@ class TransportationServiceType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TransportServiceCode $transportServiceCode
+     * @param  \horstoeko\ubl\entities\cbc\TransportServiceCode $transportServiceCode
      * @return self
      */
     public function setTransportServiceCode(\horstoeko\ubl\entities\cbc\TransportServiceCode $transportServiceCode)
@@ -441,7 +441,7 @@ class TransportationServiceType
      *  Code. Type
      *  Tariff Class Specifier
      *
-     * @param \horstoeko\ubl\entities\cbc\TariffClassCode $tariffClassCode
+     * @param  \horstoeko\ubl\entities\cbc\TariffClassCode $tariffClassCode
      * @return self
      */
     public function setTariffClassCode(\horstoeko\ubl\entities\cbc\TariffClassCode $tariffClassCode)
@@ -481,7 +481,7 @@ class TransportationServiceType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Priority $priority
+     * @param  \horstoeko\ubl\entities\cbc\Priority $priority
      * @return self
      */
     public function setPriority(\horstoeko\ubl\entities\cbc\Priority $priority)
@@ -523,7 +523,7 @@ class TransportationServiceType
      *  Code. Type
      *  Charge Basis
      *
-     * @param \horstoeko\ubl\entities\cbc\FreightRateClassCode $freightRateClassCode
+     * @param  \horstoeko\ubl\entities\cbc\FreightRateClassCode $freightRateClassCode
      * @return self
      */
     public function setFreightRateClassCode(\horstoeko\ubl\entities\cbc\FreightRateClassCode $freightRateClassCode)
@@ -545,7 +545,7 @@ class TransportationServiceType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\TransportationServiceDescription $transportationServiceDescription
+     * @param  \horstoeko\ubl\entities\cbc\TransportationServiceDescription $transportationServiceDescription
      */
     public function addToTransportationServiceDescription(\horstoeko\ubl\entities\cbc\TransportationServiceDescription $transportationServiceDescription)
     {
@@ -565,7 +565,7 @@ class TransportationServiceType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTransportationServiceDescription($index)
@@ -585,7 +585,7 @@ class TransportationServiceType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTransportationServiceDescription($index)
@@ -624,7 +624,7 @@ class TransportationServiceType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TransportationServiceDescription[] $transportationServiceDescription
+     * @param  \horstoeko\ubl\entities\cbc\TransportationServiceDescription[] $transportationServiceDescription
      * @return self
      */
     public function setTransportationServiceDescription(array $transportationServiceDescription)
@@ -664,7 +664,7 @@ class TransportationServiceType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TransportationServiceDetailsURI $transportationServiceDetailsURI
+     * @param  \horstoeko\ubl\entities\cbc\TransportationServiceDetailsURI $transportationServiceDetailsURI
      * @return self
      */
     public function setTransportationServiceDetailsURI(\horstoeko\ubl\entities\cbc\TransportationServiceDetailsURI $transportationServiceDetailsURI)
@@ -704,7 +704,7 @@ class TransportationServiceType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $nominationDate
+     * @param  \DateTime $nominationDate
      * @return self
      */
     public function setNominationDate(\DateTime $nominationDate)
@@ -744,7 +744,7 @@ class TransportationServiceType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $nominationTime
+     * @param  \DateTime $nominationTime
      * @return self
      */
     public function setNominationTime(\DateTime $nominationTime)
@@ -784,7 +784,7 @@ class TransportationServiceType
      *  Name
      *  Name. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Name $name
+     * @param  \horstoeko\ubl\entities\cbc\Name $name
      * @return self
      */
     public function setName(\horstoeko\ubl\entities\cbc\Name $name)
@@ -824,7 +824,7 @@ class TransportationServiceType
      *  Numeric
      *  Numeric. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SequenceNumeric $sequenceNumeric
+     * @param  \horstoeko\ubl\entities\cbc\SequenceNumeric $sequenceNumeric
      * @return self
      */
     public function setSequenceNumeric(\horstoeko\ubl\entities\cbc\SequenceNumeric $sequenceNumeric)
@@ -846,7 +846,7 @@ class TransportationServiceType
      *  Transport Equipment
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\TransportEquipment $transportEquipment
+     * @param  \horstoeko\ubl\entities\cac\TransportEquipment $transportEquipment
      */
     public function addToTransportEquipment(\horstoeko\ubl\entities\cac\TransportEquipment $transportEquipment)
     {
@@ -866,7 +866,7 @@ class TransportationServiceType
      *  Transport Equipment
      *  Transport Equipment
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTransportEquipment($index)
@@ -886,7 +886,7 @@ class TransportationServiceType
      *  Transport Equipment
      *  Transport Equipment
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTransportEquipment($index)
@@ -925,7 +925,7 @@ class TransportationServiceType
      *  Transport Equipment
      *  Transport Equipment
      *
-     * @param \horstoeko\ubl\entities\cac\TransportEquipment[] $transportEquipment
+     * @param  \horstoeko\ubl\entities\cac\TransportEquipment[] $transportEquipment
      * @return self
      */
     public function setTransportEquipment(array $transportEquipment)
@@ -948,7 +948,7 @@ class TransportationServiceType
      *  Transport Equipment
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\SupportedTransportEquipment $supportedTransportEquipment
+     * @param  \horstoeko\ubl\entities\cac\SupportedTransportEquipment $supportedTransportEquipment
      */
     public function addToSupportedTransportEquipment(\horstoeko\ubl\entities\cac\SupportedTransportEquipment $supportedTransportEquipment)
     {
@@ -969,7 +969,7 @@ class TransportationServiceType
      *  Transport Equipment
      *  Transport Equipment
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSupportedTransportEquipment($index)
@@ -990,7 +990,7 @@ class TransportationServiceType
      *  Transport Equipment
      *  Transport Equipment
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSupportedTransportEquipment($index)
@@ -1031,7 +1031,7 @@ class TransportationServiceType
      *  Transport Equipment
      *  Transport Equipment
      *
-     * @param \horstoeko\ubl\entities\cac\SupportedTransportEquipment[] $supportedTransportEquipment
+     * @param  \horstoeko\ubl\entities\cac\SupportedTransportEquipment[] $supportedTransportEquipment
      * @return self
      */
     public function setSupportedTransportEquipment(array $supportedTransportEquipment)
@@ -1054,7 +1054,7 @@ class TransportationServiceType
      *  Transport Equipment
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\UnsupportedTransportEquipment $unsupportedTransportEquipment
+     * @param  \horstoeko\ubl\entities\cac\UnsupportedTransportEquipment $unsupportedTransportEquipment
      */
     public function addToUnsupportedTransportEquipment(\horstoeko\ubl\entities\cac\UnsupportedTransportEquipment $unsupportedTransportEquipment)
     {
@@ -1075,7 +1075,7 @@ class TransportationServiceType
      *  Transport Equipment
      *  Transport Equipment
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetUnsupportedTransportEquipment($index)
@@ -1096,7 +1096,7 @@ class TransportationServiceType
      *  Transport Equipment
      *  Transport Equipment
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetUnsupportedTransportEquipment($index)
@@ -1137,7 +1137,7 @@ class TransportationServiceType
      *  Transport Equipment
      *  Transport Equipment
      *
-     * @param \horstoeko\ubl\entities\cac\UnsupportedTransportEquipment[] $unsupportedTransportEquipment
+     * @param  \horstoeko\ubl\entities\cac\UnsupportedTransportEquipment[] $unsupportedTransportEquipment
      * @return self
      */
     public function setUnsupportedTransportEquipment(array $unsupportedTransportEquipment)
@@ -1159,7 +1159,7 @@ class TransportationServiceType
      *  Commodity Classification
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\CommodityClassification $commodityClassification
+     * @param  \horstoeko\ubl\entities\cac\CommodityClassification $commodityClassification
      */
     public function addToCommodityClassification(\horstoeko\ubl\entities\cac\CommodityClassification $commodityClassification)
     {
@@ -1179,7 +1179,7 @@ class TransportationServiceType
      *  Commodity Classification
      *  Commodity Classification
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetCommodityClassification($index)
@@ -1199,7 +1199,7 @@ class TransportationServiceType
      *  Commodity Classification
      *  Commodity Classification
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetCommodityClassification($index)
@@ -1238,7 +1238,7 @@ class TransportationServiceType
      *  Commodity Classification
      *  Commodity Classification
      *
-     * @param \horstoeko\ubl\entities\cac\CommodityClassification[] $commodityClassification
+     * @param  \horstoeko\ubl\entities\cac\CommodityClassification[] $commodityClassification
      * @return self
      */
     public function setCommodityClassification(array $commodityClassification)
@@ -1261,7 +1261,7 @@ class TransportationServiceType
      *  Commodity Classification
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\SupportedCommodityClassification $supportedCommodityClassification
+     * @param  \horstoeko\ubl\entities\cac\SupportedCommodityClassification $supportedCommodityClassification
      */
     public function addToSupportedCommodityClassification(\horstoeko\ubl\entities\cac\SupportedCommodityClassification $supportedCommodityClassification)
     {
@@ -1282,7 +1282,7 @@ class TransportationServiceType
      *  Commodity Classification
      *  Commodity Classification
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSupportedCommodityClassification($index)
@@ -1303,7 +1303,7 @@ class TransportationServiceType
      *  Commodity Classification
      *  Commodity Classification
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSupportedCommodityClassification($index)
@@ -1344,7 +1344,7 @@ class TransportationServiceType
      *  Commodity Classification
      *  Commodity Classification
      *
-     * @param \horstoeko\ubl\entities\cac\SupportedCommodityClassification[] $supportedCommodityClassification
+     * @param  \horstoeko\ubl\entities\cac\SupportedCommodityClassification[] $supportedCommodityClassification
      * @return self
      */
     public function setSupportedCommodityClassification(array $supportedCommodityClassification)
@@ -1367,7 +1367,7 @@ class TransportationServiceType
      *  Commodity Classification
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\UnsupportedCommodityClassification $unsupportedCommodityClassification
+     * @param  \horstoeko\ubl\entities\cac\UnsupportedCommodityClassification $unsupportedCommodityClassification
      */
     public function addToUnsupportedCommodityClassification(\horstoeko\ubl\entities\cac\UnsupportedCommodityClassification $unsupportedCommodityClassification)
     {
@@ -1388,7 +1388,7 @@ class TransportationServiceType
      *  Commodity Classification
      *  Commodity Classification
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetUnsupportedCommodityClassification($index)
@@ -1409,7 +1409,7 @@ class TransportationServiceType
      *  Commodity Classification
      *  Commodity Classification
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetUnsupportedCommodityClassification($index)
@@ -1450,7 +1450,7 @@ class TransportationServiceType
      *  Commodity Classification
      *  Commodity Classification
      *
-     * @param \horstoeko\ubl\entities\cac\UnsupportedCommodityClassification[] $unsupportedCommodityClassification
+     * @param  \horstoeko\ubl\entities\cac\UnsupportedCommodityClassification[] $unsupportedCommodityClassification
      * @return self
      */
     public function setUnsupportedCommodityClassification(array $unsupportedCommodityClassification)
@@ -1492,7 +1492,7 @@ class TransportationServiceType
      *  Dimension
      *  Dimension
      *
-     * @param \horstoeko\ubl\entities\cac\TotalCapacityDimension $totalCapacityDimension
+     * @param  \horstoeko\ubl\entities\cac\TotalCapacityDimension $totalCapacityDimension
      * @return self
      */
     public function setTotalCapacityDimension(\horstoeko\ubl\entities\cac\TotalCapacityDimension $totalCapacityDimension)
@@ -1514,7 +1514,7 @@ class TransportationServiceType
      *  Shipment Stage
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ShipmentStage $shipmentStage
+     * @param  \horstoeko\ubl\entities\cac\ShipmentStage $shipmentStage
      */
     public function addToShipmentStage(\horstoeko\ubl\entities\cac\ShipmentStage $shipmentStage)
     {
@@ -1534,7 +1534,7 @@ class TransportationServiceType
      *  Shipment Stage
      *  Shipment Stage
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetShipmentStage($index)
@@ -1554,7 +1554,7 @@ class TransportationServiceType
      *  Shipment Stage
      *  Shipment Stage
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetShipmentStage($index)
@@ -1593,7 +1593,7 @@ class TransportationServiceType
      *  Shipment Stage
      *  Shipment Stage
      *
-     * @param \horstoeko\ubl\entities\cac\ShipmentStage[] $shipmentStage
+     * @param  \horstoeko\ubl\entities\cac\ShipmentStage[] $shipmentStage
      * @return self
      */
     public function setShipmentStage(array $shipmentStage)
@@ -1615,7 +1615,7 @@ class TransportationServiceType
      *  Transport Event
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\TransportEvent $transportEvent
+     * @param  \horstoeko\ubl\entities\cac\TransportEvent $transportEvent
      */
     public function addToTransportEvent(\horstoeko\ubl\entities\cac\TransportEvent $transportEvent)
     {
@@ -1635,7 +1635,7 @@ class TransportationServiceType
      *  Transport Event
      *  Transport Event
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTransportEvent($index)
@@ -1655,7 +1655,7 @@ class TransportationServiceType
      *  Transport Event
      *  Transport Event
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTransportEvent($index)
@@ -1694,7 +1694,7 @@ class TransportationServiceType
      *  Transport Event
      *  Transport Event
      *
-     * @param \horstoeko\ubl\entities\cac\TransportEvent[] $transportEvent
+     * @param  \horstoeko\ubl\entities\cac\TransportEvent[] $transportEvent
      * @return self
      */
     public function setTransportEvent(array $transportEvent)
@@ -1736,7 +1736,7 @@ class TransportationServiceType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\ResponsibleTransportServiceProviderParty $responsibleTransportServiceProviderParty
+     * @param  \horstoeko\ubl\entities\cac\ResponsibleTransportServiceProviderParty $responsibleTransportServiceProviderParty
      * @return self
      */
     public function setResponsibleTransportServiceProviderParty(\horstoeko\ubl\entities\cac\ResponsibleTransportServiceProviderParty $responsibleTransportServiceProviderParty)
@@ -1758,7 +1758,7 @@ class TransportationServiceType
      *  Environmental Emission
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\EnvironmentalEmission $environmentalEmission
+     * @param  \horstoeko\ubl\entities\cac\EnvironmentalEmission $environmentalEmission
      */
     public function addToEnvironmentalEmission(\horstoeko\ubl\entities\cac\EnvironmentalEmission $environmentalEmission)
     {
@@ -1778,7 +1778,7 @@ class TransportationServiceType
      *  Environmental Emission
      *  Environmental Emission
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetEnvironmentalEmission($index)
@@ -1798,7 +1798,7 @@ class TransportationServiceType
      *  Environmental Emission
      *  Environmental Emission
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetEnvironmentalEmission($index)
@@ -1837,7 +1837,7 @@ class TransportationServiceType
      *  Environmental Emission
      *  Environmental Emission
      *
-     * @param \horstoeko\ubl\entities\cac\EnvironmentalEmission[] $environmentalEmission
+     * @param  \horstoeko\ubl\entities\cac\EnvironmentalEmission[] $environmentalEmission
      * @return self
      */
     public function setEnvironmentalEmission(array $environmentalEmission)
@@ -1879,7 +1879,7 @@ class TransportationServiceType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\EstimatedDurationPeriod $estimatedDurationPeriod
+     * @param  \horstoeko\ubl\entities\cac\EstimatedDurationPeriod $estimatedDurationPeriod
      * @return self
      */
     public function setEstimatedDurationPeriod(\horstoeko\ubl\entities\cac\EstimatedDurationPeriod $estimatedDurationPeriod)
@@ -1902,7 +1902,7 @@ class TransportationServiceType
      *  Service Frequency
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ScheduledServiceFrequency $scheduledServiceFrequency
+     * @param  \horstoeko\ubl\entities\cac\ScheduledServiceFrequency $scheduledServiceFrequency
      */
     public function addToScheduledServiceFrequency(\horstoeko\ubl\entities\cac\ScheduledServiceFrequency $scheduledServiceFrequency)
     {
@@ -1923,7 +1923,7 @@ class TransportationServiceType
      *  Service Frequency
      *  Service Frequency
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetScheduledServiceFrequency($index)
@@ -1944,7 +1944,7 @@ class TransportationServiceType
      *  Service Frequency
      *  Service Frequency
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetScheduledServiceFrequency($index)
@@ -1985,7 +1985,7 @@ class TransportationServiceType
      *  Service Frequency
      *  Service Frequency
      *
-     * @param \horstoeko\ubl\entities\cac\ScheduledServiceFrequency[] $scheduledServiceFrequency
+     * @param  \horstoeko\ubl\entities\cac\ScheduledServiceFrequency[] $scheduledServiceFrequency
      * @return self
      */
     public function setScheduledServiceFrequency(array $scheduledServiceFrequency)

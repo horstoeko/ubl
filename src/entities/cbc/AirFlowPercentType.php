@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\PercentType;
 /**
  * Class representing AirFlowPercentType
  *
- *
  * XSD Type: AirFlowPercentType
  */
 class AirFlowPercentType extends PercentType

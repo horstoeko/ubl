@@ -400,7 +400,7 @@ class HazardousItemType
      *  Identifier. Type
      *  Round Up
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -442,7 +442,7 @@ class HazardousItemType
      *  Text. Type
      *  5.1
      *
-     * @param \horstoeko\ubl\entities\cbc\PlacardNotation $placardNotation
+     * @param  \horstoeko\ubl\entities\cbc\PlacardNotation $placardNotation
      * @return self
      */
     public function setPlacardNotation(\horstoeko\ubl\entities\cbc\PlacardNotation $placardNotation)
@@ -484,7 +484,7 @@ class HazardousItemType
      *  Text. Type
      *  2
      *
-     * @param \horstoeko\ubl\entities\cbc\PlacardEndorsement $placardEndorsement
+     * @param  \horstoeko\ubl\entities\cbc\PlacardEndorsement $placardEndorsement
      * @return self
      */
     public function setPlacardEndorsement(\horstoeko\ubl\entities\cbc\PlacardEndorsement $placardEndorsement)
@@ -508,7 +508,7 @@ class HazardousItemType
      *  Must be stored away from flammable materials N.O.S. or a Waste Characteristics Code in conjunction with an EPA Waste Stream code
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\AdditionalInformation $additionalInformation
+     * @param  \horstoeko\ubl\entities\cbc\AdditionalInformation $additionalInformation
      */
     public function addToAdditionalInformation(\horstoeko\ubl\entities\cbc\AdditionalInformation $additionalInformation)
     {
@@ -530,7 +530,7 @@ class HazardousItemType
      *  Text. Type
      *  Must be stored away from flammable materials N.O.S. or a Waste Characteristics Code in conjunction with an EPA Waste Stream code
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAdditionalInformation($index)
@@ -552,7 +552,7 @@ class HazardousItemType
      *  Text. Type
      *  Must be stored away from flammable materials N.O.S. or a Waste Characteristics Code in conjunction with an EPA Waste Stream code
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAdditionalInformation($index)
@@ -595,7 +595,7 @@ class HazardousItemType
      *  Text. Type
      *  Must be stored away from flammable materials N.O.S. or a Waste Characteristics Code in conjunction with an EPA Waste Stream code
      *
-     * @param \horstoeko\ubl\entities\cbc\AdditionalInformation[] $additionalInformation
+     * @param  \horstoeko\ubl\entities\cbc\AdditionalInformation[] $additionalInformation
      * @return self
      */
     public function setAdditionalInformation(array $additionalInformation)
@@ -637,7 +637,7 @@ class HazardousItemType
      *  Code. Type
      *  UN Code
      *
-     * @param \horstoeko\ubl\entities\cbc\UNDGCode $uNDGCode
+     * @param  \horstoeko\ubl\entities\cbc\UNDGCode $uNDGCode
      * @return self
      */
     public function setUNDGCode(\horstoeko\ubl\entities\cbc\UNDGCode $uNDGCode)
@@ -679,7 +679,7 @@ class HazardousItemType
      *  Code. Type
      *  EMG code, EMS Page Number
      *
-     * @param \horstoeko\ubl\entities\cbc\EmergencyProceduresCode $emergencyProceduresCode
+     * @param  \horstoeko\ubl\entities\cbc\EmergencyProceduresCode $emergencyProceduresCode
      * @return self
      */
     public function setEmergencyProceduresCode(\horstoeko\ubl\entities\cbc\EmergencyProceduresCode $emergencyProceduresCode)
@@ -721,7 +721,7 @@ class HazardousItemType
      *  Code. Type
      *  MFAG page number
      *
-     * @param \horstoeko\ubl\entities\cbc\MedicalFirstAidGuideCode $medicalFirstAidGuideCode
+     * @param  \horstoeko\ubl\entities\cbc\MedicalFirstAidGuideCode $medicalFirstAidGuideCode
      * @return self
      */
     public function setMedicalFirstAidGuideCode(\horstoeko\ubl\entities\cbc\MedicalFirstAidGuideCode $medicalFirstAidGuideCode)
@@ -765,7 +765,7 @@ class HazardousItemType
      *  Name. Type
      *  Granular Sodium Chlorate WeedKiller
      *
-     * @param \horstoeko\ubl\entities\cbc\TechnicalName $technicalName
+     * @param  \horstoeko\ubl\entities\cbc\TechnicalName $technicalName
      * @return self
      */
     public function setTechnicalName(\horstoeko\ubl\entities\cbc\TechnicalName $technicalName)
@@ -805,7 +805,7 @@ class HazardousItemType
      *  Name
      *  Name. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CategoryName $categoryName
+     * @param  \horstoeko\ubl\entities\cbc\CategoryName $categoryName
      * @return self
      */
     public function setCategoryName(\horstoeko\ubl\entities\cbc\CategoryName $categoryName)
@@ -847,7 +847,7 @@ class HazardousItemType
      *  Code. Type
      *  Hazardous material class code
      *
-     * @param \horstoeko\ubl\entities\cbc\HazardousCategoryCode $hazardousCategoryCode
+     * @param  \horstoeko\ubl\entities\cbc\HazardousCategoryCode $hazardousCategoryCode
      * @return self
      */
     public function setHazardousCategoryCode(\horstoeko\ubl\entities\cbc\HazardousCategoryCode $hazardousCategoryCode)
@@ -891,7 +891,7 @@ class HazardousItemType
      *  Identifier. Type
      *  Hazard identification number (upper part)
      *
-     * @param \horstoeko\ubl\entities\cbc\UpperOrangeHazardPlacardID $upperOrangeHazardPlacardID
+     * @param  \horstoeko\ubl\entities\cbc\UpperOrangeHazardPlacardID $upperOrangeHazardPlacardID
      * @return self
      */
     public function setUpperOrangeHazardPlacardID(\horstoeko\ubl\entities\cbc\UpperOrangeHazardPlacardID $upperOrangeHazardPlacardID)
@@ -935,7 +935,7 @@ class HazardousItemType
      *  Identifier. Type
      *  Substance identification number (lower part)
      *
-     * @param \horstoeko\ubl\entities\cbc\LowerOrangeHazardPlacardID $lowerOrangeHazardPlacardID
+     * @param  \horstoeko\ubl\entities\cbc\LowerOrangeHazardPlacardID $lowerOrangeHazardPlacardID
      * @return self
      */
     public function setLowerOrangeHazardPlacardID(\horstoeko\ubl\entities\cbc\LowerOrangeHazardPlacardID $lowerOrangeHazardPlacardID)
@@ -977,7 +977,7 @@ class HazardousItemType
      *  Identifier. Type
      *  Dangerous goods label marking
      *
-     * @param \horstoeko\ubl\entities\cbc\MarkingID $markingID
+     * @param  \horstoeko\ubl\entities\cbc\MarkingID $markingID
      * @return self
      */
     public function setMarkingID(\horstoeko\ubl\entities\cbc\MarkingID $markingID)
@@ -1019,7 +1019,7 @@ class HazardousItemType
      *  Identifier. Type
      *  IMDG Class Number, ADR/RID Class Number
      *
-     * @param \horstoeko\ubl\entities\cbc\HazardClassID $hazardClassID
+     * @param  \horstoeko\ubl\entities\cbc\HazardClassID $hazardClassID
      * @return self
      */
     public function setHazardClassID(\horstoeko\ubl\entities\cbc\HazardClassID $hazardClassID)
@@ -1061,7 +1061,7 @@ class HazardousItemType
      *  Measure
      *  Measure. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\NetWeightMeasure $netWeightMeasure
+     * @param  \horstoeko\ubl\entities\cbc\NetWeightMeasure $netWeightMeasure
      * @return self
      */
     public function setNetWeightMeasure(\horstoeko\ubl\entities\cbc\NetWeightMeasure $netWeightMeasure)
@@ -1103,7 +1103,7 @@ class HazardousItemType
      *  Measure
      *  Measure. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\NetVolumeMeasure $netVolumeMeasure
+     * @param  \horstoeko\ubl\entities\cbc\NetVolumeMeasure $netVolumeMeasure
      * @return self
      */
     public function setNetVolumeMeasure(\horstoeko\ubl\entities\cbc\NetVolumeMeasure $netVolumeMeasure)
@@ -1143,7 +1143,7 @@ class HazardousItemType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Quantity $quantity
+     * @param  \horstoeko\ubl\entities\cbc\Quantity $quantity
      * @return self
      */
     public function setQuantity(\horstoeko\ubl\entities\cbc\Quantity $quantity)
@@ -1185,7 +1185,7 @@ class HazardousItemType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\ContactParty $contactParty
+     * @param  \horstoeko\ubl\entities\cac\ContactParty $contactParty
      * @return self
      */
     public function setContactParty(\horstoeko\ubl\entities\cac\ContactParty $contactParty)
@@ -1207,7 +1207,7 @@ class HazardousItemType
      *  Secondary Hazard
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\SecondaryHazard $secondaryHazard
+     * @param  \horstoeko\ubl\entities\cac\SecondaryHazard $secondaryHazard
      */
     public function addToSecondaryHazard(\horstoeko\ubl\entities\cac\SecondaryHazard $secondaryHazard)
     {
@@ -1227,7 +1227,7 @@ class HazardousItemType
      *  Secondary Hazard
      *  Secondary Hazard
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetSecondaryHazard($index)
@@ -1247,7 +1247,7 @@ class HazardousItemType
      *  Secondary Hazard
      *  Secondary Hazard
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetSecondaryHazard($index)
@@ -1286,7 +1286,7 @@ class HazardousItemType
      *  Secondary Hazard
      *  Secondary Hazard
      *
-     * @param \horstoeko\ubl\entities\cac\SecondaryHazard[] $secondaryHazard
+     * @param  \horstoeko\ubl\entities\cac\SecondaryHazard[] $secondaryHazard
      * @return self
      */
     public function setSecondaryHazard(array $secondaryHazard)
@@ -1308,7 +1308,7 @@ class HazardousItemType
      *  Hazardous Goods Transit
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\HazardousGoodsTransit $hazardousGoodsTransit
+     * @param  \horstoeko\ubl\entities\cac\HazardousGoodsTransit $hazardousGoodsTransit
      */
     public function addToHazardousGoodsTransit(\horstoeko\ubl\entities\cac\HazardousGoodsTransit $hazardousGoodsTransit)
     {
@@ -1328,7 +1328,7 @@ class HazardousItemType
      *  Hazardous Goods Transit
      *  Hazardous Goods Transit
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetHazardousGoodsTransit($index)
@@ -1348,7 +1348,7 @@ class HazardousItemType
      *  Hazardous Goods Transit
      *  Hazardous Goods Transit
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetHazardousGoodsTransit($index)
@@ -1387,7 +1387,7 @@ class HazardousItemType
      *  Hazardous Goods Transit
      *  Hazardous Goods Transit
      *
-     * @param \horstoeko\ubl\entities\cac\HazardousGoodsTransit[] $hazardousGoodsTransit
+     * @param  \horstoeko\ubl\entities\cac\HazardousGoodsTransit[] $hazardousGoodsTransit
      * @return self
      */
     public function setHazardousGoodsTransit(array $hazardousGoodsTransit)
@@ -1429,7 +1429,7 @@ class HazardousItemType
      *  Temperature
      *  Temperature
      *
-     * @param \horstoeko\ubl\entities\cac\EmergencyTemperature $emergencyTemperature
+     * @param  \horstoeko\ubl\entities\cac\EmergencyTemperature $emergencyTemperature
      * @return self
      */
     public function setEmergencyTemperature(\horstoeko\ubl\entities\cac\EmergencyTemperature $emergencyTemperature)
@@ -1471,7 +1471,7 @@ class HazardousItemType
      *  Temperature
      *  Temperature
      *
-     * @param \horstoeko\ubl\entities\cac\FlashpointTemperature $flashpointTemperature
+     * @param  \horstoeko\ubl\entities\cac\FlashpointTemperature $flashpointTemperature
      * @return self
      */
     public function setFlashpointTemperature(\horstoeko\ubl\entities\cac\FlashpointTemperature $flashpointTemperature)
@@ -1494,7 +1494,7 @@ class HazardousItemType
      *  Temperature
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\AdditionalTemperature $additionalTemperature
+     * @param  \horstoeko\ubl\entities\cac\AdditionalTemperature $additionalTemperature
      */
     public function addToAdditionalTemperature(\horstoeko\ubl\entities\cac\AdditionalTemperature $additionalTemperature)
     {
@@ -1515,7 +1515,7 @@ class HazardousItemType
      *  Temperature
      *  Temperature
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetAdditionalTemperature($index)
@@ -1536,7 +1536,7 @@ class HazardousItemType
      *  Temperature
      *  Temperature
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetAdditionalTemperature($index)
@@ -1577,7 +1577,7 @@ class HazardousItemType
      *  Temperature
      *  Temperature
      *
-     * @param \horstoeko\ubl\entities\cac\AdditionalTemperature[] $additionalTemperature
+     * @param  \horstoeko\ubl\entities\cac\AdditionalTemperature[] $additionalTemperature
      * @return self
      */
     public function setAdditionalTemperature(array $additionalTemperature)

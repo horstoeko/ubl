@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing DangerousGoodsApprovedIndicatorType
  *
- *
  * XSD Type: DangerousGoodsApprovedIndicatorType
  */
 class DangerousGoodsApprovedIndicatorType
@@ -29,7 +28,7 @@ class DangerousGoodsApprovedIndicatorType
     /**
      * Gets or sets the inner value
      *
-     * @param bool $value
+     * @param  bool $value
      * @return bool
      */
     public function value()

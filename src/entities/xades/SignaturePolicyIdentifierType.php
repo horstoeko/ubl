@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing SignaturePolicyIdentifierType
  *
- *
  * XSD Type: SignaturePolicyIdentifierType
  */
 class SignaturePolicyIdentifierType
@@ -34,7 +33,7 @@ class SignaturePolicyIdentifierType
     /**
      * Sets a new signaturePolicyId
      *
-     * @param \horstoeko\ubl\entities\xades\SignaturePolicyIdType $signaturePolicyId
+     * @param  \horstoeko\ubl\entities\xades\SignaturePolicyIdType $signaturePolicyId
      * @return self
      */
     public function setSignaturePolicyId(\horstoeko\ubl\entities\xades\SignaturePolicyIdType $signaturePolicyId)
@@ -56,7 +55,7 @@ class SignaturePolicyIdentifierType
     /**
      * Sets a new signaturePolicyImplied
      *
-     * @param string $signaturePolicyImplied
+     * @param  string $signaturePolicyImplied
      * @return self
      */
     public function setSignaturePolicyImplied($signaturePolicyImplied)

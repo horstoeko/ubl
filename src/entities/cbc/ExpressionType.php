@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing ExpressionType
  *
- *
  * XSD Type: ExpressionType
  */
 class ExpressionType extends TextType

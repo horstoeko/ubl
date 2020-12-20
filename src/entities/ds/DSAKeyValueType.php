@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\ds;
 /**
  * Class representing DSAKeyValueType
  *
- *
  * XSD Type: DSAKeyValueType
  */
 class DSAKeyValueType
@@ -59,7 +58,7 @@ class DSAKeyValueType
     /**
      * Sets a new p
      *
-     * @param string $p
+     * @param  string $p
      * @return self
      */
     public function setP($p)
@@ -81,7 +80,7 @@ class DSAKeyValueType
     /**
      * Sets a new q
      *
-     * @param string $q
+     * @param  string $q
      * @return self
      */
     public function setQ($q)
@@ -103,7 +102,7 @@ class DSAKeyValueType
     /**
      * Sets a new g
      *
-     * @param string $g
+     * @param  string $g
      * @return self
      */
     public function setG($g)
@@ -125,7 +124,7 @@ class DSAKeyValueType
     /**
      * Sets a new y
      *
-     * @param string $y
+     * @param  string $y
      * @return self
      */
     public function setY($y)
@@ -147,7 +146,7 @@ class DSAKeyValueType
     /**
      * Sets a new j
      *
-     * @param string $j
+     * @param  string $j
      * @return self
      */
     public function setJ($j)
@@ -169,7 +168,7 @@ class DSAKeyValueType
     /**
      * Sets a new seed
      *
-     * @param string $seed
+     * @param  string $seed
      * @return self
      */
     public function setSeed($seed)
@@ -191,7 +190,7 @@ class DSAKeyValueType
     /**
      * Sets a new pgenCounter
      *
-     * @param string $pgenCounter
+     * @param  string $pgenCounter
      * @return self
      */
     public function setPgenCounter($pgenCounter)

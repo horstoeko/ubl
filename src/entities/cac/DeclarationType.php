@@ -89,7 +89,7 @@ class DeclarationType
      *  Name. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Name $name
+     * @param  \horstoeko\ubl\entities\cbc\Name $name
      */
     public function addToName(\horstoeko\ubl\entities\cbc\Name $name)
     {
@@ -109,7 +109,7 @@ class DeclarationType
      *  Name
      *  Name. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetName($index)
@@ -129,7 +129,7 @@ class DeclarationType
      *  Name
      *  Name. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetName($index)
@@ -168,7 +168,7 @@ class DeclarationType
      *  Name
      *  Name. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Name[] $name
+     * @param  \horstoeko\ubl\entities\cbc\Name[] $name
      * @return self
      */
     public function setName(array $name)
@@ -208,7 +208,7 @@ class DeclarationType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\DeclarationTypeCode $declarationTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\DeclarationTypeCode $declarationTypeCode
      * @return self
      */
     public function setDeclarationTypeCode(\horstoeko\ubl\entities\cbc\DeclarationTypeCode $declarationTypeCode)
@@ -230,7 +230,7 @@ class DeclarationType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -250,7 +250,7 @@ class DeclarationType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -270,7 +270,7 @@ class DeclarationType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -309,7 +309,7 @@ class DeclarationType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -331,7 +331,7 @@ class DeclarationType
      *  Evidence Supplied
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\EvidenceSupplied $evidenceSupplied
+     * @param  \horstoeko\ubl\entities\cac\EvidenceSupplied $evidenceSupplied
      */
     public function addToEvidenceSupplied(\horstoeko\ubl\entities\cac\EvidenceSupplied $evidenceSupplied)
     {
@@ -351,7 +351,7 @@ class DeclarationType
      *  Evidence Supplied
      *  Evidence Supplied
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetEvidenceSupplied($index)
@@ -371,7 +371,7 @@ class DeclarationType
      *  Evidence Supplied
      *  Evidence Supplied
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetEvidenceSupplied($index)
@@ -410,7 +410,7 @@ class DeclarationType
      *  Evidence Supplied
      *  Evidence Supplied
      *
-     * @param \horstoeko\ubl\entities\cac\EvidenceSupplied[] $evidenceSupplied
+     * @param  \horstoeko\ubl\entities\cac\EvidenceSupplied[] $evidenceSupplied
      * @return self
      */
     public function setEvidenceSupplied(array $evidenceSupplied)

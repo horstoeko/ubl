@@ -476,7 +476,7 @@ class TransportHandlingUnitType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -516,7 +516,7 @@ class TransportHandlingUnitType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TransportHandlingUnitTypeCode $transportHandlingUnitTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\TransportHandlingUnitTypeCode $transportHandlingUnitTypeCode
      * @return self
      */
     public function setTransportHandlingUnitTypeCode(\horstoeko\ubl\entities\cbc\TransportHandlingUnitTypeCode $transportHandlingUnitTypeCode)
@@ -558,7 +558,7 @@ class TransportHandlingUnitType
      *  Code. Type
      *  Special Handling
      *
-     * @param \horstoeko\ubl\entities\cbc\HandlingCode $handlingCode
+     * @param  \horstoeko\ubl\entities\cbc\HandlingCode $handlingCode
      * @return self
      */
     public function setHandlingCode(\horstoeko\ubl\entities\cbc\HandlingCode $handlingCode)
@@ -581,7 +581,7 @@ class TransportHandlingUnitType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\HandlingInstructions $handlingInstructions
+     * @param  \horstoeko\ubl\entities\cbc\HandlingInstructions $handlingInstructions
      */
     public function addToHandlingInstructions(\horstoeko\ubl\entities\cbc\HandlingInstructions $handlingInstructions)
     {
@@ -602,7 +602,7 @@ class TransportHandlingUnitType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetHandlingInstructions($index)
@@ -623,7 +623,7 @@ class TransportHandlingUnitType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetHandlingInstructions($index)
@@ -664,7 +664,7 @@ class TransportHandlingUnitType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\HandlingInstructions[] $handlingInstructions
+     * @param  \horstoeko\ubl\entities\cbc\HandlingInstructions[] $handlingInstructions
      * @return self
      */
     public function setHandlingInstructions(array $handlingInstructions)
@@ -708,7 +708,7 @@ class TransportHandlingUnitType
      *  Indicator. Type
      *  Default is negative
      *
-     * @param bool $hazardousRiskIndicator
+     * @param  bool $hazardousRiskIndicator
      * @return self
      */
     public function setHazardousRiskIndicator($hazardousRiskIndicator)
@@ -750,7 +750,7 @@ class TransportHandlingUnitType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TotalGoodsItemQuantity $totalGoodsItemQuantity
+     * @param  \horstoeko\ubl\entities\cbc\TotalGoodsItemQuantity $totalGoodsItemQuantity
      * @return self
      */
     public function setTotalGoodsItemQuantity(\horstoeko\ubl\entities\cbc\TotalGoodsItemQuantity $totalGoodsItemQuantity)
@@ -792,7 +792,7 @@ class TransportHandlingUnitType
      *  Quantity
      *  Quantity. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TotalPackageQuantity $totalPackageQuantity
+     * @param  \horstoeko\ubl\entities\cbc\TotalPackageQuantity $totalPackageQuantity
      * @return self
      */
     public function setTotalPackageQuantity(\horstoeko\ubl\entities\cbc\TotalPackageQuantity $totalPackageQuantity)
@@ -815,7 +815,7 @@ class TransportHandlingUnitType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\DamageRemarks $damageRemarks
+     * @param  \horstoeko\ubl\entities\cbc\DamageRemarks $damageRemarks
      */
     public function addToDamageRemarks(\horstoeko\ubl\entities\cbc\DamageRemarks $damageRemarks)
     {
@@ -836,7 +836,7 @@ class TransportHandlingUnitType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDamageRemarks($index)
@@ -857,7 +857,7 @@ class TransportHandlingUnitType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDamageRemarks($index)
@@ -898,7 +898,7 @@ class TransportHandlingUnitType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\DamageRemarks[] $damageRemarks
+     * @param  \horstoeko\ubl\entities\cbc\DamageRemarks[] $damageRemarks
      * @return self
      */
     public function setDamageRemarks(array $damageRemarks)
@@ -922,7 +922,7 @@ class TransportHandlingUnitType
      *  Marks and Numbers, Shipping Marks
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\ShippingMarks $shippingMarks
+     * @param  \horstoeko\ubl\entities\cbc\ShippingMarks $shippingMarks
      */
     public function addToShippingMarks(\horstoeko\ubl\entities\cbc\ShippingMarks $shippingMarks)
     {
@@ -944,7 +944,7 @@ class TransportHandlingUnitType
      *  Text. Type
      *  Marks and Numbers, Shipping Marks
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetShippingMarks($index)
@@ -966,7 +966,7 @@ class TransportHandlingUnitType
      *  Text. Type
      *  Marks and Numbers, Shipping Marks
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetShippingMarks($index)
@@ -1009,7 +1009,7 @@ class TransportHandlingUnitType
      *  Text. Type
      *  Marks and Numbers, Shipping Marks
      *
-     * @param \horstoeko\ubl\entities\cbc\ShippingMarks[] $shippingMarks
+     * @param  \horstoeko\ubl\entities\cbc\ShippingMarks[] $shippingMarks
      * @return self
      */
     public function setShippingMarks(array $shippingMarks)
@@ -1051,7 +1051,7 @@ class TransportHandlingUnitType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TraceID $traceID
+     * @param  \horstoeko\ubl\entities\cbc\TraceID $traceID
      * @return self
      */
     public function setTraceID(\horstoeko\ubl\entities\cbc\TraceID $traceID)
@@ -1074,7 +1074,7 @@ class TransportHandlingUnitType
      *  Despatch Line
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\HandlingUnitDespatchLine $handlingUnitDespatchLine
+     * @param  \horstoeko\ubl\entities\cac\HandlingUnitDespatchLine $handlingUnitDespatchLine
      */
     public function addToHandlingUnitDespatchLine(\horstoeko\ubl\entities\cac\HandlingUnitDespatchLine $handlingUnitDespatchLine)
     {
@@ -1095,7 +1095,7 @@ class TransportHandlingUnitType
      *  Despatch Line
      *  Despatch Line
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetHandlingUnitDespatchLine($index)
@@ -1116,7 +1116,7 @@ class TransportHandlingUnitType
      *  Despatch Line
      *  Despatch Line
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetHandlingUnitDespatchLine($index)
@@ -1157,7 +1157,7 @@ class TransportHandlingUnitType
      *  Despatch Line
      *  Despatch Line
      *
-     * @param \horstoeko\ubl\entities\cac\HandlingUnitDespatchLine[] $handlingUnitDespatchLine
+     * @param  \horstoeko\ubl\entities\cac\HandlingUnitDespatchLine[] $handlingUnitDespatchLine
      * @return self
      */
     public function setHandlingUnitDespatchLine(array $handlingUnitDespatchLine)
@@ -1180,7 +1180,7 @@ class TransportHandlingUnitType
      *  Package
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ActualPackage $actualPackage
+     * @param  \horstoeko\ubl\entities\cac\ActualPackage $actualPackage
      */
     public function addToActualPackage(\horstoeko\ubl\entities\cac\ActualPackage $actualPackage)
     {
@@ -1201,7 +1201,7 @@ class TransportHandlingUnitType
      *  Package
      *  Package
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetActualPackage($index)
@@ -1222,7 +1222,7 @@ class TransportHandlingUnitType
      *  Package
      *  Package
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetActualPackage($index)
@@ -1263,7 +1263,7 @@ class TransportHandlingUnitType
      *  Package
      *  Package
      *
-     * @param \horstoeko\ubl\entities\cac\ActualPackage[] $actualPackage
+     * @param  \horstoeko\ubl\entities\cac\ActualPackage[] $actualPackage
      * @return self
      */
     public function setActualPackage(array $actualPackage)
@@ -1286,7 +1286,7 @@ class TransportHandlingUnitType
      *  Receipt Line
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ReceivedHandlingUnitReceiptLine $receivedHandlingUnitReceiptLine
+     * @param  \horstoeko\ubl\entities\cac\ReceivedHandlingUnitReceiptLine $receivedHandlingUnitReceiptLine
      */
     public function addToReceivedHandlingUnitReceiptLine(\horstoeko\ubl\entities\cac\ReceivedHandlingUnitReceiptLine $receivedHandlingUnitReceiptLine)
     {
@@ -1307,7 +1307,7 @@ class TransportHandlingUnitType
      *  Receipt Line
      *  Receipt Line
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetReceivedHandlingUnitReceiptLine($index)
@@ -1328,7 +1328,7 @@ class TransportHandlingUnitType
      *  Receipt Line
      *  Receipt Line
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetReceivedHandlingUnitReceiptLine($index)
@@ -1369,7 +1369,7 @@ class TransportHandlingUnitType
      *  Receipt Line
      *  Receipt Line
      *
-     * @param \horstoeko\ubl\entities\cac\ReceivedHandlingUnitReceiptLine[] $receivedHandlingUnitReceiptLine
+     * @param  \horstoeko\ubl\entities\cac\ReceivedHandlingUnitReceiptLine[] $receivedHandlingUnitReceiptLine
      * @return self
      */
     public function setReceivedHandlingUnitReceiptLine(array $receivedHandlingUnitReceiptLine)
@@ -1391,7 +1391,7 @@ class TransportHandlingUnitType
      *  Transport Equipment
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\TransportEquipment $transportEquipment
+     * @param  \horstoeko\ubl\entities\cac\TransportEquipment $transportEquipment
      */
     public function addToTransportEquipment(\horstoeko\ubl\entities\cac\TransportEquipment $transportEquipment)
     {
@@ -1411,7 +1411,7 @@ class TransportHandlingUnitType
      *  Transport Equipment
      *  Transport Equipment
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTransportEquipment($index)
@@ -1431,7 +1431,7 @@ class TransportHandlingUnitType
      *  Transport Equipment
      *  Transport Equipment
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTransportEquipment($index)
@@ -1470,7 +1470,7 @@ class TransportHandlingUnitType
      *  Transport Equipment
      *  Transport Equipment
      *
-     * @param \horstoeko\ubl\entities\cac\TransportEquipment[] $transportEquipment
+     * @param  \horstoeko\ubl\entities\cac\TransportEquipment[] $transportEquipment
      * @return self
      */
     public function setTransportEquipment(array $transportEquipment)
@@ -1492,7 +1492,7 @@ class TransportHandlingUnitType
      *  Transport Means
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\TransportMeans $transportMeans
+     * @param  \horstoeko\ubl\entities\cac\TransportMeans $transportMeans
      */
     public function addToTransportMeans(\horstoeko\ubl\entities\cac\TransportMeans $transportMeans)
     {
@@ -1512,7 +1512,7 @@ class TransportHandlingUnitType
      *  Transport Means
      *  Transport Means
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetTransportMeans($index)
@@ -1532,7 +1532,7 @@ class TransportHandlingUnitType
      *  Transport Means
      *  Transport Means
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetTransportMeans($index)
@@ -1571,7 +1571,7 @@ class TransportHandlingUnitType
      *  Transport Means
      *  Transport Means
      *
-     * @param \horstoeko\ubl\entities\cac\TransportMeans[] $transportMeans
+     * @param  \horstoeko\ubl\entities\cac\TransportMeans[] $transportMeans
      * @return self
      */
     public function setTransportMeans(array $transportMeans)
@@ -1593,7 +1593,7 @@ class TransportHandlingUnitType
      *  Hazardous Goods Transit
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\HazardousGoodsTransit $hazardousGoodsTransit
+     * @param  \horstoeko\ubl\entities\cac\HazardousGoodsTransit $hazardousGoodsTransit
      */
     public function addToHazardousGoodsTransit(\horstoeko\ubl\entities\cac\HazardousGoodsTransit $hazardousGoodsTransit)
     {
@@ -1613,7 +1613,7 @@ class TransportHandlingUnitType
      *  Hazardous Goods Transit
      *  Hazardous Goods Transit
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetHazardousGoodsTransit($index)
@@ -1633,7 +1633,7 @@ class TransportHandlingUnitType
      *  Hazardous Goods Transit
      *  Hazardous Goods Transit
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetHazardousGoodsTransit($index)
@@ -1672,7 +1672,7 @@ class TransportHandlingUnitType
      *  Hazardous Goods Transit
      *  Hazardous Goods Transit
      *
-     * @param \horstoeko\ubl\entities\cac\HazardousGoodsTransit[] $hazardousGoodsTransit
+     * @param  \horstoeko\ubl\entities\cac\HazardousGoodsTransit[] $hazardousGoodsTransit
      * @return self
      */
     public function setHazardousGoodsTransit(array $hazardousGoodsTransit)
@@ -1695,7 +1695,7 @@ class TransportHandlingUnitType
      *  Dimension
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\MeasurementDimension $measurementDimension
+     * @param  \horstoeko\ubl\entities\cac\MeasurementDimension $measurementDimension
      */
     public function addToMeasurementDimension(\horstoeko\ubl\entities\cac\MeasurementDimension $measurementDimension)
     {
@@ -1716,7 +1716,7 @@ class TransportHandlingUnitType
      *  Dimension
      *  Dimension
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetMeasurementDimension($index)
@@ -1737,7 +1737,7 @@ class TransportHandlingUnitType
      *  Dimension
      *  Dimension
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetMeasurementDimension($index)
@@ -1778,7 +1778,7 @@ class TransportHandlingUnitType
      *  Dimension
      *  Dimension
      *
-     * @param \horstoeko\ubl\entities\cac\MeasurementDimension[] $measurementDimension
+     * @param  \horstoeko\ubl\entities\cac\MeasurementDimension[] $measurementDimension
      * @return self
      */
     public function setMeasurementDimension(array $measurementDimension)
@@ -1820,7 +1820,7 @@ class TransportHandlingUnitType
      *  Temperature
      *  Temperature
      *
-     * @param \horstoeko\ubl\entities\cac\MinimumTemperature $minimumTemperature
+     * @param  \horstoeko\ubl\entities\cac\MinimumTemperature $minimumTemperature
      * @return self
      */
     public function setMinimumTemperature(\horstoeko\ubl\entities\cac\MinimumTemperature $minimumTemperature)
@@ -1862,7 +1862,7 @@ class TransportHandlingUnitType
      *  Temperature
      *  Temperature
      *
-     * @param \horstoeko\ubl\entities\cac\MaximumTemperature $maximumTemperature
+     * @param  \horstoeko\ubl\entities\cac\MaximumTemperature $maximumTemperature
      * @return self
      */
     public function setMaximumTemperature(\horstoeko\ubl\entities\cac\MaximumTemperature $maximumTemperature)
@@ -1884,7 +1884,7 @@ class TransportHandlingUnitType
      *  Goods Item
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\GoodsItem $goodsItem
+     * @param  \horstoeko\ubl\entities\cac\GoodsItem $goodsItem
      */
     public function addToGoodsItem(\horstoeko\ubl\entities\cac\GoodsItem $goodsItem)
     {
@@ -1904,7 +1904,7 @@ class TransportHandlingUnitType
      *  Goods Item
      *  Goods Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetGoodsItem($index)
@@ -1924,7 +1924,7 @@ class TransportHandlingUnitType
      *  Goods Item
      *  Goods Item
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetGoodsItem($index)
@@ -1963,7 +1963,7 @@ class TransportHandlingUnitType
      *  Goods Item
      *  Goods Item
      *
-     * @param \horstoeko\ubl\entities\cac\GoodsItem[] $goodsItem
+     * @param  \horstoeko\ubl\entities\cac\GoodsItem[] $goodsItem
      * @return self
      */
     public function setGoodsItem(array $goodsItem)
@@ -2005,7 +2005,7 @@ class TransportHandlingUnitType
      *  Dimension
      *  Dimension
      *
-     * @param \horstoeko\ubl\entities\cac\FloorSpaceMeasurementDimension $floorSpaceMeasurementDimension
+     * @param  \horstoeko\ubl\entities\cac\FloorSpaceMeasurementDimension $floorSpaceMeasurementDimension
      * @return self
      */
     public function setFloorSpaceMeasurementDimension(\horstoeko\ubl\entities\cac\FloorSpaceMeasurementDimension $floorSpaceMeasurementDimension)
@@ -2047,7 +2047,7 @@ class TransportHandlingUnitType
      *  Dimension
      *  Dimension
      *
-     * @param \horstoeko\ubl\entities\cac\PalletSpaceMeasurementDimension $palletSpaceMeasurementDimension
+     * @param  \horstoeko\ubl\entities\cac\PalletSpaceMeasurementDimension $palletSpaceMeasurementDimension
      * @return self
      */
     public function setPalletSpaceMeasurementDimension(\horstoeko\ubl\entities\cac\PalletSpaceMeasurementDimension $palletSpaceMeasurementDimension)
@@ -2070,7 +2070,7 @@ class TransportHandlingUnitType
      *  Document Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ShipmentDocumentReference $shipmentDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\ShipmentDocumentReference $shipmentDocumentReference
      */
     public function addToShipmentDocumentReference(\horstoeko\ubl\entities\cac\ShipmentDocumentReference $shipmentDocumentReference)
     {
@@ -2091,7 +2091,7 @@ class TransportHandlingUnitType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetShipmentDocumentReference($index)
@@ -2112,7 +2112,7 @@ class TransportHandlingUnitType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetShipmentDocumentReference($index)
@@ -2153,7 +2153,7 @@ class TransportHandlingUnitType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\ShipmentDocumentReference[] $shipmentDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\ShipmentDocumentReference[] $shipmentDocumentReference
      * @return self
      */
     public function setShipmentDocumentReference(array $shipmentDocumentReference)
@@ -2175,7 +2175,7 @@ class TransportHandlingUnitType
      *  Status
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Status $status
+     * @param  \horstoeko\ubl\entities\cac\Status $status
      */
     public function addToStatus(\horstoeko\ubl\entities\cac\Status $status)
     {
@@ -2195,7 +2195,7 @@ class TransportHandlingUnitType
      *  Status
      *  Status
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetStatus($index)
@@ -2215,7 +2215,7 @@ class TransportHandlingUnitType
      *  Status
      *  Status
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetStatus($index)
@@ -2254,7 +2254,7 @@ class TransportHandlingUnitType
      *  Status
      *  Status
      *
-     * @param \horstoeko\ubl\entities\cac\Status[] $status
+     * @param  \horstoeko\ubl\entities\cac\Status[] $status
      * @return self
      */
     public function setStatus(array $status)
@@ -2276,7 +2276,7 @@ class TransportHandlingUnitType
      *  Customs Declaration
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\CustomsDeclaration $customsDeclaration
+     * @param  \horstoeko\ubl\entities\cac\CustomsDeclaration $customsDeclaration
      */
     public function addToCustomsDeclaration(\horstoeko\ubl\entities\cac\CustomsDeclaration $customsDeclaration)
     {
@@ -2296,7 +2296,7 @@ class TransportHandlingUnitType
      *  Customs Declaration
      *  Customs Declaration
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetCustomsDeclaration($index)
@@ -2316,7 +2316,7 @@ class TransportHandlingUnitType
      *  Customs Declaration
      *  Customs Declaration
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetCustomsDeclaration($index)
@@ -2355,7 +2355,7 @@ class TransportHandlingUnitType
      *  Customs Declaration
      *  Customs Declaration
      *
-     * @param \horstoeko\ubl\entities\cac\CustomsDeclaration[] $customsDeclaration
+     * @param  \horstoeko\ubl\entities\cac\CustomsDeclaration[] $customsDeclaration
      * @return self
      */
     public function setCustomsDeclaration(array $customsDeclaration)
@@ -2378,7 +2378,7 @@ class TransportHandlingUnitType
      *  Shipment
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\ReferencedShipment $referencedShipment
+     * @param  \horstoeko\ubl\entities\cac\ReferencedShipment $referencedShipment
      */
     public function addToReferencedShipment(\horstoeko\ubl\entities\cac\ReferencedShipment $referencedShipment)
     {
@@ -2399,7 +2399,7 @@ class TransportHandlingUnitType
      *  Shipment
      *  Shipment
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetReferencedShipment($index)
@@ -2420,7 +2420,7 @@ class TransportHandlingUnitType
      *  Shipment
      *  Shipment
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetReferencedShipment($index)
@@ -2461,7 +2461,7 @@ class TransportHandlingUnitType
      *  Shipment
      *  Shipment
      *
-     * @param \horstoeko\ubl\entities\cac\ReferencedShipment[] $referencedShipment
+     * @param  \horstoeko\ubl\entities\cac\ReferencedShipment[] $referencedShipment
      * @return self
      */
     public function setReferencedShipment(array $referencedShipment)
@@ -2483,7 +2483,7 @@ class TransportHandlingUnitType
      *  Package
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\Package $package
+     * @param  \horstoeko\ubl\entities\cac\Package $package
      */
     public function addToPackage(\horstoeko\ubl\entities\cac\Package $package)
     {
@@ -2503,7 +2503,7 @@ class TransportHandlingUnitType
      *  Package
      *  Package
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetPackage($index)
@@ -2523,7 +2523,7 @@ class TransportHandlingUnitType
      *  Package
      *  Package
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetPackage($index)
@@ -2562,7 +2562,7 @@ class TransportHandlingUnitType
      *  Package
      *  Package
      *
-     * @param \horstoeko\ubl\entities\cac\Package[] $package
+     * @param  \horstoeko\ubl\entities\cac\Package[] $package
      * @return self
      */
     public function setPackage(array $package)

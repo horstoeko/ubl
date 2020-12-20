@@ -183,7 +183,7 @@ class ExchangeRateType
      *  Currency
      *  Currency_ Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SourceCurrencyCode $sourceCurrencyCode
+     * @param  \horstoeko\ubl\entities\cbc\SourceCurrencyCode $sourceCurrencyCode
      * @return self
      */
     public function setSourceCurrencyCode(\horstoeko\ubl\entities\cbc\SourceCurrencyCode $sourceCurrencyCode)
@@ -225,7 +225,7 @@ class ExchangeRateType
      *  Rate
      *  Rate. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SourceCurrencyBaseRate $sourceCurrencyBaseRate
+     * @param  \horstoeko\ubl\entities\cbc\SourceCurrencyBaseRate $sourceCurrencyBaseRate
      * @return self
      */
     public function setSourceCurrencyBaseRate(\horstoeko\ubl\entities\cbc\SourceCurrencyBaseRate $sourceCurrencyBaseRate)
@@ -269,7 +269,7 @@ class ExchangeRateType
      *  Currency
      *  Currency_ Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TargetCurrencyCode $targetCurrencyCode
+     * @param  \horstoeko\ubl\entities\cbc\TargetCurrencyCode $targetCurrencyCode
      * @return self
      */
     public function setTargetCurrencyCode(\horstoeko\ubl\entities\cbc\TargetCurrencyCode $targetCurrencyCode)
@@ -311,7 +311,7 @@ class ExchangeRateType
      *  Rate
      *  Rate. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\TargetCurrencyBaseRate $targetCurrencyBaseRate
+     * @param  \horstoeko\ubl\entities\cbc\TargetCurrencyBaseRate $targetCurrencyBaseRate
      * @return self
      */
     public function setTargetCurrencyBaseRate(\horstoeko\ubl\entities\cbc\TargetCurrencyBaseRate $targetCurrencyBaseRate)
@@ -351,7 +351,7 @@ class ExchangeRateType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ExchangeMarketID $exchangeMarketID
+     * @param  \horstoeko\ubl\entities\cbc\ExchangeMarketID $exchangeMarketID
      * @return self
      */
     public function setExchangeMarketID(\horstoeko\ubl\entities\cbc\ExchangeMarketID $exchangeMarketID)
@@ -391,7 +391,7 @@ class ExchangeRateType
      *  Rate
      *  Rate. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\CalculationRate $calculationRate
+     * @param  \horstoeko\ubl\entities\cbc\CalculationRate $calculationRate
      * @return self
      */
     public function setCalculationRate(\horstoeko\ubl\entities\cbc\CalculationRate $calculationRate)
@@ -433,7 +433,7 @@ class ExchangeRateType
      *  Operator
      *  Operator_ Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\MathematicOperatorCode $mathematicOperatorCode
+     * @param  \horstoeko\ubl\entities\cbc\MathematicOperatorCode $mathematicOperatorCode
      * @return self
      */
     public function setMathematicOperatorCode(\horstoeko\ubl\entities\cbc\MathematicOperatorCode $mathematicOperatorCode)
@@ -473,7 +473,7 @@ class ExchangeRateType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $date
+     * @param  \DateTime $date
      * @return self
      */
     public function setDate(\DateTime $date)
@@ -515,7 +515,7 @@ class ExchangeRateType
      *  Contract
      *  Contract
      *
-     * @param \horstoeko\ubl\entities\cac\ForeignExchangeContract $foreignExchangeContract
+     * @param  \horstoeko\ubl\entities\cac\ForeignExchangeContract $foreignExchangeContract
      * @return self
      */
     public function setForeignExchangeContract(\horstoeko\ubl\entities\cac\ForeignExchangeContract $foreignExchangeContract)

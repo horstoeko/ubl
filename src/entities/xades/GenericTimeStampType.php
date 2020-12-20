@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing GenericTimeStampType
  *
- *
  * XSD Type: GenericTimeStampType
  */
 class GenericTimeStampType
@@ -62,7 +61,7 @@ class GenericTimeStampType
     /**
      * Sets a new id
      *
-     * @param string $id
+     * @param  string $id
      * @return self
      */
     public function setId($id)
@@ -75,7 +74,7 @@ class GenericTimeStampType
      * Adds as include
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\IncludeXsd $include
+     * @param  \horstoeko\ubl\entities\xades\IncludeXsd $include
      */
     public function addToInclude(\horstoeko\ubl\entities\xades\IncludeXsd $include)
     {
@@ -86,7 +85,7 @@ class GenericTimeStampType
     /**
      * isset include
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetInclude($index)
@@ -97,7 +96,7 @@ class GenericTimeStampType
     /**
      * unset include
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetInclude($index)
@@ -118,7 +117,7 @@ class GenericTimeStampType
     /**
      * Sets a new include
      *
-     * @param \horstoeko\ubl\entities\xades\IncludeXsd[] $include
+     * @param  \horstoeko\ubl\entities\xades\IncludeXsd[] $include
      * @return self
      */
     public function setInclude(array $include)
@@ -131,7 +130,7 @@ class GenericTimeStampType
      * Adds as referenceInfo
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\ReferenceInfo $referenceInfo
+     * @param  \horstoeko\ubl\entities\xades\ReferenceInfo $referenceInfo
      */
     public function addToReferenceInfo(\horstoeko\ubl\entities\xades\ReferenceInfo $referenceInfo)
     {
@@ -142,7 +141,7 @@ class GenericTimeStampType
     /**
      * isset referenceInfo
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetReferenceInfo($index)
@@ -153,7 +152,7 @@ class GenericTimeStampType
     /**
      * unset referenceInfo
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetReferenceInfo($index)
@@ -174,7 +173,7 @@ class GenericTimeStampType
     /**
      * Sets a new referenceInfo
      *
-     * @param \horstoeko\ubl\entities\xades\ReferenceInfo[] $referenceInfo
+     * @param  \horstoeko\ubl\entities\xades\ReferenceInfo[] $referenceInfo
      * @return self
      */
     public function setReferenceInfo(array $referenceInfo)
@@ -196,7 +195,7 @@ class GenericTimeStampType
     /**
      * Sets a new canonicalizationMethod
      *
-     * @param \horstoeko\ubl\entities\ds\CanonicalizationMethod $canonicalizationMethod
+     * @param  \horstoeko\ubl\entities\ds\CanonicalizationMethod $canonicalizationMethod
      * @return self
      */
     public function setCanonicalizationMethod(\horstoeko\ubl\entities\ds\CanonicalizationMethod $canonicalizationMethod)
@@ -209,7 +208,7 @@ class GenericTimeStampType
      * Adds as encapsulatedTimeStamp
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\EncapsulatedPKIDataType $encapsulatedTimeStamp
+     * @param  \horstoeko\ubl\entities\xades\EncapsulatedPKIDataType $encapsulatedTimeStamp
      */
     public function addToEncapsulatedTimeStamp(\horstoeko\ubl\entities\xades\EncapsulatedPKIDataType $encapsulatedTimeStamp)
     {
@@ -220,7 +219,7 @@ class GenericTimeStampType
     /**
      * isset encapsulatedTimeStamp
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetEncapsulatedTimeStamp($index)
@@ -231,7 +230,7 @@ class GenericTimeStampType
     /**
      * unset encapsulatedTimeStamp
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetEncapsulatedTimeStamp($index)
@@ -252,7 +251,7 @@ class GenericTimeStampType
     /**
      * Sets a new encapsulatedTimeStamp
      *
-     * @param \horstoeko\ubl\entities\xades\EncapsulatedPKIDataType[] $encapsulatedTimeStamp
+     * @param  \horstoeko\ubl\entities\xades\EncapsulatedPKIDataType[] $encapsulatedTimeStamp
      * @return self
      */
     public function setEncapsulatedTimeStamp(array $encapsulatedTimeStamp)
@@ -265,7 +264,7 @@ class GenericTimeStampType
      * Adds as xMLTimeStamp
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\AnyType $xMLTimeStamp
+     * @param  \horstoeko\ubl\entities\xades\AnyType $xMLTimeStamp
      */
     public function addToXMLTimeStamp(\horstoeko\ubl\entities\xades\AnyType $xMLTimeStamp)
     {
@@ -276,7 +275,7 @@ class GenericTimeStampType
     /**
      * isset xMLTimeStamp
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetXMLTimeStamp($index)
@@ -287,7 +286,7 @@ class GenericTimeStampType
     /**
      * unset xMLTimeStamp
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetXMLTimeStamp($index)
@@ -308,7 +307,7 @@ class GenericTimeStampType
     /**
      * Sets a new xMLTimeStamp
      *
-     * @param \horstoeko\ubl\entities\xades\AnyType[] $xMLTimeStamp
+     * @param  \horstoeko\ubl\entities\xades\AnyType[] $xMLTimeStamp
      * @return self
      */
     public function setXMLTimeStamp(array $xMLTimeStamp)

@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\ds;
 /**
  * Class representing SignatureMethodType
  *
- *
  * XSD Type: SignatureMethodType
  */
 class SignatureMethodType
@@ -34,7 +33,7 @@ class SignatureMethodType
     /**
      * Sets a new algorithm
      *
-     * @param string $algorithm
+     * @param  string $algorithm
      * @return self
      */
     public function setAlgorithm($algorithm)
@@ -56,7 +55,7 @@ class SignatureMethodType
     /**
      * Sets a new hMACOutputLength
      *
-     * @param int $hMACOutputLength
+     * @param  int $hMACOutputLength
      * @return self
      */
     public function setHMACOutputLength($hMACOutputLength)

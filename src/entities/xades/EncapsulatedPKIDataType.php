@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing EncapsulatedPKIDataType
  *
- *
  * XSD Type: EncapsulatedPKIDataType
  */
 class EncapsulatedPKIDataType
@@ -39,7 +38,7 @@ class EncapsulatedPKIDataType
     /**
      * Gets or sets the inner value
      *
-     * @param string $value
+     * @param  string $value
      * @return string
      */
     public function value()
@@ -73,7 +72,7 @@ class EncapsulatedPKIDataType
     /**
      * Sets a new id
      *
-     * @param string $id
+     * @param  string $id
      * @return self
      */
     public function setId($id)
@@ -95,7 +94,7 @@ class EncapsulatedPKIDataType
     /**
      * Sets a new encoding
      *
-     * @param string $encoding
+     * @param  string $encoding
      * @return self
      */
     public function setEncoding($encoding)

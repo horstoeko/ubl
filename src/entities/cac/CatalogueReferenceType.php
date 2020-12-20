@@ -193,7 +193,7 @@ class CatalogueReferenceType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -233,7 +233,7 @@ class CatalogueReferenceType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\UUID $uUID
+     * @param  \horstoeko\ubl\entities\cbc\UUID $uUID
      * @return self
      */
     public function setUUID(\horstoeko\ubl\entities\cbc\UUID $uUID)
@@ -273,7 +273,7 @@ class CatalogueReferenceType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $issueDate
+     * @param  \DateTime $issueDate
      * @return self
      */
     public function setIssueDate(\DateTime $issueDate)
@@ -313,7 +313,7 @@ class CatalogueReferenceType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $issueTime
+     * @param  \DateTime $issueTime
      * @return self
      */
     public function setIssueTime(\DateTime $issueTime)
@@ -353,7 +353,7 @@ class CatalogueReferenceType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $revisionDate
+     * @param  \DateTime $revisionDate
      * @return self
      */
     public function setRevisionDate(\DateTime $revisionDate)
@@ -393,7 +393,7 @@ class CatalogueReferenceType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $revisionTime
+     * @param  \DateTime $revisionTime
      * @return self
      */
     public function setRevisionTime(\DateTime $revisionTime)
@@ -415,7 +415,7 @@ class CatalogueReferenceType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param  \horstoeko\ubl\entities\cbc\Note $note
      */
     public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
     {
@@ -435,7 +435,7 @@ class CatalogueReferenceType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNote($index)
@@ -455,7 +455,7 @@ class CatalogueReferenceType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNote($index)
@@ -494,7 +494,7 @@ class CatalogueReferenceType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note[] $note
+     * @param  \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
     public function setNote(array $note)
@@ -517,7 +517,7 @@ class CatalogueReferenceType
      *  computer accessories for laptops
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -538,7 +538,7 @@ class CatalogueReferenceType
      *  Text. Type
      *  computer accessories for laptops
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -559,7 +559,7 @@ class CatalogueReferenceType
      *  Text. Type
      *  computer accessories for laptops
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -600,7 +600,7 @@ class CatalogueReferenceType
      *  Text. Type
      *  computer accessories for laptops
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -642,7 +642,7 @@ class CatalogueReferenceType
      *  Identifier. Type
      *  1.1
      *
-     * @param \horstoeko\ubl\entities\cbc\VersionID $versionID
+     * @param  \horstoeko\ubl\entities\cbc\VersionID $versionID
      * @return self
      */
     public function setVersionID(\horstoeko\ubl\entities\cbc\VersionID $versionID)
@@ -686,7 +686,7 @@ class CatalogueReferenceType
      *  Identifier. Type
      *  1.0
      *
-     * @param \horstoeko\ubl\entities\cbc\PreviousVersionID $previousVersionID
+     * @param  \horstoeko\ubl\entities\cbc\PreviousVersionID $previousVersionID
      * @return self
      */
     public function setPreviousVersionID(\horstoeko\ubl\entities\cbc\PreviousVersionID $previousVersionID)

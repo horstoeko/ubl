@@ -167,7 +167,7 @@ class PowerOfAttorneyType
      *  Identifier
      *  Identifier. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -207,7 +207,7 @@ class PowerOfAttorneyType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $issueDate
+     * @param  \DateTime $issueDate
      * @return self
      */
     public function setIssueDate(\DateTime $issueDate)
@@ -247,7 +247,7 @@ class PowerOfAttorneyType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $issueTime
+     * @param  \DateTime $issueTime
      * @return self
      */
     public function setIssueTime(\DateTime $issueTime)
@@ -269,7 +269,7 @@ class PowerOfAttorneyType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Description $description
+     * @param  \horstoeko\ubl\entities\cbc\Description $description
      */
     public function addToDescription(\horstoeko\ubl\entities\cbc\Description $description)
     {
@@ -289,7 +289,7 @@ class PowerOfAttorneyType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetDescription($index)
@@ -309,7 +309,7 @@ class PowerOfAttorneyType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetDescription($index)
@@ -348,7 +348,7 @@ class PowerOfAttorneyType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Description[] $description
+     * @param  \horstoeko\ubl\entities\cbc\Description[] $description
      * @return self
      */
     public function setDescription(array $description)
@@ -390,7 +390,7 @@ class PowerOfAttorneyType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\NotaryParty $notaryParty
+     * @param  \horstoeko\ubl\entities\cac\NotaryParty $notaryParty
      * @return self
      */
     public function setNotaryParty(\horstoeko\ubl\entities\cac\NotaryParty $notaryParty)
@@ -432,7 +432,7 @@ class PowerOfAttorneyType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\AgentParty $agentParty
+     * @param  \horstoeko\ubl\entities\cac\AgentParty $agentParty
      * @return self
      */
     public function setAgentParty(\horstoeko\ubl\entities\cac\AgentParty $agentParty)
@@ -455,7 +455,7 @@ class PowerOfAttorneyType
      *  Party
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\WitnessParty $witnessParty
+     * @param  \horstoeko\ubl\entities\cac\WitnessParty $witnessParty
      */
     public function addToWitnessParty(\horstoeko\ubl\entities\cac\WitnessParty $witnessParty)
     {
@@ -476,7 +476,7 @@ class PowerOfAttorneyType
      *  Party
      *  Party
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetWitnessParty($index)
@@ -497,7 +497,7 @@ class PowerOfAttorneyType
      *  Party
      *  Party
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetWitnessParty($index)
@@ -538,7 +538,7 @@ class PowerOfAttorneyType
      *  Party
      *  Party
      *
-     * @param \horstoeko\ubl\entities\cac\WitnessParty[] $witnessParty
+     * @param  \horstoeko\ubl\entities\cac\WitnessParty[] $witnessParty
      * @return self
      */
     public function setWitnessParty(array $witnessParty)
@@ -561,7 +561,7 @@ class PowerOfAttorneyType
      *  Document Reference
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\MandateDocumentReference $mandateDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\MandateDocumentReference $mandateDocumentReference
      */
     public function addToMandateDocumentReference(\horstoeko\ubl\entities\cac\MandateDocumentReference $mandateDocumentReference)
     {
@@ -582,7 +582,7 @@ class PowerOfAttorneyType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetMandateDocumentReference($index)
@@ -603,7 +603,7 @@ class PowerOfAttorneyType
      *  Document Reference
      *  Document Reference
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetMandateDocumentReference($index)
@@ -644,7 +644,7 @@ class PowerOfAttorneyType
      *  Document Reference
      *  Document Reference
      *
-     * @param \horstoeko\ubl\entities\cac\MandateDocumentReference[] $mandateDocumentReference
+     * @param  \horstoeko\ubl\entities\cac\MandateDocumentReference[] $mandateDocumentReference
      * @return self
      */
     public function setMandateDocumentReference(array $mandateDocumentReference)

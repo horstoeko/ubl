@@ -73,7 +73,7 @@ class ContractingActivityType
      *  Code
      *  Code. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ActivityTypeCode $activityTypeCode
+     * @param  \horstoeko\ubl\entities\cbc\ActivityTypeCode $activityTypeCode
      * @return self
      */
     public function setActivityTypeCode(\horstoeko\ubl\entities\cbc\ActivityTypeCode $activityTypeCode)
@@ -113,7 +113,7 @@ class ContractingActivityType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ActivityType $activityType
+     * @param  \horstoeko\ubl\entities\cbc\ActivityType $activityType
      * @return self
      */
     public function setActivityType(\horstoeko\ubl\entities\cbc\ActivityType $activityType)

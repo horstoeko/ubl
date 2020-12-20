@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing TransportUserRemarksType
  *
- *
  * XSD Type: TransportUserRemarksType
  */
 class TransportUserRemarksType extends TextType

@@ -139,7 +139,7 @@ class CatalogueRequestLineType
      *  Identifier. Type
      *  1
      *
-     * @param \horstoeko\ubl\entities\cbc\ID $iD
+     * @param  \horstoeko\ubl\entities\cbc\ID $iD
      * @return self
      */
     public function setID(\horstoeko\ubl\entities\cbc\ID $iD)
@@ -181,7 +181,7 @@ class CatalogueRequestLineType
      *  Text. Type
      *  Installation , Phase One , Support and Maintenance
      *
-     * @param \horstoeko\ubl\entities\cbc\ContractSubdivision $contractSubdivision
+     * @param  \horstoeko\ubl\entities\cbc\ContractSubdivision $contractSubdivision
      * @return self
      */
     public function setContractSubdivision(\horstoeko\ubl\entities\cbc\ContractSubdivision $contractSubdivision)
@@ -203,7 +203,7 @@ class CatalogueRequestLineType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Note $note
+     * @param  \horstoeko\ubl\entities\cbc\Note $note
      */
     public function addToNote(\horstoeko\ubl\entities\cbc\Note $note)
     {
@@ -223,7 +223,7 @@ class CatalogueRequestLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetNote($index)
@@ -243,7 +243,7 @@ class CatalogueRequestLineType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetNote($index)
@@ -282,7 +282,7 @@ class CatalogueRequestLineType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Note[] $note
+     * @param  \horstoeko\ubl\entities\cbc\Note[] $note
      * @return self
      */
     public function setNote(array $note)
@@ -324,7 +324,7 @@ class CatalogueRequestLineType
      *  Period
      *  Period
      *
-     * @param \horstoeko\ubl\entities\cac\LineValidityPeriod $lineValidityPeriod
+     * @param  \horstoeko\ubl\entities\cac\LineValidityPeriod $lineValidityPeriod
      * @return self
      */
     public function setLineValidityPeriod(\horstoeko\ubl\entities\cac\LineValidityPeriod $lineValidityPeriod)
@@ -347,7 +347,7 @@ class CatalogueRequestLineType
      *  Item Location Quantity
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cac\RequiredItemLocationQuantity $requiredItemLocationQuantity
+     * @param  \horstoeko\ubl\entities\cac\RequiredItemLocationQuantity $requiredItemLocationQuantity
      */
     public function addToRequiredItemLocationQuantity(\horstoeko\ubl\entities\cac\RequiredItemLocationQuantity $requiredItemLocationQuantity)
     {
@@ -368,7 +368,7 @@ class CatalogueRequestLineType
      *  Item Location Quantity
      *  Item Location Quantity
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetRequiredItemLocationQuantity($index)
@@ -389,7 +389,7 @@ class CatalogueRequestLineType
      *  Item Location Quantity
      *  Item Location Quantity
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetRequiredItemLocationQuantity($index)
@@ -430,7 +430,7 @@ class CatalogueRequestLineType
      *  Item Location Quantity
      *  Item Location Quantity
      *
-     * @param \horstoeko\ubl\entities\cac\RequiredItemLocationQuantity[] $requiredItemLocationQuantity
+     * @param  \horstoeko\ubl\entities\cac\RequiredItemLocationQuantity[] $requiredItemLocationQuantity
      * @return self
      */
     public function setRequiredItemLocationQuantity(array $requiredItemLocationQuantity)
@@ -470,7 +470,7 @@ class CatalogueRequestLineType
      *  Item
      *  Item
      *
-     * @param \horstoeko\ubl\entities\cac\Item $item
+     * @param  \horstoeko\ubl\entities\cac\Item $item
      * @return self
      */
     public function setItem(\horstoeko\ubl\entities\cac\Item $item)

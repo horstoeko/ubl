@@ -222,7 +222,7 @@ class TransportScheduleType
      *  Numeric
      *  Numeric. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\SequenceNumeric $sequenceNumeric
+     * @param  \horstoeko\ubl\entities\cbc\SequenceNumeric $sequenceNumeric
      * @return self
      */
     public function setSequenceNumeric(\horstoeko\ubl\entities\cbc\SequenceNumeric $sequenceNumeric)
@@ -262,7 +262,7 @@ class TransportScheduleType
      *  Date
      *  Date. Type
      *
-     * @param \DateTime $referenceDate
+     * @param  \DateTime $referenceDate
      * @return self
      */
     public function setReferenceDate(\DateTime $referenceDate)
@@ -302,7 +302,7 @@ class TransportScheduleType
      *  Time
      *  Time. Type
      *
-     * @param \DateTime $referenceTime
+     * @param  \DateTime $referenceTime
      * @return self
      */
     public function setReferenceTime(\DateTime $referenceTime)
@@ -342,7 +342,7 @@ class TransportScheduleType
      *  Percent
      *  Percent. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\ReliabilityPercent $reliabilityPercent
+     * @param  \horstoeko\ubl\entities\cbc\ReliabilityPercent $reliabilityPercent
      * @return self
      */
     public function setReliabilityPercent(\horstoeko\ubl\entities\cbc\ReliabilityPercent $reliabilityPercent)
@@ -364,7 +364,7 @@ class TransportScheduleType
      *  Text. Type
      *
      * @return self
-     * @param \horstoeko\ubl\entities\cbc\Remarks $remarks
+     * @param  \horstoeko\ubl\entities\cbc\Remarks $remarks
      */
     public function addToRemarks(\horstoeko\ubl\entities\cbc\Remarks $remarks)
     {
@@ -384,7 +384,7 @@ class TransportScheduleType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetRemarks($index)
@@ -404,7 +404,7 @@ class TransportScheduleType
      *  Text
      *  Text. Type
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetRemarks($index)
@@ -443,7 +443,7 @@ class TransportScheduleType
      *  Text
      *  Text. Type
      *
-     * @param \horstoeko\ubl\entities\cbc\Remarks[] $remarks
+     * @param  \horstoeko\ubl\entities\cbc\Remarks[] $remarks
      * @return self
      */
     public function setRemarks(array $remarks)
@@ -485,7 +485,7 @@ class TransportScheduleType
      *  Location
      *  Location
      *
-     * @param \horstoeko\ubl\entities\cac\StatusLocation $statusLocation
+     * @param  \horstoeko\ubl\entities\cac\StatusLocation $statusLocation
      * @return self
      */
     public function setStatusLocation(\horstoeko\ubl\entities\cac\StatusLocation $statusLocation)
@@ -527,7 +527,7 @@ class TransportScheduleType
      *  Transport Event
      *  Transport Event
      *
-     * @param \horstoeko\ubl\entities\cac\ActualArrivalTransportEvent $actualArrivalTransportEvent
+     * @param  \horstoeko\ubl\entities\cac\ActualArrivalTransportEvent $actualArrivalTransportEvent
      * @return self
      */
     public function setActualArrivalTransportEvent(\horstoeko\ubl\entities\cac\ActualArrivalTransportEvent $actualArrivalTransportEvent)
@@ -569,7 +569,7 @@ class TransportScheduleType
      *  Transport Event
      *  Transport Event
      *
-     * @param \horstoeko\ubl\entities\cac\ActualDepartureTransportEvent $actualDepartureTransportEvent
+     * @param  \horstoeko\ubl\entities\cac\ActualDepartureTransportEvent $actualDepartureTransportEvent
      * @return self
      */
     public function setActualDepartureTransportEvent(\horstoeko\ubl\entities\cac\ActualDepartureTransportEvent $actualDepartureTransportEvent)
@@ -611,7 +611,7 @@ class TransportScheduleType
      *  Transport Event
      *  Transport Event
      *
-     * @param \horstoeko\ubl\entities\cac\EstimatedDepartureTransportEvent $estimatedDepartureTransportEvent
+     * @param  \horstoeko\ubl\entities\cac\EstimatedDepartureTransportEvent $estimatedDepartureTransportEvent
      * @return self
      */
     public function setEstimatedDepartureTransportEvent(\horstoeko\ubl\entities\cac\EstimatedDepartureTransportEvent $estimatedDepartureTransportEvent)
@@ -653,7 +653,7 @@ class TransportScheduleType
      *  Transport Event
      *  Transport Event
      *
-     * @param \horstoeko\ubl\entities\cac\EstimatedArrivalTransportEvent $estimatedArrivalTransportEvent
+     * @param  \horstoeko\ubl\entities\cac\EstimatedArrivalTransportEvent $estimatedArrivalTransportEvent
      * @return self
      */
     public function setEstimatedArrivalTransportEvent(\horstoeko\ubl\entities\cac\EstimatedArrivalTransportEvent $estimatedArrivalTransportEvent)
@@ -695,7 +695,7 @@ class TransportScheduleType
      *  Transport Event
      *  Transport Event
      *
-     * @param \horstoeko\ubl\entities\cac\PlannedDepartureTransportEvent $plannedDepartureTransportEvent
+     * @param  \horstoeko\ubl\entities\cac\PlannedDepartureTransportEvent $plannedDepartureTransportEvent
      * @return self
      */
     public function setPlannedDepartureTransportEvent(\horstoeko\ubl\entities\cac\PlannedDepartureTransportEvent $plannedDepartureTransportEvent)
@@ -737,7 +737,7 @@ class TransportScheduleType
      *  Transport Event
      *  Transport Event
      *
-     * @param \horstoeko\ubl\entities\cac\PlannedArrivalTransportEvent $plannedArrivalTransportEvent
+     * @param  \horstoeko\ubl\entities\cac\PlannedArrivalTransportEvent $plannedArrivalTransportEvent
      * @return self
      */
     public function setPlannedArrivalTransportEvent(\horstoeko\ubl\entities\cac\PlannedArrivalTransportEvent $plannedArrivalTransportEvent)

@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing ClaimedRolesListType
  *
- *
  * XSD Type: ClaimedRolesListType
  */
 class ClaimedRolesListType
@@ -22,7 +21,7 @@ class ClaimedRolesListType
      * Adds as claimedRole
      *
      * @return self
-     * @param \horstoeko\ubl\entities\xades\AnyType $claimedRole
+     * @param  \horstoeko\ubl\entities\xades\AnyType $claimedRole
      */
     public function addToClaimedRole(\horstoeko\ubl\entities\xades\AnyType $claimedRole)
     {
@@ -33,7 +32,7 @@ class ClaimedRolesListType
     /**
      * isset claimedRole
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return bool
      */
     public function issetClaimedRole($index)
@@ -44,7 +43,7 @@ class ClaimedRolesListType
     /**
      * unset claimedRole
      *
-     * @param int|string $index
+     * @param  int|string $index
      * @return void
      */
     public function unsetClaimedRole($index)
@@ -65,7 +64,7 @@ class ClaimedRolesListType
     /**
      * Sets a new claimedRole
      *
-     * @param \horstoeko\ubl\entities\xades\AnyType[] $claimedRole
+     * @param  \horstoeko\ubl\entities\xades\AnyType[] $claimedRole
      * @return self
      */
     public function setClaimedRole(array $claimedRole)

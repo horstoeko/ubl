@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing PartialDeliveryIndicatorType
  *
- *
  * XSD Type: PartialDeliveryIndicatorType
  */
 class PartialDeliveryIndicatorType
@@ -29,7 +28,7 @@ class PartialDeliveryIndicatorType
     /**
      * Gets or sets the inner value
      *
-     * @param bool $value
+     * @param  bool $value
      * @return bool
      */
     public function value()

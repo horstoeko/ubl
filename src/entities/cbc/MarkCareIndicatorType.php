@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing MarkCareIndicatorType
  *
- *
  * XSD Type: MarkCareIndicatorType
  */
 class MarkCareIndicatorType
@@ -29,7 +28,7 @@ class MarkCareIndicatorType
     /**
      * Gets or sets the inner value
      *
-     * @param bool $value
+     * @param  bool $value
      * @return bool
      */
     public function value()

@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing EffectiveTimeType
  *
- *
  * XSD Type: EffectiveTimeType
  */
 class EffectiveTimeType
@@ -29,7 +28,7 @@ class EffectiveTimeType
     /**
      * Gets or sets the inner value
      *
-     * @param \DateTime $value
+     * @param  \DateTime $value
      * @return \DateTime
      */
     public function value()

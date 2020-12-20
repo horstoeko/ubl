@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\xades;
 /**
  * Class representing CounterSignatureType
  *
- *
  * XSD Type: CounterSignatureType
  */
 class CounterSignatureType
@@ -29,7 +28,7 @@ class CounterSignatureType
     /**
      * Sets a new signature
      *
-     * @param \horstoeko\ubl\entities\ds\Signature $signature
+     * @param  \horstoeko\ubl\entities\ds\Signature $signature
      * @return self
      */
     public function setSignature(\horstoeko\ubl\entities\ds\Signature $signature)

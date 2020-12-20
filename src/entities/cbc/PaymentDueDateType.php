@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing PaymentDueDateType
  *
- *
  * XSD Type: PaymentDueDateType
  */
 class PaymentDueDateType
@@ -29,7 +28,7 @@ class PaymentDueDateType
     /**
      * Gets or sets the inner value
      *
-     * @param \DateTime $value
+     * @param  \DateTime $value
      * @return \DateTime
      */
     public function value()

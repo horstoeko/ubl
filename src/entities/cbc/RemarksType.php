@@ -7,7 +7,6 @@ use horstoeko\ubl\entities\udt\TextType;
 /**
  * Class representing RemarksType
  *
- *
  * XSD Type: RemarksType
  */
 class RemarksType extends TextType

@@ -5,7 +5,6 @@ namespace horstoeko\ubl\entities\cbc;
 /**
  * Class representing TaxEvidenceIndicatorType
  *
- *
  * XSD Type: TaxEvidenceIndicatorType
  */
 class TaxEvidenceIndicatorType
@@ -29,7 +28,7 @@ class TaxEvidenceIndicatorType
     /**
      * Gets or sets the inner value
      *
-     * @param bool $value
+     * @param  bool $value
      * @return bool
      */
     public function value()
