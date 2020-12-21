@@ -650,7 +650,12 @@ class Builder1Test extends BuilderBaseTest
         (self::$document)->setDocumentSellerOrderReferencedDocument("sellerorderrefdoc", \DateTime::createFromFormat("Ymd", "20200101"));
 
         $this->disableRenderXmlContent();
-        $this->assertXPathValue('/ubl:Invoice/cac:OrderReference/cbc:SalesOrderID', "sellerorderrefdoc");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:OrderReference/cbc:SalesOrderID', 0, "sellerorderrefdoc");
+
+        (self::$document)->setDocumentSellerOrderReferencedDocument("sellerorderrefdoc2", \DateTime::createFromFormat("Ymd", "20200102"));
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:OrderReference/cbc:SalesOrderID', 0, "sellerorderrefdoc2");
     }
 
     /**
@@ -661,9 +666,16 @@ class Builder1Test extends BuilderBaseTest
         (self::$document)->setDocumentBuyerOrderReferencedDocument("buyerorderrefdoc", \DateTime::createFromFormat("Ymd", "20200101"));
 
         $this->disableRenderXmlContent();
-        $this->assertXPathValue('/ubl:Invoice/cac:OrderReference/cbc:ID', "buyerorderrefdoc");
-        $this->assertXPathValue('/ubl:Invoice/cac:OrderReference/cbc:SalesOrderID', "sellerorderrefdoc");
-        $this->assertXPathValue('/ubl:Invoice/cac:OrderReference/cbc:IssueDate', "2020-01-01");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:OrderReference/cbc:ID', 0, "buyerorderrefdoc");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:OrderReference/cbc:SalesOrderID', 0, "sellerorderrefdoc2");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:OrderReference/cbc:IssueDate', 0, "2020-01-01");
+
+        (self::$document)->setDocumentBuyerOrderReferencedDocument("buyerorderrefdoc2", \DateTime::createFromFormat("Ymd", "20200102"));
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:OrderReference/cbc:ID', 0, "buyerorderrefdoc2");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:OrderReference/cbc:SalesOrderID', 0, "sellerorderrefdoc2");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:OrderReference/cbc:IssueDate', 0, "2020-01-02");
     }
 
     /**
@@ -674,8 +686,14 @@ class Builder1Test extends BuilderBaseTest
         (self::$document)->setDocumentContractReferencedDocument("contractrefdoc", \DateTime::createFromFormat("Ymd", "20200101"));
 
         $this->disableRenderXmlContent();
-        $this->assertXPathValue('/ubl:Invoice/cac:ContractDocumentReference/cbc:ID', "contractrefdoc");
-        $this->assertXPathValue('/ubl:Invoice/cac:ContractDocumentReference/cbc:IssueDate', "2020-01-01");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:ContractDocumentReference/cbc:ID', 0, "contractrefdoc");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:ContractDocumentReference/cbc:IssueDate', 0, "2020-01-01");
+
+        (self::$document)->setDocumentContractReferencedDocument("contractrefdoc2", \DateTime::createFromFormat("Ymd", "20200102"));
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:ContractDocumentReference/cbc:ID', 0, "contractrefdoc2");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:ContractDocumentReference/cbc:IssueDate', 0, "2020-01-02");
     }
 
     /**
@@ -686,8 +704,14 @@ class Builder1Test extends BuilderBaseTest
         (self::$document)->setDocumentOriginatorReferencedDocument("originatorrefdoc", \DateTime::createFromFormat("Ymd", "20200101"));
 
         $this->disableRenderXmlContent();
-        $this->assertXPathValue('/ubl:Invoice/cac:OriginatorDocumentReference/cbc:ID', "originatorrefdoc");
-        $this->assertXPathValue('/ubl:Invoice/cac:OriginatorDocumentReference/cbc:IssueDate', "2020-01-01");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:OriginatorDocumentReference/cbc:ID', 0, "originatorrefdoc");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:OriginatorDocumentReference/cbc:IssueDate', 0, "2020-01-01");
+
+        (self::$document)->setDocumentOriginatorReferencedDocument("originatorrefdoc2", \DateTime::createFromFormat("Ymd", "20200102"));
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:OriginatorDocumentReference/cbc:ID', 0, "originatorrefdoc2");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:OriginatorDocumentReference/cbc:IssueDate', 0, "2020-01-02");
     }
 
     /**
@@ -731,6 +755,12 @@ class Builder1Test extends BuilderBaseTest
         $this->disableRenderXmlContent();
         $this->assertXPathValue('/ubl:Invoice/cac:BillingReference/cac:InvoiceDocumentReference/cbc:ID', "invrefdoc");
         $this->assertXPathValue('/ubl:Invoice/cac:BillingReference/cac:InvoiceDocumentReference/cbc:IssueDate', "2020-01-01");
+
+        (self::$document)->setDocumentInvoiceReferencedDocument("invrefdoc2", \DateTime::createFromFormat("Ymd", "20200102"));
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValue('/ubl:Invoice/cac:BillingReference/cac:InvoiceDocumentReference/cbc:ID', "invrefdoc2");
+        $this->assertXPathValue('/ubl:Invoice/cac:BillingReference/cac:InvoiceDocumentReference/cbc:IssueDate', "2020-01-02");
     }
 
     /**

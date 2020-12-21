@@ -1697,7 +1697,7 @@ class UblDocumentBuilder extends UblDocument
             $this->invoiceObject->addToBillingReference(new BillingReference())->getBillingReference()[0];
 
         $invoiceReference = $billingReference->getInvoiceDocumentReference() !== null ?
-            $billingReference->getInvoiceDocumentReference :
+            $billingReference->getInvoiceDocumentReference() :
             $billingReference->setInvoiceDocumentReference(new InvoiceDocumentReference())->getInvoiceDocumentReference();
 
         $invoiceReference->setId(new Id($issuerassignedid));
