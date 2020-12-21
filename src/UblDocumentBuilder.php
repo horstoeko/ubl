@@ -1831,12 +1831,19 @@ class UblDocumentBuilder extends UblDocument
      * @param  string|null $payeeBic
      * Seller's banking institution, An identifier for the payment service provider with whom the payment account
      * is managed, such as the BIC or a national bank code, if required. No identification scheme is to be used.
+     * @param string|null $mandate
+     * Unique identifier assigned by the Payee for referencing the direct debit mandate. Used in order to pre-notify
+     * the Buyer of a SEPA direct debit.
+     * @param string|null $paymentReference
+     * A textual value used to establish a link between the payment and the Invoice, issued by the Seller. Used for
+     * creditor's critical reconciliation information. This information element helps the Seller to assign an incoming
+     * payment to the relevant payment process.
      * @return UblDocumentBuilder
      */
-    public function addDocumentPaymentMean(?string $typecode = null, ?string $information = null, ?string $cardType = null, ?string $cardId = null, ?string $cardHolderName = null, ?string $buyerIban = null, ?string $payeeIban = null, ?string $payeeAccountName = null, ?string $payeePropId = null, ?string $payeeBic = null, ?string $mandate = null, ?string $paxmentReference = null): UblDocumentBuilder
+    public function addDocumentPaymentMean(?string $typecode = null, ?string $information = null, ?string $cardType = null, ?string $cardId = null, ?string $cardHolderName = null, ?string $buyerIban = null, ?string $payeeIban = null, ?string $payeeAccountName = null, ?string $payeePropId = null, ?string $payeeBic = null, ?string $mandate = null, ?string $paymentReference = null): UblDocumentBuilder
     {
         if ($typecode == "58") {
-            return $this->addDocumentPaymentMeanSepaCreditTransfer($payeeIban);
+            return $this->addDocumentPaymentMeanSepaCreditTransfer($payeeIban, $payeeAccountName, $payeePropId, $payeeBic, $paymentReference);
         }
         if ($typecode == "59") {
             return $this->addDocumentPaymentMeanSepaDirectDebit($buyerIban, $mandate);
@@ -1868,7 +1875,8 @@ class UblDocumentBuilder extends UblDocument
             $cardAccount->setHolderName(new HolderName($cardHolderName));
         }
         if (!StringUtils::stringIsNullOrEmpty($buyerIban)) {
-            $payerFinancialAccount = $paymentMean->getPayerFinancialAccount() ?? $paymentMean->setPayerFinancialAccount(new PayerFinancialAccount())->getPayerFinancialAccount();
+            $paymentMandate = $paymentMean->getPaymentMandate() ?? $paymentMean->setPaymentMandate(new PaymentMandate())->getPaymentMandate();
+            $payerFinancialAccount = $paymentMandate->getPayerFinancialAccount() ?? $paymentMandate->setPayerFinancialAccount(new PayerFinancialAccount())->getPayerFinancialAccount();
             $payerFinancialAccount->setID(new ID($buyerIban));
         }
         if (!StringUtils::stringIsNullOrEmpty($mandate)) {
@@ -1889,8 +1897,8 @@ class UblDocumentBuilder extends UblDocument
             $payeeFinancialAccount = $paymentMean->getPayeeFinancialAccount() ?? $paymentMean->setPayeeFinancialAccount(new PayeeFinancialAccount)->getPayeeFinancialAccount();
             $payeeFinancialAccount->setFinancialInstitutionBranch((new FinancialInstitutionBranch())->setID(new ID($payeeBic)));
         }
-        if (!StringUtils::stringIsNullOrEmpty($paxmentReference)) {
-            $paymentMean->addToPaymentID(new PaymentID($paxmentReference));
+        if (!StringUtils::stringIsNullOrEmpty($paymentReference)) {
+            $paymentMean->addToPaymentID(new PaymentID($paymentReference));
         }
 
         return $this;
@@ -1900,10 +1908,17 @@ class UblDocumentBuilder extends UblDocument
      * Create payment means for payment type 58 (SEPA credit transfer)
      * German translation: SEPA-Überweisung
      *
-     * @param  string|null $payeeIban
+     * @param string|null $payeeIban
+     * @param string|null $payeeAccountName
+     * @param string|null $payeePropId
+     * @param string|null $payeeBic
+     * @param string|null $paymentReference
+     * A textual value used to establish a link between the payment and the Invoice, issued by the Seller. Used for
+     * creditor's critical reconciliation information. This information element helps the Seller to assign an incoming
+     * payment to the relevant payment process.
      * @return UblDocumentBuilder
      */
-    public function addDocumentPaymentMeanSepaCreditTransfer(?string $payeeIban = null, ?string $payeeAccountName = null, ?string $payeePropId = null, ?string $payeeBic = null): UblDocumentBuilder
+    public function addDocumentPaymentMeanSepaCreditTransfer(?string $payeeIban = null, ?string $payeeAccountName = null, ?string $payeePropId = null, ?string $payeeBic = null, ?string $paymentReference = null): UblDocumentBuilder
     {
         $paymentMean = new PaymentMeans();
         $paymentMean->setPaymentMeansCode(new PaymentMeansCode("58"));
@@ -1934,9 +1949,13 @@ class UblDocumentBuilder extends UblDocument
      * Mandate reference identifier
      * Unique identifier assigned by the Payee for referencing the direct debit mandate. Used in order to pre-notify
      * the Buyer of a SEPA direct debit, __German translation:__ Mandatsreferenz
+     * @param string|null $paymentReference
+     * A textual value used to establish a link between the payment and the Invoice, issued by the Seller. Used for
+     * creditor's critical reconciliation information. This information element helps the Seller to assign an incoming
+     * payment to the relevant payment process.
      * @return UblDocumentBuilder
      */
-    public function addDocumentPaymentMeanSepaDirectDebit(?string $buyerIban = null, ?string $mandate = null): UblDocumentBuilder
+    public function addDocumentPaymentMeanSepaDirectDebit(?string $buyerIban = null, ?string $mandate = null, ?string $paymentReference = null): UblDocumentBuilder
     {
         $paymentMean = new PaymentMeans();
         $paymentMean->setPaymentMeansCode(new PaymentMeansCode("59"));
@@ -1958,9 +1977,13 @@ class UblDocumentBuilder extends UblDocument
      * security for you automatically
      * @param  string|null $cardHolderName
      * The name of the payment card holder.
+     * @param string|null $paymentReference
+     * A textual value used to establish a link between the payment and the Invoice, issued by the Seller. Used for
+     * creditor's critical reconciliation information. This information element helps the Seller to assign an incoming
+     * payment to the relevant payment process.
      * @return UblDocumentBuilder
      */
-    public function addDocumentPaymentMeanBankCard(?string $cardType = null, ?string $cardId = null, ?string $cardHolderName = null): UblDocumentBuilder
+    public function addDocumentPaymentMeanBankCard(?string $cardType = null, ?string $cardId = null, ?string $cardHolderName = null, ?string $paymentReference = null): UblDocumentBuilder
     {
         $paymentMean = new PaymentMeans();
         $paymentMean->setPaymentMeansCode(new PaymentMeansCode("48"));
