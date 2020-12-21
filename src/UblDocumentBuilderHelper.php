@@ -34,6 +34,9 @@ use horstoeko\ubl\entities\cac\ReceiptDocumentReference;
 use horstoeko\ubl\entities\cac\ContractDocumentReference;
 use horstoeko\ubl\entities\cac\DespatchDocumentReference;
 use horstoeko\ubl\entities\cac\OriginatorDocumentReference;
+use horstoeko\ubl\entities\cac\PartyIdentification;
+use horstoeko\ubl\entities\cac\PartyName;
+use horstoeko\ubl\entities\cbc\EndpointID;
 
 /**
  * Class representing helper methods for the ubl invoice builder
@@ -113,6 +116,23 @@ class UblDocumentBuilderHelper
     }
 
     /**
+     * Converts a empty/null string to null
+     *
+     * @param mixed $variable
+     * @return mixed
+     */
+    public function emptyOrNullToNull($variable)
+    {
+        if (gettype($variable) == "string") {
+            if (StringUtils::stringIsNullOrEmpty($variable)) {
+                return null;
+            }
+        }
+
+        return $variable;
+    }
+
+    /**
      * Make sure that there is an accounting supplier (seller)
      *
      * @return AccountingSupplierParty
@@ -131,6 +151,30 @@ class UblDocumentBuilderHelper
     {
         $accountingSupplierParty = $this->ensureAccountingSupplier();
         return $accountingSupplierParty->getParty() ?? $accountingSupplierParty->setParty(new Party())->getParty();
+    }
+
+    /**
+     * Make sure that there is an accounting supplier with party object and the
+     * party object has an party name object
+     *
+     * @return PartyName
+     */
+    public function ensureAccountingSupplierPartyPartyName(): PartyName
+    {
+        $party = $this->ensureAccountingSupplierParty();
+        return $party->setPartyName([new PartyName()])->getPartyName()[0];
+    }
+
+    /**
+     * Make sure that there is an accounting supplier with party object and the
+     * party object has an party identification object
+     *
+     * @return PartyIdentification
+     */
+    public function ensureAccountingSupplierPartyPartyIdentification(): PartyIdentification
+    {
+        $party = $this->ensureAccountingSupplierParty();
+        return $party->setPartyIdentification([new PartyIdentification])->getPartyIdentification()[0];
     }
 
     /**
@@ -191,6 +235,30 @@ class UblDocumentBuilderHelper
     }
 
     /**
+     * Make sure that there is an accounting customer with party object and the
+     * party object has an party name object
+     *
+     * @return PartyName
+     */
+    public function ensureAccountingCustomerPartyPartyName(): PartyName
+    {
+        $party = $this->ensureAccountingCustomerParty();
+        return $party->setPartyName([new PartyName()])->getPartyName()[0];
+    }
+
+    /**
+     * Make sure that there is an accounting customer with party object and the
+     * party object has an party identification object
+     *
+     * @return PartyIdentification
+     */
+    public function ensureAccountingCustomerPartyPartyIdentification(): PartyIdentification
+    {
+        $party = $this->ensureAccountingCustomerParty();
+        return $party->setPartyIdentification([new PartyIdentification])->getPartyIdentification()[0];
+    }
+
+    /**
      * Make sure that there is an accounting customer with party object and
      * the party element contains a postal address object
      *
@@ -234,6 +302,30 @@ class UblDocumentBuilderHelper
     public function ensureTaxRepresentativeTradeParty(): TaxRepresentativeParty
     {
         return $this->getInvoiceObject()->getTaxRepresentativeParty() ?? $this->getInvoiceObject()->setTaxRepresentativeParty(new TaxRepresentativeParty())->getTaxRepresentativeParty();
+    }
+
+    /**
+     * Make sure that there is a tax representative trade party has a party
+     * name object
+     *
+     * @return PartyName
+     */
+    public function ensureTaxRepresentativeTradePartyPartyName(): PartyName
+    {
+        $party = $this->ensureTaxRepresentativeTradeParty();
+        return $party->setPartyName([new PartyName()])->getPartyName()[0];
+    }
+
+    /**
+     * Make sure that there is a tax representative trade party has a party
+     * identification object
+     *
+     * @return PartyIdentification
+     */
+    public function ensureTaxRepresentativeTradePartyPartyIdentification(): PartyIdentification
+    {
+        $party = $this->ensureTaxRepresentativeTradeParty();
+        return $party->setPartyIdentification([new PartyIdentification])->getPartyIdentification()[0];
     }
 
     /**

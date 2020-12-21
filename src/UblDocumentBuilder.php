@@ -409,15 +409,14 @@ class UblDocumentBuilder extends UblDocument
     public function setDocumentSeller(?string $name = null, ?string $id = null, ?string $idscheme = null): UblDocumentBuilder
     {
         if (!StringUtils::stringIsNullOrEmpty($name)) {
-            $party = $this->ublBuilderHelper->ensureAccountingSupplierParty();
-            $party->addToPartyName((new PartyName())->setName((new Name($name))));
+            $partyName = $this->ublBuilderHelper->ensureAccountingSupplierPartyPartyName();
+            $partyName->setName(new Name($name));
         }
         if (!StringUtils::stringIsNullOrEmpty($id)) {
-            $party = $this->ublBuilderHelper->ensureAccountingSupplierParty();
-            if (!StringUtils::stringIsNullOrEmpty($idscheme)) {
-                $party->addToPartyIdentification((new PartyIdentification())->setID((new Id($id))->setSchemeID($idscheme)));
-            } else {
-                $party->addToPartyIdentification((new PartyIdentification())->setID(new Id($id)));
+            $partyIdentification = $this->ublBuilderHelper->ensureAccountingSupplierPartyPartyIdentification();
+            $partyIdentification->setID(new ID($id));
+            if (!StringUtils::stringIsNullOrEmpty($id)) {
+                $partyIdentification->getId()->setSchemeID($idscheme);
             }
         }
 
@@ -646,15 +645,14 @@ class UblDocumentBuilder extends UblDocument
     public function setDocumentBuyer(?string $name = null, ?string $id = null, ?string $idscheme = null): UblDocumentBuilder
     {
         if (!StringUtils::stringIsNullOrEmpty($name)) {
-            $party = $this->ublBuilderHelper->ensureAccountingCustomerParty();
-            $party->addToPartyName((new PartyName())->setName((new Name($name))));
+            $partyName = $this->ublBuilderHelper->ensureAccountingCustomerPartyPartyName();
+            $partyName->setName(new Name($name));
         }
         if (!StringUtils::stringIsNullOrEmpty($id)) {
-            $party = $this->ublBuilderHelper->ensureAccountingCustomerParty();
-            if (!StringUtils::stringIsNullOrEmpty($idscheme)) {
-                $party->addToPartyIdentification((new PartyIdentification())->setID((new Id($id))->setSchemeID($idscheme)));
-            } else {
-                $party->addToPartyIdentification((new PartyIdentification())->setID(new Id($id)));
+            $partyIdentification = $this->ublBuilderHelper->ensureAccountingCustomerPartyPartyIdentification();
+            $partyIdentification->setID(new ID($id));
+            if (!StringUtils::stringIsNullOrEmpty($id)) {
+                $partyIdentification->getId()->setSchemeID($idscheme);
             }
         }
 
@@ -878,15 +876,14 @@ class UblDocumentBuilder extends UblDocument
     public function setDocumentSellerTaxRepresentative(?string $name = null, ?string $id = null, ?string $idscheme = null): UblDocumentBuilder
     {
         if (!StringUtils::stringIsNullOrEmpty($name)) {
-            $taxRepresentativeParty = $this->ublBuilderHelper->ensureTaxRepresentativeTradeParty();
-            $taxRepresentativeParty->addToPartyName((new PartyName())->setName((new Name($name))));
+            $partyName = $this->ublBuilderHelper->ensureTaxRepresentativeTradePartyPartyName();
+            $partyName->setName(new Name($name));
         }
         if (!StringUtils::stringIsNullOrEmpty($id)) {
-            $taxRepresentativeParty = $this->ublBuilderHelper->ensureTaxRepresentativeTradeParty();
-            if (!StringUtils::stringIsNullOrEmpty($idscheme)) {
-                $taxRepresentativeParty->addToPartyIdentification((new PartyIdentification())->setID((new Id($id))->setSchemeID($idscheme)));
-            } else {
-                $taxRepresentativeParty->addToPartyIdentification((new PartyIdentification())->setID(new Id($id)));
+            $partyIdentification = $this->ublBuilderHelper->ensureTaxRepresentativeTradePartyPartyIdentification();
+            $partyIdentification->setID(new ID($id));
+            if (!StringUtils::stringIsNullOrEmpty($id)) {
+                $partyIdentification->getId()->setSchemeID($idscheme);
             }
         }
 
