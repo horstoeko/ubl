@@ -288,11 +288,11 @@ class UblDocumentBuilder extends UblDocument
         $this->invoiceObject->setDocumentCurrencyCode(new DocumentCurrencyCode($documentCurrencyCode));
         $this->invoiceObject->setTaxCurrencyCode(new TaxCurrencyCode(StringUtils::stringIsNullOrEmpty($taxCurrencyCode) ? $documentCurrencyCode : $taxCurrencyCode));
 
-        if ($dueDate !== null) {
+        if ($dueDate != null) {
             $this->invoiceObject->setDueDate($dueDate);
         }
 
-        if ($taxPointDate !== null) {
+        if ($taxPointDate != null) {
             $this->invoiceObject->setTaxPointDate($taxPointDate);
         }
 
@@ -412,6 +412,7 @@ class UblDocumentBuilder extends UblDocument
             $partyName = $this->ublBuilderHelper->ensureAccountingSupplierPartyPartyName();
             $partyName->setName(new Name($name));
         }
+
         if (!StringUtils::stringIsNullOrEmpty($id)) {
             $partyIdentification = $this->ublBuilderHelper->ensureAccountingSupplierPartyPartyIdentification();
             $partyIdentification->setID(new ID($id));
@@ -2072,7 +2073,7 @@ class UblDocumentBuilder extends UblDocument
             ->setId(new ID($categoryCode))
             ->setTaxScheme(
                 (new TaxScheme())
-                ->setID(new ID($typeCode))
+                    ->setID(new ID($typeCode))
             );
 
         if ($rateApplicablePercent !== null) {
@@ -2247,7 +2248,7 @@ class UblDocumentBuilder extends UblDocument
             ->setId(new ID($categoryCode))
             ->setTaxScheme(
                 (new TaxScheme())
-                ->setID(new ID($typeCode))
+                    ->setID(new ID($typeCode))
             );
 
         if ($rateApplicablePercent !== null) {
@@ -2884,7 +2885,7 @@ class UblDocumentBuilder extends UblDocument
                 ->setId(new ID($taxCategoryCode))
                 ->setTaxScheme(
                     (new TaxScheme())
-                    ->setID(new ID($taxTypeCode))
+                        ->setID(new ID($taxTypeCode))
                 );
 
             if ($rateApplicablePercent !== null) {
@@ -3357,7 +3358,7 @@ class UblDocumentBuilder extends UblDocument
             ->setId(new ID($categoryCode))
             ->setTaxScheme(
                 (new TaxScheme())
-                ->setID(new ID($typeCode))
+                    ->setID(new ID($typeCode))
             );
 
         if ($rateApplicablePercent !== null) {

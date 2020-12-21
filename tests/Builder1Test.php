@@ -643,6 +643,90 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentSellerOrderReferencedDocument
+     */
+    public function testSetDocumentSellerOrderReferencedDocument(): void
+    {
+        (self::$document)->setDocumentSellerOrderReferencedDocument("sellerorderrefdoc", \DateTime::createFromFormat("Ymd", "20200101"));
+
+        $this->assertXPathValue('/ubl:Invoice/cac:OrderReference/cbc:SalesOrderID', "sellerorderrefdoc");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentBuyerOrderReferencedDocument
+     */
+    public function testSetDocumentBuyerOrderReferencedDocument(): void
+    {
+        (self::$document)->setDocumentBuyerOrderReferencedDocument("buyerorderrefdoc", \DateTime::createFromFormat("Ymd", "20200101"));
+
+        $this->assertXPathValue('/ubl:Invoice/cac:OrderReference/cbc:ID', "buyerorderrefdoc");
+        $this->assertXPathValue('/ubl:Invoice/cac:OrderReference/cbc:SalesOrderID', "sellerorderrefdoc");
+        $this->assertXPathValue('/ubl:Invoice/cac:OrderReference/cbc:IssueDate', "2020-01-01");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentContractReferencedDocument
+     */
+    public function testSetDocumentContractReferencedDocument(): void
+    {
+        (self::$document)->setDocumentContractReferencedDocument("contractrefdoc", \DateTime::createFromFormat("Ymd", "20200101"));
+
+        $this->assertXPathValue('/ubl:Invoice/cac:ContractDocumentReference/cbc:ID', "contractrefdoc");
+        $this->assertXPathValue('/ubl:Invoice/cac:ContractDocumentReference/cbc:IssueDate', "2020-01-01");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentOriginatorReferencedDocument
+     */
+    public function testSetDocumentOriginatorReferencedDocument(): void
+    {
+        (self::$document)->setDocumentOriginatorReferencedDocument("originatorrefdoc", \DateTime::createFromFormat("Ymd", "20200101"));
+
+        $this->assertXPathValue('/ubl:Invoice/cac:OriginatorDocumentReference/cbc:ID', "originatorrefdoc");
+        $this->assertXPathValue('/ubl:Invoice/cac:OriginatorDocumentReference/cbc:IssueDate', "2020-01-01");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentAdditionalReferencedDocument
+     */
+    public function testAddDocumentAdditionalReferencedDocument(): void
+    {
+        (self::$document)->addDocumentAdditionalReferencedDocument("adddocid", "adddoctype", "uriid", "name", "reftypecode", \DateTime::createFromFormat("Ymd", "20200101"));
+
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AdditionalDocumentReference/cbc:ID', 0, "adddocid");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AdditionalDocumentReference/cbc:IssueDate', 0, "2020-01-01");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AdditionalDocumentReference/cbc:DocumentTypeCode', 0, "adddoctype");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AdditionalDocumentReference/cbc:DocumentDescription', 0, "name");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AdditionalDocumentReference/cac:Attachment/cac:ExternalReference/cbc:URI', 0, "uriid");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentAdditionalReferencedDocument
+     */
+    public function testAddDocumentAdditionalReferencedDocument2(): void
+    {
+        (self::$document)->addDocumentAdditionalReferencedDocument("adddocid", "adddoctype", "uriid", "name", "reftypecode", \DateTime::createFromFormat("Ymd", "20200101"), dirname(__FILE__) . "/data/attachment.pdf");
+
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AdditionalDocumentReference/cbc:ID', 1, "adddocid");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AdditionalDocumentReference/cbc:IssueDate', 1, "2020-01-01");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AdditionalDocumentReference/cbc:DocumentTypeCode', 1, "adddoctype");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AdditionalDocumentReference/cbc:DocumentDescription', 1, "name");
+        $this->assertXPathNotExistsWithIndex('/ubl:Invoice/cac:AdditionalDocumentReference/cac:Attachment/cac:ExternalReference/cbc:URI', 1);
+        //$this->assertXPathValueStartsWithIndexAndAttribute('/ubl:Invoice/cac:AdditionalDocumentReference/cac:Attachment/cbc:EmbeddedDocumentBinaryObject', 1, "SlZCRVJpMHhM", "mimeCode", "application/pdf");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentInvoiceReferencedDocument
+     */
+    public function testSetDocumentInvoiceReferencedDocument(): void
+    {
+        (self::$document)->setDocumentInvoiceReferencedDocument("invrefdoc", \DateTime::createFromFormat("Ymd", "20200101"));
+
+        $this->assertXPathValue('/ubl:Invoice/cac:BillingReference/cac:InvoiceDocumentReference/cbc:ID', "invrefdoc");
+        $this->assertXPathValue('/ubl:Invoice/cac:BillingReference/cac:InvoiceDocumentReference/cbc:IssueDate', "2020-01-01");
+    }
+
+    /**
      * @covers \horstoeko\ubl\UblDocumentBuilder::writeFile
      */
     public function testWriteFile(): void
