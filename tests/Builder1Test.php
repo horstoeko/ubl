@@ -948,6 +948,73 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentTaxSubTotal
+     */
+    public function testAddDocumentTaxSubTotal(): void
+    {
+        (self::$document)->addDocumentTaxSubTotal("S", "VAT", 200, 38, 19, "reason3", "reasoncode3");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndexAndAttribute('/ubl:Invoice/cac:TaxTotal/cbc:TaxAmount', 3, "38.0", "currencyID", "EUR");
+        $this->assertXPathValueWithIndexAndAttribute('/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount', 4, "200.0", "currencyID", "EUR");
+        $this->assertXPathValueWithIndexAndAttribute('/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount', 4, "38.0", "currencyID", "EUR");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:ID', 4, "S");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:Percent', 4, "19.0");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:TaxExemptionReasonCode', 2, "reasoncode3");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:TaxExemptionReason', 2, "reason3");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme/cbc:ID', 4, "VAT");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentTaxSubTotalSimple
+     */
+    public function testAddDocumentTaxSubTotalSimple(): void
+    {
+        (self::$document)->addDocumentTaxSubTotalSimple("S", "VAT", 300, 57, 19);
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndexAndAttribute('/ubl:Invoice/cac:TaxTotal/cbc:TaxAmount', 3, "95.0", "currencyID", "EUR");
+        $this->assertXPathValueWithIndexAndAttribute('/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount', 5, "300.0", "currencyID", "EUR");
+        $this->assertXPathValueWithIndexAndAttribute('/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount', 5, "57.0", "currencyID", "EUR");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:ID', 5, "S");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:Percent', 5, "19.0");
+        $this->assertXPathNotExistsWithIndex('/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:TaxExemptionReasonCode', 3);
+        $this->assertXPathNotExistsWithIndex('/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:TaxExemptionReason', 3);
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme/cbc:ID', 5, "VAT");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentTaxInTaxCurrency
+     */
+    public function testAddDocumentTaxInTaxCurrency(): void
+    {
+        (self::$document)->addDocumentTaxInTaxCurrency(99999);
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndexAndAttribute('/ubl:Invoice/cac:TaxTotal/cbc:TaxAmount', 4, "99999.0", "currencyID", "EUR");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentBillingPeriod
+     */
+    public function testSetDocumentBillingPeriod(): void
+    {
+        (self::$document)->setDocumentBillingPeriod(\DateTime::createFromFormat("Ymd", "20200101"), \DateTime::createFromFormat("Ymd", "20200131"), "description");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:InvoicePeriod/cbc:StartDate', 0, "2020-01-01");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:InvoicePeriod/cbc:EndDate', 0, "2020-01-31");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:InvoicePeriod/cbc:Description', 0, "description");
+
+        (self::$document)->setDocumentBillingPeriod(\DateTime::createFromFormat("Ymd", "20200301"), \DateTime::createFromFormat("Ymd", "20200331"), "description2");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:InvoicePeriod/cbc:StartDate', 0, "2020-03-01");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:InvoicePeriod/cbc:EndDate', 0, "2020-03-31");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:InvoicePeriod/cbc:Description', 0, "description2");
+    }
+
+    /**
      * @covers \horstoeko\ubl\UblDocumentBuilder::writeFile
      */
     public function testWriteFile(): void
