@@ -2044,41 +2044,9 @@ class UblDocumentBuilder extends UblDocument
      * @param  string|null   $exemptionReasonCode
      * Reason given in code form for the exemption of the amount from VAT. Note: Code list issued
      * and maintained by the Connecting Europe Facility.
-     * @param  float|null    $lineTotalBasisAmount
-     * Tax rate goods amount
-     * @param  float|null    $allowanceChargeBasisAmount
-     * Total amount of surcharges and deductions of the tax rate at document level
-     * @param  DateTime|null $taxPointDate
-     * Specification of a date, in accordance with the sales tax guideline, on which the sales tax
-     * for the seller and for the buyer becomes relevant for accounting, insofar as this date can be
-     * determined and differs from the invoice date
-     * Note: The tax collection date for VAT purposes is usually the date the goods were delivered or
-     * the service was completed (the base tax date). There are a few variations. For further information,
-     * please refer to Article 226 (7) of Council Directive 2006/112 / EC. This element is required
-     * if the date set for the sales tax return differs from the invoice date. Both the buyer and the
-     * seller should use the delivery date for VAT returns, if provided by the seller.
-     * This is not used in Germany. Instead, the delivery and service date must be specified.
-     * @param  string|null   $dueDateTypeCode
-     * The code for the date on which sales tax becomes relevant for the seller and the buyer.
-     * The code must distinguish between the following entries from UNTDID 2005:
-     *  - date of issue of the invoice document
-     *  - actual delivery date
-     *  - Date of payment.
-     *
-     * The VAT Collection Date Code is used when the VAT Collection Date is not known for VAT purposes
-     * when the invoice is issued.
-     *
-     * The semantic values cited in the standard, which are represented by the values 3, 35, 432 in
-     * UNTDID2005, are mapped to the following values of UNTDID2475, which is the relevant code list
-     * supported by CII 16B:
-     *  - 5: date of issue of the invoice
-     *  - 29: Delivery date, current status
-     *  - 72: Paid to date
-     *
-     * In Germany, the date of delivery and service is decisive.
      * @return UblDocumentBuilder
      */
-    public function addDocumentTax(string $categoryCode, string $typeCode, float $basisAmount, float $calculatedAmount, float $rateApplicablePercent, ?string $exemptionReason = null, ?string $exemptionReasonCode = null, ?float $lineTotalBasisAmount = null, ?float $allowanceChargeBasisAmount = null, ?DateTime $taxPointDate = null, ?string $dueDateTypeCode = null): UblDocumentBuilder
+    public function addDocumentTax(string $categoryCode, string $typeCode, float $basisAmount, float $calculatedAmount, float $rateApplicablePercent, ?string $exemptionReason = null, ?string $exemptionReasonCode = null): UblDocumentBuilder
     {
         $taxTotalAmount = 0.0;
 
