@@ -727,6 +727,39 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentProcuringProject
+     */
+    public function testSetDocumentProcuringProject(): void
+    {
+        (self::$document)->setDocumentProcuringProject("projectref", \DateTime::createFromFormat("Ymd", "20200101"));
+
+        $this->assertXPathValue('/ubl:Invoice/cac:ProjectReference/cbc:ID', "projectref");
+        $this->assertXPathValue('/ubl:Invoice/cac:ProjectReference/cbc:IssueDate', "2020-01-01");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentDespatchAdviceReferencedDocument
+     */
+    public function testSetDocumentDespatchAdviceReferencedDocument(): void
+    {
+        (self::$document)->setDocumentDespatchAdviceReferencedDocument("despadvrefdoc", \DateTime::createFromFormat("Ymd", "20200101"));
+
+        $this->assertXPathValue('/ubl:Invoice/cac:DespatchDocumentReference/cbc:ID', "despadvrefdoc");
+        $this->assertXPathValue('/ubl:Invoice/cac:DespatchDocumentReference/cbc:IssueDate', "2020-01-01");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentReceivingAdviceReferencedDocument
+     */
+    public function testSetDocumentReceivingAdviceReferencedDocument(): void
+    {
+        (self::$document)->setDocumentReceivingAdviceReferencedDocument("revadvrefdoc", \DateTime::createFromFormat("Ymd", "20200101"));
+
+        $this->assertXPathValue('/ubl:Invoice/cac:ReceiptDocumentReference/cbc:ID', "revadvrefdoc");
+        $this->assertXPathValue('/ubl:Invoice/cac:ReceiptDocumentReference/cbc:IssueDate', "2020-01-01");
+    }
+
+    /**
      * @covers \horstoeko\ubl\UblDocumentBuilder::writeFile
      */
     public function testWriteFile(): void
