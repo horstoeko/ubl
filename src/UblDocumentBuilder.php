@@ -1839,7 +1839,7 @@ class UblDocumentBuilder extends UblDocument
             return $this->addDocumentPaymentMeanSepaCreditTransfer($payeeIban);
         }
         if ($typecode == "59") {
-            return $this->addDocumentPaymentMeanSepaCreditTransfer($buyerIban, $mandate);
+            return $this->addDocumentPaymentMeanSepaDirectDebit($buyerIban, $mandate);
         }
         if ($typecode == "48") {
             return $this->addDocumentPaymentMeanBankCard($cardType, $cardId, $cardHolderName);

@@ -649,6 +649,7 @@ class Builder1Test extends BuilderBaseTest
     {
         (self::$document)->setDocumentSellerOrderReferencedDocument("sellerorderrefdoc", \DateTime::createFromFormat("Ymd", "20200101"));
 
+        $this->disableRenderXmlContent();
         $this->assertXPathValue('/ubl:Invoice/cac:OrderReference/cbc:SalesOrderID', "sellerorderrefdoc");
     }
 
@@ -659,6 +660,7 @@ class Builder1Test extends BuilderBaseTest
     {
         (self::$document)->setDocumentBuyerOrderReferencedDocument("buyerorderrefdoc", \DateTime::createFromFormat("Ymd", "20200101"));
 
+        $this->disableRenderXmlContent();
         $this->assertXPathValue('/ubl:Invoice/cac:OrderReference/cbc:ID', "buyerorderrefdoc");
         $this->assertXPathValue('/ubl:Invoice/cac:OrderReference/cbc:SalesOrderID', "sellerorderrefdoc");
         $this->assertXPathValue('/ubl:Invoice/cac:OrderReference/cbc:IssueDate', "2020-01-01");
@@ -671,6 +673,7 @@ class Builder1Test extends BuilderBaseTest
     {
         (self::$document)->setDocumentContractReferencedDocument("contractrefdoc", \DateTime::createFromFormat("Ymd", "20200101"));
 
+        $this->disableRenderXmlContent();
         $this->assertXPathValue('/ubl:Invoice/cac:ContractDocumentReference/cbc:ID', "contractrefdoc");
         $this->assertXPathValue('/ubl:Invoice/cac:ContractDocumentReference/cbc:IssueDate', "2020-01-01");
     }
@@ -682,6 +685,7 @@ class Builder1Test extends BuilderBaseTest
     {
         (self::$document)->setDocumentOriginatorReferencedDocument("originatorrefdoc", \DateTime::createFromFormat("Ymd", "20200101"));
 
+        $this->disableRenderXmlContent();
         $this->assertXPathValue('/ubl:Invoice/cac:OriginatorDocumentReference/cbc:ID', "originatorrefdoc");
         $this->assertXPathValue('/ubl:Invoice/cac:OriginatorDocumentReference/cbc:IssueDate', "2020-01-01");
     }
@@ -693,6 +697,7 @@ class Builder1Test extends BuilderBaseTest
     {
         (self::$document)->addDocumentAdditionalReferencedDocument("adddocid", "adddoctype", "uriid", "name", "reftypecode", \DateTime::createFromFormat("Ymd", "20200101"));
 
+        $this->disableRenderXmlContent();
         $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AdditionalDocumentReference/cbc:ID', 0, "adddocid");
         $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AdditionalDocumentReference/cbc:IssueDate', 0, "2020-01-01");
         $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AdditionalDocumentReference/cbc:DocumentTypeCode', 0, "adddoctype");
@@ -707,6 +712,7 @@ class Builder1Test extends BuilderBaseTest
     {
         (self::$document)->addDocumentAdditionalReferencedDocument("adddocid", "adddoctype", "uriid", "name", "reftypecode", \DateTime::createFromFormat("Ymd", "20200101"), dirname(__FILE__) . "/data/attachment.pdf");
 
+        $this->disableRenderXmlContent();
         $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AdditionalDocumentReference/cbc:ID', 1, "adddocid");
         $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AdditionalDocumentReference/cbc:IssueDate', 1, "2020-01-01");
         $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AdditionalDocumentReference/cbc:DocumentTypeCode', 1, "adddoctype");
@@ -722,6 +728,7 @@ class Builder1Test extends BuilderBaseTest
     {
         (self::$document)->setDocumentInvoiceReferencedDocument("invrefdoc", \DateTime::createFromFormat("Ymd", "20200101"));
 
+        $this->disableRenderXmlContent();
         $this->assertXPathValue('/ubl:Invoice/cac:BillingReference/cac:InvoiceDocumentReference/cbc:ID', "invrefdoc");
         $this->assertXPathValue('/ubl:Invoice/cac:BillingReference/cac:InvoiceDocumentReference/cbc:IssueDate', "2020-01-01");
     }
@@ -733,6 +740,7 @@ class Builder1Test extends BuilderBaseTest
     {
         (self::$document)->setDocumentProcuringProject("projectref", \DateTime::createFromFormat("Ymd", "20200101"));
 
+        $this->disableRenderXmlContent();
         $this->assertXPathValue('/ubl:Invoice/cac:ProjectReference/cbc:ID', "projectref");
         $this->assertXPathValue('/ubl:Invoice/cac:ProjectReference/cbc:IssueDate', "2020-01-01");
     }
@@ -744,6 +752,7 @@ class Builder1Test extends BuilderBaseTest
     {
         (self::$document)->setDocumentDespatchAdviceReferencedDocument("despadvrefdoc", \DateTime::createFromFormat("Ymd", "20200101"));
 
+        $this->disableRenderXmlContent();
         $this->assertXPathValue('/ubl:Invoice/cac:DespatchDocumentReference/cbc:ID', "despadvrefdoc");
         $this->assertXPathValue('/ubl:Invoice/cac:DespatchDocumentReference/cbc:IssueDate', "2020-01-01");
     }
@@ -755,8 +764,74 @@ class Builder1Test extends BuilderBaseTest
     {
         (self::$document)->setDocumentReceivingAdviceReferencedDocument("revadvrefdoc", \DateTime::createFromFormat("Ymd", "20200101"));
 
+        $this->disableRenderXmlContent();
         $this->assertXPathValue('/ubl:Invoice/cac:ReceiptDocumentReference/cbc:ID', "revadvrefdoc");
         $this->assertXPathValue('/ubl:Invoice/cac:ReceiptDocumentReference/cbc:IssueDate', "2020-01-01");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentPaymentMean
+     */
+    public function testAddDocumentPaymentMean(): void
+    {
+        (self::$document)->addDocumentPaymentMean("00", "information", "cardtype", "cardid", "cardholder", "buyeriban", "payeeiban", "payeeaccount", "payeepropid", "payeebic", "mandate", "paymentref");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:PaymentMeans/cbc:PaymentMeansCode', 0, "00", "name", "information");
+        $this->assertXPathValueStartsWithIndex('/ubl:Invoice/cac:PaymentMeans/cbc:PaymentID', 0, "paymentref");
+        $this->assertXPathValueStartsWithIndex('/ubl:Invoice/cac:PaymentMeans/cac:CardAccount/cbc:PrimaryAccountNumberID', 0, "rdid");
+        $this->assertXPathValueStartsWithIndex('/ubl:Invoice/cac:PaymentMeans/cac:CardAccount/cbc:NetworkID', 0, "cardtype");
+        $this->assertXPathValueStartsWithIndex('/ubl:Invoice/cac:PaymentMeans/cac:CardAccount/cbc:HolderName', 0, "cardholder");
+        $this->assertXPathValueStartsWithIndex('/ubl:Invoice/cac:PaymentMeans/cac:PayerFinancialAccount/cbc:ID', 0, "buyeriban");
+        $this->assertXPathValueStartsWithIndex('/ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:ID', 0, "payeeiban");
+        $this->assertXPathValueStartsWithIndex('/ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:Name', 0, "payeeaccount");
+        $this->assertXPathValueStartsWithIndex('/ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID', 0, "payeebic");
+        $this->assertXPathValueStartsWithIndex('/ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate/cbc:ID', 0, "mandate");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentPaymentMean
+     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentPaymentMeanSepaCreditTransfer
+     */
+    public function testAddDocumentPaymentMean58(): void
+    {
+        (self::$document)->getInvoiceObject()->setPaymentMeans([]);
+        (self::$document)->addDocumentPaymentMean("58", "information", "cardtype", "cardid", "cardholder", "buyeriban", "payeeiban", "payeeaccount", "payeepropid", "payeebic", "mandate", "paymentref");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:PaymentMeans/cbc:PaymentMeansCode', 0, "58");
+        $this->assertXPathNotExistsWithIndex('/ubl:Invoice/cac:PaymentMeans/cbc:PaymentID', 0, "paymentref");
+        $this->assertXPathNotExistsWithIndex('/ubl:Invoice/cac:PaymentMeans/cac:CardAccount/cbc:PrimaryAccountNumberID', 0, "rdid");
+        $this->assertXPathNotExistsWithIndex('/ubl:Invoice/cac:PaymentMeans/cac:CardAccount/cbc:NetworkID', 0, "cardtype");
+        $this->assertXPathNotExistsWithIndex('/ubl:Invoice/cac:PaymentMeans/cac:CardAccount/cbc:HolderName', 0, "cardholder");
+        $this->assertXPathNotExistsWithIndex('/ubl:Invoice/cac:PaymentMeans/cac:PayerFinancialAccount/cbc:ID', 0, "buyeriban");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:ID', 0, "payeeiban");
+        $this->assertXPathNotExistsWithIndex('/ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:Name', 0, "payeeaccount");
+        $this->assertXPathNotExistsWithIndex('/ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID', 0, "payeebic");
+        $this->assertXPathNotExistsWithIndex('/ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate/cbc:ID', 0, "mandate");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentPaymentMean
+     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentPaymentMeanSepaDirectDebit
+     */
+    public function testAddDocumentPaymentMean59(): void
+    {
+        (self::$document)->getInvoiceObject()->setPaymentMeans([]);
+        (self::$document)->addDocumentPaymentMean("59", "information", "cardtype", "cardid", "cardholder", "buyeriban", "payeeiban", "payeeaccount", "payeepropid", "payeebic", "mandate", "paymentref");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:PaymentMeans/cbc:PaymentMeansCode', 0, "59");
+        $this->assertXPathNotExistsWithIndex('/ubl:Invoice/cac:PaymentMeans/cbc:PaymentID', 0, "paymentref");
+        $this->assertXPathNotExistsWithIndex('/ubl:Invoice/cac:PaymentMeans/cac:CardAccount/cbc:PrimaryAccountNumberID', 0, "rdid");
+        $this->assertXPathNotExistsWithIndex('/ubl:Invoice/cac:PaymentMeans/cac:CardAccount/cbc:NetworkID', 0, "cardtype");
+        $this->assertXPathNotExistsWithIndex('/ubl:Invoice/cac:PaymentMeans/cac:CardAccount/cbc:HolderName', 0, "cardholder");
+        $this->assertXPathNotExistsWithIndex('/ubl:Invoice/cac:PaymentMeans/cac:PayerFinancialAccount/cbc:ID', 0, "buyeriban");
+        $this->assertXPathNotExistsWithIndex('/ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:ID', 0, "payeeiban");
+        $this->assertXPathNotExistsWithIndex('/ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:Name', 0, "payeeaccount");
+        $this->assertXPathNotExistsWithIndex('/ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID', 0, "payeebic");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate/cbc:ID', 0, "mandate");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate/cac:PayerFinancialAccount/cbc:ID', 0, "buyeriban");
     }
 
     /**
