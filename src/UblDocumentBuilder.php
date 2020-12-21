@@ -1083,8 +1083,8 @@ class UblDocumentBuilder extends UblDocument
     public function setDocumentShipTo(?string $name = null, ?string $id = null, ?string $idscheme = null): UblDocumentBuilder
     {
         if (!StringUtils::stringIsNullOrEmpty($name)) {
-            $party = $this->ublBuilderHelper->ensureDeliveryParty();
-            $party->addToPartyName((new PartyName())->setName((new Name($name))));
+            $partyName = $this->ublBuilderHelper->ensureDeliveryPartyPartyName();
+            $partyName->setName(new Name($name));
         }
         if (!StringUtils::stringIsNullOrEmpty($id)) {
             $location = $this->ublBuilderHelper->ensureDeliveryLocation();
@@ -1110,9 +1110,13 @@ class UblDocumentBuilder extends UblDocument
      */
     public function addDocumentShipToGlobalId(?string $globalID = null, ?string $globalIDType = null): UblDocumentBuilder
     {
-        if (!StringUtils::stringIsNullOrEmpty($globalID) && !StringUtils::stringIsNullOrEmpty($globalIDType)) {
+        if (!StringUtils::stringIsNullOrEmpty($globalID)) {
             $party = $this->ublBuilderHelper->ensureDeliveryParty();
-            $party->addToPartyIdentification((new PartyIdentification())->setID((new Id($globalID))->setSchemeID($globalIDType)));
+            if (!StringUtils::stringIsNullOrEmpty($globalIDType)) {
+                $party->addToPartyIdentification((new PartyIdentification())->setID((new Id($globalID))->setSchemeID($globalIDType)));
+            } else {
+                $party->addToPartyIdentification((new PartyIdentification())->setID((new Id($globalID))));
+            }
         }
 
         return $this;
@@ -1315,15 +1319,14 @@ class UblDocumentBuilder extends UblDocument
     public function setDocumentPayee(?string $name = null, ?string $id = null, ?string $idscheme = null): UblDocumentBuilder
     {
         if (!StringUtils::stringIsNullOrEmpty($name)) {
-            $payeeParty = $this->ublBuilderHelper->ensurePayeeParty();
-            $payeeParty->addToPartyName((new PartyName())->setName((new Name($name))));
+            $partyName = $this->ublBuilderHelper->ensurePayeePartyPartyName();
+            $partyName->setName(new Name($name));
         }
         if (!StringUtils::stringIsNullOrEmpty($id)) {
-            $payeeParty = $this->ublBuilderHelper->ensurePayeeParty();
-            if (!StringUtils::stringIsNullOrEmpty($idscheme)) {
-                $payeeParty->addToPartyIdentification((new PartyIdentification())->setID((new Id($id))->setSchemeID($idscheme)));
-            } else {
-                $payeeParty->addToPartyIdentification((new PartyIdentification())->setID(new Id($id)));
+            $partyIdentification = $this->ublBuilderHelper->ensurePayeePartyPartyIdentification();
+            $partyIdentification->setID(new ID($id));
+            if (!StringUtils::stringIsNullOrEmpty($id)) {
+                $partyIdentification->getId()->setSchemeID($idscheme);
             }
         }
 
@@ -1361,7 +1364,7 @@ class UblDocumentBuilder extends UblDocument
      */
     public function addDocumentPayeeTaxRegistration(?string $taxregtype = null, ?string $taxregid = null): UblDocumentBuilder
     {
-        if (!StringUtils::stringIsNullOrEmpty($taxregtype) && StringUtils::stringIsNullOrEmpty($taxregid)) {
+        if (!StringUtils::stringIsNullOrEmpty($taxregtype) && !StringUtils::stringIsNullOrEmpty($taxregid)) {
             $payeeParty = $this->ublBuilderHelper->ensurePayeeParty();
             $payeeParty->addToPartyTaxScheme((new PartyTaxScheme())->setCompanyID((new CompanyID($taxregid)))->setTaxScheme((new TaxScheme())->setId(new Id($taxregtype))));
         }

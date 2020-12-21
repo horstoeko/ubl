@@ -399,4 +399,194 @@ class Builder1Test extends BuilderBaseTest
         $this->assertXPathValue('/ubl:Invoice/cac:TaxRepresentativeParty/cac:Contact/cbc:Telefax', "faxno");
         $this->assertXPathValue('/ubl:Invoice/cac:TaxRepresentativeParty/cac:Contact/cbc:ElectronicMail', "email");
     }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentShipTo
+     */
+    public function testSetDocumentShipTo(): void
+    {
+        (self::$document)->setDocumentShipTo("name", "id", "scheme");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithAttribute('/ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cbc:ID', "id", "schemeID", "scheme");
+        $this->assertXPathValue('/ubl:Invoice/cac:Delivery/cac:DeliveryParty/cac:PartyName/cbc:Name', "name");
+
+        (self::$document)->setDocumentShipTo("name2", "id2");
+        $this->disableRenderXmlContent();
+        $this->assertXPathValue('/ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cbc:ID', "id2");
+        $this->assertXPathValue('/ubl:Invoice/cac:Delivery/cac:DeliveryParty/cac:PartyName/cbc:Name', "name2");
+
+        (self::$document)->setDocumentShipTo("name3", "id3", "scheme3");
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithAttribute('/ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cbc:ID', "id3", "schemeID", "scheme3");
+        $this->assertXPathValue('/ubl:Invoice/cac:Delivery/cac:DeliveryParty/cac:PartyName/cbc:Name', "name3");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentShipToGlobalId
+     */
+    public function testAddDocumentShipToGlobalId(): void
+    {
+        (self::$document)->addDocumentShipToGlobalId("globalid", "globalidscheme");
+        (self::$document)->addDocumentShipToGlobalId("globalid2", "globalidscheme2");
+        (self::$document)->addDocumentShipToGlobalId("globalid3");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndexAndAttribute('/ubl:Invoice/cac:Delivery/cac:DeliveryParty/cac:PartyIdentification/cbc:ID', 0, "globalid", "schemeID", "globalidscheme");
+        $this->assertXPathValueWithIndexAndAttribute('/ubl:Invoice/cac:Delivery/cac:DeliveryParty/cac:PartyIdentification/cbc:ID', 1, "globalid2", "schemeID", "globalidscheme2");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:Delivery/cac:DeliveryParty/cac:PartyIdentification/cbc:ID', 2, "globalid3");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentShipToTaxRegistration
+     */
+    public function testAddDocumentShipToTaxRegistration(): void
+    {
+        (self::$document)->addDocumentShipToTaxRegistration("taxregtype", "taxregid");
+        (self::$document)->addDocumentShipToTaxRegistration("taxregtype2", "taxregid2");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:Delivery/cac:DeliveryParty/cac:PartyTaxScheme/cbc:CompanyID', 0, "taxregid");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:Delivery/cac:DeliveryParty/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID', 0, "taxregtype");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:Delivery/cac:DeliveryParty/cac:PartyTaxScheme/cbc:CompanyID', 1, "taxregid2");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:Delivery/cac:DeliveryParty/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID', 1, "taxregtype2");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentShipToAddress
+     */
+    public function testSetDocumentShipToAddress(): void
+    {
+        (self::$document)->setDocumentShipToAddress("line1", "line2", "line3", "0000", "city", "DE", "county");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValue('/ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:StreetName', "line1");
+        $this->assertXPathValue('/ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:AdditionalStreetName', "line2");
+        $this->assertXPathValue('/ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:CityName', "city");
+        $this->assertXPathValue('/ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:PostalZone', "0000");
+        $this->assertXPathValue('/ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:CountrySubentity', "county");
+        $this->assertXPathValue('/ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cac:AddressLine/cbc:Line', "line3");
+        $this->assertXPathValue('/ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cac:Country/cbc:IdentificationCode', "DE");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentShipToLegalOrganisation
+     */
+    public function testSetDocumentShipToLegalOrganisation(): void
+    {
+        (self::$document)->setDocumentShipToLegalOrganisation("legalorgid", "legalorgtype", "legalorgname", "legalorgform");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValue('/ubl:Invoice/cac:Delivery/cac:DeliveryParty/cac:PartyLegalEntity/cbc:RegistrationName', "legalorgname");
+        $this->assertXPathValueWithAttribute('/ubl:Invoice/cac:Delivery/cac:DeliveryParty/cac:PartyLegalEntity/cbc:CompanyID', "legalorgid", "schemeID", "legalorgtype");
+        $this->assertXPathValue('/ubl:Invoice/cac:Delivery/cac:DeliveryParty/cac:PartyLegalEntity/cbc:CompanyLegalForm', "legalorgform");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentShipToContact
+     */
+    public function testSetDocumentShipToContact(): void
+    {
+        (self::$document)->setDocumentShipToContact("personname", "department", "phoneno", "faxno", "email");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValue('/ubl:Invoice/cac:Delivery/cac:DeliveryParty/cac:Contact/cbc:Name', "personname");
+        $this->assertXPathValue('/ubl:Invoice/cac:Delivery/cac:DeliveryParty/cac:Contact/cbc:Telephone', "phoneno");
+        $this->assertXPathValue('/ubl:Invoice/cac:Delivery/cac:DeliveryParty/cac:Contact/cbc:Telefax', "faxno");
+        $this->assertXPathValue('/ubl:Invoice/cac:Delivery/cac:DeliveryParty/cac:Contact/cbc:ElectronicMail', "email");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentPayee
+     */
+    public function testSetDocumentPayee(): void
+    {
+        (self::$document)->setDocumentPayee("name", "id", "scheme");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithAttribute('/ubl:Invoice/cac:PayeeParty/cac:PartyIdentification/cbc:ID', "id", "schemeID", "scheme");
+        $this->assertXPathValue('/ubl:Invoice/cac:PayeeParty/cac:PartyName/cbc:Name', "name");
+
+        (self::$document)->setDocumentPayee("name2", "id2");
+        $this->disableRenderXmlContent();
+        $this->assertXPathValue('/ubl:Invoice/cac:PayeeParty/cac:PartyIdentification/cbc:ID', "id2");
+        $this->assertXPathValue('/ubl:Invoice/cac:PayeeParty/cac:PartyName/cbc:Name', "name2");
+
+        (self::$document)->setDocumentPayee("name3", "id3", "scheme3");
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithAttribute('/ubl:Invoice/cac:PayeeParty/cac:PartyIdentification/cbc:ID', "id3", "schemeID", "scheme3");
+        $this->assertXPathValue('/ubl:Invoice/cac:PayeeParty/cac:PartyName/cbc:Name', "name3");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentPayeeGlobalId
+     */
+    public function testAddDocumentPayeeGlobalId(): void
+    {
+        (self::$document)->addDocumentPayeeGlobalId("globalid", "globalidscheme");
+        (self::$document)->addDocumentPayeeGlobalId("globalid2", "globalidscheme2");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndexAndAttribute('/ubl:Invoice/cac:PayeeParty/cac:PartyIdentification/cbc:ID', 1, "globalid", "schemeID", "globalidscheme");
+        $this->assertXPathValueWithIndexAndAttribute('/ubl:Invoice/cac:PayeeParty/cac:PartyIdentification/cbc:ID', 2, "globalid2", "schemeID", "globalidscheme2");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentPayeeTaxRegistration
+     */
+    public function testAddDocumentPayeeTaxRegistration(): void
+    {
+        (self::$document)->addDocumentPayeeTaxRegistration("taxregtype", "taxregid");
+        (self::$document)->addDocumentPayeeTaxRegistration("taxregtype2", "taxregid2");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:PayeeParty/cac:PartyTaxScheme/cbc:CompanyID', 0, "taxregid");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:PayeeParty/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID', 0, "taxregtype");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:PayeeParty/cac:PartyTaxScheme/cbc:CompanyID', 1, "taxregid2");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:PayeeParty/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID', 1, "taxregtype2");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentPayeeAddress
+     */
+    public function testSetDocumentPayeeAddress(): void
+    {
+        (self::$document)->setDocumentPayeeAddress("line1", "line2", "line3", "0000", "city", "DE", "county");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValue('/ubl:Invoice/cac:PayeeParty/cac:PostalAddress/cbc:StreetName', "line1");
+        $this->assertXPathValue('/ubl:Invoice/cac:PayeeParty/cac:PostalAddress/cbc:AdditionalStreetName', "line2");
+        $this->assertXPathValue('/ubl:Invoice/cac:PayeeParty/cac:PostalAddress/cbc:CityName', "city");
+        $this->assertXPathValue('/ubl:Invoice/cac:PayeeParty/cac:PostalAddress/cbc:PostalZone', "0000");
+        $this->assertXPathValue('/ubl:Invoice/cac:PayeeParty/cac:PostalAddress/cbc:CountrySubentity', "county");
+        $this->assertXPathValue('/ubl:Invoice/cac:PayeeParty/cac:PostalAddress/cac:AddressLine/cbc:Line', "line3");
+        $this->assertXPathValue('/ubl:Invoice/cac:PayeeParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode', "DE");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentPayeeLegalOrganisation
+     */
+    public function testSetDocumentPayeeLegalOrganisation(): void
+    {
+        (self::$document)->setDocumentPayeeLegalOrganisation("legalorgid", "legalorgtype", "legalorgname", "legalorgform");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValue('/ubl:Invoice/cac:PayeeParty/cac:PartyLegalEntity/cbc:RegistrationName', "legalorgname");
+        $this->assertXPathValueWithAttribute('/ubl:Invoice/cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID', "legalorgid", "schemeID", "legalorgtype");
+        $this->assertXPathValue('/ubl:Invoice/cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyLegalForm', "legalorgform");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentPayeeContact
+     */
+    public function testSetDocumentPayeeContact(): void
+    {
+        (self::$document)->setDocumentPayeeContact("personname", "department", "phoneno", "faxno", "email");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValue('/ubl:Invoice/cac:PayeeParty/cac:Contact/cbc:Name', "personname");
+        $this->assertXPathValue('/ubl:Invoice/cac:PayeeParty/cac:Contact/cbc:Telephone', "phoneno");
+        $this->assertXPathValue('/ubl:Invoice/cac:PayeeParty/cac:Contact/cbc:Telefax', "faxno");
+        $this->assertXPathValue('/ubl:Invoice/cac:PayeeParty/cac:Contact/cbc:ElectronicMail', "email");
+    }
 }

@@ -37,6 +37,7 @@ use horstoeko\ubl\entities\cac\OriginatorDocumentReference;
 use horstoeko\ubl\entities\cac\PartyIdentification;
 use horstoeko\ubl\entities\cac\PartyName;
 use horstoeko\ubl\entities\cbc\EndpointID;
+use horstoeko\ubl\entities\cbc\ID;
 
 /**
  * Class representing helper methods for the ubl invoice builder
@@ -386,6 +387,17 @@ class UblDocumentBuilderHelper
     }
 
     /**
+     * Make sure that there is a party object in the delivery object
+     *
+     * @return PartyName
+     */
+    public function ensureDeliveryPartyPartyName(): PartyName
+    {
+        $party = $this->ensureDeliveryParty();
+        return $party->setPartyName([new PartyName()])->getPartyName()[0];
+    }
+
+    /**
      * Make sure that there is a location object in the delivery object
      *
      * @return DeliveryLocation
@@ -437,6 +449,28 @@ class UblDocumentBuilderHelper
     public function ensurePayeeParty(): PayeeParty
     {
         return $this->getInvoiceObject()->getPayeeParty() ?? $this->getInvoiceObject()->setPayeeParty((new PayeeParty()))->getPayeeParty();
+    }
+
+    /**
+     * Make sure that there is a single payee party name object in the payee party
+     *
+     * @return PartyName
+     */
+    public function ensurePayeePartyPartyName(): PartyName
+    {
+        $party = $this->ensurePayeeParty();
+        return $party->setPartyName([new PartyName()])->getPartyName()[0];
+    }
+
+    /**
+     * Make sure that there is a single payee party identification object in the payee party
+     *
+     * @return PartyIdentification
+     */
+    public function ensurePayeePartyPartyIdentification(): PartyIdentification
+    {
+        $party = $this->ensurePayeeParty();
+        return $party->setPartyIdentification([new PartyIdentification()])->getPartyIdentification()[0];
     }
 
     /**
