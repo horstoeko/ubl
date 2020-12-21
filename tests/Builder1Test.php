@@ -27,6 +27,47 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::getInvoiceObject
+     */
+    public function testgetInvoiceObject(): void
+    {
+        $invoiceObject = (self::$document)->getInvoiceObject();
+
+        $this->assertNotNull($invoiceObject);
+        $this->assertTrue(is_a($invoiceObject, \horstoeko\ubl\entities\main\Invoice::class));
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::getCurrentPosition
+     */
+    public function testGetCurrentPosition(): void
+    {
+        $currentPosition = (self::$document)->getCurrentPosition();
+
+        $this->assertNull($currentPosition);
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentCustomization
+     */
+    public function testSetDocumentCustomization(): void
+    {
+        (self::$document)->setDocumentCustomization("customizationid");
+
+        $this->assertXPathValue('/ubl:Invoice/cbc:CustomizationID', "customizationid");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentProfile
+     */
+    public function testsetDocumentProfile(): void
+    {
+        (self::$document)->setDocumentProfile("profile");
+
+        $this->assertXPathValue('/ubl:Invoice/cbc:ProfileID', "profile");
+    }
+
+    /**
      * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentInformation
      */
     public function testSetDocumentInformation(): void
@@ -497,6 +538,17 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentShipmentDate
+     */
+    public function testSetDocumentShipmentDate(): void
+    {
+        (self::$document)->setDocumentShipmentDate(\DateTime::createFromFormat("Ymd", "20201201"));
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValue('/ubl:Invoice/cac:Delivery/cbc:ActualDeliveryDate', "2020-12-01");
+    }
+
+    /**
      * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentPayee
      */
     public function testSetDocumentPayee(): void
@@ -588,5 +640,17 @@ class Builder1Test extends BuilderBaseTest
         $this->assertXPathValue('/ubl:Invoice/cac:PayeeParty/cac:Contact/cbc:Telephone', "phoneno");
         $this->assertXPathValue('/ubl:Invoice/cac:PayeeParty/cac:Contact/cbc:Telefax', "faxno");
         $this->assertXPathValue('/ubl:Invoice/cac:PayeeParty/cac:Contact/cbc:ElectronicMail', "email");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::writeFile
+     */
+    public function testWriteFile(): void
+    {
+        (self::$document)->writeFile(dirname(__FILE__) . "/output.xml");
+
+        $this->assertTrue(file_exists(dirname(__FILE__) . "/output.xml"));
+
+        @unlink(dirname(__FILE__) . "/output.xml");
     }
 }

@@ -175,9 +175,9 @@ class UblDocumentBuilder extends UblDocument
     /**
      * Returns the currently created document position (invoice line)
      *
-     * @return InvoiceLine
+     * @return InvoiceLine|null
      */
-    public function getCurrentPosition(): InvoiceLine
+    public function getCurrentPosition(): ?InvoiceLine
     {
         return $this->currentPosition;
     }
