@@ -212,7 +212,7 @@ class UblDocumentBuilder extends UblDocument
      * saved to as XML
      * @return UblDocument
      */
-    public function writeFile(string $xmlfilename): UblDocument
+    public function writeFile(string $xmlfilename): UblDocumentBuilder
     {
         file_put_contents($xmlfilename, $this->getContent());
         return $this;
@@ -1835,10 +1835,10 @@ class UblDocumentBuilder extends UblDocument
      * @param  string|null $payeeBic
      * Seller's banking institution, An identifier for the payment service provider with whom the payment account
      * is managed, such as the BIC or a national bank code, if required. No identification scheme is to be used.
-     * @param string|null $mandate
+     * @param  string|null $mandate
      * Unique identifier assigned by the Payee for referencing the direct debit mandate. Used in order to pre-notify
      * the Buyer of a SEPA direct debit.
-     * @param string|null $paymentReference
+     * @param  string|null $paymentReference
      * A textual value used to establish a link between the payment and the Invoice, issued by the Seller. Used for
      * creditor's critical reconciliation information. This information element helps the Seller to assign an incoming
      * payment to the relevant payment process.
@@ -1912,11 +1912,11 @@ class UblDocumentBuilder extends UblDocument
      * Create payment means for payment type 58 (SEPA credit transfer)
      * German translation: SEPA-Überweisung
      *
-     * @param string|null $payeeIban
-     * @param string|null $payeeAccountName
-     * @param string|null $payeePropId
-     * @param string|null $payeeBic
-     * @param string|null $paymentReference
+     * @param  string|null $payeeIban
+     * @param  string|null $payeeAccountName
+     * @param  string|null $payeePropId
+     * @param  string|null $payeeBic
+     * @param  string|null $paymentReference
      * A textual value used to establish a link between the payment and the Invoice, issued by the Seller. Used for
      * creditor's critical reconciliation information. This information element helps the Seller to assign an incoming
      * payment to the relevant payment process.
@@ -1953,7 +1953,7 @@ class UblDocumentBuilder extends UblDocument
      * Mandate reference identifier
      * Unique identifier assigned by the Payee for referencing the direct debit mandate. Used in order to pre-notify
      * the Buyer of a SEPA direct debit, __German translation:__ Mandatsreferenz
-     * @param string|null $paymentReference
+     * @param  string|null $paymentReference
      * A textual value used to establish a link between the payment and the Invoice, issued by the Seller. Used for
      * creditor's critical reconciliation information. This information element helps the Seller to assign an incoming
      * payment to the relevant payment process.
@@ -1981,7 +1981,7 @@ class UblDocumentBuilder extends UblDocument
      * security for you automatically
      * @param  string|null $cardHolderName
      * The name of the payment card holder.
-     * @param string|null $paymentReference
+     * @param  string|null $paymentReference
      * A textual value used to establish a link between the payment and the Invoice, issued by the Seller. Used for
      * creditor's critical reconciliation information. This information element helps the Seller to assign an incoming
      * payment to the relevant payment process.
@@ -2006,7 +2006,7 @@ class UblDocumentBuilder extends UblDocument
     /**
      * Add a VAT breakdown (at document level)
      *
-     * @param  string        $categoryCode
+     * @param  string      $categoryCode
      * Coded description of a sales tax category
      *
      * The following entries from UNTDID 5305 are used (details in brackets):
@@ -2030,22 +2030,22 @@ class UblDocumentBuilder extends UblDocument
      *  - O = Outside the tax scope
      *  - L = IGIC (Canary Islands)
      *  - M = IPSI (Ceuta / Melilla)
-     * @param  string        $typeCode
+     * @param  string      $typeCode
      * Coded description of a sales tax category. Note: Fixed value = "VAT"
-     * @param  float         $basisAmount
+     * @param  float       $basisAmount
      * Tax base amount, Each sales tax breakdown must show a category-specific tax base amount.
-     * @param  float         $calculatedAmount
+     * @param  float       $calculatedAmount
      * The total amount to be paid for the relevant VAT category. Note: Calculated by multiplying
      * the amount to be taxed according to the sales tax category by the sales tax rate applicable
      * for the sales tax category concerned
-     * @param  float         $rateApplicablePercent
+     * @param  float       $rateApplicablePercent
      * The sales tax rate, expressed as the percentage applicable to the sales tax category in
      * question. Note: The code of the sales tax category and the category-specific sales tax rate
      * must correspond to one another. The value to be given is the percentage. For example, the
      * value 20 is given for 20% (and not 0.2)
-     * @param  string|null   $exemptionReason
+     * @param  string|null $exemptionReason
      * Reason for tax exemption (free text)
-     * @param  string|null   $exemptionReasonCode
+     * @param  string|null $exemptionReasonCode
      * Reason given in code form for the exemption of the amount from VAT. Note: Code list issued
      * and maintained by the Connecting Europe Facility.
      * @return UblDocumentBuilder
@@ -2145,7 +2145,7 @@ class UblDocumentBuilder extends UblDocument
     /**
      * Add a VAT breakdown (at document level)
      *
-     * @param  string        $categoryCode
+     * @param  string      $categoryCode
      * Coded description of a sales tax category
      *
      * The following entries from UNTDID 5305 are used (details in brackets):
@@ -2169,22 +2169,22 @@ class UblDocumentBuilder extends UblDocument
      *  - O = Outside the tax scope
      *  - L = IGIC (Canary Islands)
      *  - M = IPSI (Ceuta / Melilla)
-     * @param  string        $typeCode
+     * @param  string      $typeCode
      * Coded description of a sales tax category. Note: Fixed value = "VAT"
-     * @param  float         $basisAmount
+     * @param  float       $basisAmount
      * Tax base amount, Each sales tax breakdown must show a category-specific tax base amount.
-     * @param  float         $calculatedAmount
+     * @param  float       $calculatedAmount
      * The total amount to be paid for the relevant VAT category. Note: Calculated by multiplying
      * the amount to be taxed according to the sales tax category by the sales tax rate applicable
      * for the sales tax category concerned
-     * @param  float         $rateApplicablePercent
+     * @param  float       $rateApplicablePercent
      * The sales tax rate, expressed as the percentage applicable to the sales tax category in
      * question. Note: The code of the sales tax category and the category-specific sales tax rate
      * must correspond to one another. The value to be given is the percentage. For example, the
      * value 20 is given for 20% (and not 0.2)
-     * @param  string|null   $exemptionReason
+     * @param  string|null $exemptionReason
      * Reason for tax exemption (free text)
-     * @param  string|null   $exemptionReasonCode
+     * @param  string|null $exemptionReasonCode
      * Reason given in code form for the exemption of the amount from VAT. Note: Code list issued
      * and maintained by the Connecting Europe Facility.
      * @return UblDocumentBuilder

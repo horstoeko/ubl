@@ -119,7 +119,7 @@ class UblDocumentBuilderHelper
     /**
      * Converts a empty/null string to null
      *
-     * @param mixed $variable
+     * @param  mixed $variable
      * @return mixed
      */
     public function emptyOrNullToNull($variable)
