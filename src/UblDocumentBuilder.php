@@ -1692,6 +1692,10 @@ class UblDocumentBuilder extends UblDocument
      */
     public function setDocumentInvoiceReferencedDocument(?string $issuerassignedid = null, ?DateTime $issueddate = null): UblDocumentBuilder
     {
+        if (StringUtils::stringIsNullOrEmpty($issuerassignedid)) {
+            return $this;
+        }
+
         $billingReference = isset($this->invoiceObject->getBillingReference()[0]) ?
             $this->invoiceObject->getBillingReference()[0] :
             $this->invoiceObject->addToBillingReference(new BillingReference())->getBillingReference()[0];
@@ -2488,7 +2492,7 @@ class UblDocumentBuilder extends UblDocument
      * @param  string $id
      * @return UblDocumentBuilder
      */
-    public function addDocumentReceivableSpecifiedTradeAccountingAccount(string $id): UblDocumentBuilder
+    public function setDocumentReceivableSpecifiedTradeAccountingAccount(string $id): UblDocumentBuilder
     {
         if (!StringUtils::stringIsNullOrEmpty($id)) {
             $this->invoiceObject->setAccountingCost(new AccountingCost($id));
@@ -2524,7 +2528,7 @@ class UblDocumentBuilder extends UblDocument
     public function setDocumentPositionNote(string $content): UblDocumentBuilder
     {
         if (!StringUtils::stringIsNullOrEmpty($content)) {
-            $this->currentPosition->addToNote(new Note($content));
+            $this->currentPosition->setNote([new Note($content)]);
         }
 
         return $this;
@@ -2576,11 +2580,11 @@ class UblDocumentBuilder extends UblDocument
         if (!StringUtils::stringIsNullOrEmpty($description)) {
             $item->addToDescription(new Description($description));
         }
-        if (!StringUtils::stringIsNullOrEmpty($sellerAssignedID)) {
-            $item->setBuyersItemIdentification((new BuyersItemIdentification())->setID(new ID($sellerAssignedID)));
-        }
         if (!StringUtils::stringIsNullOrEmpty($buyerAssignedID)) {
-            $item->setSellersItemIdentification((new SellersItemIdentification())->setId(new ID($buyerAssignedID)));
+            $item->setBuyersItemIdentification((new BuyersItemIdentification())->setID(new ID($buyerAssignedID)));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($sellerAssignedID)) {
+            $item->setSellersItemIdentification((new SellersItemIdentification())->setId(new ID($sellerAssignedID)));
         }
         if (!StringUtils::stringIsNullOrEmpty($globalIDType) && !StringUtils::stringIsNullOrEmpty($globalID)) {
             $item->setStandardItemIdentification((new StandardItemIdentification())->setID((new ID($globalID))->setSchemeID($globalIDType)));

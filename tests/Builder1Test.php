@@ -1015,6 +1015,179 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentBillingPeriod
+     */
+    public function testAddDocumentAllowanceCharge(): void
+    {
+        (self::$document)->addDocumentAllowanceCharge(10, false, "S", "VAT", 19, 1, 10, 1, 2, "C62", "reasoncode", "reason", 1);
+        (self::$document)->addDocumentAllowanceCharge(20, true, "S", "VAT", 38, 2, 20, 11, 12, "C62", "reasoncode2", "reason2", 1);
+
+        $this->disableRenderXmlContent();
+
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AllowanceCharge/cbc:ChargeIndicator', 0, "false");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode', 0, "reasoncode");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReason', 0, "reason");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AllowanceCharge/cbc:MultiplierFactorNumeric', 0, "1.0");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AllowanceCharge/cbc:SequenceNumeric', 0, "1.0");
+        $this->assertXPathValueWithIndexAndAttribute('/ubl:Invoice/cac:AllowanceCharge/cbc:Amount', 0, "10.0", "currencyID", "EUR");
+        $this->assertXPathValueWithIndexAndAttribute('/ubl:Invoice/cac:AllowanceCharge/cbc:BaseAmount', 0, "1.0", "currencyID", "EUR");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID', 0, "S");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent', 0, "19.0");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID', 0, "VAT");
+
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AllowanceCharge/cbc:ChargeIndicator', 1, "true");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode', 1, "reasoncode2");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReason', 1, "reason2");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AllowanceCharge/cbc:MultiplierFactorNumeric', 1, "1.0");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AllowanceCharge/cbc:SequenceNumeric', 1, "2.0");
+        $this->assertXPathValueWithIndexAndAttribute('/ubl:Invoice/cac:AllowanceCharge/cbc:Amount', 1, "20.0", "currencyID", "EUR");
+        $this->assertXPathValueWithIndexAndAttribute('/ubl:Invoice/cac:AllowanceCharge/cbc:BaseAmount', 1, "11.0", "currencyID", "EUR");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID', 1, "S");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent', 1, "38.0");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID', 1, "VAT");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentPaymentTerm
+     */
+    public function testAddDocumentPaymentTerm(): void
+    {
+        (self::$document)->addDocumentPaymentTerm("term1");
+        (self::$document)->addDocumentPaymentTerm("term2");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:PaymentTerms/cbc:Note', 0, "term1");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:PaymentTerms/cbc:Note', 1, "term2");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentReceivableSpecifiedTradeAccountingAccount
+     */
+    public function testAddDocumentReceivableSpecifiedTradeAccountingAccount(): void
+    {
+        (self::$document)->setDocumentReceivableSpecifiedTradeAccountingAccount("account1");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cbc:AccountingCost', 0, "account1");
+
+        (self::$document)->setDocumentReceivableSpecifiedTradeAccountingAccount("account2");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cbc:AccountingCost', 0, "account2");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::addNewPosition
+     */
+    public function testAddNewPosition(): void
+    {
+        (self::$document)->addNewPosition("1");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:InvoiceLine/cbc:ID', 0, "1");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentPositionNote
+     */
+    public function testSetDocumentPositionNote(): void
+    {
+        (self::$document)->setDocumentPositionNote("position note");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:InvoiceLine/cbc:Note', 0, "position note");
+        $this->assertXPathNotExistsWithIndex('/ubl:Invoice/cac:InvoiceLine/cbc:Note', 1);
+
+        (self::$document)->setDocumentPositionNote("position note 2");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:InvoiceLine/cbc:Note', 0, "position note 2");
+        $this->assertXPathNotExistsWithIndex('/ubl:Invoice/cac:InvoiceLine/cbc:Note', 1);
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentPositionNote
+     */
+    public function testAddDocumentPositionNote(): void
+    {
+        (self::$document)->addDocumentPositionNote("position note one");
+        (self::$document)->addDocumentPositionNote("position note two");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:InvoiceLine/cbc:Note', 1, "position note one");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:InvoiceLine/cbc:Note', 2, "position note two");
+        $this->assertXPathNotExistsWithIndex('/ubl:Invoice/cac:InvoiceLine/cbc:Note', 3);
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentPositionProductDetails
+     */
+    public function testSetDocumentPositionProductDetails(): void
+    {
+        (self::$document)->setDocumentPositionProductDetails("name", "description", "sellerid", "buyerid", "globalidtype", "globalid");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:InvoiceLine/cac:Item/cbc:Description', 0, "description");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:InvoiceLine/cac:Item/cbc:Name', 0, "name");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:BuyersItemIdentification/cbc:ID', 0, "buyerid");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:SellersItemIdentification/cbc:ID', 0, "sellerid");
+        $this->assertXPathValueWithIndexAndAttribute('/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:StandardItemIdentification/cbc:ID', 0, "globalid", "schemeID", "globalidtype");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentPositionProductCharacteristic
+     */
+    public function testAddDocumentPositionProductCharacteristic(): void
+    {
+        (self::$document)->addDocumentPositionProductCharacteristic("description1", "value1");
+        (self::$document)->addDocumentPositionProductCharacteristic("description2", "value2");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Name', 0, "description1");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Value', 0, "value1");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Name', 1, "description2");
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Value', 1, "value2");
+        $this->assertXPathNotExistsWithIndex('/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Name', 2);
+        $this->assertXPathNotExistsWithIndex('/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Value', 2);
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentPositionProductClassification
+     */
+    public function testAddDocumentPositionProductClassification(): void
+    {
+        (self::$document)->addDocumentPositionProductClassification("classcode1", "listid1", "listversionid1");
+        (self::$document)->addDocumentPositionProductClassification("classcode2", "listid2", "listversionid2");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndexAndAttribute('/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode', 0, "classcode1", "listID", "listid1");
+        $this->assertXPathValueWithIndexAndAttribute('/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode', 0, "classcode1", "listVersionID", "listversionid1");
+        $this->assertXPathValueWithIndexAndAttribute('/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode', 1, "classcode2", "listID", "listid2");
+        $this->assertXPathValueWithIndexAndAttribute('/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode', 1, "classcode2", "listVersionID", "listversionid2");
+        $this->assertXPathNotExistsWithIndex('/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode', 2);
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentPositionProductOriginTradeCountry
+     */
+    public function testSetDocumentPositionProductOriginTradeCountry(): void
+    {
+        (self::$document)->setDocumentPositionProductOriginTradeCountry("DE");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:OriginCountry/cbc:IdentificationCode', 0, "DE");
+        $this->assertXPathNotExistsWithIndex('/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:OriginCountry/cbc:IdentificationCode', 1);
+        $this->assertXPathNotExistsWithIndex('/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:OriginCountry/cbc:IdentificationCode', 2);
+
+        (self::$document)->setDocumentPositionProductOriginTradeCountry("GB");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:OriginCountry/cbc:IdentificationCode', 0, "GB");
+        $this->assertXPathNotExistsWithIndex('/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:OriginCountry/cbc:IdentificationCode', 1);
+        $this->assertXPathNotExistsWithIndex('/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:OriginCountry/cbc:IdentificationCode', 2);
+    }
+
+    /**
      * @covers \horstoeko\ubl\UblDocumentBuilder::writeFile
      */
     public function testWriteFile(): void
