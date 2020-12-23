@@ -76,7 +76,7 @@ class UblDocumentNative extends UblDocument
      * @param  string $xmlfilename
      * The filename to which the content of the UBL invoice object is
      * saved to as XML
-     * @return UblDocument
+     * @return UblDocumentNative
      */
     public function writeFile(string $xmlfilename): UblDocumentNative
     {

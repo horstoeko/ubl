@@ -211,7 +211,7 @@ class UblDocumentBuilder extends UblDocument
      * @param  string $xmlfilename
      * The filename to which the content of the UBL invoice object is
      * saved to as XML
-     * @return UblDocument
+     * @return UblDocumentBuilder
      */
     public function writeFile(string $xmlfilename): UblDocumentBuilder
     {
