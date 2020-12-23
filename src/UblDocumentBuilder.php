@@ -177,6 +177,7 @@ class UblDocumentBuilder extends UblDocument
      * Returns the currently created document position (invoice line)
      *
      * @return InvoiceLine|null
+     * @codeCoverageIgnore
      */
     public function getCurrentPosition(): ?InvoiceLine
     {
@@ -652,6 +653,7 @@ class UblDocumentBuilder extends UblDocument
      * Creates a new instance of the invoice class
      *
      * @return UblDocumentBuilder
+     * @codeCoverageIgnore
      */
     private function initInvoiceObject(): UblDocumentBuilder
     {
