@@ -78,7 +78,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentDate
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentDueDate
      */
     public function testSetDocumentDueDate(): void
     {
@@ -404,8 +404,6 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::clearDocumentAdditionalReference
-     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentAdditionalReference
      * @covers \horstoeko\ubl\UblDocumentBuilder::setFileAttachmentToAdditionalReference
      */
     public function testSetFileAttachmentToAdditionalReference(): void
@@ -442,8 +440,6 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::clearDocumentAdditionalReference
-     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentAdditionalReference
      * @covers \horstoeko\ubl\UblDocumentBuilder::setExternalAttachmentToAdditionalReference
      */
     public function testSetExternalAttachmentToAdditionalReference(): void
