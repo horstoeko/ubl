@@ -471,6 +471,12 @@ class Builder1Test extends BuilderBaseTest
 
         (self::$document)->clearDocumentAdditionalReference();
         (self::$document)->addDocumentAdditionalReference("ADD-001");
+        (self::$document)->setExternalAttachmentToAdditionalReference("");
+
+        $this->assertXPathNotExistsWithIndex('/ubl:Invoice/cac:AdditionalDocumentReference/cac:Attachment/cac:ExternalReference/cbc:URI', 0);
+
+        (self::$document)->clearDocumentAdditionalReference();
+        (self::$document)->addDocumentAdditionalReference("ADD-001");
         (self::$document)->setExternalAttachmentToAdditionalReference("http://lieferant.de/372167817.pdf");
 
         $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AdditionalDocumentReference/cac:Attachment/cac:ExternalReference/cbc:URI', 0, "http://lieferant.de/372167817.pdf");
