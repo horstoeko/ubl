@@ -85,6 +85,32 @@ class UblDocumentNative extends UblDocument
     }
 
     /**
+     * Read XML content from string
+     *
+     * @param string $xmlcontent
+     * The XML content to deserialize
+     * @return UblDocumentNative
+     */
+    public function readContent(string $xmlcontent): UblDocumentNative
+    {
+        $this->invoiceObject = $this->serializer->deserialize($xmlcontent, 'horstoeko\ubl\entities\main\Invoice', 'xml');
+        return $this;
+    }
+
+    /**
+     * Read XML content from file
+     *
+     * @param string $xmlfilename
+     * The filename which contains the XML content
+     * @return UblDocumentNative
+     */
+    public function readFile(string $xmlfilename): UblDocumentNative
+    {
+        $this->readContent(file_get_contents($xmlfilename));
+        return $this;
+    }
+
+    /**
      * Creates a new instance of the invoice class
      *
      * @return UblDocumentNative
