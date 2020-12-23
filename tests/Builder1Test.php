@@ -404,6 +404,8 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::clearDocumentAdditionalReference
+     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentAdditionalReference
      * @covers \horstoeko\ubl\UblDocumentBuilder::setFileAttachmentToAdditionalReference
      */
     public function testSetFileAttachmentToAdditionalReference(): void
@@ -433,6 +435,15 @@ class Builder1Test extends BuilderBaseTest
 
         $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AdditionalDocumentReference/cbc:ID', 0, "ADD-001");
 
+        (self::$document)->setFileAttachmentToAdditionalReference(dirname(__FILE__) . "/data/attachment.xml");
+
+        $this->assertXPathNotExistsWithIndex('/ubl:Invoice/cac:AdditionalDocumentReference/cac:Attachment/cbc:EmbeddedDocumentBinaryObject', 0);
+
+        (self::$document)->clearDocumentAdditionalReference();
+        (self::$document)->addDocumentAdditionalReference("ADD-001");
+
+        $this->assertXPathValueWithIndex('/ubl:Invoice/cac:AdditionalDocumentReference/cbc:ID', 0, "ADD-001");
+
         (self::$document)->setFileAttachmentToAdditionalReference(dirname(__FILE__) . "/data/attachment.pdf");
 
         $this->assertXPathValueStartsWithIndexAndAttribute('/ubl:Invoice/cac:AdditionalDocumentReference/cac:Attachment/cbc:EmbeddedDocumentBinaryObject', 0, "SlZCRVJpMHhMalFLSmNPa3c3", "mimeCode", "application/pdf");
@@ -440,6 +451,8 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::clearDocumentAdditionalReference
+     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentAdditionalReference
      * @covers \horstoeko\ubl\UblDocumentBuilder::setExternalAttachmentToAdditionalReference
      */
     public function testSetExternalAttachmentToAdditionalReference(): void
