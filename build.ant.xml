@@ -23,6 +23,8 @@
     <property name="phpstan" value="${basedir}/vendor/bin/phpstan"/>
     <property name="sami" value="${basedir}/sami.phar"/>
     <property name="git" value="/usr/bin/git"/>
+    <property name="result.phpunit" value="0"/>
+    <property name="result.schematron.xrechnung" value="0"/>
     <target name="clean" unless="clean.done" description="Cleanup build artifacts.">
         <delete dir="${basedir}/build/builddoc"/>
         <delete dir="${basedir}/build/doc"/>
@@ -65,7 +67,7 @@
             <arg path="${sami}"/>
         </exec>
     </target>
-    <target name="full-build" depends="prepare,composer,static-analysis,phpunit,schematron,phpdox,-check-failure,projectdoc,deploy" description="Perform static analysis, run tests, and generate project documentation.">
+    <target name="full-build" depends="prepare,composer,static-analysis,phpunit,phpdox,-check-failure,projectdoc,deploy" description="Perform static analysis, run tests, and generate project documentation.">
         <echo message="Built"/>
     </target>
     <target name="lint" unless="lint.done" description="Perform syntax check of PHP sourcecode files.">

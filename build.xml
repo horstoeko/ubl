@@ -15,6 +15,7 @@
     <property name="phpstan" value="${project.basedir}/vendor/bin/phpstan"/>
     <property name="sami" value="${project.basedir}/sami.phar"/>
     <property name="git" value="/usr/bin/git"/>
+    <property name="result.phpunit" value="0"/>
     <target name="clean" unless="clean.done" description="Cleanup build artifacts.">
         <delete dir="${project.basedir}/build/builddoc"/>
         <delete dir="${project.basedir}/build/cache"/>
