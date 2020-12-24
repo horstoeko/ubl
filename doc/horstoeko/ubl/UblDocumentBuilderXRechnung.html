@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>horstoeko\ubl\UblDocumentBuilder | horstoeko/ubl API</title>
+    <title>horstoeko\ubl\UblDocumentBuilderXRechnung | horstoeko/ubl API</title>
 
             <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:horstoeko_ubl_UblDocumentBuilder" data-root-path="../../">
+    <body id="class" data-name="class:horstoeko_ubl_UblDocumentBuilderXRechnung" data-root-path="../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -66,192 +66,48 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                        <li><a href="../../horstoeko.html">horstoeko</a></li><li class="backslash">\</li><li><a href="../../horstoeko/ubl.html">ubl</a></li><li class="backslash">\</li><li>UblDocumentBuilder</li>
+                        <li><a href="../../horstoeko.html">horstoeko</a></li><li class="backslash">\</li><li><a href="../../horstoeko/ubl.html">ubl</a></li><li class="backslash">\</li><li>UblDocumentBuilderXRechnung</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            UblDocumentBuilder
+            UblDocumentBuilderXRechnung
                 
         </h1>
     </div>
 
     <p>    class
-    <strong>UblDocumentBuilder</strong>        extends <a href="../../horstoeko/ubl/UblDocument.html"><abbr title="horstoeko\ubl\UblDocument">UblDocument</abbr></a>
+    <strong>UblDocumentBuilderXRechnung</strong>        extends <a href="../../horstoeko/ubl/UblDocumentBuilderBase.html"><abbr title="horstoeko\ubl\UblDocumentBuilderBase">UblDocumentBuilderBase</abbr></a>
 </p>
 
         
     
 
             <div class="description">
-            <p>Class representing the ubl invoice builder</p>                                </div>
+            <p>Class representing the ubl invoice builder for XRechnung</p>                                </div>
     
     
-            <h2>Constants</h2>
-
-            <table class="table table-condensed">
-                    <tr>
-                <td>SUPPORTEDTMIMETYPES</td>
-                <td class="last">
-                    <p><em>A list of supported mimetypes by binaryattachments</em></p>
-                    <p></p>
-                </td>
-            </tr>
-            </table>
-
     
-            <h2>Properties</h2>
-
-            <table class="table table-condensed">
-                    <tr>
-                <td class="type" id="property_invoiceObject">
-                                        protected                                        <abbr title="horstoeko\ubl\entities\main\Invoice">Invoice</abbr>
-                </td>
-                <td>$invoiceObject</td>
-                <td class="last"></td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td class="type" id="property_currentPosition">
-                                        protected                                        <abbr title="horstoeko\ubl\entities\cac\InvoiceLine">InvoiceLine</abbr>
-                </td>
-                <td>$currentPosition</td>
-                <td class="last"></td>
-                <td></td>
-            </tr>
-            </table>
-
     
             <h2>Methods</h2>
 
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
-                    
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderBase.html"><abbr title="horstoeko\ubl\UblDocumentBuilderBase">UblDocumentBuilderBase</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>()
+                    <a href="#method_onInitInvoiceObject">onInitInvoiceObject</a>()
         
-                                            <p>Constructor</p>                </div>
+                                            <p>This method can be overwritten in derived classes, e.g. for setting
+up the customization and the profile of the ubl document</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <abbr title="horstoeko\ubl\entities\main\Invoice">Invoice</abbr>
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_getInvoiceObject">getInvoiceObject</a>()
-        
-                                            <p class="no-description">No description</p>
-                                    </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    <abbr title="horstoeko\ubl\horstoeko\ubl\entities\cac\InvoiceLine">InvoiceLine</abbr>|null
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_getCurrentPosition">getCurrentPosition</a>()
-        
-                                            <p>Returns the currently created document position (invoice line)</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    void
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_onBeforeGetContent">onBeforeGetContent</a>()
-        
-                                            <p>This method can be overridden in derived class
-It is called before a XML is written</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    string
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_getContent">getContent</a>()
-        
-                                            <p>Write the content of a UBL object to a string</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_writeFile">writeFile</a>(string $xmlfilename)
-        
-                                            <p>Write the content of a UBL object to a file</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_setDocumentCustomization">setDocumentCustomization</a>(string $customization)
-        
-                                            <p>Sets the identifier for the customization</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_setDocumentProfile">setDocumentProfile</a>(string $profileId)
-        
-                                            <p>Set Profile</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_setDocumentNumber">setDocumentNumber</a>(string $documentNo)
-        
-                                            <p>Sets the invoice number</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_setDocumentDate">setDocumentDate</a>(<a target="_blank" href="http://php.net/DateTime">DateTime</a> $documentDate)
-        
-                                            <p>Sets the invoice issue date</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_setDocumentDueDate">setDocumentDueDate</a>(<a target="_blank" href="http://php.net/DateTime">DateTime</a> $documentDueDate)
-        
-                                            <p>Sets the payment due date</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_setDocumentTaxPointDate">setDocumentTaxPointDate</a>(<a target="_blank" href="http://php.net/DateTime">DateTime</a> $taxPointDate)
-        
-                                            <p>Sets the Value added tax point date</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderBase.html"><abbr title="horstoeko\ubl\UblDocumentBuilderBase">UblDocumentBuilderBase</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setDocumentType">setDocumentType</a>(string $documentTypeCode)
@@ -261,7 +117,47 @@ It is called before a XML is written</p>                </div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setDocumentNumber">setDocumentNumber</a>(string $documentNo)
+        
+                                            <p>Sets the invoice number</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setDocumentDate">setDocumentDate</a>(<a target="_blank" href="http://php.net/DateTime">DateTime</a> $documentDate)
+        
+                                            <p>Sets the invoice issue date</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setDocumentDueDate">setDocumentDueDate</a>(<a target="_blank" href="http://php.net/DateTime">DateTime</a> $documentDueDate)
+        
+                                            <p>Sets the payment due date</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setDocumentTaxPointDate">setDocumentTaxPointDate</a>(<a target="_blank" href="http://php.net/DateTime">DateTime</a> $taxPointDate)
+        
+                                            <p>Sets the Value added tax point date</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setDocumentNote">setDocumentNote</a>(string $documentNote)
@@ -271,7 +167,7 @@ It is called before a XML is written</p>                </div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setDocumentCurrencies">setDocumentCurrencies</a>(string $documentCurrency, string|null $taxCurrency = null)
@@ -281,7 +177,7 @@ It is called before a XML is written</p>                </div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setDocumentAccountingCost">setDocumentAccountingCost</a>(string $accountingCost)
@@ -291,7 +187,7 @@ It is called before a XML is written</p>                </div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setDocumentBuyerReference">setDocumentBuyerReference</a>(string $buyerReference)
@@ -301,7 +197,7 @@ It is called before a XML is written</p>                </div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setDocumentInvoicePeriod">setDocumentInvoicePeriod</a>(<a target="_blank" href="http://php.net/DateTime">DateTime</a>|null $startDate = null, <a target="_blank" href="http://php.net/DateTime">DateTime</a>|null $endDate = null)
@@ -311,7 +207,7 @@ It is called before a XML is written</p>                </div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setDocumentBuyerOrderNo">setDocumentBuyerOrderNo</a>(string $buyerOrderNo)
@@ -321,7 +217,7 @@ It is called before a XML is written</p>                </div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setDocumentSellerOrderNo">setDocumentSellerOrderNo</a>(string $sellerOrderNo)
@@ -331,7 +227,7 @@ It is called before a XML is written</p>                </div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_addDocumentBillingReference">addDocumentBillingReference</a>(string $referenceNo, <a target="_blank" href="http://php.net/DateTime">DateTime</a>|null $issueDate = null)
@@ -341,7 +237,7 @@ It is called before a XML is written</p>                </div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setDocumentDespatchReference">setDocumentDespatchReference</a>(string $referenceNo)
@@ -351,7 +247,7 @@ It is called before a XML is written</p>                </div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setDocumentReceiptReference">setDocumentReceiptReference</a>(string $referenceNo)
@@ -361,7 +257,7 @@ It is called before a XML is written</p>                </div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setDocumentOriginatorReference">setDocumentOriginatorReference</a>(string $referenceNo)
@@ -371,7 +267,7 @@ It is called before a XML is written</p>                </div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setDocumentContractReference">setDocumentContractReference</a>(string $referenceNo)
@@ -381,7 +277,7 @@ It is called before a XML is written</p>                </div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_clearDocumentAdditionalReference">clearDocumentAdditionalReference</a>()
@@ -391,7 +287,7 @@ It is called before a XML is written</p>                </div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_addDocumentAdditionalReference">addDocumentAdditionalReference</a>(string $referenceNo, string $referenceScheme = &quot;&quot;, string $documentTypeCode = &quot;&quot;, string $documentDescription = &quot;&quot;)
@@ -401,7 +297,7 @@ It is called before a XML is written</p>                </div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setFileAttachmentToAdditionalReference">setFileAttachmentToAdditionalReference</a>(string $filenameToAttach)
@@ -412,7 +308,7 @@ to call addDocumentAdditionalReference before using this method</p>             
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setDocumentProjectReference">setDocumentProjectReference</a>(string $referenceNo)
@@ -422,7 +318,7 @@ to call addDocumentAdditionalReference before using this method</p>             
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setExternalAttachmentToAdditionalReference">setExternalAttachmentToAdditionalReference</a>(string $uriId)
@@ -433,7 +329,7 @@ to call addDocumentAdditionalReference before using this method</p>             
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_initDocumentSeller">initDocumentSeller</a>()
@@ -443,7 +339,7 @@ to call addDocumentAdditionalReference before using this method</p>             
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setDocumentSellerEndpointId">setDocumentSellerEndpointId</a>(string $endpointId, string $endpointSchemeId)
@@ -453,7 +349,7 @@ to call addDocumentAdditionalReference before using this method</p>             
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_addDocumentSellerIdentification">addDocumentSellerIdentification</a>(string $id, string $idSchemeid = &quot;&quot;)
@@ -463,7 +359,7 @@ to call addDocumentAdditionalReference before using this method</p>             
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setDocumentSellerName">setDocumentSellerName</a>(string $name)
@@ -473,7 +369,7 @@ to call addDocumentAdditionalReference before using this method</p>             
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setDocumentSellerPostalAddress">setDocumentSellerPostalAddress</a>(string $streetName1, string $streetName2, string $streetName3, string $cityName, string $cityPostCode, string $countyName, string $countryId)
@@ -483,7 +379,7 @@ to call addDocumentAdditionalReference before using this method</p>             
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setDocumentSellerVATIdentifier">setDocumentSellerVATIdentifier</a>(string $vatIdentifier)
@@ -493,7 +389,7 @@ to call addDocumentAdditionalReference before using this method</p>             
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setDocumentSellerTaxRegistration">setDocumentSellerTaxRegistration</a>(string $taxRegistration)
@@ -503,7 +399,7 @@ to call addDocumentAdditionalReference before using this method</p>             
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setDocumentSellerLegalEntity">setDocumentSellerLegalEntity</a>(string $registrationName, string $companyId = &quot;&quot;, string $companyIdSchemeId = &quot;&quot;)
@@ -513,7 +409,7 @@ to call addDocumentAdditionalReference before using this method</p>             
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setDocumentSellerContact">setDocumentSellerContact</a>(string $contactName, string $contactPhone, string $contactElectronicMail)
@@ -523,7 +419,7 @@ to call addDocumentAdditionalReference before using this method</p>             
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_initDocumentBuyer">initDocumentBuyer</a>()
@@ -533,7 +429,7 @@ to call addDocumentAdditionalReference before using this method</p>             
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setDocumentBuyerEndpointId">setDocumentBuyerEndpointId</a>(string $endpointId, string $endpointSchemeId)
@@ -543,7 +439,7 @@ to call addDocumentAdditionalReference before using this method</p>             
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_addDocumentBuyerIdentification">addDocumentBuyerIdentification</a>(string $id, string $idSchemeid = &quot;&quot;)
@@ -553,7 +449,7 @@ to call addDocumentAdditionalReference before using this method</p>             
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setDocumentBuyerName">setDocumentBuyerName</a>(string $name)
@@ -563,7 +459,7 @@ to call addDocumentAdditionalReference before using this method</p>             
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setDocumentBuyerPostalAddress">setDocumentBuyerPostalAddress</a>(string $streetName1, string $streetName2, string $streetName3, string $cityName, string $cityPostCode, string $countyName, string $countryId)
@@ -573,7 +469,7 @@ to call addDocumentAdditionalReference before using this method</p>             
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setDocumentBuyerVATIdentifier">setDocumentBuyerVATIdentifier</a>(string $vatIdentifier)
@@ -583,7 +479,7 @@ to call addDocumentAdditionalReference before using this method</p>             
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setDocumentBuyerLegalEntity">setDocumentBuyerLegalEntity</a>(string $registrationName, string $companyId = &quot;&quot;, string $companyIdSchemeId = &quot;&quot;)
@@ -593,7 +489,7 @@ to call addDocumentAdditionalReference before using this method</p>             
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setDocumentBuyerContact">setDocumentBuyerContact</a>(string $contactName, string $contactPhone, string $contactElectronicMail)
@@ -603,7 +499,7 @@ to call addDocumentAdditionalReference before using this method</p>             
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_initDocumentPayee">initDocumentPayee</a>()
@@ -613,7 +509,7 @@ to call addDocumentAdditionalReference before using this method</p>             
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_addDocumentPayeeIdentification">addDocumentPayeeIdentification</a>(string $id, string $idSchemeid = &quot;&quot;)
@@ -623,7 +519,7 @@ to call addDocumentAdditionalReference before using this method</p>             
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setDocumentPayeeName">setDocumentPayeeName</a>(string $name)
@@ -633,7 +529,7 @@ to call addDocumentAdditionalReference before using this method</p>             
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setDocumentPayeeLegalEntity">setDocumentPayeeLegalEntity</a>(string $registrationName, string $companyId = &quot;&quot;, string $companyIdSchemeId = &quot;&quot;)
@@ -648,10 +544,10 @@ to call addDocumentAdditionalReference before using this method</p>             
 
             <div id="method-details">
                     <div class="method-item">
-                    <h3 id="method___construct">
-        <div class="location">at         line 171</div>
-        <code>                    
-    <strong>__construct</strong>()
+                    <h3 id="method_onInitInvoiceObject">
+        <div class="location">at         line 85</div>
+        <code>            protected        <a href="../../horstoeko/ubl/UblDocumentBuilderBase.html"><abbr title="horstoeko\ubl\UblDocumentBuilderBase">UblDocumentBuilderBase</abbr></a>
+    <strong>onInitInvoiceObject</strong>()
         </code>
     </h3>
     <div class="details">
@@ -659,33 +555,15 @@ to call addDocumentAdditionalReference before using this method</p>             
     
 
                     <div class="method-description">
-                                    <p>Constructor</p>                                                </div>
-                <div class="tags">
-            
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_getInvoiceObject">
-        <div class="location">at         line 181</div>
-        <code>                    <abbr title="horstoeko\ubl\entities\main\Invoice">Invoice</abbr>
-    <strong>getInvoiceObject</strong>()
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
+                                    <p>This method can be overwritten in derived classes, e.g. for setting
+up the customization and the profile of the ubl document</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
 
                     <table class="table table-condensed">
         <tr>
-            <td><abbr title="horstoeko\ubl\entities\main\Invoice">Invoice</abbr></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderBase.html"><abbr title="horstoeko\ubl\UblDocumentBuilderBase">UblDocumentBuilderBase</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -697,10 +575,10 @@ to call addDocumentAdditionalReference before using this method</p>             
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_getCurrentPosition">
-        <div class="location">at         line 192</div>
-        <code>                    <abbr title="horstoeko\ubl\horstoeko\ubl\entities\cac\InvoiceLine">InvoiceLine</abbr>|null
-    <strong>getCurrentPosition</strong>()
+                    <h3 id="method_setDocumentType">
+        <div class="location">at         line 100</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderBase.html"><abbr title="horstoeko\ubl\UblDocumentBuilderBase">UblDocumentBuilderBase</abbr></a>
+    <strong>setDocumentType</strong>(string $documentTypeCode)
         </code>
     </h3>
     <div class="details">
@@ -708,107 +586,15 @@ to call addDocumentAdditionalReference before using this method</p>             
     
 
                     <div class="method-description">
-                                    <p>Returns the currently created document position (invoice line)</p>                                                </div>
-                <div class="tags">
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td><abbr title="horstoeko\ubl\horstoeko\ubl\entities\cac\InvoiceLine">InvoiceLine</abbr>|null</td>
-            <td></td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_onBeforeGetContent">
-        <div class="location">at         line 203</div>
-        <code>            protected        void
-    <strong>onBeforeGetContent</strong>()
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                    <div class="method-description">
-                                    <p>This method can be overridden in derived class
-It is called before a XML is written</p>                                                </div>
-                <div class="tags">
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>void</td>
-            <td></td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_getContent">
-        <div class="location">at         line 213</div>
-        <code>                    string
-    <strong>getContent</strong>()
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                    <div class="method-description">
-                                    <p>Write the content of a UBL object to a string</p>                                                </div>
-                <div class="tags">
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>string</td>
-            <td></td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_writeFile">
-        <div class="location">at         line 227</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
-    <strong>writeFile</strong>(string $xmlfilename)
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                    <div class="method-description">
-                                    <p>Write the content of a UBL object to a file</p>                                                </div>
+                                    <p>Sets the invoice type code</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
                 <td>string</td>
-                <td>$xmlfilename</td>
-                <td>The filename to which the content of the UBL invoice object is
-saved to as XML</td>
+                <td>$documentTypeCode</td>
+                <td>A code specifying the functional type of the Invoice. The default value is <strong>380</strong>.</td>
             </tr>
             </table>
 
@@ -817,87 +603,7 @@ saved to as XML</td>
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
-            <td></td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_setDocumentCustomization">
-        <div class="location">at         line 240</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
-    <strong>setDocumentCustomization</strong>(string $customization)
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                    <div class="method-description">
-                                    <p>Sets the identifier for the customization</p>                                                </div>
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>string</td>
-                <td>$customization</td>
-                <td>The identifier for the customization</td>
-            </tr>
-            </table>
-
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
-            <td></td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_setDocumentProfile">
-        <div class="location">at         line 252</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
-    <strong>setDocumentProfile</strong>(string $profileId)
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                    <div class="method-description">
-                                    <p>Set Profile</p>                                                </div>
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>string</td>
-                <td>$profileId</td>
-                <td></td>
-            </tr>
-            </table>
-
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderBase.html"><abbr title="horstoeko\ubl\UblDocumentBuilderBase">UblDocumentBuilderBase</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -910,8 +616,8 @@ saved to as XML</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentNumber">
-        <div class="location">at         line 268</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 116</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentNumber</strong>(string $documentNo)
         </code>
     </h3>
@@ -940,7 +646,7 @@ is to be used.</td>
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -953,8 +659,8 @@ is to be used.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentDate">
-        <div class="location">at         line 281</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 129</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentDate</strong>(<a target="_blank" href="http://php.net/DateTime">DateTime</a> $documentDate)
         </code>
     </h3>
@@ -980,7 +686,7 @@ is to be used.</td>
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -993,8 +699,8 @@ is to be used.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentDueDate">
-        <div class="location">at         line 295</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 143</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentDueDate</strong>(<a target="_blank" href="http://php.net/DateTime">DateTime</a> $documentDueDate)
         </code>
     </h3>
@@ -1021,7 +727,7 @@ is positive, either the Payment due date (BT-9) or the Payment terms (BT-20) sha
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -1034,8 +740,8 @@ is positive, either the Payment due date (BT-9) or the Payment terms (BT-20) sha
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentTaxPointDate">
-        <div class="location">at         line 310</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 158</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentTaxPointDate</strong>(<a target="_blank" href="http://php.net/DateTime">DateTime</a> $taxPointDate)
         </code>
     </h3>
@@ -1063,47 +769,7 @@ This element is required if the Value added tax point date is different from the
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
-            <td></td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_setDocumentType">
-        <div class="location">at         line 323</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
-    <strong>setDocumentType</strong>(string $documentTypeCode)
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                    <div class="method-description">
-                                    <p>Sets the invoice type code</p>                                                </div>
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>string</td>
-                <td>$documentTypeCode</td>
-                <td>A code specifying the functional type of the Invoice. The default value is <strong>380</strong>.</td>
-            </tr>
-            </table>
-
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -1116,8 +782,8 @@ This element is required if the Value added tax point date is different from the
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentNote">
-        <div class="location">at         line 337</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 172</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentNote</strong>(string $documentNote)
         </code>
     </h3>
@@ -1144,7 +810,7 @@ Such as the reason for any correction or assignment note in case the invoice has
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -1157,8 +823,8 @@ Such as the reason for any correction or assignment note in case the invoice has
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentCurrencies">
-        <div class="location">at         line 356</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 191</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentCurrencies</strong>(string $documentCurrency, string|null $taxCurrency = null)
         </code>
     </h3>
@@ -1193,7 +859,7 @@ of the Seller. Shall be used in combination with the Invoice total VAT amount in
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -1206,8 +872,8 @@ of the Seller. Shall be used in combination with the Invoice total VAT amount in
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentAccountingCost">
-        <div class="location">at         line 371</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 206</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentAccountingCost</strong>(string $accountingCost)
         </code>
     </h3>
@@ -1233,7 +899,7 @@ of the Seller. Shall be used in combination with the Invoice total VAT amount in
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -1246,8 +912,8 @@ of the Seller. Shall be used in combination with the Invoice total VAT amount in
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentBuyerReference">
-        <div class="location">at         line 385</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 220</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentBuyerReference</strong>(string $buyerReference)
         </code>
     </h3>
@@ -1274,7 +940,7 @@ reference or purchase order reference (BT-13)</td>
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -1287,8 +953,8 @@ reference or purchase order reference (BT-13)</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentInvoicePeriod">
-        <div class="location">at         line 400</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 235</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentInvoicePeriod</strong>(<a target="_blank" href="http://php.net/DateTime">DateTime</a>|null $startDate = null, <a target="_blank" href="http://php.net/DateTime">DateTime</a>|null $endDate = null)
         </code>
     </h3>
@@ -1319,7 +985,7 @@ reference or purchase order reference (BT-13)</td>
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -1332,8 +998,8 @@ reference or purchase order reference (BT-13)</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentBuyerOrderNo">
-        <div class="location">at         line 426</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 261</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentBuyerOrderNo</strong>(string $buyerOrderNo)
         </code>
     </h3>
@@ -1360,7 +1026,7 @@ An invoice must have buyer reference (BT-10) or purchase order reference.</td>
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -1373,8 +1039,8 @@ An invoice must have buyer reference (BT-10) or purchase order reference.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentSellerOrderNo">
-        <div class="location">at         line 441</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 276</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentSellerOrderNo</strong>(string $sellerOrderNo)
         </code>
     </h3>
@@ -1400,7 +1066,7 @@ An invoice must have buyer reference (BT-10) or purchase order reference.</td>
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -1413,8 +1079,8 @@ An invoice must have buyer reference (BT-10) or purchase order reference.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_addDocumentBillingReference">
-        <div class="location">at         line 459</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 294</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>addDocumentBillingReference</strong>(string $referenceNo, <a target="_blank" href="http://php.net/DateTime">DateTime</a>|null $issueDate = null)
         </code>
     </h3>
@@ -1446,7 +1112,7 @@ Shall be provided in case the Preceding Invoice identifier is not unique</td>
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -1459,8 +1125,8 @@ Shall be provided in case the Preceding Invoice identifier is not unique</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentDespatchReference">
-        <div class="location">at         line 483</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 318</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentDespatchReference</strong>(string $referenceNo)
         </code>
     </h3>
@@ -1486,7 +1152,7 @@ Shall be provided in case the Preceding Invoice identifier is not unique</td>
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -1499,8 +1165,8 @@ Shall be provided in case the Preceding Invoice identifier is not unique</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentReceiptReference">
-        <div class="location">at         line 500</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 335</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentReceiptReference</strong>(string $referenceNo)
         </code>
     </h3>
@@ -1526,7 +1192,7 @@ Shall be provided in case the Preceding Invoice identifier is not unique</td>
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -1539,8 +1205,8 @@ Shall be provided in case the Preceding Invoice identifier is not unique</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentOriginatorReference">
-        <div class="location">at         line 517</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 352</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentOriginatorReference</strong>(string $referenceNo)
         </code>
     </h3>
@@ -1566,7 +1232,7 @@ Shall be provided in case the Preceding Invoice identifier is not unique</td>
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -1579,8 +1245,8 @@ Shall be provided in case the Preceding Invoice identifier is not unique</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentContractReference">
-        <div class="location">at         line 534</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 369</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentContractReference</strong>(string $referenceNo)
         </code>
     </h3>
@@ -1606,7 +1272,7 @@ Shall be provided in case the Preceding Invoice identifier is not unique</td>
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -1619,8 +1285,8 @@ Shall be provided in case the Preceding Invoice identifier is not unique</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_clearDocumentAdditionalReference">
-        <div class="location">at         line 549</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 384</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>clearDocumentAdditionalReference</strong>()
         </code>
     </h3>
@@ -1636,7 +1302,7 @@ Shall be provided in case the Preceding Invoice identifier is not unique</td>
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -1649,8 +1315,8 @@ Shall be provided in case the Preceding Invoice identifier is not unique</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_addDocumentAdditionalReference">
-        <div class="location">at         line 570</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 405</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>addDocumentAdditionalReference</strong>(string $referenceNo, string $referenceScheme = &quot;&quot;, string $documentTypeCode = &quot;&quot;, string $documentDescription = &quot;&quot;)
         </code>
     </h3>
@@ -1692,7 +1358,7 @@ identifier for the supporting document.</td>
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -1705,8 +1371,8 @@ identifier for the supporting document.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setFileAttachmentToAdditionalReference">
-        <div class="location">at         line 598</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 433</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setFileAttachmentToAdditionalReference</strong>(string $filenameToAttach)
         </code>
     </h3>
@@ -1733,7 +1399,7 @@ to call addDocumentAdditionalReference before using this method</p>             
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -1746,8 +1412,8 @@ to call addDocumentAdditionalReference before using this method</p>             
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentProjectReference">
-        <div class="location">at         line 636</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 471</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentProjectReference</strong>(string $referenceNo)
         </code>
     </h3>
@@ -1773,7 +1439,7 @@ to call addDocumentAdditionalReference before using this method</p>             
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -1786,8 +1452,8 @@ to call addDocumentAdditionalReference before using this method</p>             
             </div>
                     <div class="method-item">
                     <h3 id="method_setExternalAttachmentToAdditionalReference">
-        <div class="location">at         line 656</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 491</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setExternalAttachmentToAdditionalReference</strong>(string $uriId)
         </code>
     </h3>
@@ -1816,7 +1482,7 @@ Example value: http://www.example.com/index.html</td>
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -1829,8 +1495,8 @@ Example value: http://www.example.com/index.html</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_initDocumentSeller">
-        <div class="location">at         line 684</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 519</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>initDocumentSeller</strong>()
         </code>
     </h3>
@@ -1846,7 +1512,7 @@ Example value: http://www.example.com/index.html</td>
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -1859,8 +1525,8 @@ Example value: http://www.example.com/index.html</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentSellerEndpointId">
-        <div class="location">at         line 706</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 541</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentSellerEndpointId</strong>(string $endpointId, string $endpointSchemeId)
         </code>
     </h3>
@@ -1892,7 +1558,7 @@ invoice may be delivered.</td>
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -1905,8 +1571,8 @@ invoice may be delivered.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_addDocumentSellerIdentification">
-        <div class="location">at         line 738</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 573</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>addDocumentSellerIdentification</strong>(string $id, string $idSchemeid = &quot;&quot;)
         </code>
     </h3>
@@ -1942,7 +1608,7 @@ value MUST be "SEPA"</td>
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -1955,8 +1621,8 @@ value MUST be "SEPA"</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentSellerName">
-        <div class="location">at         line 766</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 601</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentSellerName</strong>(string $name)
         </code>
     </h3>
@@ -1982,7 +1648,7 @@ value MUST be "SEPA"</td>
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -1995,8 +1661,8 @@ value MUST be "SEPA"</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentSellerPostalAddress">
-        <div class="location">at         line 810</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 645</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentSellerPostalAddress</strong>(string $streetName1, string $streetName2, string $streetName3, string $cityName, string $cityPostCode, string $countyName, string $countryId)
         </code>
     </h3>
@@ -2059,7 +1725,7 @@ value MUST be "SEPA"</td>
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -2072,8 +1738,8 @@ value MUST be "SEPA"</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentSellerVATIdentifier">
-        <div class="location">at         line 857</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 692</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentSellerVATIdentifier</strong>(string $vatIdentifier)
         </code>
     </h3>
@@ -2100,7 +1766,7 @@ value MUST be "SEPA"</td>
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -2113,8 +1779,8 @@ value MUST be "SEPA"</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentSellerTaxRegistration">
-        <div class="location">at         line 893</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 728</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentSellerTaxRegistration</strong>(string $taxRegistration)
         </code>
     </h3>
@@ -2142,7 +1808,7 @@ a supplier</td>
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -2155,8 +1821,8 @@ a supplier</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentSellerLegalEntity">
-        <div class="location">at         line 937</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 772</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentSellerLegalEntity</strong>(string $registrationName, string $companyId = &quot;&quot;, string $companyIdSchemeId = &quot;&quot;)
         </code>
     </h3>
@@ -2198,7 +1864,7 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -2211,8 +1877,8 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentSellerContact">
-        <div class="location">at         line 976</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 811</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentSellerContact</strong>(string $contactName, string $contactPhone, string $contactElectronicMail)
         </code>
     </h3>
@@ -2251,7 +1917,7 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -2264,8 +1930,8 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
             </div>
                     <div class="method-item">
                     <h3 id="method_initDocumentBuyer">
-        <div class="location">at         line 997</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 832</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>initDocumentBuyer</strong>()
         </code>
     </h3>
@@ -2281,7 +1947,7 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -2294,8 +1960,8 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentBuyerEndpointId">
-        <div class="location">at         line 1018</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 853</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentBuyerEndpointId</strong>(string $endpointId, string $endpointSchemeId)
         </code>
     </h3>
@@ -2326,7 +1992,7 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -2339,8 +2005,8 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
             </div>
                     <div class="method-item">
                     <h3 id="method_addDocumentBuyerIdentification">
-        <div class="location">at         line 1047</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 882</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>addDocumentBuyerIdentification</strong>(string $id, string $idSchemeid = &quot;&quot;)
         </code>
     </h3>
@@ -2373,7 +2039,7 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -2386,8 +2052,8 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentBuyerName">
-        <div class="location">at         line 1076</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 911</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentBuyerName</strong>(string $name)
         </code>
     </h3>
@@ -2413,7 +2079,7 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -2426,8 +2092,8 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentBuyerPostalAddress">
-        <div class="location">at         line 1120</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 955</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentBuyerPostalAddress</strong>(string $streetName1, string $streetName2, string $streetName3, string $cityName, string $cityPostCode, string $countyName, string $countryId)
         </code>
     </h3>
@@ -2490,7 +2156,7 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -2503,8 +2169,8 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentBuyerVATIdentifier">
-        <div class="location">at         line 1167</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 1002</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentBuyerVATIdentifier</strong>(string $vatIdentifier)
         </code>
     </h3>
@@ -2531,7 +2197,7 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -2544,8 +2210,8 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentBuyerLegalEntity">
-        <div class="location">at         line 1208</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 1043</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentBuyerLegalEntity</strong>(string $registrationName, string $companyId = &quot;&quot;, string $companyIdSchemeId = &quot;&quot;)
         </code>
     </h3>
@@ -2584,7 +2250,7 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -2597,8 +2263,8 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentBuyerContact">
-        <div class="location">at         line 1247</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 1082</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentBuyerContact</strong>(string $contactName, string $contactPhone, string $contactElectronicMail)
         </code>
     </h3>
@@ -2637,7 +2303,7 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -2650,8 +2316,8 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
             </div>
                     <div class="method-item">
                     <h3 id="method_initDocumentPayee">
-        <div class="location">at         line 1268</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 1103</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>initDocumentPayee</strong>()
         </code>
     </h3>
@@ -2667,7 +2333,7 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -2680,8 +2346,8 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
             </div>
                     <div class="method-item">
                     <h3 id="method_addDocumentPayeeIdentification">
-        <div class="location">at         line 1291</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 1126</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>addDocumentPayeeIdentification</strong>(string $id, string $idSchemeid = &quot;&quot;)
         </code>
     </h3>
@@ -2717,7 +2383,7 @@ value MUST be "SEPA"
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -2730,8 +2396,8 @@ value MUST be "SEPA"
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentPayeeName">
-        <div class="location">at         line 1321</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 1156</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentPayeeName</strong>(string $name)
         </code>
     </h3>
@@ -2758,7 +2424,7 @@ value MUST be "SEPA"
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -2771,8 +2437,8 @@ value MUST be "SEPA"
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentPayeeLegalEntity">
-        <div class="location">at         line 1353</div>
-        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a>
+        <div class="location">at         line 1188</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentPayeeLegalEntity</strong>(string $registrationName, string $companyId = &quot;&quot;, string $companyIdSchemeId = &quot;&quot;)
         </code>
     </h3>
@@ -2811,7 +2477,7 @@ value MUST be "SEPA"
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../horstoeko/ubl/UblDocumentBuilder.html"><abbr title="horstoeko\ubl\UblDocumentBuilder">UblDocumentBuilder</abbr></a></td>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
             <td></td>
         </tr>
     </table>
