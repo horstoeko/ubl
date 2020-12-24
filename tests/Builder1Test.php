@@ -530,8 +530,8 @@ class Builder1Test extends BuilderBaseTest
 
         (self::$document)->initDocumentSeller();
 
-        $this->assertXPathExists("/ubl:Invoice/cac:AccountingSupplierParty", 0);
-        $this->assertXPathExists("/ubl:Invoice/cac:AccountingSupplierParty/cac:Party", 0);
+        $this->assertXPathExists("/ubl:Invoice/cac:AccountingSupplierParty");
+        $this->assertXPathExists("/ubl:Invoice/cac:AccountingSupplierParty/cac:Party");
     }
 
     /**

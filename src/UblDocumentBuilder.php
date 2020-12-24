@@ -701,10 +701,6 @@ class UblDocumentBuilder extends UblDocument
             return $this;
         }
 
-        if ($this->invoiceObject->getAccountingSupplierParty()->getParty() == null) {
-            return $this;
-        }
-
         if (StringUtils::stringIsNullOrEmpty($endpointId) || StringUtils::stringIsNullOrEmpty($endpointSchemeId)) {
             return $this;
         }
@@ -737,10 +733,6 @@ class UblDocumentBuilder extends UblDocument
             return $this;
         }
 
-        if ($this->invoiceObject->getAccountingSupplierParty()->getParty() == null) {
-            return $this;
-        }
-
         if (StringUtils::stringIsNullOrEmpty($id)) {
             return $this;
         }
@@ -766,10 +758,6 @@ class UblDocumentBuilder extends UblDocument
     public function setDocumentSellerName(string $name): UblDocumentBuilder
     {
         if ($this->invoiceObject->getAccountingSupplierParty() == null) {
-            return $this;
-        }
-
-        if ($this->invoiceObject->getAccountingSupplierParty()->getParty() == null) {
             return $this;
         }
 
