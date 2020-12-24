@@ -3,12 +3,12 @@
 namespace horstoeko\ubl\tests;
 
 use PHPUnit\Framework\TestCase;
-use horstoeko\ubl\UblDocumentBuilder;
+use horstoeko\ubl\UblDocumentBuilderBase;
 
 class BuilderBaseTest extends TestCase
 {
     /**
-     * @var UblDocumentBuilder
+     * @var UblDocumentBuilderBase
      */
     protected static $document;
 
