@@ -818,7 +818,9 @@ class UblDocumentBuilder extends UblDocument
             $postalAddress->setAdditionalStreetName(new AdditionalStreetName($streetName2));
         }
         if (!StringUtils::stringIsNullOrEmpty($streetName3)) {
-            $postalAddress->addToAddressLine((new AddressLine())->setLine(new Line($streetName3)));
+            $addressLine = new AddressLine();
+            $addressLine->setLine(new Line($streetName3));
+            $postalAddress->addToAddressLine($addressLine);
         }
         if (!StringUtils::stringIsNullOrEmpty($cityName)) {
             $postalAddress->setCityName(new CityName($cityName));
@@ -830,7 +832,9 @@ class UblDocumentBuilder extends UblDocument
             $postalAddress->setCountrySubentity(new CountrySubentity($countyName));
         }
         if (!StringUtils::stringIsNullOrEmpty($countryId)) {
-            $postalAddress->setCountry((new Country())->setIdentificationCode(new IdentificationCode($countryId)));
+            $country = new Country();
+            $country->setIdentificationCode(new IdentificationCode($countryId));
+            $postalAddress->setCountry($country);
         }
 
         $this->invoiceObject->getAccountingSupplierParty()->getParty()->setPostalAddress($postalAddress);
