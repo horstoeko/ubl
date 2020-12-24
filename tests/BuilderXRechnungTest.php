@@ -7,11 +7,6 @@ use horstoeko\ubl\UblDocumentBuilderXRechnung;
 
 class BuilderXRechnungTest extends BuilderBaseTest
 {
-    /**
-     * @var UblDocumentBuilderXRechnung
-     */
-    protected static $document;
-
     public static function setUpBeforeClass(): void
     {
         self::$document = new UblDocumentBuilderXRechnung();
