@@ -118,6 +118,8 @@ use \horstoeko\ubl\entities\cac\FinancialInstitutionBranch;
 use \horstoeko\ubl\entities\cac\StandardItemIdentification;
 use horstoeko\ubl\entities\cac\OriginatorDocumentReference;
 use \horstoeko\ubl\entities\cac\AdditionalDocumentReference;
+use horstoeko\ubl\entities\cac\Contact;
+use horstoeko\ubl\entities\cac\PartyLegalEntity;
 use horstoeko\ubl\entities\cac\PostalAddress;
 use \horstoeko\ubl\entities\cbc\EmbeddedDocumentBinaryObject;
 
@@ -831,6 +833,143 @@ class UblDocumentBuilder extends UblDocument
         }
 
         $this->invoiceObject->getAccountingSupplierParty()->getParty()->setPostalAddress($postalAddress);
+
+        return $this;
+    }
+
+    /**
+     * Sets the sellers VAT identifier
+     *
+     * @param string $vatIdentifier
+     * The Seller's VAT identifier (also known as Seller VAT identification number)
+     * __Example value__: NO999888777
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentSellerVATIdentifier(string $vatIdentifier): UblDocumentBuilder
+    {
+        if ($this->invoiceObject->getAccountingSupplierParty() == null) {
+            return $this;
+        }
+
+        if (StringUtils::stringIsNullOrEmpty($vatIdentifier)) {
+            return $this;
+        }
+
+        $partyTaxScheme = $this->invoiceObject->getAccountingSupplierParty()->getParty()->getPartyTaxScheme();
+
+        if (!isset($partyTaxScheme[0])) {
+            $partyTaxScheme[0] = new PartyTaxScheme();
+        }
+
+        $partyTaxScheme[0]->setCompanyID(new CompanyID($vatIdentifier));
+        $partyTaxScheme[0]->setTaxScheme((new TaxScheme())->setID(new ID("VAT")));
+
+        $this->invoiceObject->getAccountingSupplierParty()->getParty()->setPartyTaxScheme($partyTaxScheme);
+
+        return $this;
+    }
+
+    /**
+     * Sets the sellers tax registration number
+     *
+     * @param string $taxRegistration
+     * the local identification (defined by the Seller’s address) of the Seller for tax purposes or a reference
+     * that enables the Seller to state his registered tax status. In order for the buyer to automatically identify
+     * a supplier
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentSellerTaxRegistration(string $taxRegistration): UblDocumentBuilder
+    {
+        if ($this->invoiceObject->getAccountingSupplierParty() == null) {
+            return $this;
+        }
+
+        if (StringUtils::stringIsNullOrEmpty($taxRegistration)) {
+            return $this;
+        }
+
+        $partyTaxScheme = $this->invoiceObject->getAccountingSupplierParty()->getParty()->getPartyTaxScheme();
+
+        if (!isset($partyTaxScheme[1])) {
+            $partyTaxScheme[1] = new PartyTaxScheme();
+        }
+
+        $partyTaxScheme[1]->setCompanyID(new CompanyID($taxRegistration));
+        $partyTaxScheme[1]->setTaxScheme((new TaxScheme())->setID(new ID("FC")));
+
+        $this->invoiceObject->getAccountingSupplierParty()->getParty()->setPartyTaxScheme($partyTaxScheme);
+
+        return $this;
+    }
+
+    /**
+     * Sets the sellers legal entity
+     *
+     * @param string $registrationName
+     * The full formal name by which the Seller is registered in the national registry of legal entities or as a Taxable
+     * person or otherwise trades as a person or persons.
+     * __Example value__: Full Formal Seller Name LTD.
+     * @param string $companyId
+     * An identifier issued by an official registrar that identifies the Seller as a legal entity or person. In order for
+     * the buyer to automatically identify a supplier, the Seller identifier (BT-29), the Seller legal registration
+     * identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
+     * __Example value__: HRB 123
+     * @param string $companyIdSchemeId
+     * The identification scheme identifier of the Seller legal registration identifier.
+     * __Example value__: 0002
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentSellerLegalEntity(string $registrationName, string $companyId = "", string $companyIdSchemeId = ""): UblDocumentBuilder
+    {
+        if ($this->invoiceObject->getAccountingSupplierParty() == null) {
+            return $this;
+        }
+
+        if (StringUtils::stringIsNullOrEmpty($registrationName)) {
+            return $this;
+        }
+
+        $partyLegalEntity = new PartyLegalEntity();
+        $partyLegalEntity->setRegistrationName(new RegistrationName($registrationName));
+
+        if (!StringUtils::stringIsNullOrEmpty($companyId)) {
+            $partyLegalEntity->setCompanyID(new CompanyID($companyId));
+            if (!StringUtils::stringIsNullOrEmpty($companyIdSchemeId)) {
+                $partyLegalEntity->getCompanyID()->setSchemeID($companyIdSchemeId);
+            }
+        }
+
+        $this->invoiceObject->getAccountingSupplierParty()->getParty()->setPartyLegalEntity([$partyLegalEntity]);
+
+        return $this;
+    }
+
+    /**
+     * Sets the sellers contact
+     *
+     * @param string $contactName
+     * A contact point for a legal entity or person.
+     * __Example value__: xyz123
+     * @param string $contactPhone
+     * A phone number for the contact point.
+     * __Example value__: 887 654 321
+     * @param string $contactElectronicMail
+     * An e-mail address for the contact point.
+     * __Example value__: test.name@foo.bar
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentSellerContact(string $contactName, string $contactPhone, string $contactElectronicMail): UblDocumentBuilder
+    {
+        if ($this->invoiceObject->getAccountingSupplierParty() == null) {
+            return $this;
+        }
+
+        $contact = new Contact();
+        $contact->setName(new Name($contactName));
+        $contact->setTelephone(new Telephone($contactPhone));
+        $contact->setElectronicMail(new ElectronicMail($contactElectronicMail));
+
+        $this->invoiceObject->getAccountingSupplierParty()->getParty()->setContact($contact);
 
         return $this;
     }
