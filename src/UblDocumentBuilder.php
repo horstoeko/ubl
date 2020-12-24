@@ -121,6 +121,7 @@ use horstoeko\ubl\entities\cac\OriginatorDocumentReference;
 use \horstoeko\ubl\entities\cac\AdditionalDocumentReference;
 use horstoeko\ubl\entities\cac\Contact;
 use horstoeko\ubl\entities\cac\PartyLegalEntity;
+use horstoeko\ubl\entities\cac\PayeeParty;
 use horstoeko\ubl\entities\cac\PostalAddress;
 use \horstoeko\ubl\entities\cbc\EmbeddedDocumentBinaryObject;
 use horstoeko\ubl\entities\cbc\IdentificationID;
@@ -1255,6 +1256,121 @@ class UblDocumentBuilder extends UblDocument
         $contact->setElectronicMail(new ElectronicMail($contactElectronicMail));
 
         $this->invoiceObject->getAccountingCustomerParty()->getParty()->setContact($contact);
+
+        return $this;
+    }
+
+    /**
+     * Initialize the payee party of the invoice document
+     *
+     * @return UblDocumentBuilder
+     */
+    public function initDocumentPayee(): UblDocumentBuilder
+    {
+        $payeeParty = new PayeeParty();
+
+        $this->invoiceObject->setPayeeParty($payeeParty);
+
+        return $this;
+    }
+
+    /**
+     * Sets payee identifier
+     *
+     * @param string $id
+     * This element is used for both the identification of the Payee, or the unique banking reference identifier
+     * of Payee (assigned by the Payee bank.) For payee identification use ICD code list, for SEPA bank assigned
+     * creditor reference, use SEPA.
+     * __Example value__: FR932874294
+     * @param string $idSchemeid
+     * The identification scheme identifier of the payee identifier. For bank assigned creditor identifier (BT-90),
+     * value MUST be "SEPA"
+     * __Example value__: SEPA
+     * @return UblDocumentBuilder
+     */
+    public function addDocumentPayeeIdentification(string $id, string $idSchemeid = ""): UblDocumentBuilder
+    {
+        if ($this->invoiceObject->getPayeeParty() == null) {
+            return $this;
+        }
+
+        if (StringUtils::stringIsNullOrEmpty($id)) {
+            return $this;
+        }
+
+        $partyIdentification = new PartyIdentification();
+        $partyIdentification->setID(new ID($id));
+
+        if (!StringUtils::stringIsNullOrEmpty($idSchemeid)) {
+            $partyIdentification->getID()->setSchemeID($idSchemeid);
+        }
+
+        $this->invoiceObject->getAccountingCustomerParty()->getParty()->addToPartyIdentification($partyIdentification);
+
+        return $this;
+    }
+
+    /**
+     * Sets the payee name
+     *
+     * @param string $name
+     * The name of the Payee.
+     * __Example value__: Payee Name Ltd
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentPayeeName(string $name): UblDocumentBuilder
+    {
+        if ($this->invoiceObject->getPayeeParty() == null) {
+            return $this;
+        }
+
+        if (StringUtils::stringIsNullOrEmpty($name)) {
+            return $this;
+        }
+
+        $partyName = new PartyName();
+        $partyName->setName(new Name($name));
+
+        $this->invoiceObject->getPayeeParty()->setPartyName([$partyName]);
+
+        return $this;
+    }
+
+    /**
+     * Sets the payees legal entity
+     *
+     * @param string $registrationName
+     * The full name of the payee.
+     * __Example value__: payee Full Name AS
+     * @param string $companyId
+     * An identifier issued by an official registrar that identifies the payee as a legal entity or person.
+     * __Example value__: FR932874294
+     * @param string $companyIdSchemeId
+     * The identification scheme identifier of the payee legal registration identifier.
+     * __Example value__: 0002
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentPayeeLegalEntity(string $registrationName, string $companyId = "", string $companyIdSchemeId = ""): UblDocumentBuilder
+    {
+        if ($this->invoiceObject->getPayeeParty() == null) {
+            return $this;
+        }
+
+        if (StringUtils::stringIsNullOrEmpty($registrationName)) {
+            return $this;
+        }
+
+        $partyLegalEntity = new PartyLegalEntity();
+        $partyLegalEntity->setRegistrationName(new RegistrationName($registrationName));
+
+        if (!StringUtils::stringIsNullOrEmpty($companyId)) {
+            $partyLegalEntity->setCompanyID(new CompanyID($companyId));
+            if (!StringUtils::stringIsNullOrEmpty($companyIdSchemeId)) {
+                $partyLegalEntity->getCompanyID()->setSchemeID($companyIdSchemeId);
+            }
+        }
+
+        $this->invoiceObject->getPayeeParty()->setPartyLegalEntity([$partyLegalEntity]);
 
         return $this;
     }

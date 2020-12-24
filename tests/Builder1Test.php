@@ -969,6 +969,83 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentPayeeIdentification
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentPayeeName
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentPayeePostalAddress
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentPayeeVATIdentifier
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentPayeeLegalEntity
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentPayeeContact
+     */
+    public function testBeforeInitPayeeParty(): void
+    {
+        (self::$document)->addDocumentPayeeIdentification("1234567890", "0088");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PayeeParty/cac:PartyIdentification/cbc:ID", 0);
+
+        (self::$document)->setDocumentPayeeName("Payee Name");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PayeeParty/cac:PartyName/cbc:Name", 0);
+
+        (self::$document)->setDocumentPayeeLegalEntity("Payee name");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PayeeParty/cac:PartyLegalEntity", 0);
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::initDocumentPayee
+     */
+    public function testInitPayeeParty(): void
+    {
+        $this->assertXPathNotExists("/ubl:Invoice/cac:PayeeParty");
+
+        (self::$document)->initDocumentPayee();
+
+        $this->assertXPathExists("/ubl:Invoice/cac:PayeeParty");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentPayeeName
+     */
+    public function testSetDocumentPayeeName(): void
+    {
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PayeeParty/cac:PartyName/cbc:Name", 0);
+
+        (self::$document)->setDocumentPayeeName("");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PayeeParty/cac:PartyName/cbc:Name", 0);
+
+        (self::$document)->setDocumentPayeeName("Payee Name");
+
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PayeeParty/cac:PartyName/cbc:Name", 0, "Payee Name");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentPayeeLegalEntity
+     */
+    public function testSetDocumentPayeeLegalEntity(): void
+    {
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PayeeParty/cac:PartyLegalEntity", 0);
+
+        (self::$document)->setDocumentPayeeLegalEntity("");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PayeeParty/cac:PartyLegalEntity", 0);
+
+        (self::$document)->setDocumentPayeeLegalEntity("Payee name");
+
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PayeeParty/cac:PartyLegalEntity/cbc:RegistrationName", 0, "Payee name");
+
+        (self::$document)->setDocumentPayeeLegalEntity("Payee name", "7300010000001");
+
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PayeeParty/cac:PartyLegalEntity/cbc:RegistrationName", 0, "Payee name");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID", 0, "7300010000001");
+
+        (self::$document)->setDocumentPayeeLegalEntity("Payee name", "7300010000001", "0088");
+
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PayeeParty/cac:PartyLegalEntity/cbc:RegistrationName", 0, "Payee name");
+        $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID", 0, "7300010000001", "schemeID", "0088");
+    }
+
+    /**
      * @covers \horstoeko\ubl\UblDocumentBuilder::writeFile
      */
     public function testWriteFile(): void
