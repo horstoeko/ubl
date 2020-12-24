@@ -1305,7 +1305,7 @@ class UblDocumentBuilder extends UblDocument
             $partyIdentification->getID()->setSchemeID($idSchemeid);
         }
 
-        $this->invoiceObject->getAccountingCustomerParty()->getParty()->addToPartyIdentification($partyIdentification);
+        $this->invoiceObject->getPayeeParty()->addToPartyIdentification($partyIdentification);
 
         return $this;
     }
