@@ -67,7 +67,7 @@
             <arg path="${sami}"/>
         </exec>
     </target>
-    <target name="full-build" depends="prepare,composer,static-analysis,phpunit,phpdox,-check-failure,projectdoc,deploy" description="Perform static analysis, run tests, and generate project documentation.">
+    <target name="full-build" depends="prepare,composer,static-analysis,phpunit,schematron,phpdox,-check-failure,projectdoc,deploy" description="Perform static analysis, run tests, and generate project documentation.">
         <echo message="Built"/>
     </target>
     <target name="lint" unless="lint.done" description="Perform syntax check of PHP sourcecode files.">
@@ -381,21 +381,21 @@
         </exec>
         <echo message="Unpacked."/>
         <!-- Create XRechnung 2.0 -->
-        <echo message="Creating XRechnung 2.0 (02.01a-INVOICE_ubl)..."/>
+        <echo message="Creating XRechnung 2.0 (01.04a-INVOICE_ubl)..."/>
         <exec executable="php" dir="${basedir}/examples" failonerror="true">
             <arg value="-f"/>
-            <arg path="./examples/Example_02.01a-INVOICE_ubl.php"/>
+            <arg path="./examples/Example_01.04a-INVOICE_ubl_Native.php"/>
         </exec>
-        <echo message="Created XRechnung 2.0 (02.01a-INVOICE_ubl)."/>
+        <echo message="Created XRechnung 2.0 (01.04a-INVOICE_ubl)."/>
         <!-- Validate XRechnugn 2.0 -->
-        <echo message="Validating XRechnung 2.0 (02.01a-INVOICE_ubl)..."/>
+        <echo message="Validating XRechnung 2.0 (01.04a-INVOICE_ubl)..."/>
         <exec executable="java" resultproperty="result.schematron.xrechnung">
             <arg value="-jar"/>
             <arg path="${basedir}/build/validator/validationtool-1.4.0-standalone.jar"/>
             <arg value="-s"/>
             <arg path="${basedir}/build/validator/scenarios.xml"/>
-            <arg path="${basedir}/examples/Example_02.01a-INVOICE_ubl.xml"/>
+            <arg path="${basedir}/examples/Example_01.04a-INVOICE_ubl_Native.xml"/>
         </exec>
-        <echo message="Validated XRechnung 2.0 (02.01a-INVOICE_ubl)."/>
+        <echo message="Validated XRechnung 2.0 (01.04a-INVOICE_ubl)."/>
     </target>
 </project>

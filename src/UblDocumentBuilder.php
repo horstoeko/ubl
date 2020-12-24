@@ -16,6 +16,7 @@ use \horstoeko\ubl\entities\cbc\URI;
 use \horstoeko\ubl\entities\cbc\Line;
 use \horstoeko\ubl\entities\cbc\Name;
 use \horstoeko\ubl\entities\cbc\Note;
+use horstoeko\ubl\entities\cac\Party;
 use \horstoeko\ubl\entities\cac\Price;
 use \horstoeko\ubl\entities\cbc\Value;
 use \horstoeko\ubl\entities\cbc\Amount;
@@ -71,6 +72,8 @@ use \horstoeko\ubl\entities\cbc\CustomizationID;
 use \horstoeko\ubl\entities\cbc\InvoiceTypeCode;
 use \horstoeko\ubl\entities\cbc\SequenceNumeric;
 use \horstoeko\ubl\entities\cbc\TaxCurrencyCode;
+use horstoeko\ubl\entities\cac\ProjectReference;
+use horstoeko\ubl\entities\cct\BinaryObjectType;
 use \horstoeko\ubl\entities\cac\BillingReference;
 use \horstoeko\ubl\entities\cbc\CompanyLegalForm;
 use \horstoeko\ubl\entities\cbc\CountrySubentity;
@@ -101,21 +104,21 @@ use \horstoeko\ubl\entities\cac\AdditionalItemProperty;
 use \horstoeko\ubl\entities\cbc\ItemClassificationCode;
 use \horstoeko\ubl\entities\cbc\PrimaryAccountNumberID;
 use \horstoeko\ubl\entities\cbc\TaxExemptionReasonCode;
+use horstoeko\ubl\entities\cac\AccountingSupplierParty;
 use \horstoeko\ubl\entities\cac\CommodityClassification;
 use \horstoeko\ubl\entities\cbc\MultiplierFactorNumeric;
+use horstoeko\ubl\entities\cac\ReceiptDocumentReference;
 use \horstoeko\ubl\entities\cac\BuyersItemIdentification;
 use \horstoeko\ubl\entities\cac\InvoiceDocumentReference;
+use horstoeko\ubl\entities\cac\ContractDocumentReference;
 use horstoeko\ubl\entities\cac\DespatchDocumentReference;
 use \horstoeko\ubl\entities\cac\SellersItemIdentification;
 use \horstoeko\ubl\entities\cbc\AllowanceChargeReasonCode;
 use \horstoeko\ubl\entities\cac\FinancialInstitutionBranch;
 use \horstoeko\ubl\entities\cac\StandardItemIdentification;
-use \horstoeko\ubl\entities\cac\AdditionalDocumentReference;
-use horstoeko\ubl\entities\cac\ContractDocumentReference;
 use horstoeko\ubl\entities\cac\OriginatorDocumentReference;
-use horstoeko\ubl\entities\cac\ReceiptDocumentReference;
+use \horstoeko\ubl\entities\cac\AdditionalDocumentReference;
 use \horstoeko\ubl\entities\cbc\EmbeddedDocumentBinaryObject;
-use horstoeko\ubl\entities\cct\BinaryObjectType;
 
 /**
  * Class representing the ubl invoice builder
@@ -167,6 +170,7 @@ class UblDocumentBuilder extends UblDocument
 
     /**
      * @inheritDoc
+     * @codeCoverageIgnore
      */
     public function getInvoiceObject(): Invoice
     {
@@ -617,6 +621,23 @@ class UblDocumentBuilder extends UblDocument
     }
 
     /**
+     * Sets a Project reference
+     *
+     * @param string $referenceNo
+     * The identification of the project the invoice refers to.
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentProjectReference(string $referenceNo): UblDocumentBuilder
+    {
+        $projectReference = new ProjectReference();
+        $projectReference->setID(new ID($referenceNo));
+
+        $this->invoiceObject->setProjectReference([$projectReference]);
+
+        return $this;
+    }
+
+    /**
      * Adds an attachment with an external uri to the last added additional document reference. You have
      * to call addDocumentAdditionalReference before using this method
      *
@@ -645,6 +666,121 @@ class UblDocumentBuilder extends UblDocument
         $additionalReferenceCount = count($this->invoiceObject->getAdditionalDocumentReference());
         $additionalReference = $this->invoiceObject->getAdditionalDocumentReference()[$additionalReferenceCount - 1];
         $additionalReference->setAttachment($attachment);
+
+        return $this;
+    }
+
+    /**
+     * Initialize the seller party of the invoice document
+     *
+     * @return UblDocumentBuilder
+     */
+    public function initDocumentSeller(): UblDocumentBuilder
+    {
+        $party = new Party();
+
+        $accountingSupplierParty = new AccountingSupplierParty();
+        $accountingSupplierParty->setParty($party);
+
+        $this->invoiceObject->setAccountingSupplierParty($accountingSupplierParty);
+
+        return $this;
+    }
+
+    /**
+     * Sets the seller electronic address
+     *
+     * @param string $endpointId
+     * Identifies the Seller's electronic address to which the application level response to the
+     * invoice may be delivered.
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentSellerEndpointId(string $endpointId, string $endpointSchemeId): UblDocumentBuilder
+    {
+        if ($this->invoiceObject->getAccountingSupplierParty() == null) {
+            return $this;
+        }
+
+        if ($this->invoiceObject->getAccountingSupplierParty()->getParty() == null) {
+            return $this;
+        }
+
+        if (StringUtils::stringIsNullOrEmpty($endpointId) || StringUtils::stringIsNullOrEmpty($endpointSchemeId)) {
+            return $this;
+        }
+
+        $endpoint = new EndpointID($endpointId);
+        $endpoint->setSchemeID($endpointSchemeId);
+
+        $this->invoiceObject->getAccountingSupplierParty()->getParty()->setEndpointID($endpoint);
+
+        return $this;
+    }
+
+    /**
+     * Sets seller identifier or bank assigned creditor identifier
+     *
+     * @param string $id
+     * This element is used for both the identification of the Seller, or the unique banking reference identifier
+     * of Seller (assigned by the Seller bank.). For seller identification use ICD code list, for SEPA bank assigned
+     * creditor reference, use SEPA. In order for the buyer to automatically identify a supplier, the Seller
+     * identifier (BT-29), the Seller legal registration identifier (BT-30) and/or the Seller VAT identifier (BT-31)
+     * shall be present
+     * @param string $idSchemeid
+     * The identification scheme identifier of the Seller identifier. For bank assigned creditor identifier (BT-90),
+     * value MUST be "SEPA"
+     * @return UblDocumentBuilder
+     */
+    public function addDocumentSellerIdentification(string $id, string $idSchemeid = ""): UblDocumentBuilder
+    {
+        if ($this->invoiceObject->getAccountingSupplierParty() == null) {
+            return $this;
+        }
+
+        if ($this->invoiceObject->getAccountingSupplierParty()->getParty() == null) {
+            return $this;
+        }
+
+        if (StringUtils::stringIsNullOrEmpty($id)) {
+            return $this;
+        }
+
+        $partyIdentification = new PartyIdentification();
+        $partyIdentification->setID(new ID($id));
+
+        if (!StringUtils::stringIsNullOrEmpty($idSchemeid)) {
+            $partyIdentification->getID()->setSchemeID($idSchemeid);
+        }
+
+        $this->invoiceObject->getAccountingSupplierParty()->getParty()->addToPartyIdentification($partyIdentification);
+
+        return $this;
+    }
+
+    /**
+     * Sets the seller trading name
+     *
+     * @param string $name
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentSellerName(string $name): UblDocumentBuilder
+    {
+        if ($this->invoiceObject->getAccountingSupplierParty() == null) {
+            return $this;
+        }
+
+        if ($this->invoiceObject->getAccountingSupplierParty()->getParty() == null) {
+            return $this;
+        }
+
+        if (StringUtils::stringIsNullOrEmpty($name)) {
+            return $this;
+        }
+
+        $partyName = new PartyName();
+        $partyName->setName(new Name($name));
+
+        $this->invoiceObject->getAccountingSupplierParty()->getParty()->setPartyName([$partyName]);
 
         return $this;
     }
