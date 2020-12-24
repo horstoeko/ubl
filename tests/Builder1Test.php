@@ -762,27 +762,27 @@ class Builder1Test extends BuilderBaseTest
 
         $this->assertXPathNotExists("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cbc:EndpointID");
 
-        (self::$document)->addDocumentSellerIdentification("1234567890", "0088");
+        (self::$document)->addDocumentBuyerIdentification("1234567890", "0088");
 
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID", 0);
 
-        (self::$document)->setDocumentSellerName("Seller Name");
+        (self::$document)->setDocumentBuyerName("Buyer Name");
 
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyName/cbc:Name", 0);
 
-        (self::$document)->setDocumentSellerPostalAddress("Main Street 1", "Po Box 351", "Building 23", "London", "W1G 8LZ", "Region A", "GB");
+        (self::$document)->setDocumentBuyerPostalAddress("Main Street 1", "Po Box 351", "Building 23", "London", "W1G 8LZ", "Region A", "GB");
 
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress", 0);
 
-        (self::$document)->setDocumentSellerVATIdentifier("DE 123456789");
+        (self::$document)->setDocumentBuyerVATIdentifier("DE 123456789");
 
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme", 0);
 
-        (self::$document)->setDocumentSellerLegalEntity("Seller name");
+        (self::$document)->setDocumentBuyerLegalEntity("Buyer name");
 
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity", 0);
 
-        (self::$document)->setDocumentSellerContact("Name", "+49-(0)-111-22222222", "info@foo.bar");
+        (self::$document)->setDocumentBuyerContact("Name", "+49-(0)-111-22222222", "info@foo.bar");
 
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact", 0);
     }
