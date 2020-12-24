@@ -86,7 +86,6 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     {
         $this->setDocumentCustomization("urn:cen.eu:en16931:2017#compliant#urn:xoev-de:kosit:standard:xrechnung_2.0");
         $this->setDocumentProfile("urn:fdc:peppol.eu:2017:poacc:billing:01:1.0");
-
         return $this;
     }
 

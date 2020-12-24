@@ -75,7 +75,7 @@ class UblDocumentBuilderBase extends UblDocument
     /**
      * Creates a new instance of the invoice class
      *
-     * @return             UblDocumentBuilderBase
+     * @return UblDocumentBuilderBase
      * @codeCoverageIgnore
      */
     private function initInvoiceObject(): UblDocumentBuilderBase
@@ -91,7 +91,7 @@ class UblDocumentBuilderBase extends UblDocument
      * This method can be overwritten in derived classes, e.g. for setting
      * up the customization and the profile of the ubl document
      *
-     * @return             UblDocumentBuilderBase
+     * @return UblDocumentBuilderBase
      * @codeCoverageIgnore
      */
     protected function onInitInvoiceObject(): UblDocumentBuilderBase

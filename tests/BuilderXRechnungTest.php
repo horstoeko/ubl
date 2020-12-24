@@ -3,28 +3,27 @@
 namespace horstoeko\ubl\tests;
 
 use DateTime;
-use horstoeko\ubl\tests\BuilderBaseTest;
+use horstoeko\ubl\UblDocument;
+use PHPUnit\Framework\TestCase;
 use horstoeko\ubl\UblDocumentBuilderXRechnung;
 
-class BuilderXRechnungTest extends BuilderBaseTest
+class BuilderXRechnungTest extends TestCase
 {
+    /**
+     * @var UblDocumentBuilderXRechnung
+     */
+    protected static $document;
+
+    use XPathUtils;
+
+    protected static function getDocument(): ?UblDocument
+    {
+        return self::$document;
+    }
+
     public static function setUpBeforeClass(): void
     {
         self::$document = new UblDocumentBuilderXRechnung();
-    }
-
-    public static function tearDownAfterClass(): void
-    {
-        self::$document->writeFile(dirname(__FILE__) . "/builder1.xml");
-    }
-
-    public function testXmlGenerals(): void
-    {
-        $xml = $this->getXml();
-        $namespaces = $xml->getNamespaces(true);
-
-        $this->disableRenderXmlContent();
-        $this->assertArrayHasKey("ubl", $namespaces);
     }
 
     /**

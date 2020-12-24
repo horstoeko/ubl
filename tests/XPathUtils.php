@@ -2,16 +2,10 @@
 
 namespace horstoeko\ubl\tests;
 
-use PHPUnit\Framework\TestCase;
-use horstoeko\ubl\UblDocumentBuilderBase;
+use horstoeko\ubl\UblDocument;
 
-class BuilderBaseTest extends TestCase
+trait XPathUtils
 {
-    /**
-     * @var UblDocumentBuilderBase
-     */
-    protected static $document;
-
     /**
      * Cache for latest rendered XML
      *
@@ -27,21 +21,21 @@ class BuilderBaseTest extends TestCase
     protected $renderingOfXmlDisabled = false;
 
     /**
+     * Returns the test document
+     *
+     * @return UblDocument|null
+     */
+    protected static function getDocument(): ?UblDocument
+    {
+        return null;
+    }
+
+    /**
      * @inheritDoc
      */
     protected function setUp(): void
     {
         $this->EnableRenderXmlContent();
-    }
-
-    /**
-     * Dummy Test
-     *
-     * @return void
-     */
-    public function testDummy()
-    {
-        $this->assertTrue(true);
     }
 
     /**
@@ -52,7 +46,7 @@ class BuilderBaseTest extends TestCase
     protected function getXml(): \SimpleXMLElement
     {
         if ($this->renderingOfXmlDisabled === false) {
-            $this->latestXml = new \SimpleXMLElement((self::$document)->getContent());
+            $this->latestXml = new \SimpleXMLElement((self::getDocument())->getContent());
         }
         return $this->latestXml;
     }
@@ -64,7 +58,7 @@ class BuilderBaseTest extends TestCase
      */
     protected function disableRenderXmlContent()
     {
-        $this->latestXml = new \SimpleXMLElement((self::$document)->getContent());
+        $this->latestXml = new \SimpleXMLElement((self::getDocument())->getContent());
         $this->renderingOfXmlDisabled = true;
     }
 
@@ -232,6 +226,6 @@ class BuilderBaseTest extends TestCase
      */
     protected function writeXmlTestFile()
     {
-        self::$document->writeFile(dirname(__FILE__) . '/test.xml');
+        self::getDocument()->writeFile(dirname(__FILE__) . '/test.xml');
     }
 }
