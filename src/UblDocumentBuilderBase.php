@@ -24,13 +24,6 @@ use horstoeko\ubl\entities\cbc\CustomizationID;
  */
 class UblDocumentBuilderBase extends UblDocument
 {
-        /**
-     * @internal
-     * The internal invoice object
-     * @var      \horstoeko\ubl\entities\main\Invoice
-     */
-    protected $invoiceObject = null;
-
     /**
      * A list of supported mimetypes by binaryattachments
      */
@@ -52,50 +45,6 @@ class UblDocumentBuilderBase extends UblDocument
     {
         parent::__construct();
         $this->initInvoiceObject();
-    }
-    /**
-     * @inheritDoc
-     * @codeCoverageIgnore
-     */
-    public function getInvoiceObject(): Invoice
-    {
-        return $this->invoiceObject;
-    }
-
-    /**
-     * This method can be overridden in derived class
-     * It is called before a XML is written
-     *
-     * @return void
-     */
-    protected function onBeforeGetContent(): void
-    {
-        // Do nothing
-    }
-
-    /**
-     * Write the content of a UBL object to a string
-     *
-     * @return string
-     */
-    public function getContent(): string
-    {
-        $this->onBeforeGetContent();
-        return $this->serializer->serialize($this->invoiceObject, 'xml');
-    }
-
-    /**
-     * Write the content of a UBL object to a file
-     *
-     * @param  string $xmlfilename
-     * The filename to which the content of the UBL invoice object is
-     * saved to as XML
-     * @return UblDocumentBuilderBase
-     */
-    public function writeFile(string $xmlfilename): UblDocumentBuilderBase
-    {
-        file_put_contents($xmlfilename, $this->getContent());
-        return $this;
     }
 
     /**
@@ -126,7 +75,7 @@ class UblDocumentBuilderBase extends UblDocument
     /**
      * Creates a new instance of the invoice class
      *
-     * @return UblDocumentBuilderBase
+     * @return             UblDocumentBuilderBase
      * @codeCoverageIgnore
      */
     private function initInvoiceObject(): UblDocumentBuilderBase
@@ -142,7 +91,7 @@ class UblDocumentBuilderBase extends UblDocument
      * This method can be overwritten in derived classes, e.g. for setting
      * up the customization and the profile of the ubl document
      *
-     * @return UblDocumentBuilderBase
+     * @return             UblDocumentBuilderBase
      * @codeCoverageIgnore
      */
     protected function onInitInvoiceObject(): UblDocumentBuilderBase

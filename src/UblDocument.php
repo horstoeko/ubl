@@ -25,8 +25,15 @@ use \horstoeko\ubl\entities\main\Invoice;
  * @license  https://opensource.org/licenses/MIT MIT
  * @link     https://github.com/horstoeko/ubl
  */
-abstract class UblDocument
+class UblDocument
 {
+    /**
+     * @internal
+     * The internal invoice object
+     * @var      \horstoeko\ubl\entities\main\Invoice
+     */
+    protected $invoiceObject = null;
+
     /**
      * @internal
      * Serializer builder
@@ -56,7 +63,10 @@ abstract class UblDocument
      *
      * @return \horstoeko\ubl\entities\main\Invoice
      */
-    abstract public function getInvoiceObject(): Invoice;
+    public function getInvoiceObject(): Invoice
+    {
+        return $this->invoiceObject;
+    }
 
     /**
      * @internal
@@ -93,6 +103,68 @@ abstract class UblDocument
 
         $this->serializer = $this->serializerBuilder->build();
 
+        return $this;
+    }
+
+    /**
+     * This method can be overridden in derived class
+     * It is called before a XML is written
+     *
+     * @return void
+     */
+    protected function onBeforeGetContent(): void
+    {
+        // Do nothing
+    }
+
+    /**
+     * Write the content of a UBL object to a string
+     *
+     * @return string
+     */
+    public function getContent(): string
+    {
+        $this->onBeforeGetContent();
+        return $this->serializer->serialize($this->getInvoiceObject(), 'xml');
+    }
+
+    /**
+     * Write the content of a UBL object to a file
+     *
+     * @param  string $xmlfilename
+     * The filename to which the content of the UBL invoice object is
+     * saved to as XML
+     * @return UblDocumentBuilderBase
+     */
+    public function writeFile(string $xmlfilename): UblDocument
+    {
+        file_put_contents($xmlfilename, $this->getContent());
+        return $this;
+    }
+
+    /**
+     * Read XML content from string
+     *
+     * @param  string $xmlcontent
+     * The XML content to deserialize
+     * @return UblDocumentNative
+     */
+    public function readContent(string $xmlcontent): UblDocument
+    {
+        $this->invoiceObject = $this->serializer->deserialize($xmlcontent, 'horstoeko\ubl\entities\main\Invoice', 'xml');
+        return $this;
+    }
+
+    /**
+     * Read XML content from file
+     *
+     * @param  string $xmlfilename
+     * The filename which contains the XML content
+     * @return UblDocumentNative
+     */
+    public function readFile(string $xmlfilename): UblDocument
+    {
+        $this->readContent(file_get_contents($xmlfilename));
         return $this;
     }
 }

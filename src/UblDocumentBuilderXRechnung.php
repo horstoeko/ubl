@@ -79,7 +79,7 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
      * This method can be overwritten in derived classes, e.g. for setting
      * up the customization and the profile of the ubl document
      *
-     * @return UblDocumentBuilderBase
+     * @return             UblDocumentBuilderBase
      * @codeCoverageIgnore
      */
     protected function onInitInvoiceObject(): UblDocumentBuilderBase
@@ -93,7 +93,7 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets the invoice type code
      *
-     * @param string $documentTypeCode
+     * @param  string $documentTypeCode
      * A code specifying the functional type of the Invoice. The default value is __380__.
      * @return UblDocumentBuilderBase
      */
@@ -106,7 +106,7 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets the invoice number
      *
-     * @param string $documentNo
+     * @param  string $documentNo
      * A unique identification of the Invoice. The sequential number required in Article 226(2)
      * of the directive 2006/112/EC [2], to uniquely identify the Invoice within the business
      * context, time-frame, operating systems and records of the Seller. No identification scheme
@@ -122,7 +122,7 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets the invoice issue date
      *
-     * @param DateTime $documentDate
+     * @param  DateTime $documentDate
      * The date when the Invoice was issued
      * @return UblDocumentBuilderXRechnung
      */
@@ -135,7 +135,7 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets the payment due date
      *
-     * @param DateTime $documentDueDate
+     * @param  DateTime $documentDueDate
      * The date when the payment is due. In case the Amount due for payment (BT-115)
      * is positive, either the Payment due date (BT-9) or the Payment terms (BT-20) shall be present
      * @return UblDocumentBuilderXRechnung
@@ -149,7 +149,7 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets the Value added tax point date
      *
-     * @param DateTime $taxPointDate
+     * @param  DateTime $taxPointDate
      * The date when the VAT becomes accountable for the Seller and for the Buyer in so far as that date
      * can be determined and differs from the date of issue of the invoice, according to the VAT directive.
      * This element is required if the Value added tax point date is different from the Invoice issue date.
@@ -164,7 +164,7 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets the invoice note
      *
-     * @param string $documentNote
+     * @param  string $documentNote
      * A textual note that gives unstructured information that is relevant to the Invoice as a whole.
      * Such as the reason for any correction or assignment note in case the invoice has been factored.
      * @return UblDocumentBuilderXRechnung
@@ -178,11 +178,11 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets the document currencies
      *
-     * @param string $documentCurrency
+     * @param  string      $documentCurrency
      * The currency in which all Invoice amounts are given, except for the Total VAT amount in accounting
      * currency. Only one currency shall be used in the Invoice, except for the VAT accounting currency
      * code (BT-6) and the invoice total VAT amount in accounting currency (BT-111)
-     * @param string|null $taxCurrency
+     * @param  string|null $taxCurrency
      * The currency used for VAT accounting and reporting purposes as accepted or required in the country
      * of the Seller. Shall be used in combination with the Invoice total VAT amount in accounting currency
      * (BT-111), when the VAT accounting currency code differs from the Invoice currency code.
@@ -199,7 +199,7 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets the buyers accounting reference
      *
-     * @param string $accountingCost
+     * @param  string $accountingCost
      * A textual value that specifies where to book the relevant data into the Buyer's financial accounts.
      * @return UblDocumentBuilderXRechnung
      */
@@ -212,7 +212,7 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets the buyer reference
      *
-     * @param string $buyerReference
+     * @param  string $buyerReference
      * An identifier assigned by the Buyer used for internal routing purposes. An invoice must have buyer
      * reference or purchase order reference (BT-13)
      * @return UblDocumentBuilderXRechnung
@@ -226,9 +226,9 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets the delivery or invoice period
      *
-     * @param DateTime|null $startDate
+     * @param  DateTime|null $startDate
      * The date when the Invoice period starts
-     * @param DateTime|null $endDate
+     * @param  DateTime|null $endDate
      * The date when the Invoice period ends
      * @return UblDocumentBuilderXRechnung
      */
@@ -253,7 +253,7 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets the buyer order reference number
      *
-     * @param string $buyerOrderNo
+     * @param  string $buyerOrderNo
      * An identifier of a referenced purchase order, issued by the Buyer.
      * An invoice must have buyer reference (BT-10) or purchase order reference.
      * @return UblDocumentBuilderXRechnung
@@ -269,7 +269,7 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets the seller order reference number
      *
-     * @param string $sellerOrderNo
+     * @param  string $sellerOrderNo
      * An identifier of a referenced sales order, issued by the Seller.
      * @return UblDocumentBuilderXRechnung
      */
@@ -284,9 +284,9 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets an invoice document reference number and optionally ab issue date for this
      *
-     * @param string $referenceNo
+     * @param  string        $referenceNo
      * The identification of an Invoice that was previously sent by the Seller.
-     * @param DateTime|null $issueDate
+     * @param  DateTime|null $issueDate
      * The date when the Preceding Invoice was issued.
      * Shall be provided in case the Preceding Invoice identifier is not unique
      * @return UblDocumentBuilderXRechnung
@@ -311,7 +311,7 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets a despatch advice reference
      *
-     * @param string $referenceNo
+     * @param  string $referenceNo
      * An identifier of a referenced despatch advice.
      * @return UblDocumentBuilderXRechnung
      */
@@ -328,7 +328,7 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets a receiving advice reference
      *
-     * @param string $referenceNo
+     * @param  string $referenceNo
      * An identifier of a referenced receiving advice.
      * @return UblDocumentBuilderXRechnung
      */
@@ -345,7 +345,7 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets a tender or lot reference
      *
-     * @param string $referenceNo
+     * @param  string $referenceNo
      * The identification of the call for tender or lot the invoice relates to.
      * @return UblDocumentBuilderXRechnung
      */
@@ -362,7 +362,7 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets the contract reference
      *
-     * @param string $referenceNo
+     * @param  string $referenceNo
      * The identification of a contract.
      * @return UblDocumentBuilderXRechnung
      */
@@ -391,14 +391,14 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Add an additional supporting document
      *
-     * @param string $referenceNo
+     * @param  string $referenceNo
      * An identifier for an object on which the invoice is based, given by the Seller, or the
      * identifier for the supporting document.
-     * @param string $referenceScheme
+     * @param  string $referenceScheme
      * The identification scheme identifier of the Invoiced object identifier.
-     * @param string $documentTypeCode
+     * @param  string $documentTypeCode
      * Code "130" MUST be used to indicate an invoice object reference. Not used for other additional documents
-     * @param string $documentDescription
+     * @param  string $documentDescription
      * A description of the supporting document, such as: timesheet, usage report etc.
      * @return UblDocumentBuilderXRechnung
      */
@@ -426,7 +426,7 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
      * Adds an attachment to the last added additional document reference. You have
      * to call addDocumentAdditionalReference before using this method
      *
-     * @param string $filenameToAttach
+     * @param  string $filenameToAttach
      * File containing binary data. The file MUST exist.
      * @return UblDocumentBuilderXRechnung
      */
@@ -464,7 +464,7 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets a Project reference
      *
-     * @param string $referenceNo
+     * @param  string $referenceNo
      * The identification of the project the invoice refers to.
      * @return UblDocumentBuilderXRechnung
      */
@@ -482,7 +482,7 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
      * Adds an attachment with an external uri to the last added additional document reference. You have
      * to call addDocumentAdditionalReference before using this method
      *
-     * @param string $uriId
+     * @param  string $uriId
      * The URL (Uniform Resource Locator) that identifies where the external document is located. A means
      * of locating the resource, including its primary access mechanism, e.g. http:// or ftp://.
      * Example value: http://www.example.com/index.html
@@ -531,10 +531,10 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets the seller electronic address
      *
-     * @param string $endpointId
+     * @param  string $endpointId
      * Identifies the Seller's electronic address to which the application level response to the
      * invoice may be delivered.
-     * @param string $endpointSchemeId
+     * @param  string $endpointSchemeId
      * The identification scheme identifier of the Buyer electronic address.
      * @return UblDocumentBuilderXRechnung
      */
@@ -559,13 +559,13 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets seller identifier or bank assigned creditor identifier
      *
-     * @param string $id
+     * @param  string $id
      * This element is used for both the identification of the Seller, or the unique banking reference identifier
      * of Seller (assigned by the Seller bank.). For seller identification use ICD code list, for SEPA bank assigned
      * creditor reference, use SEPA. In order for the buyer to automatically identify a supplier, the Seller
      * identifier (BT-29), the Seller legal registration identifier (BT-30) and/or the Seller VAT identifier (BT-31)
      * shall be present
-     * @param string $idSchemeid
+     * @param  string $idSchemeid
      * The identification scheme identifier of the Seller identifier. For bank assigned creditor identifier (BT-90),
      * value MUST be "SEPA"
      * @return UblDocumentBuilderXRechnung
@@ -595,7 +595,7 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets the seller trading name
      *
-     * @param string $name
+     * @param  string $name
      * @return UblDocumentBuilderXRechnung
      */
     public function setDocumentSellerName(string $name): UblDocumentBuilderXRechnung
@@ -619,25 +619,25 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets the postal address of the seller
      *
-     * @param string $streetName1
+     * @param  string $streetName1
      * The main address line in an address.
      * __Example value__: Main Street 1
-     * @param string $streetName2
+     * @param  string $streetName2
      * An additional address line in an address that can be used to give further details supplementing the main line.
      * __Example value__: Po Box 351
-     * @param string $streetName3
+     * @param  string $streetName3
      * An additional address line in an address that can be used to give further details supplementing the main line.
      * __Example value__: Building 23
-     * @param string $cityName
+     * @param  string $cityName
      * The common name of the city, town or village, where the Seller address is located.
      * __Example value__: London
-     * @param string $cityPostCode
+     * @param  string $cityPostCode
      * The identifier for an addressable group of properties according to the relevant postal service.
      * __Example value__: W1G 8LZ
-     * @param string $countyName
+     * @param  string $countyName
      * The subdivision of a country.
      * __Example value__: Region A
-     * @param string $countryId
+     * @param  string $countryId
      * A code that identifies the country.
      * __Example value__: GB
      * @return UblDocumentBuilderXRechnung
@@ -684,7 +684,7 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets the sellers VAT identifier
      *
-     * @param string $vatIdentifier
+     * @param  string $vatIdentifier
      * The Seller's VAT identifier (also known as Seller VAT identification number)
      * __Example value__: NO999888777
      * @return UblDocumentBuilderXRechnung
@@ -719,7 +719,7 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets the sellers tax registration number
      *
-     * @param string $taxRegistration
+     * @param  string $taxRegistration
      * the local identification (defined by the Seller’s address) of the Seller for tax purposes or a reference
      * that enables the Seller to state his registered tax status. In order for the buyer to automatically identify
      * a supplier
@@ -755,16 +755,16 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets the sellers legal entity
      *
-     * @param string $registrationName
+     * @param  string $registrationName
      * The full formal name by which the Seller is registered in the national registry of legal entities or as a Taxable
      * person or otherwise trades as a person or persons.
      * __Example value__: Full Formal Seller Name LTD.
-     * @param string $companyId
+     * @param  string $companyId
      * An identifier issued by an official registrar that identifies the Seller as a legal entity or person. In order for
      * the buyer to automatically identify a supplier, the Seller identifier (BT-29), the Seller legal registration
      * identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
      * __Example value__: HRB 123
-     * @param string $companyIdSchemeId
+     * @param  string $companyIdSchemeId
      * The identification scheme identifier of the Seller legal registration identifier.
      * __Example value__: 0002
      * @return UblDocumentBuilderXRechnung
@@ -797,13 +797,13 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets the sellers contact
      *
-     * @param string $contactName
+     * @param  string $contactName
      * A contact point for a legal entity or person.
      * __Example value__: xyz123
-     * @param string $contactPhone
+     * @param  string $contactPhone
      * A phone number for the contact point.
      * __Example value__: 887 654 321
-     * @param string $contactElectronicMail
+     * @param  string $contactElectronicMail
      * An e-mail address for the contact point.
      * __Example value__: test.name@foo.bar
      * @return UblDocumentBuilderXRechnung
@@ -844,9 +844,9 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets the buyer electronic address
      *
-     * @param string $endpointId
+     * @param  string $endpointId
      * Identifies the Buyer's electronic address to which the invoice is delivered.
-     * @param string $endpointSchemeId
+     * @param  string $endpointSchemeId
      * The identification scheme identifier of the Buyer electronic address.
      * @return UblDocumentBuilderXRechnung
      */
@@ -871,10 +871,10 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets buyer identifier
      *
-     * @param string $id
+     * @param  string $id
      * An identifier of the Buyer.
      * __Example value__: SE8765456787
-     * @param string $idSchemeid
+     * @param  string $idSchemeid
      * The identification scheme identifier of the Buyer identifier.
      * __Example value__: 0088
      * @return UblDocumentBuilderXRechnung
@@ -904,7 +904,7 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets the buyer trading name
      *
-     * @param string $name
+     * @param  string $name
      * A name by which the Buyer is known, other than Buyer name (also known as Business name).
      * @return UblDocumentBuilderXRechnung
      */
@@ -929,25 +929,25 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets the postal address of the buyer
      *
-     * @param string $streetName1
+     * @param  string $streetName1
      * The main address line in an address.
      * __Example value__: Main Street 1
-     * @param string $streetName2
+     * @param  string $streetName2
      * An additional address line in an address that can be used to give further details supplementing the main line.
      * __Example value__: Po Box 351
-     * @param string $streetName3
+     * @param  string $streetName3
      * An additional address line in an address that can be used to give further details supplementing the main line.
      * __Example value__: Building 23
-     * @param string $cityName
+     * @param  string $cityName
      * The common name of the city, town or village, where the Buyer address is located.
      * __Example value__: London
-     * @param string $cityPostCode
+     * @param  string $cityPostCode
      * The identifier for an addressable group of properties according to the relevant postal service.
      * __Example value__: W1G 8LZ
-     * @param string $countyName
+     * @param  string $countyName
      * The subdivision of a country.
      * __Example value__: Region A
-     * @param string $countryId
+     * @param  string $countryId
      * A code that identifies the country.
      * __Example value__: GB
      * @return UblDocumentBuilderXRechnung
@@ -994,7 +994,7 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets the buyers VAT identifier
      *
-     * @param string $vatIdentifier
+     * @param  string $vatIdentifier
      * The Buyer's VAT identifier (also known as Buyer VAT identification number).
      * __Example value__: NO999888777
      * @return UblDocumentBuilderXRechnung
@@ -1029,13 +1029,13 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets the buyers legal entity
      *
-     * @param string $registrationName
+     * @param  string $registrationName
      * The full name of the Buyer.
      * __Example value__: Buyer Full Name AS
-     * @param string $companyId
+     * @param  string $companyId
      * An identifier issued by an official registrar that identifies the Buyer as a legal entity or person.
      * __Example value__: 7300010000001
-     * @param string $companyIdSchemeId
+     * @param  string $companyIdSchemeId
      * The identification scheme identifier of the Buyer legal registration identifier.
      * __Example value__: 0088
      * @return UblDocumentBuilderXRechnung
@@ -1068,13 +1068,13 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets the buyers contact
      *
-     * @param string $contactName
+     * @param  string $contactName
      * A contact point for a legal entity or person.
      * __Example value__: Jens Jensen
-     * @param string $contactPhone
+     * @param  string $contactPhone
      * A phone number for the contact point.
      * __Example value__: 876 654 321
-     * @param string $contactElectronicMail
+     * @param  string $contactElectronicMail
      * An e-mail address for the contact point.
      * __Example value__: jens.j@buyer.se
      * @return UblDocumentBuilderXRechnung
@@ -1112,12 +1112,12 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets payee identifier
      *
-     * @param string $id
+     * @param  string $id
      * This element is used for both the identification of the Payee, or the unique banking reference identifier
      * of Payee (assigned by the Payee bank.) For payee identification use ICD code list, for SEPA bank assigned
      * creditor reference, use SEPA.
      * __Example value__: FR932874294
-     * @param string $idSchemeid
+     * @param  string $idSchemeid
      * The identification scheme identifier of the payee identifier. For bank assigned creditor identifier (BT-90),
      * value MUST be "SEPA"
      * __Example value__: SEPA
@@ -1148,7 +1148,7 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets the payee name
      *
-     * @param string $name
+     * @param  string $name
      * The name of the Payee.
      * __Example value__: Payee Name Ltd
      * @return UblDocumentBuilderXRechnung
@@ -1174,13 +1174,13 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets the payees legal entity
      *
-     * @param string $registrationName
+     * @param  string $registrationName
      * The full name of the payee.
      * __Example value__: payee Full Name AS
-     * @param string $companyId
+     * @param  string $companyId
      * An identifier issued by an official registrar that identifies the payee as a legal entity or person.
      * __Example value__: FR932874294
-     * @param string $companyIdSchemeId
+     * @param  string $companyIdSchemeId
      * The identification scheme identifier of the payee legal registration identifier.
      * __Example value__: 0002
      * @return UblDocumentBuilderXRechnung

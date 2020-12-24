@@ -3,6 +3,7 @@
 namespace horstoeko\ubl\tests;
 
 use DateTime;
+use horstoeko\ubl\tests\BuilderBaseTest;
 use horstoeko\ubl\UblDocumentBuilderXRechnung;
 
 class BuilderXRechnungTest extends BuilderBaseTest
