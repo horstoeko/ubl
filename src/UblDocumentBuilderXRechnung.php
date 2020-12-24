@@ -9,125 +9,63 @@
 
 namespace horstoeko\ubl;
 
-use \DateTime;
-use Prophecy\Util\StringUtil;
-use \horstoeko\ubl\entities\cbc\ID;
-use \horstoeko\ubl\entities\cbc\URI;
-use \horstoeko\ubl\entities\cbc\Line;
-use \horstoeko\ubl\entities\cbc\Name;
-use \horstoeko\ubl\entities\cbc\Note;
+use DateTime;
+use horstoeko\ubl\entities\cbc\ID;
+use horstoeko\ubl\entities\cbc\URI;
+use horstoeko\ubl\entities\cbc\Line;
+use horstoeko\ubl\entities\cbc\Name;
+use horstoeko\ubl\entities\cbc\Note;
 use horstoeko\ubl\entities\cac\Party;
-use \horstoeko\ubl\entities\cac\Price;
-use \horstoeko\ubl\entities\cbc\Value;
-use \horstoeko\ubl\entities\cbc\Amount;
-use \horstoeko\ubl\entities\cbc\LineID;
-use \horstoeko\ubl\entities\cac\Country;
-use \horstoeko\ubl\entities\cbc\Percent;
-use \horstoeko\ubl\entities\cbc\Telefax;
-use \horstoeko\ubl\entities\cac\TaxTotal;
-use \horstoeko\ubl\entities\cbc\CityName;
-use \horstoeko\ubl\entities\main\Invoice;
-use \horstoeko\stringmanagement\FileUtils;
-use \horstoeko\ubl\entities\cac\PartyName;
-use \horstoeko\ubl\entities\cac\TaxScheme;
-use \horstoeko\ubl\entities\cbc\CompanyID;
-use \horstoeko\ubl\entities\cbc\NetworkID;
-use \horstoeko\ubl\entities\cbc\PaymentID;
-use \horstoeko\ubl\entities\cbc\ProfileID;
-use \horstoeko\ubl\entities\cbc\TaxAmount;
-use \horstoeko\ubl\entities\cbc\Telephone;
-use \horstoeko\ubl\entities\cac\Attachment;
-use \horstoeko\ubl\entities\cbc\BaseAmount;
-use \horstoeko\ubl\entities\cbc\EndpointID;
-use \horstoeko\ubl\entities\cbc\HolderName;
-use \horstoeko\ubl\entities\cbc\PostalZone;
-use \horstoeko\ubl\entities\cbc\StreetName;
-use \MimeTyper\Repository\MimeDbRepository;
-use \horstoeko\stringmanagement\StringUtils;
-use horstoeko\ubl\entities\cac\AccountingCustomerParty;
-use \horstoeko\ubl\entities\cac\AddressLine;
-use \horstoeko\ubl\entities\cac\CardAccount;
-use \horstoeko\ubl\entities\cac\InvoiceLine;
-use \horstoeko\ubl\entities\cac\TaxCategory;
-use \horstoeko\ubl\entities\cac\TaxSubtotal;
-use \horstoeko\ubl\entities\cbc\Description;
-use \horstoeko\ubl\entities\cbc\PriceAmount;
-use \horstoeko\ubl\entities\cac\PaymentMeans;
-use \horstoeko\ubl\entities\cac\PaymentTerms;
-use \horstoeko\ubl\entities\cbc\BaseQuantity;
-use \horstoeko\ubl\entities\cbc\SalesOrderID;
+use horstoeko\ubl\entities\cac\Contact;
+use horstoeko\ubl\entities\cac\Country;
+use horstoeko\ubl\entities\cbc\CityName;
+use horstoeko\stringmanagement\FileUtils;
+use horstoeko\ubl\entities\cac\PartyName;
+use horstoeko\ubl\entities\cac\TaxScheme;
+use horstoeko\ubl\entities\cbc\CompanyID;
+use horstoeko\ubl\entities\cbc\Telephone;
+use horstoeko\ubl\entities\cac\Attachment;
+use horstoeko\ubl\entities\cac\PayeeParty;
+use horstoeko\ubl\entities\cbc\EndpointID;
+use horstoeko\ubl\entities\cbc\PostalZone;
+use horstoeko\ubl\entities\cbc\StreetName;
+use MimeTyper\Repository\MimeDbRepository;
+use horstoeko\stringmanagement\StringUtils;
+use horstoeko\ubl\entities\cac\AddressLine;
+use horstoeko\ubl\entities\cbc\SalesOrderID;
 use horstoeko\ubl\entities\cac\InvoicePeriod;
-use \horstoeko\ubl\entities\cac\OriginCountry;
-use \horstoeko\ubl\entities\cbc\PayableAmount;
-use \horstoeko\ubl\entities\cbc\PrepaidAmount;
-use \horstoeko\ubl\entities\cbc\TaxableAmount;
-use \horstoeko\ubl\entities\cac\OrderReference;
-use \horstoeko\ubl\entities\cac\PartyTaxScheme;
-use \horstoeko\ubl\entities\cac\PaymentMandate;
-use \horstoeko\ubl\entities\cbc\AccountingCost;
-use \horstoeko\ubl\entities\cbc\BuyerReference;
-use \horstoeko\ubl\entities\cbc\ElectronicMail;
-use horstoeko\ubl\entities\cac\DespatchAddress;
-use \horstoeko\ubl\entities\cac\AllowanceCharge;
-use \horstoeko\ubl\entities\cbc\CustomizationID;
-use \horstoeko\ubl\entities\cbc\InvoiceTypeCode;
-use \horstoeko\ubl\entities\cbc\SequenceNumeric;
-use \horstoeko\ubl\entities\cbc\TaxCurrencyCode;
+use horstoeko\ubl\entities\cac\PostalAddress;
+use horstoeko\ubl\entities\cac\OrderReference;
+use horstoeko\ubl\entities\cac\PartyTaxScheme;
+use horstoeko\ubl\entities\cbc\AccountingCost;
+use horstoeko\ubl\entities\cbc\BuyerReference;
+use horstoeko\ubl\entities\cbc\ElectronicMail;
+use horstoeko\ubl\entities\cbc\InvoiceTypeCode;
+use horstoeko\ubl\entities\cbc\TaxCurrencyCode;
+use horstoeko\ubl\entities\cac\BillingReference;
+use horstoeko\ubl\entities\cac\PartyLegalEntity;
 use horstoeko\ubl\entities\cac\ProjectReference;
-use horstoeko\ubl\entities\cct\BinaryObjectType;
-use \horstoeko\ubl\entities\cac\BillingReference;
-use \horstoeko\ubl\entities\cbc\CompanyLegalForm;
-use \horstoeko\ubl\entities\cbc\CountrySubentity;
-use \horstoeko\ubl\entities\cbc\DocumentTypeCode;
-use \horstoeko\ubl\entities\cbc\InvoicedQuantity;
-use \horstoeko\ubl\entities\cbc\PaymentMeansCode;
-use \horstoeko\ubl\entities\cbc\RegistrationName;
-use Symfony\Component\Validator\Constraints\Date;
-use \horstoeko\ubl\entities\cac\ExternalReference;
-use \horstoeko\ubl\entities\cbc\ChargeTotalAmount;
-use \horstoeko\ubl\entities\cac\LegalMonetaryTotal;
-use \horstoeko\ubl\entities\cbc\IdentificationCode;
-use \horstoeko\ubl\entities\cbc\TaxExclusiveAmount;
-use \horstoeko\ubl\entities\cbc\TaxExemptionReason;
-use \horstoeko\ubl\entities\cbc\TaxInclusiveAmount;
-use \horstoeko\ubl\entities\cac\PartyIdentification;
-use \horstoeko\ubl\entities\cbc\DocumentDescription;
-use \horstoeko\ubl\entities\cbc\LineExtensionAmount;
-use \horstoeko\ubl\entities\cbc\AdditionalStreetName;
-use \horstoeko\ubl\entities\cbc\AllowanceTotalAmount;
-use \horstoeko\ubl\entities\cbc\DocumentCurrencyCode;
-use \horstoeko\ubl\entities\cac\ClassifiedTaxCategory;
-use \horstoeko\ubl\entities\cac\PayeeFinancialAccount;
-use \horstoeko\ubl\entities\cac\PayerFinancialAccount;
-use \horstoeko\ubl\entities\cbc\AllowanceChargeReason;
-use \horstoeko\ubl\entities\cbc\PayableRoundingAmount;
-use \horstoeko\ubl\entities\cac\AdditionalItemProperty;
-use \horstoeko\ubl\entities\cbc\ItemClassificationCode;
-use \horstoeko\ubl\entities\cbc\PrimaryAccountNumberID;
-use \horstoeko\ubl\entities\cbc\TaxExemptionReasonCode;
+use horstoeko\ubl\entities\cbc\CountrySubentity;
+use horstoeko\ubl\entities\cbc\DocumentTypeCode;
+use horstoeko\ubl\entities\cbc\RegistrationName;
+use horstoeko\ubl\entities\cac\ExternalReference;
+use horstoeko\ubl\entities\cbc\IdentificationCode;
+use horstoeko\ubl\entities\cac\PartyIdentification;
+use horstoeko\ubl\entities\cbc\DocumentDescription;
+use horstoeko\ubl\entities\cbc\AdditionalStreetName;
+use horstoeko\ubl\entities\cbc\DocumentCurrencyCode;
+use horstoeko\ubl\entities\cac\AccountingCustomerParty;
 use horstoeko\ubl\entities\cac\AccountingSupplierParty;
-use \horstoeko\ubl\entities\cac\CommodityClassification;
-use \horstoeko\ubl\entities\cbc\MultiplierFactorNumeric;
+use horstoeko\ubl\entities\cac\InvoiceDocumentReference;
 use horstoeko\ubl\entities\cac\ReceiptDocumentReference;
-use \horstoeko\ubl\entities\cac\BuyersItemIdentification;
-use \horstoeko\ubl\entities\cac\InvoiceDocumentReference;
 use horstoeko\ubl\entities\cac\ContractDocumentReference;
 use horstoeko\ubl\entities\cac\DespatchDocumentReference;
-use \horstoeko\ubl\entities\cac\SellersItemIdentification;
-use \horstoeko\ubl\entities\cbc\AllowanceChargeReasonCode;
-use \horstoeko\ubl\entities\cac\FinancialInstitutionBranch;
-use \horstoeko\ubl\entities\cac\StandardItemIdentification;
+use horstoeko\ubl\entities\cac\AdditionalDocumentReference;
 use horstoeko\ubl\entities\cac\OriginatorDocumentReference;
-use \horstoeko\ubl\entities\cac\AdditionalDocumentReference;
-use horstoeko\ubl\entities\cac\Contact;
-use horstoeko\ubl\entities\cac\PartyLegalEntity;
-use horstoeko\ubl\entities\cac\PayeeParty;
-use horstoeko\ubl\entities\cac\PostalAddress;
-use \horstoeko\ubl\entities\cbc\EmbeddedDocumentBinaryObject;
-use horstoeko\ubl\entities\cbc\IdentificationID;
+use horstoeko\ubl\entities\cbc\EmbeddedDocumentBinaryObject;
 
 /**
- * Class representing the ubl invoice builder
+ * Class representing the ubl invoice builder for XRechnung
  *
  * @category UBL
  * @package  UBL
@@ -135,123 +73,33 @@ use horstoeko\ubl\entities\cbc\IdentificationID;
  * @license  https://opensource.org/licenses/MIT MIT
  * @link     https://github.com/horstoeko/ubl
  */
-class UblDocumentBuilder extends UblDocument
+class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
 {
     /**
-     * @internal
-     * The internal invoice object
-     * @var      \horstoeko\ubl\entities\main\Invoice
-     */
-    protected $invoiceObject = null;
-
-    /**
-     * @internal Internal reference to the currently created document position
+     * This method can be overwritten in derived classes, e.g. for setting
+     * up the customization and the profile of the ubl document
      *
-     * @var \horstoeko\ubl\entities\cac\InvoiceLine
-     */
-    protected $currentPosition = null;
-
-    /**
-     * A list of supported mimetypes by binaryattachments
-     */
-    const SUPPORTEDTMIMETYPES = [
-        "application/pdf",
-        "image/png",
-        "image/jpeg",
-        "text/csv",
-        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-        "application/vnd.oasis.opendocument.spreadsheet",
-    ];
-
-    /**
-     * Constructor
-     *
+     * @return UblDocumentBuilderBase
      * @codeCoverageIgnore
      */
-    public function __construct()
+    protected function onInitInvoiceObject(): UblDocumentBuilderBase
     {
-        parent::__construct();
-        $this->initInvoiceObject();
-    }
+        $this->setDocumentCustomization("urn:cen.eu:en16931:2017#compliant#urn:xoev-de:kosit:standard:xrechnung_2.0");
+        $this->setDocumentProfile("urn:fdc:peppol.eu:2017:poacc:billing:01:1.0");
 
-    /**
-     * @inheritDoc
-     * @codeCoverageIgnore
-     */
-    public function getInvoiceObject(): Invoice
-    {
-        return $this->invoiceObject;
-    }
-
-    /**
-     * Returns the currently created document position (invoice line)
-     *
-     * @return InvoiceLine|null
-     * @codeCoverageIgnore
-     */
-    public function getCurrentPosition(): ?InvoiceLine
-    {
-        return $this->currentPosition;
-    }
-
-    /**
-     * This method can be overridden in derived class
-     * It is called before a XML is written
-     *
-     * @return void
-     */
-    protected function onBeforeGetContent(): void
-    {
-        // Do nothing
-    }
-
-    /**
-     * Write the content of a UBL object to a string
-     *
-     * @return string
-     */
-    public function getContent(): string
-    {
-        $this->onBeforeGetContent();
-        return $this->serializer->serialize($this->invoiceObject, 'xml');
-    }
-
-    /**
-     * Write the content of a UBL object to a file
-     *
-     * @param  string $xmlfilename
-     * The filename to which the content of the UBL invoice object is
-     * saved to as XML
-     * @return UblDocumentBuilder
-     */
-    public function writeFile(string $xmlfilename): UblDocumentBuilder
-    {
-        file_put_contents($xmlfilename, $this->getContent());
         return $this;
     }
 
     /**
-     * Sets the identifier for the customization
+     * Sets the invoice type code
      *
-     * @param  string $customization
-     * The identifier for the customization
-     * @return UblDocumentBuilder
+     * @param string $documentTypeCode
+     * A code specifying the functional type of the Invoice. The default value is __380__.
+     * @return UblDocumentBuilderBase
      */
-    public function setDocumentCustomization(string $customization): UblDocumentBuilder
+    public function setDocumentType(string $documentTypeCode): UblDocumentBuilderBase
     {
-        $this->invoiceObject->setCustomizationID(new CustomizationID($customization));
-        return $this;
-    }
-
-    /**
-     * Set Profile
-     *
-     * @param  string $profileId
-     * @return UblDocumentBuilder
-     */
-    public function setDocumentProfile($profileId): UblDocumentBuilder
-    {
-        $this->invoiceObject->setProfileID(new ProfileID($profileId));
+        $this->invoiceObject->setInvoiceTypeCode(new InvoiceTypeCode($documentTypeCode));
         return $this;
     }
 
@@ -263,9 +111,9 @@ class UblDocumentBuilder extends UblDocument
      * of the directive 2006/112/EC [2], to uniquely identify the Invoice within the business
      * context, time-frame, operating systems and records of the Seller. No identification scheme
      * is to be used.
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentNumber(string $documentNo): UblDocumentBuilder
+    public function setDocumentNumber(string $documentNo): UblDocumentBuilderXRechnung
     {
         $this->invoiceObject->setID(new ID($documentNo));
         return $this;
@@ -276,9 +124,9 @@ class UblDocumentBuilder extends UblDocument
      *
      * @param DateTime $documentDate
      * The date when the Invoice was issued
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentDate(DateTime $documentDate): UblDocumentBuilder
+    public function setDocumentDate(DateTime $documentDate): UblDocumentBuilderXRechnung
     {
         $this->invoiceObject->setIssueDate($documentDate);
         return $this;
@@ -290,9 +138,9 @@ class UblDocumentBuilder extends UblDocument
      * @param DateTime $documentDueDate
      * The date when the payment is due. In case the Amount due for payment (BT-115)
      * is positive, either the Payment due date (BT-9) or the Payment terms (BT-20) shall be present
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentDueDate(DateTime $documentDueDate): UblDocumentBuilder
+    public function setDocumentDueDate(DateTime $documentDueDate): UblDocumentBuilderXRechnung
     {
         $this->invoiceObject->setDueDate($documentDueDate);
         return $this;
@@ -305,24 +153,11 @@ class UblDocumentBuilder extends UblDocument
      * The date when the VAT becomes accountable for the Seller and for the Buyer in so far as that date
      * can be determined and differs from the date of issue of the invoice, according to the VAT directive.
      * This element is required if the Value added tax point date is different from the Invoice issue date.
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentTaxPointDate(DateTime $taxPointDate): UblDocumentBuilder
+    public function setDocumentTaxPointDate(DateTime $taxPointDate): UblDocumentBuilderXRechnung
     {
         $this->invoiceObject->setTaxPointDate($taxPointDate);
-        return $this;
-    }
-
-    /**
-     * Sets the invoice type code
-     *
-     * @param string $documentTypeCode
-     * A code specifying the functional type of the Invoice. The default value is __380__.
-     * @return UblDocumentBuilder
-     */
-    public function setDocumentType(string $documentTypeCode): UblDocumentBuilder
-    {
-        $this->invoiceObject->setInvoiceTypeCode(new InvoiceTypeCode($documentTypeCode));
         return $this;
     }
 
@@ -332,9 +167,9 @@ class UblDocumentBuilder extends UblDocument
      * @param string $documentNote
      * A textual note that gives unstructured information that is relevant to the Invoice as a whole.
      * Such as the reason for any correction or assignment note in case the invoice has been factored.
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentNote(string $documentNote): UblDocumentBuilder
+    public function setDocumentNote(string $documentNote): UblDocumentBuilderXRechnung
     {
         $this->invoiceObject->setNote([new Note($documentNote)]);
         return $this;
@@ -351,9 +186,9 @@ class UblDocumentBuilder extends UblDocument
      * The currency used for VAT accounting and reporting purposes as accepted or required in the country
      * of the Seller. Shall be used in combination with the Invoice total VAT amount in accounting currency
      * (BT-111), when the VAT accounting currency code differs from the Invoice currency code.
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentCurrencies(string $documentCurrency, ?string $taxCurrency = null): UblDocumentBuilder
+    public function setDocumentCurrencies(string $documentCurrency, ?string $taxCurrency = null): UblDocumentBuilderXRechnung
     {
         $this->invoiceObject->setDocumentCurrencyCode(new DocumentCurrencyCode($documentCurrency));
         $this->invoiceObject->setTaxCurrencyCode(!StringUtils::stringIsNullOrEmpty($taxCurrency) ? new TaxCurrencyCode($taxCurrency) : new TaxCurrencyCode($documentCurrency));
@@ -366,9 +201,9 @@ class UblDocumentBuilder extends UblDocument
      *
      * @param string $accountingCost
      * A textual value that specifies where to book the relevant data into the Buyer's financial accounts.
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentAccountingCost(string $accountingCost): UblDocumentBuilder
+    public function setDocumentAccountingCost(string $accountingCost): UblDocumentBuilderXRechnung
     {
         $this->invoiceObject->setAccountingCost(new AccountingCost($accountingCost));
         return $this;
@@ -380,9 +215,9 @@ class UblDocumentBuilder extends UblDocument
      * @param string $buyerReference
      * An identifier assigned by the Buyer used for internal routing purposes. An invoice must have buyer
      * reference or purchase order reference (BT-13)
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentBuyerReference(string $buyerReference): UblDocumentBuilder
+    public function setDocumentBuyerReference(string $buyerReference): UblDocumentBuilderXRechnung
     {
         $this->invoiceObject->setBuyerReference(new BuyerReference($buyerReference));
         return $this;
@@ -395,9 +230,9 @@ class UblDocumentBuilder extends UblDocument
      * The date when the Invoice period starts
      * @param DateTime|null $endDate
      * The date when the Invoice period ends
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentInvoicePeriod(?DateTime $startDate = null, ?DateTime $endDate = null): UblDocumentBuilder
+    public function setDocumentInvoicePeriod(?DateTime $startDate = null, ?DateTime $endDate = null): UblDocumentBuilderXRechnung
     {
         if (is_null($startDate) && is_null($endDate)) {
             return $this;
@@ -421,9 +256,9 @@ class UblDocumentBuilder extends UblDocument
      * @param string $buyerOrderNo
      * An identifier of a referenced purchase order, issued by the Buyer.
      * An invoice must have buyer reference (BT-10) or purchase order reference.
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentBuyerOrderNo(string $buyerOrderNo): UblDocumentBuilder
+    public function setDocumentBuyerOrderNo(string $buyerOrderNo): UblDocumentBuilderXRechnung
     {
         $orderReference = $this->invoiceObject->getOrderReference() ?? $this->invoiceObject->setOrderReference(new OrderReference())->getOrderReference();
         $orderReference->setID(new ID($buyerOrderNo));
@@ -436,9 +271,9 @@ class UblDocumentBuilder extends UblDocument
      *
      * @param string $sellerOrderNo
      * An identifier of a referenced sales order, issued by the Seller.
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentSellerOrderNo(string $sellerOrderNo): UblDocumentBuilder
+    public function setDocumentSellerOrderNo(string $sellerOrderNo): UblDocumentBuilderXRechnung
     {
         $orderReference = $this->invoiceObject->getOrderReference() ?? $this->invoiceObject->setOrderReference(new OrderReference())->getOrderReference();
         $orderReference->setSalesOrderID(new SalesOrderID($sellerOrderNo));
@@ -454,9 +289,9 @@ class UblDocumentBuilder extends UblDocument
      * @param DateTime|null $issueDate
      * The date when the Preceding Invoice was issued.
      * Shall be provided in case the Preceding Invoice identifier is not unique
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function addDocumentBillingReference(string $referenceNo, ?DateTime $issueDate = null): UblDocumentBuilder
+    public function addDocumentBillingReference(string $referenceNo, ?DateTime $issueDate = null): UblDocumentBuilderXRechnung
     {
         $invoiceReference = new InvoiceDocumentReference();
         $invoiceReference->setID(new ID($referenceNo));
@@ -478,9 +313,9 @@ class UblDocumentBuilder extends UblDocument
      *
      * @param string $referenceNo
      * An identifier of a referenced despatch advice.
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentDespatchReference(string $referenceNo): UblDocumentBuilder
+    public function setDocumentDespatchReference(string $referenceNo): UblDocumentBuilderXRechnung
     {
         $despatchReference = new DespatchDocumentReference();
         $despatchReference->setID(new ID($referenceNo));
@@ -495,9 +330,9 @@ class UblDocumentBuilder extends UblDocument
      *
      * @param string $referenceNo
      * An identifier of a referenced receiving advice.
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentReceiptReference(string $referenceNo): UblDocumentBuilder
+    public function setDocumentReceiptReference(string $referenceNo): UblDocumentBuilderXRechnung
     {
         $receiptReference = new ReceiptDocumentReference();
         $receiptReference->setID(new ID($referenceNo));
@@ -512,9 +347,9 @@ class UblDocumentBuilder extends UblDocument
      *
      * @param string $referenceNo
      * The identification of the call for tender or lot the invoice relates to.
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentOriginatorReference(string $referenceNo): UblDocumentBuilder
+    public function setDocumentOriginatorReference(string $referenceNo): UblDocumentBuilderXRechnung
     {
         $originatorReference = new OriginatorDocumentReference();
         $originatorReference->setID(new ID($referenceNo));
@@ -529,9 +364,9 @@ class UblDocumentBuilder extends UblDocument
      *
      * @param string $referenceNo
      * The identification of a contract.
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentContractReference(string $referenceNo): UblDocumentBuilder
+    public function setDocumentContractReference(string $referenceNo): UblDocumentBuilderXRechnung
     {
         $contractReference = new ContractDocumentReference();
         $contractReference->setID(new ID($referenceNo));
@@ -544,9 +379,9 @@ class UblDocumentBuilder extends UblDocument
     /**
      * Removes all additional supporting documents
      *
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function clearDocumentAdditionalReference(): UblDocumentBuilder
+    public function clearDocumentAdditionalReference(): UblDocumentBuilderXRechnung
     {
         $this->invoiceObject->setAdditionalDocumentReference([]);
 
@@ -565,9 +400,9 @@ class UblDocumentBuilder extends UblDocument
      * Code "130" MUST be used to indicate an invoice object reference. Not used for other additional documents
      * @param string $documentDescription
      * A description of the supporting document, such as: timesheet, usage report etc.
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function addDocumentAdditionalReference(string $referenceNo, string $referenceScheme = "", string $documentTypeCode = "", string $documentDescription = ""): UblDocumentBuilder
+    public function addDocumentAdditionalReference(string $referenceNo, string $referenceScheme = "", string $documentTypeCode = "", string $documentDescription = ""): UblDocumentBuilderXRechnung
     {
         $additionalReference = new AdditionalDocumentReference();
         $additionalReference->setID(new ID($referenceNo));
@@ -593,9 +428,9 @@ class UblDocumentBuilder extends UblDocument
      *
      * @param string $filenameToAttach
      * File containing binary data. The file MUST exist.
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setFileAttachmentToAdditionalReference(string $filenameToAttach): UblDocumentBuilder
+    public function setFileAttachmentToAdditionalReference(string $filenameToAttach): UblDocumentBuilderXRechnung
     {
         if (count($this->invoiceObject->getAdditionalDocumentReference()) <= 0) {
             return $this;
@@ -631,9 +466,9 @@ class UblDocumentBuilder extends UblDocument
      *
      * @param string $referenceNo
      * The identification of the project the invoice refers to.
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentProjectReference(string $referenceNo): UblDocumentBuilder
+    public function setDocumentProjectReference(string $referenceNo): UblDocumentBuilderXRechnung
     {
         $projectReference = new ProjectReference();
         $projectReference->setID(new ID($referenceNo));
@@ -651,9 +486,9 @@ class UblDocumentBuilder extends UblDocument
      * The URL (Uniform Resource Locator) that identifies where the external document is located. A means
      * of locating the resource, including its primary access mechanism, e.g. http:// or ftp://.
      * Example value: http://www.example.com/index.html
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setExternalAttachmentToAdditionalReference(string $uriId): UblDocumentBuilder
+    public function setExternalAttachmentToAdditionalReference(string $uriId): UblDocumentBuilderXRechnung
     {
         if (count($this->invoiceObject->getAdditionalDocumentReference()) <= 0) {
             return $this;
@@ -679,9 +514,9 @@ class UblDocumentBuilder extends UblDocument
     /**
      * Initialize the seller party of the invoice document
      *
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function initDocumentSeller(): UblDocumentBuilder
+    public function initDocumentSeller(): UblDocumentBuilderXRechnung
     {
         $party = new Party();
 
@@ -701,9 +536,9 @@ class UblDocumentBuilder extends UblDocument
      * invoice may be delivered.
      * @param string $endpointSchemeId
      * The identification scheme identifier of the Buyer electronic address.
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentSellerEndpointId(string $endpointId, string $endpointSchemeId): UblDocumentBuilder
+    public function setDocumentSellerEndpointId(string $endpointId, string $endpointSchemeId): UblDocumentBuilderXRechnung
     {
         if ($this->invoiceObject->getAccountingSupplierParty() == null) {
             return $this;
@@ -733,9 +568,9 @@ class UblDocumentBuilder extends UblDocument
      * @param string $idSchemeid
      * The identification scheme identifier of the Seller identifier. For bank assigned creditor identifier (BT-90),
      * value MUST be "SEPA"
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function addDocumentSellerIdentification(string $id, string $idSchemeid = ""): UblDocumentBuilder
+    public function addDocumentSellerIdentification(string $id, string $idSchemeid = ""): UblDocumentBuilderXRechnung
     {
         if ($this->invoiceObject->getAccountingSupplierParty() == null) {
             return $this;
@@ -761,9 +596,9 @@ class UblDocumentBuilder extends UblDocument
      * Sets the seller trading name
      *
      * @param string $name
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentSellerName(string $name): UblDocumentBuilder
+    public function setDocumentSellerName(string $name): UblDocumentBuilderXRechnung
     {
         if ($this->invoiceObject->getAccountingSupplierParty() == null) {
             return $this;
@@ -805,9 +640,9 @@ class UblDocumentBuilder extends UblDocument
      * @param string $countryId
      * A code that identifies the country.
      * __Example value__: GB
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentSellerPostalAddress(string $streetName1, string $streetName2, string $streetName3, string $cityName, string $cityPostCode, string $countyName, string $countryId): UblDocumentBuilder
+    public function setDocumentSellerPostalAddress(string $streetName1, string $streetName2, string $streetName3, string $cityName, string $cityPostCode, string $countyName, string $countryId): UblDocumentBuilderXRechnung
     {
         if ($this->invoiceObject->getAccountingSupplierParty() == null) {
             return $this;
@@ -852,9 +687,9 @@ class UblDocumentBuilder extends UblDocument
      * @param string $vatIdentifier
      * The Seller's VAT identifier (also known as Seller VAT identification number)
      * __Example value__: NO999888777
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentSellerVATIdentifier(string $vatIdentifier): UblDocumentBuilder
+    public function setDocumentSellerVATIdentifier(string $vatIdentifier): UblDocumentBuilderXRechnung
     {
         if ($this->invoiceObject->getAccountingSupplierParty() == null) {
             return $this;
@@ -888,9 +723,9 @@ class UblDocumentBuilder extends UblDocument
      * the local identification (defined by the Seller’s address) of the Seller for tax purposes or a reference
      * that enables the Seller to state his registered tax status. In order for the buyer to automatically identify
      * a supplier
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentSellerTaxRegistration(string $taxRegistration): UblDocumentBuilder
+    public function setDocumentSellerTaxRegistration(string $taxRegistration): UblDocumentBuilderXRechnung
     {
         if ($this->invoiceObject->getAccountingSupplierParty() == null) {
             return $this;
@@ -932,9 +767,9 @@ class UblDocumentBuilder extends UblDocument
      * @param string $companyIdSchemeId
      * The identification scheme identifier of the Seller legal registration identifier.
      * __Example value__: 0002
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentSellerLegalEntity(string $registrationName, string $companyId = "", string $companyIdSchemeId = ""): UblDocumentBuilder
+    public function setDocumentSellerLegalEntity(string $registrationName, string $companyId = "", string $companyIdSchemeId = ""): UblDocumentBuilderXRechnung
     {
         if ($this->invoiceObject->getAccountingSupplierParty() == null) {
             return $this;
@@ -971,9 +806,9 @@ class UblDocumentBuilder extends UblDocument
      * @param string $contactElectronicMail
      * An e-mail address for the contact point.
      * __Example value__: test.name@foo.bar
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentSellerContact(string $contactName, string $contactPhone, string $contactElectronicMail): UblDocumentBuilder
+    public function setDocumentSellerContact(string $contactName, string $contactPhone, string $contactElectronicMail): UblDocumentBuilderXRechnung
     {
         if ($this->invoiceObject->getAccountingSupplierParty() == null) {
             return $this;
@@ -992,9 +827,9 @@ class UblDocumentBuilder extends UblDocument
     /**
      * Initialize the buyer party of the invoice document
      *
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function initDocumentBuyer(): UblDocumentBuilder
+    public function initDocumentBuyer(): UblDocumentBuilderXRechnung
     {
         $party = new Party();
 
@@ -1013,9 +848,9 @@ class UblDocumentBuilder extends UblDocument
      * Identifies the Buyer's electronic address to which the invoice is delivered.
      * @param string $endpointSchemeId
      * The identification scheme identifier of the Buyer electronic address.
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentBuyerEndpointId(string $endpointId, string $endpointSchemeId): UblDocumentBuilder
+    public function setDocumentBuyerEndpointId(string $endpointId, string $endpointSchemeId): UblDocumentBuilderXRechnung
     {
         if ($this->invoiceObject->getAccountingCustomerParty() == null) {
             return $this;
@@ -1042,9 +877,9 @@ class UblDocumentBuilder extends UblDocument
      * @param string $idSchemeid
      * The identification scheme identifier of the Buyer identifier.
      * __Example value__: 0088
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function addDocumentBuyerIdentification(string $id, string $idSchemeid = ""): UblDocumentBuilder
+    public function addDocumentBuyerIdentification(string $id, string $idSchemeid = ""): UblDocumentBuilderXRechnung
     {
         if ($this->invoiceObject->getAccountingCustomerParty() == null) {
             return $this;
@@ -1071,9 +906,9 @@ class UblDocumentBuilder extends UblDocument
      *
      * @param string $name
      * A name by which the Buyer is known, other than Buyer name (also known as Business name).
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentBuyerName(string $name): UblDocumentBuilder
+    public function setDocumentBuyerName(string $name): UblDocumentBuilderXRechnung
     {
         if ($this->invoiceObject->getAccountingCustomerParty() == null) {
             return $this;
@@ -1115,9 +950,9 @@ class UblDocumentBuilder extends UblDocument
      * @param string $countryId
      * A code that identifies the country.
      * __Example value__: GB
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentBuyerPostalAddress(string $streetName1, string $streetName2, string $streetName3, string $cityName, string $cityPostCode, string $countyName, string $countryId): UblDocumentBuilder
+    public function setDocumentBuyerPostalAddress(string $streetName1, string $streetName2, string $streetName3, string $cityName, string $cityPostCode, string $countyName, string $countryId): UblDocumentBuilderXRechnung
     {
         if ($this->invoiceObject->getAccountingCustomerParty() == null) {
             return $this;
@@ -1162,9 +997,9 @@ class UblDocumentBuilder extends UblDocument
      * @param string $vatIdentifier
      * The Buyer's VAT identifier (also known as Buyer VAT identification number).
      * __Example value__: NO999888777
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentBuyerVATIdentifier(string $vatIdentifier): UblDocumentBuilder
+    public function setDocumentBuyerVATIdentifier(string $vatIdentifier): UblDocumentBuilderXRechnung
     {
         if ($this->invoiceObject->getAccountingCustomerParty() == null) {
             return $this;
@@ -1203,9 +1038,9 @@ class UblDocumentBuilder extends UblDocument
      * @param string $companyIdSchemeId
      * The identification scheme identifier of the Buyer legal registration identifier.
      * __Example value__: 0088
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentBuyerLegalEntity(string $registrationName, string $companyId = "", string $companyIdSchemeId = ""): UblDocumentBuilder
+    public function setDocumentBuyerLegalEntity(string $registrationName, string $companyId = "", string $companyIdSchemeId = ""): UblDocumentBuilderXRechnung
     {
         if ($this->invoiceObject->getAccountingCustomerParty() == null) {
             return $this;
@@ -1242,9 +1077,9 @@ class UblDocumentBuilder extends UblDocument
      * @param string $contactElectronicMail
      * An e-mail address for the contact point.
      * __Example value__: jens.j@buyer.se
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentBuyerContact(string $contactName, string $contactPhone, string $contactElectronicMail): UblDocumentBuilder
+    public function setDocumentBuyerContact(string $contactName, string $contactPhone, string $contactElectronicMail): UblDocumentBuilderXRechnung
     {
         if ($this->invoiceObject->getAccountingCustomerParty() == null) {
             return $this;
@@ -1263,9 +1098,9 @@ class UblDocumentBuilder extends UblDocument
     /**
      * Initialize the payee party of the invoice document
      *
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function initDocumentPayee(): UblDocumentBuilder
+    public function initDocumentPayee(): UblDocumentBuilderXRechnung
     {
         $payeeParty = new PayeeParty();
 
@@ -1286,9 +1121,9 @@ class UblDocumentBuilder extends UblDocument
      * The identification scheme identifier of the payee identifier. For bank assigned creditor identifier (BT-90),
      * value MUST be "SEPA"
      * __Example value__: SEPA
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function addDocumentPayeeIdentification(string $id, string $idSchemeid = ""): UblDocumentBuilder
+    public function addDocumentPayeeIdentification(string $id, string $idSchemeid = ""): UblDocumentBuilderXRechnung
     {
         if ($this->invoiceObject->getPayeeParty() == null) {
             return $this;
@@ -1316,9 +1151,9 @@ class UblDocumentBuilder extends UblDocument
      * @param string $name
      * The name of the Payee.
      * __Example value__: Payee Name Ltd
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentPayeeName(string $name): UblDocumentBuilder
+    public function setDocumentPayeeName(string $name): UblDocumentBuilderXRechnung
     {
         if ($this->invoiceObject->getPayeeParty() == null) {
             return $this;
@@ -1348,9 +1183,9 @@ class UblDocumentBuilder extends UblDocument
      * @param string $companyIdSchemeId
      * The identification scheme identifier of the payee legal registration identifier.
      * __Example value__: 0002
-     * @return UblDocumentBuilder
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentPayeeLegalEntity(string $registrationName, string $companyId = "", string $companyIdSchemeId = ""): UblDocumentBuilder
+    public function setDocumentPayeeLegalEntity(string $registrationName, string $companyId = "", string $companyIdSchemeId = ""): UblDocumentBuilderXRechnung
     {
         if ($this->invoiceObject->getPayeeParty() == null) {
             return $this;
@@ -1371,25 +1206,6 @@ class UblDocumentBuilder extends UblDocument
         }
 
         $this->invoiceObject->getPayeeParty()->setPartyLegalEntity([$partyLegalEntity]);
-
-        return $this;
-    }
-
-    /**
-     * Creates a new instance of the invoice class
-     *
-     * @return UblDocumentBuilder
-     * @codeCoverageIgnore
-     */
-    private function initInvoiceObject(): UblDocumentBuilder
-    {
-        // Create the internal invoice object
-        $this->invoiceObject = new Invoice();
-
-        // Initialize some defaults
-        $this->setDocumentCustomization("urn:cen.eu:en16931:2017#compliant#urn:xoev-de:kosit:standard:xrechnung_2.0");
-        $this->setDocumentProfile("urn:fdc:peppol.eu:2017:poacc:billing:01:1.0");
-        $this->setDocumentType("380");
 
         return $this;
     }

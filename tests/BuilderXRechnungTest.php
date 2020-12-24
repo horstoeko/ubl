@@ -3,13 +3,13 @@
 namespace horstoeko\ubl\tests;
 
 use DateTime;
-use \horstoeko\ubl\UblDocumentBuilder;
+use horstoeko\ubl\UblDocumentBuilderXRechnung;
 
-class Builder1Test extends BuilderBaseTest
+class BuilderXRechnungTest extends BuilderBaseTest
 {
     public static function setUpBeforeClass(): void
     {
-        self::$document = new UblDocumentBuilder();
+        self::$document = new UblDocumentBuilderXRechnung();
     }
 
     public static function tearDownAfterClass(): void
@@ -27,7 +27,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::getInvoiceObject
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::getInvoiceObject
      */
     public function testgetInvoiceObject(): void
     {
@@ -38,7 +38,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentCustomization
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentCustomization
      */
     public function testSetDocumentCustomization(): void
     {
@@ -48,7 +48,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentProfile
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentProfile
      */
     public function testsetDocumentProfile(): void
     {
@@ -58,7 +58,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentNumber
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentNumber
      */
     public function testSetDocumentNumber(): void
     {
@@ -68,7 +68,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentDate
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentDate
      */
     public function testSetDocumentDate(): void
     {
@@ -78,7 +78,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentDueDate
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentDueDate
      */
     public function testSetDocumentDueDate(): void
     {
@@ -88,7 +88,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentTaxPointDate
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentTaxPointDate
      */
     public function testSetDocumentTaxPointDate(): void
     {
@@ -98,7 +98,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentType
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentType
      */
     public function testSetDocumentType(): void
     {
@@ -116,7 +116,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentNote
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentNote
      */
     public function testSetDocumentNote(): void
     {
@@ -137,7 +137,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentCurrencies
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentCurrencies
      */
     public function testSetDocumentCurrencies(): void
     {
@@ -163,7 +163,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentAccountingCost
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentAccountingCost
      */
     public function testSetDocumentAccountingCost(): void
     {
@@ -181,7 +181,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentBuyerReference
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentBuyerReference
      */
     public function testSetDocumentBuyerReference(): void
     {
@@ -199,7 +199,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentInvoicePeriod
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentInvoicePeriod
      */
     public function testSetDocumentInvoicePeriod(): void
     {
@@ -225,7 +225,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentBuyerOrderNo
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentBuyerOrderNo
      */
     public function testSetDocumentBuyerOrderNo(): void
     {
@@ -243,7 +243,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentSellerOrderNo
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentSellerOrderNo
      */
     public function testSetDocumentSellerOrderNo(): void
     {
@@ -264,7 +264,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentBillingReference
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::addDocumentBillingReference
      */
     public function testAddDocumentBillingReference(): void
     {
@@ -282,7 +282,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentDespatchReference
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentDespatchReference
      */
     public function testSetDocumentDespatchReference(): void
     {
@@ -303,7 +303,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentReceiptReference
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentReceiptReference
      */
     public function testSetDocumentReceiptReference(): void
     {
@@ -324,7 +324,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentOriginatorReference
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentOriginatorReference
      */
     public function testSetDocumentOriginatorReference(): void
     {
@@ -345,7 +345,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentContractReference
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentContractReference
      */
     public function testSetDocumentContractReference(): void
     {
@@ -366,7 +366,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentAdditionalReference
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::addDocumentAdditionalReference
      */
     public function testAddDocumentAdditionalReference(): void
     {
@@ -391,7 +391,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::clearDocumentAdditionalReference
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::clearDocumentAdditionalReference
      */
     public function testClearDocumentAdditionalReference(): void
     {
@@ -404,9 +404,9 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::clearDocumentAdditionalReference
-     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentAdditionalReference
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setFileAttachmentToAdditionalReference
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::clearDocumentAdditionalReference
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::addDocumentAdditionalReference
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setFileAttachmentToAdditionalReference
      */
     public function testSetFileAttachmentToAdditionalReference(): void
     {
@@ -451,9 +451,9 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::clearDocumentAdditionalReference
-     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentAdditionalReference
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setExternalAttachmentToAdditionalReference
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::clearDocumentAdditionalReference
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::addDocumentAdditionalReference
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setExternalAttachmentToAdditionalReference
      */
     public function testSetExternalAttachmentToAdditionalReference(): void
     {
@@ -483,7 +483,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentProjectReference
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentProjectReference
      */
     public function testSetDocumentProjectReference(): void
     {
@@ -505,14 +505,14 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentSellerEndpointId
-     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentSellerIdentification
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentSellerName
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentSellerPostalAddress
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentSellerVATIdentifier
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentSellerTaxRegistration
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentSellerLegalEntity
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentSellerContact
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentSellerEndpointId
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::addDocumentSellerIdentification
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentSellerName
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentSellerPostalAddress
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentSellerVATIdentifier
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentSellerTaxRegistration
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentSellerLegalEntity
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentSellerContact
      */
     public function testBeforeInitSellerParty(): void
     {
@@ -550,7 +550,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::initDocumentSeller
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::initDocumentSeller
      */
     public function testInitSellerParty(): void
     {
@@ -564,7 +564,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentSellerEndpointId
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentSellerEndpointId
      */
     public function testSetDocumentSellerEndpointId(): void
     {
@@ -588,7 +588,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentSellerIdentification
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::addDocumentSellerIdentification
      */
     public function testAddDocumentSellerIdentification(): void
     {
@@ -622,7 +622,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentSellerName
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentSellerName
      */
     public function testSetDocumentSellerName(): void
     {
@@ -638,7 +638,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentSellerPostalAddress
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentSellerPostalAddress
      */
     public function testSetDocumentSellerPostalAddress(): void
     {
@@ -656,7 +656,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentSellerVATIdentifier
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentSellerVATIdentifier
      */
     public function testSetDocumentSellerVATIdentifier(): void
     {
@@ -673,7 +673,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentSellerTaxRegistration
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentSellerTaxRegistration
      */
     public function testSetDocumentSellerTaxRegistration(): void
     {
@@ -690,7 +690,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentSellerLegalEntity
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentSellerLegalEntity
      */
     public function testSetDocumentSellerLegalEntity(): void
     {
@@ -716,7 +716,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentSellerContact
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentSellerContact
      */
     public function testSetDocumentSellerContact(): void
     {
@@ -748,13 +748,13 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentBuyerEndpointId
-     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentBuyerIdentification
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentBuyerName
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentBuyerPostalAddress
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentBuyerVATIdentifier
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentBuyerLegalEntity
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentBuyerContact
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentBuyerEndpointId
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::addDocumentBuyerIdentification
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentBuyerName
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentBuyerPostalAddress
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentBuyerVATIdentifier
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentBuyerLegalEntity
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentBuyerContact
      */
     public function testBeforeInitBuyerParty(): void
     {
@@ -788,7 +788,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::initDocumentBuyer
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::initDocumentBuyer
      */
     public function testInitBuyerParty(): void
     {
@@ -802,7 +802,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentBuyerEndpointId
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentBuyerEndpointId
      */
     public function testSetDocumentBuyerEndpointId(): void
     {
@@ -826,7 +826,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentBuyerIdentification
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::addDocumentBuyerIdentification
      */
     public function testAddDocumentBuyerIdentification(): void
     {
@@ -860,7 +860,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentBuyerName
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentBuyerName
      */
     public function testSetDocumentBuyerName(): void
     {
@@ -876,7 +876,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentBuyerPostalAddress
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentBuyerPostalAddress
      */
     public function testSetDocumentBuyerPostalAddress(): void
     {
@@ -894,7 +894,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentBuyerVATIdentifier
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentBuyerVATIdentifier
      */
     public function testSetDocumentBuyerVATIdentifier(): void
     {
@@ -911,7 +911,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentBuyerLegalEntity
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentBuyerLegalEntity
      */
     public function testSetDocumentBuyerLegalEntity(): void
     {
@@ -937,7 +937,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentBuyerContact
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentBuyerContact
      */
     public function testSetDocumentBuyerContact(): void
     {
@@ -969,12 +969,12 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentPayeeIdentification
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentPayeeName
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentPayeePostalAddress
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentPayeeVATIdentifier
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentPayeeLegalEntity
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentPayeeContact
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::addDocumentPayeeIdentification
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPayeeName
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPayeePostalAddress
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPayeeVATIdentifier
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPayeeLegalEntity
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPayeeContact
      */
     public function testBeforeInitPayeeParty(): void
     {
@@ -992,7 +992,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::initDocumentPayee
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::initDocumentPayee
      */
     public function testInitPayeeParty(): void
     {
@@ -1004,7 +1004,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentPayeeIdentification
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::addDocumentPayeeIdentification
      */
     public function testAddDocumentPayeeIdentification(): void
     {
@@ -1038,7 +1038,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentPayeeName
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPayeeName
      */
     public function testSetDocumentPayeeName(): void
     {
@@ -1054,7 +1054,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentPayeeLegalEntity
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPayeeLegalEntity
      */
     public function testSetDocumentPayeeLegalEntity(): void
     {
@@ -1080,7 +1080,7 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilder::writeFile
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::writeFile
      */
     public function testWriteFile(): void
     {

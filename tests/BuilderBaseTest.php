@@ -2,8 +2,8 @@
 
 namespace horstoeko\ubl\tests;
 
-use \PHPUnit\Framework\TestCase;
-use \horstoeko\ubl\UblDocumentBuilder;
+use PHPUnit\Framework\TestCase;
+use horstoeko\ubl\UblDocumentBuilder;
 
 class BuilderBaseTest extends TestCase
 {
