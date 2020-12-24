@@ -122,6 +122,7 @@ use horstoeko\ubl\entities\cac\Contact;
 use horstoeko\ubl\entities\cac\PartyLegalEntity;
 use horstoeko\ubl\entities\cac\PostalAddress;
 use \horstoeko\ubl\entities\cbc\EmbeddedDocumentBinaryObject;
+use horstoeko\ubl\entities\cbc\IdentificationID;
 
 /**
  * Class representing the ubl invoice builder
@@ -817,7 +818,7 @@ class UblDocumentBuilder extends UblDocument
             $postalAddress->setAdditionalStreetName(new AdditionalStreetName($streetName2));
         }
         if (!StringUtils::stringIsNullOrEmpty($streetName3)) {
-            $postalAddress->setAddressLine([(new AddressLine())->setLine(new Line($streetName3))]);
+            $postalAddress->addToAddressLine((new AddressLine())->setLine(new Line($streetName3)));
         }
         if (!StringUtils::stringIsNullOrEmpty($cityName)) {
             $postalAddress->setCityName(new CityName($cityName));
@@ -829,7 +830,7 @@ class UblDocumentBuilder extends UblDocument
             $postalAddress->setCountrySubentity(new CountrySubentity($countyName));
         }
         if (!StringUtils::stringIsNullOrEmpty($countryId)) {
-            $postalAddress->setCountry(new Country($countryId));
+            $postalAddress->setCountry((new Country())->setIdentificationCode(new IdentificationCode($countryId)));
         }
 
         $this->invoiceObject->getAccountingSupplierParty()->getParty()->setPostalAddress($postalAddress);
@@ -861,8 +862,11 @@ class UblDocumentBuilder extends UblDocument
             $partyTaxScheme[0] = new PartyTaxScheme();
         }
 
+        $taxScheme = new TaxScheme();
+        $taxScheme->setId(new ID("VAT"));
+
         $partyTaxScheme[0]->setCompanyID(new CompanyID($vatIdentifier));
-        $partyTaxScheme[0]->setTaxScheme((new TaxScheme())->setID(new ID("VAT")));
+        $partyTaxScheme[0]->setTaxScheme($taxScheme);
 
         $this->invoiceObject->getAccountingSupplierParty()->getParty()->setPartyTaxScheme($partyTaxScheme);
 
@@ -894,8 +898,11 @@ class UblDocumentBuilder extends UblDocument
             $partyTaxScheme[1] = new PartyTaxScheme();
         }
 
+        $taxScheme = new TaxScheme();
+        $taxScheme->setId(new ID("FC"));
+
         $partyTaxScheme[1]->setCompanyID(new CompanyID($taxRegistration));
-        $partyTaxScheme[1]->setTaxScheme((new TaxScheme())->setID(new ID("FC")));
+        $partyTaxScheme[1]->setTaxScheme($taxScheme);
 
         $this->invoiceObject->getAccountingSupplierParty()->getParty()->setPartyTaxScheme($partyTaxScheme);
 
