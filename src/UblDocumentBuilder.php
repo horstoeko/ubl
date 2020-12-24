@@ -118,6 +118,7 @@ use \horstoeko\ubl\entities\cac\FinancialInstitutionBranch;
 use \horstoeko\ubl\entities\cac\StandardItemIdentification;
 use horstoeko\ubl\entities\cac\OriginatorDocumentReference;
 use \horstoeko\ubl\entities\cac\AdditionalDocumentReference;
+use horstoeko\ubl\entities\cac\PostalAddress;
 use \horstoeko\ubl\entities\cbc\EmbeddedDocumentBinaryObject;
 
 /**
@@ -769,6 +770,67 @@ class UblDocumentBuilder extends UblDocument
         $partyName->setName(new Name($name));
 
         $this->invoiceObject->getAccountingSupplierParty()->getParty()->setPartyName([$partyName]);
+
+        return $this;
+    }
+
+    /**
+     * Sets the postal address of the seller
+     *
+     * @param string $streetName1
+     * The main address line in an address.
+     * __Example value__: Main Street 1
+     * @param string $streetName2
+     * An additional address line in an address that can be used to give further details supplementing the main line.
+     * __Example value__: Po Box 351
+     * @param string $streetName3
+     * An additional address line in an address that can be used to give further details supplementing the main line.
+     * __Example value__: Building 23
+     * @param string $cityName
+     * The common name of the city, town or village, where the Seller address is located.
+     * __Example value__: London
+     * @param string $cityPostCode
+     * The identifier for an addressable group of properties according to the relevant postal service.
+     * __Example value__: W1G 8LZ
+     * @param string $countyName
+     * The subdivision of a country.
+     * __Example value__: Region A
+     * @param string $countryId
+     * A code that identifies the country.
+     * __Example value__: GB
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentSellerPostalAddress(string $streetName1, string $streetName2, string $streetName3, string $cityName, string $cityPostCode, string $countyName, string $countryId): UblDocumentBuilder
+    {
+        if ($this->invoiceObject->getAccountingSupplierParty() == null) {
+            return $this;
+        }
+
+        $postalAddress = new PostalAddress();
+
+        if (!StringUtils::stringIsNullOrEmpty($streetName1)) {
+            $postalAddress->setStreetName(new StreetName($streetName1));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($streetName2)) {
+            $postalAddress->setAdditionalStreetName(new AdditionalStreetName($streetName2));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($streetName3)) {
+            $postalAddress->setAddressLine([(new AddressLine())->setLine(new Line($streetName3))]);
+        }
+        if (!StringUtils::stringIsNullOrEmpty($cityName)) {
+            $postalAddress->setCityName(new CityName($cityName));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($cityPostCode)) {
+            $postalAddress->setPostalZone(new PostalZone($cityPostCode));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($countyName)) {
+            $postalAddress->setCountrySubentity(new CountrySubentity($countyName));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($countryId)) {
+            $postalAddress->setCountry(new Country($countryId));
+        }
+
+        $this->invoiceObject->getAccountingSupplierParty()->getParty()->setPostalAddress($postalAddress);
 
         return $this;
     }

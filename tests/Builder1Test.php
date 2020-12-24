@@ -508,6 +508,7 @@ class Builder1Test extends BuilderBaseTest
      * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentSellerEndpointId
      * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentSellerIdentification
      * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentSellerName
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentSellerPostalAddress
      */
     public function testBeforeInitSellerParty(): void
     {
@@ -518,6 +519,14 @@ class Builder1Test extends BuilderBaseTest
         (self::$document)->addDocumentSellerIdentification("1234567890", "0088");
 
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID", 0);
+
+        (self::$document)->setDocumentSellerName("Seller Name");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyName/cbc:Name", 0);
+
+        (self::$document)->setDocumentSellerPostalAddress("Main Street 1", "Po Box 351", "Building 23", "London", "W1G 8LZ", "Region A", "GB");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress", 0);
     }
 
     /**
@@ -606,6 +615,23 @@ class Builder1Test extends BuilderBaseTest
         (self::$document)->setDocumentSellerName("Seller Name");
 
         $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyName/cbc:Name", 0, "Seller Name");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentSellerPostalAddress
+     */
+    public function testSetDocumentSellerPostalAddress(): void
+    {
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress", 0);
+
+        (self::$document)->setDocumentSellerPostalAddress("Main Street 1", "Po Box 351", "Building 23", "London", "W1G 8LZ", "Region A", "GB");
+
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:StreetName", 0, "Main Street 1");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:AdditionalStreetName", 0, "Po Box 351");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:CityName", 0, "London");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:PostalZone", 0, "W1G 8LZ");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity", 0, "Region A");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:AddressLine/cbc:Line", 0, "Building 23");
     }
 
     /**
