@@ -44,6 +44,7 @@ use \horstoeko\ubl\entities\cbc\PostalZone;
 use \horstoeko\ubl\entities\cbc\StreetName;
 use \MimeTyper\Repository\MimeDbRepository;
 use \horstoeko\stringmanagement\StringUtils;
+use horstoeko\ubl\entities\cac\AccountingCustomerParty;
 use \horstoeko\ubl\entities\cac\AddressLine;
 use \horstoeko\ubl\entities\cac\CardAccount;
 use \horstoeko\ubl\entities\cac\InvoiceLine;
@@ -697,6 +698,8 @@ class UblDocumentBuilder extends UblDocument
      * @param string $endpointId
      * Identifies the Seller's electronic address to which the application level response to the
      * invoice may be delivered.
+     * @param string $endpointSchemeId
+     * The identification scheme identifier of the Buyer electronic address.
      * @return UblDocumentBuilder
      */
     public function setDocumentSellerEndpointId(string $endpointId, string $endpointSchemeId): UblDocumentBuilder
@@ -981,6 +984,277 @@ class UblDocumentBuilder extends UblDocument
         $contact->setElectronicMail(new ElectronicMail($contactElectronicMail));
 
         $this->invoiceObject->getAccountingSupplierParty()->getParty()->setContact($contact);
+
+        return $this;
+    }
+
+    /**
+     * Initialize the buyer party of the invoice document
+     *
+     * @return UblDocumentBuilder
+     */
+    public function initDocumentBuyer(): UblDocumentBuilder
+    {
+        $party = new Party();
+
+        $accountingCustomerParty = new AccountingCustomerParty();
+        $accountingCustomerParty->setParty($party);
+
+        $this->invoiceObject->setAccountingCustomerParty($accountingCustomerParty);
+
+        return $this;
+    }
+
+    /**
+     * Sets the buyer electronic address
+     *
+     * @param string $endpointId
+     * Identifies the Buyer's electronic address to which the invoice is delivered.
+     * @param string $endpointSchemeId
+     * The identification scheme identifier of the Buyer electronic address.
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentBuyerEndpointId(string $endpointId, string $endpointSchemeId): UblDocumentBuilder
+    {
+        if ($this->invoiceObject->getAccountingCustomerParty() == null) {
+            return $this;
+        }
+
+        if (StringUtils::stringIsNullOrEmpty($endpointId) || StringUtils::stringIsNullOrEmpty($endpointSchemeId)) {
+            return $this;
+        }
+
+        $endpoint = new EndpointID($endpointId);
+        $endpoint->setSchemeID($endpointSchemeId);
+
+        $this->invoiceObject->getAccountingCustomerParty()->getParty()->setEndpointID($endpoint);
+
+        return $this;
+    }
+
+    /**
+     * Sets buyer identifier
+     *
+     * @param string $id
+     * An identifier of the Buyer.
+     * __Example value__: SE8765456787
+     * @param string $idSchemeid
+     * The identification scheme identifier of the Buyer identifier.
+     * __Example value__: 0088
+     * @return UblDocumentBuilder
+     */
+    public function addDocumentBuyerIdentification(string $id, string $idSchemeid = ""): UblDocumentBuilder
+    {
+        if ($this->invoiceObject->getAccountingCustomerParty() == null) {
+            return $this;
+        }
+
+        if (StringUtils::stringIsNullOrEmpty($id)) {
+            return $this;
+        }
+
+        $partyIdentification = new PartyIdentification();
+        $partyIdentification->setID(new ID($id));
+
+        if (!StringUtils::stringIsNullOrEmpty($idSchemeid)) {
+            $partyIdentification->getID()->setSchemeID($idSchemeid);
+        }
+
+        $this->invoiceObject->getAccountingCustomerParty()->getParty()->addToPartyIdentification($partyIdentification);
+
+        return $this;
+    }
+
+    /**
+     * Sets the buyer trading name
+     *
+     * @param string $name
+     * A name by which the Buyer is known, other than Buyer name (also known as Business name).
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentBuyerName(string $name): UblDocumentBuilder
+    {
+        if ($this->invoiceObject->getAccountingCustomerParty() == null) {
+            return $this;
+        }
+
+        if (StringUtils::stringIsNullOrEmpty($name)) {
+            return $this;
+        }
+
+        $partyName = new PartyName();
+        $partyName->setName(new Name($name));
+
+        $this->invoiceObject->getAccountingCustomerParty()->getParty()->setPartyName([$partyName]);
+
+        return $this;
+    }
+
+    /**
+     * Sets the postal address of the buyer
+     *
+     * @param string $streetName1
+     * The main address line in an address.
+     * __Example value__: Main Street 1
+     * @param string $streetName2
+     * An additional address line in an address that can be used to give further details supplementing the main line.
+     * __Example value__: Po Box 351
+     * @param string $streetName3
+     * An additional address line in an address that can be used to give further details supplementing the main line.
+     * __Example value__: Building 23
+     * @param string $cityName
+     * The common name of the city, town or village, where the Buyer address is located.
+     * __Example value__: London
+     * @param string $cityPostCode
+     * The identifier for an addressable group of properties according to the relevant postal service.
+     * __Example value__: W1G 8LZ
+     * @param string $countyName
+     * The subdivision of a country.
+     * __Example value__: Region A
+     * @param string $countryId
+     * A code that identifies the country.
+     * __Example value__: GB
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentBuyerPostalAddress(string $streetName1, string $streetName2, string $streetName3, string $cityName, string $cityPostCode, string $countyName, string $countryId): UblDocumentBuilder
+    {
+        if ($this->invoiceObject->getAccountingCustomerParty() == null) {
+            return $this;
+        }
+
+        $postalAddress = new PostalAddress();
+
+        if (!StringUtils::stringIsNullOrEmpty($streetName1)) {
+            $postalAddress->setStreetName(new StreetName($streetName1));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($streetName2)) {
+            $postalAddress->setAdditionalStreetName(new AdditionalStreetName($streetName2));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($streetName3)) {
+            $addressLine = new AddressLine();
+            $addressLine->setLine(new Line($streetName3));
+            $postalAddress->addToAddressLine($addressLine);
+        }
+        if (!StringUtils::stringIsNullOrEmpty($cityName)) {
+            $postalAddress->setCityName(new CityName($cityName));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($cityPostCode)) {
+            $postalAddress->setPostalZone(new PostalZone($cityPostCode));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($countyName)) {
+            $postalAddress->setCountrySubentity(new CountrySubentity($countyName));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($countryId)) {
+            $country = new Country();
+            $country->setIdentificationCode(new IdentificationCode($countryId));
+            $postalAddress->setCountry($country);
+        }
+
+        $this->invoiceObject->getAccountingCustomerParty()->getParty()->setPostalAddress($postalAddress);
+
+        return $this;
+    }
+
+    /**
+     * Sets the buyers VAT identifier
+     *
+     * @param string $vatIdentifier
+     * The Buyer's VAT identifier (also known as Buyer VAT identification number).
+     * __Example value__: NO999888777
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentBuyerVATIdentifier(string $vatIdentifier): UblDocumentBuilder
+    {
+        if ($this->invoiceObject->getAccountingCustomerParty() == null) {
+            return $this;
+        }
+
+        if (StringUtils::stringIsNullOrEmpty($vatIdentifier)) {
+            return $this;
+        }
+
+        $partyTaxScheme = $this->invoiceObject->getAccountingCustomerParty()->getParty()->getPartyTaxScheme();
+
+        if (!isset($partyTaxScheme[0])) {
+            $partyTaxScheme[0] = new PartyTaxScheme();
+        }
+
+        $taxScheme = new TaxScheme();
+        $taxScheme->setId(new ID("VAT"));
+
+        $partyTaxScheme[0]->setCompanyID(new CompanyID($vatIdentifier));
+        $partyTaxScheme[0]->setTaxScheme($taxScheme);
+
+        $this->invoiceObject->getAccountingCustomerParty()->getParty()->setPartyTaxScheme($partyTaxScheme);
+
+        return $this;
+    }
+
+    /**
+     * Sets the buyers legal entity
+     *
+     * @param string $registrationName
+     * The full name of the Buyer.
+     * __Example value__: Buyer Full Name AS
+     * @param string $companyId
+     * An identifier issued by an official registrar that identifies the Buyer as a legal entity or person.
+     * __Example value__: 7300010000001
+     * @param string $companyIdSchemeId
+     * The identification scheme identifier of the Buyer legal registration identifier.
+     * __Example value__: 0088
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentBuyerLegalEntity(string $registrationName, string $companyId = "", string $companyIdSchemeId = ""): UblDocumentBuilder
+    {
+        if ($this->invoiceObject->getAccountingCustomerParty() == null) {
+            return $this;
+        }
+
+        if (StringUtils::stringIsNullOrEmpty($registrationName)) {
+            return $this;
+        }
+
+        $partyLegalEntity = new PartyLegalEntity();
+        $partyLegalEntity->setRegistrationName(new RegistrationName($registrationName));
+
+        if (!StringUtils::stringIsNullOrEmpty($companyId)) {
+            $partyLegalEntity->setCompanyID(new CompanyID($companyId));
+            if (!StringUtils::stringIsNullOrEmpty($companyIdSchemeId)) {
+                $partyLegalEntity->getCompanyID()->setSchemeID($companyIdSchemeId);
+            }
+        }
+
+        $this->invoiceObject->getAccountingCustomerParty()->getParty()->setPartyLegalEntity([$partyLegalEntity]);
+
+        return $this;
+    }
+
+    /**
+     * Sets the buyers contact
+     *
+     * @param string $contactName
+     * A contact point for a legal entity or person.
+     * __Example value__: Jens Jensen
+     * @param string $contactPhone
+     * A phone number for the contact point.
+     * __Example value__: 876 654 321
+     * @param string $contactElectronicMail
+     * An e-mail address for the contact point.
+     * __Example value__: jens.j@buyer.se
+     * @return UblDocumentBuilder
+     */
+    public function setDocumentBuyerContact(string $contactName, string $contactPhone, string $contactElectronicMail): UblDocumentBuilder
+    {
+        if ($this->invoiceObject->getAccountingCustomerParty() == null) {
+            return $this;
+        }
+
+        $contact = new Contact();
+        $contact->setName(new Name($contactName));
+        $contact->setTelephone(new Telephone($contactPhone));
+        $contact->setElectronicMail(new ElectronicMail($contactElectronicMail));
+
+        $this->invoiceObject->getAccountingCustomerParty()->getParty()->setContact($contact);
 
         return $this;
     }

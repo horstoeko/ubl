@@ -748,6 +748,227 @@ class Builder1Test extends BuilderBaseTest
     }
 
     /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentBuyerEndpointId
+     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentBuyerIdentification
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentBuyerName
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentBuyerPostalAddress
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentBuyerVATIdentifier
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentBuyerLegalEntity
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentBuyerContact
+     */
+    public function testBeforeInitBuyerParty(): void
+    {
+        (self::$document)->setDocumentBuyerEndpointId("test@test.de", "EM");
+
+        $this->assertXPathNotExists("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cbc:EndpointID");
+
+        (self::$document)->addDocumentSellerIdentification("1234567890", "0088");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID", 0);
+
+        (self::$document)->setDocumentSellerName("Seller Name");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyName/cbc:Name", 0);
+
+        (self::$document)->setDocumentSellerPostalAddress("Main Street 1", "Po Box 351", "Building 23", "London", "W1G 8LZ", "Region A", "GB");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress", 0);
+
+        (self::$document)->setDocumentSellerVATIdentifier("DE 123456789");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme", 0);
+
+        (self::$document)->setDocumentSellerLegalEntity("Seller name");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity", 0);
+
+        (self::$document)->setDocumentSellerContact("Name", "+49-(0)-111-22222222", "info@foo.bar");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact", 0);
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::initDocumentBuyer
+     */
+    public function testInitBuyerParty(): void
+    {
+        $this->assertXPathNotExists("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party");
+        $this->assertXPathNotExists("/ubl:Invoice/cac:AccountingCustomerParty");
+
+        (self::$document)->initDocumentBuyer();
+
+        $this->assertXPathExists("/ubl:Invoice/cac:AccountingCustomerParty");
+        $this->assertXPathExists("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentBuyerEndpointId
+     */
+    public function testSetDocumentBuyerEndpointId(): void
+    {
+        $this->assertXPathNotExists("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cbc:EndpointID");
+
+        (self::$document)->setDocumentBuyerEndpointId("", "");
+
+        $this->assertXPathNotExists("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cbc:EndpointID");
+
+        (self::$document)->setDocumentBuyerEndpointId("rechnungseingang@test.com", "");
+
+        $this->assertXPathNotExists("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cbc:EndpointID");
+
+        (self::$document)->setDocumentBuyerEndpointId("", "EM");
+
+        $this->assertXPathNotExists("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cbc:EndpointID");
+
+        (self::$document)->setDocumentBuyerEndpointId("rechnungseingang@test.com", "EM");
+
+        $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cbc:EndpointID", 0, "rechnungseingang@test.com", "schemeID", "EM");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::addDocumentBuyerIdentification
+     */
+    public function testAddDocumentBuyerIdentification(): void
+    {
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID", 0);
+
+        (self::$document)->addDocumentBuyerIdentification("", "");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID", 0);
+
+        (self::$document)->addDocumentBuyerIdentification("", "0088");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID", 0);
+
+        (self::$document)->addDocumentBuyerIdentification("1234567890", "0088");
+
+        $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID", 0, "1234567890", "schemeID", "0088");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID", 1);
+
+        (self::$document)->addDocumentBuyerIdentification("", "");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID", 1);
+
+        (self::$document)->addDocumentBuyerIdentification("", "0088");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID", 1);
+
+        (self::$document)->addDocumentBuyerIdentification("9876543210");
+
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID", 1, "9876543210");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentBuyerName
+     */
+    public function testSetDocumentBuyerName(): void
+    {
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyName/cbc:Name", 0);
+
+        (self::$document)->setDocumentBuyerName("");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyName/cbc:Name", 0);
+
+        (self::$document)->setDocumentBuyerName("Buyer Name");
+
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyName/cbc:Name", 0, "Buyer Name");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentBuyerPostalAddress
+     */
+    public function testSetDocumentBuyerPostalAddress(): void
+    {
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress", 0);
+
+        (self::$document)->setDocumentBuyerPostalAddress("Main Street 1", "Po Box 351", "Building 23", "London", "W1G 8LZ", "Region A", "GB");
+
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:StreetName", 0, "Main Street 1");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:AdditionalStreetName", 0, "Po Box 351");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CityName", 0, "London");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:PostalZone", 0, "W1G 8LZ");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity", 0, "Region A");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:AddressLine/cbc:Line", 0, "Building 23");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode", 0, "GB");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentBuyerVATIdentifier
+     */
+    public function testSetDocumentBuyerVATIdentifier(): void
+    {
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme", 0);
+
+        (self::$document)->setDocumentBuyerVATIdentifier("");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme", 0);
+
+        (self::$document)->setDocumentBuyerVATIdentifier("DE 123456789");
+
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID", 0, "DE 123456789");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID", 0, "VAT");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentBuyerLegalEntity
+     */
+    public function testSetDocumentBuyerLegalEntity(): void
+    {
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity", 0);
+
+        (self::$document)->setDocumentBuyerLegalEntity("");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity", 0);
+
+        (self::$document)->setDocumentBuyerLegalEntity("Buyer name");
+
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName", 0, "Buyer name");
+
+        (self::$document)->setDocumentBuyerLegalEntity("Buyer name", "7300010000001");
+
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName", 0, "Buyer name");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID", 0, "7300010000001");
+
+        (self::$document)->setDocumentBuyerLegalEntity("Buyer name", "7300010000001", "0088");
+
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName", 0, "Buyer name");
+        $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID", 0, "7300010000001", "schemeID", "0088");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilder::setDocumentBuyerContact
+     */
+    public function testSetDocumentBuyerContact(): void
+    {
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact", 0);
+
+        (self::$document)->setDocumentBuyerContact("", "", "");
+
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:Name", 0, "");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:Telephone", 0, "");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:ElectronicMail", 0, "");
+
+        (self::$document)->setDocumentBuyerContact("Name", "", "");
+
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:Name", 0, "Name");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:Telephone", 0, "");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:ElectronicMail", 0, "");
+
+        (self::$document)->setDocumentBuyerContact("Name", "+49-(0)111-2222222", "");
+
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:Name", 0, "Name");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:Telephone", 0, "+49-(0)111-2222222");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:ElectronicMail", 0, "");
+
+        (self::$document)->setDocumentBuyerContact("Name", "+49-(0)111-2222222", "info@foo.bar");
+
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:Name", 0, "Name");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:Telephone", 0, "+49-(0)111-2222222");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:ElectronicMail", 0, "info@foo.bar");
+    }
+
+    /**
      * @covers \horstoeko\ubl\UblDocumentBuilder::writeFile
      */
     public function testWriteFile(): void
