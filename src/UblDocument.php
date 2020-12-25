@@ -134,7 +134,7 @@ class UblDocument
      * @param  string $xmlfilename
      * The filename to which the content of the UBL invoice object is
      * saved to as XML
-     * @return UblDocumentBuilderBase
+     * @return UblDocument
      */
     public function writeFile(string $xmlfilename): UblDocument
     {
@@ -147,7 +147,7 @@ class UblDocument
      *
      * @param  string $xmlcontent
      * The XML content to deserialize
-     * @return UblDocumentNative
+     * @return UblDocument
      */
     public function readContent(string $xmlcontent): UblDocument
     {
@@ -160,7 +160,7 @@ class UblDocument
      *
      * @param  string $xmlfilename
      * The filename which contains the XML content
-     * @return UblDocumentNative
+     * @return UblDocument
      */
     public function readFile(string $xmlfilename): UblDocument
     {

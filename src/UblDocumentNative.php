@@ -9,8 +9,6 @@
 
 namespace horstoeko\ubl;
 
-use \horstoeko\ubl\entities\main\Invoice;
-
 /**
  * Class representing the native ubl invoice creator
  *
@@ -20,27 +18,6 @@ use \horstoeko\ubl\entities\main\Invoice;
  * @license  https://opensource.org/licenses/MIT MIT
  * @link     https://github.com/horstoeko/ubl
  */
-class UblDocumentNative extends UblDocument
+class UblDocumentNative extends UblDocumentBuilderBase
 {
-    /**
-     * Constructor
-     *
-     * @codeCoverageIgnore
-     */
-    public function __construct()
-    {
-        parent::__construct();
-        $this->initInvoiceObject();
-    }
-
-    /**
-     * Creates a new instance of the invoice class
-     *
-     * @return UblDocumentNative
-     */
-    private function initInvoiceObject(): UblDocumentNative
-    {
-        $this->invoiceObject = new Invoice();
-        return $this;
-    }
 }
