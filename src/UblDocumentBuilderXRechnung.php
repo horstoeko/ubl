@@ -1223,4 +1223,129 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
 
         return $this;
     }
+
+    /**
+     * Sets the seller tax representative name
+     *
+     * @param  string $name
+     * The full name of the Seller's tax representative party.
+     * __Example value__: Tax Representative Name AS
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function setDocumentTaxRepresentativeName(string $name): UblDocumentBuilderXRechnung
+    {
+        if ($this->invoiceObject->getTaxRepresentativeParty() == null) {
+            return $this;
+        }
+
+        if (StringUtils::stringIsNullOrEmpty($name)) {
+            return $this;
+        }
+
+        $partyName = new PartyName();
+        $partyName->setName(new Name($name));
+
+        $this->invoiceObject->getTaxRepresentativeParty()->setPartyName([$partyName]);
+
+        return $this;
+    }
+    /**
+     * Sets the postal address for the tax representative party
+     *
+     * @param  string $streetName1
+     * The main address line in an address.
+     * __Example value__: Lille gatan 545
+     * @param  string $streetName2
+     * An additional address line in an address that can be used to give further details supplementing the main line.
+     * __Example value__: Po Box 987
+     * @param  string $streetName3
+     * An additional address line in an address that can be used to give further details supplementing the main line.
+     * __Example value__: Building 23
+     * @param  string $cityName
+     * The common name of the city, town or village, where the tax representative address is located.
+     * __Example value__: Göteborg
+     * @param  string $cityPostCode
+     * The identifier for an addressable group of properties according to the relevant postal service.
+     * __Example value__: 12345
+     * @param  string $countyName
+     * The subdivision of a country.
+     * __Example value__: Region Vest
+     * @param  string $countryId
+     * A code that identifies the country.
+     * __Example value__: SE
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function setDocumentTaxRepresentativePostalAddress(string $streetName1, string $streetName2, string $streetName3, string $cityName, string $cityPostCode, string $countyName, string $countryId): UblDocumentBuilderXRechnung
+    {
+        if ($this->invoiceObject->getTaxRepresentativeParty() == null) {
+            return $this;
+        }
+
+        $postalAddress = new PostalAddress();
+
+        if (!StringUtils::stringIsNullOrEmpty($streetName1)) {
+            $postalAddress->setStreetName(new StreetName($streetName1));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($streetName2)) {
+            $postalAddress->setAdditionalStreetName(new AdditionalStreetName($streetName2));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($streetName3)) {
+            $addressLine = new AddressLine();
+            $addressLine->setLine(new Line($streetName3));
+            $postalAddress->addToAddressLine($addressLine);
+        }
+        if (!StringUtils::stringIsNullOrEmpty($cityName)) {
+            $postalAddress->setCityName(new CityName($cityName));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($cityPostCode)) {
+            $postalAddress->setPostalZone(new PostalZone($cityPostCode));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($countyName)) {
+            $postalAddress->setCountrySubentity(new CountrySubentity($countyName));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($countryId)) {
+            $country = new Country();
+            $country->setIdentificationCode(new IdentificationCode($countryId));
+            $postalAddress->setCountry($country);
+        }
+
+        $this->invoiceObject->getTaxRepresentativeParty()->setPostalAddress($postalAddress);
+
+        return $this;
+    }
+
+    /**
+     * Sets the tax representative VAT identifier
+     *
+     * @param  string $vatIdentifier
+     * The VAT identifier of the Seller's tax representative party.
+     * __Example value__: FR932874294
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function setDocumentTaxRepresentativeVATIdentifier(string $vatIdentifier): UblDocumentBuilderXRechnung
+    {
+        if ($this->invoiceObject->getTaxRepresentativeParty() == null) {
+            return $this;
+        }
+
+        if (StringUtils::stringIsNullOrEmpty($vatIdentifier)) {
+            return $this;
+        }
+
+        $partyTaxScheme = $this->invoiceObject->getTaxRepresentativeParty()->getPartyTaxScheme();
+
+        if (!isset($partyTaxScheme[0])) {
+            $partyTaxScheme[0] = new PartyTaxScheme();
+        }
+
+        $taxScheme = new TaxScheme();
+        $taxScheme->setId(new ID("VAT"));
+
+        $partyTaxScheme[0]->setCompanyID(new CompanyID($vatIdentifier));
+        $partyTaxScheme[0]->setTaxScheme($taxScheme);
+
+        $this->invoiceObject->getTaxRepresentativeParty()->setPartyTaxScheme($partyTaxScheme);
+
+        return $this;
+    }
 }

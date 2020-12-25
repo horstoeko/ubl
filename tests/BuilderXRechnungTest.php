@@ -26,6 +26,11 @@ class BuilderXRechnungTest extends TestCase
         self::$document = new UblDocumentBuilderXRechnung();
     }
 
+    public static function tearDownAfterClass(): void
+    {
+        (self::$document)->writeFile(dirname(__FILE__) . "/BuilderXRechnungTest.xml");
+    }
+
     /**
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::getInvoiceObject
      */
@@ -1077,6 +1082,89 @@ class BuilderXRechnungTest extends TestCase
 
         $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PayeeParty/cac:PartyLegalEntity/cbc:RegistrationName", 0, "Payee name");
         $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID", 0, "7300010000001", "schemeID", "0088");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentTaxRepresentativeName
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentTaxRepresentativePostalAddress
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentTaxRepresentativeVATIdentifier
+     */
+    public function testBeforeInitTaxRepresentativeParty(): void
+    {
+        (self::$document)->setDocumentTaxRepresentativeName("TaxRepresentative Name");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxRepresentativeParty/cac:PartyName/cbc:Name", 0);
+
+        (self::$document)->setDocumentTaxRepresentativePostalAddress("Main Street 1", "Po Box 351", "Building 23", "London", "W1G 8LZ", "Region A", "GB");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress", 0);
+
+        (self::$document)->setDocumentTaxRepresentativeVATIdentifier("DE 123456789");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxRepresentativeParty/cac:PartyTaxScheme", 0);
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::initDocumentTaxRepresentative
+     */
+    public function testInitTaxRepresentativeParty(): void
+    {
+        $this->assertXPathNotExists("/ubl:Invoice/cac:TaxRepresentativeParty");
+
+        (self::$document)->initDocumentTaxRepresentative();
+
+        $this->assertXPathExists("/ubl:Invoice/cac:TaxRepresentativeParty");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentTaxRepresentativeName
+     */
+    public function testSetDocumentTaxRepresentativeName(): void
+    {
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxRepresentativeParty/cac:PartyName/cbc:Name", 0);
+
+        (self::$document)->setDocumentTaxRepresentativeName("");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxRepresentativeParty/cac:PartyName/cbc:Name", 0);
+
+        (self::$document)->setDocumentTaxRepresentativeName("TaxRepresentative Name");
+
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:TaxRepresentativeParty/cac:PartyName/cbc:Name", 0, "TaxRepresentative Name");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentTaxRepresentativePostalAddress
+     */
+    public function testSetDocumentTaxRepresentativePostalAddress(): void
+    {
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress", 0);
+
+        (self::$document)->setDocumentTaxRepresentativePostalAddress("Main Street 1", "Po Box 351", "Building 23", "London", "W1G 8LZ", "Region A", "GB");
+
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:StreetName", 0, "Main Street 1");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:AdditionalStreetName", 0, "Po Box 351");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:CityName", 0, "London");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:PostalZone", 0, "W1G 8LZ");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:CountrySubentity", 0, "Region A");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cac:AddressLine/cbc:Line", 0, "Building 23");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode", 0, "GB");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentTaxRepresentativeVATIdentifier
+     */
+    public function testSetDocumentTaxRepresentativeVATIdentifier(): void
+    {
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxRepresentativeParty/cac:PartyTaxScheme", 0);
+
+        (self::$document)->setDocumentTaxRepresentativeVATIdentifier("");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxRepresentativeParty/cac:PartyTaxScheme", 0);
+
+        (self::$document)->setDocumentTaxRepresentativeVATIdentifier("DE 123456789");
+
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:TaxRepresentativeParty/cac:PartyTaxScheme/cbc:CompanyID", 0, "DE 123456789");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:TaxRepresentativeParty/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID", 0, "VAT");
     }
 
     /**
