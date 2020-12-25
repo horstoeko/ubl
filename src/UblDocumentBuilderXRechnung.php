@@ -16,8 +16,10 @@ use horstoeko\ubl\entities\cbc\Line;
 use horstoeko\ubl\entities\cbc\Name;
 use horstoeko\ubl\entities\cbc\Note;
 use horstoeko\ubl\entities\cac\Party;
+use horstoeko\ubl\entities\cac\Address;
 use horstoeko\ubl\entities\cac\Contact;
 use horstoeko\ubl\entities\cac\Country;
+use horstoeko\ubl\entities\cac\Delivery;
 use horstoeko\ubl\entities\cbc\CityName;
 use horstoeko\stringmanagement\FileUtils;
 use horstoeko\ubl\entities\cac\PartyName;
@@ -33,6 +35,7 @@ use MimeTyper\Repository\MimeDbRepository;
 use horstoeko\stringmanagement\StringUtils;
 use horstoeko\ubl\entities\cac\AddressLine;
 use horstoeko\ubl\entities\cbc\SalesOrderID;
+use horstoeko\ubl\entities\cac\DeliveryParty;
 use horstoeko\ubl\entities\cac\InvoicePeriod;
 use horstoeko\ubl\entities\cac\PostalAddress;
 use horstoeko\ubl\entities\cac\OrderReference;
@@ -43,6 +46,7 @@ use horstoeko\ubl\entities\cbc\ElectronicMail;
 use horstoeko\ubl\entities\cbc\InvoiceTypeCode;
 use horstoeko\ubl\entities\cbc\TaxCurrencyCode;
 use horstoeko\ubl\entities\cac\BillingReference;
+use horstoeko\ubl\entities\cac\DeliveryLocation;
 use horstoeko\ubl\entities\cac\PartyLegalEntity;
 use horstoeko\ubl\entities\cac\ProjectReference;
 use horstoeko\ubl\entities\cbc\CountrySubentity;
@@ -1345,6 +1349,167 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
         $partyTaxScheme[0]->setTaxScheme($taxScheme);
 
         $this->invoiceObject->getTaxRepresentativeParty()->setPartyTaxScheme($partyTaxScheme);
+
+        return $this;
+    }
+
+    /**
+     * Initialize the delivery party and delivery location of the invoice document
+     *
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function initDelivery(): UblDocumentBuilderXRechnung
+    {
+        $deliveryLocation = new DeliveryLocation();
+        $deliveryParty = new DeliveryParty();
+
+        $delivery = new Delivery();
+        $delivery->setDeliveryLocation($deliveryLocation);
+        $delivery->setDeliveryParty($deliveryParty);
+
+        $this->invoiceObject->setDelivery([$delivery]);
+
+        return $this;
+    }
+
+    /**
+     * Sets the date on which the supply of goods or services was made or completed.
+     *
+     * @param DateTime $deliveryDate
+     * The date on which the supply of goods or services was made or completed.
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function setDocumentDeliveryDate(DateTime $deliveryDate): UblDocumentBuilderXRechnung
+    {
+        if ($this->invoiceObject->getDelivery() == null) {
+            return $this;
+        }
+
+        $this->invoiceObject->getDelivery()[0]->setActualDeliveryDate($deliveryDate);
+
+        return $this;
+    }
+
+    /**
+     * Sets the deliver to location identifier
+     *
+     * @param string $id
+     * An identifier for the location at which the goods and services are delivered.
+     * __Example value__: 83745498753497
+     * @param string $idSchemeid
+     * The identification scheme identifier of the Deliver to location identifier.
+     * __Example value__: 0088
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function setDocumentDeliveryIdentification(string $id, string $idSchemeid = ""): UblDocumentBuilderXRechnung
+    {
+        if ($this->invoiceObject->getDelivery() == null) {
+            return $this;
+        }
+
+        if (StringUtils::stringIsNullOrEmpty($id)) {
+            return $this;
+        }
+
+        $deliveryLocation = $this->invoiceObject->getDelivery()[0]->getDeliveryLocation();
+        $deliveryLocationId = new ID($id);
+
+        if (!StringUtils::stringIsNullOrEmpty($idSchemeid)) {
+            $deliveryLocationId->setSchemeID($idSchemeid);
+        }
+
+        $deliveryLocation->setID($deliveryLocationId);
+
+        return $this;
+    }
+
+    /**
+     * Sets the deliver-to address
+     *
+     * @param  string $streetName1
+     * The main address line in an address.
+     * __Example value__: Delivery Street 1
+     * @param  string $streetName2
+     * An additional address line in an address that can be used to give further details supplementing the main line.
+     * __Example value__: Delivery Street 2
+     * @param  string $streetName3
+     * An additional address line in an address that can be used to give further details supplementing the main line.
+     * __Example value__: C54
+     * @param  string $cityName
+     * The common name of the city, town or village, where the deliver to address is located.
+     * __Example value__: Malmö
+     * @param  string $cityPostCode
+     * The identifier for an addressable group of properties according to the relevant postal service.
+     * __Example value__: 86756
+     * @param  string $countyName
+     * The subdivision of a country.
+     * __Example value__: South Region
+     * @param  string $countryId
+     * A code that identifies the country.
+     * __Example value__: GB
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function setDocumentDeliveryPostalAddress(string $streetName1, string $streetName2, string $streetName3, string $cityName, string $cityPostCode, string $countyName, string $countryId): UblDocumentBuilderXRechnung
+    {
+        if ($this->invoiceObject->getDelivery() == null) {
+            return $this;
+        }
+
+        $postalAddress = new Address();
+
+        if (!StringUtils::stringIsNullOrEmpty($streetName1)) {
+            $postalAddress->setStreetName(new StreetName($streetName1));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($streetName2)) {
+            $postalAddress->setAdditionalStreetName(new AdditionalStreetName($streetName2));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($streetName3)) {
+            $addressLine = new AddressLine();
+            $addressLine->setLine(new Line($streetName3));
+            $postalAddress->addToAddressLine($addressLine);
+        }
+        if (!StringUtils::stringIsNullOrEmpty($cityName)) {
+            $postalAddress->setCityName(new CityName($cityName));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($cityPostCode)) {
+            $postalAddress->setPostalZone(new PostalZone($cityPostCode));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($countyName)) {
+            $postalAddress->setCountrySubentity(new CountrySubentity($countyName));
+        }
+        if (!StringUtils::stringIsNullOrEmpty($countryId)) {
+            $country = new Country();
+            $country->setIdentificationCode(new IdentificationCode($countryId));
+            $postalAddress->setCountry($country);
+        }
+
+        $this->invoiceObject->getDelivery()[0]->getDeliveryLocation()->setAddress($postalAddress);
+
+        return $this;
+    }
+
+    /**
+     * Sets the information about the deliver party
+     *
+     * @param string $name
+     * The name of the party to which the goods and services are delivered.
+     * __Example value__: Deliver name
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function setDocumentDeliveryName(string $name): UblDocumentBuilderXRechnung
+    {
+        if ($this->invoiceObject->getDelivery() == null) {
+            return $this;
+        }
+
+        if (StringUtils::stringIsNullOrEmpty($name)) {
+            return $this;
+        }
+
+        $partyName = new PartyName();
+        $partyName->setName(new Name($name));
+
+        $this->invoiceObject->getDelivery()[0]->getDeliveryParty()->setPartyName([$partyName]);
 
         return $this;
     }

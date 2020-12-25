@@ -1168,6 +1168,122 @@ class BuilderXRechnungTest extends TestCase
     }
 
     /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentDeliveryDate
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentDeliveryIdentification
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentDeliveryPostalAddress
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentDeliveryName
+     */
+    public function testBeforeInitDelivery(): void
+    {
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:Delivery", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:Delivery/cac:DeliveryLocation", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:Delivery/cac:DeliveryParty", 0);
+
+        (self::$document)->setDocumentDeliveryDate(DateTime::createFromFormat("Ymd", "20200101"));
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:Delivery/cbc:ActualDeliveryDate", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:Delivery/cbc:ActualDeliveryDate", 1);
+
+        (self::$document)->setDocumentDeliveryIdentification("83745498753497");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cbc:ID", 0);
+
+        (self::$document)->setDocumentDeliveryPostalAddress("Delivery Street 1", "Delivery Street 2", "C54", "Malmö", "Malmö", "South Region", "SE");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address", 0);
+
+        (self::$document)->setDocumentDeliveryName("Delivery Name");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:Delivery/cac:DeliveryParty/cac:PartyName/cbc:Name", 0);
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::initDelivery
+     */
+    public function testInitDelivery(): void
+    {
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:Delivery", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:Delivery/cac:DeliveryLocation", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:Delivery/cac:DeliveryParty", 0);
+
+        (self::$document)->initDelivery();
+
+        $this->assertXPathExists("/ubl:Invoice/cac:Delivery");
+        $this->assertXPathExists("/ubl:Invoice/cac:Delivery/cac:DeliveryLocation");
+        $this->assertXPathExists("/ubl:Invoice/cac:Delivery/cac:DeliveryParty");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentDeliveryDate
+     */
+    public function testSetDocumentDeliveryDate(): void
+    {
+        (self::$document)->setDocumentDeliveryDate(DateTime::createFromFormat("Ymd", "20200101"));
+
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:Delivery/cbc:ActualDeliveryDate", 0, "2020-01-01");
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:Delivery/cbc:ActualDeliveryDate", 1);
+
+        (self::$document)->setDocumentDeliveryDate(DateTime::createFromFormat("Ymd", "20200102"));
+
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:Delivery/cbc:ActualDeliveryDate", 0, "2020-01-02");
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:Delivery/cbc:ActualDeliveryDate", 1);
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentDeliveryIdentification
+     */
+    public function testSetDocumentDeliveryIdentification(): void
+    {
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cbc:ID", 0);
+
+        (self::$document)->setDocumentDeliveryIdentification("");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cbc:ID", 0);
+
+        (self::$document)->setDocumentDeliveryIdentification("83745498753497");
+
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cbc:ID", 0, "83745498753497");
+
+        (self::$document)->setDocumentDeliveryIdentification("83745498753497", "0088");
+
+        $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cbc:ID", 0, "83745498753497", "schemeID", "0088");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentDeliveryPostalAddress
+     */
+    public function testSetDocumentDeliveryPostalAddress(): void
+    {
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address", 0);
+
+        (self::$document)->setDocumentDeliveryPostalAddress("Delivery Street 1", "Delivery Street 2", "C54", "Malmö", "86756", "South Region", "SE");
+
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:StreetName", 0, "Delivery Street 1");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:AdditionalStreetName", 0, "Delivery Street 2");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:CityName", 0, "Malmö");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:PostalZone", 0, "86756");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:CountrySubentity", 0, "South Region");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cac:AddressLine/cbc:Line", 0, "C54");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cac:Country/cbc:IdentificationCode", 0, "SE");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentDeliveryName
+     */
+    public function testSetDocumentDeliveryName(): void
+    {
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:Delivery/cac:DeliveryParty/cac:PartyName/cbc:Name", 0);
+
+        (self::$document)->setDocumentDeliveryName("");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:Delivery/cac:DeliveryParty/cac:PartyName/cbc:Name", 0);
+
+        (self::$document)->setDocumentDeliveryName("Delivery Name");
+
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:Delivery/cac:DeliveryParty/cac:PartyName/cbc:Name", 0, "Delivery Name");
+    }
+
+    /**
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::writeFile
      */
     public function testWriteFile(): void
