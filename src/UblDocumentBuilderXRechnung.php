@@ -54,6 +54,7 @@ use horstoeko\ubl\entities\cac\PartyIdentification;
 use horstoeko\ubl\entities\cbc\DocumentDescription;
 use horstoeko\ubl\entities\cbc\AdditionalStreetName;
 use horstoeko\ubl\entities\cbc\DocumentCurrencyCode;
+use horstoeko\ubl\entities\cac\TaxRepresentativeParty;
 use horstoeko\ubl\entities\cac\AccountingCustomerParty;
 use horstoeko\ubl\entities\cac\AccountingSupplierParty;
 use horstoeko\ubl\entities\cac\InvoiceDocumentReference;
@@ -1205,6 +1206,20 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
         }
 
         $this->invoiceObject->getPayeeParty()->setPartyLegalEntity([$partyLegalEntity]);
+
+        return $this;
+    }
+
+    /**
+     * Initialize the payee party of the invoice document
+     *
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function initDocumentTaxRepresentative(): UblDocumentBuilderXRechnung
+    {
+        $taxRepresentativeParty = new TaxRepresentativeParty();
+
+        $this->invoiceObject->setTaxRepresentativeParty($taxRepresentativeParty);
 
         return $this;
     }
