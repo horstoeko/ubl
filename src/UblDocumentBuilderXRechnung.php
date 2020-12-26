@@ -73,12 +73,19 @@ use horstoeko\ubl\entities\cac\ContractDocumentReference;
 use horstoeko\ubl\entities\cac\DespatchDocumentReference;
 use horstoeko\ubl\entities\cac\FinancialInstitutionBranch;
 use horstoeko\ubl\entities\cac\AdditionalDocumentReference;
+use horstoeko\ubl\entities\cac\AllowanceCharge;
 use horstoeko\ubl\entities\cac\CardAccount;
 use horstoeko\ubl\entities\cac\OriginatorDocumentReference;
 use horstoeko\ubl\entities\cac\PaymentTerms;
+use horstoeko\ubl\entities\cac\TaxCategory;
+use horstoeko\ubl\entities\cbc\AllowanceChargeReason;
+use horstoeko\ubl\entities\cbc\AllowanceChargeReasonCode;
+use horstoeko\ubl\entities\cbc\Amount;
+use horstoeko\ubl\entities\cbc\BaseAmount;
 use horstoeko\ubl\entities\cbc\EmbeddedDocumentBinaryObject;
 use horstoeko\ubl\entities\cbc\HolderName;
 use horstoeko\ubl\entities\cbc\NetworkID;
+use horstoeko\ubl\entities\cbc\Percent;
 use horstoeko\ubl\entities\cbc\PrimaryAccountNumberID;
 
 /**
@@ -1700,6 +1707,126 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
         $paymentTerms->setNote([new Note($note)]);
 
         $this->invoiceObject->setPaymentTerms([$paymentTerms]);
+
+        return $this;
+    }
+
+    /**
+     * Initializes a new Allowance/Charge information on document level
+     *
+     * @param boolean $isCharge
+     * Use “true” when informing about Charges and “false” when informing about Allowances.
+     * __Example value__: false
+     * @param string $reason
+     * The reason for the document level allowance or charge, expressed as text. The Document
+     * level allowance reason code and the Document level allowance reason shall indicate the
+     * same allowance reason
+     * __Example value__: Discount
+     * @param string $reasonCode
+     * The reason for the document level allowance or charge, expressed as a code. For allowances
+     * a subset of codelist UNCL5189 is to be used, and for charges codelist UNCL7161 applies.
+     * The Document level allowance reason code and the Document level allowance reason shall
+     * indicate the same allowance reason
+     * __Example value__: 95
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function initDocumentAllowanceCharge(bool $isCharge, string $reason, string $reasonCode): UblDocumentBuilderXRechnung
+    {
+        $allowanceCharge = new AllowanceCharge();
+        $allowanceCharge->setChargeIndicator($isCharge);
+
+        if (!StringUtils::stringIsNullOrEmpty($reason)) {
+            $allowanceCharge->setAllowanceChargeReason([new AllowanceChargeReason($reason)]);
+        }
+
+        if (!StringUtils::stringIsNullOrEmpty($reasonCode)) {
+            $allowanceCharge->setAllowanceChargeReasonCode(new AllowanceChargeReasonCode($reasonCode));
+        }
+
+        $this->invoiceObject->addToAllowanceCharge($allowanceCharge);
+
+        return $this;
+    }
+
+    /**
+     * Removes all allowcance/charge information on document level
+     *
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function clearDocumentAllowanceCharge(): UblDocumentBuilderXRechnung
+    {
+        $this->invoiceObject->setAllowanceCharge([]);
+
+        return $this;
+    }
+
+    /**
+     * Sets the document level allowance or charge amounts
+     * Before calling this method you need to call initDocumentAllowanceCharge method
+     *
+     * @param float $amount
+     * The amount of an allowance or a charge, without VAT. Must be rounded to maximum 2 decimals
+     * __Example value__: 200
+     * @param float|null $baseAmount
+     * The base amount that may be used, in conjunction with the document level allowance or charge
+     * percentage, to calculate the document level allowance or charge amount. Must be rounded to
+     * maximum 2 decimals
+     * __Example value__: 1000
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function setDocumentAllowanceChargeAmounts(float $amount, ?float $baseAmount = null): UblDocumentBuilderXRechnung
+    {
+        if (count($this->invoiceObject->getAllowanceCharge()) <= 0) {
+            return $this;
+        }
+
+        $allowanceChargeCount = count($this->invoiceObject->getAllowanceCharge());
+        $allowanceCharge = $this->invoiceObject->getAllowanceCharge()[$allowanceChargeCount - 1];
+
+        $allowanceCharge->setAmount(new Amount($amount))->getAmount()->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode());
+
+        if ($baseAmount != null) {
+            $allowanceCharge->setBaseAmount(new BaseAmount($baseAmount))->getBaseAmount()->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode());
+        }
+
+        return $this;
+    }
+
+    /**
+     * Sets the document level allowance or charge tax information
+     *
+     * @param string $taxCategoryCode
+     * A coded identification of what VAT category applies to the document level allowance or charge.
+     * __Example value__: S
+     * @param string $taxSchemeCode
+     * Mandatory element. Use “VAT”
+     * __Default value__: VAT
+     * @param float|null $percent
+     * The VAT rate, represented as percentage that applies to the document level allowance or charge
+     * __Example value__: 25
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function setDocumentAllowanceChargeTax(string $taxCategoryCode, string $taxSchemeCode = "", ?float $percent = null): UblDocumentBuilderXRechnung
+    {
+        if (count($this->invoiceObject->getAllowanceCharge()) <= 0) {
+            return $this;
+        }
+
+        $taxScheme = new TaxScheme();
+        $taxScheme->setID(new ID(StringUtils::stringIsNullOrEmpty($taxSchemeCode) ? "VAT" : $taxSchemeCode));
+
+        $taxCategory = new TaxCategory();
+        $taxCategory->setTaxScheme($taxScheme);
+        $taxCategory->setID(new ID($taxCategoryCode));
+
+        if ($percent != null) {
+            $taxCategory->setPercent(new Percent($percent));
+        }
+
+        $allowanceChargeCount = count($this->invoiceObject->getAllowanceCharge());
+        $allowanceCharge = $this->invoiceObject->getAllowanceCharge()[$allowanceChargeCount - 1];
+
+        $allowanceCharge->setTaxCategory([$taxCategory]);
 
         return $this;
     }

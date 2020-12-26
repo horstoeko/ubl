@@ -1487,6 +1487,120 @@ class BuilderXRechnungTest extends TestCase
     }
 
     /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::clearDocumentAllowanceCharge
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::initDocumentAllowanceCharge
+     */
+    public function testInitDocumentAllowanceCharge(): void
+    {
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AllowanceCharge", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AllowanceCharge", 1);
+
+        (self::$document)->initDocumentAllowanceCharge(false, "", "");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AllowanceCharge/cbc:ChargeIndicator", 0, "false");
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReason", 0);
+
+        (self::$document)->clearDocumentAllowanceCharge();
+        (self::$document)->initDocumentAllowanceCharge(false, "", "95");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AllowanceCharge/cbc:ChargeIndicator", 0, "false");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode", 0, "95");
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReason", 0);
+
+        (self::$document)->clearDocumentAllowanceCharge();
+        (self::$document)->initDocumentAllowanceCharge(false, "Discount", "95");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AllowanceCharge/cbc:ChargeIndicator", 0, "false");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode", 0, "95");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReason", 0, "Discount");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::clearDocumentAllowanceCharge
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::initDocumentAllowanceCharge
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentAllowanceChargeAmounts
+     */
+    public function testSetDocumentAllowanceChargeAmounts(): void
+    {
+        (self::$document)->clearDocumentAllowanceCharge();
+        (self::$document)->setDocumentAllowanceChargeAmounts(200, 1000);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AllowanceCharge/cbc:Amount", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AllowanceCharge/cbc:BaseAmount", 0);
+
+        (self::$document)->clearDocumentAllowanceCharge();
+        (self::$document)->initDocumentAllowanceCharge(false, "Discount", "95");
+        (self::$document)->setDocumentAllowanceChargeAmounts(200, 1000);
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AllowanceCharge/cbc:ChargeIndicator", 0, "false");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode", 0, "95");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReason", 0, "Discount");
+        $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:AllowanceCharge/cbc:Amount", 0, "200.0", "currencyID", "EUR");
+        $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:AllowanceCharge/cbc:BaseAmount", 0, "1000.0", "currencyID", "EUR");
+
+        (self::$document)->clearDocumentAllowanceCharge();
+        (self::$document)->initDocumentAllowanceCharge(false, "Discount", "95");
+        (self::$document)->setDocumentAllowanceChargeAmounts(200);
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AllowanceCharge/cbc:ChargeIndicator", 0, "false");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode", 0, "95");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReason", 0, "Discount");
+        $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:AllowanceCharge/cbc:Amount", 0, "200.0", "currencyID", "EUR");
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AllowanceCharge/cbc:BaseAmount", 0);
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::clearDocumentAllowanceCharge
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::initDocumentAllowanceCharge
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentAllowanceChargeAmounts
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentAllowanceChargeTax
+     */
+    public function testSetDocumentAllowanceChargeTax(): void
+    {
+        (self::$document)->clearDocumentAllowanceCharge();
+        (self::$document)->setDocumentAllowanceChargeTax("S", "UNK", 19.0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID", 0);
+
+        (self::$document)->clearDocumentAllowanceCharge();
+        (self::$document)->initDocumentAllowanceCharge(false, "Discount", "95");
+        (self::$document)->setDocumentAllowanceChargeAmounts(200, 1000);
+        (self::$document)->setDocumentAllowanceChargeTax("S", "UNK", 19.0);
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID", 0, "S");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent", 0, "19.0");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID", 0, "UNK");
+
+        (self::$document)->clearDocumentAllowanceCharge();
+        (self::$document)->initDocumentAllowanceCharge(false, "Discount", "95");
+        (self::$document)->setDocumentAllowanceChargeAmounts(200, 1000);
+        (self::$document)->setDocumentAllowanceChargeTax("S", "", 19.0);
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID", 0, "S");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent", 0, "19.0");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID", 0, "VAT");
+
+        (self::$document)->clearDocumentAllowanceCharge();
+        (self::$document)->initDocumentAllowanceCharge(false, "Discount", "95");
+        (self::$document)->setDocumentAllowanceChargeAmounts(200, 1000);
+        (self::$document)->setDocumentAllowanceChargeTax("S");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID", 0, "S");
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent", 0);
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID", 0, "VAT");
+    }
+
+    /**
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::writeFile
      */
     public function testWriteFile(): void
