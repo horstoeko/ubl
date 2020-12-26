@@ -976,10 +976,7 @@ class BuilderXRechnungTest extends TestCase
     /**
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::addDocumentPayeeIdentification
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPayeeName
-     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPayeePostalAddress
-     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPayeeVATIdentifier
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPayeeLegalEntity
-     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPayeeContact
      */
     public function testBeforeInitPayeeParty(): void
     {
@@ -1613,11 +1610,25 @@ class BuilderXRechnungTest extends TestCase
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal", 0);
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal", 1);
 
+        (self::$document)->initDocumentTaxSubTotal();
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxTotal", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxTotal", 1);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal", 1);
+
         (self::$document)->setDocumentTaxAmounts(100.0, 19.0);
 
         $this->disableRenderXmlContent();
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxTotal", 0);
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxTotal", 1);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal", 1);
+
+        (self::$document)->initDocumentTaxTotal();
+        (self::$document)->setDocumentTaxAmounts(100.0, 19.0);
+
+        $this->disableRenderXmlContent();
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal", 0);
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal", 1);
 
