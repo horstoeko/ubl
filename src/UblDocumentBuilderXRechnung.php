@@ -75,6 +75,7 @@ use horstoeko\ubl\entities\cac\FinancialInstitutionBranch;
 use horstoeko\ubl\entities\cac\AdditionalDocumentReference;
 use horstoeko\ubl\entities\cac\CardAccount;
 use horstoeko\ubl\entities\cac\OriginatorDocumentReference;
+use horstoeko\ubl\entities\cac\PaymentTerms;
 use horstoeko\ubl\entities\cbc\EmbeddedDocumentBinaryObject;
 use horstoeko\ubl\entities\cbc\HolderName;
 use horstoeko\ubl\entities\cbc\NetworkID;
@@ -1646,6 +1647,59 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
         $paymentMean->setCardAccount($cardAccount);
 
         $this->invoiceObject->setPaymentMeans([$paymentMean]);
+
+        return $this;
+    }
+
+    /**
+     * Set the document payment terms as textual description
+     *
+     * @param string $note
+     * A textual description of the payment terms that apply to the amount due for payment (Including description
+     * of possible penalties). In case the Amount due for payment (BT-115) is positive, either the Payment due
+     * date (BT-9) or the Payment terms (BT-20) shall be present.
+     * __Example value__: Net within 30 days
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function setDocumentPaymentTerms(string $note): UblDocumentBuilderXRechnung
+    {
+        if (StringUtils::stringIsNullOrEmpty($note)) {
+            return $this;
+        }
+
+        $paymentTerms = new PaymentTerms();
+        $paymentTerms->setNote([new Note($note)]);
+
+        $this->invoiceObject->setPaymentTerms([$paymentTerms]);
+
+        return $this;
+    }
+
+    /**
+     * Set the document payment terms as described in https://projekte.kosit.org/xrechnung/xrechnung/-/issues/6
+     *
+     * @param float $paymentDiscountBaseAmount
+     * @param integer $paymentDiscountDays
+     * @param float $paymentDiscountPercent
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function setDocumentPaymentTermsExt(float $paymentDiscountBaseAmount, int $paymentDiscountDays, float $paymentDiscountPercent): UblDocumentBuilderXRechnung
+    {
+        if ($paymentDiscountBaseAmount <= 0 || $paymentDiscountDays <= 0 || $paymentDiscountPercent <= 0) {
+            return $this;
+        }
+
+        $note = sprintf(
+            "#SKONTO#TAGE=%s#PROZENT=%s#BASISBETRAG=%s#",
+            number_format($paymentDiscountDays, 0, "", ""),
+            number_format($paymentDiscountPercent, 2, ".", ""),
+            number_format($paymentDiscountBaseAmount, 2, ".", "")
+        );
+
+        $paymentTerms = new PaymentTerms();
+        $paymentTerms->setNote([new Note($note)]);
+
+        $this->invoiceObject->setPaymentTerms([$paymentTerms]);
 
         return $this;
     }

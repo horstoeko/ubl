@@ -1441,6 +1441,52 @@ class BuilderXRechnungTest extends TestCase
     }
 
     /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPaymentTerms
+     */
+    public function testSetDocumentPaymentTerms(): void
+    {
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentTerms/cbc:Note", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentTerms/cbc:Note", 1);
+
+        (self::$document)->setDocumentPaymentTerms("");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentTerms/cbc:Note", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentTerms/cbc:Note", 1);
+
+        (self::$document)->setDocumentPaymentTerms("Net within 30 days");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentTerms/cbc:Note", 0, "Net within 30 days");
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentTerms/cbc:Note", 1);
+
+        (self::$document)->setDocumentPaymentTerms("");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentTerms/cbc:Note", 0, "Net within 30 days");
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentTerms/cbc:Note", 1);
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPaymentTerms
+     */
+    public function testSetDocumentPaymentTermsExt(): void
+    {
+        (self::$document)->setDocumentPaymentTermsExt(0, 0, 0);
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentTerms/cbc:Note", 0, "Net within 30 days");
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentTerms/cbc:Note", 1);
+
+        (self::$document)->setDocumentPaymentTermsExt(357.93, 14, 2.25);
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentTerms/cbc:Note", 0, "#SKONTO#TAGE=14#PROZENT=2.25#BASISBETRAG=357.93#");
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentTerms/cbc:Note", 1);
+    }
+
+    /**
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::writeFile
      */
     public function testWriteFile(): void
