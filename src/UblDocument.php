@@ -160,7 +160,7 @@ class UblDocument
      *
      * @param  string $xmlfilename
      * The filename which contains the XML content
-     * @return UblDocumentNative
+     * @return UblDocument
      */
     public function readFile(string $xmlfilename): UblDocument
     {
