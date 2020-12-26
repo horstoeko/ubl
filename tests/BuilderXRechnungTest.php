@@ -1175,25 +1175,30 @@ class BuilderXRechnungTest extends TestCase
      */
     public function testBeforeInitDelivery(): void
     {
+        $this->disableRenderXmlContent();
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:Delivery", 0);
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:Delivery/cac:DeliveryLocation", 0);
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:Delivery/cac:DeliveryParty", 0);
 
         (self::$document)->setDocumentDeliveryDate(DateTime::createFromFormat("Ymd", "20200101"));
 
+        $this->disableRenderXmlContent();
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:Delivery/cbc:ActualDeliveryDate", 0);
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:Delivery/cbc:ActualDeliveryDate", 1);
 
         (self::$document)->setDocumentDeliveryIdentification("83745498753497");
 
+        $this->disableRenderXmlContent();
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cbc:ID", 0);
 
         (self::$document)->setDocumentDeliveryPostalAddress("Delivery Street 1", "Delivery Street 2", "C54", "Malmö", "Malmö", "South Region", "SE");
 
+        $this->disableRenderXmlContent();
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address", 0);
 
         (self::$document)->setDocumentDeliveryName("Delivery Name");
 
+        $this->disableRenderXmlContent();
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:Delivery/cac:DeliveryParty/cac:PartyName/cbc:Name", 0);
     }
 
@@ -1202,12 +1207,14 @@ class BuilderXRechnungTest extends TestCase
      */
     public function testInitDelivery(): void
     {
+        $this->disableRenderXmlContent();
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:Delivery", 0);
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:Delivery/cac:DeliveryLocation", 0);
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:Delivery/cac:DeliveryParty", 0);
 
         (self::$document)->initDelivery();
 
+        $this->disableRenderXmlContent();
         $this->assertXPathExists("/ubl:Invoice/cac:Delivery");
         $this->assertXPathExists("/ubl:Invoice/cac:Delivery/cac:DeliveryLocation");
         $this->assertXPathExists("/ubl:Invoice/cac:Delivery/cac:DeliveryParty");
@@ -1220,11 +1227,13 @@ class BuilderXRechnungTest extends TestCase
     {
         (self::$document)->setDocumentDeliveryDate(DateTime::createFromFormat("Ymd", "20200101"));
 
+        $this->disableRenderXmlContent();
         $this->assertXPathValueWithIndex("/ubl:Invoice/cac:Delivery/cbc:ActualDeliveryDate", 0, "2020-01-01");
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:Delivery/cbc:ActualDeliveryDate", 1);
 
         (self::$document)->setDocumentDeliveryDate(DateTime::createFromFormat("Ymd", "20200102"));
 
+        $this->disableRenderXmlContent();
         $this->assertXPathValueWithIndex("/ubl:Invoice/cac:Delivery/cbc:ActualDeliveryDate", 0, "2020-01-02");
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:Delivery/cbc:ActualDeliveryDate", 1);
     }
@@ -1258,6 +1267,7 @@ class BuilderXRechnungTest extends TestCase
 
         (self::$document)->setDocumentDeliveryPostalAddress("Delivery Street 1", "Delivery Street 2", "C54", "Malmö", "86756", "South Region", "SE");
 
+        $this->disableRenderXmlContent();
         $this->assertXPathValueWithIndex("/ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:StreetName", 0, "Delivery Street 1");
         $this->assertXPathValueWithIndex("/ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:AdditionalStreetName", 0, "Delivery Street 2");
         $this->assertXPathValueWithIndex("/ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:CityName", 0, "Malmö");
@@ -1281,6 +1291,153 @@ class BuilderXRechnungTest extends TestCase
         (self::$document)->setDocumentDeliveryName("Delivery Name");
 
         $this->assertXPathValueWithIndex("/ubl:Invoice/cac:Delivery/cac:DeliveryParty/cac:PartyName/cbc:Name", 0, "Delivery Name");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPaymentMeansToCreditTransfer
+     */
+    public function testSetDocumentPaymentMeansToCreditTransfer(): void
+    {
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans", 1);
+
+        (self::$document)->setDocumentPaymentMeansToCreditTransfer("", "", "", "");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans", 1);
+
+        (self::$document)->setDocumentPaymentMeansToCreditTransfer("DE75512108001245126199");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cbc:PaymentID", 0);
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cbc:PaymentMeansCode", 0, "58");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:ID", 0, "DE75512108001245126199");
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:Name", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans", 1);
+
+        (self::$document)->setDocumentPaymentMeansToCreditTransfer("DE75512108001245126199", "0000123456");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cbc:PaymentID", 0, "0000123456");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cbc:PaymentMeansCode", 0, "58");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:ID", 0, "DE75512108001245126199");
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:Name", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans", 1);
+
+        (self::$document)->setDocumentPaymentMeansToCreditTransfer("DE75512108001245126199", "0000123456", "Payment account name");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cbc:PaymentID", 0, "0000123456");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cbc:PaymentMeansCode", 0, "58");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:ID", 0, "DE75512108001245126199");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:Name", 0, "Payment account name");
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans", 1);
+
+        (self::$document)->setDocumentPaymentMeansToCreditTransfer("DE75512108001245126199", "0000123456", "Payment account name", "BIC");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cbc:PaymentID", 0, "0000123456");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cbc:PaymentMeansCode", 0, "58");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:ID", 0, "DE75512108001245126199");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:Name", 0, "Payment account name");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID", 0, "BIC");
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans", 1);
+
+        (self::$document)->setDocumentPaymentMeansToCreditTransfer("DE75512108001245126199", "", "Payment account name", "BIC");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cbc:PaymentID", 0);
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cbc:PaymentMeansCode", 0, "58");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:ID", 0, "DE75512108001245126199");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:Name", 0, "Payment account name");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID", 0, "BIC");
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans", 1);
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPaymentMeansToDirectDebit
+     */
+    public function testSetDocumentPaymentMeansToDirectDebit(): void
+    {
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate", 1);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate/cbc:ID", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate/cac:PayerFinancialAccount/cbc:ID", 0);
+
+        (self::$document)->setDocumentPaymentMeansToDirectDebit("M000001", "");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate", 1);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate/cbc:ID", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate/cac:PayerFinancialAccount/cbc:ID", 0);
+
+        (self::$document)->setDocumentPaymentMeansToDirectDebit("", "DE75512108001245126199");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate", 1);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate/cbc:ID", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate/cac:PayerFinancialAccount/cbc:ID", 0);
+
+        (self::$document)->setDocumentPaymentMeansToDirectDebit("M000001", "DE75512108001245126199");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate/cbc:ID", 0, "M000001");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate/cac:PayerFinancialAccount/cbc:ID", 0, "DE75512108001245126199");
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate", 1);
+
+        (self::$document)->setDocumentPaymentMeansToDirectDebit("M000002", "DE75512108001245126199");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate/cbc:ID", 0, "M000002");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate/cac:PayerFinancialAccount/cbc:ID", 0, "DE75512108001245126199");
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate", 1);
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPaymentMeansToPaymentCard
+     */
+    public function testSetDocumentPaymentMeansToPaymentCard(): void
+    {
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:CardAccount", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:CardAccount/cbc:PrimaryAccountNumberID", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:CardAccount/cbc:NetworkID", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:CardAccount/cbc:HolderName", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:CardAccount", 1);
+
+        (self::$document)->setDocumentPaymentMeansToPaymentCard("", "VISA", "John Doe");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:CardAccount", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:CardAccount/cbc:PrimaryAccountNumberID", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:CardAccount/cbc:NetworkID", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:CardAccount/cbc:HolderName", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:CardAccount", 1);
+
+        (self::$document)->setDocumentPaymentMeansToPaymentCard("3563568242836", "", "John Doe");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:CardAccount", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:CardAccount/cbc:PrimaryAccountNumberID", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:CardAccount/cbc:NetworkID", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:CardAccount/cbc:HolderName", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:CardAccount", 1);
+
+        (self::$document)->setDocumentPaymentMeansToPaymentCard("3563568242836", "VISA", "John Doe");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:CardAccount/cbc:PrimaryAccountNumberID", 0, "2836");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:CardAccount/cbc:NetworkID", 0, "VISA");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:CardAccount/cbc:HolderName", 0, "John Doe");
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:CardAccount", 1);
     }
 
     /**
