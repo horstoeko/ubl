@@ -1469,7 +1469,7 @@ class BuilderXRechnungTest extends TestCase
     }
 
     /**
-     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPaymentTerms
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPaymentTermsExt
      */
     public function testSetDocumentPaymentTermsExt(): void
     {
@@ -1598,6 +1598,65 @@ class BuilderXRechnungTest extends TestCase
         $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID", 0, "S");
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent", 0);
         $this->assertXPathValueWithIndex("/ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID", 0, "VAT");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::initDocumentTaxTotal
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::initDocumentTaxSubTotal
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentTaxAmounts
+     */
+    public function testSetDocumentTaxAmounts(): void
+    {
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxTotal", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxTotal", 1);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal", 1);
+
+        (self::$document)->setDocumentTaxAmounts(100.0, 19.0);
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxTotal", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxTotal", 1);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal", 1);
+
+        (self::$document)->initDocumentTaxTotal();
+        (self::$document)->initDocumentTaxSubTotal();
+        (self::$document)->setDocumentTaxAmounts(100.0, 19.0);
+        (self::$document)->initDocumentTaxSubTotal();
+        (self::$document)->setDocumentTaxAmounts(200.0, 38.0);
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndexAndAttribute('/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount', 0, "100.0", "currencyID", "EUR");
+        $this->assertXPathValueWithIndexAndAttribute('/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount', 0, "19.0", "currencyID", "EUR");
+        $this->assertXPathValueWithIndexAndAttribute('/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount', 1, "200.0", "currencyID", "EUR");
+        $this->assertXPathValueWithIndexAndAttribute('/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount', 1, "38.0", "currencyID", "EUR");
+        $this->assertXPathValueWithIndexAndAttribute('/ubl:Invoice/cac:TaxTotal/cbc:TaxAmount', 0, "57.0", "currencyID", "EUR");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::initDocumentTaxTotal
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::initDocumentTaxSubTotal
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentTaxAmounts
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentTaxScheme
+     */
+    public function testSetDocumentTaxScheme(): void
+    {
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory", 1);
+
+        (self::$document)->initDocumentTaxTotal();
+        (self::$document)->initDocumentTaxSubTotal();
+        (self::$document)->setDocumentTaxAmounts(100.0, 19.0);
+        (self::$document)->setDocumentTaxScheme("S", "VAT", 19.0);
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:ID", 0, "S");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:Percent", 0, "19.0");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme/cbc:ID", 0, "VAT");
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory", 1);
     }
 
     /**

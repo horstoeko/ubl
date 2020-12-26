@@ -78,6 +78,8 @@ use horstoeko\ubl\entities\cac\CardAccount;
 use horstoeko\ubl\entities\cac\OriginatorDocumentReference;
 use horstoeko\ubl\entities\cac\PaymentTerms;
 use horstoeko\ubl\entities\cac\TaxCategory;
+use horstoeko\ubl\entities\cac\TaxSubtotal;
+use horstoeko\ubl\entities\cac\TaxTotal;
 use horstoeko\ubl\entities\cbc\AllowanceChargeReason;
 use horstoeko\ubl\entities\cbc\AllowanceChargeReasonCode;
 use horstoeko\ubl\entities\cbc\Amount;
@@ -87,6 +89,8 @@ use horstoeko\ubl\entities\cbc\HolderName;
 use horstoeko\ubl\entities\cbc\NetworkID;
 use horstoeko\ubl\entities\cbc\Percent;
 use horstoeko\ubl\entities\cbc\PrimaryAccountNumberID;
+use horstoeko\ubl\entities\cbc\TaxableAmount;
+use horstoeko\ubl\entities\cbc\TaxAmount;
 
 /**
  * Class representing the ubl invoice builder for XRechnung
@@ -1827,6 +1831,113 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
         $allowanceCharge = $this->invoiceObject->getAllowanceCharge()[$allowanceChargeCount - 1];
 
         $allowanceCharge->setTaxCategory([$taxCategory]);
+
+        return $this;
+    }
+
+    /**
+     * Initializes a new tax information on document level
+     *
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function initDocumentTaxTotal(): UblDocumentBuilderXRechnung
+    {
+        $taxTotal = new TaxTotal();
+        $taxTotal->setTaxAmount(new TaxAmount(0.0));
+
+        $this->invoiceObject->setTaxTotal([$taxTotal]);
+
+        return $this;
+    }
+
+    /**
+     * Initializes a new vat breakdown by different categories, rates and exemption reasons
+     *
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function initDocumentTaxSubTotal(): UblDocumentBuilderXRechnung
+    {
+        if (!isset($this->invoiceObject->getTaxTotal()[0])) {
+            return $this;
+        }
+
+        $taxSubTotal = new TaxSubtotal();
+        $this->invoiceObject->getTaxTotal()[0]->addToTaxSubtotal($taxSubTotal);
+
+        return $this;
+    }
+
+    /**
+     * Sets tax amounts on document level.
+     * Before calling this method you need to call initDocumentTaxTotal and initDocumentTaxSubTotal
+     *
+     * @param float $taxableAmount
+     * Sum of all taxable amounts subject to a specific VAT category code and VAT category rate (if
+     * the VAT category rate is applicable). Must be rounded to maximum 2 decimals.
+     * __Example value__: 1945.00
+     * @param float $taxAmount
+     * The total VAT amount for a given VAT category. Must be rounded to maximum 2 decimals.
+     * __Example value__: 486.25
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function setDocumentTaxAmounts(float $taxableAmount, float $taxAmount): UblDocumentBuilderXRechnung
+    {
+        if (!isset($this->invoiceObject->getTaxTotal()[0])) {
+            return $this;
+        }
+
+        $taxSubTotalCount = count($this->invoiceObject->getTaxTotal()[0]->getTaxSubtotal());
+
+        if ($taxSubTotalCount <= 0) {
+            return $this;
+        }
+
+        $taxSubTotal = $this->invoiceObject->getTaxTotal()[0]->getTaxSubtotal()[$taxSubTotalCount - 1];
+        $taxSubTotal->setTaxableAmount(new TaxableAmount($taxableAmount))->getTaxableAmount()->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode());
+        $taxSubTotal->setTaxAmount(new TaxAmount($taxAmount))->getTaxAmount()->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode());
+
+        $taxAmountSum = $this->invoiceObject->getTaxTotal()[0]->getTaxAmount()->value();
+        $taxAmountSum += $taxAmount;
+        $this->invoiceObject->getTaxTotal()[0]->setTaxAmount(new TaxAmount($taxAmountSum))->getTaxAmount()->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode());
+
+        return $this;
+    }
+
+    /**
+     * Sets tax category and scheme on document level.
+     * Before calling this method you need to call initDocumentTaxTotal and initDocumentTaxSubTotal
+     *
+     * @param string $taxCategoryCode
+     * @param string $taxSchemeCode
+     * @param float|null $percent
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function setDocumentTaxScheme(string $taxCategoryCode, string $taxSchemeCode = "", ?float $percent = null): UblDocumentBuilderXRechnung
+    {
+        if (!isset($this->invoiceObject->getTaxTotal()[0])) {
+            return $this;
+        }
+
+        $taxSubTotalCount = count($this->invoiceObject->getTaxTotal()[0]->getTaxSubtotal());
+
+        if ($taxSubTotalCount <= 0) {
+            return $this;
+        }
+
+        $taxSubTotal = $this->invoiceObject->getTaxTotal()[0]->getTaxSubtotal()[$taxSubTotalCount - 1];
+
+        $taxScheme = new TaxScheme();
+        $taxScheme->setID(new ID(StringUtils::stringIsNullOrEmpty($taxSchemeCode) ? "VAT" : $taxSchemeCode));
+
+        $taxCategory = new TaxCategory();
+        $taxCategory->setTaxScheme($taxScheme);
+        $taxCategory->setID(new ID($taxCategoryCode));
+
+        if ($percent != null) {
+            $taxCategory->setPercent(new Percent($percent));
+        }
+
+        $taxSubTotal->setTaxCategory($taxCategory);
 
         return $this;
     }
