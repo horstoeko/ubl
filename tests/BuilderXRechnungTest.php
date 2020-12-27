@@ -1695,6 +1695,43 @@ class BuilderXRechnungTest extends TestCase
     }
 
     /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentSummation
+     */
+    public function testSetDocumentSummation(): void
+    {
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:LegalMonetaryTotal/cbc:LineExtensionAmount", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:LegalMonetaryTotal/cbc:PayableAmount", 0);
+
+        (self::$document)->setDocumentSummation(100.0, 200.0, 300.0, 400.0);
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:LegalMonetaryTotal/cbc:LineExtensionAmount", 0, "100.0", "currencyID", "EUR");
+        $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount", 0, "200.0", "currencyID", "EUR");
+        $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount", 0, "300.0", "currencyID", "EUR");
+        $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:LegalMonetaryTotal/cbc:PayableAmount", 0, "400.0", "currencyID", "EUR");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentSummationEnhanced
+     */
+    public function testSetDocumentSummationEnhanced(): void
+    {
+        (self::$document)->setDocumentSummationEnhanced(1000.0, 2000.0, 3000.0, 4000.0, 100.0, 200.0, 300.0);
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:LegalMonetaryTotal/cbc:LineExtensionAmount", 0, "1000.0", "currencyID", "EUR");
+        $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount", 0, "2000.0", "currencyID", "EUR");
+        $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount", 0, "3000.0", "currencyID", "EUR");
+        $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:LegalMonetaryTotal/cbc:PayableAmount", 0, "4000.0", "currencyID", "EUR");
+        $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:LegalMonetaryTotal/cbc:AllowanceTotalAmount", 0, "100.0", "currencyID", "EUR");
+        $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:LegalMonetaryTotal/cbc:ChargeTotalAmount", 0, "200.0", "currencyID", "EUR");
+        $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:LegalMonetaryTotal/cbc:PrepaidAmount", 0, "300.0", "currencyID", "EUR");
+    }
+
+    /**
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::writeFile
      */
     public function testWriteFile(): void

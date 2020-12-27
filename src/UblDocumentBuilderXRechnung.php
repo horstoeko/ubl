@@ -16,36 +16,49 @@ use horstoeko\ubl\entities\cbc\Line;
 use horstoeko\ubl\entities\cbc\Name;
 use horstoeko\ubl\entities\cbc\Note;
 use horstoeko\ubl\entities\cac\Party;
+use horstoeko\ubl\entities\cbc\Amount;
 use horstoeko\ubl\entities\cac\Address;
 use horstoeko\ubl\entities\cac\Contact;
 use horstoeko\ubl\entities\cac\Country;
+use horstoeko\ubl\entities\cbc\Percent;
 use horstoeko\ubl\entities\cac\Delivery;
+use horstoeko\ubl\entities\cac\TaxTotal;
 use horstoeko\ubl\entities\cbc\CityName;
 use horstoeko\stringmanagement\FileUtils;
 use horstoeko\ubl\entities\cac\PartyName;
 use horstoeko\ubl\entities\cac\TaxScheme;
 use horstoeko\ubl\entities\cbc\CompanyID;
+use horstoeko\ubl\entities\cbc\NetworkID;
 use horstoeko\ubl\entities\cbc\PaymentID;
+use horstoeko\ubl\entities\cbc\TaxAmount;
 use horstoeko\ubl\entities\cbc\Telephone;
 use horstoeko\ubl\entities\cac\Attachment;
 use horstoeko\ubl\entities\cac\PayeeParty;
+use horstoeko\ubl\entities\cbc\BaseAmount;
 use horstoeko\ubl\entities\cbc\EndpointID;
+use horstoeko\ubl\entities\cbc\HolderName;
 use horstoeko\ubl\entities\cbc\PostalZone;
 use horstoeko\ubl\entities\cbc\StreetName;
 use MimeTyper\Repository\MimeDbRepository;
 use horstoeko\stringmanagement\StringUtils;
 use horstoeko\ubl\entities\cac\AddressLine;
+use horstoeko\ubl\entities\cac\CardAccount;
+use horstoeko\ubl\entities\cac\TaxCategory;
+use horstoeko\ubl\entities\cac\TaxSubtotal;
 use horstoeko\ubl\entities\cac\PaymentMeans;
+use horstoeko\ubl\entities\cac\PaymentTerms;
 use horstoeko\ubl\entities\cbc\SalesOrderID;
 use horstoeko\ubl\entities\cac\DeliveryParty;
 use horstoeko\ubl\entities\cac\InvoicePeriod;
 use horstoeko\ubl\entities\cac\PostalAddress;
+use horstoeko\ubl\entities\cbc\TaxableAmount;
 use horstoeko\ubl\entities\cac\OrderReference;
 use horstoeko\ubl\entities\cac\PartyTaxScheme;
 use horstoeko\ubl\entities\cac\PaymentMandate;
 use horstoeko\ubl\entities\cbc\AccountingCost;
 use horstoeko\ubl\entities\cbc\BuyerReference;
 use horstoeko\ubl\entities\cbc\ElectronicMail;
+use horstoeko\ubl\entities\cac\AllowanceCharge;
 use horstoeko\ubl\entities\cbc\InvoiceTypeCode;
 use horstoeko\ubl\entities\cbc\TaxCurrencyCode;
 use horstoeko\ubl\entities\cac\BillingReference;
@@ -57,6 +70,7 @@ use horstoeko\ubl\entities\cbc\DocumentTypeCode;
 use horstoeko\ubl\entities\cbc\PaymentMeansCode;
 use horstoeko\ubl\entities\cbc\RegistrationName;
 use horstoeko\ubl\entities\cac\ExternalReference;
+use horstoeko\ubl\entities\cac\LegalMonetaryTotal;
 use horstoeko\ubl\entities\cbc\IdentificationCode;
 use horstoeko\ubl\entities\cac\PartyIdentification;
 use horstoeko\ubl\entities\cbc\DocumentDescription;
@@ -64,33 +78,27 @@ use horstoeko\ubl\entities\cbc\AdditionalStreetName;
 use horstoeko\ubl\entities\cbc\DocumentCurrencyCode;
 use horstoeko\ubl\entities\cac\PayeeFinancialAccount;
 use horstoeko\ubl\entities\cac\PayerFinancialAccount;
+use horstoeko\ubl\entities\cbc\AllowanceChargeReason;
 use horstoeko\ubl\entities\cac\TaxRepresentativeParty;
+use horstoeko\ubl\entities\cbc\PrimaryAccountNumberID;
 use horstoeko\ubl\entities\cac\AccountingCustomerParty;
 use horstoeko\ubl\entities\cac\AccountingSupplierParty;
 use horstoeko\ubl\entities\cac\InvoiceDocumentReference;
 use horstoeko\ubl\entities\cac\ReceiptDocumentReference;
 use horstoeko\ubl\entities\cac\ContractDocumentReference;
 use horstoeko\ubl\entities\cac\DespatchDocumentReference;
+use horstoeko\ubl\entities\cbc\AllowanceChargeReasonCode;
 use horstoeko\ubl\entities\cac\FinancialInstitutionBranch;
 use horstoeko\ubl\entities\cac\AdditionalDocumentReference;
-use horstoeko\ubl\entities\cac\AllowanceCharge;
-use horstoeko\ubl\entities\cac\CardAccount;
 use horstoeko\ubl\entities\cac\OriginatorDocumentReference;
-use horstoeko\ubl\entities\cac\PaymentTerms;
-use horstoeko\ubl\entities\cac\TaxCategory;
-use horstoeko\ubl\entities\cac\TaxSubtotal;
-use horstoeko\ubl\entities\cac\TaxTotal;
-use horstoeko\ubl\entities\cbc\AllowanceChargeReason;
-use horstoeko\ubl\entities\cbc\AllowanceChargeReasonCode;
-use horstoeko\ubl\entities\cbc\Amount;
-use horstoeko\ubl\entities\cbc\BaseAmount;
+use horstoeko\ubl\entities\cbc\AllowanceTotalAmount;
+use horstoeko\ubl\entities\cbc\ChargeTotalAmount;
 use horstoeko\ubl\entities\cbc\EmbeddedDocumentBinaryObject;
-use horstoeko\ubl\entities\cbc\HolderName;
-use horstoeko\ubl\entities\cbc\NetworkID;
-use horstoeko\ubl\entities\cbc\Percent;
-use horstoeko\ubl\entities\cbc\PrimaryAccountNumberID;
-use horstoeko\ubl\entities\cbc\TaxableAmount;
-use horstoeko\ubl\entities\cbc\TaxAmount;
+use horstoeko\ubl\entities\cbc\LineExtensionAmount;
+use horstoeko\ubl\entities\cbc\PayableAmount;
+use horstoeko\ubl\entities\cbc\PrepaidAmount;
+use horstoeko\ubl\entities\cbc\TaxExclusiveAmount;
+use horstoeko\ubl\entities\cbc\TaxInclusiveAmount;
 
 /**
  * Class representing the ubl invoice builder for XRechnung
@@ -1952,5 +1960,75 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
         $taxSubTotal->setTaxCategory($taxCategory);
 
         return $this;
+    }
+
+    /**
+     * Set the document summation basic/required information
+     *
+     * @param float $lineExtensionAmount
+     * Sum of all Invoice line net amounts in the Invoice. Must be rounded to maximum 2 decimals.
+     * __Example value__: 3800.0
+     * @param float $taxExclusiveAmount
+     * The total amount of the Invoice without VAT. Must be rounded to maximum 2 decimals.
+     * __Example value__: 3600.0
+     * @param float $taxInclusiveAmount
+     * The total amount of the Invoice with VAT. Must be rounded to maximum 2 decimals.
+     * __Example value__: 4500.0
+     * @param float $payableAmount
+     * The outstanding amount that is requested to be paid. Must be rounded to maximum 2 decimals.
+     * __Example value__: 3500.0
+     * @return void
+     */
+    public function setDocumentSummation(float $lineExtensionAmount, float $taxExclusiveAmount, float $taxInclusiveAmount, float $payableAmount)
+    {
+        $legalMonetaryTotal = new LegalMonetaryTotal();
+
+        $legalMonetaryTotal->setLineExtensionAmount(new LineExtensionAmount($lineExtensionAmount))->getLineExtensionAmount()->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode());
+        $legalMonetaryTotal->setTaxExclusiveAmount(new TaxExclusiveAmount($taxExclusiveAmount))->getTaxExclusiveAmount()->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode());
+        $legalMonetaryTotal->setTaxInclusiveAmount(new TaxInclusiveAmount($taxInclusiveAmount))->getTaxInclusiveAmount()->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode());
+        $legalMonetaryTotal->setPayableAmount(new PayableAmount($payableAmount))->getPayableAmount()->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode());
+
+        $this->invoiceObject->setLegalMonetaryTotal($legalMonetaryTotal);
+    }
+
+    /**
+     * Set the document complete summation information
+     *
+     * @param float $lineExtensionAmount
+     * Sum of all Invoice line net amounts in the Invoice. Must be rounded to maximum 2 decimals.
+     * __Example value__: 3800.0
+     * @param float $taxExclusiveAmount
+     * The total amount of the Invoice without VAT. Must be rounded to maximum 2 decimals.
+     * __Example value__: 3600.0
+     * @param float $taxInclusiveAmount
+     * The total amount of the Invoice with VAT. Must be rounded to maximum 2 decimals.
+     * __Example value__: 4500.0
+     * @param float $payableAmount
+     * The outstanding amount that is requested to be paid. Must be rounded to maximum 2 decimals.
+     * __Example value__: 3500.0
+     * @param float $allowanceTotalAmount
+     * Sum of all allowances on document level in the Invoice. Must be rounded to maximum 2 decimals.
+     * __Example value__: 200.0
+     * @param float $chargeTotalAmount
+     * Sum of all charges on document level in the Invoice. Must be rounded to maximum 2 decimals.
+     * __Example value__: 0.0
+     * @param float $prepaidAmount
+     * The sum of amounts which have been paid in advance. Must be rounded to maximum 2 decimals.
+     * __Example value__: 1000.0
+     * @return void
+     */
+    public function setDocumentSummationEnhanced(float $lineExtensionAmount, float $taxExclusiveAmount, float $taxInclusiveAmount, float $payableAmount, float $allowanceTotalAmount, float $chargeTotalAmount, float $prepaidAmount)
+    {
+        $legalMonetaryTotal = new LegalMonetaryTotal();
+
+        $legalMonetaryTotal->setLineExtensionAmount(new LineExtensionAmount($lineExtensionAmount))->getLineExtensionAmount()->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode());
+        $legalMonetaryTotal->setTaxExclusiveAmount(new TaxExclusiveAmount($taxExclusiveAmount))->getTaxExclusiveAmount()->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode());
+        $legalMonetaryTotal->setTaxInclusiveAmount(new TaxInclusiveAmount($taxInclusiveAmount))->getTaxInclusiveAmount()->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode());
+        $legalMonetaryTotal->setPayableAmount(new PayableAmount($payableAmount))->getPayableAmount()->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode());
+        $legalMonetaryTotal->setChargeTotalAmount(new ChargeTotalAmount($chargeTotalAmount))->getChargeTotalAmount()->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode());
+        $legalMonetaryTotal->setAllowanceTotalAmount(new AllowanceTotalAmount($allowanceTotalAmount))->getAllowanceTotalAmount()->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode());
+        $legalMonetaryTotal->setPrepaidAmount(new PrepaidAmount($prepaidAmount))->getPrepaidAmount()->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode());
+
+        $this->invoiceObject->setLegalMonetaryTotal($legalMonetaryTotal);
     }
 }
