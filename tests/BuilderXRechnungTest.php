@@ -1742,6 +1742,7 @@ class BuilderXRechnungTest extends TestCase
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionAllowanceChargeAmounts
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionItem
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::addDocumentPositionCommodityClassification
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionTaxScheme
      */
     public function testBeforeAddNewDocumentPosition(): void
     {
@@ -1802,6 +1803,12 @@ class BuilderXRechnungTest extends TestCase
 
         $this->disableRenderXmlContent();
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode", 0);
+
+        (self::$document)->setDocumentPositionTaxScheme("S", "VAT", 19.0);
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:ID", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:Percent", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cac:TaxScheme/cbc:ID", 0);
     }
 
     /**
@@ -2014,6 +2021,7 @@ class BuilderXRechnungTest extends TestCase
 
     /**
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::addDocumentPositionCommodityClassification
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionTaxScheme
      */
     public function testBeforeSetDocumentPositionItem(): void
     {
@@ -2021,6 +2029,12 @@ class BuilderXRechnungTest extends TestCase
 
         $this->disableRenderXmlContent();
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode", 0);
+
+        (self::$document)->setDocumentPositionTaxScheme("S", "VAT", 19.0);
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:ID", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:Percent", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cac:TaxScheme/cbc:ID", 0);
     }
 
     /**
@@ -2109,6 +2123,19 @@ class BuilderXRechnungTest extends TestCase
         $this->disableRenderXmlContent();
         $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode", 1, "classcode", "listID", "listid");
         $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode", 1, "classcode", "listVersionID", "listversionid");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionTaxScheme
+     */
+    public function testSetDocumentPositionTaxScheme(): void
+    {
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:ID", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:Percent", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cac:TaxScheme/cbc:ID", 0);
+
+        (self::$document)->setDocumentPositionTaxScheme("S", "VAT", 19.0);
     }
 
     /**

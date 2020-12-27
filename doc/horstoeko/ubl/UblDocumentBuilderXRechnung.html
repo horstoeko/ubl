@@ -907,6 +907,16 @@ Before calling this method you need to call initDocumentAllowanceCharge method</
                                             <p>Sets the position item classification identifier(s)</p>                </div>
                 <div class="col-md-2"></div>
             </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setDocumentPositionTaxScheme">setDocumentPositionTaxScheme</a>(string $taxCategoryCode, string $taxSchemeCode = &quot;&quot;, float|null $percent = null)
+        
+                                            <p>Set document position vat information</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
             </div>
 
 
@@ -4593,6 +4603,59 @@ in more detail than the Item name.
                 <td>string</td>
                 <td>$listVersionId</td>
                 <td>The (optional) identification scheme version identifier of the Item classification identifier</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setDocumentPositionTaxScheme">
+        <div class="location">at         line 2481</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
+    <strong>setDocumentPositionTaxScheme</strong>(string $taxCategoryCode, string $taxSchemeCode = &quot;&quot;, float|null $percent = null)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Set document position vat information</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$taxCategoryCode</td>
+                <td>The VAT category code for the invoiced item
+<strong>Example value</strong>: S</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$taxSchemeCode</td>
+                <td>Mandatory element. Use “VAT”
+<strong>Default value</strong>: VAT</td>
+            </tr>
+                    <tr>
+                <td>float|null</td>
+                <td>$percent</td>
+                <td>The VAT rate, represented as percentage that applies to the invoiced item
+<strong>Example value</strong>: 19</td>
             </tr>
             </table>
 

@@ -2463,4 +2463,53 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
 
         return $this;
     }
+
+    /**
+     * Set document position vat information
+     *
+     * @param string $taxCategoryCode
+     * The VAT category code for the invoiced item
+     * __Example value__: S
+     * @param string $taxSchemeCode
+     * Mandatory element. Use “VAT”
+     * __Default value__: VAT
+     * @param float|null $percent
+     * The VAT rate, represented as percentage that applies to the invoiced item
+     * __Example value__: 19
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function setDocumentPositionTaxScheme(string $taxCategoryCode, string $taxSchemeCode = "", ?float $percent = null): UblDocumentBuilderXRechnung
+    {
+        if (StringUtils::stringIsNullOrEmpty($taxCategoryCode)) {
+            return $this;
+        }
+
+        $invoiceLineCount = count($this->invoiceObject->getInvoiceLine());
+
+        if ($invoiceLineCount <= 0) {
+            return $this;
+        }
+
+        $invoiceLine = $this->invoiceObject->getInvoiceLine()[$invoiceLineCount - 1];
+
+        if ($invoiceLine->getItem() == null) {
+            return $this;
+        }
+
+        $taxScheme = new TaxScheme();
+        $taxScheme->setID(new ID(StringUtils::stringIsNullOrEmpty($taxSchemeCode) ? "VAT" : $taxSchemeCode));
+
+        $taxCategory = new TaxCategory();
+        $taxCategory->setTaxScheme($taxScheme);
+        $taxCategory->setID(new ID($taxCategoryCode));
+
+        if ($percent != null) {
+            $taxCategory->setPercent(new Percent($percent));
+        }
+
+        $item = $invoiceLine->getItem();
+        $item->setClassifiedTaxCategory([$taxCategory]);
+
+        return $this;
+    }
 }
