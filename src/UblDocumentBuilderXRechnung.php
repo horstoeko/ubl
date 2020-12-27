@@ -2143,4 +2143,42 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
 
         return $this;
     }
+
+    /**
+     * Sets the delivery or invoice period
+     *
+     * @param  DateTime|null $startDate
+     * The date when the Invoice period for this Invoice line starts.
+     * __Example value__: 2017-10-05
+     * @param  DateTime|null $endDate
+     * The date when the Invoice period for this Invoice line ends.
+     * __Example value__: 2017-10-15
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function setDocumentPositionInvoicePeriod(?DateTime $startDate = null, ?DateTime $endDate = null): UblDocumentBuilderXRechnung
+    {
+        if (is_null($startDate) && is_null($endDate)) {
+            return $this;
+        }
+
+        $invoiceLineCount = count($this->invoiceObject->getInvoiceLine());
+
+        if ($invoiceLineCount <= 0) {
+            return $this;
+        }
+
+        $invoicePeriod = $this->invoiceObject->setInvoicePeriod([new InvoicePeriod])->getInvoicePeriod()[0];
+
+        if (!is_null($startDate)) {
+            $invoicePeriod->setStartDate($startDate);
+        }
+        if (!is_null($endDate)) {
+            $invoicePeriod->setEndDate($endDate);
+        }
+
+        $invoiceLine = $this->invoiceObject->getInvoiceLine()[$invoiceLineCount - 1];
+        $invoiceLine->setInvoicePeriod([$invoicePeriod]);
+
+        return $this;
+    }
 }

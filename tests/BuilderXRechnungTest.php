@@ -1735,6 +1735,7 @@ class BuilderXRechnungTest extends TestCase
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionNote
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionQuantity
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionTotalAmount
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionInvoicePeriod
      */
     public function testBeforeAddNewDocumentPosition(): void
     {
@@ -1756,6 +1757,12 @@ class BuilderXRechnungTest extends TestCase
 
         $this->disableRenderXmlContent();
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cbc:LineExtensionAmount", 0);
+
+        (self::$document)->setDocumentPositionInvoicePeriod(DateTime::createFromFormat("Ymd", "20200101"), DateTime::createFromFormat("Ymd", "20200131"));
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:InvoicePeriod/cbc:StartDate", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:InvoicePeriod/cbc:EndDate", 0);
     }
 
     /**
@@ -1820,6 +1827,40 @@ class BuilderXRechnungTest extends TestCase
 
         $this->disableRenderXmlContent();
         $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:InvoiceLine/cbc:LineExtensionAmount", 0, "100.0", "currencyID", "EUR");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionInvoicePeriod
+     */
+    public function testSetDocumentPositionInvoicePeriod(): void
+    {
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:InvoicePeriod/cbc:StartDate", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:InvoicePeriod/cbc:EndDate", 0);
+
+        (self::$document)->setDocumentPositionInvoicePeriod();
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:InvoicePeriod/cbc:StartDate", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:InvoicePeriod/cbc:EndDate", 0);
+
+        (self::$document)->setDocumentPositionInvoicePeriod(DateTime::createFromFormat("Ymd", "20200101"));
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:InvoicePeriod/cbc:StartDate", 0, "2020-01-01");
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:InvoicePeriod/cbc:EndDate", 0);
+
+        (self::$document)->setDocumentPositionInvoicePeriod(null, DateTime::createFromFormat("Ymd", "20200131"));
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:InvoicePeriod/cbc:StartDate", 0);
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:InvoicePeriod/cbc:EndDate", 0, "2020-01-31");
+
+        (self::$document)->setDocumentPositionInvoicePeriod(DateTime::createFromFormat("Ymd", "20200101"), DateTime::createFromFormat("Ymd", "20200131"));
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:InvoicePeriod/cbc:StartDate", 0, "2020-01-01");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:InvoicePeriod/cbc:EndDate", 0, "2020-01-31");
     }
 
     /**
