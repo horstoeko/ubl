@@ -17,6 +17,7 @@ use horstoeko\ubl\entities\cbc\Line;
 use horstoeko\ubl\entities\cbc\Name;
 use horstoeko\ubl\entities\cbc\Note;
 use horstoeko\ubl\entities\cac\Party;
+use horstoeko\ubl\entities\cbc\Value;
 use horstoeko\ubl\entities\cbc\Amount;
 use horstoeko\ubl\entities\cbc\LineID;
 use horstoeko\ubl\entities\cac\Address;
@@ -90,10 +91,13 @@ use horstoeko\ubl\entities\cbc\LineExtensionAmount;
 use horstoeko\ubl\entities\cbc\AdditionalStreetName;
 use horstoeko\ubl\entities\cbc\AllowanceTotalAmount;
 use horstoeko\ubl\entities\cbc\DocumentCurrencyCode;
+use horstoeko\ubl\entities\cac\ClassifiedTaxCategory;
 use horstoeko\ubl\entities\cac\PayeeFinancialAccount;
 use horstoeko\ubl\entities\cac\PayerFinancialAccount;
 use horstoeko\ubl\entities\cbc\AllowanceChargeReason;
+use horstoeko\ubl\entities\cac\AdditionalItemProperty;
 use horstoeko\ubl\entities\cac\TaxRepresentativeParty;
+use horstoeko\ubl\entities\cbc\ItemClassificationCode;
 use horstoeko\ubl\entities\cbc\PrimaryAccountNumberID;
 use horstoeko\ubl\entities\cac\AccountingCustomerParty;
 use horstoeko\ubl\entities\cac\AccountingSupplierParty;
@@ -108,10 +112,11 @@ use horstoeko\ubl\entities\cbc\AllowanceChargeReasonCode;
 use horstoeko\ubl\entities\cac\FinancialInstitutionBranch;
 use horstoeko\ubl\entities\cac\StandardItemIdentification;
 use horstoeko\ubl\entities\cac\AdditionalDocumentReference;
-use horstoeko\ubl\entities\cac\ClassifiedTaxCategory;
 use horstoeko\ubl\entities\cac\OriginatorDocumentReference;
+use horstoeko\ubl\entities\cac\Price;
+use horstoeko\ubl\entities\cbc\BaseQuantity;
 use horstoeko\ubl\entities\cbc\EmbeddedDocumentBinaryObject;
-use horstoeko\ubl\entities\cbc\ItemClassificationCode;
+use horstoeko\ubl\entities\cbc\PriceAmount;
 
 /**
  * Class representing the ubl invoice builder for XRechnung
@@ -2468,6 +2473,10 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Set document position vat information
      *
+     * __Note:__ You have to call addNewDocumentPosition before you can use this method
+     *
+     * __Note:__ You have to call setDocumentPositionItem before you can use this method
+     *
      * @param string $taxCategoryCode
      * The VAT category code for the invoiced item
      * __Example value__: S
@@ -2510,6 +2519,93 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
 
         $item = $invoiceLine->getItem();
         $item->setClassifiedTaxCategory([$taxCategory]);
+
+        return $this;
+    }
+
+    /**
+     * Adds additional item properties to the document position
+     *
+     * __Note:__ You have to call addNewDocumentPosition before you can use this method
+     *
+     * __Note:__ You have to call setDocumentPositionItem before you can use this method
+     *
+     * @param string $name
+     * @param string $value
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function addDocumentPositionItemProperty(string $name, string $value): UblDocumentBuilderXRechnung
+    {
+        if (StringUtils::stringIsNullOrEmpty($name) || StringUtils::stringIsNullOrEmpty($value)) {
+            return $this;
+        }
+
+        $invoiceLineCount = count($this->invoiceObject->getInvoiceLine());
+
+        if ($invoiceLineCount <= 0) {
+            return $this;
+        }
+
+        $invoiceLine = $this->invoiceObject->getInvoiceLine()[$invoiceLineCount - 1];
+
+        if ($invoiceLine->getItem() == null) {
+            return $this;
+        }
+
+        $itemProperty = new AdditionalItemProperty();
+        $itemProperty->setName(new Name($name));
+        $itemProperty->setValue(new Value($value));
+
+        $item = $invoiceLine->getItem();
+        $item->addToAdditionalItemProperty($itemProperty);
+
+        return $this;
+    }
+
+    /**
+     * Sets the document position price information
+     *
+     * __Note:__ You have to call addNewDocumentPosition before you can use this method
+     *
+     * @param float $priceAmount
+     * The price of an item, exclusive of VAT, after subtracting item price discount. The Item net price
+     * has to be equal with the Item gross price less the Item price discount, if they are both provided.
+     * Item price can not be negative
+     * __Example value__: 23.45
+     * @param float|null $baseQuantity
+     * The number of item units to which the price applies
+     * __Example value__: 1
+     * @param string|null $baseQuantityUnitCode
+     * The unit of measure that applies to the Item price base quantity, must be the same as the unit code
+     * of the Invoiced/credited quantity. Codes for unit of packaging from UNECE Recommendation No. 21 can
+     * be used in accordance with the descriptions in the "Intro" section of UN/ECE Recommendation 20,
+     * Revision 11 (2015): The 2 character alphanumeric code values in UNECE Recommendation 21 shall be used.
+     * To avoid duplication with existing code values in UNECE Recommendation No. 20, each code value from
+     * UNECE Recommendation 21 shall be prefixed with an “X”, resulting in a 3 alphanumeric code when used
+     * as a unit of measure
+     * __Example value__: C62
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function setDocumentPositionPrice(float $priceAmount, ?float $baseQuantity = null, ?string $baseQuantityUnitCode = null): UblDocumentBuilderXRechnung
+    {
+        $invoiceLineCount = count($this->invoiceObject->getInvoiceLine());
+
+        if ($invoiceLineCount <= 0) {
+            return $this;
+        }
+
+        $invoiceLine = $this->invoiceObject->getInvoiceLine()[$invoiceLineCount - 1];
+
+        $itemPrice = new Price();
+        $itemPrice->setPriceAmount(new PriceAmount($priceAmount));
+        $itemPrice->getPriceAmount()->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode());
+
+        if ($baseQuantity != null && !StringUtils::stringIsNullOrEmpty($baseQuantityUnitCode)) {
+            $itemPrice->setBaseQuantity(new BaseQuantity($baseQuantity));
+            $itemPrice->getBaseQuantity()->setUnitCode($baseQuantityUnitCode);
+        }
+
+        $invoiceLine->setPrice($itemPrice);
 
         return $this;
     }

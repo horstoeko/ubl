@@ -1743,6 +1743,7 @@ class BuilderXRechnungTest extends TestCase
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionItem
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::addDocumentPositionCommodityClassification
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionTaxScheme
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::addDocumentPositionItemProperty
      */
     public function testBeforeAddNewDocumentPosition(): void
     {
@@ -1809,6 +1810,15 @@ class BuilderXRechnungTest extends TestCase
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:ID", 0);
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:Percent", 0);
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cac:TaxScheme/cbc:ID", 0);
+
+        (self::$document)->addDocumentPositionItemProperty("prop1", "value1");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Name", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Value", 0);
+
+        (self::$document)->setDocumentPositionPrice(10.0, 1, "C62");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount", 0);
     }
 
     /**
@@ -2022,6 +2032,7 @@ class BuilderXRechnungTest extends TestCase
     /**
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::addDocumentPositionCommodityClassification
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionTaxScheme
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::addDocumentPositionItemProperty
      */
     public function testBeforeSetDocumentPositionItem(): void
     {
@@ -2035,6 +2046,11 @@ class BuilderXRechnungTest extends TestCase
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:ID", 0);
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:Percent", 0);
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cac:TaxScheme/cbc:ID", 0);
+
+        (self::$document)->addDocumentPositionItemProperty("prop1", "value1");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Name", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Value", 0);
     }
 
     /**
@@ -2148,6 +2164,58 @@ class BuilderXRechnungTest extends TestCase
         $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:ID", 0, "S");
         $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:Percent", 0, "19.0");
         $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cac:TaxScheme/cbc:ID", 0, "VAT");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::addDocumentPositionItemProperty
+     */
+    public function testAddDocumentPositionItemProperty(): void
+    {
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Name", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Value", 0);
+
+        (self::$document)->addDocumentPositionItemProperty("prop1", "value1");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Name", 0, "prop1");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Value", 0, "value1");
+
+        (self::$document)->addDocumentPositionItemProperty("prop2", "value2");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Name", 0, "prop1");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Value", 0, "value1");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Name", 1, "prop2");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Value", 1, "value2");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionPrice
+     */
+    public function testSetDocumentPositionPrice(): void
+    {
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Price/cbc:BaseQuantity", 0);
+
+        (self::$document)->setDocumentPositionPrice(10.0);
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount", 0, "10.0", "currencyID", "EUR");
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Price/cbc:BaseQuantity", 0);
+
+        (self::$document)->setDocumentPositionPrice(10.0, 1);
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount", 0, "10.0", "currencyID", "EUR");
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Price/cbc:BaseQuantity", 0);
+
+        (self::$document)->setDocumentPositionPrice(10.0, 1, "C62");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount", 0, "10.0", "currencyID", "EUR");
+        $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:InvoiceLine/cac:Price/cbc:BaseQuantity", 0, "1.0", "unitCode", "C62");
     }
 
     /**
