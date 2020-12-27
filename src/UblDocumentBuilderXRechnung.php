@@ -90,10 +90,12 @@ use horstoeko\ubl\entities\cac\DespatchDocumentReference;
 use horstoeko\ubl\entities\cbc\AllowanceChargeReasonCode;
 use horstoeko\ubl\entities\cac\FinancialInstitutionBranch;
 use horstoeko\ubl\entities\cac\AdditionalDocumentReference;
+use horstoeko\ubl\entities\cac\InvoiceLine;
 use horstoeko\ubl\entities\cac\OriginatorDocumentReference;
 use horstoeko\ubl\entities\cbc\AllowanceTotalAmount;
 use horstoeko\ubl\entities\cbc\ChargeTotalAmount;
 use horstoeko\ubl\entities\cbc\EmbeddedDocumentBinaryObject;
+use horstoeko\ubl\entities\cbc\InvoicedQuantity;
 use horstoeko\ubl\entities\cbc\LineExtensionAmount;
 use horstoeko\ubl\entities\cbc\PayableAmount;
 use horstoeko\ubl\entities\cbc\PrepaidAmount;
@@ -1977,9 +1979,9 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
      * @param float $payableAmount
      * The outstanding amount that is requested to be paid. Must be rounded to maximum 2 decimals.
      * __Example value__: 3500.0
-     * @return void
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentSummation(float $lineExtensionAmount, float $taxExclusiveAmount, float $taxInclusiveAmount, float $payableAmount)
+    public function setDocumentSummation(float $lineExtensionAmount, float $taxExclusiveAmount, float $taxInclusiveAmount, float $payableAmount): UblDocumentBuilderXRechnung
     {
         $legalMonetaryTotal = new LegalMonetaryTotal();
 
@@ -1989,6 +1991,8 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
         $legalMonetaryTotal->setPayableAmount(new PayableAmount($payableAmount))->getPayableAmount()->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode());
 
         $this->invoiceObject->setLegalMonetaryTotal($legalMonetaryTotal);
+
+        return $this;
     }
 
     /**
@@ -2015,9 +2019,9 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
      * @param float $prepaidAmount
      * The sum of amounts which have been paid in advance. Must be rounded to maximum 2 decimals.
      * __Example value__: 1000.0
-     * @return void
+     * @return UblDocumentBuilderXRechnung
      */
-    public function setDocumentSummationEnhanced(float $lineExtensionAmount, float $taxExclusiveAmount, float $taxInclusiveAmount, float $payableAmount, float $allowanceTotalAmount, float $chargeTotalAmount, float $prepaidAmount)
+    public function setDocumentSummationEnhanced(float $lineExtensionAmount, float $taxExclusiveAmount, float $taxInclusiveAmount, float $payableAmount, float $allowanceTotalAmount, float $chargeTotalAmount, float $prepaidAmount): UblDocumentBuilderXRechnung
     {
         $legalMonetaryTotal = new LegalMonetaryTotal();
 
@@ -2030,5 +2034,87 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
         $legalMonetaryTotal->setPrepaidAmount(new PrepaidAmount($prepaidAmount))->getPrepaidAmount()->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode());
 
         $this->invoiceObject->setLegalMonetaryTotal($legalMonetaryTotal);
+
+        return $this;
+    }
+
+    /**
+     * Initializes a new invoice line
+     *
+     * @param string $lineId
+     * A unique identifier for the individual line within the Invoice.
+     * __Example value__: 12
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function addNewDocumentPosition(string $lineId): UblDocumentBuilderXRechnung
+    {
+        $invoiceLine = new InvoiceLine();
+        $invoiceLine->setID(new ID($lineId));
+
+        $this->invoiceObject->addToInvoiceLine($invoiceLine);
+
+        return $this;
+    }
+
+    /**
+     * Set note on the latest created document position.
+     * __Note:__ You have to call addNewDocumentPosition before you can use this method
+     *
+     * @param string $note
+     * A textual note that gives unstructured information that is relevant to the Invoice line.
+     * __Example value__: New article number 12345
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function setDocumentPositionNote(string $note): UblDocumentBuilderXRechnung
+    {
+        $invoiceLineCount = count($this->invoiceObject->getInvoiceLine());
+
+        if ($invoiceLineCount <= 0) {
+            return $this;
+        }
+
+        $note = new Note($note);
+
+        $invoiceLine = $this->invoiceObject->getInvoiceLine()[$invoiceLineCount - 1];
+        $invoiceLine->setNote([$note]);
+
+        return $this;
+    }
+
+    /**
+     * Set the invoiced quantity in the latest created document position
+     * __Note:__ You have to call addNewDocumentPosition before you can use this method
+     *
+     * @param float $quantity
+     * The quantity of items (goods or services) that is charged in the Invoice line.
+     * __Example value__: 100
+     * @param string $unitCode
+     * The unit of measure that applies to the invoiced quantity. Codes for unit of packaging from UNECE Recommendation
+     * No. 21 can be used in accordance with the descriptions in the "Intro" section of UN/ECE Recommendation 20,
+     * Revision 11 (2015): The 2 character alphanumeric code values in UNECE Recommendation 21 shall be used. To avoid
+     * duplication with existing code values in UNECE Recommendation No. 20, each code value from UNECE Recommendation 21
+     * shall be prefixed with an “X”, resulting in a 3 alphanumeric code when used as a unit of measure.
+     * __Example value__: C62
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function setDocumentPositionQuantity(float $quantity, string $unitCode): UblDocumentBuilderXRechnung
+    {
+        if (StringUtils::stringIsNullOrEmpty($unitCode)) {
+            return $this;
+        }
+
+        $invoiceLineCount = count($this->invoiceObject->getInvoiceLine());
+
+        if ($invoiceLineCount <= 0) {
+            return $this;
+        }
+
+        $invoicedQuantity = new InvoicedQuantity($quantity);
+        $invoicedQuantity->setUnitCode($unitCode);
+
+        $invoiceLine = $this->invoiceObject->getInvoiceLine()[$invoiceLineCount - 1];
+        $invoiceLine->setInvoicedQuantity($invoicedQuantity);
+
+        return $this;
     }
 }
