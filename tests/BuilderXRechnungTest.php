@@ -2176,6 +2176,21 @@ class BuilderXRechnungTest extends TestCase
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Name", 0);
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Value", 0);
 
+        (self::$document)->addDocumentPositionItemProperty("", "");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Name", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Value", 0);
+
+        (self::$document)->addDocumentPositionItemProperty("prop1", "");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Name", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Value", 0);
+
+        (self::$document)->addDocumentPositionItemProperty("", "value1");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Name", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Value", 0);
+
         (self::$document)->addDocumentPositionItemProperty("prop1", "value1");
 
         $this->disableRenderXmlContent();
