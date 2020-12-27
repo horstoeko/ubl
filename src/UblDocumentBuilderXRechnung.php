@@ -1868,6 +1868,18 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     }
 
     /**
+     * Removes the tax information from document completly
+     *
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function clearDocumentTaxTotal(): UblDocumentBuilderXRechnung
+    {
+        $this->invoiceObject->setTaxTotal([]);
+
+        return $this;
+    }
+
+    /**
      * Sets tax amounts on document level.
      * Before calling this method you need to call initDocumentTaxTotal and initDocumentTaxSubTotal
      *
