@@ -2117,4 +2117,30 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
 
         return $this;
     }
+
+    /**
+     * Sets the invoice line net amount
+     * __Note:__ You have to call addNewDocumentPosition before you can use this method
+     *
+     * @param float $totalAmount
+     * The total amount of the Invoice line. The amount is “net” without VAT, i.e. inclusive of line level
+     * allowances and charges as well as other relevant taxes. Must be rounded to maximum 2 decimals.
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function setDocumentPositionTotalAmount(float $totalAmount): UblDocumentBuilderXRechnung
+    {
+        $invoiceLineCount = count($this->invoiceObject->getInvoiceLine());
+
+        if ($invoiceLineCount <= 0) {
+            return $this;
+        }
+
+        $lineExtensionAmount = new LineExtensionAmount($totalAmount);
+        $lineExtensionAmount->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode());
+
+        $invoiceLine = $this->invoiceObject->getInvoiceLine()[$invoiceLineCount - 1];
+        $invoiceLine->setLineExtensionAmount($lineExtensionAmount);
+
+        return $this;
+    }
 }

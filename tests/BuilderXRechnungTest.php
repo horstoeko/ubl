@@ -1733,6 +1733,7 @@ class BuilderXRechnungTest extends TestCase
 
     /**
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionNote
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionQuantity
      */
     public function testBeforeAddNewDocumentPosition(): void
     {
@@ -1749,6 +1750,11 @@ class BuilderXRechnungTest extends TestCase
 
         $this->disableRenderXmlContent();
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cbc:InvoicedQuantity", 0);
+
+        (self::$document)->setDocumentPositionTotalAmount(100.0);
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cbc:LineExtensionAmount", 0);
     }
 
     /**
@@ -1788,18 +1794,31 @@ class BuilderXRechnungTest extends TestCase
     public function testSetDocumentPositionQuantity(): void
     {
         $this->disableRenderXmlContent();
-        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cbc:ID", 0, "1");
-        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cbc:InvoicedQuantity", 1);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cbc:InvoicedQuantity", 0);
 
         (self::$document)->setDocumentPositionQuantity(10, "");
 
         $this->disableRenderXmlContent();
-        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cbc:InvoicedQuantity", 1);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cbc:InvoicedQuantity", 0);
 
         (self::$document)->setDocumentPositionQuantity(10, "C62");
 
         $this->disableRenderXmlContent();
         $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:InvoiceLine/cbc:InvoicedQuantity", 0, "10.0", "unitCode", "C62");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionTotalAmount
+     */
+    public function testSetDocumentPositionTotalAmount(): void
+    {
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cbc:LineExtensionAmount", 0);
+
+        (self::$document)->setDocumentPositionTotalAmount(100.0);
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:InvoiceLine/cbc:LineExtensionAmount", 0, "100.0", "currencyID", "EUR");
     }
 
     /**
