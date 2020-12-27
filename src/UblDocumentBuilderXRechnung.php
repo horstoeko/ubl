@@ -48,6 +48,7 @@ use horstoeko\ubl\entities\cac\CardAccount;
 use horstoeko\ubl\entities\cac\InvoiceLine;
 use horstoeko\ubl\entities\cac\TaxCategory;
 use horstoeko\ubl\entities\cac\TaxSubtotal;
+use horstoeko\ubl\entities\cbc\Description;
 use horstoeko\ubl\entities\cac\PaymentMeans;
 use horstoeko\ubl\entities\cac\PaymentTerms;
 use horstoeko\ubl\entities\cbc\SalesOrderID;
@@ -96,19 +97,20 @@ use horstoeko\ubl\entities\cac\TaxRepresentativeParty;
 use horstoeko\ubl\entities\cbc\PrimaryAccountNumberID;
 use horstoeko\ubl\entities\cac\AccountingCustomerParty;
 use horstoeko\ubl\entities\cac\AccountingSupplierParty;
+use horstoeko\ubl\entities\cac\CommodityClassification;
+use horstoeko\ubl\entities\cac\BuyersItemIdentification;
 use horstoeko\ubl\entities\cac\InvoiceDocumentReference;
 use horstoeko\ubl\entities\cac\ReceiptDocumentReference;
 use horstoeko\ubl\entities\cac\ContractDocumentReference;
 use horstoeko\ubl\entities\cac\DespatchDocumentReference;
+use horstoeko\ubl\entities\cac\SellersItemIdentification;
 use horstoeko\ubl\entities\cbc\AllowanceChargeReasonCode;
 use horstoeko\ubl\entities\cac\FinancialInstitutionBranch;
-use horstoeko\ubl\entities\cac\AdditionalDocumentReference;
-use horstoeko\ubl\entities\cac\BuyersItemIdentification;
-use horstoeko\ubl\entities\cac\OriginatorDocumentReference;
-use horstoeko\ubl\entities\cac\SellersItemIdentification;
 use horstoeko\ubl\entities\cac\StandardItemIdentification;
-use horstoeko\ubl\entities\cbc\Description;
+use horstoeko\ubl\entities\cac\AdditionalDocumentReference;
+use horstoeko\ubl\entities\cac\OriginatorDocumentReference;
 use horstoeko\ubl\entities\cbc\EmbeddedDocumentBinaryObject;
+use horstoeko\ubl\entities\cbc\ItemClassificationCode;
 
 /**
  * Class representing the ubl invoice builder for XRechnung
@@ -2351,7 +2353,6 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
     /**
      * Sets the position item information
      * __Note:__ You have to call addNewDocumentPosition before you can use this method
-     * __Note:__ You have to call initDocumentPositionAllowanceCharge before you can use this method
      *
      * @param string $name
      * A name for an item.
@@ -2409,8 +2410,56 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
         }
 
         $invoiceLine = $this->invoiceObject->getInvoiceLine()[$invoiceLineCount - 1];
-
         $invoiceLine->setItem($item);
+
+        return $this;
+    }
+
+    /**
+     * Sets the position item classification identifier(s)
+     *
+     * __Note:__ You have to call addNewDocumentPosition before you can use this method
+     *
+     * __Note:__ You have to call setDocumentPositionItem before you can use this method
+     *
+     * @param string $itemClassificationCode
+     * A code for classifying the item by its type or nature.
+     * __Example value__: 9873242
+     * @param string $listId
+     * The identification scheme identifier of the Item classification identifier
+     * __Example value__: STI
+     * @param string $listVersionId
+     * The (optional) identification scheme version identifier of the Item classification identifier
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function addDocumentPositionCommodityClassification(string $itemClassificationCode, string $listId, string $listVersionId = ""): UblDocumentBuilderXRechnung
+    {
+        if (StringUtils::stringIsNullOrEmpty($itemClassificationCode) || StringUtils::stringIsNullOrEmpty($listId)) {
+            return $this;
+        }
+
+        $invoiceLineCount = count($this->invoiceObject->getInvoiceLine());
+
+        if ($invoiceLineCount <= 0) {
+            return $this;
+        }
+
+        $invoiceLine = $this->invoiceObject->getInvoiceLine()[$invoiceLineCount - 1];
+
+        if ($invoiceLine->getItem() == null) {
+            return $this;
+        }
+
+        $commodityClassification = new CommodityClassification();
+        $commodityClassification->setItemClassificationCode(new ItemClassificationCode($itemClassificationCode));
+        $commodityClassification->getItemClassificationCode()->setListID($listId);
+
+        if (!StringUtils::stringIsNullOrEmpty($listVersionId)) {
+            $commodityClassification->getItemClassificationCode()->setListVersionID($listVersionId);
+        }
+
+        $item = $invoiceLine->getItem();
+        $item->addToCommodityClassification($commodityClassification);
 
         return $this;
     }

@@ -1741,6 +1741,7 @@ class BuilderXRechnungTest extends TestCase
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::initDocumentPositionAllowanceCharge
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionAllowanceChargeAmounts
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionItem
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::addDocumentPositionCommodityClassification
      */
     public function testBeforeAddNewDocumentPosition(): void
     {
@@ -1796,6 +1797,11 @@ class BuilderXRechnungTest extends TestCase
 
         $this->disableRenderXmlContent();
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cbc:Name", 0);
+
+        (self::$document)->addDocumentPositionCommodityClassification("classcode", "listid", "listversionid");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode", 0);
     }
 
     /**
@@ -2007,6 +2013,17 @@ class BuilderXRechnungTest extends TestCase
     }
 
     /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::addDocumentPositionCommodityClassification
+     */
+    public function testBeforeSetDocumentPositionItem(): void
+    {
+        (self::$document)->addDocumentPositionCommodityClassification("classcode", "listid", "listversionid");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode", 0);
+    }
+
+    /**
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionItem
      */
     public function testSetDocumentPositionItem(): void
@@ -2062,6 +2079,36 @@ class BuilderXRechnungTest extends TestCase
         $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:BuyersItemIdentification/cbc:ID", 0, "buyerid");
         $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:SellersItemIdentification/cbc:ID", 0, "sellerid");
         $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:StandardItemIdentification/cbc:ID", 0, "10986700", "schemeID", "0160");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::addDocumentPositionCommodityClassification
+     */
+    public function testAddDocumentPositionCommodityClassification(): void
+    {
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode", 0);
+
+        (self::$document)->addDocumentPositionCommodityClassification("", "");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode", 0);
+
+        (self::$document)->addDocumentPositionCommodityClassification("classcode", "");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode", 0);
+
+        (self::$document)->addDocumentPositionCommodityClassification("classcode", "listid", "");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode", 0, "classcode", "listID", "listid");
+
+        (self::$document)->addDocumentPositionCommodityClassification("classcode", "listid", "listversionid");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode", 1, "classcode", "listID", "listid");
+        $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode", 1, "classcode", "listVersionID", "listversionid");
     }
 
     /**
