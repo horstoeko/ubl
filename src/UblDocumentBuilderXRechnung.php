@@ -100,6 +100,7 @@ use horstoeko\ubl\entities\cac\DespatchDocumentReference;
 use horstoeko\ubl\entities\cbc\AllowanceChargeReasonCode;
 use horstoeko\ubl\entities\cac\FinancialInstitutionBranch;
 use horstoeko\ubl\entities\cac\AdditionalDocumentReference;
+use horstoeko\ubl\entities\cac\DocumentReference;
 use horstoeko\ubl\entities\cac\OriginatorDocumentReference;
 use horstoeko\ubl\entities\cbc\EmbeddedDocumentBinaryObject;
 use horstoeko\ubl\entities\cbc\LineID;
@@ -2207,6 +2208,51 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
 
         $invoiceLine = $this->invoiceObject->getInvoiceLine()[$invoiceLineCount - 1];
         $invoiceLine->setOrderLineReference([$orderLineReference]);
+
+        return $this;
+    }
+
+    /**
+     * Set invoice line object identifier
+     * __Note:__ You have to call addNewDocumentPosition before you can use this method
+     *
+     * @param string $id
+     * An identifier for an object on which the invoice line is based, given by the Seller.
+     * __Example value__: AB12345
+     * @param string $idSchemeid
+     * The identification scheme identifier of the Invoice line object identifier.
+     * __Example value__: ABZ
+     * @param string $documentTypeCode
+     * Code "130" MUST be used to indicate an invoice object reference. Not used for other additional documents
+     * __Default value__: 130
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function setDocumentPositionDocumentReference(string $id, string $idSchemeid, string $documentTypeCode = "130"): UblDocumentBuilderXRechnung
+    {
+        if (StringUtils::stringIsNullOrEmpty($id)) {
+            return $this;
+        }
+
+        if ($documentTypeCode != "130") {
+            return $this;
+        }
+
+        $invoiceLineCount = count($this->invoiceObject->getInvoiceLine());
+
+        if ($invoiceLineCount <= 0) {
+            return $this;
+        }
+
+        $documentReference = new DocumentReference();
+        $documentReference->setID(new ID($id));
+        $documentReference->setDocumentTypeCode(new DocumentTypeCode($documentTypeCode));
+
+        if (!StringUtils::stringIsNullOrEmpty($idSchemeid)) {
+            $documentReference->getID()->setSchemeID($idSchemeid);
+        }
+
+        $invoiceLine = $this->invoiceObject->getInvoiceLine()[$invoiceLineCount - 1];
+        $invoiceLine->setDocumentReference([$documentReference]);
 
         return $this;
     }

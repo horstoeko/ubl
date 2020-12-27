@@ -1737,6 +1737,7 @@ class BuilderXRechnungTest extends TestCase
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionTotalAmount
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionInvoicePeriod
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionBuyerOrderLineNo
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionDocumentReference
      */
     public function testBeforeAddNewDocumentPosition(): void
     {
@@ -1767,7 +1768,14 @@ class BuilderXRechnungTest extends TestCase
 
         (self::$document)->setDocumentPositionBuyerOrderLineNo("1");
 
+        $this->disableRenderXmlContent();
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:OrderLineReference/cbc:LineID", 0);
+
+        (self::$document)->setDocumentPositionDocumentReference("55555", "ABZ");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:ID", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:DocumentTypeCode", 0);
     }
 
     /**
@@ -1880,6 +1888,58 @@ class BuilderXRechnungTest extends TestCase
 
         $this->disableRenderXmlContent();
         $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:OrderLineReference/cbc:LineID", 0, "1");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionDocumentReference
+     */
+    public function testSetDocumentPositionDocumentReference(): void
+    {
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:ID", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:DocumentTypeCode", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:ID", 1);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:DocumentTypeCode", 1);
+
+        (self::$document)->setDocumentPositionDocumentReference("", "");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:ID", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:DocumentTypeCode", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:ID", 1);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:DocumentTypeCode", 1);
+
+        (self::$document)->setDocumentPositionDocumentReference("", "ABZ");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:ID", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:DocumentTypeCode", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:ID", 1);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:DocumentTypeCode", 1);
+
+        (self::$document)->setDocumentPositionDocumentReference("12345", "ABZ", "000");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:ID", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:DocumentTypeCode", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:ID", 1);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:DocumentTypeCode", 1);
+
+        (self::$document)->setDocumentPositionDocumentReference("55555", "ABZ");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:ID", 0, "55555", "schemeID", "ABZ");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:DocumentTypeCode", 0, "130");
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:ID", 1);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:DocumentTypeCode", 1);
+
+        (self::$document)->setDocumentPositionDocumentReference("66666", "XYZ", "130");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:ID", 0, "66666", "schemeID", "XYZ");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:DocumentTypeCode", 0, "130");
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:ID", 1);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:DocumentTypeCode", 1);
     }
 
     /**
