@@ -1739,6 +1739,7 @@ class BuilderXRechnungTest extends TestCase
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionBuyerOrderLineNo
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionDocumentReference
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::initDocumentPositionAllowanceCharge
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionAllowanceChargeAmounts
      */
     public function testBeforeAddNewDocumentPosition(): void
     {
@@ -1784,6 +1785,11 @@ class BuilderXRechnungTest extends TestCase
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:ChargeIndicator", 0);
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode", 0);
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:AllowanceChargeReason", 0);
+
+        (self::$document)->setDocumentPositionAllowanceChargeAmounts(10.0, 100.0);
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:Amount", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:BaseAmount", 0);
     }
 
     /**
