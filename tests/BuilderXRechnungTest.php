@@ -1734,6 +1734,7 @@ class BuilderXRechnungTest extends TestCase
     /**
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionNote
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionQuantity
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionTotalAmount
      */
     public function testBeforeAddNewDocumentPosition(): void
     {
