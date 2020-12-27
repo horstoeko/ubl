@@ -43,6 +43,7 @@ use MimeTyper\Repository\MimeDbRepository;
 use horstoeko\stringmanagement\StringUtils;
 use horstoeko\ubl\entities\cac\AddressLine;
 use horstoeko\ubl\entities\cac\CardAccount;
+use horstoeko\ubl\entities\cac\InvoiceLine;
 use horstoeko\ubl\entities\cac\TaxCategory;
 use horstoeko\ubl\entities\cac\TaxSubtotal;
 use horstoeko\ubl\entities\cac\PaymentMeans;
@@ -51,6 +52,8 @@ use horstoeko\ubl\entities\cbc\SalesOrderID;
 use horstoeko\ubl\entities\cac\DeliveryParty;
 use horstoeko\ubl\entities\cac\InvoicePeriod;
 use horstoeko\ubl\entities\cac\PostalAddress;
+use horstoeko\ubl\entities\cbc\PayableAmount;
+use horstoeko\ubl\entities\cbc\PrepaidAmount;
 use horstoeko\ubl\entities\cbc\TaxableAmount;
 use horstoeko\ubl\entities\cac\OrderReference;
 use horstoeko\ubl\entities\cac\PartyTaxScheme;
@@ -67,14 +70,21 @@ use horstoeko\ubl\entities\cac\PartyLegalEntity;
 use horstoeko\ubl\entities\cac\ProjectReference;
 use horstoeko\ubl\entities\cbc\CountrySubentity;
 use horstoeko\ubl\entities\cbc\DocumentTypeCode;
+use horstoeko\ubl\entities\cbc\InvoicedQuantity;
 use horstoeko\ubl\entities\cbc\PaymentMeansCode;
 use horstoeko\ubl\entities\cbc\RegistrationName;
 use horstoeko\ubl\entities\cac\ExternalReference;
+use horstoeko\ubl\entities\cbc\ChargeTotalAmount;
 use horstoeko\ubl\entities\cac\LegalMonetaryTotal;
+use horstoeko\ubl\entities\cac\OrderLineReference;
 use horstoeko\ubl\entities\cbc\IdentificationCode;
+use horstoeko\ubl\entities\cbc\TaxExclusiveAmount;
+use horstoeko\ubl\entities\cbc\TaxInclusiveAmount;
 use horstoeko\ubl\entities\cac\PartyIdentification;
 use horstoeko\ubl\entities\cbc\DocumentDescription;
+use horstoeko\ubl\entities\cbc\LineExtensionAmount;
 use horstoeko\ubl\entities\cbc\AdditionalStreetName;
+use horstoeko\ubl\entities\cbc\AllowanceTotalAmount;
 use horstoeko\ubl\entities\cbc\DocumentCurrencyCode;
 use horstoeko\ubl\entities\cac\PayeeFinancialAccount;
 use horstoeko\ubl\entities\cac\PayerFinancialAccount;
@@ -90,17 +100,9 @@ use horstoeko\ubl\entities\cac\DespatchDocumentReference;
 use horstoeko\ubl\entities\cbc\AllowanceChargeReasonCode;
 use horstoeko\ubl\entities\cac\FinancialInstitutionBranch;
 use horstoeko\ubl\entities\cac\AdditionalDocumentReference;
-use horstoeko\ubl\entities\cac\InvoiceLine;
 use horstoeko\ubl\entities\cac\OriginatorDocumentReference;
-use horstoeko\ubl\entities\cbc\AllowanceTotalAmount;
-use horstoeko\ubl\entities\cbc\ChargeTotalAmount;
 use horstoeko\ubl\entities\cbc\EmbeddedDocumentBinaryObject;
-use horstoeko\ubl\entities\cbc\InvoicedQuantity;
-use horstoeko\ubl\entities\cbc\LineExtensionAmount;
-use horstoeko\ubl\entities\cbc\PayableAmount;
-use horstoeko\ubl\entities\cbc\PrepaidAmount;
-use horstoeko\ubl\entities\cbc\TaxExclusiveAmount;
-use horstoeko\ubl\entities\cbc\TaxInclusiveAmount;
+use horstoeko\ubl\entities\cbc\LineID;
 
 /**
  * Class representing the ubl invoice builder for XRechnung
@@ -2146,6 +2148,7 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
 
     /**
      * Sets the delivery or invoice period
+     * __Note:__ You have to call addNewDocumentPosition before you can use this method
      *
      * @param  DateTime|null $startDate
      * The date when the Invoice period for this Invoice line starts.
@@ -2178,6 +2181,32 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
 
         $invoiceLine = $this->invoiceObject->getInvoiceLine()[$invoiceLineCount - 1];
         $invoiceLine->setInvoicePeriod([$invoicePeriod]);
+
+        return $this;
+    }
+
+    /**
+     * Sets the referenced purchase order line reference
+     * __Note:__ You have to call addNewDocumentPosition before you can use this method
+     *
+     * @param string $orderLineReferenceNo
+     * An identifier for a referenced line within a purchase order, issued by the Buyer.
+     * __Example value__: 3
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function setDocumentPositionBuyerOrderLineNo(string $orderLineReferenceNo): UblDocumentBuilderXRechnung
+    {
+        $invoiceLineCount = count($this->invoiceObject->getInvoiceLine());
+
+        if ($invoiceLineCount <= 0) {
+            return $this;
+        }
+
+        $orderLineReference = new OrderLineReference();
+        $orderLineReference->setLineID(new LineID($orderLineReferenceNo));
+
+        $invoiceLine = $this->invoiceObject->getInvoiceLine()[$invoiceLineCount - 1];
+        $invoiceLine->setOrderLineReference([$orderLineReference]);
 
         return $this;
     }

@@ -1736,6 +1736,7 @@ class BuilderXRechnungTest extends TestCase
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionQuantity
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionTotalAmount
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionInvoicePeriod
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionBuyerOrderLineNo
      */
     public function testBeforeAddNewDocumentPosition(): void
     {
@@ -1763,6 +1764,10 @@ class BuilderXRechnungTest extends TestCase
         $this->disableRenderXmlContent();
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:InvoicePeriod/cbc:StartDate", 0);
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:InvoicePeriod/cbc:EndDate", 0);
+
+        (self::$document)->setDocumentPositionBuyerOrderLineNo("1");
+
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:OrderLineReference/cbc:LineID", 0);
     }
 
     /**
@@ -1861,6 +1866,20 @@ class BuilderXRechnungTest extends TestCase
         $this->disableRenderXmlContent();
         $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:InvoicePeriod/cbc:StartDate", 0, "2020-01-01");
         $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:InvoicePeriod/cbc:EndDate", 0, "2020-01-31");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionBuyerOrderLineNo
+     */
+    public function testSetDocumentPositionBuyerOrderLineNo(): void
+    {
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:OrderLineReference/cbc:LineID", 0);
+
+        (self::$document)->setDocumentPositionBuyerOrderLineNo("1");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:OrderLineReference/cbc:LineID", 0, "1");
     }
 
     /**
