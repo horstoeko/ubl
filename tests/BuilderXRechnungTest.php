@@ -1744,6 +1744,7 @@ class BuilderXRechnungTest extends TestCase
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::addDocumentPositionCommodityClassification
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionTaxScheme
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::addDocumentPositionItemProperty
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionPrice
      */
     public function testBeforeAddNewDocumentPosition(): void
     {
