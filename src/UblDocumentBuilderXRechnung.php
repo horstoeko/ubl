@@ -1643,6 +1643,7 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
 
         $paymentMean = new PaymentMeans;
         $paymentMean->setPaymentMandate($paymentMandate);
+        $paymentMean->setPaymentMeansCode(new PaymentMeansCode("59"));
 
         $this->invoiceObject->setPaymentMeans([$paymentMean]);
 
@@ -1682,6 +1683,7 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
 
         $paymentMean = new PaymentMeans;
         $paymentMean->setCardAccount($cardAccount);
+        $paymentMean->setPaymentMeansCode(new PaymentMeansCode("48"));
 
         $this->invoiceObject->setPaymentMeans([$paymentMean]);
 

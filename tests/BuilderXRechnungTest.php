@@ -1386,6 +1386,7 @@ class BuilderXRechnungTest extends TestCase
         (self::$document)->setDocumentPaymentMeansToDirectDebit("M000001", "DE75512108001245126199");
 
         $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cbc:PaymentMeansCode", 0, "59");
         $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate/cbc:ID", 0, "M000001");
         $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate/cac:PayerFinancialAccount/cbc:ID", 0, "DE75512108001245126199");
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate", 1);
@@ -1393,6 +1394,7 @@ class BuilderXRechnungTest extends TestCase
         (self::$document)->setDocumentPaymentMeansToDirectDebit("M000002", "DE75512108001245126199");
 
         $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cbc:PaymentMeansCode", 0, "59");
         $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate/cbc:ID", 0, "M000002");
         $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate/cac:PayerFinancialAccount/cbc:ID", 0, "DE75512108001245126199");
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate", 1);
@@ -1431,6 +1433,7 @@ class BuilderXRechnungTest extends TestCase
         (self::$document)->setDocumentPaymentMeansToPaymentCard("3563568242836", "VISA", "John Doe");
 
         $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cbc:PaymentMeansCode", 0, "48");
         $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:CardAccount/cbc:PrimaryAccountNumberID", 0, "2836");
         $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:CardAccount/cbc:NetworkID", 0, "VISA");
         $this->assertXPathValueWithIndex("/ubl:Invoice/cac:PaymentMeans/cac:CardAccount/cbc:HolderName", 0, "John Doe");

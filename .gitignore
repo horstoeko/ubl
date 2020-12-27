@@ -84,4 +84,5 @@ _backup*
 /examples/Example_01.14a-INVOICE_ubl.xml
 /examples/Example_01.04a-INVOICE_ubl_Native.xml
 /examples/Example_02.01a-INVOICE_ubl.xml
+/examples/Example_03.02a-INVOICE_ubl_XRechnungBuilder.xml
 /tests/*.xml
