@@ -12,11 +12,13 @@ namespace horstoeko\ubl;
 use DateTime;
 use horstoeko\ubl\entities\cbc\ID;
 use horstoeko\ubl\entities\cbc\URI;
+use horstoeko\ubl\entities\cac\Item;
 use horstoeko\ubl\entities\cbc\Line;
 use horstoeko\ubl\entities\cbc\Name;
 use horstoeko\ubl\entities\cbc\Note;
 use horstoeko\ubl\entities\cac\Party;
 use horstoeko\ubl\entities\cbc\Amount;
+use horstoeko\ubl\entities\cbc\LineID;
 use horstoeko\ubl\entities\cac\Address;
 use horstoeko\ubl\entities\cac\Contact;
 use horstoeko\ubl\entities\cac\Country;
@@ -73,6 +75,7 @@ use horstoeko\ubl\entities\cbc\DocumentTypeCode;
 use horstoeko\ubl\entities\cbc\InvoicedQuantity;
 use horstoeko\ubl\entities\cbc\PaymentMeansCode;
 use horstoeko\ubl\entities\cbc\RegistrationName;
+use horstoeko\ubl\entities\cac\DocumentReference;
 use horstoeko\ubl\entities\cac\ExternalReference;
 use horstoeko\ubl\entities\cbc\ChargeTotalAmount;
 use horstoeko\ubl\entities\cac\LegalMonetaryTotal;
@@ -100,10 +103,12 @@ use horstoeko\ubl\entities\cac\DespatchDocumentReference;
 use horstoeko\ubl\entities\cbc\AllowanceChargeReasonCode;
 use horstoeko\ubl\entities\cac\FinancialInstitutionBranch;
 use horstoeko\ubl\entities\cac\AdditionalDocumentReference;
-use horstoeko\ubl\entities\cac\DocumentReference;
+use horstoeko\ubl\entities\cac\BuyersItemIdentification;
 use horstoeko\ubl\entities\cac\OriginatorDocumentReference;
+use horstoeko\ubl\entities\cac\SellersItemIdentification;
+use horstoeko\ubl\entities\cac\StandardItemIdentification;
+use horstoeko\ubl\entities\cbc\Description;
 use horstoeko\ubl\entities\cbc\EmbeddedDocumentBinaryObject;
-use horstoeko\ubl\entities\cbc\LineID;
 
 /**
  * Class representing the ubl invoice builder for XRechnung
@@ -2339,6 +2344,73 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
         if ($baseAmount != null) {
             $allowanceCharge->setBaseAmount(new BaseAmount($baseAmount))->getBaseAmount()->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode());
         }
+
+        return $this;
+    }
+
+    /**
+     * Sets the position item information
+     * __Note:__ You have to call addNewDocumentPosition before you can use this method
+     * __Note:__ You have to call initDocumentPositionAllowanceCharge before you can use this method
+     *
+     * @param string $name
+     * A name for an item.
+     * __Example value__: Item name
+     * @param string $description
+     * A description for an item.The item description allows for describing the item and its features
+     * in more detail than the Item name.
+     * __Example value__: Long description of the item on the invoice line
+     * @param string $buyerId
+     * An identifier, assigned by the Buyer, for the item.
+     * __Example value__: 123455
+     * @param string $sellerid
+     * An identifier, assigned by the Seller, for the item.
+     * __Example value__: 9873242
+     * @param string $standardItemIdentification
+     * An item identifier based on a registered scheme.
+     * __Example value__: 10986700
+     * @param string $standardItemIdentificationScheme
+     * The identification scheme identifier of the Item standard identifier
+     * __Example value__: 0160
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function setDocumentPositionItem(string $name, string $description = "", string $buyerId = "", string $sellerid = "", string $standardItemIdentification = "", string $standardItemIdentificationScheme = ""): UblDocumentBuilderXRechnung
+    {
+        if (StringUtils::stringIsNullOrEmpty($name)) {
+            return $this;
+        }
+
+        $invoiceLineCount = count($this->invoiceObject->getInvoiceLine());
+
+        if ($invoiceLineCount <= 0) {
+            return $this;
+        }
+
+        $item = new Item();
+        $item->setName(new Name($name));
+
+        if (!StringUtils::stringIsNullOrEmpty($description)) {
+            $item->setDescription([new Description($description)]);
+        }
+        if (!StringUtils::stringIsNullOrEmpty($buyerId)) {
+            $buyersItemIdentification = new BuyersItemIdentification();
+            $buyersItemIdentification->setID(new ID($buyerId));
+            $item->setBuyersItemIdentification($buyersItemIdentification);
+        }
+        if (!StringUtils::stringIsNullOrEmpty($sellerid)) {
+            $sellersItemIdentification = new SellersItemIdentification();
+            $sellersItemIdentification->setID(new ID($sellerid));
+            $item->setSellersItemIdentification($sellersItemIdentification);
+        }
+        if (!StringUtils::stringIsNullOrEmpty($standardItemIdentification) && !StringUtils::stringIsNullOrEmpty($standardItemIdentificationScheme)) {
+            $standardItemIdentification2 = new StandardItemIdentification();
+            $standardItemIdentification2->setID(new ID($standardItemIdentification))->getID()->setSchemeID($standardItemIdentificationScheme);
+            $item->setStandardItemIdentification($standardItemIdentification2);
+        }
+
+        $invoiceLine = $this->invoiceObject->getInvoiceLine()[$invoiceLineCount - 1];
+
+        $invoiceLine->setItem($item);
 
         return $this;
     }

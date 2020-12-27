@@ -1740,6 +1740,7 @@ class BuilderXRechnungTest extends TestCase
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionDocumentReference
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::initDocumentPositionAllowanceCharge
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionAllowanceChargeAmounts
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionItem
      */
     public function testBeforeAddNewDocumentPosition(): void
     {
@@ -1790,6 +1791,11 @@ class BuilderXRechnungTest extends TestCase
 
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:Amount", 0);
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:BaseAmount", 0);
+
+        (self::$document)->setDocumentPositionItem("name");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cbc:Name", 0);
     }
 
     /**
@@ -1998,6 +2004,64 @@ class BuilderXRechnungTest extends TestCase
         $this->disableRenderXmlContent();
         $this->assertXPathValueStartsWithIndexAndAttribute("/ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:Amount", 0, "10.0", "currencyID", "EUR");
         $this->assertXPathValueStartsWithIndexAndAttribute("/ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:BaseAmount", 0, "100.0", "currencyID", "EUR");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionItem
+     */
+    public function testSetDocumentPositionItem(): void
+    {
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item", 0);
+
+        (self::$document)->setDocumentPositionItem("");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cbc:Name", 0);
+
+        (self::$document)->setDocumentPositionItem("name");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cbc:Name", 0, "name");
+
+        (self::$document)->setDocumentPositionItem("name", "description");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cbc:Name", 0, "name");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cbc:Description", 0, "description");
+
+        (self::$document)->setDocumentPositionItem("name", "description", "buyerid");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cbc:Name", 0, "name");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cbc:Description", 0, "description");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:BuyersItemIdentification/cbc:ID", 0, "buyerid");
+
+        (self::$document)->setDocumentPositionItem("name", "description", "buyerid", "sellerid");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cbc:Name", 0, "name");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cbc:Description", 0, "description");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:BuyersItemIdentification/cbc:ID", 0, "buyerid");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:SellersItemIdentification/cbc:ID", 0, "sellerid");
+
+        (self::$document)->setDocumentPositionItem("name", "description", "buyerid", "sellerid", "10986700");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cbc:Name", 0, "name");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cbc:Description", 0, "description");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:BuyersItemIdentification/cbc:ID", 0, "buyerid");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:SellersItemIdentification/cbc:ID", 0, "sellerid");
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:StandardItemIdentification/cbc:ID", 0);
+
+        (self::$document)->setDocumentPositionItem("name", "description", "buyerid", "sellerid", "10986700", "0160");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cbc:Name", 0, "name");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cbc:Description", 0, "description");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:BuyersItemIdentification/cbc:ID", 0, "buyerid");
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:SellersItemIdentification/cbc:ID", 0, "sellerid");
+        $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:InvoiceLine/cac:Item/cac:StandardItemIdentification/cbc:ID", 0, "10986700", "schemeID", "0160");
     }
 
     /**
