@@ -863,6 +863,29 @@ Before calling this method you need to call initDocumentAllowanceCharge method</
 <strong>Note:</strong> You have to call addNewDocumentPosition before you can use this method</p>                </div>
                 <div class="col-md-2"></div>
             </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_initDocumentPositionAllowanceCharge">initDocumentPositionAllowanceCharge</a>(bool $isCharge, string $reason, string $reasonCode)
+        
+                                            <p>Initializes a new Allowance/Charge information on position level
+<strong>Note:</strong> You have to call addNewDocumentPosition before you can use this method</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setDocumentPositionAllowanceChargeAmounts">setDocumentPositionAllowanceChargeAmounts</a>(float $amount, float|null $baseAmount = null)
+        
+                                            <p>Sets the document position level allowance or charge amounts
+<strong>Note:</strong> You have to call addNewDocumentPosition before you can use this method
+<strong>Note:</strong> You have to call initDocumentPositionAllowanceCharge before you can use this method</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
             </div>
 
 
@@ -4312,6 +4335,116 @@ allowances and charges as well as other relevant taxes. Must be rounded to maxim
                 <td>$documentTypeCode</td>
                 <td>Code "130" MUST be used to indicate an invoice object reference. Not used for other additional documents
 <strong>Default value</strong>: 130</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_initDocumentPositionAllowanceCharge">
+        <div class="location">at         line 2280</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
+    <strong>initDocumentPositionAllowanceCharge</strong>(bool $isCharge, string $reason, string $reasonCode)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Initializes a new Allowance/Charge information on position level
+<strong>Note:</strong> You have to call addNewDocumentPosition before you can use this method</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>bool</td>
+                <td>$isCharge</td>
+                <td>Use “true” when informing about Charges and “false” when informing about Allowances.
+<strong>Example value</strong>: false</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$reason</td>
+                <td>The reason for the document level allowance or charge, expressed as text. The Document
+level allowance reason code and the Document level allowance reason shall indicate the
+same allowance reason
+<strong>Example value</strong>: Discount</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$reasonCode</td>
+                <td>The reason for the document level allowance or charge, expressed as a code. For allowances
+a subset of codelist UNCL5189 is to be used, and for charges codelist UNCL7161 applies.
+The Document level allowance reason code and the Document level allowance reason shall
+indicate the same allowance reason
+<strong>Example value</strong>: 95</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setDocumentPositionAllowanceChargeAmounts">
+        <div class="location">at         line 2320</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
+    <strong>setDocumentPositionAllowanceChargeAmounts</strong>(float $amount, float|null $baseAmount = null)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Sets the document position level allowance or charge amounts
+<strong>Note:</strong> You have to call addNewDocumentPosition before you can use this method
+<strong>Note:</strong> You have to call initDocumentPositionAllowanceCharge before you can use this method</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>float</td>
+                <td>$amount</td>
+                <td>The amount of an allowance or a charge, without VAT. Must be rounded to maximum 2 decimals
+<strong>Example value</strong>: 200</td>
+            </tr>
+                    <tr>
+                <td>float|null</td>
+                <td>$baseAmount</td>
+                <td>The base amount that may be used, in conjunction with the document level allowance or charge
+percentage, to calculate the document level allowance or charge amount. Must be rounded to
+maximum 2 decimals
+<strong>Example value</strong>: 1000</td>
             </tr>
             </table>
 

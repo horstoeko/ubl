@@ -2256,4 +2256,90 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
 
         return $this;
     }
+
+    /**
+     * Initializes a new Allowance/Charge information on position level
+     * __Note:__ You have to call addNewDocumentPosition before you can use this method
+     *
+     * @param boolean $isCharge
+     * Use “true” when informing about Charges and “false” when informing about Allowances.
+     * __Example value__: false
+     * @param string $reason
+     * The reason for the document level allowance or charge, expressed as text. The Document
+     * level allowance reason code and the Document level allowance reason shall indicate the
+     * same allowance reason
+     * __Example value__: Discount
+     * @param string $reasonCode
+     * The reason for the document level allowance or charge, expressed as a code. For allowances
+     * a subset of codelist UNCL5189 is to be used, and for charges codelist UNCL7161 applies.
+     * The Document level allowance reason code and the Document level allowance reason shall
+     * indicate the same allowance reason
+     * __Example value__: 95
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function initDocumentPositionAllowanceCharge(bool $isCharge, string $reason, string $reasonCode): UblDocumentBuilderXRechnung
+    {
+        $invoiceLineCount = count($this->invoiceObject->getInvoiceLine());
+
+        if ($invoiceLineCount <= 0) {
+            return $this;
+        }
+
+        $allowanceCharge = new AllowanceCharge();
+        $allowanceCharge->setChargeIndicator($isCharge);
+
+        if (!StringUtils::stringIsNullOrEmpty($reason)) {
+            $allowanceCharge->setAllowanceChargeReason([new AllowanceChargeReason($reason)]);
+        }
+
+        if (!StringUtils::stringIsNullOrEmpty($reasonCode)) {
+            $allowanceCharge->setAllowanceChargeReasonCode(new AllowanceChargeReasonCode($reasonCode));
+        }
+
+        $invoiceLine = $this->invoiceObject->getInvoiceLine()[$invoiceLineCount - 1];
+        $invoiceLine->addToAllowanceCharge($allowanceCharge);
+
+        return $this;
+    }
+
+    /**
+     * Sets the document position level allowance or charge amounts
+     * __Note:__ You have to call addNewDocumentPosition before you can use this method
+     * __Note:__ You have to call initDocumentPositionAllowanceCharge before you can use this method
+     *
+     * @param float $amount
+     * The amount of an allowance or a charge, without VAT. Must be rounded to maximum 2 decimals
+     * __Example value__: 200
+     * @param float|null $baseAmount
+     * The base amount that may be used, in conjunction with the document level allowance or charge
+     * percentage, to calculate the document level allowance or charge amount. Must be rounded to
+     * maximum 2 decimals
+     * __Example value__: 1000
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function setDocumentPositionAllowanceChargeAmounts(float $amount, ?float $baseAmount = null): UblDocumentBuilderXRechnung
+    {
+        $invoiceLineCount = count($this->invoiceObject->getInvoiceLine());
+
+        if ($invoiceLineCount <= 0) {
+            return $this;
+        }
+
+        $invoiceLine = $this->invoiceObject->getInvoiceLine()[$invoiceLineCount - 1];
+
+        if (count($invoiceLine->getAllowanceCharge()) <= 0) {
+            return $this;
+        }
+
+        $allowanceChargeCount = count($invoiceLine->getAllowanceCharge());
+        $allowanceCharge = $invoiceLine->getAllowanceCharge()[$allowanceChargeCount - 1];
+
+        $allowanceCharge->setAmount(new Amount($amount))->getAmount()->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode());
+
+        if ($baseAmount != null) {
+            $allowanceCharge->setBaseAmount(new BaseAmount($baseAmount))->getBaseAmount()->setCurrencyID($this->invoiceObject->getDocumentCurrencyCode());
+        }
+
+        return $this;
+    }
 }

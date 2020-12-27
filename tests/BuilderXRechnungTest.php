@@ -1738,6 +1738,7 @@ class BuilderXRechnungTest extends TestCase
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionInvoicePeriod
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionBuyerOrderLineNo
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionDocumentReference
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::initDocumentPositionAllowanceCharge
      */
     public function testBeforeAddNewDocumentPosition(): void
     {
@@ -1776,6 +1777,13 @@ class BuilderXRechnungTest extends TestCase
         $this->disableRenderXmlContent();
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:ID", 0);
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:DocumentTypeCode", 0);
+
+        (self::$document)->initDocumentPositionAllowanceCharge(false, "Discount", "95");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:ChargeIndicator", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:AllowanceChargeReason", 0);
     }
 
     /**
@@ -1940,6 +1948,50 @@ class BuilderXRechnungTest extends TestCase
         $this->assertXPathValueWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:DocumentTypeCode", 0, "130");
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:ID", 1);
         $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:DocumentTypeCode", 1);
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionAllowanceChargeAmounts
+     */
+    public function testBeforeInitDocumentPositionAllowanceCharge(): void
+    {
+        (self::$document)->setDocumentPositionAllowanceChargeAmounts(10.0, 100.0);
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:Amount", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:BaseAmount", 0);
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::initDocumentPositionAllowanceCharge
+     */
+    public function testInitDocumentPositionAllowanceCharge(): void
+    {
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge", 0);
+
+        (self::$document)->initDocumentPositionAllowanceCharge(false, "Discount", "95");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueStartsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:ChargeIndicator", 0, "false");
+        $this->assertXPathValueStartsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode", 0, "95");
+        $this->assertXPathValueStartsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:AllowanceChargeReason", 0, "Discount");
+    }
+
+    /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentPositionAllowanceChargeAmounts
+     */
+    public function testSetDocumentPositionAllowanceChargeAmounts(): void
+    {
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:Amount", 0);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:BaseAmount", 0);
+
+        (self::$document)->setDocumentPositionAllowanceChargeAmounts(10.0, 100.0);
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueStartsWithIndexAndAttribute("/ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:Amount", 0, "10.0", "currencyID", "EUR");
+        $this->assertXPathValueStartsWithIndexAndAttribute("/ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:BaseAmount", 0, "100.0", "currencyID", "EUR");
     }
 
     /**
