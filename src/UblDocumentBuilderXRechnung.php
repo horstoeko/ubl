@@ -108,6 +108,7 @@ use horstoeko\ubl\entities\cbc\AllowanceChargeReasonCode;
 use horstoeko\ubl\entities\cac\FinancialInstitutionBranch;
 use horstoeko\ubl\entities\cac\StandardItemIdentification;
 use horstoeko\ubl\entities\cac\AdditionalDocumentReference;
+use horstoeko\ubl\entities\cac\ClassifiedTaxCategory;
 use horstoeko\ubl\entities\cac\OriginatorDocumentReference;
 use horstoeko\ubl\entities\cbc\EmbeddedDocumentBinaryObject;
 use horstoeko\ubl\entities\cbc\ItemClassificationCode;
@@ -2499,7 +2500,7 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
         $taxScheme = new TaxScheme();
         $taxScheme->setID(new ID(StringUtils::stringIsNullOrEmpty($taxSchemeCode) ? "VAT" : $taxSchemeCode));
 
-        $taxCategory = new TaxCategory();
+        $taxCategory = new ClassifiedTaxCategory();
         $taxCategory->setTaxScheme($taxScheme);
         $taxCategory->setID(new ID($taxCategoryCode));
 
