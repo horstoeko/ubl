@@ -397,5 +397,22 @@
             <arg path="${basedir}/examples/Example_01.04a-INVOICE_ubl_Native.xml"/>
         </exec>
         <echo message="Validated XRechnung 2.0 (01.04a-INVOICE_ubl)."/>
+        <!-- Create XRechnung 2.0 -->
+        <echo message="Creating XRechnung 2.0 (03.02a-INVOICE_ubl [Builder])..."/>
+        <exec executable="php" dir="${basedir}/examples" failonerror="true">
+            <arg value="-f"/>
+            <arg path="./examples/Example_03.02a-INVOICE_ubl_XRechnungBuilder.php"/>
+        </exec>
+        <echo message="Created XRechnung 2.0 (03.02a-INVOICE_ubl [Builder])."/>
+        <!-- Validate XRechnugn 2.0 -->
+        <echo message="Validating XRechnung 2.0 (03.02a-INVOICE_ubl [Builder])..."/>
+        <exec executable="java" resultproperty="result.schematron.xrechnung">
+            <arg value="-jar"/>
+            <arg path="${basedir}/build/validator/validationtool-1.4.0-standalone.jar"/>
+            <arg value="-s"/>
+            <arg path="${basedir}/build/validator/scenarios.xml"/>
+            <arg path="${basedir}/examples/Example_03.02a-INVOICE_ubl_XRechnungBuilder.xml"/>
+        </exec>
+        <echo message="Validated XRechnung 2.0 (03.02a-INVOICE_ubl [Builder])."/>
     </target>
 </project>
