@@ -2238,6 +2238,51 @@ class BuilderXRechnungTest extends TestCase
     }
 
     /**
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::initDocumentTaxTotalFCY
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentTaxAmountFCY
+     * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::setDocumentCurrencies
+     */
+    public function testForeignCurrency(): void
+    {
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxTotal", 1);
+
+        (self::$document)->setDocumentCurrencies("EUR", "EUR");
+        (self::$document)->initDocumentTaxTotalFCY();
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxTotal", 1);
+
+        (self::$document)->setDocumentTaxAmountFCY(100.0);
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxTotal", 1);
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxTotal/cbc:TaxAmount", 1);
+
+        (self::$document)->setDocumentCurrencies("EUR", "GBP");
+        (self::$document)->initDocumentTaxTotalFCY();
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndex("/ubl:Invoice/cac:TaxTotal/cbc:TaxAmount", 1, "0.0");
+
+        (self::$document)->setDocumentTaxAmountFCY(100.0);
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValueWithIndexAndAttribute("/ubl:Invoice/cac:TaxTotal/cbc:TaxAmount", 1, "100.0", "currencyID", "GBP");
+
+        (self::$document)->setDocumentCurrencies("EUR", "EUR");
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxTotal", 1);
+
+        (self::$document)->initDocumentTaxTotalFCY();
+        (self::$document)->setDocumentTaxAmountFCY(100.0);
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathNotExistsWithIndex("/ubl:Invoice/cac:TaxTotal", 1);
+    }
+
+    /**
      * @covers \horstoeko\ubl\UblDocumentBuilderXRechnung::writeFile
      */
     public function testWriteFile(): void

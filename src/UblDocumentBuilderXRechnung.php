@@ -246,6 +246,10 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
         $this->invoiceObject->setDocumentCurrencyCode(new DocumentCurrencyCode($documentCurrency));
         $this->invoiceObject->setTaxCurrencyCode(!StringUtils::stringIsNullOrEmpty($taxCurrency) ? new TaxCurrencyCode($taxCurrency) : new TaxCurrencyCode($documentCurrency));
 
+        if ($this->invoiceObject->getDocumentCurrencyCode()->value() == $this->invoiceObject->getTaxCurrencyCode()->value()) {
+            $this->invoiceObject->unsetTaxTotal(1);
+        }
+
         return $this;
     }
 
@@ -1873,7 +1877,33 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
         $taxTotal = new TaxTotal();
         $taxTotal->setTaxAmount(new TaxAmount(0.0));
 
-        $this->invoiceObject->setTaxTotal([$taxTotal]);
+        $taxTotals = $this->invoiceObject->getTaxTotal();
+        $taxTotals[0] = $taxTotal;
+
+        $this->invoiceObject->setTaxTotal($taxTotals);
+
+        return $this;
+    }
+
+    /**
+     * Initializes a new tax information on document level for the foreign
+     * currency (currency different to invoice currency)
+     *
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function initDocumentTaxTotalFCY(): UblDocumentBuilderXRechnung
+    {
+        if ($this->invoiceObject->getTaxCurrencyCode() == null || $this->invoiceObject->getDocumentCurrencyCode()->value() == $this->invoiceObject->getTaxCurrencyCode()->value()) {
+            return $this;
+        }
+
+        $taxTotal = new TaxTotal();
+        $taxTotal->setTaxAmount(new TaxAmount(0.0));
+
+        $taxTotals = $this->invoiceObject->getTaxTotal();
+        $taxTotals[1] = $taxTotal;
+
+        $this->invoiceObject->setTaxTotal($taxTotals);
 
         return $this;
     }
@@ -1978,6 +2008,27 @@ class UblDocumentBuilderXRechnung extends UblDocumentBuilderBase
         }
 
         $taxSubTotal->setTaxCategory($taxCategory);
+
+        return $this;
+    }
+
+    /**
+     * Sets the tax amount for the foreign currency
+     *
+     * @param float $taxAmount
+     * The total VAT amount for the Invoice or the VAT total amount expressed in the accounting
+     * currency accepted or required in the country of the Seller. Must be rounded to maximum 2 decimals
+     * __Example value__: 486.25
+     * @return UblDocumentBuilderXRechnung
+     */
+    public function setDocumentTaxAmountFCY(float $taxAmount): UblDocumentBuilderXRechnung
+    {
+        if (!isset($this->invoiceObject->getTaxTotal()[1])) {
+            return $this;
+        }
+
+        $taxTotal = $this->invoiceObject->getTaxTotal()[1];
+        $taxTotal->setTaxAmount(new TaxAmount($taxAmount))->getTaxAmount()->setCurrencyID($this->invoiceObject->getTaxCurrencyCode());
 
         return $this;
     }
