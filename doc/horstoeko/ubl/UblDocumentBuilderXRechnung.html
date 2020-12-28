@@ -733,6 +733,17 @@ Before calling this method you need to call initDocumentAllowanceCharge method</
                     <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
                 </div>
                 <div class="col-md-8 type">
+                    <a href="#method_initDocumentTaxTotalFCY">initDocumentTaxTotalFCY</a>()
+        
+                                            <p>Initializes a new tax information on document level for the foreign
+currency (currency different to invoice currency)</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
+                </div>
+                <div class="col-md-8 type">
                     <a href="#method_initDocumentTaxSubTotal">initDocumentTaxSubTotal</a>()
         
                                             <p>Initializes a new vat breakdown by different categories, rates and exemption reasons</p>                </div>
@@ -766,6 +777,16 @@ Before calling this method you need to call initDocumentAllowanceCharge method</
                     <a href="#method_setDocumentTaxScheme">setDocumentTaxScheme</a>(string $taxCategoryCode, string $taxSchemeCode = &quot;&quot;, float|null $percent = null)
         
                                             <p>Sets tax category and scheme on document level.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setDocumentTaxAmountFCY">setDocumentTaxAmountFCY</a>(float $taxAmount)
+        
+                                            <p>Sets the tax amount for the foreign currency</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -1272,7 +1293,7 @@ of the Seller. Shall be used in combination with the Invoice total VAT amount in
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentAccountingCost">
-        <div class="location">at         line 259</div>
+        <div class="location">at         line 263</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentAccountingCost</strong>(string $accountingCost)
         </code>
@@ -1312,7 +1333,7 @@ of the Seller. Shall be used in combination with the Invoice total VAT amount in
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentBuyerReference">
-        <div class="location">at         line 273</div>
+        <div class="location">at         line 277</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentBuyerReference</strong>(string $buyerReference)
         </code>
@@ -1353,7 +1374,7 @@ reference or purchase order reference (BT-13)</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentInvoicePeriod">
-        <div class="location">at         line 288</div>
+        <div class="location">at         line 292</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentInvoicePeriod</strong>(<a target="_blank" href="http://php.net/DateTime">DateTime</a>|null $startDate = null, <a target="_blank" href="http://php.net/DateTime">DateTime</a>|null $endDate = null)
         </code>
@@ -1398,7 +1419,7 @@ reference or purchase order reference (BT-13)</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentBuyerOrderNo">
-        <div class="location">at         line 314</div>
+        <div class="location">at         line 318</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentBuyerOrderNo</strong>(string $buyerOrderNo)
         </code>
@@ -1439,7 +1460,7 @@ An invoice must have buyer reference (BT-10) or purchase order reference.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentSellerOrderNo">
-        <div class="location">at         line 329</div>
+        <div class="location">at         line 333</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentSellerOrderNo</strong>(string $sellerOrderNo)
         </code>
@@ -1479,7 +1500,7 @@ An invoice must have buyer reference (BT-10) or purchase order reference.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_addDocumentBillingReference">
-        <div class="location">at         line 347</div>
+        <div class="location">at         line 351</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>addDocumentBillingReference</strong>(string $referenceNo, <a target="_blank" href="http://php.net/DateTime">DateTime</a>|null $issueDate = null)
         </code>
@@ -1525,7 +1546,7 @@ Shall be provided in case the Preceding Invoice identifier is not unique</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentDespatchReference">
-        <div class="location">at         line 371</div>
+        <div class="location">at         line 375</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentDespatchReference</strong>(string $referenceNo)
         </code>
@@ -1565,7 +1586,7 @@ Shall be provided in case the Preceding Invoice identifier is not unique</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentReceiptReference">
-        <div class="location">at         line 388</div>
+        <div class="location">at         line 392</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentReceiptReference</strong>(string $referenceNo)
         </code>
@@ -1605,7 +1626,7 @@ Shall be provided in case the Preceding Invoice identifier is not unique</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentOriginatorReference">
-        <div class="location">at         line 405</div>
+        <div class="location">at         line 409</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentOriginatorReference</strong>(string $referenceNo)
         </code>
@@ -1645,7 +1666,7 @@ Shall be provided in case the Preceding Invoice identifier is not unique</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentContractReference">
-        <div class="location">at         line 422</div>
+        <div class="location">at         line 426</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentContractReference</strong>(string $referenceNo)
         </code>
@@ -1685,7 +1706,7 @@ Shall be provided in case the Preceding Invoice identifier is not unique</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_clearDocumentAdditionalReference">
-        <div class="location">at         line 437</div>
+        <div class="location">at         line 441</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>clearDocumentAdditionalReference</strong>()
         </code>
@@ -1715,7 +1736,7 @@ Shall be provided in case the Preceding Invoice identifier is not unique</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_addDocumentAdditionalReference">
-        <div class="location">at         line 458</div>
+        <div class="location">at         line 462</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>addDocumentAdditionalReference</strong>(string $referenceNo, string $referenceScheme = &quot;&quot;, string $documentTypeCode = &quot;&quot;, string $documentDescription = &quot;&quot;)
         </code>
@@ -1771,7 +1792,7 @@ identifier for the supporting document.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setFileAttachmentToAdditionalReference">
-        <div class="location">at         line 486</div>
+        <div class="location">at         line 490</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setFileAttachmentToAdditionalReference</strong>(string $filenameToAttach)
         </code>
@@ -1812,7 +1833,7 @@ to call addDocumentAdditionalReference before using this method</p>             
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentProjectReference">
-        <div class="location">at         line 524</div>
+        <div class="location">at         line 528</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentProjectReference</strong>(string $referenceNo)
         </code>
@@ -1852,7 +1873,7 @@ to call addDocumentAdditionalReference before using this method</p>             
             </div>
                     <div class="method-item">
                     <h3 id="method_setExternalAttachmentToAdditionalReference">
-        <div class="location">at         line 544</div>
+        <div class="location">at         line 548</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setExternalAttachmentToAdditionalReference</strong>(string $uriId)
         </code>
@@ -1895,7 +1916,7 @@ Example value: http://www.example.com/index.html</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_initDocumentSeller">
-        <div class="location">at         line 572</div>
+        <div class="location">at         line 576</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>initDocumentSeller</strong>()
         </code>
@@ -1925,7 +1946,7 @@ Example value: http://www.example.com/index.html</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentSellerEndpointId">
-        <div class="location">at         line 594</div>
+        <div class="location">at         line 598</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentSellerEndpointId</strong>(string $endpointId, string $endpointSchemeId)
         </code>
@@ -1971,7 +1992,7 @@ invoice may be delivered.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_addDocumentSellerIdentification">
-        <div class="location">at         line 626</div>
+        <div class="location">at         line 630</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>addDocumentSellerIdentification</strong>(string $id, string $idSchemeid = &quot;&quot;)
         </code>
@@ -2021,7 +2042,7 @@ value MUST be "SEPA"</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentSellerName">
-        <div class="location">at         line 654</div>
+        <div class="location">at         line 658</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentSellerName</strong>(string $name)
         </code>
@@ -2061,7 +2082,7 @@ value MUST be "SEPA"</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentSellerPostalAddress">
-        <div class="location">at         line 698</div>
+        <div class="location">at         line 702</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentSellerPostalAddress</strong>(string $streetName1, string $streetName2, string $streetName3, string $cityName, string $cityPostCode, string $countyName, string $countryId)
         </code>
@@ -2138,7 +2159,7 @@ value MUST be "SEPA"</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentSellerVATIdentifier">
-        <div class="location">at         line 745</div>
+        <div class="location">at         line 749</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentSellerVATIdentifier</strong>(string $vatIdentifier)
         </code>
@@ -2179,7 +2200,7 @@ value MUST be "SEPA"</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentSellerTaxRegistration">
-        <div class="location">at         line 781</div>
+        <div class="location">at         line 785</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentSellerTaxRegistration</strong>(string $taxRegistration)
         </code>
@@ -2221,7 +2242,7 @@ a supplier</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentSellerLegalEntity">
-        <div class="location">at         line 825</div>
+        <div class="location">at         line 829</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentSellerLegalEntity</strong>(string $registrationName, string $companyId = &quot;&quot;, string $companyIdSchemeId = &quot;&quot;)
         </code>
@@ -2277,7 +2298,7 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentSellerContact">
-        <div class="location">at         line 864</div>
+        <div class="location">at         line 868</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentSellerContact</strong>(string $contactName, string $contactPhone, string $contactElectronicMail)
         </code>
@@ -2330,7 +2351,7 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
             </div>
                     <div class="method-item">
                     <h3 id="method_initDocumentBuyer">
-        <div class="location">at         line 885</div>
+        <div class="location">at         line 889</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>initDocumentBuyer</strong>()
         </code>
@@ -2360,7 +2381,7 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentBuyerEndpointId">
-        <div class="location">at         line 906</div>
+        <div class="location">at         line 910</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentBuyerEndpointId</strong>(string $endpointId, string $endpointSchemeId)
         </code>
@@ -2405,7 +2426,7 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
             </div>
                     <div class="method-item">
                     <h3 id="method_addDocumentBuyerIdentification">
-        <div class="location">at         line 935</div>
+        <div class="location">at         line 939</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>addDocumentBuyerIdentification</strong>(string $id, string $idSchemeid = &quot;&quot;)
         </code>
@@ -2452,7 +2473,7 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentBuyerName">
-        <div class="location">at         line 964</div>
+        <div class="location">at         line 968</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentBuyerName</strong>(string $name)
         </code>
@@ -2492,7 +2513,7 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentBuyerPostalAddress">
-        <div class="location">at         line 1008</div>
+        <div class="location">at         line 1012</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentBuyerPostalAddress</strong>(string $streetName1, string $streetName2, string $streetName3, string $cityName, string $cityPostCode, string $countyName, string $countryId)
         </code>
@@ -2569,7 +2590,7 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentBuyerVATIdentifier">
-        <div class="location">at         line 1055</div>
+        <div class="location">at         line 1059</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentBuyerVATIdentifier</strong>(string $vatIdentifier)
         </code>
@@ -2610,7 +2631,7 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentBuyerLegalEntity">
-        <div class="location">at         line 1096</div>
+        <div class="location">at         line 1100</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentBuyerLegalEntity</strong>(string $registrationName, string $companyId = &quot;&quot;, string $companyIdSchemeId = &quot;&quot;)
         </code>
@@ -2663,7 +2684,7 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentBuyerContact">
-        <div class="location">at         line 1135</div>
+        <div class="location">at         line 1139</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentBuyerContact</strong>(string $contactName, string $contactPhone, string $contactElectronicMail)
         </code>
@@ -2716,7 +2737,7 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
             </div>
                     <div class="method-item">
                     <h3 id="method_initDocumentPayee">
-        <div class="location">at         line 1156</div>
+        <div class="location">at         line 1160</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>initDocumentPayee</strong>()
         </code>
@@ -2746,7 +2767,7 @@ identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present
             </div>
                     <div class="method-item">
                     <h3 id="method_addDocumentPayeeIdentification">
-        <div class="location">at         line 1179</div>
+        <div class="location">at         line 1183</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>addDocumentPayeeIdentification</strong>(string $id, string $idSchemeid = &quot;&quot;)
         </code>
@@ -2796,7 +2817,7 @@ value MUST be "SEPA"
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentPayeeName">
-        <div class="location">at         line 1209</div>
+        <div class="location">at         line 1213</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentPayeeName</strong>(string $name)
         </code>
@@ -2837,7 +2858,7 @@ value MUST be "SEPA"
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentPayeeLegalEntity">
-        <div class="location">at         line 1241</div>
+        <div class="location">at         line 1245</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentPayeeLegalEntity</strong>(string $registrationName, string $companyId = &quot;&quot;, string $companyIdSchemeId = &quot;&quot;)
         </code>
@@ -2890,7 +2911,7 @@ value MUST be "SEPA"
             </div>
                     <div class="method-item">
                     <h3 id="method_initDocumentTaxRepresentative">
-        <div class="location">at         line 1271</div>
+        <div class="location">at         line 1275</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>initDocumentTaxRepresentative</strong>()
         </code>
@@ -2920,7 +2941,7 @@ value MUST be "SEPA"
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentTaxRepresentativeName">
-        <div class="location">at         line 1288</div>
+        <div class="location">at         line 1292</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentTaxRepresentativeName</strong>(string $name)
         </code>
@@ -2961,7 +2982,7 @@ value MUST be "SEPA"
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentTaxRepresentativePostalAddress">
-        <div class="location">at         line 1331</div>
+        <div class="location">at         line 1335</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentTaxRepresentativePostalAddress</strong>(string $streetName1, string $streetName2, string $streetName3, string $cityName, string $cityPostCode, string $countyName, string $countryId)
         </code>
@@ -3038,7 +3059,7 @@ value MUST be "SEPA"
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentTaxRepresentativeVATIdentifier">
-        <div class="location">at         line 1378</div>
+        <div class="location">at         line 1382</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentTaxRepresentativeVATIdentifier</strong>(string $vatIdentifier)
         </code>
@@ -3079,7 +3100,7 @@ value MUST be "SEPA"
             </div>
                     <div class="method-item">
                     <h3 id="method_initDelivery">
-        <div class="location">at         line 1410</div>
+        <div class="location">at         line 1414</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>initDelivery</strong>()
         </code>
@@ -3109,7 +3130,7 @@ value MUST be "SEPA"
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentDeliveryDate">
-        <div class="location">at         line 1431</div>
+        <div class="location">at         line 1435</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentDeliveryDate</strong>(<a target="_blank" href="http://php.net/DateTime">DateTime</a> $deliveryDate)
         </code>
@@ -3149,7 +3170,7 @@ value MUST be "SEPA"
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentDeliveryIdentification">
-        <div class="location">at         line 1453</div>
+        <div class="location">at         line 1457</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentDeliveryIdentification</strong>(string $id, string $idSchemeid = &quot;&quot;)
         </code>
@@ -3196,7 +3217,7 @@ value MUST be "SEPA"
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentDeliveryPostalAddress">
-        <div class="location">at         line 1501</div>
+        <div class="location">at         line 1505</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentDeliveryPostalAddress</strong>(string $streetName1, string $streetName2, string $streetName3, string $cityName, string $cityPostCode, string $countyName, string $countryId)
         </code>
@@ -3273,7 +3294,7 @@ value MUST be "SEPA"
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentDeliveryName">
-        <div class="location">at         line 1548</div>
+        <div class="location">at         line 1552</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentDeliveryName</strong>(string $name)
         </code>
@@ -3314,7 +3335,7 @@ value MUST be "SEPA"
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentPaymentMeansToCreditTransfer">
-        <div class="location">at         line 1587</div>
+        <div class="location">at         line 1591</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentPaymentMeansToCreditTransfer</strong>(string $payeeAccountId, string $paymentId = &quot;&quot;, string $payeeAccountName = &quot;&quot;, string $payeeAccountBranch = &quot;&quot;)
         </code>
@@ -3377,7 +3398,7 @@ national clearing code where required. No identification scheme Identifier to be
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentPaymentMeansToDirectDebit">
-        <div class="location">at         line 1631</div>
+        <div class="location">at         line 1635</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentPaymentMeansToDirectDebit</strong>(string $mandateReference, string $payerAccountId)
         </code>
@@ -3425,7 +3446,7 @@ to pre-notify the Buyer of a SEPA direct debit.
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentPaymentMeansToPaymentCard">
-        <div class="location">at         line 1667</div>
+        <div class="location">at         line 1672</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentPaymentMeansToPaymentCard</strong>(string $cardId, string $networkId, string $cardHolderName = &quot;&quot;)
         </code>
@@ -3479,7 +3500,7 @@ standards, an invoice should never include a full card primary account number.
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentPaymentTerms">
-        <div class="location">at         line 1701</div>
+        <div class="location">at         line 1707</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentPaymentTerms</strong>(string $note)
         </code>
@@ -3522,7 +3543,7 @@ date (BT-9) or the Payment terms (BT-20) shall be present.
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentPaymentTermsExt">
-        <div class="location">at         line 1723</div>
+        <div class="location">at         line 1729</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentPaymentTermsExt</strong>(float $paymentDiscountBaseAmount, int $paymentDiscountDays, float $paymentDiscountPercent)
         </code>
@@ -3572,7 +3593,7 @@ date (BT-9) or the Payment terms (BT-20) shall be present.
             </div>
                     <div class="method-item">
                     <h3 id="method_initDocumentAllowanceCharge">
-        <div class="location">at         line 1763</div>
+        <div class="location">at         line 1769</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>initDocumentAllowanceCharge</strong>(bool $isCharge, string $reason, string $reasonCode)
         </code>
@@ -3630,7 +3651,7 @@ indicate the same allowance reason
             </div>
                     <div class="method-item">
                     <h3 id="method_clearDocumentAllowanceCharge">
-        <div class="location">at         line 1786</div>
+        <div class="location">at         line 1792</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>clearDocumentAllowanceCharge</strong>()
         </code>
@@ -3660,7 +3681,7 @@ indicate the same allowance reason
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentAllowanceChargeAmounts">
-        <div class="location">at         line 1807</div>
+        <div class="location">at         line 1813</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentAllowanceChargeAmounts</strong>(float $amount, float|null $baseAmount = null)
         </code>
@@ -3710,7 +3731,7 @@ maximum 2 decimals
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentAllowanceChargeTax">
-        <div class="location">at         line 1839</div>
+        <div class="location">at         line 1845</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentAllowanceChargeTax</strong>(string $taxCategoryCode, string $taxSchemeCode = &quot;&quot;, float|null $percent = null)
         </code>
@@ -3763,7 +3784,7 @@ maximum 2 decimals
             </div>
                     <div class="method-item">
                     <h3 id="method_initDocumentTaxTotal">
-        <div class="location">at         line 1869</div>
+        <div class="location">at         line 1875</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>initDocumentTaxTotal</strong>()
         </code>
@@ -3792,8 +3813,39 @@ maximum 2 decimals
 
             </div>
                     <div class="method-item">
+                    <h3 id="method_initDocumentTaxTotalFCY">
+        <div class="location">at         line 1894</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
+    <strong>initDocumentTaxTotalFCY</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Initializes a new tax information on document level for the foreign
+currency (currency different to invoice currency)</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
                     <h3 id="method_initDocumentTaxSubTotal">
-        <div class="location">at         line 1884</div>
+        <div class="location">at         line 1916</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>initDocumentTaxSubTotal</strong>()
         </code>
@@ -3823,7 +3875,7 @@ maximum 2 decimals
             </div>
                     <div class="method-item">
                     <h3 id="method_clearDocumentTaxTotal">
-        <div class="location">at         line 1901</div>
+        <div class="location">at         line 1933</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>clearDocumentTaxTotal</strong>()
         </code>
@@ -3853,7 +3905,7 @@ maximum 2 decimals
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentTaxAmounts">
-        <div class="location">at         line 1921</div>
+        <div class="location">at         line 1953</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentTaxAmounts</strong>(float $taxableAmount, float $taxAmount)
         </code>
@@ -3901,7 +3953,7 @@ the VAT category rate is applicable). Must be rounded to maximum 2 decimals.
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentTaxScheme">
-        <div class="location">at         line 1953</div>
+        <div class="location">at         line 1985</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentTaxScheme</strong>(string $taxCategoryCode, string $taxSchemeCode = &quot;&quot;, float|null $percent = null)
         </code>
@@ -3950,8 +4002,50 @@ the VAT category rate is applicable). Must be rounded to maximum 2 decimals.
 
             </div>
                     <div class="method-item">
+                    <h3 id="method_setDocumentTaxAmountFCY">
+        <div class="location">at         line 2024</div>
+        <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
+    <strong>setDocumentTaxAmountFCY</strong>(float $taxAmount)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Sets the tax amount for the foreign currency</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>float</td>
+                <td>$taxAmount</td>
+                <td>The total VAT amount for the Invoice or the VAT total amount expressed in the accounting
+currency accepted or required in the country of the Seller. Must be rounded to maximum 2 decimals
+<strong>Example value</strong>: 486.25</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
                     <h3 id="method_setDocumentSummation">
-        <div class="location">at         line 2000</div>
+        <div class="location">at         line 2053</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentSummation</strong>(float $lineExtensionAmount, float $taxExclusiveAmount, float $taxInclusiveAmount, float $payableAmount)
         </code>
@@ -4010,7 +4104,7 @@ the VAT category rate is applicable). Must be rounded to maximum 2 decimals.
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentSummationEnhanced">
-        <div class="location">at         line 2040</div>
+        <div class="location">at         line 2093</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentSummationEnhanced</strong>(float $lineExtensionAmount, float $taxExclusiveAmount, float $taxInclusiveAmount, float $payableAmount, float $allowanceTotalAmount, float $chargeTotalAmount, float $prepaidAmount)
         </code>
@@ -4087,7 +4181,7 @@ the VAT category rate is applicable). Must be rounded to maximum 2 decimals.
             </div>
                     <div class="method-item">
                     <h3 id="method_addNewDocumentPosition">
-        <div class="location">at         line 2065</div>
+        <div class="location">at         line 2118</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>addNewDocumentPosition</strong>(string $lineId)
         </code>
@@ -4128,7 +4222,7 @@ the VAT category rate is applicable). Must be rounded to maximum 2 decimals.
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentPositionNote">
-        <div class="location">at         line 2084</div>
+        <div class="location">at         line 2137</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentPositionNote</strong>(string $note)
         </code>
@@ -4169,7 +4263,7 @@ the VAT category rate is applicable). Must be rounded to maximum 2 decimals.
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentPositionQuantity">
-        <div class="location">at         line 2116</div>
+        <div class="location">at         line 2169</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentPositionQuantity</strong>(float $quantity, string $unitCode)
         </code>
@@ -4221,7 +4315,7 @@ shall be prefixed with an “X”, resulting in a 3 alphanumeric code when used 
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentPositionTotalAmount">
-        <div class="location">at         line 2146</div>
+        <div class="location">at         line 2199</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentPositionTotalAmount</strong>(float $totalAmount)
         </code>
@@ -4263,7 +4357,7 @@ allowances and charges as well as other relevant taxes. Must be rounded to maxim
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentPositionInvoicePeriod">
-        <div class="location">at         line 2175</div>
+        <div class="location">at         line 2228</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentPositionInvoicePeriod</strong>(<a target="_blank" href="http://php.net/DateTime">DateTime</a>|null $startDate = null, <a target="_blank" href="http://php.net/DateTime">DateTime</a>|null $endDate = null)
         </code>
@@ -4311,7 +4405,7 @@ allowances and charges as well as other relevant taxes. Must be rounded to maxim
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentPositionBuyerOrderLineNo">
-        <div class="location">at         line 2211</div>
+        <div class="location">at         line 2264</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentPositionBuyerOrderLineNo</strong>(string $orderLineReferenceNo)
         </code>
@@ -4353,7 +4447,7 @@ allowances and charges as well as other relevant taxes. Must be rounded to maxim
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentPositionDocumentReference">
-        <div class="location">at         line 2243</div>
+        <div class="location">at         line 2296</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentPositionDocumentReference</strong>(string $id, string $idSchemeid, string $documentTypeCode = &quot;130&quot;)
         </code>
@@ -4407,7 +4501,7 @@ allowances and charges as well as other relevant taxes. Must be rounded to maxim
             </div>
                     <div class="method-item">
                     <h3 id="method_initDocumentPositionAllowanceCharge">
-        <div class="location">at         line 2293</div>
+        <div class="location">at         line 2346</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>initDocumentPositionAllowanceCharge</strong>(bool $isCharge, string $reason, string $reasonCode)
         </code>
@@ -4466,7 +4560,7 @@ indicate the same allowance reason
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentPositionAllowanceChargeAmounts">
-        <div class="location">at         line 2333</div>
+        <div class="location">at         line 2386</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentPositionAllowanceChargeAmounts</strong>(float $amount, float|null $baseAmount = null)
         </code>
@@ -4517,7 +4611,7 @@ maximum 2 decimals
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentPositionItem">
-        <div class="location">at         line 2384</div>
+        <div class="location">at         line 2437</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentPositionItem</strong>(string $name, string $description = &quot;&quot;, string $buyerId = &quot;&quot;, string $sellerid = &quot;&quot;, string $standardItemIdentification = &quot;&quot;, string $standardItemIdentificationScheme = &quot;&quot;)
         </code>
@@ -4590,7 +4684,7 @@ in more detail than the Item name.
             </div>
                     <div class="method-item">
                     <h3 id="method_addDocumentPositionCommodityClassification">
-        <div class="location">at         line 2441</div>
+        <div class="location">at         line 2494</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>addDocumentPositionCommodityClassification</strong>(string $itemClassificationCode, string $listId, string $listVersionId = &quot;&quot;)
         </code>
@@ -4644,7 +4738,7 @@ in more detail than the Item name.
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentPositionTaxScheme">
-        <div class="location">at         line 2491</div>
+        <div class="location">at         line 2544</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentPositionTaxScheme</strong>(string $taxCategoryCode, string $taxSchemeCode = &quot;&quot;, float|null $percent = null)
         </code>
@@ -4699,7 +4793,7 @@ in more detail than the Item name.
             </div>
                     <div class="method-item">
                     <h3 id="method_addDocumentPositionItemProperty">
-        <div class="location">at         line 2537</div>
+        <div class="location">at         line 2590</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>addDocumentPositionItemProperty</strong>(string $name, string $value)
         </code>
@@ -4746,7 +4840,7 @@ in more detail than the Item name.
             </div>
                     <div class="method-item">
                     <h3 id="method_setDocumentPositionPrice">
-        <div class="location">at         line 2589</div>
+        <div class="location">at         line 2642</div>
         <code>                    <a href="../../horstoeko/ubl/UblDocumentBuilderXRechnung.html"><abbr title="horstoeko\ubl\UblDocumentBuilderXRechnung">UblDocumentBuilderXRechnung</abbr></a>
     <strong>setDocumentPositionPrice</strong>(float $priceAmount, float|null $baseQuantity = null, string|null $baseQuantityUnitCode = null)
         </code>
