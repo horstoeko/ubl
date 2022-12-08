@@ -14,9 +14,6 @@
         }
     ],
     "config": {
-        "platform": {
-            "php": "7.3.0"
-        },
         "optimize-autoloader": true,
         "sort-packages": true
     },
@@ -31,15 +28,15 @@
         }
     },
     "require": {
-        "php": "^7",
-        "ext-simplexml": "*",
+        "php": "^7.3|^8.0|^8.1",
+        "jms/serializer": "^3",
         "adrienrn/php-mimetyper": "^0.2",
         "goetas-webservices/xsd2php-runtime": "^0.2.13",
-        "horstoeko/stringmanagement": "^1",
-        "jms/serializer": "^3",
-        "symfony/intl": "^5.2",
-        "symfony/validator": "^5",
-        "symfony/yaml": "^5"
+        "ext-simplexml": "*",
+        "symfony/validator": "^5|^6",
+        "symfony/intl": "^5|^6",
+        "symfony/yaml": "^5|^6",
+        "horstoeko/stringmanagement": "^1"
     },
     "require-dev": {
         "clean/phpdoc-md": "^0",
@@ -56,6 +53,8 @@
     "scripts": {
         "tests": "./vendor/bin/phpunit ./tests/",
         "phpcs": "./vendor/bin/phpcs --standard=./build/phpcsrules.xml --extensions=php --ignore=autoload.php ./src ./tests",
-        "phpstan": "./vendor/bin/phpstan analyze -c ./build/phpstan.neon --autoload-file=vendor/autoload.php --no-interaction --no-progress --error-format=table"
+        "phpcbf": "./vendor/bin/phpcbf --ignore=/src/entities/* -q ./src ./tests",
+        "phpstan": "./vendor/bin/phpstan analyze -c ./build/phpstan.neon --autoload-file=vendor/autoload.php --no-interaction --no-progress --xdebug",
+        "phpstan_cs": "./vendor/bin/phpstan analyze -c ./build/phpstan.neon --autoload-file=vendor/autoload.php --no-interaction --no-progress --error-format=checkstyle --xdebug"
     }
 }
