@@ -1,6 +1,14 @@
 name: CI (Ant)
 
-on: [push]
+on:
+  push:
+    tags-ignore:
+      - '**'
+    branches:
+      - '**'
+    paths-ignore:
+      - '**.md'
+      - '.github/**'
 
 jobs:
   build:
